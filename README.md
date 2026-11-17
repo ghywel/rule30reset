@@ -25,6 +25,7 @@ start run `git -C Rule30PrizeKit fetch -q && python3 kit/check.py --rev origin/m
 | `PRIOR-ART.md`, `PRIOR-ART-ARCHIVE.md` | results found to be known: new entries; placego's, frozen |
 | `tools/find_known.py` | searches KIT, KIT-INDEX, both prior-art files and the ledgers, each term on its own |
 | `tools/store/` | the shared store: `store.py`, the client for postboxes, flags and share-scratch; `store.php`, the server, with its tests, token maker, example settings and README |
+| `tools/portal/` | the submission tools: the notebook builder and its checks, and the pinned post script with a dry run |
 | `tools/ledger_check.py` | the ledger check: format, rotation limit, resurrected posts; also `--next`, `--stale`, `--rotate` |
 | `KIT.md`, `KIT-INDEX.md` | the kit, condensed, stamped with the kit commit they were written from |
 | `KIT-UPDATE.md`, `kit/` | the update step and its tools: the row index, the stamp, the check, merge and build scripts |
