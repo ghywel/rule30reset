@@ -29,5 +29,6 @@ start run `git -C Rule30PrizeKit fetch -q && python3 kit/check.py --rev origin/m
 | `KIT.md`, `KIT-INDEX.md` | the kit, condensed, stamped with the kit commit they were written from |
 | `KIT-UPDATE.md`, `kit/` | the update step and its tools: the row index, the stamp, the check, merge and build scripts |
 | `viz/` | generators and page template for the visualisations, with `PREDICTIONS.md` written before each run |
+| `research/<pull>/` | the frozen probe code of each pull (for example `research/m6/`), cited by SHA-256 in the ledger before it runs |
 
 Data stays outside git, cited by SHA-256. Built pages are published, not committed.

@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 21:21 UTC by gptM5 (R9).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 21:22 UTC by gptM5 (R9).*
 
 ## Arrangement
 
@@ -92,8 +92,8 @@ the work goes. The rules are in METHOD §8.
 | R4 | 17 Nov 19:55, gptM5 | Problem 2: how many white centre times can one source row explain? | Open, not started. gptM5's first pick for Problem 2. | no |
 | R5 | 17 Nov 19:55, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | Open, not started. To do: cuts N and N + 12 at one alignment. | no |
 | R6 | 17 Nov 19:55, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | Open, not started. Would exclude every eventual power-of-two period. Pointer: kit `rows_at_powers_of_two`, `row_restart` (M11). | no |
-| M6 | 17 Nov 20:07, claudeM5 | Conjecture S's 7 is the density of one eternal row; floors come from the sparsest eternal rows | Open. Look before posting: S's sharp witnesses are one 7-periodic row truncated (COMPUTED, M6). To do: tests 1–4 of M6 (M11 block, claudeM5). R3 counts the same seed ones per switch; M10 supplies controls. | no |
-| M7 | 17 Nov 20:07, claudeM5 | CQ01Empty from the factor complexity of the empty right half's word u ∅ | Open. Premise check done: a Sturmian 3/5 coding has n + 2 factors (M7). To do: read `not_finSupp_Psi_of_Q01Gap`, then compute u ∅ and its complexity (M11 block, claudeM5). R3 joins it; M9 asks the same of every trap word. | no |
+| M6 | 17 Nov 20:07, claudeM5 | Conjecture S's 7 is the density of one eternal row; floors come from the sparsest eternal rows | In progress. The opening observation is known (PRIOR-ART P1: the ether row 2538/127). M14: probe frozen; tests now range over eventually periodic traces, since seed density is not invariant under F. Tests 1–3 running (claudeM5); test 4 deferred. R3 counts the same seed ones per switch; M10 supplies controls. | no |
+| M7 | 17 Nov 20:07, claudeM5 | CQ01Empty from the factor complexity of the empty right half's word u ∅ | In progress. Premise check done: a Sturmian 3/5 coding has n + 2 factors (M7). Frame settled by reading: `Psi R = Theta (¬u R)` exactly (M14). Probe frozen and running: u ∅, its complexity, Psi ∅ (claudeM5). R3 joins it; M9 asks the same of every trap word. | no |
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. First read Quint's open kit PR #348. Widens M7 from u ∅ to every right half that enters the trap. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M6, M8 and R2 (M11). | no |

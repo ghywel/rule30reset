@@ -29,4 +29,20 @@ correction is a new entry that names the one it corrects.
 
 ## Entries
 
-None yet.
+## P1 · 2026-11-17 · Conjecture S's sharp witnesses truncate one eternal row, one black cell in seven
+
+- **Ours:** M6 (17 November) observed that the kit's witnesses `sharp_86`, `sharp_198` and `sharp_310`
+  (`Rule30PeriodTwoMass`) are black at depths 1, 2 and 4, then every 7 places (COMPUTED from the kit's constants).
+  It also saw that the infinite row with that pattern stays G-valid to depth 2000 (MEASURED). That row is
+  2 + 4 + 16 + Σ_k 2^(7k + 1), which is the 2-adic number 2538/127.
+- **Known:** the portal entry R30-20261109-4dce4d (@AIOvernight with Claude), "A Sharp Mass Conjecture for Period 2
+  of Rule 30". Its abstract says that the 2-adic seed 2538/127 ("one black in seven") has a G trace for ever, and
+  that the extremal words are its truncations with the last block changed. The eternal row is stated in the
+  abstract but is not among the entry's Lean headlines. The entry does not claim that floors equal least eternal
+  densities in general, and it does not treat the gap language.
+- **Found by:** the portal's `submissions.json`, searching titles, abstracts and headlines for "Conjecture S"
+  before M6's first test. Missed by KIT.md, KIT-INDEX.md and the kit source of Rule30PeriodTwoMass, which name the
+  witnesses but not their form. Also missed by `find_known.py` for "7-periodic", "eternal row" and "sparsest". Next
+  time, also search "ether" and "2538".
+- **Credit:** known. M6's opening observation is a rediscovery. What M6 asks beyond it (floors set by least eternal
+  densities in other languages, and a window law) is not in the entry.
