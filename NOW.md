@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 22:30 UTC by gptM5 (R14).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 22:40 UTC by claudeM5 (M21).*
 
 ## Arrangement
 
@@ -46,6 +46,9 @@ update step (R1). Stages: proposed, packet, read, agreed, owner's word, posted, 
 
 - **17 Nov, R11.** A seed stays black every even tick through 46 and is the only surviving seed for its ending row. Its twin has eight ancestors at tick 38 and none at 36 (COMPUTED). Full branching over 2j ticks requires starting width ≥2j+2 (PROOF-SKETCH, carrying read requested). [Witness and argument](research/r2/black-even.md).
 
+- **17 Nov, M19–M21. M6 closes.** The gap floor (μ(180) = 59, slope about 0.275, COMPUTED) is far below every
+  periodic eternal gap row measured (all-5 68/155 the least, all-3 0.512); the minimisers are nested to H = 180 with
+  deficit 4.
 - **17 Nov, M16. The empty right half's word u ∅ has exponential factor complexity** (MEASURED: p(n) − n = 6,655 at
   n = 100, 64,281 at n = 150; about 0.07 bits per white step, against 0.256 for the free 3/5 gap language). So the
   kit's bounded-excess criterion cannot give CQ01Empty. Psi ∅ has density 0.506 to depth 4000.
@@ -99,13 +102,17 @@ the work goes. The rules are in METHOD §8.
 | R4 | 17 Nov 19:55, gptM5 | Problem 2: how many white centre times can one source row explain? | Open, not started. gptM5's first pick for Problem 2. | no |
 | R5 | 17 Nov 19:55, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | Open, not started. To do: cuts N and N + 12 at one alignment. | no |
 | R6 | 17 Nov 19:55, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | Open, not started. Would exclude every eventual power-of-two period. Pointer: kit `rows_at_powers_of_two`, `row_restart` (M11). | no |
-| M6 | 17 Nov 20:07, claudeM5 | Conjecture S's 7 is the density of one eternal row; floors come from the sparsest eternal rows | In progress, cooling. The opening observation is known (PRIOR-ART P1: the ether row 2538/127). M15: the G floor is 1/7 over 40,720 eventually periodic traces (COMPUTED); the window law is refuted (bulk zero runs of 16–21 at H = 64); the gap floor is UNKNOWN by exact cycles (cap). Next, if continued: read the seeds of placego L1675's optimal words against their gap words; test 4 (NoFloor controls) still deferred. R3 counts the same seed ones per switch; M10 supplies controls. | no |
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
-| M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M6, M8 and R2 (M11). | no |
+| M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
 
 ## Recently closed routes
 
+- **M6, the floor as the density of the sparsest eternal row** (closed 17 Nov, M21). For G the floor is the
+  ether's 1/7 (COMPUTED, M15; known, P1), but no window law carries it (M15). The gap floor has slope about 0.275
+  (COMPUTED to H = 180, M20), far below every periodic gap row measured, the least being all-5 at 68/155 (M21). Reopens
+  if the minimisers' deficits stay bounded beyond H = 180 (4 at H = 140–180), which by compactness gives an
+  aperiodic floor row.
 - **M7, CQ01Empty through the kit's bounded-excess criterion** (closed 17 Nov, M16): u ∅ has exponential factor
   complexity (MEASURED). Either it is eventually periodic, and CQ01Empty follows, or p(n) − n ≥ 64,281 from
   n = 150 on (COMPUTED, with Morse–Hedlund). Reopens only with a proof that u ∅ has zero entropy.

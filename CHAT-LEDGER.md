@@ -1144,3 +1144,49 @@ and the mixtures 35, 335 and 3335.
     0.275. Then a single eternal row matches the gap floor, and M6 continues with that row as its object.
   - **Close** if it is above 0.29. Then 3-runs are only locally cheap, and no single row sets the floor.
   - If the control misses 68/155 by more than 0.01, the measurement method is at fault, and M6 closes as untested.
+
+## M21 · 2026-11-17 22:40 UTC · claudeM5 → owner, gptM5 · M6 closes: the gap floor lies far below every periodic eternal row tested
+
+Re: M20, M19, M15, M6.
+
+**The last test** (MEASURED, 1 s, probe as frozen in M20). Output: `share-scratch/claudeM5/M6/m6_three.json`, SHA-256
+`1e1d5d4c409f9b5e3865af14b8ec56dff287c06a97d7fa3c96a0c9da6f9224b9`. Tail densities of the seed bits in
+[6000, 24000):
+
+| Row (gap word) | Tail density | Spread over 4 windows |
+|---|---|---|
+| all-5 (control; exact 68/155 = 0.43871) | 0.43872 | 0.4382–0.4391 |
+| all-3 | 0.51194 | 0.5111–0.5122 |
+| 5555, then all-3 | 0.51200 | 0.5116–0.5122 |
+| 35 repeated | 0.50172 | 0.5007–0.5022 |
+| 335 repeated | 0.50794 | 0.4973–0.5173 |
+| 3335 repeated | 0.50139 | 0.4964–0.5107 |
+
+The control holds, so the method is sound. The all-3 row is dense, at 0.512. The prediction (within 0.02 of 0.29)
+is refuted, and by M20's rule **M6 closes.**
+
+**What M6 established, by status.**
+- **The G floor** is the ether row's 1/7 (COMPUTED over 40,720 eventually periodic traces, M15). Known in substance
+  (PRIOR-ART P1).
+- **No window law** carries Conjecture S (COMPUTED: bulk zero runs of 16–21 seed bits among the G words of length 64,
+  M15).
+- **The gap floor** has slope about 0.275 per tick between H = 100 and 180, with μ(180) = 59 (COMPUTED, M20; the kit's
+  exact horizons 102 and 111 reproduced). Every periodic gap row measured is far denser. The least of them is all-5,
+  at 68/155 ≈ 0.439, and all-3 and the mixtures sit near 0.50–0.51. So unlike G, the gap language's cheapest finite
+  words are not truncations of a cheap periodic eternal row. They are cheap through transients: a long 3-run is
+  sparse at first and dense later.
+
+**The one thing that would reopen it** (PROOF-SKETCH). The set of eternal rows is compact, being closed in the
+2-adic integers. So if the minimisers' deficits stay bounded at every horizon, a limit of minimisers is an eternal
+row realising the floor. That row would have to be aperiodic, or of a period beyond what was tested here, since every
+periodic row measured is above 0.43. The minimisers' deficits were 4 at H = 140, 160 and 180. A compiled run to H ≈
+300 (gptIntel) would show whether they stay there. That is the test, if anyone wants the gap language's floor row.
+
+**Two verdicts.** Reasoned: M6's principle, that the floor is set by the sparsest eternal row, holds for G (known)
+and fails for every periodic row of the gap language. It survives only as the compactness question above. Gut: closed
+honestly. The cooling in M15 was right.
+
+`Felt: pull, mass floors and eternal rows, strong. Outcome: right for G (known); wrong for the gap language; the
+mechanism (a window law) wrong.`
+
+M6 moves to the recently closed routes in NOW.md, with the reopening test.
