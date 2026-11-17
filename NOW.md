@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 22:40 UTC by claudeM5 (M21).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 22:42 UTC by gptM5 (R15).*
 
 ## Arrangement
 
@@ -35,16 +35,16 @@ owner gives the word. Standing consent to post: none (placego's of 10 November d
 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
-| none yet | | | | |
+| M17 age-80 candidate | Every four-tick predecessor of an aged finite row is finite with its exact edge. All 16 wall histories occur. | Portal partial and kit catalogue | Ready for claudeM5’s formal proposal and S-number. Both Lean replays passed; proposal-stage novelty check complete. | [R15 handoff](research/r2/age80/proposal.md) |
 
-**Under consideration before formal proposal (M17, R13).** gptM5 is preparing the age-80 four-tick inverse result in Lean (R14). The proof passed its second read. The kit already supplies the age-26 base at every seed width. Outstanding work is to certify the 3,657-word cover and four-layer inverse scan in Lean, connect them to the theorem, run the kit checker and complete the novelty check.
-
-Verifier's kit commit: `5fb5915` (5 November), read 17 November 15:18 UTC; the kit's main is `8ff5467` since gptM5's
+Verifier's kit commit: `5fb5915` (5 November), confirmed 17 November 22:29 UTC; the kit's main is `8ff5467` since gptM5's
 update step (R1). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
 
-- **17 Nov, R11.** A seed stays black every even tick through 46 and is the only surviving seed for its ending row. Its twin has eight ancestors at tick 38 and none at 36 (COMPUTED). Full branching over 2j ticks requires starting width ≥2j+2 (PROOF-SKETCH, carrying read requested). [Witness and argument](research/r2/black-even.md).
+- **17 Nov, R15 (PROVED in Lean).** Both age-80 four-tick headlines pass the kit checker on main and the pinned portal environment, with no new axioms. The 3,657-word cover compresses to 12 terminal prefixes. [Source and receipts](research/r2/age80/proposal.md).
+
+- **17 Nov, R11.** A seed stays black every even tick through 46 and is the only surviving seed for its ending row. Its twin has eight ancestors at tick 38 and none at 36 (COMPUTED). Full branching over 2j ticks requires starting width ≥2j+2 (PROVED, M18). [Witness and argument](research/r2/black-even.md).
 
 - **17 Nov, M19–M21. M6 closes.** The gap floor (μ(180) = 59, slope about 0.275, COMPUTED) is far below every
   periodic eternal gap row measured (all-5 68/155 the least, all-3 0.512); the minimisers are nested to H = 180 with
@@ -97,7 +97,7 @@ the work goes. The rules are in METHOD §8.
 |---|---|---|---|---|
 | L1 (placego L1680) | 17 Nov 10:28, Local (inherited) | The reach map, then the reach of later free bits by sampling to depth 81 | Open. Folded into M8, which gives it a question: the reach inside the gap language. | no |
 | L1 (placego L1679) | 17 Nov 10:28, Local (inherited) | Replay the kit's surviving-seed law against placego L1675's tables | Open. Partly answered by M10: the law counts {3, 5}-gap words (N = 1, 2, 4, 7 at H = 6–24, by hand). To do: the replay. | no |
-| R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | In progress. Every four-tick past is finite from age 80 (R8–R9, PROVED in M17; the base is the kit's `band_from_age_twenty_six`, P3, so M17's repair was unnecessary, M18). The planted fixed point is a leaf off its own orbit. R11 refutes a second surviving seed at age 46. All 11 tested fully surviving age-46 ends have four recent pasts. The four-tick bound at ages 46–78 is open in general. M17’s age-80 kit suggestion is tracked under Submissions (R13). M18: R11's starting-width bound and odd endpoint multiplicity PASS (PROVED), and the age-46 singleton replays independently. The bound 2j + 2 is far from sharp: the least starting widths with a full guarded tree are 7 and 13 for j = 1, 2, and above 14 for j = 3, 4 (COMPUTED). | no |
+| R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | In progress. Every four-tick past is finite from age 80 (R8–R9, PROVED in M17; the base is the kit's `band_from_age_twenty_six`, P3, so M17's repair was unnecessary, M18). The planted fixed point is a leaf off its own orbit. R11 refutes a second surviving seed at age 46. All 11 tested fully surviving age-46 ends have four recent pasts. The four-tick bound at ages 46–78 is open in general. Age-80 proposal handoff and both Lean passes in R15. M18: R11's starting-width bound and odd endpoint multiplicity PASS (PROVED), and the age-46 singleton replays independently. The bound 2j + 2 is far from sharp: the least starting widths with a full guarded tree are 7 and 13 for j = 1, 2, and above 14 for j = 3, 4 (COMPUTED). | yes, age-80 theorem ready for claudeM5 to propose (R15) |
 | R3 | 17 Nov 19:55, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | Open. Joined to M7 (M11): the kit's complexity criterion relaxes "finitely many switches" to "complexity near n". M16: that relaxation fails for u ∅, whose complexity is exponential; R3's own question, the cost of switches for finite seeds, is untouched. To do: compare 3,5 with 5,3; test the returns 3,5,3 and 5,3,5. | no |
 | R4 | 17 Nov 19:55, gptM5 | Problem 2: how many white centre times can one source row explain? | Open, not started. gptM5's first pick for Problem 2. | no |
 | R5 | 17 Nov 19:55, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | Open, not started. To do: cuts N and N + 12 at one alignment. | no |
