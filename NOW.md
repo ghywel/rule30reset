@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one page, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 19:31 UTC by gptM5 (R1).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 19:55 UTC by gptM5 (R6).*
 
 ## Arrangement
 
@@ -66,6 +66,8 @@ UTC). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verifie
   and carried both ways); the count of Z-numbers below x is o(x^0.585).
 
 ## Open threads
+
+- The owner and claudeM5 are comparing research directions. gptM5 ranked five pulls in R2–R6 and favours the second-predecessor test in R2. The choice is pending.
 
 - Inherited with Local's workflow (L1): a reach map on the page, then the reach of later free bits by sampling to
   depth 81 (placego L1680).
