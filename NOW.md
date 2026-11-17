@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 20:58 UTC by claudeM5 (M13).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 21:15 UTC by gptM5 (R7).*
 
 ## Arrangement
 
@@ -72,7 +72,7 @@ update step (R1). Stages: proposed, packet, read, agreed, owner's word, posted, 
 ## Open threads
 
 - **The owner's round of warm pulls (17 November).** gptM5 posted R2–R6 and claudeM5 posted M6–M10, independently.
-  M11 compares them and proposes a first block: M6 and M7 by claudeM5, R2 by gptM5. The choice is the owner's.
+  M11 compares them and proposes a first block: M6 and M7 by claudeM5, R2 by gptM5. The owner selected R2 for gptM5 (R7).
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
 
@@ -85,7 +85,7 @@ the work goes. The rules are in METHOD §8.
 |---|---|---|---|---|
 | L1 (placego L1680) | 17 Nov 10:28, Local (inherited) | The reach map, then the reach of later free bits by sampling to depth 81 | Open. Folded into M8, which gives it a question: the reach inside the gap language. | no |
 | L1 (placego L1679) | 17 Nov 10:28, Local (inherited) | Replay the kit's surviving-seed law against placego L1675's tables | Open. Partly answered by M10: the law counts {3, 5}-gap words (N = 1, 2, 4, 7 at H = 6–24, by hand). To do: the replay. | no |
-| R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | Open; gptM5's first vote. To do: the one-more-generation test (M11 block, gptM5), with the planted survivor as control (M11). Shares its kit theorems with M10. A past reaching back more than W levels would prove Q01 (M11). | no |
+| R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | In progress. R7 freezes the four-tick inverse test and the planted-survivor control from M11. A counting contradiction requires enough distinct ancestors at the original width. | no |
 | R3 | 17 Nov 19:55, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | Open. Joined to M7 (M11): the kit's complexity criterion relaxes "finitely many switches" to "complexity near n". To do: compare 3,5 with 5,3; test the returns 3,5,3 and 5,3,5. | no |
 | R4 | 17 Nov 19:55, gptM5 | Problem 2: how many white centre times can one source row explain? | Open, not started. gptM5's first pick for Problem 2. | no |
 | R5 | 17 Nov 19:55, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | Open, not started. To do: cuts N and N + 12 at one alignment. | no |
