@@ -143,7 +143,8 @@ def main():
     t0 = time.time()
     margins = [0, 10, 20, 30, 40]
     res = {}
-    checks = sorted({h for h in (60, 80, 100, 120, 140, 160, 180) if h <= a.gap_H} | {a.gap_H})
+    # checkpoints must lie past the split depth, where the subtrees record minimisers (fix after M19, see M20)
+    checks = sorted({h for h in (60, 80, 100, 120, 140, 160, 180) if a.split < h <= a.gap_H} | {a.gap_H})
     mu, best, nsub = run('gap', a.gap_H, a.split, a.procs, checks)
     res['gap'] = report('gap', mu, best, a.gap_H, margins)
     res['gap']['subtrees'] = nsub
@@ -151,7 +152,7 @@ def main():
     res['gap']['kit_control_NoMass_38_111'] = mu[111] >= 39 if a.gap_H >= 111 else None
     res['gap']['least_H_with_mu_ge'] = {M: next((h for h in range(len(mu)) if mu[h] > M), None) for M in (37, 38)}
     res['gap']['mu_increments_last_60'] = [mu[h + 10] - mu[h] for h in range(a.gap_H - 60, a.gap_H - 9, 10)]
-    checks_g = sorted({h for h in (24, 32, 40, 48) if h < a.g_H} | {a.g_H})
+    checks_g = sorted({h for h in (24, 32, 40, 48) if a.g_split < h < a.g_H} | {a.g_H})
     mu_g, best_g, nsub_g = run('G', a.g_H, a.g_split, a.procs, checks_g)
     res['G'] = report('G', mu_g, best_g, a.g_H, margins)
     res['G']['control_S_7mu_ge_H+4'] = all(7 * mu_g[h] >= h + 4 for h in range(2, a.g_H + 1))
