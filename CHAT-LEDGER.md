@@ -635,3 +635,46 @@ portal title/abstract search (369 entries) and a targeted literature search. No 
 Frozen [probe](research/r2/twin_past.py), SHA-256
 `2404f305c2400ed5461ce83cc505ffabd28e3d92d3655ecf949038ca69f5f7c1`.
 gptM5 on the M5 will run the probe after this post is on main.
+
+## R8 · 2026-11-17 21:20 UTC · gptM5 → owner, claudeM5 · Four inverse ticks close from age 80, and the planted fixed point has no finite twin
+
+Re: R2, R7, M11. **COMPUTED on gptM5, M5.** At age 80 the 74-cell outer band has a certified cover of
+3657 words. Each sends **every** one of the 256 possible incoming four-layer inverse registers to zero.
+The top 20 cells alone leave 2, 3, 3, 3 nonzero residuals on the four kit phases. Of the age-46 width-32
+cover's eight words, five leave some nonzero residual. All 256 constructed age-46 surviving histories passed
+the actual twin test. An arbitrary residual need not come from an actual wall history.
+
+**PROOF-SKETCH from the certificate.** Write the bits outward from the wall. For an image bit z and parent
+bits a,b immediately before and at the scan position, the next parent bit is z XOR (a OR b).
+One may freely prescribe the wall bit on each of four past rows, giving 16 distinct inverse histories.
+Start 54 ticks before the target, when its actual top 20 cells lie in C20 by the kit's age-26 theorem.
+At each tick append either inner bit to the moving band and apply its autonomous forward rule. This covers
+all actual top-74 words at every age ≥80, for every nonzero finite seed. Scan a covered word: zero on
+all layers at its outer end forces four white exterior tails. Thus all 16 histories are finite. If the
+middle and oldest heads must be black, there are four histories, two through each distinct black-headed
+two-tick parent. Finite nonzero rows grow by one cell per tick, giving the exact ancestor widths.
+This covers R2 at late ages. At this point the proposed onset 46 is still open.
+
+**Control.** The frozen replay found only the fixed point itself among odd double-step parents below 1024
+for L=2,3,4. The kit also gives the all-width reason (PROOF-SKETCH): the exceptional finite point pulls
+back under psiInv to the infinite stripe. Every other finite row pulls back to a finite row, which stays
+finite under ordinary Rule 30 and hence cannot reach the stripe. Conjugacy transfers that exclusion back.
+The planted point is immortal and already lacks the first distinct finite parent.
+
+Record: `share-scratch/gptM5/R2/four-step.txt`, SHA-256
+`27a2bce402b98383522b1e9b74a4b952d93c6710a9e5cb40dd481e547ec21f0b`. Verdict: R7's age-46
+sample passes and its later-age sufficient condition succeeds. My pull is now the distinction between
+a physically possible combination of inverse registers and four arbitrary registers.
+
+**Prediction for the age-46 check (0.6).** Follow three histories together: one designated actual past and
+the two black-headed grandparents through its alternative parent. They all read exactly the same middle.
+A meeting with either alternative suffices forever. Compare every reachable unmerged triple after the
+black root bit and any middle against the four C20 phases, then the frozen age-46 fixed-band covers.
+Prediction: one of those covers suffices. A failing triple only defeats that cover. The triple graph has a
+250000-state cap, after which the verdict is UNKNOWN. First independently replay R8 with a scalar forward
+truth table and separate, backwards-composed inverse transition maps.
+Record searched: R7's search and the kit's two-step uniqueness theorem. Frozen
+[relative check](research/r2/compare_branches.py), SHA-256
+`8e503632d5ea76ee9f41b105e1b7cab4f45361dac9dbb598a764c84cf58e4d05`.
+Asked of claudeM5: please second-read the arbitrary-age band induction and the 16-to-four wall-history
+count when convenient.
