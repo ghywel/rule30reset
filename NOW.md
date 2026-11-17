@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 21:22 UTC by gptM5 (R9).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 21:28 UTC by claudeM5 (M16).*
 
 ## Arrangement
 
@@ -42,11 +42,14 @@ update step (R1). Stages: proposed, packet, read, agreed, owner's word, posted, 
 
 ## Latest results (newest first)
 
+- **17 Nov, M16. The empty right half's word u ∅ has exponential factor complexity** (MEASURED: p(n) − n = 6,655 at
+  n = 100, 64,281 at n = 150; about 0.07 bits per white step, against 0.256 for the free 3/5 gap language). So the
+  kit's bounded-excess criterion cannot give CQ01Empty. Psi ∅ has density 0.506 to depth 4000.
+- **17 Nov, M15. The G floor is the ether row's 1/7** over 40,720 eventually periodic G traces (COMPUTED; known in
+  substance, PRIOR-ART P1). **No window law** (COMPUTED: G words of length 64 have bulk zero runs of 16–21 seed
+  bits). The gap floor is UNKNOWN by exact cycles: the 882 traces that close give at least 68/155.
 - **17 Nov, R8.** A 74-cell edge certificate closes all four-tick inverse histories from tick 80 (COMPUTED). This gives a second generation for the late twin. R9 replayed the certificate. A width-one control gives t ≥ 2d for unconditional closure of d inverse ticks (PROOF-SKETCH).
 
-- **17 Nov, M6. Conjecture S's sharpness witnesses are one row, truncated** (COMPUTED): black at depths 1, 2, 4,
-  then every 7 places. The infinite row stays G-valid to depth 2000 (MEASURED, not proved), so the constant 7 is
-  probably the density of one eternal row, as NoFloor's 9 and 14 are for theirs.
 - **17 Nov, M10. Every exact survivor count in the period-2 web is a word count** (known, kit `seedOfTrace`), which
   is why the planted survivor matches them: counts alone cannot prove Q01.
 - **17 Nov, M1 and M5. The shared store is live, with the flat layout, and claudeM5 and gptM5 have joined.**
@@ -88,16 +91,18 @@ the work goes. The rules are in METHOD §8.
 | L1 (placego L1680) | 17 Nov 10:28, Local (inherited) | The reach map, then the reach of later free bits by sampling to depth 81 | Open. Folded into M8, which gives it a question: the reach inside the gap language. | no |
 | L1 (placego L1679) | 17 Nov 10:28, Local (inherited) | Replay the kit's surviving-seed law against placego L1675's tables | Open. Partly answered by M10: the law counts {3, 5}-gap words (N = 1, 2, 4, 7 at H = 6–24, by hand). To do: the replay. | no |
 | R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | In progress. R7 freezes the four-tick inverse test and the planted-survivor control from M11. R8: all four-tick pasts close from tick 80 (COMPUTED). The planted point has only itself as finite parent. R9 independently replayed the certificate on the same host. Ages 46–78 remain open. R9 gives a counting limit for unrestricted histories; carrying read requested. | no |
-| R3 | 17 Nov 19:55, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | Open. Joined to M7 (M11): the kit's complexity criterion relaxes "finitely many switches" to "complexity near n". To do: compare 3,5 with 5,3; test the returns 3,5,3 and 5,3,5. | no |
+| R3 | 17 Nov 19:55, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | Open. Joined to M7 (M11): the kit's complexity criterion relaxes "finitely many switches" to "complexity near n". M16: that relaxation fails for u ∅, whose complexity is exponential; R3's own question, the cost of switches for finite seeds, is untouched. To do: compare 3,5 with 5,3; test the returns 3,5,3 and 5,3,5. | no |
 | R4 | 17 Nov 19:55, gptM5 | Problem 2: how many white centre times can one source row explain? | Open, not started. gptM5's first pick for Problem 2. | no |
 | R5 | 17 Nov 19:55, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | Open, not started. To do: cuts N and N + 12 at one alignment. | no |
 | R6 | 17 Nov 19:55, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | Open, not started. Would exclude every eventual power-of-two period. Pointer: kit `rows_at_powers_of_two`, `row_restart` (M11). | no |
-| M6 | 17 Nov 20:07, claudeM5 | Conjecture S's 7 is the density of one eternal row; floors come from the sparsest eternal rows | In progress. The opening observation is known (PRIOR-ART P1: the ether row 2538/127). M14: probe frozen; tests now range over eventually periodic traces, since seed density is not invariant under F. Tests 1–3 running (claudeM5); test 4 deferred. R3 counts the same seed ones per switch; M10 supplies controls. | no |
-| M7 | 17 Nov 20:07, claudeM5 | CQ01Empty from the factor complexity of the empty right half's word u ∅ | In progress. Premise check done: a Sturmian 3/5 coding has n + 2 factors (M7). Frame settled by reading: `Psi R = Theta (¬u R)` exactly (M14). Probe frozen and running: u ∅, its complexity, Psi ∅ (claudeM5). R3 joins it; M9 asks the same of every trap word. | no |
+| M6 | 17 Nov 20:07, claudeM5 | Conjecture S's 7 is the density of one eternal row; floors come from the sparsest eternal rows | In progress, cooling. The opening observation is known (PRIOR-ART P1: the ether row 2538/127). M15: the G floor is 1/7 over 40,720 eventually periodic traces (COMPUTED); the window law is refuted (bulk zero runs of 16–21 at H = 64); the gap floor is UNKNOWN by exact cycles (cap). Next, if continued: read the seeds of placego L1675's optimal words against their gap words; test 4 (NoFloor controls) still deferred. R3 counts the same seed ones per switch; M10 supplies controls. | no |
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
-| M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. First read Quint's open kit PR #348. Widens M7 from u ∅ to every right half that enters the trap. | no |
+| M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M6, M8 and R2 (M11). | no |
 
 ## Recently closed routes
 
+- **M7, CQ01Empty through the kit's bounded-excess criterion** (closed 17 Nov, M16): u ∅ has exponential factor
+  complexity (MEASURED). Either it is eventually periodic, and CQ01Empty follows, or p(n) − n ≥ 64,281 from
+  n = 150 on (COMPUTED, with Morse–Hedlund). Reopens only with a proof that u ∅ has zero entropy.
 - A bounded black frontier for Q01GapCore survivors: the frontier recedes (placego L1673).
