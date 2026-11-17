@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 21:41 UTC by gptM5 (R10).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 21:46 UTC by gptM5 (R11).*
 
 ## Arrangement
 
@@ -42,13 +42,15 @@ update step (R1). Stages: proposed, packet, read, agreed, owner's word, posted, 
 
 ## Latest results (newest first)
 
+- **17 Nov, R11.** A seed stays black every even tick through 46 and is the only surviving seed for its ending row. Its twin has eight ancestors at tick 38 and none at 36 (COMPUTED). Full branching over 2j ticks requires starting width ≥2j+2 (PROOF-SKETCH, carrying read requested). [Witness and argument](research/r2/black-even.md).
+
 - **17 Nov, M16. The empty right half's word u ∅ has exponential factor complexity** (MEASURED: p(n) − n = 6,655 at
   n = 100, 64,281 at n = 150; about 0.07 bits per white step, against 0.256 for the free 3/5 gap language). So the
   kit's bounded-excess criterion cannot give CQ01Empty. Psi ∅ has density 0.506 to depth 4000.
 - **17 Nov, M15. The G floor is the ether row's 1/7** over 40,720 eventually periodic G traces (COMPUTED; known in
   substance, PRIOR-ART P1). **No window law** (COMPUTED: G words of length 64 have bulk zero runs of 16–21 seed
   bits). The gap floor is UNKNOWN by exact cycles: the 882 traces that close give at least 68/155.
-- **17 Nov, R8.** A 74-cell edge certificate closes all four-tick inverse histories from tick 80 (COMPUTED). This gives a second generation for the late twin. R9 replayed the certificate. A width-one control gives t ≥ 2d for unconditional closure of d inverse ticks (PROOF-SKETCH).
+- **17 Nov, R8.** A 74-cell edge certificate closes all four-tick inverse histories from tick 80 (PROVED with M17’s narrow-seed base check). A width-one control gives t ≥ 2d for unconditional closure of d inverse ticks (R9, read in M17).
 
 - **17 Nov, M10. Every exact survivor count in the period-2 web is a word count** (known, kit `seedOfTrace`), which
   is why the planted survivor matches them: counts alone cannot prove Q01.
@@ -90,7 +92,7 @@ the work goes. The rules are in METHOD §8.
 |---|---|---|---|---|
 | L1 (placego L1680) | 17 Nov 10:28, Local (inherited) | The reach map, then the reach of later free bits by sampling to depth 81 | Open. Folded into M8, which gives it a question: the reach inside the gap language. | no |
 | L1 (placego L1679) | 17 Nov 10:28, Local (inherited) | Replay the kit's surviving-seed law against placego L1675's tables | Open. Partly answered by M10: the law counts {3, 5}-gap words (N = 1, 2, 4, 7 at H = 6–24, by hand). To do: the replay. | no |
-| R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | In progress. R7 freezes the four-tick inverse test and the planted-survivor control from M11. R8: all four-tick pasts close from tick 80 (COMPUTED). The planted point has only itself as finite parent. R9 independently replayed the certificate on the same host. Ages 46–78 remain open. R9 gives a counting limit for unrestricted histories; carrying read requested. M17: carrying read PASS, with one repair (the base at age 26 holds for seeds narrower than 20 cells by a finite check, not by `band_settles`); four-tick closure from age 80 is PROVED, from 99 on the kit alone. Below 80 the unrestricted twin form fails for actual rows at even ages 46, 48, 54 (M17), so ages 46–78 need survival. R10 tests whether a black history forces additional ancestors at the seed width. Possible kit candidate for the age-80 result (M17). | no |
+| R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | In progress. Every four-tick past is finite from age 80 (R8–R9, PROVED with the repaired base in M17). The planted fixed point is a leaf off its own orbit. R11 refutes a second surviving seed at age 46. All 11 tested fully surviving age-46 ends have four recent pasts. The four-tick bound at ages 46–78 is open in general. R11 width argument awaits a carrying read. | no |
 | R3 | 17 Nov 19:55, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | Open. Joined to M7 (M11): the kit's complexity criterion relaxes "finitely many switches" to "complexity near n". M16: that relaxation fails for u ∅, whose complexity is exponential; R3's own question, the cost of switches for finite seeds, is untouched. To do: compare 3,5 with 5,3; test the returns 3,5,3 and 5,3,5. | no |
 | R4 | 17 Nov 19:55, gptM5 | Problem 2: how many white centre times can one source row explain? | Open, not started. gptM5's first pick for Problem 2. | no |
 | R5 | 17 Nov 19:55, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | Open, not started. To do: cuts N and N + 12 at one alignment. | no |
