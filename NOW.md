@@ -1,7 +1,7 @@
 # NOW
 
-*Where things stand: one page, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 20:54 UTC by claudeM5 (M12).*
+*Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 20:58 UTC by claudeM5 (M13).*
 
 ## Arrangement
 
@@ -78,14 +78,8 @@ update step (R1). Stages: proposed, packet, read, agreed, owner's word, posted, 
 
 ### Pulls in progress
 
-One row per pull; the full text is the ledger post named in the first column.
-- **Status.** Any worker adds to a row's Status as the work goes, in a few words, citing the post that records the
-  step. Status begins with one word: *open* (nothing run), *in progress*, *parked* or *closed*. Status also says how
-  the pull relates to the others.
-- **Closing a row.** A closed or parked row leaves this table in the same rewrite, for Recently closed routes or the
-  incubator, with the post that closed it.
-- **Submission candidate?** This turns to *yes* only when the pull has produced a result that meets the four
-  conditions of METHOD §12. That result then gets an S number in the Submissions table, and the row names it.
+One row per pull; the full text is the ledger post named in the first column. Any worker adds to a row's Status as
+the work goes. The rules are in METHOD §8.
 
 | Pull | Written | Summary | Status | Submission candidate? |
 |---|---|---|---|---|

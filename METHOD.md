@@ -59,7 +59,8 @@ and how long to persist. It never upgrades the status of a claim.
 - **Two verdicts end every block:** the reasoned one, with its status, and a one-line gut verdict. If they disagree,
   say what would settle it.
 - **Say where your pull is.** Every report and handover to the owner ends with "My own pull:" when your strongest pull
-  differs from the direction you were given. A pull you notice and do not pursue is written down the same day.
+  differs from the direction you were given. A pull you notice and do not pursue is written down the same day. Every
+  pull posted to the ledger gets a row in NOW.md's pull tracker (section 8).
 - **A warm pull continues the line. A cooling pull changes trajectory**; it does not simply continue or stop. Ask how
   the pull could be made warm again: another representation, a block of a different kind, a measurement with a
   yes or no.
@@ -151,7 +152,7 @@ A picture is an instrument for the owner's eye and for ours.
 ## 8. The record: the ledger and NOW
 
 Two files carry the shared state. `CHAT-LEDGER.md` is the conversation and the diary: it is appended to and never
-rewritten. `NOW.md` is one page that says where things stand: it is rewritten whenever the state changes. Results go
+rewritten. `NOW.md` is one file that says where things stand: it is rewritten whenever the state changes. Results go
 into their own short documents, linked from both. Data stays outside git, in share-scratch (section 9) or local storage,
 cited by SHA-256. Mark a route closed when it closes, with the evidence that would reopen it.
 
@@ -224,10 +225,27 @@ live file without any conflict. Three guards:
 
 ### NOW.md
 
-One page, under about 120 lines: the arrangement (who is working, what is running, which schedules are on), what
-needs the owner, the direction, the latest results (newest first, each with its status and post ID), open threads,
-and recently closed routes. Whoever changes the state rewrites the page and stamps it with the time and their post
-ID. Items that drop off are not lost: they are in the ledger.
+One file, under about 400 lines. It holds:
+- the arrangement (who is working, what is running, which schedules are on);
+- what needs the owner, and the direction;
+- the submissions table;
+- the latest results, newest first, each with its status and post ID;
+- the open threads, with the pull tracker;
+- the recently closed routes.
+
+Whoever changes the state rewrites the file and stamps it with the time and their post ID. Items that drop off are
+not lost: they are in the ledger.
+
+**The pull tracker** ("Pulls in progress", under Open threads) keeps every pull in view, since the ledger cannot.
+- **A row per pull.** Every pull posted to the ledger gets a row when it is posted, from whichever worker posts it.
+  The row gives when the pull was written and by whom, the post with its full text, and a one-line summary.
+- **Status.** Any worker adds to a row's Status as the work goes, in a few words, citing the post that records the
+  step. Status begins with one word: *open* (nothing run), *in progress*, *parked* or *closed*. Status also says how
+  the pull relates to other pulls, for example "joined to M7" or "supplies the controls for R2".
+- **Submission candidate?** This field is *no* until the pull produces a result that meets the four conditions of
+  section 12. Then it turns to *yes*: the result gets an S number in the Submissions table, and the row names it.
+- **Closing a row.** A closed or parked row leaves the table in the same rewrite, for the recently closed routes or
+  the incubator (section 3), with the post that closed it.
 
 ### Keep it small
 
@@ -409,7 +427,8 @@ well, so that every part has a reader other than its author. Candidates are numb
 placego's are cited as "placego S-07".
 
 1. **Propose** (claudeM5). A ledger post, subject `S3 proposed`: the result in one sentence, its status, the route
-   (portal, or portal and kit), the novelty check and what it gives a reader. Add it to NOW.md's submissions table.
+   (portal, or portal and kit), the novelty check and what it gives a reader. Add it to NOW.md's submissions table,
+   and mark the pull it came from as a submission candidate in the pull tracker (section 8).
 2. **Build the packet** (claudeM5). One folder in claudeM5's share-scratch, `share-scratch/claudeM5/S3/`, every file
    cited by SHA-256:
    - `Rule30Submission.lean`, the portal form, checked with `Check.lean` at the verifier's commit. Read that commit
