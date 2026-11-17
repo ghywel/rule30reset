@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one page, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 20:10 UTC by claudeM5 (M11).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 20:54 UTC by claudeM5 (M12).*
 
 ## Arrangement
 
@@ -71,18 +71,36 @@ update step (R1). Stages: proposed, packet, read, agreed, owner's word, posted, 
 
 ## Open threads
 
-- **The owner's round of warm pulls (17 November); the choice of direction is the owner's, pending.** gptM5's five
-  are R2–R6, with the second-predecessor test in R2 first. claudeM5's five are M6–M10, written before reading R2–R6:
-  M6, Conjecture S's 7 as an eternal row's density, first; then M7, CQ01Empty through the factor complexity of the
-  empty right half's word u ∅; M8, healing of Theta inside the gap language; M9, the lifted gate-trap languages;
-  M10, a matrix of which laws the barrier controls share. M11 compares the lists (R3 meets M7; R2 meets M10) and
-  proposes a first block: M6 and M7's first tests by claudeM5, R2's test by gptM5 with the planted survivor as
-  control.
-- Inherited with Local's workflow (L1): a reach map on the page, then the reach of later free bits by sampling to
-  depth 81 (placego L1680). M8 would give it a question: the reach inside the gap language.
-- Inherited with Local's workflow (L1): replay the kit's surviving-seed law against the tables of placego L1675.
+- **The owner's round of warm pulls (17 November).** gptM5 posted R2–R6 and claudeM5 posted M6–M10, independently.
+  M11 compares them and proposes a first block: M6 and M7 by claudeM5, R2 by gptM5. The choice is the owner's.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
+
+### Pulls in progress
+
+One row per pull; the full text is the ledger post named in the first column.
+- **Status.** Any worker adds to a row's Status as the work goes, in a few words, citing the post that records the
+  step. Status begins with one word: *open* (nothing run), *in progress*, *parked* or *closed*. Status also says how
+  the pull relates to the others.
+- **Closing a row.** A closed or parked row leaves this table in the same rewrite, for Recently closed routes or the
+  incubator, with the post that closed it.
+- **Submission candidate?** This turns to *yes* only when the pull has produced a result that meets the four
+  conditions of METHOD §12. That result then gets an S number in the Submissions table, and the row names it.
+
+| Pull | Written | Summary | Status | Submission candidate? |
+|---|---|---|---|---|
+| L1 (placego L1680) | 17 Nov 10:28, Local (inherited) | The reach map, then the reach of later free bits by sampling to depth 81 | Open. Folded into M8, which gives it a question: the reach inside the gap language. | no |
+| L1 (placego L1679) | 17 Nov 10:28, Local (inherited) | Replay the kit's surviving-seed law against placego L1675's tables | Open. Partly answered by M10: the law counts {3, 5}-gap words (N = 1, 2, 4, 7 at H = 6–24, by hand). To do: the replay. | no |
+| R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | Open; gptM5's first vote. To do: the one-more-generation test (M11 block, gptM5), with the planted survivor as control (M11). Shares its kit theorems with M10. A past reaching back more than W levels would prove Q01 (M11). | no |
+| R3 | 17 Nov 19:55, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | Open. Joined to M7 (M11): the kit's complexity criterion relaxes "finitely many switches" to "complexity near n". To do: compare 3,5 with 5,3; test the returns 3,5,3 and 5,3,5. | no |
+| R4 | 17 Nov 19:55, gptM5 | Problem 2: how many white centre times can one source row explain? | Open, not started. gptM5's first pick for Problem 2. | no |
+| R5 | 17 Nov 19:55, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | Open, not started. To do: cuts N and N + 12 at one alignment. | no |
+| R6 | 17 Nov 19:55, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | Open, not started. Would exclude every eventual power-of-two period. Pointer: kit `rows_at_powers_of_two`, `row_restart` (M11). | no |
+| M6 | 17 Nov 20:07, claudeM5 | Conjecture S's 7 is the density of one eternal row; floors come from the sparsest eternal rows | Open. Look before posting: S's sharp witnesses are one 7-periodic row truncated (COMPUTED, M6). To do: tests 1–4 of M6 (M11 block, claudeM5). R3 counts the same seed ones per switch; M10 supplies controls. | no |
+| M7 | 17 Nov 20:07, claudeM5 | CQ01Empty from the factor complexity of the empty right half's word u ∅ | Open. Premise check done: a Sturmian 3/5 coding has n + 2 factors (M7). To do: read `not_finSupp_Psi_of_Q01Gap`, then compute u ∅ and its complexity (M11 block, claudeM5). R3 joins it; M9 asks the same of every trap word. | no |
+| M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
+| M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. First read Quint's open kit PR #348. Widens M7 from u ∅ to every right half that enters the trap. | no |
+| M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M6, M8 and R2 (M11). | no |
 
 ## Recently closed routes
 
