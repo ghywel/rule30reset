@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one page, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 19:55 UTC by gptM5 (R6).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 20:07 UTC by claudeM5 (M10).*
 
 ## Arrangement
 
@@ -37,15 +37,19 @@ owner gives the word. Standing consent to post: none (placego's of 10 November d
 |---|---|---|---|---|
 | none yet | | | | |
 
-Verifier's kit commit: `5fb5915` (5 November), twelve days behind the kit's main `345f7d7` (read 17 November 15:18
-UTC). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
+Verifier's kit commit: `5fb5915` (5 November), read 17 November 15:18 UTC; the kit's main is `8ff5467` since gptM5's
+update step (R1). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
 
-- **17 Nov, M1. The shared store is live, with the flat layout.** The data folder is the project folder, so
-  `postbox/` and `share-scratch/` sit at its top. `store.php` and `store.py` changed to match; tests 45 of 45, and the
-  previous script fails 10 as a control. Live: `whoami`, `ls`, `join`, `inbox`, `fetch` work (tested); `flag`,
-  `others`, `done`, `share` await a second worker. claudeM5 has joined.
+- **17 Nov, M6. Conjecture S's sharpness witnesses are one row, truncated** (COMPUTED): black at depths 1, 2, 4,
+  then every 7 places. The infinite row stays G-valid to depth 2000 (MEASURED, not proved), so the constant 7 is
+  probably the density of one eternal row, as NoFloor's 9 and 14 are for theirs.
+- **17 Nov, M10. Every exact survivor count in the period-2 web is a word count** (known, kit `seedOfTrace`), which
+  is why the planted survivor matches them: counts alone cannot prove Q01.
+- **17 Nov, M1 and M5. The shared store is live, with the flat layout, and claudeM5 and gptM5 have joined.**
+  `store.php` and `store.py` follow the owner's flat data folder (tests 45 of 45; the previous script fails 10 as a
+  control). Every verb has run live; a flag to several recipients has not yet been sent.
 - **17 Nov, placego L1680. The bars in the Theta monomial picture are healing.** Each empty column is a context in which
   flipping the first free bit cannot reach depth 31 (COMPUTED, an exact match on all 18 columns). A free bit's reach
   grows with its position: median about 11 depths beyond entry for f0, about 24 for f1, 34 or more for f2 (MEASURED).
@@ -67,10 +71,13 @@ UTC). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verifie
 
 ## Open threads
 
-- The owner and claudeM5 are comparing research directions. gptM5 ranked five pulls in R2–R6 and favours the second-predecessor test in R2. The choice is pending.
-
+- **The owner's round of warm pulls (17 November); the choice of direction is the owner's, pending.** gptM5's five
+  are R2–R6, with the second-predecessor test in R2 first. claudeM5's five are M6–M10, written before reading R2–R6:
+  M6, Conjecture S's 7 as an eternal row's density, first; then M7, CQ01Empty through the factor complexity of the
+  empty right half's word u ∅; M8, healing of Theta inside the gap language; M9, the lifted gate-trap languages;
+  M10, a matrix of which laws the barrier controls share.
 - Inherited with Local's workflow (L1): a reach map on the page, then the reach of later free bits by sampling to
-  depth 81 (placego L1680).
+  depth 81 (placego L1680). M8 would give it a question: the reach inside the gap language.
 - Inherited with Local's workflow (L1): replay the kit's surviving-seed law against the tables of placego L1675.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
