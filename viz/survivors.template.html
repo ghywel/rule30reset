@@ -1,0 +1,419 @@
+<title>Survivors at the Wall</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one reading column of plates; each plate asks a question, gives an instrument, says what to look for. */
+:root {
+  --bg: #f3f5f8; --panel: #ffffff; --ink: #111820; --ink-2: #4a5462; --muted: #737e8c; --rule: #dce1e7;
+  --cell: #111820; --wall: #c3cbd5; --alive: #2a78d6; --free: #eb6834; --dead: #e34948; --hl: #fff2c2;
+  --f-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0d1116; --panel: #141a21; --ink: #e6ebf0; --ink-2: #b3bcc7; --muted: #85909e; --rule: #27303a;
+  --cell: #e6ebf0; --wall: #3a4552; --alive: #3987e5; --free: #d95926; --dead: #e66767; --hl: #3a3220;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0d1116; --panel: #141a21; --ink: #e6ebf0; --ink-2: #b3bcc7; --muted: #85909e; --rule: #27303a;
+  --cell: #e6ebf0; --wall: #3a4552; --alive: #3987e5; --free: #d95926; --dead: #e66767; --hl: #3a3220;
+  color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-block: 40px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 28px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 600; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.08; }
+h2 { font-size: 23px; line-height: 1.2; }
+h3 { font-size: 15px; font-weight: 600; }
+p { margin: 0; max-width: 68ch; }
+code, .mono { font-family: var(--f-mono); font-size: 0.92em; }
+.intro { display: grid; gap: 14px; }
+.lede { font-size: 17px; color: var(--ink-2); }
+.defs { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 16px; margin: 4px 0 0;
+  font-size: 14px; background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 16px; }
+.defs dt { font-family: var(--f-mono); color: var(--ink); white-space: nowrap; }
+.defs dd { margin: 0; color: var(--ink-2); min-width: 0; }
+.plate { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 22px 20px 20px;
+  display: grid; gap: 14px; min-width: 0; }
+.kicker { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.question { color: var(--ink-2); }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; font-size: 14px; }
+.controls label { display: inline-flex; gap: 8px; align-items: center; color: var(--ink-2); }
+select, input[type="text"], button { font: inherit; font-size: 14px; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--rule); border-radius: 6px; padding: 5px 9px; }
+input[type="text"] { font-family: var(--f-mono); width: 16ch; }
+input[type="range"] { accent-color: var(--alive); width: 160px; max-width: 40vw; }
+button { cursor: pointer; }
+button:hover { border-color: var(--muted); }
+button[aria-pressed="true"] { background: var(--ink); color: var(--panel); border-color: var(--ink); }
+:focus-visible { outline: 2px solid var(--alive); outline-offset: 2px; }
+.seg { display: inline-flex; gap: 0; }
+.seg button { border-radius: 0; margin-left: -1px; }
+.seg button:first-child { border-radius: 6px 0 0 6px; margin-left: 0; }
+.seg button:last-child { border-radius: 0 6px 6px 0; }
+.figure { overflow-x: auto; min-width: 0; position: relative; }
+canvas { display: block; }
+.carpet { width: 100%; max-width: 760px; aspect-ratio: 1; image-rendering: pixelated; border: 1px solid var(--rule); }
+.readout { font-family: var(--f-mono); font-size: 13px; color: var(--ink-2); min-height: 1.5em; overflow-wrap: anywhere; }
+.look { border-left: 3px solid var(--alive); padding: 2px 0 2px 12px; display: grid; gap: 4px; font-size: 14px; color: var(--ink-2); }
+.look strong { color: var(--ink); font-weight: 600; }
+.status { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.05em; padding: 1px 6px; border-radius: 4px;
+  border: 1px solid var(--rule); color: var(--ink-2); white-space: nowrap; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink-2); align-items: center; }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 6px; }
+.ramp { display: inline-flex; height: 12px; border-radius: 3px; overflow: hidden; border: 1px solid var(--rule); vertical-align: -2px; }
+.ramp i { display: block; width: 12px; height: 100%; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.two > div { min-width: 0; display: grid; gap: 8px; align-content: start; }
+svg text { font-family: var(--f-mono); font-size: 11px; fill: var(--ink-2); }
+svg .grid { stroke: var(--rule); stroke-width: 1; }
+svg .axis { stroke: var(--muted); stroke-width: 1; }
+.tip { position: absolute; pointer-events: none; background: var(--panel); color: var(--ink); border: 1px solid var(--rule);
+  border-radius: 6px; padding: 6px 8px; font-family: var(--f-mono); font-size: 12px; line-height: 1.4; box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  white-space: nowrap; z-index: 5; }
+table { border-collapse: collapse; font-family: var(--f-mono); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+th, td { padding: 3px 10px; text-align: right; border-bottom: 1px solid var(--rule); }
+th { color: var(--ink-2); font-weight: 500; }
+.tablebox { overflow-x: auto; max-height: 360px; overflow-y: auto; border: 1px solid var(--rule); border-radius: 6px; }
+footer { font-size: 13px; color: var(--ink-2); display: grid; gap: 8px; }
+footer p { max-width: 90ch; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="kicker">Rule 30 · the zero-boundary left half · 17 November 2026</div>
+    <h1>Survivors at the Wall</h1>
+    <p class="lede">Put a permanently white wall beside a finite row of rule 30 cells and run it. The cell next to the wall is black at every even tick for a while, and then it is not. The open statement Q01, which would exclude period 2 for the centre column, says this always happens. These pictures show how long rows last, which rows last longest, and what the constraint looks like as algebra.</p>
+    <dl class="defs">
+      <dt>F(Y)</dt><dd>One rule 30 step beside the wall: <code>(Y &gt;&gt; 1) xor (Y or (Y &lt;&lt; 1))</code>. Bit i of Y is the cell at depth i+1 from the wall (kit <code>Rule30ZeroBoundary.IntegerForm.F</code>).</dd>
+      <dt>G = F∘F</dt><dd>Two steps. Q01 holds exactly when every natural number Y reaches an even number under G (kit <code>Q01_iff_integer</code>).</dd>
+      <dt>σ(Y)</dt><dd>The stopping time: the least s with G<sup>s</sup>(Y) even. A row with σ = s keeps depth 1 black at ticks 0, 2, …, 2s−2 and loses it at tick 2s.</dd>
+      <dt>Theta(f)</dt><dd>The constrained start whose depth-1 cell reads 1, f<sub>0</sub>, 1, f<sub>1</sub>, … (kit <code>Theta</code>). Q01 says no Theta(f) is a finite row (kit <code>Q01_iff_Theta</code>).</dd>
+    </dl>
+  </header>
+
+  <section class="plate" id="life" aria-labelledby="h-life">
+    <div class="kicker">The space-time diagram</div>
+    <h2 id="h-life">One row, one life</h2>
+    <p class="question">Each line is one tick. The wall is the grey column on the right and depth grows to the left. The column beyond the wall shows the depth-1 cell: a blue dot at an even tick when it is black, an orange mark at an odd tick for the free bit, and a red cross where the row dies.</p>
+    <div class="controls">
+      <label for="champW">Longest-lived row of width</label>
+      <select id="champW"></select>
+      <span id="tieBox" class="seg" role="group" aria-label="Tied rows"></span>
+      <label for="yIn">or any Y</label>
+      <input id="yIn" type="text" value="1493" spellcheck="false" aria-describedby="yHelp">
+      <button id="yGo" type="button">Draw</button>
+      <span id="yHelp" class="readout">decimal, 0x… or 0b…</span>
+    </div>
+    <div class="figure" id="lifeBox"><canvas id="lifeCanvas" aria-label="Space-time diagram of the selected row"></canvas><div class="tip" id="lifeTip" hidden></div></div>
+    <p class="readout" id="lifeStats"></p>
+    <div class="look">
+      <strong>What to look for</strong>
+      <span>Near the wall the row settles into the alternating stripe, the only pattern that keeps depth 1 black. Watch where the death comes from: a disturbance travelling in from the left edge of the support, or something born at the wall. The width-11 champions, 1493 and 1507, live 15 double steps from 11 cells (they are the kit's sharp rows in <code>Rule30RecognizableBarrier</code>); the best row of width 12 lives only 8.</span>
+    </div>
+  </section>
+
+  <section class="plate" id="carpet" aria-labelledby="h-carpet">
+    <div class="kicker">The whole population <span class="status">COMPUTED</span></div>
+    <h2 id="h-carpet">Every row below 2<sup>20</sup></h2>
+    <p class="question">One pixel per row Y, 1024 × 1024 of them, coloured by σ(Y). In natural order Y = 1024·line + column. In 2-adic order the bits are reversed, so rows that agree near the wall sit together: the low bits pick the line and the high bits the column.</p>
+    <div class="controls">
+      <span class="seg" role="group" aria-label="Order">
+        <button type="button" id="ordNat" aria-pressed="false">Natural order</button>
+        <button type="button" id="ordAdic" aria-pressed="true">2-adic order</button>
+      </span>
+      <span class="seg" role="group" aria-label="Colouring">
+        <button type="button" id="modeSig" aria-pressed="true">Colour by σ</button>
+        <button type="button" id="modeThr" aria-pressed="false">Only σ ≥ k</button>
+      </span>
+      <label for="kSl">k <input id="kSl" type="range" min="1" max="19" value="6"> <span id="kVal" class="mono">6</span></label>
+    </div>
+    <div class="legend" id="carpetLegend"></div>
+    <div class="figure"><canvas id="carpetCanvas" class="carpet" width="1024" height="1024" aria-label="Stopping time of every row below 2 to the 20"></canvas><div class="tip" id="carpetTip" hidden></div></div>
+    <p class="readout" id="carpetStats">Hover or tap a pixel.</p>
+    <div class="look">
+      <strong>What to look for</strong>
+      <span>σ ≥ k depends only on the lowest 2k − 1 bits, so in 2-adic order each set σ ≥ k is a union of whole blocks: exactly 2<sup>k−1</sup> of the 2<sup>2k−1</sup> blocks of its size, one for each word of free bits. That part is exact and known. The finer grain, where a row's zeros above its top bit begin to matter, is where the rows that live longest sit.</span>
+    </div>
+  </section>
+
+  <section class="plate" id="counts" aria-labelledby="h-counts">
+    <div class="kicker">Counting the survivors <span class="status">COMPUTED</span> <span class="status">MEASURED</span></div>
+    <h2 id="h-counts">Fair coins after the support ends</h2>
+    <div class="two">
+      <div>
+        <h3>Rows below 2<sup>24</sup> still alive after k double steps</h3>
+        <div class="figure" id="histBox"><svg id="histSvg" role="img" aria-label="log2 of the number of rows with sigma at least k"></svg><div class="tip" id="histTip" hidden></div></div>
+        <div class="legend"><span><i class="sw" style="background:var(--alive)"></i>count, log<sub>2</sub></span><span><i class="sw" style="background:var(--muted)"></i>exact 2<sup>24−k</sup></span></div>
+        <p class="readout">Exactly 2<sup>24−k</sup> for every k ≤ 12 (one free bit per double step). After that a finite row's zero tail decides, and the halving continues with fair-coin noise.</p>
+      </div>
+      <div>
+        <h3>Longest life among rows of each width</h3>
+        <div class="figure" id="champBox"><svg id="champSvg" role="img" aria-label="Largest sigma among rows of each width"></svg><div class="tip" id="champTip" hidden></div></div>
+        <div class="legend"><span><i class="sw" style="background:var(--alive)"></i>best of exactly width w</span><span><i class="sw" style="background:var(--free)"></i>best below 2<sup>w</sup></span><span><i class="sw" style="background:var(--muted)"></i>σ = w</span></div>
+        <p class="readout">A fair-coin zero tail predicts a champion near σ = w. Q01 failing would need a row that beats every such bound.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="plate" id="algebra" aria-labelledby="h-algebra">
+    <div class="kicker">The constraint as algebra <span class="status">COMPUTED</span> over all 2<sup>20</sup> free words</div>
+    <h2 id="h-algebra">The constrained start as a polynomial</h2>
+    <p class="question">The cell of Theta(f) at depth d is a polynomial over GF(2) in the free bits f<sub>0</sub> … f<sub>⌊d/2⌋−1</sub>. The newest free bit enters each even depth on its own, so even depths are exactly balanced. An odd depth brings no new free bit: it is a pure constraint on the bits already chosen. Q01 asks whether these constraints can all hold at zero from some depth on. The degree at odd depths is known: depth 2n+1 is the kit's first-check polynomial, of degree n for odd n and n−1 for even n (<code>Rule30FirstCheckDegree.check_degree</code>), and the boundary of linearity at depth 7 is <code>Rule30LinearCharts</code>.</p>
+    <div class="two">
+      <div>
+        <h3>Share of possible monomials present</h3>
+        <div class="figure" id="densBox"><svg id="densSvg" role="img" aria-label="Monomial density by depth"></svg><div class="tip" id="densTip" hidden></div></div>
+        <div class="legend"><span><i class="sw" style="background:var(--alive)"></i>odd depths (constraints)</span><span><i class="sw" style="background:var(--free)"></i>even depths (newest bit + the rest)</span></div>
+        <p class="readout">A random function would sit at 0.5. Odd depths sit near 0.38 and drift down; even depths sit at half that, the same density one variable down.</p>
+        <button type="button" id="tblBtn" aria-expanded="false">Show the table</button>
+        <div class="tablebox" id="tblBox" hidden></div>
+      </div>
+      <div>
+        <h3>The monomials of one depth</h3>
+        <div class="controls">
+          <label for="dSl">depth <input id="dSl" type="range" min="1" max="41" value="27"> <span id="dVal" class="mono">27</span></label>
+          <label for="splitSl">bits across <input id="splitSl" type="range" min="0" max="20" value="7"> <span id="splitVal" class="mono">7</span></label>
+        </div>
+        <div class="figure" id="anfBox"><canvas id="anfCanvas" aria-label="Monomials of Theta at the chosen depth"></canvas><div class="tip" id="anfTip" hidden></div></div>
+        <p class="readout" id="anfStats"></p>
+        <p class="readout">One cell per possible monomial; filled if present. The top-left cell is the constant term. Moving right adds the low free bits f<sub>0</sub>, f<sub>1</sub>, …; moving down adds the high ones. A monomial set closed under taking subsets would draw a Sierpiński-like triangle.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Where the numbers come from.</strong> Two generators in this folder, both exact: <code>gen_survival.py</code> computes σ(Y) for all 2<sup>24</sup> rows Y below 2<sup>24</sup> with 128-bit arithmetic, rechecks every champion and 2000 random rows with Python integers, and wrote the data with SHA-256 <code>a867c1cc…</code>. <code>gen_theta_anf.py</code> builds Theta over all 2<sup>20</sup> free words by sideways reconstruction, replays 4096 of them forward through F, and takes the Möbius transform at each depth (SHA-256 <code>577a64bc…</code>). Both ran on the M5 laptop in about a second each, under memory caps. The predictions were written down before each run, in <code>PREDICTIONS.md</code>, with what they got right and wrong.</p>
+    <p><strong>Status.</strong> The counts and polynomials are COMPUTED. The fair-coin reading of the tail is MEASURED. The exact halving to k = 12 and the balanced even depths are known consequences of the kit's free-bit bijection (<code>Theta</code>, <code>realization</code>), reproved here. So are the odd-depth degrees (<code>Rule30FirstCheckDegree</code>). The monomial densities and the even-depth degrees are not in the kit's catalogue as of commit <code>8b397bd</code>, from which the definitions here are taken.</p>
+  </footer>
+</main>
+
+<script type="application/json" id="data">/*DATA*/</script>
+<script>
+(() => {
+'use strict';
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const S = DATA.survival, TH = DATA.theta;
+const $ = s => document.querySelector(s);
+const tok = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const isDark = () => { const t = document.documentElement.getAttribute('data-theme');
+  return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; };
+function b64bytes(s) { const b = atob(s); const u = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u; }
+function hexRGB(h) { h = h.replace('#', ''); if (h.length === 3) h = h.split('').map(c => c + c).join(''); const n = parseInt(h, 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; }
+const RAMP = ['#cde2fb','#b7d3f6','#9ec5f4','#86b6ef','#6da7ec','#5598e7','#3987e5','#2a78d6','#256abf','#1c5cab','#184f95','#104281','#0d366b'];
+function setupCanvas(cv, w, h) { const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); cv.style.width = w + 'px'; cv.style.height = h + 'px';
+  const ctx = cv.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); return ctx; }
+function showTip(tip, box, x, y, html) { tip.innerHTML = html; tip.hidden = false;
+  const bw = box.clientWidth; const tw = tip.offsetWidth; let left = x + 14; if (left + tw > bw + box.scrollLeft) left = x - tw - 14;
+  tip.style.left = Math.max(box.scrollLeft, left) + 'px'; tip.style.top = (y + 12) + 'px'; }
+
+/* ---------- one row, one life ---------- */
+const F = y => (y >> 1n) ^ (y | (y << 1n));
+const bitLen = y => y === 0n ? 0 : y.toString(2).length;
+function popcount(y) { let c = 0; for (const ch of y.toString(2)) if (ch === '1') c++; return c; }
+function lifeOf(Y) {
+  let g = Y, s = 0; while ((g & 1n) && s < 4000) { g = F(F(g)); s++; }
+  const T = Math.min(2 * s + 2, 480); const rows = []; let y = Y;
+  for (let t = 0; t <= T; t++) { rows.push(y); y = F(y); }
+  return { Y, sigma: s, rows, T, capped: 2 * s + 2 > 480, open: s >= 4000 };
+}
+let LIFE = null;
+function drawLife() {
+  const L = LIFE; if (!L) return;
+  const box = $('#lifeBox'), cv = $('#lifeCanvas');
+  const maxD = Math.max(1, ...L.rows.map(bitLen));
+  const cols = maxD + 3;
+  let c = Math.floor((box.clientWidth - 2) / cols); c = Math.max(3, Math.min(14, c));
+  const W = cols * c, H = (L.T + 1) * c;
+  const ctx = setupCanvas(cv, W, H);
+  ctx.fillStyle = tok('--panel'); ctx.fillRect(0, 0, W, H);
+  const death = 2 * L.sigma;
+  if (death <= L.T) { ctx.fillStyle = tok('--hl'); ctx.fillRect(0, death * c, W, c); }
+  ctx.fillStyle = tok('--cell');
+  const g = c > 4 ? 1 : 0;
+  L.rows.forEach((y, t) => { const s = y.toString(2); const n = s.length;
+    for (let i = 0; i < n; i++) if (s[n - 1 - i] === '1') { const k = i + 1; ctx.fillRect((maxD - k) * c, t * c, c - g, c - g); } });
+  ctx.fillStyle = tok('--wall'); ctx.fillRect(maxD * c, 0, c - g, H);
+  const xc = (maxD + 2) * c + c / 2;
+  L.rows.forEach((y, t) => { const b = Number(y & 1n); const yc = t * c + c / 2;
+    if (t % 2 === 0) {
+      if (b) { ctx.fillStyle = tok('--alive'); ctx.beginPath(); ctx.arc(xc, yc, Math.max(1.5, c * 0.32), 0, 7); ctx.fill(); }
+      else if (t === death) { ctx.strokeStyle = tok('--dead'); ctx.lineWidth = Math.max(1.5, c / 6); const r = c * 0.32;
+        ctx.beginPath(); ctx.moveTo(xc - r, yc - r); ctx.lineTo(xc + r, yc + r); ctx.moveTo(xc + r, yc - r); ctx.lineTo(xc - r, yc + r); ctx.stroke(); }
+    } else if (t < death) { ctx.strokeStyle = tok('--free'); ctx.fillStyle = tok('--free'); ctx.lineWidth = 1.5; const r = c * 0.28;
+      if (b) ctx.fillRect(xc - r, yc - r, 2 * r, 2 * r); else ctx.strokeRect(xc - r + 0.75, yc - r + 0.75, 2 * r - 1.5, 2 * r - 1.5); }
+  });
+  box.dataset.c = c; box.dataset.maxd = maxD;
+  let free = ''; for (let t = 1; t < death && t <= L.T; t += 2) free += String(Number(L.rows[t] & 1n));
+  const note = L.open ? ' · still alive after 4000 double steps (stopped)' : (L.capped ? ' · drawing stops at tick 480' : '');
+  $('#lifeStats').textContent = 'Y = ' + L.Y.toString() + ' · width ' + bitLen(L.Y) + ' · ' + popcount(L.Y) + ' black cells · σ = ' + L.sigma +
+    ' (dies at tick ' + death + ')' + (free ? ' · free bits f = ' + free : '') + note;
+}
+function setLife(Y) { LIFE = lifeOf(Y); drawLife(); }
+(function initLife() {
+  const sel = $('#champW');
+  Object.keys(S.champ).map(Number).filter(w => w >= 4).sort((a, b) => a - b).forEach(w => {
+    const o = document.createElement('option'); o.value = w; o.textContent = w + ' cells (σ = ' + S.champ[w].sigma + ')'; sel.appendChild(o); });
+  function ties() { const w = sel.value; const ys = S.champ[w].ys; const tb = $('#tieBox'); tb.innerHTML = '';
+    ys.forEach((y, i) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = String(y);
+      b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+      b.onclick = () => { tb.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', 'false')); b.setAttribute('aria-pressed', 'true');
+        $('#yIn').value = String(y); setLife(BigInt(y)); };
+      tb.appendChild(b); });
+    $('#yIn').value = String(ys[0]); setLife(BigInt(ys[0])); }
+  sel.onchange = ties;
+  sel.value = '11'; ties();
+  function go() { const v = $('#yIn').value.trim().replace(/_/g, '');
+    try { const Y = BigInt(v); if (Y < 0n) throw 0; if (bitLen(Y) > 4000) throw 0; $('#yHelp').textContent = 'decimal, 0x… or 0b…'; setLife(Y); }
+    catch (e) { $('#yHelp').textContent = 'Enter a whole number ≥ 0, in decimal, 0x… or 0b…'; } }
+  $('#yGo').onclick = go; $('#yIn').addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+  const box = $('#lifeBox'), cv = $('#lifeCanvas'), tip = $('#lifeTip');
+  cv.addEventListener('mousemove', e => { if (!LIFE) return; const r = cv.getBoundingClientRect(); const c = +box.dataset.c, maxD = +box.dataset.maxd;
+    const x = e.clientX - r.left, y = e.clientY - r.top; const t = Math.floor(y / c), col = Math.floor(x / c); const k = maxD - col;
+    if (t < 0 || t > LIFE.T) { tip.hidden = true; return; }
+    let html = 'tick ' + t;
+    if (k >= 1 && k <= maxD) html += ' · depth ' + k + ' · ' + (((LIFE.rows[t] >> BigInt(k - 1)) & 1n) ? 'black' : 'white');
+    else if (k === 0) html += ' · the wall (always white)';
+    else html += ' · depth 1 ' + ((LIFE.rows[t] & 1n) ? 'black' : 'white') + (t % 2 ? ' (free bit)' : '');
+    showTip(tip, box, x + box.scrollLeft, y, html); });
+  cv.addEventListener('mouseleave', () => { tip.hidden = true; });
+})();
+
+/* ---------- the carpet ---------- */
+const SIG = b64bytes(S.carpet);
+let REV = null;
+function rev() { if (REV) return REV; REV = new Uint32Array(1 << 20);
+  for (let i = 0; i < (1 << 20); i++) { let x = i, r = 0; for (let b = 0; b < 20; b++) { r = (r << 1) | (x & 1); x >>= 1; } REV[i] = r >>> 0; } return REV; }
+const CAR = { order: 'adic', mode: 'sig', k: 6 };
+function sigColours() { const dark = isDark(); const ramp = dark ? RAMP.slice().reverse() : RAMP; const out = [hexRGB(tok('--panel'))];
+  for (let s = 1; s <= 13; s++) out.push(hexRGB(ramp[s - 1])); const hi = hexRGB(tok('--free')); for (let s = 14; s < 256; s++) out.push(hi); return out; }
+function drawCarpet() {
+  const cv = $('#carpetCanvas'); const ctx = cv.getContext('2d'); const img = ctx.createImageData(1024, 1024); const d = img.data;
+  const R = CAR.order === 'adic' ? rev() : null; const thr = CAR.mode === 'thr';
+  const col = sigColours(); const on = hexRGB(tok('--cell')), off = hexRGB(tok('--panel'));
+  for (let i = 0; i < (1 << 20); i++) { const Y = R ? R[i] : i; const s = SIG[Y]; const c = thr ? (s >= CAR.k ? on : off) : col[s];
+    const p = i * 4; d[p] = c[0]; d[p + 1] = c[1]; d[p + 2] = c[2]; d[p + 3] = 255; }
+  ctx.putImageData(img, 0, 0);
+  let n = 0; if (thr) for (let Y = 0; Y < (1 << 20); Y++) if (SIG[Y] >= CAR.k) n++;
+  const lg = $('#carpetLegend');
+  if (thr) lg.innerHTML = '<span><i class="sw" style="background:var(--cell)"></i>σ ≥ ' + CAR.k + ': ' + n.toLocaleString('en-GB') + ' rows</span><span>' +
+    (2 * CAR.k - 1 <= 20 ? 'the free-bit count predicts exactly 2<sup>' + (20 - CAR.k) + '</sup> = ' + (2 ** (20 - CAR.k)).toLocaleString('en-GB') : 'beyond the exact range: the zero tail decides') + '</span>';
+  else { const ramp = isDark() ? RAMP.slice().reverse() : RAMP;
+    lg.innerHTML = '<span>σ = 0 <span class="ramp">' + ramp.map(h => '<i style="background:' + h + '"></i>').join('') + '</span> σ = 13</span><span><i class="sw" style="background:var(--free)"></i>σ ≥ 14 (rare: ' +
+      (() => { let m = 0; for (let Y = 0; Y < (1 << 20); Y++) if (SIG[Y] >= 14) m++; return m; })() + ' rows)</span><span>even rows (σ = 0) are left blank</span>'; }
+}
+(function initCarpet() {
+  const set = () => { $('#ordNat').setAttribute('aria-pressed', CAR.order === 'nat'); $('#ordAdic').setAttribute('aria-pressed', CAR.order === 'adic');
+    $('#modeSig').setAttribute('aria-pressed', CAR.mode === 'sig'); $('#modeThr').setAttribute('aria-pressed', CAR.mode === 'thr'); $('#kVal').textContent = CAR.k; drawCarpet(); };
+  $('#ordNat').onclick = () => { CAR.order = 'nat'; set(); }; $('#ordAdic').onclick = () => { CAR.order = 'adic'; set(); };
+  $('#modeSig').onclick = () => { CAR.mode = 'sig'; set(); }; $('#modeThr').onclick = () => { CAR.mode = 'thr'; set(); };
+  $('#kSl').oninput = e => { CAR.k = +e.target.value; CAR.mode = 'thr'; set(); };
+  const cv = $('#carpetCanvas'), tip = $('#carpetTip'), box = cv.parentElement;
+  function at(e) { const r = cv.getBoundingClientRect(); const px = Math.floor((e.clientX - r.left) / r.width * 1024), py = Math.floor((e.clientY - r.top) / r.height * 1024);
+    if (px < 0 || py < 0 || px > 1023 || py > 1023) return null; const i = py * 1024 + px; const Y = CAR.order === 'adic' ? rev()[i] : i; return { Y, x: e.clientX - r.left, y: e.clientY - r.top }; }
+  cv.addEventListener('mousemove', e => { const a = at(e); if (!a) { tip.hidden = true; return; }
+    const html = 'Y = ' + a.Y + '<br>σ = ' + SIG[a.Y] + '<br>bits ' + a.Y.toString(2).padStart(20, '0');
+    showTip(tip, box, a.x, a.y, html); $('#carpetStats').textContent = 'Y = ' + a.Y + ' · σ = ' + SIG[a.Y] + ' · click to draw its life above'; });
+  cv.addEventListener('mouseleave', () => { tip.hidden = true; });
+  cv.addEventListener('click', e => { const a = at(e); if (!a) return; $('#yIn').value = String(a.Y); setLife(BigInt(a.Y));
+    $('#carpetStats').textContent = 'Y = ' + a.Y + ' · σ = ' + SIG[a.Y] + ' · drawn in the plate above'; });
+  set();
+})();
+
+/* ---------- small SVG chart helper ---------- */
+function chart(svg, opt) {
+  const box = svg.parentElement; const W = Math.max(280, box.clientWidth), H = 250; const m = { l: 44, r: 14, t: 12, b: 34 };
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('width', W); svg.setAttribute('height', H);
+  const [x0, x1] = opt.x, [y0, y1] = opt.y; const X = v => m.l + (v - x0) / (x1 - x0) * (W - m.l - m.r); const Y = v => H - m.b - (v - y0) / (y1 - y0) * (H - m.t - m.b);
+  let s = '';
+  opt.yticks.forEach(v => { s += '<line class="grid" x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + Y(v) + '" y2="' + Y(v) + '"/><text x="' + (m.l - 6) + '" y="' + (Y(v) + 4) + '" text-anchor="end">' + v + '</text>'; });
+  opt.xticks.forEach(v => { s += '<text x="' + X(v) + '" y="' + (H - m.b + 16) + '" text-anchor="middle">' + v + '</text>'; });
+  s += '<line class="axis" x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + (H - m.b) + '" y2="' + (H - m.b) + '"/>';
+  s += '<text x="' + ((m.l + W - m.r) / 2) + '" y="' + (H - 4) + '" text-anchor="middle">' + opt.xlabel + '</text>';
+  s += '<text transform="translate(11,' + ((m.t + H - m.b) / 2) + ') rotate(-90)" text-anchor="middle">' + opt.ylabel + '</text>';
+  (opt.bands || []).forEach(b => { s += '<rect x="' + X(b[0]) + '" y="' + m.t + '" width="' + (X(b[1]) - X(b[0])) + '" height="' + (H - m.t - m.b) + '" fill="' + tok('--alive') + '" opacity="0.07"/>'; });
+  (opt.lines || []).forEach(L => { s += '<polyline fill="none" stroke="' + L.color + '" stroke-width="2" ' + (L.dash ? 'stroke-dasharray="5 4"' : '') + ' points="' +
+    L.pts.map(p => X(p[0]).toFixed(1) + ',' + Y(p[1]).toFixed(1)).join(' ') + '"/>'; });
+  const pts = []; (opt.dots || []).forEach(D => D.pts.forEach(p => { pts.push({ x: X(p[0]), y: Y(p[1]), tip: p[2] });
+    s += '<circle cx="' + X(p[0]).toFixed(1) + '" cy="' + Y(p[1]).toFixed(1) + '" r="4" fill="' + D.color + '" stroke="' + tok('--panel') + '" stroke-width="2"/>'; }));
+  svg.innerHTML = s;
+  const tip = opt.tip; svg.onmousemove = e => { const r = svg.getBoundingClientRect(); const mx = e.clientX - r.left, my = e.clientY - r.top;
+    let best = null, bd = 1e9; pts.forEach(p => { const d = Math.hypot(p.x - mx, p.y - my); if (d < bd) { bd = d; best = p; } });
+    if (best && bd < 28) showTip(tip, box, best.x, best.y, best.tip); else tip.hidden = true; };
+  svg.onmouseleave = () => { tip.hidden = true; };
+}
+function drawCounts() {
+  const h = S.hist; let maxk = 0; h.forEach((v, k) => { if (v) maxk = k; });
+  const ge = []; let acc = 0; for (let k = h.length - 1; k >= 0; k--) { acc += h[k]; ge[k] = acc; }
+  const pts = []; for (let k = 0; k <= maxk; k++) pts.push([k, Math.log2(ge[k]), 'k = ' + k + '<br>rows alive: ' + ge[k].toLocaleString('en-GB') + '<br>2<sup>' + (24 - k) + '</sup> = ' + (2 ** (24 - k)).toLocaleString('en-GB')]);
+  chart($('#histSvg'), { x: [0, maxk], y: [0, 24], xticks: [0, 4, 8, 12, 16, 20].filter(v => v <= maxk), yticks: [0, 6, 12, 18, 24], xlabel: 'double steps k', ylabel: 'log₂ rows with σ ≥ k',
+    bands: [[0, 12]], lines: [{ color: tok('--muted'), dash: true, pts: [[0, 24], [maxk, 24 - maxk]] }], dots: [{ color: tok('--alive'), pts }], tip: $('#histTip') });
+  const ws = Object.keys(S.champ).map(Number).filter(w => w >= 1).sort((a, b) => a - b);
+  let best = 0; const cum = [], exact = [];
+  ws.forEach(w => { const c = S.champ[w]; best = Math.max(best, c.sigma); exact.push([w, c.sigma, 'width ' + w + '<br>best σ = ' + c.sigma + '<br>Y = ' + c.ys.slice(0, 3).join(', ')]); cum.push([w, best]); });
+  const step = []; cum.forEach((p, i) => { if (i) step.push([p[0], cum[i - 1][1]]); step.push(p); });
+  chart($('#champSvg'), { x: [0, 24], y: [0, 24], xticks: [0, 4, 8, 12, 16, 20, 24], yticks: [0, 6, 12, 18, 24], xlabel: 'width w (bits)', ylabel: 'largest σ',
+    lines: [{ color: tok('--muted'), dash: true, pts: [[0, 0], [24, 24]] }, { color: tok('--free'), pts: step }], dots: [{ color: tok('--alive'), pts: exact }], tip: $('#champTip') });
+}
+function drawDensity() {
+  const odd = [], even = [];
+  TH.depths.forEach(r => { if (r.nvars < 2) return; const dens = r.nmon / 2 ** r.nvars;
+    const t = 'depth ' + r.d + '<br>' + r.nvars + ' free bits, degree ' + r.deg + '<br>' + r.nmon.toLocaleString('en-GB') + ' of ' + (2 ** r.nvars).toLocaleString('en-GB') + ' monomials (' + dens.toFixed(3) + ')';
+    (r.d % 2 ? odd : even).push([r.d, dens, t]); });
+  chart($('#densSvg'), { x: [0, 42], y: [0, 0.75], xticks: [0, 10, 20, 30, 40], yticks: [0, 0.25, 0.5, 0.75], xlabel: 'depth d', ylabel: 'monomials / 2^⌊d/2⌋',
+    lines: [{ color: tok('--muted'), dash: true, pts: [[0, 0.5], [42, 0.5]] }, { color: tok('--alive'), pts: odd }, { color: tok('--free'), pts: even }],
+    dots: [{ color: tok('--alive'), pts: odd }, { color: tok('--free'), pts: even }], tip: $('#densTip') });
+}
+(function initTable() {
+  const b = $('#tblBtn'), box = $('#tblBox');
+  let html = '<table><thead><tr><th>depth</th><th>free bits</th><th>degree</th><th>monomials</th><th>share</th><th>ones / 2<sup>20</sup></th></tr></thead><tbody>';
+  TH.depths.forEach(r => { html += '<tr><td>' + r.d + '</td><td>' + r.nvars + '</td><td>' + r.deg + '</td><td>' + r.nmon.toLocaleString('en-GB') + '</td><td>' + (r.nmon / 2 ** r.nvars).toFixed(3) + '</td><td>' + r.weight.toLocaleString('en-GB') + '</td></tr>'; });
+  box.innerHTML = html + '</tbody></table>';
+  b.onclick = () => { box.hidden = !box.hidden; b.setAttribute('aria-expanded', String(!box.hidden)); b.textContent = box.hidden ? 'Show the table' : 'Hide the table'; };
+})();
+
+/* ---------- the monomial picture ---------- */
+const ANF = TH.depths.map(r => ({ ...r, arr: b64bytes(r.bits) }));
+const AN = { d: 27, split: 7, userSplit: false };
+function drawAnf() {
+  const r = ANF[AN.d - 1]; const nv = r.nvars; const split = Math.min(AN.split, nv); const Wc = 2 ** split, Hc = 2 ** (nv - split);
+  const box = $('#anfBox'); const avail = box.clientWidth - 2; let c = Math.floor(avail / Wc); c = Math.max(1, Math.min(24, c));
+  if (Hc * c > 900) c = Math.max(1, Math.floor(900 / Hc));
+  const cv = $('#anfCanvas'); const ctx = setupCanvas(cv, Wc * c, Hc * c);
+  ctx.fillStyle = tok('--bg'); ctx.fillRect(0, 0, Wc * c, Hc * c); ctx.fillStyle = r.d % 2 ? tok('--alive') : tok('--free');
+  const g = c >= 4 ? 1 : 0;
+  for (let m = 0; m < 2 ** nv; m++) if ((r.arr[m >> 3] >> (m & 7)) & 1) { const x = m & (Wc - 1), y = m >>> split; ctx.fillRect(x * c, y * c, c - g, c - g); }
+  box.dataset.c = c; box.dataset.split = split;
+  $('#anfStats').textContent = 'depth ' + r.d + ' · free bits f0…f' + (nv - 1) + ' · degree ' + r.deg + ' · ' + r.nmon.toLocaleString('en-GB') + ' of ' + (2 ** nv).toLocaleString('en-GB') +
+    ' monomials · grid ' + Wc + ' × ' + Hc + (r.d % 2 ? ' · odd depth: a constraint' : ' · even depth: f' + (nv - 1) + ' + a polynomial in the earlier bits');
+}
+(function initAnf() {
+  const fix = () => { const nv = ANF[AN.d - 1].nvars; if (!AN.userSplit) AN.split = Math.ceil(nv / 2); AN.split = Math.min(AN.split, nv);
+    $('#splitSl').max = nv; $('#splitSl').value = AN.split; $('#splitVal').textContent = AN.split; $('#dVal').textContent = AN.d; drawAnf(); };
+  $('#dSl').oninput = e => { AN.d = +e.target.value; fix(); };
+  $('#splitSl').oninput = e => { AN.split = +e.target.value; AN.userSplit = true; fix(); };
+  const cv = $('#anfCanvas'), tip = $('#anfTip'), box = $('#anfBox');
+  cv.addEventListener('mousemove', e => { const r = cv.getBoundingClientRect(); const c = +box.dataset.c, split = +box.dataset.split;
+    const x = Math.floor((e.clientX - r.left) / c), y = Math.floor((e.clientY - r.top) / c); const m = (y << split) | x; const rec = ANF[AN.d - 1];
+    if (x < 0 || y < 0 || x >= 2 ** split || m >= 2 ** rec.nvars) { tip.hidden = true; return; }
+    const vars = []; for (let s = 0; s < rec.nvars; s++) if ((m >> s) & 1) vars.push('f' + s);
+    const on = (rec.arr[m >> 3] >> (m & 7)) & 1;
+    showTip(tip, box, e.clientX - r.left + box.scrollLeft, e.clientY - r.top, (vars.length ? vars.join('·') : '1 (constant)') + '<br>' + (on ? 'present' : 'absent'));
+  });
+  cv.addEventListener('mouseleave', () => { tip.hidden = true; });
+  fix();
+})();
+
+function redrawAll() { drawLife(); drawCarpet(); drawCounts(); drawDensity(); drawAnf(); }
+drawCounts(); drawDensity();
+let rt = null; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { drawLife(); drawCounts(); drawDensity(); drawAnf(); }, 150); });
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', redrawAll);
+new MutationObserver(redrawAll).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>

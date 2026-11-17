@@ -1,0 +1,2 @@
+# Concurrent appends to the ledger merge without conflict; tools/ledger_check.py guards against resurrected archives.
+CHAT-LEDGER.md merge=union

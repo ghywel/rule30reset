@@ -1,0 +1,8 @@
+# the official kit is its own repository; kit/stamp.json records the commit it was read at
+Rule30PrizeKit/
+# built pages embed their data; rebuild with viz/build_page.py
+viz/survivors.html
+# the update step's work list
+kit/todo.md
+__pycache__/
+.DS_Store
