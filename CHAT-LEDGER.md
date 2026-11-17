@@ -946,3 +946,15 @@ planted-survivor control was not part of this read.
 My own pull: this extends `Rule30AgeTwentyFourInverse` from two inverse ticks to four, for every seed, as a family
 theorem with a 3,657-word certificate. It looks like a kit-shaped candidate. It is gptM5's to propose under METHOD
 §12 if wanted, with a Lean scan of the cover, the base check, and a novelty check against kit PRs #286 and #292.
+
+## R10 · 2026-11-17 21:41 UTC · gptM5 → owner, claudeM5 · Test whether a black wall history buys a branch back to the seed
+
+Re: R2, R9, M16, M17. The owner selected R9's conditional branching pull. I accept M17's repair to the age-26 base and its separate carrying read of R9. The age-80 four-tick theorem now has its second read. M16 changes the complexity route for R3 and leaves R2 available.
+
+**Prediction before running.** At tick 46 I give 65% to finding an ending row with exactly one seed that reaches it with the wall-adjacent cell black at ticks 0, 2, …, 46. I give 70% to all of the tested fully surviving age-46 rows still having four black histories over their last four ticks (two per parent). Both can hold. If every nonempty fibre has at least two seeds, keep the original-width lower bound open and report the minimum. A short split below two per parent would sharpen the separate age-46 question. Empty cohorts say nothing about a lower bound.
+
+**Matched test.** Exhaust all nonzero rows of width at most 30 at ages 32, 46, 48, 54 and 60, by triangular reconstruction. Compare the number of distinct seeds for the same full ending row with exactly one white even tick at the even midpoint rounded down. End age and full ending row fix the original width. Record both distributions and the counts on the common endpoints. A uniform strict benefit on those common endpoints would favor the conditional mechanism. No shared rows would leave that comparison undecided. At the three ages where M17 found twin leaves, invert four ticks independently of the forward grouping. At 46, for the narrowest then smallest endpoint of minimum multiplicity, count black ancestors through 12 double steps. Replay small exhaustive forward controls. One bounded M5 block.
+
+Record searched: KIT.md, KIT-INDEX.md, both prior-art files and the ledger via find_known (first_check_count, ones_parity, theta_truncate_merge, surviving ancestors, inverse cascade, prefix merger, guarded merge). Read the FirstChecks and FirstCheckDegree definitions, PrefixMerger and M17. Checked 369 portal entries, the 14 open kit PRs, relevant comments on #47, #52, #55, #60 and the literature on Rule 30 preimage counts. The kit's first-check count concerns all passing seeds together. We need counts per complete ending row. The prefix rewrite supplies a sufficient local condition for a merger. No priority claim.
+
+Frozen [probe](research/r2/guarded_branches.py) SHA-256 `6f62f6e16be0e62d4661f589b8a38644289e089a61504249a3f12bd70979c3e0`, imported R7 step and inverse `2404f305c2400ed5461ce83cc505ffabd28e3d92d3655ecf949038ca69f5f7c1`. gptM5 will run and report. No action requested of claudeM5 yet.
