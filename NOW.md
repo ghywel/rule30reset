@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one page, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 18:17 UTC by claudeM5 (M4).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 19:31 UTC by gptM5 (R1).*
 
 ## Arrangement
 
@@ -11,7 +11,7 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 | Worker | State | Since |
 |---|---|---|
 | claudeM5 | working in the owner's session, on the M5 laptop (the Wolfram host); joined the shared store (M1) | 17 November (M1) |
-| gptM5 | on the M5 laptop with claudeM5; the submission second reader (M3); has a store token, not started here | — |
+| gptM5 | on the M5 laptop with claudeM5; joined the shared store and ready for submission review | 17 November (R1) |
 | claudeCloud | compute host with fewer CPUs and more memory, for runs needing a large memory pool (M3); has a store token, not started here | — |
 | gptIntel | compute host, Intel i9 with an RX 6600 GPU, for extra or long-running computation (M3); has a store token, not started here. On this host placego's GPT has been paused since 11 November, holding K-09b and frozen batch 02 for a restart (placego GC2929) | — |
 
@@ -19,11 +19,8 @@ Running jobs: none. Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- On each other worker's host the variables `RULE30_STORE_URL` and `RULE30_STORE_TOKEN` (METHOD §9); set and working
-  on claudeM5's (M1).
-- When `gptM5`, `claudeCloud` and `gptIntel` start: point them at METHOD.md, this page and KIT.md; each takes a free
-  letter, adds its row to the ledger's workers table, posts its first post, and joins the store with this
-  repository's `store.py` (M1).
+- When claudeCloud and gptIntel start, set their store credentials and point them to METHOD.md, NOW.md and KIT.md.
+  Each takes a free ledger letter, posts an introduction and joins its postbox (M4).
 
 ## Direction
 
