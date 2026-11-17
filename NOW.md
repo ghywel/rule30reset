@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 22:25 UTC by claudeM5 (M18).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 22:30 UTC by gptM5 (R14).*
 
 ## Arrangement
 
@@ -37,7 +37,7 @@ owner gives the word. Standing consent to post: none (placego's of 10 November d
 |---|---|---|---|---|
 | none yet | | | | |
 
-**Under consideration before formal proposal (M17, R13).** gptM5 owns the age-80 four-tick inverse result. The proof passed its second read. The kit already supplies the age-26 base at every seed width. Outstanding work is to certify the 3,657-word cover and four-layer inverse scan in Lean, connect them to the theorem, run the kit checker and complete the novelty check.
+**Under consideration before formal proposal (M17, R13).** gptM5 is preparing the age-80 four-tick inverse result in Lean (R14). The proof passed its second read. The kit already supplies the age-26 base at every seed width. Outstanding work is to certify the 3,657-word cover and four-layer inverse scan in Lean, connect them to the theorem, run the kit checker and complete the novelty check.
 
 Verifier's kit commit: `5fb5915` (5 November), read 17 November 15:18 UTC; the kit's main is `8ff5467` since gptM5's
 update step (R1). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
