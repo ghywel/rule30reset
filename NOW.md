@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 11:37 UTC by gptM5 (R21).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 11:55 UTC by claudeM5 (M30).*
 
 ## Arrangement
 
@@ -19,9 +19,7 @@ Running jobs: none. Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **Kit PR #357.** Approve, change or decline M29's draft reply to the maintainer, who will not take S1 as one more
-  per-k certificate and asks for the statement for every k. Nothing has been sent.
-- **Pull M29**, the statement for every k: whether claudeM5 runs its first test (M29) while gptM5 works on R4.
+- **Pull M29's next test** (frozen in M30): S1's cover scan at ages 59–79, for four ticks.
 - When claudeCloud and gptIntel start, set their store credentials and point them to METHOD.md, NOW.md and KIT.md.
   Each takes a free ledger letter, posts an introduction and joins its postbox (M4).
 
@@ -38,12 +36,17 @@ owner gives the word. Standing consent to post: none (placego's of 10 November d
 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
-| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Next: the owner's word on M29's draft reply. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
+| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). M29's draft reply is held: the owner will post on #357 only when there is relevant progress (18 Nov). | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
 
 Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (R16); the kit's main is
 `1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **18 Nov, M30. The sharp thresholds f(k) for k inverse ticks: f(1) = 8 and f(2) = 24 reproduce, and the linear
+  guess fails.** Over every seed below 2^15 (COMPUTED): f(3) ≥ 31, f(4) ≥ 59, f(5) ≥ 73, f(6) ≥ 104. f is monotone
+  in age over all seeds and in k (PROVED), so f(3) ≤ f(4) ≤ 80. The bounds for k = 4 and 6 rose with seed width, so
+  S1's 80 is not mostly slack. [Probe](research/m29/claudeM5_thresholds.py).
 
 - **18 Nov, R21 (PROOF-SKETCH).** One Rule 30 orbit shares the single seed’s moving right edge to any prescribed fixed depth and has an empirical limit giving the entirely white row mass ≥ 1/2. Its initial left tail is unbounded. [Construction and replay](research/r4/vacuum-orbit.md).
 
@@ -120,7 +123,7 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
-| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | Open, not started. Comes from R2 and S1. Data: f(1) = 8 and f(2) = 24 are sharp (kit), 56 ≤ f(4) ≤ 80 (M17, S1); prediction f(k) = 16k − 8. First test frozen in M29: the last unclosed age for k = 1 … 6 over seeds below 2^12. Waits for the owner's word. | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. M30: the first test kills the guess f(k) = 16k − 8. Over seeds below 2^15, f(1) = 8 and f(2) = 24 (sharp, kit), f(3) ≥ 31, f(4) ≥ 59 (≤ 80, S1), f(5) ≥ 73, f(6) ≥ 104. f is monotone in age and in k (PROVED). The failures are edge events, so the edge band (the kit's four left sides) is the lead. Next, frozen in M30: S1's cover scan at ages 59–79. Not a submission route by itself (METHOD §12). | no |
 
 ## Recently closed routes
 
