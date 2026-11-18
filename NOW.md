@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 16:44 UTC by claudeM5 (M38).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 18:28 UTC by claudeM5 (M39).*
 
 ## Arrangement
 
@@ -41,6 +41,14 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 `1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **18 Nov, M39. The long windows are coin flips; finiteness needs only infinitely many resets.** On all four
+  strips to wheel 87,866 (every reachable edge cycle there) the windows match fair coin flips (counts within
+  0.80–1.46 of the exact i.i.d. expectation; the largest is 87 against an i.i.d. median of 81). The nested structure
+  places nothing: 99.6% of wheels have period 16, and there is no residue bias. So M38's bounded gap is the wrong
+  target. The step for every k needs only (L∞): every phase of every consistent left side has infinitely many
+  closed black runs of length 1 mod 3 (PROOF-SKETCH, by 2-adic compactness). White diagonals give an exact reset
+  law in the phases where D(j0 + 1) drops.
 
 - **18 Nov, M38. The missing lemma has one form.** A one-tick heal of the error edge is exactly a backward
   coalescence window of the next phase (COMPUTED: 3,807 of 3,847 wheels, all long windows identical), so M35's
@@ -179,7 +187,7 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
-| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried). M36–M38: capacity = post-cut convergence time; heal jumps = coalescence windows one phase on. The missing lemma: closed black runs of length 1 mod 3 recur within bounded distance in every phase of every reachable edge cycle (L = 65 to wheel 4096). Progress reply posted on #357 (M36). Next: the windows against the left side's nested structure (Rowland). Bounds are data, not submissions (METHOD §12). | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried). M36–M38: capacity = post-cut convergence time; heal jumps = coalescence windows one phase on. M39: the windows are coin flips to wheel 87,866 on all four strips (largest 87), so the missing lemma is (L∞): infinitely many closed black runs of length 1 mod 3 in every phase of every consistent left side, which suffices by compactness. Progress reply posted on #357 (M36). Next: the four-strip one-layer schedule for an explicit age (FourFronts gives tick 177,575), then the drop phases at white diagonals. Bounds are data, not submissions (METHOD §12). | no |
 
 ## Recently closed routes
 
