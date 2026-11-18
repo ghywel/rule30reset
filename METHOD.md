@@ -357,6 +357,7 @@ catalogue:
 | a theorem about an infinite family (all words of a shape, all widths, all phases, every configuration of a kind) in core Lean, any certificate data a finite step inside it | yes | yes: a catalogue module |
 | a proof that needs Mathlib | yes | no |
 | a list of single words, widths, windows or depths | only if it passes "when", below | no |
+| one more term of a chain the catalogue already holds (the next number of ticks, width, depth, tail or period), proved by one more finite certificate | no | no: only the statement for every term, by an argument that needs no new certificate per term (condition 2, below) |
 | a better bound, or longer tails, for a padded word `0^r u` | yes | a change to `Rule30PaddedWords`, not a new module |
 | an essay: a synthesis, a barrier, a map | yes, with what it proves in Lean as its headlines | only the parts that are family theorems |
 
@@ -396,6 +397,19 @@ A result is ready to propose when all four hold:
    either. The portal says plainly that more finite exclusions of a known kind (longer tails, more widths, another
    family by the same method) are no longer worth sending, unless a new argument makes them uniform where they were
    not, or changes what can be proved next.
+   - **The next term of a chain is an instance.** Suppose the catalogue holds the same statement for other values of
+     a parameter, for example one inverse tick from age 8 and two from age 24. Then the next value proved by one
+     more certificate, for example four ticks from age 80, is an instance, however new its method. The kit takes the
+     statement for every value, proved by an argument that needs no new certificate for each one. The maintainers
+     said so of S1 on kit pull request #357 (18 November).
+   - **A new method is not enough.** A method counts as uniform only if it removes the per-value certificate.
+     "Changes what can be proved next" does not rescue a single further term either. We argued both for S1 in M22,
+     and the maintainers did not accept them.
+   - **The threshold may grow.** A statement for every value may let its threshold depend on the value, for example
+     an age f(k) for k ticks. So "no single age serves every k" does not show that the uniform statement is out of
+     reach. M22 argued that it did, and was wrong (M29).
+   - **The terms stay useful.** Keep them in the record as data that the uniform argument must explain, for
+     example how the certificates and the ages grow with the parameter. Do not submit them.
 3. **It gives a reader something**: a statement about all times or all sizes, a method others can reuse, a barrier,
    an equivalence, a correction. The owner asked (27 October) that finished work be submitted for the benefit of all,
    so that others can build on it: do not hold a finished result back because it does not move a prize problem. A
@@ -415,9 +429,13 @@ Run it when proposing, again before the shared read, and a third time just befor
    abstract and headlines; and the kit's open pull requests, with their comments and changed files, where public
    proofs have appeared first.
 3. **The literature.**
+4. **The chain test.** List the catalogue's results of the same form for other values of any parameter in the
+   statement: ticks, width, depth, tail length, period, age. If the candidate is the next term of such a chain,
+   proved by a new certificate, it fails condition 2. Stop, and aim instead for the statement for every term.
 
-Record the result in the proposal: the kit commit, the time of the portal list, every hit and how it differs. A hit
-whose hypotheses and conclusion match makes the result known: record it in PRIOR-ART.md, and do not submit it as new.
+Record the result in the proposal: the kit commit, the time of the portal list, every hit and how it differs, and the
+chain test with the chain it found or "no chain". A hit whose hypotheses and conclusion match makes the result known:
+record it in PRIOR-ART.md, and do not submit it as new.
 
 ### The steps
 
@@ -427,7 +445,8 @@ well, so that every part has a reader other than its author. Candidates are numb
 placego's are cited as "placego S-07".
 
 1. **Propose** (claudeM5). A ledger post, subject `S3 proposed`: the result in one sentence, its status, the route
-   (portal, or portal and kit), the novelty check and what it gives a reader. Add it to NOW.md's submissions table,
+   (portal, or portal and kit), the novelty check with its chain test, and what it gives a reader. gptM5's carrying
+   read repeats the chain test. Add it to NOW.md's submissions table,
    and mark the pull it came from as a submission candidate in the pull tracker (section 8).
 2. **Build the packet** (claudeM5). One folder in claudeM5's share-scratch, `share-scratch/claudeM5/S3/`, every file
    cited by SHA-256:

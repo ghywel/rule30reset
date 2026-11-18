@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 11:23 UTC by claudeM5 (M28).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 11:36 UTC by claudeM5 (M29).*
 
 ## Arrangement
 
@@ -19,6 +19,9 @@ Running jobs: none. Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
+- **Kit PR #357.** Approve, change or decline M29's draft reply to the maintainer, who will not take S1 as one more
+  per-k certificate and asks for the statement for every k. Nothing has been sent.
+- **Pull M29**, the statement for every k: whether claudeM5 runs its first test (M29) while gptM5 works on R4.
 - When claudeCloud and gptIntel start, set their store credentials and point them to METHOD.md, NOW.md and KIT.md.
   Each takes a free ledger letter, posts an introduction and joins its postbox (M4).
 
@@ -35,12 +38,18 @@ owner gives the word. Standing consent to post: none (placego's of 10 November d
 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
-| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified** (M26): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`; kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) open, mergeable. Next: the reviewers' tags and feedback, and the maintainers' review of #357. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
+| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Next: the owner's word on M29's draft reply. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
 
 Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (R16); the kit's main is
 `1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **18 Nov, M29. The kit will not take S1 as one more inverse-tick step.** On #357 the maintainer asks for an age
+  f(k) for every number of ticks k, by an argument that needs no new cover per k, and asks why the ages grow (8, 24,
+  80). METHOD §12 now excludes the class, with a chain test in the novelty check. The kit's ages 8 and 24 are sharp,
+  and M17 bounds f(4) below by 56; f(k) = 16k − 8 fits all three (a prediction, not tested). S1 is now also Human
+  Verified on the portal.
 
 - **18 Nov, M26. S1 is Lean Verified on the portal** ([R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f)):
   every four-tick predecessor of an aged finite row is finite from age 80, all 16 wall histories occur. Kit pull
@@ -102,7 +111,7 @@ the work goes. The rules are in METHOD §8.
 |---|---|---|---|---|
 | L1 (placego L1680) | 17 Nov 10:28, Local (inherited) | The reach map, then the reach of later free bits by sampling to depth 81 | Open. Folded into M8, which gives it a question: the reach inside the gap language. | no |
 | L1 (placego L1679) | 17 Nov 10:28, Local (inherited) | Replay the kit's surviving-seed law against placego L1675's tables | Open. Partly answered by M10: the law counts {3, 5}-gap words (N = 1, 2, 4, 7 at H = 6–24, by hand). To do: the replay. | no |
-| R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | In progress. Every four-tick past is finite from age 80 (R8–R9, PROVED in M17; the base is the kit's `band_from_age_twenty_six`, P3, so M17's repair was unnecessary, M18). The planted fixed point is a leaf off its own orbit. R11 refutes a second surviving seed at age 46. All 11 tested fully surviving age-46 ends have four recent pasts. The four-tick bound at ages 46–78 is open in general. Age-80 proposal handoff and both Lean passes in R15. M18: R11's starting-width bound and odd endpoint multiplicity PASS (PROVED), and the age-46 singleton replays independently. The bound 2j + 2 is far from sharp: the least starting widths with a full guarded tree are 7 and 13 for j = 1, 2, and above 14 for j = 3, 4 (COMPUTED).  M22: proposed as S1. M26: S1 posted, Lean Verified as R30-20261118-c8b41f; kit PR #357 open. | **yes: S1** (M22) |
+| R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | In progress. Every four-tick past is finite from age 80 (R8–R9, PROVED in M17; the base is the kit's `band_from_age_twenty_six`, P3, so M17's repair was unnecessary, M18). The planted fixed point is a leaf off its own orbit. R11 refutes a second surviving seed at age 46. All 11 tested fully surviving age-46 ends have four recent pasts. The four-tick bound at ages 46–78 is open in general. Age-80 proposal handoff and both Lean passes in R15. M18: R11's starting-width bound and odd endpoint multiplicity PASS (PROVED), and the age-46 singleton replays independently. The bound 2j + 2 is far from sharp: the least starting widths with a full guarded tree are 7 and 13 for j = 1, 2, and above 14 for j = 3, 4 (COMPUTED).  M22: proposed as S1. M26: S1 posted, Lean Verified as R30-20261118-c8b41f; kit PR #357 open. M29: the kit wants the statement for every k instead, now pull M29. | **yes: S1** (M22) |
 | R3 | 17 Nov 19:55, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | Open. Joined to M7 (M11): the kit's complexity criterion relaxes "finitely many switches" to "complexity near n". M16: that relaxation fails for u ∅, whose complexity is exponential; R3's own question, the cost of switches for finite seeds, is untouched. To do: compare 3,5 with 5,3; test the returns 3,5,3 and 5,3,5. | no |
 | R4 | 17 Nov 19:55, gptM5 | Problem 2: how many white centre times can one source row explain? | In progress, cooling. R19's exact theory (source multiplicity, gap-tail/vacuum identity, deep-gap density = largest all-white mass of a limit measure) is PROVED (claudeM5's read and replay, M27). The two-source test (M27–M28) closed the strong spacing: R19's v ≥ u + m(u) + 1 is sharp on the seed. Open: whether the all-white mass is zero; needs a non-local input. | no |
 | R5 | 17 Nov 19:55, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | Open, not started. To do: cuts N and N + 12 at one alignment. | no |
@@ -110,6 +119,7 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | Open, not started. Comes from R2 and S1. Data: f(1) = 8 and f(2) = 24 are sharp (kit), 56 ≤ f(4) ≤ 80 (M17, S1); prediction f(k) = 16k − 8. First test frozen in M29: the last unclosed age for k = 1 … 6 over seeds below 2^12. Waits for the owner's word. | no |
 
 ## Recently closed routes
 
