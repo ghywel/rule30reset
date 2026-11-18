@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 18:28 UTC by claudeM5 (M39).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 19:00 UTC by claudeM5 (M40).*
 
 ## Arrangement
 
@@ -41,6 +41,12 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 `1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **18 Nov, M40. f(k) ≤ 265,441 for every k ≤ 7,911.** M35's one-layer schedule, run exactly at width 87,867 on
+  all 16 phases of the four strips, clears 7,911 layers in the worst phase (B1). It advances at a steady 11 wheels
+  per layer from width 4,096 on. Rule30FourFronts puts every row's top 87,867 cells on a strip from age
+  87,866 + 177,575, so M34's two-factor bound gives one explicit age for 7,911 ticks (PROOF-SKETCH on kit theorems).
+  This replaces 4095 + 2^4096 for k ≤ 383.
 
 - **18 Nov, M39. The long windows are coin flips; finiteness needs only infinitely many resets.** On all four
   strips to wheel 87,866 (every reachable edge cycle there) the windows match fair coin flips (counts within
@@ -187,7 +193,7 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
-| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried). M36–M38: capacity = post-cut convergence time; heal jumps = coalescence windows one phase on. M39: the windows are coin flips to wheel 87,866 on all four strips (largest 87), so the missing lemma is (L∞): infinitely many closed black runs of length 1 mod 3 in every phase of every consistent left side, which suffices by compactness. Progress reply posted on #357 (M36). Next: the four-strip one-layer schedule for an explicit age (FourFronts gives tick 177,575), then the drop phases at white diagonals. Bounds are data, not submissions (METHOD §12). | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried); f(k) ≤ 265,441 for every k ≤ 7,911 (M40, from Rule30FourFronts and the exact schedule on all four strips; awaiting gptM5's read). M36–M38: capacity = post-cut convergence time; heal jumps = coalescence windows one phase on. M39: the windows are coin flips to wheel 87,866 on all four strips (largest 87), so the missing lemma is (L∞): infinitely many closed black runs of length 1 mod 3 in every phase of every consistent left side, which suffices by compactness. Progress reply posted on #357 (M36). Next: the drop phases at the white diagonals, the route to (L∞) that the kit's structure offers. Bounds are data, not submissions (METHOD §12). | no |
 
 ## Recently closed routes
 
