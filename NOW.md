@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 11:35 UTC by gptM5 (R20).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 11:37 UTC by gptM5 (R21).*
 
 ## Arrangement
 
@@ -44,6 +44,8 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 `1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **18 Nov, R21 (PROOF-SKETCH).** One Rule 30 orbit shares the single seed’s moving right edge to any prescribed fixed depth and has an empirical limit giving the entirely white row mass ≥ 1/2. Its initial left tail is unbounded. [Construction and replay](research/r4/vacuum-orbit.md).
 
 - **18 Nov, M29. The kit will not take S1 as one more inverse-tick step.** On #357 the maintainer asks for an age
   f(k) for every number of ticks k, by an argument that needs no new cover per k, and asks why the ages grow (8, 24,
@@ -113,7 +115,6 @@ the work goes. The rules are in METHOD §8.
 | L1 (placego L1679) | 17 Nov 10:28, Local (inherited) | Replay the kit's surviving-seed law against placego L1675's tables | Open. Partly answered by M10: the law counts {3, 5}-gap words (N = 1, 2, 4, 7 at H = 6–24, by hand). To do: the replay. | no |
 | R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | In progress. Every four-tick past is finite from age 80 (R8–R9, PROVED in M17; the base is the kit's `band_from_age_twenty_six`, P3, so M17's repair was unnecessary, M18). The planted fixed point is a leaf off its own orbit. R11 refutes a second surviving seed at age 46. All 11 tested fully surviving age-46 ends have four recent pasts. The four-tick bound at ages 46–78 is open in general. Age-80 proposal handoff and both Lean passes in R15. M18: R11's starting-width bound and odd endpoint multiplicity PASS (PROVED), and the age-46 singleton replays independently. The bound 2j + 2 is far from sharp: the least starting widths with a full guarded tree are 7 and 13 for j = 1, 2, and above 14 for j = 3, 4 (COMPUTED).  M22: proposed as S1. M26: S1 posted, Lean Verified as R30-20261118-c8b41f; kit PR #357 open. M29: the kit wants the statement for every k instead, now pull M29. | **yes: S1** (M22) |
 | R3 | 17 Nov 19:55, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | Open. Joined to M7 (M11): the kit's complexity criterion relaxes "finitely many switches" to "complexity near n". M16: that relaxation fails for u ∅, whose complexity is exponential; R3's own question, the cost of switches for finite seeds, is untouched. To do: compare 3,5 with 5,3; test the returns 3,5,3 and 5,3,5. | no |
-| R4 | 17 Nov 19:55, gptM5 | Problem 2: how many white centre times can one source row explain? | In progress, cooling. R20 tests whether a genuine orbit with the seed’s right half can have positive vacuum mass. R19's exact theory (source multiplicity, gap-tail/vacuum identity, deep-gap density = largest all-white mass of a limit measure) is PROVED (claudeM5's read and replay, M27). The two-source test (M27–M28) closed the strong spacing: R19's v ≥ u + m(u) + 1 is sharp on the seed. Open: whether the all-white mass is zero; needs a non-local input. | no |
 | R5 | 17 Nov 19:55, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | Open, not started. To do: cuts N and N + 12 at one alignment. | no |
 | R6 | 17 Nov 19:55, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | Open, not started. Would exclude every eventual power-of-two period. Pointer: kit `rows_at_powers_of_two`, `row_restart` (M11). | no |
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
@@ -122,6 +123,8 @@ the work goes. The rules are in METHOD §8.
 | M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | Open, not started. Comes from R2 and S1. Data: f(1) = 8 and f(2) = 24 are sharp (kit), 56 ≤ f(4) ≤ 80 (M17, S1); prediction f(k) = 16k − 8. First test frozen in M29: the last unclosed age for k = 1 … 6 over seeds below 2^12. Waits for the owner's word. | no |
 
 ## Recently closed routes
+
+- **R4, source multiplicity and deep-gap density** (closed 18 Nov, R21). The exact count and vacuum-mass identity are PROVED (R19, M27). M28 refuted its proposed spacing with C = 3. R21 shows that time invariance and fixed-depth right-edge data allow positive vacuum mass. Reopen for a quantitative restriction using the single seed’s distant white left tail or another seed-specific bound on deep-source occupancy. The seed’s vacuum mass is open.
 
 - **M6, the floor as the density of the sparsest eternal row** (closed 17 Nov, M21). For G the floor is the
   ether's 1/7 (COMPUTED, M15; known, P1), but no window law carries it (M15). The gap floor has slope about 0.275
