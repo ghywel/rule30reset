@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 19:00 UTC by claudeM5 (M40).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 19:12 UTC by gptM5 (R37).*
 
 ## Arrangement
 
@@ -38,34 +38,24 @@ owner gives the word. Standing consent to post: none (placego's of 10 November d
 | **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Progress reply posted on #357 at the owner's word (M36, 18 Nov 15:46 UTC); awaiting the maintainers. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
 
 Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (R16); the kit's main is
-`1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
+`e88656d` after the ZeroCoastBridge ground-reset update (R36). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **18 Nov, R37.** The age bound 265,441 through 7,911 inverse ticks passes independent review on all 64 strip phases. A [Lean construction](research/m29/Rule30PointedWhiteFork.lean) gives one phase with black immediately beyond every white diagonal, at all widths. B0 phase 9 realizes this at width 87,867 and still contains 12,532 ordinary reset factors. White-diagonal drops alone cannot supply the every-k theorem. [Five review verdicts and next test](research/m29/pointed-strip-review.md)
 
 - **18 Nov, M40. f(k) ≤ 265,441 for every k ≤ 7,911.** M35's one-layer schedule, run exactly at width 87,867 on
   all 16 phases of the four strips, clears 7,911 layers in the worst phase (B1). It advances at a steady 11 wheels
   per layer from width 4,096 on. Rule30FourFronts puts every row's top 87,867 cells on a strip from age
-  87,866 + 177,575, so M34's two-factor bound gives one explicit age for 7,911 ticks (PROOF-SKETCH on kit theorems).
+  87,866 + 177,575, so M34's two-factor bound gives one explicit age for 7,911 ticks (PROVED, computer-assisted, carried in R37).
   This replaces 4095 + 2^4096 for k ≤ 383.
 
-- **18 Nov, M39. The long windows are coin flips; finiteness needs only infinitely many resets.** On all four
-  strips to wheel 87,866 (every reachable edge cycle there) the windows match fair coin flips (counts within
-  0.80–1.46 of the exact i.i.d. expectation; the largest is 87 against an i.i.d. median of 81). The nested structure
-  places nothing: 99.6% of wheels have period 16, and there is no residue bias. So M38's bounded gap is the wrong
-  target. The step for every k needs only (L∞): every phase of every consistent left side has infinitely many
-  closed black runs of length 1 mod 3 (PROOF-SKETCH, by 2-adic compactness). White diagonals give an exact reset
-  law in the phases where D(j0 + 1) drops.
+- **18 Nov, M39.** The largest completed window across the four strips is 87 cells. On A0 the measured tail counts at the reported lengths are 0.80–1.46 times their fair-coin expectations. The estimated median maximum under that model is 81. Bounded gaps remain open. Arbitrarily deep ordinary resets in every phase of every consistent strip would suffice for every k by compactness (carried in R37).
 
-- **18 Nov, M38. The missing lemma has one form.** A one-tick heal of the error edge is exactly a backward
-  coalescence window of the next phase (COMPUTED: 3,807 of 3,847 wheels, all long windows identical), so M35's
-  one-layer schedule and M37's error edge are one mechanism. The step for every k is: in every phase of the edge
-  cycle, a closed black run 0 1^(3m+1) 0 recurs within L cells (L = 65 to wheel 4096). A rate certificate gives
-  s*(4096) = 382 independently.
+- **18 Nov, M38.** A one-tick heal gives two inverse trajectories over a window of the next phase. The measured maximal lengths agree at 3,807 of 3,847 comparable wheels. The largest one-tick heal through width 4,096 is 65. An independent envelope computation gives s*(4096) = 382 (R37).
 
-- **18 Nov, M37. φ(w) = K(w) at all 68 widths to 103** (exact backward computation): the capacity is exactly the
-  fastest post-cut band's convergence time. The error edge can jump 45 wheels in one tick (the 16 → 61 jump behind
-  the plateau K = 3), so the missing lemma is a long-run rate bound (about 11 wheels per tick in the data), which
-  reduces to which local patterns the edge cycle's words contain.
+- **18 Nov, M37. φ(w) = K(w) at all 68 widths to 103** (exact backward computation): the tested capacities equal the fastest post-cut times at these widths. The error edge can jump 45 wheels in one tick (the 16 → 61 jump behind
+  the plateau K = 3). A long-run rate bound would suffice.
 
 - **18 Nov, M36. Progress reply posted on kit PR #357** ([comment](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357#issuecomment-6983561215),
   the owner's word; text confirmed by gptM5 in R35). **The capacity is the convergence time of post-cut bands:**
@@ -193,7 +183,7 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
-| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried); f(k) ≤ 265,441 for every k ≤ 7,911 (M40, from Rule30FourFronts and the exact schedule on all four strips; awaiting gptM5's read). M36–M38: capacity = post-cut convergence time; heal jumps = coalescence windows one phase on. M39: the windows are coin flips to wheel 87,866 on all four strips (largest 87), so the missing lemma is (L∞): infinitely many closed black runs of length 1 mod 3 in every phase of every consistent left side, which suffices by compactness. Progress reply posted on #357 (M36). Next: the drop phases at the white diagonals, the route to (L∞) that the kit's structure offers. Bounds are data, not submissions (METHOD §12). | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried); f(k) ≤ 265,441 for every k ≤ 7,911 (M40, from Rule30FourFronts and the exact schedule on all four strips, carried in R37). R37 independently carries M36–M40. The white-diagonal drop proposal fails on a Lean-certified pointed strip. The sufficient ordinary reset recurrence remains open. Next test: trace both lifts between successive white wheels and see whether reset-free intervals can concatenate. Progress reply posted on #357 (M36). Bounds are data, not submissions (METHOD §12). | no |
 
 ## Recently closed routes
 

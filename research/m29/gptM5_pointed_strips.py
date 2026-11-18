@@ -62,7 +62,16 @@ def inspect(rows):
             drops += fall
         drop_counts.append(drops)
     gaps = [max(b-a for a,b in zip(ends, ends[1:])) for starts, ends in tables]
-    return dict(capacity=[capacity(t) for t in range(16)],
+    # Consecutive factor endpoints alone omit the deeper factor's own length.
+    # Start just past its deep zero and finish on the next factor's last symbol.
+    largest_window = max((end - start, WIDTH-1-end, t)
+                         for t, (starts, ends) in enumerate(tables)
+                         for start, end in zip(starts, ends[1:]))
+    black_after_white = [t for t,row in enumerate(rows)
+                         if all(row[i-1] == "1" for i in white if i > 0)]
+    return dict(max_complete_window=largest_window,
+                black_after_every_white=black_after_white,
+                capacity=[capacity(t) for t in range(16)],
                 eligible_white=sorted(WIDTH-1-i for i in anchors),
                 drops=drop_counts, reset_factors=[len(starts) for starts,_ in tables],
                 max_end_spacing=max(gaps))
