@@ -21,3 +21,20 @@ There is a useful simplification of the qualitative all-depth question (**PROOF-
 An input of the form 0, then 3m+1 ones, then 0 and one more bit synchronises the four incoming states of one layer. This family is known. To see its necessity for finite words, group the pair states as A = 00, C = 10 and E = {01,11}. Input 1 rotates A → E → C → A. Input 0 sends A to A and both C and E to E. After the first zero the possible classes are {A,E}. After the next zero they collapse exactly if the intervening black run has length 1 modulo 3. At that collapse the actual last two possibilities are 01 and 11, so one further bit is necessary and sufficient for full pair agreement. This also explains why the two independently programmed one-layer schedules gave the same capacity at all 109 widths. [Prior art in P6](../../PRIOR-ART.md)
 
 Each schedule retains the common parent suffix after the first pair reset and admits all four entrances again at the next layer. At width 25 this proves two layers of the true three, at 96 it proves six of eight, and at 128 it proves nine of eleven. It gives the exact capacity at five of 109 widths. Changing to a different one-layer synchronising word cannot recover that gap. The remaining information lies in which states and parent bits can occur together across layers. The test measures this specific scheduling rule.
+
+## What survives when two or three layers are kept together
+
+R30–R31, **COMPUTED**. For each block of d layers, enumerate all 4^d entrance registers, and require a zero joint state at the edge for all of them. Record the deepest layer's emitted bit at each cell. The positions after its last disagreement form the longest parent suffix common to every entrance. Keep that suffix for the next block and again admit every entrance register. Dynamic programming chooses the best segmentation into blocks of at most B layers, separately for each phase, then takes the minimum over phases. Each successful schedule suffices for physical closure. At the cut it deliberately discards the relation between a discarded parent prefix and the next register.
+
+| Band width | Single layers | Blocks up to two | Blocks up to three | Full joint capacity |
+|---:|---:|---:|---:|---:|
+| 25 | 2 | 3 | 3 | 3 |
+| 62 | 3 | 4 | 4 | 4 |
+| 81 | 4 | 6 | 6 | 6 |
+| 91 | 6 | 7 | 7 | 8 |
+| 96 | 6 | 7 | 7 | 8 |
+| 128 | 9 | 10 | 10 | 11 |
+
+Across widths 20–128, two-layer blocks recover the full strip capacity at 71 of 109 widths, up from five with single layers. Allowing triples gives the same worst-phase count as allowing pairs at every tested width. The first loss for either rule is at width 91. In the phase word `0x6f671619da217f6c637c9ac` (outer edge at the high bit), one optimal schedule takes 3, 3 and 1 layers, retaining 68, 17 and 8 common cells after the respective blocks. Every schedule under the block-size-three cut rule stops at seven or earlier, yet the exact eight-layer reverse scan accepts every incoming register. This supplies a specific phase and cut for testing a representation that retains which entrance states remain compatible with each parent suffix.
+
+Scope: this separates a specified suffix-only calculation from the joint register. Other two- or three-layer summaries could retain more information, and these measurements give no asymptotic separation. [Frozen block test](gptM5_reset_blocks.py). Receipt in `share-scratch/gptM5/M29/reset-blocks-r30-v1.json`, SHA-256 `7c6643c22cbd485ee291671ab54ff98f6313f634128f8858a8a9448e2caffdfa`.
