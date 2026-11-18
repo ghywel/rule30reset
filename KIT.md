@@ -1,7 +1,7 @@
-<!-- kit-commit: 1b3dceb 2026-11-18 -->
+<!-- kit-commit: e88656d 2026-11-18 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `1b3dceb` (main, 2026-11-18),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `e88656d` (main, 2026-11-18),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
@@ -52,7 +52,7 @@ graph TD
   BWH["BWH ⇔ RW ⇔ exact-width death bounds"] --> Q01
   Q01["Q01 ⇔ every natural Y reaches an even number under G ⇔ no Theta f is finite ⇔ mortality ⇔ repeat budget ⇔ QP 2 ⇔ UBEAt 2"]
   Q01 --> SEP["SEP ⇔ QN ⇔ LR1 ⇔ constant-tail separator ⇔ orbit separator"]
-  Q01 --> Q01Gap["Q01Gap ⇔ MassDiverges ⇔ FiniteSeedsTerminate"]
+  Q01 --> Q01Gap["Q01Gap ⇔ MassDiverges ⇔ FiniteSeedsTerminate ⇔ all reachable odd ground resets crash"]
   SEP --> Q01Gap
   Q01Gap --> Q01GW["Q01GapWords ⇔ Q01TwoWords"]
   Q01GW --> Q01GC["Q01GapCore ⇔ Q01TwoCore ⇔ TwoCoreThetaUnbounded"]
@@ -79,7 +79,7 @@ graph TD
 - `Rule30GateTrap`: Q01 ⇒ Q01Gap ⇒ CQ01Empty (black cells of u ∅ come 3 or 5 double steps apart after step 146).
   `Rule30GateTrapWords`, `Rule30GateTrapLift`: Q01Gap ⇒ Q01GapWords ⇒ Q01GapCore ⇒ CQ01Empty; the gap words 333, 3353,
   3533, 3553, 5533 and 3535353 are excluded after trap entry. `Rule30ZeroCoastBridge`: MassDiverges ⇔ Q01Gap, and the seeds surviving the gap language to horizon H number N(H)
-  with N(H + 10) = N(H + 4) + N(H) exactly. Q01Gap is also equivalent to eventual termination of the forced zero-bit continuation from every surviving prefix (`q01Gap_and_massDiverges_iff_survivingSeeds_void_crash`); equivalently, survivor popcount bounds the horizon (`massDiverges_and_q01Gap_iff_survivingSeeds_konig`).
+  with N(H + 10) = N(H + 4) + N(H) exactly. Q01Gap is also equivalent to eventual termination of the forced zero-bit continuation from every surviving prefix (`q01Gap_and_massDiverges_iff_survivingSeeds_void_crash`); it suffices to check macro-step termination at every reachable odd-horizon age-zero reset (`q01Gap_and_massDiverges_iff_reset_iterVoidMacro_crash`). Equivalently, survivor popcount bounds the horizon (`massDiverges_and_q01Gap_iff_survivingSeeds_konig`).
 - `Rule30PeriodTwoWidth13`: under an alternating centre the left trace lies in GE2; Q01 ⇒ NoSeedGE2 ⇒ no period 2;
   RD ∧ Q01Gap ⇒ CQ01. `Rule30ZeroCoastBridge` embeds the gap language in GE2, so NoSeedGE2 ⇒ MassDiverges ⇔ Q01Gap. `Rule30PeriodTwoMass`: Conjecture S ⇒ no period 2, sharp at 86. `Rule30PeriodTwoLadder`: the mean
   ladder law is an exact fair-coin count; geometric ladder bounds ⇒ NoSeed p01. `Rule30PeriodTwoNoFloor`: no uniform
