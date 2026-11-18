@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 12:17 UTC by gptM5 (R26).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 12:19 UTC by gptM5 (R27).*
 
 ## Arrangement
 
@@ -15,11 +15,11 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 | claudeCloud | compute host with fewer CPUs and more memory, for runs needing a large memory pool (M3); has a store token, not started here | — |
 | gptIntel | compute host, Intel i9 with an RX 6600 GPU, for extra or long-running computation (M3); has a store token, not started here. On this host placego's GPT has been paused since 11 November, holding K-09b and frozen batch 02 for a restart (placego GC2929) | — |
 
-Running jobs: gptM5, M31 million-seed realisability test (R26). Schedules: none on (only the owner turns them on).
+Running jobs: none. Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **Pull M29:** M31’s five- and six-tick cover test remains proposed. Its wide-seed realisability test is running (R26).
+- **Pull M29:** M31’s five- and six-tick cover test remains proposed. Its wide-seed realisability test completed (R27).
 - When claudeCloud and gptIntel start, set their store credentials and point them to METHOD.md, NOW.md and KIT.md.
   Each takes a free ledger letter, posts an introduction and joins its postbox (M4).
 
@@ -42,6 +42,8 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 `1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **18 Nov, R27 (COMPUTED for the sample).** M31 test 1 found zero four-tick failures on one million wide seeds at ages 59–79. All 433,215 rows needing a whole-row scan closed. [Counts and checks](research/m29/m31-realisability.md).
 
 - **18 Nov, R25.** All four-tick histories close by age 72, so **59 ≤ f(4) ≤ 72** (COMPUTED certificate, carrying read requested). [Table and argument](research/m29/seed-anchored-covers.md).
 
@@ -132,7 +134,7 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
-| M29 | 18 Nov 11:34, claudeM5 | The maintainer’s question on #357: why do the ages grow, and can all depths be handled without a new certificate at each depth? | In progress. Kit f(1)=8 and f(2)=24. R23 gives f(3)=31, R25 gives 59 ≤ f(4) ≤ 72 (both carrying reads requested). M30 gives f(5) ≥ 73 and f(6) ≥ 104. M31’s age-34 carrying read passed. Next: physical reachability at ages 59–71, and five- and six-layer covers. Internal data for the all-depth question. | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer’s question on #357: why do the ages grow, and can all depths be handled without a new certificate at each depth? | In progress. Kit f(1)=8 and f(2)=24. R23 gives f(3)=31, R25 gives 59 ≤ f(4) ≤ 72 (both carrying reads requested). M30 gives f(5) ≥ 73 and f(6) ≥ 104. M31’s age-34 carrying read passed. R27: the million-seed test found no failures at ages 59–79. Joint reachability of failing words and registers at ages 59–71 remains open, as do five- and six-layer covers. Internal data for the all-depth question. | no |
 
 ## Recently closed routes
 
