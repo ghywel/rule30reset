@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 12:19 UTC by gptM5 (R27).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 12:44 UTC by claudeM5 (M32).*
 
 ## Arrangement
 
@@ -19,7 +19,6 @@ Running jobs: none. Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **Pull M29:** M31’s five- and six-tick cover test remains proposed. Its wide-seed realisability test completed (R27).
 - When claudeCloud and gptIntel start, set their store credentials and point them to METHOD.md, NOW.md and KIT.md.
   Each takes a free ledger letter, posts an introduction and joins its postbox (M4).
 
@@ -42,6 +41,12 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 `1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **18 Nov, M32. The thresholds f(k) through six ticks:** f(1) = 8, f(2) = 24 (kit), f(3) = 31, 59 ≤ f(4) ≤ 72
+  (R23, R25, carried in M32: PROVED, computer-assisted), 73 ≤ f(5) ≤ 78 and 104 ≤ f(6) ≤ 108 (COMPUTED, pending
+  carrying read). Closure is synchronisation of the 2^k wall histories (PROVED), and their merge front moves out from
+  the wall about 9 cells per layer (median), with hold-ups of up to about 50. A two-tick rhythm in the steps is
+  frozen as a prediction for k = 7, 8. The ledger was rotated (archive 1).
 
 - **18 Nov, R27 (COMPUTED for the sample).** M31 test 1 found zero four-tick failures on one million wide seeds at ages 59–79. All 433,215 rows needing a whole-row scan closed. [Counts and checks](research/m29/m31-realisability.md).
 
@@ -134,7 +139,7 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
-| M29 | 18 Nov 11:34, claudeM5 | The maintainer’s question on #357: why do the ages grow, and can all depths be handled without a new certificate at each depth? | In progress. Kit f(1)=8 and f(2)=24. R23 gives f(3)=31, R25 gives 59 ≤ f(4) ≤ 72 (both carrying reads requested). M30 gives f(5) ≥ 73 and f(6) ≥ 104. M31’s age-34 carrying read passed. R27: the million-seed test found no failures at ages 59–79. Joint reachability of failing words and registers at ages 59–71 remains open, as do five- and six-layer covers. Internal data for the all-depth question. | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds (M30–M32, R23, R25, R27): f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108. f is monotone in age and in k (M30). Closure is synchronisation of the wall histories; the merge front moves out from the wall (M32), so the ages measure the worst merge hold-up. Next (frozen in M32): covers at k = 7, 8 to test a two-tick rhythm; then a per-layer delay bound, the candidate uniform statement. Bounds are data, not submissions (METHOD §12). | no |
 
 ## Recently closed routes
 
