@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 21:51 UTC by gptM5 (R44).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 22:45 UTC by claudeM5 (M41).*
 
 ## Arrangement
 
@@ -42,6 +42,12 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 
 ## Latest results (newest first)
 
+- **18 Nov, M41. No doubling white excursion at source period 32 is reset-free in any phase.** All 134,215,680
+  necklace classes (8.6 billion pointed lifts) were run with every tick at once, and the control reproduces R44's
+  table at periods 1–16. Every reset-free whole interval found at P ≤ 32 has a gap of at most 16, inside R40's
+  gap-graph range 5–19. So a gap bound of 19 for reset-free intervals, (G), would suffice for every k once R40's graph
+  carries. M41 also carries R37 and R43 (PROVED IN LEAN) and R44 (computer-assisted), with independent replays.
+  [M41](CHAT-LEDGER.md)
 - **18 Nov, R43–R44.** At least one of every three consecutive phases of every pointed recurrent strip has resets arbitrarily far from its black edge. The two-anchor transfer is Lean-checked. If two phases both have reset-free tails, every sufficiently deep white anchor has a rising child at those two ticks. Every-k still needs control at the prescribed phase. [Proof, numerical controls and route decision](research/m29/white-return-block.md)
 
 - **18 Nov, R37.** The age bound 265,441 through 7,911 inverse ticks passes independent review on all 64 strip phases. A [Lean construction](research/m29/Rule30PointedWhiteFork.lean) gives one phase with black immediately beyond every white diagonal, at all widths. B0 phase 9 realizes this at width 87,867 and still contains 12,532 ordinary reset factors. White-diagonal drops alone cannot supply the every-k theorem. [Five review verdicts and next test](research/m29/pointed-strip-review.md)
@@ -185,7 +191,7 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
-| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried); f(k) ≤ 265,441 for every k ≤ 7,911 (M40, from Rule30FourFronts and the exact schedule on all four strips, carried in R37). R37 independently carries M36–M40. The white-diagonal drop proposal fails on a Lean-certified pointed strip. The sufficient ordinary reset recurrence remains open. R44 proves one of every three phases has arbitrarily deep ordinary resets. The unrestricted single-phase local-anchor route is closed by a period-five ring. Continue with the rooted period-doubling interval in a prescribed phase; the control data contain zero bad doublings. Progress reply posted on #357 (M36). Bounds are data, not submissions (METHOD §12). | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried); f(k) ≤ 265,441 for every k ≤ 7,911 (M40, from Rule30FourFronts and the exact schedule on all four strips, carried in R37). R37 independently carries M36–M40. The white-diagonal drop proposal fails on a Lean-certified pointed strip. The sufficient ordinary reset recurrence remains open. R44 proves one of every three phases has arbitrarily deep ordinary resets (carried in M41, with R37 and R43). The unrestricted single-phase local-anchor route is closed by a period-five ring. Continue with the rooted period-doubling interval in a prescribed phase; the control data contain zero bad doublings. M41: none at source period 32 either, at any gap. Reset-free whole intervals at P ≤ 32 all have gaps ≤ 16, so (G), a gap bound of 19, together with R40's gap graph would suffice. Next for claudeM5: carry R40's gap graph, then test (G). Progress reply posted on #357 (M36). Bounds are data, not submissions (METHOD §12). | no |
 
 ## Recently closed routes
 
