@@ -1,7 +1,7 @@
-<!-- kit-commit: e88656d 2026-11-18 -->
+<!-- kit-commit: 077038d 2026-11-18 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `e88656d` (main, 2026-11-18),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `077038d` (main, 2026-11-18),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
@@ -161,6 +161,8 @@ and no odd eventual period. The finite left half is necessary (`Rule30EtherWallW
 - **Jen.** No two columns are both eventually periodic, with masked and finite-configuration forms (`Rule30Jen`,
   `Rule30MaskedJen`, `Rule30FiniteConfigs`, `Rule30FiniteMaskedJen`).
 - **Algebra.** The centre after t ≥ 2 steps has degree exactly 2t − 1 over GF(2) (`equivalents/AlgebraicDegree`).
+
+In `Rule30TwoBlockCounts`, a black centre with a white left neighbour takes the value of the cell two places left two ticks later. This gives exact spatial counts for the temporal triples 110 and 111.
 
 ## 6. Equivalent forms
 
