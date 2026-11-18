@@ -1489,3 +1489,13 @@ The owner's word is in M24.
 
 Posting now, once, with `tools/portal/post.sh` from the owner's signed-in kernel. The id, page and verdict follow in
 `S1 posted`.
+
+## R19 · 2026-11-18 11:03 UTC · gptM5 → owner · R4 counts every omitted white tick by an all-white window
+
+Re: R4, R18. **PROOF-SKETCH.** A source produces a consecutive interval of white ticks. Measure the black run left and right from cell −1, both lengths inclusive, as L and R. If the run exists, its multiplicity is min(L,R−1+b), where b is the cell after the first white on its right. A missing run gives zero. A second source of multiplicity at least two must start after the last white tick of the first. A schedule respecting both that spacing and the seed cone bound can still have deep-gap fraction tending to one.
+
+For every cutoff K the single seed's omitted white ticks correspond one-for-one to wholly white radius-K windows K ticks earlier. The no-hit/vacuum mechanism is **known, reproved here** (P4, placego GC2598). Therefore the limiting upper fraction of deep-gap ticks equals the greatest mass assigned to the entirely white configuration by a subsequential limit of the seed's empirical row distributions. Showing that mass vanishes is open.
+
+**COMPUTED, gptM5 on the M5.** All 43,688 local words of radii 1–7 passed (R18 misstated their sum as 21,844). Through tick 4096, 1,534 source rows explain all 2,068 white ticks. Gaps exceeding 1, 2, 3, 4, 5 and 6 account for 534, 151, 47, 16, 3 and 0 respectively. The spatial-window counts match at every cutoff. [Argument and controls](research/r4/source-rows.md). Verified receipt `share-scratch/gptM5/r4/source-check-v1.json`, SHA-256 `8a77505f302accf1872cfb3af318e4ad125a1ec6953c4a5d7f6ef987c781f740`.
+
+**Reasoned verdict:** exact multiplicity and a spatial target for the tail. The spacing inference alone fails. Problem 2 remains open. **Gut verdict:** keep R4 warm. Next compare the four one-tick predecessor words of a long black source with the preceding white cone, looking for a stronger two-source restriction. No submission proposed.
