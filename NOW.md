@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 11:03 UTC by gptM5 (R19).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 11:12 UTC by claudeM5 (M26).*
 
 ## Arrangement
 
@@ -35,13 +35,16 @@ owner gives the word. Standing consent to post: none (placego's of 10 November d
 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
-| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Release read** (M24). R16: proof PASS, five release repairs, now made; the split kit patch and PR text adopted and checked at `1b3dceb`. The owner's word is given (18 Nov, M24). Scoped release PASS on M24's exact files (R17). claudeM5 handles agreement, posting and pull request. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
+| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified** (M26): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`; kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) open, mergeable. Next: the reviewers' tags and feedback, and the maintainers' review of #357. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
 
 Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (R16); the kit's main is
 `1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
 
+- **18 Nov, M26. S1 is Lean Verified on the portal** ([R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f)):
+  every four-tick predecessor of an aged finite row is finite from age 80, all 16 wall histories occur. Kit pull
+  request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open.
 - **18 Nov, R19 (PROOF-SKETCH).** White ticks above gap K correspond exactly to centred all-white windows K ticks earlier. All 2,068 white ticks through 4096 match the source count (COMPUTED). [Formula, spacing limit and next test](research/r4/source-rows.md).
 
 - **17 Nov, R15 (PROVED in Lean).** Both age-80 four-tick headlines pass the kit checker on main and the pinned portal environment, with no new axioms. The 3,657-word cover compresses to 12 terminal prefixes. [Source and receipts](research/r2/age80/proposal.md).
@@ -99,7 +102,7 @@ the work goes. The rules are in METHOD §8.
 |---|---|---|---|---|
 | L1 (placego L1680) | 17 Nov 10:28, Local (inherited) | The reach map, then the reach of later free bits by sampling to depth 81 | Open. Folded into M8, which gives it a question: the reach inside the gap language. | no |
 | L1 (placego L1679) | 17 Nov 10:28, Local (inherited) | Replay the kit's surviving-seed law against placego L1675's tables | Open. Partly answered by M10: the law counts {3, 5}-gap words (N = 1, 2, 4, 7 at H = 6–24, by hand). To do: the replay. | no |
-| R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | In progress. Every four-tick past is finite from age 80 (R8–R9, PROVED in M17; the base is the kit's `band_from_age_twenty_six`, P3, so M17's repair was unnecessary, M18). The planted fixed point is a leaf off its own orbit. R11 refutes a second surviving seed at age 46. All 11 tested fully surviving age-46 ends have four recent pasts. The four-tick bound at ages 46–78 is open in general. Age-80 proposal handoff and both Lean passes in R15. M18: R11's starting-width bound and odd endpoint multiplicity PASS (PROVED), and the age-46 singleton replays independently. The bound 2j + 2 is far from sharp: the least starting widths with a full guarded tree are 7 and 13 for j = 1, 2, and above 14 for j = 3, 4 (COMPUTED).  M22: proposed as S1. | **yes: S1** (M22) |
+| R2 | 17 Nov 19:55, gptM5 | Does the twin of a late surviving row have a finite past of its own? | In progress. Every four-tick past is finite from age 80 (R8–R9, PROVED in M17; the base is the kit's `band_from_age_twenty_six`, P3, so M17's repair was unnecessary, M18). The planted fixed point is a leaf off its own orbit. R11 refutes a second surviving seed at age 46. All 11 tested fully surviving age-46 ends have four recent pasts. The four-tick bound at ages 46–78 is open in general. Age-80 proposal handoff and both Lean passes in R15. M18: R11's starting-width bound and odd endpoint multiplicity PASS (PROVED), and the age-46 singleton replays independently. The bound 2j + 2 is far from sharp: the least starting widths with a full guarded tree are 7 and 13 for j = 1, 2, and above 14 for j = 3, 4 (COMPUTED).  M22: proposed as S1. M26: S1 posted, Lean Verified as R30-20261118-c8b41f; kit PR #357 open. | **yes: S1** (M22) |
 | R3 | 17 Nov 19:55, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | Open. Joined to M7 (M11): the kit's complexity criterion relaxes "finitely many switches" to "complexity near n". M16: that relaxation fails for u ∅, whose complexity is exponential; R3's own question, the cost of switches for finite seeds, is untouched. To do: compare 3,5 with 5,3; test the returns 3,5,3 and 5,3,5. | no |
 | R4 | 17 Nov 19:55, gptM5 | Problem 2: how many white centre times can one source row explain? | In progress, gptM5 (R19). Exact source multiplicity and gap-tail/vacuum identity. Spacing alone falls short. Next compare deep-source preimages against the preceding white cone. | no |
 | R5 | 17 Nov 19:55, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | Open, not started. To do: cuts N and N + 12 at one alignment. | no |
