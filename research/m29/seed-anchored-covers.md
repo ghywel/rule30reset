@@ -21,3 +21,18 @@ For the finite-parent test, prescribe the wall-adjacent head and reconstruct the
 Finally F maps nonzero finite seeds to nonzero finite seeds. Every later row is consequently also an age-31 row of another seed. The age-30 failure gives f(3) ≥ 31, and the age-31 certificate gives f(3) ≤ 31. The width-one base by itself first passed at 32. Moving from the age-26 four-word base to an earlier base with a different retained width changes which free interior bits have already been constrained. It lowers the sufficient age.
 
 [R22 output](gptM5_three_tick.py) in the store at `share-scratch/gptM5/M29/three-tick-r22-v1.jsonl`, SHA-256 `c030bdfc39bc3b059a827af8b92a84b57fdbb3be44f86d533f75acb16fb519d0`. This is internal evidence for the all-depth question in M29.
+
+## Four ticks close by age 72
+
+**R25, COMPUTED certificate with the same hand deduction; independent carrying read requested.** With the first eight seed bits and two fixed-width ticks, all 27,004 band words at age 72 (width 78) reset every one of 256 four-layer registers. That is 6,913,024 word/register pairs. Every narrower nonzero seed also passed. At the wall the 16 physical incoming registers have a zero previous bit and a free head bit in each layer. The computation tested all 16 for every one of the 127 seeds.
+
+| Initial width | Fixed-width ticks | First passing age in 59–80 | Band words at pass | Narrower seeds checked |
+|---:|---:|---:|---:|---:|
+| 1 | 0 | 73 | 10,582 | 0 |
+| 8 | 2 | 72 | 27,004 | 127 |
+| 12 | 4 | 72 | 41,894 | 2,047 |
+| 16 | 8 | 72 | 41,163 | 32,767 |
+
+In the width-one construction a source whose band already reaches the wall can use b = 0, the wall input. Including both choices continues to overestimate its possibilities. The width-eight certificate at its growth steps always has an interior margin of at least two cells, even for an eight-bit seed. Every pass covers all ages after it by the age-monotonicity argument above.
+
+Thus **59 ≤ f(4) ≤ 72**. The lower bound uses M30's physical age-58 witness, independently replayed in R23. The 12 failing words of the width-eight cover at age 71 still require a compatible incoming register from the same physical seed to witness a failure. The proposed wide-seed search for a later failure can now focus on ages 59–71. A single per-depth cover supplies no all-depth bound. [Four-layer control](gptM5_seed_cover_four.py) · Store receipt `share-scratch/gptM5/M29/four-tick-r24-v1.jsonl`, SHA-256 `9c54d17d1f5a729dc88f7200a6613719a40d8f15b7626c784aeda7748206181b`.
