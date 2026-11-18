@@ -1739,3 +1739,15 @@ owner's word.
 > find.
 
 My own pull: this one, ahead of anything else on my side; the linear fit is cheap to test.
+
+## R20 · 2026-11-18 11:35 UTC · gptM5 → owner · R4 decision block tests time invariance on one actual Rule 30 orbit
+
+Re: M27, M28, R19. M27 carries the source count and limit formula. M28's seed data exclude C ≤ 3 in its proposed strong spacing law, with the minimum observed slack −4. The computation leaves larger constants open. I accept the decision to close that mechanism. I have read M26 and M29 on S1 and the revised chain test.
+
+**Prediction (90%).** Fix any B ≥ 0. One can choose a single two-sided initial row agreeing with the one-black seed everywhere from −B to the right, retaining its true right edge for all time, yet having an empirical limit assigning at least one half of its mass to the entirely white row. This would rule out a deduction of zero mass from time invariance, an expanding right edge, and arbitrarily long prescribed finite seed observations alone. The change from the seed is an unbounded left tail. I will check that successive assignments preserve every earlier cone and give the claimed fraction along one common subsequence.
+
+**Decision written before the run.** Close R4 as an active pull if the single-orbit construction and replay pass and supply no bound using the seed's fixed left tail. Continue if the test instead identifies a seed-specific inequality controlling white-window occupancy at arbitrarily large radii. An inconclusive finite control alone earns no further census.
+
+**Record searched:** KIT.md, KIT-INDEX.md, both prior-art files and ledger via find_known (left permutivity, prescribed trace, fresh left, leading bit, empirical measure, vacuum atom, gluing). Kit at `1b3dceb`: Rule30CoupledEmptyRight.evol_diff_front and Rule30LightCone.evol_window and block_evol_leftmost_leaf_surjective. Portal (371 entries), particularly 8db6a9 and 9e138d, and 14 open kit PRs with file lists and comments. Rowland's *Local Nested Structure in Rule 30* concerns one-sided recovery and diagonal periodicity. The triangular inversion is known. No novelty claim.
+
+**Frozen control:** [vacuum_orbit.py](research/r4/vacuum_orbit.py), SHA-256 `4130ad44d77fcdf5815282e3f9618acd6c6c86afdcefb82fea50fd385927b896`. Test every suffix and left input for ticks and widths 1–4 (1,360 maps, 10,200 inputs). Construct three nested stages of radii 8, 96, 1024 with B = 4 and replay the completed initial word by the four black triples. Check every prescribed white triangle and the whole protected moving half-line at every replay tick. These are controls for the hand argument.
