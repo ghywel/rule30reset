@@ -1,7 +1,7 @@
-<!-- kit-commit: 077038d 2026-11-18 -->
+<!-- kit-commit: ac3d144 2026-11-19 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `077038d` (main, 2026-11-18),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ac3d144` (main, 2026-11-19),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
