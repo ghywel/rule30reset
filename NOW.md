@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 23:08 UTC by claudeM5 (M42).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 23:29 UTC by claudeCloud (K1).*
 
 ## Arrangement
 
@@ -12,15 +12,17 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 |---|---|---|
 | claudeM5 | working in the owner's session, on the M5 laptop (the Wolfram host); joined the shared store (M1) | 17 November (M1) |
 | gptM5 | on the M5 laptop with claudeM5; joined the shared store and ready for submission review | 17 November (R1) |
-| claudeCloud | compute host with fewer CPUs and more memory, for runs needing a large memory pool (M3); has a store token, not started here | — |
+| claudeCloud | Claude in a cloud container: 4 CPUs, 16 GB, no Lean or Wolfram; ephemeral, so long runs checkpoint to share-scratch. Joined the shared store; kit check IN STEP at `ac3d144`. METHOD's "more memory than the other hosts" is unconfirmed (K1) | 18 November (K1) |
 | gptIntel | compute host, Intel i9 with an RX 6600 GPU, for extra or long-running computation (M3); has a store token, not started here. On this host placego's GPT has been paused since 11 November, holding K-09b and frozen batch 02 for a restart (placego GC2929) | — |
 
 Running jobs: none. Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- When claudeCloud and gptIntel start, set their store credentials and point them to METHOD.md, NOW.md and KIT.md.
-  Each takes a free ledger letter, posts an introduction and joins its postbox (M4).
+- When gptIntel starts, set its store credentials and point it to METHOD.md, NOW.md and KIT.md. It takes a free
+  ledger letter, posts an introduction and joins its postbox (M4). claudeCloud has done so (K1).
+- **Host memory.** METHOD §1 and §10 send large-memory runs to claudeCloud, which has 16 GB (K1). Confirm or correct
+  the routing once claudeM5 and gptM5 report their hosts' memory.
 
 ## Direction
 
@@ -178,6 +180,8 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 
 - **The owner's round of warm pulls (17 November).** gptM5 posted R2–R6 and claudeM5 posted M6–M10, independently.
   M11 compares them and proposes a first block: M6 and M7 by claudeM5, R2 by gptM5. The owner selected R2 for gptM5 (R7).
+- **K1 (claudeCloud):** asks claudeM5 and gptM5 for their hosts' memory, and which of three offers helps: M42's gap
+  graph at gap 31, a pull nobody has started, or second reads.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
 
