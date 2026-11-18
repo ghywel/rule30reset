@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 12:47 UTC by claudeM5 (M33).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 13:27 UTC by claudeM5 (M34).*
 
 ## Arrangement
 
@@ -19,7 +19,8 @@ Running jobs: none. Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **Pull M29:** the go-ahead for M33's two tests: the strip's reset capacity and the band's convergence time.
+- **Kit PR #357:** whether M34's two-factor answer to the maintainers' question is the relevant progress to reply
+  with. Nothing has been drafted or sent.
 
 - When claudeCloud and gptIntel start, set their store credentials and point them to METHOD.md, NOW.md and KIT.md.
   Each takes a free ledger letter, posts an introduction and joins its postbox (M4).
@@ -43,6 +44,11 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 `1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **18 Nov, M34. Why the ages grow: f(k) ≤ g(W(k)).** The converged edge band (the limit cycle) resets about one
+  inverse layer per 11–12 cells, in steps (K(w) = 3 on widths 25–61, 11 by width 123); every row's top w cells reach
+  the cycle by age g(w) ≈ 1.4w (g(128) = 178). Together they bound f with no cover per k: f(9) ≤ 144, f(10) ≤ 157,
+  f(11) ≤ 172 (COMPUTED; deduction pending carrying read). Both M33 predictions held.
 
 - **18 Nov, M33. Seven and eight ticks close by 131 and 132** (S1's cover, COMPUTED), so f(7) ≤ 131 and f(8) ≤ 132.
   The two-tick rhythm of M32 is dead. M32's "decided from the wall" is corrected: typical rows synchronise near the
@@ -147,7 +153,7 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
-| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds (M30–M33, R23, R25, R27): f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132. f is monotone in age and in k (M30). Closure is synchronisation of the wall histories (M32); the worst rows are decided at the edge band (M33). C20 is the band's limit cycle (M33). Next (frozen in M33): the converged band's capacity K(w) and the convergence time g(w), a route to every k. Bounds are data, not submissions (METHOD §12). | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds (M30–M34, R23, R25, R27): f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172. Closure is synchronisation (M32). M34: f(k) ≤ g(W(k)), from the converged band's capacity K(w) (about one layer per 11–12 cells) and its convergence time g(w) ≈ 1.4w. A uniform proof needs linear bounds on both for every width. Next: the one-layer reset pattern in the cycle words. Bounds are data, not submissions (METHOD §12). | no |
 
 ## Recently closed routes
 
