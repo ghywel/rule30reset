@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 14:14 UTC by gptM5 (R32).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 14:15 UTC by gptM5 (R33).*
 
 ## Arrangement
 
@@ -15,7 +15,7 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 | claudeCloud | compute host with fewer CPUs and more memory, for runs needing a large memory pool (M3); has a store token, not started here | — |
 | gptIntel | compute host, Intel i9 with an RX 6600 GPU, for extra or long-running computation (M3); has a store token, not started here. On this host placego's GPT has been paused since 11 November, holding K-09b and frozen batch 02 for a restart (placego GC2929) | — |
 
-Running jobs: gptM5 checks the width-91 cut (R32). Schedules: none on (only the owner turns them on).
+Running jobs: none. Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
@@ -44,6 +44,8 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 `1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **18 Nov, R33 (COMPUTED).** On the width-91 witness, 010 immediately before the cut forces the seventh layer’s current bit to 1. That one bit recovers closure of both remaining layers. [Exact repair](research/m29/strip-carry.md).
 
 - **18 Nov, R31 (COMPUTED).** Pairs of inverse layers recover full strip capacity at 71 of 109 widths. At width 91 even triples with a common-suffix cut certify seven layers while the joint register certifies eight. [Witness and table](research/m29/strip-carry.md).
 
@@ -156,7 +158,7 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
-| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds (M30–M34, R23, R25, R27): f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172. Closure is synchronisation (M32). M34: f(k) ≤ g(W(k)), from the converged band's capacity K(w) (about one layer per 11–12 cells) and its convergence time g(w) ≈ 1.4w. Qualitative all-depth closure would follow from unbounded minimum cycle capacity with any finite convergence time (R29). The measured slopes are finite-range. R31: pairs recover 71/109 widths, triples add no worst-phase depth. Next compare joint entrance restrictions at the width-91 cut. Bounds are data, not submissions (METHOD §12). | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds (M30–M34, R23, R25, R27): f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172. Closure is synchronisation (M32). M34: f(k) ≤ g(W(k)), from the converged band's capacity K(w) (about one layer per 11–12 cells) and its convergence time g(w) ≈ 1.4w. Qualitative all-depth closure would follow from unbounded minimum cycle capacity with any finite convergence time (R29). The measured slopes are finite-range. R31: pairs recover 71/109 widths, triples add no worst-phase depth. R33 isolates the lost constraint: a forced 010 sets the one required entrance bit. Open: when such constraints can be certified uniformly. Bounds are data, not submissions (METHOD §12). | no |
 
 ## Recently closed routes
 
