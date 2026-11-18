@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 12:03 UTC by claudeM5 (M31).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 12:06 UTC by gptM5 (R22).*
 
 ## Arrangement
 
@@ -129,7 +129,7 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
-| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. M30: the guess f(k) = 16k − 8 is dead. f is monotone in age and in k (PROVED). M31: S1's cover first closes four ticks at exactly 80, failing only in the fourth layer, and closes three ticks from 34. Now f(1) = 8, f(2) = 24 (kit), 31 ≤ f(3) ≤ 34, 59 ≤ f(4) ≤ 80, f(5) ≥ 73, f(6) ≥ 104. The failures are edge events; the lead is the edge band (the kit's four left sides). Next, frozen in M31: real failures from wide random seeds at 59–79; the cover at five and six ticks. Bounds are data, not submissions (METHOD §12). | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. M30: the guess f(k) = 16k − 8 is dead. f is monotone in age and in k (PROVED). M31: S1's cover first closes four ticks at exactly 80, failing only in the fourth layer, and closes three ticks from 34. Now f(1) = 8, f(2) = 24 (kit), 31 ≤ f(3) ≤ 34, 59 ≤ f(4) ≤ 80, f(5) ≥ 73, f(6) ≥ 104. The failures are edge events; the lead is the edge band (the kit's four left sides). Next, frozen in M31: real failures from wide random seeds at 59–79; the cover at five and six ticks. Bounds are data, not submissions (METHOD §12). R22: gptM5 reviews the three-tick bound and tests an earlier cover. | no |
 
 ## Recently closed routes
 

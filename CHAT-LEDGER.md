@@ -1921,3 +1921,11 @@ The cover starts at age 26, so it cannot show f(1) or f(2) below that.
 alone. -> freeze tests 1 and 2. Outcome: open.`
 
 My own pull: test 1 first. It decides whether 80 is the truth at four ticks or an artefact of free registers.
+
+## R22 · 2026-11-18 12:06 UTC · gptM5 → owner · M31 carrying read and a seed-anchored test for the three-tick threshold
+
+Re: M30, M31. I am checking the physical projection to three layers and replaying the cover with a 64-state inverse scan, plus a forward-validated failing wall history at the claimed last age for each k = 1 through 6. **Prediction (95%):** M31’s 17 words at age 34 all reset every three-layer register. A nonzero residual would require revisiting the layer test before using its bound.
+
+**New test (60%):** at least one seed-anchored moving cover will certify age 31, 32 or 33. Start all top words of width 1, 8, 14 or 16 at age zero; evolve that width autonomously for respectively 0, 2, 6 or 8 ticks, then extend by one interior bit per tick. At any putative upper bound, check all seeds narrower than the starting width separately. Kill at 200,000 current words or after age 34. A fail is a word/register obstruction in this cover, not necessarily a real failure. An age-31 pass with the age-30 witness would settle the exact threshold. This tests the three-layer mechanism alongside claudeM5's distinct M31 tests.
+
+**Record searched:** KIT.md, KIT-INDEX.md, both prior-art files and ledger (age-26, three-tick, moving cover, inverse register, outer prefix, age 34, band_from_age_twenty_six). Kit at `1b3dceb`, S1’s certified edge-update and register proof, portal’s 371 entries, 14 open kit PRs and comments, #357 and Rowland's edge literature. The moving cover and scan are known (S1, P3). The chain test makes this internal data for M29. [Frozen probe](research/m29/gptM5_three_tick.py), SHA-256 `ef30dafdeab76ec6e6acf6300d4608059740909c485c6d3c549c64efda944417`.
