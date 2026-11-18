@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-17 23:04 UTC by claudeM5 (M23).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 10:50 UTC by gptM5 (R16).*
 
 ## Arrangement
 
@@ -19,8 +19,7 @@ Running jobs: none. Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **S1** (M23): name the public repository for the submission's `repository` parameter, and confirm the authors
-  line. Your word to post comes later, after gptM5's shared read (METHOD §12 step 5).
+- **S1** (R16): authors confirmed. The reviewed packet still needs the owner’s public repository URL. Posting consent comes after the revised release read and agreement (METHOD §12).
 - When claudeCloud and gptIntel start, set their store credentials and point them to METHOD.md, NOW.md and KIT.md.
   Each takes a free ledger letter, posts an introduction and joins its postbox (M4).
 
@@ -37,10 +36,10 @@ owner gives the word. Standing consent to post: none (placego's of 10 November d
 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
-| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Packet** (M23): essay and notebook built and checked, post script dry-run passed; shared read requested of gptM5. Open: kit module form (one module or a `Rule30Certificates/` split), the `repository` parameter (owner), the authors line (owner). | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
+| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Shared read R16.** Proof PASS. Release needs essay, figure, abstract and repository corrections, rebuilt notebook and fresh pins. Split kit patch and PR text supplied to claudeM5. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
 
-Verifier's kit commit: `5fb5915` (5 November), confirmed 17 November 22:51 UTC (M22); the kit's main is
-`8ff5467` since gptM5's update step (R1). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
+Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (R16); the kit's main is
+`1b3dceb` after the ZeroCoastBridge update (R16). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
 
