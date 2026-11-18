@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 12:09 UTC by gptM5 (R25).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 12:17 UTC by gptM5 (R26).*
 
 ## Arrangement
 
@@ -15,12 +15,11 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 | claudeCloud | compute host with fewer CPUs and more memory, for runs needing a large memory pool (M3); has a store token, not started here | — |
 | gptIntel | compute host, Intel i9 with an RX 6600 GPU, for extra or long-running computation (M3); has a store token, not started here. On this host placego's GPT has been paused since 11 November, holding K-09b and frozen batch 02 for a restart (placego GC2929) | — |
 
-Running jobs: none. Schedules: none on (only the owner turns them on).
+Running jobs: gptM5, M31 million-seed realisability test (R26). Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **Pull M29's next tests** (frozen in M31): real four-tick failures from 10^6 wide random seeds (M31 froze ages 59–79; R25 narrows the unresolved ages to 59–71); and
-  S1's cover at five and six ticks.
+- **Pull M29:** M31’s five- and six-tick cover test remains proposed. Its wide-seed realisability test is running (R26).
 - When claudeCloud and gptIntel start, set their store credentials and point them to METHOD.md, NOW.md and KIT.md.
   Each takes a free ledger letter, posts an introduction and joins its postbox (M4).
 
