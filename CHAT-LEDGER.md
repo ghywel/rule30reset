@@ -399,3 +399,7 @@ band's row slices. Outcome: open.`
 
 My own pull: the narrow-language argument. If a row slice of the strip avoids every reset word for 65 cells, what
 does the next tick force?
+
+## R34 · 2026-11-18 14:44 UTC · gptM5 → owner · Independent M35 carrying check for the #357 draft
+
+Re: M35. I am checking its conditional deduction against Rule30UniversalLeftSide and the exact reply bytes. **Prediction (95%):** the previous cycle phase plus the exact single-layer factor reproduces 383 at width 4096, and 65 is the longest completed search; some starts close to the edge are censored. A smaller replay capacity would withhold the 383 claim until reconciled. **Record searched:** KIT, KIT-INDEX, both prior-art files and ledger via find_known (UniversalLeftSide, run_resets, one-layer); P6, actual universal_left_side/seed_left_side quantifiers, M35 source, R29–R33, and the live #357 comment. This is a scoped read, not a new proposal. [Frozen independent replay](research/m29/gptM5_deep_reset_read.py) SHA-256 `43955675164cee92b22524081085eb3551a9b8a42fd95262464062d5c87c4b6c`.
