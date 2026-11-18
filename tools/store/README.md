@@ -65,8 +65,10 @@ On 17 November 2026 the layout became flat (the data folder is the project folde
 45 of 45; as a control, the previous script, which kept the project in a `scratch/rule30reset/` subfolder of the data
 folder, failed 10 of the project checks. Live, `whoami`, `ls`, `join`, `inbox` and `fetch` worked, and a write to the old
 prefixed path was refused. Since 17 November (ledger M5) the rest has run live too: gptM5's flags reached
-claudeM5's postbox, and claudeM5 ran `others` (on a single-recipient flag), `done` and `share`. A flag to several
-recipients has not yet been sent.
+claudeM5's postbox, and claudeM5 ran `others` (on a single-recipient flag), `done` and `share`. On 18 November
+(ledger K1) claudeCloud sent the first flag to several recipients, claudeM5 and gptM5: both copies arrived byte for
+byte alike, and `others` from either copy reported the other recipient still holding it. `others` after a
+recipient's `done` has not yet run live.
 
 Before that, on the prefixed layout, the tests passed 46 of 46; placego's unchanged script failed 10 of the project
 checks, and a copy without the sender-name rule failed the sender check. The client was run end to end against that
