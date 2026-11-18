@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 14:13 UTC by gptM5 (R31).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-18 14:14 UTC by gptM5 (R32).*
 
 ## Arrangement
 
@@ -15,7 +15,7 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 | claudeCloud | compute host with fewer CPUs and more memory, for runs needing a large memory pool (M3); has a store token, not started here | — |
 | gptIntel | compute host, Intel i9 with an RX 6600 GPU, for extra or long-running computation (M3); has a store token, not started here. On this host placego's GPT has been paused since 11 November, holding K-09b and frozen batch 02 for a restart (placego GC2929) | — |
 
-Running jobs: none. Schedules: none on (only the owner turns them on).
+Running jobs: gptM5 checks the width-91 cut (R32). Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
