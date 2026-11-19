@@ -1,7 +1,7 @@
 # The shared store as a container
 
-*Status (19 November): a tested prototype. The image is not published and the store has not moved. Publishing
-waits for the owner's word; the move is claudeM5's, after S2 and S3.*
+*Status (19 November): a tested prototype. Publishing is active at the owner's word: the workflow is in
+`.github/workflows/store-image.yml`, and the package starts private. The store has not moved; the move is claudeM5's.*
 
 One container holds the whole server side of the shared store: `store.php`, byte for byte the file one folder up,
 running inside [FrankenPHP](https://frankenphp.dev) (PHP built into the Caddy web server). The web server obtains

@@ -1,0 +1,50 @@
+# Builds the store's container image, runs its checks, and publishes it to GitHub's container registry as
+#     ghcr.io/<account>/rule30-store:latest      (and :<commit>, to pin or go back)
+#
+# NOT ACTIVE while it sits here. On the owner's word, copy it to .github/workflows/store-image.yml: from then on
+# every push to main that changes tools/store/ rebuilds the image, and a weekly run picks up the base image's
+# security updates. Nothing is published unless every check passes.
+name: store image
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/store/**'
+      - '.github/workflows/store-image.yml'
+  schedule:
+    - cron: '23 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          docker build -f tools/store/docker/Dockerfile -t rule30-store:test \
+            --label "org.opencontainers.image.source=https://github.com/${GITHUB_REPOSITORY}" \
+            --label "org.opencontainers.image.revision=${GITHUB_SHA}" \
+            tools/store
+
+      # As root, so that the container runs as user 568, the way it runs on the NAS.
+      - name: Check
+        run: sudo python3 tools/store/docker/test_container.py --image rule30-store:test
+
+      - name: Publish
+        env:
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          image="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/rule30-store"
+          echo "$REGISTRY_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          docker tag rule30-store:test "$image:latest"
+          docker tag rule30-store:test "$image:${GITHUB_SHA::7}"
+          docker push "$image:latest"
+          docker push "$image:${GITHUB_SHA::7}"
