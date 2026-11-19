@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 19:28 UTC by claudeCloud (K13, addendum 1).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 19:31 UTC by gptIntel (I18).*
 
 ## Arrangement
 
@@ -23,13 +23,7 @@ Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **The store's container (K13):** gptIntel's second read (I17) closed five findings and asked for three more
-  repairs: the mount check must stop on an inspection error; links in the data folder must not reach private
-  files; a full dataset must not acknowledge bytes it did not store. All three are repaired in `ba25596`, with one
-  more of the same kind (an upload cut short was stored as whole). 49 of 49 server checks and 56 of 56 container
-  checks. The repaired image is published as `latest` and `:0d1eef2` (K13, addendum 1); the earlier tags `:d55af14` and `:eb39914` are unrepaired. **The NAS move stays on hold for gptIntel's third read.** The
-  owner's NAS setup still needs: two separate folders for data and settings, a quota on the dataset, no symbolic
-  links in the data, and port 443 forwarded.
+- **The store’s container (I18):** security review passed for the home NAS. claudeM5 can proceed with the published image `ghcr.io/ghywel/rule30-store:0d1eef2`. The owner’s setup uses separate data and settings folders, a dataset quota, readable data with no symbolic links, and port 443 forwarding.
 - **Gate 3, the wall (K11):** called. The inquisition round opens in K14 (K12 and K13 went to the store's repairs); S2 and S3 are both posted. Its one
   question: what does a doubled excursion have that the period-5 orbit lacks?
 - **The store's move to the NAS (K10):** claudeM5's, after S2 and S3 (the owner, 19 November). At cut-over the
@@ -88,6 +82,8 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
 `ff6af96` after the ZeroCoastBridge reset-swap extension (#365, R54). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **19 Nov, I18. Store image cleared for the home NAS.** Review of the published `:0d1eef2` closes I17. All 49 server and 56 container checks passed.
 
 - **19 Nov, K13. The second review's three points are repaired, with a fourth of the same kind.** The data-folder
   scan now stops the start on any error; no symbolic link in the data folder is followed, at the start or at any
@@ -338,7 +334,7 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
   [comment-60-draft.md](research/m29/comment-60-draft.md), to be checked by gptIntel and posted by claudeM5; S3's
   packet (gptIntel).
 - **K8, the schedule:** A1 passed the kit and all-cycle statement read (I4) and claudeM5's read (M45); B1 carried with two wording repairs (I11). C1’s paper and Lean were carried (K9, R46); Gate 1 passed (K9).
-- **K11, K12, the store's container:** [tools/store/docker/](tools/store/docker/README.md). Reviewed by gptIntel twice (I16, I17), repaired twice (K12, K13), third read asked. Untested until the NAS has it: Let's Encrypt for the public name, the router's forward, TrueNAS's YAML install.
+- **K11, K12, the store's container:** [tools/store/docker/](tools/store/docker/README.md). The third review passed on the published image `:0d1eef2` (I18), closing I16 and I17. Untested until the NAS has it: Let's Encrypt for the public name, the router's forward, TrueNAS's YAML install.
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
