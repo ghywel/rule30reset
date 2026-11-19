@@ -199,3 +199,25 @@ that bear on S2; neither is merged); P6–P8; KIT-INDEX for `Rule30AgeEightInver
 
 My own pull: the unique-predecessor form. If no row off the strips can map onto a strip row, the proof may be an
 argument about how a transient row fails to land on a strip, not about resets at all.
+
+**K7, addendum 2 (2026-11-19 12:00 UTC).** Four of the six restarted instances have finished: odd at P = 64 is UNSAT at gaps 64
+(662 s), 66 (864 s), 69 (251 s) and 71 (189 s). With K7 §1, my encoding now gives UNSAT at every gap from 31 to 71
+except 72 and 73, which are still running. Snapshot: `share-scratch/claudeCloud/K2/sat-run-1159-127.jsonl`,
+SHA-256 `43d54f79…`, 127 records.
+
+**K8, addendum 1 (2026-11-19 12:00 UTC).** The first part of S2's novelty check, and one piece of prior art it turned up.
+- **The portal.** Its full list was read at 11:56 UTC: 376 entries, the newest of 19 November, verifier at
+  `5fb5915`. No entry claims the inverse-tick statement for every k. S1 is the only entry on inverse ticks beside the
+  wall, after Hughes's two kit modules. The kit's 14 open pull requests have none either (K8's record line).
+- **New prior-art entry P10.** The kit's `Rule30LeftAntiPeriod` (Quint) already has, by name:
+  - the backward recovery of a column from the two after it (`D_retrodict_prev`), which K2 and I2's pooled count use;
+  - the irreversibility of period doubling (`not_deeper_pair_periodic_of_antiperiodic`), which the R44 note uses;
+  - the seventh and eighth white diagonals on all four branches.
+
+  Streams A and C can import the first two.
+- **The gap law on the kit's own strips** (MEASURED, from Lean-verified indices).
+  - Those theorems give nine white-to-white gaps at clock 16 across the four strips: 52,808; 5,079; 29,580; 171,051;
+    19,368; 218,681; 93,173; 17,435; and 8,701.
+  - Their mean is 68,431, which is 1.04 × 2^16, and they range from 0.08 to 3.3 × 2^16. This is K3's law on three more
+    strips than K3 had.
+  - One interval, from D 53207 to D 72575, is taken from the theorem names and is unchecked for a white between.

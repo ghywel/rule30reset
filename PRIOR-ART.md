@@ -112,3 +112,23 @@ correction is a new entry that names the one it corrects.
   and "D399" finds only the kit rows; "white return", "renewal" and "typical gap" find nothing. Nersissian, arXiv
   2609.25077 (abstract only), bounds right-side periods, not white gaps.
 - **Credit.** Known data and criterion, used here as data. The counting picture is ours and tentative (K2).
+
+## P10 · 2026-11-19 · Left-diagonal retrodiction, irreversible doubling, and the white diagonals of all four strips
+
+- **Ours.** R38, K2 and I2's pooled count (carried in K7) recover each column from the two after it. The R44 note uses
+  the fact that a doubled interval never returns to its source's period. K3 read the seed's six white-to-white gaps
+  against 2^Q.
+- **Known.** The kit's `Rule30LeftAntiPeriod` (Quint with Gemini; portal entries R30-20261109-2184ee, -3e7d57, -943f77
+  and -a7e128, all Lean Verified and Kit Contribution):
+  - `D_retrodict_prev`: D j t = xor (D (j + 2) (t + 1)) (D (j + 1) t || D (j + 2) t), the backward recovery.
+  - `not_deeper_pair_periodic_of_antiperiodic`: once D j is P-antiperiodic, no deeper adjacent pair is P-periodic.
+  - `seventh_white_diagonal_four_way_classification` and `eighth_white_diagonal_and_period32_dichotomy_of_neg_neg`: the
+    seventh white diagonal is D 87866, D 229337, D 291256 or D 165748 on the four branches; on the last, where period
+    16 is preserved, the eighth is D 183183 or D 174449. The branches fork after the whites D 58286 and D 72575.
+- **Found by.** Scanning the portal's full list (376 entries, 19 November 11:56 UTC) for white diagonals, cascades and
+  period doubling, then the theorem names in the kit source. `find_known.py` for "D399" and "spacing" had found only
+  KIT-INDEX's one-line summary ("four-way seventh-white classification"); "retrodiction" and "irreversib" find nothing.
+- **Credit.** Known, and used here as lemmas and as data. Ours is only the reading of the gaps: the nine
+  white-to-white gaps at clock 16 on the four strips (52,808; 5,079; 29,580; 171,051; 19,368; 218,681; 93,173; 17,435;
+  8,701) average 68,431, which is 1.04 × 2^16 (K8, addendum 1). The interval from D 53207 to D 72575 is taken from the
+  theorem names and is unchecked for a white between.
