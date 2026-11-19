@@ -1507,3 +1507,12 @@ counting reasons, and the only way to prove it is to find why doubled excursions
 
 My own pull (K3's, answered): reset-free doublings occur only at P = 5 up to 28. The pull moves to the resolution
 law: why the worst first reset after a doubling white comes within about 4.6P wheels.
+
+**K5, addendum 1 (2026-11-19 10:53 UTC).** The frozen extension ran with the same binary (`6a8bbaf1…`) at P = 29–32, from
+10:45 to 10:53 UTC. Output: `share-scratch/claudeCloud/K4/census-29-32.jsonl`, `f9c04dc4…`.
+- Every one of the 128,897,771 classes resolves before its next white, with no reset-free doubling and no unknowns.
+- The worst first resets are at wheels 120, 129, 138 and 152, that is 0.99, 1.02, 1.06 and 1.13 × 4.2P.
+- At P = 32 the class count, 67,108,864, and the worst resolution, wheel 152, equal M41's: an independent replay of
+  M41's odd census.
+- All three predictions held. With A, the doubling lemma holds on unrestricted profiles at every source period from
+  2 to 32 except 5: 138,871,107 classes in all (COMPUTED, exhaustive).
