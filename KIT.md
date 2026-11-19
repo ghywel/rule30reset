@@ -1,13 +1,13 @@
-<!-- kit-commit: ac3d144 2026-11-19 -->
+<!-- kit-commit: a8072e7 2026-11-19 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ac3d144` (main, 2026-11-19),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `a8072e7` (main, 2026-11-19),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 270 modules under `lean/` (40 of them certificate data) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 273 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 364 entries on 16 November
 (361 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
@@ -52,7 +52,7 @@ graph TD
   BWH["BWH ⇔ RW ⇔ exact-width death bounds"] --> Q01
   Q01["Q01 ⇔ every natural Y reaches an even number under G ⇔ no Theta f is finite ⇔ mortality ⇔ repeat budget ⇔ QP 2 ⇔ UBEAt 2"]
   Q01 --> SEP["SEP ⇔ QN ⇔ LR1 ⇔ constant-tail separator ⇔ orbit separator"]
-  Q01 --> Q01Gap["Q01Gap ⇔ MassDiverges ⇔ FiniteSeedsTerminate ⇔ all reachable odd ground resets crash"]
+  Q01 --> Q01Gap["Q01Gap ⇔ MassDiverges ⇔ FiniteSeedsTerminate ⇔ all reachable odd ground resets crash ⇔ stepwise active-weight gain"]
   SEP --> Q01Gap
   Q01Gap --> Q01GW["Q01GapWords ⇔ Q01TwoWords"]
   Q01GW --> Q01GC["Q01GapCore ⇔ Q01TwoCore ⇔ TwoCoreThetaUnbounded"]
@@ -79,7 +79,7 @@ graph TD
 - `Rule30GateTrap`: Q01 ⇒ Q01Gap ⇒ CQ01Empty (black cells of u ∅ come 3 or 5 double steps apart after step 146).
   `Rule30GateTrapWords`, `Rule30GateTrapLift`: Q01Gap ⇒ Q01GapWords ⇒ Q01GapCore ⇒ CQ01Empty; the gap words 333, 3353,
   3533, 3553, 5533 and 3535353 are excluded after trap entry. `Rule30ZeroCoastBridge`: MassDiverges ⇔ Q01Gap, and the seeds surviving the gap language to horizon H number N(H)
-  with N(H + 10) = N(H + 4) + N(H) exactly. Q01Gap is also equivalent to eventual termination of the forced zero-bit continuation from every surviving prefix (`q01Gap_and_massDiverges_iff_survivingSeeds_void_crash`); it suffices to check macro-step termination at every reachable odd-horizon age-zero reset (`q01Gap_and_massDiverges_iff_reset_iterVoidMacro_crash`). Equivalently, survivor popcount bounds the horizon (`massDiverges_and_q01Gap_iff_survivingSeeds_konig`).
+  with N(H + 10) = N(H + 4) + N(H) exactly. Q01Gap is also equivalent to eventual termination of the forced zero-bit continuation from every surviving prefix (`q01Gap_and_massDiverges_iff_survivingSeeds_void_crash`); it suffices to check macro-step termination at every reachable odd-horizon age-zero reset (`q01Gap_and_massDiverges_iff_reset_iterVoidMacro_crash`). Equivalently, survivor popcount bounds the horizon (`massDiverges_and_q01Gap_iff_survivingSeeds_konig`), or from every horizon some finite step raises every survivor's active weight by at least one (`q01Gap_and_massDiverges_iff_stepwise_wtH_increment`); one uniform crash lookahead would prove Q01Gap (`void_schedule_telescoping_weight_bound_and_q01Gap_iff`).
 - `Rule30PeriodTwoWidth13`: under an alternating centre the left trace lies in GE2; Q01 ⇒ NoSeedGE2 ⇒ no period 2;
   RD ∧ Q01Gap ⇒ CQ01. `Rule30ZeroCoastBridge` embeds the gap language in GE2, so NoSeedGE2 ⇒ MassDiverges ⇔ Q01Gap. `Rule30PeriodTwoMass`: Conjecture S ⇒ no period 2, sharp at 86. `Rule30PeriodTwoLadder`: the mean
   ladder law is an exact fair-coin count; geometric ladder bounds ⇒ NoSeed p01. `Rule30PeriodTwoNoFloor`: no uniform
@@ -144,7 +144,8 @@ and no odd eventual period. The finite left half is necessary (`Rule30EtherWallW
 - **The zero-boundary left half.** Q01 for every start of width ≤ 52, death by tick 96 (`Rule30ZeroBoundaryWidth52`);
   stripe-prefix families die (`Rule30ZeroBoundaryStripe*`); every nonzero finite row contains a reset word within
   three ticks (`Rule30ResetFreeThree`); predecessors of aged finite rows are finite (`Rule30AgeEightInverse`,
-  `Rule30AgeTwentyFourInverse`); late twins (`Rule30LateTwins`); from check 2 on, two of any three consecutive first checks
+  `Rule30AgeTwentyFourInverse`); late twins (`Rule30LateTwins`); swapping the first six- and ten-tick wall returns
+  keeps finite width and every row from tick 11 (`Rule30ResetSwap`); from check 2 on, two of any three consecutive first checks
   pass a share of rows in [1/40, 39/40], and check n has degree n or n − 1 (`Rule30FirstChecks`, `Rule30FirstCheckDegree`).
 - **Gap-language survivors.** If seed y survives to horizon 2m, the number Z of zeros in its trace at times
   0, 2, …, 2m−2 satisfies m ≤ 5Z and 3Z ≤ m+2. The canonical seed count N(H) is nondecreasing and
