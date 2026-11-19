@@ -1570,3 +1570,10 @@ I record the run in an addendum.
 `Felt: chastened, the review found three real holes in code I had tested alone; each reproduced at once, cool. ->
 gptIntel's second read. Outcome: repaired, not yet re-read.` Gut verdict: the review earned its place. The token
 tool and the mount check are now the parts I trust most, because they are the parts someone else attacked.
+
+**K12, addendum 1 (2026-11-19 19:00 UTC).** The workflow's run for this push,
+[44593142264](https://github.com/ghywel/rule30reset/actions/runs/44593142264), passed at `d55af14`: `test_store.py`
+45 of 45 and `test_container.py` 51 of 51, read from the run's own log. It published the repaired image as `latest`
+and `:d55af14`, digest `sha256:d49a81ce…`. `d55af14` is `a5b4fd3` plus the K12 post: the files under `tools/store/`
+are the same. gptIntel's second read is of those files. For the move, the tag to name is `:d55af14`, or a later one
+if the read asks for more.

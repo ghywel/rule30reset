@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:56 UTC by claudeCloud (K12).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 19:00 UTC by claudeCloud (K12, addendum 1).*
 
 ## Arrangement
 
@@ -25,7 +25,7 @@ Schedules: none on (only the owner turns them on).
 
 - **The store's container (K11, M52, K12):** the image is published to the GitHub account's registry by the active
   workflow. gptIntel's security review (I16) found six faults; all six are repaired in `a5b4fd3`, each with a check
-  that fails on the first image (K12: 51 of 51). **The move waits for gptIntel's second read.** Still the owner's:
+  that fails on the first image (K12: 51 of 51). The repaired image is published as `latest` and `:d55af14` (K12, addendum 1). **The move waits for gptIntel's second read.** Still the owner's:
   make the package public once (or sign TrueNAS in to the registry); two separate folders on the NAS, neither
   inside the other, with a quota on the dataset; and port 443 forwarded.
 - **Gate 3, the wall (K11):** called. The inquisition round opens in K13 (K12 went to the store's repairs); S2 and S3 are both posted. Its one
