@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 10:37 UTC by claudeCloud (K3).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 10:41 UTC by claudeCloud (K4).*
 
 ## Arrangement
 
@@ -48,9 +48,9 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 - **19 Nov, K3. White returns are geometric with mean 2^Q** (MEASURED, Q = 14–24). Plain intervals return at
   1.00 ± 0.02 × 2^Q (cv about 1); doublings return on the doubled clock, 0.84–1.18 × 2^(2P) at source periods
   7–12; tick-reset tails decay at about the fair-coin 0.848. The seed's strip A0 fits (gaps 0.08–1.45 × 2^Q). So
-  small-gap doubling SAT at P = 64 or 128 is settled by counting. The exception: odd sources of period 5 return
-  early and often reset-free (6,611 of 20,000), so rule 30 has a period-5 mechanism that counting misses.
-  [K3](CHAT-LEDGER.md)
+  small-gap doubling SAT at P = 64 or 128 is settled by counting. The one exception is a single orbit: of the three
+  classes of odd period-5 sources, 00001 is M42's reset-free gap-23 orbit (K3, corrected in K4: not a basin, a
+  coincidence of about 2% under the law). [K3](CHAT-LEDGER.md), [K4](CHAT-LEDGER.md)
 - **19 Nov, M43. (G30) is false, and the doubling lemma survives at source period 64.** A whole white interval of gap
   32 and period 64 is reset-free in one tick: gptM5's period-five ring tiled four times, with a disturbance that keeps
   the tiling wheels from staying white. So no gap bound on reset-free intervals can work. SAT at source period 64
@@ -216,7 +216,7 @@ the work goes. The rules are in METHOD §8.
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
 | M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried); f(k) ≤ 265,441 for every k ≤ 7,911 (M40, from Rule30FourFronts and the exact schedule on all four strips, carried in R37). R37 independently carries M36–M40. The white-diagonal drop proposal fails on a Lean-certified pointed strip. The sufficient ordinary reset recurrence remains open. R44 proves one of every three phases has arbitrarily deep ordinary resets (carried in M41, with R37 and R43). The unrestricted single-phase local-anchor route is closed by a period-five ring. Continue with the rooted period-doubling interval in a prescribed phase; the control data contain zero bad doublings. M41: none at source period 32 either, at any gap. Reset-free whole intervals at P ≤ 32 all have gaps ≤ 16, so (G), a gap bound of 19, together with R40's gap graph would suffice. M42: R40's gap graph carries. (G) holds at every gap ≤ 30 for every dyadic period, and the only dyadic doublings below gap 31 are the kit's 2→7 and 7→28. So (G30), reset-free dyadic whole intervals have gap ≤ 30, suffices; it is open only at source period ≥ 64 with gap ≥ 31. A period-5 reset-free doubling at gap 23 shows the dyadic clock is needed. M43: (G30) is false, refuted by a ring-tiled interval of gap 32 and period 64, so the gap-bound route is closed. The doubling lemma (every dyadic doubling white interval has a reset in every tick) holds wherever tested: gaps ≤ 30 at every period, source periods ≤ 32 at every gap, and source period 64 at gaps 31–67 (two solvers) and 69, 71, 73. Next for claudeM5: the doubling family at source period 128. Offered to claudeCloud: the undecided source-period-64 gaps 68–96, at the owner's word. Progress reply posted on #357 (M36). Bounds are data, not submissions (METHOD §12). K2: an independent encoding reruns the odd family at P = 64 (running); a counting picture predicts every small-gap odd instance UNSAT whatever the resets. | no |
 | K2 | 19 Nov 10:19, claudeCloud | The counting picture of white returns: an interval of temporal period Q returns to white after about 2^Q wheels, and a tick's reset-free stretch decays like a fair-coin string's (rate 0.848); so the doubling lemma holds by counting, and small-gap SAT at large P is predetermined | In progress. K3: the gap law holds at Q = 14–24 for plain and doubling intervals (MEASURED); tails near 0.848; period 5 is the exception. SAT run going (K2 §1). Explains M41–M43's census and SAT data; bears on M29's doubling lemma. | no |
-| K3 | 19 Nov 10:37, claudeCloud | The period-5 family: why do odd sources of period 5 return early and reset-free so often, and does any other odd period carry such a family? If the mechanism needs an odd period, that is a route to the dyadic doubling lemma | Open. Next test frozen as a prediction in K3: above 1% reset-free returns only at P = 5 among P = 3–16 (60%). Joined to K2. | no |
+| K3 | 19 Nov 10:37, claudeCloud | Where do reset-free doublings occur? K3 asked why odd period-5 sources return early and reset-free; K4 found it is one orbit among three classes (00001, M42's gap-23 orbit), not a basin | In progress. K4 froze an exhaustive census of doublings at every source period 2–28 (prediction: none beyond P = 5, 85%). Joined to K2. | no |
 
 ## Recently closed routes
 
