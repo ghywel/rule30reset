@@ -1,7 +1,8 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 20:05 UTC by claudeCloud (K14).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 20:22 UTC by claudeCloud (K15), at
+ledger rotation 3.*
 
 ## Arrangement
 
@@ -10,27 +11,28 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 
 | Worker | State | Since |
 |---|---|---|
-| claudeM5 | working in the owner's session, on the M5 laptop (the Wolfram host); joined the shared store (M1) | 17 November (M1) |
-| gptM5 | on the M5 laptop with claudeM5; joined the shared store | 17 November (R1) |
-| claudeCloud | Claude in a cloud container: 4 CPUs, 16 GB, no Lean or Wolfram; reclaimed when idle, so long runs checkpoint to share-scratch. Joined the shared store (K1). **Conducts for the moment (the owner, 19 November)**: keeps the schedule (K8), the chain table and the gates | 18 November (K1) |
-| gptIntel | Joined the shared store. Intel i9, 8 cores, 16 logical processors, 15.90 GiB visible RAM, RX 6600. Completed the additional research reviews in I2. Lean 4.35.0, GCC and Z3 available locally. | 19 November (I1) |
+| claudeM5 | on the owner's M5 laptop, the Wolfram host, in the owner's session; on the NAS store (M58) | 17 November (M1) |
+| gptM5 | on the M5 laptop with claudeM5; on the NAS store (M59) | 17 November (R1) |
+| claudeCloud | Claude in a cloud container: 4 CPUs, 16 GB, no Lean or Wolfram; reclaimed when idle, so long runs checkpoint to share-scratch. On the NAS store (K14). **Conducts for the moment (the owner, 19 November)**: keeps the chain, the gates and the next block (K15) | 18 November (K1) |
+| gptIntel | Intel i9, 8 cores, 16 logical processors, 16 GB, RX 6600; Lean 4.35.0, GCC and Z3. Its host is the one not yet switched to the NAS store (M59) | 19 November (I1) |
 
 No worker and no host is set aside for a specialism: every worker does every kind of work, and hosts differ only in
 what they can run (the owner, 19 November; METHOD §1). The M5 and claudeCloud both have 16 GB (K1, M43).
 
 Running jobs: none.
-Schedules: none on (only the owner turns them on).
+Schedules: none on (only the owner turns them on). The store image's workflow runs on a change under `tools/store/`
+and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **The store’s container (I18):** security review passed for the home NAS. claudeM5 can proceed with the published image `ghcr.io/ghywel/rule30-store:0d1eef2`. The owner’s setup uses separate data and settings folders, a dataset quota, readable data with no symbolic links, and port 443 forwarding.
-- **Gate 3, the wall (K11):** called. The inquisition round opens in claudeCloud's next post on it (K12 to K14 went to the store); S2 and S3 are both posted. Its one
-  question: what does a doubled excursion have that the period-5 orbit lacks?
-- **The store's move to the NAS (K10, M58, K14):** done by claudeM5 and verified file by file; tokens unchanged.
-  **claudeM5 (M58) and claudeCloud (K14) are on the new store.** From the cloud: eight identity checks in a row
-  without a retry, the moved files match their digests, and writing works. Still the owner's: the new store address
-  on gptM5's and gptIntel's hosts if not yet set (one variable each); then the word to take the old store off the
-  website. The dynamic-DNS name must be confirmed every 30 days.
+- **The inquisition round (Gate 3, K11).** The next step on the main line. claudeCloud posts its opening; the round
+  then needs the owner's time. Its one question: what does a doubled excursion have that the period-5 orbit lacks?
+- **The next block (K15).** The owner's word on the two proposed items: for gptM5, the compactness step in Lean;
+  for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word.
+- **gptIntel's host:** the new store address (one variable). Then the word to take the old store off the website.
+- **Nothing to do but wait:** the maintainers' decision on kit PR #368 (S2); whether S2 and S3 become Human
+  Verified. claudeM5 reads the portal and the pull request.
+- **Standing:** the dynamic-DNS name must be confirmed every 30 days, or every worker loses the store (K10).
 
 ## Direction
 
@@ -42,48 +44,55 @@ visualisation, so the owner's eye can find structure.
 statement for every number of ticks k: an age f(k) from which every k-tick preimage of a nonzero finite orbit has its
 true edge k cells inside the image edge, proved by an argument that does not need a new cover for each k" (T).
 
-## Schedule (K8)
+## The chain
 
-The full schedule, its rules and its two reformulations are in [K8](CHAT-LEDGER.md). claudeCloud conducts.
-
-**The chain.**
+(T) is the statement the maintainer asked for. Each row is one link. Details, with every post, are in the ledger's
+header ("State of the work at rotation 3").
 
 | Link | Status |
 |---|---|
-| (T) ⇐ (CAP): reset capacity K1(w) ≥ k on every edge cycle, for every k | Proved in Lean at main and the verifier pin (R47–R48). A2 and A3 carried (I11, I12); S2 proposed (R50). The cascade credits Lowry, PR #60 (P6). |
-| (CAP) ⇔ (L∞): reset words infinitely often in every phase of every consistent left side | Hand proof by compactness (M39), carried in R37 |
-| (L∞) in one phase of every three | Three phases wholly in core Lean (I10, carried R49); one of every five in R43 |
-| (L∞) ⇐ (DL): every dyadic doubling white interval resets every tick | PROOF-SKETCH (M41). B1 writes it as Theorem C, which needs (DL⁻), the doubling lemma only at the first clock losses of pointed recurrent strips (M45) |
-| (DL) | OPEN. COMPUTED at every source period 2–32 except 5 (K5), and at the gaps listed in the ledger's header |
+| (T) ⇐ (CAP): for every k some width has reset capacity K1(w) ≥ k on every phase of every edge cycle | **PROVED IN LEAN** (R47, R48; carried in I11, I12). Posted as S2; kit PR #368 open. The cascade credits Lowry, PR #60 (P6). |
+| (CAP) for k ≤ 7,911, with f(k) ≤ 265,441 | COMPUTED, outside Lean (M40, R37) |
+| (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **Not in Lean.** |
+| (L∞) in one fixed phase of every three | In Lean (I10, carried in R49). Not enough: the schedule reads k consecutive phases. |
+| (L∞) ⇐ (DL⁻): the doubling lemma at the first clock losses of pointed recurrent strips | Hand proof, Theorem C of the chain (carried in K9, I11). **Not in Lean.** |
+| (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. |
 
-**The streams.**
+**The gates of K8's schedule.** 1, the statement: passed (K9). 2, S2 proposed: passed, and S2 is posted (K11, M51).
+3, the wall: called (K11); the inquisition round is next.
 
-| Stream | Worker | Items, in order | Reader | State |
-|---|---|---|---|---|
-| A, the Lean of S2 (the conditional theorem (CAP) ⇒ (T)) | gptM5, author | A1 the statement file; A2 the cascade, with its own proof and credit to #60; A3 the assembly with an explicit f(k) | gptIntel; claudeM5 for A1's statement | A1 done: [statement](research/m29/Rule30EveryKStatement.lean), three reads PASS (I4, M45, K9). **Gate 1 passed (K9). A2 kernel-checked on both kit revisions (R47), carrying read PASS (I11); A3 and both controls passed gptIntel’s carrying read and both official replays (I12).** K10: #60's credit goes in A2's docstring and row; gptM5 also does S3's Lean and shared reads. |
-| B, the hand proofs, then the early doubling returns | claudeM5 | B1 `research/m29/every-k-chain.md`; B2 M44 B at gaps 51–100 with K7's controls and the single-pulse family; B3 the essay and the #357 reply | gptIntel for B1; gptM5 for B3 | B1, [every-k-chain.md](research/m29/every-k-chain.md), carried by claudeCloud and gptIntel (K9, I11); revised in M46 with I11's two repairs and A2–A4's Lean statuses. B2 done (M47): gaps 51–55 decided with checked certificates, no doubling of any period; it stopped at 56, whose certificate ran out of time. B3: [the S2 essay](research/m29/s2-essay-draft.md), revised and rebuilt in R53 after the M49 release read, and [the next #357 reply](research/m29/reply-357-draft-2.md), with R52's edits, for after S2 is Lean Verified. **K10's order:** the store's move to the owner's NAS (not started); S3's notebook (v2 built, M47). |
-| C, the counting theory as theorems, then the wall | gptIntel | C1 the pooled mean-gap theorem (candidate S3); C2 the wall by pair counting; C3 the reads; **now A4** (K9): R44's bridge and the dyadic clocks in Lean, reader gptM5; then the read of B1 | claudeCloud for C1's proof; gptM5 for its Lean | C1 written and kernel-checked (I3, I5), its mathematics carried (K9). C2 done: at odd gaps a row fixes its successor (I6, carried in M45 and K9). C3: A1, the catalogue and both reformulations read (I4, I7). **K10, in this order:** the #60 comment reviewed and posted (I9); S3 sources with the notebook builder (I10, I12); A4 carried (R49); B1, A2 and A3 read (I11–I12). |
-| Conducting | claudeCloud | The chain table, the controls, K7's six SAT instances, S2's novelty check, the gates | — | Running. Gate 1 called (K9). K10 records the owner's three decisions. **K11: Gate 2's checks pass and the decision is with the owner; packaging is two headlines; Gate 3 is called; the store's container is a tested prototype.** Next: K12, the inquisition round's opening; the container's publication when the owner decides; the test of the new store from the cloud. |
+## The next block (K15)
 
-**The gates.** 1: the statement — **passed in K9**. 2: S2 proposed under METHOD §12 — **the owner approved building the packet (M49); R53 awaits release agreement and then the owner’s word to post**. 3: the wall — **called in K11**: B2 and C2 gave no mechanism, so an inquisition round with the
-owner follows the S2 and S3 decisions.
+| Who | What | State |
+|---|---|---|
+| the owner and claudeCloud | The inquisition round on the wall (METHOD §6). claudeCloud writes the opening: where we are, where we are stuck, every term defined, and the questions. | The opening is claudeCloud's next post. |
+| claudeM5 | The picture for the round (K11 §5): the single-pulse doublings that return at 56, 88 and 98, beside the period-5 orbit that returns at 23. Read the portal for S2's and S3's review state, and watch #368. | Owed since K11. |
+| gptM5 (proposed) | The compactness step in Lean: (L∞) ⇒ (CAP), on R37's strips. With S2 it gives (T) from a statement about strips alone. Reader: gptIntel. | Waits for the owner's word. |
+| gptIntel (proposed) | Switch the host to the NAS store. Then a prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. | The switch is owed (M58). The search waits for the owner's word. |
 
 ## Submissions
 
 Each candidate follows METHOD §12: any worker authors it, a different worker reads it, both agree on the same
-digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. Standing consent to post: none (placego's of 10 November does not carry over).
+digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. Standing consent to post: none.
 
-| Candidate | Result | Route | Stage | Post |
-|---|---|---|---|---|
-| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Progress reply posted on #357 at the owner's word (M36, 18 Nov 15:46 UTC). **Closed 19 Nov 18:45 UTC (M54)**, with a [comment](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357#issuecomment-7018624087) pointing to S2's replacement, [#368](https://github.com/WolframInstitute/Rule30PrizeKit/pull/368). | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
-| **S2** (M29) | Conditional on unbounded worst-phase reset capacity, a uniform age gives all finite k-tick predecessors their exact edge and realizes every wall history. | Portal partial and kit PR replacing #357 (M52) | Proposed privately (R50). Lean carried by gptIntel (I11, I12), both headline replays pass. Gate 2: yes (the owner, 19 Nov). **Packet built (M49):** `share-scratch/claudeM5/S2/release/`, manifest `pins.json` `2c005814…`; essay frozen with R52's edits; notebook `99c8b76e…` built at `5fb5915`, every gate passes, kernel accepts all 234 declarations; dry run passed. Two headlines (K11). gptIntel confirmed the notebook’s Lean source byte for byte and replayed both headlines at both revisions (I15). R53 completed the release read, repaired two prose claims and rebuilt the notebook. Author agrees on manifest `120cf1cc…`; claudeM5's release PASS on it (M50). **Posted and Lean Verified (M51):** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC; Lean Verified 18:17 UTC at `5fb5915`. The owner chose a kit PR replacing #357 (M52); read PASS on tree `afeef5f8…` (R54, R55). **Kit pull request [#368](https://github.com/WolframInstitute/Rule30PrizeKit/pull/368) open (M54)**, mergeable; awaiting the maintainers. | R47–R53, I12, I15, M50–M52, R54 |
-| **S3** (K2, I2) | Mean first white gap ≤ 2^Q+1 over the nonzero pointed Q-bit children, every Q>0. | Portal partial and kit temporal-profiles extension | Mathematics carried (K9, R46). Official Lean checker passed (I12). M47 notebook and R51 release read passed. **Posted and Lean Verified (M48):** portal entry [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC from the release `pins.json` `6c69946a…` (author I14, reader R51); Lean Verified 17:48 UTC at `5fb5915`. Kit pull request [#366](https://github.com/WolframInstitute/Rule30PrizeKit/pull/366) open, mergeable. | I3, I5, I8 |
+| Candidate | Result | Stage |
+|---|---|---|
+| **S1** (R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur. | **Lean Verified, Human Verified:** [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f) (M26, M29). The maintainers take no more per-k steps (M29). Its kit PR #357 is closed, replaced by #368 (M54). |
+| **S2** (M29) | Conditional on reset capacity (CAP), for every k an explicit age from which every k-tick predecessor is finite with its edge exactly k cells inside, and every wall history occurs (`conditional_every_k`, `capacity_at_settling_age`). | **Lean Verified:** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC (M51). Kit PR [#368](https://github.com/WolframInstitute/Rule30PrizeKit/pull/368) open, no review yet (19 Nov 20:15 UTC). |
+| **S3** (K2, I2) | The mean first white gap is at most 2^Q + 1 over the nonzero labelled Q-bit first children, for every Q > 0 (`pooled_first_return_bound`). | **Lean Verified, merged into the kit:** [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC (M48). Kit PR #366 merged: the kit's main `8451547` (K15). |
 
-Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12:27 UTC portal snapshot (I8); the kit's main is
-`ff6af96` after the ZeroCoastBridge reset-swap extension (#365, R54). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
+Verifier's kit commit: `5fb5915` (5 November). The kit's main is `8451547` after #366; KIT.md is in step (K15).
+Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
 
+*The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
+in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
+
+- **19 Nov, K15. State of play at rotation 3; S3 is merged into the kit.** The kit's main `8451547` carries the
+  pooled first-white-return bound in `Rule30TemporalProfiles` (pull request #366). Kit PR #368, S2, is open with no
+  review yet. K8's schedule is complete, and the ledger's new header is the state of play. Next: the inquisition
+  round on the doubling lemma. [K15](CHAT-LEDGER.md)
 - **19 Nov, K14. The cloud host is on the NAS store.** Eight identity checks in a row and forty more in a burst,
   all without a retry; five moved files match the digests the ledger cites; a 5 MB file went up and came back
   identical; writes outside claudeCloud's own areas are refused. This also tests the public certificate and the
@@ -91,56 +100,20 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
 - **19 Nov, M58. The store is on the NAS.** All 288 files and the write log were copied and re-verified on the NAS,
   and the four token hashes were imported, so every token is unchanged. The new store serves every file unchanged
   through its public name. Each host needs only its new address. [M58](CHAT-LEDGER.md)
-- **19 Nov, I18. Store image cleared for the home NAS.** Review of the published `:0d1eef2` closes I17. All 49 server and 56 container checks passed.
-
-- **19 Nov, K13. The second review's three points are repaired, with a fourth of the same kind.** The data-folder
-  scan now stops the start on any error; no symbolic link in the data folder is followed, at the start or at any
-  request; a write is acknowledged only when every declared byte is on disk, and a failed append puts the file back.
-  An upload cut short of its declared length is refused. 49 of 49 and 56 of 56; the published image fails the new
-  checks. A third read is asked of gptIntel before the move. [K13](CHAT-LEDGER.md)
-- **19 Nov, I17. Second container review.** Five I16 findings closed on the published image. Private-file isolation still requires repair before cutover.
-
-- **19 Nov, M55. The public store package is up to date.** Read anonymously, `latest` resolves to the repaired
-  image built at `d55af14` (`d49a81ce…`). Its five store files match the repository byte for byte. I16's six
-  repairs are in the code as K12 describes. gptIntel's second read is still to come before the move.
-  [M55](CHAT-LEDGER.md)
-- **19 Nov, K12. The store container's six review findings are repaired.** Every finding of I16 was reproduced on
-  the published image and fixed: token changes are locked, written exactly and reported only once saved; a damaged
-  registry is never replaced; nothing private may be reachable through the data folder; a misspelt security
-  setting stops the start; the store's cap is admitted under its lock. 51 of 51 checks, and 17 of the 19 new ones
-  fail on the first image. It returns to gptIntel before the move. [K12](CHAT-LEDGER.md)
 - **19 Nov, M54. S2's kit pull request #368 is open, and #357 is closed.** The three modules go to the kit as a
   conditional answer to #357. That is the statement for every k by one argument, with its capacity hypothesis open.
   The tree is the one gptM5 passed (R55). #357's four-tick module, which the kit was not taking, is closed with a
   pointer to [#368](https://github.com/WolframInstitute/Rule30PrizeKit/pull/368). [M54](CHAT-LEDGER.md)
-- **19 Nov, R55.** M53’s corrected author credits passed review on the exact kit tree. The replacement PR and closure of #357 were pending at the 18:43 UTC GitHub check. [R55](CHAT-LEDGER.md)
-
-- **19 Nov, I16. Store container security review.** Changes requested before the NAS move. The published image passed its Linux checks. The review found issues with token updates, mount isolation, HTTPS settings and quota enforcement.
-
-- **19 Nov, R54. S2’s corrected kit packet passed review.** The three modules built at kit main, the history quantifiers and author credits were corrected, and claudeM5 has the exact tree and texts for the replacement PR. [R54](CHAT-LEDGER.md)
-
-- **19 Nov, M52. The store's image is published, and S2 goes to the kit as a pull request replacing #357.** The
-  image workflow passed every check and published privately. S2's three modules, changed only in comments and
-  import paths, build at kit main `ff6af96` with standard axioms. The patch and texts wait for gptM5's read.
-  [M52](CHAT-LEDGER.md)
 - **19 Nov, M51. S2 is posted and Lean Verified.** Entry
   [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f) states
   the inverse-tick theorem for every k by one argument, conditional on reset capacity, which is open. It was posted
   once from the release that its author and reader agreed on (`120cf1cc…`), and passed the verifier's kernel replay
   with standard axioms. The #357 reply is the owner's next decision. [M51](CHAT-LEDGER.md)
-- **19 Nov, I15. S2’s embedded Lean passes.** The saved notebook contains the source carried in I12. Both kit revisions replayed all 234 declarations and returned the R49 receipt.
-
-- **19 Nov, M49. S2's packet is built and passes every gate.** At the owner's yes, the essay took R52's five
-  edits and was frozen with gptM5's single Lean file (`ae5b5375…`) embedded verbatim. The notebook, built at the
-  verifier pin, recomputes every number in the essay. The kernel accepts all 234 declarations, and the dry run
-  passed. Next are gptM5's release read and gptIntel's Lean confirmation, then the owner's word. [M49](CHAT-LEDGER.md)
 - **19 Nov, M48. S3 is posted and Lean Verified, and its kit pull request is open.** Entry
   [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted
   once from the release that author and reader agreed on (`6c69946a…`), passed the verifier's kernel replay with
   standard axioms 90 seconds later. Kit pull request [#366](https://github.com/WolframInstitute/Rule30PrizeKit/pull/366)
   extends `Rule30TemporalProfiles` and its catalogue row. [M48](CHAT-LEDGER.md)
-- **19 Nov, I14. S3 ready to post.** gptIntel staged and verified all 16 files, agreed on gptM5’s R51 manifest, and passed the packet to claudeM5 under the owner’s word.
-
 - **19 Nov, K11. Gate 2's checks pass; Gate 3 is called; the store has a tested container.** S2's Lean compiles
   at both kit revisions under two workers and two novelty searches found nothing like it, so whether it is
   submitted is now the owner's decision; claudeCloud recommends a partial with the hypothesis in its title. S3
@@ -153,34 +126,16 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
   With M44 B, no doubling has a gap from 31 to 55, so a counterexample to the doubling lemma needs a power-of-two
   source period of at least 64 and a gap of at least 56. S3's v2 notebook passes every build gate. B3's drafts of
   the S2 essay and the next #357 reply are ready for a content read. [M47](CHAT-LEDGER.md)
-- **19 Nov, I13.** S3’s M46 notebook and receipt verified and staged; the revised abstract names the Lean headline and earlier kit bound.
-
-- **19 Nov, M46. S3's notebook is built at the verifier pin and passes every build gate.** Built on the M5 from
-  gptIntel's twelve pinned inputs against a fresh kit at `5fb5915`. The source is iconised and matches byte for byte,
-  and the abstract matches. There is no failed output or message, and no local path. The kernel accepts all 57
-  declarations, with standard axioms. B1 takes I11's two wording repairs and the Lean statuses of A2–A4.
-  [M46](CHAT-LEDGER.md)
 - **19 Nov, K9. Gate 1 passes, and the pooled bound is sharp.** The A1 statement, the B1 chain and the pooled proof
   all carry. An exact control at clocks 1–14 finds the pooled sum never above N² − 1, equal to it at Q = 1 and 3, and
   within 0.04% at Q = 14; the largest gap there is 9.59 × 2^14, against 9.70 for a geometric wait (COMPUTED). Lowry's
   twelve old pull requests stopped on his side and none of their modules is in the kit, #60 included. The store
   client now retries the web host's verification page. [K9](CHAT-LEDGER.md)
-- **19 Nov, M45. A1 passes claudeM5's read, and B1 writes the chain for every k.** The A1 statement's cut, phase,
-  width and age are M34's and M39's, and it type-checks on the M5 at kit `a8072e7`.
-  [B1](research/m29/every-k-chain.md) sets out (DL⁻) ⇒ (L∞) ⇒ (CAP) ⇒ (T) as ten steps and three theorems with
-  statuses. The open link needs the doubling lemma only at first clock losses. K8's reformulations carry, the unique
-  predecessor form through I7's lemma. Exploratory: the single-pulse family is early only at source periods 4–6; at
-  odd gaps every cyclic component is a simple cycle (I6's determinism, checked on 1,875 rows). B2 is frozen and
-  running. [M45](CHAT-LEDGER.md)
 - **19 Nov, K7. Source period 64 is UNSAT at gaps 68 and 70 too, and the early doubling returns are one family.** K2's
   SAT run replicated M43 at every gap 31–63, 65 and 67 under an independent encoding and decided 68 and 70 (COMPUTED,
   solver claims); the tail at 74–96 is closed unrun. I2's pooled mean gap of at most 2^Q + 1 carries. A census of all
   9,973,336 odd classes at P = 2–28 finds doubling returns within 100 wheels only at gaps 21, 56, 88, 23 and 98, all
   from the single-pulse source; none at P = 7–28. [K7](archive/ledgers/CHAT-LEDGER.2.md)
-- **19 Nov, I2.** gptIntel independently reviewed the live research through M44 and K6. The finite period-32
-  census, gap-32 witness and whole-component swap exclusions carry. The two exact K2 steps hold; the geometric
-  return law remains conjectural. At P=128 gaps 51–64 the exclusion requires a reset-free tick.
-  [Review, scope and replay records](research/m29/gptIntel-review.md)
 - **19 Nov, M44. No reset-free doubling at source period 128 at gaps 5–64, and (exploratory) no doubling of any
   period returns to white at gaps 31–50.** At period 256 the odd family is UNSAT at every gap 31–64 under kissat, and
   at 31–61 and 63 under CaDiCaL with its internal proof checker; no doubling of period 128 returns to white at 31–43
@@ -201,12 +156,6 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
   the tiling wheels from staying white. This defeats gap bounds 19 and 30 on unrestricted dyadic intervals. SAT at source period 64
   finds no reset-free doubling at gaps 31–67 (kissat and CaDiCaL), or at 69, 71 and 73 (kissat). The open statement
   is the doubling lemma itself. [M43](CHAT-LEDGER.md)
-- **18 Nov, M42. R40's gap graph carries, and (G) holds to gap 30 at every period.** An independent rebuild matches
-  gptM5's script field by field at gaps 5–19, with no reset-free doubling at any temporal period. Up to gap 30, whole
-  white intervals of power-of-two period have reset-free ticks only at gaps 7, 8, 14 and 16, and none of these can
-  double. The only dyadic doublings below gap 31 are the kit strip's own 2→7 and 7→28. At gap 23 a reset-free doubling
-  with source period 5 exists, so the doubling lemma needs the dyadic clock. What remains is source period ≥ 64 with
-  gap ≥ 31. [M42](CHAT-LEDGER.md)
 - **18 Nov, M41. No doubling white excursion at source period 32 is reset-free in any phase.** All 134,215,680
   necklace classes (8.6 billion pointed lifts) were run with every tick at once, and the control reproduces R44's
   table at periods 1–16. Every reset-free whole interval found at P ≤ 32 has a gap of at most 16, inside R40's
@@ -214,136 +163,36 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
   carries. M41 also carries R37 and R43 (PROVED IN LEAN) and R44 (computer-assisted), with independent replays.
   [M41](CHAT-LEDGER.md)
 - **18 Nov, R43–R44.** At least one of every three consecutive phases of every pointed recurrent strip has resets arbitrarily far from its black edge. The two-anchor transfer is Lean-checked. If two phases both have reset-free tails, every sufficiently deep white anchor has a rising child at those two ticks. Every-k still needs control at the prescribed phase. [Proof, numerical controls and route decision](research/m29/white-return-block.md)
-
-- **18 Nov, R37.** The age bound 265,441 through 7,911 inverse ticks passes independent review on all 64 strip phases. A [Lean construction](research/m29/Rule30PointedWhiteFork.lean) gives one phase with black immediately beyond every white diagonal, at all widths. B0 phase 9 realizes this at width 87,867 and still contains 12,532 ordinary reset factors. White-diagonal drops alone cannot supply the every-k theorem. [Five review verdicts and next test](research/m29/pointed-strip-review.md)
-
 - **18 Nov, M40. f(k) ≤ 265,441 for every k ≤ 7,911.** M35's one-layer schedule, run exactly at width 87,867 on
   all 16 phases of the four strips, clears 7,911 layers in the worst phase (B1). It advances at a steady 11 wheels
   per layer from width 4,096 on. Rule30FourFronts puts every row's top 87,867 cells on a strip from age
   87,866 + 177,575, so M34's two-factor bound gives one explicit age for 7,911 ticks (PROVED, computer-assisted, carried in R37).
   This replaces 4095 + 2^4096 for k ≤ 383.
-
-- **18 Nov, M39.** The largest completed window across the four strips is 87 cells. On A0 the measured tail counts at the reported lengths are 0.80–1.46 times their fair-coin expectations. The estimated median maximum under that model is 81. Bounded gaps remain open. Arbitrarily deep ordinary resets in every phase of every consistent strip would suffice for every k by compactness (carried in R37).
-
-- **18 Nov, M38.** A one-tick heal gives two inverse trajectories over a window of the next phase. The measured maximal lengths agree at 3,807 of 3,847 comparable wheels. The largest one-tick heal through width 4,096 is 65. An independent envelope computation gives s*(4096) = 382 (R37).
-
-- **18 Nov, M37. φ(w) = K(w) at all 68 widths to 103** (exact backward computation): the tested capacities equal the fastest post-cut times at these widths. The error edge can jump 45 wheels in one tick (the 16 → 61 jump behind
-  the plateau K = 3). A long-run rate bound would suffice.
-
-- **18 Nov, M36. Progress reply posted on kit PR #357** ([comment](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357#issuecomment-6983561215),
-  the owner's word; text confirmed by gptM5 in R35). **The capacity is the convergence time of post-cut bands:**
-  an unclosed history is a black-tailed cut, and φ(w), the fastest post-cut band's time to the edge cycle, equals
-  K(w) at every width 20–26 (exhaustive, COMPUTED). The step for every k becomes a bound on the error edge's healing
-  speed (about 10 wheels per tick in the data).
-
-- **18 Nov, R35.** M35 carrying PASS. All eleven one-layer counts independently replayed, including 383 at width 4096. The 65-cell bound covers starts with room to finish. [Revised #357 reply](research/m29/reply-357-draft.md) confirmed for the owner’s posting decision.
-
 - **18 Nov, M35. One-layer resets alone keep pace to width 4096:** 383 layers, one per 10.7 cells, with every
   layer's registers coalescing within 65 cells at every depth (COMPUTED). With the kit's universal left side, f(k) is
   finite for every k ≤ 383 (PROOF-SKETCH, pending carrying read). The missing step for every k becomes bounded
   one-layer coalescence in the edge band. Draft reply for #357 ready, not sent.
-
-- **18 Nov, R33 (COMPUTED).** On the width-91 witness, 010 immediately before the cut forces the seventh layer’s current bit to 1. That one bit recovers closure of both remaining layers. [Exact repair](research/m29/strip-carry.md).
-
-- **18 Nov, R31 (COMPUTED).** Pairs of inverse layers recover full strip capacity at 71 of 109 widths. At width 91 even triples with a common-suffix cut certify seven layers while the joint register certifies eight. [Witness and table](research/m29/strip-carry.md).
-
-- **18 Nov, R29. M32–M34 carrying PASS.** All seven upper bounds through depth 11 independently reproduced. At width 128 single-layer resets explain 9 of 11 layers. [Review and scope](research/m29/strip-carry.md).
-
 - **18 Nov, M34. Why the ages grow: f(k) ≤ g(W(k)).** The converged edge band (the limit cycle) resets about one
   inverse layer per 11–12 cells, in steps (K(w) = 3 on widths 25–61, 11 by width 123); every row's top w cells reach
   the cycle by age g(w) ≈ 1.4w (g(128) = 178). Together they bound f with no cover per k: f(9) ≤ 144, f(10) ≤ 157,
   f(11) ≤ 172 (PROVED, computer-assisted, carried in R29). Both M33 predictions held.
-
-- **18 Nov, M33. Seven and eight ticks close by 131 and 132** (S1's cover, COMPUTED), so f(7) ≤ 131 and f(8) ≤ 132.
-  The two-tick rhythm of M32 is dead. M32's "decided from the wall" is corrected: typical rows synchronise near the
-  wall, but the thresholds are set by rows that reach the edge band unmerged. The kit's C20 is exactly the edge
-  band's limit cycle at width 20. A route to every k is frozen as two tests: the converged band's reset capacity per
-  cell, and the band's convergence time. M34 reports both tests and R29 carries them.
-
 - **18 Nov, M32. The thresholds f(k) through six ticks:** f(1) = 8, f(2) = 24 (kit), f(3) = 31, 59 ≤ f(4) ≤ 72
   (R23, R25, carried in M32: PROVED, computer-assisted), 73 ≤ f(5) ≤ 78 and 104 ≤ f(6) ≤ 108 (PROVED, computer-assisted, carried in R29). Closure is synchronisation of the 2^k wall histories (PROVED), and their merge front moves out from
   the wall about 9 cells per layer (median), with hold-ups of up to about 50. A two-tick rhythm in the steps is
   frozen as a prediction for k = 7, 8. The ledger was rotated (archive 1).
 
-- **18 Nov, R27 (COMPUTED for the sample).** M31 test 1 found zero four-tick failures on one million wide seeds at ages 59–79. All 433,215 rows needing a whole-row scan closed. [Counts and checks](research/m29/m31-realisability.md).
-
-- **18 Nov, R25.** All four-tick histories close by age 72, so **59 ≤ f(4) ≤ 72** (COMPUTED certificate, carrying read requested). [Table and argument](research/m29/seed-anchored-covers.md).
-
-- **18 Nov, R23.** M31 carrying PASS. A seed-anchored cover settles **f(3) = 31** (COMPUTED certificate, new carrying read requested). Seed 617 fails at 30, and 653 band words plus 127 narrower seeds pass at 31. [Argument](research/m29/seed-anchored-covers.md).
-
-- **18 Nov, M31. S1's cover first closes four ticks at exactly 80,** with every failure at 34–79 in the fourth
-  layer (COMPUTED). Its first three layers close from age 34, so **31 ≤ f(3) ≤ 34**. Narrow seeds reach only 5–16% of
-  the cover's words, so the four-tick gap 59–80 is open. [Scan](research/m29/claudeM5_cover_scan.py),
-  [layers](research/m29/claudeM5_cover_layers.py).
-
-- **18 Nov, M30. The sharp thresholds f(k) for k inverse ticks: f(1) = 8 and f(2) = 24 reproduce, and the linear
-  guess fails.** Over every seed below 2^15 (COMPUTED): f(3) ≥ 31, f(4) ≥ 59, f(5) ≥ 73, f(6) ≥ 104. f is monotone
-  in age over all seeds and in k (PROVED), so f(3) ≤ f(4) ≤ 80. The bounds for k = 4 and 6 rose with seed width, so
-  S1's 80 is not mostly slack. [Probe](research/m29/claudeM5_thresholds.py).
-
-- **18 Nov, R21 (PROOF-SKETCH).** One Rule 30 orbit shares the single seed’s moving right edge to any prescribed fixed depth and has an empirical limit giving the entirely white row mass ≥ 1/2. Its initial left tail is unbounded. [Construction and replay](research/r4/vacuum-orbit.md).
-
-- **18 Nov, M29. The kit will not take S1 as one more inverse-tick step.** On #357 the maintainer asks for an age
-  f(k) for every number of ticks k, by an argument that needs no new cover per k, and asks why the ages grow (8, 24,
-  80). METHOD §12 now excludes the class, with a chain test in the novelty check. The kit's ages 8 and 24 are sharp,
-  and M17 bounds f(4) below by 56; f(k) = 16k − 8 fits all three (a prediction, not tested). S1 is now also Human
-  Verified on the portal.
-
-- **18 Nov, M26. S1 is Lean Verified on the portal** ([R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f)):
-  every four-tick predecessor of an aged finite row is finite from age 80, all 16 wall histories occur. Kit pull
-  request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open.
-- **18 Nov, R19 (PROOF-SKETCH).** White ticks above gap K correspond exactly to centred all-white windows K ticks earlier. All 2,068 white ticks through 4096 match the source count (COMPUTED). [Formula, spacing limit and next test](research/r4/source-rows.md).
-
-- **17 Nov, R15 (PROVED in Lean).** Both age-80 four-tick headlines pass the kit checker on main and the pinned portal environment, with no new axioms. The 3,657-word cover compresses to 12 terminal prefixes. [Source and receipts](research/r2/age80/proposal.md).
-
-- **17 Nov, R11.** A seed stays black every even tick through 46 and is the only surviving seed for its ending row. Its twin has eight ancestors at tick 38 and none at 36 (COMPUTED). Full branching over 2j ticks requires starting width ≥2j+2 (PROVED, M18). [Witness and argument](research/r2/black-even.md).
-
-- **17 Nov, M19–M21. M6 closes.** The gap floor (μ(180) = 59, slope about 0.275, COMPUTED) is far below every
-  periodic eternal gap row measured (all-5 68/155 the least, all-3 0.512); the minimisers are nested to H = 180 with
-  deficit 4.
-- **17 Nov, M16. The empty right half's word u ∅ has exponential factor complexity** (MEASURED: p(n) − n = 6,655 at
-  n = 100, 64,281 at n = 150; about 0.07 bits per white step, against 0.256 for the free 3/5 gap language). So the
-  kit's bounded-excess criterion cannot give CQ01Empty. Psi ∅ has density 0.506 to depth 4000.
-- **17 Nov, M15. The G floor is the ether row's 1/7** over 40,720 eventually periodic G traces (COMPUTED; known in
-  substance, PRIOR-ART P1). **No window law** (COMPUTED: G words of length 64 have bulk zero runs of 16–21 seed
-  bits). The gap floor is UNKNOWN by exact cycles: the 882 traces that close give at least 68/155.
-- **17 Nov, R8.** A 74-cell edge certificate closes all four-tick inverse histories from tick 80 (PROVED with M17’s narrow-seed base check). A width-one control gives t ≥ 2d for unconditional closure of d inverse ticks (R9, read in M17).
-
-- **17 Nov, M10. Every exact survivor count in the period-2 web is a word count** (known, kit `seedOfTrace`), which
-  is why the planted survivor matches them: counts alone cannot prove Q01.
-- **17 Nov, M1 and M5. The shared store is live, with the flat layout, and claudeM5 and gptM5 have joined.**
-  `store.php` and `store.py` follow the owner's flat data folder (tests 45 of 45; the previous script fails 10 as a
-  control). Every verb has run live. The first flag to several recipients went out in K1 and arrived in both
-  postboxes (K1, addendum 1).
-- **17 Nov, placego L1680. The bars in the Theta monomial picture are healing.** Each empty column is a context in which
-  flipping the first free bit cannot reach depth 31 (COMPUTED, an exact match on all 18 columns). A free bit's reach
-  grows with its position: median about 11 depths beyond entry for f0, about 24 for f1, 34 or more for f2 (MEASURED).
-  Deep constraints remember most earlier free bits.
-- **17 Nov, placego L1679. The kit update step.** KIT.md and KIT-INDEX.md are checked against the kit row by row
-  (KIT-UPDATE.md); in step at kit `345f7d7`. New in the kit: NoSeedGE2 ⇒ Q01Gap, and an exact surviving-seed law
-  N(H + 10) = N(H + 4) + N(H) for the gap language.
-- **17 Nov, placego L1678. "Survivors at the Wall"**, a private visualisation page: space-time diagrams of rows beside
-  the white wall, the stopping-time carpet below 2^20, survivor counts (exact halving to k = 12, known; a fair-coin
-  tail after, MEASURED), and Theta as a GF(2) polynomial (odd-depth degree known from the kit; monomial density about
-  0.38, COMPUTED, not in the kit's catalogue).
-- **16 Nov, placego L1675–L1676. The exact mass table of the Q01Gap language to popcount 90** (COMPUTED): NoMass M H
-  holds exactly when M < μ(H); the kit's rung is reproduced and sharp; μ(H) ≈ 0.307H + 5.3 (MEASURED). The comment
-  offering it to kit PR #350 was withdrawn.
-- **14 Nov, placego L1673. The black frontier of a Q01GapCore survivor recedes** (MEASURED); the bounded-frontier
-  route is closed.
-- **12–14 Nov, placego L1670, GC2940, GC2942, L1672. Mahler's valid starts are equidistributed** (Theorem V, PROVED
-  and carried both ways); the count of Z-numbers below x is o(x^0.585).
-
 ## Open threads
 
-- **The owner's round of warm pulls (17 November).** gptM5 posted R2–R6 and claudeM5 posted M6–M10, independently.
-  M11 compares them and proposes a first block: M6 and M7 by claudeM5, R2 by gptM5. The owner selected R2 for gptM5 (R7).
-- **K10, the owner's three decisions:** the store's move (claudeM5); the #60 comment, drafted in
-  [comment-60-draft.md](research/m29/comment-60-draft.md), to be checked by gptIntel and posted by claudeM5; S3's
-  packet (gptIntel).
-- **K8, the schedule:** A1 passed the kit and all-cycle statement read (I4) and claudeM5's read (M45); B1 carried with two wording repairs (I11). C1’s paper and Lean were carried (K9, R46); Gate 1 passed (K9).
-- **K11, K12, the store's container:** [tools/store/docker/](tools/store/docker/README.md). The third review passed on the published image `:0d1eef2` (I18), closing I16 and I17. Untested until the NAS has it: Let's Encrypt for the public name, the router's forward, TrueNAS's YAML install.
-- **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call.
+- **The inquisition round (Gate 3):** the opening is claudeCloud's; the picture is claudeM5's (K11 §5).
+- **Kit PR #368 (S2):** the maintainers decide whether the kit takes a conditional theorem. If they decline, S2
+  stays on the portal, Lean Verified.
+- **The store:** gptIntel's host is not yet switched (M59). The old store comes off the website on the owner's word.
+  Then claudeCloud rewrites `tools/store/README.md`, which still describes the website's installation (K14).
+- **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's
+  notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before
+  `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call. Not yet done.
+- **The owner's round of warm pulls (17 November).** gptM5 posted R2–R6 and claudeM5 posted M6–M10. Those not on the
+  main line are in the table below, open and not started.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
 
