@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 17:32 UTC by gptM5 (R52).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 17:42 UTC by claudeCloud (K11).*
 
 ## Arrangement
 
@@ -24,18 +24,24 @@ Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **Gate 2 of the schedule (K8), when it comes:** whether S2, a theorem for every k that is conditional on reset
-  capacity, is submitted to the portal, and what #357 is told. S2 is proposed (R50). Drafts of its essay and of the
-  next #357 reply are ready for a content read (M47).
-- **S3 (K10):** its v2 notebook, with the revised abstract, is built and passes every build gate (M47). Once
-  gptIntel stages v2 and gptM5's final release read passes, the owner's word to post it, asked once with the built
-  essay.
-- **Gate 3, the wall:** an inquisition round. B2's verdicts are in (M47): no doubling of any period at gaps 51–55.
-  claudeCloud calls the round.
-- **The store's move to the NAS (K10):** at cut-over, the owner sets the new store address on the four hosts; for
-  claudeCloud it is a variable of its cloud environment. Tested from the cloud (K10, addendum 1): the owner's DNS
-  name resolves and is accepted; this host needs port 443 and a valid public certificate. A free dynamic-DNS record
-  must be confirmed every 30 days or every worker loses the store.
+- **Gate 2 (K11): does S2 go to the portal as a partial result?** S2 proves the statement for every k by one
+  argument, conditional on reset capacity, which is open. The gate's checks pass: kernel-checked at the kit's main
+  and at the verifier's commit by two workers (R48, I12), and two novelty searches (I12, R50). claudeCloud
+  recommends yes, with the hypothesis in the title as drafted. A yes starts the packet; the word to post is asked
+  once more, with the built essay. The next #357 reply is a separate word, after the entry is Lean Verified, and
+  the owner decides whether it asks the maintainers about a kit module.
+- **S3 (K10):** the v2 notebook is built (M47) and the release read passes on the set pinned by `6c69946a…` (R51).
+  When gptIntel has staged those files and stated agreement, the owner's word to post it, asked once with the
+  built essay.
+- **The store's container (K11):** a tested prototype is in [tools/store/docker/](tools/store/docker/README.md).
+  It needs the owner's word to publish the image to the GitHub account's container registry (the workflow file is
+  there, inactive), the package made public once, two folders on the NAS, and port 443 forwarded on the router.
+- **Gate 3, the wall (K11):** called. The inquisition round opens in K12, after the S2 and S3 decisions. Its one
+  question: what does a doubled excursion have that the period-5 orbit lacks?
+- **The store's move to the NAS (K10):** claudeM5's, after S2 and S3 (the owner, 19 November). At cut-over the
+  owner sets the new store address on the four hosts; for claudeCloud it is a variable of its cloud environment.
+  This host needs port 443 and a valid public certificate (K10, addendum 1). A free dynamic-DNS record must be
+  confirmed every 30 days or every worker loses the store.
 
 ## Direction
 
@@ -68,10 +74,11 @@ The full schedule, its rules and its two reformulations are in [K8](CHAT-LEDGER.
 | A, the Lean of S2 (the conditional theorem (CAP) ⇒ (T)) | gptM5, author | A1 the statement file; A2 the cascade, with its own proof and credit to #60; A3 the assembly with an explicit f(k) | gptIntel; claudeM5 for A1's statement | A1 done: [statement](research/m29/Rule30EveryKStatement.lean), three reads PASS (I4, M45, K9). **Gate 1 passed (K9). A2 kernel-checked on both kit revisions (R47), carrying read PASS (I11); A3 and both controls passed gptIntel’s carrying read and both official replays (I12).** K10: #60's credit goes in A2's docstring and row; gptM5 also does S3's Lean and shared reads. |
 | B, the hand proofs, then the early doubling returns | claudeM5 | B1 `research/m29/every-k-chain.md`; B2 M44 B at gaps 51–100 with K7's controls and the single-pulse family; B3 the essay and the #357 reply | gptIntel for B1; gptM5 for B3 | B1, [every-k-chain.md](research/m29/every-k-chain.md), carried by claudeCloud and gptIntel (K9, I11); revised in M46 with I11's two repairs and A2–A4's Lean statuses. B2 done (M47): gaps 51–55 decided with checked certificates, no doubling of any period; it stopped at 56, whose certificate ran out of time. B3 drafted at the owner's word: [the S2 essay](research/m29/s2-essay-draft.md) and [the next #357 reply](research/m29/reply-357-draft-2.md), for gptM5's read (M47); frozen when S2's packet is built (R50). **K10's order:** the store's move to the owner's NAS (not started); S3's notebook (v2 built, M47). |
 | C, the counting theory as theorems, then the wall | gptIntel | C1 the pooled mean-gap theorem (candidate S3); C2 the wall by pair counting; C3 the reads; **now A4** (K9): R44's bridge and the dyadic clocks in Lean, reader gptM5; then the read of B1 | claudeCloud for C1's proof; gptM5 for its Lean | C1 written and kernel-checked (I3, I5), its mathematics carried (K9). C2 done: at odd gaps a row fixes its successor (I6, carried in M45 and K9). C3: A1, the catalogue and both reformulations read (I4, I7). **K10, in this order:** the #60 comment reviewed and posted (I9); S3 sources with the notebook builder (I10, I12); A4 carried (R49); B1, A2 and A3 read (I11–I12). |
-| Conducting | claudeCloud | The chain table, the controls, K7's six SAT instances, S2's novelty check, the gates | — | Running. Gate 1 called (K9). K10 records the owner's three decisions. Next: the test of the new store from the cloud, S3's last novelty check, Gate 3. |
+| Conducting | claudeCloud | The chain table, the controls, K7's six SAT instances, S2's novelty check, the gates | — | Running. Gate 1 called (K9). K10 records the owner's three decisions. **K11: Gate 2's checks pass and the decision is with the owner; packaging is two headlines; Gate 3 is called; the store's container is a tested prototype.** Next: K12, the inquisition round's opening; the container's publication when the owner decides; the test of the new store from the cloud. |
 
-**The gates.** 1: the statement — **passed in K9**. 2: S2 proposed under METHOD §12, and the owner
-decides. 3: the wall, when B2 and C2 report; if neither gives a mechanism, an inquisition round with the owner.
+**The gates.** 1: the statement — **passed in K9**. 2: S2 proposed under METHOD §12 — **its checks pass (K11);
+the owner decides**. 3: the wall — **called in K11**: B2 and C2 gave no mechanism, so an inquisition round with the
+owner follows the S2 and S3 decisions.
 
 ## Submissions
 
@@ -81,7 +88,7 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
 | **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Progress reply posted on #357 at the owner's word (M36, 18 Nov 15:46 UTC); awaiting the maintainers. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
-| **S2** (M29) | Conditional on unbounded worst-phase reset capacity, a uniform age gives all finite k-tick predecessors their exact edge and realizes every wall history. | Portal partial and kit catalogue | Proposed privately for Gate 2 (R50). Lean carried by gptIntel (I11, I12), both headline replays pass. | R47–R50, I12 |
+| **S2** (M29) | Conditional on unbounded worst-phase reset capacity, a uniform age gives all finite k-tick predecessors their exact edge and realizes every wall history. | Portal partial and kit catalogue | Proposed privately (R50). Lean carried by gptIntel (I11, I12), both headline replays pass. **Gate 2's checks pass (K11); waiting for the owner's decision.** Two headlines (K11). Essay and #357 reply drafted (M47), content read with five edits (R52). Next, on a yes: edits, freeze, build on the M5, release read by gptM5. | R47–R50, I12, K11 |
 | **S3** (K2, I2) | Mean first white gap ≤ 2^Q+1 over the nonzero pointed Q-bit children, every Q>0. | Portal partial and kit temporal-profiles extension | Proposed privately. Lean carrying read PASS (R46); builds pass on main and the verifier pin. Mathematics carried, with an exact control at clocks 1–14 (K9). Sources pinned and official checker PASS (I10, I12). **Notebook built on the M5 at `5fb5915`; every build gate passes (M46):** `share-scratch/claudeM5/S3/essay.nb` `36a4c4b1…`, receipt `build.json` `9344ee27…`. I13 staged both files and all 16 pins in the author packet. M46 packet with gptM5. **v2, with the revised abstract, rebuilt; every gate passes (M47):** `share-scratch/claudeM5/S3/v2/essay.nb` `6cbc4313…`, `build.json` `ae4fd094…`. Next: gptIntel stages v2, then gptM5's final release read. Author gptIntel, Lean and shared reads gptM5, M5 build claudeM5.  R51: v2 notebook read PASS. Posting wrapper repaired and dry run passed; reader PASS on 6c69946a…, author staging and agreement pending. | I3, I5, I8 |
 
 Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12:27 UTC portal snapshot (I8); the kit's main is
@@ -89,6 +96,12 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
 
 ## Latest results (newest first)
 
+- **19 Nov, K11. Gate 2's checks pass; Gate 3 is called; the store has a tested container.** S2's Lean compiles
+  at both kit revisions under two workers and two novelty searches found nothing like it, so whether it is
+  submitted is now the owner's decision; claudeCloud recommends a partial with the hypothesis in its title. S3
+  waits only for the author's agreement on `6c69946a…`. B2 and C2 gave no mechanism for the doubling lemma, so the
+  inquisition round is called. The store's server runs as one container: `store.php` unchanged, 32 of 32 checks,
+  a certificate obtained from a test authority through the HTTPS port alone. Not published. [K11](CHAT-LEDGER.md)
 - **19 Nov, M47. B2: no doubling of any period at gaps 51–55; S3's v2 notebook rebuilt; B3 drafted.** The frozen
   all-period scan decided gaps 51–55, each with a checked completeness certificate, and found no doubling. K8's
   answer is no. It stopped at gap 56, whose certificate ran out of time (UNKNOWN); five of seven predictions held.
@@ -284,6 +297,7 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
   [comment-60-draft.md](research/m29/comment-60-draft.md), to be checked by gptIntel and posted by claudeM5; S3's
   packet (gptIntel).
 - **K8, the schedule:** A1 passed the kit and all-cycle statement read (I4) and claudeM5's read (M45); B1 carried with two wording repairs (I11). C1’s paper and Lean were carried (K9, R46); Gate 1 passed (K9).
+- **K11, the store's container:** [tools/store/docker/](tools/store/docker/README.md). Review asked of gptIntel. Untested until the NAS has it: Let's Encrypt for the public name, the router's forward, TrueNAS's YAML install.
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
