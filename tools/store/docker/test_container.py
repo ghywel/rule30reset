@@ -12,10 +12,11 @@ Four parts, every check printing PASS or FAIL, exit non-zero if any fails:
    with a private certificate authority and with certificate files; nothing but /store.php is served; no token
    reaches the container's log; the token tool works; data and certificates outlive the container; a wrong
    installation is refused with a message that says what to fix.
-3. The findings of the security review (ledger I16): nothing private is reachable through the data folder; a
-   misspelt security setting stops the start; a damaged token registry is never replaced; token changes made at the
-   same moment all take effect; a change that cannot be saved says so; writes that arrive together cannot exceed
-   the store's cap.
+3. The findings of the two security reviews (ledgers I16, I17): nothing private is reachable through the data
+   folder, by a mount or by a link, and a data folder that cannot be wholly examined is refused; a misspelt security
+   setting stops the start; a damaged token registry is never replaced; token changes made at the same moment all
+   take effect; a change that cannot be saved says so; writes that arrive together cannot exceed the store's cap;
+   on a full disk nothing is acknowledged that was not stored.
 4. The certificate a public authority issues. Pebble, the test server of the Let's Encrypt project, plays the
    authority on a private Docker network; the container must obtain a certificate from it by the TLS-ALPN-01
    challenge on its HTTPS port alone, as it will from Let's Encrypt behind a router that forwards port 443 only.
@@ -381,7 +382,7 @@ def together(port, token, jobs):
 
 
 def review_checks(tmp):
-    print("\n== 3. the security review's findings (ledger I16) ==")
+    print("\n== 3. the security reviews' findings (ledgers I16, I17) ==")
     base = tmp / 'review'
     data, config = base / 'data', base / 'config'
     for d in (data, config):
@@ -422,6 +423,19 @@ def review_checks(tmp):
     check('a refused start leaves nothing behind in the data folder', not left, left)
     shutil.rmtree(data / 'private')
 
+    # I17: the walk of the data folder must be complete, and the data folder must hold no symbolic link.
+    hidden = data / 'workers' / 'alice' / 'closed'
+    hidden.mkdir(parents=True)
+    own(data)
+    os.chmod(hidden, 0)
+    refused(plain_env, vols, 'could not examine all of',
+            'a data folder with a part the store cannot read is refused: an unfinished examination is not a pass')
+    os.chmod(hidden, 0o700)
+    hidden.rmdir()
+    os.symlink('/config/workers.json', data / 'workers' / 'alice' / 'registry')
+    refused(plain_env, vols, 'symbolic link', 'a data folder that arrives holding a symbolic link is refused')
+    os.unlink(data / 'workers' / 'alice' / 'registry')
+
     # I16.5: a misspelt security setting stops the start, and never reads as "off".
     refused({'STORE_TLS': 'off', 'STORE_REQUIRE_HTTPS': 'ture'}, vols, 'must be true or false',
             'a misspelt STORE_REQUIRE_HTTPS is refused')
@@ -436,6 +450,24 @@ def review_checks(tmp):
 
     name = run_store('store-test-review', vols, plain_env, port=8779, inner=8080)
     wait_for(lambda: whoami(8779, A) == 200, what='the store for the review checks')
+
+    # I17: a link that reaches the data folder after the start (another writer on the NAS) is never followed.
+    def get(query, token=A):
+        c = http.client.HTTPConnection('127.0.0.1', 8779, timeout=10)
+        c.request('GET', '/store.php?' + query, headers={'X-Store-Token': token})
+        r = c.getresponse()
+        return r.status, r.read()
+    os.symlink('/config/workers.json', data / 'workers' / 'alice' / 'registry')     # resolves inside the container
+    os.symlink('/config', data / 'workers' / 'alice' / 'settings')
+    got = [get('path=workers/alice/registry'), get('stat=workers/alice/registry'),
+           get('path=workers/alice/settings/workers.json'), get('list=workers/alice/settings')]
+    s, d = get('list=workers/alice')
+    names = [e['name'] for e in json.loads(d)['entries']] if s == 200 else ['?']
+    check('links to the settings folder, put in the data folder while the store runs, are never read through '
+          '(403 each, nothing of the registry returned) and are left out of listings',
+          all(c == 403 and sha(A).encode() not in body for c, body in got) and names == [], (got, names))
+    os.unlink(data / 'workers' / 'alice' / 'registry')
+    os.unlink(data / 'workers' / 'alice' / 'settings')
 
     # I16.4: a registry that exists but cannot be read is never taken for an empty one.
     good = registry.read_bytes()
@@ -519,6 +551,41 @@ def review_checks(tmp):
         docker('rm', '-f', name)
     else:
         print('SKIP  the failed-replacement check needs root to make a registry owned by another user')
+
+    # I17: on a full dataset the store must not acknowledge bytes that did not reach the disk.
+    registry.write_bytes(good)
+    own(config)
+    tiny = ['--tmpfs', '/data:size=256k,mode=0700,uid=%s,gid=%s' % (uid, gid)]
+    name = run_store('store-test-nospace', [(config, '/config')], dict(plain_env, STORE_MAX_TOTAL_BYTES='0'),
+                     port=8779, inner=8080, extra=tiny)
+    wait_for(lambda: whoami(8779, A) == 200, what='the store on a small data folder')
+
+    def send(method, query, body):
+        c = http.client.HTTPConnection('127.0.0.1', 8779, timeout=30)
+        c.request(method, '/store.php?' + query, body=body, headers={'X-Store-Token': A})
+        r = c.getresponse()
+        return r.status, r.read()
+
+    def stored(path):
+        r = subprocess.run(['docker', 'exec', name, 'sh', '-c', 'cat /data/%s 2>/dev/null' % path], capture_output=True)
+        return r.stdout if r.returncode == 0 else None
+    keep, line = os.urandom(60 * 1024), os.urandom(20 * 1024)
+    first = [send('PUT', 'path=workers/alice/keep.bin', keep)[0], send('POST', 'append=workers/alice/a.log', line)[0]]
+    too_big = os.urandom(400 * 1024)
+    answers = [send('PUT', 'path=workers/alice/big.bin', too_big), send('PUT', 'path=workers/alice/keep.bin', too_big),
+               send('POST', 'append=workers/alice/a.log', too_big), send('POST', 'append=workers/alice/b.log', too_big)]
+    left = docker('exec', name, 'sh', '-c', 'find /data -name ".tmp-*" | wc -l').stdout.strip()
+    check('with no room for them, a new file, a replacement and two appends are each refused (507) and never '
+          'acknowledged; the file to be replaced and the file appended to are as they were; nothing is left behind',
+          first == [200, 200] and all(c == 507 for c, _ in answers) and stored('workers/alice/big.bin') is None
+          and stored('workers/alice/keep.bin') == keep and stored('workers/alice/a.log') == line
+          and stored('workers/alice/b.log') is None and left == '0',
+          (first, [c for c, _ in answers], left, len(stored('workers/alice/keep.bin') or b''),
+           len(stored('workers/alice/a.log') or b''), stored('workers/alice/b.log') is not None))
+    s1, d1 = send('PUT', 'path=workers/alice/fits.bin', line)
+    check('a file that does fit is still stored whole afterwards', s1 == 200 and stored('workers/alice/fits.bin') == line
+          and json.loads(d1)['sha256'] == hashlib.sha256(line).hexdigest(), s1)
+    docker('rm', '-f', name)
 
     # I16.6: writes that arrive together cannot both be admitted against the same remaining space.
     qdata = base / 'qdata'

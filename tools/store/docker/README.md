@@ -1,9 +1,9 @@
 # The shared store as a container
 
 *Status (19 November): a tested prototype. Publishing is active at the owner's word: the workflow is in
-`.github/workflows/store-image.yml`, and the package starts private. gptIntel's security review (ledger I16) asked
-for changes, which are in this revision (ledger K12) and go back to gptIntel for a second read. The store has not
-moved; the move is claudeM5's, after that read.*
+`.github/workflows/store-image.yml`, and the package is public. gptIntel's two security reviews (ledgers I16, I17)
+asked for changes. They are in this revision (ledgers K12, K13), which goes back to gptIntel for a third read. The
+store has not moved; the move is claudeM5's, after that read.*
 
 One container holds the whole server side of the shared store: `store.php`, byte for byte the file one folder up,
 running inside [FrankenPHP](https://frankenphp.dev) (PHP built into the Caddy web server). The web server obtains
@@ -20,7 +20,7 @@ folders on the NAS, so the container can be replaced at any time and nothing is 
 | `store-admin` | The token tool, run in the container's shell. |
 | `rule30-store.yaml` | The file to paste into TrueNAS (or give to `docker compose`). |
 | `store-image.workflow.yml` | Builds, checks and publishes the image on GitHub. Not active where it sits. |
-| `test_container.py` | The checks: the server's own 45, then 50 on the container, the review's findings and the certificates. |
+| `test_container.py` | The checks: the server's own 49, then 55 on the container, the reviews' findings and the certificates. |
 
 ## How an image reaches the NAS
 
@@ -54,6 +54,9 @@ would work unchanged as a repository of its own, should the owner prefer one: on
      this at each start and refuses to run if anything private can be reached through the data folder.
    - **Set a quota on the dataset,** a little above `STORE_MAX_TOTAL_BYTES` plus a few times `STORE_MAX_BYTES`.
      The store's own cap counts finished files. Uploads still in flight are bounded by the dataset's quota.
+   - **No symbolic links in the data folder, and every folder in it readable by user 568.** A link can point at
+     private files. The container looks through the whole data folder at each start and refuses to run if it finds
+     a link, or a part it cannot read.
 2. **The router.** Forward TCP port 443 from the internet to the NAS, to the port the YAML publishes (30443 as
    written). The NAS's own web interface keeps ports 80 and 443 on the NAS and is not exposed by this.
 3. **The app.** *Apps → Discover Apps → the three-dot menu → Install via YAML*. Name it `rule30-store`, paste
@@ -67,8 +70,8 @@ would work unchanged as a repository of its own, should the owner prefer one: on
    `https://THE-NAME/store.php`.
 
 A wrong installation does not start and says why in the log: no folder mapped, a folder the user cannot write,
-no name given, the settings folder reachable through the data folder, a setting that is not a valid value, or a
-token registry that is damaged.
+no name given, the settings folder reachable through the data folder, a symbolic link or an unreadable part in
+the data folder, a setting that is not a valid value, or a token registry that is damaged.
 
 **A rehearsal that costs nothing.** Let's Encrypt limits failed attempts for a name to a few each hour. To try the
 whole path first, add `STORE_ACME_CA: https://acme-staging-v02.api.letsencrypt.org/directory` under `environment:`.
@@ -131,14 +134,16 @@ them; an installation does not need them.
 
 It runs as an ordinary user (568) with a read-only filesystem, no capabilities, and no way to gain any. It can
 write to the two folders and to a scratch area in memory. It serves `/store.php` and answers 404 to every other
-path. A request with a multipart body is refused before PHP sees it. Requests are logged to the container's log
+path. It follows no symbolic link in the data folder: one found at a start stops the start, and one that appears
+later is refused at each request. A request with a multipart body is refused before PHP sees it. Requests are logged to the container's log
 without their headers, because the worker's token travels in a header. The web server's control interface is off.
 
 ## Moving the store from the website
 
 This is claudeM5's task, after S2 and S3. With the app installed:
 
-1. Tell the workers to stop writing. Copy the old data folder into `data/`, owned by user 568.
+1. Tell the workers to stop writing. Copy the old data folder into `data/`, owned by user 568, every folder
+   readable by that user, and with no symbolic links (`find data -type l` must print nothing).
 2. `store-admin token import NAME SHA256` for each of the four workers, from the old `config.php`. Every worker
    keeps its token.
 3. Each host changes its store address, and nothing else.
@@ -151,14 +156,15 @@ This is claudeM5's task, after S2 and S3. With the app installed:
 python3 tools/store/docker/test_container.py
 ```
 
-It needs Docker and `openssl`, and builds the image first. The last line reads `51 of 51 checks pass` (50 of 50
+It needs Docker and `openssl`, and builds the image first. The last line reads `56 of 56 checks pass` (55 of 55
 when it is not run as root, which skips one).
 
-1. `test_store.py` unchanged, each of its three servers a container: 45 checks, and one line that says all passed.
+1. `test_store.py` unchanged, each of its three servers a container: 49 checks, and one line that says all passed.
 2. The container: the refusals, the token tool, HTTPS with the private authority and with certificate files, the
    reverse-proxy mode, the log, the privileges, and that data, tokens and certificates outlive the container: 26.
-3. The security review's findings (ledger I16), one or more checks for each: 19. On the image as first published,
-   17 of these fail, which is the control (ledger K12).
+3. The two security reviews' findings (ledgers I16, I17), one or more checks for each: 24. The controls: on the
+   image as first published 17 of the first 19 fail (ledger K12); on the image published after the first review,
+   4 of the 5 added for the second fail, and the server's own checks pass only 44 of 49 (ledger K13).
 4. A certificate from Pebble, the Let's Encrypt project's test authority, by the challenge that needs only the
    HTTPS port: 5.
 

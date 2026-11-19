@@ -8,6 +8,7 @@
 # The two folders must be separate: neither inside the other, and not the same folder twice. The store serves the
 # first to every worker, and the second holds the certificate's private key. The container refuses to start otherwise.
 # Set a quota on the dataset as well: a little above the store's cap below.
+# The data folder must hold no symbolic links, and user 568 must be able to read every folder in it.
 # After installing: open the app's shell and run   store-admin token add NAME   once for each worker.
 
 services:

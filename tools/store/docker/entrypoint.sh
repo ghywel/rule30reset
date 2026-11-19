@@ -13,16 +13,26 @@ flag() { case "$(printf %s "$2" | tr 'A-Z' 'a-z')" in
 count() { case "$2" in '') ;; *[!0-9]*|????????????????*) die "$1 must be a whole number of bytes, not '$2'" ;; esac; }
 # ident DIR: the folder's identity (device and inode), whatever path or mount it was reached by.
 ident() { stat -L -c '%d:%i' "$1"; }
-# reachable A B: succeeds if folder A is folder B or lies somewhere under it, by any route: a second mount of the
-# same NAS folder, or a NAS folder inside the other. Decided by identity, not by path.
-reachable() {
-    want="$(ident "$1")"
-    find "$2" -type d -inum "${want#*:}" > /tmp/.reach 2> /tmp/.reach-err \
-        || die "could not examine $2 for overlap with $1: $(head -n 1 /tmp/.reach-err)"
-    while IFS= read -r hit; do
-        [ "$(ident "$hit")" = "$want" ] && { echo "$hit"; return 0; }
-    done < /tmp/.reach
-    return 1
+# walk DIR TEST...: list what find's TEST matches under DIR, into /tmp/.walk. The walk must be complete: if any part
+# of DIR cannot be read, the start stops here. A boundary that was not wholly examined has not been examined.
+# (Called directly, never inside $(...), so that stopping stops the entry point itself.)
+walk() {
+    dir="$1"; shift
+    if ! find "$dir" "$@" > /tmp/.walk 2> /tmp/.walk-err || [ -s /tmp/.walk-err ]; then
+        die "could not examine all of $dir ($(head -n 1 /tmp/.walk-err)). Every folder in it must be readable by user $WHO, so that the store can confirm nothing private is reachable through it"
+    fi
+}
+# overlap A B: sets HIT to the path by which folder A is folder B or lies under it, by any route (a second mount of the
+# same NAS folder, or a NAS folder inside the other), and to nothing if it does not. Decided by identity, not by path.
+overlap() {
+    HIT=""
+    want="$(ident "$1")" || die "could not examine $1"
+    walk "$2" -type d -inum "${want#*:}"
+    while IFS= read -r found; do
+        id="$(ident "$found")" || die "could not examine $found"
+        if [ "$id" = "$want" ]; then HIT="$found"; return 0; fi
+    done < /tmp/.walk
+    return 0
 }
 port() { case "$2" in ''|*[!0-9]*) die "$1 must be a port number, not '$2'" ;; esac
          [ "$2" -ge 1 ] && [ "$2" -le 65535 ] || die "$1 must be between 1 and 65535, not $2"; }
@@ -112,14 +122,21 @@ esac
 [ -d "$(dirname "$LOG")" ] || die "the folder of STORE_LOG_FILE, $(dirname "$LOG"), does not exist"
 state_in="$STATE"; while [ ! -d "$state_in" ]; do state_in="$(dirname "$state_in")"; done
 for private in "$CONFIG_DIR" "$(dirname "$LOG")" "$state_in" ${CERT:+"$(dirname "$CERT")"} ${KEY:+"$(dirname "$KEY")"}; do
-    if hit="$(reachable "$private" "$DATA")"; then
-        die "the private folder $private can be reached through the data folder, as $hit: every worker could read the token registry, the write log or the certificate's key through the store. Map two separate NAS folders, neither inside the other (volumes: in the YAML)"
-    fi
+    overlap "$private" "$DATA"
+    [ -z "$HIT" ] || die "the private folder $private can be reached through the data folder, as $HIT: every worker could read the token registry, the write log or the certificate's key through the store. Map two separate NAS folders, neither inside the other (volumes: in the YAML)"
 done
-if [ -d "$STATE" ] && hit="$(reachable "$DATA" "$STATE")"; then
-    die "the data folder $DATA lies inside the certificate folder $STATE: map two separate NAS folders"
+if [ -d "$STATE" ]; then
+    overlap "$DATA" "$STATE"
+    [ -z "$HIT" ] || die "the data folder $DATA lies inside the certificate folder $STATE: map two separate NAS folders"
 fi
-rm -f /tmp/.reach /tmp/.reach-err
+
+# A symbolic link in the data folder can point at anything on the NAS, private files included. The store never makes
+# one and never follows one. Data brought in from elsewhere must not hold any.
+walk "$DATA" -type l
+if [ -s /tmp/.walk ]; then
+    die "the data folder holds $(wc -l < /tmp/.walk) symbolic link(s), the first being $(head -n 1 /tmp/.walk). A link can point at private files, and the store serves the data folder to every worker. Remove each link, or replace it with a copy of what it points to"
+fi
+rm -f /tmp/.walk /tmp/.walk-err
 mkdir -p "$STATE"
 
 # A registry that exists but cannot be read names no worker. Say so now, not as a refusal of every request later.

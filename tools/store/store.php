@@ -67,16 +67,16 @@ if ($method === 'GET' && isset($_GET['whoami'])) {
 }
 if ($method === 'GET' && isset($_GET['list'])) {
     $rel = (string)$_GET['list'];
-    $dir = $rel === '' ? $dataDir : $dataDir . '/' . clean_path($rel);
+    $dir = $rel === '' ? $dataDir : $dataDir . '/' . no_links($dataDir, clean_path($rel));
     if (!is_dir($dir)) {
         fail(404, 'no such folder');
     }
     $out = [];
     foreach (scandir($dir) as $name) {
-        if ($name[0] === '.') {
+        $full = $dir . '/' . $name;
+        if ($name[0] === '.' || is_link($full)) {
             continue;
         }
-        $full = $dir . '/' . $name;
         $out[] = is_dir($full)
             ? ['name' => $name, 'type' => 'dir']
             : ['name' => $name, 'type' => 'file', 'bytes' => filesize($full), 'mtime' => gmdate('c', filemtime($full))];
@@ -84,7 +84,7 @@ if ($method === 'GET' && isset($_GET['list'])) {
     reply(['folder' => $rel, 'entries' => $out]);
 }
 if ($method === 'GET' && isset($_GET['stat'])) {
-    $rel = clean_path((string)$_GET['stat']);
+    $rel = no_links($dataDir, clean_path((string)$_GET['stat']));
     $full = $dataDir . '/' . $rel;
     if (!is_file($full)) {
         fail(404, 'no such file');
@@ -93,7 +93,7 @@ if ($method === 'GET' && isset($_GET['stat'])) {
            'sha256' => hash_file('sha256', $full)]);
 }
 if ($method === 'GET' && isset($_GET['path'])) {
-    $rel = clean_path((string)$_GET['path']);
+    $rel = no_links($dataDir, clean_path((string)$_GET['path']));
     $full = $dataDir . '/' . $rel;
     if (!is_file($full)) {
         fail(404, 'no such file');
@@ -104,7 +104,7 @@ if ($method === 'GET' && isset($_GET['path'])) {
     exit;
 }
 if ($method === 'PUT' && isset($_GET['path'])) {
-    $rel = clean_path((string)$_GET['path']);
+    $rel = no_links($dataDir, clean_path((string)$_GET['path']));
     [$mode, $limit, $exists] = put_rule($worker, $rel, $dataDir, (int)$cfg['max_bytes']);
     $createOnly = $mode === 'create';
     $full = $dataDir . '/' . $rel;
@@ -127,7 +127,7 @@ if ($method === 'PUT' && isset($_GET['path'])) {
     reply(['path' => $rel, 'bytes' => $bytes, 'sha256' => $sha]);
 }
 if ($method === 'POST' && isset($_GET['append'])) {
-    $rel = clean_path((string)$_GET['append']);
+    $rel = no_links($dataDir, clean_path((string)$_GET['append']));
     $place = project_place($rel);
     $ownShare = $place !== null && $place[0] === 'share-scratch' && $place[1] === $worker;
     if (!(area_of($rel) === 'log' || owns($worker, $rel) || $ownShare)) {
@@ -138,25 +138,39 @@ if ($method === 'POST' && isset($_GET['append'])) {
     [$tmp, $bytes, $sha] = receive_body($full, (int)$cfg['max_bytes']);
     $lock = lock($dataDir, $tmp);
     within_quota($cfg, $dataDir, $tmp, $bytes, $lock);
+    clearstatcache(true, $full);
+    $existed = is_file($full);
+    $before = $existed ? filesize($full) : 0;
     $out = fopen($full, 'ab');
     $in = fopen($tmp, 'rb');
-    if ($out === false || $in === false || !flock($out, LOCK_EX)) {
-        @unlink($tmp);
-        flock($lock, LOCK_UN);
-        fail(500, 'could not append');
+    $ok = $out !== false && $in !== false && flock($out, LOCK_EX)
+        && stream_copy_to_stream($in, $out) === $bytes && on_disk($out);
+    if (!$ok && $out !== false) {
+        // The file goes back to what it was: its previous complete data, or no file at all.
+        ftruncate($out, $before);
+        fflush($out);
     }
-    stream_copy_to_stream($in, $out);
-    fflush($out);
-    flock($out, LOCK_UN);
-    fclose($out);
-    fclose($in);
-    unlink($tmp);
+    if ($out !== false) {
+        flock($out, LOCK_UN);
+        fclose($out);
+    }
+    if ($in !== false) {
+        fclose($in);
+    }
+    @unlink($tmp);
+    if (!$ok) {
+        if (!$existed) {
+            @unlink($full);
+        }
+        flock($lock, LOCK_UN);
+        fail(507, 'could not append on disk: the file is as it was');
+    }
     flock($lock, LOCK_UN);
     log_write($cfg, $worker, 'append', $rel, $bytes, $sha);
     reply(['path' => $rel, 'bytes' => $bytes, 'sha256' => $sha]);
 }
 if ($method === 'DELETE' && isset($_GET['path'])) {
-    $rel = clean_path((string)$_GET['path']);
+    $rel = no_links($dataDir, clean_path((string)$_GET['path']));
     $place = project_place($rel);
     if (!(owns($worker, $rel) || ($place !== null && $place[1] === $worker))) {
         fail(403, 'you may delete only in your own area');
@@ -208,7 +222,7 @@ function within_quota(array $cfg, string $dataDir, string $tmp, int $bytes, $loc
     $used = 0;
     $it = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dataDir, FilesystemIterator::SKIP_DOTS));
     foreach ($it as $f) {
-        if ($f->isFile() && strpos($f->getFilename(), '.tmp-') !== 0) {
+        if (!$f->isLink() && $f->isFile() && strpos($f->getFilename(), '.tmp-') !== 0) {
             $used += $f->getSize();
         }
     }
@@ -249,6 +263,21 @@ function clean_path(string $p): string
         fail(400, 'bad path');
     }
     return $p;
+}
+
+/* A symbolic link in the data folder could point at anything on the host, and the data folder is served to every
+   worker. The store never makes a link and never follows one: a path with a link anywhere along it is refused, for
+   reading as for writing, and listings leave links out. */
+function no_links(string $dataDir, string $rel): string
+{
+    $path = $dataDir;
+    foreach (explode('/', $rel) as $segment) {
+        $path .= '/' . $segment;
+        if (is_link($path)) {
+            fail(403, 'that path passes through a link, and the store follows none');
+        }
+    }
+    return $rel;
 }
 
 function area_of(string $rel): string
@@ -310,7 +339,8 @@ function ensure_parent(string $full): void
     }
 }
 
-/* Stream the request body into a temporary file beside the target, enforcing the size limit and hashing as it goes. */
+/* Stream the request body into a temporary file beside the target, enforcing the size limit and hashing as it goes.
+   It returns only when the whole body, as long as it was declared, is on disk; otherwise nothing is stored. */
 function receive_body(string $full, int $maxBytes): array
 {
     $tmp = dirname($full) . '/.tmp-' . bin2hex(random_bytes(8));
@@ -324,7 +354,9 @@ function receive_body(string $full, int $maxBytes): array
     while (!feof($in)) {
         $chunk = fread($in, 1 << 16);
         if ($chunk === false) {
-            break;
+            fclose($out);
+            unlink($tmp);
+            fail(400, 'the body could not be read: nothing was stored');
         }
         $bytes += strlen($chunk);
         if ($bytes > $maxBytes) {
@@ -333,11 +365,45 @@ function receive_body(string $full, int $maxBytes): array
             fail(413, 'body larger than the limit');
         }
         hash_update($ctx, $chunk);
-        fwrite($out, $chunk);
+        if (!write_all($out, $chunk)) {
+            fclose($out);
+            unlink($tmp);
+            fail(507, 'could not write the body to disk: nothing was stored');
+        }
     }
-    fclose($out);
+    $stored = on_disk($out);
+    $stored = fclose($out) && $stored;
     fclose($in);
+    // An upload cut off on its way arrives shorter than it said it would be. It is not the file the sender meant.
+    $declared = $_SERVER['CONTENT_LENGTH'] ?? '';
+    if (is_string($declared) && ctype_digit($declared) && (int)$declared !== $bytes) {
+        @unlink($tmp);
+        fail(400, 'the body was cut short of its declared length: nothing was stored');
+    }
+    clearstatcache(true, $tmp);
+    if (!$stored || filesize($tmp) !== $bytes) {
+        @unlink($tmp);
+        fail(507, 'could not write the body to disk: nothing was stored');
+    }
     return [$tmp, $bytes, hash_final($ctx)];
+}
+
+/* Write all of $data, or say that it could not be done (a full disk writes part of it, or none). */
+function write_all($handle, string $data): bool
+{
+    for ($done = 0, $size = strlen($data); $done < $size; $done += $n) {
+        $n = @fwrite($handle, substr($data, $done));
+        if ($n === false || $n === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+/* Push what was written out of PHP and out of the system's buffers, and say whether both succeeded. */
+function on_disk($handle): bool
+{
+    return @fflush($handle) && (!function_exists('fsync') || @fsync($handle));
 }
 
 /* The store's one lock, taken with the body already received in $tmp: held while a write is admitted and put in place. */

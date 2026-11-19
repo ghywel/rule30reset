@@ -65,10 +65,12 @@ mismatch.
 
 ## Testing it
 
-`python3 tools/store/test_store.py` checks 45 behaviours: placego's 30 (tokens, each area's permissions, path
-attacks, size and total caps, HTTPS, the log) and 15 for the project areas (joining, flags into another's postbox,
+`python3 tools/store/test_store.py` checks 49 behaviours: placego's 30 (tokens, each area's permissions, path
+attacks, size and total caps, HTTPS, the log), 15 for the project areas (joining, flags into another's postbox,
 the sender in the name, no replacing or removing another's flag, a postbox that does not exist, share-scratch, the
-read-only rest, including the old `scratch/rule30reset/…` paths).
+read-only rest, including the old `scratch/rule30reset/…` paths), and 4 added on 19 November 2026 after the
+container's second security review (ledgers I17, K13): a symbolic link in the data folder is never read through,
+never written through and left out of listings, and an upload cut short of its declared length is never stored.
 
 On 17 November 2026 the layout became flat (the data folder is the project folder). With PHP 8.5.12 the tests passed
 45 of 45; as a control, the previous script, which kept the project in a `scratch/rule30reset/` subfolder of the data
@@ -96,7 +98,10 @@ published, and the store had not moved.
 ## Safety
 
 The data folder sits outside the web root, so files are reachable only through the script, which checks the token on
-every request; paths are plain segments, so `..`, hidden files and absolute paths are refused. Plain HTTP is refused.
+every request; paths are plain segments, so `..`, hidden files and absolute paths are refused. The script makes no
+symbolic link and follows none: a path with a link anywhere along it is refused, for reading and for writing. A
+write is acknowledged only when every byte the sender declared is on disk; if the disk is full or the upload is cut
+off, nothing is stored, and a file being replaced or appended to stays as it was. Plain HTTP is refused.
 Uploads are capped per file (`max_bytes`) and in total (`max_total_bytes`); since 19 November 2026 (ledgers I16, K12) a
 write is admitted against the total and put in place under one lock, so writes that arrive together cannot both
 take the same remaining space. Only each token's SHA-256 is stored on the

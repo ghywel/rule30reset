@@ -14,6 +14,7 @@ import json
 import os
 import pathlib
 import shutil
+import socket
 import subprocess
 import sys
 import tempfile
@@ -183,6 +184,8 @@ def main():
               str((r, s, s2, len(left))))
 
         project_checks(P, data)
+        link_checks(P, data, tmp)
+        cut_checks(P, data)
 
         lines = [json.loads(l) for l in log.read_text().splitlines()]
         ops = [(l['worker'], l['op']) for l in lines]
@@ -261,6 +264,74 @@ def project_checks(P, data):
         'other/postbox/alice/x')]
     check('the rest of the project folder, the old prefixed paths and other folders are read-only (403 each)',
           all(c == 403 for c in codes) and not (data / 'scratch').exists(), str(codes))
+
+
+def cut_short(port, method, query, token, declared, body):
+    """A request that declares `declared` bytes of body, sends fewer and stops: an upload cut off on its way.
+    Returns the status, or 0 if the server gave no reply."""
+    s = socket.create_connection(('127.0.0.1', port), timeout=15)
+    s.sendall(('%s /store.php?%s HTTP/1.1\r\nHost: 127.0.0.1:%d\r\nX-Store-Token: %s\r\nContent-Length: %d\r\n'
+               'Connection: close\r\n\r\n' % (method, query, port, token, declared)).encode() + body)
+    s.shutdown(socket.SHUT_WR)
+    data = b''
+    try:
+        while True:
+            chunk = s.recv(65536)
+            if not chunk:
+                break
+            data += chunk
+    except OSError:
+        pass
+    s.close()
+    return int(data.split(b' ', 2)[1]) if data.startswith(b'HTTP/') else 0
+
+
+def cut_checks(P, data):
+    """Bytes that did not all arrive are not the sender's file: nothing is stored, and what was there stays."""
+    A = 'a' * 64
+    whole = b'w' * 600
+    s, _ = call(P, 'PUT', 'path=workers/alice/whole.bin', A, whole)
+    codes = [cut_short(P, 'PUT', 'path=workers/alice/cut.bin', A, 600, b'c' * 300),
+             cut_short(P, 'PUT', 'path=workers/alice/whole.bin', A, 600, b'c' * 300),
+             cut_short(P, 'POST', 'append=workers/alice/whole.bin', A, 600, b'c' * 300)]
+    s2, d = call(P, 'GET', 'path=workers/alice/whole.bin', A)
+    left = [f.name for f in (data / 'workers' / 'alice').iterdir() if f.name.startswith('.tmp')]
+    check('an upload cut short of its declared length is never stored: a new file, a replacement and an append are '
+          'each refused, the file is as it was, nothing is left behind',
+          s == 200 and all(c != 200 for c in codes) and s2 == 200 and d == whole
+          and not (data / 'workers/alice/cut.bin').exists() and not left, '%s %s %d %s' % (s, codes, len(d), left))
+
+
+def link_checks(P, data, tmp):
+    """The store never follows a symbolic link. One that reaches the data folder by another route (a migration,
+    another writer on the host) is refused for reading and for writing, and listings leave it out."""
+    A = 'a' * 64
+    private = tmp / 'private'
+    private.mkdir()
+    (private / 'key.txt').write_bytes(b'private\n')
+    mine = data / 'workers' / 'alice'
+    mine.mkdir(parents=True, exist_ok=True)
+    os.symlink(private / 'key.txt', mine / 'leak.txt')      # a link to a file outside the data folder
+    os.symlink(private, mine / 'out')                       # a link to a folder outside it
+    got = [call(P, 'GET', q, A) for q in ('path=workers/alice/leak.txt', 'stat=workers/alice/leak.txt',
+                                          'path=workers/alice/out/key.txt', 'list=workers/alice/out')]
+    check('a link in the data folder is never read through (403 each): the file, its stat, and a file and a listing '
+          'through a linked folder', all(s == 403 and b'private' not in d for s, d in got), str([s for s, _ in got]))
+    s, d = call(P, 'GET', 'list=workers/alice', A)
+    names = [e['name'] for e in json.loads(d)['entries']] if s == 200 else ['?']
+    check('a listing leaves links out', s == 200 and 'leak.txt' not in names and 'out' not in names, str(names))
+    codes = [call(P, 'PUT', 'path=workers/alice/leak.txt', A, b'x')[0],
+             call(P, 'POST', 'append=workers/alice/leak.txt', A, b'x')[0],
+             call(P, 'DELETE', 'path=workers/alice/leak.txt', A)[0],
+             call(P, 'PUT', 'path=workers/alice/out/new.txt', A, b'x')[0],
+             call(P, 'POST', 'append=workers/alice/out/key.txt', A, b'x')[0]]
+    check('nor written through (403 each): replace, append, delete, and a new file and an append through a linked '
+          'folder; what the links point to is untouched',
+          all(c == 403 for c in codes) and (private / 'key.txt').read_bytes() == b'private\n'
+          and sorted(f.name for f in private.iterdir()) == ['key.txt'] and (mine / 'leak.txt').is_symlink(), str(codes))
+    for link in (mine / 'leak.txt', mine / 'out'):      # a faulty server may already have removed or replaced them
+        if link.is_symlink() or link.is_file():
+            link.unlink()
 
 
 if __name__ == '__main__':
