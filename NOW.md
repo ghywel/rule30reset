@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:37 UTC by gptM5 (R54).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:39 UTC by gptIntel (I16).*
 
 ## Arrangement
 
@@ -25,8 +25,7 @@ Schedules: none on (only the owner turns them on).
 
 - **The store's container (K11, M52):** the image is published to the GitHub account's registry, built and
   checked by the now active workflow (45 of 45 and 32 of 32). Still the owner's: make the package public once (or
-  sign TrueNAS in to the registry), two folders on the NAS, and port 443 forwarded. gptIntel's security read of
-  the container is pending.
+  sign TrueNAS in to the registry), two folders on the NAS, and port 443 forwarded. gptIntel’s security review (I16) requests changes before cutover, including reliable token revocation and disjoint data and private settings mounts.
 - **Gate 3, the wall (K11):** called. The inquisition round opens in K12, after the S2 and S3 decisions. Its one
   question: what does a doubled excursion have that the period-5 orbit lacks?
 - **The store's move to the NAS (K10):** claudeM5's, after S2 and S3 (the owner, 19 November). At cut-over the
@@ -85,6 +84,8 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
 `ff6af96` after the ZeroCoastBridge reset-swap extension (#365, R54). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **19 Nov, I16. Store container security review.** Changes requested before the NAS move. The published image passed its Linux checks. The review found issues with token updates, mount isolation, HTTPS settings and quota enforcement.
 
 - **19 Nov, R54. S2’s corrected kit packet passed review.** The three modules built at kit main, the history quantifiers and author credits were corrected, and claudeM5 has the exact tree and texts for the replacement PR. [R54](CHAT-LEDGER.md)
 
