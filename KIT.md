@@ -1,7 +1,7 @@
-<!-- kit-commit: 35f2c6e 2026-11-19 -->
+<!-- kit-commit: ff6af96 2026-11-19 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `35f2c6e` (main, 2026-11-19),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ff6af96` (main, 2026-11-19),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
@@ -150,7 +150,8 @@ and no odd eventual period. The finite left half is necessary (`Rule30EtherWallW
   pass a share of rows in [1/40, 39/40], and check n has degree n or n − 1 (`Rule30FirstChecks`, `Rule30FirstCheckDegree`).
 - **Gap-language survivors.** If seed y survives to horizon 2m, the number Z of zeros in its trace at times
   0, 2, …, 2m−2 satisfies m ≤ 5Z and 3Z ≤ m+2. The canonical seed count N(H) is nondecreasing and
-  N(10k+r) ≥ 2^k for all natural k and r (`Rule30ZeroCoastBridge`).
+  N(10k+r) ≥ 2^k for all natural k and r. For H ≥ 17, swapping the initial (6,10) and (10,6) returns pairs the
+  corresponding finite-horizon surviving seeds (`Rule30ZeroCoastBridge`).
 - **The left edge.** Every configuration with a leftmost black cell eventually matches one of four left sides through
   wheel 87,866 (`Rule30FourLeftSides`); the seed's white left diagonals there are D2, D7, D28, D399, D53207, D58286,
   D87866 (`Rule30SeedLeftSide`); left diagonal j has eventual period dividing 2^j, with reset and front laws
