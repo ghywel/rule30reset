@@ -95,3 +95,20 @@ correction is a new entry that names the one it corrects.
 - **Known.** The spatial inverse and finite common-clock count are in `Rule30LeftUnbounded.B_Sig_succ` and `left_profile_bound` for the single seed. The periodic/antiperiodic white fork is in `Rule30LeftAntiPeriod.D_period_or_antiperiodic`. Lowry's `Rule30ResetFreeThree.finite_nonzero_reset_in_three` forces a reset over three ticks from a nonzero finite zero-wall row. The earlier G13 criterion identifies the delimited runs, P6.
 - **Found by.** M39's white-profile argument and searches for “reset-free”, “return map” and “white interval”; the latter misses the archived review GC2216. The finite zero-wall theorem uses the white exterior of a finite row. Here two recurrent white wheels on an unbounded strip replace that boundary condition.
 - **Credit.** Known backward reconstruction, time-doubling mechanism and multirow residue automaton. Our additions are the rooted-strip bounds, the finite white-anchor box, the two-anchor three-phase return certificate and the resulting arbitrarily-deep conclusion. [Proof and scope](research/m29/white-return-block.md)
+
+## P9 · 2026-11-19 · The depths where each left-edge period first appears, and the doubling criterion
+
+- **Ours.** K2 reads the gaps between the seed's white diagonals against 2^Q, Q the interval's temporal period, as
+  evidence for a counting picture of white returns (CONJECTURE, K2).
+- **Known.** Wolfram, *A New Kind of Science*, notes, [page 871c](https://wolframscience.com/nksonline/page-871c/):
+  on the left edge of rule 30 from one black cell, "period 2 is first achieved at depth 3, period 4 at depth 8, 8 at
+  29, 16 at 400, 32 at 87,867, 64 at 2,107,985,255 or more", and "each period doubling turns out to occur exactly when
+  a diagonal in the pattern eventually becomes a white stripe, and the diagonal to its left has an odd number of
+  black cells in each repeating block". The criterion is proved in Rowland (2006) §5 (P7) and in the kit
+  (`Rule30LeftAntiPeriod.D_period_or_antiperiodic`). The kit's `Rule30SeedLeftSide` lists the white diagonals
+  through 87,866, and `Rule30TemporalProfiles.rooted_chain_returns_bounded` puts the next white within 2^(2q) wheels
+  of a q-periodic chain, a worst case. None of these states a typical gap.
+- **Found by.** A web search for Rowland's paper and left-diagonal period doubling. `find_known.py` for "spacing"
+  and "D399" finds only the kit rows; "white return", "renewal" and "typical gap" find nothing. Nersissian, arXiv
+  2609.25077 (abstract only), bounds right-side periods, not white gaps.
+- **Credit.** Known data and criterion, used here as data. The counting picture is ours and tentative (K2).

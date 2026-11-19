@@ -1,0 +1,1370 @@
+[
+{
+"phase": "control",
+"family": "oddr",
+"gap": 5,
+"half": 1,
+"period": null,
+"timeout": 300,
+"solver": "cadical195"
+},
+{
+"phase": "control",
+"family": "odd",
+"gap": 5,
+"half": 1,
+"period": null,
+"timeout": 300,
+"solver": "cadical195"
+},
+{
+"phase": "control",
+"family": "oddr",
+"gap": 21,
+"half": 2,
+"period": null,
+"timeout": 300,
+"solver": "cadical195"
+},
+{
+"phase": "control",
+"family": "odd",
+"gap": 21,
+"half": 2,
+"period": null,
+"timeout": 300,
+"solver": "cadical195"
+},
+{
+"phase": "control",
+"family": "odd",
+"gap": 23,
+"half": 5,
+"period": null,
+"timeout": 300,
+"solver": "cadical195"
+},
+{
+"phase": "control",
+"family": "even",
+"gap": 7,
+"half": null,
+"period": 4,
+"timeout": 300,
+"solver": "cadical195"
+},
+{
+"phase": "control",
+"family": "even",
+"gap": 8,
+"half": null,
+"period": 8,
+"timeout": 300,
+"solver": "cadical195"
+},
+{
+"phase": "control",
+"family": "even",
+"gap": 32,
+"half": null,
+"period": 64,
+"timeout": 300,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 5,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 5,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 5,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 6,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 6,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 6,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 7,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 7,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 7,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 8,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 8,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 8,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 9,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 9,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 9,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 10,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 10,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 10,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 11,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 11,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 11,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 12,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 12,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 12,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 13,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 13,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 13,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 14,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 14,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 14,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 15,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 15,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 15,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 16,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 16,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 16,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 17,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 17,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 17,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 18,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 18,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 18,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 19,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 19,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 19,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 20,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 20,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 20,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 21,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 21,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 21,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 22,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 22,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 22,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 23,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 23,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 23,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 24,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 24,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 24,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 25,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 25,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 25,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 26,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 26,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 26,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 27,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 27,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 27,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 28,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 28,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 28,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 29,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 29,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 29,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "even",
+"gap": 30,
+"half": null,
+"period": 64,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "odd",
+"gap": 30,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "cross-check",
+"family": "oddr",
+"gap": 30,
+"half": 64,
+"period": null,
+"timeout": 600,
+"solver": "cadical195"
+},
+{
+"phase": "undecided",
+"family": "odd",
+"gap": 68,
+"half": 64,
+"period": null,
+"timeout": 14400,
+"solver": "cadical195"
+},
+{
+"phase": "undecided",
+"family": "odd",
+"gap": 70,
+"half": 64,
+"period": null,
+"timeout": 14400,
+"solver": "cadical195"
+},
+{
+"phase": "undecided",
+"family": "odd",
+"gap": 72,
+"half": 64,
+"period": null,
+"timeout": 14400,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 31,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 32,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 33,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 34,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 35,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 36,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 37,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 38,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 39,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 40,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 41,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 42,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 43,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 44,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 45,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 46,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 47,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 48,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 49,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 50,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 51,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 52,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 53,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 54,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 55,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 56,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 57,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 58,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 59,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 60,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 61,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 62,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 63,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 64,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 65,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 66,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 67,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 69,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 71,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "replication",
+"family": "odd",
+"gap": 73,
+"half": 64,
+"period": null,
+"timeout": 1800,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 74,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 75,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 76,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 77,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 78,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 79,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 80,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 81,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 82,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 83,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 84,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 85,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 86,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 87,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 88,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 89,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 90,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 91,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 92,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 93,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 94,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 95,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+},
+{
+"phase": "undecided-tail",
+"family": "odd",
+"gap": 96,
+"half": 64,
+"period": null,
+"timeout": 7200,
+"solver": "cadical195"
+}
+]
