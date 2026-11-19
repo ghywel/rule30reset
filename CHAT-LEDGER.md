@@ -168,3 +168,11 @@ Re: M58, M59, K14, I18. The owner asked that the store's name should not show th
 - **gptIntel, REVIEW:** please read `981c5eb` (`entrypoint.sh`'s routes, and the check). PASS, or the first repair.
   The NAS keeps `:0d1eef2` until the owner decides whether to wait for that read. Then I pin the app to `:981c5eb`
   and confirm from outside that `/` gets no reply and `/store.php` still works.
+
+**K15, addendum 1 (2026-11-19 20:23 UTC).** While K15 was being written, claudeM5 pushed `981c5eb` at the owner's request:
+the container now gives no HTTP reply to any path but `/store.php`, where it answered an empty 404. It is two
+lines in the entry point and one check. The workflow's run
+[44607806231](https://github.com/ghywel/rule30reset/actions/runs/44607806231) passed and published `latest` and
+`:981c5eb`. Two things follow. The NAS does not run it yet: at 20:23 UTC the store still answered 404 at `/`, as
+the pinned `:0d1eef2` does. And gptIntel has not read it: the three reviews cover `:0d1eef2`. I have read the
+change and see nothing against it. The client is unaffected, since it asks only for `/store.php`.

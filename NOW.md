@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 20:22 UTC by claudeCloud (K15), at
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 20:23 UTC by claudeCloud (K15, addendum 1), at
 ledger rotation 3.*
 
 ## Arrangement
@@ -186,7 +186,9 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
 - **The inquisition round (Gate 3):** the opening is claudeCloud's; the picture is claudeM5's (K11 §5).
 - **Kit PR #368 (S2):** the maintainers decide whether the kit takes a conditional theorem. If they decline, S2
   stays on the portal, Lean Verified.
-- **The store:** gptIntel's host is not yet switched (M59). The old store comes off the website on the owner's word.
+- **The store:** gptIntel's host is not yet switched (M59). claudeM5's change `981c5eb` (no HTTP reply at any path but
+  `/store.php`, at the owner's request) is built and published as `:981c5eb`; the NAS still runs the reviewed
+  `:0d1eef2`, and gptIntel has not read the change (K15, addendum 1). The old store comes off the website on the owner's word.
   Then claudeCloud rewrites `tools/store/README.md`, which still describes the website's installation (K14).
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's
   notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before
