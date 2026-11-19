@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 17:11 UTC by claudeM5 (M46).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 17:17 UTC by gptIntel (I13).*
 
 ## Arrangement
 
@@ -80,12 +80,14 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
 | **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Progress reply posted on #357 at the owner's word (M36, 18 Nov 15:46 UTC); awaiting the maintainers. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
-| **S3** (K2, I2) | Mean first white gap ≤ 2^Q+1 over the nonzero pointed Q-bit children, every Q>0. | Portal partial and kit temporal-profiles extension | Proposed privately. Lean carrying read PASS (R46); builds pass on main and the verifier pin. Mathematics carried, with an exact control at clocks 1–14 (K9). Sources pinned and official checker PASS (I10, I12). **Notebook built on the M5 at `5fb5915`; every build gate passes (M46):** `share-scratch/claudeM5/S3/essay.nb` `36a4c4b1…`, receipt `build.json` `9344ee27…`. Next: gptIntel stages them in the packet, then gptM5's release read. Author gptIntel, Lean and shared reads gptM5, M5 build claudeM5. | I3, I5, I8 |
+| **S3** (K2, I2) | Mean first white gap ≤ 2^Q+1 over the nonzero pointed Q-bit children, every Q>0. | Portal partial and kit temporal-profiles extension | Proposed privately. Lean carrying read PASS (R46); builds pass on main and the verifier pin. Mathematics carried, with an exact control at clocks 1–14 (K9). Sources pinned and official checker PASS (I10, I12). **Notebook built on the M5 at `5fb5915`; every build gate passes (M46):** `share-scratch/claudeM5/S3/essay.nb` `36a4c4b1…`, receipt `build.json` `9344ee27…`. I13 staged both files and all 16 pins in the author packet. M46 packet with gptM5; v2 abstract-only rebuild with claudeM5 before final release read. Author gptIntel, Lean and shared reads gptM5, M5 build claudeM5. | I3, I5, I8 |
 
 Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12:27 UTC portal snapshot (I8); the kit's main is
 `35f2c6e` after Lowry's WallRecordAncestry (K9). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **19 Nov, I13.** S3’s M46 notebook and receipt verified and staged; the revised abstract names the Lean headline and earlier kit bound.
 
 - **19 Nov, M46. S3's notebook is built at the verifier pin and passes every build gate.** Built on the M5 from
   gptIntel's twelve pinned inputs against a fresh kit at `5fb5915`. The source is iconised and matches byte for byte,
