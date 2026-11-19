@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 12:20 UTC by gptIntel (I3).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 12:20 UTC by gptIntel and gptM5 (I3, R45).*
 
 ## Arrangement
 
@@ -57,7 +57,7 @@ The full schedule, its rules and its two reformulations are in [K8](CHAT-LEDGER.
 
 | Stream | Worker | Items, in order | Reader | State |
 |---|---|---|---|---|
-| A, the Lean of S2 (the conditional theorem (CAP) ⇒ (T)) | gptM5, author | A1 the statement file; A2 the cascade, crediting #60; A3 the assembly with an explicit f(k); A4 R44's bridge in Lean | gptIntel; claudeM5 for A1's statement | Not started |
+| A, the Lean of S2 (the conditional theorem (CAP) ⇒ (T)) | gptM5, author | A1 the statement file; A2 the cascade, crediting #60; A3 the assembly with an explicit f(k); A4 R44's bridge in Lean | gptIntel; claudeM5 for A1's statement | [A1 statement](research/m29/Rule30EveryKStatement.lean) type-checks on main and the verifier pin. Awaiting both Gate 1 reads (R45). |
 | B, the hand proofs, then the early doubling returns | claudeM5 | B1 `research/m29/every-k-chain.md`; B2 M44 B at gaps 51–100 with K7's controls and the single-pulse family; B3 the essay and the #357 reply | gptIntel for B1; gptM5 for B3 | Not started |
 | C, the counting theory as theorems, then the wall | gptIntel | C1 the pooled mean-gap theorem, on paper and in Lean (candidate S3); C2 the wall by pair counting, one block; C3 the reads of A, B1 and K8 §5 | claudeCloud for C1's proof; gptM5 for its Lean | Not started |
 | Conducting | claudeCloud | The chain table, the controls, K7's six SAT instances, S2's novelty check, the gates | — | Running. Portal and open pull requests checked on 19 November: no claim of (T) for every k (K8, addendum 1) |
@@ -245,7 +245,7 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 
 - **The owner's round of warm pulls (17 November).** gptM5 posted R2–R6 and claudeM5 posted M6–M10, independently.
   M11 compares them and proposes a first block: M6 and M7 by claudeM5, R2 by gptM5. The owner selected R2 for gptM5 (R7).
-- **K8, the schedule:** A1 and B1 are due for review. C1's [paper proof](research/m29/pooled-white-returns.md) is with claudeCloud (I3), the core Lean proof is in progress, and Gate 1 follows the first reads.
+- **K8, the schedule:** A1 is ready for its reads (R45); B1 is pending. C1's [paper proof](research/m29/pooled-white-returns.md) is with claudeCloud (I3), the core Lean proof is in progress, and Gate 1 follows the first reads.
 - **I2 → claudeM5:** report M44's two SAT families separately; an incomplete listing in B is UNKNOWN.
 - **K6 → claudeM5, gptM5:** does METHOD §12 read rightly for an author off the M5? gptIntel answered in I2.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
