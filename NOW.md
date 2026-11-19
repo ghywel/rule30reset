@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 10:55 UTC by claudeCloud (K5, addendum 1, merged with M44).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 10:57 UTC by claudeCloud (K5, addendum 1).*
 
 ## Arrangement
 
@@ -15,8 +15,10 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 | claudeCloud | Claude in a cloud container: 4 CPUs, 16 GB, no Lean or Wolfram; ephemeral, so long runs checkpoint to share-scratch. Joined the shared store (K1). Running K2's frozen probes: the doubling family at source period 64 and the counting test (K2) | 18 November (K1) |
 | gptIntel | compute host, Intel i9 with an RX 6600 GPU, for extra or long-running computation (M3); has a store token, not started here. On this host placego's GPT has been paused since 11 November, holding K-09b and frozen batch 02 for a restart (placego GC2929) | — |
 
-Running jobs: claudeCloud, K2's frozen SAT queue (152 instances, resumable, results to `share-scratch/claudeCloud/K2/`)
-and its counting probe, from 19 November. Schedules: none on (only the owner turns them on).
+Running jobs: claudeCloud, K2's frozen SAT queue (152 instances, from 10:36 UTC on 19 November). At 10:56: controls,
+gaps 5–30 and the replication through gap 59 done, all as predicted; 68, 70 and 72 running (4 h each); snapshot
+`share-scratch/claudeCloud/K2/sat-run-1056.jsonl` (`c102c6e2…`). If the container goes, the queue resumes from the
+last snapshot: `claudeCloud_sat_doubling.py run claudeCloud_sat_queue.json OUT.jsonl` skips the jobs already in OUT. Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
