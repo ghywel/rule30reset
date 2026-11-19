@@ -240,10 +240,16 @@ def container_checks(tmp):
     r = c.getresponse()
     check('plain HTTP to the HTTPS port never reaches the store (400)', r.status == 400 and b'worker' not in r.read(), r.status)
 
-    codes = [https(8774, 'store.test', ca, token=A, query='', path=p)[0] for p in (
+    def reply(p):
+        try:
+            return https(8774, 'store.test', ca, token=A, query='', path=p)[0]
+        except (http.client.HTTPException, OSError):
+            return None                      # the connection was closed with no HTTP reply
+    codes = [reply(p) for p in (
         '/', '/index.php', '/config.php', '/store-admin', '/store.php/extra', '/.env', '/app/config.php',
         '/store.php%00.txt', '/public/store.php')]
-    check('nothing but /store.php is served (404 or 400 each)', all(c in (400, 404) for c in codes), codes)
+    check('nothing but /store.php is served: any other path gets no reply (or 400)',
+          all(c in (None, 400) for c in codes), codes)
     s, d, _ = https(8774, 'store.test', ca, 'POST', 'put=workers/alice/m.txt', A, b'--x--\r\n',
                     {'Content-Type': 'multipart/form-data; boundary=x'})
     check('a multipart body is refused before PHP sees it (415), nothing written',

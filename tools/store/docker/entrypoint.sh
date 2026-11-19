@@ -148,9 +148,11 @@ if [ ! -s "$WORKERS" ]; then
     say "    store-admin token import NAME SHA   (keep a token a worker already holds)"
 fi
 
-# What every door serves: /store.php and nothing else. Requests are logged to the container's log without their
-# headers, because the worker's token travels in one. On a plain-HTTP door a Host header that names port 443 would
-# make PHP report port 443, which store.php takes for HTTPS: the port is dropped from such a header first.
+# What every door serves: /store.php and nothing else. Any other path gets no HTTP reply at all: the connection is
+# closed before anything else runs, so the name does not show a web site. Requests are logged to the container's
+# log without their headers, because the worker's token travels in one. On a plain-HTTP door a Host header that
+# names port 443 would make PHP report port 443, which store.php takes for HTTPS: the port is dropped from such a
+# header first.
 serve() {
     cat <<CADDY
 	root * /app/public
@@ -162,6 +164,8 @@ CADDY
 		request_header @port443 Host {http.request.host}
 CADDY
     cat <<'CADDY'
+		@other not path /store.php
+		abort @other
 		@multipart header_regexp Content-Type (?i)^\s*multipart/
 		respond @multipart "multipart bodies are not accepted" 415
 		@store path /store.php
