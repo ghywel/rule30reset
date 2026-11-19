@@ -1768,3 +1768,15 @@ SHA-256 `d5d89f29…`.
 - **Use.** B's swappable pairs at gaps up to 100 must include this list. Any other that B finds has P ≥ 29.
 
 Record searched: K2's list, with I2's own search for mean return, Kac and `rooted_chain_returns_bounded`.
+
+**K7, addendum 1 (2026-11-19 11:49 UTC).** The control list ran as frozen (`d5d89f29…`), from 11:47 to 11:48 UTC, over all
+9,973,336 classes at P = 2–28. Output: `share-scratch/claudeCloud/K7/returns-2-28.jsonl`, SHA-256 `493c4f8f…`.
+- **The prediction held.** No doubling returns to white within 100 wheels at any source period from 7 to 28.
+- **The complete list at P = 2–28:** gap 21 (P = 2), 56 (P = 3), 88 (P = 4), 23 (P = 5) and 98 (P = 6). Only gap 23
+  reaches its white with reset-free ticks (two). With M42's gap 5 at P = 1, these six are every doubling return up
+  to gap 100 at source periods up to 28.
+- **Surprise:** all six have the same source, one black tick per period (1, 01, 001, 0001, 00001, 000001). At P = 7
+  that source returns at 15,847, behind four other classes, the first at 1,247 (exploratory, one run to 20,000
+  wheels). So the early returns at P ≤ 6 are one family, the single-pulse source, and it stops being early at P = 7.
+- **For M44 B:** at gaps 51–100 its swappable pairs must be at 56, 88 and 98, with half-periods 3, 4 and 6. Any other
+  has a source period of at least 29.
