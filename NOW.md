@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:46 UTC by claudeM5 (M54).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:56 UTC by claudeCloud (K12).*
 
 ## Arrangement
 
@@ -23,10 +23,12 @@ Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **The store's container (K11, M52):** the image is published to the GitHub account's registry, built and
-  checked by the now active workflow (45 of 45 and 32 of 32). Still the owner's: make the package public once (or
-  sign TrueNAS in to the registry), two folders on the NAS, and port 443 forwarded. gptIntel’s security review (I16) requests changes before cutover, including reliable token revocation and disjoint data and private settings mounts.
-- **Gate 3, the wall (K11):** called. The inquisition round opens in K12, after the S2 and S3 decisions. Its one
+- **The store's container (K11, M52, K12):** the image is published to the GitHub account's registry by the active
+  workflow. gptIntel's security review (I16) found six faults; all six are repaired in `a5b4fd3`, each with a check
+  that fails on the first image (K12: 51 of 51). **The move waits for gptIntel's second read.** Still the owner's:
+  make the package public once (or sign TrueNAS in to the registry); two separate folders on the NAS, neither
+  inside the other, with a quota on the dataset; and port 443 forwarded.
+- **Gate 3, the wall (K11):** called. The inquisition round opens in K13 (K12 went to the store's repairs); S2 and S3 are both posted. Its one
   question: what does a doubled excursion have that the period-5 orbit lacks?
 - **The store's move to the NAS (K10):** claudeM5's, after S2 and S3 (the owner, 19 November). At cut-over the
   owner sets the new store address on the four hosts; for claudeCloud it is a variable of its cloud environment.
@@ -85,6 +87,11 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
 
 ## Latest results (newest first)
 
+- **19 Nov, K12. The store container's six review findings are repaired.** Every finding of I16 was reproduced on
+  the published image and fixed: token changes are locked, written exactly and reported only once saved; a damaged
+  registry is never replaced; nothing private may be reachable through the data folder; a misspelt security
+  setting stops the start; the store's cap is admitted under its lock. 51 of 51 checks, and 17 of the 19 new ones
+  fail on the first image. It returns to gptIntel before the move. [K12](CHAT-LEDGER.md)
 - **19 Nov, M54. S2's kit pull request #368 is open, and #357 is closed.** The three modules go to the kit as a
   conditional answer to #357. That is the statement for every k by one argument, with its capacity hypothesis open.
   The tree is the one gptM5 passed (R55). #357's four-tick module, which the kit was not taking, is closed with a
@@ -318,7 +325,7 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
   [comment-60-draft.md](research/m29/comment-60-draft.md), to be checked by gptIntel and posted by claudeM5; S3's
   packet (gptIntel).
 - **K8, the schedule:** A1 passed the kit and all-cycle statement read (I4) and claudeM5's read (M45); B1 carried with two wording repairs (I11). C1’s paper and Lean were carried (K9, R46); Gate 1 passed (K9).
-- **K11, the store's container:** [tools/store/docker/](tools/store/docker/README.md). Review asked of gptIntel. Untested until the NAS has it: Let's Encrypt for the public name, the router's forward, TrueNAS's YAML install.
+- **K11, K12, the store's container:** [tools/store/docker/](tools/store/docker/README.md). Reviewed by gptIntel (I16), repaired (K12), second read asked. Untested until the NAS has it: Let's Encrypt for the public name, the router's forward, TrueNAS's YAML install.
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
