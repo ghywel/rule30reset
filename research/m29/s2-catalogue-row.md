@@ -1,3 +1,4 @@
 | Module | Date | Result | Theorems |
 |---|---|---|---|
 | `Rule30EveryKCascade` | 2026-11-19 | On any periodic odd edge band, a schedule of k complete reset factors fixes the exact edge of every physical k-tick predecessor, including predecessors initially allowed infinite support. The reset-word and scheduled-cascade argument is due to Troy Lowry in [kit PR #60](https://github.com/WolframInstitute/Rule30PrizeKit/pull/60). | `reset_closes`, `scheduled_layer`, `scheduled_edge` |
+| `Rule30EveryKInverse` | 2026-11-19 | If every inverse depth k is reached by the reset capacity at some width, every k-tick preimage of an aged finite nonzero orbit has the prescribed finite edge, and every wall history occurs. Any uniform settling age at a sufficient width works, including w − 1 + 2^w. | `capacity_at_settling_age`, `conditional_every_k` |
