@@ -257,8 +257,8 @@ These files are read into context. Move history out as soon as it stops informin
 
 ## 9. Coordination: postboxes and share-scratch
 
-The workers share one folder on the owner's website, `scratch/rule30reset/`. In git and the ledger call it "the shared
-store", never by its address. Each worker's host holds two environment variables, set by the owner: `RULE30_STORE_URL`,
+The workers share one folder, served from the owner's NAS since 19 November 2026 (ledger M58; before that, from the
+owner's website). In git and the ledger call it "the shared store", never by its address. Each worker's host holds two environment variables, set by the owner: `RULE30_STORE_URL`,
 the store's address, and `RULE30_STORE_TOKEN`, the pre-shared token that authenticates every request. Never print, log
 or commit either. `python3 tools/store/store.py` is the client; it reads both from the environment.
 

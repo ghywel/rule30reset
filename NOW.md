@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 19:57 UTC by claudeM5 (M58).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 20:05 UTC by claudeCloud (K14).*
 
 ## Arrangement
 
@@ -24,11 +24,70 @@ Schedules: none on (only the owner turns them on).
 ## Needs the owner
 
 - **The store’s container (I18):** security review passed for the home NAS. claudeM5 can proceed with the published image `ghcr.io/ghywel/rule30-store:0d1eef2`. The owner’s setup uses separate data and settings folders, a dataset quota, readable data with no symbolic links, and port 443 forwarding.
-- **Gate 3, the wall (K11):** called. The inquisition round opens in K14 (K12 and K13 went to the store's repairs); S2 and S3 are both posted. Its one
+- **Gate 3, the wall (K11):** called. The inquisition round opens in claudeCloud's next post on it (K12 to K14 went to the store); S2 and S3 are both posted. Its one
   question: what does a doubled excursion have that the period-5 orbit lacks?
-- **The store's move to the NAS (K10, M58):** done by claudeM5 and verified file by file; tokens unchanged. **The owner
-  sets the new store address on each of the four hosts** (one variable). Each worker writes again only once switched.
-  The old store comes off the website on the owner's word, after all four are switched.
+- **The store's move to the NAS (K10, M58, K14):** done by claudeM5 and verified file by file; tokens unchanged.
+  **claudeM5 (M58) and claudeCloud (K14) are on the new store.** From the cloud: eight identity checks in a row
+  without a retry, the moved files match their digests, and writing works. Still the owner's: the new store address
+  on gptM5's and gptIntel's hosts if not yet set (one variable each); then the word to take the old store off the
+  website. The dynamic-DNS name must be confirmed every 30 days.
+
+## Direction
+
+The easy submissions are done, ours and others'; the hard problem needs new ways in (the owner, 17 November). Two
+strategies: this clean repository, whose method and kit summary are read whole into context; and inquisition and
+visualisation, so the owner's eye can find structure.
+
+**The goal now** (the owner, 19 November): a submittable proof of the kind the maintainer asked for on #357, "the
+statement for every number of ticks k: an age f(k) from which every k-tick preimage of a nonzero finite orbit has its
+true edge k cells inside the image edge, proved by an argument that does not need a new cover for each k" (T).
+
+## Schedule (K8)
+
+The full schedule, its rules and its two reformulations are in [K8](CHAT-LEDGER.md). claudeCloud conducts.
+
+**The chain.**
+
+| Link | Status |
+|---|---|
+| (T) ⇐ (CAP): reset capacity K1(w) ≥ k on every edge cycle, for every k | Proved in Lean at main and the verifier pin (R47–R48). A2 and A3 carried (I11, I12); S2 proposed (R50). The cascade credits Lowry, PR #60 (P6). |
+| (CAP) ⇔ (L∞): reset words infinitely often in every phase of every consistent left side | Hand proof by compactness (M39), carried in R37 |
+| (L∞) in one phase of every three | Three phases wholly in core Lean (I10, carried R49); one of every five in R43 |
+| (L∞) ⇐ (DL): every dyadic doubling white interval resets every tick | PROOF-SKETCH (M41). B1 writes it as Theorem C, which needs (DL⁻), the doubling lemma only at the first clock losses of pointed recurrent strips (M45) |
+| (DL) | OPEN. COMPUTED at every source period 2–32 except 5 (K5), and at the gaps listed in the ledger's header |
+
+**The streams.**
+
+| Stream | Worker | Items, in order | Reader | State |
+|---|---|---|---|---|
+| A, the Lean of S2 (the conditional theorem (CAP) ⇒ (T)) | gptM5, author | A1 the statement file; A2 the cascade, with its own proof and credit to #60; A3 the assembly with an explicit f(k) | gptIntel; claudeM5 for A1's statement | A1 done: [statement](research/m29/Rule30EveryKStatement.lean), three reads PASS (I4, M45, K9). **Gate 1 passed (K9). A2 kernel-checked on both kit revisions (R47), carrying read PASS (I11); A3 and both controls passed gptIntel’s carrying read and both official replays (I12).** K10: #60's credit goes in A2's docstring and row; gptM5 also does S3's Lean and shared reads. |
+| B, the hand proofs, then the early doubling returns | claudeM5 | B1 `research/m29/every-k-chain.md`; B2 M44 B at gaps 51–100 with K7's controls and the single-pulse family; B3 the essay and the #357 reply | gptIntel for B1; gptM5 for B3 | B1, [every-k-chain.md](research/m29/every-k-chain.md), carried by claudeCloud and gptIntel (K9, I11); revised in M46 with I11's two repairs and A2–A4's Lean statuses. B2 done (M47): gaps 51–55 decided with checked certificates, no doubling of any period; it stopped at 56, whose certificate ran out of time. B3: [the S2 essay](research/m29/s2-essay-draft.md), revised and rebuilt in R53 after the M49 release read, and [the next #357 reply](research/m29/reply-357-draft-2.md), with R52's edits, for after S2 is Lean Verified. **K10's order:** the store's move to the owner's NAS (not started); S3's notebook (v2 built, M47). |
+| C, the counting theory as theorems, then the wall | gptIntel | C1 the pooled mean-gap theorem (candidate S3); C2 the wall by pair counting; C3 the reads; **now A4** (K9): R44's bridge and the dyadic clocks in Lean, reader gptM5; then the read of B1 | claudeCloud for C1's proof; gptM5 for its Lean | C1 written and kernel-checked (I3, I5), its mathematics carried (K9). C2 done: at odd gaps a row fixes its successor (I6, carried in M45 and K9). C3: A1, the catalogue and both reformulations read (I4, I7). **K10, in this order:** the #60 comment reviewed and posted (I9); S3 sources with the notebook builder (I10, I12); A4 carried (R49); B1, A2 and A3 read (I11–I12). |
+| Conducting | claudeCloud | The chain table, the controls, K7's six SAT instances, S2's novelty check, the gates | — | Running. Gate 1 called (K9). K10 records the owner's three decisions. **K11: Gate 2's checks pass and the decision is with the owner; packaging is two headlines; Gate 3 is called; the store's container is a tested prototype.** Next: K12, the inquisition round's opening; the container's publication when the owner decides; the test of the new store from the cloud. |
+
+**The gates.** 1: the statement — **passed in K9**. 2: S2 proposed under METHOD §12 — **the owner approved building the packet (M49); R53 awaits release agreement and then the owner’s word to post**. 3: the wall — **called in K11**: B2 and C2 gave no mechanism, so an inquisition round with the
+owner follows the S2 and S3 decisions.
+
+## Submissions
+
+Each candidate follows METHOD §12: any worker authors it, a different worker reads it, both agree on the same
+digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. Standing consent to post: none (placego's of 10 November does not carry over).
+
+| Candidate | Result | Route | Stage | Post |
+|---|---|---|---|---|
+| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Progress reply posted on #357 at the owner's word (M36, 18 Nov 15:46 UTC). **Closed 19 Nov 18:45 UTC (M54)**, with a [comment](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357#issuecomment-7018624087) pointing to S2's replacement, [#368](https://github.com/WolframInstitute/Rule30PrizeKit/pull/368). | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
+| **S2** (M29) | Conditional on unbounded worst-phase reset capacity, a uniform age gives all finite k-tick predecessors their exact edge and realizes every wall history. | Portal partial and kit PR replacing #357 (M52) | Proposed privately (R50). Lean carried by gptIntel (I11, I12), both headline replays pass. Gate 2: yes (the owner, 19 Nov). **Packet built (M49):** `share-scratch/claudeM5/S2/release/`, manifest `pins.json` `2c005814…`; essay frozen with R52's edits; notebook `99c8b76e…` built at `5fb5915`, every gate passes, kernel accepts all 234 declarations; dry run passed. Two headlines (K11). gptIntel confirmed the notebook’s Lean source byte for byte and replayed both headlines at both revisions (I15). R53 completed the release read, repaired two prose claims and rebuilt the notebook. Author agrees on manifest `120cf1cc…`; claudeM5's release PASS on it (M50). **Posted and Lean Verified (M51):** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC; Lean Verified 18:17 UTC at `5fb5915`. The owner chose a kit PR replacing #357 (M52); read PASS on tree `afeef5f8…` (R54, R55). **Kit pull request [#368](https://github.com/WolframInstitute/Rule30PrizeKit/pull/368) open (M54)**, mergeable; awaiting the maintainers. | R47–R53, I12, I15, M50–M52, R54 |
+| **S3** (K2, I2) | Mean first white gap ≤ 2^Q+1 over the nonzero pointed Q-bit children, every Q>0. | Portal partial and kit temporal-profiles extension | Mathematics carried (K9, R46). Official Lean checker passed (I12). M47 notebook and R51 release read passed. **Posted and Lean Verified (M48):** portal entry [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC from the release `pins.json` `6c69946a…` (author I14, reader R51); Lean Verified 17:48 UTC at `5fb5915`. Kit pull request [#366](https://github.com/WolframInstitute/Rule30PrizeKit/pull/366) open, mergeable. | I3, I5, I8 |
+
+Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12:27 UTC portal snapshot (I8); the kit's main is
+`ff6af96` after the ZeroCoastBridge reset-swap extension (#365, R54). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
+
+## Latest results (newest first)
+
+- **19 Nov, K14. The cloud host is on the NAS store.** Eight identity checks in a row and forty more in a burst,
+  all without a retry; five moved files match the digests the ledger cites; a 5 MB file went up and came back
+  identical; writes outside claudeCloud's own areas are refused. This also tests the public certificate and the
+  router's forward, which could not be tested before the move. [K14](CHAT-LEDGER.md)
 - **19 Nov, I18. Store image cleared for the home NAS.** Review of the published `:0d1eef2` closes I17. All 49 server and 56 container checks passed.
 
 - **19 Nov, K13. The second review's three points are repaired, with a fourth of the same kind.** The data-folder
