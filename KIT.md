@@ -1,13 +1,13 @@
-<!-- kit-commit: a8072e7 2026-11-19 -->
+<!-- kit-commit: 35f2c6e 2026-11-19 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `a8072e7` (main, 2026-11-19),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `35f2c6e` (main, 2026-11-19),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 273 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 274 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 364 entries on 16 November
 (361 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
@@ -145,7 +145,8 @@ and no odd eventual period. The finite left half is necessary (`Rule30EtherWallW
   stripe-prefix families die (`Rule30ZeroBoundaryStripe*`); every nonzero finite row contains a reset word within
   three ticks (`Rule30ResetFreeThree`); predecessors of aged finite rows are finite (`Rule30AgeEightInverse`,
   `Rule30AgeTwentyFourInverse`); late twins (`Rule30LateTwins`); swapping the first six- and ten-tick wall returns
-  keeps finite width and every row from tick 11 (`Rule30ResetSwap`); from check 2 on, two of any three consecutive first checks
+  keeps finite width and every row from tick 11 (`Rule30ResetSwap`); every finite wall record has a finite row with a
+  complete predecessor tree of exactly any prescribed height (`Rule30WallRecordAncestry`); from check 2 on, two of any three consecutive first checks
   pass a share of rows in [1/40, 39/40], and check n has degree n or n − 1 (`Rule30FirstChecks`, `Rule30FirstCheckDegree`).
 - **Gap-language survivors.** If seed y survives to horizon 2m, the number Z of zeros in its trace at times
   0, 2, …, 2m−2 satisfies m ≤ 5Z and 3Z ≤ m+2. The canonical seed count N(H) is nondecreasing and
