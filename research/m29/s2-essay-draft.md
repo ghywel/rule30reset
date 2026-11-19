@@ -134,7 +134,7 @@ whiteIntervals[w_Integer] := Module[{ph = phases[w], col, whites, lp, inside},
 whiteIntervals[450]
 ```
 
-All three intervals are doublings, with source periods 1, 2 and 4, and each has a closed run in every phase. The white wheels at 28 and 399 are the kit's white diagonals (`Rule30LeftAntiPeriod`). Section 6 says why a reset in every phase of every doubling is the open statement.
+All three intervals are doublings, with source periods 1, 2 and 4, and each has a closed run in every phase. The white wheels at 28 and 399 are the kit's white diagonals (`Rule30LeftAntiPeriod`). Section 6 shows how a closed run in every phase of every doubling interval would imply arbitrarily deep closed runs in every phase of every recurrent strip.
 
 ## 4. The idea of the proof
 
@@ -176,7 +176,7 @@ The theorem gives `f(k) ≤ g(W(k))`, where `W(k)` is the least width of capacit
 - **The reset step and the cascade** are Troy Lowry's, in kit pull request 60 (`run_resets`, `scheduled_cascade_closes`), with the presence of resets as their hypothesis. That pull request, opened on 30 October, is unmerged, so it is not in the verifier's kit revision of 5 November. This module proves both steps locally, with that credit; a kit version would import them once 60 is merged. Kit pull requests 47 and 52 close inverse cascades under reset or gate hypotheses on a reference trajectory.
 - **Ancestry beside the wall.** `Rule30WallRecordAncestry` (Lowry, kit pull request 364) builds, for every wall record and every `k`, a finite row with a complete finite predecessor tree of height `k`. That is existence for some row, not the age statement for every row.
 - **Ours, earlier.** Four ticks from age 80 ([R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f)). The kit modules `Rule30UniversalLeftSide` (the band map and the left side shared by every configuration through wheel 53,207, whose fork Rowland located in 2006), `Rule30FourLeftSides` and `Rule30FourFronts` (the four strips and their explicit fronts). The reduction of the ages to the edge band's cycles and the capacity, the compactness argument and the computed range are in our public record.
-- **Novelty.** The portal's list and the kit's open pull requests have no statement for every `k`. At the checks of 19 November, the portal's 377 entries and the kit's 15 open pull requests contain no statement for every `k`, and no implication from capacity over the recurrent bands to every physical predecessor and every wall history.
+- **Novelty.** In a check on 19 November of 378 portal entries and 16 open kit pull requests, we found no earlier result deriving the uniform age conclusion for every `k`, every physical predecessor and every wall history from reset capacity over the recurrent bands.
 
 ## 8. What is not proved
 
