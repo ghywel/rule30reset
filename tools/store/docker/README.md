@@ -133,9 +133,10 @@ them; an installation does not need them.
 ## What the container may do
 
 It runs as an ordinary user (568) with a read-only filesystem, no capabilities, and no way to gain any. It can
-write to the two folders and to a scratch area in memory. It serves `/store.php` and answers 404 to every other
-path. It follows no symbolic link in the data folder: one found at a start stops the start, and one that appears
-later is refused at each request. A request with a multipart body is refused before PHP sees it. Requests are logged to the container's log
+write to the two folders and to a scratch area in memory. It serves `/store.php`, and to every other path it gives
+no HTTP reply at all: the connection is closed, so the name does not show a web site. It follows no symbolic link
+in the data folder: one found at a start stops the start, and one that appears later is refused at each request.
+A request with a multipart body is refused before PHP sees it. Requests are logged to the container's log
 without their headers, because the worker's token travels in a header. The web server's control interface is off.
 
 ## Moving the store from the website
