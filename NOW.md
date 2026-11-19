@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:31 UTC by claudeM5 (M52).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:37 UTC by gptM5 (R54).*
 
 ## Arrangement
 
@@ -23,8 +23,6 @@ Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **S2's kit pull request (the owner, 19 November: "PR S2, close #357"):** the patch, title, description and
-  #357's closing comment wait for gptM5's read (M52). On PASS, claudeM5 opens the pull request and closes #357.
 - **The store's container (K11, M52):** the image is published to the GitHub account's registry, built and
   checked by the now active workflow (45 of 45 and 32 of 32). Still the owner's: make the package public once (or
   sign TrueNAS in to the registry), two folders on the NAS, and port 443 forwarded. gptIntel's security read of
@@ -79,14 +77,16 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
-| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Progress reply posted on #357 at the owner's word (M36, 18 Nov 15:46 UTC); awaiting the maintainers. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
-| **S2** (M29) | Conditional on unbounded worst-phase reset capacity, a uniform age gives all finite k-tick predecessors their exact edge and realizes every wall history. | Portal partial (K11, M49) | Proposed privately (R50). Lean carried by gptIntel (I11, I12), both headline replays pass. Gate 2: yes (the owner, 19 Nov). **Packet built (M49):** `share-scratch/claudeM5/S2/release/`, manifest `pins.json` `2c005814…`; essay frozen with R52's edits; notebook `99c8b76e…` built at `5fb5915`, every gate passes, kernel accepts all 234 declarations; dry run passed. Two headlines (K11). gptIntel confirmed the notebook’s Lean source byte for byte and replayed both headlines at both revisions (I15). R53 completed the release read, repaired two prose claims and rebuilt the notebook. Author agrees on manifest `120cf1cc…`; claudeM5's release PASS on it (M50). **Posted and Lean Verified (M51):** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC; Lean Verified 18:17 UTC at `5fb5915`. No kit pull request (K11); the #357 reply is the owner's separate decision. | R47–R50, I12, K11 |
+| **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Progress reply posted on #357 at the owner's word (M36, 18 Nov 15:46 UTC). The owner directed closure once the S2 replacement opens (M52, R54). | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
+| **S2** (M29) | Conditional on unbounded worst-phase reset capacity, a uniform age gives all finite k-tick predecessors their exact edge and realizes every wall history. | Portal partial and kit PR replacing #357 (M52) | Proposed privately (R50). Lean carried by gptIntel (I11, I12), both headline replays pass. Gate 2: yes (the owner, 19 Nov). **Packet built (M49):** `share-scratch/claudeM5/S2/release/`, manifest `pins.json` `2c005814…`; essay frozen with R52's edits; notebook `99c8b76e…` built at `5fb5915`, every gate passes, kernel accepts all 234 declarations; dry run passed. Two headlines (K11). gptIntel confirmed the notebook’s Lean source byte for byte and replayed both headlines at both revisions (I15). R53 completed the release read, repaired two prose claims and rebuilt the notebook. Author agrees on manifest `120cf1cc…`; claudeM5's release PASS on it (M50). **Posted and Lean Verified (M51):** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC; Lean Verified 18:17 UTC at `5fb5915`. The owner chose a kit PR replacing #357 (M52). The corrected kit tree and PR texts passed R54. claudeM5 holds the reviewed files to open the replacement and close #357. | R47–R53, I12, I15, M50–M52, R54 |
 | **S3** (K2, I2) | Mean first white gap ≤ 2^Q+1 over the nonzero pointed Q-bit children, every Q>0. | Portal partial and kit temporal-profiles extension | Mathematics carried (K9, R46). Official Lean checker passed (I12). M47 notebook and R51 release read passed. **Posted and Lean Verified (M48):** portal entry [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC from the release `pins.json` `6c69946a…` (author I14, reader R51); Lean Verified 17:48 UTC at `5fb5915`. Kit pull request [#366](https://github.com/WolframInstitute/Rule30PrizeKit/pull/366) open, mergeable. | I3, I5, I8 |
 
 Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12:27 UTC portal snapshot (I8); the kit's main is
-`35f2c6e` after Lowry's WallRecordAncestry (K9). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
+`ff6af96` after the ZeroCoastBridge reset-swap extension (#365, R54). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **19 Nov, R54. S2’s corrected kit packet passed review.** The three modules built at kit main, the history quantifiers and author credits were corrected, and claudeM5 has the exact tree and texts for the replacement PR. [R54](CHAT-LEDGER.md)
 
 - **19 Nov, M52. The store's image is published, and S2 goes to the kit as a pull request replacing #357.** The
   image workflow passed every check and published privately. S2's three modules, changed only in comments and
