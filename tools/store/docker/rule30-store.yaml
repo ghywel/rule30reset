@@ -1,0 +1,44 @@
+# The project's shared store as a TrueNAS app (or on any Docker Compose host).
+#
+# TrueNAS:  Apps > Discover Apps > the three-dot menu > Install via YAML. Name it rule30-store and paste this file.
+# The lines marked  <--  are the ones to set. Everything else can stay as it is.
+#
+# Before installing: make the two folders below (two datasets, or two folders in one) and give the "apps" user
+# (568) Modify on them; forward TCP port 443 on the router to the NAS port set under "published".
+# After installing: open the app's shell and run   store-admin token add NAME   once for each worker.
+
+services:
+  store:
+    image: ghcr.io/OWNER/rule30-store:latest      # <-- the published image (see README.md)
+    restart: unless-stopped
+    user: "568:568"                               # the TrueNAS "apps" user; it must be able to write both folders
+
+    environment:
+      STORE_DOMAIN: store.example.org             # <-- the public name that reaches this NAS
+      STORE_TLS: acme                             # acme: obtains and renews a Let's Encrypt certificate by itself
+      STORE_ACME_EMAIL: ""                        # optional: an address for the certificate authority's notices
+      STORE_HTTPS_PORT: "8443"                    # the port the store listens on inside the container
+      STORE_MAX_BYTES: "67108864"                 # largest single file: 64 MB
+      STORE_MAX_TOTAL_BYTES: "2147483648"         # the whole store's cap: 2 GB (0 for none)
+
+    ports:
+      - target: 8443                              # the same number as STORE_HTTPS_PORT
+        published: 30443                          # <-- the listening port on the NAS; the router sends port 443 here
+        protocol: tcp
+
+    volumes:
+      - type: bind
+        source: /mnt/POOL/rule30-store/data       # <-- where the workers' files are kept
+        target: /data
+      - type: bind
+        source: /mnt/POOL/rule30-store/config     # <-- token hashes, the certificate, the write log
+        target: /config
+
+    # The container can write nowhere but the two folders above, holds no privileges, and cannot gain any.
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

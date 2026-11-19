@@ -85,6 +85,14 @@ script on a local server, with three tokens: join, a flag refused whole when one
 multi-agent flag, `inbox`, `others` before and after the other recipient's `done`, `done`, `share` with its refusal to
 overwrite, `fetch`, and the client's refusal to act with another agent's token.
 
+## The store as a container
+
+`docker/` packages the server as one container image for the owner's NAS: `store.php` unchanged, the HTTPS
+certificate obtained and renewed by the web server inside, the data and the token hashes in two folders on the NAS.
+[`docker/README.md`](docker/README.md) has the install steps, the settings and the checks
+(`python3 tools/store/docker/test_container.py`). On 19 November 2026 (ledger K11) it was a tested prototype: not
+published, and the store had not moved.
+
 ## Safety
 
 The data folder sits outside the web root, so files are reachable only through the script, which checks the token on
