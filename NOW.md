@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 17:01 UTC by gptIntel (I12).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 17:11 UTC by claudeM5 (M46).*
 
 ## Arrangement
 
@@ -20,15 +20,17 @@ what they can run (the owner, 19 November; METHOD §1). The M5 and claudeCloud b
 
 Running jobs: claudeM5, B2 (M45): the
 frozen all-period listing at gaps 51–100 on the M5 laptop, 9 workers, from 12:58 UTC for at most four hours, each
-finished gap copied to `share-scratch/claudeM5/M29/B2/`.
+finished gap copied to `share-scratch/claudeM5/M29/B2/`. Gaps 51–55 are decided; gap 56's certificate, the last,
+ends by about 17:25 UTC. Verdicts in M47.
 Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
 - **Gate 2 of the schedule (K8), when it comes:** whether S2, a theorem for every k that is conditional on reset
   capacity, is submitted to the portal, and what #357 is told.
-- **S3, when its packet is built and read (K10):** the owner's word to post it, asked once with the built essay.
-- **Gate 3, the wall:** an inquisition round, once claudeM5's B2 verdicts (M46) are in.
+- **S3 (K10):** its notebook is built at the verifier pin and passes every build gate (M46). Once gptIntel stages
+  it and gptM5's release read passes, the owner's word to post it, asked once with the built essay.
+- **Gate 3, the wall:** an inquisition round, once claudeM5's B2 verdicts (M47) are in.
 - **The store's move to the NAS (K10):** at cut-over, the owner sets the new store address on the four hosts; for
   claudeCloud it is a variable of its cloud environment. Tested from the cloud (K10, addendum 1): the owner's DNS
   name resolves and is accepted; this host needs port 443 and a valid public certificate. A free dynamic-DNS record
@@ -63,7 +65,7 @@ The full schedule, its rules and its two reformulations are in [K8](CHAT-LEDGER.
 | Stream | Worker | Items, in order | Reader | State |
 |---|---|---|---|---|
 | A, the Lean of S2 (the conditional theorem (CAP) ⇒ (T)) | gptM5, author | A1 the statement file; A2 the cascade, with its own proof and credit to #60; A3 the assembly with an explicit f(k) | gptIntel; claudeM5 for A1's statement | A1 done: [statement](research/m29/Rule30EveryKStatement.lean), three reads PASS (I4, M45, K9). **Gate 1 passed (K9). A2 kernel-checked on both kit revisions (R47), carrying read PASS (I11); A3 and both controls passed gptIntel’s carrying read and both official replays (I12).** K10: #60's credit goes in A2's docstring and row; gptM5 also does S3's Lean and shared reads. |
-| B, the hand proofs, then the early doubling returns | claudeM5 | B1 `research/m29/every-k-chain.md`; B2 M44 B at gaps 51–100 with K7's controls and the single-pulse family; B3 the essay and the #357 reply | gptIntel for B1; gptM5 for B3 | B1 written, [every-k-chain.md](research/m29/every-k-chain.md); chain carried by claudeCloud and gptIntel (K9, I11); two wording repairs with claudeM5. B2 frozen and running (M45); verdicts in M46. B3 waits for the owner's word. **K10, in this order:** the store's move to the owner's NAS; M46; S3's notebook; B3. |
+| B, the hand proofs, then the early doubling returns | claudeM5 | B1 `research/m29/every-k-chain.md`; B2 M44 B at gaps 51–100 with K7's controls and the single-pulse family; B3 the essay and the #357 reply | gptIntel for B1; gptM5 for B3 | B1, [every-k-chain.md](research/m29/every-k-chain.md), carried by claudeCloud and gptIntel (K9, I11); revised in M46 with I11's two repairs and A2–A4's Lean statuses. B2 frozen and running (M45); verdicts in M47. B3 drafted at the owner's word (the S2 essay and the next #357 reply); in M47, for gptM5's read. **K10's order:** the store's move to the owner's NAS (not started); B2's verdicts; S3's notebook (built, M46); B3. |
 | C, the counting theory as theorems, then the wall | gptIntel | C1 the pooled mean-gap theorem (candidate S3); C2 the wall by pair counting; C3 the reads; **now A4** (K9): R44's bridge and the dyadic clocks in Lean, reader gptM5; then the read of B1 | claudeCloud for C1's proof; gptM5 for its Lean | C1 written and kernel-checked (I3, I5), its mathematics carried (K9). C2 done: at odd gaps a row fixes its successor (I6, carried in M45 and K9). C3: A1, the catalogue and both reformulations read (I4, I7). **K10, in this order:** the #60 comment reviewed and posted (I9); S3 sources with the notebook builder (I10, I12); A4 carried (R49); B1, A2 and A3 read (I11–I12). |
 | Conducting | claudeCloud | The chain table, the controls, K7's six SAT instances, S2's novelty check, the gates | — | Running. Gate 1 called (K9). K10 records the owner's three decisions. Next: the test of the new store from the cloud, S3's last novelty check, Gate 3. |
 
@@ -78,13 +80,18 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
 | **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Progress reply posted on #357 at the owner's word (M36, 18 Nov 15:46 UTC); awaiting the maintainers. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
-| **S3** (K2, I2) | Mean first white gap ≤ 2^Q+1 over the nonzero pointed Q-bit children, every Q>0. | Portal partial and kit temporal-profiles extension | Proposed privately. Lean carrying read PASS (R46); builds pass on main and the verifier pin. Mathematics carried, with an exact control at clocks 1–14 (K9). **S3 sources pinned and official checker PASS (I10, I12), Wolfram notebook pending:** author gptIntel, Lean and shared reads gptM5, M5 build claudeM5. | I3, I5, I8 |
+| **S3** (K2, I2) | Mean first white gap ≤ 2^Q+1 over the nonzero pointed Q-bit children, every Q>0. | Portal partial and kit temporal-profiles extension | Proposed privately. Lean carrying read PASS (R46); builds pass on main and the verifier pin. Mathematics carried, with an exact control at clocks 1–14 (K9). Sources pinned and official checker PASS (I10, I12). **Notebook built on the M5 at `5fb5915`; every build gate passes (M46):** `share-scratch/claudeM5/S3/essay.nb` `36a4c4b1…`, receipt `build.json` `9344ee27…`. Next: gptIntel stages them in the packet, then gptM5's release read. Author gptIntel, Lean and shared reads gptM5, M5 build claudeM5. | I3, I5, I8 |
 
 Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12:27 UTC portal snapshot (I8); the kit's main is
 `35f2c6e` after Lowry's WallRecordAncestry (K9). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
 
+- **19 Nov, M46. S3's notebook is built at the verifier pin and passes every build gate.** Built on the M5 from
+  gptIntel's twelve pinned inputs against a fresh kit at `5fb5915`. The source is iconised and matches byte for byte,
+  and the abstract matches. There is no failed output or message, and no local path. The kernel accepts all 57
+  declarations, with standard axioms. B1 takes I11's two wording repairs and the Lean statuses of A2–A4.
+  [M46](CHAT-LEDGER.md)
 - **19 Nov, K9. Gate 1 passes, and the pooled bound is sharp.** The A1 statement, the B1 chain and the pooled proof
   all carry. An exact control at clocks 1–14 finds the pooled sum never above N² − 1, equal to it at Q = 1 and 3, and
   within 0.04% at Q = 14; the largest gap there is 9.59 × 2^14, against 9.70 for a geometric wait (COMPUTED). Lowry's

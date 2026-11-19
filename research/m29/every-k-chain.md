@@ -1,8 +1,9 @@
 # The chain for every k: from the doubling lemma to the inverse-tick statement
 
-**Stream B1 of K8.** Author claudeM5, 19 November 2026; reader gptIntel. This document turns the sketches of M34,
-M35, M39 and M41 (on R44) into numbered steps. Each step states its hypotheses, its status and where it lives, so
-that stream A can formalise it line by line. It adds nothing computed.
+**Stream B1 of K8.** Author claudeM5, 19 November 2026; reader gptIntel. Read PASS by claudeCloud (K9) and gptIntel
+(I11); revised in M46 with I11's two wording repairs and the Lean statuses of A2–A4. This document turns the
+sketches of M34, M35, M39 and M41 (on R44) into numbered steps. Each step states its hypotheses, its status and
+where it lives, so that stream A can formalise it line by line. It adds nothing computed.
 
 Statuses. **PROVED IN LEAN** names a Lean theorem that compiles. **CARRIED** is a hand proof that an independent read
 has passed (the read is named). **PROOF-SKETCH** has had no such read, or only a read of its idea. **OPEN** is not
@@ -101,18 +102,21 @@ The chain is (DL) ⇒ (L∞) ⇒ (CAP) ⇒ (T).
 the shallow 0 of the first reset word whose deep 0 it has read, reading from s towards the edge.
 - **Status:** PROVED as a finite automaton (M39, checked at 65,536 starts on A0); CARRIED in R37. Known: kit PR #60's
   `run_resets` (Lowry), G13's exact one-layer language, P6.
+- **In Lean, sufficiency:** after a closed run and its free symbol z, the register is (black, ¬z) from all four
+  entrance states (`scheduled_layer`, A2, R47; carried in I11). That no earlier coalescence occurs stays M39's
+  automaton check; the chain does not need it.
 - **Why:** in the subset automaton, after any 0 the subset is {A, E} in R29's classes (A = 00, C = 10,
   E = {01, 11}). A 1 rotates A → E → C → A. A 0 sends A to A and C, E to E. So the subset collapses exactly after a
   0 that ends a black run of length 1 mod 3, and one more bit fixes the pair.
-- **For Lean:** a small automaton; A2 may import or reprove `run_resets`.
+- **For Lean:** done in A2, with credit to #60.
 
 **Step 2, monotonicity.** By step 1, a layer started deeper never coalesces shallower. *Immediate from step 1.*
 
 **Step 3, the band reaches a cycle.** Every row of age ≥ g(w) has its width-w band on a cycle of R_w, and by 1.5 that
-cycle is the prefix of a pointed recurrent strip. Its k true ancestors are that strip's phases at the k previous
-ticks.
-- **Status:** CARRIED (M35 step 1 in R35; R37's read of M39).
-- **For Lean:** A3 (the kit's `Ld_uniform_period`, or a pigeonhole on the 2^w band states).
+cycle is the prefix of a pointed recurrent strip. The cycle's k previous phases are valid band parents: each maps to
+the next under R_w. At the first settled ticks the true ancestors' bands may still be transient; step 4 shows that
+every actual parent agrees with these phases on the coalesced part (I11).
+- **Status:** PROVED IN LEAN (A3, R48: a pigeonhole on the 2^w band states; carried in I12).
 
 **Step 4, capacity closes the history** (M34's argument). Let r have age a ≥ g(w), so that its width-w band lies on
 a cycle of R_w. Suppose every phase of that cycle admits k layers under the schedule. Then every k-tick preimage of r
@@ -128,14 +132,16 @@ agrees with r's true ancestors on the coalesced parts, and its edge is k cells i
   - Layer 2 then reads bits that are known for every preimage, and so on.
   - So no extra width beyond w is needed. An earlier draft of this step asked for w + k cells, from M36's φ form. A1
     rightly needs only the settled band (`Settled`), and A3's proof must make this point.
-- **Status:** CARRIED (M34 in R29: "f(k) ≤ g(W(k)) holds whenever the stated cycle covers all seeds and W(k)
-  exists"; M39 steps 1, 2 and 5 in R37).
-- **For Lean:** A2 and A3. The edge condition is exactly where the kit's k = 1, 2 statements and S1's k = 4 statement
-  serve as templates.
+- **Status:** PROVED IN LEAN (`scheduled_edge`, A2, R47, carried in I11; the wall histories and finite
+  representatives in A3, R48, carried in I12). By hand: M34 in R29, M39 steps 1, 2 and 5 in R37.
+- **The zero cut** (I11): a cut at j = 0 cannot occur on a black-edged image band, since wheel 1 is black. At j = 1
+  the pair is the parent's black edge and a white.
 
 **Theorem B** ((CAP) ⇒ (T)). Let W(k) be the least w with K1(w) ≥ k. Then (T) holds with
 f(k) ≤ g(W(k)) ≤ W(k) − 1 + 2^(W(k)). This is steps 3 and 4.
-- **Status:** CARRIED by hand, not in Lean. This is S2's main theorem.
+- **Status:** PROVED IN LEAN: `conditional_every_k : ConditionalEveryK` and
+  `capacity_at_settling_age : CapacityAtSettlingAge`, at kit main `35f2c6e` and the verifier pin `5fb5915` (R48;
+  carried in I12). This is S2's main theorem.
 - **Its Lean statement is A1** (R45, `Rule30EveryKStatement.lean`, SHA-256 `76d64433…`):
   - `ConditionalEveryK` with `settlingBound (widthFor capacity k)`;
   - the sharper `CapacityAtSettlingAge`, for any established settling age.
@@ -204,7 +210,7 @@ is a reset word of phase s with both ends in [A, B].
   - Every column up to the next loss inherits the clock from a nonwhite driver (R44's note, "Which doubling remains
     open"). Induction on the losses gives 1, 2, 4, ….
 - **Status:** (a)–(c) PROVED IN LEAN (`Rule30RootedWhiteReturns.lean`, compiled at the kit's `ac3d144` in M41 and at
-  `a8072e7` in I2). (d) CARRIED by hand (R44's note, M41); A4 should put it in Lean.
+  `a8072e7` in I2). (d) PROVED IN LEAN (`dyadic_prefix_clock`, A4, I10; carried in R49).
 
 **Step 10, a doubling interval past every depth.** Fix a depth d0.
 - Take m > d0 and the period p of the prefix [0, m], a power of 2 by step 9(d).
@@ -213,12 +219,12 @@ is a reset word of phase s with both ends in [A, B].
   So its least period P has p/P odd, hence P = p.
 - Let B be the next white past A, which exists by step 9(c). Then [A, B] is a dyadic doubling white interval with
   A > d0.
-- **Status:** PROOF-SKETCH. Hand steps on Lean facts; this is M41's sketch of R44's argument, written out.
+- **Status:** CARRIED (K9, I11). Hand steps on Lean facts; this is M41's sketch of R44's argument, written out.
 
 **Theorem C** ((DL⁻) ⇒ (L∞)).
 - **Argument.** Suppose phase s of a pointed recurrent strip has no reset deeper than d0. Step 10 gives a doubling
   interval [A, B] with A > d0. (DL⁻) gives a reset of phase s in [A, B], deeper than d0: a contradiction.
-- **Status:** PROOF-SKETCH, short. It needs (DL⁻) only at first clock losses, at the clock of the strip.
+- **Status:** CARRIED (K9, I11). It needs (DL⁻) only at first clock losses, at the clock of the strip.
 - **The chain.** Theorems C, A and B give (DL⁻) ⇒ (T).
 
 ### 3.4 What is proved of (L∞)
@@ -226,9 +232,9 @@ is a reset word of phase s with both ends in [A, B].
 - **R43** (PROVED IN LEAN; CARRIED in M41): on every pointed recurrent strip, for every s, one fixed phase among
   s, …, s + 4 has resets at arbitrarily large depths (`white_five_by_eight`, `one_of_five_unbounded`,
   `unbounded_anchors`).
-- **R44** (computer-assisted; CARRIED in M41 and I2): the same with three phases.
-  - It is a Lean automaton theorem, `three_phase_return`, plus a hand transfer from the automaton to the strip.
-  - The fixed choice among the three phases is by hand (I2). A4 is to bring it into Lean.
+- **R44** (PROVED IN LEAN: `one_of_three_unbounded`, A4, I10; carried in R49): the same with three phases.
+  - R44's automaton theorem `three_phase_return`, with the transfer to the strip and the fixed choice among the
+    three phases, all in Lean. The phase may depend on the strip and the starting tick.
 - **Neither gives (L∞).** Step 5 needs resets in the k consecutive prescribed phases s − k + 1, …, s. A fixed phase
   among three cannot be chosen to match a prescribed one (R44's note).
 
@@ -250,10 +256,12 @@ K8 §5: on a strip with white wheels w_1 < w_2 < …, let Bad_i be the ticks wit
   do as well.
 - **Consequence 2, new.** It is enough that infinitely many *runs of consecutive intervals* jointly leave no
   reset-free tick: Bad_i ∩ Bad_(i+1) ∩ … ∩ Bad_j = ∅. A tick may survive one interval and die in the next. So (L∞)
-  is strictly weaker than "every doubling interval resets every tick". It admits multi-interval arguments of R44's
-  kind, run across consecutive whites.
+  asks no more than this joint condition, which "every doubling interval resets every tick" implies. Whether (L∞) is
+  strictly weaker than (DL) on actual strips would need a counterexample or an independence result; the set-cover
+  observation alone does not show it (I11). The condition admits multi-interval arguments of R44's kind, run across
+  consecutive whites.
 
-### 4.2 Unique predecessor: the forward half survives; the backward half needs one more lemma
+### 4.2 Unique predecessor: holds both ways, the backward half by I7's lemma
 
 K8 §5: write F(x) = 4x ⊕ (2x ∨ x) on the odd 2-adic integers, bit j for wheel j.
 - **The map.** Bit j of F(x) is x_(j−2) ⊕ (x_(j−1) ∨ x_j): the band map of 1.5, read on the infinite left side. Phase
@@ -304,7 +312,9 @@ constants preferred (step 5) and the age of Theorem B.
 5. **What is already in Lean:**
    - step 9(a)–(c) (`Rule30RootedWhiteReturns.lean`);
    - R43's theorem (`Rule30WhiteResetBox.lean`);
-   - R44's automaton (`Rule30ThreePhaseReturn.lean`);
+   - R44's automaton (`Rule30ThreePhaseReturn.lean`), and A4's dyadic clocks and three-phase theorem
+     (`Rule30RecurrentStrip.lean`);
+   - A2's cascade (`Rule30EveryKCascade.lean`) and A3's assembly (`Rule30EveryKInverse.lean`), which prove Theorem B;
    - the kit's `Recurrence`, `PeriodFrom` and `forced_front_four_uniform`;
    - #60's `run_resets` and `scheduled_cascade_closes`, open and unmerged (P6).
 6. **What S2 needs:** steps 1–7 and Theorems A and B, with (CAP) or (L∞) as the named hypothesis. Theorem C and
