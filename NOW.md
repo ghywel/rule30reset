@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 19:09 UTC by gptIntel (I17).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 19:26 UTC by claudeCloud (K13).*
 
 ## Arrangement
 
@@ -23,8 +23,14 @@ Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **The store's container (I17):** the published image `:d55af14` passed 45/45 server and 51/51 container checks. Five I16 findings are closed. **NAS move on hold.** The second review requests a mount check that stops on inspection errors and protects private files from links in migrated data. I17 also records a short-write issue on a full dataset. claudeCloud has the findings. The owner’s NAS setup still needs separate data and settings directories, a dataset quota, and port 443 forwarding.
-- **Gate 3, the wall (K11):** called. The inquisition round opens in K13 (K12 went to the store's repairs); S2 and S3 are both posted. Its one
+- **The store's container (K13):** gptIntel's second read (I17) closed five findings and asked for three more
+  repairs: the mount check must stop on an inspection error; links in the data folder must not reach private
+  files; a full dataset must not acknowledge bytes it did not store. All three are repaired in `ba25596`, with one
+  more of the same kind (an upload cut short was stored as whole). 49 of 49 server checks and 56 of 56 container
+  checks; the published image fails the new ones. **The NAS move stays on hold for gptIntel's third read.** The
+  owner's NAS setup still needs: two separate folders for data and settings, a quota on the dataset, no symbolic
+  links in the data, and port 443 forwarded.
+- **Gate 3, the wall (K11):** called. The inquisition round opens in K14 (K12 and K13 went to the store's repairs); S2 and S3 are both posted. Its one
   question: what does a doubled excursion have that the period-5 orbit lacks?
 - **The store's move to the NAS (K10):** claudeM5's, after S2 and S3 (the owner, 19 November). At cut-over the
   owner sets the new store address on the four hosts; for claudeCloud it is a variable of its cloud environment.
@@ -83,6 +89,11 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
 
 ## Latest results (newest first)
 
+- **19 Nov, K13. The second review's three points are repaired, with a fourth of the same kind.** The data-folder
+  scan now stops the start on any error; no symbolic link in the data folder is followed, at the start or at any
+  request; a write is acknowledged only when every declared byte is on disk, and a failed append puts the file back.
+  An upload cut short of its declared length is refused. 49 of 49 and 56 of 56; the published image fails the new
+  checks. A third read is asked of gptIntel before the move. [K13](CHAT-LEDGER.md)
 - **19 Nov, I17. Second container review.** Five I16 findings closed on the published image. Private-file isolation still requires repair before cutover.
 
 - **19 Nov, M55. The public store package is up to date.** Read anonymously, `latest` resolves to the repaired
@@ -327,7 +338,7 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
   [comment-60-draft.md](research/m29/comment-60-draft.md), to be checked by gptIntel and posted by claudeM5; S3's
   packet (gptIntel).
 - **K8, the schedule:** A1 passed the kit and all-cycle statement read (I4) and claudeM5's read (M45); B1 carried with two wording repairs (I11). C1’s paper and Lean were carried (K9, R46); Gate 1 passed (K9).
-- **K11, K12, the store's container:** [tools/store/docker/](tools/store/docker/README.md). Reviewed by gptIntel (I16), repaired (K12), second read asked. Untested until the NAS has it: Let's Encrypt for the public name, the router's forward, TrueNAS's YAML install.
+- **K11, K12, the store's container:** [tools/store/docker/](tools/store/docker/README.md). Reviewed by gptIntel twice (I16, I17), repaired twice (K12, K13), third read asked. Untested until the NAS has it: Let's Encrypt for the public name, the router's forward, TrueNAS's YAML install.
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
