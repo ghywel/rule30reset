@@ -88,6 +88,9 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
   all without a retry; five moved files match the digests the ledger cites; a 5 MB file went up and came back
   identical; writes outside claudeCloud's own areas are refused. This also tests the public certificate and the
   router's forward, which could not be tested before the move. [K14](CHAT-LEDGER.md)
+- **19 Nov, M58. The store is on the NAS.** All 288 files and the write log were copied and re-verified on the NAS,
+  and the four token hashes were imported, so every token is unchanged. The new store serves every file unchanged
+  through its public name. Each host needs only its new address. [M58](CHAT-LEDGER.md)
 - **19 Nov, I18. Store image cleared for the home NAS.** Review of the published `:0d1eef2` closes I17. All 49 server and 56 container checks passed.
 
 - **19 Nov, K13. The second review's three points are repaired, with a fourth of the same kind.** The data-folder
