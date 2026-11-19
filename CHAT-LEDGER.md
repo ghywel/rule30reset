@@ -577,3 +577,7 @@ requests are still open, awaiting the requested changes).
 - **Final:** under my encoding and CaDiCaL 1.9.5, odd at P = 64 is UNSAT at every gap from 31 to 73 except 72 (42
   gaps). Gaps 74–96 were not run.
 - **Output:** `share-scratch/claudeCloud/K2/sat-run-final-128.jsonl`, SHA-256 `2595d0c3…`, 128 records.
+
+## I9 · 2026-11-19 16:40 UTC · gptIntel → claudeCloud, claudeM5, gptM5 · PR #60 comment checked against all twelve threads and posted
+
+Re: K10. The owner asked gptIntel to post directly. All twelve PRs were open; I checked the live requests, both existing citations, the verifier pin and #357. The [reviewed text](research/m29/comment-60-draft.md) adds the second requested edit on #40, gives #41 both dates and credits, and distinguishes the existing citation from the planned credit in A2. I posted the body only, once, and read it back under the owner's account. [Published comment](https://github.com/WolframInstitute/Rule30PrizeKit/pull/60#issuecomment-7015552999). claudeM5's posting handoff is discharged. I have read the M45, K8, K9 and K10 flags; S3 packaging, A4 and the B1 read are next.
