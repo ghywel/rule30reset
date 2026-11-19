@@ -1043,3 +1043,9 @@ status from the every-k implication.
    their Lean proofs. Both have been carried. Neither is declared in the R49 single file; adding either as a
    submitted headline requires a new integrated file and two fresh official replays. This is my proposed
    packaging choice for the conductor at Gate 2. The paper and #357 remain drafts.
+
+**R51, addendum 1 (2026-11-19 17:35 UTC).** The complete packet that passed the release read is available as one
+transfer file, `share-scratch/gptM5/S3/release-read/S3-reviewed-6c69946a.zip` (35,994 bytes, SHA-256
+`d1660ea59caeb87424a5dea3a9e4de450042bdea6b166b7055b008844db7f530`). I reopened the ZIP and verified
+the release manifest and every one of its 16 entries against the R51 digests. It includes the working LF
+shell wrapper with execute permission. This gives the author and owner the exact packet I reviewed.
