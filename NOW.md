@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 13:11 UTC by claudeM5 (M45).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 14:42 UTC by claudeCloud (K9).*
 
 ## Arrangement
 
@@ -18,8 +18,9 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 No worker and no host is set aside for a specialism: every worker does every kind of work, and hosts differ only in
 what they can run (the owner, 19 November; METHOD §1). The M5 and claudeCloud both have 16 GB (K1, M43).
 
-Running jobs: claudeCloud, the last two instances of K2's frozen SAT queue (odd, P = 64, gaps 72 and 73); 64, 66, 69
-and 71 finished UNSAT (K7, addendum 2), and the tail at gaps 74–96 is closed unrun (K7). claudeM5, B2 (M45): the
+Running jobs: claudeCloud, the last instance of K2's frozen SAT queue (odd, P = 64, gap 72), restarted at 14:27 UTC
+after two container restarts; every other gap from 31 to 73 is UNSAT (K7, K9), and the tail at gaps 74–96 is closed
+unrun (K7). claudeM5, B2 (M45): the
 frozen all-period listing at gaps 51–100 on the M5 laptop, 9 workers, from 12:58 UTC for at most four hours, each
 finished gap copied to `share-scratch/claudeM5/M29/B2/`.
 Schedules: none on (only the owner turns them on).
@@ -28,8 +29,13 @@ Schedules: none on (only the owner turns them on).
 
 - **Gate 2 of the schedule (K8), when it comes:** whether S2, a theorem for every k that is conditional on reset
   capacity, is submitted to the portal, and what #357 is told.
-- **PR #60.** S2 rests on Lowry's cascade theorems in kit PR #60, open and unmerged since 30 October (P6). The schedule
-  reproves them with credit. Waiting for its merge, or asking on #60, are outward steps and the owner's to choose.
+- **PR #60: drop the ask?** All twelve of Lowry's October pull requests stopped on his side: the maintainer's last
+  requests (28–31 October) were never answered, though he is active and had two new ones merged today. None of their
+  modules is in the kit. The portal's verifier pin cannot hold #60 in any case, so S2 carries its own proof of the
+  cascade step with credit. claudeCloud recommends no ask on #60, and one sentence on #357 at Gate 2 (K9 §5).
+- **S3** (gptIntel, I8): the pooled mean first white gap is at most 2^Q + 1 at every clock Q. It is proved in core
+  Lean at the kit's main and the verifier pin, and its mathematics is carried (K9). Should it be packaged?
+- **Gate 3, the wall:** an inquisition round, once claudeM5's B2 verdicts (M46) are in.
 
 ## Direction
 
@@ -59,12 +65,12 @@ The full schedule, its rules and its two reformulations are in [K8](CHAT-LEDGER.
 
 | Stream | Worker | Items, in order | Reader | State |
 |---|---|---|---|---|
-| A, the Lean of S2 (the conditional theorem (CAP) ⇒ (T)) | gptM5, author | A1 the statement file; A2 the cascade, crediting #60; A3 the assembly with an explicit f(k); A4 R44's bridge in Lean | gptIntel; claudeM5 for A1's statement | [A1 statement](research/m29/Rule30EveryKStatement.lean) type-checks on main and the verifier pin. Kit and all-cycle read PASS (I4); claudeM5's cut, phase, width and age read PASS (M45). |
-| B, the hand proofs, then the early doubling returns | claudeM5 | B1 `research/m29/every-k-chain.md`; B2 M44 B at gaps 51–100 with K7's controls and the single-pulse family; B3 the essay and the #357 reply | gptIntel for B1; gptM5 for B3 | B1 written, [every-k-chain.md](research/m29/every-k-chain.md), for gptIntel's read (M45). B2 frozen and running (M45). B3 waits for the owner's word. |
-| C, the counting theory as theorems, then the wall | gptIntel | C1 the pooled mean-gap theorem, on paper and in Lean (candidate S3); C2 the wall by pair counting, one block; C3 the reads of A, B1 and K8 §5 | claudeCloud for C1's proof; gptM5 for its Lean | C1 written and kernel-checked (I3, I5); C2 odd-gap bound (I6); C3 A1, catalogue, and both reformulations read (I4, I7) |
-| Conducting | claudeCloud | The chain table, the controls, K7's six SAT instances, S2's novelty check, the gates | — | Running. Portal and open pull requests checked on 19 November: no claim of (T) for every k (K8, addendum 1) |
+| A, the Lean of S2 (the conditional theorem (CAP) ⇒ (T)) | gptM5, author | A1 the statement file; A2 the cascade, with its own proof and credit to #60; A3 the assembly with an explicit f(k) | gptIntel; claudeM5 for A1's statement | A1 done: [statement](research/m29/Rule30EveryKStatement.lean), three reads PASS (I4, M45, K9). **Gate 1 passed (K9): A2 and A3 are open.** |
+| B, the hand proofs, then the early doubling returns | claudeM5 | B1 `research/m29/every-k-chain.md`; B2 M44 B at gaps 51–100 with K7's controls and the single-pulse family; B3 the essay and the #357 reply | gptIntel for B1; gptM5 for B3 | B1 written, [every-k-chain.md](research/m29/every-k-chain.md); read PASS by claudeCloud (K9), gptIntel's read still welcome. B2 frozen and running (M45); verdicts in M46. B3 waits for the owner's word. |
+| C, the counting theory as theorems, then the wall | gptIntel | C1 the pooled mean-gap theorem (candidate S3); C2 the wall by pair counting; C3 the reads; **now A4** (K9): R44's bridge and the dyadic clocks in Lean, reader gptM5; then the read of B1 | claudeCloud for C1's proof; gptM5 for its Lean | C1 written and kernel-checked (I3, I5), its mathematics carried (K9). C2 done: at odd gaps a row fixes its successor (I6, carried in M45 and K9). C3: A1, the catalogue and both reformulations read (I4, I7). |
+| Conducting | claudeCloud | The chain table, the controls, K7's six SAT instances, S2's novelty check, the gates | — | Running. Gate 1 called (K9). The store client now retries the host's verification page (K9 §6). |
 
-**The gates.** 1: the statement (A1, B1 and C1's proof all read). 2: S2 proposed under METHOD §12, and the owner
+**The gates.** 1: the statement — **passed in K9**. 2: S2 proposed under METHOD §12, and the owner
 decides. 3: the wall, when B2 and C2 report; if neither gives a mechanism, an inquisition round with the owner.
 
 ## Submissions
@@ -78,10 +84,15 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | **S3** (K2, I2) | Mean first white gap ≤ 2^Q+1 over the nonzero pointed Q-bit children, every Q>0. | Portal partial and kit temporal-profiles extension | Proposed privately. Paper and Lean with their readers; builds pass on main and the verifier pin. | I3, I5, I8 |
 
 Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12:27 UTC portal snapshot (I8); the kit's main is
-`a8072e7` after the ResetSwap and ZeroCoastBridge update (K2). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
+`35f2c6e` after Lowry's WallRecordAncestry (K9). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
 
+- **19 Nov, K9. Gate 1 passes, and the pooled bound is sharp.** The A1 statement, the B1 chain and the pooled proof
+  all carry. An exact control at clocks 1–14 finds the pooled sum never above N² − 1, equal to it at Q = 1 and 3, and
+  within 0.04% at Q = 14; the largest gap there is 9.59 × 2^14, against 9.70 for a geometric wait (COMPUTED). Lowry's
+  twelve old pull requests stopped on his side and none of their modules is in the kit, #60 included. The store
+  client now retries the web host's verification page. [K9](CHAT-LEDGER.md)
 - **19 Nov, M45. A1 passes claudeM5's read, and B1 writes the chain for every k.** The A1 statement's cut, phase,
   width and age are M34's and M39's, and it type-checks on the M5 at kit `a8072e7`.
   [B1](research/m29/every-k-chain.md) sets out (DL⁻) ⇒ (L∞) ⇒ (CAP) ⇒ (T) as ten steps and three theorems with

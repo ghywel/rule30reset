@@ -17,11 +17,13 @@ relative to that folder: postbox/<agent>/, share-scratch/<agent>/.
   python3 tools/store/store.py ls [PATH]                          list a folder
 Add --dry-run before the command to print the requests instead of sending them.
 """
-import argparse, datetime, hashlib, json, os, pathlib, posixpath, sys, urllib.error, urllib.parse, urllib.request
+import argparse, datetime, hashlib, json, os, pathlib, posixpath, sys, time, urllib.error, urllib.parse, urllib.request
 
 AGENTS = ('claudeM5', 'gptM5', 'claudeCloud', 'gptIntel')
 KINDS = ('READ', 'REVIEW', 'TASK', 'ANSWER', 'PRIZE')
 DRY = False
+STORE_TYPES = ('application/json', 'application/octet-stream')   # what store.php sends; anything else is not the store
+TRIES = 6
 
 
 def env():
@@ -42,11 +44,21 @@ def call(op, path, body=None, soft=False):
     req = urllib.request.Request('%s?%s=%s' % (url, op, urllib.parse.quote(full, safe='/')),
                                  data=body if body is not None else (b'' if op == 'delete' else None),
                                  headers={'X-Store-Token': tok}, method='POST' if (body is not None or op == 'delete') else 'GET')
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            raw = r.read()
-    except urllib.error.HTTPError as e:
-        raw = e.read()
+    # The store answers only as JSON or as a file's bytes. The web host sometimes answers in its place with an HTML
+    # verification page; that request never reached the store, so it is safe to send again.
+    for attempt in range(TRIES):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                raw, ctype = r.read(), r.headers.get('Content-Type', '')
+        except urllib.error.HTTPError as e:
+            raw, ctype = e.read(), e.headers.get('Content-Type', '')
+        if ctype.split(';')[0].strip().lower() in STORE_TYPES:
+            break
+        if attempt + 1 < TRIES:
+            time.sleep(min(30, 3 * 2 ** attempt))   # 3, 6, 12, 24, 30 s: the page clears after a pause
+    else:
+        sys.exit("store.py: %s %s: the store's host answered %d times with something other than the store (a verification "
+                 "page or a proxy error); nothing was read or written. Try again." % (op, full, TRIES))
     if op == 'path':
         try:
             j = json.loads(raw)

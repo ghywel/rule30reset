@@ -43,6 +43,15 @@ hosting account, outside the web root. Paths are relative to it: `postbox/` and 
 - The log file (`log_file`) may sit inside the data folder: every worker can then read it, and nobody can write to it
   through the store.
 
+## When the web host answers in the store's place
+
+The hosting service sometimes answers a request with an HTML verification page before it reaches `store.php`. The
+script itself answers only as `application/json`, or as `application/octet-stream` for a file. The client accepts
+only those two content types. Any other answer never reached the store, so the client sends the request again, up to
+six times with a growing pause (3 to 30 seconds), and then stops with a message. Before 19 November (ledger K9) it took
+such a page for an empty reply, which showed as "worker None", an empty listing, a flag with no fields or a read-back
+mismatch.
+
 ## Updating the website
 
 1. Run the tests on a host with PHP: `python3 tools/store/test_store.py` must end with every check passing.
