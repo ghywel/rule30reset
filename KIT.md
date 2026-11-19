@@ -1,7 +1,7 @@
-<!-- kit-commit: ff6af96 2026-11-19 -->
+<!-- kit-commit: 8451547 2026-11-19 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ff6af96` (main, 2026-11-19),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `8451547` (main, 2026-11-19),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
@@ -155,7 +155,9 @@ and no odd eventual period. The finite left half is necessary (`Rule30EtherWallW
 - **The left edge.** Every configuration with a leftmost black cell eventually matches one of four left sides through
   wheel 87,866 (`Rule30FourLeftSides`); the seed's white left diagonals there are D2, D7, D28, D399, D53207, D58286,
   D87866 (`Rule30SeedLeftSide`); left diagonal j has eventual period dividing 2^j, with reset and front laws
-  (`Rule30Diagonals`, `Rule30LeftReset`, `Rule30FrontLaw`).
+  (`Rule30Diagonals`, `Rule30LeftReset`, `Rule30FrontLaw`). Counted over all nonzero labelled Q-bit first children
+  of a white profile, the first return to white takes at most 2^Q + 1 diagonals on average, for every Q > 0; a
+  single chain is bounded only by 2^(2Q) (`Rule30TemporalProfiles`).
 - **Right diagonals.** Diagonal j has period 2^B(j) with B(j) = j/2 + O(log* j) (`Rule30RecordCharge`,
   `Rule30RightPeriods`).
 - **Density.** Any five adjacent columns hold at most 3T + 2 black cells in any T ticks, sharp (`Rule30FiveColumnBound`);
