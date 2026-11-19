@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 11:07 UTC by claudeCloud (K6).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 11:14 UTC by gptIntel (I2).*
 
 ## Arrangement
 
@@ -13,7 +13,7 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 | claudeM5 | working in the owner's session, on the M5 laptop (the Wolfram host); joined the shared store (M1) | 17 November (M1) |
 | gptM5 | on the M5 laptop with claudeM5; joined the shared store | 17 November (R1) |
 | claudeCloud | Claude in a cloud container: 4 CPUs, 16 GB, no Lean or Wolfram; ephemeral, so long runs checkpoint to share-scratch. Joined the shared store (K1). Running K2's frozen probes: the doubling family at source period 64 and the counting test (K2) | 18 November (K1) |
-| gptIntel | Intel i9 with an RX 6600 GPU; has a store token, not started here. On this host placego's GPT has been paused since 11 November, holding K-09b and frozen batch 02 for a restart (placego GC2929) | — |
+| gptIntel | Joined the shared store. Intel i9, 8 cores, 16 logical processors, 15.90 GiB visible RAM, RX 6600. Completed the additional research reviews in I2. Lean 4.35.0, GCC and Z3 available locally. | 19 November (I1) |
 
 No worker and no host is set aside for a specialism: every worker does every kind of work, and hosts differ only in
 what they can run (the owner, 19 November; METHOD §1). The M5 and claudeCloud both have 16 GB (K1, M43).
@@ -25,8 +25,7 @@ last snapshot: `claudeCloud_sat_doubling.py run claudeCloud_sat_queue.json OUT.j
 
 ## Needs the owner
 
-- When gptIntel starts, set its store credentials and point it to METHOD.md, NOW.md and KIT.md. It takes a free
-  ledger letter, posts an introduction and joins its postbox (M4). claudeCloud has done so (K1).
+None recorded.
 
 ## Direction
 
@@ -48,6 +47,10 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 
 ## Latest results (newest first)
 
+- **19 Nov, I2.** gptIntel independently reviewed the live research through M44 and K6. The finite period-32
+  census, gap-32 witness and whole-component swap exclusions carry. The two exact K2 steps hold; the geometric
+  return law remains conjectural. At P=128 gaps 51–64 the exclusion requires a reset-free tick.
+  [Review, scope and replay records](research/m29/gptIntel-review.md)
 - **19 Nov, M44. No reset-free doubling at source period 128 at gaps 5–64, and (exploratory) no doubling of any
   period returns to white at gaps 31–50.** At period 256 the odd family is UNSAT at every gap 31–64 under kissat, and
   at 31–61 and 63 under CaDiCaL with its internal proof checker; no doubling of period 128 returns to white at 31–43
@@ -55,19 +58,17 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
   swappable pair at gaps 31–50, so up to gap 50 the only reset-free doubling at any period is period 5's at gap 23.
   With K5, a reset-free dyadic doubling needs source period ≥ 64 and gap ≥ 51. [M44](CHAT-LEDGER.md)
 - **19 Nov, K5. Every doubling white interval of source period 2–32 except 5 has a reset in every tick**
-  (COMPUTED, exhaustive over 138,871,107 classes of unrestricted odd sources; P = 32 replays M41 exactly). Every
-  tick resets within 152 wheels; the worst first reset is 0.98–1.31 × 4.2P, the fair-coin extreme, so excursions
-  resolve exponentially before they can return (K3). Period 5's single exception is M42's gap-23 orbit, which no dyadic strip carries. Dyadicity
-  is not what saves the lemma; largeness of P is. [K5](CHAT-LEDGER.md)
-- **19 Nov, K3. White returns are geometric with mean 2^Q** (MEASURED, Q = 14–24). Plain intervals return at
-  1.00 ± 0.02 × 2^Q (cv about 1); doublings return on the doubled clock, 0.84–1.18 × 2^(2P) at source periods
-  7–12; tick-reset tails decay at about the fair-coin 0.848. The seed's strip A0 fits (gaps 0.08–1.45 × 2^Q). So
-  small-gap doubling SAT at P = 64 or 128 is settled by counting. The one exception is a single orbit: of the three
-  classes of odd period-5 sources, 00001 is M42's reset-free gap-23 orbit (K3, corrected in K4: not a basin, a
-  coincidence of about 2% under the law). [K3](CHAT-LEDGER.md), [K4](CHAT-LEDGER.md)
+  (COMPUTED, exhaustive over 138,871,107 classes of unrestricted odd sources; P = 32 replays M41 exactly). The resolved classes finished
+  by wheel 152. Period 5's single exception is M42's gap-23 orbit, which no dyadic strip carries. A uniform linear
+  bound on resolution and a lower bound on the earliest return are open (I2). [K5](CHAT-LEDGER.md)
+- **19 Nov, K3–K4. Mean white-return gaps track the doubled clock in the samples** (MEASURED). Plain means at
+  Q = 14–24 range from 0.912 to 1.015 × 2^Q. Odd-source means at P = 7–12 range from 0.843 to 1.182 × 2^(2P).
+  The six complete A0 gaps are consistent with that scale. Geometric waiting times and small-gap probabilities at
+  larger P remain conjectural. At P = 5 one of three primitive odd classes returns at gap 23 with a reset-free tick.
+  [K3, K4 and I2](CHAT-LEDGER.md)
 - **19 Nov, M43. (G30) is false, and the doubling lemma survives at source period 64.** A whole white interval of gap
   32 and period 64 is reset-free in one tick: gptM5's period-five ring tiled four times, with a disturbance that keeps
-  the tiling wheels from staying white. So no gap bound on reset-free intervals can work. SAT at source period 64
+  the tiling wheels from staying white. This defeats gap bounds 19 and 30 on unrestricted dyadic intervals. SAT at source period 64
   finds no reset-free doubling at gaps 31–67 (kissat and CaDiCaL), or at 69, 71 and 73 (kissat). The open statement
   is the doubling lemma itself. [M43](CHAT-LEDGER.md)
 - **18 Nov, M42. R40's gap graph carries, and (G) holds to gap 30 at every period.** An independent rebuild matches
@@ -208,7 +209,7 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 - **The owner's round of warm pulls (17 November).** gptM5 posted R2–R6 and claudeM5 posted M6–M10, independently.
   M11 compares them and proposes a first block: M6 and M7 by claudeM5, R2 by gptM5. The owner selected R2 for gptM5 (R7).
 - **K2 (claudeCloud):** asks claudeM5 to weigh the counting picture before the P = 128 runs, and gptM5 for a read of
-  its two steps (unique children, then the agreement condition).
+  its two steps. I2 gives gptIntel’s additional read. Both structural steps hold, and the probability needs a separate argument.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
 
@@ -229,8 +230,8 @@ the work goes. The rules are in METHOD §8.
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
 | M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried); f(k) ≤ 265,441 for every k ≤ 7,911 (M40, from Rule30FourFronts and the exact schedule on all four strips, carried in R37). R37 independently carries M36–M40. The white-diagonal drop proposal fails on a Lean-certified pointed strip. The sufficient ordinary reset recurrence remains open. R44 proves one of every three phases has arbitrarily deep ordinary resets (carried in M41, with R37 and R43). The unrestricted single-phase local-anchor route is closed by a period-five ring. Continue with the rooted period-doubling interval in a prescribed phase; the control data contain zero bad doublings. M41: none at source period 32 either, at any gap. Reset-free whole intervals at P ≤ 32 all have gaps ≤ 16, so (G), a gap bound of 19, together with R40's gap graph would suffice. M42: R40's gap graph carries. (G) holds at every gap ≤ 30 for every dyadic period, and the only dyadic doublings below gap 31 are the kit's 2→7 and 7→28. So (G30), reset-free dyadic whole intervals have gap ≤ 30, suffices; it is open only at source period ≥ 64 with gap ≥ 31. A period-5 reset-free doubling at gap 23 shows the dyadic clock is needed. M43: (G30) is false, refuted by a ring-tiled interval of gap 32 and period 64, so the gap-bound route is closed. The doubling lemma (every dyadic doubling white interval has a reset in every tick) holds wherever tested: gaps ≤ 30 at every period, source periods ≤ 32 at every gap, and source period 64 at gaps 31–67 (two solvers) and 69, 71, 73. Progress reply posted on #357 (M36). Bounds are data, not submissions (METHOD §12). K2: an independent encoding reruns the odd family at P = 64 (running); a counting picture predicts every small-gap odd instance UNSAT whatever the resets. K5: the doubling lemma holds on unrestricted profiles at every source period 2–32 except 5 (one non-dyadic orbit). M44: no reset-free doubling at source period 128 at gaps 5–64 (kissat at every gap 31–64, CaDiCaL with internal proof checking at 31–61 and 63); exploratory, G_n's cyclic part has no swappable pair at gaps 31–50, so no doubling of any period returns to white there. Open for dyadic doublings: P = 64 at gaps 68, 70, 72 and 74 on (claudeCloud's K2 queue is running these), P = 128 from gap 65, P ≥ 256 from gap 51. Next for claudeM5: freeze the cyclic-part test at gaps 51–100, blind, with K3–K4's returns at 56 and 88 as positive controls. | no |
-| K2 | 19 Nov 10:19, claudeCloud | The counting picture of white returns: an interval of temporal period Q returns to white after about 2^Q wheels, and a tick's reset-free stretch decays like a fair-coin string's (rate 0.848); so the doubling lemma holds by counting, and small-gap SAT at large P is predetermined | In progress. K3: the gap law holds at Q = 14–24 for plain and doubling intervals (MEASURED); tails near 0.848; period 5 is the exception. K5: census at every source period to 28 fits the reset law. SAT run going (K2 §1). Explains M41–M43's census and SAT data; bears on M29's doubling lemma. | no |
-| K5 | 19 Nov 10:44, claudeCloud | The resolution law: after a doubling white, why does every tick close a reset within about 4.6P wheels (0.98–1.31 × 4.2P at P = 12–28)? A reason for linear resolution would be the doubling lemma at every P | Open. P = 29–32 done (K5, addendum 1): worst 0.99–1.13 × 4.2P. Joined to K2; bears on M29. | no |
+| K2 | 19 Nov 10:19, claudeCloud | The counting picture of white returns: an interval of temporal period Q returns to white after about 2^Q wheels, and a tick's reset-free stretch decays like a fair-coin string's (rate 0.848); as a model for the observed scarcity of short-gap doublings | In progress. K3: the gap law holds at Q = 14–24 for plain and doubling intervals (MEASURED); tails near 0.848; period 5 is the exception. K5: census at every source period to 28 fits the reset law. SAT run going (K2 §1). Explains M41–M43's census and SAT data; bears on M29's doubling lemma. | no |
+| K5 | 19 Nov 10:44, claudeCloud | The resolution law: after a doubling white, why does every tick close a reset within about 4.6P wheels (0.98–1.31 × 4.2P at P = 12–28)? A linear resolution bound together with a sufficient earliest-return bound would imply the lemma above the period-5 exception | Open. P = 29–32 done (K5, addendum 1): worst 0.99–1.13 × 4.2P. Joined to K2; bears on M29. | no |
 
 ## Recently closed routes
 
