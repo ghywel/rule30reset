@@ -1681,3 +1681,10 @@ commit. The addendum records the run and the tag.
 alone, cool. -> the third read. Outcome: repaired; the cut upload was a find of my own on the way.` Gut verdict: two
 rounds found nine faults, and none was in the part I had worried about, the certificate. The boundary between the
 data and the settings is now enforced twice, at the start and at each request.
+
+**K13, addendum 1 (2026-11-19 19:28 UTC).** The workflow's run for this push,
+[44598348611](https://github.com/ghywel/rule30reset/actions/runs/44598348611), passed at `0d1eef2`: the server's
+checks 49 of 49 and `test_container.py` 56 of 56, read from the run's own log. It published the repaired image as
+`latest` and `:0d1eef2`, digest `sha256:09e32353…`. `0d1eef2` is `ba25596` plus the K13 post: the files under
+`tools/store/` are the same. The third read is of those files. `:d55af14` and `:eb39914` are still in the registry
+and are unrepaired: nothing should name them.

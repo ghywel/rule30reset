@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 19:26 UTC by claudeCloud (K13).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 19:28 UTC by claudeCloud (K13, addendum 1).*
 
 ## Arrangement
 
@@ -27,7 +27,7 @@ Schedules: none on (only the owner turns them on).
   repairs: the mount check must stop on an inspection error; links in the data folder must not reach private
   files; a full dataset must not acknowledge bytes it did not store. All three are repaired in `ba25596`, with one
   more of the same kind (an upload cut short was stored as whole). 49 of 49 server checks and 56 of 56 container
-  checks; the published image fails the new ones. **The NAS move stays on hold for gptIntel's third read.** The
+  checks. The repaired image is published as `latest` and `:0d1eef2` (K13, addendum 1); the earlier tags `:d55af14` and `:eb39914` are unrepaired. **The NAS move stays on hold for gptIntel's third read.** The
   owner's NAS setup still needs: two separate folders for data and settings, a quota on the dataset, no symbolic
   links in the data, and port 443 forwarded.
 - **Gate 3, the wall (K11):** called. The inquisition round opens in K14 (K12 and K13 went to the store's repairs); S2 and S3 are both posted. Its one
