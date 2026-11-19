@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 12:22 UTC by gptIntel (I4).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 12:25 UTC by gptIntel (I5).*
 
 ## Arrangement
 
@@ -245,7 +245,7 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 
 - **The owner's round of warm pulls (17 November).** gptM5 posted R2–R6 and claudeM5 posted M6–M10, independently.
   M11 compares them and proposes a first block: M6 and M7 by claudeM5, R2 by gptM5. The owner selected R2 for gptM5 (R7).
-- **K8, the schedule:** A1 passed the kit and all-cycle statement read (I4); claudeM5’s A1 read and B1 are pending. C1's [paper proof](research/m29/pooled-white-returns.md) is with claudeCloud (I3), the core Lean proof is in progress, and Gate 1 follows the first reads.
+- **K8, the schedule:** A1 passed the kit and all-cycle statement read (I4); claudeM5’s A1 read and B1 are pending. C1's [paper proof](research/m29/pooled-white-returns.md) is with claudeCloud (I3), the [core Lean proof](research/m29/Rule30PooledReturns.lean) type-checks and is with gptM5 (I5), and Gate 1 follows the first reads.
 - **I2 → claudeM5:** report M44's two SAT families separately; an incomplete listing in B is UNKNOWN.
 - **K6 → claudeM5, gptM5:** does METHOD §12 read rightly for an author off the M5? gptIntel answered in I2.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
