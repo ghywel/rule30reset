@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:12 UTC by gptM5 (R53).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:17 UTC by claudeM5 (M51).*
 
 ## Arrangement
 
@@ -18,13 +18,14 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 No worker and no host is set aside for a specialism: every worker does every kind of work, and hosts differ only in
 what they can run (the owner, 19 November; METHOD §1). The M5 and claudeCloud both have 16 GB (K1, M43).
 
-Running jobs: none. claudeM5 keeps the kit built at the verifier pin `5fb5915` in its scratch space, for S2's
-notebook.
+Running jobs: none.
 Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **S2, portal partial (K11, R53).** The author has agreed to the rebuilt packet (`120cf1cc…`). claudeM5 has the two revised essay passages and notebook for the final release agreement. The owner’s word to post is asked once after that read. A reply on #357 is a separate decision after Lean Verified.
+- **The next #357 reply (K11):** S2 is posted and Lean Verified (M51). The draft, with R52's edits, is
+  [reply-357-draft-2.md](research/m29/reply-357-draft-2.md). Whether to post it, and whether it asks the
+  maintainers about a kit module, is the owner's decision.
 - **The store's container (K11):** a tested prototype is in [tools/store/docker/](tools/store/docker/README.md).
   It needs the owner's word to publish the image to the GitHub account's container registry (the workflow file is
   there, inactive), the package made public once, two folders on the NAS, and port 443 forwarded on the router.
@@ -79,7 +80,7 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
 | **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Progress reply posted on #357 at the owner's word (M36, 18 Nov 15:46 UTC); awaiting the maintainers. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
-| **S2** (M29) | Conditional on unbounded worst-phase reset capacity, a uniform age gives all finite k-tick predecessors their exact edge and realizes every wall history. | Portal partial (K11, M49) | Proposed privately (R50). Lean carried by gptIntel (I11, I12), both headline replays pass. Gate 2: yes (the owner, 19 Nov). **Packet built (M49):** `share-scratch/claudeM5/S2/release/`, manifest `pins.json` `2c005814…`; essay frozen with R52's edits; notebook `99c8b76e…` built at `5fb5915`, every gate passes, kernel accepts all 234 declarations; dry run passed. Two headlines (K11). gptIntel confirmed the notebook’s Lean source byte for byte and replayed both headlines at both revisions (I15). R53 completed the release read, repaired two prose claims and rebuilt the notebook. Author agrees on manifest `120cf1cc…`. Next: claudeM5’s read of the revised passages and notebook, then the owner’s word to post. | R47–R50, I12, K11 |
+| **S2** (M29) | Conditional on unbounded worst-phase reset capacity, a uniform age gives all finite k-tick predecessors their exact edge and realizes every wall history. | Portal partial (K11, M49) | Proposed privately (R50). Lean carried by gptIntel (I11, I12), both headline replays pass. Gate 2: yes (the owner, 19 Nov). **Packet built (M49):** `share-scratch/claudeM5/S2/release/`, manifest `pins.json` `2c005814…`; essay frozen with R52's edits; notebook `99c8b76e…` built at `5fb5915`, every gate passes, kernel accepts all 234 declarations; dry run passed. Two headlines (K11). gptIntel confirmed the notebook’s Lean source byte for byte and replayed both headlines at both revisions (I15). R53 completed the release read, repaired two prose claims and rebuilt the notebook. Author agrees on manifest `120cf1cc…`; claudeM5's release PASS on it (M50). **Posted and Lean Verified (M51):** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC; Lean Verified 18:17 UTC at `5fb5915`. No kit pull request (K11); the #357 reply is the owner's separate decision. | R47–R50, I12, K11 |
 | **S3** (K2, I2) | Mean first white gap ≤ 2^Q+1 over the nonzero pointed Q-bit children, every Q>0. | Portal partial and kit temporal-profiles extension | Mathematics carried (K9, R46). Official Lean checker passed (I12). M47 notebook and R51 release read passed. **Posted and Lean Verified (M48):** portal entry [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC from the release `pins.json` `6c69946a…` (author I14, reader R51); Lean Verified 17:48 UTC at `5fb5915`. Kit pull request [#366](https://github.com/WolframInstitute/Rule30PrizeKit/pull/366) open, mergeable. | I3, I5, I8 |
 
 Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12:27 UTC portal snapshot (I8); the kit's main is
@@ -87,6 +88,11 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
 
 ## Latest results (newest first)
 
+- **19 Nov, M51. S2 is posted and Lean Verified.** Entry
+  [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f) states
+  the inverse-tick theorem for every k by one argument, conditional on reset capacity, which is open. It was posted
+  once from the release that its author and reader agreed on (`120cf1cc…`), and passed the verifier's kernel replay
+  with standard axioms. The #357 reply is the owner's next decision. [M51](CHAT-LEDGER.md)
 - **19 Nov, I15. S2’s embedded Lean passes.** The saved notebook contains the source carried in I12. Both kit revisions replayed all 234 declarations and returned the R49 receipt.
 
 - **19 Nov, M49. S2's packet is built and passes every gate.** At the owner's yes, the essay took R52's five
