@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:02 UTC by claudeM5 (M49).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:06 UTC by gptIntel (I15).*
 
 ## Arrangement
 
@@ -25,8 +25,8 @@ Schedules: none on (only the owner turns them on).
 ## Needs the owner
 
 - **S2, after Gate 2's yes (the owner, 19 November):** the packet is built (M49), manifest `2c005814…`. After
-  gptM5's release read and gptIntel's confirmation of the embedded Lean, the owner's word to post is asked once,
-  with the built essay. The next #357 reply is a separate word, after the entry is Lean Verified, and
+  gptM5's release read, the owner's word to post is asked once with the built essay. gptIntel confirmed the embedded Lean (I15).
+  The next #357 reply is a separate word, after the entry is Lean Verified, and
   the owner decides whether it asks the maintainers about a kit module.
 - **The store's container (K11):** a tested prototype is in [tools/store/docker/](tools/store/docker/README.md).
   It needs the owner's word to publish the image to the GitHub account's container registry (the workflow file is
@@ -83,13 +83,15 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
 | **S1** (from R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur (`aged_four_step_predecessor`, `all_four_tick_histories`). | Portal partial and kit catalogue module `Rule30AgeEightyInverse` | **Lean Verified, Human Verified** (M26, M29): portal entry [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), checked 18 Nov 11:05 UTC at `5fb5915`. Kit pull request [#357](https://github.com/WolframInstitute/Rule30PrizeKit/pull/357) is open but will not be merged as it stands. The maintainer will take no more per-k certificates after ages 8 and 24, only the statement for every k (M29, pull M29). Progress reply posted on #357 at the owner's word (M36, 18 Nov 15:46 UTC); awaiting the maintainers. | [M22](CHAT-LEDGER.md), [M23](CHAT-LEDGER.md), [M24](CHAT-LEDGER.md), [M26](CHAT-LEDGER.md), [handoff](research/r2/age80/proposal.md) |
-| **S2** (M29) | Conditional on unbounded worst-phase reset capacity, a uniform age gives all finite k-tick predecessors their exact edge and realizes every wall history. | Portal partial and kit catalogue | Proposed privately (R50). Lean carried by gptIntel (I11, I12), both headline replays pass. Gate 2: yes (the owner, 19 Nov). **Packet built (M49):** `share-scratch/claudeM5/S2/release/`, manifest `pins.json` `2c005814…`; essay frozen with R52's edits; notebook `99c8b76e…` built at `5fb5915`, every gate passes, kernel accepts all 234 declarations; dry run passed. Two headlines (K11). Next: gptM5's release read, gptIntel's Lean confirmation, then the owner's word to post. | R47–R50, I12, K11 |
+| **S2** (M29) | Conditional on unbounded worst-phase reset capacity, a uniform age gives all finite k-tick predecessors their exact edge and realizes every wall history. | Portal partial (K11, M49) | Proposed privately (R50). Lean carried by gptIntel (I11, I12), both headline replays pass. Gate 2: yes (the owner, 19 Nov). **Packet built (M49):** `share-scratch/claudeM5/S2/release/`, manifest `pins.json` `2c005814…`; essay frozen with R52's edits; notebook `99c8b76e…` built at `5fb5915`, every gate passes, kernel accepts all 234 declarations; dry run passed. Two headlines (K11). gptIntel confirmed the notebook’s Lean source byte for byte and replayed both headlines at both revisions (I15). Next: gptM5’s release read, then the owner’s word to post. | R47–R50, I12, K11 |
 | **S3** (K2, I2) | Mean first white gap ≤ 2^Q+1 over the nonzero pointed Q-bit children, every Q>0. | Portal partial and kit temporal-profiles extension | Mathematics carried (K9, R46). Official Lean checker passed (I12). M47 notebook and R51 release read passed. **Posted and Lean Verified (M48):** portal entry [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC from the release `pins.json` `6c69946a…` (author I14, reader R51); Lean Verified 17:48 UTC at `5fb5915`. Kit pull request [#366](https://github.com/WolframInstitute/Rule30PrizeKit/pull/366) open, mergeable. | I3, I5, I8 |
 
 Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12:27 UTC portal snapshot (I8); the kit's main is
 `35f2c6e` after Lowry's WallRecordAncestry (K9). Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **19 Nov, I15. S2’s embedded Lean passes.** The saved notebook contains the source carried in I12. Both kit revisions replayed all 234 declarations and returned the R49 receipt.
 
 - **19 Nov, M49. S2's packet is built and passes every gate.** At the owner's yes, the essay took R52's five
   edits and was frozen with gptM5's single Lean file (`ae5b5375…`) embedded verbatim. The notebook, built at the
