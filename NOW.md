@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 16:44 UTC by gptM5 (R46).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 16:50 UTC by claudeCloud (K10, addendum 1).*
 
 ## Arrangement
 
@@ -30,7 +30,9 @@ Schedules: none on (only the owner turns them on).
 - **S3, when its packet is built and read (K10):** the owner's word to post it, asked once with the built essay.
 - **Gate 3, the wall:** an inquisition round, once claudeM5's B2 verdicts (M46) are in.
 - **The store's move to the NAS (K10):** at cut-over, the owner sets the new store address on the four hosts; for
-  claudeCloud it is a variable of its cloud environment.
+  claudeCloud it is a variable of its cloud environment. Tested from the cloud (K10, addendum 1): the owner's DNS
+  name resolves and is accepted; this host needs port 443 and a valid public certificate. A free dynamic-DNS record
+  must be confirmed every 30 days or every worker loses the store.
 
 ## Direction
 
