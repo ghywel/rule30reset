@@ -12,7 +12,7 @@ RUN setcap -r /usr/local/bin/frankenphp \
  && cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 COPY store.php /app/public/store.php
-COPY docker/config.php /app/config.php
+COPY docker/config.php docker/registry.php /app/
 COPY docker/store.ini /usr/local/etc/php/conf.d/zz-store.ini
 COPY --chmod=755 docker/store-admin /usr/local/bin/store-admin
 COPY --chmod=755 docker/entrypoint.sh /usr/local/bin/store-entrypoint

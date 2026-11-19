@@ -5,7 +5,25 @@ set -eu
 
 say() { echo "store: $*" >&2; }
 die() { say "$*"; say "not started"; exit 1; }
-on()  { case "$(printf %s "${1:-}" | tr 'A-Z' 'a-z')" in 1|true|yes|on) return 0 ;; *) return 1 ;; esac; }
+# An explicit Boolean setting: flag NAME VALUE DEFAULT prints true or false. A value that is neither stops the start:
+# a misspelt "true" must never read as "off".
+flag() { case "$(printf %s "$2" | tr 'A-Z' 'a-z')" in
+         '') echo "$3" ;; 1|true|yes|on) echo true ;; 0|false|no|off) echo false ;;
+         *) die "$1 must be true or false, not '$2'" ;; esac; }
+count() { case "$2" in '') ;; *[!0-9]*|????????????????*) die "$1 must be a whole number of bytes, not '$2'" ;; esac; }
+# ident DIR: the folder's identity (device and inode), whatever path or mount it was reached by.
+ident() { stat -L -c '%d:%i' "$1"; }
+# reachable A B: succeeds if folder A is folder B or lies somewhere under it, by any route: a second mount of the
+# same NAS folder, or a NAS folder inside the other. Decided by identity, not by path.
+reachable() {
+    want="$(ident "$1")"
+    find "$2" -type d -inum "${want#*:}" > /tmp/.reach 2> /tmp/.reach-err \
+        || die "could not examine $2 for overlap with $1: $(head -n 1 /tmp/.reach-err)"
+    while IFS= read -r hit; do
+        [ "$(ident "$hit")" = "$want" ] && { echo "$hit"; return 0; }
+    done < /tmp/.reach
+    return 1
+}
 port() { case "$2" in ''|*[!0-9]*) die "$1 must be a port number, not '$2'" ;; esac
          [ "$2" -ge 1 ] && [ "$2" -le 65535 ] || die "$1 must be between 1 and 65535, not $2"; }
 plain() { case "$2" in *[!A-Za-z0-9@%+=:,./_-]*) die "$1 holds a character that is not allowed there" ;; esac; }
@@ -24,14 +42,21 @@ TLS_DIR="${STORE_TLS_DIR:-$CONFIG_DIR/tls}"
 STATE="$TLS_DIR"      # where the web server keeps certificates it obtains; scratch space when it obtains none
 WHO="$(id -u):$(id -g)"
 
+LOG="${STORE_LOG_FILE:-/config/store.log}"
+
 port STORE_HTTPS_PORT "$HTTPS_PORT"; port STORE_HTTP_PORT "$HTTP_PORT"; port STORE_HEALTH_PORT "$HEALTH_PORT"
 plain STORE_DATA_DIR "$DATA"; plain STORE_WORKERS_FILE "$WORKERS"; plain STORE_TLS_DIR "$TLS_DIR"
+plain STORE_LOG_FILE "$LOG"
+REQUIRE_HTTPS="$(flag STORE_REQUIRE_HTTPS "${STORE_REQUIRE_HTTPS:-}" true)" || exit 1
+TRUST_PROXY="$(flag STORE_TRUST_FORWARDED_PROTO "${STORE_TRUST_FORWARDED_PROTO:-}" false)" || exit 1
+ALLOW_UNMAPPED="$(flag STORE_ALLOW_UNMAPPED "${STORE_ALLOW_UNMAPPED:-}" false)" || exit 1
+count STORE_MAX_BYTES "${STORE_MAX_BYTES:-}"; count STORE_MAX_TOTAL_BYTES "${STORE_MAX_TOTAL_BYTES:-}"
 case "$DOMAIN" in *[!A-Za-z0-9.-]*) die "STORE_DOMAIN must be a bare host name such as store.example.org" ;; esac
 
 # The data and the settings must live on the NAS, not inside the container, where an update would delete them.
 for d in "$DATA" "$CONFIG_DIR"; do
     [ -d "$d" ] || die "the folder $d does not exist: map a NAS folder to it (volumes: in the YAML)"
-    if [ "$(stat -c %d "$d")" = "$(stat -c %d /)" ] && ! on "${STORE_ALLOW_UNMAPPED:-}"; then
+    if [ "$(stat -c %d "$d")" = "$(stat -c %d /)" ] && [ "$ALLOW_UNMAPPED" != true ]; then
         die "$d is inside the container, so its contents would be lost on the next update: map a NAS folder to it (volumes: in the YAML)"
     fi
 done
@@ -69,15 +94,36 @@ files)
 off)
     [ "$HTTP_PORT" != 443 ] || die "STORE_TLS=off cannot listen on port 443: the store would take plain HTTP for HTTPS"
     site="http://:$HTTP_PORT"; STATE=/tmp/caddy
-    if ! on "${STORE_REQUIRE_HTTPS:-true}"; then
+    if [ "$REQUIRE_HTTPS" != true ]; then
         say "WARNING: STORE_REQUIRE_HTTPS is off: tokens will cross the network in clear. For tests only."
-    elif ! on "${STORE_TRUST_FORWARDED_PROTO:-}"; then
+    elif [ "$TRUST_PROXY" != true ]; then
         say "WARNING: STORE_TLS=off with STORE_REQUIRE_HTTPS on: every request will be refused unless a reverse proxy"
         say "         in front sets X-Forwarded-Proto and STORE_TRUST_FORWARDED_PROTO is true."
     fi
     ;;
 *)  die "STORE_TLS must be acme, internal, files or off, not '$TLS'" ;;
 esac
+
+# Nothing private may be reachable through the data folder, which the store serves to every worker: not the token
+# registry, not the write log, not the certificate's key. Two NAS folders side by side are fine. The same folder
+# mapped twice, or the settings folder inside the data folder, is not, and neither is any override that puts a
+# private file there.
+# (A certificate folder that does not exist yet is judged by the folder it will be made in, and made only afterwards.)
+[ -d "$(dirname "$LOG")" ] || die "the folder of STORE_LOG_FILE, $(dirname "$LOG"), does not exist"
+state_in="$STATE"; while [ ! -d "$state_in" ]; do state_in="$(dirname "$state_in")"; done
+for private in "$CONFIG_DIR" "$(dirname "$LOG")" "$state_in" ${CERT:+"$(dirname "$CERT")"} ${KEY:+"$(dirname "$KEY")"}; do
+    if hit="$(reachable "$private" "$DATA")"; then
+        die "the private folder $private can be reached through the data folder, as $hit: every worker could read the token registry, the write log or the certificate's key through the store. Map two separate NAS folders, neither inside the other (volumes: in the YAML)"
+    fi
+done
+if [ -d "$STATE" ] && hit="$(reachable "$DATA" "$STATE")"; then
+    die "the data folder $DATA lies inside the certificate folder $STATE: map two separate NAS folders"
+fi
+rm -f /tmp/.reach /tmp/.reach-err
+mkdir -p "$STATE"
+
+# A registry that exists but cannot be read names no worker. Say so now, not as a refusal of every request later.
+store-admin verify > /dev/null || die "repair or restore $WORKERS before starting the store"
 
 if [ ! -s "$WORKERS" ]; then
     say "no worker has a token yet, so every request will be refused. In this container's shell run:"

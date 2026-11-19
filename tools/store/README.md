@@ -97,5 +97,7 @@ published, and the store had not moved.
 
 The data folder sits outside the web root, so files are reachable only through the script, which checks the token on
 every request; paths are plain segments, so `..`, hidden files and absolute paths are refused. Plain HTTP is refused.
-Uploads are capped per file (`max_bytes`) and in total (`max_total_bytes`). Only each token's SHA-256 is stored on the
+Uploads are capped per file (`max_bytes`) and in total (`max_total_bytes`); since 19 November 2026 (ledgers I16, K12) a
+write is admitted against the total and put in place under one lock, so writes that arrive together cannot both
+take the same remaining space. Only each token's SHA-256 is stored on the
 server. Every write is logged with the worker, the operation, the path, the size and the SHA-256.

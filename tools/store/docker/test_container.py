@@ -4,7 +4,7 @@
 COMMAND:  python3 tools/store/docker/test_container.py [--image NAME] [--no-build] [--no-acme]
           (needs docker and openssl; nothing leaves this machine except image pulls)
 
-Three parts, every check printing PASS or FAIL, exit non-zero if any fails:
+Four parts, every check printing PASS or FAIL, exit non-zero if any fails:
 
 1. The server's own checks. test_store.py runs unchanged except that each of its three servers is a container
    (plain HTTP on 127.0.0.1, settings from the environment) instead of PHP's built-in server.
@@ -12,7 +12,11 @@ Three parts, every check printing PASS or FAIL, exit non-zero if any fails:
    with a private certificate authority and with certificate files; nothing but /store.php is served; no token
    reaches the container's log; the token tool works; data and certificates outlive the container; a wrong
    installation is refused with a message that says what to fix.
-3. The certificate a public authority issues. Pebble, the test server of the Let's Encrypt project, plays the
+3. The findings of the security review (ledger I16): nothing private is reachable through the data folder; a
+   misspelt security setting stops the start; a damaged token registry is never replaced; token changes made at the
+   same moment all take effect; a change that cannot be saved says so; writes that arrive together cannot exceed
+   the store's cap.
+4. The certificate a public authority issues. Pebble, the test server of the Let's Encrypt project, plays the
    authority on a private Docker network; the container must obtain a certificate from it by the TLS-ALPN-01
    challenge on its HTTPS port alone, as it will from Let's Encrypt behind a router that forwards port 443 only.
 """
@@ -28,6 +32,7 @@ import ssl
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -169,14 +174,25 @@ def server_checks():
 # ---------------------------------------------------------------- part 2: the container's checks
 
 def refused(env, mounts, needle, name, user=None):
-    args = ['run', '--rm', '--user', user or RUNAS, *HARD]
+    """The container must exit at once, non-zero, saying `needle` and 'not started'."""
+    cname = 'store-test-refused'
+    docker('rm', '-f', cname)
+    args = ['run', '-d', '--name', cname, '--user', user or RUNAS, *HARD]
     for src, dst in mounts:
         args += ['-v', '%s:%s' % (src, dst)]
     for k, v in env.items():
         args += ['-e', '%s=%s' % (k, v)]
-    r = docker(*args, IMAGE, timeout=60)
-    out = r.stdout + r.stderr
-    check(name, r.returncode != 0 and needle in out and 'not started' in out, out.strip()[-300:])
+    docker(*args, IMAGE, timeout=60)
+    state, end = ['true', '0'], time.time() + 10
+    while time.time() < end:
+        state = docker('inspect', '-f', '{{.State.Running}} {{.State.ExitCode}}', cname).stdout.split() or state
+        if state[0] == 'false':
+            break
+        time.sleep(0.2)
+    out = logs(cname)
+    docker('rm', '-f', cname)
+    check(name, state[0] == 'false' and state[1] != '0' and needle in out and 'not started' in out,
+          'it started' if state[0] == 'true' else out.strip()[-300:])
 
 
 def container_checks(tmp):
@@ -326,10 +342,216 @@ def container_checks(tmp):
     docker('rm', '-f', name)
 
 
+# ---------------------------------------------------------------- the security review's findings (ledger I16)
+
+def admin(name, *args):
+    """store-admin inside the running container `name`: (exit code, stdout, stderr)."""
+    r = docker('exec', name, 'store-admin', *args)
+    return r.returncode, r.stdout, r.stderr
+
+
+def together(port, token, jobs):
+    """Send every request up to its last byte, then all the last bytes at once: the writes arrive together."""
+    barrier = threading.Barrier(len(jobs))
+    codes = [0] * len(jobs)
+
+    def one(i, method, query, body):
+        s = socket.create_connection(('127.0.0.1', port), timeout=30)
+        s.sendall(('%s /store.php?%s HTTP/1.1\r\nHost: 127.0.0.1:%d\r\nX-Store-Token: %s\r\nContent-Length: %d\r\n'
+                   'Connection: close\r\n\r\n' % (method, query, port, token, len(body))).encode() + body[:-1])
+        try:
+            barrier.wait(timeout=20)
+        except threading.BrokenBarrierError:
+            pass
+        s.sendall(body[-1:])
+        data = b''
+        while True:
+            chunk = s.recv(65536)
+            if not chunk:
+                break
+            data += chunk
+        s.close()
+        codes[i] = int(data.split(b' ', 2)[1]) if data.startswith(b'HTTP/') else 0
+    threads = [threading.Thread(target=one, args=(i, *job)) for i, job in enumerate(jobs)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    return codes
+
+
+def review_checks(tmp):
+    print("\n== 3. the security review's findings (ledger I16) ==")
+    base = tmp / 'review'
+    data, config = base / 'data', base / 'config'
+    for d in (data, config):
+        d.mkdir(parents=True)
+    A, C = 'a' * 64, 'c' * 64
+    sha = lambda t: hashlib.sha256(t.encode()).hexdigest()   # noqa: E731
+    registry = config / 'workers.json'
+    registry.write_text(json.dumps({'alice': sha(A), 'carol': sha(C)}))
+    own(base)
+    vols = [(data, '/data'), (config, '/config')]
+    plain_env = {'STORE_TLS': 'off', 'STORE_REQUIRE_HTTPS': 'false'}
+
+    def whoami(port, token):
+        c = http.client.HTTPConnection('127.0.0.1', port, timeout=10)
+        c.request('GET', '/store.php?whoami', headers={'X-Store-Token': token})
+        r = c.getresponse()
+        r.read()
+        return r.status
+
+    # I16.3: nothing private may be reachable through the data folder.
+    reach = 'can be reached through the data folder'
+    refused(plain_env, [(data, '/data'), (data, '/config')], reach,
+            'the same folder mapped as data and as settings is refused')
+    nested = base / 'nested'
+    (nested / 'private').mkdir(parents=True)
+    own(nested)
+    refused(plain_env, [(nested, '/data'), (nested / 'private', '/config')], reach,
+            'a settings folder inside the data folder is refused')
+    refused(dict(plain_env, STORE_LOG_FILE='/data/store.log'), vols, reach,
+            'a write log placed in the data folder is refused')
+    (data / 'private').mkdir()
+    own(data)
+    refused(dict(plain_env, STORE_WORKERS_FILE='/data/private/workers.json'), vols, reach,
+            'a token registry placed under the data folder is refused')
+    refused({'STORE_TLS': 'internal', 'STORE_DOMAIN': 'store.test', 'STORE_TLS_DIR': '/data/private/tls'}, vols, reach,
+            'a certificate folder placed under the data folder is refused')
+    left = sorted(q.name for q in (data / 'private').iterdir())
+    check('a refused start leaves nothing behind in the data folder', not left, left)
+    shutil.rmtree(data / 'private')
+
+    # I16.5: a misspelt security setting stops the start, and never reads as "off".
+    refused({'STORE_TLS': 'off', 'STORE_REQUIRE_HTTPS': 'ture'}, vols, 'must be true or false',
+            'a misspelt STORE_REQUIRE_HTTPS is refused')
+    refused({'STORE_TLS': 'off', 'STORE_TRUST_FORWARDED_PROTO': 'yes please'}, vols, 'must be true or false',
+            'a misspelt STORE_TRUST_FORWARDED_PROTO is refused')
+    refused(dict(plain_env, STORE_MAX_TOTAL_BYTES='2GB'), vols, 'whole number of bytes', 'a size that is not a number is refused')
+    r = docker('run', '--rm', '--user', RUNAS, *HARD, '-v', '%s:/config' % config, '-e', 'STORE_REQUIRE_HTTPS=ture',
+               '-e', 'STORE_TRUST_FORWARDED_PROTO=ture', IMAGE, 'store-admin', 'check')
+    cfg = json.loads(r.stdout) if r.returncode == 0 and r.stdout.strip().startswith('{') else {}
+    check('were such a value ever to reach the settings file, it keeps HTTPS required and the proxy header unbelieved',
+          cfg.get('require_https') is True and cfg.get('trust_forwarded_proto') is False, r.stdout[-200:] + r.stderr[-200:])
+
+    name = run_store('store-test-review', vols, plain_env, port=8779, inner=8080)
+    wait_for(lambda: whoami(8779, A) == 200, what='the store for the review checks')
+
+    # I16.4: a registry that exists but cannot be read is never taken for an empty one.
+    good = registry.read_bytes()
+    results = []
+    for damaged in (b'{"alice": "' + sha(A).encode()[:40], b'["alice"]', b'{"alice": "not-a-hash"}',
+                    json.dumps({'alice': sha(A), 'twin': sha(A)}).encode()):
+        registry.write_bytes(damaged)
+        rc1, out1, err1 = admin(name, 'token', 'add', 'mallory')
+        rc2, out2, err2 = admin(name, 'token', 'import', 'mallory', sha('m' * 64))
+        rc3, out3, err3 = admin(name, 'token', 'remove', 'alice')
+        rc4, out4, err4 = admin(name, 'token', 'list')
+        results.append(rc1 != 0 and rc2 != 0 and rc3 != 0 and rc4 != 0 and 'damaged' in err1 and not out1.strip()
+                       and registry.read_bytes() == damaged and whoami(8779, A) == 401)
+    check('a damaged registry (cut short, a list, a bad hash, one token under two names) is never replaced, '
+          'every change is refused, and it authenticates nobody', all(results), results)
+    registry.write_bytes(b'{"alice": "not-a-hash"}')
+    refused(plain_env, vols, 'repair or restore', 'the store refuses to start on a damaged registry and says so')
+    registry.write_bytes(good)
+    rc, out, err = admin(name, 'token', 'import', 'dave', sha(C))
+    rc2, out2, err2 = admin(name, 'token', 'import', 'alice', sha('z' * 64))
+    check("importing a token that already names another worker, or over a worker that has one, is refused",
+          rc != 0 and 'already belongs' in err and rc2 != 0 and 'already has a token' in err2
+          and registry.read_bytes() == good, err + err2)
+
+    # I16.2: changes made at the same moment must all take effect.
+    for n in ('old1', 'old2', 'old3', 'old4'):
+        admin(name, 'token', 'add', n)
+    script = ('cd /tmp; for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16; do store-admin token add new$i > add$i.out 2>&1 & done; '
+              'for i in 1 2 3 4; do store-admin token remove old$i > rm$i.out 2>&1 & done; wait; '
+              'for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16; do tail -n 1 add$i.out; done')
+    r = docker('exec', name, 'sh', '-c', script)
+    tokens = r.stdout.split()
+    names = set(admin(name, 'token', 'list')[1].split())
+    want = {'alice', 'carol'} | {'new%d' % i for i in range(1, 17)}
+    check('twenty changes made at the same moment all take effect: sixteen additions kept, four removals kept',
+          names == want and len(tokens) == 16 and all(len(t) == 64 for t in tokens)
+          and all(whoami(8779, t) == 200 for t in tokens), sorted(names ^ want))
+    mode = registry.stat().st_mode & 0o777
+    stray = [q.name for q in config.iterdir() if '.tmp-' in q.name]
+    check('the registry is readable by its owner only, and no temporary file is left', mode == 0o600 and not stray,
+          '%o %s' % (mode, stray))
+    docker('rm', '-f', name)
+
+    # I16.1: a change that cannot be saved must say so, and must leave the old registry in force.
+    uid, gid = RUNAS.split(':')
+    small = ['--tmpfs', '/config:size=16k,mode=0700,uid=%s,gid=%s' % (uid, gid)]
+    name = run_store('store-test-full', [(data, '/data')], plain_env, port=8779, inner=8080, extra=small)
+    wait_for(lambda: whoami(8779, A) == 401, what='the store on a small settings folder')
+    rc, out, err = admin(name, 'token', 'add', 'alice')
+    T = out.strip().splitlines()[-1] if rc == 0 and out.strip() else ''
+    docker('exec', name, 'sh', '-c', 'dd if=/dev/zero of=/config/filler bs=1k count=64 2>/dev/null; true')
+    before = docker('exec', name, 'cat', '/config/workers.json').stdout
+    rc1, out1, err1 = admin(name, 'token', 'remove', 'alice')
+    rc2, out2, err2 = admin(name, 'token', 'add', 'bob')
+    after = docker('exec', name, 'cat', '/config/workers.json').stdout
+    left = docker('exec', name, 'sh', '-c', 'ls -a /config | grep -c tmp-').stdout.strip()
+    check('with no space left, a removal and an addition both report failure, print no token, leave the registry '
+          'as it was, and the old token still works',
+          len(T) == 64 and rc1 != 0 and 'removed' not in out1 and rc2 != 0 and not out2.strip()
+          and before == after and before.strip() and left == '0' and whoami(8779, T) == 200,
+          (rc1, out1, err1, rc2, out2, err2, left))
+    docker('exec', name, 'rm', '/config/filler')
+    rc3, out3, err3 = admin(name, 'token', 'remove', 'alice')
+    check('once there is space, the removal succeeds and the token is refused at once',
+          rc3 == 0 and 'removed' in out3 and whoami(8779, T) == 401, err3)
+    docker('rm', '-f', name)
+
+    if ROOT:
+        # The save's last step fails (a registry owned by another user, in a folder that forbids replacing it).
+        sticky = base / 'sticky'
+        sticky.mkdir()
+        os.chmod(sticky, 0o1777)
+        (sticky / 'workers.json').write_text(json.dumps({'alice': sha(A)}))
+        os.chmod(sticky / 'workers.json', 0o644)
+        name = run_store('store-test-sticky', [(data, '/data'), (sticky, '/config')], plain_env, port=8779, inner=8080)
+        wait_for(lambda: whoami(8779, A) == 200, what='the store on a registry it cannot replace')
+        rc, out, err = admin(name, 'token', 'remove', 'alice')
+        stray = [q.name for q in sticky.iterdir() if '.tmp-' in q.name]
+        check('when the new registry cannot replace the old one, the removal reports failure and the token still works',
+              rc != 0 and 'removed' not in out and whoami(8779, A) == 200 and not stray, (rc, out, err, stray))
+        docker('rm', '-f', name)
+    else:
+        print('SKIP  the failed-replacement check needs root to make a registry owned by another user')
+
+    # I16.6: writes that arrive together cannot both be admitted against the same remaining space.
+    qdata = base / 'qdata'
+    qdata.mkdir()
+    own(qdata)
+    registry.write_bytes(good)
+    own(config)
+    name = run_store('store-test-quota', [(qdata, '/data'), (config, '/config')],
+                     dict(plain_env, STORE_MAX_BYTES='1000', STORE_MAX_TOTAL_BYTES='2500'), port=8779, inner=8080)
+    wait_for(lambda: whoami(8779, A) == 200, what='the store with a small cap')
+    rounds = []
+    for n in range(6):
+        jobs = [('PUT', 'path=workers/alice/r%d-%d.bin' % (n, i), b'q' * 900) for i in range(3)]
+        jobs += [('POST', 'append=workers/alice/r%d-%d.log' % (n, i), b'q' * 900) for i in range(3)]
+        codes = together(8779, A, jobs)
+        files = [f for f in qdata.rglob('*') if f.is_file() and f.name != '.lock']
+        used = sum(f.stat().st_size for f in files if not f.name.startswith('.tmp-'))
+        rounds.append((sorted(codes), used, len([f for f in files if f.name.startswith('.tmp-')])))
+        for f in files:
+            if not f.name.startswith('.'):
+                c = http.client.HTTPConnection('127.0.0.1', 8779, timeout=10)
+                c.request('DELETE', '/store.php?path=' + str(f.relative_to(qdata)), headers={'X-Store-Token': A})
+                c.getresponse().read()
+    check('six writes of 900 bytes arriving together, six times over, under a 2,500-byte cap: each time exactly two '
+          'are stored, four are refused (507), and nothing is left behind',
+          all(r == ([200, 200, 507, 507, 507, 507], 1800, 0) for r in rounds), rounds)
+    docker('rm', '-f', name)
+
+
 # ---------------------------------------------------------------- part 3: a certificate from a public authority
 
 def acme_checks(tmp):
-    print("\n== 3. a certificate from an ACME authority (Pebble standing in for Let's Encrypt) ==")
+    print("\n== 4. a certificate from an ACME authority (Pebble standing in for Let's Encrypt) ==")
     if docker('pull', '-q', PEBBLE, timeout=300).returncode:
         print('SKIP  the Pebble image could not be pulled')
         return
@@ -411,7 +633,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--image', help='test this image instead of building one')
     ap.add_argument('--no-build', action='store_true', help='use the image %s as it is' % IMAGE)
-    ap.add_argument('--no-acme', action='store_true', help='skip part 3 (it pulls the Pebble image)')
+    ap.add_argument('--no-acme', action='store_true', help='skip part 4 (it pulls the Pebble image)')
     a = ap.parse_args()
     for tool in ('docker', 'openssl'):
         if not shutil.which(tool):
@@ -429,6 +651,7 @@ def main():
     try:
         server_checks()
         container_checks(tmp)
+        review_checks(tmp)
         if not a.no_acme:
             acme_checks(tmp)
     finally:

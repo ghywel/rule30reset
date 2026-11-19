@@ -7,74 +7,131 @@
  *   store-admin token remove NAME         revoke
  *   store-admin token list                the names
  *   store-admin check                     the settings in force (no secrets) and whether the folders are writable
+ *   store-admin verify                    exit 0 if the registry is absent or valid, 1 with the reason if it is damaged
  *   store-admin health                    exit 0 if the store answers inside the container (the image's health check)
+ *
+ * Every change is made under an exclusive lock, from the registry as it stands at that moment, and is reported only
+ * after the new registry is on disk and has been read back. A change that cannot be saved leaves the old registry
+ * in place and exits 1. A registry that exists but cannot be read or is not valid is never replaced.
  */
 if (PHP_SAPI !== 'cli') {
     http_response_code(404);
     exit;
 }
+require_once (is_file('/app/registry.php') ? '/app' : __DIR__) . '/registry.php';
+
 $file = getenv('STORE_WORKERS_FILE') ?: '/config/workers.json';
-$load = static function () use ($file): array {
-    if (!is_file($file)) {
-        return [];
-    }
-    $d = json_decode((string)file_get_contents($file), true);
-    return is_array($d) ? $d : [];
-};
-$save = static function (array $workers) use ($file): void {
-    ksort($workers);
-    $tmp = $file . '.tmp-' . bin2hex(random_bytes(4));
-    if (file_put_contents($tmp, json_encode($workers, JSON_PRETTY_PRINT) . "\n") === false) {
-        fwrite(STDERR, "store-admin: cannot write beside $file (is /config writable by this user?)\n");
-        exit(1);
-    }
-    chmod($tmp, 0600);
-    rename($tmp, $file);
-};
-$name = static function (?string $n): string {
-    if ($n === null || !preg_match('/^[A-Za-z0-9][A-Za-z0-9-]{0,31}$/', $n)) {
-        fwrite(STDERR, "store-admin: a worker name is 1 to 32 letters, digits or hyphens\n");
-        exit(1);
+
+function stop(string $message): never
+{
+    fwrite(STDERR, "store-admin: $message\n");
+    exit(1);
+}
+
+function worker_name(?string $n): string
+{
+    if ($n === null || !preg_match(REGISTRY_NAME, $n)) {
+        stop('a worker name is 1 to 32 letters, digits or hyphens');
     }
     return $n;
-};
+}
+
+/* The registry for reading: a damaged one stops the command. */
+function registry_now(string $file): array
+{
+    [$state, $workers, $why] = registry_read($file);
+    if ($state === 'bad') {
+        stop("the registry $file is damaged ($why). Nothing was changed. Repair or restore it by hand; "
+            . 'only a registry that does not exist is started afresh.');
+    }
+    return $workers;
+}
+
+/* Run $change on the registry under an exclusive lock and save what it returns. Returns only after the new registry
+   is on disk and reads back as intended; otherwise the old one is still in place and the command has stopped. */
+function change(string $file, callable $change): void
+{
+    umask(0177);                                   // the lock, the temporary file and the registry: owner only
+    $lock = @fopen($file . '.lock', 'c');
+    if ($lock === false || !flock($lock, LOCK_EX)) {
+        stop("cannot lock the registry (is the folder of $file writable by this user?). Nothing was changed.");
+    }
+    $workers = $change(registry_now($file));
+    [$state, , $why] = registry_parse(registry_text($workers));
+    if ($state !== 'ok') {
+        stop("refusing to write a registry that is not valid ($why). Nothing was changed.");
+    }
+    $text = registry_text($workers);
+    $tmp = $file . '.tmp-' . bin2hex(random_bytes(8));
+    $out = @fopen($tmp, 'xb');                     // created new, mode 0600 from the start
+    $ok = $out !== false
+        && @fwrite($out, $text) === strlen($text)
+        && @fflush($out)
+        && @fsync($out);
+    if ($out !== false) {
+        $ok = @fclose($out) && $ok;
+    }
+    $ok = $ok && @file_get_contents($tmp) === $text && @rename($tmp, $file);
+    if (!$ok) {
+        @unlink($tmp);
+        stop("could not save the registry beside $file (folder not writable, or no space). Nothing was changed.");
+    }
+    [$state, $saved] = registry_read($file);
+    if ($state !== 'ok' || $saved != $workers) {
+        stop("the registry $file does not read back as written. Check it before relying on any token.");
+    }
+    flock($lock, LOCK_UN);
+}
+
 $a = array_slice($argv, 1);
-if (($a[0] ?? '') === 'token' && ($a[1] ?? '') === 'add') {
-    $n = $name($a[2] ?? null);
-    $w = $load();
-    if (isset($w[$n])) {
-        fwrite(STDERR, "store-admin: '$n' already has a token; remove it first to replace it\n");
-        exit(1);
-    }
+$cmd = implode(' ', array_slice($a, 0, 2));
+if ($cmd === 'token add') {
+    $n = worker_name($a[2] ?? null);
     $token = bin2hex(random_bytes(32));
-    $w[$n] = hash('sha256', $token);
-    $save($w);
+    change($file, static function (array $w) use ($n, $token): array {
+        if (isset($w[$n])) {
+            stop("'$n' already has a token; remove it first to replace it. Nothing was changed.");
+        }
+        $w[$n] = hash('sha256', $token);
+        return $w;
+    });
     echo "Token for '$n' (shown once; give it to that worker through its own secret settings, never by chat):\n$token\n";
-} elseif (($a[0] ?? '') === 'token' && ($a[1] ?? '') === 'import') {
-    $n = $name($a[2] ?? null);
+} elseif ($cmd === 'token import') {
+    $n = worker_name($a[2] ?? null);
     $h = strtolower($a[3] ?? '');
-    if (!preg_match('/^[0-9a-f]{64}$/', $h)) {
-        fwrite(STDERR, "store-admin: give the token's SHA-256, 64 hex digits (not the token itself)\n");
-        exit(1);
+    if (!preg_match(REGISTRY_HASH, $h)) {
+        stop("give the token's SHA-256, 64 hex digits (not the token itself)");
     }
-    $w = $load();
-    $w[$n] = $h;
-    $save($w);
+    change($file, static function (array $w) use ($n, $h): array {
+        if (isset($w[$n])) {
+            stop($w[$n] === $h ? "'$n' already holds that token. Nothing was changed."
+                : "'$n' already has a token; remove it first to replace it. Nothing was changed.");
+        }
+        $holder = array_search($h, $w, true);
+        if ($holder !== false) {
+            stop("that token already belongs to '$holder': one token cannot name two workers. Nothing was changed.");
+        }
+        $w[$n] = $h;
+        return $w;
+    });
     echo "'$n' imported.\n";
-} elseif (($a[0] ?? '') === 'token' && ($a[1] ?? '') === 'remove') {
-    $n = $name($a[2] ?? null);
-    $w = $load();
-    if (!isset($w[$n])) {
-        fwrite(STDERR, "store-admin: no worker '$n'\n");
-        exit(1);
-    }
-    unset($w[$n]);
-    $save($w);
+} elseif ($cmd === 'token remove') {
+    $n = worker_name($a[2] ?? null);
+    change($file, static function (array $w) use ($n): array {
+        if (!isset($w[$n])) {
+            stop("no worker '$n'. Nothing was changed.");
+        }
+        unset($w[$n]);
+        return $w;
+    });
     echo "'$n' removed.\n";
-} elseif (($a[0] ?? '') === 'token' && ($a[1] ?? '') === 'list') {
-    foreach (array_keys($load()) as $n) {
+} elseif ($cmd === 'token list') {
+    foreach (array_keys(registry_now($file)) as $n) {
         echo "$n\n";
     }
+} elseif (($a[0] ?? '') === 'verify') {
+    registry_now($file);
+    echo "ok\n";
 } elseif (($a[0] ?? '') === 'check') {
     $cfg = require (getenv('SHAREDSTORE_CONFIG') ?: '/app/config.php');
     $cfg['workers'] = array_keys($cfg['workers']);
@@ -92,11 +149,9 @@ if (($a[0] ?? '') === 'token' && ($a[1] ?? '') === 'add') {
     $head = function_exists('http_get_last_response_headers') ? (http_get_last_response_headers() ?? []) : [];
     $ok = $body !== false && preg_match('/^HTTP\/\S+ 40[13]\b/', $head[0] ?? '') && is_array(json_decode($body, true));
     if (!$ok) {
-        fwrite(STDERR, "store-admin: the store did not answer as expected: " . ($head[0] ?? 'no reply') . "\n");
-        exit(1);
+        stop('the store did not answer as expected: ' . ($head[0] ?? 'no reply'));
     }
     echo "ok\n";
 } else {
-    fwrite(STDERR, "usage: store-admin token add|import|remove|list ... | store-admin check | store-admin health\n");
-    exit(1);
+    stop('usage: store-admin token add|import|remove|list ... | store-admin check | verify | health');
 }

@@ -1,7 +1,8 @@
-# The image holds store.php and the five files the Dockerfile names; nothing else from this folder is sent to the build.
+# The image holds store.php and the six files the Dockerfile names; nothing else from this folder is sent to the build.
 *
 !store.php
 !docker/config.php
+!docker/registry.php
 !docker/store.ini
 !docker/store-admin
 !docker/entrypoint.sh

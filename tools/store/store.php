@@ -110,8 +110,8 @@ if ($method === 'PUT' && isset($_GET['path'])) {
     $full = $dataDir . '/' . $rel;
     ensure_parent($full);
     [$tmp, $bytes, $sha] = receive_body($full, $limit);
-    within_quota($cfg, $dataDir, $tmp, $bytes);
-    $lock = lock($dataDir);
+    $lock = lock($dataDir, $tmp);
+    within_quota($cfg, $dataDir, $tmp, $bytes, $lock);
     if ($createOnly && file_exists($full)) {
         unlink($tmp);
         flock($lock, LOCK_UN);
@@ -136,11 +136,13 @@ if ($method === 'POST' && isset($_GET['append'])) {
     $full = $dataDir . '/' . $rel;
     ensure_parent($full);
     [$tmp, $bytes, $sha] = receive_body($full, (int)$cfg['max_bytes']);
-    within_quota($cfg, $dataDir, $tmp, $bytes);
+    $lock = lock($dataDir, $tmp);
+    within_quota($cfg, $dataDir, $tmp, $bytes, $lock);
     $out = fopen($full, 'ab');
     $in = fopen($tmp, 'rb');
     if ($out === false || $in === false || !flock($out, LOCK_EX)) {
         @unlink($tmp);
+        flock($lock, LOCK_UN);
         fail(500, 'could not append');
     }
     stream_copy_to_stream($in, $out);
@@ -149,6 +151,7 @@ if ($method === 'POST' && isset($_GET['append'])) {
     fclose($out);
     fclose($in);
     unlink($tmp);
+    flock($lock, LOCK_UN);
     log_write($cfg, $worker, 'append', $rel, $bytes, $sha);
     reply(['path' => $rel, 'bytes' => $bytes, 'sha256' => $sha]);
 }
@@ -193,8 +196,10 @@ function is_https(bool $trustForwarded): bool
 
 /* The store shares the hosting account's disk with the website itself, and cited files can never be deleted through
    the store. A runaway upload loop or a leaked token must not be able to fill the account, so the whole data folder
-   is capped ('max_total_bytes'). The new body is counted, and the file it may replace is not subtracted. */
-function within_quota(array $cfg, string $dataDir, string $tmp, int $bytes): void
+   is capped ('max_total_bytes'). The new body is counted, and the file it may replace is not subtracted.
+   The caller holds the store's lock from this count until its write is in place, so two writes arriving together
+   cannot both be admitted against the same remaining space. */
+function within_quota(array $cfg, string $dataDir, string $tmp, int $bytes, $lock): void
 {
     $cap = (int)($cfg['max_total_bytes'] ?? 0);
     if ($cap <= 0) {
@@ -209,6 +214,7 @@ function within_quota(array $cfg, string $dataDir, string $tmp, int $bytes): voi
     }
     if ($used + $bytes > $cap) {
         unlink($tmp);
+        flock($lock, LOCK_UN);
         fail(507, 'the store is full');
     }
 }
@@ -334,10 +340,12 @@ function receive_body(string $full, int $maxBytes): array
     return [$tmp, $bytes, hash_final($ctx)];
 }
 
-function lock(string $dataDir)
+/* The store's one lock, taken with the body already received in $tmp: held while a write is admitted and put in place. */
+function lock(string $dataDir, string $tmp)
 {
     $h = fopen($dataDir . '/.lock', 'c');
     if ($h === false || !flock($h, LOCK_EX)) {
+        @unlink($tmp);
         fail(500, 'could not lock');
     }
     return $h;

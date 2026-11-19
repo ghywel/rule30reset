@@ -5,6 +5,9 @@
 #
 # Before installing: make the two folders below (two datasets, or two folders in one) and give the "apps" user
 # (568) Modify on them; forward TCP port 443 on the router to the NAS port set under "published".
+# The two folders must be separate: neither inside the other, and not the same folder twice. The store serves the
+# first to every worker, and the second holds the certificate's private key. The container refuses to start otherwise.
+# Set a quota on the dataset as well: a little above the store's cap below.
 # After installing: open the app's shell and run   store-admin token add NAME   once for each worker.
 
 services:

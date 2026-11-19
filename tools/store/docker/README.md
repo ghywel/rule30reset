@@ -1,7 +1,9 @@
 # The shared store as a container
 
 *Status (19 November): a tested prototype. Publishing is active at the owner's word: the workflow is in
-`.github/workflows/store-image.yml`, and the package starts private. The store has not moved; the move is claudeM5's.*
+`.github/workflows/store-image.yml`, and the package starts private. gptIntel's security review (ledger I16) asked
+for changes, which are in this revision (ledger K12) and go back to gptIntel for a second read. The store has not
+moved; the move is claudeM5's, after that read.*
 
 One container holds the whole server side of the shared store: `store.php`, byte for byte the file one folder up,
 running inside [FrankenPHP](https://frankenphp.dev) (PHP built into the Caddy web server). The web server obtains
@@ -13,11 +15,12 @@ folders on the NAS, so the container can be replaced at any time and nothing is 
 | `Dockerfile` | The recipe for the image. |
 | `entrypoint.sh` | Runs at each start: checks the settings, writes the web server's configuration from them, starts it. |
 | `config.php` | The store's settings, read from the environment and from `workers.json` on the NAS. |
+| `registry.php` | The one definition of a valid token registry, shared by the server and the token tool. |
 | `store.ini` | PHP settings: no parsing of request bodies, no upload tracking, errors to the container's log. |
 | `store-admin` | The token tool, run in the container's shell. |
 | `rule30-store.yaml` | The file to paste into TrueNAS (or give to `docker compose`). |
 | `store-image.workflow.yml` | Builds, checks and publishes the image on GitHub. Not active where it sits. |
-| `test_container.py` | The checks: the server's own 45, then 31 on the container and its certificates. |
+| `test_container.py` | The checks: the server's own 45, then 50 on the container, the review's findings and the certificates. |
 
 ## How an image reaches the NAS
 
@@ -46,6 +49,11 @@ would work unchanged as a repository of its own, should the owner prefer one: on
 
 1. **Two folders.** Make a dataset for the app, with two folders in it, `data` and `config` (two datasets work as
    well). Give the `apps` user (568) Modify on both.
+   - **They must be separate: neither inside the other, and not the same folder twice.** The store serves the
+     data folder to every worker. The settings folder holds the certificate's private key. The container checks
+     this at each start and refuses to run if anything private can be reached through the data folder.
+   - **Set a quota on the dataset,** a little above `STORE_MAX_TOTAL_BYTES` plus a few times `STORE_MAX_BYTES`.
+     The store's own cap counts finished files. Uploads still in flight are bounded by the dataset's quota.
 2. **The router.** Forward TCP port 443 from the internet to the NAS, to the port the YAML publishes (30443 as
    written). The NAS's own web interface keeps ports 80 and 443 on the NAS and is not exposed by this.
 3. **The app.** *Apps → Discover Apps → the three-dot menu → Install via YAML*. Name it `rule30-store`, paste
@@ -59,7 +67,8 @@ would work unchanged as a repository of its own, should the owner prefer one: on
    `https://THE-NAME/store.php`.
 
 A wrong installation does not start and says why in the log: no folder mapped, a folder the user cannot write,
-no name given.
+no name given, the settings folder reachable through the data folder, a setting that is not a valid value, or a
+token registry that is damaged.
 
 **A rehearsal that costs nothing.** Let's Encrypt limits failed attempts for a name to a few each hour. To try the
 whole path first, add `STORE_ACME_CA: https://acme-staging-v02.api.letsencrypt.org/directory` under `environment:`.
@@ -80,7 +89,7 @@ All are environment variables, under `environment:` in the YAML. Only the name i
 | `STORE_HTTP_PORT` | `8080` | The same for `STORE_TLS: off`. |
 | `STORE_MAX_BYTES` | `67108864` | The largest single file (64 MB). |
 | `STORE_MAX_TOTAL_BYTES` | `2147483648` | The cap on the whole store (2 GB); `0` for none. |
-| `STORE_REQUIRE_HTTPS` | `true` | Refuse plain HTTP. Turn off for tests only. |
+| `STORE_REQUIRE_HTTPS` | `true` | Refuse plain HTTP. Turn off for tests only. `true` or `false` (also `1`, `0`, `yes`, `no`, `on`, `off`); any other value stops the start. |
 | `STORE_TRUST_FORWARDED_PROTO` | `false` | With `off`: believe the reverse proxy's `X-Forwarded-Proto`. |
 | `STORE_CERT_FILE`, `STORE_KEY_FILE` | `/config/tls/cert.pem`, `key.pem` | With `files`: the certificate and its key. |
 
@@ -97,9 +106,26 @@ them; an installation does not need them.
 | On the NAS | Holds |
 |---|---|
 | `data/` | The store's data folder: `postbox/`, `share-scratch/`, and the rest, as files you can read on the NAS. |
-| `config/workers.json` | Each worker's name and the SHA-256 of its token. No token is ever stored. |
+| `config/workers.json` | Each worker's name and the SHA-256 of its token. No token is ever stored. Change it with `store-admin` only. |
+| `config/workers.json.lock` | The token tool's lock: empty, and safe to leave. |
 | `config/store.log` | One line for each write: time, worker, operation, path, size, digest. Not readable through the store. |
 | `config/tls/` | The certificate and its private key. Keep this folder as private as a password. |
+
+## The token tool
+
+`store-admin token add NAME`, `token import NAME SHA256`, `token remove NAME` and `token list`, in the app's shell.
+
+- **A change takes effect at once,** with no restart: the server reads the registry at each request.
+- **A change is reported only after it is saved.** The new registry is written beside the old one, read back, and
+  put in its place in one step. If any of that fails, the command says so and exits 1, the old registry is still
+  in force, and no token is printed.
+- **Changes are made one at a time,** under a lock, each from the registry as it then stands. Two people changing
+  tokens at the same moment cannot undo each other.
+- **A damaged registry is never replaced.** If the file exists but cannot be read, or is not a valid registry, every
+  change is refused, the server authenticates nobody, and it will not start. Restore the file by hand. Only a
+  registry that does not exist is started afresh.
+- **One token names one worker.** An import of a token that another worker holds is refused, and so is an import or
+  an addition over a worker that already has one: remove it first.
 
 ## What the container may do
 
@@ -125,12 +151,16 @@ This is claudeM5's task, after S2 and S3. With the app installed:
 python3 tools/store/docker/test_container.py
 ```
 
-It needs Docker and `openssl`, and builds the image first. Part 1 is `test_store.py` unchanged, each of its three
-servers a container: 45 checks, and one line that says all of them passed. Part 2 is the container: the refusals,
-the token tool, HTTPS with the private authority and with certificate files, the reverse-proxy mode, the log, the
-privileges, and that data, tokens and certificates outlive the container: 26 checks. Part 3 obtains a certificate
-from Pebble, the Let's Encrypt project's test authority, by the challenge that needs only the HTTPS port: 5 checks.
-The last line reads `32 of 32 checks pass`.
+It needs Docker and `openssl`, and builds the image first. The last line reads `51 of 51 checks pass` (50 of 50
+when it is not run as root, which skips one).
+
+1. `test_store.py` unchanged, each of its three servers a container: 45 checks, and one line that says all passed.
+2. The container: the refusals, the token tool, HTTPS with the private authority and with certificate files, the
+   reverse-proxy mode, the log, the privileges, and that data, tokens and certificates outlive the container: 26.
+3. The security review's findings (ledger I16), one or more checks for each: 19. On the image as first published,
+   17 of these fail, which is the control (ledger K12).
+4. A certificate from Pebble, the Let's Encrypt project's test authority, by the challenge that needs only the
+   HTTPS port: 5.
 
 **Not tested here**, because it needs the NAS and the router: a certificate from Let's Encrypt itself for the
 public name, the port forward, and TrueNAS's handling of the YAML. Tested on Linux only (x86-64).
