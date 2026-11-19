@@ -13,11 +13,15 @@ archive. Nothing here is new; what did not earn its place was left behind.*
 - **The owner** directs the programme, can start, steer or halt it at any time, and decides anything outward-facing
   that has not already been agreed.
 - **The workers** are AI assistants. At the time of writing there are four, on three hosts:
-  - *claudeM5* (Claude) and *gptM5* (GPT) share the owner's M5 laptop, the only host with Wolfram. claudeM5 writes
-    and posts every submission, and gptM5 is its second reader (section 12).
-  - *gptIntel* (GPT) and *claudeCloud* (Claude) are separate hosts for extra or long-running computation (section
-    10). gptIntel has an Intel i9 processor and an RX 6600 GPU as a compute target. claudeCloud has fewer CPUs but
-    more memory than the other hosts, for work that needs a larger memory pool.
+  - *claudeM5* (Claude) and *gptM5* (GPT) share the owner's M5 laptop (16 GB), the only host with Wolfram and the
+    owner's signed-in Wolfram kernel.
+  - *gptIntel* (GPT) has an Intel i9 processor and an RX 6600 GPU.
+  - *claudeCloud* (Claude) runs in a cloud container: 4 CPUs, 16 GB, no Lean or Wolfram, and reclaimed when idle,
+    so its long runs checkpoint to share-scratch.
+
+  **No worker and no host is set aside for a specialism** (the owner, 19 November). Every worker proposes, proves,
+  computes, codes, reviews, writes submissions and keeps the record. What differs between hosts is only what they can
+  run; where a step needs a tool one host alone has, a worker on that host runs that step for the others (section 10).
 
   Each name is also that worker's name on the shared store (section 9). The earlier names Local, GPT and Cloud were
   retired on 17 November; claudeM5 took on Local's workflow. Attribute every measurement to the worker and host that
@@ -127,8 +131,8 @@ and how long to persist. It never upgrades the status of a claim.
 - **Do your own part first.** Lookups, convention checks, cheap bounded tests and an adversarial pass on your own work
   are yours. Send the results with the one step you want an independent mind on.
 - A check by a sub-agent of the same worker is a self-check, not a second read. It is still worth doing.
-- **A submission has a shared read of its own** before anything is posted: gptM5 reads what claudeM5 writes, and
-  both agree in the ledger on the same files (section 12).
+- **A submission has a shared read of its own** before anything is posted: a worker other than its author reads it,
+  and both agree in the ledger on the same files (section 12).
 - **Criticism comes with a route around.** Every objection to a line names at least one way past the obstacle: a
   weaker target, another model, another object. "Park it" is never the first option offered.
 
@@ -313,11 +317,12 @@ with `python3 tools/store/store.py fetch <path> <file>`.
   again. Never keep them only in a session's temporary folder.
 - **Use the best tool for the job.** If your host lacks it, hand the task to a worker who has it; do not substitute
   without the owner's agreement.
-- **Where to compute.** The M5 laptop runs short probes. Extra or long-running computation goes to gptIntel (an Intel
-  i9 processor, with an RX 6600 GPU as a compute target) or, where a run needs a larger memory pool, to claudeCloud
-  (fewer CPUs, more memory).
-- **Wolfram** runs on claudeM5 only. Every Wolfram result with a status is restated in plain mathematics and
-  replayed in another language. Conversely, an independent Wolfram replay is a good second route for a Python result.
+- **Where to compute.** Every worker runs its own computations on its own host. Choose by what the run needs (Wolfram
+  on the M5 laptop, the GPU on gptIntel, cores, memory, wall-clock time) and hand a run to another host only when
+  yours lacks what it needs. Say in the ledger what is running where.
+- **Wolfram** runs on the M5 laptop only, for claudeM5 and gptM5. Every Wolfram result with a status is restated in
+  plain mathematics and replayed in another language. Conversely, an independent Wolfram replay is a good second
+  route for a Python result.
 - **Lean certificates** should fit the kit: one module per family, building in about a minute and under 4 GB. That is
   a target, not a rule: a longer build can still be added to the kit by hand. The portal's verifier allows four
   minutes in all. Branch-free arithmetic and chunked `decide +kernel` checks make the difference.
@@ -342,7 +347,7 @@ then ask once.
 | What it is | Wolfram's submissions site for the prize, <https://www.wolframcloud.com/obj/rule-30-prize/Agents/> | the reference Lean environment, [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit) on GitHub |
 | What it holds | every submission: a notebook with its Lean proof, an abstract, a status, the reviewers' tags and feedback | the official statements, the verifier's checker, the submission template, the catalogue of proved partial results (`lean/`) and the equivalent forms (`equivalents/`) |
 | What it is for | credit, verification and review; a prize is claimed here | building on: every later proof can import what the catalogue holds |
-| How we contribute | a submission through its API, sent by claudeM5 from a Wolfram kernel signed in with the owner's Wolfram ID; no other host can send one | a pull request from the owner's fork, which the maintainers review and merge |
+| How we contribute | a submission through its API, sent from the M5 laptop's Wolfram kernel signed in with the owner's Wolfram ID; no other host can send one | a pull request from the owner's fork, which the maintainers review and merge |
 | Our copy | none: search it directly | KIT.md and KIT-INDEX.md, kept in step by [KIT-UPDATE.md](KIT-UPDATE.md) |
 
 The portal's instructions for agents (`skill.md` on the site, version 1.17.4 on 17 November 2026) are the authority on
@@ -439,16 +444,18 @@ record it in PRIOR-ART.md, and do not submit it as new.
 
 ### The steps
 
-**claudeM5 writes and posts every submission**, since it has Wolfram and the owner's signed-in kernel.
-**gptM5 reads it.** Where another worker wrote a part (the Lean, a proof, the prose), claudeM5 reads that part as
-well, so that every part has a reader other than its author. Candidates are numbered S1, S2, … in this repository;
-placego's are cited as "placego S-07".
+**Any worker can author a submission, and any other worker can read it.** The author proposes, builds the packet
+and asks the owner; the reader is a different worker, named in the proposal. Where several workers wrote parts (the
+Lean, a proof, the prose), each part has a reader other than its author. The steps that need Wolfram, building the
+notebook and running `post.sh`, run on the M5 laptop, the only host with Wolfram and the owner's signed-in kernel: an
+author elsewhere asks claudeM5 or gptM5 to run them on the pinned files, and that is a step of the author's packet,
+not a role. Candidates are numbered S1, S2, … in this repository; placego's are cited as "placego S-07".
 
-1. **Propose** (claudeM5). A ledger post, subject `S3 proposed`: the result in one sentence, its status, the route
-   (portal, or portal and kit), the novelty check with its chain test, and what it gives a reader. gptM5's carrying
-   read repeats the chain test. Add it to NOW.md's submissions table,
+1. **Propose** (the author). A ledger post, subject `S3 proposed`: the result in one sentence, its status, the route
+   (portal, or portal and kit), the novelty check with its chain test, what it gives a reader, and the reader. The
+   reader's carrying read repeats the chain test. Add it to NOW.md's submissions table,
    and mark the pull it came from as a submission candidate in the pull tracker (section 8).
-2. **Build the packet** (claudeM5). One folder in claudeM5's share-scratch, `share-scratch/claudeM5/S3/`, every file
+2. **Build the packet** (the author). One folder in the author's share-scratch, `share-scratch/<author>/S3/`, every file
    cited by SHA-256:
    - `Rule30Submission.lean`, the portal form, checked with `Check.lean` at the verifier's commit. Read that commit
      (`environment.kit.commit` in `submissions.json`), clone the kit at exactly that commit and confirm it with
@@ -465,30 +472,30 @@ placego's are cited as "placego S-07".
      or fewer, and its `"KernelCheck"` succeeds; the source is in an icon; the expected outputs are there.
    - `post.sh`, which pins every file by digest, refuses if the verifier's commit has changed, and has a dry run.
 
-   Then a ledger post, `S3 packet ready`, listing the digests, and a `REVIEW` flag to gptM5.
-3. **The shared read** (gptM5), reported in the ledger as `Re: M…`, in two parts:
+   Then a ledger post, `S3 packet ready`, listing the digests, and a `REVIEW` flag to the reader.
+3. **The shared read** (the reader), reported in the ledger as `Re: …`, in two parts:
    - **the carrying read**: the statement says what the claim says, with the right quantifiers and hypotheses; the
      proof's carrying steps hold; the novelty check, repeated independently, finds nothing that matches;
    - **the release read**: the actual files to be posted, byte for byte, against the digests in the packet post: the
      notebook and its outputs, the Lean source, the essay, abstract, title, headlines and authors, the kit patch and
      the pull request's text.
 
-   gptM5 ends with PASS, or with the repairs needed. A repair to wording returns for a read of the changed text and
+   The reader ends with PASS, or with the repairs needed. A repair to wording returns for a read of the changed text and
    the rebuilt notebook; a change to the proof, the source or the checker's inputs returns for a scoped carrying read.
    A sub-agent's check does not stand in for this read (section 5).
 4. **Agree** (both). Nothing is posted until both workers have said in the ledger that the packet is ready, naming
-   the same digests: claudeM5's `S3 ready to post` and gptM5's PASS on exactly those files. If they disagree,
+   the same digests: the author's `S3 ready to post` and the reader's PASS on exactly those files. If they disagree,
    nothing is posted: set out both views for the owner.
-5. **Ask the owner** (claudeM5). Show the built essay, the abstract, the title, the authors line and the route, and
+5. **Ask the owner** (the author). Show the built essay, the abstract, the title, the authors line and the route, and
    ask once. Consent given in placego does not carry over: standing consent here is only what NOW.md records.
-6. **Check again, then post** (claudeM5). Just before posting, read the verifier's commit, the portal's list and the
+6. **Check again, then post** (the author, with the run on the M5 laptop). Just before posting, read the verifier's commit, the portal's list and the
    open pull requests again, and confirm the digests. If anything has moved, go back to the step it affects. Then run
    `post.sh` once, from the owner's signed-in kernel, with every text parameter sent as UTF-8.
 7. **The verdict.** The response gives the entry's id and page. The entry turns Lean Verified, or comes back with the
    reasons: repair, have the change read, and resubmit with `supersedes`. An `error` state is the verifier's own
    failure, and there is nothing to repair.
-8. **The kit pull request** (claudeM5, after Lean Verified). Fill the id and page into the row, open the pull request
-   from the fork against the kit's current main, with the text gptM5 read. The portal's own instructions open the
+8. **The kit pull request** (the author, after Lean Verified). Fill the id and page into the row, open the pull request
+   from the fork against the kit's current main, with the text the reader read. The portal's own instructions open the
    pull request first; we post first because the row must carry the submission link, and the maintainers have
    accepted that order.
 9. **Record and follow.** A ledger post, `S3 posted`, with the id, the page, the verdict and the pull request, then

@@ -1641,3 +1641,31 @@ gaps ≤ 30 and against claudeCloud's P = 64 runs wherever they overlap.
   M41's odd census.
 - All three predictions held. With A, the doubling lemma holds on unrestricted profiles at every source period from
   2 to 32 except 5: 138,871,107 classes in all (COMPUTED, exhaustive).
+
+## K6 · 2026-11-19 11:07 UTC · claudeCloud → all · The owner: no worker and no host has a specialism; METHOD and NOW now say so
+
+The owner, in claudeCloud's session (19 November): correct the work roles. All workers do everything, claudeCloud and
+gptIntel included, and no worker or machine is set aside for a particular specialism.
+
+**What changed** (METHOD.md and NOW.md, this commit).
+- **§1.** The worker list now gives each host's facts only: the M5 laptop (16 GB, Wolfram and the owner's signed-in
+  kernel), gptIntel (i9, RX 6600), claudeCloud (4 CPUs, 16 GB, no Lean or Wolfram, reclaimed when idle). A new
+  paragraph states the decision. Where a step needs a tool only one host has, a worker on that host runs that step for
+  the others.
+- **§5.** A submission's shared read is by a worker other than its author, not by gptM5 of claudeM5.
+- **§10.** "Where to compute" no longer routes long runs to gptIntel or memory to claudeCloud. Each worker computes on
+  its own host and hands a run on only when its host lacks what the run needs.
+- **§12.**
+  - Any worker can author a submission and any other can read it. The proposal names the reader.
+  - Proposing, the packet (in the author's share-scratch), the agreement, asking the owner and the kit pull request
+    belong to the author.
+  - Building the notebook and running `post.sh` need Wolfram and the owner's kernel, so they run on the M5 laptop:
+    claudeM5 or gptM5 runs them on the author's pinned files, as a step of that packet, not as a role.
+- **NOW.md.** The arrangement records the decision. The worker rows lose "ready for submission review" and "for extra
+  or long-running computation". The host-memory item leaves "Needs the owner", since it is settled: both measured
+  hosts have 16 GB. The submissions line follows §12.
+- **Not changed:** the ledger header's workers table still says "submission second reader" for gptM5. The header
+  changes only at a rotation, so whoever rotates next should rewrite those host descriptions to match §1.
+
+claudeM5, gptM5: please read §1, §10 and §12 as they stand now, and say if a step of §12 reads wrongly for an author
+off the M5.

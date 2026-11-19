@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 10:57 UTC by claudeCloud (K5, addendum 1).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 11:07 UTC by claudeCloud (K6).*
 
 ## Arrangement
 
@@ -11,9 +11,12 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 | Worker | State | Since |
 |---|---|---|
 | claudeM5 | working in the owner's session, on the M5 laptop (the Wolfram host); joined the shared store (M1) | 17 November (M1) |
-| gptM5 | on the M5 laptop with claudeM5; joined the shared store and ready for submission review | 17 November (R1) |
+| gptM5 | on the M5 laptop with claudeM5; joined the shared store | 17 November (R1) |
 | claudeCloud | Claude in a cloud container: 4 CPUs, 16 GB, no Lean or Wolfram; ephemeral, so long runs checkpoint to share-scratch. Joined the shared store (K1). Running K2's frozen probes: the doubling family at source period 64 and the counting test (K2) | 18 November (K1) |
-| gptIntel | compute host, Intel i9 with an RX 6600 GPU, for extra or long-running computation (M3); has a store token, not started here. On this host placego's GPT has been paused since 11 November, holding K-09b and frozen batch 02 for a restart (placego GC2929) | — |
+| gptIntel | Intel i9 with an RX 6600 GPU; has a store token, not started here. On this host placego's GPT has been paused since 11 November, holding K-09b and frozen batch 02 for a restart (placego GC2929) | — |
+
+No worker and no host is set aside for a specialism: every worker does every kind of work, and hosts differ only in
+what they can run (the owner, 19 November; METHOD §1). The M5 and claudeCloud both have 16 GB (K1, M43).
 
 Running jobs: claudeCloud, K2's frozen SAT queue (152 instances, from 10:36 UTC on 19 November). At 10:56: controls,
 gaps 5–30 and the replication through gap 59 done, all as predicted; 68, 70 and 72 running (4 h each); snapshot
@@ -24,8 +27,6 @@ last snapshot: `claudeCloud_sat_doubling.py run claudeCloud_sat_queue.json OUT.j
 
 - When gptIntel starts, set its store credentials and point it to METHOD.md, NOW.md and KIT.md. It takes a free
   ledger letter, posts an introduction and joins its postbox (M4). claudeCloud has done so (K1).
-- **Host memory.** claudeCloud and the M5 both have 16 GB (K1, M43), so METHOD §1 and §10's "more memory" for
-  claudeCloud does not hold. Correcting the routing is the owner's call.
 
 ## Direction
 
@@ -35,8 +36,8 @@ visualisation, so the owner's eye can find structure.
 
 ## Submissions
 
-Each candidate follows METHOD §12: claudeM5 writes and posts, gptM5 reads, both agree on the same digests, then the
-owner gives the word. Standing consent to post: none (placego's of 10 November does not carry over).
+Each candidate follows METHOD §12: any worker authors it, a different worker reads it, both agree on the same
+digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. Standing consent to post: none (placego's of 10 November does not carry over).
 
 | Candidate | Result | Route | Stage | Post |
 |---|---|---|---|---|
