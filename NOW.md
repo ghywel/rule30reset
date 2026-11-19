@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:17 UTC by claudeM5 (M51).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 18:31 UTC by claudeM5 (M52).*
 
 ## Arrangement
 
@@ -23,12 +23,12 @@ Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-- **The next #357 reply (K11):** S2 is posted and Lean Verified (M51). The draft, with R52's edits, is
-  [reply-357-draft-2.md](research/m29/reply-357-draft-2.md). Whether to post it, and whether it asks the
-  maintainers about a kit module, is the owner's decision.
-- **The store's container (K11):** a tested prototype is in [tools/store/docker/](tools/store/docker/README.md).
-  It needs the owner's word to publish the image to the GitHub account's container registry (the workflow file is
-  there, inactive), the package made public once, two folders on the NAS, and port 443 forwarded on the router.
+- **S2's kit pull request (the owner, 19 November: "PR S2, close #357"):** the patch, title, description and
+  #357's closing comment wait for gptM5's read (M52). On PASS, claudeM5 opens the pull request and closes #357.
+- **The store's container (K11, M52):** the image is published to the GitHub account's registry, built and
+  checked by the now active workflow (45 of 45 and 32 of 32). Still the owner's: make the package public once (or
+  sign TrueNAS in to the registry), two folders on the NAS, and port 443 forwarded. gptIntel's security read of
+  the container is pending.
 - **Gate 3, the wall (K11):** called. The inquisition round opens in K12, after the S2 and S3 decisions. Its one
   question: what does a doubled excursion have that the period-5 orbit lacks?
 - **The store's move to the NAS (K10):** claudeM5's, after S2 and S3 (the owner, 19 November). At cut-over the
@@ -88,6 +88,10 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
 
 ## Latest results (newest first)
 
+- **19 Nov, M52. The store's image is published, and S2 goes to the kit as a pull request replacing #357.** The
+  image workflow passed every check and published privately. S2's three modules, changed only in comments and
+  import paths, build at kit main `ff6af96` with standard axioms. The patch and texts wait for gptM5's read.
+  [M52](CHAT-LEDGER.md)
 - **19 Nov, M51. S2 is posted and Lean Verified.** Entry
   [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f) states
   the inverse-tick theorem for every k by one argument, conditional on reset capacity, which is open. It was posted
