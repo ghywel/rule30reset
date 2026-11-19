@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 12:32 UTC by gptIntel (I8).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 13:11 UTC by claudeM5 (M45).*
 
 ## Arrangement
 
@@ -19,7 +19,9 @@ No worker and no host is set aside for a specialism: every worker does every kin
 what they can run (the owner, 19 November; METHOD §1). The M5 and claudeCloud both have 16 GB (K1, M43).
 
 Running jobs: claudeCloud, the last two instances of K2's frozen SAT queue (odd, P = 64, gaps 72 and 73); 64, 66, 69
-and 71 finished UNSAT (K7, addendum 2), and the tail at gaps 74–96 is closed unrun (K7).
+and 71 finished UNSAT (K7, addendum 2), and the tail at gaps 74–96 is closed unrun (K7). claudeM5, B2 (M45): the
+frozen all-period listing at gaps 51–100 on the M5 laptop, 9 workers, from 12:58 UTC for at most four hours, each
+finished gap copied to `share-scratch/claudeM5/M29/B2/`.
 Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
@@ -50,15 +52,15 @@ The full schedule, its rules and its two reformulations are in [K8](CHAT-LEDGER.
 | (T) ⇐ (CAP): reset capacity K1(w) ≥ k on every edge cycle, for every k | Hand proof (M34, M39), carried in R37; the cascade is Lowry's PR #60 (P6). Not in Lean. |
 | (CAP) ⇔ (L∞): reset words infinitely often in every phase of every consistent left side | Hand proof by compactness (M39), carried in R37 |
 | (L∞) in one phase of every three | Lean automaton with a hand transfer (R44); one of every five wholly in Lean (R43) |
-| (L∞) ⇐ (DL): every dyadic doubling white interval resets every tick | PROOF-SKETCH (M41) |
+| (L∞) ⇐ (DL): every dyadic doubling white interval resets every tick | PROOF-SKETCH (M41). B1 writes it as Theorem C, which needs (DL⁻), the doubling lemma only at the first clock losses of pointed recurrent strips (M45) |
 | (DL) | OPEN. COMPUTED at every source period 2–32 except 5 (K5), and at the gaps listed in the ledger's header |
 
 **The streams.**
 
 | Stream | Worker | Items, in order | Reader | State |
 |---|---|---|---|---|
-| A, the Lean of S2 (the conditional theorem (CAP) ⇒ (T)) | gptM5, author | A1 the statement file; A2 the cascade, crediting #60; A3 the assembly with an explicit f(k); A4 R44's bridge in Lean | gptIntel; claudeM5 for A1's statement | [A1 statement](research/m29/Rule30EveryKStatement.lean) type-checks on main and the verifier pin. Kit and all-cycle read PASS (I4); claudeM5’s read pending. |
-| B, the hand proofs, then the early doubling returns | claudeM5 | B1 `research/m29/every-k-chain.md`; B2 M44 B at gaps 51–100 with K7's controls and the single-pulse family; B3 the essay and the #357 reply | gptIntel for B1; gptM5 for B3 | Not started |
+| A, the Lean of S2 (the conditional theorem (CAP) ⇒ (T)) | gptM5, author | A1 the statement file; A2 the cascade, crediting #60; A3 the assembly with an explicit f(k); A4 R44's bridge in Lean | gptIntel; claudeM5 for A1's statement | [A1 statement](research/m29/Rule30EveryKStatement.lean) type-checks on main and the verifier pin. Kit and all-cycle read PASS (I4); claudeM5's cut, phase, width and age read PASS (M45). |
+| B, the hand proofs, then the early doubling returns | claudeM5 | B1 `research/m29/every-k-chain.md`; B2 M44 B at gaps 51–100 with K7's controls and the single-pulse family; B3 the essay and the #357 reply | gptIntel for B1; gptM5 for B3 | B1 written, [every-k-chain.md](research/m29/every-k-chain.md), for gptIntel's read (M45). B2 frozen and running (M45). B3 waits for the owner's word. |
 | C, the counting theory as theorems, then the wall | gptIntel | C1 the pooled mean-gap theorem, on paper and in Lean (candidate S3); C2 the wall by pair counting, one block; C3 the reads of A, B1 and K8 §5 | claudeCloud for C1's proof; gptM5 for its Lean | C1 written and kernel-checked (I3, I5); C2 odd-gap bound (I6); C3 A1, catalogue, and both reformulations read (I4, I7) |
 | Conducting | claudeCloud | The chain table, the controls, K7's six SAT instances, S2's novelty check, the gates | — | Running. Portal and open pull requests checked on 19 November: no claim of (T) for every k (K8, addendum 1) |
 
@@ -80,6 +82,13 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
 
 ## Latest results (newest first)
 
+- **19 Nov, M45. A1 passes claudeM5's read, and B1 writes the chain for every k.** The A1 statement's cut, phase,
+  width and age are M34's and M39's, and it type-checks on the M5 at kit `a8072e7`.
+  [B1](research/m29/every-k-chain.md) sets out (DL⁻) ⇒ (L∞) ⇒ (CAP) ⇒ (T) as ten steps and three theorems with
+  statuses. The open link needs the doubling lemma only at first clock losses. K8's reformulations carry, the unique
+  predecessor form through I7's lemma. Exploratory: the single-pulse family is early only at source periods 4–6; at
+  odd gaps every cyclic component is a simple cycle (I6's determinism, checked on 1,875 rows). B2 is frozen and
+  running. [M45](CHAT-LEDGER.md)
 - **19 Nov, K7. Source period 64 is UNSAT at gaps 68 and 70 too, and the early doubling returns are one family.** K2's
   SAT run replicated M43 at every gap 31–63, 65 and 67 under an independent encoding and decided 68 and 70 (COMPUTED,
   solver claims); the tail at 74–96 is closed unrun. I2's pooled mean gap of at most 2^Q + 1 carries. A census of all
@@ -246,9 +255,8 @@ Verifier's kit commit: `5fb5915` (5 November), reconfirmed 19 November at the 12
 
 - **The owner's round of warm pulls (17 November).** gptM5 posted R2–R6 and claudeM5 posted M6–M10, independently.
   M11 compares them and proposes a first block: M6 and M7 by claudeM5, R2 by gptM5. The owner selected R2 for gptM5 (R7).
-- **K8, the schedule:** A1 passed the kit and all-cycle statement read (I4); claudeM5’s A1 read and B1 are pending. C1's [paper proof](research/m29/pooled-white-returns.md) is with claudeCloud (I3), the [core Lean proof](research/m29/Rule30PooledReturns.lean) type-checks and is with gptM5 (I5), and Gate 1 follows the first reads.
-- **I2 → claudeM5:** report M44's two SAT families separately; an incomplete listing in B is UNKNOWN.
-- **K6 → claudeM5, gptM5:** does METHOD §12 read rightly for an author off the M5? gptIntel answered in I2.
+- **K8, the schedule:** A1 passed the kit and all-cycle statement read (I4) and claudeM5's read (M45); B1 is written and waits for gptIntel's read (M45). C1's [paper proof](research/m29/pooled-white-returns.md) is with claudeCloud (I3), the [core Lean proof](research/m29/Rule30PooledReturns.lean) type-checks and is with gptM5 (I5), and Gate 1 follows the first reads.
+- **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
 
