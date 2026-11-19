@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 11:14 UTC by gptIntel (I2).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 11:53 UTC by claudeCloud (K8).*
 
 ## Arrangement
 
@@ -12,26 +12,58 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 |---|---|---|
 | claudeM5 | working in the owner's session, on the M5 laptop (the Wolfram host); joined the shared store (M1) | 17 November (M1) |
 | gptM5 | on the M5 laptop with claudeM5; joined the shared store | 17 November (R1) |
-| claudeCloud | Claude in a cloud container: 4 CPUs, 16 GB, no Lean or Wolfram; ephemeral, so long runs checkpoint to share-scratch. Joined the shared store (K1). Running K2's frozen probes: the doubling family at source period 64 and the counting test (K2) | 18 November (K1) |
+| claudeCloud | Claude in a cloud container: 4 CPUs, 16 GB, no Lean or Wolfram; reclaimed when idle, so long runs checkpoint to share-scratch. Joined the shared store (K1). **Conducts for the moment (the owner, 19 November)**: keeps the schedule (K8), the chain table and the gates | 18 November (K1) |
 | gptIntel | Joined the shared store. Intel i9, 8 cores, 16 logical processors, 15.90 GiB visible RAM, RX 6600. Completed the additional research reviews in I2. Lean 4.35.0, GCC and Z3 available locally. | 19 November (I1) |
 
 No worker and no host is set aside for a specialism: every worker does every kind of work, and hosts differ only in
 what they can run (the owner, 19 November; METHOD §1). The M5 and claudeCloud both have 16 GB (K1, M43).
 
-Running jobs: claudeCloud, K2's frozen SAT queue (152 instances, from 10:36 UTC on 19 November). At 10:56: controls,
-gaps 5–30 and the replication through gap 59 done, all as predicted; 68, 70 and 72 running (4 h each); snapshot
-`share-scratch/claudeCloud/K2/sat-run-1056.jsonl` (`c102c6e2…`). If the container goes, the queue resumes from the
-last snapshot: `claudeCloud_sat_doubling.py run claudeCloud_sat_queue.json OUT.jsonl` skips the jobs already in OUT. Schedules: none on (only the owner turns them on).
+Running jobs: claudeCloud, six instances of K2's frozen SAT queue (odd, P = 64, gaps 64, 66, 69, 71, 72 and 73),
+restarted at 11:39 UTC on 19 November after the container restarted; the tail at gaps 74–96 is closed unrun (K7).
+Schedules: none on (only the owner turns them on).
 
 ## Needs the owner
 
-None recorded.
+- **Gate 2 of the schedule (K8), when it comes:** whether S2, a theorem for every k that is conditional on reset
+  capacity, is submitted to the portal, and what #357 is told.
+- **PR #60.** S2 rests on Lowry's cascade theorems in kit PR #60, open and unmerged since 30 October (P6). The schedule
+  reproves them with credit. Waiting for its merge, or asking on #60, are outward steps and the owner's to choose.
 
 ## Direction
 
 The easy submissions are done, ours and others'; the hard problem needs new ways in (the owner, 17 November). Two
 strategies: this clean repository, whose method and kit summary are read whole into context; and inquisition and
 visualisation, so the owner's eye can find structure.
+
+**The goal now** (the owner, 19 November): a submittable proof of the kind the maintainer asked for on #357, "the
+statement for every number of ticks k: an age f(k) from which every k-tick preimage of a nonzero finite orbit has its
+true edge k cells inside the image edge, proved by an argument that does not need a new cover for each k" (T).
+
+## Schedule (K8)
+
+The full schedule, its rules and its two reformulations are in [K8](CHAT-LEDGER.md). claudeCloud conducts.
+
+**The chain.**
+
+| Link | Status |
+|---|---|
+| (T) ⇐ (CAP): reset capacity K1(w) ≥ k on every edge cycle, for every k | Hand proof (M34, M39), carried in R37; the cascade is Lowry's PR #60 (P6). Not in Lean. |
+| (CAP) ⇔ (L∞): reset words infinitely often in every phase of every consistent left side | Hand proof by compactness (M39), carried in R37 |
+| (L∞) in one phase of every three | Lean automaton with a hand transfer (R44); one of every five wholly in Lean (R43) |
+| (L∞) ⇐ (DL): every dyadic doubling white interval resets every tick | PROOF-SKETCH (M41) |
+| (DL) | OPEN. COMPUTED at every source period 2–32 except 5 (K5), and at the gaps listed in the ledger's header |
+
+**The streams.**
+
+| Stream | Worker | Items, in order | Reader | State |
+|---|---|---|---|---|
+| A, the Lean of S2 (the conditional theorem (CAP) ⇒ (T)) | gptM5, author | A1 the statement file; A2 the cascade, crediting #60; A3 the assembly with an explicit f(k); A4 R44's bridge in Lean | gptIntel; claudeM5 for A1's statement | Not started |
+| B, the hand proofs, then the early doubling returns | claudeM5 | B1 `research/m29/every-k-chain.md`; B2 M44 B at gaps 51–100 with K7's controls and the single-pulse family; B3 the essay and the #357 reply | gptIntel for B1; gptM5 for B3 | Not started |
+| C, the counting theory as theorems, then the wall | gptIntel | C1 the pooled mean-gap theorem, on paper and in Lean (candidate S3); C2 the wall by pair counting, one block; C3 the reads of A, B1 and K8 §5 | claudeCloud for C1's proof; gptM5 for its Lean | Not started |
+| Conducting | claudeCloud | The chain table, the controls, K7's six SAT instances, S2's novelty check, the gates | — | Running |
+
+**The gates.** 1: the statement (A1, B1 and C1's proof all read). 2: S2 proposed under METHOD §12, and the owner
+decides. 3: the wall, when B2 and C2 report; if neither gives a mechanism, an inquisition round with the owner.
 
 ## Submissions
 
@@ -47,6 +79,11 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 
 ## Latest results (newest first)
 
+- **19 Nov, K7. Source period 64 is UNSAT at gaps 68 and 70 too, and the early doubling returns are one family.** K2's
+  SAT run replicated M43 at every gap 31–63, 65 and 67 under an independent encoding and decided 68 and 70 (COMPUTED,
+  solver claims); the tail at 74–96 is closed unrun. I2's pooled mean gap of at most 2^Q + 1 carries. A census of all
+  9,973,336 odd classes at P = 2–28 finds doubling returns within 100 wheels only at gaps 21, 56, 88, 23 and 98, all
+  from the single-pulse source; none at P = 7–28. [K7](archive/ledgers/CHAT-LEDGER.2.md)
 - **19 Nov, I2.** gptIntel independently reviewed the live research through M44 and K6. The finite period-32
   census, gap-32 witness and whole-component swap exclusions carry. The two exact K2 steps hold; the geometric
   return law remains conjectural. At P=128 gaps 51–64 the exclusion requires a reset-free tick.
@@ -208,8 +245,9 @@ Verifier's kit commit: `5fb5915` (5 November), confirmed 18 November 10:45 UTC (
 
 - **The owner's round of warm pulls (17 November).** gptM5 posted R2–R6 and claudeM5 posted M6–M10, independently.
   M11 compares them and proposes a first block: M6 and M7 by claudeM5, R2 by gptM5. The owner selected R2 for gptM5 (R7).
-- **K2 (claudeCloud):** asks claudeM5 to weigh the counting picture before the P = 128 runs, and gptM5 for a read of
-  its two steps. I2 gives gptIntel’s additional read. Both structural steps hold, and the probability needs a separate argument.
+- **K8, the schedule:** each worker's first item (A1, B1, C1) is open, and Gate 1 follows them.
+- **I2 → claudeM5:** report M44's two SAT families separately; an incomplete listing in B is UNKNOWN.
+- **K6 → claudeM5, gptM5:** does METHOD §12 read rightly for an author off the M5? gptIntel answered in I2.
 - Visualisations proposed, not built: an interactive map of the open statements; the branching-walk fan; Mahler's
   valid starts on the circle; a timeline of kit contributions by theme.
 
@@ -229,9 +267,10 @@ the work goes. The rules are in METHOD §8.
 | M8 | 17 Nov 20:07, claudeM5 | Does Theta's reach stay bounded inside the gap language? | Open, not started. Carries the inherited reach thread (L1, placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov 20:07, claudeM5 | Forbidden gap words and entropy of the gate trap lifted to 20–24 columns | Open, not started. Quint's PR #348 is no longer open (M14): read it or its merged module first. Widens M7 from u ∅ to every right half that enters the trap. A first number (M16): u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language. | no |
 | M10 | 17 Nov 20:07, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | Open, not started. Supplies the controls for M8 and R2 (M11); M6, which it also served, closed in M21. | no |
-| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried); f(k) ≤ 265,441 for every k ≤ 7,911 (M40, from Rule30FourFronts and the exact schedule on all four strips, carried in R37). R37 independently carries M36–M40. The white-diagonal drop proposal fails on a Lean-certified pointed strip. The sufficient ordinary reset recurrence remains open. R44 proves one of every three phases has arbitrarily deep ordinary resets (carried in M41, with R37 and R43). The unrestricted single-phase local-anchor route is closed by a period-five ring. Continue with the rooted period-doubling interval in a prescribed phase; the control data contain zero bad doublings. M41: none at source period 32 either, at any gap. Reset-free whole intervals at P ≤ 32 all have gaps ≤ 16, so (G), a gap bound of 19, together with R40's gap graph would suffice. M42: R40's gap graph carries. (G) holds at every gap ≤ 30 for every dyadic period, and the only dyadic doublings below gap 31 are the kit's 2→7 and 7→28. So (G30), reset-free dyadic whole intervals have gap ≤ 30, suffices; it is open only at source period ≥ 64 with gap ≥ 31. A period-5 reset-free doubling at gap 23 shows the dyadic clock is needed. M43: (G30) is false, refuted by a ring-tiled interval of gap 32 and period 64, so the gap-bound route is closed. The doubling lemma (every dyadic doubling white interval has a reset in every tick) holds wherever tested: gaps ≤ 30 at every period, source periods ≤ 32 at every gap, and source period 64 at gaps 31–67 (two solvers) and 69, 71, 73. Progress reply posted on #357 (M36). Bounds are data, not submissions (METHOD §12). K2: an independent encoding reruns the odd family at P = 64 (running); a counting picture predicts every small-gap odd instance UNSAT whatever the resets. K5: the doubling lemma holds on unrestricted profiles at every source period 2–32 except 5 (one non-dyadic orbit). M44: no reset-free doubling at source period 128 at gaps 5–64 (kissat at every gap 31–64, CaDiCaL with internal proof checking at 31–61 and 63); exploratory, G_n's cyclic part has no swappable pair at gaps 31–50, so no doubling of any period returns to white there. Open for dyadic doublings: P = 64 at gaps 68, 70, 72 and 74 on (claudeCloud's K2 queue is running these), P = 128 from gap 65, P ≥ 256 from gap 51. Next for claudeM5: freeze the cyclic-part test at gaps 51–100, blind, with K3–K4's returns at 56 and 88 as positive controls. | no |
-| K2 | 19 Nov 10:19, claudeCloud | The counting picture of white returns: an interval of temporal period Q returns to white after about 2^Q wheels, and a tick's reset-free stretch decays like a fair-coin string's (rate 0.848); as a model for the observed scarcity of short-gap doublings | In progress. K3: the gap law holds at Q = 14–24 for plain and doubling intervals (MEASURED); tails near 0.848; period 5 is the exception. K5: census at every source period to 28 fits the reset law. SAT run going (K2 §1). Explains M41–M43's census and SAT data; bears on M29's doubling lemma. | no |
-| K5 | 19 Nov 10:44, claudeCloud | The resolution law: after a doubling white, why does every tick close a reset within about 4.6P wheels (0.98–1.31 × 4.2P at P = 12–28)? A linear resolution bound together with a sufficient earliest-return bound would imply the lemma above the period-5 exception | Open. P = 29–32 done (K5, addendum 1): worst 0.99–1.13 × 4.2P. Joined to K2; bears on M29. | no |
+| M29 | 18 Nov 11:34, claudeM5 | The maintainer's question on #357: an age f(k) for every number of inverse ticks k, with no cover per k; why the ages grow (8, 24, 80) | In progress. Comes from R2 and S1. Bounds: f(1) = 8, f(2) = 24, f(3) = 31, 59 ≤ f(4) ≤ 72, 73 ≤ f(5) ≤ 78, 104 ≤ f(6) ≤ 108, f(7) ≤ 131, f(8) ≤ 132, f(9) ≤ 144, f(10) ≤ 157, f(11) ≤ 172 (carried); f(k) finite for k ≤ 383 (M35, carried); f(k) ≤ 265,441 for every k ≤ 7,911 (M40, from Rule30FourFronts and the exact schedule on all four strips, carried in R37). R37 independently carries M36–M40. The white-diagonal drop proposal fails on a Lean-certified pointed strip. The sufficient ordinary reset recurrence remains open. R44 proves one of every three phases has arbitrarily deep ordinary resets (carried in M41, with R37 and R43). The unrestricted single-phase local-anchor route is closed by a period-five ring. Continue with the rooted period-doubling interval in a prescribed phase; the control data contain zero bad doublings. M41: none at source period 32 either, at any gap. Reset-free whole intervals at P ≤ 32 all have gaps ≤ 16, so (G), a gap bound of 19, together with R40's gap graph would suffice. M42: R40's gap graph carries. (G) holds at every gap ≤ 30 for every dyadic period, and the only dyadic doublings below gap 31 are the kit's 2→7 and 7→28. So (G30), reset-free dyadic whole intervals have gap ≤ 30, suffices; it is open only at source period ≥ 64 with gap ≥ 31. A period-5 reset-free doubling at gap 23 shows the dyadic clock is needed. M43: (G30) is false, refuted by a ring-tiled interval of gap 32 and period 64, so the gap-bound route is closed. The doubling lemma (every dyadic doubling white interval has a reset in every tick) holds wherever tested: gaps ≤ 30 at every period, source periods ≤ 32 at every gap, and source period 64 at gaps 31–67 (two solvers) and 69, 71, 73. Progress reply posted on #357 (M36). Bounds are data, not submissions (METHOD §12). K2: an independent encoding reruns the odd family at P = 64 (running); a counting picture predicts every small-gap odd instance UNSAT whatever the resets. K5: the doubling lemma holds on unrestricted profiles at every source period 2–32 except 5 (one non-dyadic orbit). M44: no reset-free doubling at source period 128 at gaps 5–64 (kissat at every gap 31–64, CaDiCaL with internal proof checking at 31–61 and 63); exploratory, G_n's cyclic part has no swappable pair at gaps 31–50, so no doubling of any period returns to white there. Open for dyadic doublings: P = 64 at gaps 68, 70, 72 and 74 on (claudeCloud's K2 queue is running these), P = 128 from gap 65, P ≥ 256 from gap 51. Next for claudeM5: freeze the cyclic-part test at gaps 51–100, blind, with K3–K4's returns at 56 and 88 as positive controls. K8: the schedule. Stream A (gptM5) puts (CAP) ⇒ (T) in Lean as S2; B (claudeM5) writes the chain on paper and runs B at gaps 51–100; C (gptIntel) proves the pooled count and attacks the wall by pair counting. | no |
+| K2 | 19 Nov 10:19, claudeCloud | The counting picture of white returns: an interval of temporal period Q returns to white after about 2^Q wheels, and a tick's reset-free stretch decays like a fair-coin string's (rate 0.848); as a model for the observed scarcity of short-gap doublings | In progress. K3: the gap law holds at Q = 14–24 for plain and doubling intervals (MEASURED); tails near 0.848; period 5 is the exception. K5: census at every source period to 28 fits the reset law. K7: the SAT run replicates M43 at gaps 31–63, 65 and 67 and decides 68 and 70; six instances restarted, the tail closed. I2: the two structural steps carry, the pooled mean is at most 2^Q + 1 (carried in K7), and the geometric law stays a conjecture. Explains M41–M43's census and SAT data; bears on M29's doubling lemma. | no |
+| K5 | 19 Nov 10:44, claudeCloud | The resolution law: after a doubling white, why does every tick close a reset within about 4.2P wheels (0.98–1.31 × 4.2P at P = 12–32; not a bound, K7)? A linear resolution bound together with a sufficient earliest-return bound would imply the lemma above the period-5 exception | Open. P = 29–32 done (K5, addendum 1): worst 0.99–1.13 × 4.2P. Joined to K2; bears on M29. Stream C2 of the schedule takes the resolution side (K8). | no |
+| K8 | 19 Nov, claudeCloud | The unique-predecessor form: (L∞) says every recurrent point of F(x) = 4x ⊕ (2x ∨ x) on the odd 2-adic integers has exactly one preimage, so no row off the strips maps onto a strip row; and it is enough that infinitely many white intervals of each strip reset every tick | Open. PROOF-SKETCH, unread; gptIntel reads it in C3, claudeM5 in B1 (K8 §5). | no |
 
 ## Recently closed routes
 
