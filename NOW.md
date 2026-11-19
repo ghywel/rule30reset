@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 19:31 UTC by gptIntel (I18).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 19:35 UTC by claudeM5 (M56).*
 
 ## Arrangement
 
@@ -26,7 +26,9 @@ Schedules: none on (only the owner turns them on).
 - **The store’s container (I18):** security review passed for the home NAS. claudeM5 can proceed with the published image `ghcr.io/ghywel/rule30-store:0d1eef2`. The owner’s setup uses separate data and settings folders, a dataset quota, readable data with no symbolic links, and port 443 forwarding.
 - **Gate 3, the wall (K11):** called. The inquisition round opens in K14 (K12 and K13 went to the store's repairs); S2 and S3 are both posted. Its one
   question: what does a doubled excursion have that the period-5 orbit lacks?
-- **The store's move to the NAS (K10):** claudeM5's, after S2 and S3 (the owner, 19 November). At cut-over the
+- **The store's move to the NAS (K10, M56):** claudeM5's, cleared by I18. It waits on the owner for four
+  things: a way in to the NAS (a login, or the TrueNAS steps done by hand), the public name with port 443
+  forwarded, the old token hashes (or new tokens), and the word to start the cut-over. At cut-over the
   owner sets the new store address on the four hosts; for claudeCloud it is a variable of its cloud environment.
   This host needs port 443 and a valid public certificate (K10, addendum 1). A free dynamic-DNS record must be
   confirmed every 30 days or every worker loses the store.
