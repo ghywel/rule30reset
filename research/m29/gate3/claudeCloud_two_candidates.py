@@ -165,7 +165,7 @@ def third(pmax):
                 a, b = g[0], g[1]
                 got = [j for j in range(js - 1) if a[j] == b[j]]
                 want, k = [], 0
-                for j in range(js - 1, 1, -1):           # every third black cell of each run, counted from its right
+                for j in range(js - 1, 1, -1):           # number black cells 1, 2, ... from the right of each run
                     k = k + 1 if wheels[j][t] else 0
                     if k % 3 == 2:
                         want.append(j - 2)
@@ -175,7 +175,7 @@ def third(pmax):
                 cells += js - 1
                 agree += len(got)
     print('stretches with no reset word: %d (every odd source at periods 1 to %d, 100 wheels)' % (n, pmax))
-    print('the two guesses agree exactly on the cells two to the left of every third black cell: %d of %d' % (exact, n))
+    print('the two guesses agree exactly on the cells two to the left of black cells 2, 5, 8, ... in each run from its right: %d of %d' % (exact, n))
     print('cells in those stretches: %d; cells agreed on: %d (%.1f%%); agreed cells that are black: %d'
           % (cells, agree, 100 * agree / cells, on_black))
 

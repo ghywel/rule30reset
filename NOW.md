@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:05 UTC by gptM5 (R56).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:05 UTC by gptIntel (I27).*
 
 ## Arrangement
 
@@ -66,7 +66,7 @@ by counting marks. Its curiosities and misgivings are listed there.
 |---|---|---|---|
 | claudeM5 | The weakest statement about doubled stretches from which Theorem C still gives (L∞), written into [every-k-chain.md](research/m29/every-k-chain.md) with its proof sketch. Say plainly if none weaker than (DL⁻) works. | gptM5 | Asked (K25). |
 | gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions ([busy-sources.md](research/m29/gate3/busy-sources.md), owed from K19), and the read of claudeM5's statement. | gptIntel | Compactness proof complete (R56), with gptIntel for review. I25 and the relaxed-statement read follow. |
-| gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Asked (K25). |
+| gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Search under way (I27). |
 | claudeCloud | Conducts. Reads the search. Designs the census under claudeM5's statement once it is carried. | — | Waits on the two above. |
 
 ## Submissions
@@ -90,6 +90,8 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 *The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
 in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
 
+- **20 Nov, I27.** K21’s three local agreement laws and K22’s gate law carried. A white agreement occurs two wheels left of black positions 2, 5, 8, … counted from the right of each run in K21’s test. Through wheel 3,000 there are 1,601 strict settling records and 507 ties. The front bounds the consecutive settled prefix. Read K19 and K23–K25. [I27](CHAT-LEDGER.md)
+
 - **20 Nov, K25. The round is closed; the owner chooses the relaxed lemma and consolidation.** The handover ranks
   the pulls and lists the misgivings: the relaxed lemma has one test case (period 5) and must not slide into (L∞)
   itself. Two answers to the owner, both known and reproduced: no formula gives the gaps between white wheels,
@@ -100,21 +102,20 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
   on, not at every tick: wheel 28 is black ten times before tick 31 (the owner's catch). Up to wheel 88,000 seven
   wheels turn white for good (2, 7, 28, 399, 53,207, 58,286, 87,866), and the wheels that turn black for good are
   exactly the wheel two on from each, with wheels 0 and 1. All known (the kit, Rowland); reproduced with the tick
-  at which each settles. The tick at which a wheel settles is the front between the orderly side and the
-  random-looking side passing it; the front drifts left about 0.25 cells a tick, as NKS reports (K24).
+  at which each settles. The front tracks the deepest consecutively settled prefix (I27); the front drifts left about 0.25 cells a tick, as NKS reports (K24).
   [K23](CHAT-LEDGER.md), [K24](CHAT-LEDGER.md)
 
 - **20 Nov, K22. The four guesses at a wheel split in exactly three ways: the owner's logic gates.** Start the
   reading of a row at any wheel. Count the black cells of the row from there leftwards to the first white one.
   None, or 3, 6, …: guess 1 stands alone (an OR of the two guessed cells). 1, 4, 7, …: guess 3 alone. 2, 5, 8, …:
   the left cell alone decides. Once a reset word has been read, all four end the same. COMPUTED at all 401,270
-  rows and starts of every odd source to period 11; PROOF-SKETCH from the reader's four states. Read left to
+  rows and starts of every odd source to period 11; PROVED from the four possible reader states (I27). Read left to
   right it is a dial with three positions, and a white cell arriving on "guess 3 alone" is the capture. The
   explorer shows the split at every wheel of a row as a strip. [K22](CHAT-LEDGER.md)
 
 - **20 Nov, K21. How closely the guesses of the row above match: a first measure (not the one the owner meant, K22).** Two different guesses agree
   only on single white cells: one in three under a black run of the row read, none where it is white; a black cell
-  they agree on makes them one (PROOF-SKETCH on a table of 12 local cases; COMPUTED on 4,070 rows and 2,637
+  they agree on makes them one (PROVED on a table of 12 local cases (I27); COMPUTED on 4,070 rows and 2,637
   stretches). The measure, *pinned*, is the share of the row above on which all four guesses agree: everything left
   of the row's last reset word, plus a third of the black to its right. Period 5 is alone on it: four rows under a
   third (ticks 1, 3, 7, 9, the four the owner named), where every other whole excursion's worst row is at a half
@@ -251,8 +252,7 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
 
 ## Open threads
 
-- **The inquisition round (Gate 3):** open (K16); first answers researched (K17). It waits for the owner's further answers; then claudeCloud writes the handover:
-  warm pulls with their first tests, curiosities and misgivings (METHOD §6).
+- **The inquisition round (Gate 3):** closed (K25). The owner chose the relaxed lemma and consolidation; assignments and readers are in the current work table.
 - **The store:** gptIntel confirmed the NAS switch and passed the scoped M60 route review (I20). The old store comes off the website on the owner’s word. Then claudeCloud updates the installation notes (K14).
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's
   notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before

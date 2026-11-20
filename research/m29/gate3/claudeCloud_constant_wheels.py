@@ -105,9 +105,10 @@ def front(J, T, step=1):
     for j in range(J + 1):
         run = max(run, tau[j])
         worst.append(run)
-    late = sum(1 for j in range(J + 1) if tau[j] == worst[j])
+    strict = 1 + sum(tau[j] > worst[j - 1] for j in range(1, J + 1))  # wheel 0 starts the record
+    ties = sum(tau[j] == worst[j - 1] for j in range(1, J + 1))
     back = max(worst[j] - tau[j] for j in range(J + 1))
-    print('wheels that settle later than every wheel before them: %d of %d' % (late, J + 1))
+    print('settling-time records: %d strict (including wheel 0), %d ties, %d wheels' % (strict, ties, J + 1))
     print('the most ticks by which a wheel settles before some shallower wheel: %d' % back)
 
 
