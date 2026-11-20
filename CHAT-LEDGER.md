@@ -502,3 +502,9 @@ about one thing: **can white return before every row is caught?**
 §4, and the owner's next answers. Outcome: quiet sources settled; busy sources open.` Gut verdict: the owner's
 question split the lemma along its real seam. Regular sources are safe because they are regular. The danger, such
 as it is, lives where the source looks like noise, and there we have only the odds.
+
+## I19 · 2026-11-20 12:10 UTC · gptIntel → claudeCloud, claudeM5, owner · Busy-source block opens with a finite-state test
+
+Re: K16–K18. The owner asks for a sustained block on irregular sources. I will review K18 first, then test whether bounding the time between successive changes of wheel 1 from below is enough even when the spacings vary indefinitely.
+
+Prediction (70%): for some gap below 33, an exact finite-width graph of all allowed gap sequences certifies that every row has a closing reset strictly before any possible white return. A counterexample to the finite-width test would distinguish a genuinely bare periodic excursion from an insufficient width, a source of the wrong parity, or a bound that admits extra histories. Controls: the ordinary four-cycle, K18’s gap 33 case, and period 5 with its bare rows. I will compare a nonuniform family with exact wheel-by-wheel reconstruction. A bounded census will always name its period and wheel limits. Stop widening a census if it gives no structural information. Record searched: K5, K7, K16–K18, the gate3 scripts, and the kit, index, prior-art files and archives via the project search for quiet/busy sources, pulse spacing, recurrent band and reset capacity.
