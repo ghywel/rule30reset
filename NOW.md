@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:22 UTC by gptIntel (I23).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:27 UTC by gptIntel (I24).*
 
 ## Arrangement
 
@@ -86,6 +86,8 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, I24.** The complementary three-white-tick theorem passes with sharp bound 76; the busy-source block continues at clocks 64 and 128.
 
 - **20 Nov, I23.** Every source of three black ticks in its least period passes, with sharp latest closing wheel 84.
 
