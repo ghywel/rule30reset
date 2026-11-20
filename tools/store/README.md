@@ -1,17 +1,18 @@
 # The shared store
 
-The store is one PHP script on the owner's website that the workers read and write over HTTPS, each with its own
-token. In git and the ledger call it "the shared store", never by its address. How the workers use it is in
-[METHOD.md §9](../../METHOD.md); this file is about the server.
+The store is one PHP script that the workers read and write over HTTPS, each with its own token. Since 19 November
+2026 it runs in a container on the owner's NAS (ledgers M58, K14). Until then it ran on the owner's website; that
+installation has been taken down (the owner, 20 November, ledger K28). In git and the ledger call it "the shared
+store", never by its address. How the workers use it is in [METHOD.md §9](../../METHOD.md); this file is about the
+server.
 
 | File | What it is |
 |---|---|
-| `store.php` | the server script, as run on the website |
-| `make_token.php` | makes a worker's token, run from a terminal on the host, never from the web |
-| `config.example.php` | the private settings the script reads; the real `config.php` lives outside the web root |
-| `htaccess.example` | the web folder's `.htaccess`: only `store.php` is served, multipart bodies are refused |
+| `store.php` | the server script; the container runs this file byte for byte |
+| `docker/` | the container: the image's recipe, the token tool, the TrueNAS YAML and their checks ([docker/README.md](docker/README.md)) |
 | `store.py` | the workers' client: postboxes, flags, share-scratch |
 | `test_store.py` | runs `store.php` under PHP's built-in server with throwaway tokens and checks every rule |
+| `make_token.php`, `config.example.php`, `htaccess.example` | for running the script on an ordinary PHP web host, as the website did. The container does not use them: its tokens are made with `store-admin`. Kept so that the script can be hosted that way again. |
 
 ## Who may do what
 
@@ -19,8 +20,8 @@ A worker's name is its token's name in `config.php`'s `workers`, and the store's
 every write to your own postbox or share-scratch, and before every flag, the client asks `whoami` and sends nothing if
 the name differs from the agent named on its command line.
 
-The store's data folder (`data_dir` in `config.php`) is the project folder itself, `scratch/rule30reset/` in the
-hosting account, outside the web root. Paths are relative to it: `postbox/` and `share-scratch/` sit at its top.
+The store's data folder is the project folder itself: on the NAS, the `data` folder mapped into the container. Paths
+are relative to it: `postbox/` and `share-scratch/` sit at its top.
 
 | Path | Read | Create or replace | Append | Delete |
 |---|---|---|---|---|
@@ -43,25 +44,27 @@ hosting account, outside the web root. Paths are relative to it: `postbox/` and 
 - The log file (`log_file`) may sit inside the data folder: every worker can then read it, and nobody can write to it
   through the store.
 
-## When the web host answers in the store's place
+## When something other than the store answers
 
-The hosting service sometimes answers a request with an HTML verification page before it reaches `store.php`. The
-script itself answers only as `application/json`, or as `application/octet-stream` for a file. The client accepts
+The script itself answers only as `application/json`, or as `application/octet-stream` for a file. The client accepts
 only those two content types. Any other answer never reached the store, so the client sends the request again, up to
-six times with a growing pause (3 to 30 seconds), and then stops with a message. Before 19 November (ledger K9) it took
-such a page for an empty reply, which showed as "worker None", an empty listing, a flag with no fields or a read-back
-mismatch.
+six times with a growing pause (3 to 30 seconds), and then stops with a message. This was written for the website's
+hosting service, which sometimes put an HTML verification page in front of the script (ledger K9). The NAS container
+has nothing in front of it and has needed no retry (K14); the rule stays as a guard.
 
-## Updating the website
+## Updating the store
 
-1. Run the tests on a host with PHP: `python3 tools/store/test_store.py` must end with every check passing.
-2. Upload `store.php` over the one in the web folder. `config.php` and `.htaccess` stay as they are.
-3. Set `data_dir` in `config.php` to the project folder, `scratch/rule30reset/` in the hosting account (outside the
-   web root). The postboxes and share-scratch folders inside it are made by the workers' own writes.
-4. Each agent's token must have its agent's name, `claudeM5`, `gptM5`, `claudeCloud` or `gptIntel`. Make any that is missing with
-   `php make_token.php <name>`, add the printed line to `config.php`, and put the token on that agent's host as
-   `RULE30_STORE_TOKEN`, with `RULE30_STORE_URL` set to the address of `store.php`.
-5. Each agent runs `python3 tools/store/store.py join <agent>`.
+1. Change `store.php` and run the tests on a host with PHP: `python3 tools/store/test_store.py` must end with every
+   check passing. With Docker, `python3 tools/store/docker/test_container.py` runs them inside the container too.
+2. Push to `main`. Any change under `tools/store/` starts the workflow `.github/workflows/store-image.yml`, which
+   builds the image, runs the container's checks and publishes it under the commit's short hash only if all pass.
+3. Another worker reads the change (METHOD §5). The NAS is pinned to one tag, so nothing changes there until the
+   owner sets the new tag in the app's YAML and restarts it.
+4. Each worker checks its access: `python3 tools/store/store.py ls` and `inbox <agent>`.
+
+Tokens are made and revoked in the container's shell with `store-admin` ([docker/README.md](docker/README.md)). A new
+worker gets its token through its host's secret settings, never by chat, and then runs
+`python3 tools/store/store.py join <agent>`.
 
 ## Testing it
 
@@ -92,12 +95,13 @@ overwrite, `fetch`, and the client's refusal to act with another agent's token.
 `docker/` packages the server as one container image for the owner's NAS: `store.php` unchanged, the HTTPS
 certificate obtained and renewed by the web server inside, the data and the token hashes in two folders on the NAS.
 [`docker/README.md`](docker/README.md) has the install steps, the settings and the checks
-(`python3 tools/store/docker/test_container.py`). On 19 November 2026 (ledger K11) it was a tested prototype: not
-published, and the store had not moved.
+(`python3 tools/store/docker/test_container.py`). It was reviewed three times (ledgers I16–I18, with the repairs in
+K12 and K13) and has served the store since 19 November 2026 (M58, K14). The NAS runs the image tagged `981c5eb`
+(M60, reviewed in I20; M62).
 
 ## Safety
 
-The data folder sits outside the web root, so files are reachable only through the script, which checks the token on
+The data folder is not served by the web server, so files are reachable only through the script, which checks the token on
 every request; paths are plain segments, so `..`, hidden files and absolute paths are refused. The script makes no
 symbolic link and follows none: a path with a link anywhere along it is refused, for reading and for writing. A
 write is acknowledged only when every byte the sender declared is on disk; if the disk is full or the upload is cut

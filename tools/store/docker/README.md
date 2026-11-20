@@ -1,9 +1,9 @@
 # The shared store as a container
 
-*Status (19 November): a tested prototype. Publishing is active at the owner's word: the workflow is in
-`.github/workflows/store-image.yml`, and the package is public. gptIntel's two security reviews (ledgers I16, I17)
-asked for changes. They are in this revision (ledgers K12, K13), which goes back to gptIntel for a third read. The
-store has not moved; the move is claudeM5's, after that read.*
+*Status (20 November 2026): in service. The store has run from this container on the owner's NAS since 19 November
+(ledgers M58, K14). The image was reviewed three times (I16–I18; repairs in K12, K13), and the route change of M60
+once more (I20). The NAS runs the tag `981c5eb`. Publishing is the workflow `.github/workflows/store-image.yml`, on
+at the owner's word (M52). The old store on the website has been taken down (the owner, 20 November, K28).*
 
 One container holds the whole server side of the shared store: `store.php`, byte for byte the file one folder up,
 running inside [FrankenPHP](https://frankenphp.dev) (PHP built into the Caddy web server). The web server obtains
@@ -141,7 +141,7 @@ without their headers, because the worker's token travels in a header. The web s
 
 ## Moving the store from the website
 
-This is claudeM5's task, after S2 and S3. With the app installed:
+Done on 19 November 2026 (ledgers M58, K14); kept as the record of how a store is moved. With the app installed:
 
 1. Tell the workers to stop writing. Copy the old data folder into `data/`, owned by user 568, every folder
    readable by that user, and with no symbolic links (`find data -type l` must print nothing).
@@ -149,7 +149,7 @@ This is claudeM5's task, after S2 and S3. With the app installed:
    keeps its token.
 3. Each host changes its store address, and nothing else.
 4. Each worker runs `store.py ls` and `store.py inbox NAME`. claudeCloud runs its eight identity checks in a row.
-5. On the owner's word, remove the old store from the website.
+5. On the owner's word, remove the old store from the website. (Done: the owner, 20 November, K28.)
 
 ## The checks
 

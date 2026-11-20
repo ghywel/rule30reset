@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 19:45 UTC by gptM5 (R60).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 19:55 UTC by claudeCloud (K28).*
 
 ## Arrangement
 
@@ -24,10 +24,8 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **S4, when its packet is ready.** A packet is being prepared for R56's Lean result: the every-k statement follows
-  from reset words at arbitrarily large depths in every row of every recurrent strip (K26 §7). It comes to the owner
-  for the word before anything is posted. Nothing else in the research waits on the owner.
-- **The old store:** gptIntel and gptM5 have confirmed the NAS switch (I20, R56). Taking the old store off the website still needs the owner’s word.
+- **Nothing in the research waits on the owner.** S4 has the owner's word in advance (20 November, K28): claudeM5
+  posts it when the packet has had its read and both workers agree on the same digests.
 - **Settled since K15 (M61):** S2 and S3 are both in the kit, and both Human Verified.
 - **Standing:** the dynamic-DNS name must be confirmed every 30 days, or every worker loses the store (K10).
 
@@ -83,7 +81,7 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | **S1** (R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur. | **Lean Verified, Human Verified:** [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f) (M26, M29). The maintainers take no more per-k steps (M29). Its kit PR #357 is closed, replaced by #368 (M54). |
 | **S2** (M29) | Conditional on reset capacity (CAP), for every k an explicit age from which every k-tick predecessor is finite with its edge exactly k cells inside, and every wall history occurs (`conditional_every_k`, `capacity_at_settling_age`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC (M51). The kit carries it as `Rule30EveryKInverse`, `Rule30EveryKCascade` and `Rule30EveryKStatement` (kit `fd00829`, from PR #368; M61). Quint's #370 builds on it. |
 | **S3** (K2, I2) | The mean first white gap is at most 2^Q + 1 over the nonzero labelled Q-bit first children, for every Q > 0 (`pooled_first_return_bound`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC (M48). Kit PR #366 merged: the kit's main `8451547` (K15). |
-| **S4** (R56) | The every-k statement follows from reset words at arbitrarily large depths in every prescribed phase of every pointed recurrent strip: `cap_of_unbounded_resets : LInfinity → CAP`, composed with S2 (kernel-checked, I29). | **Proposed (K26).** Packet: claudeM5; reader: gptIntel. Lean carried in I29. |
+| **S4** (R56) | The every-k statement follows from reset words at arbitrarily large depths in every prescribed phase of every pointed recurrent strip: `cap_of_unbounded_resets : LInfinity → CAP`, composed with S2 (kernel-checked, I29). | **Proposed (K26). The owner's word is given in advance (K28): claudeM5 posts it when read and agreed.** Packet: claudeM5; reader: gptIntel. Lean carried in I29. |
 
 Verifier's kit commit: `5fb5915` (5 November). The kit's main is `c352a6b`; KIT.md is in step (R60).
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
@@ -281,7 +279,7 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
 ## Open threads
 
 - **The inquisition round (Gate 3):** closed (K25). The owner chose the relaxed lemma and consolidation; assignments and readers are in the current work table.
-- **The store:** gptIntel confirmed the NAS switch and passed the scoped M60 route review (I20). The old store comes off the website on the owner’s word. Then claudeCloud updates the installation notes (K14).
+- **The store:** on the NAS, image `981c5eb` (M62; route review I20). The old store on the website is dismantled (the owner, 20 November), and the installation notes describe the NAS (K28). Closed.
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's
   notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before
   `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call. Not yet done.
