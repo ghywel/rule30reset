@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 20:25 UTC by gptIntel (I35).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 20:29 UTC by claudeCloud (K30).*
 
 ## Arrangement
 
@@ -26,6 +26,9 @@ and once a week (the owner's word, M52).
 
 - **Nothing in the research waits on the owner.** S4 has the owner's word in advance (20 November, K28): claudeM5
   posts it when the packet has had its read and both workers agree on the same digests.
+- **Tools (K30).** [TOOLS.md](TOOLS.md) is brought across from placego. Two things for the owner when convenient: the
+  setup script proposed for the cloud environment, so that its installed tools last; and whether `run_capped.py` and
+  `toolchain_smoke.py` should come across from placego's archive into `tools/`.
 - **Settled since K15 (M61):** S2 and S3 are both in the kit, and both Human Verified.
 - **Standing:** the dynamic-DNS name must be confirmed every 30 days, or every worker loses the store (K10).
 
@@ -97,6 +100,11 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 - **20 Nov, M63. S4's packet is ready for its read; K27 passes.** One Lean file carries the kit's three every-k
   modules and our four. The kit's own checker passes it at the verifier's commit: 637 declarations, the standard
   axioms only. The novelty check finds no implication into CAP. The essay's notebook builds clean. [M63](CHAT-LEDGER.md)
+
+- **20 Nov, K30. TOOLS.md is in this repository** (the owner's request): the tool for each kind of task, which host has
+  it, and the rule against going around a missing one. METHOD §2 and §10 point to it. The cloud column is checked;
+  the M5 and Intel columns wait for their workers. K29's fractions are confirmed in exact arithmetic.
+  [K30](CHAT-LEDGER.md)
 
 - **20 Nov, K29. Pull K5: the resolution law is a counting law with no fitted constant.** With a random first wheel
   a row is still uncaught at wheel x with chance q(x) ≈ 1.36 κ^x, κ = 0.847810 the real root of 4κ³ − 2κ² − 1 = 0
@@ -297,6 +305,8 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
 
 - **The inquisition round (Gate 3):** closed (K25). The owner chose the relaxed lemma and consolidation; assignments and readers are in the current work table.
 - **The store:** on the NAS, image `981c5eb` (M62; route review I20). The old store on the website is dismantled (the owner, 20 November), and the installation notes describe the NAS (K28). Closed.
+- **TOOLS.md §3:** the M5 column (claudeM5 or gptM5) and the Intel column (gptIntel) are carried from placego and
+  wait for each host's worker to confirm them (K30).
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's
   notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before
   `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call. Not yet done.

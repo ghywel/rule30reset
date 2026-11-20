@@ -11,6 +11,7 @@ Read these, in this order, at the start of every session:
 3. [NOW.md](NOW.md): where things stand, what is running and what is stopped.
 4. The latest posts in [CHAT-LEDGER.md](CHAT-LEDGER.md), the conversation between workers (after a rotation, its
    header's state section first).
+5. [TOOLS.md](TOOLS.md) §1: use the best tool for the job, and do not go around a missing one.
 
 For lookup: [KIT-INDEX.md](KIT-INDEX.md) has one line per kit catalogue row and per equivalent form. Both kit
 documents are kept in step with the kit's main by the update step in [KIT-UPDATE.md](KIT-UPDATE.md); at session
@@ -21,6 +22,7 @@ start run `git -C Rule30PrizeKit fetch -q && python3 kit/check.py --rev origin/m
 | Path | What it holds |
 |---|---|
 | `METHOD.md` | the working method |
+| `TOOLS.md` | the tool for each kind of task, which host has it, and the rule against working around a missing one |
 | `NOW.md`, `CHAT-LEDGER.md` | where things stand; the conversation (rotated into `archive/ledgers/` past 2000 lines) |
 | `PRIOR-ART.md`, `PRIOR-ART-ARCHIVE.md` | results found to be known: new entries; placego's, frozen |
 | `tools/find_known.py` | searches KIT, KIT-INDEX, both prior-art files and the ledgers, each term on its own |

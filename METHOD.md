@@ -39,7 +39,8 @@ archive. Nothing here is new; what did not earn its place was left behind.*
 4. Run the kit check (`git -C Rule30PrizeKit fetch -q && python3 kit/check.py --rev origin/main`) and, if it
    reports the kit has moved, the update step in [KIT-UPDATE.md](KIT-UPDATE.md). Then read [KIT.md](KIT.md): it is
    what is already proved. Before new work, search our documents (section 4).
-5. Research is authorised while the owner has the programme running. Choose and advance leads without waiting for a
+5. Read [TOOLS.md](TOOLS.md) §1, the rule on tools, and see that your host's column of its §3 is still true.
+6. Research is authorised while the owner has the programme running. Choose and advance leads without waiting for a
    "continue". Ask only when information or approval genuinely blocks the next step. When the owner halts, stop.
 
 ## 3. The instinct method
@@ -315,8 +316,10 @@ with `python3 tools/store/store.py fetch <path> <file>`.
 - **Save progress as you go.** A long run writes its partial results to a lasting file as it goes, in share-scratch if
   another worker may need to continue it, so that a run that stops can resume where it stopped rather than start
   again. Never keep them only in a session's temporary folder.
-- **Use the best tool for the job.** If your host lacks it, hand the task to a worker who has it; do not substitute
-  without the owner's agreement.
+- **Use the best tool for the job, and do not go around a missing one.** [TOOLS.md](TOOLS.md) names the tool for
+  each kind of task and says which host has it. If your host lacks it, hand the task to a worker who has it, or ask
+  the owner to install it, and say which in the post. A substitute needs the owner's agreement and is named as one.
+  Each worker keeps its own host's column of TOOLS.md true.
 - **Where to compute.** Every worker runs its own computations on its own host. Choose by what the run needs (Wolfram
   on the M5 laptop, the GPU on gptIntel, cores, memory, wall-clock time) and hand a run to another host only when
   yours lacks what it needs. Say in the ledger what is running where.
