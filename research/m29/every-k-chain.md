@@ -3,7 +3,8 @@
 **Stream B1 of K8.** Author claudeM5, 19 November 2026; reader gptIntel. Read PASS by claudeCloud (K9) and gptIntel
 (I11); revised in M46 with I11's two wording repairs and the Lean statuses of A2–A4. This document turns the
 sketches of M34, M35, M39 and M41 (on R44) into numbered steps. Each step states its hypotheses, its status and
-where it lives, so that stream A can formalise it line by line. It adds nothing computed.
+where it lives, so that stream A can formalise it line by line. It adds nothing computed, except §3.5 (the relaxed
+lemma, added in M62 for K25's pull 1; reader gptM5).
 
 Statuses. **PROVED IN LEAN** names a Lean theorem that compiles. **CARRIED** is a hand proof that an independent read
 has passed (the read is named). **PROOF-SKETCH** has had no such read, or only a read of its idea. **OPEN** is not
@@ -237,6 +238,89 @@ is a reset word of phase s with both ends in [A, B].
     three phases, all in Lean. The phase may depend on the strip and the starting tick.
 - **Neither gives (L∞).** Step 5 needs resets in the k consecutive prescribed phases s − k + 1, …, s. A fixed phase
   among three cannot be chosen to match a prescribed one (R44's note).
+
+### 3.5 The relaxed lemma (K25, pull 1)
+
+Added by claudeM5 on 20 November (M62); reader gptM5. The question (K25 §6): what is the weakest statement about
+doubled stretches from which Theorem C still gives (L∞)? **The answer, plainly:** weaker statements than (DL⁻) do
+work, and the first is (DL⁻₁) below. None of them is the weakest. They form a descending ladder, every rung closes
+the chain, and the ladder's limit is (L∞) itself. "Weaker" here means logically weaker, over all pointed recurrent
+strips. Whether any of these statements differ in truth on actual rule 30 strips is not shown (R57).
+
+**Notation.** On a strip let A be a first clock loss and [A, B] its doubling interval (step 10). Let
+A = w_0 < w_1 = B < w_2 < … be the white wheels from A on; they exist by step 9(c). Phase s means tick s of the strip
+in every interval: one common phase across the block (R57), whatever each interval's clock.
+
+**Theorem C′ (windows).** Suppose each pointed recurrent strip carries a family of *windows* [w_i, w_j] (i < j),
+each a run of consecutive white intervals, and that their starting wheels are unbounded. If every phase has a reset
+with both ends in each window of the family, then (L∞) holds.
+- **Argument.** Theorem C's. Suppose phase s has no reset deeper than d0. Take a window starting past d0. The window
+  holds a reset of phase s, and that reset is deeper than d0: a contradiction.
+- **Status:** PROOF-SKETCH. It changes only the family that Theorem C uses, and Theorem C is CARRIED.
+- Theorem C is the case where the windows are the doubling intervals [A, B] of step 10. §4.1's consequences 1 and 2
+  are other cases of the same argument.
+
+**The ladder** (each rung implies the next; each implies (L∞) by Theorem C′).
+- **(DL⁻₀) = (DL⁻).** Every phase has a reset in [A, w_1].
+- **(DL⁻₁), the first relaxed lemma.** Every phase has a reset in [A, w_2]: a row that the doubled stretch misses is
+  caught in the next stretch. This is the owner's choice (K25) in its first form, and the one to attack first.
+- **(DL⁻_N).** The same in [A, w_(N+1)], for a fixed N.
+- **(DL^b).** (DL⁻_N) holds for some N, the same N for every strip and every clock.
+- **(DL^c), for a bound c named in advance.** From the first clock loss of clock p, every phase is caught within c(p)
+  + 1 intervals.
+  - The window may also be set by structure, for example "through the end of the next doubled stretch". That window
+    holds at least two intervals, so (DL⁻₁) implies it. Its own number of intervals is bounded by a function of p,
+    by step 9(a).
+  - A bound in wheels, every phase caught by wheel A + h(p), is another rung of the same kind.
+
+**Where the ladder stops: with no bound it is (L∞).**
+
+*Proposition.* (L∞) holds exactly when every first clock loss A of every strip has a finite N(A) such that every
+phase has a reset in [A, w_(N(A)+1)]. N(A) can even be taken to depend only on the clock at A.
+- **⇐** is Theorem C′.
+- **⇒.** By (L∞), phase s has a reset whose deep end is beyond A. It cannot straddle A: its black cells would then lie
+  on a white wheel (1.6). So it lies in some finite run of intervals from A.
+  - The phases caught within N intervals form a set that depends on finitely many wheels. So the set is open and
+    closed in ℤ₂ (1.4), and it grows with N.
+  - By (L∞) these sets cover ℤ₂, since every 2-adic phase is tick 0 of a shifted strip (1.4). By compactness one N
+    is enough.
+  - Step 7's compactness over the space of strips then gives one N for every strip at a given clock. (The
+    clock-p segment ends by wheel 4^p + 1, by step 9(a).)
+- **Status:** PROOF-SKETCH (steps 6 and 7's argument, used again).
+- **What it means.** "A row missed now is caught in some later stretch", with no bound named, is (L∞) restated. The
+  misgiving in K25 §5 is exact. With a bound named in advance (any rung), the statement is strictly about stretches:
+  - it is decided at each clock by a finite computation;
+  - one source can refute it, which no finite computation can do for (L∞).
+- **There is no weakest rung.** Every named bound c is beaten by a faster-growing one, and together the rungs give
+  exactly (L∞). Of the uniform rungs, the weakest is (DL^b); the first and most testable is (DL⁻₁).
+
+**A source form of (DL⁻₁)**, for the census (K25 §6: claudeCloud designs it).
+- **The statement.** Take any periodic source of odd weight with least period P, where P is a power of 2 for the
+  chain. Its doubled excursion, together with the interval after its return, catches every tick. When that interval
+  does not double, this must hold on both of its branches.
+- **Why it implies (DL⁻₁) on strips.**
+  - The interval at a first clock loss has a source of this kind, with P the clock (step 10).
+  - The excursion's first wheel has two choices. They differ by a shift of P, which leaves the P-periodic prefix
+    fixed. So the excursion is set by its source.
+  - At a white where the clock stays (even weight), the next first wheel x has x(t + 1) = a(t) ⊕ x(t). Both x and
+    its complement are periodic, so the strips fork there: the kit's branches (`Rule30LeftAntiPeriod`,
+    PRIOR-ART.md).
+- **Checked** (COMPUTED, `gate3/claudeM5_relaxed_window.py`, which reuses `claudeCloud_excursions.py`).
+  - Its one test case passes. The source `00001` (P = 5) leaves ticks 1 and 9 of 10 uncaught when white returns at
+    wheel 23. The next stretch doubles (period 20) and catches all 20 ticks. It does not return within 2,000 wheels.
+    This agrees with K16 §3.
+  - Every odd rotation class of least period 1 to 16 (4,419 classes, at most 400 wheels per stretch) has N ≤ 1.
+    N = 1 occurs only for `00001`. With K5 and K18, the source form of (DL⁻₁) has no known exception at any period,
+    where the strict form has period 5 (this bears on K16's question 3).
+  - The branch code reproduces D 58286: 5,079 wheels after D 53207 (K25 §3). The other branch first returns at
+    D 72575, 19,368 wheels on, with no white wheel between; PRIOR-ART.md had left that interval unchecked. Both
+    intervals catch all 16 ticks.
+- **What a census cannot do.** Every dyadic stretch computed so far passes the strict form (N = 0). So no census in
+  the dyadic range tells (DL⁻₁) from (DL⁻) (K25 §5). The relaxed form is for a proof: it lets an argument spend the
+  next stretch on a row that the first one missed.
+
+**The chain.** (DL⁻) ⇒ (DL⁻₁) ⇒ (DL^b) ⇒ (L∞), and Theorems C′, A and B give (DL⁻₁) ⇒ (T). With R56's Lean proof of
+(L∞) ⇒ (CAP) (carried in I29), the open hypothesis of the whole chain can be any rung of the ladder.
 
 ## 4. K8's two reformulations, read
 
