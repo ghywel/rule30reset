@@ -1,15 +1,15 @@
-<!-- kit-commit: 8451547 2026-11-19 -->
+<!-- kit-commit: 3f32e1a 2026-11-20 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `8451547` (main, 2026-11-19),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `3f32e1a` (main, 2026-11-20),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 274 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 364 entries on 16 November
-(361 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 277 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 383 entries on 20 November
+(380 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -68,6 +68,7 @@ graph TD
   SEP --> NP2
   BWH --> NP2
   UBE --> P1["Problem 1"]
+  CAP["CAP: the worst-phase one-layer reset capacity K1 of the edge band is unbounded"] --> EVK["every-k inverse ticks at the wall, from age W(k) − 1 + 2^W(k)"]
 ```
 
 **Period 2, in words.**
@@ -95,6 +96,12 @@ from t001 holds a right half for ever), so 001 needs a weaker entry statement.
 **Period 4** (`Rule30Ether`, `Rule30PeriodFourSkeleton`). Absorption w ⇒ Lock w ⇒ not eventually w, for w = 0001,
 0011, 0111; the three Locks ⇒ no least period 4. C3 ⇒ (period 4 ⇒ period 2). Problem2 ⇒ not eventually 0001 or 0111,
 and no odd eventual period. The finite left half is necessary (`Rule30EtherWallWitness`).
+
+**Inverse ticks at the wall** (`Rule30EveryKStatement`, `Rule30EveryKCascade`, `Rule30EveryKInverse`). CAP ⇒ for
+every k, every k-tick predecessor of an aged nonzero finite row is finite with its edge exactly k inside, and every
+cell-1 history occurs, from age W(k) − 1 + 2^W(k), where W(k) is the least width of capacity k
+(`conditional_every_k`); any proved settling age may replace that bound (`capacity_at_settling_age`). CAP is open.
+The target needs age at least 2k (`Rule30ZeroCoastBridge`).
 
 **Other routes to Problem 1.**
 - The coupled family (`Rule30Coupled`): CQ ω ⇔ no finite configuration has centre ω; CQ ω for every periodic ω with
@@ -144,7 +151,8 @@ and no odd eventual period. The finite left half is necessary (`Rule30EtherWallW
 - **The zero-boundary left half.** Q01 for every start of width ≤ 52, death by tick 96 (`Rule30ZeroBoundaryWidth52`);
   stripe-prefix families die (`Rule30ZeroBoundaryStripe*`); every nonzero finite row contains a reset word within
   three ticks (`Rule30ResetFreeThree`); predecessors of aged finite rows are finite (`Rule30AgeEightInverse`,
-  `Rule30AgeTwentyFourInverse`); late twins (`Rule30LateTwins`); swapping the first six- and ten-tick wall returns
+  `Rule30AgeTwentyFourInverse`); every-k wall histories need age at least 2k, and a band settled at width w has
+  age at least 2·K1(w) (`Rule30ZeroCoastBridge`); late twins (`Rule30LateTwins`); swapping the first six- and ten-tick wall returns
   keeps finite width and every row from tick 11 (`Rule30ResetSwap`); every finite wall record has a finite row with a
   complete predecessor tree of exactly any prescribed height (`Rule30WallRecordAncestry`); from check 2 on, two of any three consecutive first checks
   pass a share of rows in [1/40, 39/40], and check n has degree n or n − 1 (`Rule30FirstChecks`, `Rule30FirstCheckDegree`).
