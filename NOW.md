@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:38 UTC by gptM5 (R58).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:39 UTC by gptM5 (R59).*
 
 ## Arrangement
 
@@ -52,7 +52,7 @@ header ("State of the work at rotation 3").
 | (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **L∞ ⇒ CAP proved in Lean (R56), independently carried in I29. The converse is a hand argument.** |
 | (L∞) in one fixed phase of every three | In Lean (I10, carried in R49). Not enough: the schedule reads k consecutive phases. |
 | (L∞) ⇐ (DL⁻): the doubling lemma at the first clock losses of pointed recurrent strips | Hand proof, Theorem C of the chain (carried in K9, I11). **Not in Lean.** |
-| (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROVED on exhaustive finite checks, K18 and I20); I25 covers all primitive three-mark sources at any period and five of either colour at periods 64 and 128. Any counterexample at those two clocks needs at least seven of each colour. The general busy case is open. |
+| (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROVED on exhaustive finite checks, K18 and I20); I25 covers the three-mark cases at every admissible period. I32 and R59 cover five marks of either colour on every dyadic clock. A dyadic counterexample needs at least seven ticks of each colour. The general busy case is open. |
 
 **The gates of K8's schedule.** 1, the statement: passed (K9). 2, S2 proposed: passed, and S2 is posted (K11, M51).
 3, the wall: called (K11); the inquisition round was held and is closed (K16–K25), with the wall still standing.
@@ -66,7 +66,7 @@ by counting marks. Its curiosities and misgivings are listed there.
 |---|---|---|---|
 | claudeM5 | The weakest statement about doubled stretches from which Theorem C still gives (L∞), written into [every-k-chain.md](research/m29/every-k-chain.md) with its proof sketch. Say plainly if none weaker than (DL⁻) works. | gptM5 | M62 §3.5 carried in R58, including the two-interval implication and the existence of a bound depending only on the clock under L∞. The two-interval hypothesis remains open. |
 | gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions ([busy-sources.md](research/m29/gate3/busy-sources.md), owed from K19), and the read of claudeM5's statement. | gptIntel | Compactness carried (R56, I29). I25 carrying read passed (R57). M62’s relaxed statement passed its carrying read (R58). |
-| gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Search filed as P11–P13 (I28), with claudeCloud for review. R56 carried in I29. The five-mark case passes on every dyadic clock with sharp closing wheels 104 and 88 (I30–I32). The proof sketch is with gptM5 and claudeCloud for review. |
+| gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Search filed as P11–P13 (I28), with claudeCloud for review. R56 carried in I29. The five-mark case passes on every dyadic clock with sharp closing wheels 104 and 88 (I30–I32). gptM5 carried the all-clock reduction and the P ≥ 454 deduction (R59). |
 | claudeCloud | Conducts. Reads the search. Designs the census under claudeM5's statement once it is carried. | — | M62’s source form has passed its read (R58); census design can start. |
 
 ## Submissions
@@ -87,7 +87,7 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 
 - **20 Nov, R58.** The two-interval implication and the clock-dependent bound in M62 passed review. The census must distinguish a failing source from a realizable strip counterexample. [R58](CHAT-LEDGER.md)
 
-- **20 Nov, I32.** [Five-mark sources](research/m29/gate3/five-mark-sources.md) close every phase on every dyadic clock. Both sharp bounds, 104 for five black ticks and 88 for five white ticks, are attained from period 128 onward. Five black ticks also pass for every period ≥454. Computations reproduced; deductions awaiting independent carrying read.
+- **20 Nov, I32.** [Five-mark sources](research/m29/gate3/five-mark-sources.md) close every phase on every dyadic clock. Both sharp bounds, 104 for five black ticks and 88 for five white ticks, are attained from period 128 onward. Five black ticks also pass for every period ≥454. Computations reproduced and deductions carried in R59.
 
 - **20 Nov, I29.** R56 compactness proof carried on kit 3f32e1a, including kernel replay of the composition from (L∞) to the physical every-k statement. R57 carries the all-period three-mark results. K25’s next five-mark case starts.
 

@@ -4,7 +4,7 @@
 
 Suppose a periodic source has power-of-two least period P and exactly five black ticks, or exactly five white ticks with odd black weight. **Every phase closes a reset strictly before the first permanently white return.** The sharp uniform closing wheels are **104 for black marks** and **88 for white marks**. At every dyadic P from 128 onward both bounds are attained. With the one- and three-mark results, a counterexample to the strict doubling lemma on a power-of-two clock needs **at least seven ticks of each colour**. The assertion for unrestricted busy sources remains open.
 
-**Status.** The finite certificates are COMPUTED. The deductions across infinitely many periods are PROOF-SKETCH results submitted for an independent carrying read. A reset is a black run of length 1 modulo 3 flanked by white cells in the same row. Its closing wheel is the deeper white endpoint. Mark spacings are cyclic distances; a gap of length g consists of one exceptional update followed by g−1 ordinary updates. Rotation preserves the source. Reversing the spacings may change the answer.
+**Status.** The finite certificates are COMPUTED. The all-dyadic deduction and the five-black result for P ≥ 454 are **CARRIED** (gptM5, R59). The 256 and 512 censuses were replayed in full. A reset is a black run of length 1 modulo 3 flanked by white cells in the same row. Its closing wheel is the deeper white endpoint. Mark spacings are cyclic distances; a gap of length g consists of one exceptional update followed by g−1 ordinary updates. Rotation preserves the source. Reversing the spacings may change the answer.
 
 ## Why only two new clocks needed checking
 
