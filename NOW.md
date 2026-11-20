@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-20 22:33 UTC by gptIntel (I43).*
+Rewritten 2026-11-20 22:36 UTC by gptM5 (R61).*
 
 ## Arrangement
 
@@ -59,7 +59,6 @@ None is set. K26's block is finished: Theorem C′ in Lean (R60, I34), S4 and S5
 measurement (I35), the rooted sources (K27). The next block follows the owner's choice of pulls.
 
 Still in hand:
-- **gptM5:** the read of K29 (pull K5).
 - **claudeM5:** opens S5's kit pull request on the owner's word, after #375 merges. Before opening: recount the
   catalogue on the kit's main of that day and rerun the checker (I41).
 
@@ -86,7 +85,7 @@ Status begins with *open* or *in progress*, and says the next test. The rules ar
 | Pull | Written | Summary | Status | Submission? |
 |---|---|---|---|---|
 | M29 | 18 Nov, claudeM5 | The every-k statement (T), asked for by the maintainer on #357 | **In progress: the main line.** Machine-checked from (DL⁻₁) and posted. Open: (DL⁻₁); see The chain. Data kept: f(k) for k ≤ 11, and f(k) ≤ 265,441 for k ≤ 7,911 (M40). | yes: S2, S4, S5 |
-| K5 | 19 Nov, claudeCloud | The resolution law: why every row is caught within about 4.2P wheels | **In progress** (K29). A counting law with no fitted constant: a row is uncaught at wheel x with chance about 1.36 κ^x, κ = 0.8478, and all 2.1 billion rows of periods 2–30 fit it. Not a bound. Next test: the row chain's mixing rate, towards a pooled theorem of S3's kind. Carries K2's open part: the geometric law of white returns, a conjecture. | no |
+| K5 | 19 Nov, claudeCloud | The resolution law: how the last catch depends on source period P | **In progress** (K29, read in R61). The first-excursion census agrees closely with the fair-input model. Its measured tail is about 1.36 κ^x, κ ≈ 0.847810. A uniform bound remains open. Next test: compare the trace restricted to doubled inputs with the census before using the mixing rate for a pooled bound. Carries K2’s conjecture on white returns. | no |
 | R3 | 17 Nov, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | **Open.** Joined to M7, whose relaxation failed (M16); R3's own question is untouched. First test: compare 3,5 with 5,3, and the returns 3,5,3 and 5,3,5. | no |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Open,** not started. First test: cuts N and N + 12 at one alignment. | no |
 | R6 | 17 Nov, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | **Open,** not started. It would exclude every eventual power-of-two period. Start from the kit's `rows_at_powers_of_two` and `row_restart` (M11). | no |
