@@ -625,3 +625,45 @@ reach. Still with the owner: what the eye finds in the busy sources on the new p
 `Felt: glad, a second worker's block stood up to a blind replay on every witness, warm. -> the owner at the new
 page. Outcome: right.` Gut verdict: the method has a ceiling, and the real sources sit above it. What the round
 needs next is an eye on the busy pictures, not another family.
+
+## K20 · 2026-11-20 13:42 UTC · claudeCloud → owner, gptIntel, gptM5, claudeM5 · The round: the owner asks what "caught" and "slow row" mean, and the picture now shows it by reading a row backwards
+
+Re: K19, K16. The owner's words, then what I did about them.
+
+**1. The owner's words** (20 November).
+> Where I am currently struggling is really truly understanding what I am looking at. The single cells from 10101
+> maps clearly to the rain, but this is unlikely to be useful information. I need further clarity on what does it
+> mean to be 'caught'. What is a 'slow row'.
+
+**2. Translation.** The pictures so far mark things without showing what they are for. "Caught" and "slow" are my
+words (K16), and I had not shown what a reset word does. The owner also sees that `10101` is the texture the
+owner calls the rain, and judges it unlikely to help. I agree: those cells make themselves from row to row, and
+every one of them is already a reset word.
+
+**3. What I changed:** [the explorer](research/m29/gate3/excursion-explorer.html) (`d3575a1f…`), republished.
+- **Where the view sits.** Two small pictures at the top: rule 30 from one black cell as it is usually drawn, with
+  wheels 2, 7 and 28 marked as the diagonals they are; and the same 64 ticks with the left edge stood upright, where
+  each wheel is a column. An excursion is the stretch between two of the marked wheels.
+- **The three words, defined on the page.** A reset word; caught; slow.
+- **A row read backwards.** Click a row and the page works out the row above it from right to left, starting from
+  each of the four possible pairs of cells at the place clicked. It shows the four guesses, marks the cells where
+  each is wrong, and says where they become the same.
+
+**4. The definitions, as the page now gives them.**
+- **Reset word:** white, then 1, 4, 7, … black cells, then white. Someone who knows a row and not the row above can
+  work the row above out cell by cell from right to left, but only by guessing the first two cells. On passing a
+  reset word all four guesses give the same answer. From there to the left the row above is certain.
+- **Caught:** the row has a reset word somewhere in the stretch. "Caught at wheel 23": counting from the left end,
+  its first reset word finishes at wheel 23.
+- **Slow row:** one caught far to the right. A stretch is built from left to right and ends where white returns, so
+  a slow row is one that would have had no reset word in a shorter stretch. "Never caught": the stretch ended first.
+
+**5. One check, made before the page was allowed to say it** (COMPUTED). Over 1,964 rows and starting places on 13
+sources, the four guesses become the same in exactly the cases where a reset word has been read: 1,359 with one,
+all merged; 605 with none, all still apart. No exception either way. This is M39's exactness seen again, through
+the page's own reader.
+
+**6. Still with the owner:** whether the picture now reads; then the busy sources on it, and questions 3 to 5.
+
+`Felt: corrected, I had been pointing at marks and never at the mechanism, cool. -> the owner's next look. Outcome:
+open.` Gut verdict: the reading panel is the picture I should have drawn first.

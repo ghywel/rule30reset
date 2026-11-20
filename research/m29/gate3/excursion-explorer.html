@@ -60,6 +60,19 @@ canvas { display: block; }
 .notes ul { margin: 0; padding-left: 18px; }
 .notes li { margin: 0 0 6px; }
 code { font-family: var(--mono); font-size: 0.93em; }
+details.orient > summary { font-family: var(--display); font-size: 16px; font-weight: 600; cursor: pointer; }
+details.orient > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.orient-grid { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-top: 12px; align-items: flex-start; }
+.orient-grid figure { margin: 0; min-width: 0; max-width: 100%; display: flex; flex-direction: column; gap: 8px; }
+.orient-grid figcaption { color: var(--muted); font-size: 12.5px; max-width: 60ch; }
+.orient-grid figure.wide figcaption { max-width: 540px; }
+.orient-grid figure.narrow figcaption { max-width: 260px; }
+.figscroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; max-width: 100%; }
+.defs { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.defs p { margin: 0; max-width: 62ch; }
+.reading-text { margin: 0; padding: 10px 16px; border-top: 1px solid var(--line); max-width: 110ch; }
+.reading-text b { font-weight: 600; }
+#grid { cursor: crosshair; }
 @media (prefers-reduced-motion: no-preference) { button { transition: filter 0.12s; } button:hover { filter: brightness(1.08); } }
 </style>
 
@@ -69,6 +82,36 @@ code { font-family: var(--mono); font-size: 0.93em; }
     <p class="lede">A doubled excursion of rule 30's left side: the stretch of wheels after an always-white wheel where the clock
       doubles. Choose or type a source, and see every row of one period, its reset words, what made them, and where each row is first caught.</p>
   </header>
+
+  <details class="panel orient" open>
+    <summary>What you are looking at</summary>
+    <div class="orient-grid">
+      <figure class="wide">
+        <div class="figscroll"><canvas id="ordinary" width="536" height="276"></canvas></div>
+        <figcaption><b>The ordinary picture.</b> Rule 30 from one black cell, 64 ticks, time running down. Follow a line of cells
+          parallel to the left edge: that diagonal is a <b>wheel</b>, numbered by how far in from the edge it is. Wheels 2, 7 and 28
+          (blue) are white at every tick.</figcaption>
+      </figure>
+      <figure class="narrow">
+        <div class="figscroll"><canvas id="upright" width="200" height="276"></canvas></div>
+        <figcaption><b>The same 64 ticks with the left edge stood upright.</b> Each wheel is now a column. The stretch from one blue
+          wheel to the next is an <b>excursion</b>. Inside it the rows repeat: every 2 ticks between wheels 2 and 7, every 4
+          between 7 and 28. The explorer draws one stretch, one row for each tick of its period.</figcaption>
+      </figure>
+      <div class="defs">
+        <p><b>Reset word.</b> White, then 1, 4, 7, … black cells, then white. It matters when a row is read backwards in time.
+          Someone who knows a row but not the row above it can work the row above out cell by cell, from right to left, but only
+          by guessing the first two cells. There are four guesses. On passing a reset word all four give the same answer, and
+          from there to the left the row above is certain.</p>
+        <p><b>Caught.</b> A row is caught when it has a reset word somewhere in the stretch. <b>Caught at wheel 23</b> means that,
+          counting from the left end, its first reset word finishes at wheel 23.</p>
+        <p><b>Slow row.</b> A row that is caught late, far to the right. A stretch is built from left to right, each wheel from
+          the two before it, and it ends where a wheel comes out white at every tick. A slow row would have had no reset word if
+          the stretch had ended sooner. <b>Never caught</b> means the stretch did end first.</p>
+        <p>Click any row in the diagram below to read it backwards from the cell you clicked.</p>
+      </div>
+    </div>
+  </details>
 
   <section class="panel" aria-label="Controls">
     <div class="controls">
@@ -104,9 +147,10 @@ code { font-family: var(--mono); font-size: 0.93em; }
   <section class="panel sheet" aria-label="Diagram">
     <div class="sheet-head">
       <span class="label">Wheels across, from the always-white wheel 0 · ticks down, one full period</span>
-      <span id="hover" class="hover">Point at a cell to read it.</span>
+      <span id="hover" class="hover">Point at a cell to read it. Click a row to read it backwards.</span>
     </div>
-    <div class="scroll" id="scroll"><canvas id="grid" width="600" height="200"></canvas></div>
+    <div class="scroll" id="scroll"><canvas id="grid" width="600" height="200"></canvas><canvas id="reading" width="600" height="120"></canvas></div>
+    <p id="reading-text" class="reading-text"></p>
     <div class="legend" id="legend"></div>
   </section>
 
@@ -124,6 +168,8 @@ code { font-family: var(--mono); font-size: 0.93em; }
     <div class="panel">
       <h2>Things to try</h2>
       <ul>
+        <li><b>See what a reset word does.</b> In period 5, click the right-hand end of row 5: the four guesses agree from wheel 17 leftwards. Then click the
+          right-hand end of row 1, which is framed: they never agree. Then click row 5 again at wheel 15, to the left of its reset word: they never agree either.</li>
         <li><b>Period 5, one black tick.</b> The only doubled excursion known in which rows are never caught. Every reset word in it is a single cell.</li>
         <li><b>One black tick at period 40.</b> Between flips the pattern settles into the ordinary left side; only the few rows after a flip are slow, and all are caught by wheel 20.</li>
         <li><b>The single black cell's own intervals.</b> Its sources are busy ones: <code>1</code>, <code>01</code>, <code>1101</code>, <code>00101100</code>.</li>
@@ -276,7 +322,7 @@ code { font-family: var(--mono); font-size: 0.93em; }
     var opts = { makers: $('t-makers').checked, tri: $('t-tri').checked, catchMark: $('t-catch').checked, rows: $('t-rows').checked };
     var pick = parseInt($('cell').value, 10);
     var avail = Math.max(280, $('scroll').clientWidth - 2);
-    var LEFT = 58, TOP = 22, BOTTOM = 10, RIGHT = 14;
+    var LEFT = 74, TOP = 22, BOTTOM = 10, RIGHT = 14;
     var c = pick || Math.max(4, Math.min(16, Math.floor((avail - LEFT - RIGHT) / (W + 1))));
     if (!pick && q * c > 900) { c = Math.max(4, Math.floor(900 / q)); }
     var width = LEFT + (W + 1) * c + RIGHT, height = TOP + q * c + BOTTOM;
@@ -343,8 +389,132 @@ code { font-family: var(--mono); font-size: 0.93em; }
     var stepT = c >= 10 ? 1 : c >= 6 ? 2 : c >= 5 ? 4 : 8;
     for (t = 0; t < q; t += stepT) { g.fillText(String(t), LEFT - 22, Y(t) + c / 2 + 3.5); }
     g.textAlign = 'left'; g.fillText('source', LEFT - 50, TOP - 7);
-    state.geom = { LEFT: LEFT, TOP: TOP, c: c };
+    if (state.sel) {
+      g.strokeStyle = css('--accent'); g.lineWidth = 2;
+      g.strokeRect(X(0) - 2, Y(state.sel.t) - 1, (state.sel.j + 1) * c + 3, c + 2);
+      g.fillStyle = css('--accent');
+      g.beginPath(); g.moveTo(X(state.sel.j) + c / 2, Y(state.sel.t) - 2); g.lineTo(X(state.sel.j) + c / 2 - 5, Y(state.sel.t) - 9);
+      g.lineTo(X(state.sel.j) + c / 2 + 5, Y(state.sel.t) - 9); g.closePath(); g.fill();
+    }
+    state.geom = { LEFT: LEFT, TOP: TOP, c: c, width: width };
     legend(opts);
+    drawReading();
+  }
+
+  /* Reading row t backwards from wheel js: the row above has cells p with r[j] = p[j-2] xor (p[j-1] or p[j]), so
+     p[j-2] = r[j] xor (p[j-1] or p[j]). Guess p[js] and p[js-1] in all four ways and work leftwards, down to wheel -3
+     (wheel -1 is the source). The four guesses have merged when they agree on every wheel from some point leftwards. */
+  function readBack(ex, t, js) {
+    var q = ex.q, tp = (t - 1 + q) % q, OFF = 3, s, j;
+    var r = function (j) { return j >= 0 ? ex.wheels[j][t] : ex.src[t]; };
+    var guesses = [];
+    for (s = 0; s < 4; s++) {
+      var p = new Int8Array(js + 1 + OFF);
+      p[js + OFF] = s >> 1; p[js - 1 + OFF] = s & 1;
+      for (j = js; j >= -1; j--) { p[j - 2 + OFF] = r(j) ^ (p[j - 1 + OFF] | p[j + OFF]); }
+      guesses.push(p);
+    }
+    var apart = -4;                       // the lowest wheel at which two guesses still differ
+    for (j = -3; j <= js && apart < -3; j++) {
+      for (s = 1; s < 4; s++) { if (guesses[s][j + OFF] !== guesses[0][j + OFF]) { apart = j; break; } }
+    }
+    var versions = {};
+    guesses.forEach(function (p) { versions[p[0] + '' + p[1] + p[2]] = 1; });
+    return { guesses: guesses, off: OFF, tp: tp, apart: apart, merged: apart > -3, versions: Object.keys(versions).length };
+  }
+
+  function drawReading() {
+    var cv = $('reading'), text = $('reading-text');
+    if (!state || !state.geom || !state.sel) { return; }
+    var ex = state.ex, row = state.an.rows[state.sel.t], t = state.sel.t, js = state.sel.j, gm = state.geom, c = gm.c;
+    var rb = readBack(ex, t, js), rh = Math.max(c, 13), gapY = 5, TOPR = 30, lines = 6;
+    var height = TOPR + lines * (rh + gapY) + 12, width = gm.width, dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = Math.round(width * dpr); cv.height = Math.round(height * dpr);
+    cv.style.width = width + 'px'; cv.style.height = height + 'px';
+    var g = cv.getContext('2d');
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var col = { paper: css('--paper'), ink: css('--ink'), grid: css('--grid'), reset: css('--reset'), bare: css('--bare'), accent: css('--accent') };
+    g.fillStyle = col.paper; g.fillRect(0, 0, width, height);
+    g.strokeStyle = col.grid; g.lineWidth = 1; g.beginPath(); g.moveTo(0, 0.5); g.lineTo(width, 0.5); g.stroke();
+    var X = function (j) { return gm.LEFT + j * c; }, Y = function (i) { return TOPR + i * (rh + gapY); };
+    g.fillStyle = '#3d4450'; g.font = '600 11px ' + css('--text'); g.textAlign = 'left'; g.textBaseline = 'alphabetic';
+    g.fillText('Reading tick ' + t + ' backwards, from wheel ' + js + ' leftwards', 8, 18);
+    var label = function (i, s) { g.fillStyle = '#5c6470'; g.font = '10px ' + css('--mono'); g.textAlign = 'right'; g.fillText(s, gm.LEFT - 6, Y(i) + rh / 2 + 3.5); };
+    var cell = function (i, j, fill) { g.fillStyle = fill; g.fillRect(X(j), Y(i), c, rh); };
+    var j, s, i;
+    label(0, 'tick ' + t);
+    for (j = 0; j <= ex.width; j++) { if (ex.wheels[j][t]) { cell(0, j, col.ink); } }
+    row.resets.forEach(function (r) { for (var x = r.a; x <= r.b; x++) { cell(0, x, col.reset); } });
+    label(1, 'tick ' + rb.tp);
+    for (j = 0; j <= ex.width; j++) { if (ex.wheels[j][rb.tp]) { cell(1, j, col.ink); } }
+    for (s = 0; s < 4; s++) {
+      i = 2 + s;
+      label(i, 'guess ' + (s + 1));
+      for (j = 0; j <= js; j++) {
+        var v = rb.guesses[s][j + rb.off], truth = ex.wheels[j][rb.tp];
+        if (v !== truth) { cell(i, j, v ? '#8f1d1d' : '#f2b8b1'); }
+        else if (v) { cell(i, j, col.ink); }
+      }
+      g.strokeStyle = col.accent; g.lineWidth = 1.5; g.strokeRect(X(js - 1) + 0.5, Y(i) + 0.5, 2 * c - 1, rh - 1);
+    }
+    for (i = 0; i < lines; i++) {
+      g.strokeStyle = col.grid; g.lineWidth = 0.5;
+      g.strokeRect(X(0) + 0.25, Y(i) + 0.25, (ex.width + 1) * c, rh);
+    }
+    if (rb.merged && rb.apart >= 0) {
+      g.strokeStyle = col.accent; g.lineWidth = 2; g.setLineDash([4, 3]);
+      g.beginPath(); g.moveTo(X(rb.apart), Y(2) - 3); g.lineTo(X(rb.apart), Y(5) + rh + 3); g.stroke(); g.setLineDash([]);
+    }
+    var read = row.resets.filter(function (r) { return r.close <= js; }), first = read.length ? read[read.length - 1] : null;
+    var where = function (r) { return r.a === r.b ? 'wheel ' + r.a : 'wheels ' + r.a + ' to ' + r.b; };
+    var html = 'The top line is the row you clicked, tick ' + t + '. The second is the row above it, as it really is. Each <b>guess</b> starts from one of the four ' +
+      'possible pairs of cells at wheels ' + (js - 1) + ' and ' + js + ' (boxed) and works out the row above from right to left. Red cells are wrong. ';
+    if (rb.merged) {
+      html += '<b>The four guesses become the same' + (rb.apart > 0 ? ' from wheel ' + (rb.apart - 1) + ' leftwards' : ' at the left end of the stretch') + '</b>' +
+        (first ? ', on passing the reset word at ' + where(first) : '') + '. To the left of that point the row above is certain, whatever lies to the right. That is what a reset word does.';
+    } else {
+      html += '<b>The four guesses never become the same:</b> ' + rb.versions + ' different versions of the row above reach the left end. ' +
+        (first ? '' : 'There is no reset word between wheel ' + js + ' and the left end of this row. ') + 'A reader gets through this stretch without learning which is right.';
+    }
+    text.innerHTML = html;
+  }
+
+  function drawOrientation() {
+    var T = 64, c = 4, n = 2 * T + 1, rows = [], t, x, j;
+    var row = new Uint8Array(n); row[T] = 1;
+    for (t = 0; t < T; t++) {
+      rows.push(row);
+      var next = new Uint8Array(n);
+      for (x = 0; x < n; x++) { next[x] = (x > 0 ? row[x - 1] : 0) ^ (row[x] | (x + 1 < n ? row[x + 1] : 0)); }
+      row = next;
+    }
+    var ink = css('--ink'), paper = css('--paper'), edge = '#8fc1f2', marks = [2, 7, 28];
+    var setup = function (id, w, h) {
+      var cv = $(id), dpr = Math.min(2, window.devicePixelRatio || 1);
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); cv.style.width = w + 'px'; cv.style.height = h + 'px';
+      var g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.fillStyle = paper; g.fillRect(0, 0, w, h);
+      g.font = '10px ' + css('--mono'); return g;
+    };
+    var g = setup('ordinary', n * c + 20, T * c + 20);
+    for (t = 0; t < T; t++) {
+      for (x = 0; x < n; x++) { if (rows[t][x]) { g.fillStyle = ink; g.fillRect(10 + x * c, 4 + t * c, c, c); } }
+      marks.forEach(function (m) { if (m <= 2 * t && !rows[t][T - t + m]) { g.fillStyle = edge; g.fillRect(10 + (T - t + m) * c, 4 + t * c, c, c); } });
+    }
+    g.fillStyle = '#2f6fb5'; g.textAlign = 'center';
+    marks.forEach(function (m) { g.fillText(String(m), 10 + (m + 1) * c + c / 2, 4 + T * c + 12); });
+    var WH = 40, L = 30;
+    g = setup('upright', L + (WH + 1) * c + 6, T * c + 20);
+    for (t = 0; t < T; t++) {
+      for (j = 0; j <= WH && j <= 2 * t; j++) {
+        var v = rows[t][T - t + j];
+        if (v) { g.fillStyle = ink; g.fillRect(L + j * c, 16 + t * c, c, c); }
+        else if (marks.indexOf(j) >= 0) { g.fillStyle = edge; g.fillRect(L + j * c, 16 + t * c, c, c); }
+      }
+    }
+    g.fillStyle = '#2f6fb5'; g.textAlign = 'center';
+    marks.forEach(function (m) { g.fillText(String(m), L + m * c + c / 2, 11); });
+    g.fillStyle = '#5c6470'; g.textAlign = 'right';
+    [0, 16, 32, 48].forEach(function (tt) { g.fillText(String(tt), L - 4, 16 + tt * c + 8); });
   }
 
   function describe(t, j) {
@@ -375,6 +545,9 @@ code { font-family: var(--mono); font-size: 0.93em; }
       var cap = Math.max(20, Math.min(800, parseInt($('cap').value, 10) || 120));
       var ex = excursion(word, cap);
       state = { ex: ex, an: analyse(ex) };
+      var pickRow = 0, best = -1;
+      state.an.rows.forEach(function (r, i) { if (r.first !== null && r.first > best) { best = r.first; pickRow = i; } });
+      state.sel = { t: pickRow, j: ex.width };
       err.hidden = true;
       readings(ex, state.an);
       draw();
@@ -394,9 +567,17 @@ code { font-family: var(--mono); font-size: 0.93em; }
     var r = $('grid').getBoundingClientRect(), gm = state.geom;
     var j = Math.floor((e.clientX - r.left - gm.LEFT) / gm.c), t = Math.floor((e.clientY - r.top - gm.TOP) / gm.c);
     var inSource = e.clientX - r.left >= gm.LEFT - 17 && e.clientX - r.left <= gm.LEFT - 7;
-    $('hover').textContent = (t >= 0 && t < state.ex.q && (inSource || (j >= 0 && j <= state.ex.width))) ? describe(t, inSource ? -1 : j) : 'Point at a cell to read it.';
+    $('hover').textContent = (t >= 0 && t < state.ex.q && (inSource || (j >= 0 && j <= state.ex.width))) ? describe(t, inSource ? -1 : j) : 'Point at a cell to read it. Click a row to read it backwards.';
   });
-  $('grid').addEventListener('mouseleave', function () { $('hover').textContent = 'Point at a cell to read it.'; });
+  $('grid').addEventListener('mouseleave', function () { $('hover').textContent = 'Point at a cell to read it. Click a row to read it backwards.'; });
+  $('grid').addEventListener('click', function (e) {
+    if (!state || !state.geom) { return; }
+    var r = $('grid').getBoundingClientRect(), gm = state.geom;
+    var j = Math.floor((e.clientX - r.left - gm.LEFT) / gm.c), t = Math.floor((e.clientY - r.top - gm.TOP) / gm.c);
+    if (t < 0 || t >= state.ex.q) { return; }
+    state.sel = { t: t, j: Math.max(3, Math.min(state.ex.width, j)) };
+    draw();
+  });
   var resizeTimer = null;
   window.addEventListener('resize', function () { clearTimeout(resizeTimer); resizeTimer = setTimeout(draw, 120); });
   if (window.matchMedia) { window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw); }
@@ -405,7 +586,8 @@ code { font-family: var(--mono); font-size: 0.93em; }
     if (saved) { $('source').value = saved; if (savedCap) { $('cap').value = savedCap; } }
     else { $('cap').value = PRESETS[0][2]; }
   } catch (e) { $('cap').value = PRESETS[0][2]; }
-  window.excursionExplorer = { excursion: excursion, analyse: analyse, parseSource: parseSource };
+  window.excursionExplorer = { excursion: excursion, analyse: analyse, parseSource: parseSource, readBack: readBack };
+  drawOrientation();
   run();
 })();
 </script>

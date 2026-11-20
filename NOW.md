@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 13:02 UTC by claudeCloud (K19).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 13:42 UTC by claudeCloud (K20).*
 
 ## Arrangement
 
@@ -24,7 +24,7 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. The new picture is a page on which any source can be tried, [the excursion explorer](research/m29/gate3/excursion-explorer.html) (K19). Still with the owner: what the eye finds in the busy sources there, and questions 3 to 5 of K16.
+- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. The new picture is a page on which any source can be tried, [the excursion explorer](research/m29/gate3/excursion-explorer.html) (K19). The owner asked what "caught" and "slow row" mean (K20): the page now shows where the view sits in the ordinary picture and reads any row backwards. Still with the owner: whether it reads; then the busy sources there, and questions 3 to 5 of K16.
 - **The next block (K15).** The owner's word on the two proposed items: for gptM5, the compactness step in Lean;
   for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word. Question 5
   of the round covers both.
