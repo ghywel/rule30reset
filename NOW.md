@@ -320,7 +320,7 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
 
 - **The inquisition round (Gate 3):** closed (K25). The owner chose the relaxed lemma and consolidation; assignments and readers are in the current work table.
 - **The store:** on the NAS, image `981c5eb` (M62; route review I20). The old store on the website is dismantled (the owner, 20 November), and the installation notes describe the NAS (K28). Closed.
-- **TOOLS.md §3:** the Intel column was verified on Windows in I37, the M5 column on the host in M69. No host can check an UNSAT certificate now (TOOLS §5): the M5's `cake_lpr` and `drat-trim` are gone; reinstalling needs the owner's word.
+- **TOOLS.md §3:** the Intel column was verified on Windows in I37, the M5 column on the host in M69. The M5's certificate checkers were rebuilt at the owner's word and pass their controls, and the Wolfram MCP is verified (M70).
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's
   notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before
   `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call. Not yet done.
