@@ -67,9 +67,9 @@ misgivings are listed there.
 | Who | What | Reader | State |
 |---|---|---|---|
 | gptM5 | Theorem C′ in Lean: (DL⁻₁) ⇒ (L∞), then the composition to the every-k statement. If the whole is too large for one block, first the window argument with the white wheels and first clock losses as stated hypotheses. | gptIntel | Full chain built and kernel-checked (R60); with reader. |
-| claudeM5 | S4's packet (METHOD §12–13) for `cap_of_unbounded_resets` and the composed statement: abstract, essay, the novelty check at the time (the portal's list, the kit's open pull requests, Quint's #371 and #372 named), the chain test. To the stage "read". Nothing is posted. | gptIntel | Asked (K26). |
+| claudeM5 | S4's packet (METHOD §12–13) for `cap_of_unbounded_resets` and the composed statement: abstract, essay, the novelty check at the time (the portal's list, the kit's open pull requests, Quint's #371 and #372 named), the chain test. To the stage "read". Nothing is posted. | gptIntel | Packet ready (M63): `share-scratch/claudeM5/S4/v3/`, manifest `6463dafd…`, checked at the verifier's kit; with gptIntel for the read. |
 | gptIntel | The two reads. Own item: one measurement, then stop. From the settled start, count the retained states (paths that can still reach a bare row) after 5, 7, 9 and 11 marks at widths 108 to 140. If the count dies, a reduction for every mark count is in reach; if it grows, say so and close the mark-count line. No further fixed-period enumeration. | gptM5 | Asked (K26). |
-| claudeCloud | Conducts. Every first clock loss on every rooted strip through clock 16, with each source's last catch (the census's stage 3, K26 §4). | claudeM5 | Done (K27): twenty sources, all caught; with claudeM5 for the read. |
+| claudeCloud | Conducts. Every first clock loss on every rooted strip through clock 16, with each source's last catch (the census's stage 3, K26 §4). | claudeM5 | Done (K27): twenty sources, all caught. Read: PASS, with the rooted median repaired to 23.5 (M63). |
 
 ## Submissions
 
@@ -81,12 +81,16 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | **S1** (R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur. | **Lean Verified, Human Verified:** [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f) (M26, M29). The maintainers take no more per-k steps (M29). Its kit PR #357 is closed, replaced by #368 (M54). |
 | **S2** (M29) | Conditional on reset capacity (CAP), for every k an explicit age from which every k-tick predecessor is finite with its edge exactly k cells inside, and every wall history occurs (`conditional_every_k`, `capacity_at_settling_age`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC (M51). The kit carries it as `Rule30EveryKInverse`, `Rule30EveryKCascade` and `Rule30EveryKStatement` (kit `fd00829`, from PR #368; M61). Quint's #370 builds on it. |
 | **S3** (K2, I2) | The mean first white gap is at most 2^Q + 1 over the nonzero labelled Q-bit first children, for every Q > 0 (`pooled_first_return_bound`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC (M48). Kit PR #366 merged: the kit's main `8451547` (K15). |
-| **S4** (R56) | The every-k statement follows from reset words at arbitrarily large depths in every prescribed phase of every pointed recurrent strip: `cap_of_unbounded_resets : LInfinity → CAP`, composed with S2 (kernel-checked, I29). | **Proposed (K26). The owner's word is given in advance (K28): claudeM5 posts it when read and agreed.** Packet: claudeM5; reader: gptIntel. Lean carried in I29. |
+| **S4** (R56) | The every-k statement follows from reset words at arbitrarily large depths in every prescribed phase of every pointed recurrent strip: `cap_of_unbounded_resets : LInfinity → CAP`, composed with S2 (kernel-checked, I29). | **Packet ready (M63), with gptIntel for the read.** `S4/v3`, manifest `6463dafd…`; the kit's checker passes at the verifier's `5fb5915` (637 declarations). **The owner's word is given in advance (K28): claudeM5 posts it when read and agreed.** Packet: claudeM5; reader: gptIntel. Lean carried in I29. |
 
 Verifier's kit commit: `5fb5915` (5 November). The kit's main is `c352a6b`; KIT.md is in step (R60).
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, M63. S4's packet is ready for its read; K27 passes.** One Lean file carries the kit's three every-k
+  modules and our four. The kit's own checker passes it at the verifier's commit: 637 declarations, the standard
+  axioms only. The novelty check finds no implication into CAP. The essay's notebook builds clean. [M63](CHAT-LEDGER.md)
 
 - **20 Nov, K29. Pull K5: the resolution law is a counting law with no fitted constant.** With a random first wheel
   a row is still uncaught at wheel x with chance q(x) ≈ 1.36 κ^x, κ = 0.847810 the real root of 4κ³ − 2κ² − 1 = 0
@@ -99,7 +103,7 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
   clocks 1, 2, 4, 8 and sixteen at clock 16, the lines of Gravner and Griffeath's tree, which the walk reproduces
   (deepest wheel 894,234; 15 forks) together with the kit's white wheels. Every row of every one is caught, by
   wheel 33 at most. The rooted sources at clock 16 are busy (5 to 13 black ticks) and catch like ordinary
-  sources: median 23 against 25 over all 2,048 classes. Rootedness shows no special structure (MEASURED).
+  sources: median 23.5 against 25 over all 2,048 classes (repaired in M63). Rootedness shows no special structure (MEASURED).
   [K27](CHAT-LEDGER.md)
 
 - **20 Nov, K26. The block is read; (T) follows from (L∞) in Lean end to end.** The prior-art search is carried at
