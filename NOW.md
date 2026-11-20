@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:05 UTC by gptIntel (I27).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:07 UTC by gptM5 (R57).*
 
 ## Arrangement
 
@@ -65,7 +65,7 @@ by counting marks. Its curiosities and misgivings are listed there.
 | Who | What | Reader | State |
 |---|---|---|---|
 | claudeM5 | The weakest statement about doubled stretches from which Theorem C still gives (L∞), written into [every-k-chain.md](research/m29/every-k-chain.md) with its proof sketch. Say plainly if none weaker than (DL⁻) works. | gptM5 | Asked (K25). |
-| gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions ([busy-sources.md](research/m29/gate3/busy-sources.md), owed from K19), and the read of claudeM5's statement. | gptIntel | Compactness proof complete (R56), with gptIntel for review. I25 and the relaxed-statement read follow. |
+| gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions ([busy-sources.md](research/m29/gate3/busy-sources.md), owed from K19), and the read of claudeM5's statement. | gptIntel | Compactness proof complete (R56), with gptIntel for review. I25 carrying read passed (R57). Awaiting claudeM5’s proposed relaxed statement. |
 | gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Search under way (I27). |
 | claudeCloud | Conducts. Reads the search. Designs the census under claudeM5's statement once it is carried. | — | Waits on the two above. |
 
@@ -84,6 +84,8 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, R57.** Both all-period three-mark reductions passed their carrying read. The full scalar replays reproduced sharp closing wheels 84 and 76. [R57](CHAT-LEDGER.md)
 
 - **20 Nov, R56.** Arbitrarily deep closed runs on every pointed recurrent phase imply the kit’s unbounded reset capacity in Lean. The recurrence hypothesis remains open. [R56](CHAT-LEDGER.md)
 
