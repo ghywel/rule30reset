@@ -243,9 +243,9 @@ is a reset word of phase s with both ends in [A, B].
 
 Added by claudeM5 on 20 November (M62); reader gptM5. The question (K25 §6): what is the weakest statement about
 doubled stretches from which Theorem C still gives (L∞)? **The answer, plainly:** weaker statements than (DL⁻) do
-work, and the first is (DL⁻₁) below. None of them is the weakest. They form a descending ladder, every rung closes
-the chain, and the ladder's limit is (L∞) itself. "Weaker" here means logically weaker, over all pointed recurrent
-strips. Whether any of these statements differ in truth on actual rule 30 strips is not shown (R57).
+work, and the first is (DL⁻₁) below. Enlarging the allowed window preserves the implication to (L∞).
+Allowing an arbitrary clock-dependent bound gives exactly (L∞). The ordering here concerns the permitted
+windows. Strict separation of the assertions on actual Rule 30 strips is open (R57, R58).
 
 **Notation.** On a strip let A be a first clock loss and [A, B] its doubling interval (step 10). Let
 A = w_0 < w_1 = B < w_2 < … be the white wheels from A on; they exist by step 9(c). Phase s means tick s of the strip
@@ -256,11 +256,11 @@ each a run of consecutive white intervals, and that their starting wheels are un
 with both ends in each window of the family, then (L∞) holds.
 - **Argument.** Theorem C's. Suppose phase s has no reset deeper than d0. Take a window starting past d0. The window
   holds a reset of phase s, and that reset is deeper than d0: a contradiction.
-- **Status:** PROOF-SKETCH. It changes only the family that Theorem C uses, and Theorem C is CARRIED.
+- **Status:** CARRIED (R58). Both endpoints belong to the same window at the same phase.
 - Theorem C is the case where the windows are the doubling intervals [A, B] of step 10. §4.1's consequences 1 and 2
   are other cases of the same argument.
 
-**The ladder** (each rung implies the next; each implies (L∞) by Theorem C′).
+**Sufficient window conditions.** Each implies (L∞) by Theorem C′. Two prescribed bounds are ordered whenever one dominates the other pointwise.
 - **(DL⁻₀) = (DL⁻).** Every phase has a reset in [A, w_1].
 - **(DL⁻₁), the first relaxed lemma.** Every phase has a reset in [A, w_2]: a row that the doubled stretch misses is
   caught in the next stretch. This is the owner's choice (K25) in its first form, and the one to attack first.
@@ -284,15 +284,21 @@ phase has a reset in [A, w_(N(A)+1)]. N(A) can even be taken to depend only on t
     closed in ℤ₂ (1.4), and it grows with N.
   - By (L∞) these sets cover ℤ₂, since every 2-adic phase is tick 0 of a shifted strip (1.4). By compactness one N
     is enough.
-  - Step 7's compactness over the space of strips then gives one N for every strip at a given clock. (The
-    clock-p segment ends by wheel 4^p + 1, by step 9(a).)
-- **Status:** PROOF-SKETCH (steps 6 and 7's argument, used again).
+  - For a single bound across strips at clock p, take D = 4^p + 1. Step 9(a) gives A ≤ D on every such strip.
+    R56’s `uniform_factor` applied at cut depth D gives a finite width b common to all sufficiently wide periodic
+    odd bands. Truncate each strip at width b at the phase in question. Its prefix is periodic, so the factor
+    has shallow white at j+1 > A and deep white below b. Since consecutive white wheels increase by at least one,
+    w_(b+1) ≥ b. Thus N(p) = b works on every such strip and at every phase. This is an existence bound under (L∞).
+- **Status:** CARRIED (R58), both directions. The uniform-factor step is also proved in Lean (R56, I29).
 - **What it means.** "A row missed now is caught in some later stretch", with no bound named, is (L∞) restated. The
   misgiving in K25 §5 is exact. With a bound named in advance (any rung), the statement is strictly about stretches:
   - it is decided at each clock by a finite computation;
-  - one source can refute it, which no finite computation can do for (L∞).
-- **There is no weakest rung.** Every named bound c is beaten by a faster-growing one, and together the rungs give
-  exactly (L∞). Of the uniform rungs, the weakest is (DL^b); the first and most testable is (DL⁻₁).
+  - a failing source and branch refute the source version below. For the strip version, the source and phase
+    must occur at a first clock loss of a pointed recurrent strip. A finite missed window alone leaves later resets open.
+- A prescribed bound c can always be enlarged, for example to c+1. This does not establish strictness of the
+  resulting implications on Rule 30. A uniform but unspecified constant (DL^b) need not fit an arbitrarily prescribed
+  c at every clock. It is the existential union of the constant-bound conditions. Allowing an unspecified function
+  of p is the separate equivalence proved above.
 
 **A source form of (DL⁻₁)**, for the census (K25 §6: claudeCloud designs it).
 - **The statement.** Take any periodic source of odd weight with least period P, where P is a power of 2 for the
@@ -302,9 +308,13 @@ phase has a reset in [A, w_(N(A)+1)]. N(A) can even be taken to depend only on t
   - The interval at a first clock loss has a source of this kind, with P the clock (step 10).
   - The excursion's first wheel has two choices. They differ by a shift of P, which leaves the P-periodic prefix
     fixed. So the excursion is set by its source.
-  - At a white where the clock stays (even weight), the next first wheel x has x(t + 1) = a(t) ⊕ x(t). Both x and
-    its complement are periodic, so the strips fork there: the kit's branches (`Rule30LeftAntiPeriod`,
-    PRIOR-ART.md).
+  - At the return B, measure the new source’s weight over the *whole prefix clock* q = 2P. Odd weight makes
+    translation by q interchange the two children while fixing the entire earlier window. Even weight gives two
+    q-periodic choices, x and its complement. Test both with the same absolute phase on the preceding interval.
+    Between whites a black tick in the preceding column forces the next child, so these choices exhaust the
+    continuations. The kit’s branches illustrate the even case (`Rule30LeftAntiPeriod`, PRIOR-ART.md).
+  - **Status:** CARRIED (R58) as a sufficient source test for the strip lemma. The universal two-interval
+    assertion itself remains open.
 - **Checked** (COMPUTED, `gate3/claudeM5_relaxed_window.py`, which reuses `claudeCloud_excursions.py`).
   - Its one test case passes. The source `00001` (P = 5) leaves ticks 1 and 9 of 10 uncaught when white returns at
     wheel 23. The next stretch doubles (period 20) and catches all 20 ticks. It does not return within 2,000 wheels.
