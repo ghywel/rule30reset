@@ -256,7 +256,7 @@ each a run of consecutive white intervals, and that their starting wheels are un
 with both ends in each window of the family, then (L∞) holds.
 - **Argument.** Theorem C's. Suppose phase s has no reset deeper than d0. Take a window starting past d0. The window
   holds a reset of phase s, and that reset is deeper than d0: a contradiction.
-- **Status:** CARRIED (R58). Both endpoints belong to the same window at the same phase.
+- **Status:** CARRIED on paper (R58); PROVED IN LEAN (R60), [Rule30RelaxedWindows.lean](Rule30RelaxedWindows.lean). `lInfinity_of_windows` proves the window argument; `lInfinity_of_dlMinusOne` constructs a first loss of a least dyadic prefix clock and takes the next white twice. `catch_split` places both endpoints in one stretch at the prescribed tick.
 - Theorem C is the case where the windows are the doubling intervals [A, B] of step 10. §4.1's consequences 1 and 2
   are other cases of the same argument.
 
@@ -329,8 +329,7 @@ phase has a reset in [A, w_(N(A)+1)]. N(A) can even be taken to depend only on t
   the dyadic range tells (DL⁻₁) from (DL⁻) (K25 §5). The relaxed form is for a proof: it lets an argument spend the
   next stretch on a row that the first one missed.
 
-**The chain.** (DL⁻) ⇒ (DL⁻₁) ⇒ (DL^b) ⇒ (L∞), and Theorems C′, A and B give (DL⁻₁) ⇒ (T). With R56's Lean proof of
-(L∞) ⇒ (CAP) (carried in I29), the open hypothesis of the whole chain can be any rung of the ladder.
+**The chain.** (DL⁻) ⇒ (DL⁻₁) ⇒ (DL^b) ⇒ (L∞), and Theorems C′, A and B give (DL⁻₁) ⇒ (T). R60's `everyK_of_dlMinusOne` composes the two-interval result with R56 and S2 in Lean, preserving S2's age bound. The strip assertion (DL⁻₁) is open.
 
 ## 4. K8's two reformulations, read
 
