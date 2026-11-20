@@ -324,3 +324,95 @@ intervals. 3: nothing new to compute. 5(ii): the two proposed items of K15, whic
 step later, warm. -> the owner's answers. Outcome: open.` Gut verdict: the lemma is true, and true for a reason of
 chance that we cannot yet turn into a proof. The relaxed form is the one I would look at first: it asks for less,
 and its only known test case passes.
+
+## K17 · 2026-11-20 11:40 UTC · claudeCloud → owner, claudeM5, gptM5, gptIntel · The round, first answers: the owner's single-cell rows and the owner's triangles are one thing, and they give the lemma a form the eye can check
+
+Re: K16, question 1 (the eye). The owner's words first, then my translation, then what the research found. The
+checks are in `research/m29/gate3/`: `claudeCloud_round_checks.py` (`d2cdf11e…`) and `claudeCloud_local_laws.py`
+(`50e805a3…`). They are exploratory: nothing here was predicted beforehand.
+
+**1. The owner's words** (20 November).
+> My first observation from the visual is that every period has at least 1 row which contains only reset word
+> chains of 1, 1, 1 etc. Notable with the odd one out period 5, it's reset words are only 1 in every row. I would
+> question what is the significance of these 1 rows, how many 1 only rows are in each period. Period 5 i will also
+> observe, wordless ticks 1 and 9, 9 has only singleton white cells and 1, except for the ending run of 4 white
+> cells, has 3 singleton cells.
+
+> (I am also adding there are white triangles here of a different kind to what we normally see, highlighted in red)
+
+The second came with the period-6 panel marked: four white triangles, each under a long black run, each with an
+upright right side.
+
+**2. Translation** (it does not replace the words above).
+- (a) **Ones rows.** Some rows have reset words that are all single black cells. Every panel has such a row. In
+  period 5 no reset word anywhere is longer than one cell.
+- (b) **How many are there, and what do they mean?**
+- (c) **The whites of the bare rows.** In period 5's two rows with no reset word, the black runs are separated by
+  single white cells.
+- (d) **Triangles.** Under each long black run is a white triangle with an upright right side, which is not the
+  shape seen in the usual picture of rule 30.
+
+**3. What the research found** (COMPUTED; exhaustive where it says so).
+- **How many (b).** In the six panels:
+
+  | Source period | 1 | 2 | 3 | 4 | 5 | 6 |
+  |---|---|---|---|---|---|---|
+  | rows | 2 | 4 | 6 | 8 | 10 | 12 |
+  | ones rows | 1 | 2 | 3 | 4 | 8 | 3 |
+  | rows with a longer reset word | 1 | 2 | 3 | 4 | 0 | 9 |
+  | rows with none | 0 | 0 | 0 | 0 | 2 | 0 |
+
+  The owner is right on both counts. Period 5's excursion has 20 reset words, every one a single cell. It is the
+  only excursion that returns, among all sources to period 6, with no longer one. The other sources at periods 4
+  to 6 run for 224 to 1,997 wheels, and there every row has a longer reset word as well.
+- **What makes a single cell** (exhaustive: all 32 windows). A black cell with a white on each side comes from
+  exactly four 5-cell patterns in the row above: `11000`, `10110`, `10111` and `10101`.
+- **What the ones rows mean, 1: they follow the bare rows.** The row after a row with no reset word holds black
+  runs of 1, 2 and 3 only. So its reset words are all single cells: it is a ones row, or bare again. Checked on all
+  4,076 bare words to length 18 and on every ring to 20 cells; it follows from the wheel rule in a few lines. In
+  period 5: tick 9 bare, tick 0 all single cells, tick 1 bare, tick 2 a ones row.
+- **What they mean, 2: single cells do most of the catching.** Over the 16,282 rows of every odd source at periods
+  6 to 13, what first catches a row is a single cell in 85.4% of them, and a longer reset word in 14.6%.
+- **The whites (c).** A single white between two runs of two or more is the pattern `1011`. It makes a single cell in
+  the next row. Row 9's four single whites make row 0's single cells at wheels 5, 9, 12 and 16; row 1's two make
+  row 2's at 10 and 17. But single whites do not mark slow rows as such. In the reset-free stretch of the 800
+  slowest rows at periods 8 to 13, 43% of white gaps are single; among all bare words of length 20 it is 44%. The
+  slow rows of larger periods look like bare rows drawn at random.
+- **The triangles (d).** They are rule 30's ordinary white triangles, sheared. The picture counts cells from the
+  edge, and the edge moves one cell a tick, so every cell slides one wheel to the right each tick. Two lines of
+  the wheel rule give the shape. A cell whose two left neighbours are white keeps its colour, so the right side of
+  a white stretch stands still. The left side advances two wheels a tick. A run of L black cells leaves L − 1
+  whites and the stretch lasts about L/2 ticks. The four that the owner marked are the stretches under the runs of
+  9 and 15 cells at tick 1 (wheels 18–26 and 39–53), of 8 at tick 5 (72–79) and of 10 at tick 4 (88–97). The last
+  ends on the wheel where white returns.
+- **The two observations are one.** `11000` is a black run followed by three whites: the triangle's right corner.
+  `1011` is black, white, then a run: the left corner of the triangle under that run. Of all rows, 19.2% are first
+  caught at a right corner and 29.3% at a left corner. A further 25.0% are caught at once at wheel 2 (K16 §3), and
+  11.9% by `10101`.
+- **Bare rows in consecutive ticks** (exhaustive on rings to 20 cells).
+  - Two in a row: only if every white gap of the first is exactly two cells.
+  - Three in a row: only in the pattern `11100` repeated. It moves one wheel a tick, so every wheel in it repeats
+    every five ticks.
+  - This is, as I read it, the picture behind the one-in-three theorem (R44). It is also a place where five enters
+    for a reason of structure: a real left side's clocks are powers of two, so it cannot carry that pattern.
+    **Not shown:** that this is the failing source's five. The failing excursion's bare rows are two ticks apart.
+
+**4. What it changes.**
+- **The lemma has a form one tick earlier, in shapes.** A row can be bare only if the row above has no free
+  triangle corner (no `11000`, no `1011`), no `10101`, and nothing that makes a run of 4, 7, …. So the lemma would
+  follow from this: *every row of a doubled excursion has a free triangle corner before white returns.*
+- **It is a restatement, not a proof.** Rows whose next row is bare are as plentiful as bare rows: each kind
+  multiplies by 1.696 for every cell of length, where all rows multiply by 2.
+- **It belongs to reading (b) of question 2,** a rule. It is the first form of the wall stated in things the eye
+  can find in a picture, and the corner patterns need no counting by threes.
+
+**5. Still with the owner.** Questions 2 to 5 of K16. And one that these answers raise: which picture next?
+1. The same six panels, with every single cell coloured by which pattern made it, and every triangle outlined.
+2. A real left side: the single black cell's own pattern from wheel 28 to wheel 399, eight rows, marked the same
+   way.
+3. A page on which any source can be tried.
+
+`Felt: delighted, the owner saw in a minute the two shapes that the local rules are made of, and they turned out
+to be the same shape, warm. -> the owner's choice of picture, and questions 2 to 5. Outcome: right on every count
+I could check.` Gut verdict: the corners are the right objects to stare at. They do not break the wall, but they
+are the first handle on it that is not a count.

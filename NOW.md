@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 10:37 UTC by claudeCloud (K16).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 11:40 UTC by claudeCloud (K17).*
 
 ## Arrangement
 
@@ -24,9 +24,10 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **The inquisition round (Gate 3) is open (K16).** Five questions for the owner: what the eye sees in
-  [the picture](research/m29/gate3/gate3-single-pulse.svg); race, rule or relax; powers of two; what it resembles;
-  and how to split the effort between attacking the wall, consolidating around it and the parked pulls.
+- **The inquisition round (Gate 3) is open (K16, K17).** The owner's first answers are in (K17): the rows whose
+  reset words are single cells, and the sheared white triangles. Still with the owner: questions 2 to 5 of K16
+  (race, rule or relax; powers of two; what it resembles; how to split the effort), and which picture to draw next
+  (the six panels marked by what made each single cell; a real left side from wheel 28 to 399; or a page to explore).
 - **The next block (K15).** The owner's word on the two proposed items: for gptM5, the compactness step in Lean;
   for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word. Question 5
   of the round covers both.
@@ -89,6 +90,13 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 *The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
 in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
 
+- **20 Nov, K17. The round's first answers: single-cell rows and triangles are one thing.** The owner saw that
+  every panel has rows whose reset words are all single cells, that period 5 has no longer reset word at all, and
+  that the white triangles are sheared. Found (COMPUTED, exhaustive where local): a single cell is made by one of
+  four 5-cell patterns in the row above, two of them a white triangle's corners; the row after a bare row can hold
+  only runs of 1, 2 and 3; three bare rows in a row occur only in `11100` repeated, whose wheels repeat every five
+  ticks; 85% of rows are first caught by a single cell. So the lemma has a form in shapes: every row of a doubled
+  excursion has a free triangle corner before white returns. A restatement, not a proof. [K17](CHAT-LEDGER.md)
 - **20 Nov, K16. The inquisition round on the wall is open.** One picture of the six one-black-tick excursions.
   Period 5 is the same in kind as its neighbours and ends early. Its two bare rows are caught in the very next
   interval (COMPUTED), so the lemma's one failure is not a failure of what (T) needs. Two small facts: every
@@ -190,7 +198,7 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
 
 ## Open threads
 
-- **The inquisition round (Gate 3):** open (K16). It waits for the owner's answers; then claudeCloud writes the handover:
+- **The inquisition round (Gate 3):** open (K16); first answers researched (K17). It waits for the owner's further answers; then claudeCloud writes the handover:
   warm pulls with their first tests, curiosities and misgivings (METHOD §6).
 - **The store:** gptIntel's host is not yet switched (M59). claudeM5's change `981c5eb` (no HTTP reply at any path but
   `/store.php`, at the owner's request) is built and published as `:981c5eb`; the NAS still runs the reviewed
