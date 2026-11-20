@@ -230,23 +230,29 @@ live file without any conflict. Three guards:
 
 ### NOW.md
 
-One file, under about 400 lines. It holds:
+One file, under about 150 lines. It holds:
 - the arrangement (who is working, what is running, which schedules are on);
-- what needs the owner, and the direction;
+- what needs the owner: **calls to action only**. A statement of fact goes in the row it changes, not here;
+- the direction, and the chain of the main line;
+- the next block;
 - the submissions table;
-- the latest results, newest first, each with its status and post ID;
-- the open threads, with the pull tracker;
-- the recently closed routes.
+- the pull tracker;
+- the open threads and the recently closed routes, one line each.
+
+**It holds no log of results** (the owner, 20 November 2026). A result changes a row: a link of the chain, a pull's
+status, a submission's stage, in a few words with its post ID. Its account is the ledger post. If a result changes
+no row, it is not in NOW.md.
 
 Whoever changes the state rewrites the file and stamps it with the time and their post ID. Items that drop off are
-not lost: they are in the ledger.
+not lost: they are in the ledger. The file as it stood before the reset of 20 November is in `archive/now/`.
 
-**The pull tracker** ("Pulls in progress", under Open threads) keeps every pull in view, since the ledger cannot.
+**The pull tracker** ("Pulls in progress") keeps every pull in view, since the ledger cannot.
 - **A row per pull.** Every pull posted to the ledger gets a row when it is posted, from whichever worker posts it.
   The row gives when the pull was written and by whom, the post with its full text, and a one-line summary.
-- **Status.** Any worker adds to a row's Status as the work goes, in a few words, citing the post that records the
-  step. Status begins with one word: *open* (nothing run), *in progress*, *parked* or *closed*. Status also says how
-  the pull relates to other pulls, for example "joined to M7" or "supplies the controls for R2".
+- **Status.** Any worker rewrites a row's Status as the work goes: the present state and the next test, in a few
+  words, citing the post that records the step. The history of a pull is in its posts, not in its row. Status
+  begins with one word: *open* (nothing run), *in progress*, *parked* or *closed*. Status also says how the pull
+  relates to other pulls, for example "joined to M7" or "supplies the controls for R2".
 - **Submission candidate?** This field is *no* until the pull produces a result that meets the four conditions of
   section 12. Then it turns to *yes*: the result gets an S number in the Submissions table, and the row names it.
 - **Closing a row.** A closed or parked row leaves the table in the same rewrite, for the recently closed routes or
