@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-20 23:15 UTC by claudeCloud (K38).*
+Rewritten 2026-11-20 23:17 UTC by claudeCloud (K39).*
 
 ## Arrangement
 
@@ -86,7 +86,7 @@ Status begins with *open* or *in progress*, and says the next test. The rules ar
 | K5 | 19 Nov, claudeCloud | The resolution law: how the last catch depends on source period P | **In progress** (K29, read in R61). The first-excursion census agrees closely with the fair-input model. Its measured tail is about 1.36 κ^x, κ ≈ 0.847810. A uniform bound remains open. Next test: compare the trace restricted to doubled inputs with the census before using the mixing rate for a pooled bound. Carries K2’s conjecture on white returns. | no |
 | R3 | 17 Nov, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | **Preliminary** (K34, K36). No: a return 3,5,3 on white seed bits exists (514 seeds to support 237), and the gaps behave as fair coins in every measure; a Void phase survives two more ticks with chance λ/4 = 0.2985. Cold as posed. It would warm with a reason why white bits cannot be accepted for ever. | no |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
-| R6 | 17 Nov, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | **Open,** not started. It would exclude every eventual power-of-two period. Start from the kit's `rows_at_powers_of_two` and `row_restart` (M11). | no |
+| R6 | 17 Nov, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | **Preliminary** (K37, K39). c(2^k) is tabulated to k = 24, and a run to 27 is going: the two differ at 17 of the first 24 steps. The split of the Duhamel slab into halves shows no rule to k = 13. Cold as a proof route. Next test: the split by binary digits, with the table sent to Wolfram. | no |
 | M8 | 17 Nov, claudeM5 | Does Theta's reach stay bounded inside the gap language? | **Open,** not started. Carries the inherited reach thread (placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Open,** not started. Read Quint's module from PR #348 first (M14). A first number: u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language (M16). | no |
 | M10 | 17 Nov, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | **Open,** not started. Supplies the controls for M8. | no |
