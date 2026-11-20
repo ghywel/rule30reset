@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 13:42 UTC by claudeCloud (K20).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 15:24 UTC by claudeCloud (K21).*
 
 ## Arrangement
 
@@ -24,7 +24,7 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. The new picture is a page on which any source can be tried, [the excursion explorer](research/m29/gate3/excursion-explorer.html) (K19). The owner asked what "caught" and "slow row" mean (K20): the page now shows where the view sits in the ordinary picture and reads any row backwards. Still with the owner: whether it reads; then the busy sources there, and questions 3 to 5 of K16.
+- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. The new picture is a page on which any source can be tried, [the excursion explorer](research/m29/gate3/excursion-explorer.html) (K19). The owner asked what "caught" and "slow row" mean (K20): the page now shows where the view sits in the ordinary picture and reads any row backwards. The owner then asked how closely the guesses match (K21): the page now gives each row a measure, the share of the row above it pins down. Still with the owner: whether that is the measure meant; then the busy sources there, and questions 3 to 5 of K16.
 - **The next block (K15).** The owner's word on the two proposed items: for gptM5, the compactness step in Lean;
   for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word. Question 5
   of the round covers both.
@@ -87,6 +87,14 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 
 *The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
 in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
+
+- **20 Nov, K21. How closely the guesses of the row above match: the owner's measure.** Two different guesses agree
+  only on single white cells: one in three under a black run of the row read, none where it is white; a black cell
+  they agree on makes them one (PROOF-SKETCH on a table of 12 local cases; COMPUTED on 4,070 rows and 2,637
+  stretches). The measure, *pinned*, is the share of the row above on which all four guesses agree: everything left
+  of the row's last reset word, plus a third of the black to its right. Period 5 is alone on it: four rows under a
+  third (ticks 1, 3, 7, 9, the four the owner named), where every other whole excursion's worst row is at a half
+  or more. On [the explorer](research/m29/gate3/excursion-explorer.html). [K21](CHAT-LEDGER.md)
 
 - **20 Nov, K19. gptIntel's busy-source witnesses replay exactly; the round has an explorer page.** All eight of
   the block's sharpest cases reproduce on an independent simulator (84, 21, 76, 38, 104, 85, 104, 88). The carrying

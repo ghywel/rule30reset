@@ -138,6 +138,7 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
       <label><input id="t-tri" type="checkbox" checked> Outline white triangles</label>
       <label><input id="t-catch" type="checkbox" checked> Mark where each row is first caught</label>
       <label><input id="t-rows" type="checkbox" checked> Frame rows with no reset word</label>
+      <label><input id="t-pin" type="checkbox" checked> Show how much of the row above each row pins down</label>
     </div>
     <p id="error" class="error" role="alert" hidden></p>
   </section>
@@ -163,6 +164,8 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
         <li><code>11000</code> is a black run followed by three whites: the <b>right corner</b> of the white triangle under that run. <code>1011</code> is black, white, then a run: the <b>left corner</b> of the triangle under the next run.</li>
         <li>A <b>white triangle</b> hangs under every black run. Its right side stands still and its left side moves two wheels a tick, because wheels are counted from the moving edge.</li>
         <li>The strip on the far left is the <b>source</b>, the wheel before wheel 0. Each black tick there flips the colour of wheel 1.</li>
+        <li>The <b>pinned</b> bar beside each row is the share of the row above that the row settles for certain, read from the right-hand end of what is shown: the cells on which all four guesses agree. Red is under a third.</li>
+        <li>Two different guesses can agree only on single white cells: one cell in every three where the row has a black run, and none where it is white. A black cell they agree on makes them one guess.</li>
       </ul>
     </div>
     <div class="panel">
@@ -170,6 +173,7 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
       <ul>
         <li><b>See what a reset word does.</b> In period 5, click the right-hand end of row 5: the four guesses agree from wheel 17 leftwards. Then click the
           right-hand end of row 1, which is framed: they never agree. Then click row 5 again at wheel 15, to the left of its reset word: they never agree either.</li>
+        <li><b>How closely the guesses match.</b> In period 5 the bars show four rows under a third: 1, 3, 7 and 9. Rows 3 and 7 do have a reset word, but near the left end, so most of the row above stays open. Compare period 4 or 6, where no row is under a half.</li>
         <li><b>Period 5, one black tick.</b> The only doubled excursion known in which rows are never caught. Every reset word in it is a single cell.</li>
         <li><b>One black tick at period 40.</b> Between flips the pattern settles into the ordinary left side; only the few rows after a flip are slow, and all are caught by wheel 20.</li>
         <li><b>The single black cell's own intervals.</b> Its sources are busy ones: <code>1</code>, <code>01</code>, <code>1101</code>, <code>00101100</code>.</li>
@@ -279,6 +283,21 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
         j = k + 1;
       }
     }
+    /* The owner's measure (ledger K21): read each row backwards across everything shown, and count the cells of the
+       row above that each guess gets right, and the cells on which all four guesses agree: those are pinned down. */
+    for (t = 0; t < q; t++) {
+      var rb = readBack(ex, t, W), tp = rb.tp, right = [0, 0, 0, 0], sure = 0;
+      for (j = 0; j <= W; j++) {
+        var v0 = rb.guesses[0][j + rb.off], same = true;
+        for (var s = 0; s < 4; s++) {
+          var v = rb.guesses[s][j + rb.off];
+          if (v === ex.wheels[j][tp]) { right[s]++; }
+          if (v !== v0) { same = false; }
+        }
+        if (same) { sure++; }
+      }
+      rows[t].right = right; rows[t].sure = sure; rows[t].pinned = sure / (W + 1); rows[t].trueGuess = right.indexOf(W + 1);
+    }
     return { rows: rows, tris: tris };
   }
 
@@ -298,6 +317,10 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
       ['Rows by kind', bare + ' · ' + ones + ' · ' + longer, 'none · single cells only · with a longer word' + (ex.gap === null ? ' (in the wheels shown)' : ''), false],
       ['Reset words', singles + ' + ' + longs, 'single cells + longer (4, 7, …)', false]
     ];
+    var lo = 0, hi = 0;
+    an.rows.forEach(function (r, i) { if (r.pinned < an.rows[lo].pinned) { lo = i; } if (r.pinned > an.rows[hi].pinned) { hi = i; } });
+    items.push(['Row above pinned down', Math.round(100 * an.rows[lo].pinned) + '% to ' + Math.round(100 * an.rows[hi].pinned) + '%',
+      'least at tick ' + lo + ', most at tick ' + hi + ': cells all four guesses agree on', false]);
     $('readings').innerHTML = items.map(function (it) {
       return '<div class="reading' + (it[3] ? ' alert' : '') + '"><div class="label">' + it[0] + '</div><div class="value">' + it[1] + '</div><div class="note">' + it[2] + '</div></div>';
     }).join('');
@@ -319,10 +342,10 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
   function draw() {
     if (!state) { return; }
     var ex = state.ex, an = state.an, q = ex.q, W = ex.width;
-    var opts = { makers: $('t-makers').checked, tri: $('t-tri').checked, catchMark: $('t-catch').checked, rows: $('t-rows').checked };
+    var opts = { makers: $('t-makers').checked, tri: $('t-tri').checked, catchMark: $('t-catch').checked, rows: $('t-rows').checked, pin: $('t-pin').checked };
     var pick = parseInt($('cell').value, 10);
     var avail = Math.max(280, $('scroll').clientWidth - 2);
-    var LEFT = 74, TOP = 22, BOTTOM = 10, RIGHT = 14;
+    var LEFT = 74, TOP = 22, BOTTOM = 10, RIGHT = 96;
     var c = pick || Math.max(4, Math.min(16, Math.floor((avail - LEFT - RIGHT) / (W + 1))));
     if (!pick && q * c > 900) { c = Math.max(4, Math.floor(900 / q)); }
     var width = LEFT + (W + 1) * c + RIGHT, height = TOP + q * c + BOTTOM;
@@ -389,6 +412,16 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
     var stepT = c >= 10 ? 1 : c >= 6 ? 2 : c >= 5 ? 4 : 8;
     for (t = 0; t < q; t += stepT) { g.fillText(String(t), LEFT - 22, Y(t) + c / 2 + 3.5); }
     g.textAlign = 'left'; g.fillText('source', LEFT - 50, TOP - 7);
+    if (opts.pin) {
+      var bx = X(W + 1) + 10, bw = 50;
+      g.fillStyle = '#5c6470'; g.textAlign = 'left'; g.fillText('pinned', bx, TOP - 7);
+      for (t = 0; t < q; t++) {
+        var frac = an.rows[t].pinned;
+        g.fillStyle = '#e3e6ea'; g.fillRect(bx, Y(t) + 1, bw, Math.max(1, c - 2));
+        g.fillStyle = frac < 0.34 ? col.bare : '#3f7fbf'; g.fillRect(bx, Y(t) + 1, Math.round(bw * frac), Math.max(1, c - 2));
+        if (c >= 9) { g.fillStyle = '#3d4450'; g.fillText(Math.round(100 * frac) + '%', bx + bw + 4, Y(t) + c / 2 + 3.5); }
+      }
+    }
     if (state.sel) {
       g.strokeStyle = css('--accent'); g.lineWidth = 2;
       g.strokeRect(X(0) - 2, Y(state.sel.t) - 1, (state.sel.j + 1) * c + 3, c + 2);
@@ -427,7 +460,7 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
     var cv = $('reading'), text = $('reading-text');
     if (!state || !state.geom || !state.sel) { return; }
     var ex = state.ex, row = state.an.rows[state.sel.t], t = state.sel.t, js = state.sel.j, gm = state.geom, c = gm.c;
-    var rb = readBack(ex, t, js), rh = Math.max(c, 13), gapY = 5, TOPR = 30, lines = 6;
+    var rb = readBack(ex, t, js), rh = Math.max(c, 13), gapY = 5, TOPR = 30, lines = 7;
     var height = TOPR + lines * (rh + gapY) + 12, width = gm.width, dpr = Math.min(2, window.devicePixelRatio || 1);
     cv.width = Math.round(width * dpr); cv.height = Math.round(height * dpr);
     cv.style.width = width + 'px'; cv.style.height = height + 'px';
@@ -457,6 +490,25 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
       }
       g.strokeStyle = col.accent; g.lineWidth = 1.5; g.strokeRect(X(js - 1) + 0.5, Y(i) + 0.5, 2 * c - 1, rh - 1);
     }
+    /* What the row settles for certain: the cells on which all four guesses agree. The rest is hatched. */
+    var counts = [0, 0, 0, 0], sure = 0;
+    label(6, 'certain');
+    for (j = 0; j <= js; j++) {
+      var a0 = rb.guesses[0][j + rb.off], agree = true;
+      for (s = 0; s < 4; s++) {
+        if (rb.guesses[s][j + rb.off] === ex.wheels[j][rb.tp]) { counts[s]++; }
+        if (rb.guesses[s][j + rb.off] !== a0) { agree = false; }
+      }
+      if (agree) { sure++; if (a0) { cell(6, j, col.ink); } }
+      else {
+        g.fillStyle = '#d9dce1'; g.fillRect(X(j), Y(6), c, rh);
+        g.strokeStyle = '#aab0b8'; g.lineWidth = 1; g.beginPath(); g.moveTo(X(j), Y(6) + rh); g.lineTo(X(j) + c, Y(6)); g.stroke();
+      }
+    }
+    g.fillStyle = '#3d4450'; g.font = '10px ' + css('--mono'); g.textAlign = 'left';
+    for (s = 0; s < 4; s++) { g.fillText(counts[s] + ' of ' + (js + 1) + (counts[s] === js + 1 ? '  true' : ''), X(ex.width + 1) + 10, Y(2 + s) + rh / 2 + 3.5); }
+    g.fillText(sure + ' of ' + (js + 1), X(ex.width + 1) + 10, Y(6) + rh / 2 + 3.5);
+    state.lastReading = { counts: counts, sure: sure, cells: js + 1 };
     for (i = 0; i < lines; i++) {
       g.strokeStyle = col.grid; g.lineWidth = 0.5;
       g.strokeRect(X(0) + 0.25, Y(i) + 0.25, (ex.width + 1) * c, rh);
@@ -476,6 +528,11 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
       html += '<b>The four guesses never become the same:</b> ' + rb.versions + ' different versions of the row above reach the left end. ' +
         (first ? '' : 'There is no reset word between wheel ' + js + ' and the left end of this row. ') + 'A reader gets through this stretch without learning which is right.';
     }
+    var lr = state.lastReading, trueOne = lr.counts.indexOf(lr.cells) + 1;
+    var wrong = lr.counts.filter(function (x) { return x !== lr.cells; });
+    html += ' <b>How closely they match:</b> guess ' + trueOne + ' is the true one. The others get ' + wrong.join(', ') + ' of ' + lr.cells +
+      ' cells right. All four agree on ' + lr.sure + ' cells (' + Math.round(100 * lr.sure / lr.cells) + '%), drawn on the line marked <b>certain</b>: ' +
+      'that much of the row above is pinned down by this row. Two different guesses can agree on a single white cell and stay apart; the first black cell they agree on makes them one.';
     text.innerHTML = html;
   }
 
@@ -561,7 +618,7 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
   $('draw').addEventListener('click', run);
   $('source').addEventListener('keydown', function (e) { if (e.key === 'Enter') { run(); } });
   $('cap').addEventListener('change', run);
-  ['cell', 't-makers', 't-tri', 't-catch', 't-rows'].forEach(function (id) { $(id).addEventListener('change', draw); });
+  ['cell', 't-makers', 't-tri', 't-catch', 't-rows', 't-pin'].forEach(function (id) { $(id).addEventListener('change', draw); });
   $('grid').addEventListener('mousemove', function (e) {
     if (!state || !state.geom) { return; }
     var r = $('grid').getBoundingClientRect(), gm = state.geom;
