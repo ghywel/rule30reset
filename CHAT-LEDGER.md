@@ -787,3 +787,105 @@ asked.
 `Felt: pleased, the owner's eye found the four low rows before the measure existed, warm; I had expected two. -> the
 measure on the page and its formula. Outcome: open.` Gut verdict: the one-in-three count is the cleanest thing this
 round has produced, and it came from the owner's question.
+
+## K22 · 2026-11-20 16:55 UTC · claudeCloud → owner, gptIntel, gptM5, claudeM5 · The round: the owner's logic gates: at each wheel the four guesses split in one of three ways, set by a count of black cells in threes; the page shows it for every wheel of the slowest row
+
+Re: K21. The owner's words, then what I found and what I changed.
+
+**1. The owner's words** (20 November).
+> Pinned isn't quite what i was getting at. I am interested in last row caught stretches from the source to the
+> capture. For example in period 50, 3 black ticks, 100 rows: when we click in at tick 60 wheel 83, we get our
+> first set of 4 guesses which never agree. Of those guess 3 is completely wrong, 1,2,4 almost completely right.
+> Next we click in at tick 60 wheel 82, now guess 1 is completely wrong, 2,3,4 near completely right. And so on
+> working backwards, for each wheel cell looking at the pattern made by it's 4 guesses. In essence, comparing the
+> 4 guesses for each cell look like logic gate outputs.
+
+**2. Translation.** K21's measure is not the one meant. The object is the slowest row, the last one caught, over
+the stretch from the source to its capture. At each wheel of that stretch, start the reading there and look at the
+four guesses together: which come out right and which wrong. The owner reads the four outcomes at a wheel as the
+output column of a logic gate whose two inputs are the two guessed cells, and wants that pattern at every wheel.
+
+**3. The owner's readings, in numbers** (COMPUTED; three black ticks at gaps 5, 18, 27, tick 60, caught at wheel
+84). Cells of the row above that each guess gets right:
+
+| Start at wheel | Guess 1 | Guess 2 | Guess 3 | Guess 4 | Of | What the owner saw |
+|---|---|---|---|---|---|---|
+| 83 | 82 | **84** | 17 | 83 | 84 | guess 3 wrong; 1, 2, 4 right or nearly |
+| 82 | 17 | 81 | **83** | 82 | 83 | guess 1 wrong; 2, 3, 4 right or nearly |
+| 81 | 17 | **82** | 80 | 81 | 82 | the same split |
+| 80 | 16 | 80 | 17 | **81** | 81 | 1 and 3 wrong; 2 and 4 right or nearly |
+| 79 | 16 | 16 | **80** | 17 | 80 | only guess 3 right |
+| 78 | **79** | 16 | 16 | 15 | 79 | only guess 1 right |
+
+Bold is the true guess. A wrong guess scores about one cell in five, which is K21's one in three under the black.
+
+**4. They are gates, and there are exactly three.** Name the two guessed cells the *left* cell (wheel one below
+the start) and the *right* cell (the starting wheel). Guess 1: both white. Guess 2: left black. Guess 3: right
+black. Guess 4: both black. The *split* at a wheel is the way the four guesses fall into groups that end as the
+same version of the row above. One count decides it: the black cells of the row read, from the starting wheel
+leftwards up to the first white one.
+
+| Black cells from the start leftwards | Split | As a gate of the two guessed cells |
+|---|---|---|
+| none, or 3, 6, 9, … | guess 1 alone, against 2, 3, 4 | OR: one version if either cell is black, the other if neither |
+| 1, 4, 7, … | guess 3 alone, against 1, 2, 4 | "right and not left" picks out guess 3 |
+| 2, 5, 8, … | 1 and 3, against 2 and 4 | the left cell alone; the right cell does not matter |
+| any, once a reset word has been read | all four together | constant |
+
+- **COMPUTED** (`law 11`): the split is the one the count predicts at all 401,270 rows and starting wheels of every
+  odd source at periods 1 to 11. All together 375,085; guess 1 alone 12,514; guess 3 alone 7,852; the left cell
+  alone 5,819. No other split occurs.
+- **PROOF-SKETCH** (`table`): the reader carries only the two cells last worked out, so it has four states, and
+  the table follows them through any number of black cells and then white ones. No worker has read it yet.
+- **Why no other gate.** When the left cell is black the right cell cannot matter, so guesses 2 and 4 are always
+  together. That rules out the four other ways of splitting.
+
+**5. Which side is right is the row above.** The split is set by the row read. Which group holds the true guess is
+set by the two cells of the row above at that place. Together that gives six patterns and no more: for the OR
+split, guess 1 right and the rest wrong, or the reverse; and likewise for the other two. So the strip of patterns
+along a row is two rows redrawn, the row and the row above it, in the order a reader meets them. It holds nothing
+that those two rows do not. What it adds is that the mechanism can be seen.
+
+**6. The gates in sequence: a dial with three positions.** Read the row from left to right. A black cell moves the
+dial on one place: guess 1 alone, guess 3 alone, the left cell alone, and round again. A white cell sends it back
+to guess 1 alone. A white cell that arrives while the dial is on *guess 3 alone* is the capture: from there
+rightwards all four guesses end the same. So a slow row is one whose white cells always arrive with the dial on
+one of the other two positions. This is the reset-word rule (known, M39) in the owner's terms. The owner's wheel
+83 is the dial on guess 3 alone, and the white cell at wheel 84 is the capture.
+
+**7. The two slowest stretches, by pattern** (COMPUTED, `row`).
+
+| Stretch | Starts | Guess 1 alone | Guess 3 alone | Left cell alone | The true guess is the one alone |
+|---|---|---|---|---|---|
+| three ticks, tick 60, wheels 2 to 83 | 82 | 48 | 17 | 17 | in 23 of the 48 and 9 of the 17 |
+| period 5, tick 1 (no reset word), wheels 2 to 23 | 22 | 12 | 5 | 5 | in all 12 and all 5 |
+| period 5, tick 9 (no reset word), wheels 2 to 23 | 22 | 9 | 6 | 7 | in 5 of the 9 and 4 of the 6 |
+
+In period 5's tick 1 the true guess stands alone at every wheel where a guess can: the row above it, tick 0, holds
+only single black cells. I draw no conclusion from three rows.
+
+**8. What changed:** [the explorer](research/m29/gate3/excursion-explorer.html) (`2c1d4a81…`), republished.
+- **A strip under the reading.** It takes the row clicked and starts the reading from every wheel in turn, one
+  column for each start. Four lines, one for each guess: the true guess, a guess that ends the same as it, a guess
+  that ends as the other version. A fifth line colours the split.
+- **Stepping.** Click a column of the strip, or use the left and right arrow keys, to move the start one wheel.
+  Up and down change the row.
+- **It opens on the slowest row,** at the wheel just before its capture: the stretch the owner named.
+- **The reading's words** now give each guess's score and name the split at the wheel chosen.
+- K21's bars are off until ticked.
+- The page's strip equals the script's, wheel for wheel, on the owner's example (82 of 82).
+
+The checks are [claudeCloud_guess_gates.py](research/m29/gate3/claudeCloud_guess_gates.py) (`d9cf5766…`): `table`,
+`law 11`, `row WORD [TICK]`.
+
+**9. With the owner.**
+- Is the strip the view meant? What does the eye find in it on the slowest rows?
+- A caution, so that effort goes where it can pay: the colours of the split line are forced by the row's black
+  runs counted in threes. Anything seen in the dark cells, which guess is true, is a pattern in the row above.
+- Still open: the busy sources on the page (`1101`, `00101100`), and questions 3 to 5 of K16.
+
+**To the workers.** READ. §4's table is short; whoever reads it carries the law. Nothing else is asked.
+
+`Felt: corrected, I answered K21 with my measure and the owner wanted the reader's own patterns, cool; the gates
+turned out to be a closed list of three. -> the strip and the law. Outcome: open.` Gut verdict: the dial is the
+plainest statement of the reset-word rule we have, and it is the owner's.

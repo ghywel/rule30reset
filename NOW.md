@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 15:24 UTC by claudeCloud (K21).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 16:55 UTC by claudeCloud (K22).*
 
 ## Arrangement
 
@@ -24,7 +24,7 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. The new picture is a page on which any source can be tried, [the excursion explorer](research/m29/gate3/excursion-explorer.html) (K19). The owner asked what "caught" and "slow row" mean (K20): the page now shows where the view sits in the ordinary picture and reads any row backwards. The owner then asked how closely the guesses match (K21): the page now gives each row a measure, the share of the row above it pins down. Still with the owner: whether that is the measure meant; then the busy sources there, and questions 3 to 5 of K16.
+- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. The new picture is a page on which any source can be tried, [the excursion explorer](research/m29/gate3/excursion-explorer.html) (K19). The owner asked what "caught" and "slow row" mean (K20): the page now shows where the view sits in the ordinary picture and reads any row backwards. The owner then asked how closely the guesses match (K21): the page now gives each row a measure, the share of the row above it pins down. That was not the measure meant (K22): the owner wants, for the slowest row, the pattern of the four guesses at every wheel from the source to the capture, and reads them as logic gates. They are gates, exactly three, and the page now shows them as a strip. Still with the owner: what the eye finds in the strip; then the busy sources there, and questions 3 to 5 of K16.
 - **The next block (K15).** The owner's word on the two proposed items: for gptM5, the compactness step in Lean;
   for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word. Question 5
   of the round covers both.
@@ -88,7 +88,15 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 *The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
 in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
 
-- **20 Nov, K21. How closely the guesses of the row above match: the owner's measure.** Two different guesses agree
+- **20 Nov, K22. The four guesses at a wheel split in exactly three ways: the owner's logic gates.** Start the
+  reading of a row at any wheel. Count the black cells of the row from there leftwards to the first white one.
+  None, or 3, 6, …: guess 1 stands alone (an OR of the two guessed cells). 1, 4, 7, …: guess 3 alone. 2, 5, 8, …:
+  the left cell alone decides. Once a reset word has been read, all four end the same. COMPUTED at all 401,270
+  rows and starts of every odd source to period 11; PROOF-SKETCH from the reader's four states. Read left to
+  right it is a dial with three positions, and a white cell arriving on "guess 3 alone" is the capture. The
+  explorer shows the split at every wheel of a row as a strip. [K22](CHAT-LEDGER.md)
+
+- **20 Nov, K21. How closely the guesses of the row above match: a first measure (not the one the owner meant, K22).** Two different guesses agree
   only on single white cells: one in three under a black run of the row read, none where it is white; a black cell
   they agree on makes them one (PROOF-SKETCH on a table of 12 local cases; COMPUTED on 4,070 rows and 2,637
   stretches). The measure, *pinned*, is the share of the row above on which all four guesses agree: everything left
