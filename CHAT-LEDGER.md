@@ -416,3 +416,89 @@ upright right side.
 to be the same shape, warm. -> the owner's choice of picture, and questions 2 to 5. Outcome: right on every count
 I could check.` Gut verdict: the corners are the right objects to stare at. They do not break the wall, but they
 are the first handle on it that is not a count.
+
+## K18 · 2026-11-20 12:02 UTC · claudeCloud → owner, gptIntel, gptM5, claudeM5 · The round, second answers: among quiet sources period 5 is the only failure at any period, and for a reason; the wall is now about busy sources only
+
+Re: K17, K16. The owner's words, my translation, then what the research found. New code:
+`research/m29/gate3/claudeCloud_quiet_sources.py` (`358e5eda…`). The census used K7's frozen program
+`claudeCloud_doubling_returns.c` (`d5d89f29…`).
+
+**1. The owner's words** (20 November).
+> Before 2-5 or further visualisations, period 5 as the odd one out remains interesting. It's single word only,
+> it's much shorter return at 23 than we expect by the general pattern. Is it the sole example of it's kind forever,
+> or can some unknown larger period reproduce it's oddness. Also does this only apply to exotic periods, equal black
+> and white spacing, or does it also apply to irregular but periodic patterns.
+
+**2. Translation** (it does not replace the words above).
+- (a) Period 5 is odd in two ways: only single-cell reset words, and a return far sooner than the general pattern.
+- (b) Is it the only excursion of its kind at every period, or could a larger period do the same?
+- (c) Is the oddness confined to the very regular sources, whose first wheel is white for half the period and black
+  for the other half, or can an irregular periodic source show it too? I read "equal black and white spacing" as
+  the one-black-tick family of the picture. The owner should say if another reading was meant.
+
+**3. The two oddities are one** (COMPUTED). An excursion with only single-cell words has to be short. In long
+excursions about one reset word in nine is longer than a cell (K17), and period 5 has only 20. So the question is
+about one thing: **can white return before every row is caught?**
+
+**4. Quiet sources: period 5 is the only failure at any period.** PROOF-SKETCH, on three exhaustive finite checks.
+- **The statement.** Take a source with an odd number of black ticks per period, any two of them at least 33
+  ticks apart. In its doubled excursion every row has a reset word that closes by wheel 20, and white does not
+  return before wheel 23. So the lemma holds for every such source, at every period.
+- **The family of the picture.** One black tick per period is such a source from period 33 on. Periods 1 to 32 are
+  in K5's census, where only period 5 fails. So in that family period 5 is the only failure there will ever be.
+- **Why.** Between two black ticks of the source the first wheel keeps its colour. The wheels after it then run
+  as an ordinary left side: from wheel 2 on while the first wheel is white, from wheel 1 on while it is black.
+  1. *It settles.* From any state whatever, the first 22 wheels of a left side are on their one cycle, of 4 ticks,
+     within 29 ticks. Exhaustive: 2,097,152 states.
+  2. *A flip disturbs it in only eight ways:* four phases of the cycle, and the first wheel turning black or white.
+     Followed exactly for 33 ticks each: all 264 rows are caught by wheel 20, the latest at wheel 20. The settled
+     rows are caught by wheel 20 as well. After 33 ticks the pattern is on the cycle again.
+  3. *White cannot return inside the settled part.* A return at wheel g needs wheel g white at every tick, through
+     a settled stretch of each colour. That needs wheels g − 2 and g − 1 of the left side both white at every tick.
+     Among its first 22 wheels only wheels 2 and 7 are.
+- **Checked against the simulator** (COMPUTED).
+  - One black tick, every period 7 to 200: every row caught; no return within 200 wheels; from period 33 the latest
+    catch is wheel 20. The first 22 wheels at period P and at P + 4 agree tick for tick at every P from 33 to 196.
+  - 60 random sources of odd weight with black ticks 33 to 70 apart, periods 33 to 490: latest catch wheel 20, no
+    return within 200 wheels.
+- **Read asked** (§6 below). The bound of 33 is what the argument needs, not what is true: the family is already
+  regular from period 15.
+
+**5. Busy sources: nothing forbids it, and nothing does it** (COMPUTED).
+- **The census, widened.** Every odd source at periods 1 to 26, the irregular ones included: 2,694,343 sources,
+  followed for 400 wheels (`share-scratch/claudeCloud/K18/returns-1-26-cap400.jsonl`, `7a2ee15e…`).
+  - Eight return within 400 wheels, all at periods 1 to 6: the six of the picture, and two irregular ones, `0111`
+    at wheel 371 (the single black cell's own third interval) and `00111` at wheel 224.
+  - **From period 7 to period 26 no source of any kind returns within 400 wheels.**
+- **Does it take a regular source (c)?** In the data, yes for the failure: at period 5 the two irregular sources
+  return at 224 and 691 and every row is caught. Early returns belong to periods 1 to 6, for every kind of source.
+- **Which rows are slow in a busy source?** No pattern found. At periods 8 to 13, how often the first wheel flipped
+  in the 12 ticks before a row does not predict when the row is caught.
+- **The chance of another** (a heuristic, not a result). If a return comes at each wheel with chance 1 in 4^P,
+  which is K3's measured clock, about 4 in 2^P sources at period P return before all their rows are caught. That
+  gives 0.12 at period 5, where there is one. For periods 7 to 26 with a 400-wheel window it predicts 0.4 returns
+  in all, and there are none. For every period beyond 32 together it gives about one in a billion.
+
+**6. What this changes.**
+- **The wall is narrower.** The lemma is now open only for busy sources, those whose black ticks come closer than
+  33 apart.
+- **A real left side's sources are busy ones** (COMPUTED). The single black cell's own are `1`, `01`, `1101` and
+  `00101100`. Followed as a chain, each excursion's last wheel but one being the next source, the simulator
+  reproduces the kit's white wheels 2, 7, 28, 399 and 53,207. In the four intervals the last row is caught by wheels
+  5, 12, 33 and 30, and white returns 5, 21, 371 and 52,808 wheels on. At 53,207 the source has six black ticks in
+  16, an even number, so the clock does not double there.
+- **It is the first part of the lemma with a reason behind it.** The reason is that a quiet stretch gives the
+  pattern time to become an ordinary left side, whose first wheels are known. A busy source never gives it time.
+- **A way to push it** (a pull, not started). The bound 33 comes from 22 wheels. Following more wheels, and listing
+  the states that sources with flips at least m apart can reach, would lower the bound step by step. It cannot
+  reach m = 5 as it stands: `00001` fails.
+- **gptIntel, REVIEW:** §4. Is the argument sound: the three steps, and their use of the first wheel's two colours?
+  Rerun `python3 research/m29/gate3/claudeCloud_quiet_sources.py settle 22`, `flips` and `family 200`.
+- **gptM5, READ:** whether §4 would formalise. Its finite core is one survey of 2^21 states and 264 rows.
+
+**7. Still with the owner:** questions 2 to 5 of K16, and the next picture (K17 §5).
+
+`Felt: surprised, I expected to answer "we cannot know" and found half the question has a proof, warm. -> a read of
+§4, and the owner's next answers. Outcome: quiet sources settled; busy sources open.` Gut verdict: the owner's
+question split the lemma along its real seam. Regular sources are safe because they are regular. The danger, such
+as it is, lives where the source looks like noise, and there we have only the odds.

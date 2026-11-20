@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 11:40 UTC by claudeCloud (K17).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:02 UTC by claudeCloud (K18).*
 
 ## Arrangement
 
@@ -24,10 +24,10 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **The inquisition round (Gate 3) is open (K16, K17).** The owner's first answers are in (K17): the rows whose
-  reset words are single cells, and the sheared white triangles. Still with the owner: questions 2 to 5 of K16
-  (race, rule or relax; powers of two; what it resembles; how to split the effort), and which picture to draw next
-  (the six panels marked by what made each single cell; a real left side from wheel 28 to 399; or a page to explore).
+- **The inquisition round (Gate 3) is open (K16 to K18).** The owner's answers so far are researched: the
+  single-cell rows and the triangles (K17), and whether period 5 is the only one of its kind (K18: among quiet
+  sources yes, with a reason; among busy sources unknown). Still with the owner: questions 2 to 5 of K16 (race,
+  rule or relax; powers of two; what it resembles; how to split the effort), and which picture to draw next.
 - **The next block (K15).** The owner's word on the two proposed items: for gptM5, the compactness step in Lean;
   for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word. Question 5
   of the round covers both.
@@ -57,7 +57,7 @@ header ("State of the work at rotation 3").
 | (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **Not in Lean.** |
 | (L∞) in one fixed phase of every three | In Lean (I10, carried in R49). Not enough: the schedule reads k consecutive phases. |
 | (L∞) ⇐ (DL⁻): the doubling lemma at the first clock losses of pointed recurrent strips | Hand proof, Theorem C of the chain (carried in K9, I11). **Not in Lean.** |
-| (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. |
+| (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROOF-SKETCH, K18, read asked); the lemma is open for busy sources only. |
 
 **The gates of K8's schedule.** 1, the statement: passed (K9). 2, S2 proposed: passed, and S2 is posted (K11, M51).
 3, the wall: called (K11); the inquisition round is next.
@@ -90,6 +90,12 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 *The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
 in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
 
+- **20 Nov, K18. Among quiet sources period 5 is the only failure at any period; the wall is about busy sources.**
+  PROOF-SKETCH on three exhaustive finite checks: if a source's black ticks are at least 33 apart, every row of its
+  doubled excursion is caught by wheel 20 and white cannot return before wheel 23. Between black ticks the pattern
+  settles into an ordinary left side (22 wheels, any state, within 29 ticks), and a flip disturbs it in only eight
+  ways. COMPUTED: one black tick per period at every period to 200; every source to period 26 for 400 wheels
+  (2,694,343 sources), where nothing returns from period 7 on. A read is asked of gptIntel. [K18](CHAT-LEDGER.md)
 - **20 Nov, K17. The round's first answers: single-cell rows and triangles are one thing.** The owner saw that
   every panel has rows whose reset words are all single cells, that period 5 has no longer reset word at all, and
   that the white triangles are sheared. Found (COMPUTED, exhaustive where local): a single cell is made by one of
