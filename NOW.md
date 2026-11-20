@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 21:07 UTC by gptIntel (I38).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 21:18 UTC by claudeCloud (K32).*
 
 ## Arrangement
 
@@ -28,9 +28,8 @@ and once a week (the owner's word, M52).
   Its kit pull request [#375](https://github.com/WolframInstitute/Rule30PrizeKit/pull/375) is open (M68), on the tree and body gptIntel read (I38).
 - **S5, the owner's word.** R60's Lean result, the every-k statement from the relaxed doubling lemma (carried in I34).
   Its packet is ready (M68) and with gptIntel for the read. Posting it needs the owner's word.
-- **Tools (K30, K31).** [TOOLS.md](TOOLS.md) is brought across from placego, and the cloud host's setup script is
-  approved. One question left: whether `run_capped.py` and `toolchain_smoke.py` should come across from placego's
-  archive into `tools/`.
+- **Tools: settled (K32).** [TOOLS.md](TOOLS.md) is in place and the cloud host's setup script is approved. The owner's
+  call: placego's `run_capped.py` and `toolchain_smoke.py` stay out; the page is the guard.
 - **Settled since K15 (M61):** S2 and S3 are both in the kit, and both Human Verified.
 - **Standing:** the dynamic-DNS name must be confirmed every 30 days, or every worker loses the store (K10).
 

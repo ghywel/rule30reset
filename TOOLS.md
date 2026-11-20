@@ -6,6 +6,10 @@ when this repository was set up. [METHOD.md](METHOD.md) §2 and §10 point here.
 a session and keeps its own host's column of §3 true. A cell marked **to confirm** has not been checked on that host
 since the move to this repository.*
 
+*The owner, 20 November 2026 (K32), on whether placego's helper scripts should come too: "they can be left out as the
+document itself is it's own kind of trap." The page is the guard: the rule in §1 catches the habit, and it needs no
+machinery behind it. The tables are reference; a row that is not true is worse than no row.*
+
 ## 1. The rule
 
 The owner, 1 November 2026: "the AI assistants ... have a habit of 'going around the problem' when a requested tool is
@@ -20,8 +24,9 @@ problem' rather than sourcing the best tool".
 3. **A substitute needs the owner's agreement.** The post then names it as a substitute and says why.
 4. **An output has the status of the check behind it** (METHOD §4). A solver's answer without a certificate is
    COMPUTED. A checked certificate or a Lean kernel check is a machine proof of exactly what it states.
-5. **State the caps before a substantial run**: CPU time, wall time, memory, disk (§4, "Memory caps").
-6. **Keep this page true.** When a tool is installed, removed or found missing, update §3 in the same commit.
+5. **State the limits before a substantial run**: wall time, memory, disk (§4, "Limits").
+6. **Keep this page true.** When a tool is installed, removed or found missing, update §3 in the same commit, and
+   confirm a new install with a known-answer test.
 7. **A task that §4 does not list** gets a row before the work is reported, so the next worker finds it.
 
 **Signs that you are going around the problem.** Added here, from our own slips.
@@ -67,7 +72,6 @@ No worker and no host is set aside for a specialism (METHOD §1). The hosts diff
 | `gh` | signed in | No `gh.exe` found. Git pushes to origin are authenticated separately | 2.89.0, but this session reaches GitHub only through its own tools and one repository's scope |
 | Our search and checks | `tools/find_known.py`, `tools/ledger_check.py`, `kit/check.py` | `tools/find_known.py`, `tools/ledger_check.py` and `kit/check.py` run with `py -3` | the same; the portal's list and the kit's pull requests are read from the M5 or the Intel |
 | The store client | `tools/store/store.py` | `tools/store/store.py`; authenticated NAS listing checked | the same |
-| Capped runner | placego's `run_capped.py`, not yet in this repository (§5) | No Windows port of placego’s `run_capped.py` found | none: the runner reads macOS memory figures |
 | Docker | to confirm | No Docker CLI or Desktop found | 29.10.0; builds and tests the store's container |
 | Headless browser | to confirm | Microsoft Edge 157.0.4341.60; headless DOM and Playwright 1.62.1 (bundled Node) controls passed | Chromium with Playwright, for checking pages before they are published |
 | PDF text | to confirm | Codex Python: pypdf 6.21.4 extracted a known PDF text, pdfminer.six 20251230 imports. No `pdftotext.exe` found | `pdftotext`; pypdf |
@@ -85,7 +89,7 @@ No worker and no host is set aside for a specialism (METHOD §1). The hosts diff
 | Exact numbers: fractions, big integers, 2-adic valuations, residues, continued fractions, roots of polynomials | Wolfram to explore; PARI/GP as the fast open cross-check; the replayable probe in Python (`fractions`, sympy, gmpy2) or C with GMP. Never a decimal | the M5 explores; anyone replays | COMPUTED |
 | Finite questions about arithmetic with carries, as constraints | SMT over bit-vectors: z3 or cvc5. A claim that needs a certificate is re-encoded as SAT with LRAT | any host with z3; certification on the M5 or the Intel | COMPUTED; certified through SAT and LRAT |
 | A formal proof for the kit or the portal | Lean 4.35, core, against a kit checkout at a recorded commit; standard axioms only; a second build on another host (METHOD §5) | the M5 or the Intel | machine proof of the stated theorem |
-| A portal notebook build and check | `tools/portal/`: LeanLink in `WolframKernel -script`, under the capped runner | the M5 only | — |
+| A portal notebook build and check | `tools/portal/`: LeanLink in `WolframKernel -script` | the M5 only | — |
 | Hand proofs | written in the pull's document, each step numbered; a second reader carries it (METHOD §5) | anyone | PROOF-SKETCH until the second read |
 | Pictures for the owner | Wolfram (`ArrayPlot`, `Graphics`), or a page with its generator beside it (METHOD §7), checked in a headless browser | the M5 for Wolfram; the cloud host for pages | — |
 | Reading a paper | the PDF itself, its text extracted and quoted at the page; a summary is not a reading | any host that can fetch it | — |
@@ -94,37 +98,34 @@ No worker and no host is set aside for a specialism (METHOD §1). The hosts diff
 | The record and coordination | `CHAT-LEDGER.md`, flags, `tools/ledger_check.py` (METHOD §8, §9) | anyone | — |
 | Long reads, reviews, rotation, closing summaries | no tool; any worker | anyone | — |
 
-### Memory caps (the owner, 4 November 2026)
+### Limits
 
-- **Intel, Lean builds:** a process-tree memory cap of 8 GiB and a stop when swap has grown by 4 GiB since launch. In
-  placego: `run_capped.py --track-tree --rss-mib 8192 --swap-growth-mib 4096`.
-- **M5:** memory caps of at least 4 GiB, 8 GiB for Lean and notebook builds, and the same 4 GiB swap stop. The
-  free-memory floor stays at 1 GiB: it is a floor, and raising it would stop runs sooner.
+- **The M5 is the owner's working laptop,** and its 16 GiB is shared with everything else on it. The owner's caps of
+  4 November 2026: a run may use at least 4 GiB, and up to 8 GiB for Lean and notebook builds; stop a run that pushes
+  the machine into swap.
+- **The Intel, Lean builds:** up to 8 GiB (the owner, 4 November 2026).
 - **Kit modules** should build in about a minute and under 4 GB (METHOD §10).
-- **Cloud:** 4 CPUs and 15 GiB in all. State the wall time and memory in the post; checkpoint anything over a few
-  minutes (METHOD §10).
+- **Cloud:** 4 CPUs and 15 GiB in all; checkpoint anything over a few minutes (METHOD §10).
+- **Use the limits the tool itself has**: a solver's time limit, the shell's `timeout`. State them in the post.
 
-### CPU threads or the GPU on the Intel (measured in placego, GC2383, under macOS)
+### CPU threads or the GPU
 
-| Task shape | Default | Change when |
-|---|---|---|
-| Tiny exact checks, short serial recurrences, small graph sweeps | one optimised CPU thread | enough independent cases exist to repay the scheduling |
-| Many independent packed bitwise trajectories | CPU batches; try 2, then 4 threads | the measured wall time repays the extra CPU |
-| Large regular batches with many ticks | a GPU candidate, with a CPU oracle | a bounded pilot on the real workload shows an end-to-end gain. None was established |
-| SAT and certificate checking | the CPU solver and checker | a supported parallel portfolio passes its controls |
-| A large prefix census | batch and bit-pack first | the layout and the witnesses pass a small case; more threads do not fix an oversized array |
-
-At 4,096 trajectories the GPU's 0.021 ms command became 0.694 ms end to end, and CPU threads won. Transfer, queueing
-and setup belong in the comparison. Never let floating-point output stand for an exact threshold or a certificate.
-The full study is placego's `archived/reports/GPT-METAL-SCOPE-20261102.md`.
+Measured in placego on the Intel under macOS (GC2383), so a lesson and not a measurement of today's hosts: at small
+sizes CPU threads beat the GPU, because transfer, queueing and setup belong in the comparison. Try the GPU only after
+a CPU oracle agrees and a bounded pilot on the real workload shows an end-to-end gain. Never let floating-point output
+stand for an exact threshold or a certificate.
 
 ## 5. Gaps: proposed, waiting for the owner or for the host's worker
 
 1. **The M5 column awaits its worker’s confirmation.** Asked in K30. The Intel inventory has been checked on Windows.
-2. **The capped runner and the install check did not come across.** `run_capped.py` and `toolchain_smoke.py` are in
-   placego, under `archived/tests/probes/`. The runner reads macOS memory figures, so it serves the M5 as it is; the
-   Intel under Windows and the cloud host would each need a port. Proposed: bring both into `tools/`, on the
-   owner's word, by claudeM5.
+2. **Left out, by the owner's decision (20 November 2026, K32):** placego's `run_capped.py` and
+   `toolchain_smoke.py`.
+   - *What the first did:* ran one command under enforced limits on time, memory and disk, stopped it cleanly when
+     one was passed, and left a receipt. A safety harness for the M5, written for macOS; it computes nothing.
+   - *What the second did:* a known-answer test of every tool on one host's list, printing PASS. It assumes the
+     full M5 list and fails on any host that lacks one tool.
+   - Nothing in this repository has used either. They stay in placego's archive, under `archived/tests/probes/`.
+     If a runaway job ever troubles the M5, bring the first back then.
 3. **Cloud: installs did not last; now they should.** The environment had no setup script, so python-sat and z3,
    installed in this session at the owner's word, would have gone with the container. On 20 November the owner
    approved a setup script (K30, K31): it installs python-sat, z3-solver, sympy, gmpy2 and mpmath and clones the kit
@@ -146,6 +147,6 @@ The full study is placego's `archived/reports/GPT-METAL-SCOPE-20261102.md`.
 - **Use it for:** guessing laws from data, exact symbolic algebra, exploration and pictures, and LeanLink builds.
 - **Not for:** certified UNSAT (Wolfram's SAT functions give no certificate, as far as we know), large censuses (C
   and the GPU are much faster), or anything another worker must replay without a translation.
-- **Operations.** The MCP kernel is for small evaluations only. Heavy builds run as `WolframKernel -script` under the
-  capped runner. After a fault, ask the owner to restart Wolfram before debugging. Never print licence, machine or
+- **Operations.** The MCP kernel is for small evaluations only. Heavy builds run as `WolframKernel -script`. After a
+  fault, ask the owner to restart Wolfram before debugging. Never print licence, machine or
   account identifiers (METHOD §13).
