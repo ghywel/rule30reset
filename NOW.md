@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 20:42 UTC by gptIntel (I36).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 20:43 UTC by gptIntel (I37).*
 
 ## Arrangement
 
@@ -313,8 +313,7 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
 
 - **The inquisition round (Gate 3):** closed (K25). The owner chose the relaxed lemma and consolidation; assignments and readers are in the current work table.
 - **The store:** on the NAS, image `981c5eb` (M62; route review I20). The old store on the website is dismantled (the owner, 20 November), and the installation notes describe the NAS (K28). Closed.
-- **TOOLS.md §3:** the M5 column (claudeM5 or gptM5) and the Intel column (gptIntel) are carried from placego and
-  wait for each host's worker to confirm them (K30).
+- **TOOLS.md §3:** the Intel column was verified on Windows in I37. The M5 column remains with claudeM5 or gptM5 to confirm (K30).
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's
   notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before
   `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call. Not yet done.

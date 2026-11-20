@@ -48,28 +48,29 @@ No worker and no host is set aside for a specialism (METHOD §1). The hosts diff
   control.
 - **M5 column:** carried from placego's page, checked there by Local on 1 November 2026 (L1275–L1277). **To confirm**
   by claudeM5 or gptM5.
-- **Intel column:** carried from placego's page, checked there under macOS (GC2343, GC2376–GC2383). gptIntel now
-  runs under Windows (I1), so **every cell is to confirm**; NOW.md reports Lean 4.35.0, GCC and Z3.
+- **Intel column:** checked on Windows by gptIntel on 20 November 2026 (K30). The standalone Lean distribution,
+  w64devkit and Python review environment live under `%LOCALAPPDATA%/Rule30/toolchains`. The Codex desktop
+  runtime supplies additional Python and browser tools.
 
 | Tool | M5 (claudeM5, gptM5) | Intel (gptIntel) | Cloud (claudeCloud) |
 |---|---|---|---|
-| Python 3 | 3.15.2: numpy 2.5.4, scipy 1.18.1, sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0, python-sat 1.9.dev17, z3-solver 5.3.3.0, cvc5 1.4.2 | under macOS: 3.14.7 with the same modules | **3.13.18**: numpy 2.5.3, python-sat 1.9.dev23, z3-solver 5.4.1.0, sympy 1.14.0, gmpy2 2.3.2, mpmath 1.3.0, pypdf, pdfminer. **Absent:** scipy, networkx, cvc5 |
-| C | Apple clang; GMP | under macOS: Apple clang 17, GMP 6.3.0. Now: GCC (NOW.md) | gcc 13.3.0, clang 18.1.3; **no GMP headers** |
-| GPU compute | Metal on the M5 GPU | under macOS: Metal and Vulkan on the RX 6600, 16 small trials matching CPU oracles (GC2381–GC2383) | none |
-| SAT solvers | Kissat and CaDiCaL (command line); python-sat in Python | under macOS: Kissat 4.0.4, CaDiCaL 3.0.1, Gimsatul; python-sat | python-sat only: CaDiCaL 1.9.5 and 1.5.3, Glucose 4, MiniSat 2.2, Lingeling and MapleChrono each pass an UNSAT and a SAT control. **No Kissat or CaDiCaL command line** |
-| Proof-certificate checkers | `cake_lpr` (verified LRAT checker), `drat-trim`; the CaDiCaL LRAT to `cake_lpr` pipeline passed its controls | under macOS: `cake_lpr`, `drat-trim`, `lrat-check`, compiled from pinned sources | **none** |
-| Lean 4 | `elan` with 4.35.0, the kit's version | 4.35.0 (NOW.md; independent builds in I29) | **none**: Lean sources may be prepared here and are built on the M5 or the Intel |
-| Wolfram | Wolfram Engine, `wolframscript`, LeanLink, the Wolfram MCP | **none, by the owner's decision** | none |
-| SMT | z3 5.3.3 (command line and Python); cvc5 1.4.2 (Python) | under macOS: the same. Now: Z3 (NOW.md) | z3 5.4.1, command line and Python: gives the inverse of 3 modulo 2^16 as 43691. No cvc5 |
-| PARI/GP | 2.19.0, `gp` on the path | under macOS: 2.19.0 | none |
-| Sage | not installed | not installed | none |
-| `gh` | signed in | under macOS: 2.102.0, signed in | 2.89.0, but this session reaches GitHub only through its own tools and one repository's scope |
-| Our search and checks | `tools/find_known.py`, `tools/ledger_check.py`, `kit/check.py` | the same | the same; the portal's list and the kit's pull requests are read from the M5 or the Intel |
-| The store client | `tools/store/store.py` | the same | the same |
-| Capped runner | placego's `run_capped.py`, not yet in this repository (§5) | under macOS: yes | none: the runner reads macOS memory figures |
-| Docker | to confirm | to confirm | 29.10.0; builds and tests the store's container |
-| Headless browser | to confirm | to confirm | Chromium with Playwright, for checking pages before they are published |
-| PDF text | to confirm | to confirm | `pdftotext`; pypdf |
+| Python 3 | 3.15.2: numpy 2.5.4, scipy 1.18.1, sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0, python-sat 1.9.dev17, z3-solver 5.3.3.0, cvc5 1.4.2 | Default `py -3` 3.15.2. `review-py` uses 3.13.17 with networkx 3.7, python-sat 1.9.dev24 and z3-solver 5.4.1.0. Codex Python 3.12.14 supplies numpy 2.3.5. No scipy, sympy, gmpy2, mpmath or cvc5 in these environments | **3.13.18**: numpy 2.5.3, python-sat 1.9.dev23, z3-solver 5.4.1.0, sympy 1.14.0, gmpy2 2.3.2, mpmath 1.3.0, pypdf, pdfminer. **Absent:** scipy, networkx, cvc5 |
+| C | Apple clang; GMP | w64devkit GCC 16.2.0 compiled and ran a C control. Lean bundles clang 23.1.0. No GMP development headers found | gcc 13.3.0, clang 18.1.3; **no GMP headers** |
+| GPU compute | Metal on the M5 GPU | RX 6600, AMD OpenCL 2.1. An integer kernel matched all 256 CPU Rule 30 updates. Vulkan enumerates the RX 6600 with API 1.4.315 | none |
+| SAT solvers | Kissat and CaDiCaL (command line); python-sat in Python | CaDiCaL 2.1.2 CLI in Lean’s bin directory. It and PySAT’s CaDiCaL 1.5.3/1.9.5/3.0, Glucose 4, MiniSat 2.2, Lingeling and MapleChrono passed SAT/UNSAT controls. PySAT Kissat 4.0.4 crashed in the control; no standalone Kissat or Gimsatul found | python-sat only: CaDiCaL 1.9.5 and 1.5.3, Glucose 4, MiniSat 2.2, Lingeling and MapleChrono each pass an UNSAT and a SAT control. **No Kissat or CaDiCaL command line** |
+| Proof-certificate checkers | `cake_lpr` (verified LRAT checker), `drat-trim`; the CaDiCaL LRAT to `cake_lpr` pipeline passed its controls | No standalone `cake_lpr`, `drat-trim` or `lrat-check` found. Use the M5 for the specified checked-LRAT pipeline | **none** |
+| Lean 4 | `elan` with 4.35.0, the kit's version | Standalone Lean 4.35.0 (x86_64-w64-windows-gnu) and Lake; independent kernel replays in I29 and I34 | **none**: Lean sources may be prepared here and are built on the M5 or the Intel |
+| Wolfram | Wolfram Engine, `wolframscript`, LeanLink, the Wolfram MCP | None, by the owner's decision (§6) | none |
+| SMT | z3 5.3.3 (command line and Python); cvc5 1.4.2 (Python) | Z3 5.4.1 CLI (`review-py/bin/z3.exe`) and Python (`review-py/Scripts/python.exe`); both give 43691 as the inverse of 3 modulo 2¹⁶. No cvc5 found | z3 5.4.1, command line and Python: gives the inverse of 3 modulo 2^16 as 43691. No cvc5 |
+| PARI/GP | 2.19.0, `gp` on the path | No Windows `gp.exe` found | none |
+| Sage | not installed | None found. WSL is not installed | none |
+| `gh` | signed in | No `gh.exe` found. Git pushes to origin are authenticated separately | 2.89.0, but this session reaches GitHub only through its own tools and one repository's scope |
+| Our search and checks | `tools/find_known.py`, `tools/ledger_check.py`, `kit/check.py` | `tools/find_known.py`, `tools/ledger_check.py` and `kit/check.py` run with `py -3` | the same; the portal's list and the kit's pull requests are read from the M5 or the Intel |
+| The store client | `tools/store/store.py` | `tools/store/store.py`; authenticated NAS listing checked | the same |
+| Capped runner | placego's `run_capped.py`, not yet in this repository (§5) | No Windows port of placego’s `run_capped.py` found | none: the runner reads macOS memory figures |
+| Docker | to confirm | No Docker CLI or Desktop found | 29.10.0; builds and tests the store's container |
+| Headless browser | to confirm | Microsoft Edge 157.0.4341.60; headless DOM and Playwright 1.62.1 (bundled Node) controls passed | Chromium with Playwright, for checking pages before they are published |
+| PDF text | to confirm | Codex Python: pypdf 6.21.4 extracted a known PDF text, pdfminer.six 20251230 imports. No `pdftotext.exe` found | `pdftotext`; pypdf |
 
 ## 4. Task to tool
 
@@ -119,8 +120,7 @@ The full study is placego's `archived/reports/GPT-METAL-SCOPE-20261102.md`.
 
 ## 5. Gaps: proposed, waiting for the owner or for the host's worker
 
-1. **Each host's column needs its worker's confirmation.** claudeM5 or gptM5 for the M5; gptIntel for the Intel,
-   whose column was taken under another system. Asked in K30.
+1. **The M5 column awaits its worker’s confirmation.** Asked in K30. The Intel inventory has been checked on Windows.
 2. **The capped runner and the install check did not come across.** `run_capped.py` and `toolchain_smoke.py` are in
    placego, under `archived/tests/probes/`. The runner reads macOS memory figures, so it serves the M5 as it is; the
    Intel under Windows and the cloud host would each need a port. Proposed: bring both into `tools/`, on the
