@@ -1,13 +1,13 @@
-<!-- kit-commit: d01ab27 2026-11-21 -->
+<!-- kit-commit: e7806c6 2026-11-21 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `d01ab27` (main, 2026-11-21),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `e7806c6` (main, 2026-11-21),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 278 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 279 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 383 entries on 20 November
 (380 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
@@ -177,7 +177,10 @@ The target holds at k = age = 0 and persists as age increases. Positive multiple
   the j-th black centre time is at most 20·(8/5)^j − 20, so the first N cells hold about log_(8/5)(N/20) black ones or
   more (`Rule30BlackTimeGrowth`).
 - **Jen.** No two columns are both eventually periodic, with masked and finite-configuration forms (`Rule30Jen`,
-  `Rule30MaskedJen`, `Rule30FiniteConfigs`, `Rule30FiniteMaskedJen`).
+  `Rule30MaskedJen`, `Rule30FiniteConfigs`, `Rule30FiniteMaskedJen`). On a periodic singleton centre tail with
+  isolated white ticks, the stream of selected unpaired spatial 10 sources is aperiodic. If each white is followed
+  by two black ticks, the net parity of the three source arrivals and the XOR of columns −2 and +2 are each
+  aperiodic (`Rule30SourceArrivals`).
 - **Algebra.** The centre after t ≥ 2 steps has degree exactly 2t − 1 over GF(2) (`equivalents/AlgebraicDegree`).
 
 In `Rule30TwoBlockCounts`, a black centre with a white left neighbour takes the value of the cell two places left two ticks later. This gives exact spatial counts for the temporal triples 110 and 111.
