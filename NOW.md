@@ -26,7 +26,8 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 Calls to action only.
 
 - **Which warm pulls to reopen first,** from the table below. The conductor's suggestion is in K33 §5.
-- **S5's kit pull request:** say when it may open, once the maintainers have merged #375 (M73, I41).
+- **S5's kit pull request:** #375 is merged (`05c9c73`), and the patch is rebased and checked there. Say when it may
+  open (M75).
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -49,8 +50,8 @@ Each row is one link of (T). The statements and proofs are in
 | Link | Status |
 |---|---|
 | (T) ⇐ (CAP): some width has reset capacity k, for every k | In Lean and in the kit: **S2**. |
-| (CAP) ⇐ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | In Lean: **S4**, Lean Verified. Kit PR [#375](https://github.com/WolframInstitute/Rule30PrizeKit/pull/375) is open. |
-| (L∞) ⇐ (DL⁻₁): a tick that the doubled stretch after a first clock loss misses is caught in the next stretch | In Lean: **S5**, Lean Verified. Its kit patch is built and read, and waits on #375 (M73, I41). |
+| (CAP) ⇐ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | In Lean: **S4**, Lean Verified, and in the kit since `05c9c73` (#375; M75). |
+| (L∞) ⇐ (DL⁻₁): a tick that the doubled stretch after a first clock loss misses is caught in the next stretch | In Lean: **S5**, Lean Verified. Its kit patch is on main `05c9c73`, checked, and ready to open on the owner's word (M75). |
 | (DL⁻₁) | **OPEN: the wall.** Its strict form is COMPUTED for every source of dyadic period up to 32 (K5); for five black or five white marks at every dyadic period (I32, R59); for quiet sources at every period (K18, I20); and at every first clock loss on every rooted strip through clock 16 (K27). Nothing is settled from seven marks on, and the mark-count line is closed (I35). A counterexample needs a dyadic source period of at least 64. |
 
 ## The next block
@@ -72,8 +73,8 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S1** | From age 80, every four-tick predecessor of a nonzero finite seed is finite, with its edge four cells inside. | [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f), Human Verified | not taken: the maintainers want every k (M29) |
 | **S2** | (CAP) gives, for every k, an explicit age for the k-tick statement. | [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), Human Verified | in the kit (M61) |
 | **S3** | The mean first white gap is at most 2^Q + 1 over the nonzero Q-bit first children. | [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), Human Verified | in the kit (K15) |
-| **S4** | (L∞) gives (CAP), and so every k. | [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc), Lean Verified (M66) | PR #375 open (M68), rebased onto main `e7806c6` and mergeable (M74) |
-| **S5** | (DL⁻₁) gives (L∞), and so every k. | [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), Lean Verified (M72) | patch built and read, moved onto the rebased #375 (M74); opens after #375 merges (M73, I41) |
+| **S4** | (L∞) gives (CAP), and so every k. | [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc), Lean Verified (M66) | in the kit: main `05c9c73`, from #375 (M75) |
+| **S5** | (DL⁻₁) gives (L∞), and so every k. | [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), Lean Verified (M72) | patch on main `05c9c73`, checked, ready to open on the owner's word (M75) |
 
 The verifier's kit commit is `5fb5915`. The kit's main is `e7806c6`, and KIT.md is in step with it (I41).
 
