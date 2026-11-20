@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:10 UTC by gptIntel (I28).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:11 UTC by gptIntel (I29).*
 
 ## Arrangement
 
@@ -49,7 +49,7 @@ header ("State of the work at rotation 3").
 |---|---|
 | (T) ⇐ (CAP): for every k some width has reset capacity K1(w) ≥ k on every phase of every edge cycle | **PROVED IN LEAN** (R47, R48; carried in I11, I12). S2: posted, Human Verified, and in the kit (M61). The cascade credits Lowry, PR #60 (P6). |
 | (CAP) for k ≤ 7,911, with f(k) ≤ 265,441 | COMPUTED, outside Lean (M40, R37) |
-| (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **L∞ ⇒ CAP proved in Lean (R56), with gptIntel for review. The converse is a hand argument.** |
+| (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **L∞ ⇒ CAP proved in Lean (R56), independently carried in I29. The converse is a hand argument.** |
 | (L∞) in one fixed phase of every three | In Lean (I10, carried in R49). Not enough: the schedule reads k consecutive phases. |
 | (L∞) ⇐ (DL⁻): the doubling lemma at the first clock losses of pointed recurrent strips | Hand proof, Theorem C of the chain (carried in K9, I11). **Not in Lean.** |
 | (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROVED on exhaustive finite checks, K18 and I20); I25 covers all primitive three-mark sources at any period and five of either colour at periods 64 and 128. Any counterexample at those two clocks needs at least seven of each colour. The general busy case is open. |
@@ -65,8 +65,8 @@ by counting marks. Its curiosities and misgivings are listed there.
 | Who | What | Reader | State |
 |---|---|---|---|
 | claudeM5 | The weakest statement about doubled stretches from which Theorem C still gives (L∞), written into [every-k-chain.md](research/m29/every-k-chain.md) with its proof sketch. Say plainly if none weaker than (DL⁻) works. | gptM5 | Asked (K25). |
-| gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions ([busy-sources.md](research/m29/gate3/busy-sources.md), owed from K19), and the read of claudeM5's statement. | gptIntel | Compactness proof complete (R56), with gptIntel for review. I25 carrying read passed (R57). Awaiting claudeM5’s proposed relaxed statement. |
-| gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Search filed as P11–P13 (I28), with claudeCloud for review. Reading R56. |
+| gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions ([busy-sources.md](research/m29/gate3/busy-sources.md), owed from K19), and the read of claudeM5's statement. | gptIntel | Compactness carried (R56, I29). I25 carrying read passed (R57). Awaiting claudeM5’s proposed relaxed statement. |
+| gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Search filed as P11–P13 (I28), with claudeCloud for review. R56 carried in I29. The five-mark test from K25 §5 is under way. |
 | claudeCloud | Conducts. Reads the search. Designs the census under claudeM5's statement once it is carried. | — | Waits on the two above. |
 
 ## Submissions
@@ -84,6 +84,8 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, I29.** R56 compactness proof carried on kit 3f32e1a, including kernel replay of the composition from (L∞) to the physical every-k statement. R57 carries the all-period three-mark results. K25’s next five-mark case starts.
 
 - **20 Nov, I28.** The [prior-art search, P11–P13](PRIOR-ART.md#p11--2026-11-20--unique-predecessors-on-a-recurrent-set-and-in-the-whole-odd-half-line) found earlier theorems on unbounded left-edge clocks, full-shift generic preimages, and the ring marker. None of the sources reviewed proves unique arbitrary parents for every recurrent odd left-edge row. Sent to claudeCloud for review.
 
