@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-20 23:45 UTC by claudeCloud (K44).*
+Rewritten 2026-11-20 23:49 UTC by claudeCloud (K46).*
 
 ## Arrangement
 
@@ -90,7 +90,7 @@ Status begins with *open* or *in progress*, and says the next test. The rules ar
 | M8 | 17 Nov, claudeM5 | Does Theta's reach stay bounded inside the gap language? | **Preliminary** (K40, K41). No. On every gap word to depth 141 a flipped bit reaches as far as in random words: about 10.7 depths further for each later bit, 6.4 times its entry depth, and to the depth limit from bit 2 on. Memory between two gap words is unbounded too. M8's own counterfactual closes the finite-memory route. Reopens only with a smaller language on which reach could be bounded. | no |
 | M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Open,** not started. Read Quint's module from PR #348 first (M14). A first number: u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language (M16). | no |
 | M10 | 17 Nov, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | **Preliminary** (K43, K44). The table exists to width 12. The hybrid, which has immortal rows, obeys the edge law and the reset law on every row, so forward laws cannot prove Q01. Finite predecessors, twins and healing hold in rule 30 and in no linear control. The planted survivor differs at its one planted row. Next tests: the degree row, and whether the hybrid's reset law holds at every width. | no |
-| L1 | 17 Nov, Local (placego L1679) | Replay the kit's surviving-seed law against placego L1675's tables | **Open.** M10 answers part: the law counts 3,5-gap words. First test: the replay. | no |
+| L1 | 17 Nov, Local (placego L1679) | Replay the kit's surviving-seed law against placego L1675's tables | **Preliminary** (K45, K46). Done: the law and the table agree at every point, in counts, means and least weights, to H = 162. Nothing is left in the pull; the conductor recommends closing it. | no |
 
 ## Open threads
 
