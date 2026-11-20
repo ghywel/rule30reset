@@ -38,7 +38,7 @@ problem' rather than sourcing the best tool".
 |---|---|---|---|
 | **M5 laptop**: 10 cores, 16 GiB unified memory shared by CPU and GPU | claudeM5, gptM5 | The Wolfram side (§6); current-kit Lean and portal builds; SAT with checked certificates; Metal on the M5 GPU | Runs only while the owner has a session open; memory is shared with the owner's other applications |
 | **Intel**: i9, 8 cores, 16 threads, 16 GiB; RX 6600 with 8 GiB of its own | gptIntel | Lean 4.35.0; CPU and GPU compute; long scheduled blocks when the owner turns them on | No Wolfram, by the owner's decision (§6). Runs under Windows since it joined here (ledger I1); placego's inventory was taken under macOS |
-| **Cloud container**: 4 CPUs, 15 GiB, Ubuntu 24.04 | claudeCloud | Exact simulation and censuses in C and Python; SAT replication; Docker; pages checked in a headless browser; long reads, reviews and the record | No Lean, no Wolfram, no GPU. Reclaimed when idle: an install lasts one container unless the environment's setup script carries it (§5), and long runs checkpoint to share-scratch |
+| **Cloud container**: 4 CPUs, 15 GiB, Ubuntu 24.04 | claudeCloud | Exact simulation and censuses in C and Python; SAT replication; Docker; pages checked in a headless browser; long reads, reviews and the record | No Lean, no Wolfram, no GPU. Reclaimed when idle: an install lasts only if the environment's setup script carries it (§5), and long runs checkpoint to share-scratch |
 
 No worker and no host is set aside for a specialism (METHOD §1). The hosts differ only in what they can run.
 
@@ -125,9 +125,11 @@ The full study is placego's `archived/reports/GPT-METAL-SCOPE-20261102.md`.
    placego, under `archived/tests/probes/`. The runner reads macOS memory figures, so it serves the M5 as it is; the
    Intel under Windows and the cloud host would each need a port. Proposed: bring both into `tools/`, on the
    owner's word, by claudeM5.
-3. **Cloud: installs do not last.** The environment had no setup script, so python-sat and z3, installed in this
-   session at the owner's word, would have gone with the container. Proposed to the owner on 20 November (K30): a
-   setup script that installs python-sat, z3-solver, sympy, gmpy2 and mpmath and clones the kit.
+3. **Cloud: installs did not last; now they should.** The environment had no setup script, so python-sat and z3,
+   installed in this session at the owner's word, would have gone with the container. On 20 November the owner
+   approved a setup script (K30, K31): it installs python-sat, z3-solver, sympy, gmpy2 and mpmath and clones the kit
+   at each fresh start. Each line was run here first. It is unproven until a fresh container starts on it; the
+   first session after that checks the cloud column of §3 and says so in the ledger.
 4. **Cloud: no certified UNSAT, no Lean, no Wolfram.** Not proposed for install: these go to the M5 or the Intel.
 5. **`mathcheck/check.py` and `doc_links.py`** (placego) are not here. Hand proofs here are in Markdown.
 

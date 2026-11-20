@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 20:29 UTC by claudeCloud (K30).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 20:33 UTC by claudeCloud (K31).*
 
 ## Arrangement
 
@@ -24,11 +24,13 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **Nothing in the research waits on the owner.** S4 has the owner's word in advance (20 November, K28): claudeM5
-  posts it when the packet has had its read and both workers agree on the same digests.
-- **Tools (K30).** [TOOLS.md](TOOLS.md) is brought across from placego. Two things for the owner when convenient: the
-  setup script proposed for the cloud environment, so that its installed tools last; and whether `run_capped.py` and
-  `toolchain_smoke.py` should come across from placego's archive into `tools/`.
+- **S4 has the owner's word in advance** (20 November, K28): claudeM5 posts it when the packet has had its read and
+  both workers agree on the same digests. It is in revision (I33).
+- **S5, the owner's word.** R60's Lean result, the every-k statement from the relaxed doubling lemma (carried in I34),
+  is proposed as S5, after S4 (K31 §3). Only S4 has the owner's word.
+- **Tools (K30, K31).** [TOOLS.md](TOOLS.md) is brought across from placego, and the cloud host's setup script is
+  approved. One question left: whether `run_capped.py` and `toolchain_smoke.py` should come across from placego's
+  archive into `tools/`.
 - **Settled since K15 (M61):** S2 and S3 are both in the kit, and both Human Verified.
 - **Standing:** the dynamic-DNS name must be confirmed every 30 days, or every worker loses the store (K10).
 
@@ -85,6 +87,7 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | **S2** (M29) | Conditional on reset capacity (CAP), for every k an explicit age from which every k-tick predecessor is finite with its edge exactly k cells inside, and every wall history occurs (`conditional_every_k`, `capacity_at_settling_age`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC (M51). The kit carries it as `Rule30EveryKInverse`, `Rule30EveryKCascade` and `Rule30EveryKStatement` (kit `fd00829`, from PR #368; M61). Quint's #370 builds on it. |
 | **S3** (K2, I2) | The mean first white gap is at most 2^Q + 1 over the nonzero labelled Q-bit first children, for every Q > 0 (`pooled_first_return_bound`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC (M48). Kit PR #366 merged: the kit's main `8451547` (K15). |
 | **S4** (R56) | The every-k statement follows from reset words at arbitrarily large depths in every prescribed phase of every pointed recurrent strip: `cap_of_unbounded_resets : LInfinity → CAP`, composed with S2 (kernel-checked, I29). | **Revisions requested on v3 (I33).** `S4/v3`, manifest `6463dafd…`; the kit's checker passes at the verifier's `5fb5915` (637 declarations). **The owner's word is given in advance (K28): claudeM5 posts it when read and agreed.** Packet: claudeM5; reader: gptIntel. Lean carried in I29. |
+| **S5** (R60) | The every-k statement follows from the relaxed doubling lemma (DL⁻₁): a tick missed in a doubled stretch is caught in the next (`lInfinity_of_dlMinusOne`, `everyK_of_dlMinusOne`). | **Proposed (K31).** Lean carried in I34. Packet after S4 is posted: claudeM5; reader: gptIntel. **Needs the owner's word.** |
 
 Verifier's kit commit: `5fb5915` (5 November). The kit's main is `c352a6b`; KIT.md is in step (R60).
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
@@ -100,6 +103,9 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 - **20 Nov, M63. S4's packet is ready for its read; K27 passes.** One Lean file carries the kit's three every-k
   modules and our four. The kit's own checker passes it at the verifier's commit: 637 declarations, the standard
   axioms only. The novelty check finds no implication into CAP. The essay's notebook builds clean. [M63](CHAT-LEDGER.md)
+
+- **20 Nov, K31. The chain is machine-checked from (DL⁻₁) (R60, carried in I34); the mark-count line is closed (I35);
+  S4 is in revision (I33); S5 is proposed.** The cloud host's setup script is approved. [K31](CHAT-LEDGER.md)
 
 - **20 Nov, K30. TOOLS.md is in this repository** (the owner's request): the tool for each kind of task, which host has
   it, and the rule against going around a missing one. METHOD §2 and §10 point to it. The cloud column is checked;
