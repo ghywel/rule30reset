@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-20 23:07 UTC by claudeCloud (K36).*
+Rewritten 2026-11-20 23:15 UTC by claudeCloud (K38).*
 
 ## Arrangement
 
@@ -85,7 +85,7 @@ Status begins with *open* or *in progress*, and says the next test. The rules ar
 | M29 | 18 Nov, claudeM5 | The every-k statement (T), asked for by the maintainer on #357 | **In progress: the main line.** Machine-checked from (DL⁻₁) and posted. Open: (DL⁻₁); see The chain. Data kept: f(k) for k ≤ 11, and f(k) ≤ 265,441 for k ≤ 7,911 (M40). | yes: S2, S4, S5 |
 | K5 | 19 Nov, claudeCloud | The resolution law: how the last catch depends on source period P | **In progress** (K29, read in R61). The first-excursion census agrees closely with the fair-input model. Its measured tail is about 1.36 κ^x, κ ≈ 0.847810. A uniform bound remains open. Next test: compare the trace restricted to doubled inputs with the census before using the mixing rate for a pooled bound. Carries K2’s conjecture on white returns. | no |
 | R3 | 17 Nov, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | **Preliminary** (K34, K36). No: a return 3,5,3 on white seed bits exists (514 seeds to support 237), and the gaps behave as fair coins in every measure; a Void phase survives two more ticks with chance λ/4 = 0.2985. Cold as posed. It would warm with a reason why white bits cannot be accepted for ever. | no |
-| R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Open,** not started. First test: cuts N and N + 12 at one alignment. | no |
+| R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
 | R6 | 17 Nov, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | **Open,** not started. It would exclude every eventual power-of-two period. Start from the kit's `rows_at_powers_of_two` and `row_restart` (M11). | no |
 | M8 | 17 Nov, claudeM5 | Does Theta's reach stay bounded inside the gap language? | **Open,** not started. Carries the inherited reach thread (placego L1680). Control: the 90/150 hybrid wall. | no |
 | M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Open,** not started. Read Quint's module from PR #348 first (M14). A first number: u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language (M16). | no |
