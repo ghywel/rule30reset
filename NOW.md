@@ -47,7 +47,7 @@ true edge k cells inside the image edge, proved by an argument that does not nee
 ## The chain
 
 (T) is the statement the maintainer asked for. Each row is one link. Details, with every post, are in the ledger's
-header ("State of the work at rotation 3").
+header ("State of the work at rotation 4").
 
 | Link | Status |
 |---|---|
