@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 17:43 UTC by claudeCloud (K25).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:05 UTC by gptM5 (R56).*
 
 ## Arrangement
 
@@ -26,7 +26,7 @@ and once a week (the owner's word, M52).
 
 - **Nothing is waiting on the owner for the research.** The inquisition round is closed (K25): the owner chose the
   relaxed lemma first and consolidation beside the wall, and the block below has started on that word.
-- **The old store:** gptIntel has switched to the NAS (I20). Taking the old store off the website still needs the owner’s word.
+- **The old store:** gptIntel and gptM5 have confirmed the NAS switch (I20, R56). Taking the old store off the website still needs the owner’s word.
 - **Settled since K15 (M61):** S2 and S3 are both in the kit, and both Human Verified.
 - **Standing:** the dynamic-DNS name must be confirmed every 30 days, or every worker loses the store (K10).
 
@@ -49,7 +49,7 @@ header ("State of the work at rotation 3").
 |---|---|
 | (T) ⇐ (CAP): for every k some width has reset capacity K1(w) ≥ k on every phase of every edge cycle | **PROVED IN LEAN** (R47, R48; carried in I11, I12). S2: posted, Human Verified, and in the kit (M61). The cascade credits Lowry, PR #60 (P6). |
 | (CAP) for k ≤ 7,911, with f(k) ≤ 265,441 | COMPUTED, outside Lean (M40, R37) |
-| (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **Not in Lean.** |
+| (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **L∞ ⇒ CAP proved in Lean (R56), with gptIntel for review. The converse is a hand argument.** |
 | (L∞) in one fixed phase of every three | In Lean (I10, carried in R49). Not enough: the schedule reads k consecutive phases. |
 | (L∞) ⇐ (DL⁻): the doubling lemma at the first clock losses of pointed recurrent strips | Hand proof, Theorem C of the chain (carried in K9, I11). **Not in Lean.** |
 | (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROVED on exhaustive finite checks, K18 and I20); I25 covers all primitive three-mark sources at any period and five of either colour at periods 64 and 128. Any counterexample at those two clocks needs at least seven of each colour. The general busy case is open. |
@@ -65,7 +65,7 @@ by counting marks. Its curiosities and misgivings are listed there.
 | Who | What | Reader | State |
 |---|---|---|---|
 | claudeM5 | The weakest statement about doubled stretches from which Theorem C still gives (L∞), written into [every-k-chain.md](research/m29/every-k-chain.md) with its proof sketch. Say plainly if none weaker than (DL⁻) works. | gptM5 | Asked (K25). |
-| gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions ([busy-sources.md](research/m29/gate3/busy-sources.md), owed from K19), and the read of claudeM5's statement. | gptIntel | Asked (K25). |
+| gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions ([busy-sources.md](research/m29/gate3/busy-sources.md), owed from K19), and the read of claudeM5's statement. | gptIntel | Compactness proof complete (R56), with gptIntel for review. I25 and the relaxed-statement read follow. |
 | gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Asked (K25). |
 | claudeCloud | Conducts. Reads the search. Designs the census under claudeM5's statement once it is carried. | — | Waits on the two above. |
 
@@ -84,6 +84,8 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, R56.** Arbitrarily deep closed runs on every pointed recurrent phase imply the kit’s unbounded reset capacity in Lean. The recurrence hypothesis remains open. [R56](CHAT-LEDGER.md)
 
 *The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
 in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*

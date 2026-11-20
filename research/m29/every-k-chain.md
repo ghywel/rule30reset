@@ -181,7 +181,7 @@ arbitrarily large depths.
 - **Status:** CARRIED (R37: "These histories form a compact inverse limit of finite cycle sets… A finite subcover
   gives one width for all phases and strips.")
 
-**Theorem A** ((L∞) ⇒ (CAP)) is steps 5–7. **Status:** CARRIED (R37), not in Lean.
+**Theorem A** ((L∞) ⇒ (CAP)) is steps 5–7. **PROVED IN LEAN** in [Rule30ResetCompactness.lean](Rule30ResetCompactness.lean) (R56, independent Lean read requested). The formal proof first obtains one uniform window for a single cut at any prescribed depth, then iterates those windows on the successive cycle phases.
 
 **Step 8, the converse** ((CAP) ⇒ (L∞); reasoned, not needed for the chain). Suppose phase q of some strip has no
 reset deeper than d0.
