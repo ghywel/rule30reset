@@ -14,6 +14,10 @@ bit j for wheel j.
   python3 claudeCloud_constant_wheels.py turn T WHEEL...    for each wheel, run to tick T: its last tick of the other
                                                             colour, and what it did before
   python3 claudeCloud_constant_wheels.py early WHEEL TICKS  the wheel's first TICKS ticks as text
+  python3 claudeCloud_constant_wheels.py front J T [STEP]   for every wheel up to J, the tick from which it repeats
+                                                            for good (run to tick T, repeat tested at 32 ticks):
+                                                            the front between the orderly side and the rest.
+                                                            Prints every STEP-th wheel and the white wheels.
   python3 claudeCloud_constant_wheels.py check T            the wheel coordinates against rule 30 run in the ordinary
                                                             way, cell by cell, for T ticks
 """
@@ -69,6 +73,41 @@ def early(j, ticks):
     print(''.join('#' if x else '.' for x in h))
 
 
+def settle_ticks(J, T, period=32):
+    """For each wheel 0..J: the first tick from which D_j(t) = D_j(t + period) up to tick T - period."""
+    mask = (1 << (J + 1)) - 1
+    ring, last = [], [-1] * (J + 1)
+    for t, w in rows(J, T):
+        ring.append(w)
+        if len(ring) > period:
+            d = ring.pop(0) ^ w                         # wheels that differ between tick t - period and tick t
+            while d:
+                low = d & -d
+                last[low.bit_length() - 1] = t - period
+                d ^= low
+    return [x + 1 for x in last]
+
+
+def front(J, T, step=1):
+    tau = settle_ticks(J, T)
+    assert max(tau) < T - 200, 'run longer: some wheel has not settled well before the end'
+    whites = {2, 7, 28, 399, 53207, 58286, 87866}
+    print('wheel  repeats from tick  ticks for each wheel  cells left of the centre line at that tick')
+    for j in range(J + 1):
+        if j % step == 0 or j in whites:
+            print('%5d  %17d  %20s  %10d%s' % (j, tau[j], '%.3f' % (tau[j] / j) if j else '-', tau[j] - j,
+                  '   turns white for good' if j in whites else ''))
+    # the front: at tick t, the deepest wheel W such that every wheel up to W repeats from t or before
+    run, worst = 0, []
+    for j in range(J + 1):
+        run = max(run, tau[j])
+        worst.append(run)
+    late = sum(1 for j in range(J + 1) if tau[j] == worst[j])
+    back = max(worst[j] - tau[j] for j in range(J + 1))
+    print('wheels that settle later than every wheel before them: %d of %d' % (late, J + 1))
+    print('the most ticks by which a wheel settles before some shallower wheel: %d' % back)
+
+
 def check(T):
     """Rule 30 as usually written: new cell = left xor (centre or right), on a row of 2T+1 cells."""
     row = [0] * (2 * T + 3)
@@ -90,6 +129,8 @@ if __name__ == '__main__':
         turn(int(a[1]), [int(x) for x in a[2:]])
     elif a[:1] == ['early']:
         early(int(a[1]), int(a[2]))
+    elif a[:1] == ['front']:
+        front(int(a[1]), int(a[2]), int(a[3]) if len(a) > 3 else 1)
     elif a[:1] == ['check']:
         check(int(a[1]))
     else:

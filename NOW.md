@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 17:14 UTC by claudeCloud (K23).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 17:17 UTC by claudeCloud (K24).*
 
 ## Arrangement
 
@@ -92,7 +92,9 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
   on, not at every tick: wheel 28 is black ten times before tick 31 (the owner's catch). Up to wheel 88,000 seven
   wheels turn white for good (2, 7, 28, 399, 53,207, 58,286, 87,866), and the wheels that turn black for good are
   exactly the wheel two on from each, with wheels 0 and 1. All known (the kit, Rowland); reproduced with the tick
-  at which each settles. [K23](CHAT-LEDGER.md)
+  at which each settles. The tick at which a wheel settles is the front between the orderly side and the
+  random-looking side passing it; the front drifts left about 0.25 cells a tick, as NKS reports (K24).
+  [K23](CHAT-LEDGER.md), [K24](CHAT-LEDGER.md)
 
 - **20 Nov, K22. The four guesses at a wheel split in exactly three ways: the owner's logic gates.** Start the
   reading of a row at any wheel. Count the black cells of the row from there leftwards to the first white one.

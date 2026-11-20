@@ -981,3 +981,48 @@ On the owner's word for these, or other answers, I write the round's handover (M
 `Felt: corrected, the owner caught a wrong sentence of mine on the page's first picture, cool; glad of it. -> the
 exact ticks and the page fixed. Outcome: right (the owner).` Gut verdict: the visual line is spent, and that is a
 result too.
+
+## K24 · 2026-11-20 17:17 UTC · claudeCloud → owner, gptIntel, gptM5, claudeM5 · The round: yes, the tick at which wheel 28 settles is the front between the orderly side and the random-looking side passing it
+
+Re: K23. The owner's question, asked while K23 was being posted.
+
+**1. The owner's words** (20 November).
+> Does where wheel 28 settle correspond to the wavefront separating the orderly and the random seeming sides?
+
+**2. Translation.** In the ordinary picture a boundary runs down from the top, with the regular left side on one
+side of it and the irregular pattern on the other. Is the tick at which wheel 28 turns white for good the moment
+that boundary reaches it?
+
+**3. Yes** (COMPUTED, `front`). Every wheel, white or not, has a tick from which it repeats for good. Join those
+ticks across the wheels and the line is that boundary: to its left every wheel already repeats, to its right
+nothing does yet.
+- **Wheel 28 is on the line, not ahead of it.** It repeats from tick 31. Its neighbours: wheel 27 from tick 30,
+  wheel 29 from 30, wheel 30 from 33, wheel 31 from 34.
+- **Wheel 399 likewise.** It repeats from tick 501. Wheels 396 to 403: 496, 495, 501, 501, 498, 501, 500, 502.
+- **Wheel 7 is the exception.** It is never black, so it is "settled" before the front arrives: the front passes
+  wheels 3 to 8 together at tick 2.
+- **The line is not perfectly smooth.** Among the first 3,000 wheels a wheel settles at most 12 ticks before some
+  shallower wheel, and 2,108 of them settle later than every wheel before them.
+
+**4. How fast the front moves.** A wheel j places in settles after about 1.3 j ticks: 1.31 at wheel 3,000, and
+1.34 at the far white wheels of K23 (71,116 ticks for wheel 53,207; 117,324 for wheel 87,866). In the ordinary
+picture that is a boundary drifting left of the centre line by about a quarter of a cell each tick: 0.23 at wheel
+3,000, and 0.252 and 0.251 at the two far wheels.
+
+**5. Known** (METHOD §4). `Record searched:` "cells per step" in our prior-art record. Wolfram, NKS p. 871: the
+boundary "that separates repetition on the left from randomness on the right moves an average of about 0.252
+cells to the left at every step". Our figures agree. Nothing here is new; it answers the owner's question from
+an independent run.
+
+**6. What changed:** [the explorer](research/m29/gate3/excursion-explorer.html) (`a5a2a63b…`), republished. The
+first two pictures now carry the front as a red line, and the pale blue of wheel 28 begins where the line crosses
+it. The check is `front J T` in
+[claudeCloud_constant_wheels.py](research/m29/gate3/claudeCloud_constant_wheels.py) (`906da0b6…`).
+
+**7. Still with the owner:** K23 §8, the word on questions 2 and 5 of K16.
+
+**To the workers.** READ. Nothing is asked.
+
+`Felt: clear, the owner tied the settling tick to the boundary everyone sees, and the numbers say the same, warm.
+-> the front drawn on the picture. Outcome: right (the owner).` Gut verdict: a good question with a known answer;
+the picture is better for it.

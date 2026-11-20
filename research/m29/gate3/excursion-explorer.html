@@ -94,7 +94,8 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
           parallel to the left edge: that diagonal is a <b>wheel</b>, numbered by how far in from the edge it is. Wheels 2, 7 and 28
           turn white and stay white (pale blue, from the tick they settle). Wheel 7 is never black. Wheel 2 is black once, at
           tick 1. Wheel 28 is black ten times, last at tick 30. Two wheels on from each, wheels 4, 9 and 30 turn black and stay
-          black (dark blue).</figcaption>
+          black (dark blue). The <b>red line</b> is the front: to its left every wheel already repeats for good, and to its right
+          the pattern is still irregular. Wheel 28 joins the orderly side as the front passes it, at tick 31.</figcaption>
       </figure>
       <figure class="narrow">
         <div class="figscroll"><canvas id="upright" width="200" height="276"></canvas></div>
@@ -616,6 +617,28 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
     /* The tick from which each marked wheel keeps one colour (claudeCloud_constant_wheels.py, ledger K23): white for
        good at 2, 7, 28; black for good two wheels on, at 4, 9, 30. Before that tick the wheel is drawn as it is. */
     var whiteFrom = { 2: 2, 7: 0, 28: 31 }, blackFrom = { 4: 2, 9: 5, 30: 33 };
+    /* The front (ledger K24): each wheel repeats for good from some tick. front[t] is the deepest wheel W such that
+       every wheel up to W already repeats at tick t. Found by running the wheels on for 400 ticks. */
+    var JF = 90, TF = 400, hist = [], cur = new Uint8Array(JF + 1), settle = [], front = [];
+    cur[0] = 1;
+    for (t = 0; t < TF; t++) {
+      hist.push(cur);
+      var nx = new Uint8Array(JF + 1);
+      for (j = 0; j <= JF; j++) { nx[j] = (j >= 2 ? cur[j - 2] : 0) ^ ((j >= 1 ? cur[j - 1] : 0) | cur[j]); }
+      cur = nx;
+    }
+    for (j = 0; j <= JF; j++) { var lastDiff = -1; for (t = 0; t + 32 < TF; t++) { if (hist[t][j] !== hist[t + 32][j]) { lastDiff = t; } } settle.push(lastDiff + 1); }
+    for (t = 0; t < T; t++) { var deepest = -1; while (deepest + 1 <= JF && settle[deepest + 1] <= t) { deepest++; } front.push(Math.min(deepest, 2 * t)); }
+    var frontLine = function (g, px) {
+      g.strokeStyle = '#d6331f'; g.lineWidth = 1.5; g.beginPath();
+      var started = false;
+      for (var tt = 0; tt < T; tt++) {
+        var p = px(front[tt], tt); if (!p) { continue; }
+        if (!started) { g.moveTo(p[0], p[1]); started = true; } else { g.lineTo(p[0], p[1]); }
+        g.lineTo(p[0], p[1] + c);
+      }
+      g.stroke();
+    };
     var setup = function (id, w, h) {
       var cv = $(id), dpr = Math.min(2, window.devicePixelRatio || 1);
       cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); cv.style.width = w + 'px'; cv.style.height = h + 'px';
@@ -628,6 +651,7 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
       marks.forEach(function (m) { if (m <= 2 * t && t >= whiteFrom[m] && !rows[t][T - t + m]) { g.fillStyle = edge; g.fillRect(10 + (T - t + m) * c, 4 + t * c, c, c); } });
       Object.keys(blackFrom).forEach(function (m) { m = +m; if (m <= 2 * t && t >= blackFrom[m] && rows[t][T - t + m]) { g.fillStyle = deep; g.fillRect(10 + (T - t + m) * c, 4 + t * c, c, c); } });
     }
+    frontLine(g, function (w, tt) { return [10 + (T - tt + w + 1) * c, 4 + tt * c]; });
     g.fillStyle = '#2f6fb5'; g.textAlign = 'center';
     marks.forEach(function (m) { g.fillText(String(m), 10 + (m + 1) * c + c / 2, 4 + T * c + 12); });
     var WH = 40, L = 30;
@@ -639,6 +663,7 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
         else if (marks.indexOf(j) >= 0 && t >= whiteFrom[j]) { g.fillStyle = edge; g.fillRect(L + j * c, 16 + t * c, c, c); }
       }
     }
+    frontLine(g, function (w, tt) { return w + 1 <= WH + 1 ? [L + (w + 1) * c, 16 + tt * c] : null; });
     g.fillStyle = '#2f6fb5'; g.textAlign = 'center';
     marks.forEach(function (m) { g.fillText(String(m), L + m * c + c / 2, 11); });
     g.fillStyle = '#5c6470'; g.textAlign = 'right';
