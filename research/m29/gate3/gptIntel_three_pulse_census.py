@@ -142,6 +142,49 @@ def bounded_gaps(bound, first, last, cap, holes=False):
           f'peak={peak} gaps={earliest_witness} missing={missing} cap={cap} holes={holes}', flush=True)
 
 
+def first_longer(first, q, cap):
+    """First closing wheel with a run of length 4,7,... in any phase."""
+    mask = (1 << q) - 1
+    a, b = 0, first
+    residue1, residue2, singleton = 0, 0, 0
+    for j in range(1,cap+1):
+        if residue1 & ~b & ~singleton:
+            return j
+        if b == 0:
+            return 0
+        residue1, residue2 = b & ~(residue1 | residue2), b & residue1
+        singleton = b & ~a
+        a, b = b, (mask if j == 1 else child(a,b,q,mask))
+    return 0
+
+
+def longer_box(bound, lo, hi, cap, holes):
+    total = missed = peak = 0
+    witness = None
+    for a in range(lo, hi + 1):
+        for b in range(a, bound + 1):
+            for c in range(a, bound + 1):
+                gaps = (a, b, c)
+                if a == b == c or gaps > (b, c, a) or gaps > (c, a, b):
+                    continue
+                p = a + b + c
+                if holes and p % 2:
+                    continue
+                column = first_column(p, a, b)
+                if holes:
+                    column ^= 2 * (((1 << (2*p)) - 1) // 3)
+                closing = first_longer(column, 2*p, cap)
+                total += 1
+                if not closing:
+                    if not missed:
+                        print('no longer run', gaps, flush=True)
+                    missed += 1
+                if closing > peak:
+                    peak, witness = closing, gaps
+    print(f'longer box={bound} least={lo}..{hi} holes={holes} classes={total} '
+          f'missing={missed} max_first_longer={peak} gaps={witness}', flush=True)
+
+
 def reflection(bound, lo, hi, cap, holes=False):
     """Compare opposite time orders for the same three distinct gaps."""
     distribution = Counter()
@@ -189,7 +232,21 @@ def one_two_holes(bound, cap):
 
 
 def controls():
-    from claudeCloud_excursions import excursion, first_resets
+    from claudeCloud_excursions import excursion, first_resets, resets
+    from gptIntel_three_pulses import anchored
+    from gptIntel_three_holes import base_cycles
+    from gptIntel_near_five import first_reset
+
+    def scalar_longer(wheels):
+        return min((end for t in range(len(wheels[0]))
+                    for start, last, end in resets(wheels, t) if last > start), default=0)
+
+    def earliest_on_cycle(rows, width):
+        return min(j for row in rows if (j := first_reset(row, width, 4)))
+
+    assert earliest_on_cycle(anchored(67)[0], 67) == 8
+    assert earliest_on_cycle([row << 1 for row in anchored(66)[0]], 67) == 9
+    assert all(earliest_on_cycle(rows, 59) == 5 for rows, _ in base_cycles(59))
     for p in range(3, 14):
         gaps = set(triples(p))
         canonical = set()
@@ -200,6 +257,7 @@ def controls():
         for a, b, c in gaps:
             word = '1' + '0'*(a-1) + '1' + '0'*(b-1) + '1' + '0'*(c-1)
             wheels, white = excursion(word, 96)
+            assert first_longer(first_column(p, a, b), 2*p, 96) == scalar_longer(wheels)
             fr = first_resets(wheels[:-1] if white else wheels)
             expected = (max((v for v in fr if v), default=0), fr.count(None))
             got = trace_word(word, 96)
@@ -209,12 +267,24 @@ def controls():
                 dw, dg = excursion(dual, 96)
                 df = first_resets(dw[:-1] if dg else dw)
                 measured = trace_first(first_column(p,a,b) ^ (2*(((1<<(2*p))-1)//3)),2*p,96)
+                assert first_longer(first_column(p,a,b) ^ (2*(((1<<(2*p))-1)//3)), 2*p, 96) == scalar_longer(dw)
                 assert measured == trace_word(dual,96)
                 assert measured[:2] == (max((v for v in df if v), default=0),df.count(None))
             for i in range(2,len(wheels)-1):
                 def pack(bits): return sum(x << t for t,x in enumerate(bits))
                 assert child(pack(wheels[i-1]),pack(wheels[i]),2*p,(1<<(2*p))-1) == pack(wheels[i+1])
     assert trace_word('00001',96)[1:] == (2,23)
+    for word, phase, witness in [('110000100', 9, (13,16,17)), ('00110111', 1, (24,27,28))]:
+        wheels, _ = excursion(word, 96)
+        assert witness in resets(wheels, phase) and scalar_longer(wheels) == witness[2]
+    for gaps, last in [((6,)+(5,)*4+(6,)+(5,)*7, 67), ((6,)+(5,)*8, 63)]:
+        word = ''.join('1' + '0'*(g-1) for g in gaps)
+        wheels, white = excursion(word, 96)
+        assert max(first_resets(wheels[:-1] if white else wheels)) == last
+    for defect, first in [(4, 12), (6, 8)]:
+        word = '1' + '0'*(defect-1) + '10000'*6
+        assert scalar_longer(excursion(word, 96)[0]) == first
+    assert scalar_longer(excursion('00001', 96)[0]) == 0
     print('control: all triple classes P=3..13 match the scalar column simulator; period-5 obstruction recovered',flush=True)
 
 
@@ -226,10 +296,15 @@ if __name__ == '__main__':
     p.add_argument('--one-two-holes', type=int, metavar='MAX_GAP')
     p.add_argument('--max-gap', type=int)
     p.add_argument('--holes', action='store_true', help='in the gap cube, mark white instead of black source ticks')
+    p.add_argument('--longer', type=int, metavar='MAX_GAP')
     p.add_argument('--reflection', type=int, metavar='MAX_GAP')
     p.add_argument('--box', type=int, help='maximum allowed cyclic gap for primitive triples')
     p.add_argument('--least', type=int, nargs=2, metavar=('FIRST','LAST'))
     args = p.parse_args()
+    if args.longer:
+        lo, hi = args.least or (1,args.longer)
+        assert 1 <= lo <= hi <= args.longer
+        longer_box(args.longer,lo,hi,args.cap,args.holes)
     if args.reflection:
         lo, hi = args.least or (1,args.reflection)
         assert 1 <= lo <= hi <= args.reflection

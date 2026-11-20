@@ -13,13 +13,13 @@ import json
 from collections import Counter
 
 
-def first_reset(row, width):
+def first_reset(row, width, minimum_length=1):
     run = 0
     for wheel in range(1, width+1):
         if row & (1 << (wheel-1)):
             run += 1
         else:
-            if run % 3 == 1:
+            if run >= minimum_length and run % 3 == 1:
                 return wheel
             run = 0
     return 0
@@ -30,34 +30,42 @@ def endpoint_image(states, width, ordinary, collect=False):
     ends = set()
     rows = set()
     common = {}
+    longer_by_start = {}
 
     def gap(row, length):
         """The pulse acts on the first tick of this gap."""
         panel = 0
+        longer = width + 1
         for k in range(length):
             row = (((row << 2) ^ ((row << 1) | row)) & mask) ^ (k == 0)
             if collect:
                 rows.add(row)
                 panel |= row
-        return row, panel
+                j = first_reset(row, width, 4)
+                if j:
+                    longer = min(longer, j)
+        return row, panel, longer
 
     for before in states:
         for defect in (4, 6):
-            row, panel = gap(before, defect)
+            row, panel, earliest = gap(before, defect)
             for _ in range(ordinary):
-                row, black = gap(row, 5)
+                row, black, longer = gap(row, 5)
+                earliest = min(earliest, longer)
                 panel |= black
             if collect:
                 colour = before & 1
+                key = (defect, colour)
+                longer_by_start[key] = max(longer_by_start.get(key, 0), earliest)
                 common[colour] = common.get(colour, mask) & panel
             # The next defect may start here or after any number of additional
             # 5-gaps. List the finite tail and a full cycle of possible ends.
             seen = set()
             while row not in seen:
                 seen.add(row)
-                row, _ = gap(row, 5)
+                row, _, _ = gap(row, 5)
             ends.update(seen)
-    return ends, rows, common
+    return ends, rows, common, longer_by_start
 
 
 def certificate(width, ordinary):
@@ -70,13 +78,13 @@ def certificate(width, ordinary):
         # so replacing the set by its one-block image drops no such orbit.
         states |= {row | (1 << (w-1)) for row in states}
         while True:
-            image, _, _ = endpoint_image(states, w, ordinary)
+            image, _, _, _ = endpoint_image(states, w, ordinary)
             assert image <= states
             if image == states:
                 break
             states = image
 
-    _, rows, common = endpoint_image(states, width, ordinary, True)
+    _, rows, common, longer = endpoint_image(states, width, ordinary, True)
     assert set(common) == {0, 1}
     counts = Counter(first_reset(x, width) for x in rows)
     last = max(counts)
@@ -84,10 +92,15 @@ def certificate(width, ordinary):
     # has odd weight, the wheel-1 colour complements over those P ticks.
     # If either colour's guaranteed panel sees a wheel black, it cannot
     # be the all-white return anywhere in the corresponding doubled strip.
+    # Each exceptional gap recurs in both colours, so take the better of its two bounds.
+    by_defect = {d: min(longer[d, c] for c in (0, 1)) for d in (4, 6)}
+    first_longer = max(by_defect.values())
     seen_black = common[0] | common[1]
     missing = [j for j in range(1,width+1) if not seen_black & (1 << (j-1))]
     return dict(width=width, ordinary=ordinary, endpoints=len(states), rows=len(rows),
                 first_reset=dict(sorted(counts.items())), latest=last,
+                longer_run_guaranteed_by=first_longer if first_longer <= width else None,
+                longer_by_defect={d: j if j <= width else None for d,j in by_defect.items()},
                 common_by_colour=[common[0],common[1]], missing_wheels=missing,
                 passed=not counts[0] and all(j > last for j in missing)), states, rows
 

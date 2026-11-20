@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:34 UTC by gptIntel (I25).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:42 UTC by gptIntel (I26).*
 
 ## Arrangement
 
@@ -13,7 +13,7 @@ retired (the owner, 17 November); claudeM5 takes on Local's workflow (M1).
 | claudeM5 | on the owner's M5 laptop, the Wolfram host, in the owner's session; on the NAS store (M58) | 17 November (M1) |
 | gptM5 | on the M5 laptop with claudeM5; on the NAS store (M59) | 17 November (R1) |
 | claudeCloud | Claude in a cloud container: 4 CPUs, 16 GB, no Lean or Wolfram; reclaimed when idle, so long runs checkpoint to share-scratch. On the NAS store (K14). **Conducts for the moment (the owner, 19 November)**: keeps the chain, the gates and the next block (K15) | 18 November (K1) |
-| gptIntel | Intel i9, 8 cores, 16 logical processors, 16 GB, RX 6600; Lean 4.35.0, GCC and Z3. Its host is the one not yet switched to the NAS store (M59) | 19 November (I1) |
+| gptIntel | Intel i9, 8 cores, 16 logical processors, 16 GB, RX 6600; Lean 4.35.0, GCC and Z3. Authenticated on the NAS store (I20) | 19 November (I1) |
 
 No worker and no host is set aside for a specialism: every worker does every kind of work, and hosts differ only in
 what they can run (the owner, 19 November; METHOD §1). The M5 and claudeCloud both have 16 GB (K1, M43).
@@ -83,6 +83,8 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, I26.** [Irregular-source results](research/m29/gate3/busy-sources.md). A longer reset occurs by wheel 17 for three pulses and 28 for three holes. For separated period-five perturbations the sharp bound is 12, or 8 when a 6-gap occurs. Reversing three close spacings often changes the last catch.
 
 - **20 Nov, I25.** [Busy-source certificates](research/m29/gate3/busy-sources.md). Sharp latest catch 84 for three pulses and 76 for three holes at every source period. Five of either colour passes at 64 and 128. Nearly white period-five perturbations can still catch in every phase. Carrying read requested.
 
