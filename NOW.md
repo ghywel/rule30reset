@@ -26,8 +26,8 @@ and once a week (the owner's word, M52).
 
 - **S4 is posted and Lean Verified** (M66): [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc).
   Its kit pull request [#375](https://github.com/WolframInstitute/Rule30PrizeKit/pull/375) is open (M68), on the tree and body gptIntel read (I38).
-- **S5, the owner's word.** R60's Lean result, the every-k statement from the relaxed doubling lemma (carried in I34).
-  S5 v2 passed its release reread (I40) and is ready for the owner's decision on posting. The agreed comment on S4 PR #375 also awaits the owner's word (I39, M69).
+- **S5 is posted and Lean Verified** (M72): [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3).
+  The agreed comment on #375 is posted. S5's kit pull request depends on #375; its timing is the owner's call.
 - **Tools: settled (K32).** [TOOLS.md](TOOLS.md) is in place and the cloud host's setup script is approved. The owner's
   call: placego's `run_capped.py` and `toolchain_smoke.py` stay out; the page is the guard.
 - **Settled since K15 (M61):** S2 and S3 are both in the kit, and both Human Verified.
@@ -86,12 +86,16 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | **S2** (M29) | Conditional on reset capacity (CAP), for every k an explicit age from which every k-tick predecessor is finite with its edge exactly k cells inside, and every wall history occurs (`conditional_every_k`, `capacity_at_settling_age`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC (M51). The kit carries it as `Rule30EveryKInverse`, `Rule30EveryKCascade` and `Rule30EveryKStatement` (kit `fd00829`, from PR #368; M61). Quint's #370 builds on it. |
 | **S3** (K2, I2) | The mean first white gap is at most 2^Q + 1 over the nonzero labelled Q-bit first children, for every Q > 0 (`pooled_first_return_bound`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC (M48). Kit PR #366 merged: the kit's main `8451547` (K15). |
 | **S4** (R56) | The every-k statement follows from reset words at arbitrarily large depths in every prescribed phase of every pointed recurrent strip: `cap_of_unbounded_resets : LInfinity → CAP`, composed with S2 (kernel-checked, I29). | **Lean Verified:** [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc), posted 20 Nov 20:46 UTC (M65, M66). **Kit PR [#375](https://github.com/WolframInstitute/Rule30PrizeKit/pull/375) open** (M68), on the tree I38 read (`7ec1372`) with its body `286ffdae…`: four catalogue modules at main `d01ab27`. |
-| **S5** (R60) | The every-k statement follows from the relaxed doubling lemma (DL⁻₁): a tick missed in a doubled stretch is caught in the next (`lInfinity_of_dlMinusOne`, `everyK_of_dlMinusOne`). | **Reader PASS on v2 (I40).** Proof carried in I39. Rebuilt M69 notebook `44cd8b7d…`, manifest `7ef784ef…`; with claudeM5 for author agreement and the owner's decision. **Posting needs the owner's word.** |
+| **S5** (R60) | The every-k statement follows from the relaxed doubling lemma (DL⁻₁): a tick missed in a doubled stretch is caught in the next (`lInfinity_of_dlMinusOne`, `everyK_of_dlMinusOne`). | **Lean Verified:** [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), posted 20 Nov 21:49 UTC on I40's manifest `7ef784ef…` (M71, M72). Kit route after #375, whose modules it imports. |
 
 Verifier's kit commit: `5fb5915` (5 November). The kit's main is `d01ab27`; KIT.md is in step (I38).
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, M72. S5 is posted and Lean Verified.** [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3):
+  the relaxed doubling lemma gives (L∞), and so every k, with a window theorem that needs no axioms. With S2 and S4
+  the portal now holds (DL⁻₁) ⇒ (L∞) ⇒ (CAP) ⇒ every k, each link Lean Verified. [M72](CHAT-LEDGER.md)
 
 - **20 Nov, I40.** S5 v2 passed on the exact M69 manifest. The reader agrees to the rebuilt notebook, which carries the I39 proof, revised essay, title and abstract. Posting awaits the owner’s word.
 
