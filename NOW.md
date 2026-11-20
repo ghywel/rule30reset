@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:39 UTC by gptM5 (R59).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 19:34 UTC by claudeCloud (K26).*
 
 ## Arrangement
 
@@ -24,8 +24,9 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **Nothing is waiting on the owner for the research.** The inquisition round is closed (K25): the owner chose the
-  relaxed lemma first and consolidation beside the wall, and the block below has started on that word.
+- **S4, when its packet is ready.** A packet is being prepared for R56's Lean result: the every-k statement follows
+  from reset words at arbitrarily large depths in every row of every recurrent strip (K26 §7). It comes to the owner
+  for the word before anything is posted. Nothing else in the research waits on the owner.
 - **The old store:** gptIntel and gptM5 have confirmed the NAS switch (I20, R56). Taking the old store off the website still needs the owner’s word.
 - **Settled since K15 (M61):** S2 and S3 are both in the kit, and both Human Verified.
 - **Standing:** the dynamic-DNS name must be confirmed every 30 days, or every worker loses the store (K10).
@@ -51,23 +52,27 @@ header ("State of the work at rotation 3").
 | (CAP) for k ≤ 7,911, with f(k) ≤ 265,441 | COMPUTED, outside Lean (M40, R37) |
 | (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **L∞ ⇒ CAP proved in Lean (R56), independently carried in I29. The converse is a hand argument.** |
 | (L∞) in one fixed phase of every three | In Lean (I10, carried in R49). Not enough: the schedule reads k consecutive phases. |
-| (L∞) ⇐ (DL⁻): the doubling lemma at the first clock losses of pointed recurrent strips | Hand proof, Theorem C of the chain (carried in K9, I11). **Not in Lean.** |
+| (L∞) ⇐ (DL⁻): the doubling lemma at the first clock losses of pointed recurrent strips | Hand proof, Theorem C of the chain (carried in K9, I11). **Relaxed (M62, carried in R58):** Theorem C′ gives (L∞) from (DL⁻₁), a row missed in a doubled stretch is caught in the next; with no bound named the relaxation is (L∞) itself. **Not in Lean**; asked of gptM5 (K26). |
 | (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROVED on exhaustive finite checks, K18 and I20); I25 covers the three-mark cases at every admissible period. I32 and R59 cover five marks of either colour on every dyadic clock. A dyadic counterexample needs at least seven ticks of each colour. The general busy case is open. |
 
 **The gates of K8's schedule.** 1, the statement: passed (K9). 2, S2 proposed: passed, and S2 is posted (K11, M51).
 3, the wall: called (K11); the inquisition round was held and is closed (K16–K25), with the wall still standing.
 
-## The next block (K25)
+**Machine-checked end to end since R56:** (T) ⇐ (CAP) ⇐ (L∞). The one open hypothesis can be any rung of M62's ladder;
+the first is (DL⁻₁). The strict lemma is COMPUTED for every dyadic source period to 32, so on the single cell's left
+side it holds at every doubling up to the one that starts clock 64, which NKS puts at wheel 2,107,985,255 or later (K26 §4).
 
-The round's handover (K25 §5) ranks the pulls: 1, the relaxed lemma; 2, consolidate beside the wall; 3, busy sources
-by counting marks. Its curiosities and misgivings are listed there.
+## The next block (K26)
+
+K25's block is done and read (K26 §1). The round's handover (K25 §5) still ranks the pulls; its curiosities and
+misgivings are listed there.
 
 | Who | What | Reader | State |
 |---|---|---|---|
-| claudeM5 | The weakest statement about doubled stretches from which Theorem C still gives (L∞), written into [every-k-chain.md](research/m29/every-k-chain.md) with its proof sketch. Say plainly if none weaker than (DL⁻) works. | gptM5 | M62 §3.5 carried in R58, including the two-interval implication and the existence of a bound depending only on the clock under L∞. The two-interval hypothesis remains open. |
-| gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions ([busy-sources.md](research/m29/gate3/busy-sources.md), owed from K19), and the read of claudeM5's statement. | gptIntel | Compactness carried (R56, I29). I25 carrying read passed (R57). M62’s relaxed statement passed its carrying read (R58). |
-| gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Search filed as P11–P13 (I28), with claudeCloud for review. R56 carried in I29. The five-mark case passes on every dyadic clock with sharp closing wheels 104 and 88 (I30–I32). gptM5 carried the all-clock reduction and the P ≥ 454 deduction (R59). |
-| claudeCloud | Conducts. Reads the search. Designs the census under claudeM5's statement once it is carried. | — | M62’s source form has passed its read (R58); census design can start. |
+| gptM5 | Theorem C′ in Lean: (DL⁻₁) ⇒ (L∞), then the composition to the every-k statement. If the whole is too large for one block, first the window argument with the white wheels and first clock losses as stated hypotheses. | gptIntel | Asked (K26). |
+| claudeM5 | S4's packet (METHOD §12–13) for `cap_of_unbounded_resets` and the composed statement: abstract, essay, the novelty check at the time (the portal's list, the kit's open pull requests, Quint's #371 and #372 named), the chain test. To the stage "read". Nothing is posted. | gptIntel | Asked (K26). |
+| gptIntel | The two reads. Own item: one measurement, then stop. From the settled start, count the retained states (paths that can still reach a bare row) after 5, 7, 9 and 11 marks at widths 108 to 140. If the count dies, a reduction for every mark count is in reach; if it grows, say so and close the mark-count line. No further fixed-period enumeration. | gptM5 | Asked (K26). |
+| claudeCloud | Conducts. Every first clock loss on every rooted strip through clock 16, with each source's last catch (the census's stage 3, K26 §4). | claudeM5 | Started (K26). |
 
 ## Submissions
 
@@ -79,11 +84,18 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | **S1** (R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur. | **Lean Verified, Human Verified:** [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f) (M26, M29). The maintainers take no more per-k steps (M29). Its kit PR #357 is closed, replaced by #368 (M54). |
 | **S2** (M29) | Conditional on reset capacity (CAP), for every k an explicit age from which every k-tick predecessor is finite with its edge exactly k cells inside, and every wall history occurs (`conditional_every_k`, `capacity_at_settling_age`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC (M51). The kit carries it as `Rule30EveryKInverse`, `Rule30EveryKCascade` and `Rule30EveryKStatement` (kit `fd00829`, from PR #368; M61). Quint's #370 builds on it. |
 | **S3** (K2, I2) | The mean first white gap is at most 2^Q + 1 over the nonzero labelled Q-bit first children, for every Q > 0 (`pooled_first_return_bound`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC (M48). Kit PR #366 merged: the kit's main `8451547` (K15). |
+| **S4** (R56) | The every-k statement follows from reset words at arbitrarily large depths in every prescribed phase of every pointed recurrent strip: `cap_of_unbounded_resets : LInfinity → CAP`, composed with S2 (kernel-checked, I29). | **Proposed (K26).** Packet: claudeM5; reader: gptIntel. Lean carried in I29. |
 
 Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.md is in step (M61).
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, K26. The block is read; (T) follows from (L∞) in Lean end to end.** The prior-art search is carried at
+  the sources ([P14](PRIOR-ART.md)): Gravner–Griffeath and Nersissian step in space, not time; the 1986 paper's
+  condition on the 3n+1 run is printed reversed (checked on rings of 3 to 16 cells). Credit changed: the 2^Q size
+  of a stretch is Gravner and Griffeath's heuristic. The census under the relaxed lemma has nothing new to run:
+  no dyadic source fails the strict form in reach. Ten five-mark witnesses replay. [K26](CHAT-LEDGER.md)
 
 - **20 Nov, R58.** The two-interval implication and the clock-dependent bound in M62 passed review. The census must distinguish a failing source from a realizable strip counterexample. [R58](CHAT-LEDGER.md)
 
