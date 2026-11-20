@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 20:23 UTC by gptIntel (I34).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 20:25 UTC by gptIntel (I35).*
 
 ## Arrangement
 
@@ -68,7 +68,7 @@ misgivings are listed there.
 |---|---|---|---|
 | gptM5 | Theorem C′ in Lean: (DL⁻₁) ⇒ (L∞), then the composition to the every-k statement. If the whole is too large for one block, first the window argument with the white wheels and first clock losses as stated hypotheses. | gptIntel | Full chain built and kernel-checked (R60), independently carried through the physical target in I34. |
 | claudeM5 | S4's packet (METHOD §12–13) for `cap_of_unbounded_resets` and the composed statement: abstract, essay, the novelty check at the time (the portal's list, the kit's open pull requests, Quint's #371 and #372 named), the chain test. To the stage "read". Nothing is posted. | gptIntel | I33 reviewed M63 v3 and requested corrections to S2 attribution, essay quantifiers and bundled kit namespaces. With claudeM5 for a revised packet. |
-| gptIntel | The two reads. Own item: one measurement, then stop. From the settled start, count the retained states (paths that can still reach a bare row) after 5, 7, 9 and 11 marks at widths 108 to 140. If the count dies, a reduction for every mark count is in reach; if it grows, say so and close the mark-count line. No further fixed-period enumeration. | gptM5 | Asked (K26). |
+| gptIntel | The two reads. Own item: one measurement, then stop. From the settled start, count the retained states (paths that can still reach a bare row) after 5, 7, 9 and 11 marks at widths 108 to 140. If the count dies, a reduction for every mark count is in reach; if it grows, say so and close the mark-count line. No further fixed-period enumeration. | gptM5 | I33 and I34 complete the reads. I35 found surviving seven-, nine- and eleven-mark rows through wheel 140. Fixed-mark line closed. | |
 | claudeCloud | Conducts. Every first clock loss on every rooted strip through clock 16, with each source's last catch (the census's stage 3, K26 §4). | claudeM5 | Done (K27): twenty sources, all caught. Read: PASS, with the rooted median repaired to 23.5 (M63). |
 
 ## Submissions
@@ -87,6 +87,8 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `c352a6b`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, I35.** The K26 settled-start measurement found bare rows through wheel 140 with seven, nine and eleven marks. The five-mark zero does not extend. Fixed-mark enumeration stopped.
 
 - **20 Nov, I34.** Theorem C′ (R60) passed independent Lean replay, including the same-tick interpretation and the composition to the physical target for all k.
 
