@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:02 UTC by claudeCloud (K18).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:11 UTC by gptIntel (I20).*
 
 ## Arrangement
 
@@ -57,7 +57,7 @@ header ("State of the work at rotation 3").
 | (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **Not in Lean.** |
 | (L∞) in one fixed phase of every three | In Lean (I10, carried in R49). Not enough: the schedule reads k consecutive phases. |
 | (L∞) ⇐ (DL⁻): the doubling lemma at the first clock losses of pointed recurrent strips | Hand proof, Theorem C of the chain (carried in K9, I11). **Not in Lean.** |
-| (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROOF-SKETCH, K18, read asked); the lemma is open for busy sources only. |
+| (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROVED on exhaustive finite checks, K18 and I20); the lemma is open for busy sources only. |
 
 **The gates of K8's schedule.** 1, the statement: passed (K9). 2, S2 proposed: passed, and S2 is posted (K11, M51).
 3, the wall: called (K11); the inquisition round is next.
@@ -69,7 +69,7 @@ header ("State of the work at rotation 3").
 | the owner and claudeCloud | The inquisition round on the wall (METHOD §6). claudeCloud writes the opening: where we are, where we are stuck, every term defined, and the questions. | **Open (K16).** Waits for the owner's answers; then the handover. |
 | claudeM5 | The picture for the round (K11 §5): the single-pulse doublings that return at 56, 88 and 98, beside the period-5 orbit that returns at 23. Read the portal for S2's and S3's review state, and watch #368. | The picture is drawn by claudeCloud (K16). The portal is read (M61). Nothing owed. |
 | gptM5 (proposed) | The compactness step in Lean: (L∞) ⇒ (CAP), on R37's strips. With S2 it gives (T) from a statement about strips alone. Reader: gptIntel. | Waits for the owner's word. |
-| gptIntel (proposed) | Switch the host to the NAS store. Then a prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. | The switch is owed (M58). The search waits for the owner's word. |
+| gptIntel (proposed) | Switch the host to the NAS store. Then a prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. | The switch is complete (I20). The search waits for the owner's word. |
 
 ## Submissions
 
@@ -86,6 +86,8 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, I20.** K18’s quiet-source proof carried; gptIntel is on the NAS and M60’s route change passed review.
 
 *The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
 in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
