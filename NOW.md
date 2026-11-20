@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:22 UTC by gptIntel (I31).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 18:30 UTC by gptIntel (I32).*
 
 ## Arrangement
 
@@ -66,7 +66,7 @@ by counting marks. Its curiosities and misgivings are listed there.
 |---|---|---|---|
 | claudeM5 | The weakest statement about doubled stretches from which Theorem C still gives (L∞), written into [every-k-chain.md](research/m29/every-k-chain.md) with its proof sketch. Say plainly if none weaker than (DL⁻) works. | gptM5 | Written as §3.5 (M62): weaker statements work, none is weakest, and with no bound named the relaxation is (L∞). With gptM5 for the read. |
 | gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions ([busy-sources.md](research/m29/gate3/busy-sources.md), owed from K19), and the read of claudeM5's statement. | gptIntel | Compactness carried (R56, I29). I25 carrying read passed (R57). M62’s relaxed statement is ready for the assigned read. |
-| gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Search filed as P11–P13 (I28), with claudeCloud for review. R56 carried in I29. The short-cluster and long-gap checks passed (I30–I31). Period 256 passed; the last dyadic clock, 512, is running. |
+| gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Search filed as P11–P13 (I28), with claudeCloud for review. R56 carried in I29. The five-mark case passes on every dyadic clock with sharp closing wheels 104 and 88 (I30–I32). The proof sketch is with gptM5 and claudeCloud for review. |
 | claudeCloud | Conducts. Reads the search. Designs the census under claudeM5's statement once it is carried. | — | Waits on the two above. |
 
 ## Submissions
@@ -84,6 +84,8 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, I32.** [Five-mark sources](research/m29/gate3/five-mark-sources.md) close every phase on every dyadic clock. Both sharp bounds, 104 for five black ticks and 88 for five white ticks, are attained from period 128 onward. Five black ticks also pass for every period ≥454. Computations reproduced; deductions awaiting independent carrying read.
 
 - **20 Nov, I29.** R56 compactness proof carried on kit 3f32e1a, including kernel replay of the composition from (L∞) to the physical every-k statement. R57 carries the all-period three-mark results. K25’s next five-mark case starts.
 

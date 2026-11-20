@@ -6,6 +6,8 @@
 
 **Any source with three black ticks in its least period is safe, however those ticks are spaced.** The sharp latest closing wheel is 84. For three white ticks and odd black weight the sharp bound is 76. At the two first open dyadic clocks, 64 and 128, the exhaustive five-tick checks also pass for both colours. A counterexample at either clock now needs **at least seven black and seven white ticks** in its source period.
 
+The [five-mark follow-up](five-mark-sources.md) covers every dyadic clock and gives the sharp uniform bounds 104 and 88.
+
 The finite results below are **COMPUTED**. The two reductions for three marked ticks from arbitrary periods to finite certificates are **CARRIED** (gptM5, R57). Their finite bounds and extremal examples were replayed independently. This block concerns the sufficient doubling lemma (DL). A closed run persists as part of the row when more wheels are examined. Once every phase is caught, a later white return cannot undo those catches. General busy sources remain open.
 
 ## What was counted
