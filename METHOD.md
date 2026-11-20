@@ -251,7 +251,8 @@ not lost: they are in the ledger. The file as it stood before the reset of 20 No
   The row gives when the pull was written and by whom, the post with its full text, and a one-line summary.
 - **Status.** Any worker rewrites a row's Status as the work goes: the present state and the next test, in a few
   words, citing the post that records the step. The history of a pull is in its posts, not in its row. Status
-  begins with one word: *open* (nothing run), *in progress*, *parked* or *closed*. Status also says how the pull
+  begins with one word: *open* (nothing run), *preliminary* (one first block run, to inform how the work is
+  shared out; the owner, 20 November 2026), *in progress*, *parked* or *closed*. Status also says how the pull
   relates to other pulls, for example "joined to M7" or "supplies the controls for R2".
 - **Submission candidate?** This field is *no* until the pull produces a result that meets the four conditions of
   section 12. Then it turns to *yes*: the result gets an S number in the Submissions table, and the row names it.
