@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:27 UTC by gptIntel (I24).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:34 UTC by gptIntel (I25).*
 
 ## Arrangement
 
@@ -24,14 +24,11 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **The inquisition round (Gate 3) is open (K16 to K18).** The owner's answers so far are researched: the
-  single-cell rows and the triangles (K17), and whether period 5 is the only one of its kind (K18: among quiet
-  sources yes, with a reason; among busy sources unknown). Still with the owner: questions 2 to 5 of K16 (race,
-  rule or relax; powers of two; what it resembles; how to split the effort), and which picture to draw next.
+- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. Questions 2–5 of K16 and the choice of the next picture remain with the owner.
 - **The next block (K15).** The owner's word on the two proposed items: for gptM5, the compactness step in Lean;
   for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word. Question 5
   of the round covers both.
-- **gptIntel's host:** the new store address (one variable). Then the word to take the old store off the website.
+- **The old store:** gptIntel has switched to the NAS (I20). Taking the old store off the website still needs the owner’s word.
 - **Settled since K15 (M61):** S2 and S3 are both in the kit, and both Human Verified.
 - **Standing:** the dynamic-DNS name must be confirmed every 30 days, or every worker loses the store (K10).
 
@@ -57,7 +54,7 @@ header ("State of the work at rotation 3").
 | (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **Not in Lean.** |
 | (L∞) in one fixed phase of every three | In Lean (I10, carried in R49). Not enough: the schedule reads k consecutive phases. |
 | (L∞) ⇐ (DL⁻): the doubling lemma at the first clock losses of pointed recurrent strips | Hand proof, Theorem C of the chain (carried in K9, I11). **Not in Lean.** |
-| (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROVED on exhaustive finite checks, K18 and I20); the lemma is open for busy sources only. |
+| (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROVED on exhaustive finite checks, K18 and I20); I25 covers all primitive three-mark sources at any period and five of either colour at periods 64 and 128. Any counterexample at those two clocks needs at least seven of each colour. The general busy case is open. |
 
 **The gates of K8's schedule.** 1, the statement: passed (K9). 2, S2 proposed: passed, and S2 is posted (K11, M51).
 3, the wall: called (K11); the inquisition round is next.
@@ -86,6 +83,8 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, I25.** [Busy-source certificates](research/m29/gate3/busy-sources.md). Sharp latest catch 84 for three pulses and 76 for three holes at every source period. Five of either colour passes at 64 and 128. Nearly white period-five perturbations can still catch in every phase. Carrying read requested.
 
 - **20 Nov, I24.** The complementary three-white-tick theorem passes with sharp bound 76; the busy-source block continues at clocks 64 and 128.
 
@@ -214,10 +213,7 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
 
 - **The inquisition round (Gate 3):** open (K16); first answers researched (K17). It waits for the owner's further answers; then claudeCloud writes the handover:
   warm pulls with their first tests, curiosities and misgivings (METHOD §6).
-- **The store:** gptIntel's host is not yet switched (M59). claudeM5's change `981c5eb` (no HTTP reply at any path but
-  `/store.php`, at the owner's request) is built and published as `:981c5eb`; the NAS still runs the reviewed
-  `:0d1eef2`, and gptIntel has not read the change (K15, addendum 1). The old store comes off the website on the owner's word.
-  Then claudeCloud rewrites `tools/store/README.md`, which still describes the website's installation (K14).
+- **The store:** gptIntel confirmed the NAS switch and passed the scoped M60 route review (I20). The old store comes off the website on the owner’s word. Then claudeCloud updates the installation notes (K14).
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's
   notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before
   `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call. Not yet done.

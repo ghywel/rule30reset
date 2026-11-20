@@ -6,7 +6,7 @@ The horizon is a stopping limit; unclosed phases or an early return are reported
 """
 import argparse
 from collections import Counter
-from itertools import combinations
+from itertools import combinations, combinations_with_replacement
 from math import comb
 
 
@@ -102,7 +102,7 @@ def census(p, cap, maximum_gap=None):
     return n, worst, witness, missing, first_miss
 
 
-def bounded_gaps(bound, first, last, cap):
+def bounded_gaps(bound, first, last, cap, holes=False):
     """Primitive three-pulse necklaces in the gap cube; split by least gap for parallel checks."""
     hist = Counter()
     earliest_witness = None
@@ -114,7 +114,12 @@ def bounded_gaps(bound, first, last, cap):
                 if a == b == c or gaps > (b, c, a) or gaps > (c, a, b):
                     continue
                 p = a+b+c
-                latest, bare, white = trace_first(first_column(p,a,b),2*p,cap)
+                if holes and p % 2:
+                    continue  # the complemented source would have even black weight
+                column = first_column(p,a,b)
+                if holes:
+                    column ^= 2 * (((1 << (2*p)) - 1) // 3)  # prefix XOR of all-one input
+                latest, bare, white = trace_first(column,2*p,cap)
                 total += 1
                 hist[latest] += 1
                 if bare:
@@ -124,10 +129,34 @@ def bounded_gaps(bound, first, last, cap):
                 if latest > peak:
                     peak, earliest_witness = latest, gaps
     # Nonconstant gap triples have precisely three rotations.
-    expected = ((bound-first+1)**3 - (bound-last)**3 - (last-first+1)) // 3
+    def ordered(lo):
+        n = bound - lo + 1
+        if not holes:
+            return n**3 - n
+        even = bound // 2 - (lo-1) // 2
+        odd = n - even
+        return even**3 + 3*even*odd**2 - even
+    expected = (ordered(first) - ordered(last + 1)) // 3
     assert total == expected
     print(f'gap cube={bound} minimum={first}..{last} classes={total} '
-          f'peak={peak} gaps={earliest_witness} missing={missing} cap={cap}', flush=True)
+          f'peak={peak} gaps={earliest_witness} missing={missing} cap={cap} holes={holes}', flush=True)
+
+
+def one_two_holes(bound, cap):
+    for count in (1, 2):
+        total, peak, missing, witness = 0, 0, 0, None
+        for gaps in combinations_with_replacement(range(1,bound+1),count):
+            if (sum(gaps) - count) % 2 == 0:
+                continue
+            word = ''.join('0' + '1'*(g-1) for g in gaps)
+            last, bare, _ = trace_word(word,cap)
+            total += 1
+            missing += bool(bare)
+            if last > peak:
+                peak, witness = last, gaps
+        expected = bound // 2 if count == 1 else (bound // 2)*((bound+1)//2)
+        assert total == expected
+        print(f'holes={count} bound={bound} classes={total} peak={peak} gaps={witness} missing={missing}')
 
 
 def controls():
@@ -146,6 +175,13 @@ def controls():
             expected = (max((v for v in fr if v), default=0), fr.count(None))
             got = trace_word(word, 96)
             assert got[:2] == expected and got == trace_first(first_column(p,a,b), 2*p,96)
+            if p % 2 == 0:
+                dual = ''.join('0' if ch == '1' else '1' for ch in word)
+                dw, dg = excursion(dual, 96)
+                df = first_resets(dw[:-1] if dg else dw)
+                measured = trace_first(first_column(p,a,b) ^ (2*(((1<<(2*p))-1)//3)),2*p,96)
+                assert measured == trace_word(dual,96)
+                assert measured[:2] == (max((v for v in df if v), default=0),df.count(None))
             for i in range(2,len(wheels)-1):
                 def pack(bits): return sum(x << t for t,x in enumerate(bits))
                 assert child(pack(wheels[i-1]),pack(wheels[i]),2*p,(1<<(2*p))-1) == pack(wheels[i+1])
@@ -158,14 +194,18 @@ if __name__ == '__main__':
     p.add_argument('period', nargs='*', type=int)
     p.add_argument('--cap', type=int, default=100)
     p.add_argument('--controls', action='store_true')
+    p.add_argument('--one-two-holes', type=int, metavar='MAX_GAP')
     p.add_argument('--max-gap', type=int)
+    p.add_argument('--holes', action='store_true', help='in the gap cube, mark white instead of black source ticks')
     p.add_argument('--box', type=int, help='maximum allowed cyclic gap for primitive triples')
     p.add_argument('--least', type=int, nargs=2, metavar=('FIRST','LAST'))
     args = p.parse_args()
     if args.box:
         lo, hi = args.least or (1, args.box)
         assert 1 <= lo <= hi <= args.box
-        bounded_gaps(args.box, lo, hi, args.cap)
+        bounded_gaps(args.box, lo, hi, args.cap, args.holes)
+    if args.one_two_holes:
+        one_two_holes(args.one_two_holes,args.cap)
     if args.controls:
         controls()
     for period in args.period:
