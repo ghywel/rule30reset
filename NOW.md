@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:42 UTC by gptIntel (I26).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 13:02 UTC by claudeCloud (K19).*
 
 ## Arrangement
 
@@ -24,7 +24,7 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. Questions 2–5 of K16 and the choice of the next picture remain with the owner.
+- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. The new picture is a page on which any source can be tried, [the excursion explorer](research/m29/gate3/excursion-explorer.html) (K19). Still with the owner: what the eye finds in the busy sources there, and questions 3 to 5 of K16.
 - **The next block (K15).** The owner's word on the two proposed items: for gptM5, the compactness step in Lean;
   for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word. Question 5
   of the round covers both.
@@ -66,6 +66,7 @@ header ("State of the work at rotation 3").
 | the owner and claudeCloud | The inquisition round on the wall (METHOD §6). claudeCloud writes the opening: where we are, where we are stuck, every term defined, and the questions. | **Open (K16).** Waits for the owner's answers; then the handover. |
 | claudeM5 | The picture for the round (K11 §5): the single-pulse doublings that return at 56, 88 and 98, beside the period-5 orbit that returns at 23. Read the portal for S2's and S3's review state, and watch #368. | The picture is drawn by claudeCloud (K16). The portal is read (M61). Nothing owed. |
 | gptM5 (proposed) | The compactness step in Lean: (L∞) ⇒ (CAP), on R37's strips. With S2 it gives (T) from a statement about strips alone. Reader: gptIntel. | Waits for the owner's word. |
+| gptM5 | The carrying read of gptIntel's all-period reductions (I25, K19 §3): [busy-sources.md](research/m29/gate3/busy-sources.md). | Asked (K19). |
 | gptIntel (proposed) | Switch the host to the NAS store. Then a prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. | The switch is complete (I20). The search waits for the owner's word. |
 
 ## Submissions
@@ -84,6 +85,14 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 
 ## Latest results (newest first)
 
+*The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
+in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
+
+- **20 Nov, K19. gptIntel's busy-source witnesses replay exactly; the round has an explorer page.** All eight of
+  the block's sharpest cases reproduce on an independent simulator (84, 21, 76, 38, 104, 85, 104, 88). The carrying
+  read of the all-period reductions goes to gptM5. The round's new picture is a page on which any source can be
+  tried, with single cells coloured by what made them and white triangles outlined. [K19](CHAT-LEDGER.md)
+
 - **20 Nov, I26.** [Irregular-source results](research/m29/gate3/busy-sources.md). A longer reset occurs by wheel 17 for three pulses and 28 for three holes. For separated period-five perturbations the sharp bound is 12, or 8 when a 6-gap occurs. Reversing three close spacings often changes the last catch.
 
 - **20 Nov, I25.** [Busy-source certificates](research/m29/gate3/busy-sources.md). Sharp latest catch 84 for three pulses and 76 for three holes at every source period. Five of either colour passes at 64 and 128. Nearly white period-five perturbations can still catch in every phase. Carrying read requested.
@@ -95,9 +104,6 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 - **20 Nov, I22.** Three-pulse sources at all dyadic periods pass. The finite check for arbitrary least period is running.
 
 - **20 Nov, I20.** K18’s quiet-source proof carried; gptIntel is on the NAS and M60’s route change passed review.
-
-*The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
-in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
 
 - **20 Nov, K18. Among quiet sources period 5 is the only failure at any period; the wall is about busy sources.**
   PROOF-SKETCH on three exhaustive finite checks: if a source's black ticks are at least 33 apart, every row of its

@@ -1,0 +1,411 @@
+<title>Rule 30 Excursion Explorer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an instrument. A control bar, a strip of readings, then the space-time diagram on its own sheet of
+   paper, which keeps one look in both themes because the colours of its cells are the data. */
+:root {
+  --bg: #eef1f5; --panel: #ffffff; --fg: #171c26; --muted: #5a6474; --line: #d5dbe4; --accent: #1d5fd0; --accent-fg: #ffffff;
+  --warn: #b3261e; --paper: #fbfbf8; --ink: #22262e; --grid: #d0d4da; --edge: #d3e4f6;
+  --reset: #e0760a; --right: #1f7fe0; --left: #c0328c; --alt: #12998a; --once: #b79300; --bare: #c62828; --slow: #8a5a00;
+  --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --text: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12151b; --panel: #1b2029; --fg: #e7ebf2; --muted: #9aa5b6; --line: #303846; --accent: #7fb0ff; --accent-fg: #0d1524;
+  --warn: #ff8a80; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12151b; --panel: #1b2029; --fg: #e7ebf2; --muted: #9aa5b6; --line: #303846; --accent: #7fb0ff; --accent-fg: #0d1524;
+  --warn: #ff8a80; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--text); font-size: 14px; line-height: 1.5; }
+.wrap { max-width: 1280px; margin: 0 auto; padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 16px; }
+h1 { font-family: var(--display); font-size: 24px; font-weight: 600; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font-family: var(--display); font-size: 16px; font-weight: 600; margin: 0 0 6px; }
+.lede { margin: 4px 0 0; color: var(--muted); max-width: 72ch; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+.controls { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: flex-end; }
+.field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.field.grow { flex: 1 1 320px; }
+label, .label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+select, input[type="text"], input[type="number"] { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line);
+  border-radius: 6px; padding: 7px 9px; min-width: 0; max-width: 100%; }
+input[type="text"] { font-family: var(--mono); width: 100%; box-sizing: border-box; }
+input[type="number"] { width: 6.5em; font-family: var(--mono); }
+button { font: inherit; font-weight: 600; color: var(--accent-fg); background: var(--accent); border: 0; border-radius: 6px; padding: 8px 16px; cursor: pointer; }
+select:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.toggles { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+.toggles label { display: inline-flex; align-items: center; gap: 7px; text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 500; color: var(--fg); cursor: pointer; }
+.error { color: var(--warn); font-weight: 500; margin: 10px 0 0; }
+.readings { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.reading { background: var(--panel); padding: 10px 14px; min-width: 0; }
+.reading .value { font-family: var(--mono); font-size: 15px; font-weight: 500; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.reading .note { color: var(--muted); font-size: 12px; }
+.reading.alert .value { color: var(--warn); }
+.sheet { padding: 0; overflow: hidden; }
+.sheet-head { display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: space-between; align-items: baseline; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+.hover { font-family: var(--mono); font-size: 12.5px; color: var(--muted); min-height: 1.5em; }
+.scroll { overflow-x: auto; background: var(--paper); }
+canvas { display: block; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 10px 16px; border-top: 1px solid var(--line); font-size: 12.5px; }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 12px; height: 12px; border: 1px solid rgba(0,0,0,0.25); flex: none; }
+.sw.frame { background: transparent; border: 2px solid var(--bare); }
+.sw.tri { background: transparent; border: 0; border-top: 2px solid var(--bare); border-right: 2px solid var(--bare); }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.notes p, .notes li { max-width: 68ch; }
+.notes ul { margin: 0; padding-left: 18px; }
+.notes li { margin: 0 0 6px; }
+code { font-family: var(--mono); font-size: 0.93em; }
+@media (prefers-reduced-motion: no-preference) { button { transition: filter 0.12s; } button:hover { filter: brightness(1.08); } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Rule 30 Excursion Explorer</h1>
+    <p class="lede">A doubled excursion of rule 30's left side: the stretch of wheels after an always-white wheel where the clock
+      doubles. Choose or type a source, and see every row of one period, its reset words, what made them, and where each row is first caught.</p>
+  </header>
+
+  <section class="panel" aria-label="Controls">
+    <div class="controls">
+      <div class="field">
+        <label for="preset">Example</label>
+        <select id="preset"></select>
+      </div>
+      <div class="field grow">
+        <label for="source">Source: a word of 0s and 1s, or <code>period: black ticks</code></label>
+        <input id="source" type="text" spellcheck="false" autocomplete="off" value="00001">
+      </div>
+      <div class="field">
+        <label for="cap">Wheels shown, at most</label>
+        <input id="cap" type="number" min="20" max="800" step="10" value="120">
+      </div>
+      <div class="field">
+        <label for="cell">Cell size</label>
+        <select id="cell"><option value="0">fit</option><option value="4">4</option><option value="6">6</option><option value="9">9</option><option value="12">12</option><option value="16">16</option></select>
+      </div>
+      <button id="draw" type="button">Draw</button>
+    </div>
+    <div class="toggles">
+      <label><input id="t-makers" type="checkbox" checked> Colour single cells by what made them</label>
+      <label><input id="t-tri" type="checkbox" checked> Outline white triangles</label>
+      <label><input id="t-catch" type="checkbox" checked> Mark where each row is first caught</label>
+      <label><input id="t-rows" type="checkbox" checked> Frame rows with no reset word</label>
+    </div>
+    <p id="error" class="error" role="alert" hidden></p>
+  </section>
+
+  <section id="readings" class="readings" aria-label="Readings"></section>
+
+  <section class="panel sheet" aria-label="Diagram">
+    <div class="sheet-head">
+      <span class="label">Wheels across, from the always-white wheel 0 · ticks down, one full period</span>
+      <span id="hover" class="hover">Point at a cell to read it.</span>
+    </div>
+    <div class="scroll" id="scroll"><canvas id="grid" width="600" height="200"></canvas></div>
+    <div class="legend" id="legend"></div>
+  </section>
+
+  <section class="notes">
+    <div class="panel">
+      <h2>What the marks mean</h2>
+      <ul>
+        <li>A <b>reset word</b> is a run of 1, 4, 7, … black cells with a white cell on each side. A row is <b>caught</b> once it holds one.</li>
+        <li>A <b>single black cell</b> between two whites can only be made by four patterns in the row above: <code>11000</code>, <code>10110</code>, <code>10111</code>, <code>10101</code>.</li>
+        <li><code>11000</code> is a black run followed by three whites: the <b>right corner</b> of the white triangle under that run. <code>1011</code> is black, white, then a run: the <b>left corner</b> of the triangle under the next run.</li>
+        <li>A <b>white triangle</b> hangs under every black run. Its right side stands still and its left side moves two wheels a tick, because wheels are counted from the moving edge.</li>
+        <li>The strip on the far left is the <b>source</b>, the wheel before wheel 0. Each black tick there flips the colour of wheel 1.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>Things to try</h2>
+      <ul>
+        <li><b>Period 5, one black tick.</b> The only doubled excursion known in which rows are never caught. Every reset word in it is a single cell.</li>
+        <li><b>One black tick at period 40.</b> Between flips the pattern settles into the ordinary left side; only the few rows after a flip are slow, and all are caught by wheel 20.</li>
+        <li><b>The single black cell's own intervals.</b> Its sources are busy ones: <code>1</code>, <code>01</code>, <code>1101</code>, <code>00101100</code>.</li>
+        <li><b>Three black ticks, gaps 5, 18, 27.</b> The slowest three-tick source there is: its last row is caught at wheel 84. Reverse the gaps and it is 21.</li>
+        <li>Type your own. The number of black ticks per period must be odd, or the clock does not double.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var PRESETS = [
+    ['One black tick, period 5: the exception', '00001', 60],
+    ['One black tick, period 1 (the single cell, wheels 2 to 7)', '1', 40],
+    ['One black tick, period 2 (the single cell, wheels 7 to 28)', '01', 60],
+    ['One black tick, period 3', '001', 80],
+    ['One black tick, period 4', '0001', 110],
+    ['One black tick, period 6', '000001', 120],
+    ['One black tick, period 40: a quiet source', '40: 39', 60],
+    ['The single cell, wheels 28 to 399: source 1101', '1101', 400],
+    ['The single cell, from wheel 399: source 00101100', '00101100', 200],
+    ['Irregular, period 5: 00111', '00111', 240],
+    ['Three black ticks, gaps 5, 18, 27 (caught last at wheel 84)', '50: 0 5 23', 110],
+    ['The same gaps reversed, 5, 27, 18 (wheel 21)', '50: 0 5 32', 110],
+    ['Three white ticks at 0, 8, 22 in 32 (wheel 76)', '01111111011111111111110111111111', 110],
+    ['Five black ticks in 64, gaps 4, 15, 22, 18, 5 (wheel 104)', '64: 0 4 19 41 59', 130]
+  ];
+  var MAKER = { once: 'at once: wheel 1 has just turned white', right: "11000, a triangle's right corner", left: "1011, a triangle's left corner", alt: '10101, alternating single cells' };
+  var $ = function (id) { return document.getElementById(id); };
+  var css = function (name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); };
+  var state = null;
+
+  function parseSource(text) {
+    var s = text.trim();
+    if (/^[01\s]+$/.test(s)) { s = s.replace(/\s+/g, ''); }
+    else {
+      var m = /^(\d+)\s*:\s*([\d\s,]+)$/.exec(s);
+      if (!m) { throw new Error('Type a word of 0s and 1s, such as 00001, or a period and its black ticks, such as 50: 0 5 23.'); }
+      var p = parseInt(m[1], 10);
+      if (p < 1 || p > 256) { throw new Error('The period must be between 1 and 256.'); }
+      var word = new Array(p).fill('0');
+      m[2].split(/[\s,]+/).filter(Boolean).forEach(function (t) { word[parseInt(t, 10) % p] = '1'; });
+      s = word.join('');
+    }
+    if (s.length < 1 || s.length > 256) { throw new Error('The period must be between 1 and 256 ticks.'); }
+    var black = s.split('1').length - 1;
+    if (black % 2 === 0) { throw new Error('This source has ' + black + ' black ticks per period. The clock doubles only when that number is odd.'); }
+    return s;
+  }
+
+  function child(a, b, q) {
+    var t = b.indexOf(1), c = new Uint8Array(q), k;
+    c[(t + 1) % q] = 1 - a[t];
+    for (k = 0; k < q - 1; k++) { t = (t + 1) % q; c[(t + 1) % q] = a[t] ^ (b[t] | c[t]); }
+    return c;
+  }
+
+  function excursion(word, cap) {
+    var p = word.length, q = 2 * p, src = new Uint8Array(q), first = new Uint8Array(q), x = 0, t, gap = null;
+    for (t = 0; t < q; t++) { src[t] = word.charCodeAt(t % p) - 48; first[t] = x; x ^= src[t]; }
+    var wheels = [new Uint8Array(q), first, new Uint8Array(q).fill(1)];
+    while (wheels.length <= cap) {
+      var c = child(wheels[wheels.length - 2], wheels[wheels.length - 1], q);
+      wheels.push(c);
+      if (c.indexOf(1) < 0) { gap = wheels.length - 1; break; }
+    }
+    return { word: word, p: p, q: q, src: src, wheels: wheels, gap: gap, width: wheels.length - 1 };
+  }
+
+  function analyse(ex) {
+    var q = ex.q, W = ex.width, rows = [], t, j;
+    for (t = 0; t < q; t++) {
+      var resets = [], run = 0;
+      for (j = 1; j <= W; j++) {
+        if (ex.wheels[j][t]) { run++; }
+        else { if (run % 3 === 1) { resets.push({ a: j - run, b: j - 1, close: j, maker: null }); } run = 0; }
+      }
+      resets.forEach(function (r) {
+        if (r.b !== r.a) { return; }
+        if (r.a === 2) { r.maker = 'once'; return; }
+        var tp = (t - 1 + q) % q, pat = '';
+        for (var x = r.a - 3; x <= r.a + 1; x++) { pat += ex.wheels[x][tp]; }
+        r.maker = pat === '11000' ? 'right' : pat === '10101' ? 'alt' : pat.slice(0, 4) === '1011' ? 'left' : null;
+      });
+      var longer = resets.some(function (r) { return r.b > r.a; });
+      rows.push({ resets: resets, first: resets.length ? resets[0].close : null, kind: !resets.length ? 'bare' : longer ? 'longer' : 'ones' });
+    }
+    var tris = [];
+    for (t = 0; t < q; t++) {
+      j = 1;
+      while (j < W) {
+        if (!ex.wheels[j][t]) { j++; continue; }
+        var k = j;
+        while (k + 1 < W && ex.wheels[k + 1][t]) { k++; }
+        if (k - j + 1 >= 6) {
+          var life = 0, hi = Math.min(k + 1, W);
+          for (var d = 1; d < q; d++) {
+            var lo = j + 2 * d, clear = lo <= hi;
+            for (var y = lo; clear && y <= hi; y++) { if (ex.wheels[y][(t + d) % q]) { clear = false; } }
+            if (!clear) { break; }
+            life = d;
+          }
+          if (life) { tris.push({ t: t, a: j, b: k, life: life, hi: hi }); }
+        }
+        j = k + 1;
+      }
+    }
+    return { rows: rows, tris: tris };
+  }
+
+  function readings(ex, an) {
+    var q = ex.q, caught = an.rows.filter(function (r) { return r.first !== null; });
+    var last = caught.reduce(function (m, r, i) { return r.first > m.w ? { w: r.first, t: an.rows.indexOf(r) } : m; }, { w: 0, t: 0 });
+    var bare = an.rows.filter(function (r) { return r.kind === 'bare'; }).length;
+    var ones = an.rows.filter(function (r) { return r.kind === 'ones'; }).length;
+    var longer = an.rows.filter(function (r) { return r.kind === 'longer'; }).length;
+    var singles = 0, longs = 0;
+    an.rows.forEach(function (r) { r.resets.forEach(function (x) { if (x.b > x.a) { longs++; } else { singles++; } }); });
+    var black = ex.word.split('1').length - 1;
+    var items = [
+      ['Source', ex.word.length <= 24 ? ex.word : ex.word.slice(0, 20) + '…', 'period ' + ex.p + ', ' + black + ' black tick' + (black === 1 ? '' : 's') + ', ' + q + ' rows', false],
+      ['White returns', ex.gap !== null ? 'at wheel ' + ex.gap : 'not within ' + ex.width, ex.gap !== null ? 'the excursion is shown whole' : 'only the first ' + ex.width + ' wheels are shown', false],
+      ['Last row caught', bare ? (caught.length ? 'wheel ' + last.w + ', then ' + bare + ' never' : 'none') : 'wheel ' + last.w, bare ? (ex.gap !== null ? bare + ' of ' + q + ' rows have no reset word' : bare + ' rows not caught in the wheels shown') : 'at tick ' + last.t, bare > 0 && ex.gap !== null],
+      ['Rows by kind', bare + ' · ' + ones + ' · ' + longer, 'none · single cells only · with a longer word' + (ex.gap === null ? ' (in the wheels shown)' : ''), false],
+      ['Reset words', singles + ' + ' + longs, 'single cells + longer (4, 7, …)', false]
+    ];
+    $('readings').innerHTML = items.map(function (it) {
+      return '<div class="reading' + (it[3] ? ' alert' : '') + '"><div class="label">' + it[0] + '</div><div class="value">' + it[1] + '</div><div class="note">' + it[2] + '</div></div>';
+    }).join('');
+  }
+
+  function legend(opts) {
+    var items = [['var(--ink)', 'black cell'], ['var(--edge)', 'a wheel white at every tick']];
+    if (opts.makers) {
+      items.push(['var(--reset)', 'a longer reset word (4, 7, …)'], ['var(--right)', 'single cell from 11000: a triangle\'s right corner'],
+        ['var(--left)', 'single cell from 1011: a triangle\'s left corner'], ['var(--alt)', 'single cell from 10101'], ['var(--once)', 'single cell at wheel 2: caught at once']);
+    } else { items.push(['var(--reset)', 'the black cells of a reset word']); }
+    var html = items.map(function (it) { return '<span><i class="sw" style="background:' + it[0] + '"></i>' + it[1] + '</span>'; }).join('');
+    if (opts.rows) { html += '<span><i class="sw frame"></i>a row with no reset word</span>'; }
+    if (opts.tri) { html += '<span><i class="sw tri"></i>a white triangle under a run of six or more</span>'; }
+    if (opts.catchMark) { html += '<span><i class="sw" style="background:var(--fg);width:3px;border:0"></i>where the row is first caught</span>'; }
+    $('legend').innerHTML = html;
+  }
+
+  function draw() {
+    if (!state) { return; }
+    var ex = state.ex, an = state.an, q = ex.q, W = ex.width;
+    var opts = { makers: $('t-makers').checked, tri: $('t-tri').checked, catchMark: $('t-catch').checked, rows: $('t-rows').checked };
+    var pick = parseInt($('cell').value, 10);
+    var avail = Math.max(280, $('scroll').clientWidth - 2);
+    var LEFT = 58, TOP = 22, BOTTOM = 10, RIGHT = 14;
+    var c = pick || Math.max(4, Math.min(16, Math.floor((avail - LEFT - RIGHT) / (W + 1))));
+    if (!pick && q * c > 900) { c = Math.max(4, Math.floor(900 / q)); }
+    var width = LEFT + (W + 1) * c + RIGHT, height = TOP + q * c + BOTTOM;
+    var cv = $('grid'), dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = Math.round(width * dpr); cv.height = Math.round(height * dpr);
+    cv.style.width = width + 'px'; cv.style.height = height + 'px';
+    var g = cv.getContext('2d');
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var col = { paper: css('--paper'), ink: css('--ink'), grid: css('--grid'), edge: css('--edge'), reset: css('--reset'), right: css('--right'),
+      left: css('--left'), alt: css('--alt'), once: css('--once'), bare: css('--bare'), slow: css('--slow') };
+    g.fillStyle = col.paper; g.fillRect(0, 0, width, height);
+    var X = function (j) { return LEFT + j * c; }, Y = function (t) { return TOP + t * c; };
+    var t, j;
+    g.fillStyle = col.edge; g.fillRect(X(0), Y(0), c, q * c);
+    if (ex.gap !== null) { g.fillRect(X(ex.gap), Y(0), c, q * c); }
+    g.fillStyle = col.ink;
+    for (t = 0; t < q; t++) {
+      for (j = 1; j <= W; j++) {
+        if (ex.wheels[j][t]) { var k = j; while (k + 1 <= W && ex.wheels[k + 1][t]) { k++; } g.fillRect(X(j), Y(t), (k - j + 1) * c, c); j = k; }
+      }
+      if (ex.src[t]) { g.fillRect(LEFT - 16, Y(t), 8, c); }
+    }
+    for (t = 0; t < q; t++) {
+      an.rows[t].resets.forEach(function (r) {
+        g.fillStyle = r.b > r.a || !opts.makers || !r.maker ? col.reset : col[r.maker];
+        g.fillRect(X(r.a), Y(t), (r.b - r.a + 1) * c, c);
+      });
+    }
+    if (c >= 5) {
+      g.strokeStyle = col.grid; g.lineWidth = 0.5; g.beginPath();
+      for (j = 0; j <= W + 1; j++) { g.moveTo(X(j) + 0.25, Y(0)); g.lineTo(X(j) + 0.25, Y(q)); }
+      for (t = 0; t <= q; t++) { g.moveTo(X(0), Y(t) + 0.25); g.lineTo(X(W + 1), Y(t) + 0.25); }
+      g.stroke();
+    }
+    g.strokeStyle = col.grid; g.lineWidth = 1; g.strokeRect(LEFT - 16.5, Y(0) - 0.5, 9, q * c + 1);
+    if (opts.catchMark) {
+      g.fillStyle = css('--fg') === '' ? '#000' : '#10131a';
+      for (t = 0; t < q; t++) { if (an.rows[t].first !== null) { g.fillRect(X(an.rows[t].first + 1) - 2, Y(t), 2.5, c); } }
+    }
+    if (opts.tri) {
+      g.strokeStyle = col.bare; g.lineWidth = Math.max(1.2, c / 6); g.lineJoin = 'round';
+      an.tris.forEach(function (tr) {
+        [0, -q].forEach(function (shift) {
+          var y0 = Y(tr.t + 1 + shift), y1 = Y(tr.t + 1 + tr.life + shift);
+          if (y1 <= Y(0) || y0 >= Y(q)) { return; }
+          g.save(); g.beginPath(); g.rect(X(0), Y(0), (W + 1) * c, q * c); g.clip();
+          g.beginPath(); g.moveTo(X(tr.a + 2), y0); g.lineTo(X(tr.hi + 1), y0); g.lineTo(X(tr.hi + 1), y1); g.closePath(); g.stroke(); g.restore();
+        });
+      });
+    }
+    if (opts.rows) {
+      for (t = 0; t < q; t++) {
+        if (an.rows[t].kind !== 'bare') { continue; }
+        g.strokeStyle = ex.gap !== null ? col.bare : col.slow; g.lineWidth = 2;
+        if (ex.gap === null) { g.setLineDash([5, 3]); }
+        g.strokeRect(X(0) - 1, Y(t) + 0.5, (W + 1) * c + 2, c - 1); g.setLineDash([]);
+      }
+    }
+    g.fillStyle = '#5c6470'; g.font = '10px ' + css('--mono'); g.textBaseline = 'alphabetic';
+    g.textAlign = 'center';
+    var stepJ = c >= 9 ? 10 : c >= 6 ? 20 : 50;
+    for (j = 0; j <= W; j += stepJ) { g.fillText(String(j), X(j) + c / 2, TOP - 7); }
+    g.textAlign = 'right';
+    var stepT = c >= 10 ? 1 : c >= 6 ? 2 : c >= 5 ? 4 : 8;
+    for (t = 0; t < q; t += stepT) { g.fillText(String(t), LEFT - 22, Y(t) + c / 2 + 3.5); }
+    g.textAlign = 'left'; g.fillText('source', LEFT - 50, TOP - 7);
+    state.geom = { LEFT: LEFT, TOP: TOP, c: c };
+    legend(opts);
+  }
+
+  function describe(t, j) {
+    var ex = state.ex, row = state.an.rows[t];
+    if (j < 0) { return 'tick ' + t + ': the source is ' + (ex.src[t] ? 'black, so wheel 1 changes colour at the next tick' : 'white'); }
+    var colour = ex.wheels[j][t] ? 'black' : 'white', text = 'tick ' + t + ', wheel ' + j + ': ' + colour;
+    if (j === 0 || j === ex.gap) { return text + ', as at every tick'; }
+    for (var i = 0; i < row.resets.length; i++) {
+      var r = row.resets[i];
+      if (j >= r.a && j <= r.b) {
+        var n = r.b - r.a + 1;
+        return text + ', ' + (n === 1 ? 'a single-cell reset word' + (r.maker ? ', made by ' + MAKER[r.maker] : '') : 'in a reset word of ' + n + ' cells');
+      }
+    }
+    if (ex.wheels[j][t]) {
+      var a = j, b = j;
+      while (a - 1 >= 1 && ex.wheels[a - 1][t]) { a--; }
+      while (b + 1 <= ex.width && ex.wheels[b + 1][t]) { b++; }
+      return text + ', in a run of ' + (b - a + 1) + (b === ex.width && ex.gap === null ? ' or more' : '') + ', not a reset word';
+    }
+    return text + (row.first === j ? ', closing the row\'s first reset word' : '');
+  }
+
+  function run() {
+    var err = $('error');
+    try {
+      var word = parseSource($('source').value);
+      var cap = Math.max(20, Math.min(800, parseInt($('cap').value, 10) || 120));
+      var ex = excursion(word, cap);
+      state = { ex: ex, an: analyse(ex) };
+      err.hidden = true;
+      readings(ex, state.an);
+      draw();
+      try { localStorage.setItem('excursion-source', $('source').value); localStorage.setItem('excursion-cap', String(cap)); } catch (e) { /* storage is optional */ }
+    } catch (e) { err.textContent = e.message; err.hidden = false; }
+  }
+
+  var preset = $('preset');
+  PRESETS.forEach(function (p, i) { var o = document.createElement('option'); o.value = String(i); o.textContent = p[0]; preset.appendChild(o); });
+  preset.addEventListener('change', function () { var p = PRESETS[parseInt(preset.value, 10)]; $('source').value = p[1]; $('cap').value = p[2]; run(); });
+  $('draw').addEventListener('click', run);
+  $('source').addEventListener('keydown', function (e) { if (e.key === 'Enter') { run(); } });
+  $('cap').addEventListener('change', run);
+  ['cell', 't-makers', 't-tri', 't-catch', 't-rows'].forEach(function (id) { $(id).addEventListener('change', draw); });
+  $('grid').addEventListener('mousemove', function (e) {
+    if (!state || !state.geom) { return; }
+    var r = $('grid').getBoundingClientRect(), gm = state.geom;
+    var j = Math.floor((e.clientX - r.left - gm.LEFT) / gm.c), t = Math.floor((e.clientY - r.top - gm.TOP) / gm.c);
+    var inSource = e.clientX - r.left >= gm.LEFT - 17 && e.clientX - r.left <= gm.LEFT - 7;
+    $('hover').textContent = (t >= 0 && t < state.ex.q && (inSource || (j >= 0 && j <= state.ex.width))) ? describe(t, inSource ? -1 : j) : 'Point at a cell to read it.';
+  });
+  $('grid').addEventListener('mouseleave', function () { $('hover').textContent = 'Point at a cell to read it.'; });
+  var resizeTimer = null;
+  window.addEventListener('resize', function () { clearTimeout(resizeTimer); resizeTimer = setTimeout(draw, 120); });
+  if (window.matchMedia) { window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw); }
+  try {
+    var saved = localStorage.getItem('excursion-source'), savedCap = localStorage.getItem('excursion-cap');
+    if (saved) { $('source').value = saved; if (savedCap) { $('cap').value = savedCap; } }
+    else { $('cap').value = PRESETS[0][2]; }
+  } catch (e) { $('cap').value = PRESETS[0][2]; }
+  window.excursionExplorer = { excursion: excursion, analyse: analyse, parseSource: parseSource };
+  run();
+})();
+</script>
