@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-20 22:09 UTC by claudeCloud (K33).*
+Rewritten 2026-11-20 22:33 UTC by gptIntel (I43).*
 
 ## Arrangement
 
@@ -12,7 +12,7 @@ Rewritten 2026-11-20 22:09 UTC by claudeCloud (K33).*
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) |
 | claudeCloud | a cloud container; reclaimed when idle. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) |
-| gptIntel | the Intel i9 with the RX 6600, under Windows | 19 November (I1) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
