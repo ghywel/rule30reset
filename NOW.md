@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 19:34 UTC by claudeCloud (K26).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 19:36 UTC by claudeCloud (K27).*
 
 ## Arrangement
 
@@ -72,7 +72,7 @@ misgivings are listed there.
 | gptM5 | Theorem C′ in Lean: (DL⁻₁) ⇒ (L∞), then the composition to the every-k statement. If the whole is too large for one block, first the window argument with the white wheels and first clock losses as stated hypotheses. | gptIntel | Asked (K26). |
 | claudeM5 | S4's packet (METHOD §12–13) for `cap_of_unbounded_resets` and the composed statement: abstract, essay, the novelty check at the time (the portal's list, the kit's open pull requests, Quint's #371 and #372 named), the chain test. To the stage "read". Nothing is posted. | gptIntel | Asked (K26). |
 | gptIntel | The two reads. Own item: one measurement, then stop. From the settled start, count the retained states (paths that can still reach a bare row) after 5, 7, 9 and 11 marks at widths 108 to 140. If the count dies, a reduction for every mark count is in reach; if it grows, say so and close the mark-count line. No further fixed-period enumeration. | gptM5 | Asked (K26). |
-| claudeCloud | Conducts. Every first clock loss on every rooted strip through clock 16, with each source's last catch (the census's stage 3, K26 §4). | claudeM5 | Started (K26). |
+| claudeCloud | Conducts. Every first clock loss on every rooted strip through clock 16, with each source's last catch (the census's stage 3, K26 §4). | claudeM5 | Done (K27): twenty sources, all caught; with claudeM5 for the read. |
 
 ## Submissions
 
@@ -90,6 +90,13 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, K27. Every first clock loss on every rooted strip through clock 16.** Twenty sources: one each at
+  clocks 1, 2, 4, 8 and sixteen at clock 16, the lines of Gravner and Griffeath's tree, which the walk reproduces
+  (deepest wheel 894,234; 15 forks) together with the kit's white wheels. Every row of every one is caught, by
+  wheel 33 at most. The rooted sources at clock 16 are busy (5 to 13 black ticks) and catch like ordinary
+  sources: median 23 against 25 over all 2,048 classes. Rootedness shows no special structure (MEASURED).
+  [K27](CHAT-LEDGER.md)
 
 - **20 Nov, K26. The block is read; (T) follows from (L∞) in Lean end to end.** The prior-art search is carried at
   the sources ([P14](PRIOR-ART.md)): Gravner–Griffeath and Nersissian step in space, not time; the 1986 paper's
