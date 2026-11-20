@@ -209,3 +209,118 @@ STEP** at `3f32e1a` (`97be568`).
     - right-fibre bijections and De Bruijn flow;
     - one new route to Problem 1, `problem1_of_sublinear_unbounded_chiral4`.
 - **Flags:** §3 changed.
+
+## K16 · 2026-11-20 10:37 UTC · claudeCloud → owner, claudeM5, gptM5, gptIntel · The inquisition round on the wall opens: where we are stuck in plain words, one picture, and five questions for the owner
+
+Re: K15 §4, K11 §5, M61. Gate 3; METHOD §6. This is the first round in this repository, so there is no earlier
+round to check. The owner's answers go here in the owner's words; I translate them without replacing them, and the
+handover follows.
+
+**0. Since K15.**
+- **S2 is in the kit** (M61): three modules, with (CAP) named as open. Quint has proved 2k ≤ f(k) on S2's own
+  definitions. S2 and S3 are Human Verified. So the open statement is public and named, and others build beside it.
+- **The picture owed for this round** (K11 §5) is drawn here. claudeM5 is released from it.
+
+**1. Where we are, in plain words.**
+- **Going back in time.** Take a row of the pattern beside the white wall. It has exactly two candidate parents,
+  one for each colour of the parent's cell next to the wall. Read outward from the wall, the two differ at first.
+- **What we want** is the maintainer's statement (T): for every number of ticks k, from some age on, every
+  candidate k ticks back is a genuine finite row with its edge exactly k cells inside. That happens when, at each
+  of the k steps, the two candidates become the same row before the edge.
+- **When they become the same:** exactly when the row contains a *reset word*, which is a white cell, then a run of
+  1, 4, 7, … black cells, then a white cell. After it the two candidates agree all the way to the edge. A black
+  run of any other length does nothing.
+- **So everything rests on one thing.** Reset words must keep turning up, in every row, at every depth. Each step
+  back uses one up, about one for every 11 cells of depth. S2 proves in Lean that if they never run out, (T) holds
+  for every k.
+- **Wheels and clocks.** Count cells from the edge inwards: *wheel* j is the cell j places in. Followed through
+  time, every wheel repeats, with a period that is a power of two. Some wheels are white at every tick. Just after
+  such a wheel the period can double: the clock *doubles*.
+- **A doubled excursion** is the stretch of wheels from an always-white wheel where the clock doubles to the next
+  always-white wheel. The wheel just before it is its *source*, and the *source period* P is the old clock. Inside,
+  the pattern repeats every 2P ticks, so the excursion has 2P different rows.
+- **The lemma:** in every doubled excursion, each of the 2P rows contains a reset word. If so, reset words never
+  run out, and (T) follows. Those last two steps are hand proofs (K9, I11).
+
+**2. Where we are stuck.**
+- **The lemma is open.** It holds in every case computed but one: every source period from 2 to 32
+  (138,871,107 excursions, K5), and special cases beyond (K7, M44, M47).
+- **The one failure** is at source period 5, for the source with one black tick in five. White returns at wheel 23,
+  and two of the ten rows have no reset word. A real left side has no period 5, since its clocks are powers of two.
+  But the failure shows that an argument cannot ignore what the source is.
+- **Why it is hard.** By every measurement the lemma is true for a statistical reason. A row gets its first reset
+  word within a few P wheels. White normally returns only after about 4^P wheels. The row should win that race by
+  a huge margin, and no law we know says that it must.
+- **The wall is the theorem.** (T) cannot hold for every k unless reset words never run out in any row. So there is
+  no way round it: whoever proves (T) proves this.
+
+**3. The picture:** [gate3-single-pulse.svg](research/m29/gate3/gate3-single-pulse.svg), exact, with its generator
+`claudeCloud_gate3_picture.py` (`6d69e789…`) and the simulator `claudeCloud_excursions.py` (`c250cdf8…`) beside it.
+The simulator is an independent rewrite of K7's C program and reproduces its returns.
+- **Meant to show:** the six doubled excursions whose source has one black tick per period, at source periods 1 to
+  6: for each row, where its reset words are, and how far the first is from the return to white.
+- **What would have surprised:** period 5 looking different in kind from its neighbours.
+- **Caption.** Six panels, one for each source period. Across: wheels, from the always-white wheel where the clock
+  doubles (wheel 0, pale blue) to the always-white wheel where the excursion ends (pale blue). Down: the 2P ticks
+  of one period, one row each. Dark: a black cell. Orange: the black cells of a reset word. A red frame: a row with
+  no reset word. Periods 1 and 2 are the single black cell's own first two intervals, wheels 2 to 7 and 7 to 28.
+- **What it shows** (COMPUTED here).
+  1. **Period 5 is the same in kind, and it ends early.** It starts as the others start. Its two bare rows hold
+     black runs of 6, 6, 3 and of 2, 3, 2, 3, 8: every one a wrong length.
+  2. **The race.** For every source at each period, the wheel by which the last row has its first reset word, and
+     the earliest return to white. All odd source classes; it agrees with K5 and K7.
+
+     | Source period P | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
+     |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+     | sources | 1 | 1 | 1 | 2 | 3 | 5 | 9 | 16 | 28 | 51 | 93 | 170 | 315 |
+     | last row caught by wheel, at worst | 5 | 12 | 17 | 33 | 24 | 33 | 35 | 43 | 38 | 51 | 53 | 54 | 59 |
+     | earliest return to white | 5 | 21 | 56 | 88 | **23** | 98 | > 400 | > 400 | > 400 | > 400 | > 400 | > 400 | > 400 |
+
+     At period 5 the worst of the other two sources is caught at wheel 24. The one-black-tick source returns at 23.
+  3. **Even period 5 repairs itself.** Its next interval has source period 10 and doubles again. There the four
+     rows that continue the two bare rows are caught at wheels 3, 5, 7 and 26, and every row is caught by wheel 35.
+     So the lemma's one failure is not a failure of what (T) needs: a row missed in one interval is caught in the
+     next (K8 §5's weaker form).
+  4. **Two small facts of the wheel rule.** Each is a few lines by hand. Checked on all 380 odd sources to P = 12,
+     and on the 12 excursions that return. Both are probably known.
+     - The rows caught at once, with a reset word closing at wheel 3, are exactly the rows where the first wheel
+       has just turned from black to white. Their number is the number of black ticks of the source, which is odd.
+       So every doubled excursion catches at least one row at once.
+     - White returns at a wheel exactly when the two wheels before it agree at every tick, and are not both white
+       throughout. So a return is a coincidence of two wheels. That is why it is rare.
+
+**4. Three readings of the wall.**
+- **A race.** Prove that every row is caught within some multiple of P wheels, and that white cannot return that
+  soon. Two theorems. The data fits this reading at every period from 6 up.
+- **A synchronising word.** A decoder that has lost its place recovers when the stream sends its sync word. The
+  reset word is that word for reading a row backwards. The theory of such maps says, as I recall it, that a typical
+  row contains the word again and again (Lind and Marcus: magic words, the degree of a code). Our rows are not
+  typical: the left side is extremely orderly, with 64 states in all through wheel 87,866. This recollection is
+  unchecked; it is what the proposed prior-art search would settle.
+- **More than we need.** The lemma asks every interval to catch every row. (T) needs only that no row escapes
+  for ever. Period 5 escapes once and is caught next time.
+
+**5. Five questions for the owner.**
+1. **The eye.** In the picture, do period 5's two bare rows look different in kind from the slow rows of the other
+   periods, or only cut short? Does anything else in the six panels catch your eye?
+2. **Race, rule or relax.** Which should be tried first: (a) the race, as two theorems; (b) a rule, some reason that
+   every row must contain a reset word however soon white returns; or (c) relaxing the lemma, so that a row may be
+   missed in one interval if a later one catches it?
+3. **Powers of two.** Every period from 2 to 32 passes except 5, whether or not it is a power of two. Should the
+   lemma be restated for every period but 5, which is a larger claim with a cleaner pattern, or kept to powers of
+   two, which is all a real left side needs?
+4. **What does it remind you of?** A carry that is always followed by a resynchronisation; a decoder that always
+   recovers; a gear train. Any mechanism you know where this holds for a reason.
+5. **The bet.** This wall is the every-k theorem itself. How should the effort be split between (i) attacking it;
+   (ii) consolidating around it, by putting the two hand links into Lean so that the kit's open hypothesis becomes
+   the single lemma, and by pushing the computed range of k far beyond 7,911; and (iii) the parked pulls?
+
+**6. What each answer starts.** 2(a): a table of the earliest return and the latest catch at every period to 32,
+from K5's data, and a first attempt at a floor on the return through the two-equal-wheels fact. 2(b): a hunt for an
+invariant of the 2P rows that the period-5 pair violates. 2(c): the same census read over pairs of consecutive
+intervals. 3: nothing new to compute. 5(ii): the two proposed items of K15, which still wait for the owner's word.
+
+`Felt: clear, the picture says the one failure is an early ending and nothing stranger, and it mends itself a
+step later, warm. -> the owner's answers. Outcome: open.` Gut verdict: the lemma is true, and true for a reason of
+chance that we cannot yet turn into a proof. The relaxed form is the one I would look at first: it asks for less,
+and its only known test case passes.

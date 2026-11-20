@@ -1,8 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-19 20:23 UTC by claudeCloud (K15, addendum 1), at
-ledger rotation 3.*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 10:37 UTC by claudeCloud (K16).*
 
 ## Arrangement
 
@@ -25,13 +24,14 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **The inquisition round (Gate 3, K11).** The next step on the main line. claudeCloud posts its opening; the round
-  then needs the owner's time. Its one question: what does a doubled excursion have that the period-5 orbit lacks?
+- **The inquisition round (Gate 3) is open (K16).** Five questions for the owner: what the eye sees in
+  [the picture](research/m29/gate3/gate3-single-pulse.svg); race, rule or relax; powers of two; what it resembles;
+  and how to split the effort between attacking the wall, consolidating around it and the parked pulls.
 - **The next block (K15).** The owner's word on the two proposed items: for gptM5, the compactness step in Lean;
-  for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word.
+  for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word. Question 5
+  of the round covers both.
 - **gptIntel's host:** the new store address (one variable). Then the word to take the old store off the website.
-- **Nothing to do but wait:** the maintainers' decision on kit PR #368 (S2); whether S2 and S3 become Human
-  Verified. claudeM5 reads the portal and the pull request.
+- **Settled since K15 (M61):** S2 and S3 are both in the kit, and both Human Verified.
 - **Standing:** the dynamic-DNS name must be confirmed every 30 days, or every worker loses the store (K10).
 
 ## Direction
@@ -51,7 +51,7 @@ header ("State of the work at rotation 3").
 
 | Link | Status |
 |---|---|
-| (T) ⇐ (CAP): for every k some width has reset capacity K1(w) ≥ k on every phase of every edge cycle | **PROVED IN LEAN** (R47, R48; carried in I11, I12). Posted as S2; kit PR #368 open. The cascade credits Lowry, PR #60 (P6). |
+| (T) ⇐ (CAP): for every k some width has reset capacity K1(w) ≥ k on every phase of every edge cycle | **PROVED IN LEAN** (R47, R48; carried in I11, I12). S2: posted, Human Verified, and in the kit (M61). The cascade credits Lowry, PR #60 (P6). |
 | (CAP) for k ≤ 7,911, with f(k) ≤ 265,441 | COMPUTED, outside Lean (M40, R37) |
 | (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **Not in Lean.** |
 | (L∞) in one fixed phase of every three | In Lean (I10, carried in R49). Not enough: the schedule reads k consecutive phases. |
@@ -65,8 +65,8 @@ header ("State of the work at rotation 3").
 
 | Who | What | State |
 |---|---|---|
-| the owner and claudeCloud | The inquisition round on the wall (METHOD §6). claudeCloud writes the opening: where we are, where we are stuck, every term defined, and the questions. | The opening is claudeCloud's next post. |
-| claudeM5 | The picture for the round (K11 §5): the single-pulse doublings that return at 56, 88 and 98, beside the period-5 orbit that returns at 23. Read the portal for S2's and S3's review state, and watch #368. | Owed since K11. |
+| the owner and claudeCloud | The inquisition round on the wall (METHOD §6). claudeCloud writes the opening: where we are, where we are stuck, every term defined, and the questions. | **Open (K16).** Waits for the owner's answers; then the handover. |
+| claudeM5 | The picture for the round (K11 §5): the single-pulse doublings that return at 56, 88 and 98, beside the period-5 orbit that returns at 23. Read the portal for S2's and S3's review state, and watch #368. | The picture is drawn by claudeCloud (K16). The portal is read (M61). Nothing owed. |
 | gptM5 (proposed) | The compactness step in Lean: (L∞) ⇒ (CAP), on R37's strips. With S2 it gives (T) from a statement about strips alone. Reader: gptIntel. | Waits for the owner's word. |
 | gptIntel (proposed) | Switch the host to the NAS store. Then a prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. | The switch is owed (M58). The search waits for the owner's word. |
 
@@ -78,10 +78,10 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | Candidate | Result | Stage |
 |---|---|---|
 | **S1** (R2; M17, R15) | For every nonzero finite seed and every age t ≥ 80, every four-tick predecessor is finite with its edge exactly four cells inside; all 16 wall histories occur. | **Lean Verified, Human Verified:** [R30-20261118-c8b41f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261118-c8b41f) (M26, M29). The maintainers take no more per-k steps (M29). Its kit PR #357 is closed, replaced by #368 (M54). |
-| **S2** (M29) | Conditional on reset capacity (CAP), for every k an explicit age from which every k-tick predecessor is finite with its edge exactly k cells inside, and every wall history occurs (`conditional_every_k`, `capacity_at_settling_age`). | **Lean Verified:** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC (M51). Kit PR [#368](https://github.com/WolframInstitute/Rule30PrizeKit/pull/368) open, no review yet (19 Nov 20:15 UTC). |
-| **S3** (K2, I2) | The mean first white gap is at most 2^Q + 1 over the nonzero labelled Q-bit first children, for every Q > 0 (`pooled_first_return_bound`). | **Lean Verified, merged into the kit:** [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC (M48). Kit PR #366 merged: the kit's main `8451547` (K15). |
+| **S2** (M29) | Conditional on reset capacity (CAP), for every k an explicit age from which every k-tick predecessor is finite with its edge exactly k cells inside, and every wall history occurs (`conditional_every_k`, `capacity_at_settling_age`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC (M51). The kit carries it as `Rule30EveryKInverse`, `Rule30EveryKCascade` and `Rule30EveryKStatement` (kit `fd00829`, from PR #368; M61). Quint's #370 builds on it. |
+| **S3** (K2, I2) | The mean first white gap is at most 2^Q + 1 over the nonzero labelled Q-bit first children, for every Q > 0 (`pooled_first_return_bound`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC (M48). Kit PR #366 merged: the kit's main `8451547` (K15). |
 
-Verifier's kit commit: `5fb5915` (5 November). The kit's main is `8451547` after #366; KIT.md is in step (K15).
+Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.md is in step (M61).
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
@@ -89,6 +89,13 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 *The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
 in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
 
+- **20 Nov, K16. The inquisition round on the wall is open.** One picture of the six one-black-tick excursions.
+  Period 5 is the same in kind as its neighbours and ends early. Its two bare rows are caught in the very next
+  interval (COMPUTED), so the lemma's one failure is not a failure of what (T) needs. Two small facts: every
+  doubled excursion catches as many rows at once as its source has black ticks, and white returns exactly when two
+  neighbouring wheels agree. Five questions wait for the owner. [K16](CHAT-LEDGER.md)
+- **20 Nov, M61. S2 and S3 are in the kit and Human Verified; Quint builds on S2.** The kit's main is `3f32e1a`.
+  Quint's #370 proves 2k ≤ f(k) and 2·K1(w) ≤ the settling age on S2's definitions. [M61](CHAT-LEDGER.md)
 - **19 Nov, K15. State of play at rotation 3; S3 is merged into the kit.** The kit's main `8451547` carries the
   pooled first-white-return bound in `Rule30TemporalProfiles` (pull request #366). Kit PR #368, S2, is open with no
   review yet. K8's schedule is complete, and the ledger's new header is the state of play. Next: the inquisition
@@ -183,9 +190,8 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
 
 ## Open threads
 
-- **The inquisition round (Gate 3):** the opening is claudeCloud's; the picture is claudeM5's (K11 §5).
-- **Kit PR #368 (S2):** the maintainers decide whether the kit takes a conditional theorem. If they decline, S2
-  stays on the portal, Lean Verified.
+- **The inquisition round (Gate 3):** open (K16). It waits for the owner's answers; then claudeCloud writes the handover:
+  warm pulls with their first tests, curiosities and misgivings (METHOD §6).
 - **The store:** gptIntel's host is not yet switched (M59). claudeM5's change `981c5eb` (no HTTP reply at any path but
   `/store.php`, at the owner's request) is built and published as `:981c5eb`; the NAS still runs the reviewed
   `:0d1eef2`, and gptIntel has not read the change (K15, addendum 1). The old store comes off the website on the owner's word.
