@@ -142,6 +142,35 @@ def bounded_gaps(bound, first, last, cap, holes=False):
           f'peak={peak} gaps={earliest_witness} missing={missing} cap={cap} holes={holes}', flush=True)
 
 
+def reflection(bound, lo, hi, cap, holes=False):
+    """Compare opposite time orders for the same three distinct gaps."""
+    distribution = Counter()
+    extremum = None
+    max_delta = -1
+    for a in range(lo, hi + 1):
+        for b, c in combinations(range(a + 1, bound + 1), 2):
+            p = a + b + c
+            if holes and p % 2:
+                continue
+            stagger = 2 * (((1 << (2*p))-1)//3) if holes else 0
+            peaks = []
+            for second in (b, c):
+                last, pending, white = trace_first(first_column(p,a,second) ^ stagger, 2*p, cap)
+                if pending:
+                    raise ValueError((a,b,c,second,pending,white))
+                peaks.append(last)
+            delta = abs(peaks[0] - peaks[1])
+            distribution[delta] += 1
+            if delta > max_delta:
+                max_delta, extremum = delta, (a,b,c,*peaks)
+    pairs = sum(distribution.values())
+    if not holes:
+        assert pairs == comb(bound-lo+1,3) - comb(bound-hi,3)
+    print(f'reflection box={bound} least={lo}..{hi} holes={holes} pairs={pairs} '
+          f'changed={pairs-distribution[0]} diff10plus={sum(n for d,n in distribution.items() if d>=10)} '
+          f'max_diff={max_delta} (gaps,forward,reverse)={extremum}',flush=True)
+
+
 def one_two_holes(bound, cap):
     for count in (1, 2):
         total, peak, missing, witness = 0, 0, 0, None
@@ -197,9 +226,14 @@ if __name__ == '__main__':
     p.add_argument('--one-two-holes', type=int, metavar='MAX_GAP')
     p.add_argument('--max-gap', type=int)
     p.add_argument('--holes', action='store_true', help='in the gap cube, mark white instead of black source ticks')
+    p.add_argument('--reflection', type=int, metavar='MAX_GAP')
     p.add_argument('--box', type=int, help='maximum allowed cyclic gap for primitive triples')
     p.add_argument('--least', type=int, nargs=2, metavar=('FIRST','LAST'))
     args = p.parse_args()
+    if args.reflection:
+        lo, hi = args.least or (1,args.reflection)
+        assert 1 <= lo <= hi <= args.reflection
+        reflection(args.reflection,lo,hi,args.cap,args.holes)
     if args.box:
         lo, hi = args.least or (1, args.box)
         assert 1 <= lo <= hi <= args.box
