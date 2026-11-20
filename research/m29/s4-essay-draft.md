@@ -4,7 +4,7 @@ Name: Deep Closed Runs on Every Recurrent Edge Strip Give Reset Capacity, and So
 Author: {AUTHORS}
 Date: 2026-11-20
 Description: Core Lean. The kit's open hypothesis CAP, on the reset capacity of finite edge bands at every width, follows from one property of infinite left-edge strips: every tick's row has closed runs at arbitrarily large depths. With the kit's conditional theorem this gives the inverse-tick statement for every k from that property alone. The property is open. Nothing here decides Q01.
-Abstract: In core Lean 4.35.0 we prove that the kit's reset-capacity hypothesis `CAP` follows from a property of infinite left-edge strips (`Rule30Submission.cap_of_unbounded_resets`). A pointed recurrent strip is an array of cells, wheels 0, 1, 2, … by ticks 0, 1, 2, …, that obeys rule 30's left-edge recurrence, is black at wheel 0, and for each m has a positive period common to wheels 0 to m. `LInfinity` says that in every such strip the row of every tick contains closed runs, a white cell, 3n + 1 black cells and a white cell, starting at arbitrarily large depths. With the kit's `conditional_every_k`, the same hypothesis gives for every k an age from which every k-tick predecessor of every aged nonzero finite row beside the white wall is finite, with its edge exactly k cells inside, and every history at cell 1 occurs (`Rule30Submission.every_k_of_unbounded_resets`). The catalog has this from `CAP` (`Rule30EveryKInverse`), and an open kit pull request (371) proves it without hypothesis for k ≤ 25. Nothing yet derived `CAP` itself. The proof is compactness. If no window held a closed run beyond a given depth in every periodic band, a limit of failing bands would be a pointed recurrent strip with no such run at tick 0. Nesting the windows bounds the width the schedule needs for each k. `LInfinity` is open, and nothing here decides `Q01`.
+Abstract: In core Lean 4.35.0 we prove that the kit's reset-capacity hypothesis `CAP` follows from a property of infinite left-edge strips (`Rule30Submission.cap_of_unbounded_resets`). A pointed recurrent strip is an array of cells, wheels 0, 1, 2, … by ticks 0, 1, 2, …, that obeys rule 30's left-edge recurrence, is black at wheel 0, and for each m has a positive period common to wheels 0 to m. `LInfinity` says that in every such strip the row of every tick contains closed runs, a white cell, 3n + 1 black cells and a white cell, starting at arbitrarily large depths. With the kit's `conditional_every_k`, the same hypothesis gives for every k an age from which every k-tick predecessor of every aged nonzero finite row beside the white wall is finite, with its edge exactly k cells inside, and every history at cell 1 is realised by one of them (`Rule30Submission.every_k_of_unbounded_resets`). The catalog has this from `CAP` (`Rule30EveryKInverse`), and an open kit pull request (371) proves it without hypothesis for k ≤ 25. Our earlier entry argued by hand that `LInfinity` gives `CAP`; this is the first proof of that implication in Lean. The proof is compactness. If no window held a closed run beyond a given depth in every periodic band, a limit of failing bands would be a pointed recurrent strip with no such run at tick 0. Nesting the windows bounds the width the schedule needs for each k. `LInfinity` is open, and nothing here decides `Q01`.
 Keywords: [rule 30, Rule 30 Prize, zero-boundary left half, white wall, inverse ticks, every k, reset capacity, closed runs, recurrent strips, compactness, conditional theorem, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The rule30reset record](https://github.com/ghywel/rule30reset)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
@@ -35,10 +35,9 @@ def LInfinity : Prop := ∀ (d : Nat → Nat → Bool), Recurrence d → d 0 0 =
 - `Rule30Submission.cap_of_unbounded_resets : LInfinity → CAP`.
 - `Rule30Submission.every_k_of_unbounded_resets : LInfinity → ∀ k, ∃ age, TargetAt k age`.
 
-`TargetAt k age` is the kit's target for `k` inverse ticks beside the white wall. For every nonzero finite seed and every time `t ≥ age`, every `k`-tick predecessor of the row at time `t`, a priori of infinite support, has three properties:
-- its last black cell is exactly `k` cells inside the row's edge;
-- it is the row of a natural number;
-- every choice of cell 1 at times `0` to `k − 1` occurs.
+`TargetAt k age` is the kit's target for `k` inverse ticks beside the white wall. Take any nonzero finite seed, any time `t ≥ age`, and the `k`-tick predecessors of the row at time `t`, a priori of infinite support. Then:
+- every one of them is finite, the row of a natural number (`FinitePredecessor`), with its last black cell exactly `k` cells inside the row's edge (`PhysicalEdge`);
+- for every choice of cell 1 at times `0` to `k − 1`, some predecessor has that history (`AllHistories`). One predecessor has one history; the clause is that every history is realised.
 
 In the proof the age is the kit's: `W − 1 + 2^W`, with `W` the least width of capacity `k`.
 
@@ -48,11 +47,11 @@ The kit proves the target for every `k` from `CAP`, by one argument with no cove
 - an open kit pull request (371) evaluates `K1 300 = 25` in Lean, which gives the target for `k ≤ 25` without the hypothesis;
 - our record computes 7,911 layers at width 87,867, outside Lean.
 
-`LInfinity` has no width in it. It is a property of infinite strips, about each tick on its own, and it asks only that closed runs never stop. This entry proves that it is enough. The inverse-tick statement for every `k` now rests in Lean on `LInfinity` alone.
+`LInfinity` has no width in it. It is a property of infinite strips, about each tick on its own, and it asks only that closed runs never stop. Our earlier entry argued by hand that it is enough. This entry proves it in Lean. The inverse-tick statement for every `k` now rests in Lean on `LInfinity` alone.
 
 ## 3. Exploration
 
-**A pointed recurrent strip.** The single black cell's left side, from age 1,200: the top 96 wheels, with the edge on the left and time downwards. The black cells of each closed run are orange.
+**A finite periodic prefix.** The single black cell's rows from age 1,200, read from the edge: the top 96 wheels, with the edge on the left and time downwards. The black cells of each closed run are orange.
 
 ```wl
 f[y_Integer] := BitXor[BitShiftRight[y, 1], BitOr[y, BitShiftLeft[y, 1]]];
@@ -68,16 +67,16 @@ ArrayPlot[Table[marked[band[96, rows[[a + 1]]], 96], {a, 1200, 1263}],
   ColorRules -> {0 -> White, 1 -> Black, 2 -> Orange}, ImageSize -> 420, Frame -> False]
 ```
 
-These 96 wheels have already settled. Their least common period, and a check that they repeat with it from age 1,200 to age 1,480:
+These 96 wheels have settled. Here are their least common period and a check that they repeat with it from age 1,200 to age 1,480:
 
 ```wl
 period[w_Integer, v_Integer] := SelectFirst[2^Range[0, 12], Nest[step[w], v, #] == v &, None];
 {period[96, band[96, rows[[1201]]]], And @@ Table[band[96, rows[[a + 9]]] == band[96, rows[[a + 1]]], {a, 1200, 1480}]}
 ```
 
-Each wheel is periodic, the periods grow with the depth, and every finite prefix has a common period. The rows are the first wheels of a pointed recurrent strip, and in each of them closed runs keep appearing further in. That is what `LInfinity` asks of every such strip.
+So these rows are the phases of one cycle of the band map at width 96: a finite periodic prefix, the kind of object whose limits the proof's first step takes. Each row is the row of a finite seed, with finite support. The picture shows closed runs across the whole window in every phase. It cannot show that they go on without end, which is what `LInfinity` asks of every pointed recurrent strip.
 
-**The window of the compactness step.** The first step of the proof says that for each depth `lo` there is one width `b` such that every odd band on a cycle, of width at least `b`, has a complete factor beyond `lo` that ends by wheel `b`. On the single cell's strip, take its cycle at width 600, with 16 phases. Here is the least such `b` for every phase of that cycle, at depths `lo` from 0 to 550:
+**The window of the compactness step.** The first step of the proof says that for each depth `lo` there is one width `b` such that every odd band on a cycle, of width at least `b`, has a complete factor beyond `lo` that ends by wheel `b`. On the single cell's rows, take the cycle of their top 600 wheels, with 16 phases. Here is the least such `b` for every phase of that cycle, at depths `lo` from 0 to 550:
 
 ```wl
 W = 600;
@@ -94,7 +93,7 @@ gaps = Table[window[lo] - lo, {lo, 0, 560}];
 {Max[gaps], First[Ordering[gaps, -1]] - 1, Min[gaps], N[Mean[gaps], 3]}
 ```
 
-Kit pull request 371 proves that through width 53,208 every odd band on a cycle is one of these 16 phases (`periodic_oddBand_eq_bPhase_of_le_53208`). A band of any greater width on a cycle has its first 600 wheels on a cycle too, and a complete factor that ends by wheel `b` lies in those wheels. So at these depths these windows are the windows of the theorem, not just of this strip.
+Kit pull request 371 proves that through width 53,208 every odd band on a cycle is one of these 16 phases (`periodic_oddBand_eq_bPhase_of_le_53208`). A band of any greater width on a cycle has its first 600 wheels on a cycle too, and a complete factor that ends by wheel `b` lies in those wheels. So at these depths these windows are the windows of the theorem, not just of the single cell.
 
 **Nesting the windows.** The second step applies the first one layer at a time. With `u 0 = 0` and `u (k + 1)` the window for depth `u k`, the schedule clears `k` layers at every width of at least `u k` (here `u k` is never below `k`, as the proof also needs). Here are `u k`, and the capacity the schedule actually reaches on this cycle at width `u k + 1`, for `k` from 1 to 30:
 
@@ -128,23 +127,24 @@ Further in, the nesting costs about 19 wheels per layer, while the schedule itse
 - **The clocks.** On a pointed recurrent strip the least common period of each prefix is a power of two (`dyadic_prefix_clock`). Every clock is eventually lost (`escapes_clock`). It is first lost just after a wheel that is white at every tick, where the next wheel turns antiperiodic and the clock doubles (`first_clock_loss`). All three are in this file.
 - **A sufficient lemma.** `LInfinity` follows from a statement about those doublings: a tick that the doubled stretch after a clock loss misses is caught in the stretch after the next white wheel. The implication is proved by hand and read independently in our record, and a Lean version of it is there too. The lemma's strict form has been checked by computation in two cases: every source of power-of-two period up to 32, and every source with five black or five white ticks at every power-of-two period. So does every first clock loss on every pointed recurrent strip, through clock 16. It is open in general.
 
-The converse of the first headline is not claimed. It is the route through `CAP` that needs `LInfinity`, not `CAP` itself.
+The converse of the first headline is not claimed. Our earlier entry's essay argues by hand that this route needs `LInfinity`: a phase with a last closed run limits the capacity at every width. That argument is outside the two headlines.
 
 ## 6. Prior art and credit
 
 - **The kit.**
   - `Rule30EveryKStatement`, `Rule30EveryKCascade` and `Rule30EveryKInverse` state and prove the target from `CAP`. They are our earlier entry R30-20261119-ccc65f, in the kit from pull request 368. The cascade credits Troy Lowry's kit pull request 60.
-  - The verifier's kit revision does not have these three modules. This file carries them as they stand at kit commit `3f32e1a`, with only the module-system lines removed.
+  - The verifier's kit revision does not have these three modules. This file carries them as they stand at kit commit `3f32e1a`, with the module-system lines removed and their namespaces moved inside `Rule30Submission`, so that it can be imported beside the kit's own copies.
   - The left-edge recurrence is in `Rule30AgedLeftDiagonals` (Lowry with OpenAI Codex), and the encoding behind the clocks in `Rule30LeftUnbounded` (AIOvernight, with OpenAI Codex and Claude).
 - **Capacity values.** G.P.J.W. Quint and Gemini's R30-20261120-2a993b (kit pull request 371, open) has two results: the 16-phase collapse of `K1` through width 53,208, and `CAP`'s first 25 values with the target for `k ≤ 25`. Their R30-20261120-515c76 (in the kit's main since 20 November) has the period-multiple invariance of the schedule. Neither derives `CAP` for every `k`.
-- **The method.** The compactness argument is the standard one, König's lemma on the tree of failing prefixes. The use here is the observation that limits of periodic bands are pointed recurrent strips, each prefix with its own clock.
+- **The implication, by hand.** Our earlier entry R30-20261119-ccc65f says in its abstract that `CAP` would follow from closed runs arbitrarily deep in every phase of every recurrent strip. Its essay (section 6) gives the argument, by compactness and nested windows. This entry is the first proof of that implication in Lean that we found, composed with the every-k theorem.
+- **The method.** The compactness argument is the standard one, König's lemma on the tree of failing prefixes, as in that hand argument. What the Lean adds is that every step is checked, in particular that limits of periodic bands are pointed recurrent strips, each prefix with its own clock.
 - **Ours, earlier.** The three modules after the kit's are ours, with links to their source in our record:
   - [two returns along a strip](https://github.com/ghywel/rule30reset/blob/ab2c0fd0660e521010ac3f4dff74be941b141a99/research/m29/Rule30ThreePhaseReturn.lean);
   - [rooted white returns and clock losses](https://github.com/ghywel/rule30reset/blob/ab2c0fd0660e521010ac3f4dff74be941b141a99/research/m29/Rule30RootedWhiteReturns.lean);
   - [pointed recurrent strips](https://github.com/ghywel/rule30reset/blob/ab2c0fd0660e521010ac3f4dff74be941b141a99/research/m29/Rule30RecurrentStrip.lean).
 
   The compactness module is [here](https://github.com/ghywel/rule30reset/blob/ab2c0fd0660e521010ac3f4dff74be941b141a99/research/m29/Rule30ResetCompactness.lean). Each module has been proved and read independently in our record. None of them has been submitted before.
-- **Novelty.** We read the portal's list of 386 entries and the kit's 15 open pull requests at 19:50 UTC on 20 November. Neither has an implication into `CAP`, or into the target for every `k`, from a property of infinite strips. The nearest entries are the three above.
+- **Novelty.** We read the portal's list of 386 entries and the kit's 15 open pull requests at 19:50 UTC on 20 November. Apart from our earlier entry's hand argument, neither has an implication into `CAP`, or into the target for every `k`, from a property of infinite strips, and neither has one in Lean. The nearest entries are the three named above.
 
 ## 7. What is not proved
 
@@ -155,7 +155,7 @@ The converse of the first headline is not claimed. It is the route through `CAP`
 ## The formal proof
 
 The module is core Lean. It imports the kit's `Rule30ZeroBoundary`, `Rule30UniversalLeftSide`, `Rule30AgedLeftDiagonals` and `Rule30LeftUnbounded`, all present at the verifier's kit revision. Each part has its own namespace:
-- the kit's three every-k modules (`Rule30EveryKStatement`, `Rule30EveryKCascade`, `Rule30EveryKInverse`);
+- the kit's three every-k modules, as `Rule30Submission.Rule30EveryKStatement`, `Rule30Submission.Rule30EveryKCascade` and `Rule30Submission.Rule30EveryKInverse`;
 - two returns along a strip (`Rule30ThreePhaseReturn`, `Rule30TwoPhaseRise`);
 - rooted white returns (`Rule30RootedWhiteReturns`);
 - pointed recurrent strips (`Rule30RecurrentStrip`);
@@ -180,8 +180,9 @@ import Ruliology.CellularAutomata.Rule30LeftUnbounded
 
 One file. First the kit's three every-k modules (`Rule30EveryKStatement`, `Rule30EveryKCascade`,
 `Rule30EveryKInverse`), which the verifier's kit revision does not have, as they stand at kit commit 3f32e1a with
-only the module-system lines removed. Then four modules of ours: two returns along a strip, rooted white returns,
-pointed recurrent strips, and the compactness argument. The headlines are in `Rule30Submission` at the end.
+the module-system lines removed and their namespaces moved inside `Rule30Submission`. Then four modules of ours: two
+returns along a strip, rooted white returns, pointed recurrent strips, and the compactness argument. The headlines are
+in `Rule30Submission` at the end.
 -/
 
 /-!
@@ -194,7 +195,8 @@ directions. This module states the target and its hypothesis; `Rule30EveryKInver
 -/
 
 
-namespace Ruliology.CellularAutomata.Rule30EveryKStatement
+open Ruliology.CellularAutomata
+namespace Rule30Submission.Rule30EveryKStatement
 
 open Rule30ZeroBoundary Rule30ZeroBoundary.IntegerForm
 
@@ -317,7 +319,7 @@ least capacity witness. CAP remains the open mathematical hypothesis. -/
 def ConditionalEveryK : Prop :=
   ∀ capacity : CAP, EveryK (fun k => settlingBound (widthFor capacity k))
 
-end Ruliology.CellularAutomata.Rule30EveryKStatement
+end Rule30Submission.Rule30EveryKStatement
 
 /-!
 # Scheduled inverse layers at a finite Rule 30 edge
@@ -328,7 +330,7 @@ cut is the one computed by Rule30EveryKStatement.firstReset.
 -/
 
 
-namespace Ruliology.CellularAutomata.Rule30EveryKCascade
+namespace Rule30Submission.Rule30EveryKCascade
 
 open Rule30EveryKStatement Rule30ZeroBoundary Rule30UniversalLeftSide
 
@@ -555,7 +557,7 @@ theorem scheduled_edge {w v q : Nat} (hq : 0 < q) (cycle : bandAt w v q = v)
         have result := ih (d+1) j k (e-1) (by omega) (by omega) next (by omega)
         simpa [show e-(k+1) = e-1-k by omega] using result
 
-end Ruliology.CellularAutomata.Rule30EveryKCascade
+end Rule30Submission.Rule30EveryKCascade
 
 /-!
 # The conditional inverse-tick theorem at a uniform age
@@ -565,7 +567,7 @@ finite rows at a fixed white wall. All widths and tick counts are natural number
 -/
 
 
-namespace Ruliology.CellularAutomata.Rule30EveryKInverse
+namespace Rule30Submission.Rule30EveryKInverse
 
 open Rule30EveryKStatement Rule30EveryKCascade Rule30ZeroBoundary
 open Rule30ZeroBoundary.IntegerForm Rule30UniversalLeftSide
@@ -925,7 +927,7 @@ theorem conditional_every_k : ConditionalEveryK := by
       exact of_decide_eq_true found
   exact capacity_at_settling_age k _ _ spec.1 spec.2 (uniform_settling spec.1)
 
-end Ruliology.CellularAutomata.Rule30EveryKInverse
+end Rule30Submission.Rule30EveryKInverse
 
 /-! Three temporal bits of two adjacent wheels, followed by two bit masks
 recording open runs of lengths one and two modulo three at the three ticks.
@@ -1554,6 +1556,7 @@ end Rule30RecurrentStrip
 
 /-! Uniform reset depth on periodic finite bands, from unbounded closed runs on
 each pointed recurrent strip. All widths count wheels starting at wheel zero. -/
+open Rule30Submission
 namespace Rule30ResetCompactness
 open Ruliology.CellularAutomata
 open Rule30AgedLeftDiagonals Rule30UniversalLeftSide Rule30EveryKStatement
