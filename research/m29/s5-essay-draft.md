@@ -1,10 +1,10 @@
 ---
 Template: ComputationalEssay
-Name: The Relaxed Doubling Lemma Gives Closed Runs at Every Depth, and So Every Number of Inverse Ticks
+Name: The Relaxed Doubling Lemma Gives Arbitrarily Deep Closed Runs and Every Number of Inverse Ticks
 Author: {AUTHORS}
 Date: 2026-11-20
 Description: Core Lean. Closed runs at arbitrarily large depths in every row of every recurrent left-edge strip, the hypothesis of our previous entry, follow from a statement about the two stretches after each first period doubling: a tick missed by the first is caught by the second. With our earlier entries this gives the inverse-tick statement for every k from that local statement alone. It is open. Nothing here decides Q01.
-Abstract: In core Lean 4.35.0 we prove that `LInfinity`, the hypothesis of our entry R30-20261120-eb2bcc, follows from a statement about two stretches of a strip at a time (`Rule30Submission.lInfinity_of_dlMinusOne`), and with it the kit's inverse-tick target for every k (`Rule30Submission.every_k_of_dlMinusOne`). On a pointed recurrent strip the least common period of the first wheels is a power of two, and it is first lost just after a wheel that is white at every tick. `DLMinusOne` says that at every such first loss, every tick has a closed run, a white cell, 3n + 1 black cells and a white cell, inside the stretch up to the next white wheel or the stretch after it. The proof is a window theorem that uses no axioms (`Rule30Submission.lInfinity_of_windows`): windows that start beyond every depth and hold a closed run at every tick give `LInfinity`, and first losses supply such windows. With our earlier entries, `LInfinity` gives `CAP` and `CAP` gives the target (`Rule30EveryKInverse`). The catalog has the per-wheel doubling criterion (`Rule30LeftAntiPeriod`), but no reset condition at doublings. `DLMinusOne` is open. Its strict form, the first stretch alone, holds by computation for every source of power-of-two period up to 32. Nothing here decides `Q01`.
+Abstract: In core Lean 4.35.0 we prove that `LInfinity`, the hypothesis of our entry R30-20261120-eb2bcc, follows from a statement about two stretches of a strip at a time (`Rule30Submission.lInfinity_of_dlMinusOne`), and with it the kit's inverse-tick target for every k (`Rule30Submission.every_k_of_dlMinusOne`). On a pointed recurrent strip the least common period of the first wheels is a power of two, and it is first lost just after a wheel that is white at every tick. `DLMinusOne` says that at every such first loss, every tick has a closed run, a white cell, 3n + 1 black cells and a white cell, inside the stretch up to the next white wheel or the stretch after it. The proof is a window theorem that uses no axioms (`Rule30Submission.lInfinity_of_windows`): windows that start beyond every depth and hold a closed run at every tick give `LInfinity`, and first losses supply such windows. With our earlier entries, `LInfinity` gives `CAP` and `CAP` gives the target (`Rule30EveryKInverse`). The kit gives the per-wheel doubling criterion (`Rule30LeftAntiPeriod`). Section 5 of R30-20261120-eb2bcc describes this two-stretch implication and cites its proof. This entry submits the general window implication and its two-stretch consequences for kernel verification. `DLMinusOne` is open. Computations verify the first stretch alone for every odd-weight source of power-of-two least period through 32. Nothing here decides `Q01`.
 Keywords: [rule 30, Rule 30 Prize, zero-boundary left half, white wall, inverse ticks, every k, closed runs, recurrent strips, period doubling, white wheels, conditional theorem, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The rule30reset record](https://github.com/ghywel/rule30reset)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
@@ -95,7 +95,7 @@ s2 = stretch[s1[[-2]], 60];
 
 The second stretch catches every tick that the first missed. A source of period 5 cannot feed a first loss on a pointed recurrent strip, since there the clocks are powers of two. So this is not a counterexample to the strict form at doublings. It shows what the relaxation buys: it does not rest on the strict form, which fails here for this standalone source, and the next stretch catches the missed ticks. In our record, every odd source of least period 1 to 16 (4,419 classes) is caught within its own first stretch, except `00001`, which needs the second.
 
-The two stretches of `00001`, each tick a row and each wheel a column, with the first closed run of each tick in orange:
+Each row is one tick and each column one wheel. The left panel shows the first stretch of `00001` through its white return at wheel 23. The right panel shows relative wheels 0 through 29 of the second stretch. Orange marks the first closed run when its closing white wheel is visible. At tick 16 the first closing wheel is 35, outside the right panel.
 
 ```wl
 mark[ws_List] := Module[{g = Transpose[ws]},
@@ -117,12 +117,12 @@ GraphicsRow[{ArrayPlot[mark[s1], ColorRules -> {0 -> White, 1 -> Black, 2 -> Ora
 
 `DLMinusOne` is not proved. What is known about it:
 - **Its strict form,** the first stretch alone, holds by computation outside Lean in three families:
-  - every source of power-of-two period up to 32;
+  - every odd-weight source of power-of-two least period through 32;
   - every source with exactly five black or five white ticks in its period, at every power-of-two period;
   - every first loss on every pointed recurrent strip through clock 16.
 
   So `DLMinusOne` holds at every first loss of clock at most 32.
-- **The counts look like chance.** In a measurement in our record, over every odd source of periods 2 to 30, the share of ticks still uncaught at wheel `x` falls like `1.36 κ^x`. Here `κ = 0.8478` is the real root of `4κ³ − 2κ² − 1 = 0`, and the share does not depend on the period. That is a measurement, not a bound.
+- **The measured decay.** For odd-weight sources of least periods 2 through 30, we counted the fraction of ticks still uncaught at wheel `x`. The same approximate curve `1.36 κ^x` describes the measured decay beyond the first wheels, with κ ≈ 0.847810 the positive root of `4κ³ − 2κ² − 1 = 0`. The measured fractions vary with period. At wheel 24 they are 1,608/65,536 for period 16 and 27,060/1,048,560 for period 20.
 - **Busy sources are open.** Beyond period 32, sources with at least seven black and seven white ticks in their period are not settled.
 
 ## 6. Prior art and credit
@@ -133,11 +133,11 @@ GraphicsRow[{ArrayPlot[mark[s1], ColorRules -> {0 -> White, 1 -> Black, 2 -> Ora
   - The left-edge recurrence is in `Rule30AgedLeftDiagonals` (Lowry with OpenAI Codex), and the encoding behind the clocks in `Rule30LeftUnbounded` (AIOvernight, with OpenAI Codex and Claude).
 - **The relaxation is ours.** The doubling lemma at first clock losses, the window form of the implication, and the ladder of relaxations are written in our record ([every-k-chain.md](https://github.com/ghywel/rule30reset/blob/a27d0ad/research/m29/every-k-chain.md), section 3.5), where they were proved by hand and read independently. The [Lean module](https://github.com/ghywel/rule30reset/blob/a27d0ad/research/m29/Rule30RelaxedWindows.lean) is carried here with one doc comment reworded.
 - **The constant** `κ` is in Wolfram (1986), p. 151, from C. and R. Feynman.
-- **Novelty.** We read the portal's list of 387 entries and the kit's 15 open pull requests at 21:04 UTC on 20 November. None has a reset condition at period doublings that gives `LInfinity`, `CAP` or the target for every `k`, and none has the window theorem. The nearest entries are our own two above.
+- **Prior statement and formal contribution.** Section 5 of our earlier entry R30-20261120-eb2bcc states the same two-stretch implication and points to the hand and Lean proofs in our record. That entry submitted the implications from `LInfinity` to `CAP` and to the inverse-tick target. We found no earlier verified portal headline or kit theorem corresponding to the three headlines submitted here in our search of the catalogue and open pull requests.
 
 ## 7. What is not proved
 
-- `DLMinusOne` is not proved, and so neither are `LInfinity` and `CAP`. Both theorems are conditional; the window theorem is not.
+- `DLMinusOne` is not proved, and so neither are `LInfinity` and `CAP`. The two specialized theorems assume the open two-stretch condition. The general theorem assumes that covering windows exist, and its Lean proof uses no axioms.
 - The strict form is computed outside Lean, and only in the families of section 5.
 - The theorem is about the zero-boundary left half beside a fixed white wall. It says nothing about the centre column's period, and it does not decide `Q01`.
 

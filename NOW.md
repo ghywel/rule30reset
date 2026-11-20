@@ -27,7 +27,7 @@ and once a week (the owner's word, M52).
 - **S4 is posted and Lean Verified** (M66): [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc).
   Its kit pull request [#375](https://github.com/WolframInstitute/Rule30PrizeKit/pull/375) is open (M68), on the tree and body gptIntel read (I38).
 - **S5, the owner's word.** R60's Lean result, the every-k statement from the relaxed doubling lemma (carried in I34).
-  The proof passed I39. With claudeM5 to rebuild the notebook with the corrected prose before the release reread. Posting needs the owner's word.
+  The proof passed I39. v2, rebuilt with I39's prose (M69), is with gptIntel for the release reread. Posting needs the owner's word.
 - **Tools: settled (K32).** [TOOLS.md](TOOLS.md) is in place and the cloud host's setup script is approved. The owner's
   call: placego's `run_capped.py` and `toolchain_smoke.py` stay out; the page is the guard.
 - **Settled since K15 (M61):** S2 and S3 are both in the kit, and both Human Verified.
@@ -86,7 +86,7 @@ digests, then the owner gives the word; the Wolfram steps run on the M5 laptop. 
 | **S2** (M29) | Conditional on reset capacity (CAP), for every k an explicit age from which every k-tick predecessor is finite with its edge exactly k cells inside, and every wall history occurs (`conditional_every_k`, `capacity_at_settling_age`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-ccc65f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-ccc65f), posted 19 Nov 18:15 UTC (M51). The kit carries it as `Rule30EveryKInverse`, `Rule30EveryKCascade` and `Rule30EveryKStatement` (kit `fd00829`, from PR #368; M61). Quint's #370 builds on it. |
 | **S3** (K2, I2) | The mean first white gap is at most 2^Q + 1 over the nonzero labelled Q-bit first children, for every Q > 0 (`pooled_first_return_bound`). | **Lean Verified, Human Verified, in the kit:** [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), posted 19 Nov 17:47 UTC (M48). Kit PR #366 merged: the kit's main `8451547` (K15). |
 | **S4** (R56) | The every-k statement follows from reset words at arbitrarily large depths in every prescribed phase of every pointed recurrent strip: `cap_of_unbounded_resets : LInfinity → CAP`, composed with S2 (kernel-checked, I29). | **Lean Verified:** [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc), posted 20 Nov 20:46 UTC (M65, M66). **Kit PR [#375](https://github.com/WolframInstitute/Rule30PrizeKit/pull/375) open** (M68), on the tree I38 read (`7ec1372`) with its body `286ffdae…`: four catalogue modules at main `d01ab27`. |
-| **S5** (R60) | The every-k statement follows from the relaxed doubling lemma (DL⁻₁): a tick missed in a doubled stretch is caught in the next (`lInfinity_of_dlMinusOne`, `everyK_of_dlMinusOne`). | **Proof carried; release revisions requested (I39).** All 665 declarations of M68 v1 independently replayed. Corrected prose, abstract and title are with claudeM5 for the notebook rebuild and scoped reread. **Posting needs the owner's word.** |
+| **S5** (R60) | The every-k statement follows from the relaxed doubling lemma (DL⁻₁): a tick missed in a doubled stretch is caught in the next (`lInfinity_of_dlMinusOne`, `everyK_of_dlMinusOne`). | **Proof carried (I39); v2 rebuilt with I39's prose (M69):** `S5/v2`, manifest `7ef784ef…`, with gptIntel for the release reread. **Posting needs the owner's word.** |
 
 Verifier's kit commit: `5fb5915` (5 November). The kit's main is `d01ab27`; KIT.md is in step (I38).
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
@@ -320,7 +320,7 @@ in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2
 
 - **The inquisition round (Gate 3):** closed (K25). The owner chose the relaxed lemma and consolidation; assignments and readers are in the current work table.
 - **The store:** on the NAS, image `981c5eb` (M62; route review I20). The old store on the website is dismantled (the owner, 20 November), and the installation notes describe the NAS (K28). Closed.
-- **TOOLS.md §3:** the Intel column was verified on Windows in I37. The M5 column remains with claudeM5 or gptM5 to confirm (K30).
+- **TOOLS.md §3:** the Intel column was verified on Windows in I37, the M5 column on the host in M69. No host can check an UNSAT certificate now (TOOLS §5): the M5's `cake_lpr` and `drat-trim` are gone; reinstalling needs the owner's word.
 - **K6:** METHOD §12 reads rightly off the M5 with three handoffs, which R45, I2 and M45 describe: the builder's
   notebook and receipt pass through the author's verification; the M5 operator verifies the packet's digests before
   `post.sh`; the raw portal response stays on the M5. Writing them into §12 is the conductor's call. Not yet done.

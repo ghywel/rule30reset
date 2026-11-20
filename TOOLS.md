@@ -41,7 +41,7 @@ problem' rather than sourcing the best tool".
 
 | Host | Workers | Suited to | Limits |
 |---|---|---|---|
-| **M5 laptop**: 10 cores, 16 GiB unified memory shared by CPU and GPU | claudeM5, gptM5 | The Wolfram side (§6); current-kit Lean and portal builds; SAT with checked certificates; Metal on the M5 GPU | Runs only while the owner has a session open; memory is shared with the owner's other applications |
+| **M5 laptop**: 10 cores, 16 GiB unified memory shared by CPU and GPU | claudeM5, gptM5 | The Wolfram side (§6); current-kit Lean and portal builds; SAT, with checked certificates once a checker is reinstalled (§5); Metal on the M5 GPU | Runs only while the owner has a session open; memory is shared with the owner's other applications |
 | **Intel**: i9, 8 cores, 16 threads, 16 GiB; RX 6600 with 8 GiB of its own | gptIntel | Lean 4.35.0; CPU and GPU compute; long scheduled blocks when the owner turns them on | No Wolfram, by the owner's decision (§6). Runs under Windows since it joined here (ledger I1); placego's inventory was taken under macOS |
 | **Cloud container**: 4 CPUs, 15 GiB, Ubuntu 24.04 | claudeCloud | Exact simulation and censuses in C and Python; SAT replication; Docker; pages checked in a headless browser; long reads, reviews and the record | No Lean, no Wolfram, no GPU. Reclaimed when idle: an install lasts only if the environment's setup script carries it (§5), and long runs checkpoint to share-scratch |
 
@@ -51,30 +51,30 @@ No worker and no host is set aside for a specialism (METHOD §1). The hosts diff
 
 - **Cloud column:** checked on the host by claudeCloud on 20 November 2026 (K30), each solver with a known-answer
   control.
-- **M5 column:** carried from placego's page, checked there by Local on 1 November 2026 (L1275–L1277). **To confirm**
-  by claudeM5 or gptM5.
+- **M5 column:** checked on the host by claudeM5 on 20 November 2026 (M69), each tool that computes with a
+  known-answer control. gptM5 runs on the same host; its own agent environment was not checked.
 - **Intel column:** checked on Windows by gptIntel on 20 November 2026 (K30). The standalone Lean distribution,
   w64devkit and Python review environment live under `%LOCALAPPDATA%/Rule30/toolchains`. The Codex desktop
   runtime supplies additional Python and browser tools.
 
 | Tool | M5 (claudeM5, gptM5) | Intel (gptIntel) | Cloud (claudeCloud) |
 |---|---|---|---|
-| Python 3 | 3.15.2: numpy 2.5.4, scipy 1.18.1, sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0, python-sat 1.9.dev17, z3-solver 5.3.3.0, cvc5 1.4.2 | Default `py -3` 3.15.2. `review-py` uses 3.13.17 with networkx 3.7, python-sat 1.9.dev24 and z3-solver 5.4.1.0. Codex Python 3.12.14 supplies numpy 2.3.5. No scipy, sympy, gmpy2, mpmath or cvc5 in these environments | **3.13.18**: numpy 2.5.3, python-sat 1.9.dev23, z3-solver 5.4.1.0, sympy 1.14.0, gmpy2 2.3.2, mpmath 1.3.0, pypdf, pdfminer. **Absent:** scipy, networkx, cvc5 |
-| C | Apple clang; GMP | w64devkit GCC 16.2.0 compiled and ran a C control. Lean bundles clang 23.1.0. No GMP development headers found | gcc 13.3.0, clang 18.1.3; **no GMP headers** |
-| GPU compute | Metal on the M5 GPU | RX 6600, AMD OpenCL 2.1. An integer kernel matched all 256 CPU Rule 30 updates. Vulkan enumerates the RX 6600 with API 1.4.315 | none |
-| SAT solvers | Kissat and CaDiCaL (command line); python-sat in Python | CaDiCaL 2.1.2 CLI in Lean’s bin directory. It and PySAT’s CaDiCaL 1.5.3/1.9.5/3.0, Glucose 4, MiniSat 2.2, Lingeling and MapleChrono passed SAT/UNSAT controls. PySAT Kissat 4.0.4 crashed in the control; no standalone Kissat or Gimsatul found | python-sat only: CaDiCaL 1.9.5 and 1.5.3, Glucose 4, MiniSat 2.2, Lingeling and MapleChrono each pass an UNSAT and a SAT control. **No Kissat or CaDiCaL command line** |
-| Proof-certificate checkers | `cake_lpr` (verified LRAT checker), `drat-trim`; the CaDiCaL LRAT to `cake_lpr` pipeline passed its controls | No standalone `cake_lpr`, `drat-trim` or `lrat-check` found. Use the M5 for the specified checked-LRAT pipeline | **none** |
-| Lean 4 | `elan` with 4.35.0, the kit's version | Standalone Lean 4.35.0 (x86_64-w64-windows-gnu) and Lake; independent kernel replays in I29 and I34 | **none**: Lean sources may be prepared here and are built on the M5 or the Intel |
-| Wolfram | Wolfram Engine, `wolframscript`, LeanLink, the Wolfram MCP | None, by the owner's decision (§6) | none |
-| SMT | z3 5.3.3 (command line and Python); cvc5 1.4.2 (Python) | Z3 5.4.1 CLI (`review-py/bin/z3.exe`) and Python (`review-py/Scripts/python.exe`); both give 43691 as the inverse of 3 modulo 2¹⁶. No cvc5 found | z3 5.4.1, command line and Python: gives the inverse of 3 modulo 2^16 as 43691. No cvc5 |
-| PARI/GP | 2.19.0, `gp` on the path | No Windows `gp.exe` found | none |
+| Python 3 | 3.15.2: numpy 2.5.4, scipy 1.18.1, sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0, python-sat 1.9.dev17, z3-solver 5.3.3, cvc5 1.4.2; numpy reproduced 256 Rule 30 updates, gmpy2 inverted 3 modulo 2¹⁶ (43691), mpmath found κ = 0.847810. No pypdf, pdfminer or Playwright | Default `py -3` 3.15.2. `review-py` uses 3.13.17 with networkx 3.7, python-sat 1.9.dev24 and z3-solver 5.4.1.0. Codex Python 3.12.14 supplies numpy 2.3.5. No scipy, sympy, gmpy2, mpmath or cvc5 in these environments | **3.13.18**: numpy 2.5.3, python-sat 1.9.dev23, z3-solver 5.4.1.0, sympy 1.14.0, gmpy2 2.3.2, mpmath 1.3.0, pypdf, pdfminer. **Absent:** scipy, networkx, cvc5 |
+| C | Apple clang 21.0.0; GMP from Homebrew: a compiled control inverted 3 modulo 2¹⁶ (43691) | w64devkit GCC 16.2.0 compiled and ran a C control. Lean bundles clang 23.1.0. No GMP development headers found | gcc 13.3.0, clang 18.1.3; **no GMP headers** |
+| GPU compute | Metal on the M5 GPU: a kernel compiled at run time matched all 256 CPU Rule 30 updates (Swift and `swiftc` from Xcode) | RX 6600, AMD OpenCL 2.1. An integer kernel matched all 256 CPU Rule 30 updates. Vulkan enumerates the RX 6600 with API 1.4.315 | none |
+| SAT solvers | Kissat 4.0.4 and CaDiCaL 3.0.1 (command line), each passing an UNSAT and a SAT control; CaDiCaL writes LRAT. python-sat's CaDiCaL 1.5.3 and 1.9.5, Glucose 4, MiniSat 2.2, Lingeling, MapleChrono and Kissat 4.0.4 pass the same controls | CaDiCaL 2.1.2 CLI in Lean’s bin directory. It and PySAT’s CaDiCaL 1.5.3/1.9.5/3.0, Glucose 4, MiniSat 2.2, Lingeling and MapleChrono passed SAT/UNSAT controls. PySAT Kissat 4.0.4 crashed in the control; no standalone Kissat or Gimsatul found | python-sat only: CaDiCaL 1.9.5 and 1.5.3, Glucose 4, MiniSat 2.2, Lingeling and MapleChrono each pass an UNSAT and a SAT control. **No Kissat or CaDiCaL command line** |
+| Proof-certificate checkers | **none working.** `cake_lpr` is not on the host, and `drat-trim`'s link points at a folder that no longer exists (§5) | No standalone `cake_lpr`, `drat-trim` or `lrat-check` found. Use the M5 for the specified checked-LRAT pipeline | **none** |
+| Lean 4 | `elan` 4.2.4 with 4.35.0, the kit's version, and 4.33.1; not on the agent shells' path, and no default toolchain, so it runs inside a project with a `lean-toolchain` (the kit). Kernel-checked builds and `Check.lean` runs at the verifier's commit and at main on 20 November (M63–M68) | Standalone Lean 4.35.0 (x86_64-w64-windows-gnu) and Lake; independent kernel replays in I29 and I34 | **none**: Lean sources may be prepared here and are built on the M5 or the Intel |
+| Wolfram | Wolfram Engine 15.0 with `wolframscript` (the kernel is inside the app, not on the path); LeanLink 1.2.2; the portal builds of S4 and S5 ran here (M63–M68). No Wolfram MCP is configured for claudeM5's sessions | None, by the owner's decision (§6) | none |
+| SMT | z3 5.3.3 (command line and Python) and cvc5 1.4.2 (Python only, no command line): both give 43691 as the inverse of 3 modulo 2¹⁶ | Z3 5.4.1 CLI (`review-py/bin/z3.exe`) and Python (`review-py/Scripts/python.exe`); both give 43691 as the inverse of 3 modulo 2¹⁶. No cvc5 found | z3 5.4.1, command line and Python: gives the inverse of 3 modulo 2^16 as 43691. No cvc5 |
+| PARI/GP | 2.19.0, `gp` on the path: gives 43691 and the root κ = 0.847810 of 4κ³ − 2κ² − 1 | No Windows `gp.exe` found | none |
 | Sage | not installed | None found. WSL is not installed | none |
-| `gh` | signed in | No `gh.exe` found. Git pushes to origin are authenticated separately | 2.89.0, but this session reaches GitHub only through its own tools and one repository's scope |
-| Our search and checks | `tools/find_known.py`, `tools/ledger_check.py`, `kit/check.py` | `tools/find_known.py`, `tools/ledger_check.py` and `kit/check.py` run with `py -3` | the same; the portal's list and the kit's pull requests are read from the M5 or the Intel |
-| The store client | `tools/store/store.py` | `tools/store/store.py`; authenticated NAS listing checked | the same |
-| Docker | to confirm | No Docker CLI or Desktop found | 29.10.0; builds and tests the store's container |
-| Headless browser | to confirm | Microsoft Edge 157.0.4341.60; headless DOM and Playwright 1.62.1 (bundled Node) controls passed | Chromium with Playwright, for checking pages before they are published |
-| PDF text | to confirm | Codex Python: pypdf 6.21.4 extracted a known PDF text, pdfminer.six 20251230 imports. No `pdftotext.exe` found | `pdftotext`; pypdf |
+| `gh` | signed in; it opened kit PR #375 (M68) | No `gh.exe` found. Git pushes to origin are authenticated separately | 2.89.0, but this session reaches GitHub only through its own tools and one repository's scope |
+| Our search and checks | `tools/find_known.py`, `tools/ledger_check.py`, `kit/check.py` (IN STEP once the kit clone was advanced to `d01ab27`) | `tools/find_known.py`, `tools/ledger_check.py` and `kit/check.py` run with `py -3` | the same; the portal's list and the kit's pull requests are read from the M5 or the Intel |
+| The store client | `tools/store/store.py`: inbox, flag, share and fetch used on 20 November | `tools/store/store.py`; authenticated NAS listing checked | the same |
+| Docker | not installed | No Docker CLI or Desktop found | 29.10.0; builds and tests the store's container |
+| Headless browser | Google Chrome 156 in headless mode: ran a page's script and printed its DOM, and printed a page to PDF. No Playwright. The desktop app's own browser pane is a session tool, not a host tool | Microsoft Edge 157.0.4341.60; headless DOM and Playwright 1.62.1 (bundled Node) controls passed | Chromium with Playwright, for checking pages before they are published |
+| PDF text | `pdftotext` 26.10.0 (Poppler) extracted the known text of a PDF printed by Chrome. No pypdf | Codex Python: pypdf 6.21.4 extracted a known PDF text, pdfminer.six 20251230 imports. No `pdftotext.exe` found | `pdftotext`; pypdf |
 
 ## 4. Task to tool
 
@@ -83,7 +83,7 @@ No worker and no host is set aside for a specialism (METHOD §1). The hosts diff
 | Is it already known? | `tools/find_known.py`, each term on its own; then the kit source behind each hit; the portal's list and the kit's open pull requests; then the literature, read at the page (METHOD §4, §12) | anyone for our documents; the M5 or the Intel for the portal and the kit's pull requests | — |
 | Small exact simulation | Python with numpy, or C; Wolfram for exploration and pictures | anyone; Wolfram on the M5 | COMPUTED |
 | Large census or bit-parallel search | C with bit-sliced lanes; GPU kernels only after a CPU oracle agrees | any host for C; the M5 and the Intel for GPU | COMPUTED or MEASURED |
-| A finite "does such a configuration exist?" question | SAT: Kissat or CaDiCaL. For UNSAT, an LRAT proof checked by `cake_lpr`, with `drat-trim` as a second checker | the M5 or the Intel. The cloud host replicates with python-sat and checks SAT witnesses; it cannot certify UNSAT | SAT: the witness checks itself. UNSAT: a machine proof of that finite case once the certificate checks; otherwise COMPUTED |
+| A finite "does such a configuration exist?" question | SAT: Kissat or CaDiCaL. For UNSAT, an LRAT proof checked by `cake_lpr`, with `drat-trim` as a second checker | the M5 or the Intel; at present no host has a certificate checker (§5). The cloud host replicates with python-sat and checks SAT witnesses; it cannot certify UNSAT | SAT: the witness checks itself. UNSAT: a machine proof of that finite case once the certificate checks; otherwise COMPUTED |
 | Guessing a law from exact data: a closed form, a recurrence, a generating function | Wolfram `FindSequenceFunction`, `FindLinearRecurrence`, `FindGeneratingFunction`, `FindFormula` | the M5 | CONJECTURE until proved |
 | Exact symbolic work: recurrences and sums, real inequalities, exact intervals, polynomials over GF(2), Boolean normal forms | Wolfram (`RSolve`, `Reduce`, `Resolve`, `CylindricalDecomposition`, `Interval`, `GroebnerBasis[..., Modulus -> 2]`, `BooleanConvert`) | the M5 | COMPUTED: no certificate; PROVED only through a hand proof or Lean |
 | Exact numbers: fractions, big integers, 2-adic valuations, residues, continued fractions, roots of polynomials | Wolfram to explore; PARI/GP as the fast open cross-check; the replayable probe in Python (`fractions`, sympy, gmpy2) or C with GMP. Never a decimal | the M5 explores; anyone replays | COMPUTED |
@@ -117,7 +117,11 @@ stand for an exact threshold or a certificate.
 
 ## 5. Gaps: proposed, waiting for the owner or for the host's worker
 
-1. **The M5 column awaits its worker’s confirmation.** Asked in K30. The Intel inventory has been checked on Windows.
+1. **No host can check an UNSAT certificate** (found by claudeM5, M69). The M5 had the only checkers. `cake_lpr` is
+   no longer on it, and `drat-trim`'s link points at a folder that has been removed; the Intel and the cloud host have
+   neither. CaDiCaL still writes LRAT proofs on the M5. Until the owner reinstalls a checker, an UNSAT answer is
+   COMPUTED, whatever the solver. Proposed: build `drat-trim` from its source and install `cake_lpr`, on the M5,
+   with the owner's word, then rerun the CaDiCaL LRAT control of §3.
 2. **Left out, by the owner's decision (20 November 2026, K32):** placego's `run_capped.py` and
    `toolchain_smoke.py`.
    - *What the first did:* ran one command under enforced limits on time, memory and disk, stopped it cleanly when
