@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 17:17 UTC by claudeCloud (K24).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 17:43 UTC by claudeCloud (K25).*
 
 ## Arrangement
 
@@ -24,10 +24,8 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. The new picture is a page on which any source can be tried, [the excursion explorer](research/m29/gate3/excursion-explorer.html) (K19). The owner asked what "caught" and "slow row" mean (K20): the page now shows where the view sits in the ordinary picture and reads any row backwards. The owner then asked how closely the guesses match (K21): the page now gives each row a measure, the share of the row above it pins down. That was not the measure meant (K22): the owner wants, for the slowest row, the pattern of the four guesses at every wheel from the source to the capture, and reads them as logic gates. They are gates, exactly three, and the page now shows them as a strip. The owner's verdict (K23): the pictures explain the work and show nothing further to follow. The owner also caught a wrong sentence: the white wheels are white from some tick on, not at every tick (corrected, K23). Still with the owner: questions 2 to 5 of K16. claudeCloud recommends the relaxed lemma first, and the two items waiting since K15.
-- **The next block (K15).** The owner's word on the two proposed items: for gptM5, the compactness step in Lean;
-  for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word. Question 5
-  of the round covers both.
+- **Nothing is waiting on the owner for the research.** The inquisition round is closed (K25): the owner chose the
+  relaxed lemma first and consolidation beside the wall, and the block below has started on that word.
 - **The old store:** gptIntel has switched to the NAS (I20). Taking the old store off the website still needs the owner’s word.
 - **Settled since K15 (M61):** S2 and S3 are both in the kit, and both Human Verified.
 - **Standing:** the dynamic-DNS name must be confirmed every 30 days, or every worker loses the store (K10).
@@ -57,17 +55,19 @@ header ("State of the work at rotation 3").
 | (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROVED on exhaustive finite checks, K18 and I20); I25 covers all primitive three-mark sources at any period and five of either colour at periods 64 and 128. Any counterexample at those two clocks needs at least seven of each colour. The general busy case is open. |
 
 **The gates of K8's schedule.** 1, the statement: passed (K9). 2, S2 proposed: passed, and S2 is posted (K11, M51).
-3, the wall: called (K11); the inquisition round is next.
+3, the wall: called (K11); the inquisition round was held and is closed (K16–K25), with the wall still standing.
 
-## The next block (K15)
+## The next block (K25)
 
-| Who | What | State |
-|---|---|---|
-| the owner and claudeCloud | The inquisition round on the wall (METHOD §6). claudeCloud writes the opening: where we are, where we are stuck, every term defined, and the questions. | **Open (K16).** Waits for the owner's answers; then the handover. |
-| claudeM5 | The picture for the round (K11 §5): the single-pulse doublings that return at 56, 88 and 98, beside the period-5 orbit that returns at 23. Read the portal for S2's and S3's review state, and watch #368. | The picture is drawn by claudeCloud (K16). The portal is read (M61). Nothing owed. |
-| gptM5 (proposed) | The compactness step in Lean: (L∞) ⇒ (CAP), on R37's strips. With S2 it gives (T) from a statement about strips alone. Reader: gptIntel. | Waits for the owner's word. |
-| gptM5 | The carrying read of gptIntel's all-period reductions (I25, K19 §3): [busy-sources.md](research/m29/gate3/busy-sources.md). | Asked (K19). |
-| gptIntel (proposed) | Switch the host to the NAS store. Then a prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. | The switch is complete (I20). The search waits for the owner's word. |
+The round's handover (K25 §5) ranks the pulls: 1, the relaxed lemma; 2, consolidate beside the wall; 3, busy sources
+by counting marks. Its curiosities and misgivings are listed there.
+
+| Who | What | Reader | State |
+|---|---|---|---|
+| claudeM5 | The weakest statement about doubled stretches from which Theorem C still gives (L∞), written into [every-k-chain.md](research/m29/every-k-chain.md) with its proof sketch. Say plainly if none weaker than (DL⁻) works. | gptM5 | Asked (K25). |
+| gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions ([busy-sources.md](research/m29/gate3/busy-sources.md), owed from K19), and the read of claudeM5's statement. | gptIntel | Asked (K25). |
+| gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud | Asked (K25). |
+| claudeCloud | Conducts. Reads the search. Designs the census under claudeM5's statement once it is carried. | — | Waits on the two above. |
 
 ## Submissions
 
@@ -87,6 +87,12 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 
 *The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
 in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
+
+- **20 Nov, K25. The round is closed; the owner chooses the relaxed lemma and consolidation.** The handover ranks
+  the pulls and lists the misgivings: the relaxed lemma has one test case (period 5) and must not slide into (L∞)
+  itself. Two answers to the owner, both known and reproduced: no formula gives the gaps between white wheels,
+  though a stretch on clock Q is of the order of 2^Q wheels and the kit proves a ceiling of 2^(2Q); and a clock
+  can come again: the stretches run on clocks 1, 2, 4, 8, 16, 16, 16, 32. [K25](CHAT-LEDGER.md)
 
 - **20 Nov, K23. The wheels that settle to one colour, and a correction.** A white wheel is white from some tick
   on, not at every tick: wheel 28 is black ten times before tick 31 (the owner's catch). Up to wheel 88,000 seven

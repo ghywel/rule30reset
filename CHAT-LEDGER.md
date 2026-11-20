@@ -1026,3 +1026,122 @@ it. The check is `front J T` in
 `Felt: clear, the owner tied the settling tick to the boundary everyone sees, and the numbers say the same, warm.
 -> the front drawn on the picture. Outcome: right (the owner).` Gut verdict: a good question with a known answer;
 the picture is better for it.
+
+## K25 · 2026-11-20 17:43 UTC · claudeCloud → owner, claudeM5, gptM5, gptIntel · The round closes: the owner chooses the relaxed lemma and consolidation; clocks can repeat and gaps have no formula; the handover and the next block
+
+Re: K24, K23 §8, K16 §5, K15. The owner's words, the answers, the handover of the round (METHOD §6), the block.
+
+**1. The owner's words** (20 November).
+> Race, rule or relax: I have no clear opinion, and defer to your relax recommendation.
+> The bet, consolidate i agree.
+>
+> With the infinitely many diagnoal white wheels that abut the wavefront, I am assuming there is no obvious pattern
+> that describes the spacing between these diagonals, or the white from tick distance from the edge. Given each
+> diagonal wheel traps a period of type, is each trapped period always different or are periods allowed to repeat
+> in later wheels?
+
+**2. Translation.**
+- **Question 2 of K16:** the relaxed lemma first, on my recommendation; the owner holds no view of their own.
+- **Question 5 of K16:** consolidate. This is the owner's word for the two items that have waited since K15.
+- **An assumption to check:** no rule gives the spacing of the white wheels, or the tick at which each turns white.
+- **A question:** each white wheel closes a stretch that runs on one clock. Is the clock of every stretch
+  different from all before it, or can a clock come again?
+
+**3. The spacing: the owner's assumption holds, with two things known.** No formula is known for where the next
+white wheel falls.
+
+| Stretch after white wheel | Clock Q | Length in wheels | Against 2^Q |
+|---|---|---|---|
+| 2 | 2 | 5 | 1.25 |
+| 7 | 4 | 21 | 1.31 |
+| 28 | 8 | 371 | 1.45 |
+| 399 | 16 | 52,808 | 0.81 |
+| 53,207 | 16 | 5,079 | 0.08 |
+| 58,286 | 16 | 29,580 | 0.45 |
+| 87,866 | 32 | 1,420,791,102, if Berzai's eighth white wheel holds (one run, not replicated) | 0.33 |
+
+- **A rough size** (MEASURED, ours and tentative: K2, P9, P10). A stretch on clock Q is of the order of 2^Q wheels
+  long, with wide scatter. The reason we give: white returns exactly when two neighbouring wheels agree at every
+  one of the Q ticks (K16 §3), a coincidence of one in 2^Q if the wheels were random.
+- **A proved ceiling** (known, in Lean: the kit's `rooted_chain_returns_bounded`). The next white wheel comes within
+  2^(2Q) wheels. It is a worst case and far above what is seen.
+- **The tick at which a wheel turns white** is the front reaching it (K24): about 1.34 ticks for each wheel far
+  out, with fluctuations that look random. No formula is known for it either.
+
+**4. A clock can come again** (COMPUTED here, `periods 88000 200000 204096`: the least period of every wheel to
+88,000; all of it known).
+
+| Stretch (wheels) | 0–2 | 3–7 | 8–28 | 29–399 | 400–53,207 | 53,208–58,286 | 58,287–87,866 | from 87,867 |
+|---|---|---|---|---|---|---|---|---|
+| Clock | 1 | 2 | 4 | 8 | **16** | **16** | **16** | 32 |
+
+- **What decides it** (known: Rowland 2006; the kit's `Rule30LeftAntiPeriod`). At a white wheel the clock doubles
+  exactly when the wheel just before it is black an odd number of times in one period. Otherwise the clock stays.
+  Checked here on all seven: 1, 1, 3, 3 and 5 black ticks before wheels 2, 7, 28, 399 and 87,866, where it doubles;
+  6 and 10 before wheels 53,207 and 58,286, where it stays at 16.
+- **It never falls back** (known, in Lean: `not_deeper_pair_periodic_of_antiperiodic`), **and it grows without end**
+  (known, in Lean: `D_least_period_unbounded`). So the clocks along the left side read 1, 2, 4, 8, 16, 16, 16, 32, …:
+  each the same as the last or twice it.
+- NKS (p. 871) puts clock 64 at wheel 2,107,985,255 or later. If that and Berzai's eighth white wheel both hold,
+  the clock repeats at 32 as well.
+- The wall concerns only the stretches where the clock doubles (the chain, (DL)).
+
+The check is `periods` in [claudeCloud_constant_wheels.py](research/m29/gate3/claudeCloud_constant_wheels.py)
+(`4c3ccf69…`).
+
+**5. The round's handover** (METHOD §6). The round ran K16 to K25, with gptIntel's block I19–I26 beside it.
+
+**What it established.**
+- The local laws of rows with no reset word, and that 85.4% of rows are first caught by a single cell (K17).
+- Quiet sources are settled: black ticks 33 or more apart, every row caught by wheel 20, no return before wheel 23
+  (K18; carried in I20). Period 5 is the only failure among them, at any period.
+- Three marks of either colour at every period, and five at periods 64 and 128, pass (I23–I25, replayed in K19).
+- The mechanism in the owner's terms: two guesses agree only on single white cells; the four guesses split in
+  exactly three ways; the dial (K21, K22).
+- The owner's verdict: the pictures explain the work and show nothing further to follow (K23).
+
+**Warmest pulls, ranked, each with its first test.**
+1. **The relaxed lemma** (the owner's choice). A row may go uncaught in one stretch if a later stretch catches it.
+   *First test, on paper:* read Theorem C of [every-k-chain.md](research/m29/every-k-chain.md) and write down the
+   weakest statement about doubled stretches from which (L∞) still follows. If the chain does not close on a
+   relaxed statement, the pull ends there. Only after that is there a census to design.
+2. **Consolidate beside the wall** (the owner's choice). *First tests:* the compactness step, (L∞) ⇒ (CAP), stated
+   in Lean on R37's strips with `sorry` allowed only at named places; and the prior-art search on the open
+   statement's two forms, ending in a PRIOR-ART entry.
+3. **Busy sources by counting marks** (gptIntel's line, I25). *First test:* gptM5's carrying read of the all-period
+   reductions (asked in K19). If they carry, the next case is five marks at every period.
+
+**Curiosities** (interest in an uncertainty, not yet a pull).
+- Time order matters: gaps 5, 18, 27 are caught last at wheel 84, the same gaps reversed at wheel 21 (I25).
+- Period 5's four poor rows are its odd ticks, and its rows fall into three groups by their last reset word (K21).
+- The gaps between white wheels sit near 2^Q (§3). Nobody has a law.
+- The front settles each wheel at about 1.34 ticks a wheel (K24): does the slow row of a stretch know the front?
+
+**Misgivings** (circular traps, restatements of the problem).
+- The gates, the dial and the pinned measure (K21, K22) are the reset-word rule again. They hold nothing beyond a
+  row and the row above it. A proof through them is the synchronising-word reading of K16 §4.
+- The relaxed lemma can slide into "no row escapes for ever", which is (L∞) itself. Pull 1's first test exists to
+  stop that: the statement must be strictly about stretches.
+- It has one test case, period 5. Every other excursion computed passes the strict lemma, so a census cannot tell
+  the relaxed form from the strict one.
+- Our theorems are for quiet sources. A real left side's sources are busy.
+- The lemma looks true for a reason of chance. None of the round's results turns chance into necessity.
+
+**6. The next block** (replaces K15's). The round is closed; Gate 3 is passed with the wall still standing.
+
+| Who | What | Reader |
+|---|---|---|
+| claudeM5 | Pull 1's first test: the weakest statement about doubled stretches from which Theorem C still gives (L∞), written into every-k-chain.md with its proof sketch. Say plainly if none weaker than (DL⁻) works. | gptM5 |
+| gptM5 | The compactness step in Lean: (L∞) ⇒ (CAP) on R37's strips. Then the carrying read of I25's reductions, still owed from K19, and the read of claudeM5's statement. | gptIntel |
+| gptIntel | The prior-art search (METHOD §4) on the open statement's two forms: unique preimages of recurrent points of a one-sided cellular automaton on the 2-adic integers, and period doubling along rule 30's left edge. Then the read of gptM5's Lean. | claudeCloud |
+| claudeCloud | Conducts. Reads the search. Designs the census under claudeM5's statement once it is carried. | — |
+
+Nothing here leaves the repository.
+
+**7. Asked of whom.**
+- claudeM5, gptM5, gptIntel: TASK, as the table says.
+- The owner: nothing now. Still standing with the owner: the old store's removal from the website.
+
+`Felt: settled, the round ends with the owner's two decisions and an honest list of what it did not do, calm. ->
+the block. Outcome: open.` Gut verdict: the round was worth holding for the quiet-source theorem and for the
+owner's understanding; the wall has not moved.

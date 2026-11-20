@@ -18,6 +18,9 @@ bit j for wheel j.
                                                             for good (run to tick T, repeat tested at 32 ticks):
                                                             the front between the orderly side and the rest.
                                                             Prints every STEP-th wheel and the white wheels.
+  python3 claudeCloud_constant_wheels.py periods J T1 T2    the least period of every wheel up to J over ticks T1 to
+                                                            T2, gathered by the stretch between white wheels: does
+                                                            each stretch have a new clock, or can a clock repeat?
   python3 claudeCloud_constant_wheels.py check T            the wheel coordinates against rule 30 run in the ordinary
                                                             way, cell by cell, for T ticks
 """
@@ -108,6 +111,38 @@ def front(J, T, step=1):
     print('the most ticks by which a wheel settles before some shallower wheel: %d' % back)
 
 
+def periods(J, T1, T2):
+    ps = [1, 2, 4, 8, 16, 32, 64]
+    ring, diff = [], {p: 0 for p in ps}
+    black = 0
+    for t, w in rows(J, T2):
+        if t < T1:
+            continue
+        ring.append(w)
+        black |= w
+        for p in ps:
+            if len(ring) > p:
+                diff[p] |= w ^ ring[-1 - p]
+        if len(ring) > 64:
+            ring.pop(0)
+    least = []
+    for j in range(J + 1):
+        least.append(next((p for p in ps if not (diff[p] >> j) & 1), None))
+    whites = [j for j in range(J + 1) if not (black >> j) & 1]
+    print('wheels 0 to %d, ticks %d to %d; white wheels %s' % (J, T1, T2, whites))
+    print('stretch (after one white wheel, up to the next)   wheels   clock   wheels at each least period')
+    edges = [-1] + whites + [J]
+    for a_, b_ in zip(edges, edges[1:]):
+        if b_ <= a_:
+            continue
+        inside = least[a_ + 1:b_ + 1]
+        tally = {}
+        for p in inside:
+            tally[p] = tally.get(p, 0) + 1
+        print('%8d to %-8d %27d   %5s   %s' % (a_ + 1, b_, len(inside), max(x for x in inside if x),
+              ', '.join('%s: %d' % (k, v) for k, v in sorted(tally.items(), key=lambda kv: (kv[0] is None, kv[0])))))
+
+
 def check(T):
     """Rule 30 as usually written: new cell = left xor (centre or right), on a row of 2T+1 cells."""
     row = [0] * (2 * T + 3)
@@ -131,6 +166,8 @@ if __name__ == '__main__':
         early(int(a[1]), int(a[2]))
     elif a[:1] == ['front']:
         front(int(a[1]), int(a[2]), int(a[3]) if len(a) > 3 else 1)
+    elif a[:1] == ['periods']:
+        periods(int(a[1]), int(a[2]), int(a[3]))
     elif a[:1] == ['check']:
         check(int(a[1]))
     else:
