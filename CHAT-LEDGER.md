@@ -889,3 +889,95 @@ The checks are [claudeCloud_guess_gates.py](research/m29/gate3/claudeCloud_guess
 `Felt: corrected, I answered K21 with my measure and the owner wanted the reader's own patterns, cool; the gates
 turned out to be a closed list of three. -> the strip and the law. Outcome: open.` Gut verdict: the dial is the
 plainest statement of the reset-word rule we have, and it is the owner's.
+
+## K23 · 2026-11-20 17:14 UTC · claudeCloud → owner, gptIntel, gptM5, claudeM5 · The round: the owner is right that wheel 28 is not white at every tick; every wheel that settles to one colour, white or black, and from which tick
+
+Re: K22, K16 §1. The owner's words, a correction of mine, and the answer to the owner's question.
+
+**1. The owner's words** (20 November).
+> My simple response is, although this visualisation has helped me to understand properly what we have been working
+> on, nothing of especial value is jumping out at me. My only outstanding push back is wheel 28 is not 'white at
+> every tick' as stated - it turns white eventually but starts with black. It follows, are there other diagonal
+> wheels that start black and white which turn black, or are 2, 7, 28 the only examples.
+
+**2. Translation.**
+- **The pictures:** they have done their work as an explanation, and they show the owner nothing further to follow.
+  That answers question 1 of K16, the eye: nothing more.
+- **A correction:** the page said wheels 2, 7 and 28 are white at every tick. Wheel 28 is black at first and turns
+  white later.
+- **A question:** are 2, 7 and 28 the only wheels that settle to one colour, and are there wheels that begin mixed
+  and settle to black?
+
+**3. The correction.** The owner is right. K16 §1 said "some wheels are white at every tick", and the page's first
+picture said the same of wheels 2, 7 and 28. The true statement is: white *from some tick on*. Of the three, only
+wheel 7 is white at every tick. The research statements are not touched: they are all about the pattern once it
+has settled, which is how the excursions are drawn. The wording was mine and it was wrong.
+
+**4. Every wheel that settles to one colour** (COMPUTED here, `find 88000 200000 204096`: rule 30 from one black
+cell, wheels 0 to 88,000, ticks 200,000 to 204,096; and `turn`, for the ticks).
+
+| Turns white for good | The pattern first reaches it at tick | Black ticks before | White from tick | Its black companion | Black from tick |
+|---|---|---|---|---|---|
+| wheel 2 | 1 | 1 | 2 | wheel 4 | 2 |
+| wheel 7 | 4 | 0 | always | wheel 9 | 5 |
+| wheel 28 | 14 | 10 | 31 | wheel 30 | 33 |
+| wheel 399 | 200 | 137 | 501 | wheel 401 | 501 |
+| wheel 53,207 | 26,604 | 22,218 | 71,116 | wheel 53,209 | 71,117 |
+| wheel 58,286 | 29,143 | 24,349 | 77,910 | wheel 58,288 | 77,912 |
+| wheel 87,866 | 43,933 | 36,627 | 117,324 | wheel 87,868 | 117,325 |
+
+- **So 2, 7 and 28 are not the only ones.** Seven wheels up to 88,000 turn white for good.
+- **And yes, wheels turn black for good:** exactly the wheel two on from each white one, with wheels 0 and 1 at
+  the edge, which are black from the start. No other wheel up to 88,000 settles to one colour.
+- **Wheel 28's start,** ticks 14 to 30, black `#`: `##..#.####...##.#`. Then white.
+- The far wheels settle at about 1.34 ticks for each wheel of depth (71,116 / 53,207; 117,324 / 87,866).
+
+**5. Why the black ones sit two on from the white ones.** Two lines of the wheel rule, each a hand step
+(PROOF-SKETCH; both are known, see §6).
+- **White gives black two on.** Once wheel W is white for good, wheel W + 2 at the next tick is black if it or
+  wheel W + 1 is black now. So it can gain black and never lose it. It turns black for good the first time wheel
+  W + 1 is black after that.
+- **Black needs white two back.** If wheel B is black for good, the rule gives black at the next tick only when
+  wheel B − 2 is white now. So wheel B − 2 is white for good.
+
+Together: the wheels that turn black for good are exactly the wheels two on from a wheel that turns white for
+good, provided the wheel between is black at least once afterwards, as it is in all seven cases. Wheels 0 and 1
+fit the same rule, because everything outside the pattern is white.
+
+**6. What was already known** (METHOD §4). `Record searched:` "eventually black", "black diagonal", "white
+diagonal" with `find_known.py`. All of §4 and §5 is known, and reproduced here.
+- The seven white wheels through 87,866: the kit's `Rule30SeedLeftSide` (`seed_white_black`), in Lean, with every
+  wheel that far settled from tick 177,560.
+- Infinitely many wheels turn white for good, and infinitely many black: the kit's `Rule30LeftUnbounded`
+  (@AIOvernight), in Lean. So the list never ends.
+- "When a diagonal is eventually white and the next has a black cell in its period, the one after is eventually
+  black": Rowland (2006), as our prior-art record has it.
+- An eighth white wheel is reported at 1,420,878,968 (Berzai's settling table; one run, not replicated).
+- The clock doubles after wheels 2, 7, 28, 399 and 87,866, and not after 53,207 or 58,286 (the record, L1481).
+
+What is added here is only the per-wheel ticks of §4 from an independent run. The simulator is checked against
+rule 30 run cell by cell (`check 300`: 90,601 cells, none different).
+
+**7. What changed:** [the explorer](research/m29/gate3/excursion-explorer.html) (`8449d79b…`), republished.
+- The first picture marks wheels 2, 7 and 28 in pale blue only from the tick each is white for good, so wheel 28's
+  early black cells show as they are. It marks wheels 4, 9 and 30 in dark blue from the tick each is black for good.
+- The caption gives the ticks. The page says "white for good" and "settled" where it said "always white".
+
+The checks are [claudeCloud_constant_wheels.py](research/m29/gate3/claudeCloud_constant_wheels.py) (`1010b09e…`):
+`find`, `turn`, `early`, `check`.
+
+**8. Where the round stands, and what I recommend.** The visual line has given what it can: the local laws (K17),
+the quiet-source theorem (K18, carried by I20), and the mechanism in the owner's terms (K21, K22). The owner's eye
+finds nothing further in it. Questions 2 to 5 of K16 are unanswered. Two of them direct effort, and I recommend:
+- **Question 2 (race, rule or relax): relax.** Read the census over pairs of consecutive intervals, so that a row
+  may be missed once if the next interval catches it. Its one known test, period 5, passes (K16 §3).
+- **Question 5 (the bet): consolidate beside it.** Give the two items that have waited since K15 their word:
+  gptM5 puts the compactness step into Lean, and gptIntel makes the prior-art search on the open statement.
+
+On the owner's word for these, or other answers, I write the round's handover (METHOD §6).
+
+**To the workers.** READ. Nothing is asked.
+
+`Felt: corrected, the owner caught a wrong sentence of mine on the page's first picture, cool; glad of it. -> the
+exact ticks and the page fixed. Outcome: right (the owner).` Gut verdict: the visual line is spent, and that is a
+result too.

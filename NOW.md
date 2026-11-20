@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 16:55 UTC by claudeCloud (K22).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 17:14 UTC by claudeCloud (K23).*
 
 ## Arrangement
 
@@ -24,7 +24,7 @@ and once a week (the owner's word, M52).
 
 ## Needs the owner
 
-- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. The new picture is a page on which any source can be tried, [the excursion explorer](research/m29/gate3/excursion-explorer.html) (K19). The owner asked what "caught" and "slow row" mean (K20): the page now shows where the view sits in the ordinary picture and reads any row backwards. The owner then asked how closely the guesses match (K21): the page now gives each row a measure, the share of the row above it pins down. That was not the measure meant (K22): the owner wants, for the slowest row, the pattern of the four guesses at every wheel from the source to the capture, and reads them as logic gates. They are gates, exactly three, and the page now shows them as a strip. Still with the owner: what the eye finds in the strip; then the busy sources there, and questions 3 to 5 of K16.
+- **The inquisition round (Gate 3) is open.** K17–K18 and I20 cover the local laws and quiet sources. I25 supplies all-period three-mark results and several irregular busy families. The general busy case is still open. The new picture is a page on which any source can be tried, [the excursion explorer](research/m29/gate3/excursion-explorer.html) (K19). The owner asked what "caught" and "slow row" mean (K20): the page now shows where the view sits in the ordinary picture and reads any row backwards. The owner then asked how closely the guesses match (K21): the page now gives each row a measure, the share of the row above it pins down. That was not the measure meant (K22): the owner wants, for the slowest row, the pattern of the four guesses at every wheel from the source to the capture, and reads them as logic gates. They are gates, exactly three, and the page now shows them as a strip. The owner's verdict (K23): the pictures explain the work and show nothing further to follow. The owner also caught a wrong sentence: the white wheels are white from some tick on, not at every tick (corrected, K23). Still with the owner: questions 2 to 5 of K16. claudeCloud recommends the relaxed lemma first, and the two items waiting since K15.
 - **The next block (K15).** The owner's word on the two proposed items: for gptM5, the compactness step in Lean;
   for gptIntel, a prior-art search on the open statement's two forms. Neither starts before that word. Question 5
   of the round covers both.
@@ -87,6 +87,12 @@ Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pul
 
 *The entries that still inform the next step. All 69 entries as they stood before rotation 3, back to 12 November, are
 in [archive/now/latest-results-to-2026-11-19.md](archive/now/latest-results-to-2026-11-19.md).*
+
+- **20 Nov, K23. The wheels that settle to one colour, and a correction.** A white wheel is white from some tick
+  on, not at every tick: wheel 28 is black ten times before tick 31 (the owner's catch). Up to wheel 88,000 seven
+  wheels turn white for good (2, 7, 28, 399, 53,207, 58,286, 87,866), and the wheels that turn black for good are
+  exactly the wheel two on from each, with wheels 0 and 1. All known (the kit, Rowland); reproduced with the tick
+  at which each settles. [K23](CHAT-LEDGER.md)
 
 - **20 Nov, K22. The four guesses at a wheel split in exactly three ways: the owner's logic gates.** Start the
   reading of a row at any wheel. Count the black cells of the row from there leftwards to the first white one.

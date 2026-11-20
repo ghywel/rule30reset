@@ -81,8 +81,8 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
 <div class="wrap">
   <header>
     <h1>Rule 30 Excursion Explorer</h1>
-    <p class="lede">A doubled excursion of rule 30's left side: the stretch of wheels after an always-white wheel where the clock
-      doubles. Choose or type a source, and see every row of one period, its reset words, what made them, and where each row is first caught.</p>
+    <p class="lede">A doubled excursion of rule 30's left side: the stretch of wheels after a wheel that has turned white for good,
+      where the clock doubles. It is drawn as it is once every wheel in it has settled. Choose or type a source, and see every row of one period, its reset words, what made them, and where each row is first caught.</p>
   </header>
 
   <details class="panel orient" open>
@@ -92,7 +92,9 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
         <div class="figscroll"><canvas id="ordinary" width="536" height="276"></canvas></div>
         <figcaption><b>The ordinary picture.</b> Rule 30 from one black cell, 64 ticks, time running down. Follow a line of cells
           parallel to the left edge: that diagonal is a <b>wheel</b>, numbered by how far in from the edge it is. Wheels 2, 7 and 28
-          (blue) are white at every tick.</figcaption>
+          turn white and stay white (pale blue, from the tick they settle). Wheel 7 is never black. Wheel 2 is black once, at
+          tick 1. Wheel 28 is black ten times, last at tick 30. Two wheels on from each, wheels 4, 9 and 30 turn black and stay
+          black (dark blue).</figcaption>
       </figure>
       <figure class="narrow">
         <div class="figscroll"><canvas id="upright" width="200" height="276"></canvas></div>
@@ -149,7 +151,7 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
 
   <section class="panel sheet" aria-label="Diagram">
     <div class="sheet-head">
-      <span class="label">Wheels across, from the always-white wheel 0 · ticks down, one full period</span>
+      <span class="label">Wheels across, from the white wheel 0 · ticks down, one full period, settled</span>
       <span id="hover" class="hover">Point at a cell to read it. Click a row to read it backwards.</span>
     </div>
     <div class="scroll" id="scroll" tabindex="0" aria-label="The excursion, the reading and the strip. Arrow keys move the row and the starting wheel."><canvas id="grid" width="600" height="200"></canvas><canvas id="reading" width="600" height="120"></canvas></div>
@@ -333,7 +335,7 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
   }
 
   function legend(opts) {
-    var items = [['var(--ink)', 'black cell'], ['var(--edge)', 'a wheel white at every tick']];
+    var items = [['var(--ink)', 'black cell'], ['var(--edge)', 'a wheel white at every tick of the period']];
     if (opts.makers) {
       items.push(['var(--reset)', 'a longer reset word (4, 7, …)'], ['var(--right)', 'single cell from 11000: a triangle\'s right corner'],
         ['var(--left)', 'single cell from 1011: a triangle\'s left corner'], ['var(--alt)', 'single cell from 10101'], ['var(--once)', 'single cell at wheel 2: caught at once']);
@@ -610,7 +612,10 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
       for (x = 0; x < n; x++) { next[x] = (x > 0 ? row[x - 1] : 0) ^ (row[x] | (x + 1 < n ? row[x + 1] : 0)); }
       row = next;
     }
-    var ink = css('--ink'), paper = css('--paper'), edge = '#8fc1f2', marks = [2, 7, 28];
+    var ink = css('--ink'), paper = css('--paper'), edge = '#8fc1f2', deep = '#2f6fb5', marks = [2, 7, 28];
+    /* The tick from which each marked wheel keeps one colour (claudeCloud_constant_wheels.py, ledger K23): white for
+       good at 2, 7, 28; black for good two wheels on, at 4, 9, 30. Before that tick the wheel is drawn as it is. */
+    var whiteFrom = { 2: 2, 7: 0, 28: 31 }, blackFrom = { 4: 2, 9: 5, 30: 33 };
     var setup = function (id, w, h) {
       var cv = $(id), dpr = Math.min(2, window.devicePixelRatio || 1);
       cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); cv.style.width = w + 'px'; cv.style.height = h + 'px';
@@ -620,7 +625,8 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
     var g = setup('ordinary', n * c + 20, T * c + 20);
     for (t = 0; t < T; t++) {
       for (x = 0; x < n; x++) { if (rows[t][x]) { g.fillStyle = ink; g.fillRect(10 + x * c, 4 + t * c, c, c); } }
-      marks.forEach(function (m) { if (m <= 2 * t && !rows[t][T - t + m]) { g.fillStyle = edge; g.fillRect(10 + (T - t + m) * c, 4 + t * c, c, c); } });
+      marks.forEach(function (m) { if (m <= 2 * t && t >= whiteFrom[m] && !rows[t][T - t + m]) { g.fillStyle = edge; g.fillRect(10 + (T - t + m) * c, 4 + t * c, c, c); } });
+      Object.keys(blackFrom).forEach(function (m) { m = +m; if (m <= 2 * t && t >= blackFrom[m] && rows[t][T - t + m]) { g.fillStyle = deep; g.fillRect(10 + (T - t + m) * c, 4 + t * c, c, c); } });
     }
     g.fillStyle = '#2f6fb5'; g.textAlign = 'center';
     marks.forEach(function (m) { g.fillText(String(m), 10 + (m + 1) * c + c / 2, 4 + T * c + 12); });
@@ -629,8 +635,8 @@ details.orient > summary:focus-visible { outline: 2px solid var(--accent); outli
     for (t = 0; t < T; t++) {
       for (j = 0; j <= WH && j <= 2 * t; j++) {
         var v = rows[t][T - t + j];
-        if (v) { g.fillStyle = ink; g.fillRect(L + j * c, 16 + t * c, c, c); }
-        else if (marks.indexOf(j) >= 0) { g.fillStyle = edge; g.fillRect(L + j * c, 16 + t * c, c, c); }
+        if (v) { g.fillStyle = (blackFrom[j] !== undefined && t >= blackFrom[j]) ? deep : ink; g.fillRect(L + j * c, 16 + t * c, c, c); }
+        else if (marks.indexOf(j) >= 0 && t >= whiteFrom[j]) { g.fillStyle = edge; g.fillRect(L + j * c, 16 + t * c, c, c); }
       }
     }
     g.fillStyle = '#2f6fb5'; g.textAlign = 'center';
