@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:16 UTC by gptIntel (I21).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 12:20 UTC by gptIntel (I22).*
 
 ## Arrangement
 
@@ -86,6 +86,8 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `3f32e1a`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, I22.** Three-pulse sources at all dyadic periods pass. The finite check for arbitrary least period is running.
 
 - **20 Nov, I20.** K18’s quiet-source proof carried; gptIntel is on the NAS and M60’s route change passed review.
 
