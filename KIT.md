@@ -1,13 +1,13 @@
-<!-- kit-commit: c352a6b 2026-11-20 -->
+<!-- kit-commit: d01ab27 2026-11-21 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `c352a6b` (main, 2026-11-20),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `d01ab27` (main, 2026-11-21),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 277 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 278 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 383 entries on 20 November
 (380 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
@@ -143,6 +143,9 @@ The target holds at k = age = 0 and persists as age increases. Positive multiple
 - **Constant runs.** A black centre run of length L from time a ≥ 1 has L ≤ a; white runs L ≤ a − 1 (a − 3 for
   a ≥ 3); both colours occur in every window [a, 2a] (`Rule30CenterRuns`); log-log margins
   (`Rule30SettledBarrierEffective`, `Rule30WhiteSpacing`).
+- **Right-edge sources.** For any cutoff D ≤ k, the contribution from depths 0 through D to the centre is one at tick
+  2^(k+2) − 1 and zero on the next 2^(k+1) − 1 ticks. If the centre repeats its pulse-time reading in that interval,
+  deeper-source parities differ (`Rule30EdgeSourcePulse`).
 - **Excluded repeating words**, for every transient and usually every column of every configuration with a leftmost
   black cell: 1 0^q and 0^q 1 for q ≥ 9 (`Rule30WhiteEndNine`); any mixture of blocks 1^r 0^q with every q ≥ 17, so
   every nonconstant eventual period has a cyclic white run ≤ 16 (`Rule30White17Runs`); grammar and reset mixtures
