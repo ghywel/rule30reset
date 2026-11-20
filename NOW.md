@@ -1,7 +1,7 @@
 # NOW
 
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 20:21 UTC by gptIntel (I33).*
+post that changed it. History is in the [ledger](CHAT-LEDGER.md). Rewritten 2026-11-20 20:23 UTC by gptIntel (I34).*
 
 ## Arrangement
 
@@ -50,7 +50,7 @@ header ("State of the work at rotation 3").
 | (CAP) for k ≤ 7,911, with f(k) ≤ 265,441 | COMPUTED, outside Lean (M40, R37) |
 | (CAP) ⇔ (L∞): reset words at arbitrarily large depths in every phase of every pointed recurrent strip | Hand proof by compactness (M39, R37; [every-k-chain.md](research/m29/every-k-chain.md), carried in K9, I11). **L∞ ⇒ CAP proved in Lean (R56), independently carried in I29. The converse is a hand argument.** |
 | (L∞) in one fixed phase of every three | In Lean (I10, carried in R49). Not enough: the schedule reads k consecutive phases. |
-| (L∞) ⇐ (DL⁻): the doubling lemma at the first clock losses of pointed recurrent strips | Hand proof, Theorem C of the chain (carried in K9, I11). **Relaxed (M62, carried in R58):** Theorem C′ gives (L∞) from (DL⁻₁), a row missed in a doubled stretch is caught in the next; with no bound named the relaxation is (L∞) itself. **(DL⁻₁) ⇒ (L∞) proved in Lean (R60)**, including the existence of the windows. With gptIntel for review. |
+| (L∞) ⇐ (DL⁻): the doubling lemma at the first clock losses of pointed recurrent strips | Hand proof, Theorem C of the chain (carried in K9, I11). **Relaxed (M62, carried in R58):** Theorem C′ gives (L∞) from (DL⁻₁), a row missed in a doubled stretch is caught in the next; with no bound named the relaxation is (L∞) itself. **(DL⁻₁) ⇒ (L∞) proved in Lean (R60)**, including the existence of the windows. Carried by gptIntel in I34. |
 | (DL): every white interval at which the clock doubles has a reset in every tick | **OPEN: the wall.** COMPUTED at every source period 2–32 except 5 (K5); source period 64 to gap 73 except gap 72 (K7, K10); source period 128 to gap 64 (M44); no doubling of any period at gaps 31–55 (M47). A counterexample needs a power-of-two source period ≥ 64 and a gap ≥ 56. **Quiet sources are settled** (black ticks at least 33 apart: PROVED on exhaustive finite checks, K18 and I20); I25 covers the three-mark cases at every admissible period. I32 and R59 cover five marks of either colour on every dyadic clock. A dyadic counterexample needs at least seven ticks of each colour. The general busy case is open. |
 
 **The gates of K8's schedule.** 1, the statement: passed (K9). 2, S2 proposed: passed, and S2 is posted (K11, M51).
@@ -66,7 +66,7 @@ misgivings are listed there.
 
 | Who | What | Reader | State |
 |---|---|---|---|
-| gptM5 | Theorem C′ in Lean: (DL⁻₁) ⇒ (L∞), then the composition to the every-k statement. If the whole is too large for one block, first the window argument with the white wheels and first clock losses as stated hypotheses. | gptIntel | Full chain built and kernel-checked (R60); with reader. |
+| gptM5 | Theorem C′ in Lean: (DL⁻₁) ⇒ (L∞), then the composition to the every-k statement. If the whole is too large for one block, first the window argument with the white wheels and first clock losses as stated hypotheses. | gptIntel | Full chain built and kernel-checked (R60), independently carried through the physical target in I34. |
 | claudeM5 | S4's packet (METHOD §12–13) for `cap_of_unbounded_resets` and the composed statement: abstract, essay, the novelty check at the time (the portal's list, the kit's open pull requests, Quint's #371 and #372 named), the chain test. To the stage "read". Nothing is posted. | gptIntel | I33 reviewed M63 v3 and requested corrections to S2 attribution, essay quantifiers and bundled kit namespaces. With claudeM5 for a revised packet. |
 | gptIntel | The two reads. Own item: one measurement, then stop. From the settled start, count the retained states (paths that can still reach a bare row) after 5, 7, 9 and 11 marks at widths 108 to 140. If the count dies, a reduction for every mark count is in reach; if it grows, say so and close the mark-count line. No further fixed-period enumeration. | gptM5 | Asked (K26). |
 | claudeCloud | Conducts. Every first clock loss on every rooted strip through clock 16, with each source's last catch (the census's stage 3, K26 §4). | claudeM5 | Done (K27): twenty sources, all caught. Read: PASS, with the rooted median repaired to 23.5 (M63). |
@@ -87,6 +87,8 @@ Verifier's kit commit: `5fb5915` (5 November). The kit's main is `c352a6b`; KIT.
 Stages: proposed, packet, read, agreed, owner's word, posted, Lean Verified, pull request, merged.
 
 ## Latest results (newest first)
+
+- **20 Nov, I34.** Theorem C′ (R60) passed independent Lean replay, including the same-tick interpretation and the composition to the physical target for all k.
 
 - **20 Nov, I33.** S4 v3 reviewed. The conditional proof carries, and the release needs corrected S2 credit, precise history and finite-window language, and isolated namespaces for copied kit modules. With claudeM5 for revision.
 
