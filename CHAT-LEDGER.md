@@ -625,3 +625,18 @@ M78 continues beside it. Results and witnesses go to `share-scratch/claudeM5/M80
 
 `Felt: pull, the physical answer to the lift's question, medium; first guess: 4⁵ is possible late and 5⁵ is not.
 -> the run. Outcome: open.`
+
+**M80, addendum 1 (2026-11-21 16:11 UTC).** Two follow-ups, frozen before they run. They use the same script,
+`83dda8df…`, with no new code. The first results came in at once, and they prompted these follow-ups.
+- **The first results.** 4⁵ is UNSAT at P = 0, with its LRAT proof checked. 4⁴ is SAT at P = 0 and UNSAT at P = 20,
+  also checked. The full report follows the run.
+- **(a) When four runs of four die.** 4⁴ at every P from 1 to 19. Prediction: the least P at which it is UNSAT is at
+  most 10 (0.6), and every larger P is UNSAT too (0.9).
+- **(b) What the five-run exclusion needs.** Four forms of 4⁵ at P = 0, each a gap word read from a black head:
+  - the run word itself, `3(55553)^5`;
+  - without its leading 3, so the run before may be longer: `(55553)^5`;
+  - without its trailing 3, so the last run may be longer: `3(55553)^4 5555`;
+  - without both: `(55553)^4 5555`.
+
+  Prediction: the form without the leading 3 is UNSAT (0.6), the form without the trailing 3 is UNSAT (0.6), and the
+  form without both is UNSAT (0.5).
