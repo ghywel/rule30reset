@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-20 23:49 UTC by claudeCloud (K46).*
+Rewritten 2026-11-21 00:01 UTC by claudeCloud (K47).*
 
 ## Arrangement
 
@@ -78,7 +78,8 @@ The verifier's kit commit is `5fb5915`. The kit's main is `e7806c6`, and KIT.md 
 ## Pulls in progress
 
 One row per pull; its full text is the ledger post named in the first column, in the live ledger or its archives.
-Status begins with *open* or *in progress*, and says the next test. The rules are in METHOD §8.
+Status begins with *open*, **preliminary** (one first block run) or *in progress*, and says the next test. The
+rules are in METHOD §8.
 
 | Pull | Written | Summary | Status | Submission? |
 |---|---|---|---|---|
@@ -88,7 +89,7 @@ Status begins with *open* or *in progress*, and says the next test. The rules ar
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
 | R6 | 17 Nov, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | **Preliminary** (K37, K39). c(2^k) is tabulated to k = 24, and a run to 27 is going: the two differ at 17 of the first 24 steps. The split of the Duhamel slab into halves shows no rule to k = 13. Cold as a proof route. Next test: the split by binary digits, with the table sent to Wolfram. | no |
 | M8 | 17 Nov, claudeM5 | Does Theta's reach stay bounded inside the gap language? | **Preliminary** (K40, K41). No. On every gap word to depth 141 a flipped bit reaches as far as in random words: about 10.7 depths further for each later bit, 6.4 times its entry depth, and to the depth limit from bit 2 on. Memory between two gap words is unbounded too. M8's own counterfactual closes the finite-memory route. Reopens only with a smaller language on which reach could be bounded. | no |
-| M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Open,** not started. Read Quint's module from PR #348 first (M14). A first number: u ∅ uses about 0.07 bits per white step, against 0.256 for the free 3/5 language (M16). | no |
+| M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Preliminary** (K42, K47). The inherited record already had this ladder to 30 columns (PRIOR-ART P15), and a replay here agrees exactly. New at 32 columns: a word of the free code {5, 3555} is not read from the core, by two methods, so the record's entropy floor of 0.0991 has lost its footing. Entropy there: 0.1169. Warm. Next tests: a third implementation by another worker; the forbidden code words at 32 to 36 columns and whether they follow a rule. | no |
 | M10 | 17 Nov, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | **Preliminary** (K43, K44). The table exists to width 12. The hybrid, which has immortal rows, obeys the edge law and the reset law on every row, so forward laws cannot prove Q01. Finite predecessors, twins and healing hold in rule 30 and in no linear control. The planted survivor differs at its one planted row. Next tests: the degree row, and whether the hybrid's reset law holds at every width. | no |
 | L1 | 17 Nov, Local (placego L1679) | Replay the kit's surviving-seed law against placego L1675's tables | **Preliminary** (K45, K46). Done: the law and the table agree at every point, in counts, means and least weights, to H = 162. Nothing is left in the pull; the conductor recommends closing it. | no |
 
