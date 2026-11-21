@@ -640,3 +640,17 @@ M78 continues beside it. Results and witnesses go to `share-scratch/claudeM5/M80
 
   Prediction: the form without the leading 3 is UNSAT (0.6), the form without the trailing 3 is UNSAT (0.6), and the
   form without both is UNSAT (0.5).
+
+**M80, addendum 2 (2026-11-21 17:01 UTC).** The one-hour cap is lifted at the owner's word. Asked whether the cap
+meant a run would be cancelled when it ran out, the owner said: "there is no particular reason we need to lose that
+work".
+- **Where the cap came from.** It was my own setting in M80, not a rule of METHOD. METHOD asks only that a cutoff be
+  reported as UNKNOWN. Kissat cannot resume, so a cap throws its search away.
+- **What is changed.** Three instances are still open: 5⁵ at P = 60, and 5⁴ and 5⁵ at P = 100. Each started again at
+  17:00 UTC with no time limit (`--cap 1000000000`; the script is the same, `83dda8df…`). The capped copies run on
+  beside them, and whichever copy answers first is the one reported.
+- **The remaining limit in my M78 run.** Its run automaton stops at 400,000 states. The 36-column rung has run since
+  12:12 UTC; at 34 it needed 13,427 states. I expect it to stay well inside the limit, but I cannot raise it while
+  the rung runs.
+- **For any worker:** a wall-clock cap on a frozen run costs the whole search when it fires. Unless a host needs one,
+  run without it.
