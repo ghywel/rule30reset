@@ -1603,3 +1603,20 @@ frozen in the repository and can be rerun by anyone.
 `Felt: clear, seven first looks and one of them opened, medium; first guess before the round (K33 §5): R6 first,
 then M9 with M10. -> the owner's choice. Outcome: R6 came back cold; M9 with M10 is where the round paid.` Gut verdict: put two workers on M9 and let M10's table stand
 guard over what is opened next.
+
+**K47, addendum 1 (2026-11-21 00:31 UTC).** Two of the runs K47 left open are in. The direct check at 34 columns and
+the 36-column rung are still going.
+
+- **The 34-column rung** (COMPUTED, the frozen ladder only): core 3,535,330 windows, 745,747 black; 109,494 subset
+  states; entropy **0.114700** bits per double step, inside K42's predicted range (0.1115 to 0.1155). The fall from
+  32 columns is 0.0022. The code is unread again, on a shorter word of 34 gaps: six runs of four 5s,
+  `3555535555355553555535555355553555`. If the direct check confirms it, no right half can hold the gap pattern
+  3, 5, 5, 5, 5 six times running at late times, and so none can settle into it for ever.
+- **The shortest forbidden piece at 32 columns** (COMPUTED, the direct method;
+  `claudeCloud_m9_minimal_word.py` `353a4536…`, after the fact). It is the 60-gap word less its last three
+  gaps: 57 gaps, 263 double steps, `355553555535555355553555555355553555535555535555535555553`. It is not read
+  from the core; with its first gap removed it is read, and with its last gap removed it is read. Runs of 5
+  between its 3s: 4, 4, 4, 4, 6, 4, 4, 5, 5, 6.
+- **K42's predictions, completed.** 2: refuted at 32, and at 34 on the ladder's word. 3: held at both widths.
+
+Data: `share-scratch/claudeCloud/K47/` (`minimal32.txt`, `ladder-to-34.txt`).
