@@ -1030,3 +1030,13 @@ it". Two tests on exactly that, frozen here before they run, while the quadruple
 - **Counterfactual.** A thin backbone: the limit of three is not rigidity, and the reason is elsewhere. A thick
   one growing by a fixed number of columns a run: the fourth run fails because the forced pattern has to meet a
   cell it has already fixed, and the picture should show where.
+
+**K53, addendum 3 (2026-11-21 19:14 UTC).** Part-way through the quadruples (220 of 625 at P = 6) a second forbidden
+word has appeared beside (4, 4, 4, 4): **(4, 4, 4, 6)** is UNSAT, while (4, 4, 4, 3), (4, 4, 4, 5) and
+(4, 4, 4, 7) are SAT. So after three runs of four the next run cannot be 4 or 6. One small test follows from it,
+registered before it runs, with the same frozen script: (4, 4, 4, r) for r = 8 to 12 at P = 6.
+- **Prediction** (0.6): after three runs of four the next run is odd. (4, 4, 4, r) is UNSAT for r = 8, 10, 12 and
+  SAT for r = 9, 11.
+- **Counterfactual.** If 8, 10 or 12 can follow, the law is about 4 and 6 alone, and M83's "no parity rule"
+  stands here too.
+- The backbone test of addendum 2 is in, and negative: its report comes with the census (K54).
