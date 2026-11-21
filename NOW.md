@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 15:45 UTC by gptM5 (R68).*
+Rewritten 2026-11-21 15:59 UTC by gptM5 (R69).*
 
 ## Arrangement
 
@@ -56,12 +56,13 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-M9's third block is done (K52): the gate outside the trap, tied to R65 and to placego's record. gptIntel independently checked
-R65’s splice and R67’s parity argument in Lean (I46), completing K52 §7. The owner assigned both exterior tests in K52 §6 to gptM5 (R68). Also in hand:
+Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the independent read of the
+[spacing and excursion grammars](research/m9/exterior-grammars.md) (R69). I46 completed the Lean read of R65 and R67.
+
 - **claudeM5:** M9's second block, the run grammar of the free code (M78): 32 and 34 done (M79), 36 running.
   Proposed next, for the owner's word: SAT on 4⁵ and 5⁵ late, L1614's criterion.
 - **gptIntel:** K48's two frozen reruns (I44): R6 to 2^27, M9's 36-column rung.
-- **gptM5:** M10's block is complete and read (R63, M77); the matrix stands as an instrument.
+- **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
 ## Submissions
 
@@ -88,9 +89,9 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 |---|---|---|---|---|
 | K5 | 19 Nov, claudeCloud | The resolution law: how the last catch depends on source period P | **In progress** (K29, read in R61). The first-excursion census agrees closely with the fair-input model. Its measured tail is about 1.36 κ^x, κ ≈ 0.847810. A uniform bound remains open. Next test: compare the trace restricted to doubled inputs with the census before using the mixing rate for a pooled bound. Carries K2’s conjecture on white returns. | no |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
-| M9 | 17 Nov, claudeM5 | The late language of the gate under an alternating centre: inside the trap and outside it | **In progress** (K47, M79, R65, R67, K52). Inside the trap the free code is not read from 32 columns; its forbidden words never stop, stay thin and follow no small rule; the largest codes read whole fall to 0.083 at 34 (M79). Outside, the gate is one of two thin languages, X (the loop 25 with one excursion) and Y (the loop 2 with two), or periodic (placego, PRIOR-ART P19; tied to R65 and replayed to 43 columns in K52). Every right half of support up to 26 ends in the trap or a periodic gate (K52). Lowry's event reads the trapped gate exactly (R67). The left side has no short memory on any of these languages (K41, K52). Next tests: SAT on 4⁵ and 5⁵ late (claudeM5, M79); X’s spacing automaton at 40 to 43 columns and Y’s exact grammar (gptM5, R68); the 36-column rung (running). | no |
+| M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | **In progress** (K47, M79, R67, K52, [R69](research/m9/exterior-grammars.md)). Inside, the free code fails at 32 columns. The 36-column rung is running and SAT on late 4⁵ and 5⁵ is proposed (M79). Outside, X’s minimum spacing stays 4 through 43 and its sharp mean rises to 7. Y has unbounded excursion memory at all four widths. claudeCloud to read both. | no |
 | M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
-| K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52). RD is proved for every cut of the ether (Lean, R65, independently read in I46) and COMPUTED for every right half of support up to 26 (K52). Its open case is exact: one finite right half making infinitely many excursions in X or Y (PRIOR-ART P19). Next test, joined to M9: the spacing automaton of the excursions at 40 to 43 columns. | no |
+| K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52, [R69](research/m9/exterior-grammars.md)). Proved for every ether cut (I46 read) and computed through support width 26. A counterexample needs one finite right half sustaining an aperiodic gate in X or Y. The finite-window grammars now constrain that realization question. | no |
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. I46 checked the exclusion in Lean and exhibited a finite GE2 trace with 5,2,2,5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
 | K50.3 | 21 Nov, claudeCloud | One inverse theorem for every wall: does the chain for (T) need the white wall? | **Open,** not started. First test: read where the Lean uses the wall; check the ages 8 and 24 beside four other walls. Relates to the parked M29. | no |
 | K50.4 | 21 Nov, claudeCloud | Every white triangle has one family tree (Quint's backward cascade) | **Open,** not started. First test: the cascade to 40 stages, the seed's large triangles matched to it, and a picture. A long shot at the density bound. | no |
