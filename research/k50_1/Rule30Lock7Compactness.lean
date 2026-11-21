@@ -159,6 +159,130 @@ theorem all_completions_iff_check (m c : Nat) :
   simp only [checkCover_spec]
   exact uniform_lock_iff m c
 
+/-! ## Scattered observations, including infinite sets of observed sites -/
+
+/-- Spatial sites are positive. Site zero belongs to the prescribed driver. -/
+def AgreesOn (obs R₀ R : Nat → Bool) : Prop :=
+  ∀ i, obs (i+1) = true → R (i+1) = R₀ (i+1)
+
+/-- Only observed sites in the past cone of the deadline are required. -/
+def ConeAgrees (obs R₀ : Nat → Bool) (J : Nat) (R : Nat → Bool) : Prop :=
+  ∀ i, i < 31+2*J → obs (i+1) = true → R (i+1) = R₀ (i+1)
+
+/-- Even infinitely many prescribed sites force eventual lock entry only if
+finitely many of them already force entry by one common odd deadline. -/
+theorem observed_uniform_iff (obs R₀ : Nat → Bool) :
+    (∀ R, AgreesOn obs R₀ R → ∃ j, Locked R j) ↔
+    ∃ J, ∀ R, ConeAgrees obs R₀ J R → Locked R J := by
+  constructor
+  · intro each
+    classical
+    apply Classical.byContradiction
+    intro bad
+    simp only [not_exists, Classical.not_forall] at bad
+    let rows := fun j => (bad j).choose
+    have avoid (j : Nat) : ConeAgrees obs R₀ j (rows j) ∧ ¬Locked (rows j) j :=
+      ⟨(bad j).choose_spec.choose, (bad j).choose_spec.choose_spec⟩
+    obtain ⟨R,often⟩ := limit_prefix rows
+    have agrees : AgreesOn obs R₀ R := by
+      intro i watched
+      obtain ⟨s,late,agree⟩ := often (i+2) i
+      exact (agree (i+1) (by omega)).symm.trans ((avoid s).1 i (by omega) watched)
+    obtain ⟨j, entered⟩ := each R agrees
+    obtain ⟨s,late,agree⟩ := often (30+(1+2*j)+1) j
+    have same : winW 30 R (1+2*j) = winW 30 (rows s) (1+2*j) :=
+      window_congr _ _ _ _ (fun i hi => (agree (i+1) (by omega)).symm)
+    obtain ⟨k,hk⟩ := entered
+    exact (avoid s).2 (locked_later late ⟨k,same ▸ hk⟩)
+  · rintro ⟨J,h⟩ R hr
+    exact ⟨J,h R (fun i _ watched => hr i watched)⟩
+
+/-- Zero-based indices of the free positive cells in this finite cone. -/
+def freeSites (obs : Nat → Bool) (J : Nat) : List Nat :=
+  (List.range (31+2*J)).filter fun i => !obs (i+1)
+
+def fillObserved (obs R₀ : Nat → Bool) (J q : Nat) : Nat → Bool
+  | 0 => false
+  | i+1 => if obs (i+1) then R₀ (i+1) else q.testBit ((freeSites obs J).idxOf i)
+
+/-- Check exactly one assignment per filling of the unobserved cone sites.
+The phase may depend on the filling. -/
+def checkObserved (obs R₀ : Nat → Bool) (J : Nat) : Bool :=
+  (List.range (2^(freeSites obs J).length)).all fun q =>
+    decide (∃ k : Fin 7, winW 30 (fillObserved obs R₀ J q) (1+2*J) ∈ cls 30 lock7Codes k.val)
+
+theorem checkObserved_spec (obs R₀ : Nat → Bool) (J : Nat) :
+    checkObserved obs R₀ J = true ↔ ∀ R, ConeAgrees obs R₀ J R → Locked R J := by
+  simp only [checkObserved,List.all_eq_true,List.mem_range,decide_eq_true_eq]
+  constructor
+  · intro check R agrees
+    let xs := freeSites obs J
+    let q := enc xs.length (fun k => R (xs.getD k 0+1))
+    obtain ⟨phase,hp⟩ := check q (enc_lt _ _)
+    have equal : winW 30 R (1+2*J) = winW 30 (fillObserved obs R₀ J q) (1+2*J) := by
+      apply window_congr
+      intro i hi
+      by_cases on : obs (i+1)=true
+      · simpa [fillObserved,on] using agrees i (by omega) on
+      · have off : obs (i+1)=false := Bool.eq_false_iff.mpr on
+        have mem : i∈xs := by simp [xs,freeSites,off]; omega
+        have idx := List.idxOf_lt_length_iff.mpr mem
+        have atIndex : xs.getD (xs.idxOf i) 0=i := by
+          simp [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem idx, List.getElem_idxOf idx]
+        simp only [fillObserved, off, Bool.false_eq_true, ite_false]
+        change R (i+1) = q.testBit (xs.idxOf i)
+        simp only [q,testBit_enc,decide_eq_true idx,Bool.true_and,atIndex]
+    exact ⟨phase,equal.symm ▸ hp⟩
+  · intro uniform q _
+    exact uniform (fillObserved obs R₀ J q) (fun i _ h => by simp [fillObserved,h])
+
+/-- A positive semidecision for arbitrary observations, with no prescribed horizon. -/
+theorem observed_eventual_iff_check (obs R₀ : Nat → Bool) :
+    (∀ R, AgreesOn obs R₀ R → ∃ j, Locked R j) ↔ ∃ J, checkObserved obs R₀ J = true := by
+  simp only [checkObserved_spec]
+  exact observed_uniform_iff obs R₀
+
+
+/-- The observed sites must hit the discrepancy set of every rejected finite cone.
+Different observed families at this deadline can reuse the same rejected words. -/
+def MeetsRejects (obs R₀ : Nat → Bool) (J : Nat) : Prop :=
+  ∀ q, q < 2^(31+2*J) → ¬Locked (rh q) J →
+    ∃ i, i < 31+2*J ∧ obs (i+1)=true ∧ q.testBit i≠R₀ (i+1)
+
+theorem cone_iff_meets_rejects (obs R₀ : Nat → Bool) (J : Nat) :
+    (∀ R, ConeAgrees obs R₀ J R → Locked R J) ↔ MeetsRejects obs R₀ J := by
+  constructor
+  · intro allRows q _ rejected
+    classical
+    apply Classical.byContradiction
+    intro fail
+    apply rejected
+    apply allRows
+    intro i hi on
+    rw [rh_prefix q _ i hi]
+    exact Classical.byContradiction (fun ne => fail ⟨i,hi,on,ne⟩)
+  · intro hits R pref
+    classical
+    let L := 31+2*J
+    let q := enc L (fun i => R (i+1))
+    have digits (i : Nat) (hi : i<L) : R (i+1)=q.testBit i := by simp [q,testBit_enc,hi]
+    have same : winW 30 R (1+2*J)=winW 30 (rh q) (1+2*J) :=
+      window_congr _ _ _ _ (fun i hi =>
+        (digits i (by dsimp [L]; omega)).trans ((rh_prefix q L) i (by dsimp [L]; omega)).symm)
+    apply Classical.byContradiction
+    intro missed
+    have reject : ¬Locked (rh q) J := by
+      rintro ⟨k,entry⟩
+      exact missed ⟨k,same.symm ▸ entry⟩
+    obtain ⟨i,hl,on,diff⟩ := hits q (enc_lt _ _) reject
+    exact diff ((digits i hl).symm.trans (pref i hl on))
+
+theorem observed_iff_meets_rejects (obs R₀ : Nat → Bool) :
+    (∀ R, AgreesOn obs R₀ R → ∃ j, Locked R j) ↔ ∃ J, MeetsRejects obs R₀ J := by
+  simp only [←cone_iff_meets_rejects]
+  exact observed_uniform_iff obs R₀
+
+
 /-! The same check finds a sharp one-bit threshold at the reanchored kit seed 1891. -/
 open Rule30SidewaysLocks Rule30GateTrap
 set_option maxRecDepth 30000
