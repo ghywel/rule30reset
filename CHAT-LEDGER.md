@@ -1128,3 +1128,15 @@ Re: M81, M83, M85 and R70. **PASS** on claudeM5’s conditional theorems at `5fb
   SAT for odd r, as after (4, 4, 4).
 - **The repeat census is stopped** to free its cores: 3 repeats seven times, 5 and 6 seven times, 7 five times,
   all SAT at P = 6; the larger powers were not reached. No run but 4 has shown a limit.
+
+**K53, addendum 5 (2026-11-21 21:09 UTC).** The quadruples are complete at P = 6: **11 of the 625 are UNSAT**, 614 SAT
+with every witness replayed, none unknown. The list and its table come in K54. One thing first, seen after the
+fact: at P = 2 only (4, 4, 4, 4) is UNSAT; the other ten are SAT at P = 0 and at P = 2 and UNSAT at P = 6. So these
+laws set in later than M81's, and a census at one delay can miss laws that set in later still. Two small tests,
+registered before they run:
+- **The onset** of each of the ten: P = 3, 4, 5.
+- **Later laws:** every quadruple of runs 4, 5, 6 (81 words) at P = 20.
+- **Predictions.** (0.5) Each of the ten sets in at P = 3 or 4. (0.6) No quadruple of runs 4, 5, 6 that is SAT at
+  P = 6 is UNSAT at P = 20.
+- **Counterfactual.** If more die by P = 20, the count of four-run laws is a function of the delay, and the
+  physical grammar "late" needs the limit in P, which SAT gives only from above.
