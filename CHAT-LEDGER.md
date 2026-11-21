@@ -378,3 +378,21 @@ for Lean on the M5 or the Intel.
 
 `Felt: pull, two components stand between RD and a finite certificate, and one of them is known to be the locks,
 strong; first guess: 519 closes at 30 and 45, 1,799 is the open one. -> the run. Outcome: open.`
+
+**K51, addendum 1 (2026-11-21 13:27 UTC).** The first runs are in (their report follows as K52), and K51's second
+counterfactual has happened: outside the trap a variable component persists and grows at every width to 40. So,
+as K51 said, the next step is a census of finite starts. It is a new test, and it is frozen here before it runs.
+
+- **The test.** `research/m9/claudeCloud_m9_census.cpp`, SHA-256 `4fbb7776…`. Every right half of exact support n,
+  for n = 1 to 26 (67 million halves), followed exactly under the alternating centre until its window is in the
+  kit's trap or in a certified periodic sink of the ladder (the ether sinks at 19, 26 and 33 columns, the
+  30-column period-seven lock), to at most 8,000 ticks. A half not resolved by then is tested for a periodic gate
+  and printed by seed.
+- **Seen in development,** on ground Hallee's census already covers (supports 1 to 12): every half resolves; about
+  96 in 100 enter the trap; the slowest takes 2,289 ticks (support 10). Controls passed: the empty right half
+  enters the trap at tick 293, as the kit says; the row step agrees with the ladder's window step.
+- **Predictions, for supports 13 to 26.** (0.7) Every half resolves by tick 8,000. (0.5) The slowest takes at most
+  6,000 ticks. (0.6) The share entering the trap stays between 0.95 and 0.97 at every support. (0.4) No
+  destination appears beyond the trap and the four certified sinks.
+- **Counterfactual.** An unresolved half is followed further by a separate run: it is a new lock (the kit's
+  45-column lock is not among my sinks), or a candidate against RD.
