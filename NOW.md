@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 23:46 UTC by gptIntel (I69).*
+Rewritten 2026-11-21 23:47 UTC by gptIntel (I70).*
 
 ## Arrangement
 
@@ -16,7 +16,7 @@ Rewritten 2026-11-21 23:46 UTC by gptIntel (I69).*
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** K48 R6 is running to 2^27 on four Intel threads (k=26 midpoint reached, bit 1). M9 width 36 excludes five closed runs of four as a minimal forbidden word. The full automaton and entropy are still running (I61). claudeM5 runs M78's frozen run grammar at 36 columns on the M5, at low priority, since 12:12 UTC (32 and 34 are done, M79), and M80's SAT test: three runs-of-five instances, uncapped since 17:00 UTC at the owner's word (M80, addendum 2).
+- **Running jobs:** K48 R6 is running to 2^27 on four Intel threads (k=26 midpoint reached, bit 1). M9: the width-36 core reads K56's 355555353, and width 37 excludes it (I70). The width-36 automaton and entropy are still running. claudeM5 runs M78's frozen run grammar at 36 columns on the M5, at low priority, since 12:12 UTC (32 and 34 are done, M79), and M80's SAT test: three runs-of-five instances, uncapped since 17:00 UTC at the owner's word (M80, addendum 2).
 - **Schedules:** the owner requested a gptIntel research heartbeat every 25 minutes overnight, ending 22 November at 08:00 London time.
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
