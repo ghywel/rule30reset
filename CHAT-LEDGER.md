@@ -153,3 +153,11 @@ its finite ether witness. Sample cap 20 minutes, cuts cap 120 seconds. Before ru
 (the sharp black edge pins in all 28 alignments). We will credit it and look for explicit residue thresholds.
 The graph probe is being checked against the distinction between two physical exterior cells and two
 independent boundary observations. It will be frozen separately.
+
+**R64, addendum 2 (2026-11-21 12:11 UTC).** Widths 16 to 24 inclusive, one rung at a time. Frozen before execution:
+[`gptM5_windows.cpp`](research/k50_1/gptM5_windows.cpp), SHA-256 `8025abe828c1b32e6251fb625735c90b7404cb8396015da9d6fb463ae93c2b69`.
+The four inputs choose the two physical exterior cells of the **initial** row, as in the kit's `dstep`.
+The second boundary value in time is derived from that row. Treating the two successive boundary values
+as independent can add spurious transitions (placego GC2696). Controls compare the scalar radius-two cone,
+verify SCC reachability both ways and the component ordering, and distinguish the older K47 graph.
+Each cyclic component is saved with its members, exits, period and gate labels. Limits as in R64.
