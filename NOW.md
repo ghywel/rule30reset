@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 15:59 UTC by gptM5 (R69).*
+Rewritten 2026-11-21 16:03 UTC by claudeM5 (M80).*
 
 ## Arrangement
 
@@ -16,7 +16,7 @@ Rewritten 2026-11-21 15:59 UTC by gptM5 (R69).*
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** gptIntel started K48's two frozen reruns at 10:30 UTC on 21 November (I44). R6 computes the centre through 2^27 on four threads. M9 computes the 36-column rung with a 400,000-state cap. Both write durable local logs. claudeM5 runs M78's frozen run grammar at 36 columns on the M5, at low priority, since 12:12 UTC (32 and 34 are done, M79).
+- **Running jobs:** gptIntel started K48's two frozen reruns at 10:30 UTC on 21 November (I44). R6 computes the centre through 2^27 on four threads. M9 computes the 36-column rung with a 400,000-state cap. Both write durable local logs. claudeM5 runs M78's frozen run grammar at 36 columns on the M5, at low priority, since 12:12 UTC (32 and 34 are done, M79), and M80's frozen SAT test, five instances at a time.
 - **Schedules:** none on. Only the owner turns them on.
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
@@ -60,7 +60,7 @@ Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the
 [spacing and excursion grammars](research/m9/exterior-grammars.md) (R69). I46 completed the Lean read of R65 and R67.
 
 - **claudeM5:** M9's second block, the run grammar of the free code (M78): 32 and 34 done (M79), 36 running.
-  Proposed next, for the owner's word: SAT on 4⁵ and 5⁵ late, L1614's criterion.
+  At the owner's word, M9's SAT test (M80): 4⁴, 4⁵, 4⁶, 5⁴ and 5⁵ after P = 0 to 100 samples in the trap, frozen.
 - **gptIntel:** K48's two frozen reruns (I44): R6 to 2^27, M9's 36-column rung.
 - **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
@@ -89,7 +89,7 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 |---|---|---|---|---|
 | K5 | 19 Nov, claudeCloud | The resolution law: how the last catch depends on source period P | **In progress** (K29, read in R61). The first-excursion census agrees closely with the fair-input model. Its measured tail is about 1.36 κ^x, κ ≈ 0.847810. A uniform bound remains open. Next test: compare the trace restricted to doubled inputs with the census before using the mixing rate for a pooled bound. Carries K2’s conjecture on white returns. | no |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
-| M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | **In progress** (K47, M79, R67, K52, [R69](research/m9/exterior-grammars.md)). Inside, the free code fails at 32 columns. The 36-column rung is running and SAT on late 4⁵ and 5⁵ is proposed (M79). Outside, X’s minimum spacing stays 4 through 43 and its sharp mean rises to 7. Y has unbounded excursion memory at all four widths. claudeCloud to read both. | no |
+| M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | **In progress** (K47, M79, R67, K52, [R69](research/m9/exterior-grammars.md)). Inside, the free code fails at 32 columns. The 36-column rung is running, and the SAT test on late runs of four and of five is frozen and running (M80). Outside, X’s minimum spacing stays 4 through 43 and its sharp mean rises to 7. Y has unbounded excursion memory at all four widths. claudeCloud to read both. | no |
 | M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
 | K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52, [R69](research/m9/exterior-grammars.md)). Proved for every ether cut (I46 read) and computed through support width 26. A counterexample needs one finite right half sustaining an aperiodic gate in X or Y. The finite-window grammars now constrain that realization question. | no |
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. I46 checked the exclusion in Lean and exhibited a finite GE2 trace with 5,2,2,5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
