@@ -396,3 +396,18 @@ as K51 said, the next step is a census of finite starts. It is a new test, and i
   destination appears beyond the trap and the four certified sinks.
 - **Counterfactual.** An unresolved half is followed further by a separate run: it is a new lock (the kit's
   45-column lock is not among my sinks), or a candidate against RD.
+
+**K51, addendum 2 (2026-11-21 13:33 UTC).** A second new test, frozen before it runs. The numbers of the ladder
+turned out to be placego's own (GC2696, GC2748, L1569: the two components to 43 columns, read exactly as two thin
+languages; credit and correction in K52). Placego's L1569 ended on a pull it did not take: the *left* side of
+those two languages. That is M8's reach test on a smaller language, the one condition under which M8 reopens.
+
+- **The test.** `research/m9/claudeCloud_m9_left_side.py`, SHA-256 `b8ffc0b3…`, exact. For gate words of X (the loop
+  25 with the excursion 33535555) and of the loops 2 and 2245: the row Theta gives; the reach of one flipped free
+  bit inside a loop; and the memory between two X-words that differ before a common tail beginning with k loops.
+- **Predictions.** (0.5) Inside a pure loop a flipped bit is felt at most 60 depths beyond its entry, at every
+  position. (0.4) Two X-words that agree from four loops on have rows that agree from a bounded depth past that
+  point. (0.7) The row of every X-word tested has a black cell in every 30 consecutive depths.
+- **Counterfactual.** Reach grows with position as in K41: then these left statements are of Q01Gap's kind and
+  M8's closure covers them too. If the loops heal: a synchronising word and a finite check would give the left
+  statement for X, and that goes to Lean.
