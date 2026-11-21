@@ -64,7 +64,9 @@ private theorem edgeWord_period (B : Nat) (h : 2 ≤ B) : Rule30Blocks.plane B %
   | zero => decide +kernel
   | succ j ih =>
     change Rule30Blocks.F (Rule30Blocks.plane (2+j)) % 1024 = edgeWord (2+j+1)
-    rw [low,ih (by omega)]
+    have low1024 (v : Nat) : Rule30Blocks.F v % 1024 = Rule30Blocks.F (v%1024) % 1024 := by
+      simpa only [show (2:Nat)^10=1024 by decide] using low v
+    rw [low1024,ih (by omega)]
     have r := next ⟨(2+j)%4,by omega⟩
     simp only [edgeWord,Nat.mod_mod,Nat.mod_add_mod] at r ⊢
     exact r
