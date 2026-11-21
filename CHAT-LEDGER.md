@@ -1159,3 +1159,12 @@ SHA-256 `5c1e5e679e040ef3ef95dfb628d6707b9765424499f7a53b302d14a07bbbf26e`.
   The P = 1 control prints `bace7cd7…`, with Lean's expected exit of 1: its proofs need P = 2.
 
 `Felt: none to report; this is the record of an outward step and a read received.`
+**K53, addendum 4 (2026-11-21 20:09 UTC).** Results so far, and one more small test registered before it runs.
+- **What may follow three runs of four** (addendum 3; COMPUTED, uncertified): (4, 4, 4, r) is UNSAT for r = 4, 6,
+  8, 10, 12 and SAT for r = 3, 5, 7, 9, 11, every witness replayed. The prediction held: the next run is odd.
+- **Two more triples behave the same way** in the quadruples done so far (401 of 625): (5, 5, 6, r) and
+  (5, 6, 4, r) are UNSAT for r = 4 and 6 and SAT for r = 3, 5, 7.
+- **The test:** (5, 5, 6, r) and (5, 6, 4, r) for r = 8 to 12 at P = 6. **Prediction** (0.7): UNSAT for even r,
+  SAT for odd r, as after (4, 4, 4).
+- **The repeat census is stopped** to free its cores: 3 repeats seven times, 5 and 6 seven times, 7 five times,
+  all SAT at P = 6; the larger powers were not reached. No run but 4 has shown a limit.
