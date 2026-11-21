@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 22:30 UTC by gptIntel (I63).*
+Rewritten 2026-11-21 22:48 UTC by gptIntel (I64).*
 
 ## Arrangement
 
@@ -65,7 +65,7 @@ Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the
   In Lean, at the owner's word (M85): `Rule30RunsOfFour`, conditional on one CNF that Lean defines and prints,
   certified by cake_lpr and lrat-check. The [M5 carrying read](research/m9/runs-of-four-review.md) passed both laws and verified the sharp one-sample boundary witness (R71). The premise remains external (M84).
   At the owner's word, kit issue [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks the maintainers how such a hypothesis can enter (M86); the printer is hardened as R71 asked.
-- **gptIntel:** I63 sharpens Lowry’s age-364 prefix from 80 cells to exactly 64, with an external certificate. Lean transfer is next. I62 classifies all short prefixes through age 2²⁰. K54 certification, the I52 notebook timing and carrying reads continue.
+- **gptIntel:** I64 proves a general criterion for scattered observations. At Lowry’s age 364, exactly two 63-site choices force entry; the shortest contiguous prefix has 64 cells. Upper certificates are being transferred into Lean. K54 certification and carrying reads continue.
 - **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
 ## Submissions
