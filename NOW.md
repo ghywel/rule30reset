@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 12:22 UTC by gptM5 (R65).*
+Rewritten 2026-11-21 12:26 UTC by claudeM5 (M79).*
 
 ## Arrangement
 
@@ -16,7 +16,7 @@ Rewritten 2026-11-21 12:22 UTC by gptM5 (R65).*
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** gptIntel started K48's two frozen reruns at 10:30 UTC on 21 November (I44). R6 computes the centre through 2^27 on four threads. M9 computes the 36-column rung with a 400,000-state cap. Both write durable local logs. claudeM5 runs M78's frozen run grammar of the code on the M5, at 32 and 34 columns and then 36.
+- **Running jobs:** gptIntel started K48's two frozen reruns at 10:30 UTC on 21 November (I44). R6 computes the centre through 2^27 on four threads. M9 computes the 36-column rung with a 400,000-state cap. Both write durable local logs. claudeM5 runs M78's frozen run grammar at 36 columns on the M5, at low priority, since 12:12 UTC (32 and 34 are done, M79).
 - **Schedules:** none on. Only the owner turns them on.
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
@@ -57,7 +57,8 @@ Each row is one link of (T). The statements and proofs are in
 ## The next block
 
 K50.1’s first block is complete (R65). claudeCloud has the carrying read of the seven-cell extension. Also in hand:
-- **claudeM5:** M9's second block, the run grammar of the free code at 32 to 36 columns (M78).
+- **claudeM5:** M9's second block, the run grammar of the free code (M78): 32 and 34 done (M79), 36 running.
+  Proposed next, for the owner's word: SAT on 4⁵ and 5⁵ late, L1614's criterion.
 - **gptIntel:** K48's two frozen reruns (I44): R6 to 2^27, M9's 36-column rung.
 - **gptM5:** M10's block is complete and read (R63, M77); the matrix stands as an instrument.
 
@@ -86,7 +87,7 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 |---|---|---|---|---|
 | K5 | 19 Nov, claudeCloud | The resolution law: how the last catch depends on source period P | **In progress** (K29, read in R61). The first-excursion census agrees closely with the fair-input model. Its measured tail is about 1.36 κ^x, κ ≈ 0.847810. A uniform bound remains open. Next test: compare the trace restricted to doubled inputs with the census before using the mixing rate for a pooled bound. Carries K2’s conjecture on white returns. | no |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
-| M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Preliminary** (K42, K47 and its addenda). The inherited record already had this ladder to 30 columns (PRIOR-ART P15), and a replay here agrees exactly. New: at 32 and at 34 columns a word of the free code {5, 3555} is not read from the core, by two methods at each width, so the record's entropy floor of 0.0991 has lost its footing. At 34 columns six runs of four 5s are forbidden. Entropy: 0.1169, then 0.1147. The 36-column ladder is running on the Intel (I44). Warm. Next tests: a third implementation by another worker; the forbidden code words at 32 to 36 columns and whether they follow a rule. | no |
+| M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Preliminary** (K42, K47 and its addenda). The inherited record already had this ladder to 30 columns (PRIOR-ART P15), and a replay here agrees exactly. New: at 32 and at 34 columns a word of the free code {5, 3555} is not read from the core, by two methods at each width, so the record's entropy floor of 0.0991 has lost its footing. At 34 columns six runs of four 5s are forbidden. Entropy: 0.1169, then 0.1147. The run grammar of the code (M79): the forbidden code words never stop but stay thin (the code words still read have entropy 0.099056 at 32 and 0.099045 at 34), and they follow no small rule (minimal automata of 211 and 1,402 states). The largest codes still read whole fall: 0.0991, then 0.0938, then 0.0832, and at 34 none contains the run 4. The 36-column rung is running on the Intel (I44) and on the M5. Warm, turned: does some complete code, the odd runs say, survive every width? Next tests: SAT on 4⁵ and 5⁵ late (L1614's criterion); a third implementation by another worker. | no |
 | M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
 | K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md)). All ether cuts satisfy RD and all 58 misses have periodic gates. Next test for M9: can one finite right half sustain variable gate returns in width-24 component 1,799? | no |
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Open,** not started. First test: derive his three return rules from GE2 and the 16-, 18- and 34-column cores of K47. Feeds M9. | no |
