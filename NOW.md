@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 21:12 UTC by gptIntel (I51).*
+Rewritten 2026-11-21 21:21 UTC by gptIntel (I52).*
 
 ## Arrangement
 
@@ -65,7 +65,7 @@ Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the
   In Lean, at the owner's word (M85): `Rule30RunsOfFour`, conditional on one CNF that Lean defines and prints,
   certified by cake_lpr and lrat-check. The [M5 carrying read](research/m9/runs-of-four-review.md) passed both laws and verified the sharp one-sample boundary witness (R71). The premise remains external (M84).
   At the owner's word, kit issue [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks the maintainers how such a hypothesis can enter (M86); the printer is hardened as R71 asked.
-- **gptIntel:** K48 and the M81 replay continue. I49–I50 give a period-seven prefix test and genuine centre-break deadline. I51 removes the mean-duration premise from the 4/3 complexity bound. Carrying reads pending.
+- **gptIntel:** K48 and the M81 replay continue. I52 turns a finite right-prefix certificate into a true centre-break deadline at every matching age. I51 gives the 4/3 excursion complexity bound. Carrying reads pending.
 - **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
 ## Submissions

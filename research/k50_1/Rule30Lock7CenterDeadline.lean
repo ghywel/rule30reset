@@ -1,6 +1,7 @@
 module
 
 public import Rule30Lock7Prefixes
+public import Rule30Lock7Compactness
 
 /-!
 # A deadline for the actual singleton centre
@@ -158,5 +159,29 @@ theorem actual_center_break {A s0 k : Nat} (hk : k<7)
     have hE : E<9 := by dsimp [B] at hb; omega
     obtain ⟨z,bad⟩ := short_starts ⟨A,hA⟩ ⟨E,hE⟩ (by change E%2=1;dsimp [E];omega) (by change A+E<9;dsimp [B] at hb;omega)
     exact ⟨z.val,by have := z.isLt;dsimp [E] at *;omega,bad⟩
+
+open Rule30Lock7Compactness
+
+/-- A finite test on the positive right prefix alone bounds the first disagreement
+with black-first alternation at every singleton age A exhibiting that prefix.
+The bound is expressed in absolute physical ticks. -/
+theorem actual_break_of_checkCover {m c J A : Nat}
+    (checked : checkCover m c J = true) (pref : HasPrefix m c (rightAt A)) :
+    ∃ h, A+h ≤ 2*(A+(1+2*J)) ∧ Rule30Jen.cell (A+h) 0 ≠ altCol h := by
+  obtain ⟨k, entry⟩ := (checkCover_spec m c J).mp checked (rightAt A) pref
+  rw [Nat.add_comm 1 (2*J)] at entry
+  obtain ⟨h, bound, differs⟩ := actual_center_break k.isLt entry
+  exact ⟨h, by omega, differs⟩
+
+/-- If every completion eventually locks, one intercept K works for *all* singleton
+ages with the prescribed prefix, even when entry phases vary across completions. -/
+theorem uniform_actual_break {m c : Nat}
+    (forces : ∀ R, HasPrefix m c R → ∃ j, Locked R j) :
+    ∃ K, ∀ A, HasPrefix m c (rightAt A) →
+      ∃ h, A+h ≤ 2*A+K ∧ Rule30Jen.cell (A+h) 0 ≠ altCol h := by
+  obtain ⟨J, checked⟩ := (all_completions_iff_check m c).mp forces
+  refine ⟨2*(1+2*J), fun A pref => ?_⟩
+  obtain ⟨h, bound, differs⟩ := actual_break_of_checkCover checked pref
+  exact ⟨h, by omega, differs⟩
 
 end Ruliology.CellularAutomata.Rule30Lock7CenterDeadline
