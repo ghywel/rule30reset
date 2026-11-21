@@ -1606,3 +1606,27 @@ thing in tier 1's tables calls for a SAT test, which is frozen here before it ru
 For each upper mask, CaDiCaL emitted an LRAT proof that a phase-6 miss at tick 95 is impossible. A separate implementation generated literal truth-table CNFs and checked Kissat's proofs independently. Both cake_lpr and lrat-check accepted the positive proofs. Dropping both sites and requiring the wrong phase were independently checked negative controls. The finite inputs, witnesses, four checker chains and kernel receipts are at `I64/observations.zip`, read-back SHA-256 `b490c384646f14f30f1c279ca2ac6f8bc485cf7fdd198f065c4b68c14fd6b2f1`. The compact kernel transfer of the two upper bounds is running. P28 records earlier work. A carrying read should start with the general criterion and ask whether the two optimal masks illustrate it sufficiently for the maintainer.
 
 K48's W36 worker resumed from its exact SQLite frontier with a faster single-core image calculation. An independent continuation reproduced all 64 prespecified transitions, 28 new canonical states and the first 256 resumed successor vectors. Recovery retains its original deadline and memory/state limits. The frozen worker would still be used after a transition mismatch. R6 continues, as does the K54 batch.
+
+**K55, addendum 2 (2026-11-21 22:57 UTC).** Interim answers of addendum 1's test, and the next set frozen before it runs.
+- **(5, 1) is a law, later than I said** (COMPUTED, uncertified; every SAT answer replayed). SAT at P = 0 to 8 and 10.
+  UNSAT at P = 20 and 40. A scan of P = 11 to 19, not registered, places the onset: SAT at 11, **UNSAT from 12**.
+  The instance at P = 12 has 6,185 variables and solves in a second. My "from P = 6" is refuted; the law holds.
+- **(11, 1) is SAT at P = 0, 2, 6 and 20**: both predictions refuted. It never occurs in tier 1 even so.
+- **The column ladder does not see (5, 1).** The trap lifted to 18, 22, 26 and 28 columns still reads `355555353`
+  from its core (`claudeCloud_m9_verify_word.py`; the control `3535353` is not read). The ladder frees the outer
+  column afresh at every step; SAT keeps one row.
+- **A sieve, from tier 1's tables** (exploratory): words that never start at delay 100 or more although the
+  shorter words inside them do. It finds (1, 1, 1), the kit's `3535353`, by itself (1,898 expected from its pairs,
+  none seen), which checks the sieve. Its other triples with 300 or more expected and none seen: (3, 1, 4) with
+  7,839; (6, 1, 12); (1, 4, 5), seen 21 times and only within 5 samples of entry; (5, 6, 6); (13, 4, 4); (11, 4, 8);
+  (4, 8, 12); (6, 1, 14); (5, 6, 4); (10, 1, 5); (10, 4, 6); (6, 1, 18).
+- **The next set** (same frozen script, budget 20 million conflicts an instance):
+  - (11, 1) at P = 30, 40, 60, 80, stopping at the first UNSAT;
+  - (1, 4, 5) at P = 0 to 12;
+  - the twelve triples above at P = 20, and at P = 40 where 20 is SAT;
+  - the 19 quadruples over runs 4 to 6 that tier 1 never shows late (K56 lists them) at P = 40.
+- **Predictions.** (0.7) (3, 1, 4) is UNSAT at P = 20. (0.7) (1, 4, 5) is UNSAT at P = 20 and (0.97) SAT at P up
+  to 5. (0.5) (11, 1) is UNSAT by P = 60. (0.5) At least 6 of the other ten triples are UNSAT by P = 40. (0.5) At
+  least 5 of the 19 quadruples are UNSAT at P = 40.
+- **Counterfactual.** Few of these UNSAT: then the measure of real rows is much thinner than the language, and
+  the sieve finds rarities, not laws.
