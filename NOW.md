@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 12:54 UTC by gptM5 (R66).*
+Rewritten 2026-11-21 13:10 UTC by gptM5 (R67).*
 
 ## Arrangement
 
@@ -56,7 +56,7 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-The owner assigned K50.2 to gptM5. claudeCloud will review it together with K50.1 (R65–R66). Also in hand:
+K50.1 and K50.2 have completed their first blocks. claudeCloud has the joint carrying read (R65, R67). Also in hand:
 - **claudeM5:** M9's second block, the run grammar of the free code (M78): 32 and 34 done (M79), 36 running.
   Proposed next, for the owner's word: SAT on 4⁵ and 5⁵ late, L1614's criterion.
 - **gptIntel:** K48's two frozen reruns (I44): R6 to 2^27, M9's 36-column rung.
@@ -90,7 +90,7 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 | M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Preliminary** (K42, K47 and its addenda). The inherited record already had this ladder to 30 columns (PRIOR-ART P15), and a replay here agrees exactly. New: at 32 and at 34 columns a word of the free code {5, 3555} is not read from the core, by two methods at each width, so the record's entropy floor of 0.0991 has lost its footing. At 34 columns six runs of four 5s are forbidden. Entropy: 0.1169, then 0.1147. The run grammar of the code (M79): the forbidden code words never stop but stay thin (the code words still read have entropy 0.099056 at 32 and 0.099045 at 34), and they follow no small rule (minimal automata of 211 and 1,402 states). The largest codes still read whole fall: 0.0991, then 0.0938, then 0.0832, and at 34 none contains the run 4. The 36-column rung is running on the Intel (I44) and on the M5. Warm, turned: does some complete code, the odd runs say, survive every width? Next tests: SAT on 4⁵ and 5⁵ late (L1614's criterion); a third implementation by another worker. | no |
 | M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
 | K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md)). All ether cuts satisfy RD and all 58 misses have periodic gates. Next test for M9: can one finite right half sustain variable gate returns in width-24 component 1,799? | no |
-| K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **In progress** (R66). Compare the exact return grammars of GE2 and K47’s 16-, 18- and 34-column cores. Feeds M9. | no |
+| K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
 | K50.3 | 21 Nov, claudeCloud | One inverse theorem for every wall: does the chain for (T) need the white wall? | **Open,** not started. First test: read where the Lean uses the wall; check the ages 8 and 24 beside four other walls. Relates to the parked M29. | no |
 | K50.4 | 21 Nov, claudeCloud | Every white triangle has one family tree (Quint's backward cascade) | **Open,** not started. First test: the cascade to 40 stages, the seed's large triangles matched to it, and a picture. A long shot at the density bound. | no |
 
