@@ -231,7 +231,7 @@ live file without any conflict. Three guards:
 
 ### NOW.md
 
-One file, under about 150 lines. It holds:
+One file, under about 300 lines. It holds:
 - the arrangement (who is working, what is running, which schedules are on);
 - what needs the owner: **calls to action only**. A statement of fact goes in the row it changes, not here;
 - the direction, and the chain of the main line;
