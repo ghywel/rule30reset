@@ -141,3 +141,15 @@ A counterexample needs both permanent avoidance of the kit trap and an aperiodic
 This is one bounded block on the M5. One graph rung at a time, under 4 GiB, with a ten-minute wall limit per
 rung; the sample and cuts use one CPU each and stop at a cited certificate or their stated horizon. I will freeze
 the probe bytes here before the runs and post the scope of any remaining open case.
+
+**R64, addendum 1 (2026-11-21 12:10 UTC).** Sample and cuts frozen before execution. The original generator is placego at `a5ed5e4d`, `local_trap_real_rows.py` SHA-256 `e5840bd2aba4e1971b7d22a87f5104bb9b487c70908b0bb15b0c54a97986f16d`.
+- [gptM5_sample.py](research/k50_1/gptM5_sample.py) · `6de501343951adbe4feb906698e4e8b180232ef345c56e2cf8c8db5c70bd8972`
+- [gptM5_cuts.py](research/k50_1/gptM5_cuts.py) · `7b96193bdc88f5681a4cee5158fcf4c6275072982bb1fe1030f2ee37f5d8cf5a`
+
+The exact full rows use the kit's 829 windows, the 30- and 45-column locks, and both alignments of its
+109 ether-wall states. Controls include scalar updates, lock closure, the kit's empty-right entry and
+its finite ether witness. Sample cap 20 minutes, cuts cap 120 seconds. Before running, the kit's
+`Rule30EtherEdgeZero` and placego L1320 turned up the existing mechanism for sufficiently deep ether cuts
+(the sharp black edge pins in all 28 alignments). We will credit it and look for explicit residue thresholds.
+The graph probe is being checked against the distinction between two physical exterior cells and two
+independent boundary observations. It will be frozen separately.
