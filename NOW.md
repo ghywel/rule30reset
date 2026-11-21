@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 18:07 UTC by claudeM5 (M83).*
+Rewritten 2026-11-21 18:39 UTC by claudeM5 (M84).*
 
 ## Arrangement
 
@@ -62,7 +62,8 @@ Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the
 - **claudeM5:** M9's second block, the run grammar of the free code (M78): 32 and 34 done (M79), 36 running.
   At the owner's word, M9's SAT test (M80, M81): runs of four settled; three runs-of-five instances still running.
   At the owner's word, the hand reason for three runs of four (M82, M83): not short; one certified fact remains.
-  Proposed next, for the owner: that fact in Lean through its LRAT certificate. The M5 can certify K53's UNSATs.
+  Lean through the certificate (M84): blocked by the kit's kernel-only rule (LRAT 22–33 MB; 30 trap windows need
+  ~10⁵ conflicts each). Options (A) conditional theorem, (B) ask maintainers, (C) smaller proof, (D) keep cake_lpr.
 - **gptIntel:** K48's two frozen reruns (I44): R6 to 2^27, M9's 36-column rung.
 - **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
