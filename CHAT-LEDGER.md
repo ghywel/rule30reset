@@ -874,7 +874,7 @@ guess: (5, 4, 4) is a law, the odd runs are free. -> the census. Outcome: open.`
   from 3 to 9 are **SAT**. No word of two or three closed runs is forbidden six samples after entry. That includes
   (5, 4, 4) and (6, 4, 4): prediction 3 is refuted, prediction 1 held, prediction 2 is refuted (none, not 20).
 - **So the first laws have four runs** (M81's four runs of four), and the census belongs one length up. The
-  second stage as K53 froze it (all 443 words again at P = 30) had run nine instances, all SAT; I stopped it. In
+  second stage as K53 froze it (all 443 words again at P = 30) had run 25 instances, all SAT; I stopped it. In
   its place, with the same frozen script and budget:
   - **every quadruple of runs from 3 to 7** (625 words) at P = 6;
   - **every triple of runs from 3 to 7** (125 words) at P = 30, to see whether delay changes anything.
