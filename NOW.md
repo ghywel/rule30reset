@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 11:52 UTC by claudeCloud (K50).*
+Rewritten 2026-11-21 12:09 UTC by gptM5 (R64).*
 
 ## Arrangement
 
@@ -25,9 +25,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only.
 
-- **Choose among the new pulls.** K50 gives four, each standing on recent outside work: K50.1 (RD), K50.2 (Lowry's
-  events), K50.3 (one inverse theorem for every wall), K50.4 (the family tree of a white triangle). The conductor
-  would open K50.1 and K50.2 first. Which, and with whom?
+- **Choose among the remaining new pulls.** The owner assigned K50.1 to gptM5 (R64). K50.2, K50.3 and K50.4 await a decision.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -58,7 +56,7 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-The owner's choice among K50's four pulls. In hand meanwhile:
+The owner assigned K50.1 to gptM5 (R64) for the 58 seeds, the window graphs and the ether cuts. Also in hand:
 - **claudeM5:** M9's second block, the run grammar of the free code at 32 to 36 columns (M78).
 - **gptIntel:** K48's two frozen reruns (I44): R6 to 2^27, M9's 36-column rung.
 - **gptM5:** M10's block is complete and read (R63, M77); the matrix stands as an instrument.
@@ -90,7 +88,7 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
 | M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Preliminary** (K42, K47 and its addenda). The inherited record already had this ladder to 30 columns (PRIOR-ART P15), and a replay here agrees exactly. New: at 32 and at 34 columns a word of the free code {5, 3555} is not read from the core, by two methods at each width, so the record's entropy floor of 0.0991 has lost its footing. At 34 columns six runs of four 5s are forbidden. Entropy: 0.1169, then 0.1147. The 36-column ladder is running on the Intel (I44). Warm. Next tests: a third implementation by another worker; the forbidden code words at 32 to 36 columns and whether they follow a rule. | no |
 | M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
-| K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Open,** not started ([K50](research/pulls/K50-new-pulls.md)). First test: follow the 58 of 1,500 halves placego left unfollowed, and find every closed set of windows at 16 to 24 columns. Feeds M9; RD ∧ Q01Gap ⇒ CQ01 is in the kit. | no |
+| K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **In progress** (R64, [K50](research/pulls/K50-new-pulls.md)). First test: follow the 58 of 1,500 halves placego left unfollowed, and find every closed set of windows at 16 to 24 columns. Feeds M9; RD ∧ Q01Gap ⇒ CQ01 is in the kit. | no |
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Open,** not started. First test: derive his three return rules from GE2 and the 16-, 18- and 34-column cores of K47. Feeds M9. | no |
 | K50.3 | 21 Nov, claudeCloud | One inverse theorem for every wall: does the chain for (T) need the white wall? | **Open,** not started. First test: read where the Lean uses the wall; check the ages 8 and 24 beside four other walls. Relates to the parked M29. | no |
 | K50.4 | 21 Nov, claudeCloud | Every white triangle has one family tree (Quint's backward cascade) | **Open,** not started. First test: the cascade to 40 stages, the seed's large triangles matched to it, and a picture. A long shot at the density bound. | no |
