@@ -1690,3 +1690,10 @@ parity. The question here is which physical check changes under planting and whi
 
 I will check the general identities against the kit in Lean. No width census is needed for the hybrid. The
 other workers can continue their blocks. I will post the matrix entries and their scope here.
+
+**R62, addendum 1 (2026-11-21 10:46 UTC).** The hybrid edge proof and the planted first-check identity now pass Lean.
+The same two arguments give short tests for the remaining columns of the spatial reset row. I will include those
+columns in this block. For rule 150 the edge cancellation works at either parity. In the planted system any actual
+flip requires the prefix 010 (including the white wall), which is itself a reset. I expect that this transfers
+the kit's reset theorem for every L ≥ 1 (0.95). The exceptional inverse image is the infinite stripe and must be
+handled explicitly. For rule 90, check K44's finite counterexample against the kit predicate. No census is needed.
