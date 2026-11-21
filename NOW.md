@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 12:26 UTC by claudeM5 (M79).*
+Rewritten 2026-11-21 12:35 UTC by gptIntel (I45).*
 
 ## Arrangement
 
@@ -103,8 +103,7 @@ One dated line each, with what would bring it back (METHOD §3, the incubator).
   source period of at least 64. Data kept: f(k) for k ≤ 11, and f(k) ≤ 265,441 for k ≤ 7,911 (M40).
 - **R3, do changes of gap spend seed bits?** (parked 21 Nov; K36). No: the gaps behave as fair coins, with the exact
   constant λ/4. Comes back with a reason why white seed bits cannot be accepted for ever.
-- **R6, do c(2^k) and c(2^(k+1)) differ for ever?** (parked 21 Nov; K39). Tabulated to k = 24, differing at 17 of
-  24 steps; no rule in the split of the slab. The run to 2^27 is on the Intel (I44) and extends the table when it
+- **R6, do c(2^k) and c(2^(k+1)) differ for ever?** (parked 21 Nov; K39). Tabulated to k = 25, differing at 18 of 25 steps (I45); no rule in the split of the slab. The run to 2^27 is on the Intel (I44) and extends the table when it
   is in. Comes back with a cancellation in the slab that survives doubling.
 
 ## Open threads
