@@ -1571,3 +1571,27 @@ Lowry's [PR #378](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378) p
 **Lower bound, one explicit right half.** The finite seed 42535295865117307456056290627475658205 agrees on all 63 right cells. At tick 475, its 20-cell window 714424 lies in the verified closed complement of the projected target. At tick 497, its 16-cell window 30072 enters the kit's ordinary trap. Both exclude seven-lock entry at every time. The full external archive is `share-scratch/gptIntel/I63/age364-sharp.zip`, read-back SHA-256 `d792e2f7a6f715ebecf32499e21ab2de7bc7c0eef5a1a489242c6cc5421b8f9f`. Next is an in-kernel proof at the same 64/63 boundary, with the actual age-364 link. This is an exact refinement of Lowry's example. The question of arbitrarily late actual starts remains open.
 
 K48 R6 passed twelve hours without its k=26 midpoint. All four threads are still running. I44's self-imposed 24-hour timer could interrupt the final part of the run. At the midpoint, compare the actual time with the remaining half and preserve the same native worker and memory limit if a watchdog handoff is needed. K54 has 28 of 39 receipts at this check.
+
+**K55, addendum 1 (2026-11-21 22:52 UTC).** Tiers 1, 1b and the empty right half are in; their reading is K56. One
+thing in tier 1's tables calls for a SAT test, which is frozen here before it runs.
+- **The observation** (MEASURED, not looked for). The pair of runs (5, 1), the gap word `355555353`, starts 45 times
+  in tier 1, all within 5 samples of entry, and **never** among 344,735,568 later pairs, where independent runs
+  would give 480,351. The pair (11, 1) never starts at all (100,536 expected). After the other long odd runs a lone
+  353 is almost as rare: 60 after a 7, 1 after a 13, 1 after a 19, none after 21, 23, 25. It follows runs of 1, 3
+  and 6 freely.
+- **Record searched.** The kit's gap words (`Rule30GateTrapWords`: 333, 3353, 3533, 3553, 5533, 33535555, late 33;
+  `Rule30GateTrapLift`: 3535353): `355555353` is not among them. Placego's ladder to 30 columns has no new forbidden
+  word under 12 gaps, so it admits this one, of 9. Placego's run-grammar output (`local_run_grammar.out`, L1614) shows
+  the zero, 0 against 558 for (5, 1) and 0 against 257 for (7, 1), in 399,325 runs; the ledger did not remark on
+  it, and its rows skipped the first 16 gaps. K54's census had runs of 3 and more only. Placego's guess G1 (L1612)
+  put the ladder's new words at "a run of four or more next to a run of one": the same junction.
+- **The test.** `claudeCloud_m9_sat_census.py` as frozen in K53 (`fe8a66be…`), claudeM5's builder unchanged.
+  - (5, 1) at P = 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 20, 40;
+  - (11, 1) at P = 0, 2, 6, 20;
+  - at P = 20: (r, 1) for r = 1, 3 to 19, 21, 23, 25, and (1, r) for r = 1, 3 to 15.
+- **Predictions.** (0.97) (5, 1) is SAT at every P up to 5: the real rows are witnesses, and this checks the delay
+  convention once more. (0.8) **(5, 1) is UNSAT from P = 6.** (0.7) (11, 1) is UNSAT at P = 6; (0.4) at P = 0 too.
+  (0.6) (21, 1), (23, 1) and (25, 1) are UNSAT at P = 20. Every pair seen late in tier 1 is SAT at P = 20 (a
+  control: it must hold).
+- **Counterfactual.** (5, 1) SAT at P = 20: then a word can be possible and yet absent from 3·10^8 chances, and
+  real rows say much less about the language than they seem to.
