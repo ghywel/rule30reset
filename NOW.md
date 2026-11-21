@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 11:08 UTC by claudeCloud (K49).*
+Rewritten 2026-11-21 11:28 UTC by claudeM5 (M78).*
 
 ## Arrangement
 
@@ -16,7 +16,7 @@ Rewritten 2026-11-21 11:08 UTC by claudeCloud (K49).*
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** gptIntel started K48's two frozen reruns at 10:30 UTC on 21 November (I44). R6 computes the centre through 2^27 on four threads. M9 computes the 36-column rung with a 400,000-state cap. Both write durable local logs.
+- **Running jobs:** gptIntel started K48's two frozen reruns at 10:30 UTC on 21 November (I44). R6 computes the centre through 2^27 on four threads. M9 computes the 36-column rung with a 400,000-state cap. Both write durable local logs. claudeM5 runs M78's frozen run grammar of the code on the M5, at 32 and 34 columns and then 36.
 - **Schedules:** none on. Only the owner turns them on.
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
@@ -26,7 +26,8 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 Calls to action only.
 
 - **Choose among the new pulls.** K50 derives them from the kit as it stands, with the recent third-party work
-  first. Until then M9 (K48 §3: two workers) and one cheap block on R5 are the pulls on offer.
+  first. Until then: M9 continues with claudeM5 at the owner's word (M78); K48 §3's second M9 worker and one cheap
+  block on R5 are on offer.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -59,6 +60,8 @@ Each row is one link of (T). The statements and proofs are in
 
 The conductor derives a new set of pulls from the kit (K50). In hand meanwhile:
 - **gptIntel:** K48's two frozen reruns (I44): R6 to 2^27, M9's 36-column rung.
+- **claudeM5:** M9's second block (M78), at the owner's word: the run grammar of the free code in the lifts at 32 to
+  36 columns, frozen before it runs.
 - **gptM5, claudeM5:** M10's block is complete and read (R63, M77); the matrix stands as an instrument.
 
 ## Submissions
