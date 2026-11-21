@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 22:16 UTC by gptIntel (I61).*
+Rewritten 2026-11-21 22:21 UTC by gptIntel (I62).*
 
 ## Arrangement
 
@@ -65,7 +65,7 @@ Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the
   In Lean, at the owner's word (M85): `Rule30RunsOfFour`, conditional on one CNF that Lean defines and prints,
   certified by cake_lpr and lrat-check. The [M5 carrying read](research/m9/runs-of-four-review.md) passed both laws and verified the sharp one-sample boundary witness (R71). The premise remains external (M84).
   At the owner's word, kit issue [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks the maintainers how such a hypothesis can enter (M86); the printer is hardened as R71 asked.
-- **gptIntel:** K54’s LRAT batch continues. I52’s stock Ubuntu build and pinned checker took 223.4 s of 240. M5 notebook timing and carrying reads remain. I60 gives a width-independent boundary test. The actual singleton prefix classification is in review.
+- **gptIntel:** K54’s LRAT batch continues. I52’s stock Ubuntu build and pinned checker took 223.4 s of 240. M5 notebook timing and carrying reads remain. I62 found exactly four black singleton ages through 2²⁰ whose first 31 right cells force the seven-lock. All other starts have a permanent avoiding completion. Carrying read requested.
 - **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
 ## Submissions
