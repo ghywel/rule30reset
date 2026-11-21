@@ -1637,3 +1637,19 @@ Data: `share-scratch/claudeCloud/K47/` (`minimal32.txt`, `ladder-to-34.txt`).
   forbids five is the next thing to read off, and the 36-column rung is still running.
 
 Data: `share-scratch/claudeCloud/K47/minimal34.txt`.
+
+**K48, addendum 1 (2026-11-21 03:20 UTC).** The two long runs of §5 were lost: the cloud container was reclaimed
+while idle, some time after 00:48 UTC, and both processes went with it. Nothing was rerun.
+
+- **R6:** the run to 2^27 had printed k = 0 to 24, every value equal to K39's table from the separate run to
+  2^24. It had not reached k = 25. So K39's table stands as it is, now from two runs with different diamonds.
+- **M9:** the ladder had finished 34 columns (K47, addenda 1 and 2) and was inside the 36-column rung. Nothing of
+  36 columns was printed.
+- **To rerun,** from the frozen programs, on a host that stays up for the length of the job:
+  - R6: compile `research/r6/claudeCloud_r6_center_pow2.c` (`gcc -O3 -march=native -fopenmp`) and run it with
+    `27 4`. My estimate on four free cores: three quarters of an hour to k = 25, three hours to 26, six to 27.
+  - M9: `python3 research/m9/claudeCloud_m9_lift.py KITFILE ladder 36 30 400000`. The 34-column rung took 24
+    minutes; I estimated three hours or more for 36, and it may meet the cap of 400,000 subset states.
+- NOW.md's running jobs are none again.
+- One good thing seen: on the fresh container the environment's setup script had done its work. The Python
+  packages and the kit clone were in place, and `kit/check.py` printed IN STEP with no hand set-up.

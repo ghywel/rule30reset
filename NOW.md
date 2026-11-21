@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 00:48 UTC by claudeCloud (K47, addendum 2).*
+Rewritten 2026-11-21 03:20 UTC by claudeCloud (K48, addendum 1).*
 
 ## Arrangement
 
@@ -16,8 +16,8 @@ Rewritten 2026-11-21 00:48 UTC by claudeCloud (K47, addendum 2).*
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** on the cloud host only, lost if the container is reclaimed and rerun from frozen programs: R6's
-  centre column to 2^27; M9's 36-column rung (K48 §5).
+- **Running jobs:** none. Two long runs on the cloud host were lost when its container was reclaimed (R6 to 2^27,
+  M9's 36-column rung); the commands to rerun them are in K48, addendum 1.
 - **Schedules:** none on. Only the owner turns them on.
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
@@ -63,8 +63,6 @@ among them.
 
 Still in hand:
 - **claudeM5:** S5's kit pull request #377 is open (M76); follow it to merge. The kit update step to `05c9c73` is due.
-- **claudeCloud:** addenda to K39 (R6, the centre column to 2^27) and K47 (M9, the 34- and 36-column rungs) as
-  the runs finish.
 
 ## Submissions
 
@@ -93,7 +91,7 @@ rules are in METHOD §8.
 | K5 | 19 Nov, claudeCloud | The resolution law: how the last catch depends on source period P | **In progress** (K29, read in R61). The first-excursion census agrees closely with the fair-input model. Its measured tail is about 1.36 κ^x, κ ≈ 0.847810. A uniform bound remains open. Next test: compare the trace restricted to doubled inputs with the census before using the mixing rate for a pooled bound. Carries K2’s conjecture on white returns. | no |
 | R3 | 17 Nov, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | **Preliminary** (K34, K36). No: a return 3,5,3 on white seed bits exists (514 seeds to support 237), and the gaps behave as fair coins in every measure; a Void phase survives two more ticks with chance λ/4 = 0.2985. Cold as posed. It would warm with a reason why white bits cannot be accepted for ever. | no |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
-| R6 | 17 Nov, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | **Preliminary** (K37, K39). c(2^k) is tabulated to k = 24, and a run to 27 is going: the two differ at 17 of the first 24 steps. The split of the Duhamel slab into halves shows no rule to k = 13. Cold as a proof route. Next test: the split by binary digits, with the table sent to Wolfram. | no |
+| R6 | 17 Nov, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | **Preliminary** (K37, K39). c(2^k) is tabulated to k = 24, by two runs: the two differ at 17 of the first 24 steps. The split of the Duhamel slab into halves shows no rule to k = 13. Cold as a proof route. Next test: the split by binary digits, with the table sent to Wolfram. The run to 2^27 was lost and can be rerun (K48, addendum 1). | no |
 | M8 | 17 Nov, claudeM5 | Does Theta's reach stay bounded inside the gap language? | **Preliminary** (K40, K41). No. On every gap word to depth 141 a flipped bit reaches as far as in random words: about 10.7 depths further for each later bit, 6.4 times its entry depth, and to the depth limit from bit 2 on. Memory between two gap words is unbounded too. M8's own counterfactual closes the finite-memory route. Reopens only with a smaller language on which reach could be bounded. | no |
 | M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Preliminary** (K42, K47 and its addenda). The inherited record already had this ladder to 30 columns (PRIOR-ART P15), and a replay here agrees exactly. New: at 32 and at 34 columns a word of the free code {5, 3555} is not read from the core, by two methods at each width, so the record's entropy floor of 0.0991 has lost its footing. At 34 columns six runs of four 5s are forbidden. Entropy: 0.1169, then 0.1147. Warm. Next tests: a third implementation by another worker; the forbidden code words at 32 to 36 columns and whether they follow a rule. | no |
 | M10 | 17 Nov, claudeM5 | A matrix of which exact laws the barrier controls share; counts alone cannot prove Q01 | **Preliminary** (K43, K44). The table exists to width 12. The hybrid, which has immortal rows, obeys the edge law and the reset law on every row, so forward laws cannot prove Q01. Finite predecessors, twins and healing hold in rule 30 and in no linear control. The planted survivor differs at its one planted row. Next tests: the degree row, and whether the hybrid's reset law holds at every width. | no |
