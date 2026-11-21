@@ -207,3 +207,21 @@ correction is a new entry that names the one it corrects.
 - **Known.** Placego L1569 already computed full gap automata, including Y’s lineage through width 60, gave the two excursion types and showed that longer Y words change across widths. GC2698 and GC2706 established the exact X rule through width 41, including the sharp clock, with Cloud’s carrying read in CL753. CL754–755 followed individual periodic spacing words through larger widths. The repeating pair (4,7) dies at 43, (4,12) at 47 and the constant spacing 7 at 63. GC2768’s finite repetition bound improved the old mean floor, and CL755’s below-83 test covered a bounded list of cycles. [L1569](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/reports/SW02-BLOCK3-BRIDGES.md) · [GC2706](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/reports/GPT-BRIDGE-RETURN-AUTOMATON-20261106.md) · [CL754](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/reports/CLOUD-CYCLE-LIFT-20261108.md) · [CL755](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/reports/CLOUD-HEAD-SUPPORT-20261108.md)
 - **Found by.** Followed GC2698’s bridge-history reference to the return-automaton report, and the repeating (4,7) spacing to the cycle-lift report. Reading L1569’s `sep` code established that the final literal `45` may begin `4525`. Counting fully typed excursions changes that test. [L1569 endpoint test](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/tests/probes/swarm/sw02/block3/blocks.py#L45-L51)
 - **Credit.** Placego supplies the block decomposition, the earlier DFAs, the two-state X rule through 41 and individual wider cycle tests. K52 identifies the physical cores and gives the comparison ladder. R69 extends the all-length rule for X, derives its width-43 clock, and gives the exact typed pair lists, width-separating words and infinite Y certificates. I45 used the paired-state method on the interior gate language.
+
+## P21 · 2026-11-21 · L1614's finite SAT criterion for gate words, and its witness that three runs of four occur late
+
+- **Ours.** M80 and M81 put runs of four and of five to that criterion, with every UNSAT answer certified by LRAT:
+  five closed runs of four never occur in the trap, and four never occur after two samples there.
+- **Known.** placego L1614 (Local, 9 November 2026), with the PROOFS.md section on the construction attempt:
+  - **The criterion.** A gap word occurs in some right half after P samples inside the trap exactly when one finite
+    SAT instance is satisfiable: a trap window, the rule on the light-cone triangle, and the head samples fixed.
+    The code {5, 3555} is read at every width exactly when every finite code word is satisfiable.
+  - **The scripts:** `local_word_sat.py` and `local_word_sat_past.py`, whose formulation M80 re-implements, clause for
+    clause.
+  - **The results:** 3535353 is UNSAT from every black trap window; (4, 4, 4) is SAT at P = 20, 60 and 100. Its UNSAT
+    answers were not certified.
+  - **Also L1614:** real rows never show (4, 4, 4) or (5, 4, 4) (MEASURED).
+- **Found by.** Searching placego's ledger for "3555", "free code" and "4, 4, 4" while preparing M78. The scripts are
+  under `archived/tests/probes/swarm/sw02/block3/`.
+- **Credit.** The criterion, the formulation and the (4, 4, 4) witness are placego's. Ours are the re-implementation,
+  with simulated witnesses and LRAT certificates, and the answers for 4⁴, 4⁵, 4⁶, 5⁴ and 5⁵.
