@@ -107,7 +107,8 @@ and how long to persist. It never upgrades the status of a claim.
   object carries: the kit called our "Theta at odd depths" the "first check", and a search for one name missed the
   other. Then search what our documents do not track: the portal's entries, the kit's open pull requests and their
   comments, and the literature. A keyword hit is only a candidate; a result is known once hypotheses and conclusion
-  match.
+  match. For a new Q01 proof route, use [M10's matrix](research/m10/control-laws.md) to identify which proposed
+  hypothesis rules out each control with an immortal finite row.
 - **Prior art: when and how.** Search both prior-art files, with KIT.md and KIT-INDEX.md, before an experiment or a
   proof attempt (and name what you searched in the `Record searched:` line), before calling anything new in a post,
   and before any outward step. The archive is large (placego's 117 sections): search it, never read it whole. The

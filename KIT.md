@@ -130,9 +130,10 @@ hypothesis remains open.
 
 - **Structure alone is not enough.** Rules 90, 150 and 210 satisfy every structural fact the arguments use, yet their
   centre columns are eventually constant (`Rule30Realization`). Rules 90 and 150 beside a wall have exact, sharp Q01
-  deadlines (`Rule30WallDeadlines`); a planted survivor reproduces rule 30's survival counts (`Rule30PlantedSurvivor`);
-  radius-2 left permutivity allows periodic columns (`Rule30RadiusTwoClock`); an alternating 90/150 hybrid has immortal
-  finite rows (`Rule30HybridWall`).
+  deadlines (`Rule30WallDeadlines`). For planting depth L ≥ 1, the survivor count through time t at width ≤ W equals
+  rule 30's plus one exactly when W ≥ 2L−1 and t ≥ 2⌈W/2⌉. It equals rule 30's elsewhere
+  (`Rule30PlantedSurvivor`). Radius-2 left permutivity allows periodic columns (`Rule30RadiusTwoClock`).
+  An alternating 90/150 hybrid has immortal finite rows (`Rule30HybridWall`).
 - **No ranking.** No ranking through a finite abstraction, no local ranking, no edge-DFA ranking proves Q01
   (`Rule30ZeroBoundaryBarriers`); no well-founded rank of width and a finite-monoid image (`Rule30RecognizableBarrier`);
   no additive ranking bounded below on late rows (`Rule30FreeMiddle`); no finite abstract ranking in the coupled frame
