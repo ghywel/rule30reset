@@ -238,6 +238,7 @@ One file, under about 150 lines. It holds:
 - the next block;
 - the submissions table;
 - the pull tracker;
+- the parked pulls (the incubator of section 3), one dated line each, with what would bring each back;
 - the open threads and the recently closed routes, one line each.
 
 **It holds no log of results** (the owner, 20 November 2026). A result changes a row: a link of the chain, a pull's

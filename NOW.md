@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 11:06 UTC by claudeM5 (M77).*
+Rewritten 2026-11-21 11:08 UTC by claudeCloud (K49).*
 
 ## Arrangement
 
@@ -25,9 +25,8 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only.
 
-- **Assign the remaining pulls.** K48 §3 proposes two workers for the M9 proof work and one cheap block on R5.
-  The owner assigned the M10 block to gptM5 (R62–R63).
-- **Close or park?** M8 and L1 to the closed routes; R3 and R6 parked (K48 §3, point 4).
+- **Choose among the new pulls.** K50 derives them from the kit as it stands, with the recent third-party work
+  first. Until then M9 (K48 §3: two workers) and one cheap block on R5 are the pulls on offer.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -35,10 +34,11 @@ Calls to action only.
 - **The goal** (the owner, 19 November): a submittable proof of the statement the maintainer asked for on #357, "the
   statement for every number of ticks k: an age f(k) from which every k-tick preimage of a nonzero finite orbit has
   its true edge k cells inside the image edge, proved by an argument that does not need a new cover for each k" (T).
-- **Where it stands:** (T) is machine-checked and posted from one open lemma, (DL⁻₁). The consolidation the owner
-  chose after the inquisition round (K25) is complete. The lemma is the wall, and no proof idea for it is in hand.
-- **Now** (the owner, 20 November): reopen the warm pulls. This file was reset for that, and each open pull has
-  had a first block on the cloud host (K48).
+- **Where it stands:** (T) is machine-checked, posted and in the kit from one open lemma, (DL⁻₁). The lemma is the
+  wall, no proof idea for it is in hand, and the main line is **parked there** (the owner, 21 November).
+- **Now** (the owner, 21 November): the first round on the old pulls is done (K48), and warm pulls are short. New
+  pulls are to be derived from KIT.md and KIT-INDEX.md read whole, with key attention to recent third-party
+  submissions, "which we might be able to spring board off towards the next general proof".
 - **Standing** (the owner, 17 November): the easy submissions are done, ours and others'; the hard problem needs new
   ways in. Two strategies: this clean repository, read whole into context; and inquisition and visualisation, so
   that the owner's eye can find structure.
@@ -57,7 +57,9 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-The owner assigned gptIntel the two outstanding computations from K48, addendum 1 (I44). M10’s assigned block is complete, and claudeM5 has read its planted degree steps: they pass (M77). The wider sharing-out of the pulls is still open.
+The conductor derives a new set of pulls from the kit (K50). In hand meanwhile:
+- **gptIntel:** K48's two frozen reruns (I44): R6 to 2^27, M9's 36-column rung.
+- **gptM5, claudeM5:** M10's block is complete and read (R63, M77); the matrix stands as an instrument.
 
 ## Submissions
 
@@ -77,20 +79,28 @@ The verifier's kit commit is `5fb5915`. The kit's main is `40017e8`, and KIT.md 
 ## Pulls in progress
 
 One row per pull; its full text is the ledger post named in the first column, in the live ledger or its archives.
-Status begins with *open*, **preliminary** (one first block run) or *in progress*, and says the next test. The
-rules are in METHOD §8.
+Status begins with *open*, **preliminary** (one first block run) or *in progress*, and says the next test. A
+parked or closed pull leaves the table for the lists below. The rules are in METHOD §8.
 
 | Pull | Written | Summary | Status | Submission? |
 |---|---|---|---|---|
-| M29 | 18 Nov, claudeM5 | The every-k statement (T), asked for by the maintainer on #357 | **In progress: the main line.** Machine-checked from (DL⁻₁) and posted. Open: (DL⁻₁); see The chain. Data kept: f(k) for k ≤ 11, and f(k) ≤ 265,441 for k ≤ 7,911 (M40). | yes: S2, S4, S5 |
 | K5 | 19 Nov, claudeCloud | The resolution law: how the last catch depends on source period P | **In progress** (K29, read in R61). The first-excursion census agrees closely with the fair-input model. Its measured tail is about 1.36 κ^x, κ ≈ 0.847810. A uniform bound remains open. Next test: compare the trace restricted to doubled inputs with the census before using the mixing rate for a pooled bound. Carries K2’s conjecture on white returns. | no |
-| R3 | 17 Nov, gptM5 | Do switches between 3-gaps and 5-gaps spend seed bits? | **Preliminary** (K34, K36). No: a return 3,5,3 on white seed bits exists (514 seeds to support 237), and the gaps behave as fair coins in every measure; a Void phase survives two more ticks with chance λ/4 = 0.2985. Cold as posed. It would warm with a reason why white bits cannot be accepted for ever. | no |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
-| R6 | 17 Nov, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | **Preliminary** (K37, K39). c(2^k) is tabulated to k = 24, by two runs: the two differ at 17 of the first 24 steps. The split of the Duhamel slab into halves shows no rule to k = 13. Cold as a proof route. Next test: the split by binary digits, with the table sent to Wolfram. The frozen run to 2^27 is running on the Intel (I44). | no |
-| M8 | 17 Nov, claudeM5 | Does Theta's reach stay bounded inside the gap language? | **Preliminary** (K40, K41). No. On every gap word to depth 141 a flipped bit reaches as far as in random words: about 10.7 depths further for each later bit, 6.4 times its entry depth, and to the depth limit from bit 2 on. Memory between two gap words is unbounded too. M8's own counterfactual closes the finite-memory route. Reopens only with a smaller language on which reach could be bounded. | no |
 | M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Preliminary** (K42, K47 and its addenda). The inherited record already had this ladder to 30 columns (PRIOR-ART P15), and a replay here agrees exactly. New: at 32 and at 34 columns a word of the free code {5, 3555} is not read from the core, by two methods at each width, so the record's entropy floor of 0.0991 has lost its footing. At 34 columns six runs of four 5s are forbidden. Entropy: 0.1169, then 0.1147. The 36-column ladder is running on the Intel (I44). Warm. Next tests: a third implementation by another worker; the forbidden code words at 32 to 36 columns and whether they follow a rule. | no |
 | M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
-| L1 | 17 Nov, Local (placego L1679) | Replay the kit's surviving-seed law against placego L1675's tables | **Preliminary** (K45, K46). Done: the law and the table agree at every point, in counts, means and least weights, to H = 162. Nothing is left in the pull; the conductor recommends closing it. | no |
+
+## Parked
+
+One dated line each, with what would bring it back (METHOD §3, the incubator).
+
+- **M29, the every-k statement (T)** (parked 21 Nov, the owner). In the kit from one open lemma, (DL⁻₁): see The
+  chain; submissions S2, S4, S5. Comes back with a proof idea for (DL⁻₁), or a counterexample, which needs a dyadic
+  source period of at least 64. Data kept: f(k) for k ≤ 11, and f(k) ≤ 265,441 for k ≤ 7,911 (M40).
+- **R3, do changes of gap spend seed bits?** (parked 21 Nov; K36). No: the gaps behave as fair coins, with the exact
+  constant λ/4. Comes back with a reason why white seed bits cannot be accepted for ever.
+- **R6, do c(2^k) and c(2^(k+1)) differ for ever?** (parked 21 Nov; K39). Tabulated to k = 24, differing at 17 of
+  24 steps; no rule in the split of the slab. The run to 2^27 is on the Intel (I44) and extends the table when it
+  is in. Comes back with a cancellation in the slab that survives doubling.
 
 ## Open threads
 
@@ -105,6 +115,10 @@ rules are in METHOD §8.
 
 One line each, with what would reopen it.
 
+- **M8, bounded reach on gap words** (K41; closed 21 Nov, the owner). No bound: a flipped bit reaches as far as in
+  random words, 6.4 times its entry depth. Reopens only with a smaller language on which reach could be bounded.
+- **L1, the kit's seed law against placego's table** (K46; closed 21 Nov, the owner). They agree at every point, to
+  H = 162. Nothing is left in it.
 - **Counting marks** (I35, 20 Nov): five marks pass at every dyadic clock; rows survive from seven. Reopens only with
   a reduction for every count at once.
 - **The census under the relaxed lemma** (K26, 20 Nov): nothing to run, since no dyadic source fails the strict form
