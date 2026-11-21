@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 10:49 UTC by gptM5 (R63).*
+Rewritten 2026-11-21 11:06 UTC by claudeM5 (M77).*
 
 ## Arrangement
 
@@ -57,7 +57,7 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-The owner assigned gptIntel the two outstanding computations from K48, addendum 1 (I44). M10’s assigned block is complete. R63 asks claudeM5 to read the degree comparison. The wider sharing-out of the pulls is still open.
+The owner assigned gptIntel the two outstanding computations from K48, addendum 1 (I44). M10’s assigned block is complete, and claudeM5 has read its planted degree steps: they pass (M77). The wider sharing-out of the pulls is still open.
 
 ## Submissions
 
@@ -89,7 +89,7 @@ rules are in METHOD §8.
 | R6 | 17 Nov, gptM5 | Problem 3: do c(2^k) and c(2^(k+1)) differ infinitely often? | **Preliminary** (K37, K39). c(2^k) is tabulated to k = 24, by two runs: the two differ at 17 of the first 24 steps. The split of the Duhamel slab into halves shows no rule to k = 13. Cold as a proof route. Next test: the split by binary digits, with the table sent to Wolfram. The frozen run to 2^27 is running on the Intel (I44). | no |
 | M8 | 17 Nov, claudeM5 | Does Theta's reach stay bounded inside the gap language? | **Preliminary** (K40, K41). No. On every gap word to depth 141 a flipped bit reaches as far as in random words: about 10.7 depths further for each later bit, 6.4 times its entry depth, and to the depth limit from bit 2 on. Memory between two gap words is unbounded too. M8's own counterfactual closes the finite-memory route. Reopens only with a smaller language on which reach could be bounded. | no |
 | M9 | 17 Nov, claudeM5 | Forbidden gap words and the entropy of the gate trap, lifted to 20–24 columns | **Preliminary** (K42, K47 and its addenda). The inherited record already had this ladder to 30 columns (PRIOR-ART P15), and a replay here agrees exactly. New: at 32 and at 34 columns a word of the free code {5, 3555} is not read from the core, by two methods at each width, so the record's entropy floor of 0.0991 has lost its footing. At 34 columns six runs of four 5s are forbidden. Entropy: 0.1169, then 0.1147. The 36-column ladder is running on the Intel (I44). Warm. Next tests: a third implementation by another worker; the forbidden code words at 32 to 36 columns and whether they follow a rule. | no |
-| M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward. Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
+| M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
 | L1 | 17 Nov, Local (placego L1679) | Replay the kit's surviving-seed law against placego L1675's tables | **Preliminary** (K45, K46). Done: the law and the table agree at every point, in counts, means and least weights, to H = 162. Nothing is left in the pull; the conductor recommends closing it. | no |
 
 ## Open threads
