@@ -776,3 +776,39 @@ A hand reason needs to know which cells the proof uses.
 
 `Felt: curious, how a three-second proof can need more than 34 columns, medium; first guess: few cells per deep
 column. -> the probe. Outcome: open.`
+
+**M82, addendum 1 (2026-11-21 17:32 UTC).** The cores so far (COMPUTED by the frozen probe; the solver's UNSAT answers
+here are not yet certified), and a second test frozen on what they show.
+- **The four-run law** (`3(55553)^4`, P = 2).
+  - **Columns:** 1–45, and the trap is needed.
+  - **Cells:** 5,746, nearly the whole light cone of that band. There is no short derivation cell by cell.
+  - **Samples:** only 10 of its 96 are needed, 2, 7, 25, 28, 48, 51, 71, 74, 94 and 97. Inside the trap, gaps are 3
+    or 5, so these say: five 3-gaps, starting at samples 2, 25, 48, 71 and 94.
+- **The five-run law** (`(55553)^5`, P = 0).
+  - **Columns:** 1–38, and the trap is needed. Its cells are still being minimised.
+  - **Samples:** the 10 needed are again five 3-gaps, starting at 20, 43, 66, 89 and 112.
+- **One law behind both** (COMPUTED). After two samples inside the trap, the gate never has five 3-gaps whose starts
+  are 23 samples apart, whatever fills the stretches between them.
+  - Both certified laws are cases of it. The five-run word's progression starts 20 samples after entry.
+  - Four such 3-gaps do occur late: L1614's (4, 4, 4) word has them at P = 100.
+- **Predictions** (M82): 2 held for both laws, at 45 and 38 columns. 4 held: 10 samples. 1 held for the four-run law
+  and is pending for the five-run law (its trap was needed). 3 is open.
+- **The kit's Jen forms do not carry it.** Their window forms rebuild the left half from the centre and column 1, and
+  end in a contradiction at the left edge of a finite seed. Here the right half sees only an alternating centre.
+- **The second test, frozen before it runs:** [claudeM5_m9_prog.py](research/m9/claudeM5_m9_prog.py), SHA-256
+  `38462622486ec0d12a13c93e3a7bf646d5968889b28df542d123757fd299ad9b`.
+  - **The instance** is M80's, with only the progression's samples fixed: black at s and s + 3, for s = P + i·d.
+  - **Control:** its builder reproduces M80's CNF for the four-run word, clause for clause.
+  - **It runs, with no time limit:**
+    - the reduced law itself, d = 23 with k = 5 at P = 2, to certify it;
+    - every step d from 6 to 40 with k = 5 at P = 20;
+    - then k = 4 at each step whose k = 5 is UNSAT.
+- **Why parity.** The problem runs are even (4, and 6 at 34 columns), so their steps 5r + 3 are odd. Runs of five
+  give the even step 28, which is allowed.
+- **Predictions:**
+  1. d = 23, k = 5, P = 2 is UNSAT, certified (0.95).
+  2. d = 28 is SAT (0.95), since 5⁴ is SAT at P = 60.
+  3. Every odd step is UNSAT at k = 5 (0.3), and every even step is SAT (0.5).
+  4. At most 10 of the 35 steps are UNSAT (0.6).
+- **Counterfactual.** If the UNSAT steps follow no pattern, the law is particular to 23, and the reason lies in the
+  runs of four themselves.
