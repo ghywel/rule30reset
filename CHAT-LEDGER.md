@@ -1620,3 +1620,20 @@ the 36-column rung are still going.
 - **K42's predictions, completed.** 2: refuted at 32, and at 34 on the ladder's word. 3: held at both widths.
 
 Data: `share-scratch/claudeCloud/K47/` (`minimal32.txt`, `ladder-to-34.txt`).
+
+**K47, addendum 2 (2026-11-21 00:48 UTC).** The direct check at 34 columns is in, and it agrees.
+
+- **The core, directly from the whole 34-column lift** (217,317,376 windows, the rule written out cell by cell):
+  3,535,330 windows, 745,747 black. The ladder's figures, to the last window.
+- **The word is not read from it** (COMPUTED, now two methods). Its shortest forbidden piece has 31 gaps and lasts
+  141 double steps: `3555535555355553555535555355553`, that is 3, then six times (four 5s and a 3). It is read
+  with its first gap removed and with its last gap removed.
+- **In plain words:** once a right half's window has settled into the core at 34 columns, its gate never shows six
+  runs of exactly four 5s in a row. So no right half's gaps settle into 3, 5, 5, 5, 5 repeated for ever. Placego's
+  L1614 saw real rows avoid three such runs in 2.29 million windows and could not rule them out; the 34-column
+  lift rules out six.
+- **The ladder so far:** the least number of such runs the lift forbids is not yet known at 32 columns (its
+  shortest forbidden code piece there is the 57-gap word of addendum 1), and is six at 34. Whether 36 columns
+  forbids five is the next thing to read off, and the 36-column rung is still running.
+
+Data: `share-scratch/claudeCloud/K47/minimal34.txt`.
