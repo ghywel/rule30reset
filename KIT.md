@@ -1,13 +1,13 @@
-<!-- kit-commit: e7806c6 2026-11-21 -->
+<!-- kit-commit: 40017e8 2026-11-21 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `e7806c6` (main, 2026-11-21),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `40017e8` (main, 2026-11-21),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 279 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 285 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 383 entries on 20 November
 (380 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
@@ -69,7 +69,8 @@ graph TD
   BWH --> NP2
   UBE --> P1["Problem 1"]
   P1 <--> MIR["Two-sided XOR mirror escape for all P ≥ 2"]
-  CAP["CAP: the worst-phase one-layer reset capacity K1 of the edge band is unbounded"] --> EVK["every-k inverse ticks at the wall, from age W(k) − 1 + 2^W(k)"]
+  DL1["DLMinusOne: every tick has a reset in one of the two stretches at each first clock loss"] --> LI["LInfinity: every tick has resets at arbitrarily large depths"]
+  LI --> CAP["CAP: the worst-phase one-layer reset capacity K1 of the edge band is unbounded"] --> EVK["every-k inverse ticks at the wall, from age W(k) − 1 + 2^W(k)"]
 ```
 
 **Period 2, in words.**
@@ -88,6 +89,9 @@ graph TD
   floor H ≤ qA + d with q < 14 (**refuted** by eternal periodic rows).
 - `Rule30ZeroBoundaryPeriodLanes`: QP P generalises Q01 (QP 2 ⇔ Q01, QP 3 ⇔ Q001); QP P excludes (0^(P−1) 1)^∞;
   P ∣ Q and QP Q ⇒ QP P; QP 4 ⇒ Q01 ∧ C3 w0001.
+- During centre alternation, returns of the word 0101001 at sites −4 through +2 take a multiple of four ticks, six
+  ticks, or ten ticks. A gap ≥ 12 forces the next gap to be six, and ten forces four, if alternation continues.
+  An alternating singleton tail has arbitrarily late returns in both white phases modulo four (`Rule30EventReturns`).
 
 **Period 3** (`Rule30EtherThreeLeft`, `Rule30EtherThreeSkeleton`, `Rule30PeriodThreeLanguage`). Q001 ∧ C3w(011) ⇒ no
 eventual period 3; C3w(001) ∧ C3w(011) ⇒ no period 3; C3w(001) ⇒ C3s001 ⇒ not eventually 001; C3w(011) ⇒ C3r011;
@@ -103,6 +107,10 @@ every k, every k-tick predecessor of an aged nonzero finite row is finite with i
 cell-1 history occurs, from age W(k) − 1 + 2^W(k), where W(k) is the least width of capacity k
 (`conditional_every_k`); any proved settling age may replace that bound (`capacity_at_settling_age`). CAP is open.
 The target holds at k = age = 0 and persists as age increases. Positive multiples of a cycle period give the same schedule and phase capacity. The target needs age at least 2k (`Rule30ZeroCoastBridge`).
+On every pointed recurrent strip, let a reset be a closed run 0 1^(3m+1) 0. If every tick has a reset between the
+white wheel at each first clock loss and the white wheel after next (`DLMinusOne`), every tick has arbitrarily deep
+resets (`LInfinity`). Compactness then gives CAP (`Rule30RelaxedWindows`, `Rule30ResetCompactness`). The two-stretch
+hypothesis remains open.
 
 **Other routes to Problem 1.**
 - For every tail start and shift P ≥ 2, compare the single-seed diagram with its P-tick translate. Problem 1 is equivalent to an initial centre mismatch or a later failure of the mirror rule: at a black centre the left neighbour must match, and at a white centre the two neighbour differences must agree (`problem1_iff_two_sided_xor_mirror_escape`).
@@ -171,6 +179,10 @@ The target holds at k = age = 0 and persists as age increases. Positive multiple
   (`Rule30Diagonals`, `Rule30LeftReset`, `Rule30FrontLaw`). Counted over all nonzero labelled Q-bit first children
   of a white profile, the first return to white takes at most 2^Q + 1 diagonals on average, for every Q > 0; a
   single chain is bounded only by 2^(2Q) (`Rule30TemporalProfiles`).
+  On a pointed recurrent strip the least prefix clocks are powers of two. Each fixed triple of consecutive ticks has
+  a tick with arbitrarily deep resets (`Rule30RecurrentStrip`, `Rule30ThreePhaseReturn`). A black-edged strip must
+  lose each positive clock p by depth 4^p + 1. On pointed recurrent strips, arbitrarily deep permanently white
+  wheels have a permanently black wheel two positions further in (`Rule30RootedWhiteReturns`).
 - **Right diagonals.** Diagonal j has period 2^B(j) with B(j) = j/2 + O(log* j) (`Rule30RecordCharge`,
   `Rule30RightPeriods`).
 - **Density.** Any five adjacent columns hold at most 3T + 2 black cells in any T ticks, sharp (`Rule30FiveColumnBound`);
