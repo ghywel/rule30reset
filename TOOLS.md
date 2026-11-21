@@ -18,7 +18,10 @@ unavailable and finding some other solution, but i would always rather we use th
 The owner, 20 November 2026: "it's important as a guard as the AI assistants have a habit of 'working around the
 problem' rather than sourcing the best tool".
 
-1. **Use the tool §4 names for the task.**
+The owner, 21 November 2026: "cloud SAT solving is fine, wolfram is the only software limited to the M5, everything
+else is fine if your sandbox can run it".
+
+1. **Use the tool §4 names for the task.** Which host runs it is free, except Wolfram: that is the M5's.
 2. **If it is not on your host, do not go around it.** Either hand the task to a worker who has the tool (§3), or ask
    the owner to install it (§5). Say which in the ledger post.
 3. **A substitute needs the owner's agreement.** The post then names it as a substitute and says why.
@@ -83,7 +86,7 @@ No worker and no host is set aside for a specialism (METHOD §1). The hosts diff
 | Is it already known? | `tools/find_known.py`, each term on its own; then the kit source behind each hit; the portal's list and the kit's open pull requests; then the literature, read at the page (METHOD §4, §12) | anyone for our documents; the M5 or the Intel for the portal and the kit's pull requests | — |
 | Small exact simulation | Python with numpy, or C; Wolfram for exploration and pictures | anyone; Wolfram on the M5 | COMPUTED |
 | Large census or bit-parallel search | C with bit-sliced lanes; GPU kernels only after a CPU oracle agrees | any host for C; the M5 and the Intel for GPU | COMPUTED or MEASURED |
-| A finite "does such a configuration exist?" question | SAT: Kissat or CaDiCaL. For UNSAT, an LRAT proof checked by `cake_lpr`, with `drat-trim` as a second checker | the M5 or the Intel for solving and proof checking. The cloud host replicates with python-sat and checks SAT witnesses; it cannot certify UNSAT | SAT: the witness checks itself. UNSAT: a machine proof of that finite case once the certificate checks; otherwise COMPUTED |
+| A finite "does such a configuration exist?" question | SAT: Kissat or CaDiCaL. For UNSAT, an LRAT proof checked by `cake_lpr`, with `drat-trim` as a second checker | any host with a solver, the cloud host included (python-sat's CaDiCaL; the owner, 21 November 2026); proof checking on a host with a checker, today the M5 and the Intel | SAT: the witness checks itself. UNSAT: a machine proof of that finite case once the certificate checks; otherwise COMPUTED |
 | Guessing a law from exact data: a closed form, a recurrence, a generating function | Wolfram `FindSequenceFunction`, `FindLinearRecurrence`, `FindGeneratingFunction`, `FindFormula` | the M5 | CONJECTURE until proved |
 | Exact symbolic work: recurrences and sums, real inequalities, exact intervals, polynomials over GF(2), Boolean normal forms | Wolfram (`RSolve`, `Reduce`, `Resolve`, `CylindricalDecomposition`, `Interval`, `GroebnerBasis[..., Modulus -> 2]`, `BooleanConvert`) | the M5 | COMPUTED: no certificate; PROVED only through a hand proof or Lean |
 | Exact numbers: fractions, big integers, 2-adic valuations, residues, continued fractions, roots of polynomials | Wolfram to explore; PARI/GP as the fast open cross-check; the replayable probe in Python (`fractions`, sympy, gmpy2) or C with GMP. Never a decimal | the M5 explores; anyone replays | COMPUTED |
