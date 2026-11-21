@@ -5,9 +5,8 @@ public import Ruliology.CellularAutomata.Rule30SidewaysLocks
 /-!
 # Suffix criterion for impossible free-boundary endpoints
 
-After J double steps, some free endpoint is impossible exactly when it remains
-impossible after replacing the black-time prefix by one with the same last 4J+1
-bits and sufficient width. The choice of a particular target is separate.
+At widths W ≥ 4J, the last 4J+1 black-time prefix bits determine whether
+some free endpoint after J double steps is impossible for all physical completions. The choice of a particular target is separate.
 The proof compares each free input history with each physical exterior,
 propagating their common interior and a possible XOR at the leftmost tail cell.
 -/
@@ -55,8 +54,8 @@ private theorem xor_edge : ∀ a b c d : Bool,
 
 /-- A common boundary extension makes the last candidate cell of disagreement propagate one site
 to the right, toggling it by the same bit. Two cells of the aligned suffix are consumed per tick. -/
-theorem tick_tail {d n u v} (h : Tail d (n+2) u v) (l m : Bool) :
-    Tail d n (lin3 (l::u)) (lin3 (m::v)) := by
+theorem lin_tail {d n u v} (h : Tail d (n+2) u v)  :
+    Tail d n (lin3 u) (lin3 v) := by
   obtain ⟨a,s,p,q,sz,rfl,rfl⟩:=h
   cases s with
   | nil => simp at sz
@@ -64,12 +63,17 @@ theorem tick_tail {d n u v} (h : Tail d (n+2) u v) (l m : Bool) :
     cases s with
     | nil => simp at sz
     | cons c s =>
-      rw [show l :: (p++(a::b::c::s)) = (l::p)++(a::b::c::s) by rfl,split_lin (l::p) a b (c::s)]
-      rw [show m :: (q++((xor a d)::b::c::s)) = (m::q)++((xor a d)::b::c::s) by rfl,split_lin (m::q) (xor a d) b (c::s)]
-      refine ⟨rule a b c,lin3 (b::c::s),lin3 ((l::p)++[a,b]),lin3 ((m::q)++[xor a d,b]),?_,rfl,?_⟩
+      rw [split_lin p a b (c::s)]
+      rw [split_lin q (xor a d) b (c::s)]
+      refine ⟨rule a b c,lin3 (b::c::s),lin3 (p++[a,b]),lin3 (q++[xor a d,b]),?_,rfl,?_⟩
       · rw [len_lin]; simp_all
       · change _ ++ (rule (xor a d) b c :: _) = _ ++ (xor (rule a b c) d :: _)
         rw [xor_edge]
+
+theorem tick_tail {d n u v} (h : Tail d (n+2) u v) (l m : Bool) :
+    Tail d n (lin3 (l::u)) (lin3 (m::v)) := by
+  obtain ⟨a,s,p,q,sz,rfl,rfl⟩:=h
+  exact lin_tail ⟨a,s,l::p,m::q,sz,rfl,rfl⟩
 
 theorem crop_tail {d n u v} (h : Tail d n u v) (l m : Bool) (e : List Bool)
     {k : Nat} (eqn : n+e.length=k+2) :
@@ -402,5 +406,82 @@ theorem kit_spurious_of_suffix (j : Nat) (s u v : List Bool) (a b : Bool)
       KitSpurious (v++(b::s)) (v.length+s.length) j := by
   rw [kit_iff_spurious _ _ _ (by simp; omega),kit_iff_spurious _ _ _ (by simp; omega)]
   exact spurious_of_suffix j s u v a b hs
+
+/-- Pair the extreme input at tick zero even when it is the prescribed black centre.
+At the smallest width one can dispense with a separate positive fringe bit. -/
+theorem centred_correspondence {p q : List Bool} {d j} (hj : 0<j)
+    (h : Tail d (4*j+1) (true::p) (true::q)) (z : List (Bool×Bool)) (hz : z.length=j)
+    (e : List Bool) (he : e.length=2*j) :
+    freeEnd p z=realEnd p e j ↔ freeEnd q z=realEnd q e j := by
+  have f : Tail d (2*j-1) (freeEnd p z) (freeEnd q z) := by
+    apply game_tail
+    apply lin_tail
+    rw [hz,show 2*j-1+2*j+2=4*j+1 by omega]
+    exact h
+  have g : Tail d (2*j-1) (realEnd p e j) (realEnd q e j) := by
+    apply phys_tail
+    apply lin_tail
+    have h':=append_tail h e
+    rw [he] at h'
+    rw [show 2*j-1+4*j+2=4*j+1+2*j by omega]
+    exact h'
+  obtain ⟨lo,lo'⟩:=lower h
+  simp only [List.length_cons] at lo lo'
+  let w:=p.length-1-2*j
+  let v:=q.length-1-2*j
+  have hp:=common_interior p e z w (by dsimp [w]; omega)
+  have hq:=common_interior q e z v (by dsimp [v]; omega)
+  rw [hz] at hp hq
+  apply equal_join f g hp hq
+  · rw [size_free]; dsimp [w]; omega
+  · rw [size_real _ _ _ he]; dsimp [w]; omega
+  · rw [size_free]; dsimp [v]; omega
+  · rw [size_real _ _ _ he]; dsimp [v]; omega
+
+private theorem split_final (x : Bool) (u : List Bool) :
+    ∃ v b, x::u=v++[b] := by
+  induction u generalizing x with
+  | nil => exact ⟨[],x,rfl⟩
+  | cons a u ih =>
+    obtain ⟨v,b,h⟩:=ih a
+    exact ⟨x::v,b,congrArg (List.cons x) h⟩
+
+private theorem initial_tail (p q s : List Bool) :
+    ∃ d, Tail d s.length (true::(p++s)) (true::(q++s)) := by
+  obtain ⟨u,a,hu⟩:=split_final true p
+  obtain ⟨v,b,hv⟩:=split_final true q
+  refine ⟨xor a b,a,s,u,v,rfl,?_,?_⟩
+  · change (true::p)++s=_
+    simp [hu,List.append_assoc]
+  · change (true::q)++s=_
+    cases a <;> cases b <;> simp [hv,List.append_assoc]
+
+/-- The actual width can be as small as 4J. Only a length-4J+1 terminal word is required,
+so the comparison includes the canonical smallest width and arbitrary wider prefixes. -/
+theorem kit_suffix_minimal_width (j : Nat) (s p q : List Bool) (W V : Nat) (hs : s.length=4*j+1)
+    (hp : (p++s).length=W+1) (hq : (q++s).length=V+1) :
+    KitSpurious (p++s) W j ↔ KitSpurious (q++s) V j := by
+  rw [kit_iff_spurious _ W j hp,kit_iff_spurious _ V j hq]
+  by_cases hj : 0<j
+  · obtain ⟨d,h⟩:=initial_tail p q s
+    rw [hs] at h
+    constructor
+    · rintro ⟨z,hz,im⟩
+      exact ⟨z,hz,fun e he eqn=>im e he ((centred_correspondence hj h z hz e he).mpr eqn)⟩
+    · rintro ⟨z,hz,im⟩
+      exact ⟨z,hz,fun e he eqn=>im e he ((centred_correspondence hj h z hz e he).mp eqn)⟩
+  · have j0 : j=0 := by omega
+    simp [j0,spurious_zero]
+
+/-- Every actual endpoint belongs to the free game at the same width, for every odd starting tick.
+So an impossible free endpoint certifies proper containment for that initial window. -/
+theorem physical_subset_free (R : Nat → Bool) (W j t : Nat) (odd : t%2=1) :
+    ∃ z : List (Bool×Bool), z.length=j ∧ game z (winW W R t)=winW W R (t+2*j) := by
+  induction j generalizing t with
+  | zero => exact ⟨[],rfl,by simp [game]⟩
+  | succ j ih =>
+    obtain ⟨z,lz,eqn⟩:=ih (t+2) (by omega)
+    refine ⟨(drv altCol R t (W+1),drv altCol R t (W+2))::z,by simp [lz],?_⟩
+    rw [game,←winW_dstep W R t odd,eqn,show t+2+2*j=t+2*(j+1) by omega]
 
 end Ruliology.CellularAutomata.Rule30BoundarySuffix

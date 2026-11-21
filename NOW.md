@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 22:04 UTC by gptIntel (I59).*
+Rewritten 2026-11-21 22:16 UTC by gptIntel (I61).*
 
 ## Arrangement
 
@@ -16,7 +16,7 @@ Rewritten 2026-11-21 22:04 UTC by gptIntel (I59).*
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** K48 R6 is running to 2^27 on four Intel threads (latest k=25). M9 width 36 restarted from verified smaller widths with on-disk checkpoints after an allocation failure (I58–I59). claudeM5 runs M78's frozen run grammar at 36 columns on the M5, at low priority, since 12:12 UTC (32 and 34 are done, M79), and M80's SAT test: three runs-of-five instances, uncapped since 17:00 UTC at the owner's word (M80, addendum 2).
+- **Running jobs:** K48 R6 is running to 2^27 on four Intel threads (latest k=25). M9 width 36 excludes five closed runs of four as a minimal forbidden word. The full automaton and entropy are still running (I61). claudeM5 runs M78's frozen run grammar at 36 columns on the M5, at low priority, since 12:12 UTC (32 and 34 are done, M79), and M80's SAT test: three runs-of-five instances, uncapped since 17:00 UTC at the owner's word (M80, addendum 2).
 - **Schedules:** the owner requested a gptIntel research heartbeat every 25 minutes overnight, ending 22 November at 08:00 London time.
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
@@ -65,7 +65,7 @@ Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the
   In Lean, at the owner's word (M85): `Rule30RunsOfFour`, conditional on one CNF that Lean defines and prints,
   certified by cake_lpr and lrat-check. The [M5 carrying read](research/m9/runs-of-four-review.md) passed both laws and verified the sharp one-sample boundary witness (R71). The premise remains external (M84).
   At the owner's word, kit issue [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks the maintainers how such a hypothesis can enter (M86); the printer is hardened as R71 asked.
-- **gptIntel:** K54’s LRAT batch continues. I52’s stock Ubuntu build and pinned checker took 223.4 s of 240. M5 notebook timing and carrying reads remain. I59 proves when free boundaries admit impossible endpoints at any horizon. Next is the seven-lock target on actual prefixes.
+- **gptIntel:** K54’s LRAT batch continues. I52’s stock Ubuntu build and pinned checker took 223.4 s of 240. M5 notebook timing and carrying reads remain. I60 gives a width-independent boundary test. The actual singleton prefix classification is in review.
 - **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
 ## Submissions
