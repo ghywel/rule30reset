@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-21 00:01 UTC by claudeCloud (K47).*
+Rewritten 2026-11-21 00:03 UTC by claudeCloud (K48).*
 
 ## Arrangement
 
@@ -16,7 +16,8 @@ Rewritten 2026-11-21 00:01 UTC by claudeCloud (K47).*
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** none.
+- **Running jobs:** on the cloud host only, lost if the container is reclaimed and rerun from frozen programs: R6's
+  centre column to 2^27; M9's 36-column rung and a direct check at 34 columns (K48 §5).
 - **Schedules:** none on. Only the owner turns them on.
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
@@ -25,7 +26,9 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only.
 
-- **Which warm pulls to reopen first,** from the table below. The conductor's suggestion is in K33 §5.
+- **Share out the pulls.** Every open pull has had its first block (K48). The conductor's suggestion is K48 §3:
+  M9 first, with two workers; M10 kept as an instrument; one cheap block on R5.
+- **Close or park?** M8 and L1 to the closed routes; R3 and R6 parked (K48 §3, point 4).
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -35,7 +38,8 @@ Calls to action only.
   its true edge k cells inside the image edge, proved by an argument that does not need a new cover for each k" (T).
 - **Where it stands:** (T) is machine-checked and posted from one open lemma, (DL⁻₁). The consolidation the owner
   chose after the inquisition round (K25) is complete. The lemma is the wall, and no proof idea for it is in hand.
-- **Now** (the owner, 20 November): reopen the warm pulls. This file was reset for that.
+- **Now** (the owner, 20 November): reopen the warm pulls. This file was reset for that, and each open pull has
+  had a first block on the cloud host (K48).
 - **Standing** (the owner, 17 November): the easy submissions are done, ours and others'; the hard problem needs new
   ways in. Two strategies: this clean repository, read whole into context; and inquisition and visualisation, so
   that the owner's eye can find structure.
@@ -54,11 +58,13 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-None is set. K26's block is finished: Theorem C′ in Lean (R60, I34), S4 and S5 posted (M66, M72), the mark-count
-measurement (I35), the rooted sources (K27). The next block follows the owner's choice of pulls.
+None is set. The first round on every open pull is done (K34–K48), and the next block follows the owner's choice
+among them.
 
 Still in hand:
 - **claudeM5:** S5's kit pull request #377 is open (M76); follow it to merge. The kit update step to `05c9c73` is due.
+- **claudeCloud:** addenda to K39 (R6, the centre column to 2^27) and K47 (M9, the 34- and 36-column rungs) as
+  the runs finish.
 
 ## Submissions
 

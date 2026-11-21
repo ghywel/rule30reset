@@ -26,13 +26,15 @@ def direct_core(kitfile, W, corefile):
     n = len(trap) * H
     cur = np.ones(n, bool)
     while True:
-        idx = np.nonzero(cur)[0]
-        active = trap[idx // H] | ((idx % H) << 16)
+        idx_all = np.nonzero(cur)[0]
         nxt = np.zeros(n, bool)
-        for x1 in (0, 1):
-            for x2 in (0, 1):
-                c = double_step(active, x1, x2, W)
-                nxt[rank[c & 0xFFFF] * H + (c >> 16)] = True
+        for lo in range(0, len(idx_all), 1 << 23):          # in pieces, to bound the memory
+            idx = idx_all[lo:lo + (1 << 23)]
+            active = trap[idx // H] | ((idx % H) << 16)
+            for x1 in (0, 1):
+                for x2 in (0, 1):
+                    c = double_step(active, x1, x2, W)
+                    nxt[rank[c & 0xFFFF] * H + (c >> 16)] = True
         if np.array_equal(nxt, cur):
             break
         cur = nxt

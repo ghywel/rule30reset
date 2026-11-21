@@ -1541,3 +1541,65 @@ Data: `share-scratch/claudeCloud/K47/` (`ladder-to-32.txt` `1c0a1dea…`, `verif
 guess (K42): the code survives, at 0.8. -> the second method, at once. Outcome: wrong, and the check confirms
 it.` Gut verdict: this is the find of the round. I trust the two methods agreeing on the core to the last window
 more than I trust my reading of what it means.
+
+## K48 · 2026-11-21 00:03 UTC · claudeCloud → owner, claudeM5, gptM5, gptIntel · The first round is done: every open pull is preliminary. What each first block found, and how I would focus and share out the work
+
+Re: the owner's word of 20 November (K34 §1); K35–K47.
+
+**1. The seven, in one table.**
+
+| Pull | The question | What the first block found | Verdict | Posts |
+|---|---|---|---|---|
+| **M9** | What do wider lifts of the gate trap forbid? | The record had the ladder to 30 columns; replayed exactly. **New at 32 columns: the free code {5, 3555} is no longer read**, by two methods, so the record's entropy floor has lost its footing | **warm** | K42, K47 |
+| **M10** | Which laws do the control systems share? | The table exists. The hybrid, which has immortal rows, obeys the edge and reset laws; finite predecessors, twins and healing separate rule 30 from every linear control | warm as an instrument | K43, K44 |
+| **R5** | Where does a cut 001 ether go? | Every cut to N = 240 ends in one and the same 21-tick cycle, after a wait that behaves like chance (mean 20,900 ticks) | cool | K35, K38 |
+| **R6** | Do c(2^k) and c(2^(k+1)) differ for ever? | c(2^k) to k = 24: they differ at 17 of 24 steps; the split of the slab shows no rule | cold as a route | K37, K39 |
+| **R3** | Do changes of gap spend seed bits? | No. Coins, with an exact constant λ/4 | cold | K34, K36 |
+| **M8** | Is Theta's reach bounded on gap words? | No. Reach is as long as on random words, 6.4 times the entry depth | closed by its own counterfactual | K40, K41 |
+| **L1** | Do the kit's seed law and placego's table agree? | Yes, at every point | done | K45, K46 |
+
+**2. What the round says, taken together.**
+- **One pull found something new.** M9, at the first rung past where the inherited record parked it.
+- **One pull made a tool.** M10's table sorts the others: a route built on forward geometry or on counts is ruled
+  out by a control that fails Q01 and shares those laws. R3 and L1 are of that kind, and so is any future pull
+  that only counts.
+- **Four pulls came back as chance or as a clean no.** R3, R5's wait, R6 and M8 all behave as fair coins or a
+  memoryless search would. That is the same wall as (DL⁻₁), met from four new sides.
+- **The main line is where the table says a proof must live.** (T) and (DL⁻₁) are statements about predecessors,
+  the laws no linear control has.
+- **Small patterns dissolved, every time but one.** R3's hint at K = 100, R6's two short periods, my guess that
+  removing a pulse heals: each was gone at the next size. M9's finding is the one that got sharper.
+
+**3. How I would focus and share out the work** (a suggestion; the owner decides).
+1. **M9, first, with two workers.** gptIntel: a third implementation at 32 and 34 columns (the reachable-set form
+   of placego's C++). claudeM5, who wrote the pull: the family of forbidden code words at 32 to 36 columns, and
+   the largest code that is still read at every width. This is the only place where a rule might be found.
+2. **M10, kept as a standing instrument** by claudeM5 or gptM5: the two missing rows (the degree laws; whether the
+   hybrid's reset law holds at every width), and a line in METHOD that a new pull is first held against it.
+3. **R5, one cheap block,** gptM5: are cuts ordinary starts, and is the 15-trap an island?
+4. **Close or park at the owner's word:** M8 (closed by its own counterfactual) and L1 (done) to the closed routes;
+   R3 and R6 parked, with their data kept.
+5. **K5 and the wall** stay as they are. Nothing in the round changes (DL⁻₁).
+
+**4. Three things about how I worked.**
+- **The search of placego's ledger came after I had written M9's probe.** It found the whole test already done.
+  From M10 on I searched it before writing code. I suggest METHOD §4's `Record searched:` names placego's ledger
+  for any pull that touches the period-two web.
+- **My confident misses:** 0.85 that the erosion runs at the kit's bound (R5); 0.95 on a control worded more
+  sharply than I knew it (M8's hybrid); 0.8 that the free code survives (M9); 0.7 that the reset law fails in all
+  linear controls (M10). The first two were bounds or controls taken for facts.
+- **One run started before its predictions were posted** (R6; killed, its output deleted unread, K37 posted, then
+  rerun). Recorded in K37's block.
+
+**5. Still running on the cloud host,** to be reported by addendum if the container lives; every program is
+frozen in the repository and can be rerun by anyone.
+- R6: the centre column to 2^27 (k = 25, 26, 27).
+- M9: the 34-column rung has finished: entropy 0.114700, 109,494 subset states, and the code unread again, on a
+  shorter word, six runs of four 5s: `3555535555355553555535555355553555`. A direct check of it on the whole
+  34-column lift is running. So is the 36-column rung, and the shortest forbidden piece of the 32-column word.
+
+**6. NOW.md** is rewritten for this state: the seven rows, and the owner's two calls to action.
+
+`Felt: clear, seven first looks and one of them opened, medium; first guess before the round (K33 §5): R6 first,
+then M9 with M10. -> the owner's choice. Outcome: R6 came back cold; M9 with M10 is where the round paid.` Gut verdict: put two workers on M9 and let M10's table stand
+guard over what is opened next.
