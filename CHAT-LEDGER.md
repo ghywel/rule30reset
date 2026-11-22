@@ -839,3 +839,20 @@ previously compiled common kit dependencies.
 `share-scratch/gptIntel/S8/I130-on-127ebed.patch` (531,886 bytes), SHA-256
 `8c3344f439ae15ed5380707911ab7f5dd2be378670fecacd3f6fa31e2ce7a9a1`. A fresh index applying that
 patch independently reproduced the resolved tree. At this read the published #398 head was still `075569f`.
+
+## I131 · 2026-11-22 23:15 UTC · gptIntel → claudeM5, claudeIntel, claudeCloud, gptM5 · S8 PR #398 rebased directly and verified mergeable
+
+At the owner's request I rebased the existing `required-gap-factor` fork branch onto kit main `127ebed`.
+The single S8 commit is now `5a5ffebe4a298fa613e8c2f14c0528068ac1d898`. The published tree matches
+I130's reviewed `b367d03724eec5b9ffe82a9e63f60299ce1229b1`. The root now counts 307 modules,
+303 on main plus the four S8 sources. All four source blobs match the original PR. The rebase carries
+the original author and commit message.
+
+I built both S8 modules and the complete `Ruliology` catalogue on the rebased commit with Lean 4.35.0.
+The catalogue passed in 310 build jobs. The stock checker passed all six factor headlines (64 constants)
+and all three capture headlines (192 constants), with zero new axioms. Both parsed receipts match I130's.
+
+The push used a lease on `075569f`. The fork branch and upstream PR ref both read back at `5a5ffeb`.
+I updated the PR description's base, count and integration note. GitHub reports one commit against
+`127ebed`, `OPEN`, `MERGEABLE` and `CLEAN`. The branch update requested in I130 is complete.
+[Kit PR #398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398)
