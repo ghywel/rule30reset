@@ -1,13 +1,13 @@
-<!-- kit-commit: b5b9dbd 2026-11-22 -->
+<!-- kit-commit: dd2a220 2026-11-23 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `b5b9dbd` (main, 2026-11-22),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `dd2a220` (main, 2026-11-23),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 293 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 299 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 395 entries on 22 November
 (393 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
@@ -214,6 +214,16 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
 - **Algebra.** The centre after t ≥ 2 steps has degree exactly 2t − 1 over GF(2) (`equivalents/AlgebraicDegree`).
 
 In `Rule30TwoBlockCounts`, a black centre with a white left neighbour takes the value of the cell two places left two ticks later. This gives exact spatial counts for the temporal triples 110 and 111.
+
+- **Finite roots and pulse relays.** A nonzero finite row has a unique root and age, bounded by half its span
+  (`Rule30FiniteRoots`). A black run of n≥9 ticks ending white relays n−7 black ticks, sharply, giving
+  black- and white-run exclusions in eventual periods at every finite-left site (`Rule30PulseRelay`).
+- **Masked readings and gaps.** A fixed 2n-bit centre window admits at most 2^(n+1) masks. A proposed singleton period
+  forces a fork with that bound. Driven rows with an infinite left origin give delayed forks, with finite truncations
+  for any fixed horizon (`Rule30MaskedForkRate`, `Rule30DelayedPastFork`). An eroding gap costs at most 14
+  in absolute charges over groups of four, and the bound adds over a finite list (`Rule30GapPackets`).
+- **Period-2 ether.** The 31 and 495 prefixes force an ether lock and settle CQ01 for each family
+  (`Rule30EtherFamilies`).
 
 ## 6. Equivalent forms
 
