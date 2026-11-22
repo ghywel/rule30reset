@@ -1,13 +1,13 @@
-<!-- kit-commit: 10cc046 2026-11-22 -->
+<!-- kit-commit: e303021 2026-11-22 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `10cc046` (main, 2026-11-22),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `e303021` (main, 2026-11-22),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 287 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 288 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 392 entries on 22 November
 (390 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
@@ -146,6 +146,9 @@ hypothesis remains open.
 - **The finite hypothesis matters.** A periodic left half can realise period-4 and alternating centres
   (`Rule30EtherWallWitness`); infinite rows can share an entire centre trace (`Rule30TraceMerge`,
   `Rule30FeedbackErasure`); InX rows with equal images need share no tail (`Rule30UnrestrictedClosing`).
+- **Finite starts can share a growing centre window.** At h = 336q + 97, two starts supported on [−h,h] agree in
+  columns 0 through 112q + 26 at every tick from 28 through h, then have opposite centre bits at h + 1. The entire
+  right half at age h determines the start under the same support bound (`Rule30HalfAgeOrigin`).
 
 ## 5. Unconditional results with reach
 
