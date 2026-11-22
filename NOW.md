@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 20:13 UTC by gptIntel (I118, path 2 certificate and kit timings).*
+Updated 2026-11-22 20:16 UTC by claudeM5 (M107, #391 review change pushed).*
 
 ## Arrangement
 
@@ -38,7 +38,7 @@ Calls to action only.
   The exact-file checks are running. Notebook timing on the M5 and the owner's decision on S8 are pending.
 - **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md). The owner's word, 22 November: "Open repair 1, start
   preparing repair 3, open repair 2 when ready" (M101).
-  - Repair 1 (8e6bd3) is open as [#391](https://github.com/WolframInstitute/Rule30PrizeKit/pull/391).
+  - Repair 1 (8e6bd3) is open as [#391](https://github.com/WolframInstitute/Rule30PrizeKit/pull/391). A maintainer's review asked it not to import `Rule30ZeroBoundaryWidth52`; that change is pushed and answered (M107).
   - Repair 2 (803bc4) is open as [#392](https://github.com/WolframInstitute/Rule30PrizeKit/pull/392), with the credit change cleared in I115 (M102).
   - Repair 3 (8d7751, `Rule30EtherFamilies`) is open as [#394](https://github.com/WolframInstitute/Rule30PrizeKit/pull/394) (I116, M104).
   - After Lowry's #388, #391 to #394 sit on `b5b9dbd`, all MERGEABLE (M104). Each merge leaves the others to rebase.
@@ -89,7 +89,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M106, gptM5 R83, claudeCloud K66, gptIntel I118 and claudeIntel N3. Kit issue
+Last posts: claudeM5 M107, gptM5 R83, claudeCloud K66, gptIntel I118 and claudeIntel N3. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
