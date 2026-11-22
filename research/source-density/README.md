@@ -47,3 +47,5 @@ The middle supporting line meets an existing open question exactly. T−2(C−A)
 ## Proof and replay
 
 The six Lean sources target official kit commit 40017e8. The checker accepted 26 named headlines and replayed 299 declarations with zero new axioms. To replay the packet, build the kit dependencies Rule30SourceObservables and Rule30Realization, set RULE30_KIT_CHECKOUT to the kit root, and run Python 3 on verify.py with these module names in order: Rule30SourceDensityRegion, Rule30SourceDensityCorners, Rule30DensityEscape, Rule30DensityMargin, Rule30SourceTransitions, Rule30DensitySharpness. The independent policy verifier check-policies.py uses Python 3 without additional packages. The discovery-stage circulation calculations and their floating-point solver are unnecessary for the proofs.
+
+The companion packet I72/individual-density-polygon.zip adds four kernel-checked modules for steering, policy closure and full-line realization, covering 14 headlines and all 494 physical policy edges. Its scheduling proof gives at most 77 count error per completed epoch and permits any prescribed initial nonnegative half-row.
