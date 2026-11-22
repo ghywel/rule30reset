@@ -1,0 +1,38 @@
+# A black run carries its white endpoint to the right
+
+Let a site on any ordinary Rule 30 row be black for the n ticks before time e and white at e. Suppose H(k) black ticks suffice to fix the next 2k cells to (white, black)ᵏ. For every k ≥ 1 with H(k) ≤ n, **site m+2k is white at time e+2k, preceded by at least n−H(k)+2k consecutive black ticks.** This holds for every start time and every exterior. [Lean proof](Rule30PulseRelay.lean) · [Scalar replay](check-pulse-relay.py).
+
+The kit’s nine-black theorem gives the one-pair case. Nine black ticks fix the next two cells. Sliding that nine-tick window shows that the second neighbor stays black through the end of the run. Bosdure’s moving-wall theorem keeps it black for another two ticks and then turns it white. A run of length n therefore produces a run of length at least **n−7**, ending two sites to the right and two ticks later. The loss of seven is sharp for **every** n ≥ 9. The same initial right half, represented by the integer 19 with its lowest bit nearest the driver, has a white second cell at tick eight. Left permutivity realizes that right half with any prescribed n-black drive and white endpoint. [Original moving-wall theorem](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30BlackRuns.lean) · [Ordinary realization](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30Realization.lean).
+
+## Why successive runs rule out whole families of periods
+
+Take two occurrences with the same subsequent drive. During each transfer, the far end of the common interval stays black until both rows turn white there. Rectangular agreement preserves all cells in between. After the white endpoint has moved a total of 2j cells in 2j ticks, the ordinary left-going light cone gives another 2j ticks of agreement at the first right neighbor. The proof works for different initial rows. A finite common drive suffices for all readings within it.
+
+For j ≥ 1, **7j+2 black ticks suffice to guarantee agreement for the following 4j ticks**. Repeat the one-pair transfer j times. The kit’s earlier self-shielded argument used 9j initial black ticks for that horizon. The improvement accumulates at arbitrary widths without a new finite case. This agreement compares the right readings under matching drives. The actual right-hand word may depend on that drive.
+
+For an eventual period P at **any site of any row with a leftmost black cell**, let the indicated run start after the transient. Finite-left masked Jen now excludes P in either of the following circumstances.
+
+| Word in the period | Sufficient test using just the nine-black theorem | Example |
+|---|---|---|
+| r blacks, then white, with r < P | r ≥ 7j+2 and P−r ≤ 4j | r = 16, P = 24 |
+| s ≥ 9 blacks, r whites, then black, with s+r < P | r ≥ 7j+2 and P−s−r ≤ 4j+2 | s = 9, r = 16, P = 35 |
+
+In the second case the first right neighbor is black throughout the r ticks ending just after the white run, then turns white. The comparison starts there with one already agreed cell. A convenient rounded form of the first test is **7P+29 ≤ 11r**. Its limiting black fraction is 7/11, down from the kit’s singleton threshold of 9/13. Both tests have standalone kernel proofs. [Finite-left masked Jen](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30FiniteMaskedJen.lean).
+
+Every further certified building block improves the same theorem. Repeated use of a k-pair block with duration h costs h−2k black ticks per group, plus a fixed allowance of 2k ticks. With the separately kernel-verified ten-cell block, **34q+10 blacks cover 20q following ticks**, giving limiting fraction 17/27. For instance 350 black ticks followed by white exclude P = 550; the previous 44-tick block used without this transfer required 440 black ticks for the same 200-tick tail. [Five-pair specialization](Rule30PulseFive.lean) · [Ten-cell certificate](Rule30FastBlackShield.lean).
+
+## Finite repetitions in the singleton
+
+Troyusrex2’s PR 379 bounds repetitions of the singleton’s center together with the unmasked first-right reading. A black run that meets the transfer criterion lets us apply that bound using **only the observed center word**. Suppose a word of P ticks starts at age a > 0 with r blacks followed by white, the remaining P−r ticks fit the agreement horizon, and the center agrees with its P-tick translate for offsets 0 through NP inclusive. Then **NP < a+P**. For example a 24-tick word starting with sixteen blacks then white qualifies, regardless of the remaining seven bits. The theorem allows a finite observation and arbitrary later evolution. The extra endpoint comparison is explicit in the statement.
+
+The proof applies the transfer at each aligned white endpoint. Black phases already mask the first right neighbor. The full masked observation therefore agrees over NP ticks, so PR 379’s finite window bound applies. The proof was checked against the exact PR head `8026612`. [Finite center theorem](Rule30PulseRepetitions.lean) · [PR 379](https://github.com/WolframInstitute/Rule30PrizeKit/pull/379) · [PR 381 on singleton run transitions](https://github.com/WolframInstitute/Rule30PrizeKit/pull/381).
+
+## Boundary controls and attribution
+
+If only j alternating pairs and a white boundary are given initially, with no earlier black-run history, the first possible disagreement times for j = 1,…,7 are **4, 8, 12, 16, 24, 28, 32**. At j = 5 the original ten-tick moving wall builds one more pair before its endpoint turns white. Each lower witness uses two ordinary rows and exactly the same drive at all times. These are sharp values for the alternating-prefix hypothesis. Their use as lower bounds for a preceding black run would require the additional history on both rows. [Lean controls](Rule30PulseWitnesses.lean).
+
+Renaud Bosdure contributed the original quarter-period theorems in kit commit `01677a0`. Troy Lowry’s white-pulse work proves survival of a shield through a prescribed pulse. The new step carries the unused black ticks through each moving white endpoint and iterates that operation. The source record searched includes both prior-art files, KIT.md, KIT-INDEX.md, the kit’s two catalogues, and PRs 66, 379 and 381. The maintainer asked for families on PRs 371 and 378. This result applies uniformly to every width and period; the specific entry question on PR 378 remains open. [Bosdure’s contribution](https://github.com/WolframInstitute/Rule30PrizeKit/pull/66) · [Lowry’s white-pulse result](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30WhitePulse.lean) · [Maintainer’s scope on PR 371](https://github.com/WolframInstitute/Rule30PrizeKit/pull/371).
+
+The next question is whether actual incoming black histories force a longer agreement interval than the repeated transfers guarantee. The sharp first transfer and the sharp free-prefix controls test different hypotheses.
+
+The four modules passed the stock and native checkers. The standalone main file replayed 227 declarations and ten headlines with no new axioms. The exact free-prefix, five-pair, and PR 379 supplements replayed 29, 6, and 23 declarations respectively. The full replay packet is `I86/white-pulse-relay.zip`, SHA-256 `d4988e643e72cc9e9c622ad8ec11d1873ca58a529ceb89e5701aef92190d910d`. The 70-tick eight-pair block also passed independent kernel replay. Substituting it in the general transfer gives 54q+16 black ticks for 32q following ticks, with limiting fraction 27/43.

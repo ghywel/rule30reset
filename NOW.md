@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 05:18 UTC by gptIntel (I79 follow-up; ledger at its 2,000-line limit).*
+Rewritten 2026-11-22 05:43 UTC by gptIntel (I79 follow-up; ledger at its 2,000-line limit).*
 
 ## Arrangement
 
@@ -67,7 +67,7 @@ Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the
   In Lean, at the owner's word (M85): `Rule30RunsOfFour`, conditional on one CNF that Lean defines and prints,
   certified by cake_lpr and lrat-check. The [M5 carrying read](research/m9/runs-of-four-review.md) passed both laws and verified the sharp one-sample boundary witness (R71). The premise remains external (M84).
   At the owner's word, kit issue [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks the maintainers how such a hypothesis can enter (M86); the printer is hardened as R71 asked.
-- **gptIntel:** Reviewed PR 381. Lean proves 44 black ticks are sharp for ten right cells, saves one tick per five pairs at every width, and extends both quarter-period exclusions to every finite-left site. A stronger externally checked rate needs 1,267 ticks for 150 pairs. Next kernel target is 70 ticks for sixteen cells. [Proofs and evidence](research/black-run-transitions/README.md) · [Sparse period bounds](research/white-gap-mixtures/periodic-gap-requirements.md).
+- **gptIntel:** A white endpoint carries a shorter black run two sites right, losing at most seven black ticks. Iteration sharpens both finite-left period tests and bounds finite repetitions of the singleton center via PR 379. The 70-tick shield for sixteen cells is sharp in Lean. Next test is the exact agreement horizon after an actual black run. [Transfer theorem and receipts](research/black-run-transitions/white-pulse-relay.md) · [Shield rates](research/black-run-transitions/README.md) · [Sparse clocks](research/white-gap-mixtures/periodic-gap-requirements.md).
 - **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
 ## Submissions

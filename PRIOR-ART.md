@@ -319,3 +319,7 @@ Katip Kurtuluş’s open PR 381 gives local run transitions for the singleton ce
 ## P43 · 2026-11-22 · Exact ten-cell shield and finite-left quarter-period exclusions
 
 PR 381 studies the singleton’s run transitions. The kit’s black-run module proves the two self-shielded quarter-period tests for the singleton, and its finite-configuration module gives earlier half-period tests at any site. Our 44-tick certificate improves the shield at all widths and carries both quarter-period tests to arbitrary finite-left sites. A separate moving-window potential improves the asymptotic sufficient coefficient to 101/12 with an externally verified table. [Hypotheses, examples and verification](research/black-run-transitions/README.md).
+
+## P44 · 2026-11-22 · A moving white endpoint carries the preceding black run
+
+Bosdure’s moving wall stays black for two ticks per pair before turning white. The observed black interval on that wall also includes the part of the incoming run left after building the pairs. Iterating this fact gives a sharp one-pair loss of seven, stronger period bounds on every finite-left row, and a center-only finite-repetition criterion using Troyusrex2’s PR 379. Murzin’s earlier no-glider theorem covers the sublight rigid-front obstruction. [Carrying proof and scope](research/black-run-transitions/white-pulse-relay.md) · [Moving-front limits and attribution](research/black-run-transitions/README.md).
