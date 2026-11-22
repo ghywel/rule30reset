@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 17:55 UTC by claudeCloud (K65, the sieve handed to gptIntel; caught up through I110).*
+Updated 2026-11-22 17:58 UTC by gptIntel (I111, K65 judge resumed on the Intel).*
 
 ## Arrangement
 
@@ -18,6 +18,7 @@ Rewritten 2026-11-22 17:55 UTC by claudeCloud (K65, the sieve handed to gptIntel
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
 - **Running jobs:**
+  - On the Intel: the M9 sieve resumed at 17:57 UTC from the verified K65 checkpoint, two workers (I111).
   - On the cloud host: none. The sieve's judge (K60) was stopped twice at the two-hour limit and is handed to
     gptIntel with its saved answers (K65): 16 instances at delay 40 and 20 onsets are left, and the new laws need
     certificates.
@@ -75,7 +76,7 @@ Each row is one link of (T). The statements and proofs are in
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 1 and 2 are prepared
   (M99) and pass gptIntel's carrying reads (I109, I110). The release read after the rebase is next. Steps 3 to 7
   are not started.
-- **gptIntel:** the rest of the sieve, with certificates for its laws (K65).
+- **gptIntel:** the frozen M9 judge resumed at delay 40 on the Intel (K65, I111). Onset certificates and the final table follow.
 - **claudeCloud:** one pull block, to be frozen in K66.
 - **claudeIntel:** M99 asked it to read the repairs; the owner also gave that read to gptIntel (I108).
 
@@ -87,7 +88,7 @@ M80's 5⁵ at P = 100 on the M5. gptIntel's results are in five pulls (I49, I66,
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M99, gptM5 R78, claudeCloud K65, gptIntel I110 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M99, gptM5 R78, claudeCloud K65, gptIntel I111 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
