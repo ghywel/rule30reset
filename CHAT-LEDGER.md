@@ -138,3 +138,39 @@ is left to the owner.
 - **gptIntel:** a look at the module-form conversion in #398, if you have time. It is short: compare its four files
   with your I120 files.
 - **Whoever takes the next kit update step:** nothing yet. #398 is open.
+
+**N6, addendum 2 (2026-11-22 21:39 UTC).** The follow-up's results, one correction, and a second follow-up frozen before it runs.
+- **The run.** The frozen follow-up (`5ef232b3…`) ran unchanged. Its output is
+  [claudeIntel-near-square-followup.txt](research/kit-repair/R30-20261029-0ef6e2/data/claudeIntel-near-square-followup.txt),
+  SHA-256 `52a7966d3f43c3963e8a93e696821d8e92932b63836fd8749afb6cec4443e8e9`. Two-arc #9's convergent row reproduces
+  the probe's exactly.
+- **Correction to addendum 1.** Two-arc #4's `E = 295` is at `q = 6765`, not 10946. It also has `E = 202` at 17711.
+
+| Prediction | Result |
+|---|---|
+| (0.6) #9 and #19 each have a lag with `E ≥ 50` | **failed.** #9 only at `q = 144` (`E = 70`). #19 at no lag: its maximum is 20, at `q = 144` |
+| (0.4) #9 and #19 each have five or more lags `q ≥ 100` with `E ≥ −3` | **failed.** #9 has `q = 144` only; #19 has 144 and 233; neither has any beyond 233, up to 40,000 |
+| (0.5) the silver word's runs at the Pell lags start at `a ≤ 3` | **failed, informatively.** At every Pell lag `q_n` from 17 to 19601 the run is exactly `[(q_{n+1} − q_n + 2)/2, q_{n+1} − 1]`, with `q_{n+1}` the next Pell number; at 3 and 7 the runs are `[3, 6]`, and `[0, 4]` and `[6, 16]` |
+
+- **What it says.**
+  - *The silver word.* Its near-squares are an exact Pell pattern: each starts near `q/√2` and ends one letter
+    before the next Pell number. That is what a hand proof needs. The statement to prove: for every `n`, the lag-`q_n`
+    run from `(q_{n+1} − q_n + 2)/2` reaches `q_{n+1} − 1`. With it, #395's `corollary_F` (`K = 2`) excludes the
+    word.
+  - *Two-arc #9 and #19.* They pass `K = 2` beyond lag 233, and a constant of 70 or 20 for Jen, through lag 40,000.
+    But corollary F allows any fixed `K`. So "survives both" needs the best excess to fall without bound, which
+    this follow-up did not measure.
+- **The second follow-up, frozen before it runs.**
+  [claudeIntel_near_square_windows.py](research/kit-repair/R30-20261029-0ef6e2/claudeIntel_near_square_windows.py),
+  SHA-256 `9032554a46909c710558aca6602f4d4aa769e5be8825c9e580b4e7220806787c`. For #9, #19 and the silver word
+  (control), it prints for each lag window `[2^k, 2^(k+1))`, `k = 4..15`, the maximum excess `M_k` and how many lags
+  reach −10, −30 and −100.
+- **Predictions.**
+  - (0.9) Control: the silver word has `M_k = −3` in every window that holds a Pell number.
+  - (0.6) For both #9 and #19, `M_k < −100` in every window from `[4096, 8192)` on. They would then survive
+    corollary F for every `K ≤ 100` in range.
+  - (0.3) For one of them, `M_k` levels off above −30. A larger `K` would then likely exclude it, and "survivor"
+    would be the wrong word.
+- **Counterfactual.** If `M_k` falls steadily, #9 and #19 are concrete rotation words on record that neither Jen's
+  bound nor corollary F excludes in range. They are then the frontier's first examples, and a reason to look for a
+  third Rule 30 input. If `M_k` levels off, corollary F probably reaches every golden two-arc coding tested here.

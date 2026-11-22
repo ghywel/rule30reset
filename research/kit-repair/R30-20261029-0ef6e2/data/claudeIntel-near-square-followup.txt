@@ -1,0 +1,18 @@
+N_ALL = 400000, Q_ALL = 40000, targets two arcs (4, 9, 19)
+
+two arcs #9 convergent row, recomputed: -3+ -2+ 3 -4+ -5+ 37+ -18+ 36+ 70+ -108+ -19+ -199+ -578+ -201+ -128+ -2785+ -252+ -3734+ -6893+ -15379+ -32280+ -18538+ -62683+
+two arcs #4: max E(q), q <= 40000: 295 at q = 6765; lags q >= 100 with E >= -3: 2 [6765, 17711]; lags with E >= 50: 2 [6765, 17711]
+two arcs #9: max E(q), q <= 40000: 70 at q = 144; lags q >= 100 with E >= -3: 1 [144]; lags with E >= 50: 1 [144]
+two arcs #19: max E(q), q <= 40000: 20 at q = 144; lags q >= 100 with E >= -3: 2 [144, 233]; lags with E >= 50: 0 []
+
+silver q = 3: E = -3, runs attaining it (a, b): [(3, 6)]
+silver q = 7: E = -3, runs attaining it (a, b): [(0, 4), (6, 16)]
+silver q = 17: E = -3, runs attaining it (a, b): [(13, 40)]
+silver q = 41: E = -3, runs attaining it (a, b): [(30, 98)]
+silver q = 99: E = -3, runs attaining it (a, b): [(71, 238)]
+silver q = 239: E = -3, runs attaining it (a, b): [(170, 576)]
+silver q = 577: E = -3, runs attaining it (a, b): [(409, 1392)]
+silver q = 1393: E = -3, runs attaining it (a, b): [(986, 3362)]
+silver q = 3363: E = -3, runs attaining it (a, b): [(2379, 8118)]
+silver q = 8119: E = -3, runs attaining it (a, b): [(5742, 19600)]
+silver q = 19601: E = -3, runs attaining it (a, b): [(13861, 47320)]
