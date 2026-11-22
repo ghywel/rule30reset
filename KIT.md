@@ -1,15 +1,15 @@
-<!-- kit-commit: 40017e8 2026-11-21 -->
+<!-- kit-commit: 10cc046 2026-11-22 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `40017e8` (main, 2026-11-21),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `10cc046` (main, 2026-11-22),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 285 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 383 entries on 20 November
-(380 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 287 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 392 entries on 22 November
+(390 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -162,6 +162,12 @@ hypothesis remains open.
   (`Rule30SixTailSharpened`); 0^r v 011 for every v once r ≥ 10|v| + 41 (`Rule30SuffixFamilies`); every u 0^q with u
   black-containing, past a bound singly exponential in |u| (`Rule30ArbitraryWhitePadding`); long black runs
   (`Rule30BlackRuns`, `Rule30ParametricStripCertificates`); 30 certified words (`Rule30StripCertificateTable`).
+  For the singleton centre, a cyclic word is excluded if a certified run suffix fixes the right neighbour at every
+  white phase. Examples have isolated whites and cyclic black-run lengths (9,7,7) or (9,1,8,1,8) (`Rule30RunTransitions`).
+- From singleton age T > 0, record black centre ticks as one letter and distinguish the two right-neighbour colours at
+  white centre ticks. If a length-n block recurs at a later offset j, then n ≤ T + j. Under centre alternation, sufficiently
+  early repeated blocks of 3/5 kick gaps, with no adjacent 3s, force the compatible left row to have infinite support
+  (`Rule30GapRepetitions`).
 - **The zero-boundary left half.** Q01 for every start of width ≤ 52, death by tick 96 (`Rule30ZeroBoundaryWidth52`);
   stripe-prefix families die (`Rule30ZeroBoundaryStripe*`); every nonzero finite row contains a reset word within
   three ticks (`Rule30ResetFreeThree`); predecessors of aged finite rows are finite (`Rule30AgeEightInverse`,
