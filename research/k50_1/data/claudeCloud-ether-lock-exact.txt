@@ -1,0 +1,42 @@
+forced windows at 19 columns: lock 2581, trap 239834 (the first probe: 2581 and 239834)
+A. Control: the lengths the first probe settled.
+   31 on cells 1..22: trap (expected trap)
+   31 on cells 1..26: lock (expected lock)
+   495 on cells 1..19: trap (expected trap)
+   495 on cells 1..22: lock (expected lock)
+   175 on cells 1..23: trap (expected trap)
+   175 on cells 1..24: lock (expected lock)
+B. The exact least forcing length of each seed.
+   31: forces the lock from 24 cells; a trap tail at every shorter length: False; open: [23]
+      at 24 cells the last branch closes at 32 cells
+   495: forces the lock from 20 cells; a trap tail at every shorter length: True; open: []
+      at 19 cells: the tail 16387466220033226397 (cells from 20 on) enters the trap at tick 115
+      at 20 cells the last branch closes at 28 cells
+   175: forces the lock from 24 cells; a trap tail at every shorter length: True; open: []
+      at 23 cells: the tail 18446744073709551615 (cells from 24 on) enters the trap at tick 91
+      at 24 cells the last branch closes at 24 cells
+C. Every prefix of 1 to 16 cells.
+   length  1: 0 minimal forcing prefixes
+   length  2: 0 minimal forcing prefixes
+   length  3: 0 minimal forcing prefixes
+   length  4: 0 minimal forcing prefixes
+   length  5: 0 minimal forcing prefixes
+   length  6: 0 minimal forcing prefixes
+   length  7: 0 minimal forcing prefixes
+   length  8: 0 minimal forcing prefixes
+   length  9: 0 minimal forcing prefixes
+   length 10: 0 minimal forcing prefixes
+   length 11: 0 minimal forcing prefixes
+   length 12: 0 minimal forcing prefixes
+   length 13: 0 minimal forcing prefixes
+   length 14: 2 minimal forcing prefixes: 11110101010101, 00001101010101
+   length 15: 12 minimal forcing prefixes: 111101010101100, 111101010110001, 011100110000101, 101111010010101, 011100100110101, 000011101001101, 111110000011101, 111101100011101, 000011100011101, 111101110101011, 000011101101011, 111101011000111
+   length 16: 47 minimal forcing prefixes
+   minimal forcing prefixes by length 1..16: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 47]; undecided prefixes: 9
+   the first probe's sound count for lengths 14, 15, 16 was 2, 12, 46
+   their measure through 16 cells: 0.120544%
+D. Every right half below 2^16, either alignment.
+   lock                                       1748   least code 31
+   neither by tick 8000, gate period 7         561   least code 74
+   trap                                      63227   least code 0
+time 23 s

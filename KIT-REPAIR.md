@@ -69,11 +69,11 @@ own read. Recommended: port 0c4a33 first, then decide whether any of these is st
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17), *An explicit finite horizon for mechanical words beside a Rule 30 clock* | For every real slope α, phase θ and natural C, the mechanical word has a repetition with an explicit bound, and so do its block recodings. Beside a clock, a stretch [a, b] of the visible neighbour that agrees with such a word has b − a < 251(L + 2a + 4) + … | 2197 lines. `ℝ` 309 times, `Irrational` 31, `linarith` 73, `nlinarith` 17. Lean Verified, not Human Verified. | It is uniform in real α, θ. A recast over rational or digit-given slopes would lose that uniformity. Probably leave it portal-only. |
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2), *Finite-arc rotation codes beside a Rule 30 clock* | The visible neighbour of a clocked row cannot eventually equal a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | 1001 lines. `ℝ` 139 times, `Irrational` 17. Lean Verified, not Human Verified. | Its hypothesis is already about continued-fraction digits, so a recast with the rotation given by its digits may be natural. Read it before deciding. |
 
-## 3. Check: needs a read of the Lean source (1)
+## 3. Read: a third missed entry (1)
 
 | Entry | What it proves | Source | The question |
 |---|---|---|---|
-| [R30-20261024-8d7751](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261024-8d7751), *Two infinite families of right halves absorbed by the ether: CQ01 for every right half with one of two prefixes* | For the prefixes R31 (black cells 1 to 5) and R495 (black cells 1 to 4 and 6 to 9), every right half with that prefix enters the ether-and-wall trap by time 9, so CQ01 holds for it. | 289 lines, core Lean. Imports `Rule30PeriodTwoSideways`. | Is it already in the kit? Our `Rule30SidewaysLocks` (8 November) gives CQ01 for every right half whose window enters one of three locks. Bosdure's `Rule30GateTrap` holds the 829-window trap. If both prefixes reach a lock or the trap whatever lies beyond them, this is covered; otherwise it is a third missed entry. Read the source's trap against both modules, then simulate the two prefixes with free tails. |
+| [R30-20261024-8d7751](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261024-8d7751), *Two infinite families of right halves absorbed by the ether: CQ01 for every right half with one of two prefixes* | For the prefixes R31 (black cells 1 to 5) and R495 (black cells 1 to 4 and 6 to 9), every right half with that prefix enters the ether-and-wall trap by time 9, so CQ01 holds for it. | 289 lines, core Lean. Imports `Rule30PeriodTwoSideways`. | **Read in K66: it is not in the kit.** The three locks of `Rule30SidewaysLocks` read 10000, 0101000 and 0010100 in column 1, and inside `Rule30GateTrap` black gate cells are 3 or 5 apart. These families read 01 for ever. The kit has the trap invariant and the step from a periodic gate to CQ01, and no family through the ether-and-wall trap beside the alternating column. The repair: the lock is the kit's 53 ether-and-wall windows of 19 columns in two classes, a lock of period 2 in `Rule30SidewaysLocks`' sense; keep the eight headlines word for word. Possible additions, each new and needing its own read (K66 addendum 2): the families never enter the gate trap (h3artfield's R30-20261122-66c410 states this for the seed 175, to be credited); the other time alignment, from the seed 112; and the sharper prefix lengths, 23 and 20 cells where the entry states 28 and 24 (COMPUTED). |
 
 ## The plan, in order
 
@@ -82,7 +82,7 @@ own read. Recommended: port 0c4a33 first, then decide whether any of these is st
 3. **91b0b0, then 0c4a33 on it**, as one module: the near-square core and the characteristic Sturmian words.
 4. **1bf4dc with 920c1b**, rule 210.
 5. **1d5070**, after reading `Rule30LeftUnbounded` and `Rule30AgedLeftDiagonals`.
-6. **8d7751**, the read. Then send it as a pull request, or move it to covered.
+6. **8d7751:** read (K66), and not covered. Send it as a pull request: the period-2 lock beside the three of `Rule30SidewaysLocks`.
 7. **8084e6, dc3d17 and 0ef6e2:** decide after step 3 whether a combinatorial recast is worth it.
 
 Each step is one pull request, read by a second worker. The maintainers have been told in kit issue
@@ -94,7 +94,9 @@ Each step is one pull request, read by a second worker. The maintainers have bee
 |---|---|---|
 | 1 | 8e6bd3 | **Carrying and release reads passed** (I109, I112). `Rule30ZeroBoundaryDeathTimes` gives the exact width-52 bound. [Reviewed source](research/kit-repair/R30-20261023-8e6bd3/Rule30ZeroBoundaryDeathTimes.lean). Three headlines, 34 constants. Reviewed patch `ce5d2124…` on `54d030c`. #386 asks about placement. |
 | 2 | 803bc4 | **Carrying and release reads passed** (I110, I112). `Rule30FiniteRoots` gives the unique root and age, the finite-parent test, and exact counts. [Reviewed source](research/kit-repair/R30-20261030-803bc4/Rule30FiniteRoots.lean) and [port generator](research/kit-repair/R30-20261030-803bc4/claudeM5_port.py). Seven headlines, 196 constants. Reviewed patch `765ef1c2…` on `54d030c`. |
-| 3 to 7 | — | Not started. |
+| 3 to 5 | — | Not started. |
+| 6 | 8d7751 | **Read** (K66): not in the kit, so a third missed entry. The kit form is not started; it waits for the owner's word. |
+| 7 | — | Not started. |
 
 The author and owner have the release digests in I112. Either patch can be first on the 290-module base. The second needs a fresh rebase and build after the first merges.
 

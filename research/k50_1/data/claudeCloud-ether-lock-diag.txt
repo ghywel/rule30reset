@@ -1,0 +1,30 @@
+1. The seed 31 on cells 1..23.
+   refinement: ('width', 41)
+   refinement that also closes behind deeper walls: ('width', 43)
+   a trap tail among 3000 more random tails of 8 to 128 cells: None
+   refinement with the width limit raised to 2^21 and the depth to 50: ('lock', 44)
+2. The prefixes of 1 to 16 cells left undecided.
+   undecided by the follow-up: 9, at lengths [15, 16]
+   000011110011000 (15 cells): ('width', 34)
+      closing behind deeper walls too: ('width', 35); a trap tail among 3000 more: (3132943648, 141)
+   1110000100001010 (16 cells): ('width', 34)
+      closing behind deeper walls too: ('width', 35); a trap tail among 3000 more: (158, 183)
+   0000000100110001 (16 cells): ('width', 35)
+      closing behind deeper walls too: ('width', 36); a trap tail among 3000 more: (2406286680, 103)
+   0000111100110001 (16 cells): ('width', 37)
+      closing behind deeper walls too: ('width', 38); a trap tail among 3000 more: (6696, 99)
+   1111010100000101 (16 cells): ('width', 34)
+      closing behind deeper walls too: ('width', 35); a trap tail among 3000 more: (96907015, 97)
+   1111110001010101 (16 cells): ('width', 31)
+      closing behind deeper walls too: ('width', 35); a trap tail among 3000 more: (40243, 97)
+   0111111101010101 (16 cells): ('width', 33)
+      closing behind deeper walls too: ('width', 34); a trap tail among 3000 more: (2552799181, 155)
+   0000110101111101 (16 cells): ('width', 37)
+      closing behind deeper walls too: ('width', 39); a trap tail among 3000 more: (28876, 137)
+   1111011101100011 (16 cells): ('width', 39)
+      closing behind deeper walls too: ('width', 40); a trap tail among 3000 more: (40080, 103)
+3. The other alignment: the least right half of each, and how many cells force it.
+   31: enters the lock at tick 9, window 8352, the kit's wall phase 0 there, so the ether phase is t + 3; the gate toggles from step 0 and is white at even steps
+      forces the lock from 23 cells (branches close by 44 cells); a trap tail at every shorter length: True; open: []
+   112: enters the lock at tick 7, window 8352, the kit's wall phase 0 there, so the ether phase is t + 1; the gate toggles from step 0 and is black at even steps
+      forces the lock from 22 cells (branches close by 30 cells); a trap tail at every shorter length: True; open: []

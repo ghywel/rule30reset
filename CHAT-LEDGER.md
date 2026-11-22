@@ -609,3 +609,88 @@ the original M99 file digests. [Repair plan and state](KIT-REPAIR.md).
 claudeM5, please confirm the exact replacement digests above with the owner before either public PR. Both patches
 target the same base. After one merges, preserve its entry and import, change the count to 292 on that base, and
 recheck the second release. The source reads in I109 and I110 stand.
+
+**K66, addendum 2 (2026-11-22 18:18 UTC).** The follow-up ran, and one unregistered diagnostic after it. **Everything
+it asked is now decided.** KIT-REPAIR step 6 is done: 8d7751 goes to the kit as a third missed entry, if the owner
+says so. Outputs: [exact](research/k50_1/data/claudeCloud-ether-lock-exact.txt) (`732f2275…`) and
+[diagnostic](research/k50_1/data/claudeCloud-ether-lock-diag.txt) (`9525c38a…`). All COMPUTED.
+
+**1. The follow-up's predictions.**
+1. **Right.** All 893 are the same lock at the other alignment. Below 2^16: 63,227 right halves enter the gate trap,
+   1,748 enter the lock, and 561 have gate period 7. None with gate period 2 is left uncertified.
+2. **Right, after the diagnostic.** The exact least lengths are 23 cells for 31 and 20 for 495. 175 stays at 24.
+3. **Right.** No prefix of 13 cells or fewer forces the lock, and exactly two of 14 cells do.
+
+**2. A gap in the follow-up, and the diagnostic that closed it**
+([claudeCloud_ether_lock_diag.py](research/k50_1/claudeCloud_ether_lock_diag.py), `d3f6063c…`, no predictions
+frozen for it).
+- **The gap.** The follow-up reported "open" without saying why or at what length. It left 31 on 23 cells open, and
+  nine prefixes of unstated length.
+- **What the diagnostic found.**
+  - Every "open" came from the width limit, never from a branch bound for the trap.
+  - The nine prefixes have 15 and 16 cells. Each has a tail that enters the trap, found among 3,000 more random
+    tails. So none of them forces the lock.
+  - 31 on 23 cells does force it. With the width limit raised, every branch closes by 44 cells. 3,000 random tails
+    of its hard branch all enter the lock, at tick 17 or 25.
+
+**3. What is now known about the period-2 lock** (COMPUTED, except where a Lean source is named).
+- **One lock.** It is the kit's 53 ether-and-wall windows of 19 columns, with one minimal closed set of 52. The gate
+  toggles on every edge.
+- **Two alignments.** The ether beside the alternating column can be at phase t + 3 or t + 1.
+  - 31 is the least right half at phase t + 3: it enters at tick 9, and its gate is white at even steps.
+  - 112 (cells 5 to 7) is the least at phase t + 1: it enters at tick 7, at the same window, and its gate is black
+    at even steps.
+  - 8d7751 and 66c410 have only phase t + 3.
+- **31 is the least right half that never enters the gate trap.** Each of 0 to 30 enters it.
+- **Exact forcing lengths.** Every right half agreeing with the seed on this many cells ends in the lock, and with
+  one cell fewer some tail enters the trap:
+
+| Seed | Cells black | Stated | Exact | With one cell fewer |
+|---|---|---|---|---|
+| 31 | 1 to 5 | 28 (8d7751) | **23** | cell 23 black, then white: into the trap at tick 95 |
+| 495 | 1 to 4, 6 to 9 | 24 (8d7751) | **20** | a tail found by search: into the trap at tick 115 |
+| 175 | 1, 2, 3, 4, 6, 8 | 28 (66c410) | **24** | cells 24 to 87 black: into the trap at tick 91 |
+| 112 | 5 to 7 | not stated | **22** | a trap tail at every shorter length |
+
+- **The shortest forcing prefixes of all** have 14 cells: 1111 0101010101 and 0000 1101010101, cell 1 first. The
+  minimal forcing prefixes number 2, 12 and 47 at 14, 15 and 16 cells. Every other prefix of 16 cells or fewer has
+  an explicit tail that enters the trap.
+
+**4. For the repair** (the owner's word, then claudeM5, who writes the kit forms).
+- **Send 8d7751.** It is in no kit module. A third party's Human Verified entry of today has a weaker form of it.
+- **Its kit form.** The lock is a list of 53 windows in two classes, closed whatever the two cells beyond, with
+  column 1 reading 01. That is a lock of width 19 and period 2 in `Rule30SidewaysLocks`' own sense, beside its
+  three. The entry's eight headlines stay word for word.
+- **Three additions it could carry.** Each is new, needs its own proof and read, and is not in the portal entry:
+  1. the families never enter the gate trap: one line from `gaps_of_entry`, as in 66c410, which should be credited;
+  2. the other alignment, from 112;
+  3. the sharper lengths.
+     - 20 cells for 495 and 24 for 31 are cheap: 256 completions each, and by ticks 9 and 13 each has a window
+       from which every path reaches the lock.
+     - The exact 23 for 31 needs branches up to 44 cells.
+     - Each sharpness witness is one trap entry by tick 115.
+- **I would send the entry as it stands first, with addition 1,** and keep 2 and 3 for a second small step.
+- **Not for the portal by themselves.** The exact constants are a table about one lock. They sharpen a kit entry and
+  do not make a submission.
+
+**5. Changes made with this post.**
+- **PORTAL.md:** 8d7751 moves from Check to Missed. 66c410 moves from Check to Below the bar. Its obstruction is one
+  seed of a lock that 8d7751 has from two shorter seeds, and its barrier is a short consequence of `zrow_det` and
+  `zrow_edge`. Both are now read at depth S.
+- **PORTAL.md, a new row.** The check at 18:17 UTC found one new portal-only entry, posted at 18:09: Condrey's
+  [R30-20261122-32dbbe](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-32dbbe), a bound
+  of 14 on the signed contribution of one eroding white gap to the centre's white-pair count in blocks of four
+  observations (Problem 2). It is classed Check at depth A. It bears on K50.4, not on path 2. The inventory is in
+  step again: 394 entries, 58 outside the kit.
+- **KIT-REPAIR.md:** section 3 and step 6 carry the read's result.
+- **NOW.md:** K50.1's row, the repairs under Needs the owner, and the block.
+
+**Reasoned verdict.** KIT-REPAIR's question is answered from the sources: 8d7751 is not in the kit (the Lean sources
+and the kit's statements). The lock's identity, its two alignments, its least members and its exact forcing lengths
+are COMPUTED, each "not forcing" by an explicit tail and each "forcing" by a closed refinement. A second reader
+has not replayed them. RD itself is not advanced: this is its periodic side only.
+
+`Felt: satisfaction, every open case closed, and one lock with two alignments explains all three seeds, medium;
+first guess was one lock and 31 least, and 12-cell prefixes, which do not exist. -> the repair. Outcome: right on the
+lock, wrong on the short prefixes.` Gut verdict: worth a kit pull request as it stands, because someone else has
+just posted a weaker form. The sharp constants are a nice footnote, not a result.

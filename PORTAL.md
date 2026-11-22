@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-22 17:38 UTC, 393 entries, 57 portal-only -->
+<!-- portal-list: 2026-11-22 18:17 UTC, 394 entries, 58 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 17:38 UTC (393 entries)
-and kit main `54d030c` (I108). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 18:17 UTC (394 entries)
+and kit main `54d030c` (I108, K66). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 57 of the 393 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 58 of the 394 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -25,15 +25,15 @@ and kit main `54d030c` (I108). Find new portal-only entries with `python3 tools/
 
 | Class | Entries |
 |---|---|
-| Missed | 9 |
+| Missed | 10 |
 | Port | 8 |
 | Pending | 2 |
-| Check | 6 |
+| Check | 5 |
 | Covered | 7 |
-| Below the bar | 25 |
-| All | 57, of them 25 ours |
+| Below the bar | 26 |
+| All | 58, of them 25 ours |
 
-## Missed (9)
+## Missed (10)
 
 Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-request candidates. For others', credit them when building on them, and they can be raised with their authors.
 
@@ -43,6 +43,7 @@ Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-r
 | [R30-20261023-8e6bd3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-8e6bd3) | 2026-10-23 | ours | Lean Verified, Human Verified | The death time at width 52 is exactly 96: a start black at depth 1 at every even time below 96 (`death_time_52_exact`), with witnesses at widths 56 and 60. | The kit's Rule30ZeroBoundaryWidth52 row calls 96 "observed, not proved". A small extension. | A |
 | [R30-20261023-603218](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-603218) | 2026-10-23 | Andy Norris; Jesse v1.4 (solidSF) | Lean Verified, Human Verified | Norris's self-replicating shield cascade: the right wall of a (0,1)^j shield stays black 2j ticks and spawns further shields, so a single-seed period with r ≥ 9j blacks and P − r + 9 ≤ 4·cascadePairs d j is excluded (slope 7/4, limit 7/11). Also 11 0^q for q ≥ 8, strip fixed points, a 32-block catalogue, and Problem 2 and 3 bridges. | The cascade is not in the kit, which holds Bosdure's later quarter-period theorem (slope 9/4). 11 0^q is the kit's Rule30WhiteRunEight. gptIntel's relay sharpens the cascade's constant (M95, P46). | S |
 | [R30-20261023-7e9e6e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-7e9e6e) | 2026-10-23 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Jen's left-permutive hypotheses hold for exactly four rules, 90, 150, 210 and 30 (`jen_class_iff_four_rules`), with equivalences for the single seed. | A small, clean extension of Rule30Realization, which names three of the four. | A |
+| [R30-20261024-8d7751](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261024-8d7751) | 2026-10-24 | ours | Lean Verified, Human Verified | Every right half agreeing with 31 (cells 1 to 5) on cells 1 to 28, or with 495 (cells 1 to 4 and 6 to 9) on cells 1 to 24, has its gate equal to the parity of the step, by entering the kit's ether-and-wall trap; so CQ01 holds for it (`CQ01_prefix31`, `CQ01_prefix495`). | Not in the kit (K66): the three locks of Rule30SidewaysLocks read 10000, 0101000 and 0010100, and the gate trap has gaps 3 or 5, while these read 01. It is the period-2 lock: the kit's 53 ether-and-wall windows of 19 columns. COMPUTED in K66: 23 and 20 cells already force it, and 31 is the least right half that never enters the gate trap. A pull-request candidate: KIT-REPAIR step 6. | S |
 | [R30-20261030-803bc4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261030-803bc4) | 2026-10-30 | ours | Lean Verified, Human Verified | Finite ancestors on the line: every nonzero finite row y has a unique finite root x and age n with F^n x = y, and 2n is at most y's width (`finite_root_age`). It also gives a finite-parent test, a bijection of n-step pasts, and exact counts. | Core Lean, general, and nothing in the kit states it. It sits beside Hughes's inverse theorems and S6. A pull-request candidate. | A |
 | [R30-20261105-c6874e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-c6874e) | 2026-11-05 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | The same as 4b74be. | A duplicate submission. | A |
 | [R30-20261105-4b74be](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-4b74be) | 2026-11-05 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint's bridges from machine complexity to aperiodicity, stated for every Boolean sequence rather than the centre column. | A small generalisation of Rule30Problem3Bounds. No kit theorem has these names. Submitted twice, with c6874e, and neither copy records the other. | S |
@@ -73,18 +74,17 @@ In an open kit pull request. Moves out of this file when it merges.
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261120-2a993b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-2a993b) | 2026-11-20 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: K1 collapses to a 16-phase minimum through width 53,208, and the inverse ticks hold unconditionally through k = 25. | Open kit PR #371. | S |
 
-## Check (6)
+## Check (5)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
-| [R30-20261024-8d7751](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261024-8d7751) | 2026-10-24 | ours | Lean Verified, Human Verified | Ours: CQ01 for every right half with prefix R31 or R495, which enter the ether-and-wall trap by time 9. | Probably subsumed by the kit's gate-trap results and our later CQ01-on-entry module. Check whether these prefixes enter the 829-window trap. | A |
 | [R30-20261029-99db76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-99db76) | 2026-10-29 | Eric Elbaz (Tensorbend.ai) | Lean Verified, Human Verified | Elbaz: with the canonical alternating centre, an adjacent column white at all odd times forces every left layer to its depth's parity, so the left half is not finitely supported. | As 23ac1b. | A |
 | [R30-20261029-23ac1b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-23ac1b) | 2026-10-29 | Eric Elbaz (Tensorbend.ai) | Lean Verified, Human Verified | Elbaz: if the column beside the centre is eventually black, its deviation from the alternating reference vanishes above 8(s/2 + 1) + 2. So a centre white on its finitely many defects reconstructs an infinite left half. | Possibly a kit-worthy Q01-type statement. Read the hypotheses against Rule30ZeroBoundary. | A |
 | [R30-20261108-508c6c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-508c6c) | 2026-11-08 | h3artfield; Cursor Agent (Composer) | Lean Verified | h3artfield: every Y < 2^52 dies within size Y + 4 steps of G, and Q01 is equivalent to Open131072Exit. | The equivalence would be a reformulation of Q01. Not Human Verified, and the portal has no separate Lean file. | A |
 | [R30-20261108-a0fd36](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-a0fd36) | 2026-11-08 | h3artfield; Cursor Agent (Composer) | Lean Verified, Human Verified | h3artfield: the size of G grows by 2 per odd step, and first_even Y ≤ size Y + 4 for every Y would give Q01 (`Q01_of_size_add_four`). | The kit's Rule30RecognizableBarrier row cites it only for an observed sharpness. Is the reduction in the kit? | A |
-| [R30-20261122-66c410](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-66c410) | 2026-11-22 | h3artfield; Cursor Agent (Composer) | Lean Verified, Human Verified | h3artfield (today): a finite trace-horizon barrier (a rejoining edit first differs before W), and an eight-bit obstruction to universal entry into the gate trap. | New. Unread. | A |
+| [R30-20261122-32dbbe](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-32dbbe) | 2026-11-22 | David Condrey; OpenAI Codex (GPT-6) | Lean Verified, Human Verified | Condrey (today, Problem 2): group the centre observations in blocks of four. The signed contribution of one eroding white gap to the centre white-pair count, summed inside each block and then in absolute value across blocks, is at most 14 for every width, depth, horizon and alignment (`birth_packet_budget`); for a finite list of gaps, at most 14 times its length (`family_packet_budget`). The abstract adds a packing error of 224 T^(2/3) for the singleton, and says the remaining signed contribution is open. | New and unread beyond the abstract (K66). It builds on Rule30AgedLeftDiagonals and Rule30CenterCylinders, and its author usually sends to the kit. It bears on K50.4, the white triangles. | A |
 
 ## Covered (7)
 
@@ -100,7 +100,7 @@ The kit holds it, or something stronger, or credits it inside a row. The portal 
 | [R30-20261105-5e2517](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-5e2517) | 2026-11-05 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: algebraic inversion of `Coupled`, aperiodicity of both driven neighbours, and the reduction to even periods 2m ≥ 4 under Problem 2 and CQ01. | An earlier copy, ten minutes before, of R30-20261105-3bda85 (same title and headlines), which is tagged and in the kit as Rule30Coupled (kit #168). Neither copy records the supersession. | S |
 | [R30-20261105-8becc6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-8becc6) | 2026-11-05 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: the left-column cascade −1 to −6 under w0001, and P ≤ 7 excluded under open hypotheses. | An earlier copy, 26 minutes before, of R30-20261105-bd78e5, which is tagged and in the kit as Rule30PeriodFourSkeleton (kit #174). Neither copy records the supersession. | S |
 
-## Below the bar (25)
+## Below the bar (26)
 
 Finite instances, tables, single terms of a chain, bounded ranges, elementary facts, or a failed verification. Cite them for what they are; do not build a kit case on them.
 
@@ -131,6 +131,7 @@ Finite instances, tables, single terms of a chain, bounded ranges, elementary fa
 | [R30-20261119-cefcc1](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-cefcc1) | 2026-11-19 | Matthew Payton Ulrey; Antigravity (Google DeepMind) | Lean Verified | Ulrey: 35 theorems across five topics, among them the centre's ANF degree 2n − 1. | A collection. Compare the ANF item with Condrey's Rule30TopCoefficient. Not Human Verified. | A |
 | [R30-20261120-38ce9e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-38ce9e) | 2026-11-20 | David L. Condrey | Lean Verified, Human Verified | Condrey: the centre is not eventually 1^5 0^8 nor 1^3 0^17. | Two words. | A |
 | [R30-20261121-09376a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261121-09376a) | 2026-11-21 | h3artfield; Claude; Cursor Agent (Composer) | Lean Verified | h3artfield: period-2 obstructions, for an empty right half to depth 10,000 and for two-sided right width 8. | Bounded instances. Not Human Verified. | A |
+| [R30-20261122-66c410](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-66c410) | 2026-11-22 | h3artfield; Cursor Agent (Composer) | Lean Verified, Human Verified | h3artfield: every right half agreeing with 175 on cells 1 to 28 has a gate that toggles from step 4, never enters the 829-window gate trap, and satisfies CQ01 (53 windows of 19 columns). Also a trace-horizon barrier: two finite zero-boundary rows whose wall traces first differ at t0 and later agree for ever have t0 below the first row's support bound. | The obstruction is one seed of the period-2 lock, which our 8d7751 has from two shorter seeds since 24 October; its 53 windows are exactly the kit's ether-and-wall windows (K66). Its stated corollary, never entering the gate trap, is one line from `gaps_of_entry`: credit it if a repair of 8d7751 adds that line. The barrier is a short consequence of `zrow_det` and `zrow_edge`. | S |
 
 ## Keeping it
 
