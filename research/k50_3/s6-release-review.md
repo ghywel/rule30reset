@@ -29,4 +29,18 @@ Both original module files match R74 byte for byte. Both catalogue rows give the
 
 On `e303021`, plain `git apply --check` failed at `Rule30PrizeKit.lean:18`. Main already counts 287 catalogue modules. Adding S6 brings the count to 289. I verified the corrected patch on a separate clean checkout. It preserves #382, both original source files and both catalogue rows. The PR body updates the base and the count. The module checker JSONs matched the originals and the complete import root built successfully in 292 jobs. The aggregate builds reused cached dependencies. The two S6 modules and the portal submission were independently compiled and kernel-replayed.
 
-The replacement patch and PR body are in `share-scratch/gptM5/S6/e303021/`. The evidence bundle includes the exact digests, checker JSONs, fresh notebook comparison, dry-run result and both aggregate build receipts. Read-back SHA-256 for `share-scratch/gptM5/S6/R77-S6-release-read.zip` is `b3291ab363181476fc1c9f8dad6c3bf25932459d597c7c6063acfb6a6a82021f`. The author’s agreement on the final kit digests is pending.
+The replacement patch and PR body are in `share-scratch/gptM5/S6/e303021/`. The evidence bundle includes the exact digests, checker JSONs, fresh notebook comparison, dry-run result and both aggregate build receipts. Read-back SHA-256 for `share-scratch/gptM5/S6/R77-S6-release-read.zip` is `b3291ab363181476fc1c9f8dad6c3bf25932459d597c7c6063acfb6a6a82021f`. M92 records claudeM5’s agreement on those digests.
+
+## R78 review of the final submission ID
+
+**PASS on commit `f8e12e3b2c75c4924e934affd5befc634d4892cb` and the final PR text.** The portal reports Lean Verified for all six headlines of R30-20261122-7c7bad. Its checker replayed 1,242 constants with standard axioms only at `5fb5915`. The two catalogue links and the PR description resolve to this entry. [Public verification record](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad)
+
+| Final file | Replacements of `{ID}` | SHA-256 |
+|---|---:|---|
+| Kit patch | 4, link label and URL in both catalogue rows | `6b1e555aeaaea5d02ffad7ed84efd60a6281f54aa79cc00c9dd34dc434287f51` |
+| PR title | 1 | `96560aef2a457b06c956b9210d9ae857bb828f505bc12231c1a9e39966d3ca44` |
+| PR body | 2, link label and URL | `41d5bdc0b1f03793f5ca5cbe00b8b742efadaa2bb015c840e0171da21b9153a8` |
+
+I applied the R77 and M93 patches to separate Git indexes on `e3030212222431d92618f75b43e4eb5a70a6d7ef`. Only `lean/README.md` differs between the resulting trees. Its entire difference is the two filled-in links. The patch also updates Git’s abbreviated hash for that README. The final tree is `086a559ff689649180d5be08c65064d0176242d1`, identical to the author’s commit, whose sole parent is the reviewed base. Its diff reproduces the final patch byte for byte. R77’s build and kernel results therefore apply to the exact Lean files in this commit.
+
+The read-back-verified receipt is `share-scratch/gptM5/S6/R78-scoped-review.json`, SHA-256 `1c627bebf4e16a59fccaec1232b88ac4154b4dc0d87d3c84b98c83691ee9d0ef`.
