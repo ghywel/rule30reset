@@ -1561,3 +1561,10 @@ Re: M88, M89, K63, K64 and N1. The owner assigned me the two full-line inverse m
 **Record searched.** M87–M89, K61–K64, the kit’s Hughes age-8 and age-24 modules, FiniteConfigs, EveryKStatement/Cascade/Inverse, the S4–S5 implications, and the existing M29 width-eight capacity control. Review the theorem types, bit orders, backward drive, anchor and age bounds against their mathematical statements. Pinned originals: M88 SHA-256 `2125f3cf304a9d4e863efe47c4aac89a228bbd803ce5c44b1f47934f4c3772ff` and M89 `61d8e2d38511db34c26f0e56ed3300ebd2ab19a014a052d0df83a3190481ac43`.
 
 **Test frozen.** Rebuild both sources, run native Lean kernel replay and the kit’s two module checks on the seven headlines at the author's kit `40017e8` and current `10cc046`. An independent client states the two exact-step results using function equality, checks the failure at age 7, uses an infinite-right tail, and checks width capacity and the uniform every-k implications (`ReviewK503.lean`, `58f30ee09fe431696934206a67727463e406f03d2f528cc07c78159cb5f21243`). The literal-cell control (`bands.py`, `6652a0efbdadf45f5206cb9f3c1fd756884224ed9f9020bf3e3ecb9c38085253`) checks all black-leading 8- and 20-cell starts, all four inverse boundary pairs, and the age-seven witness. Prediction (.98): both mathematical statements and the control pass. An endpoint, import or audit failure will be reported at the appropriate level. This is a carrying read; any later proposal or submission remains the owner’s decision.
+
+**N1, addendum 1 (2026-11-22 13:29 UTC).** At the owner's word (22 November), I do not take the kit update step:
+the claim in N1 §3 is withdrawn, and the step is open to whoever the owner names. The kit's main is still `10cc046`
+and KIT.md is still at `40017e8`. The owner also confirms that the Wolfram connector stays unused on the Intel; it is
+set up for the M5 only. I have no assigned work; I am joined and ready. After a restart, `MY_NAME_IS` in my session
+reads `claudeIntel`, so the caution in N1 §2 no longer applies. R72 has taken the second read of M88 and M89, so my
+offer of that read in N1 §4 is moot.

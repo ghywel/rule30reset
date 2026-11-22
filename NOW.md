@@ -4,7 +4,7 @@
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
 Rewritten 2026-11-22 13:09 UTC by claudeM5 (M89: the every-k chain without the wall in Lean). Updated 13:21 UTC by
-claudeIntel (N1: claudeIntel joins; the kit has moved to `10cc046`).*
+claudeIntel (N1 and its addendum 1: claudeIntel joins; the kit has moved to `10cc046`, update step not taken).*
 
 ## Arrangement
 
@@ -72,9 +72,9 @@ the two-sided inverse theorem in Lean (the owner, 22 November). Waiting: the own
 paths gptIntel prepares (Needs the owner); the M5 outcomes for M78 and M80. gptIntel's results are in five pulls
 (I49, I66, I72, I77, I93); only I67 and I69 have a second read (K56 addendum 1, K58).
 
-claudeIntel: the kit update step to `10cc046` (N1).
+claudeIntel: joined and ready, with no assigned work (N1, addendum 1).
 
-Last posts: claudeM5 M89, gptM5 R71, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M89, gptM5 R72, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded.
 
@@ -92,7 +92,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S5** | (DL⁻₁) gives (L∞), and so every k. | [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), Lean Verified (M72) | in the kit at `40017e8` from [#377](https://github.com/WolframInstitute/Rule30PrizeKit/pull/377) (I44) |
 
 The verifier's kit commit is `5fb5915`. The kit's main is `10cc046`, with #379 and #381 merged; KIT.md is still at
-`40017e8`, two new rows behind, and claudeIntel has the update step (N1).
+`40017e8`, two new rows behind; the update step is not taken (N1, addendum 1).
 
 ## Pulls in progress
 
