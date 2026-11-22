@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 09:05 UTC by claudeCloud (K59: rotation 6, and this file brought up to date at the owner's word).*
+Rewritten 2026-11-22 11:07 UTC by claudeCloud (K61: K50.3 and K50.4 opened for their preliminary rounds; the sieve is running, K60).*
 
 ## Arrangement
 
@@ -16,7 +16,8 @@ Rewritten 2026-11-22 09:05 UTC by claudeCloud (K59: rotation 6, and this file br
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** none on any host (the owner, 22 November). Four outcomes are not recorded yet: on the Intel,
+- **Running jobs:** on the cloud host, the sieve's judge (K60) and the first tests of K50.3 and K50.4 (K61). None on
+  the M5 or the Intel (the owner, 22 November), where four outcomes are not recorded yet: on the Intel,
   R6's centre column to 2^27 (last recorded c(2^26) = 1, I66) and M9's 36-column automaton and entropy (I61, I70);
   on the M5, M78's 36-column run and M80's three instances of runs of five.
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
@@ -27,9 +28,6 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only.
 
-- **Choose among the remaining new pulls.** K50.3 and K50.4 await a decision.
-- **Choose M9's next test** (K56). The sieve run to the end on the cloud host (recommended); a hand reason for the
-  (5, 1) law; or that law to the kit by M85's route, which waits on issue #380.
 - **Say what becomes of gptIntel's overnight threads** (listed under Open threads): which become pulls, who reads
   each, and whether any is to be prepared as a submission. gptIntel names two candidates: the seven-lock prefix
   packet (I52) and the sharp three-gap resets (`research/white-gap-mixtures/cold-reset.md`, no post yet).
@@ -101,12 +99,12 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 |---|---|---|---|---|
 | K5 | 19 Nov, claudeCloud | The resolution law: how the last catch depends on source period P | **In progress** (K29, read in R61). The first-excursion census agrees closely with the fair-input model. Its measured tail is about 1.36 κ^x, κ ≈ 0.847810. A uniform bound remains open. Next test: compare the trace restricted to doubled inputs with the census before using the mixing rate for a pooled bound. Carries K2’s conjecture on white returns. | no |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
-| M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | **In progress** (K47, M79, M81, M85, K54, K56; outside: K52, [R69](research/m9/exterior-grammars.md)). Inside, the gate settles within 50 samples of entry to a fixed, structured process and stays there to 10^7 ticks (K56). Its laws are read by SAT, each certified by LRAT: at most three closed runs of four, and four never after two samples (M81; in Lean from one CNF, M85, [read](research/m9/runs-of-four-review.md) in R71); 19 of the 81 quadruples over runs 4–6 by delay 20 (K54, I65); the pair (5, 1) from delay 12, (3, 1, 4) from 9, (10, 1, 5) from 20 and (5, 5, 5, 6) from 39 (K56, I66, I75). The column ladder misses the short ones: (5, 1) needs 37 columns (I70). No rule behind the table yet. Absence from real rows is not a law: (11, 1) never occurs and is SAT at delay 80. Outside, X and Y have their grammars to 43 columns. Next test, the owner to choose: the sieve run to the end; a hand reason for (5, 1); the kit route, which waits on issue #380. | no |
+| M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | **In progress** (K47, M79, M81, M85, K54, K56; outside: K52, [R69](research/m9/exterior-grammars.md)). Inside, the gate settles within 50 samples of entry to a fixed, structured process and stays there to 10^7 ticks (K56). Its laws are read by SAT, each certified by LRAT: at most three closed runs of four, and four never after two samples (M81; in Lean from one CNF, M85, [read](research/m9/runs-of-four-review.md) in R71); 19 of the 81 quadruples over runs 4–6 by delay 20 (K54, I65); the pair (5, 1) from delay 12, (3, 1, 4) from 9, (10, 1, 5) from 20 and (5, 5, 5, 6) from 39 (K56, I66, I75). The column ladder misses the short ones: (5, 1) needs 37 columns (I70). No rule behind the table yet. Absence from real rows is not a law: (11, 1) never occurs and is SAT at delay 80. Outside, X and Y have their grammars to 43 columns. Now: the sieve run to the end on the cloud host, 98 candidates frozen in K60 (the owner, 22 November). After it: a hand reason for (5, 1); the kit route waits on issue #380. | no |
 | M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
 | K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52, [R69](research/m9/exterior-grammars.md)). Proved for every ether cut (I46 read) and computed through support width 26. A counterexample needs one finite right half sustaining an aperiodic gate in X or Y. The finite-window grammars now constrain that realization question. Beside it, unread: gptIntel's prefix criterion for the period-seven lock and a deadline for the true centre (I49 to I64, Lean in `research/k50_1/`). | no |
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. I46 checked the exclusion in Lean and exhibited a finite GE2 trace with 5,2,2,5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
-| K50.3 | 21 Nov, claudeCloud | One inverse theorem for every wall: does the chain for (T) need the white wall? | **Open,** not started. First test: read where the Lean uses the wall; check the ages 8 and 24 beside four other walls. Relates to the parked M29. | no |
-| K50.4 | 21 Nov, claudeCloud | Every white triangle has one family tree (Quint's backward cascade) | **Open,** not started. First test: the cascade to 40 stages, the seed's large triangles matched to it, and a picture. A long shot at the density bound. | no |
+| K50.3 | 21 Nov, claudeCloud | One inverse theorem for every wall: does the chain for (T) need the white wall? | **Open,** preliminary round under way on the cloud host (the owner, 22 November). The reading is done: only narrow rows touch the wall (K61). The exact test of the ages beside every wall is frozen in K61. Relates to the parked M29. | no |
+| K50.4 | 21 Nov, claudeCloud | Every white triangle has one family tree (Quint's backward cascade) | **Open,** preliminary round under way on the cloud host (the owner, 22 November). The cascade to 40 stages and the seed's triangles to 10^5 rows are frozen in K61. A long shot at the density bound. | no |
 
 ## Parked
 
