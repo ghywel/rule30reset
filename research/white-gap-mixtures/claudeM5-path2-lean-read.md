@@ -147,3 +147,62 @@ If the owner takes path 2 forward as S8:
   - the packet;
   - the release read;
   - the owner's word.
+
+## Addendum: the compact S8 source (I118, I119), read in M108
+
+gptIntel cut the certificate to one 507,882-byte `Rule30Submission.lean` (`2ece6aa9…`), which holds the factor and the
+ten-word support. Its packet, `I119/s8-compact-certificate.zip` (`15dfbe50…`), also carries a four-module kit form.
+The packet's copy of the source is byte for byte the store's.
+
+**The checks on the M5.** The single file was compiled from scratch with `--root`, then the stock `Check.lean` ran on
+the nine headlines.
+
+| Kit revision | Build | Replay | Peak | Result |
+|---|---|---|---|---|
+| verifier pin `5fb5915` | 25 s | 22 s | 3.7 GiB | pass: nine headlines, 885 constants, 392 declarations, no new axioms |
+| kit main `b5b9dbd` | 21 s | 21 s | not measured | the same |
+
+Both receipts equal the packet's `checks/pin.json` and `checks/main.json` in every field. The same work took 172 s
+and 191 s on the Intel (I119), so the portal's time depends on its own hardware.
+
+**What changed against the packets read above.**
+- **The statements.** All nine headline statements are word for word those of the M105 packets. The
+  `Rule30Submission` theorems are one-line wrappers.
+- **The definitions.** Every definition they rest on is identical: `stamp`, `locate`, `clock`, `Fitted`, `blocks`,
+  `letters`, `HasCyclicTriple`, `Forces`, `word`, `known`, `Drive`, `driver`, `Low`, `Driven`, `row`, `low`, `Tr`,
+  `atSet`, `samples` and `Physical`.
+- **The new lemma.** The stored per-tick frames are gone.
+  - `images src t` iterates the kit's `fimage 19`, and `scanImages` checks the destination inclusion at every legal
+    gap.
+  - `routeByImage` proves `Physical src h dst` from that check, through the same `frame_route`, with the kit's
+    `fimage_mem` for either exterior bit.
+  - So every ordinary history is still inside the graph, and the layers are now computed by the kernel instead of
+    stored.
+- **The scan.**
+  - There is no `native_decide`, `ofReduceBool`, `sorry`, axiom, `implemented_by` or `extern`.
+  - The one elaborator, `stripMask%`, turns dictionary-coded hex into number literals.
+  - The comments carry no internal references.
+
+**Before release: the namespaces.**
+- **Internal labels.** Outside the nine headlines, the source declares its theorems in namespaces named for a worker
+  and for internal posts: `IntelRequiredTriple` (141 uses), `IntelI80`, `IntelI79`, `IntelI66NoDiamond`,
+  `IntelEdgeDiamond`, `IntelBinary15`, `IntelPeriodBound` and `IntelPackedNatData`. METHOD §13 and the kit's rules
+  keep such labels out of public files.
+- **Kit namespaces in the portal file.** It also declares into `Ruliology.CellularAutomata.Rule30RunFamilies`,
+  `Rule30SparseWarm`, `GapFiniteFamily`, `Rule30GapParity` and `Rule30MixedLanguage`, which are kit namespaces.
+  S7 moved its equivalents under `Rule30Submission` (R80). The same here would keep the portal file from claiming
+  names in the kit's tree.
+- **The kit form.** It has the same labels in all four modules. Its logic module declares into ten namespaces,
+  where kit modules use their own `Ruliology.CellularAutomata.Rule30<Name>`.
+- **No proof changes.** Renaming is mechanical, and the receipts would change only in the names.
+
+**For the notebook.** S7's essay ended with a `KernelCheck` cell, which replays the whole module again. Here that
+replay is 22 s on the M5 and 82 s on the Intel, on top of the build inside the notebook and the verifier's own build
+and replay. Leaving it out makes the four-minute limit easier to meet; the verifier replays the module anyway. If
+the check still runs out of time, the portal records `error`, and a maintainer reruns it without the limit.
+
+**Not checked here:**
+- the negative controls (`controls/Reject.lean`);
+- the width-16 witness;
+- the kit form's build;
+- the equality of the 46 masks with I85's. The theorem does not depend on that equality.

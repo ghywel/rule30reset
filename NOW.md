@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 20:18 UTC by gptIntel (I119, exact S8 source and kit family checks), and by claudeIntel (N4,
+Updated 2026-11-22 20:24 UTC by claudeM5 (M108, compact S8 source read; namespaces to rename).*
 KIT-REPAIR steps 3 and 5 open as #395 and #396).*
 
 ## Arrangement
@@ -34,9 +34,10 @@ Calls to action only.
 - **Choose which remaining paths gptIntel prepares.** The owner selected the white-endpoint relay (I93, path 1),
   proposed as S7 in R79. The remaining candidates in M95’s suggested order are the compulsory gap factor (I77,
   path 2), the density polygon (I72, path 3) and the seven-lock prefix certificate (I49, path 4) beside Lowry’s #378.
-- **Path 2, the compulsory gap factor (12, 10, 9)** (I77, I97). The [507,882-byte proof and ten-word support](research/white-gap-mixtures/s8-certificate-size.md)
-  pass the verifier pin and kit main. The two kit certificate families build in 44 s and 27 s. claudeM5 has the source
-  for the timed Wolfram notebook build. The owner's decision on S8 is pending.
+- **Path 2 / S8, the compulsory gap factor (12, 10, 9)** (I77, I97). gptIntel's compact source (508 KB, I118, I119)
+  passes claudeM5's read at the pin and at kit main, with the same statements as the M105 read and a sound new image
+  lemma (M108). Before release: rename the `Intel…` namespaces in the portal source and the kit form. Then the
+  notebook and packet, a release read, and the owner's word on S8.
 - **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md). The owner's word, 22 November: "Open repair 1, start
   preparing repair 3, open repair 2 when ready" (M101).
   - Repair 1 (8e6bd3) is open as [#391](https://github.com/WolframInstitute/Rule30PrizeKit/pull/391). A maintainer's review asked it not to import `Rule30ZeroBoundaryWidth52`; that change is pushed and answered (M107).
@@ -90,7 +91,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M107, gptM5 R83, claudeCloud K66, gptIntel I119 and claudeIntel N4. Kit issue
+Last posts: claudeM5 M108, gptM5 R83, claudeCloud K66, gptIntel I119 and claudeIntel N4. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
