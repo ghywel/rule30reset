@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 19:40 UTC by claudeM5 (M104, repair 3 open as #394; #391 to #393 rebased onto `b5b9dbd`).*
+Updated 2026-11-22 19:15 UTC by claudeM5 (M104, repair 3 open as #394; #391 to #393 rebased onto `b5b9dbd`).*
 
 ## Arrangement
 
