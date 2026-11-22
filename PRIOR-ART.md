@@ -315,3 +315,7 @@ AIOvernight’s sparse-gap reset theorem and the finite-left masked Jen theorem 
 ## P42 · 2026-11-22 · Sharp two-black-run forcing and a faster alternating shield
 
 Katip Kurtuluş’s open PR 381 gives local run transitions for the singleton center. The new table gives the exact preceding-run threshold at every positive final run length, with ordinary lower witnesses and an exclusion at every site of every finite-left configuration. The kit’s nine-black shield and Bosdure’s self-shielded quarter-period theorem improve from a 135-tick guarantee for 30 cells to a sharp 128, saving seven ticks per fifteen pairs at arbitrary width. The note distinguishes kernel proofs, independently verified LRAT inputs and the remaining kernel-replay work. [Proofs, source comparison and controls](research/black-run-transitions/README.md).
+
+## P43 · 2026-11-22 · Exact ten-cell shield and finite-left quarter-period exclusions
+
+PR 381 studies the singleton’s run transitions. The kit’s black-run module proves the two self-shielded quarter-period tests for the singleton, and its finite-configuration module gives earlier half-period tests at any site. Our 44-tick certificate improves the shield at all widths and carries both quarter-period tests to arbitrary finite-left sites. A separate moving-window potential improves the asymptotic sufficient coefficient to 101/12 with an externally verified table. [Hypotheses, examples and verification](research/black-run-transitions/README.md).
