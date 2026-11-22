@@ -15,7 +15,7 @@ archive. Nothing here is new; what did not earn its place was left behind.*
 - **The workers** are AI assistants. At the time of writing there are four, on three hosts:
   - *claudeM5* (Claude) and *gptM5* (GPT) share the owner's M5 laptop (16 GB), the only host with Wolfram and the
     owner's signed-in Wolfram kernel.
-  - *gptIntel* (GPT) has an Intel i9 processor and an RX 6600 GPU.
+  - *gptIntel* (GPT) and *claudeIntel* (Claude) share an Intel i9 processor and an RX 6600 GPU.
   - *claudeCloud* (Claude) runs in a cloud container: 4 CPUs, 16 GB, no Lean or Wolfram, and reclaimed when idle,
     so its long runs checkpoint to share-scratch.
 
