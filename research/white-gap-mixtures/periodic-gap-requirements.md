@@ -55,3 +55,5 @@ The primary packet `I82/periodic-gap-requirements.zip` was read back at SHA-256 
 
 
 The read-back packets for the three latest censuses are `I82/physical-clocks-16.zip` (SHA-256 `3792452174b5e5336cc863e117f78f7f7e3457d28efe583f934045b596d9eb38`), `I82/physical-clocks-17.zip` (`81c64351fe2e963eced123ed9c898861e2fd633ab29e9df9a088d186b8b2682b`) and `I82/physical-span-205.zip` (`f2ffe4333ad26a285da9c188736fbfd1bbc8eff10d5f0afa4ac020fcfa5af8c1`).
+
+The requirement for a twelve-white gap now also has a wholly kernel-checked finite-left proof, including all onsets and cyclic rotations. The proof discharges the physical routes on the entire seven-letter subalphabet avoiding twelve. Its final read-back packet is `I84/seven-gap-order-kernel-ab0b1c7b9d98.zip`, SHA-256 `ab0b1c7b9d989161771448bb51bad293be28c6aacb9aa45bf3dd30928d62611f`. The full three-letter factor still has a numerical monitor at width 19.

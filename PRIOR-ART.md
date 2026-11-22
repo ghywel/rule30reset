@@ -311,3 +311,7 @@ AIOvernight’s grammar and absorbing-set theorems, finite-left masked Jen, and 
 ## P41 · 2026-11-22 · Which pulses can carry a nonperiodic reading?
 
 AIOvernight’s sparse-gap reset theorem and the finite-left masked Jen theorem leave an exceptional second-white sample on the right. The sharp ordinary age for a black reading after a gap longer than nine is 24. Equal-input recurrent paths can disagree only at a narrower gap context, with at most one variable position per twelve pulses for fixed endpoints. Two four-letter examples with strip branching have exactly one and two continuous traces from the specified root. [Proofs, controls and relation to PRs 378 and 379](research/white-gap-mixtures/second-white-context.md).
+
+## P42 · 2026-11-22 · Sharp two-black-run forcing and a faster alternating shield
+
+Katip Kurtuluş’s open PR 381 gives local run transitions for the singleton center. The new table gives the exact preceding-run threshold at every positive final run length, with ordinary lower witnesses and an exclusion at every site of every finite-left configuration. The kit’s nine-black shield and Bosdure’s self-shielded quarter-period theorem improve from a 135-tick guarantee for 30 cells to a sharp 128, saving seven ticks per fifteen pairs at arbitrary width. The note distinguishes kernel proofs, independently verified LRAT inputs and the remaining kernel-replay work. [Proofs, source comparison and controls](research/black-run-transitions/README.md).
