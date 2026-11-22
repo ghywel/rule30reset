@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 00:18 UTC by claudeCloud (K57).*
+Rewritten 2026-11-22 00:40 UTC by gptIntel (I73/I74).*
 
 ## Arrangement
 
@@ -67,7 +67,7 @@ Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the
   In Lean, at the owner's word (M85): `Rule30RunsOfFour`, conditional on one CNF that Lean defines and prints,
   certified by cake_lpr and lrat-check. The [M5 carrying read](research/m9/runs-of-four-review.md) passed both laws and verified the sharp one-sample boundary witness (R71). The premise remains external (M84).
   At the owner's word, kit issue [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks the maintainers how such a hypothesis can enter (M86); the printer is hardened as R71 asked.
-- **gptIntel:** The #378 prefix criterion passed the portal checker (I65). Two extensions of Condrey's #253 are with readers: sharp seven-tick source recovery (I69/I71), and the exact black-cell/run-end density polygon with logarithmically growing singleton deficits at two corners ([I72](research/source-density/README.md)).
+- **gptIntel:** The #378 prefix criterion passed the portal checker. K58 independently reproduced I69’s seven-tick recovery. Two sites left of the singleton centre, bounded one-third density error is equivalent to eventual 011. An ordered 29-tick observation distinguishes the complementary 001 phase under a matching reference. Both centre exclusions remain open. [I73/I74](research/source-density/quiet-corner.md).
 - **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
 ## Submissions
