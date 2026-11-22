@@ -4,28 +4,29 @@ public import Ruliology.CellularAutomata.Rule30Diagonals
 public import Ruliology.CellularAutomata.Rule30ClockNearSquares
 
 /-!
-# A repeat's white run cannot lie in the settled band of left diagonals
+# A length bound for a repeat's white run inside a settled band
 
 Jen's clocked bound in window form (`Rule30ClockNearSquares.theorem_A'`; `Rule30FiniteMaskedJen.window_jen_col` for
 any configuration with a leftmost black cell) says: if columns `i` and `i + 1` carry equal blocks of length `n` at
 times `a < a'`, and the leftmost black cell is `L` cells left of column `i`, then `n ≤ L + a'`. The reason is a
 white run. Row `a'` is white at the distances `L + a + 1 … n - 1` left of column `i`
 (`Rule30ClockNearSquares.theorem_A3_white`). Read as left diagonals `D x0 e k t = evol x0 t (e - t + k)` from the
-moving edge `e`, these are the diagonals `L + a' - n + 1 … a' - a - 1` at time `a'`. This module shows that the run
-cannot lie in the band of diagonals that has settled.
+moving edge `e`, these are the diagonals `L + a' - n + 1 … a' - a - 1` at time `a'`. If these diagonals lie in the agreeing band, the white run can have length at most
+`2 * P - 1`.
 
 * `lemma_B3_sharp`, `lemma_B3`: if the diagonals `0 … M` agree at times `t - P` and `t` (`1 ≤ P ≤ t`), a white run
   `g + 1 … M'` of row `t` inside them (`M' ≤ M`) whose left neighbour `g` is black has length at most `2 * P - 1`.
 * `theorem_A4_sharp`, `theorem_A4`: if, in addition to the block, the diagonals `0 … M` agree at times `a' - P` and
-  `a'`, with `1 ≤ P ≤ a'` and `M < a' - a`, then `n ≤ L + a' - M + 2 * P - 1`. The gain over `n ≤ L + a'` is
-  `M - 2 * P + 1`: a settled band of width `M` pushes a repeat's white run out, up to a margin of `2 * P - 1`.
+  `a'`, with `1 ≤ P ≤ a'` and `M < a' - a`, then `n ≤ L + a' - M + 2 * P - 1`. When `M ≥ 2 * P`,
+  this improves `n ≤ L + a'` by `M - 2 * P + 1`.
 * `center_A4_sharp`, `center_A4`: the same for the single seed, with the center column `Rule30Jen.cell t 0` and the
   diagonals `Rule30Diagonals.D`, and `L = 0`: `n ≤ a' - M + 2 * P - 1`.
 
 **Method.** Lemma B3 follows the white run back in time. One step back, a white run bounded on the left by a black
 cell is either older (white two cells wider, with a black cell two further left) or newborn (black on
-`g - 1 … M' - 2`, and black at `M' - 1` or `M'`) (`back`). Going forward, a white run loses cells only from its left
-side, two a step (`fwd`). If the run were older at every one of the `P` steps back, the black cell `g` would be white
+`g - 1 … M' - 2`, and black at `M' - 1` or `M'`) (`back`). Going forward, the portion starting two cells farther right at each step stays
+white up to the original right endpoint (`fwd`). Assume the run has length at least `2 * P`. If it were older at all
+`P` steps back, the black cell `g` would be white
 at time `t - P`, against the agreement. If it was born `s0 + 1` steps back, the run carried forward from time
 `t - P` covers both `M' - 1` and `M'` at the birth time, one of which is black. Theorem A⁗ applies Lemma B3 to the run
 of Theorem A‴. Its nearest black diagonal on the left exists because diagonal `0`, the edge, is black.
@@ -119,7 +120,7 @@ theorem back (x0 : Int → Bool) (e g M' : Int) (τ : Nat) (hgM : g + 1 ≤ M') 
         rw [c, ih (k + 1) (by omega) (by omega)]; rfl
     exact ⟨fun k hk1 hk2 => downB (M' - 2 - k).toNat k (by omega) hk1, top⟩
 
-/-- Forward: a white run only loses cells from its left side, two a step. -/
+/-- The suffix starting two cells farther right per tick stays white up to the original right endpoint. -/
 theorem fwd (x0 : Int → Bool) (e g M' : Int) (τ0 : Nat) (hw : ∀ k, g + 1 ≤ k → k ≤ M' → D x0 e k τ0 = false) :
     ∀ r : Nat, ∀ k, g + 1 + 2 * r ≤ k → k ≤ M' → D x0 e k (τ0 + r) = false := by
   intro r

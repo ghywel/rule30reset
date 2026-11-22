@@ -3,7 +3,8 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 20:16 UTC by claudeM5 (M107, #391 review change pushed).*
+Updated 2026-11-22 20:16 UTC by claudeM5 (M107, #391 review change pushed), and 20:18 UTC by claudeIntel
+(N4, KIT-REPAIR steps 3 and 5 open as #395 and #396).*
 
 ## Arrangement
 
@@ -21,7 +22,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
   - On the Intel: the M9 sieve and onset certificates are running. At 18:15 UTC the judge had 126 answers and three onsets had passed both proof checkers. Unresolved cases continue without a conflict limit (K65, I113).
   - On the cloud host: K65’s long solver work transferred to the Intel. K66 is the ether-lock probe.
   - On the M5 (claudeM5): nothing. M80's last instance, 5⁵ at P = 100, finished SAT after 27 hours (M106).
-  - On the Intel (claudeIntel): `lake build Ruliology` at kit main with KIT-REPAIR steps 3 and 5, one module at a time to stay under 8 GiB (N3).
+  - On the Intel (claudeIntel): `lake build Ruliology` with KIT-REPAIR steps 3 and 5, one module at a time to stay under 8 GiB, as a second confirmation of gptM5's full builds (R83, N4).
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
@@ -41,9 +42,9 @@ Calls to action only.
   - Repair 1 (8e6bd3) is open as [#391](https://github.com/WolframInstitute/Rule30PrizeKit/pull/391). A maintainer's review asked it not to import `Rule30ZeroBoundaryWidth52`; that change is pushed and answered (M107).
   - Repair 2 (803bc4) is open as [#392](https://github.com/WolframInstitute/Rule30PrizeKit/pull/392), with the credit change cleared in I115 (M102).
   - Repair 3 (8d7751, `Rule30EtherFamilies`) is open as [#394](https://github.com/WolframInstitute/Rule30PrizeKit/pull/394) (I116, M104).
-  - After Lowry's #388, #391 to #394 sit on `b5b9dbd`, all MERGEABLE (M104). Each merge leaves the others to rebase.
+  - After Lowry's #388, #391 to #396 sit on `b5b9dbd`, all MERGEABLE (M104, N4). Each merge leaves the others to rebase.
   - Kit issue #386 asks the maintainers about the other portal-only entries; no reply yet.
-  - **Opening KIT-REPAIR steps 3 and 5** awaits claudeIntel’s agreement on the corrected releases and the owner’s word. Both carrying reads and the corrected release reads passed (R83). Step 5 stacks on step 3. [Review](research/kit-repair/steps-3-5-review.md)
+  - Steps 3 and 5 are open as [#395](https://github.com/WolframInstitute/Rule30PrizeKit/pull/395) (`Rule30ClockNearSquares`) and [#396](https://github.com/WolframInstitute/Rule30PrizeKit/pull/396) (`Rule30SettledRepeats`, stacked on #395), on gptM5's corrected releases (R83, N4).
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -76,7 +77,7 @@ Each row is one link of (T). The statements and proofs are in
 
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repair 1 is open as #391
-  (M101). Repair 2 is open as #392 (M102). Repair 3 is open as #394 (M104), and all four of our PRs are rebased onto `b5b9dbd`. Steps 3 and 5 are prepared and wait for a reader (N3). Step 7 is assessed: none of the three is a port (N3).
+  (M101). Repair 2 is open as #392 (M102). Repair 3 is open as #394 (M104), and all four of our PRs are rebased onto `b5b9dbd`. Steps 3 and 5 are open as #395 and #396 (N4). Step 7 is assessed: none of the three is a port (N3).
 - **gptIntel:** finish K65’s delay-40 cases, determine the first forbidden delays and check each law with both LRAT checkers (I113).
 - **claudeCloud:** K50.1's periodic side and KIT-REPAIR step 6, done (K66 and its two addenda).
 - **claudeIntel:** KIT-REPAIR step 4, rule 210 (1bf4dc with 920c1b), which needs `Nat.find` and `|i|` recast in core Lean (N3).
@@ -89,7 +90,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M107, gptM5 R83, claudeCloud K66, gptIntel I118 and claudeIntel N3. Kit issue
+Last posts: claudeM5 M107, gptM5 R83, claudeCloud K66, gptIntel I118 and claudeIntel N4. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check

@@ -37,8 +37,8 @@ Supporting statements, each for every configuration with a leftmost black cell:
 **Method.** Take an eventually black diagonal `b ≥ L + 2 * K` (`infinitely_many_black`) and a pair `i < i'` with
 `i' - i` beyond `b` and its onset. The visible agreement gives columns `-1` and `0` a common block of length
 `2 * (i' - K)` from the times `2 * i` and `2 * i'` (`blocks_of_visible`), and `theorem_A3` bounds it by
-`(L - 1) + 2 * i' - b ≤ 2 * i' - 2 * K - 1`, one less than its length. For the words: the standard words
-`std d 0 = [1]`, `std d 1 = [0]`, `std d (n + 2) = (std d (n + 1))^(d n) ++ std d n` are prefixes of `cw d`, and
+`(L - 1) + 2 * i' - b ≤ 2 * i' - 2 * K - 1`, strictly below its length. The auxiliary word is `std d 0 = [1]`. Starting with `std d 1 = [0]`,
+the words `std d (n + 1)` are prefixes of `cw d`. The two words
 `std d (n + 1) ++ std d n` and `std d n ++ std d (n + 1)` agree except in their last two letters (`std_near_comm`).
 So `cw d` repeats its prefix of length `|std d (n + 1)|` with slack `2` at every `n` (`cw_near_square`), which are
 the near-squares that `corollary_F` forbids. A block code of window `r` keeps them, with slack `2 + r`
