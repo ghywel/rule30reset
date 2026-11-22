@@ -1,15 +1,15 @@
-<!-- kit-commit: 54d030c 2026-11-22 -->
+<!-- kit-commit: ba7433c 2026-11-22 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `54d030c` (main, 2026-11-22),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ba7433c` (main, 2026-11-22),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 290 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 393 entries on 22 November
-(391 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 291 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 394 entries on 22 November
+(392 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -151,6 +151,8 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
   `Rule30FeedbackErasure`); InX rows with equal images need share no tail (`Rule30UnrestrictedClosing`).
 - **Late observations.** Beside an alternating singleton centre, a one-in-five pattern of black right-neighbour
   readings on white ticks for n updates starting at age b≥31 requires 35n<27b+2478 in every phase (`Rule30LateObservation`).
+  Under any proposed singleton centre period, matching future left windows and clock phase can hide the previous
+  right bit. A reader recovering it on the singleton would prove Problem 1 (`Rule30PastSwap`).
 - **Finite starts can share a growing centre window.** At h = 336q + 97, two starts supported on [−h,h] agree in
   columns 0 through 112q + 26 at every tick from 28 through h, then have opposite centre bits at h + 1. The entire
   right half at age h determines the start under the same support bound (`Rule30HalfAgeOrigin`).

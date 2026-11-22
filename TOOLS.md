@@ -27,7 +27,8 @@ else is fine if your sandbox can run it".
 3. **A substitute needs the owner's agreement.** The post then names it as a substitute and says why.
 4. **An output has the status of the check behind it** (METHOD §4). A solver's answer without a certificate is
    COMPUTED. A checked certificate or a Lean kernel check is a machine proof of exactly what it states.
-5. **State the limits before a substantial run**: wall time, memory, disk (§4, "Limits").
+5. **Plan substantial runs by host** (§4, “Limits”). Record the question, completion condition, checkpoint location
+   and estimated resource use. Apply the owner's instructions for the host.
 6. **Keep this page true.** When a tool is installed, removed or found missing, update §3 in the same commit, and
    confirm a new install with a known-answer test.
 7. **A task that §4 does not list** gets a row before the work is reported, so the next worker finds it.
@@ -45,7 +46,7 @@ else is fine if your sandbox can run it".
 | Host | Workers | Suited to | Limits |
 |---|---|---|---|
 | **M5 laptop**: 10 cores, 16 GiB unified memory shared by CPU and GPU | claudeM5, gptM5 | The Wolfram side (§6); current-kit Lean and portal builds; SAT with checked certificates; Metal on the M5 GPU | Runs only while the owner has a session open; memory is shared with the owner's other applications |
-| **Intel**: i9, 8 cores, 16 threads, 16 GiB; RX 6600 with 8 GiB of its own | gptIntel | Lean 4.35.0, SAT with checked certificates, and CPU and GPU compute. Long scheduled blocks when the owner turns them on | No Wolfram, by the owner's decision (§6). Runs under Windows since it joined here (ledger I1); placego's inventory was taken under macOS |
+| **Intel**: i9, 8 cores, 16 threads, 16 GiB; RX 6600 with 8 GiB of its own | gptIntel, claudeIntel | Lean 4.35.0, SAT with checked certificates, and long CPU and GPU runs on Windows or Ubuntu in WSL 2 | Approved runs continue to their stated result (§4). Wolfram is on the M5 (§6). |
 | **Cloud container**: 4 CPUs, 15 GiB, Ubuntu 24.04 | claudeCloud | Exact simulation and censuses in C and Python; SAT replication; Docker; pages checked in a headless browser; long reads, reviews and the record | No Lean, no Wolfram, no GPU. Reclaimed when idle: an install lasts only if the environment's setup script carries it (§5), and long runs checkpoint to share-scratch |
 
 No worker and no host is set aside for a specialism (METHOD §1). The hosts differ only in what they can run.
@@ -106,10 +107,13 @@ No worker and no host is set aside for a specialism (METHOD §1). The hosts diff
 - **The M5 is the owner's working laptop,** and its 16 GiB is shared with everything else on it. The owner's caps of
   4 November 2026: a run may use at least 4 GiB, and up to 8 GiB for Lean and notebook builds; stop a run that pushes
   the machine into swap.
-- **The Intel, Lean builds:** up to 8 GiB (the owner, 4 November 2026).
+- **Intel compute** (owner, 22 November 2026): let an approved run finish the question it was started to answer.
+  Leave artificial time, CPU, memory, disk, conflict and state-count limits unset. Estimate resources to plan
+  concurrency and checkpoints. If a transferred run reports UNKNOWN at an inherited limit, retain its evidence
+  and continue the unresolved cases uncapped. Checkpoint and resume across sessions or genuine interruptions.
 - **Kit modules** should build in about a minute and under 4 GB (METHOD §10).
 - **Cloud:** 4 CPUs and 15 GiB in all; checkpoint anything over a few minutes (METHOD §10).
-- **Use the limits the tool itself has**: a solver's time limit, the shell's `timeout`. State them in the post.
+- Apply a tool timeout only where the owner or the execution service requires one. Record the affected host or service.
 
 ### CPU threads or the GPU
 

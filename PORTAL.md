@@ -4,7 +4,7 @@
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
 only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 18:17 UTC (394 entries)
-and kit main `54d030c` (I108, K66). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+and kit main `ba7433c` (I114, K66). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
@@ -27,8 +27,8 @@ and kit main `54d030c` (I108, K66). Find new portal-only entries with `python3 t
 |---|---|
 | Missed | 10 |
 | Port | 8 |
-| Pending | 2 |
-| Check | 5 |
+| Pending | 3 |
+| Check | 4 |
 | Covered | 7 |
 | Below the bar | 26 |
 | All | 58, of them 25 ours |
@@ -65,7 +65,7 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (2)
+## Pending (3)
 
 In an open kit pull request. Moves out of this file when it merges.
 
@@ -73,8 +73,9 @@ In an open kit pull request. Moves out of this file when it merges.
 |---|---|---|---|---|---|---|
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261120-2a993b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-2a993b) | 2026-11-20 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: K1 collapses to a 16-phase minimum through width 53,208, and the inverse ticks hold unconditionally through k = 25. | Open kit PR #371. | S |
+| [R30-20261122-32dbbe](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-32dbbe) | 2026-11-22 | David Condrey; OpenAI Codex (GPT-6) | Lean Verified, Human Verified | In disjoint four-observation blocks, the total absolute charge is at most 14 per eroding white gap and at most 14 times the length of any list of gaps. | [Open kit PR #390](https://github.com/WolframInstitute/Rule30PrizeKit/pull/390). The remaining signed contribution for the singleton is open. | S |
 
-## Check (5)
+## Check (4)
 
 Not decided from the abstract and headlines: needs a source read.
 
@@ -84,7 +85,6 @@ Not decided from the abstract and headlines: needs a source read.
 | [R30-20261029-23ac1b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-23ac1b) | 2026-10-29 | Eric Elbaz (Tensorbend.ai) | Lean Verified, Human Verified | Elbaz: if the column beside the centre is eventually black, its deviation from the alternating reference vanishes above 8(s/2 + 1) + 2. So a centre white on its finitely many defects reconstructs an infinite left half. | Possibly a kit-worthy Q01-type statement. Read the hypotheses against Rule30ZeroBoundary. | A |
 | [R30-20261108-508c6c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-508c6c) | 2026-11-08 | h3artfield; Cursor Agent (Composer) | Lean Verified | h3artfield: every Y < 2^52 dies within size Y + 4 steps of G, and Q01 is equivalent to Open131072Exit. | The equivalence would be a reformulation of Q01. Not Human Verified, and the portal has no separate Lean file. | A |
 | [R30-20261108-a0fd36](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-a0fd36) | 2026-11-08 | h3artfield; Cursor Agent (Composer) | Lean Verified, Human Verified | h3artfield: the size of G grows by 2 per odd step, and first_even Y ≤ size Y + 4 for every Y would give Q01 (`Q01_of_size_add_four`). | The kit's Rule30RecognizableBarrier row cites it only for an observed sharpness. Is the reduction in the kit? | A |
-| [R30-20261122-32dbbe](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-32dbbe) | 2026-11-22 | David Condrey; OpenAI Codex (GPT-6) | Lean Verified, Human Verified | Condrey (today, Problem 2): group the centre observations in blocks of four. The signed contribution of one eroding white gap to the centre white-pair count, summed inside each block and then in absolute value across blocks, is at most 14 for every width, depth, horizon and alignment (`birth_packet_budget`); for a finite list of gaps, at most 14 times its length (`family_packet_budget`). The abstract adds a packing error of 224 T^(2/3) for the singleton, and says the remaining signed contribution is open. | New and unread beyond the abstract (K66). It builds on Rule30AgedLeftDiagonals and Rule30CenterCylinders, and its author usually sends to the kit. It bears on K50.4, the white triangles. | A |
 
 ## Covered (7)
 

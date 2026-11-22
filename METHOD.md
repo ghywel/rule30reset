@@ -47,7 +47,8 @@ archive. Nothing here is new; what did not earn its place was left behind.*
 
 A worker on a long, hard problem has signals that act like intuition. Give them a channel: **name the signal when it
 arises, act on it within a fixed budget, and record afterwards whether it was right.** A feeling chooses where to look
-and how long to persist. It never upgrades the status of a claim.
+and how long to spend following a lead. Those block budgets govern a worker's attention. An approved Intel
+computation continues across blocks until its stated completion condition. A feeling never upgrades the status of a claim.
 
 | Signal | Sounds like | What it earns |
 |---|---|---|
@@ -76,8 +77,9 @@ and how long to persist. It never upgrades the status of a claim.
   version, and record the tip. Only evidence tips it.
 - **Loops of a kind.** Two refuted candidates of the same kind is a loop, whatever the rules say. The next block must
   differ in kind.
-- **Wall-limits.** An enumeration that goes further and decides nothing is more dangerous than a loop. Before any
-  enumeration write the yes or no it answers; count before searching; a resource cutoff is UNKNOWN, never a negative.
+- **Enumerations.** State the question and count the cases before searching. Record a resource interruption as UNKNOWN.
+  On the Intel, checkpoint the run and continue to the agreed completion condition. Research-block estimates and
+  checkpoints are occasions to report progress. The owner’s Intel compute policy is in TOOLS.md §4.
 - **The incubator.** Park questions too hard for now, one dated line each. Glance down the list at session start
   and at each step-back, without working on it.
 - **The niggle sweep.** Before anything goes outward, ask "any silent instincts?", list every niggle however small,
@@ -333,7 +335,8 @@ with `python3 tools/store/store.py fetch <path> <file>`.
   Each worker keeps its own host's column of TOOLS.md true.
 - **Where to compute.** Every worker runs its own computations on its own host. Choose by what the run needs (Wolfram
   on the M5 laptop, the GPU on gptIntel, cores, memory, wall-clock time) and hand a run to another host only when
-  yours lacks what it needs. Say in the ledger what is running where.
+  yours lacks what it needs. Say in the ledger what is running where. Use the Intel run policy in TOOLS.md §4
+  for both native Windows and WSL jobs.
 - **Wolfram** runs on the M5 laptop only, for claudeM5 and gptM5. Every Wolfram result with a status is restated in
   plain mathematics and replayed in another language. Conversely, an independent Wolfram replay is a good second
   route for a Python result.
