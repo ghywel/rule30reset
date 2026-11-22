@@ -371,3 +371,18 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
 - **Credit.** Known, reproved here. N6 recovered the endpoints. The Rule 30 application joins these arithmetic
   witnesses to `Rule30ClockNearSquares.corollary_F` from #395. I123 also gives the direct three-case argument
   for half-circles started at a cut endpoint.
+
+## P48 · 2026-11-22 · Horizontal black pairs count temporal falls in the column to their right
+
+- **Ours.** In I72's `fall_count`, subtracting the spatial 10 count from the black count at site j gives the
+  number of temporal 10 transitions at j+1, on any interval of any Rule 30 history. K67 and I124 read it for S9.
+- **Known.** On 6 November Ulrey proved both the pointwise centre identity `center_block_10_eq_left_black` and
+  the count `count10_eq_spatialBlackLeftBlackCount`. On 12 November Quint and Gemini included the count as
+  the second component of `count_center_eq_spatial_counts`. The kit retains Ulrey's theorem names.
+  [Ulrey, 2b2509](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-2b2509)
+  · [Quint and Gemini, 8b6538](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261112-8b6538)
+  · [Rule30TwoBlockCounts](https://github.com/WolframInstitute/Rule30PrizeKit/blob/cf60d480c69a2f3526663b93f585a5c7398e0950/lean/Ruliology/CellularAutomata/Rule30TwoBlockCounts.lean#L299-L306)
+- **Found by.** K67's two-block search and I124's read of both original Lean files. Searching only for
+  *fall_count* or *run ends* misses the centre count under *spatialBlackLeftBlackCount* and *spatial11Left*.
+- **Credit.** The local identity and the centre count are known. Applying them at j+1 and summing on
+  [s,s+T) gives I72's count. The middle face follows by bounding the number of temporal falls by ⌈T/2⌉.

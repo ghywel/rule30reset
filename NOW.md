@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 22:11 UTC by gptIntel (I123, N6 hand proof and flags).*
+Updated 2026-11-22 22:15 UTC by gptIntel (I124, S9 carrying read).*
 
 ## Arrangement
 
@@ -30,16 +30,14 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 Calls to action only.
 
 - **Path 3 / S9, the density polygon** (I72), proposed in K67 at the owner's word to continue it. Both of gptIntel's
-  packets pass the Lean read at four kit commits, and one new module makes the classification an equivalence. Say
-  whether it goes forward in K67's shape. Before a post it still needs gptIntel's read of the new module, the packet
-  (the Lean and text from claudeCloud, the notebook from the M5) and a release read.
+  packets pass the Lean read at four kit commits. The new converse passed its second read in I124. The proposal
+  awaits the owner's decision, claudeCloud's packet, the M5 notebook and the release read.
 - **Path 4, the seven-lock prefix certificate** (I49), beside Lowry’s #378, is the one path left unread. Say whether
   anyone takes it.
 - **S8, the compulsory gap factor (12, 10, 9)** is posted as
   [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a), Lean
-  Verified, at the owner's word without the final scoped read. Its kit PR is
-  [#398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398), with the four modules in the kit's module form
-  (M112).
+  Verified. I123's retrospective read passed on the posted packet and the module conversion in
+  [kit PR #398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398) at `075569f`.
 - **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md). The owner's word, 22 November: "Open repair 1, start
   preparing repair 3, open repair 2 when ready" (M101).
   - Repair 1 (8e6bd3) is **merged** as kit commit `a4b4aff` (#391), with the maintainer's review change (M107).
@@ -82,7 +80,7 @@ Each row is one link of (T). The statements and proofs are in
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 2 and 3 are merged
   (#392, #394), as are repair 1 (#391) and steps 3 and 5 (#395, #396). Step 4 is open as #397, rebased onto `cf60d48` (M113). Step 7 is assessed: none of the three is a port (N3).
-- **gptIntel:** the N6 hand proof is with claudeIntel (I123). Reading K67's S9 converse. K65 continues.
+- **gptIntel:** K65 continues. The N6 family argument is with claudeIntel (I123). The S9 converse passed (I124).
 - **claudeCloud:** path 3 at the owner's word: read in Lean, the converse added, S9 proposed (K67). Next: its packet.
 - **claudeIntel:** 0ef6e2 read in full and probed (N6 and addenda 1 to 3); pull N6 opened. #397 awaits the maintainers.
 
@@ -94,7 +92,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M113, gptM5 R85, claudeCloud K67, gptIntel I123 and claudeIntel N6. Kit issue
+Last posts: claudeM5 M113, gptM5 R85, claudeCloud K67, gptIntel I124 and claudeIntel N6. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -115,7 +113,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified, Human Verified**. **Merged** in [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) at `54d030c` (I108). The portal lists both kit modules. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 | **S7** | The sharp loss of seven ticks at a moving white endpoint, and both quarter-period exclusions at every site of a row with a leftmost black cell. | Proposed in R79 from I93/I103. Finite replay K64 and Lean read M95 passed. **Packet ready** (R80). Portal manifest `d6977083…`, kit patch `4137eecb…`. **Posted** at the owner's word as [R30-20261122-a963b5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-a963b5), **Lean Verified** at `5fb5915` (M103). | **In the kit** as `Rule30PulseRelay`, kit commit `98cdf71` (#393). Norris has priority for singleton 7/11. |
 | **S8** | Every periodic sparse column (isolated pulses, gaps of at least 9) at any site of a row with a leftmost black cell contains the gaps 12, 10, 9; the ten three-gap reset words as support. | **Posted** as [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a), **Lean Verified** at `5fb5915` (M112) | Kit PR [#398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398), open (M112). |
-| **S9** | At any site of any history the black count C and the run-end count A over T ticks satisfy three sharp inequalities; five explicit histories are the corners of the polygon; a linear inequality holds uniformly exactly when it holds at the five corners; on the single seed two corners are missed by a margin of at least log T. | **Proposed** in K67 from I72. gptIntel's ten modules pass the Lean read at `40017e8`, `cf60d48` and the verifier's `5fb5915` (with `Rule30SourceObservables` carried). The converse `Rule30DensityPolygon` is claudeCloud's and awaits a read. | A family of kit modules after the portal id. |
+| **S9** | A uniform integer linear bound on the black count and the spatial 10 count holds exactly when it holds at the five corners. On the single seed two unnormalized deficits grow at least logarithmically. | **Proposed** in K67 from I72. The original ten modules and the new converse have independent carrying reads (K67, I124). | A family of kit modules after the portal id. |
 
 The verifier's kit commit is `5fb5915`. The shared catalogue is in step with kit main at `cf60d48` (I122).
 
@@ -135,7 +133,7 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. I46 checked the exclusion in Lean and exhibited a finite GE2 trace with 5,2,2,5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
 | I49 | 21 Nov, gptIntel | Lowry's period-seven lock from a finite right prefix: the family criterion the maintainer asked for on #378 | *In progress* (I49–I64, I68; Lean in `research/k50_1/`). Kernel: an exact prefix test for every right prefix, complete once its window may grow (I49, I55); lock entry gives a deadline for the true centre (I50, I52); 63 observed sites are exactly enough at Lowry's age 364 (I64). External: 64 cells are exactly enough there (I63). Of 524,971 singleton ages to 2^20, four have a forcing prefix of 31 cells or fewer (I62). I52's packet checks at the verifier's pin in 223 s (I58). Unread. Relates to K50.1. Next: compare with Lowry's open #378. | no; path 4 (K64): beside #378, not ahead of it |
 | I66 | 21 Nov, gptIntel | Lowry's source arrivals under periodic centres, and source priority | *In progress* (I66–I69, I71, I73; `research/arrivals/`). Kernel: arrival parity aperiodic for a wider family of periodic centres (I66). Under an eventually alternating centre, arrival parity and the distance-two shell are both aperiodic (I67–I68, finite part read in K56 addendum 1), with a finite form 2n < 3b + 16 (I73). Seven rightmost readings recover a four-cell band; four letters are optimal (I69, read in K58; I71). Lean unread. | no |
-| I72 | 22 Nov, gptIntel | Which densities of black cells and of run ends one site can show | *In progress* (I72–I76; `research/source-density/`). Kernel, 26 headlines: the joint limits (C/T, A/T) fill exactly the polygon (0,0), (1/3,0), (3/4,1/4), (9/10,2/5), (1,1); every point is realised by one history; on the singleton two deficits grow at least logarithmically. Extends Condrey's #253 and Quint and Gemini's #297. Beside it: what two sites or one column recognise (I73–I76). The bounds, vertices and witnesses (least width 155) read by claudeCloud (K64 addendum 3). **Read in Lean** (K67): both I72 packets, 40 headlines, pass at four kit commits, and `Rule30DensityPolygon` adds the converse, so a linear bound holds uniformly exactly when it holds at the five corners. The identity behind the middle face is Ulrey's and Quint's (`Rule30TwoBlockCounts`). Next: the S9 packet; then the one-third corner with two aperiodic columns. | yes: S9 proposed (K67) |
+| I72 | 22 Nov, gptIntel | Which densities of black cells and spatial run ends one site can show | **Read in Lean** (K67, I124): five corners, all uniform integer linear bounds, controllers and two single-seed count deficits. Realizing each interior limit by one history is a hand corollary. Builds on Condrey, Ulrey, Quint and Gemini (P48). The width-155 minimum is computed (K64). Next: the S9 packet, then the one-third corner with two aperiodic columns. | yes: S9 proposed (K67) |
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress* (I77–I92, I94, I95, I97, I104; `research/white-gap-mixtures/`). Kernel, at every site of every row with a leftmost black cell, pulses with gaps ≥ 9: every eventual period contains the gaps (12, 10, 9) arbitrarily late and uses 12, and has at least 6 pulses and 64 ticks (I97, I95, I104); no order of 9 and 10 alone (I91); exactly 10 of 512 three-gap words reset every right half into G (I85). External: (10, 12), (12, 12) and 13 or 14 compulsory (I87); at least 18 pulses, 206 ticks (I90); at most 474·3^n readable orders (I81); every nondegenerate i.i.d. gap law resets almost surely (I92, I94). I85's ten words replayed by claudeCloud under true dynamics (K64 addendum 4). The 0.51 MB factor and ten-word classification pass at the portal pin and kit main (M105, I119). The five- and six-pulse floors await a separate read. Next: can either four-letter alphabet sustain two readings? | no; path 2 (K64) |
 | I93 | 22 Nov, gptIntel | Black runs and the right-hand shield: Kurtuluş's PR 381 and Bosdure's quarter periods | *In progress* (I93, I95, I96, I98–I103, I105; `research/black-run-transitions/`). Kernel: 44 and 70 black ticks fix 10 and 16 right cells, sharp (I98, I101); Bosdure's quarter-period exclusions hold at every site of every row with a leftmost black cell (I98); a black run of n ≥ 9 ending white relays a run of at least n − 7, sharp, so the limiting fraction falls from 9/13 to 7/11 (I103), though for the single seed 7/11 is Norris's shield cascade of 23 October (P46); one physical row attains the worst shield rate at every width (I100); drift rigidity for every q ≠ p beyond Murzin's `PeriodicPoints` (I102); the sharp two-run table (I95, on open PR 381). External: 128 ticks for 30 cells; rates 101/12 and 117/14. Finite claims replayed by claudeCloud, and the agreement horizon is exact to n = 44, beating 4⌊(n − 2)/7⌋ from n = 36 (K64 addendum 2). The Lean replay passes at `40017e8` and main, and at the verifier's pin with two kit declarations carried (M95). The relay's gain over Norris is the constant, with every finite-left site and any certified block. | yes, S7 packet ready (R80); carrying read K64 and M95 |
 | N3 | 22 Nov, claudeIntel | The complexity form of 8084e6: no aperiodic word with at most n + 1 blocks of each length n (every Sturmian word, every slope and intercept) is the visible-bit sequence beside a clock, in core Lean | *Open.* Builds on step 3's `corollary_F` and `Rule30ZeroWallDiagonals.factorCount`. First test: whether collisions at unbounded lags follow by hand from `rightSpecialCount_pos` and the bound n + 1. | no |
