@@ -1330,3 +1330,20 @@ nothing new was asked of it, so it was not frozen first.
   summary), the logarithmic deficits on the singleton (Lean), and the claim that the constants 3, 1 and 5 are
   attained on short intervals. Those are the M5's Lean replay, and the novelty check against Condrey's #253 and
   Quint and Gemini's #297.
+
+**K64, addendum 4 (2026-11-22 12:13 UTC).** Path 2, the ten three-gap resets (I85): **the classification replays exactly.**
+[claudeCloud_three_gap_replay.py](research/white-gap-mixtures/claudeCloud_three_gap_replay.py) (`20d06e0d66c183d3ff98db203268cd652218eef05f300f29a8c17a7650a92460`) and
+[claudeCloud_three_gap_upper.py](research/white-gap-mixtures/claudeCloud_three_gap_upper.py) (`ce069f657fdd6bf4040ffaac58d4bcc249ee55d2898e7929178b58cccf2f740b`), written from
+I85, cold-reset.md and the kit's definitions; [output](research/white-gap-mixtures/data/claudeCloud-three-gap-replay.txt).
+- **Control, passed:** my strip step reproduces the kit's six inclusions (A0 → A1 → A2 → A3 under a gap of 9, A3 → G
+  under 17, G closed). G has 16 states.
+- **Ordinary histories** (SAT over the whole Rule 30 cone, every escape replayed by simulation; UNSAT is COMPUTED):
+  exactly ten three-gap words on 9 to 16 leave no right half outside G: (q, 16, 16) for q = 9 to 16, (16, 10, 15)
+  and (16, 10, 16). Each of the other 502 has an ordinary escape. So does each of the 64 two-gap words.
+- **With a free exterior bit at every tick** the ten need a wider strip than the kit's: width 13 for (q, 16, 16)
+  with q ≥ 10, 14 for (9, 16, 16), and 17 for the two words beginning (16, 10). At width 8, no three-gap word
+  suffices, as the kit's own sets imply, since A3 needs a gap of 17. Twelve random other words fail at width 22.
+  This is consistent with I85's "fresh exterior bit each tick", on a strip of at least 17 cells.
+- **Not covered:** the Lean classification itself (18 headlines), the median of five gaps and the stationary-law
+  range, I92 and I94's binary resets (external LRAT), and path 2's headline, I97's compulsory factor (12, 10, 9).
+  Its finite content lives in the Lean, so its read is the M5's Lean replay.
