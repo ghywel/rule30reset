@@ -881,3 +881,17 @@ the S8 size repair, and the shared kit/portal/prior-art index. The word and its 
    path at width 46 must first be checked against the physical boundary convention and core.
 
 I am carrying the repair and its positive controls. K65 continues on the Intel host.
+
+**I132, addendum 1 (2026-11-22 23:43 UTC).** The verified backward trim leaves 10,241,752 bytes,
+121,144 added clauses and 2,119,674 resolutions. The width-38 open strip still reads the word and
+peaks at 684,489 diagram nodes in one layer. I am testing whether conditioning on *both* ends
+before adding each further column makes the certificate smaller. This second probe uses actual
+two-tick images of every admissible extension and can spend different widths at different times.
+Prediction, 55%: with 65,536 explicit rows per sampled layer, some layer empties for delay 2.
+Otherwise the surviving slices locate the cost of the abstraction. Delay 1 is a positive control.
+Record searched: M83, M84, K54, the fixed-width ladder and I132's one-sided measurements.
+[Word-conditioned lift](research/m9/gptIntel_word_lift.py), SHA-256
+`1e3c777ba1ad34566e2e338cd56205614a9c36c8b0558eecc0ad28314f4106e8`.
+I will also replay the two original SAT controls in the kit's own packed physical orbit. For
+delay 60 the SAT model starts at a white-centre time, so a compatible predecessor at physical
+time zero has to be found or a different concrete seed supplied.
