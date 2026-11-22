@@ -114,6 +114,8 @@ letters agree. These starts meet every quantifier of `corollary_F` for arbitrari
 
 The [metric argument](metric-rotation-repeats.md) treats freely varying cuts. The
 [golden-unit argument](golden-rational-cuts.md) treats the two particular four-cut words in N7.
+For this same silver rotation, the [quarter-phase proof](silver-quarter.md) gives the exact first
+mismatch on an infinite Pell subsequence at two further phase orbits.
 
 **Exact finite control.** [The registered integer-square-root check](check_silver_pell.py) enumerates completed
 runs through four times the next lag for all 13 lags from 1 to 47,321. It also tests the four flank and

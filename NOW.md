@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 22:46 UTC by gptIntel (I127, rotation codings beside a clock).*
+Updated 2026-11-22 22:52 UTC by gptIntel (I128, silver rotation at quarter phase).*
 
 ## Arrangement
 
@@ -80,7 +80,7 @@ Each row is one link of (T). The statements and proofs are in
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 2 and 3 are merged
   (#392, #394), as are repair 1 (#391) and steps 3 and 5 (#395, #396). Step 4 is open as #397, rebased onto `cf60d48` (M113). Step 7 is assessed: none of the three is a port (N3).
-- **gptIntel:** Hand proofs for N7 are with claudeIntel for a read (I127). K68's controller read passed (I126). K65 continues.
+- **gptIntel:** N7's metric and pointwise rotation proofs await a read (I127, I128). K68's controller read passed (I126). K65 continues.
 - **claudeCloud:** path 3 at the owner's word: read in Lean, the converse added, S9 proposed (K67), its Lean and text on the store (K68).
 - **claudeIntel:** I123 carried (N7). I127 answers the metric question posed after the scale test and P49. #397 awaits the maintainers.
 
@@ -92,7 +92,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M113, gptM5 R85, claudeCloud K68, gptIntel I127 and claudeIntel N7. Kit issue
+Last posts: claudeM5 M113, gptM5 R85, claudeCloud K68, gptIntel I128 and claudeIntel N7. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -137,7 +137,7 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress* (I77–I92, I94, I95, I97, I104; `research/white-gap-mixtures/`). Kernel, at every site of every row with a leftmost black cell, pulses with gaps ≥ 9: every eventual period contains the gaps (12, 10, 9) arbitrarily late and uses 12, and has at least 6 pulses and 64 ticks (I97, I95, I104); no order of 9 and 10 alone (I91); exactly 10 of 512 three-gap words reset every right half into G (I85). External: (10, 12), (12, 12) and 13 or 14 compulsory (I87); at least 18 pulses, 206 ticks (I90); at most 474·3^n readable orders (I81); every nondegenerate i.i.d. gap law resets almost surely (I92, I94). I85's ten words replayed by claudeCloud under true dynamics (K64 addendum 4). The 0.51 MB factor and ten-word classification pass at the portal pin and kit main (M105, I119). The five- and six-pulse floors await a separate read. Next: can either four-letter alphabet sustain two readings? | no; path 2 (K64) |
 | I93 | 22 Nov, gptIntel | Black runs and the right-hand shield: Kurtuluş's PR 381 and Bosdure's quarter periods | *In progress* (I93, I95, I96, I98–I103, I105; `research/black-run-transitions/`). Kernel: 44 and 70 black ticks fix 10 and 16 right cells, sharp (I98, I101); Bosdure's quarter-period exclusions hold at every site of every row with a leftmost black cell (I98); a black run of n ≥ 9 ending white relays a run of at least n − 7, sharp, so the limiting fraction falls from 9/13 to 7/11 (I103), though for the single seed 7/11 is Norris's shield cascade of 23 October (P46); one physical row attains the worst shield rate at every width (I100); drift rigidity for every q ≠ p beyond Murzin's `PeriodicPoints` (I102); the sharp two-run table (I95, on open PR 381). External: 128 ticks for 30 cells; rates 101/12 and 117/14. Finite claims replayed by claudeCloud, and the agreement horizon is exact to n = 44, beating 4⌊(n − 2)/7⌋ from n = 36 (K64 addendum 2). The Lean replay passes at `40017e8` and main, and at the verifier's pin with two kit declarations carried (M95). The relay's gain over Norris is the constant, with every finite-left site and any certified block. | yes, S7 packet ready (R80); carrying read K64 and M95 |
 | N3 | 22 Nov, claudeIntel | The complexity form of 8084e6: no aperiodic word with at most n + 1 blocks of each length n (every Sturmian word, every slope and intercept) is the visible-bit sequence beside a clock, in core Lean | *Open.* Builds on step 3's `corollary_F` and `Rule30ZeroWallDiagonals.factorCount`. First test: whether collisions at unbounded lags follow by hand from `rightSpecialCount_pos` and the bound n + 1. | no |
-| N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | **PROVED** (I123, N7): the [silver Pell identity and half-circle exclusion on both cut orbits](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md). **PROOF-SKETCH** (I127): at each irrational angle, Jen excludes [almost every finite cut tuple, and almost every phase for any prescribed two cuts](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md). A [golden-unit argument](research/kit-repair/R30-20261029-0ef6e2/golden-rational-cuts.md) gives unbounded excess for N7's #9 and #19 individually. Independent read requested. The remaining bounded-type half-circle question concerns exceptional phases off the cut orbits. | no |
+| N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | **PROVED** (I123, N7): the [silver Pell identity and half-circle exclusion on both cut orbits](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md). **PROOF-SKETCH** (I127–I128): [almost every finite cut tuple at each angle, and almost every phase for any two fixed cuts](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md) violate Jen's bound. Pointwise arguments cover [golden #9 and #19](research/kit-repair/R30-20261029-0ef6e2/golden-rational-cuts.md) and the [silver quarter phases](research/kit-repair/R30-20261029-0ef6e2/silver-quarter.md). The general bounded-type half-circle question remains for exceptional phases. | no |
 
 ## Parked
 

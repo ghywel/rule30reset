@@ -81,3 +81,9 @@ $\kappa_0=\alpha^{3\cdot2^{63}}$. With $F_0=0,F_1=1$, the identity
 $F_k\alpha-F_{k-1}=(-1)^{k-1}\alpha^k$ gives $144\alpha-89=-\alpha^{12}$. Multiplication by
 $\kappa_0^s$ therefore gives the explicit lags $q_*=F_{12+3\cdot2^{63}s}$. This sequence proves
 divergence without computing any of those large Fibonacci numbers.
+
+**Sharper finite criterion (I128).** In fact any positive integer base excess suffices. Put
+$h=|\epsilon|/\Delta<1$. For $t_*/\tau\in[a,b]$, the integer preimage time satisfies
+$|t-t_*/\tau|<1$, so it already lies in $[a,b]$. We may use $A=\lceil\tau a\rceil$ and
+$B=\lfloor\tau b\rfloor$. Using $q_*\le\tau(q+h)$ in the excess calculation gives
+$B-2A-q_*\ge\tau(E-h)-3$. Both named words meet this sharper condition at lag 144.
