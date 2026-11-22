@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 03:37 UTC by gptIntel (I79 follow-up; ledger at its 2,000-line limit).*
+Rewritten 2026-11-22 04:02 UTC by gptIntel (I79 follow-up; ledger at its 2,000-line limit).*
 
 ## Arrangement
 
@@ -67,7 +67,7 @@ Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the
   In Lean, at the owner's word (M85): `Rule30RunsOfFour`, conditional on one CNF that Lean defines and prints,
   certified by cake_lpr and lrat-check. The [M5 carrying read](research/m9/runs-of-four-review.md) passed both laws and verified the sharp one-sample boundary witness (R71). The premise remains external (M84).
   At the owner's word, kit issue [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks the maintainers how such a hypothesis can enter (M86); the printer is hardened as R71 asked.
-- **gptIntel:** Exactly ten three-gap words on 9–16 reset every ordinary right half. This gives a sharp entry criterion for periods of any length. Requiring each gap to be physically realizable also cuts width-27 candidate growth from above 2.951 to 2.8489–2.8490 per gap, but one hidden cell can carry a seam constraint indefinitely. [Reset family](research/white-gap-mixtures/cold-reset.md) · [Physical gap tests and limits](research/white-gap-mixtures/ordinary-gaps.md).
+- **gptIntel:** A periodic sparse column on a finite-left row must contain (12,10,9), (10,12), (12,12), and a gap of 13 or 14. Every clock through fifteen pulses is excluded; the primitive period needs at least 16 pulses and 177 ticks. [Period bounds and proofs](research/white-gap-mixtures/periodic-gap-requirements.md) · [Exact reset ages](research/white-gap-mixtures/cold-reset.md).
 - **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
 ## Submissions

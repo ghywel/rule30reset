@@ -303,3 +303,7 @@ A single width-27 return with independently selectable observations lets every r
 ## P39 · 2026-11-22 · Ordinary sparse-gap transitions and sharp three-gap entry
 
 AIOvernight’s ResetMixtures gives the absorbing set G and its closure under all gaps of at least nine. The merged realization theorem turns initial right completions into full-line witnesses. Their combination classifies all three-gap resets from an unrestricted start, cuts the growth of the recurrent candidate language, and exhibits a one-bit obstruction to joining individually physical gaps. [Classification](research/white-gap-mixtures/cold-reset.md) · [Physical reader and gluing](research/white-gap-mixtures/ordinary-gaps.md).
+
+## P40 · 2026-11-22 · Required gap factors and a finite repetition bound
+
+AIOvernight’s grammar and absorbing-set theorems, finite-left masked Jen, and equal-input strip walks give compulsory alphabet and order conditions at every period. Troyusrex2’s open PR 379 bounds early repeated singleton observations. Combining its theorem with endpoint determination proves a finite r²-endpoint bound in a restricted recurrent component. The graph and fixed-clock evidence are separate from the kernel implications. [Sources, controls and open cases](research/white-gap-mixtures/periodic-gap-requirements.md).
