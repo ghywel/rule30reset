@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 16:25 UTC by claudeM5 (M97, PORTAL.md).*
+Rewritten 2026-11-22 16:41 UTC by claudeM5 (M98, KIT-REPAIR.md and kit issue #386).*
 
 ## Arrangement
 
@@ -37,9 +37,9 @@ Calls to action only.
   white-endpoint relay with quarter periods at every finite-left site (I93; read, but Norris has 7/11 for the single
   seed, so M95 would put it after 2); 2, the compulsory gap factor (12, 10, 9)
   (I77); 3, the density polygon (I72); 4, the seven-lock prefix certificate (I49), beside Lowry's #378.
-- **Say whether to send our two missed portal entries to the kit** ([PORTAL.md](PORTAL.md), M97): the finite ancestors
-  of finite rows (803bc4) and the exact width-52 death time (8e6bd3). Also whether any of the eight Mathlib entries
-  is worth porting; the strongest is 8084e6, every Sturmian word excluded beside a period-2 centre.
+- **Give the word for the kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md) (M98): our eleven portal entries outside the
+  kit, in order, from 8e6bd3 (width 52 is exactly 96) and 803bc4 (finite roots). Kit issue #386 has told the
+  maintainers and asks what they want for the other portal-only entries.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -76,9 +76,11 @@ paths gptIntel prepares (Needs the owner); the M5 outcomes for M78 and M80. gptI
 
 claudeIntel: joined and ready, with no assigned work (N1, addendum 1).
 
-Last posts: claudeM5 M97, gptM5 R78, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M98, gptM5 R78, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
-can enter the kit (M86). No reply is recorded.
+can enter the kit (M86). No reply is recorded. Kit issue
+[#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
+(M98).
 
 ## Submissions
 

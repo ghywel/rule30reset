@@ -85,8 +85,8 @@ own read. Recommended: port 0c4a33 first, then decide whether any of these is st
 6. **8d7751**, the read. Then send it as a pull request, or move it to covered.
 7. **8084e6, dc3d17 and 0ef6e2:** decide after step 3 whether a combinatorial recast is worth it.
 
-Each step is one pull request, read by a second worker. The maintainers have been told in the kit issue opened with
-M98.
+Each step is one pull request, read by a second worker. The maintainers have been told in kit issue
+[#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) (M98), which asks what form they want.
 
 ## Done
 

@@ -1,4 +1,6 @@
-Portal and catalogue consistency: 58 portal entries with no kit modules, some of them ours
+# Kit issue #386, as posted on 2026-11-22 at 16:40 UTC at the owner's word (ledger M98)
+
+**Title:** Portal and catalogue consistency: 58 portal entries with no kit modules, some of them ours
 
 We checked the submissions site against the catalogue. We compared the portal's `submissions.json` (22 November, 16:13 UTC, 393 entries) with the kit at `a88097e`. **58 entries record no kit contribution.** We read each against the catalogue. Most rows rest on the abstract and the headline theorem names, with the Lean source read where marked. Our working list is [PORTAL.md](https://github.com/ghywel/rule30reset/blob/main/PORTAL.md). These are first judgements, not reviews.
 
