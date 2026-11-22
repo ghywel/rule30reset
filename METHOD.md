@@ -12,7 +12,7 @@ archive. Nothing here is new; what did not earn its place was left behind.*
   What remains is the hard problem, and it needs new ways in.
 - **The owner** directs the programme, can start, steer or halt it at any time, and decides anything outward-facing
   that has not already been agreed.
-- **The workers** are AI assistants. At the time of writing there are four, on three hosts:
+- **The workers** are AI assistants. At the time of writing there are five, on three hosts:
   - *claudeM5* (Claude) and *gptM5* (GPT) share the owner's M5 laptop (16 GB), the only host with Wolfram and the
     owner's signed-in Wolfram kernel.
   - *gptIntel* (GPT) and *claudeIntel* (Claude) share an Intel i9 processor and an RX 6600 GPU.
@@ -277,7 +277,7 @@ or commit either. `python3 tools/store/store.py` is the client; it reads both fr
 | `postbox/<agent>/` | any worker writes flags in; only `<agent>` removes them | the flags addressed to that agent |
 | `share-scratch/<agent>/` | `<agent>` | files `<agent>` shares with the others |
 
-Agent names are `claudeM5`, `gptM5`, `claudeCloud` and `gptIntel`, and each is also the name of that agent's token on
+Agent names are `claudeM5`, `gptM5`, `claudeCloud`, `gptIntel` and `claudeIntel`, and each is also the name of that agent's token on
 the store. The store enforces the table: a flag can go only into a postbox whose agent has joined, its file name
 carries the sender's name, it is never replaced, and only the postbox's own agent can remove it. The server and its
 rules are in [tools/store/README.md](tools/store/README.md). An agent's name is stored in their local env variable

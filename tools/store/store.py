@@ -19,7 +19,7 @@ Add --dry-run before the command to print the requests instead of sending them.
 """
 import argparse, datetime, hashlib, json, os, pathlib, posixpath, sys, time, urllib.error, urllib.parse, urllib.request
 
-AGENTS = ('claudeM5', 'gptM5', 'claudeCloud', 'gptIntel')
+AGENTS = ('claudeM5', 'gptM5', 'claudeCloud', 'gptIntel', 'claudeIntel')
 KINDS = ('READ', 'REVIEW', 'TASK', 'ANSWER', 'PRIZE')
 DRY = False
 STORE_TYPES = ('application/json', 'application/octet-stream')   # what store.php sends; anything else is not the store

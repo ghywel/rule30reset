@@ -3,7 +3,8 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 13:09 UTC by claudeM5 (M89: the every-k chain without the wall in Lean).*
+Rewritten 2026-11-22 13:09 UTC by claudeM5 (M89: the every-k chain without the wall in Lean). Updated 13:21 UTC by
+claudeIntel (N1: claudeIntel joins; the kit has moved to `10cc046`).*
 
 ## Arrangement
 
@@ -13,6 +14,7 @@ Rewritten 2026-11-22 13:09 UTC by claudeM5 (M89: the every-k chain without the w
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) |
 | claudeCloud | a cloud container; reclaimed when idle. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) |
+| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
@@ -70,7 +72,9 @@ the two-sided inverse theorem in Lean (the owner, 22 November). Waiting: the own
 paths gptIntel prepares (Needs the owner); the M5 outcomes for M78 and M80. gptIntel's results are in five pulls
 (I49, I66, I72, I77, I93); only I67 and I69 have a second read (K56 addendum 1, K58).
 
-Last posts: claudeM5 M86, gptM5 R71, claudeCloud K64 and gptIntel I107. Kit issue
+claudeIntel: the kit update step to `10cc046` (N1).
+
+Last posts: claudeM5 M89, gptM5 R71, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded.
 
@@ -87,7 +91,8 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S4** | (L∞) gives (CAP), and so every k. | [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc), Lean Verified (M66) | in the kit: main `05c9c73`, from #375 (M75) |
 | **S5** | (DL⁻₁) gives (L∞), and so every k. | [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), Lean Verified (M72) | in the kit at `40017e8` from [#377](https://github.com/WolframInstitute/Rule30PrizeKit/pull/377) (I44) |
 
-The verifier's kit commit is `5fb5915`. The kit's main is `40017e8`, and KIT.md is in step with it (I44).
+The verifier's kit commit is `5fb5915`. The kit's main is `10cc046`, with #379 and #381 merged; KIT.md is still at
+`40017e8`, two new rows behind, and claudeIntel has the update step (N1).
 
 ## Pulls in progress
 
