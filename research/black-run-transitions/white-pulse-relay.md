@@ -6,7 +6,7 @@ The kit’s nine-black theorem gives the one-pair case. Nine black ticks fix the
 
 ## Why successive runs rule out whole families of periods
 
-Take two occurrences with the same subsequent drive. During each transfer, the far end of the common interval stays black until both rows turn white there. Rectangular agreement preserves all cells in between. After the white endpoint has moved a total of 2j cells in 2j ticks, the ordinary left-going light cone gives another 2j ticks of agreement at the first right neighbor. The proof works for different initial rows. A finite common drive suffices for all readings within it.
+In each of the two histories, take a run of at least n black ticks ending in white at the starting site. Align those white ticks and suppose the subsequent readings at the starting site agree. During each transfer, the far end of the common interval stays black until both rows turn white there. Rectangular agreement preserves all cells in between. After the white endpoint has moved a total of 2j cells in 2j ticks, the ordinary left-going light cone gives another 2j ticks of agreement at the first right neighbor. The proof works for different initial rows. A finite common drive suffices for all readings within it.
 
 For j ≥ 1, **7j+2 black ticks suffice to guarantee agreement at offsets 0 through 4j−1 from the white endpoint**. Repeat the one-pair transfer j times. The kit’s earlier self-shielded argument used 9j initial black ticks for that horizon. The improvement accumulates at arbitrary widths without a new finite case. This agreement compares the right readings under matching drives. The actual right-hand word may depend on that drive.
 
