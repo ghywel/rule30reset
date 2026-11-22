@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 18:24 UTC by claudeCloud (K66 addendum 2: KIT-REPAIR step 6 read, a third missed entry; merged with I114 and R79).*
+Updated 2026-11-22 18:40 UTC by claudeM5 (M100, repair 1 agreed on `ba7433c`, repair 2 credit change; merged with K66 addendum 2).*
 
 ## Arrangement
 
@@ -35,9 +35,10 @@ Calls to action only.
 - **Name a reader with Lean for path 2** (I97, I104, I95), if it goes forward. Its finite part is replayed (K64
   addendum 4). Paths 3 and 4 have no Lean read either.
 - **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md): repairs 1 (8e6bd3, width 52 is exactly 96) and 2 (803bc4,
-  finite roots) passed both carrying and release reads on `ba7433c` (I109, I110, I114). The reviewed digests are with
-  claudeM5 for agreement. The owner’s word is due before opening either PR. Kit issue #386 has told the
-  maintainers and asks what they want for the other portal-only entries.
+  finite roots) passed both carrying and release reads on `ba7433c` (I109, I110, I114). Repair 1's digests are
+  agreed (M100). Repair 2 waits for gptIntel's recheck of one credit change (M100). Each pull request needs the
+  owner's word. Kit issue #386 has told the maintainers and asks what they want for the other portal-only
+  entries; no reply yet.
 - **A third repair, if the owner says so** (K66): our 8d7751 is not in the kit. It is the period-2 lock, and a
   third party posted a weaker form of it today (66c410). Say whether claudeM5 writes its kit form now, and whether
   it carries the one-line corollary that its families never enter the gate trap.
@@ -72,12 +73,13 @@ Each row is one link of (T). The statements and proofs are in
 ## The next block
 
 **Under way.**
-- **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 1 and 2 are prepared
-  (M99). Both carrying and release reads pass on `ba7433c` (I109, I110, I114). Steps 3 to 7
-  await further work.
+- **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Both reads pass on `ba7433c`
+  (I109, I110, I114). Repair 1 is agreed and waits for the owner's word; repair 2 waits for the recheck of its
+  credit change (M100). Step 6's read is done (K66): 8d7751 is not in the kit, a third missed entry. Steps 3 to 5
+  and 7 are not started.
 - **gptIntel:** finish K65’s delay-40 cases, determine the first forbidden delays and check each law with both LRAT checkers (I113).
 - **claudeCloud:** K50.1's periodic side and KIT-REPAIR step 6, done (K66 and its two addenda).
-- **claudeIntel:** M99 asked it to read the repairs. The owner assigned the read to gptIntel, who completed it (I109, I110, I114).
+- **claudeIntel:** free. M99 asked it to read the repairs; the owner gave the read to gptIntel, who completed it (I109, I110, I114).
 
 **Done since K64.** S6 is posted, Lean Verified and Human Verified, and in the kit at `54d030c` (M93, I108). It came
 from pull K50.3 (K61, K63, M88, M89, R74).
@@ -87,7 +89,7 @@ M80's 5⁵ at P = 100 on the M5. gptIntel's results are in five pulls (I49, I66,
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M99, gptM5 R79, claudeCloud K66, gptIntel I114 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M100, gptM5 R79, claudeCloud K66, gptIntel I114 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -108,7 +110,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified, Human Verified**. **Merged** in [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) at `54d030c` (I108). The portal lists both kit modules. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 | **S7** | The sharp loss of seven ticks at a moving white endpoint, and both quarter-period exclusions at every site of a row with a leftmost black cell. | Proposed in R79 from I93/I103. Finite replay K64 and Lean read M95 passed. gptM5 prepares the packet for claudeM5. | Portal partial result and one core-Lean kit module. Norris has priority for singleton 7/11. |
 
-The verifier's kit commit is `5fb5915`. The kit's main and the shared catalogue are at `54d030c`, including #384 and #385 (I108).
+The verifier's kit commit is `5fb5915`. The kit's main and the shared catalogue are at `ba7433c`, including #384, #385 and Lowry's #387 (`Rule30PastSwap`) (I108, I114).
 
 ## Pulls in progress
 

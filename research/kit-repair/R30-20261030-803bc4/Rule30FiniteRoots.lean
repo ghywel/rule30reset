@@ -25,11 +25,12 @@ evolution is an exact translated-image bijection. Counts are the lengths of prov
 actual rows, so no cardinality library is needed.
 
 **Credit.** The finite ancestor and its age are described in Antti Karttunen's OEIS entries of February 2016
-(A269165, the earliest finite ancestor, and the entries around it from A269160); no priority is claimed for that
-structure, which this module states and proves for the kit's `evol`. Injectivity on configurations that agree far to
-the right is `Rule30Equivalents.Preimages.eq_of_evol_one_eq_of_right` in the equivalents library, which also builds
-the white-right preimage. It is reproved here in core Lean, since the catalogue does not import the equivalents. The
-endpoint arguments specialise the edge facts of `Rule30FiniteConfigs` and `Rule30FrozenRuler`.
+(A269165, the earliest finite ancestor, and A269166, its age; A269160 is one step of rule 30 on binary words). No
+priority is claimed for that structure, which this module states and proves for the kit's `evol`. Injectivity on
+configurations that agree far to the right is `Rule30Equivalents.Preimages.eq_of_evol_one_eq_of_right` in the
+equivalents library, which also builds the white-right preimage. It is reproved here in core Lean, since the catalog
+does not import the equivalents. The endpoint arguments specialise the edge facts of `Rule30FiniteConfigs` and
+`Rule30FrozenRuler`.
 -/
 
 @[expose] public section

@@ -92,13 +92,13 @@ Each step is one pull request, read by a second worker. The maintainers have bee
 
 | Step | Entry | State |
 |---|---|---|
-| 1 | 8e6bd3 | **Carrying and release reads passed** (I109, I114). `Rule30ZeroBoundaryDeathTimes` gives the exact width-52 bound. [Reviewed source](research/kit-repair/R30-20261023-8e6bd3/Rule30ZeroBoundaryDeathTimes.lean). Three headlines, 34 constants. Reviewed patch `8d0b85fd…` on `ba7433c`. #386 asks about placement. |
-| 2 | 803bc4 | **Carrying and release reads passed** (I110, I114). `Rule30FiniteRoots` gives the unique root and age, the finite-parent test, and exact counts. [Reviewed source](research/kit-repair/R30-20261030-803bc4/Rule30FiniteRoots.lean) and [port generator](research/kit-repair/R30-20261030-803bc4/claudeM5_port.py). Seven headlines, 196 constants. Reviewed patch `c8618846…` on `ba7433c`. |
+| 1 | 8e6bd3 | **Carrying and release reads passed** (I109, I114). `Rule30ZeroBoundaryDeathTimes` gives the exact width-52 bound. [Reviewed source](research/kit-repair/R30-20261023-8e6bd3/Rule30ZeroBoundaryDeathTimes.lean). Three headlines, 34 constants. Reviewed patch `8d0b85fd…` on `ba7433c`. **Agreed** (M100): the tree claudeM5 built and checked on `ba7433c`, `cf85df6f…`, is I114's, and M100 adopts I114's patch, title and body byte for byte. Waiting: the owner's word. #386 asks about placement. |
+| 2 | 803bc4 | **Carrying and release reads passed** (I110, I114). `Rule30FiniteRoots` gives the unique root and age, the finite-parent test, and exact counts. [Reviewed source](research/kit-repair/R30-20261030-803bc4/Rule30FiniteRoots.lean) and [port generator](research/kit-repair/R30-20261030-803bc4/claudeM5_port.py). Seven headlines, 196 constants. Reviewed patch `c8618846…` on `ba7433c`. M100 proposes one change to it, a credit sentence in the docstring and the body that also names A269166, Karttunen's age sequence; no Lean line changes (patch `6dcc6753…`, tree `6f8a806e…`). Waiting: gptIntel's recheck of that delta, then the owner's word. |
 | 3 to 5 | — | Not started. |
 | 6 | 8d7751 | **Read** (K66): not in the kit, so a third missed entry. The kit form is not started; it waits for the owner's word. |
 | 7 | — | Not started. |
 
-The author and owner have the release digests in I114. Either patch can be first on the 291-module base. The second needs a fresh rebase and build after the first merges.
+The author and owner have the release digests in I114, and repair 2's credit change in M100. Either patch can be first on the 291-module base. The second needs a fresh rebase and build after the first merges.
 
 ## Done
 

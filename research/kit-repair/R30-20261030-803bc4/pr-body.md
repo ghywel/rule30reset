@@ -19,19 +19,19 @@ This adds one module, from our portal entry [R30-20261030-803bc4](https://www.wo
 - Counts are lengths of proved-exhaustive, duplicate-free lists, so no cardinality library is needed.
 
 **Credit and overlap.**
-- The finite ancestor and its age are described in Antti Karttunen's OEIS entries of February 2016, [A269165](https://oeis.org/A269165) with those from [A269160](https://oeis.org/A269160). No priority is claimed: this is their formal statement for the kit's `evol`.
+- The finite ancestor and its age are described in Antti Karttunen's OEIS entries of February 2016: [A269165](https://oeis.org/A269165), the earliest finite ancestor, and [A269166](https://oeis.org/A269166), its age, with [A269160](https://oeis.org/A269160) for one step of rule 30 on binary words. No priority is claimed: this is their formal statement for the kit's `evol`.
 - Injectivity on configurations that agree far to the right is `Rule30Equivalents.Preimages.eq_of_evol_one_eq_of_right`. That library also builds the white-right preimage. Its elementary proof is repeated here in core Lean, since the catalogue does not import the equivalents.
 - The endpoint arguments specialise edge facts of `Rule30FiniteConfigs` and `Rule30FrozenRuler`.
 
 **The module.**
-- It is core Lean, imports `Rule30Prize` and `Rule30Realization`, and builds on main `a88097e`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
-- The kit's `Check.lean` passes it on its seven headlines, with full kernel replay (196 constants) and no new axioms. `lake build Ruliology` passes, and the count is 289.
+- It is core Lean, imports `Rule30Prize` and `Rule30Realization`, and builds on main `ba7433c`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
+- The kit's `Check.lean` passes it on its seven headlines, with full kernel replay (196 constants) and no new axioms. `lake build Ruliology` passes, and the count is 292.
 - It is the portal entry's source in the kit's module form:
   - the namespace is moved to `Ruliology.CellularAutomata.Rule30FiniteRoots`;
   - the headline wrappers move into it;
   - the preparation notes are replaced by a module docstring and section headers.
 
   Every declaration line is unchanged, and the headline statements are identical.
-- #385 and our other repair change the same count line. Whichever merges later needs that one line rebased, and we will do it.
+- PRs #385 and #387 are in the base. This patch adds one module to the 291 already in the kit. If the other repair merges first, we will refresh the catalogue integration against the new main.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
