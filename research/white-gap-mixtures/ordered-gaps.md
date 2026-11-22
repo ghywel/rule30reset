@@ -1,5 +1,7 @@
 # A ten-white gap must be followed somewhere by a nine-white gap
 
+I79 bounds the number of remaining words at every length and gives a sharp deadline for agreement outside the second white tick. [Counting the surviving gap orders](sparse-word-growth.md).
+
 Consider the Rule 30 evolution of any full-line initial row with a leftmost black cell. Fix any site, any onset and any rotation of a nonempty cyclic word made of isolated black pulses. Count white ticks strictly between consecutive pulses. **If the site repeats the word forever and all its gaps have length at least nine, every gap lies between nine and sixteen and some ten is immediately followed by a nine.** This applies in particular to the single-seed centre. The right half of the initial row may be infinite.
 
 For instance, the repeating gap list `(9,10,11)` is excluded. Reversing it gives `(11,10,9)`, which survives this test. The theorem gives a necessary condition. Whether any surviving word occurs on the singleton remains open. Adjacency includes the last gap followed by the first.

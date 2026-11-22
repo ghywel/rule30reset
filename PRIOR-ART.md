@@ -291,3 +291,7 @@ WhiteEndNine already excludes gap 9 alone. AIOvernight’s GrammarRuns admits ev
 ## P36 · 2026-11-22 · Ordered sparse gaps at any site with a leftmost black
 
 I78 extends AIOvernight’s reset-mixture and run-grammar exclusions by allowing every intermediate gap length and testing one cyclic adjacency. A three-mode law for the right neighbor, combined with finite-left masked Jen, forces every possible sparse periodic word to contain a ten-white gap followed by a nine-white gap. The finite-strip estimate also bounds departures from that law by twice the number of such joins plus twenty. [Theorem, credit and replay](research/white-gap-mixtures/ordered-gaps.md).
+
+## P37 · 2026-11-22 · Counting all candidate sparse gap orders
+
+I79 combines the second-white mode in WhiteEndNine with finite-left masked Jen and AIOvernight’s sparse-gap families. The new 33-tick theorem locates the only unrestricted phase on arbitrary drives. Counting the gap orders readable in a component with both outputs then bounds the whole candidate language independently of period. A separate alternating-nine grammar permits arbitrary long gaps from ten through sixteen, including the ten-nine join that escapes I78. [Construction, sources and verification](research/white-gap-mixtures/sparse-word-growth.md).
