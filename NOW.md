@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 14:21 UTC by gptM5 (R76, kit catalogue updated).*
+Rewritten 2026-11-22 14:25 UTC by gptM5 (R77, S6 release read).*
 
 ## Arrangement
 
@@ -66,13 +66,13 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-**Under way** (K60–K64). claudeCloud: the sieve (K60), then the finite claims of path 1 (K64 §5). claudeM5’s K50.3 modules passed gptM5’s second read (R74), and S6's packet is ready for its release read (M91). Waiting: the owner's word on the reads and on which
+**Under way** (K60–K64). claudeCloud: the sieve (K60), then the finite claims of path 1 (K64 §5). claudeM5’s K50.3 modules passed gptM5’s second read (R74), and S6’s portal packet passed. The rebased kit files passed at `e303021` and await claudeM5’s agreement on the digests (R77). Waiting: the owner's word on the reads and on which
 paths gptIntel prepares (Needs the owner); the M5 outcomes for M78 and M80. gptIntel's results are in five pulls
 (I49, I66, I72, I77, I93); only I67 and I69 have a second read (K56 addendum 1, K58).
 
 claudeIntel: joined and ready, with no assigned work (N1, addendum 1).
 
-Last posts: claudeM5 M91, gptM5 R76, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M91, gptM5 R77, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded.
 
@@ -88,7 +88,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S3** | The mean first white gap is at most 2^Q + 1 over the nonzero Q-bit first children. | [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), Human Verified | in the kit (K15) |
 | **S4** | (L∞) gives (CAP), and so every k. | [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc), Lean Verified (M66) | in the kit: main `05c9c73`, from #375 (M75) |
 | **S5** | (DL⁻₁) gives (L∞), and so every k. | [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), Lean Verified (M72) | in the kit at `40017e8` from [#377](https://github.com/WolframInstitute/Rule30PrizeKit/pull/377) (I44) |
-| **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | proposed (M90); packet ready (M91, manifest `374b8d2d…`, and the kit patch `4e4b5c11…`); release read: gptM5 (R74 passed the carrying read) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
+| **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | portal PASS on M91 manifest `374b8d2d…`; rebased kit PASS at `e303021` on patch `b0b1244f…` and PR body `6abc610e…`. Awaiting claudeM5’s matching digests. [R77 release review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 
 The verifier's kit commit is `5fb5915`. The kit's main and the shared catalogue are at `e303021`, including #382 (R76).
 
@@ -106,7 +106,7 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 | M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
 | K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52, [R69](research/m9/exterior-grammars.md)). Proved for every ether cut (I46 read) and computed through support width 26. A counterexample needs one finite right half sustaining an aperiodic gate in X or Y. The finite-window grammars now constrain that realization question. gptIntel's seven-lock prefix work has its own row, I49. | no |
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. I46 checked the exclusion in Lean and exhibited a finite GE2 trace with 5,2,2,5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
-| K50.3 | 21 Nov, claudeCloud | Does the every-k inverse chain need the white wall? | *In progress.* M88 and M89’s full-line forms are proved and independently read ([R74](research/k50_3/review.md)). For every configuration with a leftmost black cell, the unconditional ages are 8 for one inverse tick (sharp) and 24 for two. CAP, L∞ or DL⁻₁ gives every depth. With PR #371’s exact capacity, k ≤ 25 is unconditional from age 2^300. K63’s prescribed-wall results are separate. S6 is proposed in M90; claudeM5 is preparing the packet for gptM5’s release read. | yes: S6 (M90, R74) |
+| K50.3 | 21 Nov, claudeCloud | Does the every-k inverse chain need the white wall? | *In progress.* M88 and M89’s full-line forms are proved and independently read ([R74](research/k50_3/review.md)). For every configuration with a leftmost black cell, the unconditional ages are 8 for one inverse tick (sharp) and 24 for two. CAP, L∞ or DL⁻₁ gives every depth. With PR #371’s exact capacity, k ≤ 25 is unconditional from age 2^300. K63’s prescribed-wall results are separate. S6’s portal packet and the rebased kit files passed the release read (R77). | yes: S6 (M90, R74) |
 | I49 | 21 Nov, gptIntel | Lowry's period-seven lock from a finite right prefix: the family criterion the maintainer asked for on #378 | *In progress* (I49–I64, I68; Lean in `research/k50_1/`). Kernel: an exact prefix test for every right prefix, complete once its window may grow (I49, I55); lock entry gives a deadline for the true centre (I50, I52); 63 observed sites are exactly enough at Lowry's age 364 (I64). External: 64 cells are exactly enough there (I63). Of 524,971 singleton ages to 2^20, four have a forcing prefix of 31 cells or fewer (I62). I52's packet checks at the verifier's pin in 223 s (I58). Unread. Relates to K50.1. Next: compare with Lowry's open #378. | no; path 4 (K64): beside #378, not ahead of it |
 | I66 | 21 Nov, gptIntel | Lowry's source arrivals under periodic centres, and source priority | *In progress* (I66–I69, I71, I73; `research/arrivals/`). Kernel: arrival parity aperiodic for a wider family of periodic centres (I66). Under an eventually alternating centre, arrival parity and the distance-two shell are both aperiodic (I67–I68, finite part read in K56 addendum 1), with a finite form 2n < 3b + 16 (I73). Seven rightmost readings recover a four-cell band; four letters are optimal (I69, read in K58; I71). Lean unread. | no |
 | I72 | 22 Nov, gptIntel | Which densities of black cells and of run ends one site can show | *In progress* (I72–I76; `research/source-density/`). Kernel, 26 headlines: the joint limits (C/T, A/T) fill exactly the polygon (0,0), (1/3,0), (3/4,1/4), (9/10,2/5), (1,1); every point is realised by one history; on the singleton two deficits grow at least logarithmically. Extends Condrey's #253 and Quint and Gemini's #297. Beside it: what two sites or one column recognise (I73–I76). The bounds, vertices and witnesses (least width 155) read by claudeCloud (K64 addendum 3); the Lean replay is still owed. Next: the one-third corner with two aperiodic columns. | no; path 3 (K64) |
