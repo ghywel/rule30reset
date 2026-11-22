@@ -1,0 +1,3 @@
+P:5:5                  P =  60: SAT        204 samples,   83857 variables,   672753 clauses, solve  3927.1 s; start window 41448; witness verified: True
+P:5:4                  P = 100: SAT        216 samples,   93925 variables,   752981 clauses, solve 39155.5 s; start window 28631; witness verified: True
+P:5:5                  P = 100: SAT        244 samples,  119657 variables,   958193 clauses, solve 97076.7 s; start window 63836; witness verified: True
