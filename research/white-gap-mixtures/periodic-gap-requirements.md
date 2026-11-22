@@ -28,13 +28,13 @@ A separate calculation admitted arbitrary exterior bits at every tick, used inde
 
 Enumerate primitive cyclic gap words at the forced factor (12,10,9), retain the lexicographically first such rotation, and check the other required factors. Repeatedly reading the candidate from the all-row width-26 observer until it reaches its sink or a fixed state gives a necessary test for indefinite input readability. A separate phase-labelled SCC test then checks whether the observed output on a fixed clock can remain nonperiodic.
 
-| Number of pulses | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Primitive cyclic inputs retained for the phase test | 1 | 4 | 19 | 61 | 221 | 745 | 2,331 | 7,425 | 23,153 |
+| Number of pulses | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Primitive cyclic inputs retained for the phase test | 1 | 4 | 19 | 61 | 221 | 745 | 2,331 | 7,425 | 23,153 | 71,371 |
 
-All these clocks are excluded. In each recurrent component the right-neighbor output eventually repeats with the original clock period. Lengths 7–12 needed widths through 25, lengths 13–14 through 28. One 15-gap survivor at width 29 was finally excluded at width 31. A second enumeration agreed on every candidate through length 12. Independent ordinary-graph replays of the hardest nine- and twelve-gap cases found only one recurrent output cycle each.
+All these clocks are excluded. In each recurrent component the right-neighbor output eventually repeats with the original clock period. Lengths 7–12 needed widths through 25, lengths 13–14 through 28. One 15-gap survivor at width 29 was finally excluded at width 31. Five 16-gap survivors required widths 30, 31, 32, 32 and 35. Each eventually has the original clock period as an output period. The candidate and resolved-word sets were compared in full, by rotation, for all 71,371 sixteen-gap words. A second enumeration agreed on every candidate through length 12. Independent ordinary-graph replays of the hardest nine- and twelve-gap cases found only one recurrent output cycle each.
 
-Combined with the previous six-gap census, **any such actual periodic column needs at least 16 pulses and at least 177 ticks in its primitive period**. The least width-26-readable sixteen-gap clock passing the factor tests costs 177 ticks. For n ≥ 17 the pattern constraints alone give at least 10n + 12 ticks: there must be two gaps of ten, two of twelve and one of at least thirteen in addition to a nine. The lower bound makes no claim that a clock at that boundary exists. [Earlier six-gap controls](physical-padding.md).
+Combined with the previous six-gap census, **any such actual periodic column needs at least 17 pulses and at least 183 ticks in its primitive period**. The least width-26-readable seventeen-gap clock passing the factor tests costs 183 ticks. For n ≥ 18 the pattern constraints alone give at least 10n + 12 ticks: there must be two gaps of ten, two of twelve and one of at least thirteen in addition to a nine. The lower bound makes no claim that a clock at that boundary exists. [Earlier six-gap controls](physical-padding.md).
 
 ## Why finite forbidden lists miss some gap orders
 
@@ -52,3 +52,6 @@ The numerical component and product tables are finite computations. General Lean
 
 
 The primary packet `I82/periodic-gap-requirements.zip` was read back at SHA-256 `6000120f12a4b40e5ef224e794b0deff8ac34fd54a83d8e8608917d0b1694e62`. The ordinary-edge, required-label monitor and literal cyclic-word kernel receipts are respectively `I82/ordinary-alphabet-diamond-kernel-03df8b57a993.zip`, `I82/required-labels-automata-kernel-3e325b2dc8d6.zip` and `I82/literal-gap-period-kernel-291e2035fe6a.zip`. The first fixed-clock census is `I82/physical-clocks-7-12.zip` at `f54fbe44413f830150fd5a3a19770cdea927100bfd69c934d0cdb899370e2077`. The continuation `I82/physical-clocks-13-15.zip` was read back at `9ea733f5d8e7e7765ee36680b1c9bdc49c16041b086177d3bf5cede5a9e04a7d`. Together the two phase tests exclude 33,960 filtered primitive necklaces over lengths 7–15. The PR 379 extension passed three stock headlines with no new axioms. [Independent equal-input path verifier](check-gap-requirements.py).
+
+
+The complete 7–16 census resolves 105,331 admissible primitive candidate words. Length 17 is the next test. The length-16 read-back packet is I82/physical-clocks-16.zip, SHA-256 3792452174b5e5336cc863e117f78f7f7e3457d28efe583f934045b596d9eb38.
