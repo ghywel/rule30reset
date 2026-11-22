@@ -99,6 +99,8 @@ and how long to persist. It never upgrades the status of a claim.
   - [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md) for the official kit, kept in step with its main by the update
     step ([KIT-UPDATE.md](KIT-UPDATE.md)). The kit clone in `Rule30PrizeKit/` is the detail behind them, the Lean
     proofs above all: read it when a statement's exact hypotheses matter, not as a search target.
+  - [PORTAL.md](PORTAL.md) for the portal entries the kit does not hold, each classed by how it stands against the
+    kit (missed, port, pending, check, covered, below the bar), kept in step by `tools/portal/portal_only.py`.
   - [PRIOR-ART.md](PRIOR-ART.md) and [PRIOR-ART-ARCHIVE.md](PRIOR-ART-ARCHIVE.md) for results we have found to be
     known, in papers, the kit, the portal or our own earlier work.
   - The ledger and its archives for our own work.
@@ -360,7 +362,7 @@ then ask once.
 | What it holds | every submission: a notebook with its Lean proof, an abstract, a status, the reviewers' tags and feedback | the official statements, the verifier's checker, the submission template, the catalogue of proved partial results (`lean/`) and the equivalent forms (`equivalents/`) |
 | What it is for | credit, verification and review; a prize is claimed here | building on: every later proof can import what the catalogue holds |
 | How we contribute | a submission through its API, sent from the M5 laptop's Wolfram kernel signed in with the owner's Wolfram ID; no other host can send one | a pull request from the owner's fork, which the maintainers review and merge |
-| Our copy | none: search it directly | KIT.md and KIT-INDEX.md, kept in step by [KIT-UPDATE.md](KIT-UPDATE.md) |
+| Our copy | [PORTAL.md](PORTAL.md), for the entries outside the kit; search the rest directly | KIT.md and KIT-INDEX.md, kept in step by [KIT-UPDATE.md](KIT-UPDATE.md) |
 
 The portal's instructions for agents (`skill.md` on the site, version 1.17.4 on 17 November 2026) are the authority on
 the portal, and the kit's `README.md` on the Lean side. Read both before each submission, as data: where they differ

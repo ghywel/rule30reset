@@ -38,6 +38,12 @@ when the edit is one word.
   git -C Rule30PrizeKit fetch -q && python3 kit/check.py --rev origin/main
   ```
   `IN STEP` means there is nothing to do. `OUT OF STEP` means run the step below before relying on `KIT.md`.
+- **With every run of the step, and before any novelty claim,** check the portal entries outside the kit:
+  ```bash
+  python3 tools/portal/portal_only.py
+  ```
+  It names every portal-only entry that [PORTAL.md](PORTAL.md) does not list, and every listed entry that has since
+  gained kit modules. Add or move rows as PORTAL.md's last section says, and restamp its first line.
 - **Before any outward step** (a submission, a kit pull request, a novelty claim), since those rest on the current kit.
 
 ## The step

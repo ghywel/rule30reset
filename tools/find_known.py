@@ -5,17 +5,18 @@
   python3 tools/find_known.py --all TERM                 every hit, not the first five per file
   python3 tools/find_known.py --files PRIOR-ART TERM     only files whose name contains PRIOR-ART
 
-Searched, in order: KIT.md and KIT-INDEX.md (the kit, kept in step by KIT-UPDATE.md), PRIOR-ART.md and
+Searched, in order: KIT.md and KIT-INDEX.md (the kit, kept in step by KIT-UPDATE.md), PORTAL.md (the portal entries
+outside the kit, kept in step by tools/portal/portal_only.py), PRIOR-ART.md and
 PRIOR-ART-ARCHIVE.md (results found to be known), CHAT-LEDGER.md and its archives (our own work). Each hit is shown
 with the nearest heading above it. Every file is named even when a term has no hit there, so an absence is visible.
 Terms are never combined: search each name an object carries separately ("Theta odd depth", "first check").
-For detail behind KIT.md, read the Lean source in Rule30PrizeKit/; for what our documents do not track (the portal,
-open kit pull requests, the literature), search those directly.
+For detail behind KIT.md, read the Lean source in Rule30PrizeKit/; for what our documents do not track (the portal's
+abstracts in full, open kit pull requests, the literature), search those directly.
 """
 import argparse, pathlib, re
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-FILES = ['KIT.md', 'KIT-INDEX.md', 'PRIOR-ART.md', 'PRIOR-ART-ARCHIVE.md', 'CHAT-LEDGER.md']
+FILES = ['KIT.md', 'KIT-INDEX.md', 'PORTAL.md', 'PRIOR-ART.md', 'PRIOR-ART-ARCHIVE.md', 'CHAT-LEDGER.md']
 
 def files(only):
     out = [ROOT / f for f in FILES]
