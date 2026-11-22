@@ -1,15 +1,15 @@
-<!-- kit-commit: ba7433c 2026-11-22 -->
+<!-- kit-commit: b5b9dbd 2026-11-22 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ba7433c` (main, 2026-11-22),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `b5b9dbd` (main, 2026-11-22),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 291 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 394 entries on 22 November
-(392 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 293 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 395 entries on 22 November
+(393 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -186,6 +186,7 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
   keeps finite width and every row from tick 11 (`Rule30ResetSwap`); every finite wall record has a finite row with a
   complete predecessor tree of exactly any prescribed height (`Rule30WallRecordAncestry`); from check 2 on, two of any three consecutive first checks
   pass a share of rows in [1/40, 39/40], and check n has degree n or n − 1 (`Rule30FirstChecks`, `Rule30FirstCheckDegree`).
+- An output with arbitrarily far-right white cells has at most two whole-line predecessors. Every 2k-tick ancestor of a nonconstant spatially p-periodic row is 2^k p-periodic (`Rule30InverseSpatialPeriod`, `Rule30InverseSixBlack`).
 - **Gap-language survivors.** If seed y survives to horizon 2m, the number Z of zeros in its trace at times
   0, 2, …, 2m−2 satisfies m ≤ 5Z and 3Z ≤ m+2. The canonical seed count N(H) is nondecreasing and
   N(10k+r) ≥ 2^k for all natural k and r. For H ≥ 17, swapping the initial (6,10) and (10,6) returns pairs the

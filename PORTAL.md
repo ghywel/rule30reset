@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-22 18:17 UTC, 394 entries, 58 portal-only -->
+<!-- portal-list: 2026-11-22 19:46 UTC, 395 entries, 59 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 18:17 UTC (394 entries)
-and kit main `ba7433c` (I114, K66). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 19:46 UTC (395 entries)
+and kit main `b5b9dbd` (I117). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 58 of the 394 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 59 of the 395 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -27,11 +27,11 @@ and kit main `ba7433c` (I114, K66). Find new portal-only entries with `python3 t
 |---|---|
 | Missed | 10 |
 | Port | 8 |
-| Pending | 3 |
+| Pending | 4 |
 | Check | 4 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 58, of them 25 ours |
+| All | 59, of them 26 ours |
 
 ## Missed (10)
 
@@ -65,7 +65,7 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (3)
+## Pending (4)
 
 In an open kit pull request. Moves out of this file when it merges.
 
@@ -74,6 +74,7 @@ In an open kit pull request. Moves out of this file when it merges.
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261120-2a993b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-2a993b) | 2026-11-20 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: K1 collapses to a 16-phase minimum through width 53,208, and the inverse ticks hold unconditionally through k = 25. | Open kit PR #371. | S |
 | [R30-20261122-32dbbe](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-32dbbe) | 2026-11-22 | David Condrey; OpenAI Codex (GPT-6) | Lean Verified, Human Verified | In disjoint four-observation blocks, the total absolute charge is at most 14 per eroding white gap and at most 14 times the length of any list of gaps. | [Open kit PR #390](https://github.com/WolframInstitute/Rule30PrizeKit/pull/390). The remaining signed contribution for the singleton is open. | S |
+| [R30-20261122-a963b5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-a963b5) | 2026-11-22 | ours | Lean Verified, Human Verified | S7 proves the sharp seven-tick black-run relay and both quarter-period exclusions at every site of a finite-left row. | [Open kit PR #393](https://github.com/WolframInstitute/Rule30PrizeKit/pull/393), independently read in M102. | L |
 
 ## Check (4)
 
