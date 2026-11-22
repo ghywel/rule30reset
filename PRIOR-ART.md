@@ -386,3 +386,28 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
   *fall_count* or *run ends* misses the centre count under *spatialBlackLeftBlackCount* and *spatial11Left*.
 - **Credit.** The local identity and the centre count are known. Applying them at j+1 and summing on
   [s,s+T) gives I72's count. The middle face follows by bounding the number of temporal falls by ⌈T/2⌉.
+
+## P49 · 2026-11-22 · Repetition exponents of rotation codings: what Jen's bound and corollary F exclude
+
+- **Ours.** N6 and N7 (MEASURED) found the following for golden rotation codings. Large-excess repeats, which
+  violate Jen's bound, recur at a stationary rate of about 0.18 per scale for random one- and two-arc codings. The
+  silver half-circle word passes Jen but has exact Pell near-squares (P47), so #395's `corollary_F` excludes it.
+  CONJECTURE (N7 addendum 1): for a bounded-type rotation and almost every choice of endpoints and phase, a finite-arc
+  coding has `Dio > 2`, so Jen's bound alone excludes it.
+- **Known.**
+  - Nguyen, *Spectrum of the refined Diophantine exponent*, v2, 5 October 2026 ([arXiv](https://arxiv.org/html/2608.20191v2)),
+    Theorem 7.4. For a non-constant coding of an irrational rotation by a finite partition, at any phase:
+    `1 < Dio < ∞` if the angle is badly approximable, and `Dio = ∞` otherwise. Theorem 7.2: `Rdio = ∞` always.
+    No value of `Dio`, no dependence on phase or endpoints, and no almost-every statement appear in §7. Section 9's
+    one bounded-type conjecture, Peltomäki's, concerns episturmian words.
+  - Bugeaud–Kim, Lemma 10.3: `rep = Dio/(Dio − 1)`; for Sturmian words `rep ≤ √10 − 3/2 < 2`. Read in placego GC2189
+    and GC2193, not re-read here.
+  - In these terms Jen's bound (`RepeatBound`, 0ef6e2) excludes every word with `Dio > 2` (`rep < 2`).
+    `corollary_F` excludes, beyond that, words with repeats at unbounded lags falling short of their second start
+    by a fixed amount.
+- **Found by.** placego's PRIOR-ART-ARCHIVE entries on Rote, half-circle codes and Bugeaud–Kim, then GC2193's pointer
+  to Nguyen §7, whose statements were read verbatim this session (Definitions 2.1 to 2.7, §7, §9). Searching
+  *badly approximable*, *partial quotient* or *initial critical exponent* in our documents found nothing.
+- **Credit.** The large-digit case of 0ef6e2 is known in exponent form (`Dio = ∞`, so `rep = 1`). The bounded-type
+  value of `Dio`, and so the conjecture, is not settled by these sources; this is not an exhaustive literature
+  search.

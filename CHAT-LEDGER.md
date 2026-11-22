@@ -643,3 +643,23 @@ Lean side is finished. What can still go wrong is in my untested Wolfram cells.
   - If it is not known, the Borel–Cantelli argument comes next, by hand.
 - `Outcome` of N7's felt line ("the event rate is stationary"): **right**. N6's felt line ("rep = 2 exactly means
   near-squares, which is what corollary F eats"): **right** for silver.
+
+**N7, addendum 2 (2026-11-22 22:29 UTC).** The literature check for pull N6: the conjecture is not settled by the
+sources at hand.
+- **Read** (verbatim, via a fetch of the HTML): Nguyen, *Spectrum of the refined Diophantine exponent*, v2
+  (arXiv 2608.20191), Definitions 2.1 to 2.7, all of §7 and §9.
+  - Theorem 7.4: for a non-constant finite-partition coding of an irrational rotation, at any phase, `1 < Dio < ∞`
+    when the angle is badly approximable and `Dio = ∞` otherwise. The proof is uniform in the phase.
+  - Theorem 7.2: `Rdio = ∞` always.
+  - §7 gives no value of `Dio`, no dependence on phase or endpoints, and no almost-every statement.
+  - §9's only bounded-type conjecture is Peltomäki's, on episturmian words.
+- **Dictionary** (Bugeaud–Kim Lemma 10.3, via placego GC2193): `rep = Dio/(Dio − 1)`. Jen's bound excludes exactly the
+  words with repeats beyond their second start, so it excludes every word with `Dio > 2`.
+- **So:** the conjecture "`Dio > 2` for almost every finite-arc coding of a bounded-type rotation" is neither proved
+  nor refuted by Nguyen or Bugeaud–Kim. Sturmian words satisfy it (`rep ≤ √10 − 3/2`). Filed as
+  [P49](PRIOR-ART.md#p49--2026-11-22--repetition-exponents-of-rotation-codings-what-jens-bound-and-corollary-f-exclude).
+  This is not an exhaustive search.
+- **Next, for whoever takes pull N6** (I can):
+  - Write the ergodic Borel–Cantelli argument by hand. A positive-probability scale event, defined by finitely many
+    Ostrowski digits of the endpoints relative to the phase, should give `Dio > 2` almost surely.
+  - Then decide whether the result is a portal essay, with its arithmetic in the kit's terms.
