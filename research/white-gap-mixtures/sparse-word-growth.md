@@ -28,6 +28,10 @@ The I78 minimum of four pulses and span 41 is now a literal Lean theorem for all
 
 There is also an irregular family with a sharp physical deadline. When gaps alternate between nine and an independently chosen length from ten through sixteen, every right neighbor follows the standard pattern, including white on the second white tick, from tick **102** for every starting phase. A full-line history fails at tick 101. This family admits arbitrarily many ten-nine joins and need never repeat. Independent window and ordinary-cone checks are in the packet below.
 
+A complementary Lean result allows arbitrary periodic concatenations of the two-gap block `(10,9)`, a single thirteen, and a single fifteen. A second version replaces the fifteen by sixteen. In each family the right-neighbor mask eventually repeats with the supplied period on every full-line history. Finite-left masked Jen again rules out the drive at every site of a row with a leftmost black cell. The number of blocks is unrestricted.
+
+Five short gap strings also force exclusion with arbitrary surrounding gaps of at least nine: `(9,15)`, `(13,15)`, `(15,15)`, `(16,16)` and `(16,10,9)`. Each sends the right strip into the kit's eight-cell reset set after the following pulse and nine whites. This permits arbitrarily many ten-nine joins elsewhere. The literal cyclic exclusion is in Lean for every site and rotation. At the initial leftmost site a period presented with the reset factor has an unequal tick by the inclusive endpoint 2T+6P, where T is the aligned onset and P the period in ticks.
+
 AIOvernight's GrammarRuns and ResetMixtures provide the earlier uniform exclusions. WhiteEndNine supplies the earlier mode analysis for constant gap length. The maintainer accepted the uniform grammar and asked on PR 378 for a family or criterion beyond individual starts. The growth bound and the 33-tick theorem both use a single construction across arbitrary gap counts. [GrammarRuns review](https://github.com/WolframInstitute/Rule30PrizeKit/pull/36) · [ResetMixtures](https://github.com/WolframInstitute/Rule30PrizeKit/pull/43) · [Maintainer's request](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378).
 
 ### Replay
@@ -43,5 +47,7 @@ Private store paths below are relative to `share-scratch/gptIntel/`. The main ar
 | `I79/irregular-sync.zip` | Alternating nine and variable long gaps, exact 102-tick bound and boundary histories | `732613fbce252de676e4606600a0163198207e175c7aeadc0b8b47ab69b7bab7` |
 | `I78/short-gap-41-kernel-e7d1bfa4a0e2.zip` | Literal four-pulse and 41-tick minimum, kernel-checked | `e7d1bfa4a0e2f245a749dfb1d6ff67926f4f386f418377c9a215cfc766c3fff6` |
 | `I78/finite-mixed-gap-center-deadline.zip` | I78's guarded sparse language, finite singleton mismatch by tick 4(s+40)+10P+16 | `fa99d30d4cc0849e6323793ca627d6b1e6feb66fb20d2c7312d1c34dc968ef57` |
+| `I78/paired-gap-grammars-kernel-ec905e3cf1ca.zip` | Unlimited paired ten-nine blocks with freely interleaved thirteen and fifteen (or sixteen) | `ec905e3cf1caa66a83c52008866eeba2f256ae313aea0010efcb4a7beac21486` |
+| `I79/short-reset-factors.zip` | Five reset factors and finite mismatch, 42 official headlines, independent replay of 117,416 labelled transitions | `1bfd306120544878b8f6892eefd67200c2113727687245bd2a00cce3fddb365a` |
 
 The next test is to remove components where fixing the input also fixes the response, even though both colors occur for different inputs. The present count retains such components. An observation about possible continuations could lower the candidate growth rate without enlarging the strip.
