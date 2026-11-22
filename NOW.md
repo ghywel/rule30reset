@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 22:34 UTC by gptIntel (I125, N7 follow-up and K68 review).*
+Updated 2026-11-22 22:40 UTC by gptIntel (I126, S9 controller read).*
 
 ## Arrangement
 
@@ -30,9 +30,8 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 Calls to action only.
 
 - **Path 3 / S9, the density polygon** (I72), proposed in K67 at the owner's word to continue it. **Say whether it
-  goes forward.** Its Lean is done: the single file passes at a clean checkout of the verifier's commit, ten
-  headlines, in 30 seconds, and gptIntel has read the converse (I124). The author's files are on the store (K68).
-  Left before a post: a read of one 30-line module, the notebook from the M5, the release read, and your word.
+  goes forward.** Independent reads of the converse and the controllers passed (I124, I126). The store source
+  passes all ten headlines at the verifier's commit (K68, I126). The M5 notebook and release read remain.
 - **Path 4, the seven-lock prefix certificate** (I49), beside Lowry’s #378, is the one path left unread. Say whether
   anyone takes it.
 - **S8, the compulsory gap factor (12, 10, 9)** is posted as
@@ -81,7 +80,7 @@ Each row is one link of (T). The statements and proofs are in
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 2 and 3 are merged
   (#392, #394), as are repair 1 (#391) and steps 3 and 5 (#395, #396). Step 4 is open as #397, rebased onto `cf60d48` (M113). Step 7 is assessed: none of the three is a port (N3).
-- **gptIntel:** N7's half-circle family write-up, the almost-everywhere repeat question and K68's controller review (I125). K65 continues.
+- **gptIntel:** N7's half-circle family write-up and the almost-everywhere repeat question (I125). K68's controller read passed (I126). K65 continues.
 - **claudeCloud:** path 3 at the owner's word: read in Lean, the converse added, S9 proposed (K67), its Lean and text on the store (K68).
 - **claudeIntel:** I123 carried (N7); pull N6's scale test done (N7 addendum 1); literature check done (P49); the Borel–Cantelli argument is next for pull N6. #397 awaits the maintainers.
 
@@ -93,7 +92,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M113, gptM5 R85, claudeCloud K68, gptIntel I125 and claudeIntel N7. Kit issue
+Last posts: claudeM5 M113, gptM5 R85, claudeCloud K68, gptIntel I126 and claudeIntel N7. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -114,7 +113,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified, Human Verified**. **Merged** in [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) at `54d030c` (I108). The portal lists both kit modules. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 | **S7** | The sharp loss of seven ticks at a moving white endpoint, and both quarter-period exclusions at every site of a row with a leftmost black cell. | Proposed in R79 from I93/I103. Finite replay K64 and Lean read M95 passed. **Packet ready** (R80). Portal manifest `d6977083…`, kit patch `4137eecb…`. **Posted** at the owner's word as [R30-20261122-a963b5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-a963b5), **Lean Verified** at `5fb5915` (M103). | **In the kit** as `Rule30PulseRelay`, kit commit `98cdf71` (#393). Norris has priority for singleton 7/11. |
 | **S8** | Every periodic sparse column (isolated pulses, gaps of at least 9) at any site of a row with a leftmost black cell contains the gaps 12, 10, 9; the ten three-gap reset words as support. | **Posted** as [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a), **Lean Verified** at `5fb5915` (M112) | Kit PR [#398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398), open (M112). |
-| **S9** | At any site of any history the black count C and the run-end count A over T ticks satisfy three sharp inequalities; five explicit histories are the corners of the polygon; a linear inequality holds uniformly exactly when it holds at the five corners; on the single seed two corners are missed by a margin of at least log T. | **Proposed** in K67 from I72. Read: gptIntel's ten modules (K67), the converse (I124). Unread: `Rule30DensityCornerHistories`. Source `a70b08b4…` passes `Check.lean` at a clean `5fb5915`: ten headlines, 593 constants (K68). Author's files in `share-scratch/claudeCloud/S9/v2/`. Waiting: the notebook from the M5, the release read, the owner's word. | A family of kit modules after the portal id. |
+| **S9** | At any site of any history the black count C and the run-end count A over T ticks satisfy three sharp inequalities; five explicit histories are the corners of the polygon; a linear inequality holds uniformly exactly when it holds at the five corners; on the single seed two corners are missed by a margin of at least log T. | **Proposed** in K67 from I72. Lean read in full (K67, I124, I126). Source `a70b08b4…` passes the stock checker twice at `5fb5915`, ten headlines and 593 constants (K68, I126). Author's files in `share-scratch/claudeCloud/S9/v2/`. The M5 notebook, release read and owner's word remain. | A family of kit modules after the portal id. |
 
 The verifier's kit commit is `5fb5915`. The shared catalogue is in step with kit main at `cf60d48` (I122).
 
