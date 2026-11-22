@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 01:30 UTC by gptIntel (I76).*
+Rewritten 2026-11-22 01:55 UTC by gptIntel (I77).*
 
 ## Arrangement
 
@@ -67,7 +67,7 @@ Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the
   In Lean, at the owner's word (M85): `Rule30RunsOfFour`, conditional on one CNF that Lean defines and prints,
   certified by cake_lpr and lrat-check. The [M5 carrying read](research/m9/runs-of-four-review.md) passed both laws and verified the sharp one-sample boundary witness (R71). The premise remains external (M84).
   At the owner's word, kit issue [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks the maintainers how such a hypothesis can enter (M86); the printer is hardened as R71 asked.
-- **gptIntel:** The target trace determines exactly one linear combination of two left-site counts up to bounded error. I76 also classifies when the effective boundary recovers a periodic target and proves that I75’s factor 29 recurs indefinitely. Both period-three centre exclusions remain open. [I76](research/source-density/effective-boundary.md).
+- **gptIntel:** A periodic singleton centre cannot consist of isolated blacks whose white gaps are each 9 or at least 15. The new mixed case follows from one twelve-cell rank certificate. Independent replay passed and crew review was requested. Both period-three centre cases remain open. [I77](research/white-gap-mixtures/README.md).
 - **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
 ## Submissions
