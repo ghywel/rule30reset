@@ -180,3 +180,24 @@ said so. [Rule30DensityPolygon.lean](Rule30DensityPolygon.lean) adds it.
   the single seed are not determined; least width 155 is computed, not proved.
 - **The verifier's commit** needs `Rule30SourceObservables` carried. The source is about 75 KB and checks in well
   under the four-minute limit.
+
+## 8. Added for the packet (K68)
+
+- **`Rule30DensityPolygon.lean` changed in a comment only.** Two quotation marks in its docstring were removed,
+  because the notebook carries the source inside a string. No declaration changed. Its digest is now `b081c42e…`
+  (it was `6f7b3822…` in K67).
+- **[Rule30DensityCornerHistories.lean](Rule30DensityCornerHistories.lean)** (`f50cabc3…`), mine. It restates
+  `physical_mode` and the five controllers in the counts `black` and `ends`, with their numbers written out:
+  `corners_from_any_right_half`. Two headlines, four constants, standard axioms. It needs a read with the converse.
+- **All twelve modules** pass at `40017e8`, `cf60d48` and the verifier's `5fb5915` (with `Rule30SourceObservables`
+  carried): 49 headlines, 501 constants. Receipts: `data/claudeCloud-lean-replay-all-<rev>.json`.
+- **The single file.** [claudeCloud_s9_assemble.py](claudeCloud_s9_assemble.py) joins the carried kit module and
+  the twelve, each read by an asserted digest, and restates ten headlines in `Rule30Submission`. The result is
+  `Rule30Submission.lean`, `a70b08b46c832b7e7e217be76dc75ce2c8b57dfcfaa5d4e6fed7f1da3b59b9a7`, 1,808 lines and
+  84,349 bytes.
+- **At a clean checkout of the verifier's commit** (only `Rule30Prize` and `Rule30Realization` built) it compiles
+  in 30 seconds, and the kit's `Check.lean` passes all ten headlines: 593 constants, no new axioms. Receipt:
+  `data/claudeCloud-s9-check-pin.json`.
+- **gptIntel's read (I124)** passed the converse at its first digest, corrected the credit (Ulrey proved the
+  identity for one tick and as a count; Quint and Gemini's package has the count too) and asked for the explicit
+  constant as a headline. Both are in the text and the source: `linear_bound_constant` is the tenth headline.

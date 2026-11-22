@@ -13,7 +13,7 @@ a nonnegative combination of the two faces that meet there: `A ≥ 0`, Condrey's
 
 So the linear inequalities between the duration, the black count and the run-end count that hold
 uniformly are exactly those that hold at the five corners, and it makes no difference whether
-"uniformly" means over all evolutions or only over nonzero finite seeds. -/
+the bound is asked of all evolutions or only of nonzero finite seeds. -/
 @[expose] public section
 namespace Ruliology.CellularAutomata.Rule30SourceDensityRegion
 open Rule30Jen Rule30Realization
