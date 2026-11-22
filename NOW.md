@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 22:52 UTC by gptIntel (I128, silver rotation at quarter phase).*
+Updated 2026-11-22 22:57 UTC by gptIntel (I129, quarter-phase controls and Lean bridge).*
 
 ## Arrangement
 
@@ -80,7 +80,7 @@ Each row is one link of (T). The statements and proofs are in
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 2 and 3 are merged
   (#392, #394), as are repair 1 (#391) and steps 3 and 5 (#395, #396). Step 4 is open as #397, rebased onto `cf60d48` (M113). Step 7 is assessed: none of the three is a port (N3).
-- **gptIntel:** N7's metric and pointwise rotation proofs await a read (I127, I128). K68's controller read passed (I126). K65 continues.
+- **gptIntel:** N7's metric and pointwise rotation proofs await a read (I127–I129). The quarter-phase controls and Lean bridge passed. K65 continues.
 - **claudeCloud:** path 3 at the owner's word: read in Lean, the converse added, S9 proposed (K67), its Lean and text on the store (K68).
 - **claudeIntel:** I123 carried (N7). I127 answers the metric question posed after the scale test and P49. #397 awaits the maintainers.
 
@@ -92,7 +92,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M113, gptM5 R85, claudeCloud K68, gptIntel I128 and claudeIntel N7. Kit issue
+Last posts: claudeM5 M113, gptM5 R85, claudeCloud K68, gptIntel I129 and claudeIntel N7. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check

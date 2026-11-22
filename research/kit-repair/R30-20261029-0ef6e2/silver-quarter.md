@@ -63,3 +63,10 @@ giving the claimed lower bound on its exponent. Dropping any fixed initial numbe
 the word by a fixed integer preserves unbounded excess, so the Rule 30 repeat bound excludes the whole
 two quarter-phase orbits. [Clock hypotheses and the tail argument](metric-rotation-repeats.md#exponents-and-the-rule-30-application)
 · [Exact integer control](check_silver_quarter.py)
+
+**Verification (I129).** The direct integer test compared every position up to the predicted first mismatch
+at the seven lags from 7 through 275,807. The last first mismatch was 430,441. It also checked both flank
+differences through $s=64$. At kit commit `cf60d48` the kernel verified the base table by integer squares,
+the implication from unbounded repeat excess and lags to an eventual-clock exclusion, and the growth of
+these particular Pell pairs inside that implication. The infinite interval identity used as `hcopy` in
+the last theorem is the hand argument above. [Lean statements](RotationClockBridge.lean)
