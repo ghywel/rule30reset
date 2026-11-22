@@ -1274,3 +1274,37 @@ Outcome: open.` Gut verdict: paths 1 and 2 are real candidates. Path 4 belongs b
   values 7j + 2 (I105 has no witness at 13, 14, 19, 21, 22).
 - **Counterfactual.** A failure of a kernel claim would mean my encoding or the claim is wrong; I would look for the
   convention first. A horizon attained at every n from 9 to 44 makes the relay sharp beyond its first step.
+
+**K64, addendum 2 (2026-11-22 12:10 UTC).** Path 1's finite claims: **every one replays**, and I105's two open horizons are
+attained. The output is [claudeCloud-replay.txt](research/black-run-transitions/data/claudeCloud-replay.txt).
+- **Two bugs of mine first.** The frozen file crashed twice on the same off-by-one: the column list was one tick
+  short for site 1 in the relay's cone, and again in the seed-19 simulation. Site 2 never reads that tick. Each
+  fix adds one unused column value; nothing tested changed. The shield results came from the frozen file itself.
+  Corrected file `ad5fe1026327c88f8e1f21fffa30f3d563ebdd74eb9176a5cbd0e47cdedc12bc`; the whole run was repeated.
+- **Shields** (COMPUTED, no certificate): 44 black ticks fix 10 cells and 43 do not; 70 fix 16 and 69 do not; 128
+  fix 30 and 127 do not. Each counterexample was replayed by direct simulation. This agrees with I98 and I101
+  (kernel) and with I96 (LRAT).
+- **Relay** (COMPUTED): for every n from 9 to 80, site 2 is white at n + 2 and black at every tick from 9 to n + 1,
+  for every right half. The right half 19 has site 2 white at tick 8, so the loss is exactly 7, for every n from 9
+  to 400.
+- **Agreement** (COMPUTED): after n = 7j + 2 black ticks and a common drive, site 1 agrees for 4j ticks, for every
+  pair of right halves, j = 1 to 6.
+- **Sharpness**, new for n = 37 and 44. The exact agreement horizon h(n) for n = 9 to 44, replayed witnesses at
+  each value:
+
+| n | 9–15 | 16–22 | 23–29 | 30–35 | 36–42 | 43–44 |
+|---|---|---|---|---|---|---|
+| h(n), first possible difference | 4 | 8 | 12 | 16 | **20** | **24** |
+
+  The relay's horizon 4⌊(n − 2)/7⌋ is attained everywhere except at n = 36 and 43, where no pair differs at it.
+  An unregistered follow-up then found the first difference at +20 for n = 36 and +24 for n = 43. So from n = 36 the
+  true rate beats seven blacks per four ticks. That is the beginning of the answer to I105's last question: actual
+  black histories do give more than the repeated transfers guarantee.
+- **Arithmetic** (checked): I98's examples (44 blacks at P = 64; 9 blacks and 45 whites at P = 74) and I103's
+  (16 at P = 24; 9 and 16 at P = 35) meet their tests. 7P + 29 ≤ 11r implies the relay test for every r < P up to
+  2,000. The limiting fractions are 7/11, 17/27 and 27/43.
+- **Predictions:** (0.97) and (0.9) held; the horizon is attained at 9, 16, 23, 30 (0.9), at 37 (0.55) and at 44
+  (0.45), all held; (0.6) "not attained at some n between", held at 36 and 43.
+- **What this read covers.** Every finite claim of I98, I101 and I103 that a light cone decides. It does not cover
+  the Lean transport to every site of every row with a leftmost black cell, or the masked-Jen step. Those are the
+  Lean replay, which K64 §5 proposes for gptM5. Path 1's carrying read is therefore half done.

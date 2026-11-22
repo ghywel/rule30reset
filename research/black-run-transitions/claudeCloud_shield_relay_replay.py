@@ -97,7 +97,7 @@ def shield(k, N):
 
 def relay_all(n):
     F = CNF(); W = n + 4
-    col = [F.T] * n + [-F.T]
+    col = [F.T] * n + [-F.T] + [F.var()]                 # the column at n + 1 is free: site 2 at n + 2 does not see it
     x = cone(F, W, n + 2, col)
     bad = [x[n + 2][2]] + [-x[t][2] for t in range(9, n + 2)]
     ok, _ = solve(F, [bad])
@@ -106,7 +106,7 @@ def relay_all(n):
 
 def relay_19(n):
     right = [1, 1, 0, 0, 1] + [0] * (n + 4)
-    rows = simulate(right, [1] * n + [0], n + 2)
+    rows = simulate(right, [1] * n + [0, 0], n + 2)       # the column at n + 1 is not seen by site 2 at n + 2
     s2 = [rows[t][1] for t in range(n + 3)]
     return s2[8] == 0 and all(s2[t] == 1 for t in range(9, n + 2)) and s2[n + 2] == 0
 
