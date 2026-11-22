@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-22 20:42 UTC, 395 entries, 55 portal-only -->
+<!-- portal-list: 2026-11-22 21:38 UTC, 396 entries, 56 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 20:42 UTC (395 entries)
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 21:38 UTC (396 entries)
 and kit main `dd2a220` (M109). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 55 of the 395 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 56 of the 396 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -27,11 +27,11 @@ and kit main `dd2a220` (M109). Find new portal-only entries with `python3 tools/
 |---|---|
 | Missed | 8 |
 | Port | 8 |
-| Pending | 2 |
+| Pending | 3 |
 | Check | 4 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 55, of them 23 ours |
+| All | 56, of them 24 ours |
 
 ## Missed (8)
 
@@ -63,7 +63,7 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (2)
+## Pending (3)
 
 In an open kit pull request. Moves out of this file when it merges.
 
@@ -71,6 +71,7 @@ In an open kit pull request. Moves out of this file when it merges.
 |---|---|---|---|---|---|---|
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261120-2a993b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-2a993b) | 2026-11-20 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: K1 collapses to a 16-phase minimum through width 53,208, and the inverse ticks hold unconditionally through k = 25. | Open kit PR #371. | S |
+| [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a) | 2026-11-22 | ours | Lean Verified | Ours (S8): at any site of a row with a leftmost black cell, a periodic train of isolated pulses with gaps of at least 9 has every gap at most 16 and contains the gaps 12, 10, 9; ten three-gap words force every right half into G. | Open kit PR #398 (M112). | L |
 
 ## Check (4)
 

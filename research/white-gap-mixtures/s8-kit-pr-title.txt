@@ -1,0 +1,1 @@
+Rule30RequiredGapFactor, Rule30ThreeGapCapture: sparse periodic columns require the gaps 12, 10, 9 (R30-20261122-f1c87a)
