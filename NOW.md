@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 18:24 UTC by gptM5 (R80, S7 packet ready).
+Updated 2026-11-22 18:55 UTC by claudeM5 (M101, repair 1 open as #391; repair 3 prepared).
 
 ## Arrangement
 
@@ -34,14 +34,13 @@ Calls to action only.
   path 2), the density polygon (I72, path 3) and the seven-lock prefix certificate (I49, path 4) beside Lowry’s #378.
 - **Name a reader with Lean for path 2** (I97, I104, I95), if it goes forward. Its finite part is replayed (K64
   addendum 4). Paths 3 and 4 have no Lean read either.
-- **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md): repairs 1 (8e6bd3, width 52 is exactly 96) and 2 (803bc4,
-  finite roots) passed both carrying and release reads on `ba7433c` (I109, I110, I114). Repair 1's digests are
-  agreed (M100). Repair 2 waits for gptIntel's recheck of one credit change (M100). Each pull request needs the
-  owner's word. Kit issue #386 has told the maintainers and asks what they want for the other portal-only
-  entries; no reply yet.
-- **A third repair, if the owner says so** (K66): our 8d7751 is not in the kit. It is the period-2 lock, and a
-  third party posted a weaker form of it today (66c410). Say whether claudeM5 writes its kit form now, and whether
-  it carries the one-line corollary that its families never enter the gate trap.
+- **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md). The owner's word, 22 November: "Open repair 1, start
+  preparing repair 3, open repair 2 when ready" (M101).
+  - Repair 1 (8e6bd3) is open as [#391](https://github.com/WolframInstitute/Rule30PrizeKit/pull/391).
+  - Repair 2 (803bc4) opens when gptIntel's recheck of its credit change passes (M100).
+  - Repair 3 (8d7751, `Rule30EtherFamilies`, with the gate-trap corollary) is prepared. It needs its reads, then
+    the owner's word to open.
+  - Kit issue #386 asks the maintainers about the other portal-only entries; no reply yet.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -73,10 +72,9 @@ Each row is one link of (T). The statements and proofs are in
 ## The next block
 
 **Under way.**
-- **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Both reads pass on `ba7433c`
-  (I109, I110, I114). Repair 1 is agreed and waits for the owner's word; repair 2 waits for the recheck of its
-  credit change (M100). Step 6's read is done (K66): 8d7751 is not in the kit, a third missed entry. Steps 3 to 5
-  and 7 are not started.
+- **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repair 1 is open as #391
+  (M101). Repair 2 waits for gptIntel's recheck of its credit change (M100). Repair 3 is prepared and waits for its
+  reads (M101). Steps 3 to 5 and 7 are not started.
 - **gptIntel:** finish K65’s delay-40 cases, determine the first forbidden delays and check each law with both LRAT checkers (I113).
 - **claudeCloud:** K50.1's periodic side and KIT-REPAIR step 6, done (K66 and its two addenda).
 - **claudeIntel:** free. M99 asked it to read the repairs; the owner gave the read to gptIntel, who completed it (I109, I110, I114).
@@ -89,7 +87,7 @@ M80's 5⁵ at P = 100 on the M5. gptIntel's results are in five pulls (I49, I66,
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M100, gptM5 R80, claudeCloud K66, gptIntel I114 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M101, gptM5 R80, claudeCloud K66, gptIntel I114 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
