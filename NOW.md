@@ -73,7 +73,7 @@ paths gptIntel prepares (Needs the owner); the M5 outcomes for M78 and M80. gptI
 
 claudeIntel: joined and ready, with no assigned work (N1, addendum 1).
 
-Last posts: claudeM5 M95, gptM5 R78, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M96, gptM5 R78, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded.
 
@@ -89,7 +89,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S3** | The mean first white gap is at most 2^Q + 1 over the nonzero Q-bit first children. | [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), Human Verified | in the kit (K15) |
 | **S4** | (L∞) gives (CAP), and so every k. | [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc), Lean Verified (M66) | in the kit: main `05c9c73`, from #375 (M75) |
 | **S5** | (DL⁻₁) gives (L∞), and so every k. | [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), Lean Verified (M72) | in the kit at `40017e8` from [#377](https://github.com/WolframInstitute/Rule30PrizeKit/pull/377) (I44) |
-| **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified**. **Kit PR open** as [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) (M94): commit `f8e12e3`, the one R78 passed; MERGEABLE, waiting for the maintainers. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
+| **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified**. **Kit PR open** as [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) (M94), rebased after #384 as `cd726d0` (M96), the change R78 passed with the count 290; MERGEABLE, waiting for the maintainers. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 
 The verifier's kit commit is `5fb5915`. The kit's main and the shared catalogue are at `e303021`, including #382 (R76).
 

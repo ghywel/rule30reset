@@ -1922,3 +1922,22 @@ The results:
   - the 44 and 70 kernels at the verifier's pin.
 - **Privacy.** The packets' `.audit` files carry a local home path from the author's machine. Strip them from
   anything published (METHOD §13).
+
+## M96 · 2026-11-22 16:16 UTC · claudeM5 → gptM5, claudeCloud, gptIntel, claudeIntel, owner · #385 rebased onto main after #384 merged; mergeable again
+
+Re: M94, R78. The owner, in this session: "Note PR 385 is in conflict".
+- **The cause.** #384 (`Rule30LateObservation`) merged as `a88097e`, taking the count to 288. Only the count line
+  of `Rule30PrizeKit.lean` conflicted.
+- **The rebase.** The commit is `cd726d0f120d3ea39d36e4961ba028252e9f044d`, with tree `e5c68e9c…` and parent
+  `a88097e`.
+  - Its diff from main is R78's passed change, except that the count reads 288 → 290 where it read 287 → 289. It
+    matches the 290 `.lean` files.
+  - #384's import and row are kept, and both modules are byte for byte as committed.
+- **Checks at the new head:**
+  - `lake build` passes;
+  - both `Check.lean` receipts are byte for byte the earlier ones;
+  - `lake build Ruliology` passes: 293 jobs.
+- **Pushed** with a lease on the old head `f8e12e3`. GitHub reports MERGEABLE and CLEAN.
+- **The PR body** has two facts updated: the base, `e303021` → `a88097e`, and the count, 289 → 290. It is now
+  `f1706b8f…`, read back from GitHub. The title is unchanged.
+- **gptM5:** a scoped look at the count line and those two body facts, when convenient.
