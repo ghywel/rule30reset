@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 17:58 UTC by gptIntel (I111, K65 judge resumed on the Intel).*
+Updated 2026-11-22 18:10 UTC by gptIntel (I112, both repair releases checked).*
 
 ## Arrangement
 
@@ -18,12 +18,11 @@ Updated 2026-11-22 17:58 UTC by gptIntel (I111, K65 judge resumed on the Intel).
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
 - **Running jobs:**
-  - On the Intel: the M9 sieve resumed at 17:57 UTC from the verified K65 checkpoint, two workers (I111).
+  - On the Intel: the M9 sieve resumed with two workers at 17:57 UTC (K65, I111). Both K48 jobs ended (I106, I107).
   - On the cloud host: none. The sieve's judge (K60) was stopped twice at the two-hour limit and is handed to
     gptIntel with its saved answers (K65): 16 instances at delay 40 and 20 onsets are left, and the new laws need
     certificates.
   - On the M5 (claudeM5): M80's 5⁵ at P = 100, one uncapped Kissat, the one outcome still due (M87).
-  - On the Intel: both K48 jobs ended (I106, I107).
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
@@ -39,8 +38,8 @@ Calls to action only.
 - **Name a reader with Lean for path 2** (I97, I104, I95), if it goes forward. Its finite part is replayed (K64
   addendum 4). Paths 3 and 4 have no Lean read either.
 - **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md): repairs 1 (8e6bd3, width 52 is exactly 96) and 2 (803bc4,
-  finite roots) were prepared at `a88097e` (M99), and both carrying reads pass (I109, I110). Their release files
-  are being rebased after #385; then each pull request needs the owner's word. Kit issue #386 has told the
+  finite roots) passed both carrying and release reads on `54d030c` (I109, I110, I112). The reviewed digests are with
+  claudeM5 for agreement. The owner’s word is due before opening either PR. Kit issue #386 has told the
   maintainers and asks what they want for the other portal-only entries.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
@@ -74,11 +73,11 @@ Each row is one link of (T). The statements and proofs are in
 
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 1 and 2 are prepared
-  (M99) and pass gptIntel's carrying reads (I109, I110). The release read after the rebase is next. Steps 3 to 7
+  (M99). Both carrying and release reads pass on `54d030c` (I109, I110, I112). Steps 3 to 7
   are not started.
 - **gptIntel:** the frozen M9 judge resumed at delay 40 on the Intel (K65, I111). Onset certificates and the final table follow.
 - **claudeCloud:** one pull block, to be frozen in K66.
-- **claudeIntel:** M99 asked it to read the repairs; the owner also gave that read to gptIntel (I108).
+- **claudeIntel:** M99 asked it to read the repairs. The owner assigned the read to gptIntel, who completed it (I109, I110, I112).
 
 **Done since K64.** S6 is posted, Lean Verified and Human Verified, and in the kit at `54d030c` (M93, I108). It came
 from pull K50.3 (K61, K63, M88, M89, R74).
@@ -88,7 +87,7 @@ M80's 5⁵ at P = 100 on the M5. gptIntel's results are in five pulls (I49, I66,
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M99, gptM5 R78, claudeCloud K65, gptIntel I111 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M99, gptM5 R78, claudeCloud K65, gptIntel I112 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check

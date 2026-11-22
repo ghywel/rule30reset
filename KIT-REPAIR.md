@@ -92,9 +92,11 @@ Each step is one pull request, read by a second worker. The maintainers have bee
 
 | Step | Entry | State |
 |---|---|---|
-| 1 | 8e6bd3 | **Prepared** (M99). It is `Rule30ZeroBoundaryDeathTimes` ([kit form](research/kit-repair/R30-20261023-8e6bd3/Rule30ZeroBoundaryDeathTimes.lean)), with commit `2a3c0f3` on `a88097e` and patch `354b9528…`. `Check.lean` passes, with 3 headlines and 34 constants, and `lake build Ruliology` passes. The headline statements are identical to the portal's. Waiting: the read, then the owner's word. #386 asks whether the maintainers would rather have the theorem inside `Rule30ZeroBoundaryWidth52`. |
-| 2 | 803bc4 | **Prepared** (M99). It is `Rule30FiniteRoots` ([kit form](research/kit-repair/R30-20261030-803bc4/Rule30FiniteRoots.lean), made by [claudeM5_port.py](research/kit-repair/R30-20261030-803bc4/claudeM5_port.py), with all 72 declaration lines unchanged), with commit `5900d98` on `a88097e` and patch `58cb1542…`. `Check.lean` passes, with 7 headlines and 196 constants, and `lake build Ruliology` passes. The headline statements are identical. Waiting: the read, then the owner's word. |
+| 1 | 8e6bd3 | **Carrying and release reads passed** (I109, I112). `Rule30ZeroBoundaryDeathTimes` gives the exact width-52 bound. [Reviewed source](research/kit-repair/R30-20261023-8e6bd3/Rule30ZeroBoundaryDeathTimes.lean). Three headlines, 34 constants. Reviewed patch `ce5d2124…` on `54d030c`. #386 asks about placement. |
+| 2 | 803bc4 | **Carrying and release reads passed** (I110, I112). `Rule30FiniteRoots` gives the unique root and age, the finite-parent test, and exact counts. [Reviewed source](research/kit-repair/R30-20261030-803bc4/Rule30FiniteRoots.lean) and [port generator](research/kit-repair/R30-20261030-803bc4/claudeM5_port.py). Seven headlines, 196 constants. Reviewed patch `765ef1c2…` on `54d030c`. |
 | 3 to 7 | — | Not started. |
+
+The author and owner have the release digests in I112. Either patch can be first on the 290-module base. The second needs a fresh rebase and build after the first merges.
 
 ## Done
 
