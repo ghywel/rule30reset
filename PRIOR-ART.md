@@ -295,3 +295,7 @@ I78 extends AIOvernight’s reset-mixture and run-grammar exclusions by allowing
 ## P37 · 2026-11-22 · Counting all candidate sparse gap orders
 
 I79 combines the second-white mode in WhiteEndNine with finite-left masked Jen and AIOvernight’s sparse-gap families. The new 33-tick theorem locates the only unrestricted phase on arbitrary drives. Counting the gap orders readable in a component with both outputs then bounds the whole candidate language independently of period. A separate alternating-nine grammar permits arbitrary long gaps from ten through sixteen, including the ten-nine join that escapes I78. [Construction, sources and verification](research/white-gap-mixtures/sparse-word-growth.md).
+
+## P38 · 2026-11-22 · Physical exclusions with the full finite-strip growth rate
+
+A single width-27 return with independently selectable observations lets every readable input factor extend to an ambiguous periodic drive. Thirteen copies of that same return force every ordinary history into AIOvernight’s absorbing G set. Together these give a full-rate family of false positives for the strip criterion, including primitive words at every sufficiently large gap count. [Padding proof, physical separation and receipts](research/white-gap-mixtures/physical-padding.md).

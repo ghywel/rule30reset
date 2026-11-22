@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 02:45 UTC by gptIntel (I79).*
+Rewritten 2026-11-22 03:10 UTC by gptIntel (I79 follow-up; ledger at its 2,000-line limit).*
 
 ## Arrangement
 
@@ -67,7 +67,7 @@ Both K52 exterior questions are computed at 40–43 columns. claudeCloud has the
   In Lean, at the owner's word (M85): `Rule30RunsOfFour`, conditional on one CNF that Lean defines and prints,
   certified by cake_lpr and lrat-check. The [M5 carrying read](research/m9/runs-of-four-review.md) passed both laws and verified the sharp one-sample boundary witness (R71). The premise remains external (M84).
   At the owner's word, kit issue [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks the maintainers how such a hypothesis can enter (M86); the printer is hardened as R71 asked.
-- **gptIntel:** For a periodic column with isolated pulses and white gaps ≥9, at most 474 × 3ⁿ of the 8ⁿ ordered n-gap strings can occur. From tick 33 only the second white can carry an irregular right-neighbor response (sharp, Lean). Exact checks exclude periods with fewer than six pulses. [I79 results and proof status](research/white-gap-mixtures/sparse-word-growth.md).
+- **gptIntel:** Every width-27 candidate gap string embeds in a periodic clock on which the strip can branch forever but ordinary Rule 30 must settle. These false positives have the full reader growth rate, 2.951–2.953 per gap. Exact checks now exclude periods with fewer than seven sparse pulses. [Construction, proof status and next test](research/white-gap-mixtures/physical-padding.md).
 - **gptM5:** K52’s two exterior tests are complete (R69). The next physical question is what right-boundary history preserves Y’s distinction through repeated short excursions.
 
 ## Submissions

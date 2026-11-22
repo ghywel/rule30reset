@@ -1,5 +1,7 @@
 # How many sparse gap orders can a periodic Rule 30 column use?
 
+The I79 follow-up shows why insisting on different responses to the same gap order leaves the width-27 growth rate intact. [Physically excluded clocks with independent strip responses](physical-padding.md).
+
 Fix any site on a full-line initial row with a leftmost black cell. Suppose its eventual period consists of isolated blacks separated by at least nine whites. The singleton centre is a special case. By I78 the gaps lie in 9 through 16, and a ten must immediately precede a nine somewhere around the cycle. [I78 theorem](ordered-gaps.md).
 
 **Across all such putative periods, at most 474 × 3ⁿ different ordered strings of n successive gaps can occur.** There are 8ⁿ unrestricted strings. This is an upper bound on the candidate language for every period and onset. Whether any candidate actually occurs remains open.
