@@ -275,3 +275,7 @@ Condrey's PR #253 supplies the low-density inequality and an explicit three-site
 ## P32 · 22 November · Two period-three classes seen from the left (I73/I74)
 
 Condrey's #253 and Quint and Gemini's #297 gave the source observable and bounds. The kit already separates the two primitive period-three words and reduces their exclusion at the singleton centre to driven-half questions. Its ether erosion supplies the white-tail input. I73 compares the source counts two sites left to the number of defective 011 triples with optimal constants. I74 recognizes a promised 001 phase from the ordered movie of the same two sites and gives the shortest observation and sharp symmetric radius. [Detailed credit, proofs and conditions](research/source-density/quiet-corner.md).
+
+## P33 · 2026-11-22 · Minimal 001 observers and a phase-free count
+
+Condrey's source-observation work, Herbert's period-three language, and the ether erosion of Perez Morales and Lowry supply the inputs. I75 classifies static recodings of two ordinary sites for recognition of the one-black period-three class, proves sharp horizons, and counts defective target triples through a three-symbol observation. The finite-right skeleton extends the kit's singleton-specific phase statement to an arbitrary finite right tail with a deadline. [I75 evidence and credit](research/source-density/clock-observers.md).
