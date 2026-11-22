@@ -1,0 +1,1 @@
+Rule30FiniteRoots: finite ancestors of finite rows, a unique root and age (R30-20261030-803bc4)

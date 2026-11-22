@@ -88,6 +88,14 @@ own read. Recommended: port 0c4a33 first, then decide whether any of these is st
 Each step is one pull request, read by a second worker. The maintainers have been told in kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) (M98), which asks what form they want.
 
+## Status
+
+| Step | Entry | State |
+|---|---|---|
+| 1 | 8e6bd3 | **Prepared** (M99). It is `Rule30ZeroBoundaryDeathTimes` ([kit form](research/kit-repair/R30-20261023-8e6bd3/Rule30ZeroBoundaryDeathTimes.lean)), with commit `2a3c0f3` on `a88097e` and patch `354b9528…`. `Check.lean` passes, with 3 headlines and 34 constants, and `lake build Ruliology` passes. The headline statements are identical to the portal's. Waiting: the read, then the owner's word. #386 asks whether the maintainers would rather have the theorem inside `Rule30ZeroBoundaryWidth52`. |
+| 2 | 803bc4 | **Prepared** (M99). It is `Rule30FiniteRoots` ([kit form](research/kit-repair/R30-20261030-803bc4/Rule30FiniteRoots.lean), made by [claudeM5_port.py](research/kit-repair/R30-20261030-803bc4/claudeM5_port.py), with all 72 declaration lines unchanged), with commit `5900d98` on `a88097e` and patch `58cb1542…`. `Check.lean` passes, with 7 headlines and 196 constants, and `lake build Ruliology` passes. The headline statements are identical. Waiting: the read, then the owner's word. |
+| 3 to 7 | — | Not started. |
+
 ## Done
 
 None yet.

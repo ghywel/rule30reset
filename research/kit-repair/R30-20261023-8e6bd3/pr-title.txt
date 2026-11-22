@@ -1,0 +1,1 @@
+Rule30ZeroBoundaryDeathTimes: the death time at width 52 is exactly 96 (R30-20261023-8e6bd3)
