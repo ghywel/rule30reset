@@ -1954,3 +1954,44 @@ Re: I121, M110. The owner, in this session: "gptIntel has completed its pre-rele
 - **gptIntel, REVIEW:** the scoped read of the rebuilt notebook and manifest.
 - **The owner:** after that read, the word to post S8. The kit PR follows the portal's Lean Verified, with the
   portal id.
+
+**N6, addendum 1 (2026-11-22 21:30 UTC).** A correction, then the probe's results, and one follow-up frozen before it runs.
+- **Correction.** N6's header time, 21:30, was estimated, not read from the clock. The post was pushed at 21:19 UTC.
+- **The run.** The frozen probe (`c3956991…`) ran unchanged. Its output is
+  [claudeIntel-near-square-probe.txt](research/kit-repair/R30-20261029-0ef6e2/data/claudeIntel-near-square-probe.txt),
+  SHA-256 `74c47081b86ef01c4a5a8c68b04efa7b62f453290b8defaba7afc2554acc715b`. All of it is MEASURED, on finite
+  prefixes.
+
+| Prediction | Result |
+|---|---|
+| (0.97) control `E(q_n) ≥ −3` at every golden convergent `q_n ≥ 5` | **held**, with a surprise: `E(q_n) = q_n − 3`, growing, so Jen alone already excludes the characteristic word (consistent with Bugeaud–Kim's `rep < 2` for Sturmian words) |
+| (0.9) silver word `E(q) ≤ −1` at every lag (GC2179) | **held** at all 40,000 lags; the maximum is −1, at `q = 1` |
+| (0.65) silver word `E(q) ≥ −3` at five or more lags `q ≥ 100` | **held**: `E(q) = −3` exactly at every Pell number `q = 3, 7, 17, 41, 99, 239, 577, 1393, 3363, 8119, 19601`, and no other lag reaches −5 except 1, 4 and 5 |
+| (0.55) one-arc codes, 15 of 20 | **held**, 20 of 20 |
+| (0.45) two-arc codes, 15 of 20 | **failed**: 8 of 20 |
+| (0.5) some random code with `E(q_n) ≥ 50` | **held**, by far: excesses reach tens of thousands at large convergents |
+
+- **What it says.**
+  - *The silver word.* In corollary F's terms, the silver word has near-squares with `K = 2` at every Pell scale
+    measured. Each run `[a, b]` with `b = 2a + q − 3` gives a pair `(i, i') = (a, a + q)` that agrees for
+    `s + 2 < i'`. So **if the pattern persists, #395's `corollary_F` excludes the one rotation word that placego
+    recorded as passing Jen** (G143, GC2179). The exact −3 at every Pell number looks like a provable identity; a hand
+    proof is the target.
+  - *Generic golden codings.* Most violate Jen outright at large convergents: excess up to about 0.6 q. Jen alone,
+    0ef6e2's own input, excludes them, far below 0ef6e2's digit threshold. The threshold is an artifact of that
+    entry's counting, not the frontier.
+  - *Two two-arc codes.* #9 and #19 show neither large excess nor near-squares at the golden convergents beyond
+    `q = 144`. But beyond 1500 only convergent lags were scanned.
+- **The follow-up, frozen before it runs.**
+  [claudeIntel_near_square_followup.py](research/kit-repair/R30-20261029-0ef6e2/claudeIntel_near_square_followup.py),
+  SHA-256 `5ef232b3030aabb7f4664216de50952d1e393c8317883f5fad3a9243b9d038a7`.
+  - It rebuilds the probe's cases from the same seed, and first checks that two-arc #9 reproduces the probe's row.
+  - It then scans every lag up to 40,000, on 400,000 letters, for two-arc #4, #9 and #19. #4 is a check: it already
+    has `E = 295` at `q = 10946`.
+  - It also prints where the silver word's runs start at the Pell lags.
+- **Predictions.**
+  - (0.6) #9 and #19 each have some lag with `E ≥ 50`, so Jen excludes them at a non-convergent lag.
+  - (0.4) #9 and #19 each have five or more lags `q ≥ 100` with `E ≥ −3`.
+  - (0.5) The silver word's runs at the Pell lags all start at `a ≤ 3`.
+- **Counterfactual.** If #9 or #19 has neither, it survives both Jen and corollary F in range, and it is the first
+  such rotation word on record: a concrete target.
