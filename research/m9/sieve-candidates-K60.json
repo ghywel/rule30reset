@@ -1,0 +1,884 @@
+[
+{
+"word": "5,1",
+"runs": 2,
+"gaps": 9,
+"samples": 39,
+"expected": 780208.6,
+"seen_total": 53,
+"last_delay": 5
+},
+{
+"word": "11,1",
+"runs": 2,
+"gaps": 15,
+"samples": 69,
+"expected": 163258.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "23,1",
+"runs": 2,
+"gaps": 27,
+"samples": 129,
+"expected": 10003.8,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "25,1",
+"runs": 2,
+"gaps": 29,
+"samples": 139,
+"expected": 6339.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "29,1",
+"runs": 2,
+"gaps": 33,
+"samples": 159,
+"expected": 2161.7,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "31,1",
+"runs": 2,
+"gaps": 35,
+"samples": 169,
+"expected": 1339.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "33,1",
+"runs": 2,
+"gaps": 37,
+"samples": 179,
+"expected": 824.8,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "33,6",
+"runs": 2,
+"gaps": 42,
+"samples": 204,
+"expected": 687.5,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "26,1",
+"runs": 2,
+"gaps": 30,
+"samples": 144,
+"expected": 614.6,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "35,1",
+"runs": 2,
+"gaps": 39,
+"samples": 189,
+"expected": 564.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "37,1",
+"runs": 2,
+"gaps": 41,
+"samples": 199,
+"expected": 363.7,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "28,1",
+"runs": 2,
+"gaps": 32,
+"samples": 154,
+"expected": 323.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "37,6",
+"runs": 2,
+"gaps": 46,
+"samples": 224,
+"expected": 303.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "39,1",
+"runs": 2,
+"gaps": 43,
+"samples": 209,
+"expected": 246.5,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "30,1",
+"runs": 2,
+"gaps": 34,
+"samples": 164,
+"expected": 242.5,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "41,1",
+"runs": 2,
+"gaps": 45,
+"samples": 219,
+"expected": 154.5,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "32,1",
+"runs": 2,
+"gaps": 36,
+"samples": 174,
+"expected": 144.7,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "41,6",
+"runs": 2,
+"gaps": 50,
+"samples": 244,
+"expected": 128.7,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "43,1",
+"runs": 2,
+"gaps": 47,
+"samples": 229,
+"expected": 105.1,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,1,4",
+"runs": 3,
+"gaps": 12,
+"samples": 52,
+"expected": 12858.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "1,1,1",
+"runs": 3,
+"gaps": 7,
+"samples": 27,
+"expected": 3075.5,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "6,1,12",
+"runs": 3,
+"gaps": 23,
+"samples": 107,
+"expected": 1452.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "1,4,5",
+"runs": 3,
+"gaps": 14,
+"samples": 62,
+"expected": 801.2,
+"seen_total": 25,
+"last_delay": 5
+},
+{
+"word": "5,6,6",
+"runs": 3,
+"gaps": 21,
+"samples": 97,
+"expected": 700.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "11,4,8",
+"runs": 3,
+"gaps": 27,
+"samples": 127,
+"expected": 640.5,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "4,8,12",
+"runs": 3,
+"gaps": 28,
+"samples": 132,
+"expected": 630.6,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "6,1,14",
+"runs": 3,
+"gaps": 25,
+"samples": 117,
+"expected": 626.5,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "5,6,4",
+"runs": 3,
+"gaps": 19,
+"samples": 87,
+"expected": 552.6,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "10,1,5",
+"runs": 3,
+"gaps": 20,
+"samples": 92,
+"expected": 514.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "10,4,6",
+"runs": 3,
+"gaps": 24,
+"samples": 112,
+"expected": 512.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "1,4,7",
+"runs": 3,
+"gaps": 16,
+"samples": 72,
+"expected": 471.3,
+"seen_total": 13,
+"last_delay": 2
+},
+{
+"word": "10,1,9",
+"runs": 3,
+"gaps": 24,
+"samples": 112,
+"expected": 463.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "8,1,5",
+"runs": 3,
+"gaps": 18,
+"samples": 82,
+"expected": 443.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "6,4,4",
+"runs": 3,
+"gaps": 18,
+"samples": 82,
+"expected": 420.3,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "8,1,9",
+"runs": 3,
+"gaps": 22,
+"samples": 102,
+"expected": 399.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "5,8,1",
+"runs": 3,
+"gaps": 18,
+"samples": 82,
+"expected": 367.8,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "10,4,8",
+"runs": 3,
+"gaps": 26,
+"samples": 122,
+"expected": 329.8,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "6,1,16",
+"runs": 3,
+"gaps": 27,
+"samples": 127,
+"expected": 297.8,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "1,1,4",
+"runs": 3,
+"gaps": 10,
+"samples": 42,
+"expected": 292.7,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "1,4,10",
+"runs": 3,
+"gaps": 19,
+"samples": 87,
+"expected": 284.9,
+"seen_total": 5,
+"last_delay": 5
+},
+{
+"word": "1,4,9",
+"runs": 3,
+"gaps": 18,
+"samples": 82,
+"expected": 270.6,
+"seen_total": 8,
+"last_delay": 28
+},
+{
+"word": "1,4,4",
+"runs": 3,
+"gaps": 13,
+"samples": 57,
+"expected": 256.3,
+"seen_total": 4,
+"last_delay": 1
+},
+{
+"word": "4,8,6",
+"runs": 3,
+"gaps": 22,
+"samples": 102,
+"expected": 253.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "1,4,11",
+"runs": 3,
+"gaps": 20,
+"samples": 92,
+"expected": 222.9,
+"seen_total": 7,
+"last_delay": 2
+},
+{
+"word": "12,1,3",
+"runs": 3,
+"gaps": 20,
+"samples": 92,
+"expected": 220.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "7,4,8",
+"runs": 3,
+"gaps": 23,
+"samples": 107,
+"expected": 194.5,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "10,1,7",
+"runs": 3,
+"gaps": 22,
+"samples": 102,
+"expected": 192.8,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "10,1,11",
+"runs": 3,
+"gaps": 26,
+"samples": 122,
+"expected": 191.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "8,8,1",
+"runs": 3,
+"gaps": 21,
+"samples": 97,
+"expected": 169.8,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "8,1,7",
+"runs": 3,
+"gaps": 20,
+"samples": 92,
+"expected": 166.2,
+"seen_total": 3,
+"last_delay": 0
+},
+{
+"word": "8,1,11",
+"runs": 3,
+"gaps": 24,
+"samples": 112,
+"expected": 164.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "10,1,1",
+"runs": 3,
+"gaps": 16,
+"samples": 72,
+"expected": 164.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "5,6,14",
+"runs": 3,
+"gaps": 29,
+"samples": 137,
+"expected": 164.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "4,1,7",
+"runs": 3,
+"gaps": 16,
+"samples": 72,
+"expected": 158.8,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "8,1,1",
+"runs": 3,
+"gaps": 14,
+"samples": 62,
+"expected": 142.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "4,1,1",
+"runs": 3,
+"gaps": 10,
+"samples": 42,
+"expected": 135.9,
+"seen_total": 2,
+"last_delay": 12
+},
+{
+"word": "1,4,13",
+"runs": 3,
+"gaps": 22,
+"samples": 102,
+"expected": 132.5,
+"seen_total": 7,
+"last_delay": 1
+},
+{
+"word": "4,4,1",
+"runs": 3,
+"gaps": 13,
+"samples": 57,
+"expected": 119.0,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "10,1,8",
+"runs": 3,
+"gaps": 23,
+"samples": 107,
+"expected": 108.3,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,4,4,6",
+"runs": 4,
+"gaps": 22,
+"samples": 100,
+"expected": 11595.1,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,4,4,10",
+"runs": 4,
+"gaps": 26,
+"samples": 120,
+"expected": 8717.7,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "1,3,4,7",
+"runs": 4,
+"gaps": 20,
+"samples": 90,
+"expected": 1274.3,
+"seen_total": 4,
+"last_delay": 6
+},
+{
+"word": "6,3,1,1",
+"runs": 4,
+"gaps": 16,
+"samples": 70,
+"expected": 1239.0,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "4,3,4,10",
+"runs": 4,
+"gaps": 26,
+"samples": 120,
+"expected": 565.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "1,7,4,3",
+"runs": 4,
+"gaps": 20,
+"samples": 90,
+"expected": 537.6,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,4,4,14",
+"runs": 4,
+"gaps": 30,
+"samples": 140,
+"expected": 449.5,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "5,3,4,6",
+"runs": 4,
+"gaps": 23,
+"samples": 105,
+"expected": 435.8,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,4,4,16",
+"runs": 4,
+"gaps": 32,
+"samples": 150,
+"expected": 401.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "1,7,5,4",
+"runs": 4,
+"gaps": 22,
+"samples": 100,
+"expected": 394.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,1,5,6",
+"runs": 4,
+"gaps": 20,
+"samples": 90,
+"expected": 377.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,1,3,1",
+"runs": 4,
+"gaps": 13,
+"samples": 55,
+"expected": 341.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "11,3,4,1",
+"runs": 4,
+"gaps": 24,
+"samples": 110,
+"expected": 288.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "4,4,6,1",
+"runs": 4,
+"gaps": 20,
+"samples": 90,
+"expected": 287.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,9,4,4",
+"runs": 4,
+"gaps": 25,
+"samples": 115,
+"expected": 251.6,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "13,3,1,1",
+"runs": 4,
+"gaps": 23,
+"samples": 105,
+"expected": 209.6,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "4,3,1,1",
+"runs": 4,
+"gaps": 14,
+"samples": 60,
+"expected": 198.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "11,6,1,1",
+"runs": 4,
+"gaps": 24,
+"samples": 110,
+"expected": 193.5,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "13,3,4,1",
+"runs": 4,
+"gaps": 26,
+"samples": 120,
+"expected": 185.7,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "5,4,11,6",
+"runs": 4,
+"gaps": 31,
+"samples": 145,
+"expected": 181.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "5,4,6,4",
+"runs": 4,
+"gaps": 24,
+"samples": 110,
+"expected": 178.8,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "5,6,1,5",
+"runs": 4,
+"gaps": 22,
+"samples": 100,
+"expected": 167.0,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "4,4,10,6",
+"runs": 4,
+"gaps": 29,
+"samples": 135,
+"expected": 166.6,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "9,4,3,1",
+"runs": 4,
+"gaps": 22,
+"samples": 100,
+"expected": 157.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "7,3,4,6",
+"runs": 4,
+"gaps": 25,
+"samples": 115,
+"expected": 157.3,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "5,12,9,6",
+"runs": 4,
+"gaps": 37,
+"samples": 175,
+"expected": 156.6,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "5,4,4,6",
+"runs": 4,
+"gaps": 24,
+"samples": 110,
+"expected": 139.6,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,1,5,12",
+"runs": 4,
+"gaps": 26,
+"samples": 120,
+"expected": 138.7,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,1,1,16",
+"runs": 4,
+"gaps": 26,
+"samples": 120,
+"expected": 138.6,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "15,3,4,1",
+"runs": 4,
+"gaps": 28,
+"samples": 130,
+"expected": 121.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,1,1,12",
+"runs": 4,
+"gaps": 22,
+"samples": 100,
+"expected": 121.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "6,8,5,4",
+"runs": 4,
+"gaps": 28,
+"samples": 130,
+"expected": 121.1,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "11,5,8,7",
+"runs": 4,
+"gaps": 36,
+"samples": 170,
+"expected": 114.5,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "5,6,1,8",
+"runs": 4,
+"gaps": 25,
+"samples": 115,
+"expected": 110.2,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "1,5,5,4",
+"runs": 4,
+"gaps": 20,
+"samples": 90,
+"expected": 108.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "1,11,5,4",
+"runs": 4,
+"gaps": 26,
+"samples": 120,
+"expected": 107.3,
+"seen_total": 1,
+"last_delay": 0
+},
+{
+"word": "11,3,4,6",
+"runs": 4,
+"gaps": 29,
+"samples": 135,
+"expected": 106.4,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "5,4,4,10",
+"runs": 4,
+"gaps": 28,
+"samples": 130,
+"expected": 104.9,
+"seen_total": 0,
+"last_delay": null
+},
+{
+"word": "3,9,1,3",
+"runs": 4,
+"gaps": 21,
+"samples": 95,
+"expected": 102.7,
+"seen_total": 0,
+"last_delay": null
+}
+]
