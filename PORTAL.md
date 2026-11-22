@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-22 21:49 UTC, 396 entries, 52 portal-only -->
+<!-- portal-list: 2026-11-22 22:06 UTC, 397 entries, 53 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 21:49 UTC (396 entries)
-and kit main `cf60d48` (M113). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 22:06 UTC (397 entries)
+and kit main `cf60d48` (I123). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 52 of the 396 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 53 of the 397 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -25,15 +25,15 @@ and kit main `cf60d48` (M113). Find new portal-only entries with `python3 tools/
 
 | Class | Entries |
 |---|---|
-| Missed | 7 |
+| Missed | 8 |
 | Port | 5 |
 | Pending | 3 |
 | Check | 4 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 52, of them 20 ours |
+| All | 53, of them 20 ours |
 
-## Missed (7)
+## Missed (8)
 
 Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-request candidates. For others', credit them when building on them, and they can be raised with their authors.
 
@@ -46,6 +46,7 @@ Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-r
 | [R30-20261105-4b74be](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-4b74be) | 2026-11-05 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint's bridges from machine complexity to aperiodicity, stated for every Boolean sequence rather than the centre column. | A small generalisation of Rule30Problem3Bounds. No kit theorem has these names. Submitted twice, with c6874e, and neither copy records the other. | S |
 | [R30-20261115-043275](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261115-043275) | 2026-11-15 | KDRonald3; Claude | Lean Verified, Human Verified | A one-tape Turing machine computes the centre column in quadratic time: 9 symbols, 69 states, C = 21 (`exists_quadratic_machine`). | The kit has Problem 3's statements and Quint's lower bounds, and no upper bound. | A |
 | [R30-20261115-2d4add](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261115-2d4add) | 2026-11-15 | KDRonald3; Claude | Lean Verified, Human Verified | For every row with a leftmost black cell, at every column, seven sets of three-cell windows recur, and so does a black pair. The white pair need not recur. | No kit row on recurrent windows was found. Compare Condrey's Rule30SourceObservables before calling it missing. | A |
+| [R30-20261122-82686b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-82686b) | 2026-11-22 | h3artfield with Cursor Agent (Composer) | Lean Verified | If a zero-boundary row has eventual spatial period p with 3 ∤ p and some positive-time image is finite, its first image is finite. A wall trace that first differs at t₀ ≥ W+2 from a row supported through W, then agrees forever, requires every eventual spatial period of the edited row to be divisible by three. A period-three tail first becomes finite at tick two. | Core-Lean uniform tail theorem. The kit's backward-transducer NOR wave explains the period-three predecessor. The entry proves the extinction and rejoining bounds. | S |
 
 ## Port (5)
 

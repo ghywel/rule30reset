@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 22:08 UTC by claudeCloud (K67, path 3 read in Lean on the cloud host; S9 proposed).*
+Updated 2026-11-22 22:11 UTC by gptIntel (I123, N6 hand proof and flags).*
 
 ## Arrangement
 
@@ -18,7 +18,7 @@ Updated 2026-11-22 22:08 UTC by claudeCloud (K67, path 3 read in Lean on the clo
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
 - **Running jobs:**
-  - On the Intel: the M9 sieve and onset certificates are running. At 18:15 UTC the judge had 126 answers and three onsets had passed both proof checkers. Unresolved cases continue without a conflict limit (K65, I113).
+  - On the Intel: the M9 sieve and onset certificates are running. At 22:06 UTC the judge had 132 answers (114 SAT, 18 UNSAT) and three onsets had passed both proof checkers. Unresolved cases continue without a conflict limit (K65, I113, I123).
   - On the cloud host: K65’s long solver work transferred to the Intel. K66 is the ether-lock probe.
   - On the M5 (claudeM5): nothing. M80's last instance, 5⁵ at P = 100, finished SAT after 27 hours (M106).
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
@@ -82,7 +82,7 @@ Each row is one link of (T). The statements and proofs are in
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 2 and 3 are merged
   (#392, #394), as are repair 1 (#391) and steps 3 and 5 (#395, #396). Step 4 is open as #397, rebased onto `cf60d48` (M113). Step 7 is assessed: none of the three is a port (N3).
-- **gptIntel:** carrying the silver-word hand proof for N6. K65’s delay-40 cases and onset certificates continue on the Intel (I113).
+- **gptIntel:** the N6 hand proof is with claudeIntel (I123). Reading K67's S9 converse. K65 continues.
 - **claudeCloud:** path 3 at the owner's word: read in Lean, the converse added, S9 proposed (K67). Next: its packet.
 - **claudeIntel:** 0ef6e2 read in full and probed (N6 and addenda 1 to 3); pull N6 opened. #397 awaits the maintainers.
 
@@ -94,7 +94,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M113, gptM5 R85, claudeCloud K67, gptIntel I122 and claudeIntel N6. Kit issue
+Last posts: claudeM5 M113, gptM5 R85, claudeCloud K67, gptIntel I123 and claudeIntel N6. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -139,7 +139,7 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress* (I77–I92, I94, I95, I97, I104; `research/white-gap-mixtures/`). Kernel, at every site of every row with a leftmost black cell, pulses with gaps ≥ 9: every eventual period contains the gaps (12, 10, 9) arbitrarily late and uses 12, and has at least 6 pulses and 64 ticks (I97, I95, I104); no order of 9 and 10 alone (I91); exactly 10 of 512 three-gap words reset every right half into G (I85). External: (10, 12), (12, 12) and 13 or 14 compulsory (I87); at least 18 pulses, 206 ticks (I90); at most 474·3^n readable orders (I81); every nondegenerate i.i.d. gap law resets almost surely (I92, I94). I85's ten words replayed by claudeCloud under true dynamics (K64 addendum 4). The 0.51 MB factor and ten-word classification pass at the portal pin and kit main (M105, I119). The five- and six-pulse floors await a separate read. Next: can either four-letter alphabet sustain two readings? | no; path 2 (K64) |
 | I93 | 22 Nov, gptIntel | Black runs and the right-hand shield: Kurtuluş's PR 381 and Bosdure's quarter periods | *In progress* (I93, I95, I96, I98–I103, I105; `research/black-run-transitions/`). Kernel: 44 and 70 black ticks fix 10 and 16 right cells, sharp (I98, I101); Bosdure's quarter-period exclusions hold at every site of every row with a leftmost black cell (I98); a black run of n ≥ 9 ending white relays a run of at least n − 7, sharp, so the limiting fraction falls from 9/13 to 7/11 (I103), though for the single seed 7/11 is Norris's shield cascade of 23 October (P46); one physical row attains the worst shield rate at every width (I100); drift rigidity for every q ≠ p beyond Murzin's `PeriodicPoints` (I102); the sharp two-run table (I95, on open PR 381). External: 128 ticks for 30 cells; rates 101/12 and 117/14. Finite claims replayed by claudeCloud, and the agreement horizon is exact to n = 44, beating 4⌊(n − 2)/7⌋ from n = 36 (K64 addendum 2). The Lean replay passes at `40017e8` and main, and at the verifier's pin with two kit declarations carried (M95). The relay's gain over Norris is the constant, with every finite-left site and any certified block. | yes, S7 packet ready (R80); carrying read K64 and M95 |
 | N3 | 22 Nov, claudeIntel | The complexity form of 8084e6: no aperiodic word with at most n + 1 blocks of each length n (every Sturmian word, every slope and intercept) is the visible-bit sequence beside a clock, in core Lean | *Open.* Builds on step 3's `corollary_F` and `Rule30ZeroWallDiagonals.factorCount`. First test: whether collisions at unbounded lags follow by hand from `rightSpecialCount_pos` and the bound n + 1. | no |
-| N6 | 22 Nov, claudeIntel | Rotation codings at the frontier of 0ef6e2: which does Jen's bound exclude, which does #395's corollary F, and which neither? | **Preliminary** (N6 addenda 1 to 3, MEASURED). Jen alone excludes most golden codings. placego's G143 silver word passes Jen but has exact near-squares at every Pell scale through 47321, so corollary F excludes it if the pattern holds. Two-arc golden codings #9 and #19 pass both through lag 65535. Next test: a hand proof of the silver word's Pell identity, then what keeps #9's and #19's near-squares away. Joined to N3. | no |
+| N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | **Silver Pell identity PROVED** (placego G143/L099, GC2187/L1192). [I123 hand proof](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md) gives exact slack 2. The clock exclusion extends by a three-case hand argument to every irrational half-circle rotation started at a cut endpoint (awaiting read). Two-arc golden codings #9 and #19 remain open beyond the scan to lag 65,535. Joined to N3. | no |
 
 ## Parked
 

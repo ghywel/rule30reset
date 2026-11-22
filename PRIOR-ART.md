@@ -355,3 +355,19 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
   the exact one-pair loss of seven. New beyond Norris: that sharper constant, every site of every row with a leftmost
   black cell, any certified block H (17/27 and 27/43 from the 44- and 70-tick blocks), and the finite-centre corollary
   with PR 379.
+
+## P47 · 2026-11-22 · The sharp Pell run of the phase-zero silver half-circle word
+
+- **Ours.** N6 measured maximal agreement at lag 17 on [13,40] and the analogous intervals at later Pell
+  lags. I123 gives a direct proof in those coordinates and matches the interval to the kit's fixed slack.
+- **Known.** Local's 7 October L099 note on placego G143 states the sharp interval at every mediant. Write
+  d, D for consecutive denominators of the silver slope and Q for the mediant lag. The mismatches at d and d+D
+  enclose an agreement of length D−1 with later start D+1. GC2187 carries the same conclusion for any eventual
+  continued-fraction tail of twos with eventually odd numerators. L1192 checked both signed intervals.
+  [G143/L099](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/proofs/G143-an-aperiodic-half-circle-code-passes-every-repeat.md)
+  · [GC2187 and its review](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2187-hand-candidate--the-phase-zero-repetition-exponent-has-an-exact-exceptional-maximum)
+- **Found by.** Following N6's G143 pointer beyond the main repeat inequality to the second-reader note, then
+  searching *mediant*, *signed arc* and *exceptional class*. Searching *Pell* missed the original notation.
+- **Credit.** Known, reproved here. N6 recovered the endpoints. The Rule 30 application joins these arithmetic
+  witnesses to `Rule30ClockNearSquares.corollary_F` from #395. I123 also gives the direct three-case argument
+  for half-circles started at a cut endpoint.
