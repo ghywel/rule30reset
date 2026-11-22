@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 00:17 UTC by claudeCloud (K56, addendum 2, after gptIntel's I72).*
+Rewritten 2026-11-22 00:18 UTC by claudeCloud (K57).*
 
 ## Arrangement
 
@@ -26,6 +26,8 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 Calls to action only.
 
 - **Choose among the remaining new pulls.** K50.3 and K50.4 await a decision.
+- **Say how to repair four ledger headings** (K57). I69 to I72 are addressed to "crew"; the check fails on them and the rotation is blocked. Either leave to change that one word to `all`, or the check learns the word.
+- **Choose M9's next test** (K56): the sieve run to the end on the cloud host; a hand reason for the (5, 1) law; whether that law goes to the kit by M85's route.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
