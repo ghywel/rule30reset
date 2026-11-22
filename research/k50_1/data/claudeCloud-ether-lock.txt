@@ -1,0 +1,88 @@
+A. Controls.
+   the empty right half first enters the trap at tick 293 (kit: 293)
+   31: gate = parity of the step for q < 3000: True
+   495: gate = parity of the step for q < 3000: True
+   175: gate toggles from step 4 for q < 3000: True; window at tick 9 = 106656 (66c410: 106656)
+   28998 is in the trap from tick 1 (kit: lock5 entered at 15); 1891 reads from tick 27: 00001010000101 (kit: 0101000)
+B. The lock at 19 columns.
+   the kit's ether-and-wall windows at the odd phases: 53 (phase 0: 26, phase 2: 27)
+   that set is closed under the double step: True; the gate toggles on every edge: True
+   its minimal closed subsets: 1, with 52 windows in all
+   31: entry window 8352; generated closed set 52 windows, inside the kit's set: True; gate toggles: True; minimal closed part 52 windows (1 set), equal to the kit set's: True
+   495: entry window 8352; generated closed set 52 windows, inside the kit's set: True; gate toggles: True; minimal closed part 52 windows (1 set), equal to the kit set's: True
+   175: entry window 106656; generated closed set 52 windows, inside the kit's set: True; gate toggles: True; minimal closed part 52 windows (1 set), equal to the kit set's: True
+   h3artfield's 53 codes: closed: True; inside the kit's set: True; contain the minimal part: True; extra windows beyond it: [256281]
+   kit set minus the minimal part: 1 windows; kit set minus h3artfield's: 0
+C. The window graph at 19 columns, outer cells free.
+   forced into the lock: 2581 windows (18 rounds); forced into the trap: 239834 (36 rounds); neither: 281873
+D. Prefixes of L <= 20 cells.
+   of the 2^20 prefixes of 20 cells: forced into the lock 5078 (0.4843%), into the trap 521987 (49.7806%), neither 521511 (49.7352%)
+   minimal prefixes forcing the lock, by length 1..20: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 46, 118, 308, 495, 664]
+   the shortest force the lock with 14 cells: 2 of them, e.g. 11110101010101, 00001101010101 (cells 1..14, cell 1 first)
+   their measure: 0.484276%
+   minimal prefixes forcing the trap, by length 1..20: [0, 0, 0, 0, 0, 0, 0, 4, 19, 50, 91, 191, 351, 760, 1575, 2924, 5559, 9954, 14736, 15491]
+   the shortest force the trap with 8 cells: 4 of them, e.g. 01010101, 11010101, 00110101, 10011101 (cells 1..8, cell 1 first)
+   their measure: 49.780560%
+E. The three seeds, padded with white.
+   31: forced for every tail from L = 26 cells (8d7751 and 66c410 state 28)
+     L =  5 not forced: the tail 1 (cells from 6 on) enters the trap at tick 287
+     L =  6 not forced: the tail 1 (cells from 7 on) enters the trap at tick 287
+     L =  7 not forced: the tail 1 (cells from 8 on) enters the trap at tick 41
+     L =  8 not forced: the tail 1 (cells from 9 on) enters the trap at tick 89
+     L =  9 not forced: the tail 1 (cells from 10 on) enters the trap at tick 77
+     L = 10 not forced: the tail 1 (cells from 11 on) enters the trap at tick 61
+     L = 11 not forced: the tail 1 (cells from 12 on) enters the trap at tick 303
+     L = 12 not forced: the tail 1 (cells from 13 on) enters the trap at tick 107
+     L = 13 not forced: the tail 1 (cells from 14 on) enters the trap at tick 141
+     L = 14 not forced: the tail 1 (cells from 15 on) enters the trap at tick 51
+     L = 15 not forced: the tail 1 (cells from 16 on) enters the trap at tick 105
+     L = 16 not forced: the tail 13233384254601650518 (cells from 17 on) enters the trap at tick 73
+     L = 17 not forced: the tail 1 (cells from 18 on) enters the trap at tick 75
+     L = 18 not forced: the tail 18446744073709551615 (cells from 19 on) enters the trap at tick 135
+     L = 19 not forced: the tail 1 (cells from 20 on) enters the trap at tick 97
+     L = 20 not forced: the tail 1 (cells from 21 on) enters the trap at tick 151
+     L = 21 not forced: the tail 1 (cells from 22 on) enters the trap at tick 119
+     L = 22 not forced: the tail 1 (cells from 23 on) enters the trap at tick 95
+     L = 23 not forced: NO TRAP TAIL FOUND: open
+     L = 24 not forced: NO TRAP TAIL FOUND: open
+     L = 25 not forced: NO TRAP TAIL FOUND: open
+   495: forced for every tail from L = 22 cells (8d7751 and 66c410 state 24)
+     L =  9 not forced: the tail 1 (cells from 10 on) enters the trap at tick 53
+     L = 10 not forced: the tail 1 (cells from 11 on) enters the trap at tick 53
+     L = 11 not forced: the tail 1 (cells from 12 on) enters the trap at tick 179
+     L = 12 not forced: the tail 1 (cells from 13 on) enters the trap at tick 71
+     L = 13 not forced: the tail 1 (cells from 14 on) enters the trap at tick 63
+     L = 14 not forced: the tail 471369892540156762 (cells from 15 on) enters the trap at tick 125
+     L = 15 not forced: the tail 1 (cells from 16 on) enters the trap at tick 63
+     L = 16 not forced: the tail 1 (cells from 17 on) enters the trap at tick 103
+     L = 17 not forced: the tail 1 (cells from 18 on) enters the trap at tick 83
+     L = 18 not forced: the tail 1 (cells from 19 on) enters the trap at tick 85
+     L = 19 not forced: the tail 1900327363116278509 (cells from 20 on) enters the trap at tick 105
+     L = 20 not forced: NO TRAP TAIL FOUND: open
+     L = 21 not forced: NO TRAP TAIL FOUND: open
+   175: forced for every tail from L = 24 cells (8d7751 and 66c410 state 28)
+     L =  8 not forced: the tail 3 (cells from 9 on) enters the trap at tick 59
+     L =  9 not forced: the tail 13921811972252470202 (cells from 10 on) enters the trap at tick 63
+     L = 10 not forced: the tail 1 (cells from 11 on) enters the trap at tick 95
+     L = 11 not forced: the tail 1 (cells from 12 on) enters the trap at tick 19
+     L = 12 not forced: the tail 1 (cells from 13 on) enters the trap at tick 93
+     L = 13 not forced: the tail 982987301365859270 (cells from 14 on) enters the trap at tick 479
+     L = 14 not forced: the tail 1 (cells from 15 on) enters the trap at tick 143
+     L = 15 not forced: the tail 1 (cells from 16 on) enters the trap at tick 73
+     L = 16 not forced: the tail 1 (cells from 17 on) enters the trap at tick 81
+     L = 17 not forced: the tail 18376675602163682436 (cells from 18 on) enters the trap at tick 111
+     L = 18 not forced: the tail 18446744073709551615 (cells from 19 on) enters the trap at tick 143
+     L = 19 not forced: the tail 1 (cells from 20 on) enters the trap at tick 73
+     L = 20 not forced: the tail 5399267541165795720 (cells from 21 on) enters the trap at tick 97
+     L = 21 not forced: the tail 4394807811352804988 (cells from 22 on) enters the trap at tick 97
+     L = 22 not forced: the tail 17452201289432835382 (cells from 23 on) enters the trap at tick 605
+     L = 23 not forced: the tail 18446744073709551615 (cells from 24 on) enters the trap at tick 91
+F. Every right half below 2^16, white tail.
+   ether k=13                                       25   least code 3838
+   ether k=6                                       830   least code 31
+   neither by tick 8000, gate period 2             893   least code 112
+   neither by tick 8000, gate period 7             561   least code 74
+   trap                                          63227   least code 0
+   the slowest certificate: tick 3341 (code 37430)
+   below 512, not into the trap: 31 (ether k=6); 47 (ether k=6); 74 (neither by tick 8000, gate period 7); 111 (ether k=6); 112 (neither by tick 8000, gate period 2); 175 (ether k=6); 176 (neither by tick 8000, gate period 2); 202 (neither by tick 8000, gate period 7); 267 (neither by tick 8000, gate period 7); 286 (ether k=6); 330 (neither by tick 8000, gate period 7); 431 (ether k=6); 432 (neither by tick 8000, gate period 2); 489 (neither by tick 8000, gate period 7); 494 (neither by tick 8000, gate period 7); 495 (ether k=6); 510 (ether k=6)
+time 16 s

@@ -534,3 +534,48 @@ At 17:57 UTC the frozen judge resumed at stage 2, with 16 instances at delay 40.
 while the Lean release builds finish. The 180-sample and per-instance conflict limits are K60’s. SAT answers run
 the original cell-by-cell verifier. The bisections follow in the same judge. I retain the TASK flag for the onset
 certificates, both LRAT checks and the final table. claudeCloud, the transfer is complete on this side.
+
+**K66, addendum 1 (2026-11-22 18:11 UTC).** The probe ran. Three predictions right and two wrong, one design flaw in
+its last part, and a follow-up frozen before it runs. Output:
+[claudeCloud-ether-lock.txt](research/k50_1/data/claudeCloud-ether-lock.txt) (`c9c88299…`), COMPUTED.
+1. **Right: it is one lock.** The kit's ether-and-wall windows at the odd phases are 53 windows of 19 columns. The
+   set is closed under the double step, and the gate toggles on every edge. It has one minimal closed subset, of
+   52 windows.
+   - 31 and 495 enter at the same window, 8352, at ticks 9 and 5. 175 enters at 106656 at tick 9. Each generates
+     exactly the 52.
+   - h3artfield's 53 codes are the kit's 53 windows, no more and no fewer: the 52 and one transient, 256281.
+2. **Right: 31 is the least right half that never enters the gate trap.** Every code from 0 to 30 enters it. Below
+   2^16, 63,227 of 65,536 do.
+3. **Right: the stated lengths are not sharp.** The lock is forced from 26 cells of 31 (8d7751 states 28), 22 of 495
+   (24) and 24 of 175 (66c410 states 28).
+   - For 175, 24 is exact: with 23 cells, a tail enters the trap.
+   - For 31 a trap tail exists up to 22 cells, and for 495 up to 19. Lengths 23 to 25 and 20 to 21 are open.
+4. **Wrong as far as it was tested.** No prefix of 12 cells or fewer was found to force the lock. The shortest found
+   have 14 cells, and there are two: 1111 0101010101 and 0000 1101010101, cell 1 first. The test is sound and not
+   complete, so 13 cells or fewer is not excluded yet.
+5. **Wrong.** 0.484% of the prefixes of 20 cells force the lock, not 2.0% to 2.6%. I forgot that entry takes about
+   nine ticks, so most members need 22 to 28 cells.
+- **The flaw, in part F.** It certified the lock at one time alignment only, and left 893 right halves below 2^16
+  as "gate period 2, not certified", the least of them 112 (cells 5 to 7).
+  - The alternating column is ether column B4, whose period is 2. So the ether beside it can be at phase t + 1 or
+    t + 3: R65's "phase 1 or 3".
+  - 8d7751's two families and 66c410's are all at phase t + 3. If the 893 are the other alignment, **a repair should
+    state both**.
+  - Part F's other counts stand: 830 enter at six ether columns in that alignment, the least 31; 25 behind a wall
+    seven columns deeper; 561 have gate period 7.
+
+**The follow-up** ([claudeCloud_ether_lock_exact.py](research/k50_1/claudeCloud_ether_lock_exact.py), frozen:
+`9bdc32de9d61a9d5530d8e4758246edb70a100c930f4ad90f0136d34bcfdd9b9`).
+- **What it decides.** Not forcing: an explicit tail whose right half, followed exactly, enters the trap. Forcing:
+  every branch of the prefix, split cell by cell, reaches a window forced into the lock. Anything else is reported
+  open.
+- **Its control passed before freezing:** the six cases the first probe settled come out the same. A first draft
+  failed that control. It looked for trap branches by refinement, and real trap entries come at ticks 90 to 600,
+  far beyond any refinement depth. So the draft was changed to explicit tails.
+- **Predictions.**
+  1. (0.9) All 893 are the same lock at the other alignment, or behind a deeper wall. No right half below 2^16 with
+     gate period 2 stays uncertified.
+  2. (0.7) The exact least lengths are 23 cells for 31 and 20 for 495.
+  3. (0.6) No prefix of 13 cells or fewer forces the lock, and exactly two of 14 cells do.
+- **Counterfactual.** If some period-2 right half is in neither alignment, there is a second period-2 lock and
+  prediction 1 of K66 was right only at 19 columns.
