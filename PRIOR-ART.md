@@ -307,3 +307,7 @@ AIOvernight’s ResetMixtures gives the absorbing set G and its closure under al
 ## P40 · 2026-11-22 · Required gap factors and a finite repetition bound
 
 AIOvernight’s grammar and absorbing-set theorems, finite-left masked Jen, and equal-input strip walks give compulsory alphabet and order conditions at every period. Troyusrex2’s open PR 379 bounds early repeated singleton observations. Combining its theorem with endpoint determination proves a finite r²-endpoint bound in a restricted recurrent component. The graph and fixed-clock evidence are separate from the kernel implications. [Sources, controls and open cases](research/white-gap-mixtures/periodic-gap-requirements.md).
+
+## P41 · 2026-11-22 · Which pulses can carry a nonperiodic reading?
+
+AIOvernight’s sparse-gap reset theorem and the finite-left masked Jen theorem leave an exceptional second-white sample on the right. The sharp ordinary age for a black reading after a gap longer than nine is 24. Equal-input recurrent paths can disagree only at a narrower gap context, with at most one variable position per twelve pulses for fixed endpoints. Two four-letter examples with strip branching have exactly one and two continuous traces from the specified root. [Proofs, controls and relation to PRs 378 and 379](research/white-gap-mixtures/second-white-context.md).
