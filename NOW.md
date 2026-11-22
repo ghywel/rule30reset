@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 11:15 UTC by claudeCloud (K62: K50.4 preliminary; K50.3's test and the sieve, K60, are running).*
+Updated 2026-11-22 11:17 UTC by gptIntel (I80–I107, recovered overnight posts and both Intel K48 outcomes).*
 
 ## Arrangement
 
@@ -16,10 +16,10 @@ Rewritten 2026-11-22 11:15 UTC by claudeCloud (K62: K50.4 preliminary; K50.3's t
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** on the cloud host, the sieve's judge (K60) and the first tests of K50.3 and K50.4 (K61). None on
-  the M5 or the Intel (the owner, 22 November), where four outcomes are not recorded yet: on the Intel,
-  R6's centre column to 2^27 (last recorded c(2^26) = 1, I66) and M9's 36-column automaton and entropy (I61, I70);
-  on the M5, M78's 36-column run and M80's three instances of runs of five.
+- **Running jobs:** on the cloud host, the sieve’s judge (K60) and the K50.3 test (K61). The K50.4 first round is complete (K62).
+  Both Intel K48 jobs ended. M9 reached its cap at 400,002 discovered states, leaving entropy and the five-run word
+  undecided (I106). R6 finished at 11:12 UTC with c(2²⁷) = 0 (I107). The M5 outcomes for M78’s 36-column run
+  and M80’s three runs-of-five instances are still due.
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
@@ -31,7 +31,7 @@ Calls to action only.
 - **Say what becomes of K50.4** (K62): park it, as I recommend, or pick up the tree or the zone statistic.
 - **Say what becomes of gptIntel's overnight threads** (listed under Open threads): which become pulls, who reads
   each, and whether any is to be prepared as a submission. gptIntel names two candidates: the seven-lock prefix
-  packet (I52) and the sharp three-gap resets (`research/white-gap-mixtures/cold-reset.md`, no post yet).
+  packet (I52) and the sharp three-gap resets (I85).
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -62,18 +62,13 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-**Not set.** The last block ended on the morning of 22 November with nothing running. Before the next one starts:
+**The cloud round is under way** (K60–K62). For the next Intel block, the overnight work is now in I80–I107.
+The remaining handoffs are the M5 outcomes (M78, M80), allocation of second reads, and the owner’s choice of pulls.
+I67 and I69 have second reads in K56 addendum 1 and K58. The later Intel results await readers (METHOD §12).
 
-1. **gptIntel posts its missing entries,** I80 onward: twelve commits between 02:47 and 05:43 UTC on 22 November
-   have no post (the owner is prompting it).
-2. **The four stopped jobs are accounted for** (Arrangement): each host's worker records where its job ended.
-3. **The reads owed are shared out.** Of gptIntel's overnight results only I67 and I69 have a second reader (K56
-   addendum 1, K58). Nothing unread goes further (METHOD §12).
-4. **The owner chooses** (Needs the owner).
-
-Last posts: claudeM5 M86 and gptM5 R71 (21 November); gptIntel I79 (22 November, 02:46 UTC); claudeCloud K59. Open
-with the maintainers: kit issue [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380), on how a law
-with a certified CNF hypothesis can enter the kit (M86). No reply is recorded.
+Last posts: claudeM5 M86, gptM5 R71, claudeCloud K62 and gptIntel I107. Kit issue
+[#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
+can enter the kit (M86). No reply is recorded.
 
 ## Submissions
 
@@ -116,20 +111,22 @@ One dated line each, with what would bring it back (METHOD §3, the incubator).
   source period of at least 64. Data kept: f(k) for k ≤ 11, and f(k) ≤ 265,441 for k ≤ 7,911 (M40).
 - **R3, do changes of gap spend seed bits?** (parked 21 Nov; K36). No: the gaps behave as fair coins, with the exact
   constant λ/4. Comes back with a reason why white seed bits cannot be accepted for ever.
-- **R6, do c(2^k) and c(2^(k+1)) differ for ever?** (parked 21 Nov; K39). Tabulated to k = 26: c(2^26) = 1, and 18
-  changes in the first 27 values (I45, I66); no rule in the split of the slab. The Intel's run to 2^27 has stopped; its
-  outcome is not recorded yet. Comes back with a cancellation in the slab that survives doubling.
+- **R6, do c(2^k) and c(2^(k+1)) differ for ever?** (parked 21 Nov; K39). Tabulated to k = 27.
+  c(2²⁶) = 1 and c(2²⁷) = 0, giving 19 changes in the first 28 values (I45, I66, I107). No rule in the split of the
+  slab has emerged. Comes back with a cancellation that survives doubling.
 
 ## Open threads
 
-- **gptIntel's overnight threads** (21 to 22 November; not pulls yet, and unread unless marked). Posts are in ledger
-  archive 6.
+- **gptIntel's overnight threads** (21 to 22 November; not pulls yet, and unread unless marked). Posts through I79 are in archive 6.
+  The live ledger holds I80–I107.
   - Early repeats and excursion clocks on Lowry's #379 (I48, I51, I53; `research/m9/Rule30ExcursionClocks.lean`).
   - Lowry's arrival parity under periodic and alternating centres (I66 to I68; I67 read in K56 addendum 1), and
     source priority (I69, read in K58; I71). In `research/arrivals/`.
   - The density region of Condrey's run ends (I72); what two sites or one column can recognise (I73 to I76).
-  - Mixtures of white gaps and sparse clocks (I77 to I79, and later work without a post), in
-    `research/white-gap-mixtures/`; transitions of black runs, in `research/black-run-transitions/` (no post).
+  - Sparse clocks, ordinary gap words, reset lengths and proof grades (I77–I92, I94, I97, I104), in
+    `research/white-gap-mixtures/`. Sharp cold three-gap resets are in I85.
+  - PR 381 and black-run transitions (I93, I95–I96, I98–I103), in `research/black-run-transitions/`. I103 gives
+    the white-endpoint relay and finite-centre result using PR 379. I105 records the final checks and witness limits.
 
 - **The round's curiosities and misgivings** (K25 §5, in ledger archive 4) are not pulls yet: time order matters
   (I25); period 5's four poor rows (K21); two late single sources at P = 21 and 23 (K29).
