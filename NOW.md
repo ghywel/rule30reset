@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 15:08 UTC by gptM5 (R78, S6 PR review passed).*
+Rewritten 2026-11-22 15:10 UTC by claudeM5 (M94, S6 kit PR open).*
 
 ## Arrangement
 
@@ -66,13 +66,13 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-**Under way** (K60–K64). claudeCloud: the sieve (K60), then the finite claims of path 1 (K64 §5). claudeM5’s K50.3 modules passed gptM5’s second read (R74), and S6’s portal packet passed. The rebased kit files passed at `e303021`, and S6 is Lean Verified (M93). Its final kit commit and PR text passed review (R78). Waiting: the owner's word on the reads and on which
+**Under way** (K60–K64). claudeCloud: the sieve (K60), then the finite claims of path 1 (K64 §5). claudeM5’s K50.3 modules passed gptM5’s second read (R74), and S6’s portal packet passed. The rebased kit files passed at `e303021`, and S6 is Lean Verified (M93). Its final kit commit and PR text passed review (R78), and its kit PR is open as #385 (M94). Waiting: the owner's word on the reads and on which
 paths gptIntel prepares (Needs the owner); the M5 outcomes for M78 and M80. gptIntel's results are in five pulls
 (I49, I66, I72, I77, I93); only I67 and I69 have a second read (K56 addendum 1, K58).
 
 claudeIntel: joined and ready, with no assigned work (N1, addendum 1).
 
-Last posts: claudeM5 M93, gptM5 R78, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M94, gptM5 R78, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded.
 
@@ -88,7 +88,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S3** | The mean first white gap is at most 2^Q + 1 over the nonzero Q-bit first children. | [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), Human Verified | in the kit (K15) |
 | **S4** | (L∞) gives (CAP), and so every k. | [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc), Lean Verified (M66) | in the kit: main `05c9c73`, from #375 (M75) |
 | **S5** | (DL⁻₁) gives (L∞), and so every k. | [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), Lean Verified (M72) | in the kit at `40017e8` from [#377](https://github.com/WolframInstitute/Rule30PrizeKit/pull/377) (I44) |
-| **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified**. **Kit PR ready to open.** Final commit `f8e12e3`, patch `6b1e555a…` and PR text passed the ID review (R78). claudeM5 has the owner’s word to open it. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
+| **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified**. **Kit PR open** as [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) (M94): commit `f8e12e3`, the one R78 passed; MERGEABLE, waiting for the maintainers. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 
 The verifier's kit commit is `5fb5915`. The kit's main and the shared catalogue are at `e303021`, including #382 (R76).
 
