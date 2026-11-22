@@ -54,6 +54,8 @@ vector<Edges> build(const Word &rows, int w) {
   }
   return graph;
 }
+#include "ordinary-cone.hpp"
+
 Word mixed(const Word &rows, const vector<Edges> &g, int &mixedCount) {
   int n = rows.size();
   Word order(n, -1), low(n), comp(n, -1), stack, active(n), color;
@@ -158,12 +160,13 @@ void determinize(const vector<Edges> &g, int w) {
 }
 int main(int argc, char **argv) {
   int limit = argc > 1 ? atoi(argv[1]) : 19;
-  if (limit < 8 || limit > 28)
+  bool ordinary = argc == 3 && string(argv[2]) == "--ordinary";
+  if (argc > 3 || (argc == 3 && !ordinary) || limit < 8 || limit > 28)
     return 2;
   Word rows(256);
   iota(rows.begin(), rows.end(), 0);
   for (int w = 8; w <= limit; w++) {
-    auto g = build(rows, w);
+    auto g = ordinary ? buildOrdinary(rows, w) : build(rows, w);
     int count = 0;
     Word comp = mixed(rows, g, count), idx(rows.size(), -1), surv;
     for (int i = 0; i < (int)rows.size(); i++)

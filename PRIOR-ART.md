@@ -299,3 +299,7 @@ I79 combines the second-white mode in WhiteEndNine with finite-left masked Jen a
 ## P38 · 2026-11-22 · Physical exclusions with the full finite-strip growth rate
 
 A single width-27 return with independently selectable observations lets every readable input factor extend to an ambiguous periodic drive. Thirteen copies of that same return force every ordinary history into AIOvernight’s absorbing G set. Together these give a full-rate family of false positives for the strip criterion, including primitive words at every sufficiently large gap count. [Padding proof, physical separation and receipts](research/white-gap-mixtures/physical-padding.md).
+
+## P39 · 2026-11-22 · Ordinary sparse-gap transitions and sharp three-gap entry
+
+AIOvernight’s ResetMixtures gives the absorbing set G and its closure under all gaps of at least nine. The merged realization theorem turns initial right completions into full-line witnesses. Their combination classifies all three-gap resets from an unrestricted start, cuts the growth of the recurrent candidate language, and exhibits a one-bit obstruction to joining individually physical gaps. [Classification](research/white-gap-mixtures/cold-reset.md) · [Physical reader and gluing](research/white-gap-mixtures/ordinary-gaps.md).
