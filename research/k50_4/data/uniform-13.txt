@@ -1,0 +1,12 @@
+rows up  1 (stage  2): windows 4, width 16, mean defect 1.500, largest 2, least patch 14, windows matched by two nodes equally 0; nodes 0:1.0000
+rows up  2 (stage  3): windows 16, width 18, mean defect 4.688, largest 8, least patch 10, windows matched by two nodes equally 0; nodes 0:1.0000
+rows up  3 (stage  4): windows 64, width 20, mean defect 6.906, largest 12, least patch 8, windows matched by two nodes equally 0; nodes 0:1.0000
+rows up  4 (stage  5): windows 256, width 22, mean defect 10.660, largest 18, least patch 4, windows matched by two nodes equally 0; nodes 0:1.0000
+rows up  5 (stage  6): windows 1024, width 24, mean defect 14.070, largest 22, least patch 2, windows matched by two nodes equally 0; nodes 0:1.0000
+rows up  6 (stage  7): windows 4096, width 26, mean defect 18.779, largest 24, least patch 2, windows matched by two nodes equally 0; nodes 0:1.0000
+rows up  7 (stage  8): windows 16384, width 28, mean defect 19.855, largest 26, least patch 2, windows matched by two nodes equally 728; nodes 0:0.7092 1:0.2908
+rows up  8 (stage  9): windows 65536, width 30, mean defect 22.499, largest 28, least patch 2, windows matched by two nodes equally 2568; nodes 0:0.5940 1:0.4060
+rows up  9 (stage 10): windows 262144, width 32, mean defect 24.300, largest 30, least patch 2, windows matched by two nodes equally 0; nodes 0:0.6858 1:0.3142
+rows up 10 (stage 11): windows 1048576, width 34, mean defect 26.316, largest 31, least patch 3, windows matched by two nodes equally 97084; nodes 0:0.6229 1:0.3771
+rows up 11 (stage 12): windows 4194304, width 36, mean defect 29.526, largest 33, least patch 3, windows matched by two nodes equally 227257; nodes 0:0.5363 1:0.4637
+rows up 12 (stage 13): windows 16777216, width 38, mean defect 32.010, largest 36, least patch 2, windows matched by two nodes equally 0; nodes 0:0.5405 1:0.4595

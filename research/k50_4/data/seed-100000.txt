@@ -1,0 +1,14 @@
+rows 100000, maximal black runs of 13 or more cells (rows 12 on): 605637; longest 41 cells at row 65535, from position 65495
+by zone: left 149441, middle 302285, right 153911
+rows up  1 (stage  2): mean defect (standard window) 1.508; mean run 13.983, mean patch 15.475; mean cells continued left 0.000; matched by two nodes equally 0
+rows up  2 (stage  3): mean defect (standard window) 4.592; mean run 13.983, mean patch 14.392; mean cells continued left 0.000; matched by two nodes equally 0
+rows up  3 (stage  4): mean defect (standard window) 6.777; mean run 13.983, mean patch 14.207; mean cells continued left 0.000; matched by two nodes equally 0
+rows up  4 (stage  5): mean defect (standard window) 10.621; mean run 13.983, mean patch 12.291; mean cells continued left 0.102; matched by two nodes equally 0
+rows up  5 (stage  6): mean defect (standard window) 14.029; mean run 13.983, mean patch 10.768; mean cells continued left 0.071; matched by two nodes equally 0
+rows up  6 (stage  7): mean defect (standard window) 18.747; mean run 13.983, mean patch 7.904; mean cells continued left 0.270; matched by two nodes equally 0
+rows up  7 (stage  8): mean defect (standard window) 19.771; mean run 13.983, mean patch 8.975; mean cells continued left 0.190; matched by two nodes equally 28230
+rows up  8 (stage  9): mean defect (standard window) 22.344; mean run 13.983, mean patch 8.239; mean cells continued left 0.318; matched by two nodes equally 26390
+rows up  9 (stage 10): mean defect (standard window) 24.163; mean run 13.983, mean patch 8.410; mean cells continued left 0.495; matched by two nodes equally 0
+rows up 10 (stage 11): mean defect (standard window) 26.262; mean run 13.983, mean patch 8.213; mean cells continued left 0.574; matched by two nodes equally 51881
+rows up 11 (stage 12): mean defect (standard window) 29.584; mean run 13.983, mean patch 6.773; mean cells continued left 0.918; matched by two nodes equally 31155
+rows up 12 (stage 13): mean defect (standard window) 32.092; mean run 13.983, mean patch 6.243; mean cells continued left 0.933; matched by two nodes equally 0

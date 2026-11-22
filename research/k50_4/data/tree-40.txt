@@ -1,0 +1,113 @@
+stage  1: nodes 1, M = 1, periods 1 x1; cycle types of f [3] x1; distinct factors 4:1 8:1 12:1 16:1 20:1 24:1
+      node 0 (parent -1, cycle 1): 1
+stage  2: nodes 1, M = 3, periods 3 x1; cycle types of f [1] x1; distinct factors 4:3 8:3 12:3 16:3 20:3 24:3
+      node 0 (parent 0, cycle 3): 001
+stage  3: nodes 1, M = 3, periods 3 x1; cycle types of f [2] x1; distinct factors 4:3 8:3 12:3 16:3 20:3 24:3
+      node 0 (parent 0, cycle 1): 101
+stage  4: nodes 1, M = 6, periods 6 x1; cycle types of f [1] x1; distinct factors 4:6 8:6 12:6 16:6 20:6 24:6
+      node 0 (parent 0, cycle 2): 101000
+stage  5: nodes 1, M = 6, periods 6 x1; cycle types of f [1] x1; distinct factors 4:6 8:6 12:6 16:6 20:6 24:6
+      node 0 (parent 0, cycle 1): 101110
+stage  6: nodes 1, M = 6, periods 6 x1; cycle types of f [1] x1; distinct factors 4:6 8:6 12:6 16:6 20:6 24:6
+      node 0 (parent 0, cycle 1): 110010
+stage  7: nodes 1, M = 6, periods 6 x1; cycle types of f [1+1] x1; distinct factors 4:6 8:6 12:6 16:6 20:6 24:6
+      node 0 (parent 0, cycle 1): 011100
+stage  8: nodes 2, M = 12, periods 6 x2; cycle types of f [1] x2; distinct factors 4:11 8:12 12:12 16:12 20:12 24:12
+      node 0 (parent 0, cycle 1): 001000
+      node 1 (parent 0, cycle 1): 100111
+stage  9: nodes 2, M = 12, periods 6 x2; cycle types of f [1] x1 [2] x1; distinct factors 4:10 8:12 12:12 16:12 20:12 24:12
+      node 0 (parent 0, cycle 1): 101111
+      node 1 (parent 1, cycle 1): 110100
+stage 10: nodes 2, M = 18, periods 6 x1 12 x1; cycle types of f [1] x1 [2] x1; distinct factors 4:11 8:18 12:18 16:18 20:18 24:18
+      node 0 (parent 0, cycle 2): 101001000100
+      node 1 (parent 1, cycle 1): 011000
+stage 11: nodes 2, M = 24, periods 12 x2; cycle types of f [1] x2; distinct factors 4:13 8:24 12:24 16:24 20:24 24:24
+      node 0 (parent 0, cycle 1): 101101110110
+      node 1 (parent 1, cycle 2): 010000001111
+stage 12: nodes 2, M = 24, periods 12 x2; cycle types of f [1] x2; distinct factors 4:12 8:24 12:24 16:24 20:24 24:24
+      node 0 (parent 0, cycle 1): 101000100010
+      node 1 (parent 1, cycle 1): 011111101001
+stage 13: nodes 2, M = 24, periods 12 x2; cycle types of f [1] x2; distinct factors 4:11 8:24 12:24 16:24 20:24 24:24
+      node 0 (parent 0, cycle 1): 101110111010
+      node 1 (parent 1, cycle 1): 100100101101
+stage 14: nodes 2, M = 24, periods 12 x2; cycle types of f [1] x2; distinct factors 4:12 8:24 12:24 16:24 20:24 24:24
+      node 0 (parent 0, cycle 1): 110011001010
+      node 1 (parent 1, cycle 1): 110110101000
+stage 15: nodes 2, M = 24, periods 12 x2; cycle types of f [1] x2; distinct factors 4:13 8:24 12:24 16:24 20:24 24:24
+      node 0 (parent 0, cycle 1): 100001101010
+      node 1 (parent 1, cycle 1): 100010101110
+stage 16: nodes 2, M = 24, periods 12 x2; cycle types of f [1] x2; distinct factors 4:13 8:23 12:24 16:24 20:24 24:24
+      node 0 (parent 0, cycle 1): 000000101011
+      node 1 (parent 1, cycle 1): 111010110010
+stage 17: nodes 2, M = 24, periods 12 x2; cycle types of f [2] x2; distinct factors 4:11 8:23 12:24 16:24 20:24 24:24
+      node 0 (parent 0, cycle 1): 111110110001
+      node 1 (parent 1, cycle 1): 001100011011
+stage 18: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:15 8:43 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 2): 100100011110010010100000
+      node 1 (parent 1, cycle 2): 101000001010000111010001
+stage 19: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:41 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 110111010011011010111110
+      node 1 (parent 1, cycle 1): 101111101011111001100000
+stage 20: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:42 12:46 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 011001011010001010100100
+      node 1 (parent 1, cycle 1): 000100101010010000111111
+stage 21: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:46 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 001110001011101010111000
+      node 1 (parent 1, cycle 1): 110110101011011111001001
+stage 22: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:48 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 110011101100101011001111
+      node 1 (parent 1, cycle 1): 100010101010001001110000
+stage 23: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:43 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 100001000110101010000100
+      node 1 (parent 1, cycle 1): 111010101011101110011110
+stage 24: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:43 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 111110000010101011110110
+      node 1 (parent 1, cycle 1): 001010101100110011010011
+stage 25: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:45 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 010011111010101010010100
+      node 1 (parent 1, cycle 1): 101011000110100001100001
+stage 26: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:15 8:43 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 100001001010101011010111
+      node 1 (parent 1, cycle 1): 101010000010111101000000
+stage 27: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:15 8:41 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 111101101010110001010100
+      node 1 (parent 1, cycle 1): 101011111010100101111110
+stage 28: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:14 8:44 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 001000101100011101010111
+      node 1 (parent 1, cycle 1): 110001001010110110010010
+stage 29: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:15 8:45 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 101111000111100101011001
+      node 1 (parent 1, cycle 1): 011101101010100011011100
+stage 30: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:14 8:47 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 101001110100110101010000
+      node 1 (parent 1, cycle 1): 001000101010111010001000
+stage 31: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:15 8:47 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 101110011000010101011110
+      node 1 (parent 1, cycle 1): 101110101011001011101111
+stage 32: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:44 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 000100001111010101010011
+      node 1 (parent 1, cycle 1): 110010110001110001000100
+stage 33: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:41 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 110111101001010101100001
+      node 1 (parent 1, cycle 1): 011100011110011101111000
+stage 34: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:15 8:40 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 010100101101011000111110
+      node 1 (parent 1, cycle 1): 100111010011100101001111
+stage 35: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:15 8:45 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 010111000101010000010011
+      node 1 (parent 1, cycle 1): 111001011100110110000100
+stage 36: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:46 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 011001110101011111100001
+      node 1 (parent 1, cycle 1): 001101100110100011110111
+stage 37: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:15 8:46 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 001110010101100100111110
+      node 1 (parent 1, cycle 1): 000101000010111100100010
+stage 38: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:44 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 110011011000111000010011
+      node 1 (parent 1, cycle 1): 110101111010100110111011
+stage 39: nodes 2, M = 48, periods 24 x2; cycle types of f [1] x2; distinct factors 4:16 8:46 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 011010001111001111011010
+      node 1 (parent 1, cycle 1): 010101001011000011001010
+stage 40: nodes 2, M = 48, periods 24 x2; distinct factors 4:15 8:44 12:48 16:48 20:48 24:48
+      node 0 (parent 0, cycle 1): 001011101001110010001100
+      node 1 (parent 1, cycle 1): 010101101010000001101011
