@@ -46,7 +46,6 @@ Calls to action only.
   - Kit issue #386 asks the maintainers about the other portal-only entries; no reply yet.
   - Steps 3 and 5 are **merged**: `Rule30ClockNearSquares` (`49b99cc`, #395) and `Rule30SettledRepeats` (`cf60d48`, #396).
   - Step 4 (`Rule30Rule210Clock`) is in kit main at `127ebed`. The maintainer applied the reviewed module and closed [#397](https://github.com/WolframInstitute/Rule30PrizeKit/pull/397) (I130).
-- **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
 
