@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 17:40 UTC by gptIntel (I108, kit and portal inventory at the S6 merge).*
+Rewritten 2026-11-22 17:55 UTC by claudeCloud (K65, the sieve handed to gptIntel; caught up through I110).*
 
 ## Arrangement
 
@@ -11,18 +11,18 @@ Updated 2026-11-22 17:40 UTC by gptIntel (I108, kit and portal inventory at the 
 |---|---|---|
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) |
-| claudeCloud | a cloud container; reclaimed when idle. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) |
+| claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). **Conducts for the moment** (the owner, 19 November) | 18 November (K1) |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** on the cloud host, the sieve’s judge (K60), in two-hour runs that restart from saved answers. The first rounds of
-  K50.3 and K50.4 are complete (K62, K63).
-  On the M5 (claudeM5): M80's 5⁵ at P = 100, one uncapped Kissat (M87); M78's 36-column rung finished (M87).
-  Both Intel K48 jobs ended. M9 reached its cap at 400,002 discovered states, leaving entropy and the five-run word
-  undecided (I106). R6 finished at 11:12 UTC with c(2²⁷) = 0 (I107). The M5 outcomes for M78’s 36-column run
-  and M80’s three runs-of-five instances are still due.
+- **Running jobs:**
+  - On the cloud host: none. The sieve's judge (K60) was stopped twice at the two-hour limit and is handed to
+    gptIntel with its saved answers (K65): 16 instances at delay 40 and 20 onsets are left, and the new laws need
+    certificates.
+  - On the M5 (claudeM5): M80's 5⁵ at P = 100, one uncapped Kissat, the one outcome still due (M87).
+  - On the Intel: both K48 jobs ended (I106, I107).
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
@@ -31,15 +31,16 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only.
 
-- **Agree the second reads** for gptIntel's results (K64 §5), or change them: gptM5 and claudeM5 replay the Lean on
-  the M5; claudeCloud replays the finite claims and reads the density polygon by hand.
-- **Say which paths to a submission gptIntel prepares as proposals** (K64 §4), and in what order. Recommended: 1, the
-  white-endpoint relay with quarter periods at every finite-left site (I93; read, but Norris has 7/11 for the single
-  seed, so M95 would put it after 2); 2, the compulsory gap factor (12, 10, 9)
-  (I77); 3, the density polygon (I72); 4, the seven-lock prefix certificate (I49), beside Lowry's #378.
+- **Say which paths to a submission gptIntel prepares as proposals** (K64 §4), and in what order. Recommended now,
+  after M95: first the compulsory gap factor (12, 10, 9) (I77, path 2); then the density polygon (I72, path 3);
+  then the white-endpoint relay (I93, path 1), which is read in full but has Norris's 7/11 before it for the single
+  seed (P46); and the seven-lock prefix certificate (I49, path 4) beside Lowry's #378.
+- **Name a reader with Lean for path 2** (I97, I104, I95), if it goes forward. Its finite part is replayed (K64
+  addendum 4). Paths 3 and 4 have no Lean read either.
 - **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md): repairs 1 (8e6bd3, width 52 is exactly 96) and 2 (803bc4,
-  finite roots) were prepared at `a88097e` (M99). Both need their release files updated after #385.
-  gptIntel is reviewing them at the owner’s request. Kit issue #386 has told the maintainers and asks what they want for the other portal-only entries.
+  finite roots) were prepared at `a88097e` (M99), and both carrying reads pass (I109, I110). Their release files
+  are being rebased after #385; then each pull request needs the owner's word. Kit issue #386 has told the
+  maintainers and asks what they want for the other portal-only entries.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -70,13 +71,23 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-**Under way** (K60–K64). claudeCloud: the sieve (K60), then the finite claims of path 1 (K64 §5). claudeM5’s K50.3 modules passed gptM5’s second read (R74), and S6’s portal packet passed. The rebased kit files passed at `e303021`, and S6 is Lean Verified (M93). Its final kit commit and PR text passed review (R78), and the kit merged both modules in #385 at `54d030c` (I108). Waiting: the owner's word on the reads and on which
-paths gptIntel prepares (Needs the owner); the M5 outcomes for M78 and M80. gptIntel's results are in five pulls
-(I49, I66, I72, I77, I93); only I67 and I69 have a second read (K56 addendum 1, K58).
+**Under way.**
+- **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 1 and 2 are prepared
+  (M99) and pass gptIntel's carrying reads (I109, I110). The release read after the rebase is next. Steps 3 to 7
+  are not started.
+- **gptIntel:** the rest of the sieve, with certificates for its laws (K65).
+- **claudeCloud:** one pull block, to be frozen in K66.
+- **claudeIntel:** M99 asked it to read the repairs; the owner also gave that read to gptIntel (I108).
 
-M99 asked claudeIntel to read Repairs 1 and 2. The owner has also assigned the read to gptIntel (I108).
+**Done since K64.** S6 is posted, Lean Verified and Human Verified, and in the kit at `54d030c` (M93, I108). It came
+from pull K50.3 (K61, K63, M88, M89, R74).
 
-Last posts: claudeM5 M99, gptM5 R78, claudeCloud K64, gptIntel I108 and claudeIntel N1. Kit issue
+**Waiting.** The owner's word on which paths gptIntel prepares, and a Lean reader for path 2 (Needs the owner).
+M80's 5⁵ at P = 100 on the M5. gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: path 1
+in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
+1, K58).
+
+Last posts: claudeM5 M99, gptM5 R78, claudeCloud K65, gptIntel I110 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -94,7 +105,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S3** | The mean first white gap is at most 2^Q + 1 over the nonzero Q-bit first children. | [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), Human Verified | in the kit (K15) |
 | **S4** | (L∞) gives (CAP), and so every k. | [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc), Lean Verified (M66) | in the kit: main `05c9c73`, from #375 (M75) |
 | **S5** | (DL⁻₁) gives (L∞), and so every k. | [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), Lean Verified (M72) | in the kit at `40017e8` from [#377](https://github.com/WolframInstitute/Rule30PrizeKit/pull/377) (I44) |
-| **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified**. **Merged** in [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) at `54d030c` (I108). The portal lists both kit modules. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
+| **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified, Human Verified**. **Merged** in [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) at `54d030c` (I108). The portal lists both kit modules. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 
 The verifier's kit commit is `5fb5915`. The kit's main and the shared catalogue are at `54d030c`, including #384 and #385 (I108).
 
@@ -108,11 +119,10 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 |---|---|---|---|---|
 | K5 | 19 Nov, claudeCloud | The resolution law: how the last catch depends on source period P | **In progress** (K29, read in R61). The first-excursion census agrees closely with the fair-input model. Its measured tail is about 1.36 κ^x, κ ≈ 0.847810. A uniform bound remains open. Next test: compare the trace restricted to doubled inputs with the census before using the mixing rate for a pooled bound. Carries K2’s conjecture on white returns. | no |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
-| M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | **In progress** (K47, M79, M81, M85, K54, K56; outside: K52, [R69](research/m9/exterior-grammars.md)). Inside, the gate settles within 50 samples of entry to a fixed, structured process and stays there to 10^7 ticks (K56). Its laws are read by SAT, each certified by LRAT: at most three closed runs of four, and four never after two samples (M81; in Lean from one CNF, M85, [read](research/m9/runs-of-four-review.md) in R71); 19 of the 81 quadruples over runs 4–6 by delay 20 (K54, I65); the pair (5, 1) from delay 12, (3, 1, 4) from 9, (10, 1, 5) from 20 and (5, 5, 5, 6) from 39 (K56, I66, I75). The column ladder misses the short ones: (5, 1) needs 37 columns (I70). No rule behind the table yet. Absence from real rows is not a law: (11, 1) never occurs and is SAT at delay 80. The Intel's width-36 automaton stopped at its 400,000-state cap: entropy undecided (I106). On Lowry's #379: an all-length repeat bound for the trapped 3/5 clock, 17n ≤ 20j + 2m + 4t₀ + 6 (I53, Lean), and the 4/3 complexity obstruction for any excursion reading (I51, on paper). Outside, X and Y have their grammars to 43 columns; an aperiodic exterior spacing is excluded (I48, Lean). Now: the sieve run to the end on the cloud host, 98 candidates frozen in K60 (the owner, 22 November). After it: a hand reason for (5, 1); the kit route waits on issue #380. | no |
+| M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | **In progress** (K47, M79, M81, M85, K54, K56; outside: K52, [R69](research/m9/exterior-grammars.md)). Inside, the gate settles within 50 samples of entry to a fixed, structured process and stays there to 10^7 ticks (K56). Its laws are read by SAT, each certified by LRAT: at most three closed runs of four, and four never after two samples (M81; in Lean from one CNF, M85, [read](research/m9/runs-of-four-review.md) in R71); 19 of the 81 quadruples over runs 4–6 by delay 20 (K54, I65); the pair (5, 1) from delay 12, (3, 1, 4) from 9, (10, 1, 5) from 20 and (5, 5, 5, 6) from 39 (K56, I66, I75). The column ladder misses the short ones: (5, 1) needs 37 columns (I70). No rule behind the table yet. Absence from real rows is not a law: (11, 1) never occurs and is SAT at delay 80. The Intel's width-36 automaton stopped at its 400,000-state cap: entropy undecided (I106). On Lowry's #379: an all-length repeat bound for the trapped 3/5 clock, 17n ≤ 20j + 2m + 4t₀ + 6 (I53, Lean), and the 4/3 complexity obstruction for any excursion reading (I51, on paper). Outside, X and Y have their grammars to 43 columns; an aperiodic exterior spacing is excluded (I48, Lean). The sieve (K60, 98 candidates) has 23 laws so far, 18 of them new and uncertified, and every new one contains a lone run of 1; (3, 4, 4, 6) and (3, 4, 4, 10) are possible through delay 40 ([table](research/m9/data/claudeCloud-sieve-interim-K65.txt), K65). Now: gptIntel finishes the run and certifies the laws (K65). After it: a hand reason at the lone 1, for (5, 1) first; the kit route waits on issue #380. | no |
 | M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
 | K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52, [R69](research/m9/exterior-grammars.md)). Proved for every ether cut (I46 read) and computed through support width 26. A counterexample needs one finite right half sustaining an aperiodic gate in X or Y. The finite-window grammars now constrain that realization question. gptIntel's seven-lock prefix work has its own row, I49. | no |
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. I46 checked the exclusion in Lean and exhibited a finite GE2 trace with 5,2,2,5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
-| K50.3 | 21 Nov, claudeCloud | Does the every-k inverse chain need the white wall? | *In progress.* M88 and M89’s full-line forms are proved and independently read ([R74](research/k50_3/review.md)). For every configuration with a leftmost black cell, the unconditional ages are 8 for one inverse tick (sharp) and 24 for two. CAP, L∞ or DL⁻₁ gives every depth. With PR #371’s exact capacity, k ≤ 25 is unconditional from age 2^300. K63’s prescribed-wall results are separate. S6’s portal packet and both kit modules merged in #385 (I108). | yes: S6 (M90, R74) |
 | I49 | 21 Nov, gptIntel | Lowry's period-seven lock from a finite right prefix: the family criterion the maintainer asked for on #378 | *In progress* (I49–I64, I68; Lean in `research/k50_1/`). Kernel: an exact prefix test for every right prefix, complete once its window may grow (I49, I55); lock entry gives a deadline for the true centre (I50, I52); 63 observed sites are exactly enough at Lowry's age 364 (I64). External: 64 cells are exactly enough there (I63). Of 524,971 singleton ages to 2^20, four have a forcing prefix of 31 cells or fewer (I62). I52's packet checks at the verifier's pin in 223 s (I58). Unread. Relates to K50.1. Next: compare with Lowry's open #378. | no; path 4 (K64): beside #378, not ahead of it |
 | I66 | 21 Nov, gptIntel | Lowry's source arrivals under periodic centres, and source priority | *In progress* (I66–I69, I71, I73; `research/arrivals/`). Kernel: arrival parity aperiodic for a wider family of periodic centres (I66). Under an eventually alternating centre, arrival parity and the distance-two shell are both aperiodic (I67–I68, finite part read in K56 addendum 1), with a finite form 2n < 3b + 16 (I73). Seven rightmost readings recover a four-cell band; four letters are optimal (I69, read in K58; I71). Lean unread. | no |
 | I72 | 22 Nov, gptIntel | Which densities of black cells and of run ends one site can show | *In progress* (I72–I76; `research/source-density/`). Kernel, 26 headlines: the joint limits (C/T, A/T) fill exactly the polygon (0,0), (1/3,0), (3/4,1/4), (9/10,2/5), (1,1); every point is realised by one history; on the singleton two deficits grow at least logarithmically. Extends Condrey's #253 and Quint and Gemini's #297. Beside it: what two sites or one column recognise (I73–I76). The bounds, vertices and witnesses (least width 155) read by claudeCloud (K64 addendum 3); the Lean replay is still owed. Next: the one-third corner with two aperiodic columns. | no; path 3 (K64) |
@@ -152,6 +162,10 @@ One dated line each, with what would bring it back (METHOD §3, the incubator).
 
 One line each, with what would reopen it.
 
+- **K50.3, does the every-k inverse chain need the white wall?** (K61, K63, M88, M89; closed 22 Nov, K65). No: the
+  answer is S6, in the kit at `54d030c`. Reopens for the sharpness of age 24 on the line, which is open (Hughes's
+  age-23 control is beside the wall and outside Lean), or to prove K63's forms beside a prescribed wall, which are
+  COMPUTED only.
 - **M8, bounded reach on gap words** (K41; closed 21 Nov, the owner). No bound: a flipped bit reaches as far as in
   random words, 6.4 times its entry depth. Reopens only with a smaller language on which reach could be bounded.
 - **L1, the kit's seed law against placego's table** (K46; closed 21 Nov, the owner). They agree at every point, to

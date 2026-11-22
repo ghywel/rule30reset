@@ -1,0 +1,105 @@
+word | runs | samples | expected | verdict
+(5,1) | 2 | 39 | 780209 | LAW from delay 12 (possible through 11)
+(11,1) | 2 | 69 | 163258 | possible through delay 80
+(23,1) | 2 | 129 | 10004 | possible through delay 40
+(25,1) | 2 | 139 | 6340 | possible through delay 20; delay 40 not judged
+(29,1) | 2 | 159 | 2162 | possible through delay 20; delay 40 not judged
+(31,1) | 2 | 169 | 1339 | possible through delay 20; delay 40 not judged
+(33,1) | 2 | 179 | 825 | possible through delay 20; delay 40 not judged
+(33,6) | 2 | 204 | 688 | not run (204 samples)
+(26,1) | 2 | 144 | 615 | possible through delay 20; delay 40 not judged
+(35,1) | 2 | 189 | 564 | not run (189 samples)
+(37,1) | 2 | 199 | 364 | not run (199 samples)
+(28,1) | 2 | 154 | 323 | possible through delay 20; delay 40 not judged
+(37,6) | 2 | 224 | 303 | not run (224 samples)
+(39,1) | 2 | 209 | 246 | not run (209 samples)
+(30,1) | 2 | 164 | 242 | possible through delay 20; delay 40 not judged
+(41,1) | 2 | 219 | 154 | not run (219 samples)
+(32,1) | 2 | 174 | 145 | possible through delay 20; delay 40 not judged
+(41,6) | 2 | 244 | 129 | not run (244 samples)
+(43,1) | 2 | 229 | 105 | not run (229 samples)
+(3,1,4) | 3 | 52 | 12858 | LAW from delay 9 (possible through 8)
+(1,1,1) | 3 | 27 | 3076 | LAW, first forbidden delay in 0..20
+(6,1,12) | 3 | 107 | 1452 | possible through delay 40
+(1,4,5) | 3 | 62 | 801 | possible through delay 40
+(5,6,6) | 3 | 97 | 700 | possible through delay 40
+(11,4,8) | 3 | 127 | 640 | possible through delay 40
+(4,8,12) | 3 | 132 | 631 | possible through delay 40
+(6,1,14) | 3 | 117 | 626 | possible through delay 40
+(5,6,4) | 3 | 87 | 553 | possible through delay 40
+(10,1,5) | 3 | 92 | 514 | LAW from delay 20 (possible through 19)
+(10,4,6) | 3 | 112 | 512 | possible through delay 40
+(1,4,7) | 3 | 72 | 471 | possible through delay 40
+(10,1,9) | 3 | 112 | 463 | LAW, first forbidden delay in 0..20
+(8,1,5) | 3 | 82 | 443 | LAW, first forbidden delay in 0..20
+(6,4,4) | 3 | 82 | 420 | possible through delay 40
+(8,1,9) | 3 | 102 | 399 | LAW, first forbidden delay in 0..20
+(5,8,1) | 3 | 82 | 368 | possible through delay 40
+(10,4,8) | 3 | 122 | 330 | possible through delay 40
+(6,1,16) | 3 | 127 | 298 | possible through delay 40
+(1,1,4) | 3 | 42 | 293 | LAW, first forbidden delay in 0..20
+(1,4,10) | 3 | 87 | 285 | possible through delay 40
+(1,4,9) | 3 | 82 | 271 | possible through delay 40
+(1,4,4) | 3 | 57 | 256 | possible through delay 40
+(4,8,6) | 3 | 102 | 253 | possible through delay 40
+(1,4,11) | 3 | 92 | 223 | possible through delay 40
+(12,1,3) | 3 | 92 | 220 | LAW, first forbidden delay in 21..40
+(7,4,8) | 3 | 107 | 194 | possible through delay 40
+(10,1,7) | 3 | 102 | 193 | possible through delay 40
+(10,1,11) | 3 | 122 | 191 | LAW, first forbidden delay in 21..40
+(8,8,1) | 3 | 97 | 170 | possible through delay 40
+(8,1,7) | 3 | 92 | 166 | LAW, first forbidden delay in 0..20
+(8,1,11) | 3 | 112 | 165 | LAW, first forbidden delay in 0..20
+(10,1,1) | 3 | 72 | 165 | possible through delay 40
+(5,6,14) | 3 | 137 | 164 | possible through delay 20; delay 40 not judged
+(4,1,7) | 3 | 72 | 159 | possible through delay 40
+(8,1,1) | 3 | 62 | 142 | LAW, first forbidden delay in 21..40
+(4,1,1) | 3 | 42 | 136 | possible through delay 40
+(1,4,13) | 3 | 102 | 132 | possible through delay 40
+(4,4,1) | 3 | 57 | 119 | possible through delay 40
+(10,1,8) | 3 | 107 | 108 | possible through delay 40
+(3,4,4,6) | 4 | 100 | 11595 | possible through delay 40
+(3,4,4,10) | 4 | 120 | 8718 | possible through delay 40
+(1,3,4,7) | 4 | 90 | 1274 | possible through delay 40
+(6,3,1,1) | 4 | 70 | 1239 | possible through delay 40
+(4,3,4,10) | 4 | 120 | 565 | possible through delay 40
+(1,7,4,3) | 4 | 90 | 538 | possible through delay 40
+(3,4,4,14) | 4 | 140 | 450 | possible through delay 20; delay 40 not judged
+(5,3,4,6) | 4 | 105 | 436 | possible through delay 40
+(3,4,4,16) | 4 | 150 | 402 | possible through delay 20; delay 40 not judged
+(1,7,5,4) | 4 | 100 | 395 | possible through delay 40
+(3,1,5,6) | 4 | 90 | 377 | LAW, first forbidden delay in 0..20
+(3,1,3,1) | 4 | 55 | 341 | LAW, first forbidden delay in 0..20
+(11,3,4,1) | 4 | 110 | 288 | possible through delay 40
+(4,4,6,1) | 4 | 90 | 288 | LAW, first forbidden delay in 0..20
+(3,9,4,4) | 4 | 115 | 252 | possible through delay 40
+(13,3,1,1) | 4 | 105 | 210 | possible through delay 40
+(4,3,1,1) | 4 | 60 | 199 | possible through delay 40
+(11,6,1,1) | 4 | 110 | 194 | possible through delay 40
+(13,3,4,1) | 4 | 120 | 186 | LAW, first forbidden delay in 21..40
+(5,4,11,6) | 4 | 145 | 182 | possible through delay 20; delay 40 not judged
+(5,4,6,4) | 4 | 110 | 179 | LAW, first forbidden delay in 7..20
+(5,6,1,5) | 4 | 100 | 167 | LAW, first forbidden delay in 21..40
+(4,4,10,6) | 4 | 135 | 167 | possible through delay 20; delay 40 not judged
+(9,4,3,1) | 4 | 100 | 158 | LAW, first forbidden delay in 0..20
+(7,3,4,6) | 4 | 115 | 157 | possible through delay 40
+(5,12,9,6) | 4 | 175 | 157 | possible through delay 20; delay 40 not judged
+(5,4,4,6) | 4 | 110 | 140 | LAW, first forbidden delay in 7..20
+(3,1,5,12) | 4 | 120 | 139 | LAW, first forbidden delay in 21..40
+(3,1,1,16) | 4 | 120 | 139 | possible through delay 40
+(15,3,4,1) | 4 | 130 | 122 | possible through delay 40
+(3,1,1,12) | 4 | 100 | 121 | possible through delay 40
+(6,8,5,4) | 4 | 130 | 121 | possible through delay 40
+(11,5,8,7) | 4 | 170 | 114 | possible through delay 20; delay 40 not judged
+(5,6,1,8) | 4 | 115 | 110 | possible through delay 40
+(1,5,5,4) | 4 | 90 | 109 | possible through delay 40
+(1,11,5,4) | 4 | 120 | 107 | possible through delay 40
+(11,3,4,6) | 4 | 135 | 106 | possible through delay 20; delay 40 not judged
+(5,4,4,10) | 4 | 130 | 105 | possible through delay 40
+(3,9,1,3) | 4 | 95 | 103 | LAW, first forbidden delay in 21..40
+
+98 candidates: 23 laws, 51 possible through delay 40 or more, 16 not judged at delay 40, 8 not run
+with a run of 1: 21 of the 23 laws, 34 of the 51 possible, 68 of all 98 candidates
+still to judge at delay 40 (16): (25,1); (29,1); (31,1); (33,1); (26,1); (28,1); (30,1); (32,1); (5,6,14); (3,4,4,14); (3,4,4,16); (5,4,11,6); (4,4,10,6); (5,12,9,6); (11,5,8,7); (11,3,4,6)
+still to bisect (20): (1,1,1) in 0..20; (10,1,9) in 0..20; (8,1,5) in 0..20; (8,1,9) in 0..20; (1,1,4) in 0..20; (12,1,3) in 21..40; (10,1,11) in 21..40; (8,1,7) in 0..20; (8,1,11) in 0..20; (8,1,1) in 21..40; (3,1,5,6) in 0..20; (3,1,3,1) in 0..20; (4,4,6,1) in 0..20; (13,3,4,1) in 21..40; (5,4,6,4) in 7..20; (5,6,1,5) in 21..40; (9,4,3,1) in 0..20; (5,4,4,6) in 7..20; (3,1,5,12) in 21..40; (3,9,1,3) in 21..40
+not run (8): (33,6); (35,1); (37,1); (37,6); (39,1); (41,1); (41,6); (43,1)
