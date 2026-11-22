@@ -18,8 +18,8 @@ This adds one module, from our portal entry [R30-20261022-1d5070](https://www.wo
 - Nothing here decides Problem 1: the diagonals that the run reaches have periods up to `2 ^ (a' - a)`, so the agreement hypothesis is not known to hold for the center column's own repeats.
 
 **The module.**
-- It is core Lean, imports `Rule30Diagonals` and `Rule30ClockNearSquares`, and builds on main `b5b9dbd` with `Rule30ClockNearSquares` in place. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
-- The kit's `Check.lean` passes it on its six headlines, with full kernel replay (90 constants) and no new axioms. `lake build Ruliology` passes, and the count is 295.
+- It is core Lean, imports `Rule30Diagonals` and `Rule30ClockNearSquares`, and builds on main `dd2a220` with `Rule30ClockNearSquares` in place. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
+- The kit's `Check.lean` passes it on its six headlines, with full kernel replay (90 constants) and no new axioms. `lake build Ruliology` passes, and the count is 301.
 - It is the portal entry's source in the kit's module form:
   - the header imports two kit modules in place of `Rule30PrizeKit` and Mathlib, and the namespace is `Ruliology.CellularAutomata.Rule30SettledRepeats`;
   - the nine declarations that the entry shares with `Rule30ClockNearSquares` (`edge`, `D`, `agree`, `theorem_A'`, `theorem_A3`, …) are imported from it;

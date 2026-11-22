@@ -19,14 +19,14 @@ This adds one module, from two of our portal entries: [R30-20261022-91b0b0](http
 - `Rule30DrivenLeftWindows` bounds a periodic agreement window of column `-1` by its start. #379's `Rule30GapRepetitions.psi_not_finite_of_sample_repeats` rules out a finite left row when repeats of the white-tick readings outlast their second start by unbounded amounts. Here repeats at unbounded lags that fall short of their second start by a fixed amount already suffice, through the black diagonal. #379 also excludes Sturmian gap orders using Bugeaud and Kim's theorem, cited outside Lean. Here the characteristic Sturmian words are excluded as the readings themselves, with the proof in Lean.
 
 **The module.**
-- It is core Lean, imports `Rule30Realization` and `Rule30ZeroWallDiagonals`, and builds on main `b5b9dbd`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
-- The kit's `Check.lean` passes it on its twelve headlines, with full kernel replay (174 constants) and no new axioms. `lake build Ruliology` passes, and the count is 294.
+- It is core Lean, imports `Rule30Realization` and `Rule30ZeroWallDiagonals`, and builds on main `dd2a220`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
+- The kit's `Check.lean` passes it on its twelve headlines, with full kernel replay (174 constants) and no new axioms. `lake build Ruliology` passes, and the count is 300.
 - It is the portal entries' source in the kit's module form:
   - the header imports two kit modules in place of `Rule30PrizeKit` and Mathlib, and the namespace is `Ruliology.CellularAutomata.Rule30ClockNearSquares`;
   - the Mathlib tactics are replaced by core ones (`omega`, `Classical.byContradiction`, `Nat.strongRecOn`, `rw (occs := …)`), and two `List.getD` append lemmas are proved in the module;
   - the entry's own proofs of the diagonal theory (period `2^j`, Lemmas B1 and B2) are replaced by the kit's tail-left package, through `tailLeft_D`. Its run bound, Lemma B3, which `corollary_F` does not use, is left out.
 
   The 44 declarations kept have the entries' statements, with `ℕ` and `ℤ` written `Nat` and `Int`.
-- PRs #391 to #394 change the same count line, import list and table. After each merge, we will refresh this patch against main and rebuild it.
+- #391 and #396 change the same count line, import list and table. After each merge, we will refresh this patch against main and rebuild it.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
