@@ -279,3 +279,7 @@ Condrey's #253 and Quint and Gemini's #297 gave the source observable and bounds
 ## P33 · 2026-11-22 · Minimal 001 observers and a phase-free count
 
 Condrey's source-observation work, Herbert's period-three language, and the ether erosion of Perez Morales and Lowry supply the inputs. I75 classifies static recodings of two ordinary sites for recognition of the one-black period-three class, proves sharp horizons, and counts defective target triples through a three-symbol observation. The finite-right skeleton extends the kit's singleton-specific phase statement to an arbitrary finite right tail with a deadline. [I75 evidence and credit](research/source-density/clock-observers.md).
+
+## P34 · 2026-11-22 · Reading the effective boundary and recovering a source count
+
+Rule30MaskedJen gives the effective boundary, Rule30Realization allows arbitrary target traces with prescribed initial right half, and Rule30BlackRuns gives the shielding exclusion. I76 characterizes exactly when that boundary determines a periodic template, and which linear score of two left-site counts survives observation of an arbitrary target column. Herbert's period-three language and the I75 observations lead to sharp four- and eight-frame tests for 011. [Definitions, proofs and receipts](research/source-density/effective-boundary.md).

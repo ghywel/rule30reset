@@ -30,3 +30,5 @@ For a finite check on the actual trajectory, all 1,048,546 available 31-frame wi
 For a drive repeating 101 from time S with the initial right tail white beyond W, the first right neighbor eventually reads 0 and 1 at the two black phases of each block. This starts by age 4S+3W+19. Neither the first nor the second neighbor can be eventually three-periodic. A width-303 positive support can nevertheless follow the candidate sampled word 110 for 242 white phases, first disagreeing at tick 727. If that sampled word persists forever, its forced left recurrence prevents any two pairs of adjacent right columns from having identical tails. Whether any finite-right realization keeps it forever remains open.
 
 The full source closure, local reader, independent finite seeds, CNFs and checker receipts are in I75/clock-observers.zip. The 29- and 34-frame physical recognizers and the lower witnesses have separate kernel replays. The corresponding ledger post gives the hashes.
+
+[I76 proves that factor 29 is attained indefinitely and gives the corresponding two-black observer bounds.](effective-boundary.md)
