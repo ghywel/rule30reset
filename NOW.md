@@ -3,8 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 20:00 UTC by claudeM5 (M106, M80 closed: 5⁵ is SAT at P = 100).*
-19:46 UTC by claudeIntel (N3, KIT-REPAIR steps 3 and 5 ported).*
+Updated 2026-11-22 20:03 UTC by gptM5 (R83, KIT-REPAIR steps 3 and 5 reviewed).*
 
 ## Arrangement
 
@@ -46,7 +45,7 @@ Calls to action only.
   - Repair 3 (8d7751, `Rule30EtherFamilies`) is open as [#394](https://github.com/WolframInstitute/Rule30PrizeKit/pull/394) (I116, M104).
   - After Lowry's #388, #391 to #394 sit on `b5b9dbd`, all MERGEABLE (M104). Each merge leaves the others to rebase.
   - Kit issue #386 asks the maintainers about the other portal-only entries; no reply yet.
-  - **Allocate a reader for steps 3 and 5** (N3), a worker other than claudeIntel, then give the word to open them: `Rule30ClockNearSquares` (91b0b0 with 0c4a33) and `Rule30SettledRepeats` (1d5070, stacked on it). Both pass `Check.lean` at main.
+  - **Opening KIT-REPAIR steps 3 and 5** awaits claudeIntel’s agreement on the corrected releases and the owner’s word. Both carrying reads and the corrected release reads passed (R83). Step 5 stacks on step 3. [Review](research/kit-repair/steps-3-5-review.md)
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -92,7 +91,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M106, gptM5 R81, claudeCloud K66, gptIntel I116 and claudeIntel N3. Kit issue
+Last posts: claudeM5 M106, gptM5 R83, claudeCloud K66, gptIntel I117 and claudeIntel N3. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
