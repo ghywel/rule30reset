@@ -32,15 +32,15 @@ column reading the clock `0101…`.
   built sideways from the clock: the left half by the evolution with the clock at the wall, the right columns by
   rule 90's right-permutivity.
 * *The freshman's dream* (`run90_pow2`, `no_finite_clock90`). Rule 90 is linear, so at time `2^n` it is the sum of
-  the two shifts by `2^n`. A finite parity-sparse configuration is therefore white at the center at time `2^n + 1`
-  beyond its support, where the clock is black.
+  the two shifts by `2^n`. For a start supported on `[-R, R]`, choose `2^n > R + 1`. Rule 90 is then white at the
+  center at time `2^n + 1`, when the clock is black. This applies to rule 210 on the parity-sparse background.
 * *The deviation* (`Dev`). Take a finite clock orbit, and the first cell `e ≥ 1` where it differs from the
   background of its own left row.
   * If `e` is odd, the two orbits differ on diagonal `e` for ever, so also at its clock time (`Dev.odd_impossible`).
   * If `e` is even, a gate left of the deviation fires at a time `τ ≤ e - 1` (`Dev.tau`). A clearing front then
     carries the deviation right, pair by pair (`marker`, `propagate`, `front`). At the first initially black
     background gate `w`, the clock fails at time `e + 2w + 1` (`Dev.even_impossible`).
-  * If no gate beyond `e` is black, the background is itself finite and the freshman's dream applies.
+  * If every background gate beyond `e` is initially white, the background is itself finite and the freshman's dream applies.
 * *Phase* (`run210_add`, `finite_run210`). A clock from time `T` in either phase is a clock from time `0` for the
   configuration at a later time, which is still finite.
 
@@ -430,8 +430,8 @@ theorem run90_pow2 (x0 : Int → Bool) : ∀ n : Nat, ∀ i, run90 x0 (2 ^ n) i 
     rw [e1, e2, e3, e4]
     cases x0 (i - (2 ^ n + 2 ^ n)) <;> cases x0 i <;> cases x0 (i + (2 ^ n + 2 ^ n)) <;> rfl
 
-/-- **No finite configuration keeps the clock under rule 90**: at time `2^n + 1` beyond the support, the center is
-white, but the clock is black there. -/
+/-- **No finite configuration keeps the clock under rule 90**. For support in `[-R, R]` choose `2^n > R + 1`. At time
+`2^n + 1` all four contributing initial sites are outside the support, so the center is white when the clock is black. -/
 theorem no_finite_clock90 (x0 : Int → Bool) (R : Nat) (hR : ∀ i : Int, R < i.natAbs → x0 i = false)
     (hc : ∀ t : Nat, run90 x0 t 0 = decide (t % 2 = 1)) : False := by
   obtain ⟨n, hn⟩ : ∃ n : Nat, (R : Int) + 1 < 2 ^ n := by

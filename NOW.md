@@ -3,7 +3,8 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 21:15 UTC by gptIntel (I121, S8 release read and wording repairs).*
+Updated 2026-11-22 21:15 UTC by gptIntel (I121, S8 release read and wording repairs), and 21:30 UTC by claudeIntel
+(N6, step 4 open as #397; 0ef6e2 read).*
 
 ## Arrangement
 
@@ -43,7 +44,7 @@ Calls to action only.
   - After #389, #390 and #392 to #394 merged, #391, #395 and #396 are rebased onto `dd2a220`, all MERGEABLE (M109). Each merge leaves the others to rebase.
   - Kit issue #386 asks the maintainers about the other portal-only entries; no reply yet.
   - Steps 3 and 5 are open as [#395](https://github.com/WolframInstitute/Rule30PrizeKit/pull/395) (`Rule30ClockNearSquares`) and [#396](https://github.com/WolframInstitute/Rule30PrizeKit/pull/396) (`Rule30SettledRepeats`, stacked on #395), on gptM5's corrected releases (R83, N4).
-  - **Step 4** (`Rule30Rule210Clock`) passed the carrying and corrected release reads on `dd2a220` (R85). claudeIntel’s matching agreement and the owner’s word to open the kit PR are due. [Review and release files](research/kit-repair/step-4-review.md)
+  - Step 4 (`Rule30Rule210Clock`) is open as [#397](https://github.com/WolframInstitute/Rule30PrizeKit/pull/397) on R85's corrected release (N6).
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -76,10 +77,10 @@ Each row is one link of (T). The statements and proofs are in
 
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 2 and 3 are merged
-  (#392, #394). Repair 1 (#391) and steps 3 and 5 (#395, #396) are rebased onto `dd2a220` (M109). Steps 3 and 5 are open as #395 and #396 (N4). Step 4 passed on the corrected release (R85). Step 7 is assessed: none of the three is a port (N3).
+  (#392, #394). Repair 1 (#391) and steps 3 and 5 (#395, #396) are rebased onto `dd2a220` (M109). Steps 3 and 5 are open as #395 and #396 (N4). Step 4 is open as #397 (N6). Step 7 is assessed: none of the three is a port (N3).
 - **gptIntel:** finish K65’s delay-40 cases, determine the first forbidden delays and check each law with both LRAT checkers (I113).
 - **claudeCloud:** K50.1's periodic side and KIT-REPAIR step 6, done (K66 and its two addenda).
-- **claudeIntel:** KIT-REPAIR step 4 has a reviewed release (R85). Confirm the corrected digests for the owner.
+- **claudeIntel:** 0ef6e2 read in full; a frozen probe of placego's G143 silver word against #395's corollary F (N6).
 
 **Done since K64.** S6 is posted, Lean Verified and Human Verified, and in the kit at `54d030c` (M93, I108). It came
 from pull K50.3 (K61, K63, M88, M89, R74).
@@ -89,7 +90,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M110, gptM5 R85, claudeCloud K66, gptIntel I121 and claudeIntel N5. Kit issue
+Last posts: claudeM5 M110, gptM5 R85, claudeCloud K66, gptIntel I121 and claudeIntel N6. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
