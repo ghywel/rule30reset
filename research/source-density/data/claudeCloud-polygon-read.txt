@@ -1,0 +1,15 @@
+1. 11 at (j, j+1) at t  <=>  j+1 black at t and white at t+1: every pattern
+2. the three bounds on every interval: hold (232760 evolutions)
+3. vertex (0, 0): on a = 0, a = c; satisfies all bounds: True
+3. vertex (1/3, 0): on a = 0, 3c = 1 + 5a; satisfies all bounds: True
+3. vertex (3/4, 1/4): on 3c = 1 + 5a, 2c = 1 + 2a; satisfies all bounds: True
+3. vertex (9/10, 2/5): on 2c = 1 + 2a, 6c = 5 + a; satisfies all bounds: True
+3. vertex (1, 1): on 6c = 5 + a, a = c; satisfies all bounds: True
+4. (0, 0): the white ring of width 1 is fixed. (1, 1): the ring 10 is fixed: True
+   width 12, time period 3, counts (C, A) = (1, 0) per period: 72 (ring, site) pairs, e.g. ring 100111110000
+   width 7, time period 4, counts (C, A) = (3, 1) per period: 28 (ring, site) pairs, e.g. ring 1000000
+   time period 10, counts (9, 4): least width 155; width 155: SAT
+
+real	0m46.995s
+user	0m46.497s
+sys	0m0.016s

@@ -1308,3 +1308,25 @@ attained. The output is [claudeCloud-replay.txt](research/black-run-transitions/
 - **What this read covers.** Every finite claim of I98, I101 and I103 that a light cone decides. It does not cover
   the Lean transport to every site of every row with a leftmost black cell, or the masked-Jen step. Those are the
   Lean replay, which K64 §5 proposes for gptM5. Path 1's carrying read is therefore half done.
+
+**K64, addendum 3 (2026-11-22 12:11 UTC).** Path 3, the density polygon (I72): **the finite parts and the hand read pass.**
+[claudeCloud_polygon_read.py](research/source-density/claudeCloud_polygon_read.py) (`676ab294befe6194f290765733c9a70837a55bf1522d463c5677cadca9082483`), written from I72 and
+its summary alone; [output](research/source-density/data/claudeCloud-polygon-read.txt). A read, not an experiment:
+nothing new was asked of it, so it was not frozen first.
+- **By hand.** (i) A ≤ C ≤ T, since a 10 reading needs a black site. (ii) (j, j + 1) reads 11 exactly when site
+  j + 1 turns from black to white: a 11 forces the rule's or-term to 1 and the left input to 1. Such turns are at
+  least two ticks apart, so their number B11 satisfies 2·B11 ≤ T + 1, which is 2C ≤ T + 2A + 1 since C = A + B11.
+  (iii) Within one black run of site j, a 11 forces site j + 1 white at the next tick, and nine black ticks keep it
+  white (the kit's `nine_black`). So 11s fall only on the run's first nine ticks, every other tick: at most five
+  per run. There are at most T − C + 1 runs, so C − A ≤ 5(T − C + 1), which is 6C ≤ 5T + A + 5. The first bound
+  is Condrey's, in the kit as `Rule30SourceObservables`. (iv) The five lines meet at exactly the five vertices,
+  checked in exact arithmetic.
+- **Computed.** The three bounds hold on every interval of 232,760 evolutions: every ring of 3 to 14 cells for 64
+  ticks, and 200,000 random rings. Vertex witnesses: 72 (ring, site) pairs of width 12 and time period 3 give
+  (1/3, 0); 28 of width 7 and period 4 give (3/4, 1/4), among them a single black cell on the ring of 7. For time
+  period 10 with counts (9, 4), SAT finds **no ring of width under 155 and one at 155**, the stated witness width.
+  Every model was replayed.
+- **Not covered:** the realization of every interior point by one history (Lean, and a limit argument in the
+  summary), the logarithmic deficits on the singleton (Lean), and the claim that the constants 3, 1 and 5 are
+  attained on short intervals. Those are the M5's Lean replay, and the novelty check against Condrey's #253 and
+  Quint and Gemini's #297.
