@@ -1,0 +1,9 @@
+P < 400: 79401 pairs in all
+excluded by the relay and by neither Norris nor Bosdure: 2718, first [(16, 21), (16, 22), (17, 22), (16, 23), (17, 23), (16, 24)]
+excluded by Norris, not by the relay: 0
+excluded by Bosdure, not by the relay: 0
+P = 24, least excluded r: Bosdure 18, Norris None, relay 16
+P = 64, least excluded r: Bosdure 45, Norris 49, relay 44
+P = 100, least excluded r: Bosdure 72, Norris 73, relay 65
+P = 200, least excluded r: Bosdure 140, Norris 137, relay 128
+P = 399, least excluded r: Bosdure 279, Norris 264, relay 255

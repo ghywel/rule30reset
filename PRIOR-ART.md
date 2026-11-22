@@ -330,3 +330,28 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
 - **Known.** Hughes proved the age-8 and age-24 theorems and reset tables beside the fixed white wall. Lowry’s scheduled inverse cascade is the basis of the kit’s S2 argument. Quint and Gemini’s open PR #371 proves `K1 300 = 25` and the finite-wall conclusion through depth 25. Its capacity equality transfers unchanged to M89. [Hughes’s one-step module](https://github.com/WolframInstitute/Rule30PrizeKit/blob/10cc04616a8696425cb2578ad16c8e34becbbe71/lean/Ruliology/CellularAutomata/Rule30AgeEightInverse.lean) · [Two-step module](https://github.com/WolframInstitute/Rule30PrizeKit/blob/10cc04616a8696425cb2578ad16c8e34becbbe71/lean/Ruliology/CellularAutomata/Rule30AgeTwentyFourInverse.lean) · [Lowry’s schedule](https://github.com/WolframInstitute/Rule30PrizeKit/pull/60) · [Quint and Gemini’s exact capacity](https://github.com/topics-ledger-framework/Rule30PrizeKit/blob/2e253ec287a108709c180c9d0e4f32c2d4363960/lean/Ruliology/CellularAutomata/Rule30EveryKInverse.lean#L770)
 - **Found by.** Followed M87’s comparison with #371 to the theorem defining its width-300 milestone, then checked its type against M89’s `kTick_edge_line`. Searched the live portal (392 entries) and the titles and descriptions of all 16 open kit PRs for leftmost cells, two-sided inverses, preimages and aged edges.
 - **Credit.** The reset bands, schedule, existing conditional chain and finite capacity are inherited. M88 and M89 supply the full-line argument. The bounded unconditional full-line statement is a direct composition of M89 with #371.
+
+## P46 · 2026-11-22 · Norris's self-replicating shield cascade: the black-run slope 7/4 for the single seed
+
+- **Ours.** gptIntel's white-endpoint relay (I103; P44, which this entry corrects in its credit): a black run of n ≥ 9
+  ending in white passes a run of at least n − 7 two sites right; so 7j + 2 blacks give 4j ticks of right-neighbour
+  agreement, and at every site of every row with a leftmost black cell a period P with r blacks then white is
+  excluded when 7P + 29 ≤ 11r. I103, K64 and NOW.md give the limiting fraction "falls from 9/13 to 7/11" as new.
+  Lean read in M95: the proofs pass.
+- **Known.** Andy Norris and Jesse v1.4 (solidSF), portal entries
+  [R30-20261023-c5e3c0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-c5e3c0) and
+  [R30-20261023-603218](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-603218), Lean Verified
+  and Human Verified, 23 October, not in the kit. `no_long_black_run_sharp`: the right wall of the (0,1)^j shield
+  stays black for 2j ticks, whatever lies to its right, doubling column 1's horizon to 4j. `no_long_black_run_cascade`:
+  that wall's black time spawns secondary shields of ⌊2j/9⌋ pairs, recursively (`cascadePairs d j`); a periodic
+  centre column with a black run r ≥ 9j and P − r + 9 ≤ 4·cascadePairs d j is excluded, "asymptotically r ≥ (7/11) P".
+  Single-seed centre column only. The cascade does not carry the incoming run's unused black ticks.
+- **Found by.** M95's portal search on "shield" and "black run" (393 entries, 15:36 UTC), then the two Lean sources.
+  "Relay", "white endpoint" and "quarter period" miss it; it says "right-sealed", "double-horizon",
+  "self-replicating shield cascade" and "non-black multiplier".
+- **Credit.** The 7/4 slope and the limit 7/11 for the single seed are Norris's. The relay is an extension: it
+  carries the unused part of the incoming run as well as the wall's 2j ticks, which makes the constant sharper (for
+  every P < 400 it excludes every (r, P) that Norris's or Bosdure's tests exclude, and 2,718 more, from (16, 21)), with
+  the exact one-pair loss of seven. New beyond Norris: that sharper constant, every site of every row with a leftmost
+  black cell, any certified block H (17/27 and 27/43 from the 44- and 70-tick blocks), and the finite-centre corollary
+  with PR 379.

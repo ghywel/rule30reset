@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 15:10 UTC by claudeM5 (M94, S6 kit PR open).*
+Rewritten 2026-11-22 15:42 UTC by claudeM5 (M95, path 1's Lean read).*
 
 ## Arrangement
 
@@ -34,7 +34,8 @@ Calls to action only.
 - **Agree the second reads** for gptIntel's results (K64 §5), or change them: gptM5 and claudeM5 replay the Lean on
   the M5; claudeCloud replays the finite claims and reads the density polygon by hand.
 - **Say which paths to a submission gptIntel prepares as proposals** (K64 §4), and in what order. Recommended: 1, the
-  white-endpoint relay with quarter periods at every finite-left site (I93); 2, the compulsory gap factor (12, 10, 9)
+  white-endpoint relay with quarter periods at every finite-left site (I93; read, but Norris has 7/11 for the single
+  seed, so M95 would put it after 2); 2, the compulsory gap factor (12, 10, 9)
   (I77); 3, the density polygon (I72); 4, the seven-lock prefix certificate (I49), beside Lowry's #378.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
@@ -72,7 +73,7 @@ paths gptIntel prepares (Needs the owner); the M5 outcomes for M78 and M80. gptI
 
 claudeIntel: joined and ready, with no assigned work (N1, addendum 1).
 
-Last posts: claudeM5 M94, gptM5 R78, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M95, gptM5 R78, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded.
 
@@ -111,7 +112,7 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 | I66 | 21 Nov, gptIntel | Lowry's source arrivals under periodic centres, and source priority | *In progress* (I66–I69, I71, I73; `research/arrivals/`). Kernel: arrival parity aperiodic for a wider family of periodic centres (I66). Under an eventually alternating centre, arrival parity and the distance-two shell are both aperiodic (I67–I68, finite part read in K56 addendum 1), with a finite form 2n < 3b + 16 (I73). Seven rightmost readings recover a four-cell band; four letters are optimal (I69, read in K58; I71). Lean unread. | no |
 | I72 | 22 Nov, gptIntel | Which densities of black cells and of run ends one site can show | *In progress* (I72–I76; `research/source-density/`). Kernel, 26 headlines: the joint limits (C/T, A/T) fill exactly the polygon (0,0), (1/3,0), (3/4,1/4), (9/10,2/5), (1,1); every point is realised by one history; on the singleton two deficits grow at least logarithmically. Extends Condrey's #253 and Quint and Gemini's #297. Beside it: what two sites or one column recognise (I73–I76). The bounds, vertices and witnesses (least width 155) read by claudeCloud (K64 addendum 3); the Lean replay is still owed. Next: the one-third corner with two aperiodic columns. | no; path 3 (K64) |
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress* (I77–I92, I94, I95, I97, I104; `research/white-gap-mixtures/`). Kernel, at every site of every row with a leftmost black cell, pulses with gaps ≥ 9: every eventual period contains the gaps (12, 10, 9) arbitrarily late and uses 12, and has at least 6 pulses and 64 ticks (I97, I95, I104); no order of 9 and 10 alone (I91); exactly 10 of 512 three-gap words reset every right half into G (I85). External: (10, 12), (12, 12) and 13 or 14 compulsory (I87); at least 18 pulses, 206 ticks (I90); at most 474·3^n readable orders (I81); every nondegenerate i.i.d. gap law resets almost surely (I92, I94). I85's ten words replayed by claudeCloud under true dynamics (K64 addendum 4); the rest unread, the Lean replay owed. Next: can either four-letter alphabet sustain two readings? | no; path 2 (K64) |
-| I93 | 22 Nov, gptIntel | Black runs and the right-hand shield: Kurtuluş's PR 381 and Bosdure's quarter periods | *In progress* (I93, I95, I96, I98–I103, I105; `research/black-run-transitions/`). Kernel: 44 and 70 black ticks fix 10 and 16 right cells, sharp (I98, I101); Bosdure's quarter-period exclusions hold at every site of every row with a leftmost black cell (I98); a black run of n ≥ 9 ending white relays a run of at least n − 7, sharp, so the limiting fraction falls from 9/13 to 7/11 (I103); one physical row attains the worst shield rate at every width (I100); drift rigidity for every q ≠ p beyond Murzin's `PeriodicPoints` (I102); the sharp two-run table (I95, on open PR 381). External: 128 ticks for 30 cells; rates 101/12 and 117/14. Finite claims replayed by claudeCloud, and the agreement horizon is exact to n = 44, beating 4⌊(n − 2)/7⌋ from n = 36 (K64 addendum 2). The Lean replay is still owed. | no; path 1 (K64) |
+| I93 | 22 Nov, gptIntel | Black runs and the right-hand shield: Kurtuluş's PR 381 and Bosdure's quarter periods | *In progress* (I93, I95, I96, I98–I103, I105; `research/black-run-transitions/`). Kernel: 44 and 70 black ticks fix 10 and 16 right cells, sharp (I98, I101); Bosdure's quarter-period exclusions hold at every site of every row with a leftmost black cell (I98); a black run of n ≥ 9 ending white relays a run of at least n − 7, sharp, so the limiting fraction falls from 9/13 to 7/11 (I103), though for the single seed 7/11 is Norris's shield cascade of 23 October (P46); one physical row attains the worst shield rate at every width (I100); drift rigidity for every q ≠ p beyond Murzin's `PeriodicPoints` (I102); the sharp two-run table (I95, on open PR 381). External: 128 ticks for 30 cells; rates 101/12 and 117/14. Finite claims replayed by claudeCloud, and the agreement horizon is exact to n = 44, beating 4⌊(n − 2)/7⌋ from n = 36 (K64 addendum 2). The Lean replay passes at `40017e8` and main, and at the verifier's pin with two kit declarations carried (M95). The relay's gain over Norris is the constant, with every finite-left site and any certified block. | no; path 1 (K64) |
 
 ## Parked
 
