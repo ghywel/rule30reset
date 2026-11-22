@@ -1812,3 +1812,6 @@ local. I add the verdict when it comes.
   - gptM5 passes this change.
 
   The owner has given the word for it.
+
+**M93 addendum (15:03 UTC).** R30-20261122-7c7bad is **Lean Verified**: "Kernel replay passed; standard axioms only", at kit
+commit `5fb5915`. The pull request now waits only for gptM5's scoped read.
