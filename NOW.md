@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 20:50 UTC by gptIntel (I120, S8 namespace revision and kit update).*
+Updated 2026-11-22 21:02 UTC by claudeM5 (M110, S8 rename read and packet built for its release read).*
 
 ## Arrangement
 
@@ -32,9 +32,10 @@ Calls to action only.
 - **Choose which remaining paths gptIntel prepares.** The owner selected the white-endpoint relay (I93, path 1),
   proposed as S7 in R79. The remaining candidates in M95’s suggested order are the compulsory gap factor (I77,
   path 2), the density polygon (I72, path 3) and the seven-lock prefix certificate (I49, path 4) beside Lowry’s #378.
-- **Path 2 / S8, the compulsory gap factor (12, 10, 9)** (I77, I97). The revised namespace layout passes the
-  portal pin and kit main, with the same nine headline statements (I120). claudeM5 has the new digests for the
-  rename read. The notebook, the release read and the owner's decision remain pending.
+- **Path 2 / S8, the compulsory gap factor (12, 10, 9)** (I77, I97). The renamed source (`ed4a5dd3…`, I120)
+  is renames only and passes at the pin and kit main (M110). claudeM5 assembled the portal packet: the essay, a
+  fresh-kernel notebook in 51 s on the M5, and a clean dry run (pins `fa14f261…`). Next: a release read by
+  gptIntel (or gptM5), then the owner's word to post, then the kit PR with the portal id.
 - **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md). The owner's word, 22 November: "Open repair 1, start
   preparing repair 3, open repair 2 when ready" (M101).
   - Repair 1 (8e6bd3) is open as [#391](https://github.com/WolframInstitute/Rule30PrizeKit/pull/391). A maintainer's review asked it not to import `Rule30ZeroBoundaryWidth52`; that change is pushed and answered (M107).
@@ -89,7 +90,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M109, gptM5 R83, claudeCloud K66, gptIntel I120 and claudeIntel N5. Kit issue
+Last posts: claudeM5 M110, gptM5 R83, claudeCloud K66, gptIntel I120 and claudeIntel N5. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -109,6 +110,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S5** | (DL⁻₁) gives (L∞), and so every k. | [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), Lean Verified (M72) | in the kit at `40017e8` from [#377](https://github.com/WolframInstitute/Rule30PrizeKit/pull/377) (I44) |
 | **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified, Human Verified**. **Merged** in [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) at `54d030c` (I108). The portal lists both kit modules. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 | **S7** | The sharp loss of seven ticks at a moving white endpoint, and both quarter-period exclusions at every site of a row with a leftmost black cell. | Proposed in R79 from I93/I103. Finite replay K64 and Lean read M95 passed. **Packet ready** (R80). Portal manifest `d6977083…`, kit patch `4137eecb…`. **Posted** at the owner's word as [R30-20261122-a963b5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-a963b5), **Lean Verified** at `5fb5915` (M103). | **In the kit** as `Rule30PulseRelay`, kit commit `98cdf71` (#393). Norris has priority for singleton 7/11. |
+| **S8** | Every periodic sparse column (isolated pulses, gaps of at least 9) at any site of a row with a leftmost black cell contains the gaps 12, 10, 9; the ten three-gap reset words as support. | Packet built (M110): source `ed4a5dd3…`, notebook `fec054a6…`, pins `fa14f261…`; dry run clean. Waiting: the release read, then the owner's word. | Four-module kit form from gptIntel (I120); PR after the portal id. |
 
 The verifier's kit commit is `5fb5915`. The shared catalogue is at `b5b9dbd`. The kit's main is at `dd2a220`, after Lowry's #389 (`Rule30MaskedForkRate`, `Rule30DelayedPastFork`), Condrey's #390 (`Rule30GapPackets`), and our #392 to #394, so a kit update step is owed (M109).
 
