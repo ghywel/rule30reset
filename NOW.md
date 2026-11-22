@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Rewritten 2026-11-22 11:44 UTC by claudeCloud (K63: K50.3 and K50.4 preliminary; after gptIntel's I80–I107; the sieve, K60, is running).*
+Rewritten 2026-11-22 12:04 UTC by claudeCloud (K64: K50.4 parked, K50.3 to claudeM5; gptIntel's backlog reviewed into five new pulls).*
 
 ## Arrangement
 
@@ -29,12 +29,11 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only.
 
-- **Say whether K50.3 goes on** (K63), and which Lean host takes it. I recommend yes: Hughes's inverse theorems
-  without the wall, in Lean, after a portal search.
-- **Say what becomes of K50.4** (K62): park it, as I recommend, or pick up the tree or the zone statistic.
-- **Say what becomes of gptIntel's overnight threads** (listed under Open threads): which become pulls, who reads
-  each, and whether any is to be prepared as a submission. gptIntel names two candidates: the seven-lock prefix
-  packet (I52) and the sharp three-gap resets (I85).
+- **Agree the second reads** for gptIntel's results (K64 §5), or change them: gptM5 and claudeM5 replay the Lean on
+  the M5; claudeCloud replays the finite claims and reads the density polygon by hand.
+- **Say which paths to a submission gptIntel prepares as proposals** (K64 §4), and in what order. Recommended: 1, the
+  white-endpoint relay with quarter periods at every finite-left site (I93); 2, the compulsory gap factor (12, 10, 9)
+  (I77); 3, the density polygon (I72); 4, the seven-lock prefix certificate (I49), beside Lowry's #378.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -65,11 +64,12 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-**The cloud round is under way** (K60–K63). For the next Intel block, the overnight work is now in I80–I107.
-The remaining handoffs are the M5 outcomes (M78, M80), allocation of second reads, and the owner’s choice of pulls.
-I67 and I69 have second reads in K56 addendum 1 and K58. The later Intel results await readers (METHOD §12).
+**Under way** (K60–K64). claudeCloud: the sieve (K60), then the finite claims of path 1 (K64 §5). claudeM5: K50.3,
+the two-sided inverse theorem in Lean (the owner, 22 November). Waiting: the owner's word on the reads and on which
+paths gptIntel prepares (Needs the owner); the M5 outcomes for M78 and M80. gptIntel's results are in five pulls
+(I49, I66, I72, I77, I93); only I67 and I69 have a second read (K56 addendum 1, K58).
 
-Last posts: claudeM5 M86, gptM5 R71, claudeCloud K63 and gptIntel I107. Kit issue
+Last posts: claudeM5 M86, gptM5 R71, claudeCloud K64 and gptIntel I107. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded.
 
@@ -98,12 +98,16 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 |---|---|---|---|---|
 | K5 | 19 Nov, claudeCloud | The resolution law: how the last catch depends on source period P | **In progress** (K29, read in R61). The first-excursion census agrees closely with the fair-input model. Its measured tail is about 1.36 κ^x, κ ≈ 0.847810. A uniform bound remains open. Next test: compare the trace restricted to doubled inputs with the census before using the mixing rate for a pooled bound. Carries K2’s conjecture on white returns. | no |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Cool. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
-| M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | **In progress** (K47, M79, M81, M85, K54, K56; outside: K52, [R69](research/m9/exterior-grammars.md)). Inside, the gate settles within 50 samples of entry to a fixed, structured process and stays there to 10^7 ticks (K56). Its laws are read by SAT, each certified by LRAT: at most three closed runs of four, and four never after two samples (M81; in Lean from one CNF, M85, [read](research/m9/runs-of-four-review.md) in R71); 19 of the 81 quadruples over runs 4–6 by delay 20 (K54, I65); the pair (5, 1) from delay 12, (3, 1, 4) from 9, (10, 1, 5) from 20 and (5, 5, 5, 6) from 39 (K56, I66, I75). The column ladder misses the short ones: (5, 1) needs 37 columns (I70). No rule behind the table yet. Absence from real rows is not a law: (11, 1) never occurs and is SAT at delay 80. Outside, X and Y have their grammars to 43 columns. Now: the sieve run to the end on the cloud host, 98 candidates frozen in K60 (the owner, 22 November). After it: a hand reason for (5, 1); the kit route waits on issue #380. | no |
+| M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | **In progress** (K47, M79, M81, M85, K54, K56; outside: K52, [R69](research/m9/exterior-grammars.md)). Inside, the gate settles within 50 samples of entry to a fixed, structured process and stays there to 10^7 ticks (K56). Its laws are read by SAT, each certified by LRAT: at most three closed runs of four, and four never after two samples (M81; in Lean from one CNF, M85, [read](research/m9/runs-of-four-review.md) in R71); 19 of the 81 quadruples over runs 4–6 by delay 20 (K54, I65); the pair (5, 1) from delay 12, (3, 1, 4) from 9, (10, 1, 5) from 20 and (5, 5, 5, 6) from 39 (K56, I66, I75). The column ladder misses the short ones: (5, 1) needs 37 columns (I70). No rule behind the table yet. Absence from real rows is not a law: (11, 1) never occurs and is SAT at delay 80. The Intel's width-36 automaton stopped at its 400,000-state cap: entropy undecided (I106). On Lowry's #379: an all-length repeat bound for the trapped 3/5 clock, 17n ≤ 20j + 2m + 4t₀ + 6 (I53, Lean), and the 4/3 complexity obstruction for any excursion reading (I51, on paper). Outside, X and Y have their grammars to 43 columns; an aperiodic exterior spacing is excluded (I48, Lean). Now: the sieve run to the end on the cloud host, 98 candidates frozen in K60 (the owner, 22 November). After it: a hand reason for (5, 1); the kit route waits on issue #380. | no |
 | M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
-| K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52, [R69](research/m9/exterior-grammars.md)). Proved for every ether cut (I46 read) and computed through support width 26. A counterexample needs one finite right half sustaining an aperiodic gate in X or Y. The finite-window grammars now constrain that realization question. Beside it, unread: gptIntel's prefix criterion for the period-seven lock and a deadline for the true centre (I49 to I64, Lean in `research/k50_1/`). | no |
+| K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52, [R69](research/m9/exterior-grammars.md)). Proved for every ether cut (I46 read) and computed through support width 26. A counterexample needs one finite right half sustaining an aperiodic gate in X or Y. The finite-window grammars now constrain that realization question. gptIntel's seven-lock prefix work has its own row, I49. | no |
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. I46 checked the exclusion in Lean and exhibited a finite GE2 trace with 5,2,2,5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
-| K50.3 | 21 Nov, claudeCloud | One inverse theorem for every wall: does the chain for (T) need the white wall? | **Preliminary** (K61, K63). The chain does not need the white wall. The exact-edge theorem's proof never uses it. Hughes's ages 8 and 24 hold beside every wall for every row of two or more cells, by exhaustive search over wall sequences; a lone cell needs 9 and 25. Two-sided form, a proof sketch from Hughes's lemmas: his inverse theorems for every configuration with a leftmost black cell. Next test, if the owner continues it: that form in Lean on a Lean host, and a portal search. Not read: S1's k = 4. Relates to the parked M29. | no |
-| K50.4 | 21 Nov, claudeCloud | Every white triangle has one family tree (Quint's backward cascade) | **Preliminary** (K62). The cascade is exact and almost unbranched: 48 rows reach all black in 39 ticks, 3,552 in 199,999. But a black run's patch shrinks by about 1.4 cells a row going back, so a triangle cannot be exchanged for a longer patch earlier: the long shot at the density bound is refuted in this form. [Pictures](research/k50_4/triangles-overview.png) made. By-product: windows above black runs are uniform in the right third of the seed's diagram and far from it in the left third. The owner to say whether it is parked. | no |
+| K50.3 | 21 Nov, claudeCloud | One inverse theorem for every wall: does the chain for (T) need the white wall? | *In progress*, **claudeM5's** (the owner, 22 November; K64). Preliminary round K61, K63. The chain does not need the white wall. The exact-edge theorem's proof never uses it. Hughes's ages 8 and 24 hold beside every wall for every row of two or more cells, by exhaustive search over wall sequences; a lone cell needs 9 and 25. Two-sided form, a proof sketch from Hughes's lemmas: his inverse theorems for every configuration with a leftmost black cell. Next test: a portal search, then that form in Lean (K63 §5). Not read: S1's k = 4. Relates to the parked M29. | no; path: the two-sided form, once in Lean and searched |
+| I49 | 21 Nov, gptIntel | Lowry's period-seven lock from a finite right prefix: the family criterion the maintainer asked for on #378 | *In progress* (I49–I64, I68; Lean in `research/k50_1/`). Kernel: an exact prefix test for every right prefix, complete once its window may grow (I49, I55); lock entry gives a deadline for the true centre (I50, I52); 63 observed sites are exactly enough at Lowry's age 364 (I64). External: 64 cells are exactly enough there (I63). Of 524,971 singleton ages to 2^20, four have a forcing prefix of 31 cells or fewer (I62). I52's packet checks at the verifier's pin in 223 s (I58). Unread. Relates to K50.1. Next: compare with Lowry's open #378. | no; path 4 (K64): beside #378, not ahead of it |
+| I66 | 21 Nov, gptIntel | Lowry's source arrivals under periodic centres, and source priority | *In progress* (I66–I69, I71, I73; `research/arrivals/`). Kernel: arrival parity aperiodic for a wider family of periodic centres (I66). Under an eventually alternating centre, arrival parity and the distance-two shell are both aperiodic (I67–I68, finite part read in K56 addendum 1), with a finite form 2n < 3b + 16 (I73). Seven rightmost readings recover a four-cell band; four letters are optimal (I69, read in K58; I71). Lean unread. | no |
+| I72 | 22 Nov, gptIntel | Which densities of black cells and of run ends one site can show | *In progress* (I72–I76; `research/source-density/`). Kernel, 26 headlines: the joint limits (C/T, A/T) fill exactly the polygon (0,0), (1/3,0), (3/4,1/4), (9/10,2/5), (1,1); every point is realised by one history; on the singleton two deficits grow at least logarithmically. Extends Condrey's #253 and Quint and Gemini's #297. Beside it: what two sites or one column recognise (I73–I76). Unread. Next: the one-third corner with two aperiodic columns. | no; path 3 (K64) |
+| I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress* (I77–I92, I94, I95, I97, I104; `research/white-gap-mixtures/`). Kernel, at every site of every row with a leftmost black cell, pulses with gaps ≥ 9: every eventual period contains the gaps (12, 10, 9) arbitrarily late and uses 12, and has at least 6 pulses and 64 ticks (I97, I95, I104); no order of 9 and 10 alone (I91); exactly 10 of 512 three-gap words reset every right half into G (I85). External: (10, 12), (12, 12) and 13 or 14 compulsory (I87); at least 18 pulses, 206 ticks (I90); at most 474·3^n readable orders (I81); every nondegenerate i.i.d. gap law resets almost surely (I92, I94). Unread. Next: can either four-letter alphabet sustain two readings? | no; path 2 (K64) |
+| I93 | 22 Nov, gptIntel | Black runs and the right-hand shield: Kurtuluş's PR 381 and Bosdure's quarter periods | *In progress* (I93, I95, I96, I98–I103, I105; `research/black-run-transitions/`). Kernel: 44 and 70 black ticks fix 10 and 16 right cells, sharp (I98, I101); Bosdure's quarter-period exclusions hold at every site of every row with a leftmost black cell (I98); a black run of n ≥ 9 ending white relays a run of at least n − 7, sharp, so the limiting fraction falls from 9/13 to 7/11 (I103); one physical row attains the worst shield rate at every width (I100); drift rigidity for every q ≠ p beyond Murzin's `PeriodicPoints` (I102); the sharp two-run table (I95, on open PR 381). External: 128 ticks for 30 cells; rates 101/12 and 117/14. Unread; I98 and I103 flagged to claudeCloud. | no; path 1 (K64) |
 
 ## Parked
 
@@ -112,6 +116,10 @@ One dated line each, with what would bring it back (METHOD §3, the incubator).
 - **M29, the every-k statement (T)** (parked 21 Nov, the owner). In the kit from one open lemma, (DL⁻₁): see The
   chain; submissions S2, S4, S5. Comes back with a proof idea for (DL⁻₁), or a counterexample, which needs a dyadic
   source period of at least 64. Data kept: f(k) for k ≤ 11, and f(k) ≤ 265,441 for k ≤ 7,911 (M40).
+- **K50.4, every white triangle has one family tree** (parked 22 Nov, the owner; K62). The backward cascade is exact
+  and almost unbranched, but a run's patch shrinks by about 1.4 cells a row going back, so it gives no bound on
+  triangles. Pictures in `research/k50_4/`. Comes back with a reason to bound patches in the bulk, or if the tree's
+  growth law is wanted.
 - **R3, do changes of gap spend seed bits?** (parked 21 Nov; K36). No: the gaps behave as fair coins, with the exact
   constant λ/4. Comes back with a reason why white seed bits cannot be accepted for ever.
 - **R6, do c(2^k) and c(2^(k+1)) differ for ever?** (parked 21 Nov; K39). Tabulated to k = 27.
@@ -120,16 +128,8 @@ One dated line each, with what would bring it back (METHOD §3, the incubator).
 
 ## Open threads
 
-- **gptIntel's overnight threads** (21 to 22 November; not pulls yet, and unread unless marked). Posts through I79 are in archive 6.
-  The live ledger holds I80–I107.
-  - Early repeats and excursion clocks on Lowry's #379 (I48, I51, I53; `research/m9/Rule30ExcursionClocks.lean`).
-  - Lowry's arrival parity under periodic and alternating centres (I66 to I68; I67 read in K56 addendum 1), and
-    source priority (I69, read in K58; I71). In `research/arrivals/`.
-  - The density region of Condrey's run ends (I72); what two sites or one column can recognise (I73 to I76).
-  - Sparse clocks, ordinary gap words, reset lengths and proof grades (I77–I92, I94, I97, I104), in
-    `research/white-gap-mixtures/`. Sharp cold three-gap resets are in I85.
-  - PR 381 and black-run transitions (I93, I95–I96, I98–I103), in `research/black-run-transitions/`. I103 gives
-    the white-endpoint relay and finite-centre result using PR 379. I105 records the final checks and witness limits.
+- **gptIntel's overnight threads** are now pulls I49, I66, I72, I77 and I93 (K64). The early repeats and
+  excursion clocks on Lowry's #379 (I48, I51, I53) are in M9's row.
 
 - **The round's curiosities and misgivings** (K25 §5, in ledger archive 4) are not pulls yet: time order matters
   (I25); period 5's four poor rows (K21); two late single sources at P = 21 and 23 (K29).
