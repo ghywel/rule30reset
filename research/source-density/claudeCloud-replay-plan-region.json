@@ -1,0 +1,18 @@
+{
+ "namespace": {
+  "Rule30SourceDensityRegion": "Ruliology.CellularAutomata.Rule30SourceDensityRegion",
+  "Rule30SourceDensityCorners": "Ruliology.CellularAutomata.Rule30SourceDensityRegion",
+  "Rule30DensitySharpness": "Ruliology.CellularAutomata.Rule30SourceDensityRegion",
+  "Rule30SourceTransitions": "Ruliology.CellularAutomata.Rule30SourceDensityRegion",
+  "Rule30DensityEscape": "Ruliology.CellularAutomata.Rule30DensityEscape",
+  "Rule30DensityMargin": "Ruliology.CellularAutomata.Rule30DensityEscape"
+ },
+ "modules": {
+  "Rule30SourceDensityRegion": ["middle_face", "high_face", "region", "singleton_region"],
+  "Rule30SourceDensityCorners": ["corner0", "corner1", "corner2", "corner3", "corner4", "optimal_startup"],
+  "Rule30DensitySharpness": ["repeated_corner", "finite_corner_bound", "polygon_necessary"],
+  "Rule30SourceTransitions": ["fall_count", "middle_identity", "bounded_iff_alternates", "singleton_middle_bounded_iff_period_two"],
+  "Rule30DensityEscape": ["range_potential", "band_edge", "tight_repeat", "tight_columns", "accumulated_step"],
+  "Rule30DensityMargin": ["loss_in_interval", "singleton_margin", "margin_three_quarters", "margin_nine_tenths"]
+ }
+}

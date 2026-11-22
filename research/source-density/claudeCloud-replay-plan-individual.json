@@ -1,0 +1,14 @@
+{
+ "namespace": {
+  "Rule30DensityControl": "Ruliology.CellularAutomata.Rule30DensityControl",
+  "Rule30DensityModes": "Ruliology.CellularAutomata.Rule30DensityControl",
+  "Rule30DensityVertices": "Ruliology.CellularAutomata.Rule30DensityControl",
+  "Rule30DensityOneHistory": "Ruliology.CellularAutomata.Rule30DensityControl"
+ },
+ "modules": {
+  "Rule30DensityControl": ["steer_prefix", "realize_segment", "realize_stream"],
+  "Rule30DensityModes": ["install", "run_fit", "run_open", "discrepancy", "block_bounds"],
+  "Rule30DensityVertices": ["zero_policy", "oneThird_policy", "threeQuarters_policy", "nineTenths_policy", "one_policy"],
+  "Rule30DensityOneHistory": ["physical_mode"]
+ }
+}

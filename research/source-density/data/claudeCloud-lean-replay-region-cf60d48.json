@@ -1,0 +1,563 @@
+{
+ "kit": "cf60d480c69a2f3526663b93f585a5c7398e0950",
+ "lean": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+ "modules": [
+  {
+   "bytes": 5148,
+   "check_exit": 0,
+   "check_seconds": 2.7,
+   "compile_seconds": 1.3,
+   "compiled": true,
+   "constants": 27,
+   "declared": 8,
+   "declared_all_standard": true,
+   "declared_names": [
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.Evolution",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.History",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.black",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.ends",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.high_face",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.middle_face",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.region",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.singleton_region"
+   ],
+   "forbidden": [],
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.middle_face",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.high_face",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.region",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.singleton_region",
+     "ok": true
+    }
+   ],
+   "imports_statements": true,
+   "messages": "",
+   "module": "Rule30SourceDensityRegion",
+   "new_axioms": [],
+   "reasons": [],
+   "replay_ok": true,
+   "sha256": "33b4c5e4cf96323740813b77c9307bdb2c63a17562b047edf62ea36fc0ff726d",
+   "verdict": "pass"
+  },
+  {
+   "bytes": 6627,
+   "check_exit": 0,
+   "check_seconds": 3.0,
+   "compile_seconds": 1.9,
+   "compiled": true,
+   "constants": 90,
+   "declared": 7,
+   "declared_all_standard": true,
+   "declared_names": [
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.Corner",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner0",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner1",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner2",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner3",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner4",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.optimal_startup"
+   ],
+   "forbidden": [],
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner0",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner1",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner2",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner3",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner4",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.optimal_startup",
+     "ok": true
+    }
+   ],
+   "imports_statements": true,
+   "messages": "",
+   "module": "Rule30SourceDensityCorners",
+   "new_axioms": [],
+   "reasons": [],
+   "replay_ok": true,
+   "sha256": "6110ba271b933c2284f3cf403759da534c197bc599ab4252b13412639b48226c",
+   "verdict": "pass"
+  },
+  {
+   "bytes": 4617,
+   "check_exit": 0,
+   "check_seconds": 1.8,
+   "compile_seconds": 0.5,
+   "compiled": true,
+   "constants": 34,
+   "declared": 8,
+   "declared_all_standard": true,
+   "declared_names": [
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.FiniteBound",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.black.eq_1",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.ends.eq_1",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finiteCopy",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finiteCopy.eq_1",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_corner_bound",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.polygon_necessary",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.repeated_corner"
+   ],
+   "forbidden": [],
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.repeated_corner",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_corner_bound",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.polygon_necessary",
+     "ok": true
+    }
+   ],
+   "imports_statements": true,
+   "messages": "",
+   "module": "Rule30DensitySharpness",
+   "new_axioms": [],
+   "reasons": [],
+   "replay_ok": true,
+   "sha256": "910b803222632f4f338bffabfdc23270bd91d0764eb4d7b2f07841c0b34c9fae",
+   "verdict": "pass"
+  },
+  {
+   "bytes": 5601,
+   "check_exit": 0,
+   "check_seconds": 1.8,
+   "compile_seconds": 0.5,
+   "compiled": true,
+   "constants": 35,
+   "declared": 11,
+   "declared_all_standard": true,
+   "declared_names": [
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.Alternates",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.black.eq_1",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.bounded_iff_alternates",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.ends.eq_1",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.fall_count",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.falls",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.falls.eq_1",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.flats",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.flats.eq_1",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.middle_identity",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.singleton_middle_bounded_iff_period_two"
+   ],
+   "forbidden": [],
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.fall_count",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.middle_identity",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.bounded_iff_alternates",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.singleton_middle_bounded_iff_period_two",
+     "ok": true
+    }
+   ],
+   "imports_statements": true,
+   "messages": "",
+   "module": "Rule30SourceTransitions",
+   "new_axioms": [],
+   "reasons": [],
+   "replay_ok": true,
+   "sha256": "c1a7e6ace524b8b303e9314cd45bf745673406a691efb2f7ae681c8e1db0b28a",
+   "verdict": "pass"
+  },
+  {
+   "bytes": 6168,
+   "check_exit": 0,
+   "check_seconds": 4.7,
+   "compile_seconds": 3.6,
+   "compiled": true,
+   "constants": 65,
+   "declared": 24,
+   "declared_all_standard": true,
+   "declared_names": [
+    "Ruliology.CellularAutomata.Rule30DensityEscape.W",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.accumulated",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.accumulated.eq_1",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.accumulated_step",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.band",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.band_edge",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.base",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.highNext",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.highPot",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.loss",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.loss.eq_1",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.lowNext",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.lowPot",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.next",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.pack",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.period",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.potential",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.range_potential",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.slope",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.tight_columns",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.tight_repeat",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.weight",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.black.eq_1",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.ends.eq_1"
+   ],
+   "forbidden": [],
+   "headlines": [
+    {
+     "axioms": [],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.range_potential",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.band_edge",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.tight_repeat",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.tight_columns",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.accumulated_step",
+     "ok": true
+    }
+   ],
+   "imports_statements": true,
+   "messages": "",
+   "module": "Rule30DensityEscape",
+   "new_axioms": [],
+   "reasons": [],
+   "replay_ok": true,
+   "sha256": "63af32bbc0b09b8c6b5b23f1160b407f16e5e5e2343f24937eb8cf45b0df574d",
+   "verdict": "pass"
+  },
+  {
+   "bytes": 4868,
+   "check_exit": 0,
+   "check_seconds": 2.0,
+   "compile_seconds": 0.7,
+   "compiled": true,
+   "constants": 48,
+   "declared": 9,
+   "declared_all_standard": true,
+   "declared_names": [
+    "Ruliology.CellularAutomata.Rule30DensityEscape.deadline",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.deadline.eq_1",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.deadline.eq_2",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.deadline.eq_def",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.deadline.match_1",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.loss_in_interval",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.margin_nine_tenths",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.margin_three_quarters",
+    "Ruliology.CellularAutomata.Rule30DensityEscape.singleton_margin"
+   ],
+   "forbidden": [],
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.loss_in_interval",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.singleton_margin",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.margin_three_quarters",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.margin_nine_tenths",
+     "ok": true
+    }
+   ],
+   "imports_statements": true,
+   "messages": "",
+   "module": "Rule30DensityMargin",
+   "new_axioms": [],
+   "reasons": [],
+   "replay_ok": true,
+   "sha256": "e37db0c8ca23c3cd33c31b476d2eda3aa3c066e3ba5df9c085bc7ecdc84d76e6",
+   "verdict": "pass"
+  },
+  {
+   "bytes": 6478,
+   "check_exit": 0,
+   "check_seconds": 2.7,
+   "compile_seconds": 0.8,
+   "compiled": true,
+   "constants": 42,
+   "declared": 10,
+   "declared_all_standard": true,
+   "declared_names": [
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.AtCorners",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.UniformBound",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.ends_le_black",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.ends_nonneg",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_bound_iff",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_bound_iff_uniform",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_of_uniform",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.polygon_sufficient",
+    "Ruliology.CellularAutomata.Rule30SourceDensityRegion.uniform_bound_iff",
+    "Ruliology.CellularAutomata.Rule30SourceObservables.source.eq_1"
+   ],
+   "forbidden": [],
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.ends_nonneg",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.ends_le_black",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.polygon_sufficient",
+     "ok": true
+    },
+    {
+     "axioms": [],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_of_uniform",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.uniform_bound_iff",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_bound_iff",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_bound_iff_uniform",
+     "ok": true
+    }
+   ],
+   "imports_statements": true,
+   "messages": "",
+   "module": "Rule30DensityPolygon",
+   "new_axioms": [],
+   "reasons": [],
+   "replay_ok": true,
+   "sha256": "6f7b38225fbc59925b507c04e552cb1f08987028e5e701ee24c2de4567e8c28e",
+   "verdict": "pass"
+  }
+ ],
+ "ok": true,
+ "totals": {
+  "all_pass": true,
+  "checked": 7,
+  "constants": 341,
+  "headlines": 33,
+  "modules": 7
+ }
+}

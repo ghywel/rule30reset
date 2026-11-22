@@ -1,0 +1,25 @@
+1. The five films.
+   film 0: width 1, time period 1: a Rule 30 history: True; counts over one period (0, 0) (stated (0, 0))
+   film 1: width 12, time period 3: a Rule 30 history: True; counts over one period (1, 0) (stated (1, 0))
+   film 2: width 7, time period 4: a Rule 30 history: True; counts over one period (3, 1) (stated (3, 1))
+   film 3: width 155, time period 10: a Rule 30 history: True; counts over one period (9, 4) (stated (9, 4))
+   film 4: width 2, time period 1: a Rule 30 history: True; counts over one period (1, 1) (stated (1, 1))
+2. The sharp constants on film 3.
+   3C - 5A - T on [2, 5): 3 (stated 3)
+   2C - 2A - T on [8, 17): 1 (stated 1)
+   6C - A - 5T on [4, 13): 5 (stated 5)
+3. The single seed.
+   site -3: C/T = 0.5011, A/T = 0.2500 at T = 2^16; margin 3/4: holds True (least slack 7, deficit at the end 81566); margin 9/10: holds True (least slack 22, deficit at the end 179633)
+   site -2: C/T = 0.4978, A/T = 0.2486 at T = 2^16; margin 3/4: holds True (least slack 5, deficit at the end 82012); margin 9/10: holds True (least slack 16, deficit at the end 181101)
+   site -1: C/T = 0.4999, A/T = 0.2489 at T = 2^16; margin 3/4: holds True (least slack 3, deficit at the end 81456); margin 9/10: holds True (least slack 10, deficit at the end 180072)
+   site  0: C/T = 0.5017, A/T = 0.2500 at T = 2^16; margin 3/4: holds True (least slack 4, deficit at the end 81361); margin 9/10: holds True (least slack 5, deficit at the end 179346)
+   site  1: C/T = 0.4998, A/T = 0.2501 at T = 2^16; margin 3/4: holds True (least slack 6, deficit at the end 82038); margin 9/10: holds True (least slack 12, deficit at the end 180339)
+   site  2: C/T = 0.4987, A/T = 0.2496 at T = 2^16; margin 3/4: holds True (least slack 8, deficit at the end 82152); margin 9/10: holds True (least slack 17, deficit at the end 180833)
+   site  3: C/T = 0.5012, A/T = 0.2512 at T = 2^16; margin 3/4: holds True (least slack 10, deficit at the end 82054); margin 9/10: holds True (least slack 24, deficit at the end 179807)
+4. Corners, facets and multipliers.
+   corner (T, C, A) = (1, 0, 0): tight on ['A >= 0', 'A <= C']; every facet holds: True
+   corner (T, C, A) = (3, 1, 0): tight on ['A >= 0', '3C <= T + 5A']; every facet holds: True
+   corner (T, C, A) = (4, 3, 1): tight on ['3C <= T + 5A', '2C <= T + 2A']; every facet holds: True
+   corner (T, C, A) = (10, 9, 4): tight on ['2C <= T + 2A', '6C <= 5T + A']; every facet holds: True
+   corner (T, C, A) = (1, 1, 1): tight on ['6C <= 5T + A', 'A <= C']; every facet holds: True
+   5488 integer triples (alpha, beta, gamma) in [-12, 12]^3 hold at the corners; the multipliers of Rule30DensityPolygon.lean are nonnegative and give the identity for every one: True
