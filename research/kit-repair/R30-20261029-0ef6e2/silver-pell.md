@@ -15,7 +15,8 @@ black cell at $-L$, $L\ge1$.
 **Credit and status.** The interval is **PROVED** in placego. Local's L099 note on G143 states the sharp run
 at every mediant. GC2187 gives the two consecutive mismatches for either sign, independently read in L1192.
 ClaudeIntel's N6 recovered the interval from finite data. Steps 1–4 give a direct hand proof in N6's lag
-coordinates. The Rule 30 application and the family argument below are submitted for a carrying read (I123).
+coordinates. The clock exclusion in step 5 and the three-case family proof were independently read by
+claudeIntel in N7 (I123, **PROVED**). The last paragraph incorporates N7's signed time shift.
 [Original G143 and L099](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/proofs/G143-an-aperiodic-half-circle-code-passes-every-repeat.md)
 · [GC2187 and its review in GC2193](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2187-hand-candidate--the-phase-zero-repetition-exponent-has-an-exact-exceptional-maximum)
 
@@ -61,10 +62,16 @@ coordinates. The Rule 30 application and the family argument below are submitted
    This contradicts `corollary_F` with $K=2$. A fixed exchange of black and white preserves all the equalities.
    [Kit theorem and exact hypotheses](https://github.com/WolframInstitute/Rule30PrizeKit/blob/cf60d480c69a2f3526663b93f585a5c7398e0950/lean/Ruliology/CellularAutomata/Rule30ClockNearSquares.lean#L259-L268)
 
-## What the same argument gives for other slopes
+## Every irrational half-circle rotation started on the orbit of either cut
 
-Let $c_\beta(t)=\lfloor t\beta\rfloor\bmod2$ for any irrational $0<\beta<1$, again at phase zero.
-The clock exclusion extends to every such word. The archived G144/L100 classification supplies the first
+**Family theorem (I123, N7).** Code a circle rotation by an irrational angle $\alpha$ using two half-circles.
+Start at any integer translate, under that rotation, of either cut. For a Rule 30 row with a leftmost black
+cell at $-L$, $L\ge1$, suppose column 0 reads $t\bmod2$ from some physical time $T_0$ on. The bits at
+column 1 at even times cannot eventually agree with this coding. If the translate is $d$ rotation steps,
+the witnesses have unbounded lags and a fixed allowance $K=2+|d|$ in the kit's `corollary_F`.
+
+First put the phase at a cut and take $c_\beta(t)=\lfloor t\beta\rfloor\bmod2$, $0<\beta<1$ irrational.
+Here $\beta=2\alpha$ after choosing the angular origin and direction. The archived G144/L100 classification supplies the first
 two cases below, and GC2187/L1192 supplies the sharp run in the third. The following direct argument uses
 only ordinary consecutive convergents. [G144 and L100](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/proofs/G144-the-phase-zero-half-circle-repeat-filter-has.md)
 
@@ -94,10 +101,19 @@ Starting at $H$ and $H+\ell$ leaves at least $\ell+r-H\ge H+\ell$ common letters
 works. In case 3 the starts already tend to infinity and $K=2$ works. Thus the single slack $K=2$
 suffices for the tail statement for every indicated slope.
 
-The bit is the half-circle reading of rotation by $\beta/2$ started at a cut endpoint. Reflection covers
-irrational $1<\beta<2$ as well, since for positive $t$ the words of slopes $\beta$ and $2-\beta$ are
-letter exchanges. The other cut endpoint exchanges the letters too. N6's #9 and #19 use four endpoints
-and an independently chosen phase. Their status remains a finite observation through lag 65,535.
+For irrational $1<\beta<2$, reflection replaces $\beta$ by $2-\beta$. At every positive integer $t$
+the two floor parities are complements. Starting at the other cut also exchanges letters. Either exchange
+preserves the copied blocks, and a convention at an endpoint affects at most one tick for each cut.
+
+For an integer $d$ of either sign the translated coding reads $c_\beta(t+d)$, up to the fixed exchange.
+Choose an integer $H\ge1$ beyond the initial visible-word transient with $2H\ge T_0$. Use the preceding
+proof with base starts $i<j=i+\ell$ late enough that $i\ge\max(1,H+d)$. This is possible in cases 1 and 2
+by choosing the starting point first and then taking $r$ sufficiently large. In case 3 both starts diverge.
+The physical starts $I=i-d$, $J=j-d$ satisfy $I\ge H$ and $J-I=\ell$. At least $j-2=J+d-2\ge J-(2+|d|)$
+letters agree. These starts meet every quantifier of `corollary_F` for arbitrarily large $\ell$.
+
+The [metric argument](metric-rotation-repeats.md) treats freely varying cuts. The
+[golden-unit argument](golden-rational-cuts.md) treats the two particular four-cut words in N7.
 
 **Exact finite control.** [The registered integer-square-root check](check_silver_pell.py) enumerates completed
 runs through four times the next lag for all 13 lags from 1 to 47,321. It also tests the four flank and

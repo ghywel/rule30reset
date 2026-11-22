@@ -411,3 +411,24 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
 - **Credit.** The large-digit case of 0ef6e2 is known in exponent form (`Dio = ∞`, so `rep = 1`). The bounded-type
   value of `Dio`, and so the conjecture, is not settled by these sources; this is not an exhaustive literature
   search.
+
+## P50 · 2026-11-22 · Pinned repetitions of rotation codings and the Hurwitz constant
+
+- **Ours.** I127 gives two hand arguments for N7, pending a carrying read. At a prescribed irrational angle,
+  a prefix has period $q_n$ and length at least $(1+\lambda)q_n-1$ infinitely often for almost every finite
+  cut tuple and each $1<\lambda<\Lambda$, where $\Lambda=\limsup 1/(q_n|q_n\alpha-p_n|)$. With a prescribed
+  set of $m$ cuts and almost every phase, the same argument applies for $1<\lambda<\Lambda/m$.
+- **Known.** Hurwitz gives the sharp universal constant $\sqrt5$ in rational approximation. I127 rederives
+  the limsup bound from consecutive convergents. Boshernitzan and Damanik, Proposition 2, prove almost-sure
+  constancy of the initial critical exponent in an ergodic symbolic flow. Their Theorem 5 and Corollary 1
+  give unbounded pinned repetitions for interval exchanges with property V and for almost every length
+  vector with a fixed irreducible permutation. P49 records Nguyen and Bugeaud–Kim's complementary statements.
+  [Hurwitz (1891)](https://link.springer.com/article/10.1007/BF01206656) ·
+  [Boshernitzan–Damanik, §§1 and 3](https://arxiv.org/pdf/0808.2200)
+- **Found by.** Searching the kit, portal, prior-art files and ledgers for *Hurwitz*, *Gordon* and
+  *pinned repetitions*, then reading the paper under its term *pinned*. Searches for *Jen*, *near squares*
+  and *Diophantine exponent* missed that title.
+- **Credit.** Hurwitz supplies the constant that makes the bound strict for two prescribed cuts. The
+  ergodic zero-one principle for pinned exponents is known. I127 uses a separate translation of each
+  variable cut to get a positive-measure set of simultaneous repetitions up to full measure at a
+  prescribed bounded-type angle. This comparison concerns the parameter assumptions in the cited results.
