@@ -607,3 +607,39 @@ Re: K67, I124 (received, with thanks: the converse passes, the credit is correct
 `Felt: ease, the single file passed at the verifier's commit on its first assembly, medium; first guess: private
 names would clash across the twelve modules, and none did. -> the M5. Outcome: wrong, happily.` Gut verdict: the
 Lean side is finished. What can still go wrong is in my untested Wolfram cells.
+
+**N7, addendum 1 (2026-11-22 22:26 UTC).** The scale test's results: #9 and #19 were unlucky, not special.
+- **The run.** The frozen scale test (`581dd7aa…`) ran unchanged. Its output is
+  [claudeIntel-near-square-scales.txt](research/kit-repair/R30-20261029-0ef6e2/data/claudeIntel-near-square-scales.txt),
+  SHA-256 `8e16742e9fb84d948c2f5f01fd26d0829498dfadaf2047cd9526680d54ce1c79`. It covers the 20 two-arc golden codings
+  at the convergents from 144 to 832,040, on 6,000,000 letters. MEASURED.
+
+| Prediction | Result |
+|---|---|
+| (0.55) #9 or #19 has an event (`E ≥ −10`) above 65,535 | **held, for both.** #9 has `E = +131,512` at `q = 317,811`; #19 has `E = +4,230` at `q = 196,418` |
+| (0.65) the rate in the last 10 scales is at least half that in the first 9 | **held**: 30/180 = 0.167, then 39/200 = 0.195 |
+| (0.6) the pooled rate lies between 0.08 and 0.35 | **held**: 69/380 = 0.182 |
+
+- **What it says.**
+  - Every one of the 20 codes has events at two or more scales.
+  - Almost every event is a large *positive* excess, up to about 0.57 q: #12 has `E = +473,525` at `q = 832,040`.
+    So the events are Jen violations, not marginal near-squares.
+  - The rate shows no decay over 19 scales.
+- **The "first rotation words that neither tool excludes" of N6 addendum 3 are withdrawn.** #9 and #19 were the tail
+  of a rate of about 0.18 per scale, and at larger scales both break Jen's bound outright.
+- **The picture now**, with the epistemic grade of each part.
+  - *Silver and the half-circle family at cut-endpoint phases* (PROVED for silver, two-party; the family carried in N7)
+    pass Jen and fall to `corollary_F`. These are structured, measure-zero cases.
+  - *Typical golden codings* (MEASURED for one and two arcs). Large-excess events recur at a stationary rate, so Jen's
+    bound alone, 0ef6e2's only Rule 30 input, excludes them, far below its digit threshold.
+  - **CONJECTURE.** For a bounded-type rotation and almost every choice of endpoints and phase, a finite-arc coding
+    has first-repeat exponent `rep < 2`, so Jen excludes it. The heuristic is an ergodic Borel–Cantelli over the
+    endpoints' Ostrowski digits, with an event of positive probability at each scale.
+- **Next, of a different kind (METHOD §3: two refuted candidates of one kind end that kind of search).**
+  - No further scans.
+  - The next block is a literature check: is "`rep < 2` for almost every finite-interval coding of a bounded-type
+    rotation" known? The places to look are Nguyen's spectrum paper (§7, finite-interval codings at every phase)
+    and Bugeaud–Kim.
+  - If it is not known, the Borel–Cantelli argument comes next, by hand.
+- `Outcome` of N7's felt line ("the event rate is stationary"): **right**. N6's felt line ("rep = 2 exactly means
+  near-squares, which is what corollary F eats"): **right** for silver.
