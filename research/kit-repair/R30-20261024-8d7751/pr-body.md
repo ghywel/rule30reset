@@ -20,7 +20,7 @@ Column 1 of every member locks into period 2, beside the locks of periods 5 and 
 
 **Credit and overlap.**
 - The gate-trap corollary is from h3artfield's [R30-20261122-66c410](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-66c410), which proves it for the right halves that agree with 175 on cells 1..28. The proof here follows that entry's.
-- Our entry is the earlier, from 24 October, with shorter seeds. It states the families without the corollary.
+- Our 24 October entry proves the two prefix families around 31 and 495. The two gate-trap exclusions are added here using h3artfield’s argument.
 
 **The module.**
 - It is core Lean, imports `Rule30Ether`, `Rule30PeriodTwoSideways` and `Rule30GateTrap`, and builds on main `ba7433c`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
@@ -31,6 +31,6 @@ Column 1 of every member locks into period 2, beside the locks of periods 5 and 
   - The gate-trap section is added.
 
   The other seven headline statements are identical, and no other declaration or proof line changes.
-- Our other repairs, #391 and one to follow, change the same count line, import list and table. Whichever merges first, we will rebase the others.
+- Repair PRs #391 and #392 change the same module count, import list and table. After each merge, we will refresh the remaining patches against main and rebuild them.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

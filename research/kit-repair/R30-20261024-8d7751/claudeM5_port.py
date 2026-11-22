@@ -71,8 +71,10 @@ proof here follows that entry's.
 
 namespace Ruliology.CellularAutomata.Rule30EtherFamilies'''
 
-EQVGEN = '''/-- The equivalence closure of a relation (as Mathlib's `Relation.EqvGen`, which core Lean lacks). -/
-inductive EqvGen {α : Type} (r : α → α → Prop) : α → α → Prop
+EQVGEN = '''universe u
+
+/-- The equivalence closure of a relation (as Mathlib's `Relation.EqvGen`, which core Lean lacks). -/
+inductive EqvGen {α : Type u} (r : α → α → Prop) : α → α → Prop
   | rel : ∀ x y, r x y → EqvGen r x y
   | refl : ∀ x, EqvGen r x x
   | symm : ∀ x y, EqvGen r x y → EqvGen r y x

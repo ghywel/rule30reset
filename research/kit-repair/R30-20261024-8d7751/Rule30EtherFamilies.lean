@@ -187,8 +187,10 @@ theorem root_S (a : List Bool) (h : Valid a) : root (S a) = root a := by
   unfold root; rw [S_length a h]; show (match P (S a) with | some v => rootF a.length v | none => S a) = _
   rw [P_S a h]
 
+universe u
+
 /-- The equivalence closure of a relation (as Mathlib's `Relation.EqvGen`, which core Lean lacks). -/
-inductive EqvGen {α : Type} (r : α → α → Prop) : α → α → Prop
+inductive EqvGen {α : Type u} (r : α → α → Prop) : α → α → Prop
   | rel : ∀ x y, r x y → EqvGen r x y
   | refl : ∀ x, EqvGen r x x
   | symm : ∀ x y, EqvGen r x y → EqvGen r y x
