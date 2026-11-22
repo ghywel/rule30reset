@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 22:57 UTC by gptIntel (I129, quarter-phase controls and Lean bridge).*
+Updated 2026-11-22 23:04 UTC by gptIntel (I130, kit and portal inventories).*
 
 ## Arrangement
 
@@ -18,7 +18,7 @@ Updated 2026-11-22 22:57 UTC by gptIntel (I129, quarter-phase controls and Lean 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
 - **Running jobs:**
-  - On the Intel: the M9 sieve and onset certificates are running. At 22:45 UTC the judge had 134 answers (116 SAT, 18 UNSAT) and three onsets had passed both proof checkers. Unresolved cases continue without a conflict limit (K65, I127).
+  - On the Intel: the M9 sieve and onset certificates are running. At 23:03 UTC the judge had 134 answers (116 SAT, 18 UNSAT) and three onsets had passed both proof checkers. Unresolved cases continue without a conflict limit (K65, I127).
   - On the cloud host: K65’s long solver work transferred to the Intel. K66 is the ether-lock probe.
   - On the M5 (claudeM5): nothing. M80's last instance, 5⁵ at P = 100, finished SAT after 27 hours (M106).
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
@@ -37,16 +37,16 @@ Calls to action only.
 - **S8, the compulsory gap factor (12, 10, 9)** is posted as
   [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a), Lean
   Verified. I123's retrospective read passed on the posted packet and the module conversion in
-  [kit PR #398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398) at `075569f`.
+  [kit PR #398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398) at `075569f`. After #397 landed,
+  only the module-count line conflicts. The 307-module integration patch is with claudeM5 (I130).
 - **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md). The owner's word, 22 November: "Open repair 1, start
   preparing repair 3, open repair 2 when ready" (M101).
   - Repair 1 (8e6bd3) is **merged** as kit commit `a4b4aff` (#391), with the maintainer's review change (M107).
   - Repair 2 (803bc4) is **merged** as kit commit `cef7356` (#392).
   - Repair 3 (8d7751, `Rule30EtherFamilies`) is **merged** as kit commit `dd2a220` (#394).
-  - After #391, #395 and #396 merged, #397 and #398 are rebased onto `cf60d48`, both MERGEABLE (M113). Each merge leaves the other to rebase.
   - Kit issue #386 asks the maintainers about the other portal-only entries; no reply yet.
   - Steps 3 and 5 are **merged**: `Rule30ClockNearSquares` (`49b99cc`, #395) and `Rule30SettledRepeats` (`cf60d48`, #396).
-  - Step 4 (`Rule30Rule210Clock`) is open as [#397](https://github.com/WolframInstitute/Rule30PrizeKit/pull/397) on R85's corrected release (N6), rebased onto `cf60d48` (M113).
+  - Step 4 (`Rule30Rule210Clock`) is in kit main at `127ebed`. The maintainer applied the reviewed module and closed [#397](https://github.com/WolframInstitute/Rule30PrizeKit/pull/397) (I130).
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -78,11 +78,11 @@ Each row is one link of (T). The statements and proofs are in
 ## The next block
 
 **Under way.**
-- **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 2 and 3 are merged
-  (#392, #394), as are repair 1 (#391) and steps 3 and 5 (#395, #396). Step 4 is open as #397, rebased onto `cf60d48` (M113). Step 7 is assessed: none of the three is a port (N3).
+- **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Steps 1–6 are in kit main
+  following #397 (I130). Step 7's three entries need separate treatment (N3).
 - **gptIntel:** N7's metric and pointwise rotation proofs await a read (I127–I129). The quarter-phase controls and Lean bridge passed. K65 continues.
 - **claudeCloud:** path 3 at the owner's word: read in Lean, the converse added, S9 proposed (K67), its Lean and text on the store (K68).
-- **claudeIntel:** I123 carried (N7). I127 answers the metric question posed after the scale test and P49. #397 awaits the maintainers.
+- **claudeIntel:** I123 carried (N7). I127 answers the metric question posed after the scale test and P49.
 
 **Done since K64.** S6 is posted, Lean Verified and Human Verified, and in the kit at `54d030c` (M93, I108). It came
 from pull K50.3 (K61, K63, M88, M89, R74).
@@ -92,7 +92,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M113, gptM5 R85, claudeCloud K68, gptIntel I129 and claudeIntel N7. Kit issue
+Last posts: claudeM5 M113, gptM5 R85, claudeCloud K68, gptIntel I130 and claudeIntel N7. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -115,7 +115,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S8** | Every periodic sparse column (isolated pulses, gaps of at least 9) at any site of a row with a leftmost black cell contains the gaps 12, 10, 9; the ten three-gap reset words as support. | **Posted** as [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a), **Lean Verified** at `5fb5915` (M112) | Kit PR [#398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398), open (M112). |
 | **S9** | At any site of any history the black count C and the run-end count A over T ticks satisfy three sharp inequalities; five explicit histories are the corners of the polygon; a linear inequality holds uniformly exactly when it holds at the five corners; on the single seed two corners are missed by a margin of at least log T. | **Proposed** in K67 from I72. Lean read in full (K67, I124, I126). Source `a70b08b4…` passes the stock checker twice at `5fb5915`, ten headlines and 593 constants (K68, I126). Author's files in `share-scratch/claudeCloud/S9/v2/`. The M5 notebook, release read and owner's word remain. | A family of kit modules after the portal id. |
 
-The verifier's kit commit is `5fb5915`. The shared catalogue is in step with kit main at `cf60d48` (I122).
+The portal verifier is at `5fb5915`. The shared catalogue is in step with kit main at `127ebed` (I130).
 
 ## Pulls in progress
 

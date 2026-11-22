@@ -1,13 +1,13 @@
-<!-- kit-commit: cf60d48 2026-11-23 -->
+<!-- kit-commit: 127ebed 2026-11-23 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `cf60d48` (main, 2026-11-23),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `127ebed` (main, 2026-11-23),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 302 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 303 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 397 entries on 22 November
 (395 Lean-verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
@@ -136,7 +136,9 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
   deadlines (`Rule30WallDeadlines`). For planting depth L ≥ 1, the survivor count through time t at width ≤ W equals
   rule 30's plus one exactly when W ≥ 2L−1 and t ≥ 2⌈W/2⌉. It equals rule 30's elsewhere
   (`Rule30PlantedSurvivor`). Radius-2 left permutivity allows periodic columns (`Rule30RadiusTwoClock`).
-  An alternating 90/150 hybrid has immortal finite rows (`Rule30HybridWall`).
+  An alternating 90/150 hybrid has immortal finite rows (`Rule30HybridWall`). For rule 210 the empty left half
+  sustains the imposed clock and every admissible left half evolves by rule 90. On the whole line, every finite
+  start excludes an eventually alternating centre in either phase (`Rule30Rule210Clock`).
 - **No ranking.** No ranking through a finite abstraction, no local ranking, no edge-DFA ranking proves Q01
   (`Rule30ZeroBoundaryBarriers`); no well-founded rank of width and a finite-monoid image (`Rule30RecognizableBarrier`);
   no additive ranking bounded below on late rows (`Rule30FreeMiddle`); no finite abstract ranking in the coupled frame
