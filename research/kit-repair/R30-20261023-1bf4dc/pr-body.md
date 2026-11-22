@@ -23,8 +23,8 @@ This adds one module, from two of our portal entries: [R30-20261022-920c1b](http
 **Overlap.** `Rule30Realization` has rule 210 from the single seed only (`run210_eq`, `center210`). Nothing in the catalogue or the open pull requests treats rule 210 beside the clock.
 
 **The module.**
-- It is core Lean, imports `Rule30Realization` and `Rule30ZeroBoundary`, and builds on main `dd2a220`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
-- The kit's `Check.lean` passes it on fourteen headlines, with full kernel replay (329 constants) and no new axioms. The count is 300.
+- It is core Lean, imports `Rule30Realization` and `Rule30ZeroBoundary`, and builds on main `cf60d48`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
+- The kit's `Check.lean` passes it on fourteen headlines, with full kernel replay (329 constants) and no new axioms. The count is 303.
 - It is the two portal entries' sources in the kit's module form:
   - the header imports two kit modules in place of `Rule30PrizeKit` and Mathlib, and the namespace is `Ruliology.CellularAutomata.Rule30Rule210Clock`;
   - the Mathlib tactics are replaced by core ones (`omega`, `Classical.byContradiction`, `Nat.strongRecOn`, `by_cases` for `split_ifs`);
@@ -32,6 +32,6 @@ This adds one module, from two of our portal entries: [R30-20261022-920c1b](http
   - core Lean has no `Nat.find`, so `Dev.tau` and the two least choices in `even_impossible` and `no_finite_clock` use a least-witness lemma, `exists_least`.
 
   The other 90 declarations have the entries' statements, with `ℕ` and `ℤ` written `Nat` and `Int`, and `Dev.tau` keeps its type.
-- PRs #391, #395 and #396 change the same count line, import list and table. After each merge, we will refresh this patch against main and rebuild it.
+- #398 changes the same count line, import list and table. After each merge, we will refresh this patch against main and rebuild it.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

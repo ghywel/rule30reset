@@ -22,9 +22,9 @@ The leftmost black cell is needed: without it, a constant gap of 9 is realized o
 - `Rule30Certificates.RequiredGapFactor`: the data and kernel checks, 391 KB.
 - `Rule30RequiredGapFactor`: the six theorems.
 - `Rule30ThreeGapCapture`: the classification and `forever`.
-- They are core Lean in the module form, on main `dd2a220`. Their declarations use only `propext`, `Classical.choice` and `Quot.sound`.
+- They are core Lean in the module form, on main `cf60d48`. Their declarations use only `propext`, `Classical.choice` and `Quot.sound`.
 - The kit's `Check.lean` passes the six factor headlines (64 constants) and the three capture headlines (192 constants), with no new axioms.
-- The certificate module builds in about 10 s on an M5, and in 41 s at 2.6 GiB on an older Intel. `lake build Ruliology` passes, and the count is 303. The certificate is listed under *Certificate data*.
+- The certificate module builds in about 10 s on an M5, and in 41 s at 2.6 GiB on an older Intel. `lake build Ruliology` passes, and the count is 306. The certificate is listed under *Certificate data*.
 
 **Credit and earlier results.**
 - AIOvernight: `Rule30ResetMixtures` (the set G and its closure) and `Rule30FastImage`.
@@ -32,6 +32,6 @@ The leftmost black cell is needed: without it, a constant gap of 9 is realized o
 - The kit: the finite-left masked Jen and realization theorems.
 - The earlier family exclusions for sparse words are `Rule30ResetMixtures`, `Rule30GrammarRuns`, `Rule30WhiteEnd` and `Rule30WhiteEndNine`.
 
-**Integration.** #391, #395, #396 and #397 change the same count line, import list and table. Whichever merges first, we will rebase the others.
+**Integration.** #397 changes the same count line, import list and table. Whichever merges first, we will rebase the other.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

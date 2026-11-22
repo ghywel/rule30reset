@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-22 21:38 UTC, 396 entries, 56 portal-only -->
+<!-- portal-list: 2026-11-22 21:49 UTC, 396 entries, 52 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 21:38 UTC (396 entries)
-and kit main `dd2a220` (M109). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 21:49 UTC (396 entries)
+and kit main `cf60d48` (M113). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 56 of the 396 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 52 of the 396 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -25,22 +25,21 @@ and kit main `dd2a220` (M109). Find new portal-only entries with `python3 tools/
 
 | Class | Entries |
 |---|---|
-| Missed | 8 |
-| Port | 8 |
+| Missed | 7 |
+| Port | 5 |
 | Pending | 3 |
 | Check | 4 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 56, of them 24 ours |
+| All | 52, of them 20 ours |
 
-## Missed (8)
+## Missed (7)
 
 Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-request candidates. For others', credit them when building on them, and they can be raised with their authors.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
 | [R30-20261023-c5e3c0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-c5e3c0) | 2026-10-23 | Andy Norris; Jesse v1.4 (solidSF) | Lean Verified, Human Verified | The same cascade and strip results, without the Problem 2 and 3 bridges (17 headlines). | As 603218, which extends it. | S |
-| [R30-20261023-8e6bd3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-8e6bd3) | 2026-10-23 | ours | Lean Verified, Human Verified | The death time at width 52 is exactly 96: a start black at depth 1 at every even time below 96 (`death_time_52_exact`), with witnesses at widths 56 and 60. | The kit's Rule30ZeroBoundaryWidth52 row calls 96 "observed, not proved". A small extension. | A |
 | [R30-20261023-603218](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-603218) | 2026-10-23 | Andy Norris; Jesse v1.4 (solidSF) | Lean Verified, Human Verified | Norris's self-replicating shield cascade: the right wall of a (0,1)^j shield stays black 2j ticks and spawns further shields, so a single-seed period with r ≥ 9j blacks and P − r + 9 ≤ 4·cascadePairs d j is excluded (slope 7/4, limit 7/11). Also 11 0^q for q ≥ 8, strip fixed points, a 32-block catalogue, and Problem 2 and 3 bridges. | The cascade is not in the kit, which holds Bosdure's later quarter-period theorem (slope 9/4). 11 0^q is the kit's Rule30WhiteRunEight. gptIntel's relay sharpens the cascade's constant (M95, P46). | S |
 | [R30-20261023-7e9e6e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-7e9e6e) | 2026-10-23 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Jen's left-permutive hypotheses hold for exactly four rules, 90, 150, 210 and 30 (`jen_class_iff_four_rules`), with equivalences for the single seed. | A small, clean extension of Rule30Realization, which names three of the four. | A |
 | [R30-20261105-c6874e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-c6874e) | 2026-11-05 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | The same as 4b74be. | A duplicate submission. | A |
@@ -48,16 +47,13 @@ Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-r
 | [R30-20261115-043275](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261115-043275) | 2026-11-15 | KDRonald3; Claude | Lean Verified, Human Verified | A one-tape Turing machine computes the centre column in quadratic time: 9 symbols, 69 states, C = 21 (`exists_quadratic_machine`). | The kit has Problem 3's statements and Quint's lower bounds, and no upper bound. | A |
 | [R30-20261115-2d4add](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261115-2d4add) | 2026-11-15 | KDRonald3; Claude | Lean Verified, Human Verified | For every row with a leftmost black cell, at every column, seven sets of three-cell windows recur, and so does a black pair. The white pair need not recur. | No kit row on recurrent windows was found. Compare Condrey's Rule30SourceObservables before calling it missing. | A |
 
-## Port (8)
+## Port (5)
 
 Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean without it. Each is a kit candidate only after a port. All are ours.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
-| [R30-20261022-1d5070](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261022-1d5070) | 2026-10-22 | ours | Lean Verified, Human Verified | A repeat on the centre column cannot put its white run inside the settled band of left diagonals: a refinement of the kit's `window_jen_col`. | Mathlib. | A |
-| [R30-20261022-91b0b0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261022-91b0b0) | 2026-10-22 | ours | Lean Verified, Human Verified | Under a period-2 centre, a right neighbour that starts with near-squares at unbounded scales has no left edge (`corollary_F`). | A narrow family. Mathlib. | A |
 | [R30-20261022-920c1b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261022-920c1b) | 2026-10-22 | ours | Lean Verified, Human Verified | For rule 210 beside the period-2 clock, the one-sided question is false and the left half is linear. | The same barrier reading. Mathlib. | A |
-| [R30-20261023-0c4a33](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-0c4a33) | 2026-10-23 | ours | Lean Verified, Human Verified | Every characteristic Sturmian word is excluded the same way. | Superseded by 8084e6. | A |
 | [R30-20261023-1bf4dc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-1bf4dc) | 2026-10-23 | ours | Lean Verified, Human Verified | For rule 210 (the sibling of rule 30 that shares Jen's hypotheses), no finite configuration keeps the period-2 clock on its centre column (`no_finite_clock`). | It bears on the kit's barrier (Rule30Realization): what separates 210 from 30. Mathlib. | A |
 | [R30-20261023-8084e6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-8084e6) | 2026-10-23 | ours | Lean Verified, Human Verified | Every Sturmian word, of every irrational slope and intercept, is excluded as the visible right neighbour of a period-2 centre column, for every row with a leftmost black cell (`sturmian_excluded`). | An exclusion for an infinite family, which the kit has no form of. It uses Mathlib, and the kit is core Lean. | A |
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
