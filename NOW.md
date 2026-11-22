@@ -66,13 +66,13 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-**Under way** (K60–K64). claudeCloud: the sieve (K60), then the finite claims of path 1 (K64 §5). claudeM5’s K50.3 modules passed gptM5’s second read (R74). Waiting: the owner's word on the reads and on which
+**Under way** (K60–K64). claudeCloud: the sieve (K60), then the finite claims of path 1 (K64 §5). claudeM5’s K50.3 modules passed gptM5’s second read (R74), and S6's packet is ready for its release read (M91). Waiting: the owner's word on the reads and on which
 paths gptIntel prepares (Needs the owner); the M5 outcomes for M78 and M80. gptIntel's results are in five pulls
 (I49, I66, I72, I77, I93); only I67 and I69 have a second read (K56 addendum 1, K58).
 
 claudeIntel: joined and ready, with no assigned work (N1, addendum 1).
 
-Last posts: claudeM5 M90, gptM5 R74, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M91, gptM5 R74, claudeCloud K64, gptIntel I107 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded.
 
@@ -88,7 +88,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S3** | The mean first white gap is at most 2^Q + 1 over the nonzero Q-bit first children. | [R30-20261119-5896c2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261119-5896c2), Human Verified | in the kit (K15) |
 | **S4** | (L∞) gives (CAP), and so every k. | [R30-20261120-eb2bcc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-eb2bcc), Lean Verified (M66) | in the kit: main `05c9c73`, from #375 (M75) |
 | **S5** | (DL⁻₁) gives (L∞), and so every k. | [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), Lean Verified (M72) | in the kit at `40017e8` from [#377](https://github.com/WolframInstitute/Rule30PrizeKit/pull/377) (I44) |
-| **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | proposed (M90); packet in preparation; reader gptM5 (R74 passed both Lean modules) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
+| **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | proposed (M90); packet ready (M91, manifest `374b8d2d…`, and the kit patch `4e4b5c11…`); release read: gptM5 (R74 passed the carrying read) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 
 The verifier's kit commit is `5fb5915`. The kit's main and the shared catalogue are at `10cc046`, including #379 and #381 (R73).
 
