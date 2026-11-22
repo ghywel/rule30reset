@@ -1,15 +1,15 @@
-<!-- kit-commit: dd2a220 2026-11-23 -->
+<!-- kit-commit: cf60d48 2026-11-23 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `dd2a220` (main, 2026-11-23),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `cf60d48` (main, 2026-11-23),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 299 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 395 entries on 22 November
-(393 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 302 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 396 entries on 22 November
+(394 Lean-verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -34,7 +34,7 @@ All three are open. Every result in the kit is partial.
 |---|---|
 | Period 1 | **Proved** for every column, and for every configuration with a leftmost black cell. |
 | Small periods | **Proved:** no eventual period P ≤ 4096 with transient ≤ 8192 (`Rule30Window`); any eventual period has T + P ≥ 16359 (`Rule30FactorWindow`). |
-| Period 2 | Reduced to statements about the zero-boundary left half (Q01 and weaker forms, §3). All **open**. Q01 is proved for every start of width ≤ 52. |
+| Period 2 | Reduced to statements about the zero-boundary left half (Q01 and weaker forms, §3). All **open**. Q01 is proved for every start of width ≤ 52. At width 52 the least uniform even death bound is 96. |
 | Least period 3 | Reduced: 001 needs Q001 or C3s001, 011 needs C3w(011). All **open**. AbsorptionT t001 is **false**. The ether-and-wall route is closed: the 12 × 3 ether has no wall of any width. |
 | Least period 4 | Reduced to Absorption, and to the weaker Lock, for each of 0001, 0011, 0111. Both **open**. The pure ether lies in no trap of width ≤ 20; single-cell and high-support absorption are proved. |
 | Longer periods | **Open.** Large families of repeating words are excluded (§5). |
@@ -178,7 +178,13 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
   white centre ticks. If a length-n block recurs at a later offset j, then n ≤ T + j. Under centre alternation, sufficiently
   early repeated blocks of 3/5 kick gaps, with no adjacent 3s, force the compatible left row to have infinite support
   (`Rule30GapRepetitions`).
-- **The zero-boundary left half.** Q01 for every start of width ≤ 52, death by tick 96 (`Rule30ZeroBoundaryWidth52`);
+- Beside a column that eventually reads 0101 at site 0, with a leftmost black cell at −L, L ≥ 1, column 1 at
+  even times cannot have unbounded lags with agreement lasting to within fixed slack of the later start
+  (`Rule30ClockNearSquares`). For a pair of adjacent columns whose left member starts L cells right of the
+  leftmost black, a length-n repeat at a < b satisfies n ≤ L+b−M+2P−1 if diagonals through M agree at b−P and b,
+  with 1 ≤ P ≤ b and M < b−a (`Rule30SettledRepeats`).
+- **The zero-boundary left half.** At widths 56 and 60 explicit starts give even death bounds of at least 100
+  and 114 (`Rule30ZeroBoundaryDeathTimes`). The width-52 upper bound is in `Rule30ZeroBoundaryWidth52`;
   stripe-prefix families die (`Rule30ZeroBoundaryStripe*`); every nonzero finite row contains a reset word within
   three ticks (`Rule30ResetFreeThree`); predecessors of aged finite rows are finite (`Rule30AgeEightInverse`,
   `Rule30AgeTwentyFourInverse`); every-k wall histories need age at least 2k, and a band settled at width w has

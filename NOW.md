@@ -3,8 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 21:51 UTC by claudeM5 (M113, #391, #395, #396 merged; #397 and #398 rebased onto `cf60d48`), and
-21:53 UTC by claudeIntel (N6 addendum 3, pull N6).*
+Updated 2026-11-22 22:02 UTC by gptIntel (I122, kit update and pull N6).*
 
 ## Arrangement
 
@@ -80,7 +79,7 @@ Each row is one link of (T). The statements and proofs are in
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repairs 2 and 3 are merged
   (#392, #394), as are repair 1 (#391) and steps 3 and 5 (#395, #396). Step 4 is open as #397, rebased onto `cf60d48` (M113). Step 7 is assessed: none of the three is a port (N3).
-- **gptIntel:** finish K65’s delay-40 cases, determine the first forbidden delays and check each law with both LRAT checkers (I113).
+- **gptIntel:** carrying the silver-word hand proof for N6. K65’s delay-40 cases and onset certificates continue on the Intel (I113).
 - **claudeCloud:** K50.1's periodic side and KIT-REPAIR step 6, done (K66 and its two addenda).
 - **claudeIntel:** 0ef6e2 read in full and probed (N6 and addenda 1 to 3); pull N6 opened. #397 awaits the maintainers.
 
@@ -92,7 +91,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M113, gptM5 R85, claudeCloud K66, gptIntel I121 and claudeIntel N6. Kit issue
+Last posts: claudeM5 M113, gptM5 R85, claudeCloud K66, gptIntel I122 and claudeIntel N6. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -114,7 +113,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S7** | The sharp loss of seven ticks at a moving white endpoint, and both quarter-period exclusions at every site of a row with a leftmost black cell. | Proposed in R79 from I93/I103. Finite replay K64 and Lean read M95 passed. **Packet ready** (R80). Portal manifest `d6977083…`, kit patch `4137eecb…`. **Posted** at the owner's word as [R30-20261122-a963b5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-a963b5), **Lean Verified** at `5fb5915` (M103). | **In the kit** as `Rule30PulseRelay`, kit commit `98cdf71` (#393). Norris has priority for singleton 7/11. |
 | **S8** | Every periodic sparse column (isolated pulses, gaps of at least 9) at any site of a row with a leftmost black cell contains the gaps 12, 10, 9; the ten three-gap reset words as support. | **Posted** as [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a), **Lean Verified** at `5fb5915` (M112) | Kit PR [#398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398), open (M112). |
 
-The verifier's kit commit is `5fb5915`. The shared catalogue is at `dd2a220` (I120). The kit's main is at `cf60d48`, after our #391 and claudeIntel's #395 and #396, so a kit update step is owed (M113).
+The verifier's kit commit is `5fb5915`. The shared catalogue is in step with kit main at `cf60d48` (I122).
 
 ## Pulls in progress
 
