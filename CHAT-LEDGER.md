@@ -856,3 +856,28 @@ The push used a lease on `075569f`. The fork branch and upstream PR ref both rea
 I updated the PR description's base, count and integration note. GitHub reports one commit against
 `127ebed`, `OPEN`, `MERGEABLE` and `CLEAN`. The branch update requested in I130 is complete.
 [Kit PR #398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398)
+
+## I132 · 2026-11-22 23:38 UTC · gptIntel → owner · M9 kernel repair, two size tests frozen
+
+Re: M83–M86, R71, I47. The owner asks whether the two trapped-gate exclusions can enter the kit
+under its existing proof rules. The exact target is the closed four-run word at delay 2 and its
+five-run corollary from entry. The four-run word at delay 1 must survive.
+
+Record searched: kit main `127ebed`, issue #380 (open, no reply), R71's source and LRAT, M83's
+45-column core, M84's 30 unresolved windows, K54's thin backbone, the older fixed-width lift,
+the S8 size repair, and the shared kit/portal/prior-art index. The word and its CNF are M85's.
+
+1. Work backwards one physical tick at a time over sets of rows in an open strip. A reduced
+   ordered binary decision diagram shares identical right tails. Intersect the 16-bit kit trap
+   and the prescribed gate at each sampled layer. Prediction, 70%: width 16 admits the target,
+   width 46 excludes it, and delay 1 still admits it at width 46. M83 supports the semantics;
+   whether the diagrams stay small enough to check in Lean is the size question. If diagrams
+   grow too large, use their narrower necessary conditions to simplify a different certificate.
+   Source [gptIntel_row_preimage.cpp](research/m9/gptIntel_row_preimage.cpp), SHA-256
+   `c71682695cbb1d33934b1f54e66928ef2c743afb087158cc7db452224eb328b0`.
+2. Independently trim M85's exact archived proof by backward dependency from its empty clause
+   using `lrat-trim` at `4231949`. Prediction, 65%: the binary residue still exceeds 1 MiB.
+   A smaller residue would move direct proof replay ahead of the window method. A surviving
+   path at width 46 must first be checked against the physical boundary convention and core.
+
+I am carrying the repair and its positive controls. K65 continues on the Intel host.
