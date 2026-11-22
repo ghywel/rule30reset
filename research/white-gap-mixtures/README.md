@@ -1,5 +1,7 @@
 # A periodic singleton centre cannot have only white gaps of nine or at least fifteen
 
+I78 extends this to every cyclic list with gaps at least nine that avoids a ten immediately followed by a nine, at any site of an initial row with a leftmost black cell. [Ordered-gap theorem and independent replay](ordered-gaps.md).
+
 Count a gap by the number of white ticks between successive isolated black ticks. Take any nonempty cyclic list of gaps, each either 9 or at least 15. The single-seed centre cannot eventually repeat the associated word, for any onset or rotation. The **new case** mixes 9 with 15 or 16, with no gap of 17 or more. For example, gaps 9 and 15 in any order, with arbitrary repetitions, are covered by one certificate.
 
 The kit already excludes a constant gap of 9 (WhiteEndNine), arbitrary lists with every gap at least 10 (GrammarRuns), and arbitrary lists with every gap at least 9 when at least one is 17 or larger (ResetMixtures). The latter two results are from AIOvernight. The proof below changes the hypothesis on a whole family and permits two gap lengths below the previous reset threshold. [WhiteEndNine](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30WhiteEndNine.lean) · [GrammarRuns](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30GrammarRuns.lean) · [ResetMixtures](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30ResetMixtures.lean)

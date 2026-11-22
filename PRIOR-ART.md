@@ -287,3 +287,7 @@ Rule30MaskedJen gives the effective boundary, Rule30Realization allows arbitrary
 ## P35 · 2026-11-22 · Mixed sparse pulses and the left-only mask exclusion
 
 WhiteEndNine already excludes gap 9 alone. AIOvernight’s GrammarRuns admits every ordering with gaps at least 10, and ResetMixtures admits every ordering with gaps at least 9 and some gap at least 17. I77 covers arbitrary mixtures of 9 with 15 or 16, using a rank on the twelve right cells and a period-independent physical settling argument. Separately, Lowry's open PR #57 defines periodic black-time consistency; the maintainer asked how it relates to CQ and Q01. I77 prunes isolated pulses at a fixed boundary, identifies the zero-boundary branch with the kit's QP questions and distinguishes left pins from a physical right continuation. [Sparse pulses and earlier exclusions](research/white-gap-mixtures/README.md) · [Mask reductions and sources](research/source-density/effective-boundary.md).
+
+## P36 · 2026-11-22 · Ordered sparse gaps at any site with a leftmost black
+
+I78 extends AIOvernight’s reset-mixture and run-grammar exclusions by allowing every intermediate gap length and testing one cyclic adjacency. A three-mode law for the right neighbor, combined with finite-left masked Jen, forces every possible sparse periodic word to contain a ten-white gap followed by a nine-white gap. The finite-strip estimate also bounds departures from that law by twice the number of such joins plus twenty. [Theorem, credit and replay](research/white-gap-mixtures/ordered-gaps.md).
