@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-22 16:13 UTC, 393 entries, 58 portal-only -->
+<!-- portal-list: 2026-11-22 17:38 UTC, 393 entries, 57 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. It was written from the portal's list (`submissions.json`, 2026-11-22 16:13 UTC, 393 entries) and the kit at
-`a88097e` (main) in ledger M97. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 17:38 UTC (393 entries)
+and kit main `54d030c` (I108). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 58 of the 393 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 57 of the 393 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -27,11 +27,11 @@ only what those cannot. It was written from the portal's list (`submissions.json
 |---|---|
 | Missed | 9 |
 | Port | 8 |
-| Pending | 3 |
+| Pending | 2 |
 | Check | 6 |
 | Covered | 7 |
 | Below the bar | 25 |
-| All | 58, of them 26 ours |
+| All | 57, of them 25 ours |
 
 ## Missed (9)
 
@@ -64,7 +64,7 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (3)
+## Pending (2)
 
 In an open kit pull request. Moves out of this file when it merges.
 
@@ -72,7 +72,6 @@ In an open kit pull request. Moves out of this file when it merges.
 |---|---|---|---|---|---|---|
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261120-2a993b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-2a993b) | 2026-11-20 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: K1 collapses to a 16-phase minimum through width 53,208, and the inverse ticks hold unconditionally through k = 25. | Open kit PR #371. | S |
-| [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) | 2026-11-22 | ours | Lean Verified, Human Verified | S6: Hughes's ages and the every-k chain on the line, without the white wall. | Open kit PR #385. | L |
 
 ## Check (6)
 

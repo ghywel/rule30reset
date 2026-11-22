@@ -1,15 +1,15 @@
-<!-- kit-commit: e303021 2026-11-22 -->
+<!-- kit-commit: 54d030c 2026-11-22 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `e303021` (main, 2026-11-22),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `54d030c` (main, 2026-11-22),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 288 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 392 entries on 22 November
-(390 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 290 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 393 entries on 22 November
+(391 Lean-verified); its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -70,6 +70,7 @@ graph TD
   UBE --> P1["Problem 1"]
   P1 <--> MIR["Two-sided XOR mirror escape for all P ≥ 2"]
   DL1["DLMinusOne: every tick has a reset in one of the two stretches at each first clock loss"] --> LI["LInfinity: every tick has resets at arbitrarily large depths"]
+  CAP --> LINE["Every k on the line for rows with a leftmost black cell"]
   LI --> CAP["CAP: the worst-phase one-layer reset capacity K1 of the edge band is unbounded"] --> EVK["every-k inverse ticks at the wall, from age W(k) − 1 + 2^W(k)"]
 ```
 
@@ -110,7 +111,9 @@ The target holds at k = age = 0 and persists as age increases. Positive multiple
 On every pointed recurrent strip, let a reset be a closed run 0 1^(3m+1) 0. If every tick has a reset between the
 white wheel at each first clock loss and the white wheel after next (`DLMinusOne`), every tick has arbitrarily deep
 resets (`LInfinity`). Compactness then gives CAP (`Rule30RelaxedWindows`, `Rule30ResetCompactness`). The two-stretch
-hypothesis remains open.
+hypothesis remains open. On the whole line, if w>0 and k≤K1(w), every k-tick predecessor of a row
+with a leftmost black cell has its edge k sites inside from age 2^w (`Rule30EveryKLine`). Ages 8 and 24 suffice
+unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoSidedInverse`).
 
 **Other routes to Problem 1.**
 - For every tail start and shift P ≥ 2, compare the single-seed diagram with its P-tick translate. Problem 1 is equivalent to an initial centre mismatch or a later failure of the mirror rule: at a black centre the left neighbour must match, and at a white centre the two neighbour differences must agree (`problem1_iff_two_sided_xor_mirror_escape`).
@@ -146,6 +149,8 @@ hypothesis remains open.
 - **The finite hypothesis matters.** A periodic left half can realise period-4 and alternating centres
   (`Rule30EtherWallWitness`); infinite rows can share an entire centre trace (`Rule30TraceMerge`,
   `Rule30FeedbackErasure`); InX rows with equal images need share no tail (`Rule30UnrestrictedClosing`).
+- **Late observations.** Beside an alternating singleton centre, a one-in-five pattern of black right-neighbour
+  readings on white ticks for n updates starting at age b≥31 requires 35n<27b+2478 in every phase (`Rule30LateObservation`).
 - **Finite starts can share a growing centre window.** At h = 336q + 97, two starts supported on [−h,h] agree in
   columns 0 through 112q + 26 at every tick from 28 through h, then have opposite centre bits at h + 1. The entire
   right half at age h determines the start under the same support bound (`Rule30HalfAgeOrigin`).
