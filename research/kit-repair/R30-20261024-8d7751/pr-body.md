@@ -23,14 +23,14 @@ Column 1 of every member locks into period 2, beside the locks of periods 5 and 
 - Our 24 October entry proves the two prefix families around 31 and 495. The two gate-trap exclusions are added here using h3artfield’s argument.
 
 **The module.**
-- It is core Lean, imports `Rule30Ether`, `Rule30PeriodTwoSideways` and `Rule30GateTrap`, and builds on main `ba7433c`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
-- The kit's `Check.lean` passes it on its ten headlines, with full kernel replay (131 constants) and no new axioms. `lake build Ruliology` passes, and the count is 292.
+- It is core Lean, imports `Rule30Ether`, `Rule30PeriodTwoSideways` and `Rule30GateTrap`, and builds on main `b5b9dbd`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
+- The kit's `Check.lean` passes it on its ten headlines, with full kernel replay (131 constants) and no new axioms. `lake build Ruliology` passes, and the count is 294.
 - It is the portal entry's source in the kit's module form. Beyond the header, namespace and docstring, three things change:
   - The entry used Mathlib's `Relation.EqvGen`. The module defines the same equivalence closure, `EqvGen`, with the same four constructors, so `not_move_equivalent` reads `¬ EqvGen Move cells31.reverse cells495.reverse`.
   - One proof line of `R31_far` uses core list lemmas in place of Mathlib's `List.getD_eq_default`.
   - The gate-trap section is added.
 
   The other seven headline statements are identical, and no other declaration or proof line changes.
-- Repair PRs #391 and #392 change the same module count, import list and table. After each merge, we will refresh the remaining patches against main and rebuild them.
+- PRs #391, #392 and #393 change the same module count, import list and table. After each merge, we will refresh the remaining patches against main and rebuild them.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

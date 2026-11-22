@@ -24,14 +24,14 @@ This adds one module, from our portal entry [R30-20261030-803bc4](https://www.wo
 - The endpoint arguments specialise edge facts of `Rule30FiniteConfigs` and `Rule30FrozenRuler`.
 
 **The module.**
-- It is core Lean, imports `Rule30Prize` and `Rule30Realization`, and builds on main `ba7433c`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
-- The kit's `Check.lean` passes it on its seven headlines, with full kernel replay (196 constants) and no new axioms. `lake build Ruliology` passes, and the count is 292.
+- It is core Lean, imports `Rule30Prize` and `Rule30Realization`, and builds on main `b5b9dbd`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
+- The kit's `Check.lean` passes it on its seven headlines, with full kernel replay (196 constants) and no new axioms. `lake build Ruliology` passes, and the count is 294.
 - It is the portal entry's source in the kit's module form:
   - the namespace is moved to `Ruliology.CellularAutomata.Rule30FiniteRoots`;
   - the headline wrappers move into it;
   - the preparation notes are replaced by a module docstring and section headers.
 
   Every declaration line is unchanged, and the headline statements are identical.
-- PRs #385 and #387 are in the base. This patch adds one module to the 291 already in the kit. If the other repair merges first, we will refresh the catalogue integration against the new main.
+- PRs #385, #387 and #388 are in the base. This patch adds one module to the 293 already in the kit. If the other repair merges first, we will refresh the catalogue integration against the new main.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

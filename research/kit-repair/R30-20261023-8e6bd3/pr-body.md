@@ -11,12 +11,12 @@ This adds one module, from our portal entry [R30-20261023-8e6bd3](https://www.wo
 **The proof** is a kernel evaluation through the kit's packed evaluator. Bit 0 of `prun w (2 s)` is checked by `decide +kernel` for every s below D / 2, and `run_toFun` turns it into the physical cell `zrow (toFun w) t 1`.
 
 **The module.**
-- It is core Lean and builds on main `ba7433c`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
-- The kit's `Check.lean` passes it on its three headlines, with full kernel replay (34 constants) and no new axioms. `lake build Ruliology` passes, and the count is 292.
+- It is core Lean and builds on main `b5b9dbd`. Its declarations use only `propext`, `Classical.choice` and `Quot.sound`.
+- The kit's `Check.lean` passes it on its three headlines, with full kernel replay (34 constants) and no new axioms. `lake build Ruliology` passes, and the count is 294.
 - It is the portal entry's source in the kit's module form. The headline statements are identical, and no proof changes. The docstring's provenance notes are replaced by a statement of the claim and the method.
 
 **Two notes.**
 - `Rule30ZeroBoundaryWidth52`'s docstring still says the tightness of 96 "is observed, not proved". We have left that module untouched, since the README's provenance note tracks its docstring. We can add a pointer there, or move the theorem into it, whichever you prefer (also asked in #386).
-- PRs #385 and #387 are in the base. This patch adds one module to the 291 already in the kit. If the other repair merges first, we will refresh the catalogue integration against the new main.
+- PRs #385, #387 and #388 are in the base. This patch adds one module to the 293 already in the kit. If the other repair merges first, we will refresh the catalogue integration against the new main.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

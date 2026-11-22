@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 19:20 UTC by claudeM5 (M103, S7 posted and Lean Verified; kit PR #393).*
+Updated 2026-11-22 19:40 UTC by claudeM5 (M104, repair 3 open as #394; #391 to #393 rebased onto `b5b9dbd`).*
 
 ## Arrangement
 
@@ -38,7 +38,8 @@ Calls to action only.
   preparing repair 3, open repair 2 when ready" (M101).
   - Repair 1 (8e6bd3) is open as [#391](https://github.com/WolframInstitute/Rule30PrizeKit/pull/391).
   - Repair 2 (803bc4) is open as [#392](https://github.com/WolframInstitute/Rule30PrizeKit/pull/392), with the credit change cleared in I115 (M102).
-  - Repair 3 (8d7751, `Rule30EtherFamilies`) passed both reads on the revised packet (I116), and claudeM5 agrees to it (M103). It awaits the owner’s word to open.
+  - Repair 3 (8d7751, `Rule30EtherFamilies`) is open as [#394](https://github.com/WolframInstitute/Rule30PrizeKit/pull/394) (I116, M104).
+  - After Lowry's #388, #391 to #394 sit on `b5b9dbd`, all MERGEABLE (M104). Each merge leaves the others to rebase.
   - Kit issue #386 asks the maintainers about the other portal-only entries; no reply yet.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
@@ -72,7 +73,7 @@ Each row is one link of (T). The statements and proofs are in
 
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repair 1 is open as #391
-  (M101). Repair 2 is open as #392 (M102). The revised Repair 3 passed both reads and is agreed (I116, M103). Steps 3 to 5 and 7 are not started.
+  (M101). Repair 2 is open as #392 (M102). Repair 3 is open as #394 (M104), and all four of our PRs are rebased onto `b5b9dbd`. Steps 3 to 5 and 7 are not started.
 - **gptIntel:** finish K65’s delay-40 cases, determine the first forbidden delays and check each law with both LRAT checkers (I113).
 - **claudeCloud:** K50.1's periodic side and KIT-REPAIR step 6, done (K66 and its two addenda).
 - **claudeIntel:** free. M99 asked it to read the repairs; the owner gave the read to gptIntel, who completed it (I109, I110, I114).
@@ -85,7 +86,7 @@ M80's 5⁵ at P = 100 on the M5. gptIntel's results are in five pulls (I49, I66,
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M103, gptM5 R81, claudeCloud K66, gptIntel I116 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M104, gptM5 R81, claudeCloud K66, gptIntel I116 and claudeIntel N1. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -106,7 +107,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified, Human Verified**. **Merged** in [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) at `54d030c` (I108). The portal lists both kit modules. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 | **S7** | The sharp loss of seven ticks at a moving white endpoint, and both quarter-period exclusions at every site of a row with a leftmost black cell. | Proposed in R79 from I93/I103. Finite replay K64 and Lean read M95 passed. **Packet ready** (R80). Portal manifest `d6977083…`, kit patch `4137eecb…`. **Posted** at the owner's word as [R30-20261122-a963b5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-a963b5), **Lean Verified** at `5fb5915` (M103). | Kit PR [#393](https://github.com/WolframInstitute/Rule30PrizeKit/pull/393), open (M103): one core-Lean module, `Rule30PulseRelay`. Norris has priority for singleton 7/11. |
 
-The verifier's kit commit is `5fb5915`. The kit's main and the shared catalogue are at `ba7433c`, including #384, #385 and Lowry's #387 (`Rule30PastSwap`) (I108, I114).
+The verifier's kit commit is `5fb5915`. The shared catalogue is at `ba7433c`, including #384, #385 and Lowry's #387 (`Rule30PastSwap`) (I108, I114). The kit's main is at `b5b9dbd`, after Lowry's #388 (`Rule30InverseSixBlack`, `Rule30InverseSpatialPeriod`), so a kit update step is owed (M104).
 
 ## Pulls in progress
 
