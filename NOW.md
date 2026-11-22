@@ -3,7 +3,8 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 19:32 UTC by claudeM5 (M105, path 2 Lean read; the certificate is too large to package).*
+Updated 2026-11-22 19:32 UTC by claudeM5 (M105, path 2 Lean read; the certificate is too large to package), and
+19:46 UTC by claudeIntel (N3, KIT-REPAIR steps 3 and 5 ported).*
 
 ## Arrangement
 
@@ -21,6 +22,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
   - On the Intel: the M9 sieve and onset certificates are running. At 18:15 UTC the judge had 126 answers and three onsets had passed both proof checkers. Unresolved cases continue without a conflict limit (K65, I113).
   - On the cloud host: K65’s long solver work transferred to the Intel. K66 is the ether-lock probe.
   - On the M5 (claudeM5): M80's 5⁵ at P = 100, one uncapped Kissat, the one outcome still due (M87).
+  - On the Intel (claudeIntel): `lake build Ruliology` at kit main with KIT-REPAIR steps 3 and 5, one module at a time to stay under 8 GiB (N3).
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
@@ -44,6 +46,7 @@ Calls to action only.
   - Repair 3 (8d7751, `Rule30EtherFamilies`) is open as [#394](https://github.com/WolframInstitute/Rule30PrizeKit/pull/394) (I116, M104).
   - After Lowry's #388, #391 to #394 sit on `b5b9dbd`, all MERGEABLE (M104). Each merge leaves the others to rebase.
   - Kit issue #386 asks the maintainers about the other portal-only entries; no reply yet.
+  - **Allocate a reader for steps 3 and 5** (N3), a worker other than claudeIntel, then give the word to open them: `Rule30ClockNearSquares` (91b0b0 with 0c4a33) and `Rule30SettledRepeats` (1d5070, stacked on it). Both pass `Check.lean` at main.
 - **Every 30 days:** confirm the dynamic-DNS name, or every worker loses the store (K10).
 
 ## Direction
@@ -76,10 +79,10 @@ Each row is one link of (T). The statements and proofs are in
 
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Repair 1 is open as #391
-  (M101). Repair 2 is open as #392 (M102). Repair 3 is open as #394 (M104), and all four of our PRs are rebased onto `b5b9dbd`. Steps 3 to 5 and 7 are not started.
+  (M101). Repair 2 is open as #392 (M102). Repair 3 is open as #394 (M104), and all four of our PRs are rebased onto `b5b9dbd`. Steps 3 and 5 are prepared and wait for a reader (N3). Step 7 is assessed: none of the three is a port (N3).
 - **gptIntel:** finish K65’s delay-40 cases, determine the first forbidden delays and check each law with both LRAT checkers (I113).
 - **claudeCloud:** K50.1's periodic side and KIT-REPAIR step 6, done (K66 and its two addenda).
-- **claudeIntel:** free. M99 asked it to read the repairs; the owner gave the read to gptIntel, who completed it (I109, I110, I114).
+- **claudeIntel:** KIT-REPAIR step 4, rule 210 (1bf4dc with 920c1b), which needs `Nat.find` and `|i|` recast in core Lean (N3).
 
 **Done since K64.** S6 is posted, Lean Verified and Human Verified, and in the kit at `54d030c` (M93, I108). It came
 from pull K50.3 (K61, K63, M88, M89, R74).
@@ -89,7 +92,7 @@ M80's 5⁵ at P = 100 on the M5. gptIntel's results are in five pulls (I49, I66,
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M105, gptM5 R81, claudeCloud K66, gptIntel I116 and claudeIntel N1. Kit issue
+Last posts: claudeM5 M105, gptM5 R81, claudeCloud K66, gptIntel I116 and claudeIntel N3. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -131,6 +134,7 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 | I72 | 22 Nov, gptIntel | Which densities of black cells and of run ends one site can show | *In progress* (I72–I76; `research/source-density/`). Kernel, 26 headlines: the joint limits (C/T, A/T) fill exactly the polygon (0,0), (1/3,0), (3/4,1/4), (9/10,2/5), (1,1); every point is realised by one history; on the singleton two deficits grow at least logarithmically. Extends Condrey's #253 and Quint and Gemini's #297. Beside it: what two sites or one column recognise (I73–I76). The bounds, vertices and witnesses (least width 155) read by claudeCloud (K64 addendum 3); the Lean replay is still owed. Next: the one-third corner with two aperiodic columns. | no; path 3 (K64) |
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress* (I77–I92, I94, I95, I97, I104; `research/white-gap-mixtures/`). Kernel, at every site of every row with a leftmost black cell, pulses with gaps ≥ 9: every eventual period contains the gaps (12, 10, 9) arbitrarily late and uses 12, and has at least 6 pulses and 64 ticks (I97, I95, I104); no order of 9 and 10 alone (I91); exactly 10 of 512 three-gap words reset every right half into G (I85). External: (10, 12), (12, 12) and 13 or 14 compulsory (I87); at least 18 pulses, 206 ticks (I90); at most 474·3^n readable orders (I81); every nondegenerate i.i.d. gap law resets almost surely (I92, I94). I85's ten words replayed by claudeCloud under true dynamics (K64 addendum 4). Lean read (M105): the factor (12,10,9) passes at kit main and the pin, and the ten-word classification at main; the five- and six-pulse floors are not yet read. The 41 MB certificate is too large for the portal or the kit as packaged. Next: can either four-letter alphabet sustain two readings? | no; path 2 (K64) |
 | I93 | 22 Nov, gptIntel | Black runs and the right-hand shield: Kurtuluş's PR 381 and Bosdure's quarter periods | *In progress* (I93, I95, I96, I98–I103, I105; `research/black-run-transitions/`). Kernel: 44 and 70 black ticks fix 10 and 16 right cells, sharp (I98, I101); Bosdure's quarter-period exclusions hold at every site of every row with a leftmost black cell (I98); a black run of n ≥ 9 ending white relays a run of at least n − 7, sharp, so the limiting fraction falls from 9/13 to 7/11 (I103), though for the single seed 7/11 is Norris's shield cascade of 23 October (P46); one physical row attains the worst shield rate at every width (I100); drift rigidity for every q ≠ p beyond Murzin's `PeriodicPoints` (I102); the sharp two-run table (I95, on open PR 381). External: 128 ticks for 30 cells; rates 101/12 and 117/14. Finite claims replayed by claudeCloud, and the agreement horizon is exact to n = 44, beating 4⌊(n − 2)/7⌋ from n = 36 (K64 addendum 2). The Lean replay passes at `40017e8` and main, and at the verifier's pin with two kit declarations carried (M95). The relay's gain over Norris is the constant, with every finite-left site and any certified block. | yes, S7 packet ready (R80); carrying read K64 and M95 |
+| N3 | 22 Nov, claudeIntel | The complexity form of 8084e6: no aperiodic word with at most n + 1 blocks of each length n (every Sturmian word, every slope and intercept) is the visible-bit sequence beside a clock, in core Lean | *Open.* Builds on step 3's `corollary_F` and `Rule30ZeroWallDiagonals.factorCount`. First test: whether collisions at unbounded lags follow by hand from `rightSpecialCount_pos` and the bound n + 1. | no |
 
 ## Parked
 

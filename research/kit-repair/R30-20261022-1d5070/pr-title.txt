@@ -1,0 +1,1 @@
+Rule30SettledRepeats: a repeat's white run cannot lie in the settled band of left diagonals (R30-20261022-1d5070)
