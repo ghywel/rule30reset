@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 11:17 UTC by gptIntel (I80–I107, recovered overnight posts and both Intel K48 outcomes).*
+Rewritten 2026-11-22 11:44 UTC by claudeCloud (K63: K50.3 and K50.4 preliminary; after gptIntel's I80–I107; the sieve, K60, is running).*
 
 ## Arrangement
 
@@ -16,7 +16,8 @@ Updated 2026-11-22 11:17 UTC by gptIntel (I80–I107, recovered overnight posts 
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** on the cloud host, the sieve’s judge (K60) and the K50.3 test (K61). The K50.4 first round is complete (K62).
+- **Running jobs:** on the cloud host, the sieve’s judge (K60), in two-hour runs that restart from saved answers. The first rounds of
+  K50.3 and K50.4 are complete (K62, K63).
   Both Intel K48 jobs ended. M9 reached its cap at 400,002 discovered states, leaving entropy and the five-run word
   undecided (I106). R6 finished at 11:12 UTC with c(2²⁷) = 0 (I107). The M5 outcomes for M78’s 36-column run
   and M80’s three runs-of-five instances are still due.
@@ -28,6 +29,8 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only.
 
+- **Say whether K50.3 goes on** (K63), and which Lean host takes it. I recommend yes: Hughes's inverse theorems
+  without the wall, in Lean, after a portal search.
 - **Say what becomes of K50.4** (K62): park it, as I recommend, or pick up the tree or the zone statistic.
 - **Say what becomes of gptIntel's overnight threads** (listed under Open threads): which become pulls, who reads
   each, and whether any is to be prepared as a submission. gptIntel names two candidates: the seven-lock prefix
@@ -62,11 +65,11 @@ Each row is one link of (T). The statements and proofs are in
 
 ## The next block
 
-**The cloud round is under way** (K60–K62). For the next Intel block, the overnight work is now in I80–I107.
+**The cloud round is under way** (K60–K63). For the next Intel block, the overnight work is now in I80–I107.
 The remaining handoffs are the M5 outcomes (M78, M80), allocation of second reads, and the owner’s choice of pulls.
 I67 and I69 have second reads in K56 addendum 1 and K58. The later Intel results await readers (METHOD §12).
 
-Last posts: claudeM5 M86, gptM5 R71, claudeCloud K62 and gptIntel I107. Kit issue
+Last posts: claudeM5 M86, gptM5 R71, claudeCloud K63 and gptIntel I107. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded.
 
@@ -99,7 +102,7 @@ parked or closed pull leaves the table for the lists below. The rules are in MET
 | M10 | 17 Nov, claudeM5 | Which exact laws distinguish Rule 30 from controls with an immortal finite row? | **In progress** as a standing instrument (K44, R63, M77). The [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree for every width. The hybrid has a sharp tick-2 reset and degree 1. Planting changes only the top monomial from n=L onward (PROVED: Lean, read in M77). Next use: compare the hypotheses of the next Q01 proof route against these controls. | no |
 | K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52, [R69](research/m9/exterior-grammars.md)). Proved for every ether cut (I46 read) and computed through support width 26. A counterexample needs one finite right half sustaining an aperiodic gate in X or Y. The finite-window grammars now constrain that realization question. Beside it, unread: gptIntel's prefix criterion for the period-seven lock and a deadline for the true centre (I49 to I64, Lean in `research/k50_1/`). | no |
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. I46 checked the exclusion in Lean and exhibited a finite GE2 trace with 5,2,2,5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
-| K50.3 | 21 Nov, claudeCloud | One inverse theorem for every wall: does the chain for (T) need the white wall? | **Open,** preliminary round under way on the cloud host (the owner, 22 November). The reading is done: only narrow rows touch the wall (K61). The exact test of the ages beside every wall is frozen in K61. Relates to the parked M29. | no |
+| K50.3 | 21 Nov, claudeCloud | One inverse theorem for every wall: does the chain for (T) need the white wall? | **Preliminary** (K61, K63). The chain does not need the white wall. The exact-edge theorem's proof never uses it. Hughes's ages 8 and 24 hold beside every wall for every row of two or more cells, by exhaustive search over wall sequences; a lone cell needs 9 and 25. Two-sided form, a proof sketch from Hughes's lemmas: his inverse theorems for every configuration with a leftmost black cell. Next test, if the owner continues it: that form in Lean on a Lean host, and a portal search. Not read: S1's k = 4. Relates to the parked M29. | no |
 | K50.4 | 21 Nov, claudeCloud | Every white triangle has one family tree (Quint's backward cascade) | **Preliminary** (K62). The cascade is exact and almost unbranched: 48 rows reach all black in 39 ticks, 3,552 in 199,999. But a black run's patch shrinks by about 1.4 cells a row going back, so a triangle cannot be exchanged for a longer patch earlier: the long shot at the density bound is refuted in this form. [Pictures](research/k50_4/triangles-overview.png) made. By-product: windows above black runs are uniform in the right third of the seed's diagram and far from it in the left third. The owner to say whether it is parked. | no |
 
 ## Parked
