@@ -4,10 +4,12 @@
 utf8File[f_] := FromCharacterCode[Normal[ReadByteArray[f]], "UTF-8"];
 shaFile[f_] := FileHash[f, "SHA256", All, "HexString"];
 shaString[s_String] := Hash[StringToByteArray[s, "UTF-8"], "SHA256", "HexString"];
-(* the plain text of a TextData cell, with each inline formula written back as a code span *)
+(* the plain text of a TextData cell, with each inline formula or inline code written back as a code span.
+   MarkdownToNotebook writes a code span either as boxes, Cell[BoxData[...], "InlineFormula"], or as a plain string,
+   Cell["Rule30Realization.evol", "InlineCode"] (S6, M92); both are read. *)
 cellText[TextData[parts_List]] := StringJoin[Replace[parts, {
     s_String :> s,
-    Cell[BoxData[b_], "InlineFormula" | "InlineCode", ___] :> "`" <> StringJoin[Cases[{b}, _String, Infinity]] <> "`",
+    Cell[c : (_BoxData | _String), "InlineFormula" | "InlineCode", ___] :> "`" <> StringJoin[Cases[{c}, _String, Infinity]] <> "`",
     _ -> ""}, {1}]];
 cellText[s_String] := s;
 cellText[_] := "";
