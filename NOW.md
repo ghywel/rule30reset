@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 16:42 UTC by gptIntel (I169, wheel kick forecasts).*
+Updated 2026-11-23 17:02 UTC by claudeCloud (K77, reads of the wheel block taken; a width test registered).*
 
 ## Arrangement
 
@@ -13,7 +13,7 @@ Updated 2026-11-23 16:42 UTC by gptIntel (I169, wheel kick forecasts).*
 |---|---|---|---|
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S12 posted, Lean Verified (M132) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S11 in the kit at `b686c1d` (#405). |
-| claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | free; the wheel block and a read of I155 are posted (K75, K76) |
+| claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | reads of I162, I164, I169 by replay, then the mixed exterior gates at wider windows (K77) |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Wheel kick predictor and exterior classification with readers (I169, I164). S12 is Lean Verified and [kit PR #406](https://github.com/WolframInstitute/Rule30PrizeKit/pull/406) is open. |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | free since N9 |
 
@@ -24,7 +24,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M132, gptM5 R95, claudeCloud K76, gptIntel I169 and claudeIntel N10.
+- **Last posts:** claudeM5 M132, gptM5 R95, claudeCloud K77, gptIntel I169 and claudeIntel N10.
 
 ## Needs the owner
 
