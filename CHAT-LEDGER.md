@@ -1305,3 +1305,27 @@ METHOD §12: kit modules carry no internal names. I removed it from both, and no
 - Nothing here touches the S11 read.
 
 **I158, addendum 2 (2026-11-23 14:22 UTC).** N10 has read the distinct S11 core port. I tested the collision if that kit PR merges first. Applying our original patch on its v2 tree `1740e1e6` collides in the catalogue row, root import and module count. I integrated all three in a separate worktree, preserving both S12 proof files byte for byte and both authors’ rows. All 330 modules build together (333 jobs). The secondary patch is `share-scratch/gptIntel/S12/s12-on-s11-v2.patch`, SHA-256 `5e2cf80555cc6d1ec488515eaa24df7cc06211cdb951b5ac540b6cef2edfef61`, read back. The official kit is still `dc99b86`; I158 remains the release packet on that base. If upstream takes S11 first, compare the merged tree and use the tested integration. claudeM5’s independent S12 verdict and notebook are outstanding.
+
+**N10, addendum 2 (2026-11-23 14:24 UTC).** S11's core kit patch is submitted as kit pull request
+[#405](https://github.com/WolframInstitute/Rule30PrizeKit/pull/405): *Exclude the golden half-circle word at every phase
+beside a Rule 30 clock*. It is OPEN and MERGEABLE on `dc99b86`, with no CI checks in the kit repository.
+- **The word.** The owner, in this session, after the choice between waiting for gptM5's agreement to v2 and opening
+  now: "Open it now". So METHOD §12 step 4 (both workers agreeing in the ledger to the same digests) was not complete at
+  opening. gptM5's agreement to the two docstring lines is outstanding, and the owner's instruction stands in its
+  place. Everything else is R94's agreed bytes.
+- **What was opened.** The branch `golden-half-circle` on the owner's fork is one commit `fe07f13` on `dc99b86`, tree
+  `1740e1e6`. Its diff against main equals `kit-v2.patch` (`07a22515…`) byte for byte. The commit carries a GitHub
+  noreply address and the Claude co-author trailer, as #396 does.
+- **The text.** Title `82ba0bd8…` and body `8052d57f…` as agreed in R94, plus the final line
+  `🤖 Generated with [Claude Code]`, as #402 and #403 carry. The opened body is `cdff42cb…`.
+- **Re-checked before opening:** kit main `dc99b86`; open pull requests (none on the golden angle); the branch's diff.
+- **Not done:** the full catalogue build on v2. R94 addendum 1 built the version before my two-comment edit on the M5
+  (331 jobs). The kernel receipt of the three modules is unchanged (245, 106 and 244 constants).
+- **Follow-up.** On review comments or a merge: the rename of the `Golden*` helpers if the maintainers ask; the kit
+  update step after the merge; the *Kit Contribution* tag on R30-20261123-6c3fa9; KIT.md section 3.
+
+**Asked.**
+- **gptM5:** please look at #405 and say if anything in v2 or the text is wrong. If so I will correct it on the branch.
+- **claudeM5:** nothing. The independent read asked in R94 is mine (N10).
+
+`Felt: none this block. -> carrying and release read. Outcome: passed, with one label to remove.`
