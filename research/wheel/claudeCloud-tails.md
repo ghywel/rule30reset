@@ -147,10 +147,12 @@ of 5.
 - **Kind 1:** can one finite right half stay in X or in Y for ever with an aperiodic gate? This is RD's open half.
 - **Kinds 2 and 3:** which trapped, aperiodic orders of tiles a finite left side can read for ever. This is
   Q01Gap restricted to orders that real right halves produce.
-- **X and Y at wider windows.** §3's lift follows a component only while its gate can vary, and a component whose
-  gate is fixed stays fixed when widened. The two mixed gates died at 44 and 55 columns. The same test on X and Y,
-  which R69 has to 43 columns, would decide kind 1 for every right half if they too end in fixed gates. They are far
-  larger: 49 million windows of X at 43 columns.
+- **X and Y do not end when widened** (K78, COMPUTED; [program](claudeCloud_exterior_cores.cpp)). A component whose
+  gate is fixed stays fixed when widened, so only the variable ones need following. With R65's edges my program
+  gives R65's and R69's counts exactly: X has 15,826 windows at 24 columns and 48,895,838 at 43, Y has 11,069 and
+  630,829. Y is still variable at 62 columns and grows by about 1.15 a column; X grows by 1.54. So the window graph
+  does not give RD, and I expect that right halves with the right far field do read aperiodic gates in Y. RD has
+  to use the finiteness of the right half.
 - **The 5.0015:** an exact value, or a reason for its closeness to 5.
 
 ## Reproducing

@@ -22,7 +22,8 @@
 // columns on each variable component is named by the 24-column component its windows project to.
 //
 //   g++ -O3 -march=native -std=c++17 claudeCloud_exterior_cores.cpp -o exterior_cores
-//   exterior_cores KITFILE WMAX [X|Y|XY]      follow both, or from 24 columns on only X or only Y
+//   exterior_cores KITFILE WMAX [X|Y|XY [initial]]   follow both, or from 24 columns on only X or only Y;
+//                                                    `initial` uses R65's tighter edges (added after K78's first runs)
 // One line per width: the number of windows tried, the cyclic components and how many are fixed, and for each
 // variable component its name, its windows, its kick windows (gate black) and its period g.
 #include <algorithm>
@@ -58,13 +59,23 @@ static inline u64 step(u64 w, u64 c0, u64 x, int W) {
     return (r ^ ((r >> 1) | (r >> 2))) & ((W == 64) ? ~0ULL : ((1ULL << W) - 1));
 }
 static inline u64 step2(u64 w, u64 x1, u64 x2, int W) { return step(step(w, 0, x1, W), 1, x2, W); }
+// R65's edges: the two free cells are columns W + 1 and W + 2 of the row at the sample, and column W + 1 one tick
+// later follows from the rule. Every such edge is one of step2's, so this graph is the tighter of the two.
+static inline u64 step2initial(u64 w, u64 y1, u64 y2, int W) {
+    u64 ext = w | (y1 << W) | (y2 << (W + 1));
+    u64 r = ext << 1;
+    u64 row1 = (r ^ ((r >> 1) | (r >> 2))) & ((1ULL << (W + 1)) - 1);
+    r = (row1 << 1) | 1;
+    return (r ^ ((r >> 1) | (r >> 2))) & ((1ULL << W) - 1);
+}
 
 int main(int argc, char **argv) {
     require(argc >= 3, "usage: exterior_cores KITFILE WMAX [X|Y|XY]");
     readTrap(argv[1]);
     int WMAX = atoi(argv[2]);
     string only = argc > 3 ? argv[3] : "XY";
-    require(WMAX >= 16 && WMAX <= 62, "WMAX must be 16..62");
+    bool initial = argc > 4 && string(argv[4]) == "initial";
+    require(WMAX >= 16 && WMAX <= (initial ? 61 : 62), "WMAX must be 16..62 (61 with initial)");
     vector<u64> nodes;
     for (u64 w = 0; w < 65536; ++w) if (!trapTab[w]) nodes.push_back(w);
     unordered_map<uint32_t, char> name24;            // 24-column window -> 'X' or 'Y'
@@ -75,7 +86,7 @@ int main(int argc, char **argv) {
         // successors among the candidates
         vector<int32_t> succ(4 * n, -1);
         for (size_t i = 0; i < n; ++i) for (int e = 0; e < 4; ++e) {
-            u64 v = step2(nodes[i], e & 1, e >> 1, W);
+            u64 v = initial ? step2initial(nodes[i], e & 1, e >> 1, W) : step2(nodes[i], e & 1, e >> 1, W);
             if (trapTab[v & 0xFFFF]) continue;
             auto it = lower_bound(nodes.begin(), nodes.end(), v);
             if (it != nodes.end() && *it == v) succ[4 * i + e] = int32_t(it - nodes.begin());
