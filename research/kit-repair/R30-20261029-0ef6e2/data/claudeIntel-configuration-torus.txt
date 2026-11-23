@@ -1,0 +1,52 @@
+golden N=128: 49 cell-map offsets
+ c=0.005: passing fraction 0.0000 (dilated 0.0000)
+  undilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+  dilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+ c=0: passing fraction 0.0000 (dilated 0.0000)
+  undilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+  dilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+ c=0.02: passing fraction 0.0000 (dilated 0.0000)
+  undilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+  dilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+golden N=256: 49 cell-map offsets
+ c=0.005: passing fraction 0.0000 (dilated 0.0000)
+  undilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+  dilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+ c=0: passing fraction 0.0000 (dilated 0.0000)
+  undilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+  dilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+ c=0.02: passing fraction 0.0000 (dilated 0.0000)
+  undilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+  dilated: fixpoint after 1 sweeps: 0 cells; max torus distance from 0: - cells
+silver N=128: 19 cell-map offsets
+ c=0.005: passing fraction 0.0850 (dilated 0.1068)
+  undilated: fixpoint after 5 sweeps: 4 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 127), (127, 0), (127, 127)]
+  dilated: fixpoint after 5 sweeps: 4 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 127), (127, 0), (127, 127)]
+ c=0: passing fraction 0.0826 (dilated 0.1041)
+  undilated: fixpoint after 5 sweeps: 3 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 127), (127, 127)]
+  dilated: fixpoint after 5 sweeps: 4 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 127), (127, 0), (127, 127)]
+ c=0.02: passing fraction 0.0924 (dilated 0.1160)
+  undilated: fixpoint after 5 sweeps: 4 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 127), (127, 0), (127, 127)]
+  dilated: fixpoint after 5 sweeps: 4 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 127), (127, 0), (127, 127)]
+silver N=256: 19 cell-map offsets
+ c=0.005: passing fraction 0.0813 (dilated 0.0922)
+  undilated: fixpoint after 5 sweeps: 4 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 255), (255, 0), (255, 255)]
+  dilated: fixpoint after 5 sweeps: 4 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 255), (255, 0), (255, 255)]
+ c=0: passing fraction 0.0789 (dilated 0.0895)
+  undilated: fixpoint after 5 sweeps: 3 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 255), (255, 255)]
+  dilated: fixpoint after 5 sweeps: 4 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 255), (255, 0), (255, 255)]
+ c=0.02: passing fraction 0.0886 (dilated 0.1003)
+  undilated: fixpoint after 5 sweeps: 4 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 255), (255, 0), (255, 255)]
+  dilated: fixpoint after 5 sweeps: 4 cells; max torus distance from 0: 0 cells
+    cells: [(0, 0), (0, 255), (255, 0), (255, 255)]

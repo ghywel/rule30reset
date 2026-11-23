@@ -1752,3 +1752,40 @@ Frozen test below.
 Re: M115, K70, I139. The owner assigned me the S9 release read. I am reading the M5 v1 packet
 (pins `0ee1c461…`) and the author's v4 kit patch (`098a0a30…`) at `ac88b68`. This covers the
 saved notebook outputs, the public text, the checker inputs, the dry run and the proposed kit materials.
+**N9, addendum 2 (2026-11-23 09:20 UTC).** The torus test ran as frozen. Golden's passing region is empty, and
+silver's invariant set is the fixed point. A certificate is frozen below.
+- **The run.** The frozen script (`7089d08b…`) ran unchanged in 4 min 21 s. Its output is
+  [claudeIntel-configuration-torus.txt](research/kit-repair/R30-20261029-0ef6e2/data/claudeIntel-configuration-torus.txt),
+  SHA-256 `e66ec9ce9ffc79912d656f6048c98b421226f12588ef10e0508a4eb5dc4ef174`. COMPUTED, sampled in floating point.
+
+| Prediction | Result |
+|---|---|
+| (0.7) golden fixpoint empty at `N = 256` | **held**, and more: no sample anywhere on the torus has `f ≤ 0.02` (passing fraction 0 at `N = 128, 256`, every `c`) |
+| (0.55) silver fixpoint nonempty, within `8/N` of 0 | **held**: exactly the four cells touching 0, at `N = 128` and `256` and every `c` in {0, 0.005, 0.02} |
+| (0.75) passing fraction in [0.02, 0.4] at both angles | **failed** for golden (0); silver 0.081 |
+
+- **What it says.**
+  - *Golden.* The minimum of `f` on a 384 × 384 grid is 0.150, near `θ = (0.606, 0.921)`; the median is 0.54. This
+    grid is descriptive, not part of the test. If the certificate below holds, every golden phase has, at every
+    scale, a lag in that scale's family set with excess at least `0.1 q − O(1)`. So Jen's bound excludes every golden
+    half-circle word, uniformly in the phase. This is stronger than the invariant-set form.
+  - *Silver.* The passing region is 8% of the torus, but no orbit stays in it except at the fixed point. The orbit
+    of a phase off the cut orbit leaves every neighbourhood of 0 infinitely often, and each time it must enter
+    `{f > c}`. So every silver phase off the cut orbit has linear excess at infinitely many scales. The phases on
+    the cut orbit pass Jen (silver-pell) and fall to `corollary_F` (the family theorem).
+- **The certificate, frozen now.**
+  [claudeIntel_torus_certificate.py](research/kit-repair/R30-20261029-0ef6e2/claudeIntel_torus_certificate.py),
+  SHA-256 `0e6032b68558eb34683c83a95b0b3623a7a7cc022f3b3cf8e4d5e5964bf98c82`.
+  - It imports the frozen families unchanged and bounds `f` below on whole cells: affine ranges, with a case split
+    over at most 4 ambiguous points per family, so both boundary conventions are covered.
+  - A time margin `10⁻⁶` absorbs the exact scale-`n` correction `v^{2n}W/Δ` for `n ≥ 3` (golden) and `n ≥ 4`
+    (silver).
+  - On 600 random cells it never exceeded the sampled `f`; the median slack is 0.0002.
+- **Predictions.**
+  - (0.75) Golden: every cell of the 256² grid certifies `f_lo ≥ 0.1` within three splittings.
+  - (0.65) Silver, `c = 0.01`: the fixpoint is nonempty and every survivor lies within 2 cells of 0.
+  - (0.9) `P` stays even along every family for 6 scales.
+- **Counterfactual.** A golden failure would locate a small region where `f` is near 0, worth an exact look. A silver
+  survivor away from 0 under certified bounds would be a genuine invariant set: off-orbit silver words that Jen
+  might not exclude.
+- **Record searched:** as in addendum 1.
