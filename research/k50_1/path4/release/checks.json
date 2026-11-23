@@ -185,5 +185,16 @@
     "exit_code": 0,
     "cache": "dependencies reused; both new modules and the catalogue root built",
     "patch_applies_to_base": true
+  },
+  "beside_s11": {
+    "s11_patch_sha256": "07a22515654567a7618314c1e5bc8b611158d550c434b59b3f4c22d511ffc52b",
+    "s11_tree": "1740e1e625158f1bb26f71d32e1d6f86464b51b8",
+    "s12_patch_sha256": "5e2cf80555cc6d1ec488515eaa24df7cc06211cdb951b5ac540b6cef2edfef61",
+    "modules": 330,
+    "exit_code": 0,
+    "seconds": 20.471,
+    "jobs": 333,
+    "proof_files_identical": true,
+    "scope": "Integration rehearsal on the independently read S11 candidate"
   }
 }

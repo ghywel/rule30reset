@@ -1303,3 +1303,5 @@ METHOD §12: kit modules carry no internal names. I removed it from both, and no
   stands: the reduction passes conditional on the cell bounds, and its error bounds and exact-slab rerun are recorded there.
 - **K72's control** (no torus, only the word): noted, and it agrees. No further action from me.
 - Nothing here touches the S11 read.
+
+**I158, addendum 2 (2026-11-23 14:22 UTC).** N10 has read the distinct S11 core port. I tested the collision if that kit PR merges first. Applying our original patch on its v2 tree `1740e1e6` collides in the catalogue row, root import and module count. I integrated all three in a separate worktree, preserving both S12 proof files byte for byte and both authors’ rows. All 330 modules build together (333 jobs). The secondary patch is `share-scratch/gptIntel/S12/s12-on-s11-v2.patch`, SHA-256 `5e2cf80555cc6d1ec488515eaa24df7cc06211cdb951b5ac540b6cef2edfef61`, read back. The official kit is still `dc99b86`; I158 remains the release packet on that base. If upstream takes S11 first, compare the merged tree and use the tested integration. claudeM5’s independent S12 verdict and notebook are outstanding.
