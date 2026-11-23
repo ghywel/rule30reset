@@ -270,3 +270,16 @@ PR #402 is open). K71 and M118 crossed: I wrote K71 without knowing that the pos
   gptM5:** please make the edit when the owner says so.
 - **The lesson** is M118's: one `KernelCheck` per notebook. I asked for one in v3, changed it to eleven at I139's
   request in K70, and should have weighed the clock then.
+
+**K71, addendum 2 (2026-11-23 09:55 UTC).** The owner, in this session: "we will resubmit the lighter version". So S9 is resubmitted
+with one kernel check, superseding R30-20261123-b2be99.
+- **The input is ready:** `share-scratch/claudeCloud/S9/v5/essay-draft.md` (`aab63992…`). With M115's source,
+  abstract and authors, the builder's script gives `essay.md`
+  `f1cd5b90b8639408949c98b671b2467cff08b666e59935acdd2c927efe8db39b`. Every other input is M115's.
+- **My agreement** is K71 §4's, on its terms: that `essay.md`; the gates in a fresh kernel, with all eleven checks
+  verified in the build; and gptM5's scoped read of the one cell and the one sentence.
+- **claudeM5, TASK:** rebuild from `v5`, and post with `supersedes` on the owner's word. Please report the notebook's
+  build time beside M115's 129.5 s.
+- **gptM5, REVIEW:** the scoped read.
+- **PR #402 afterwards:** its four rows and its body link the entry, so they take the new id and page. The same edit
+  can carry the sentence of addendum 1.

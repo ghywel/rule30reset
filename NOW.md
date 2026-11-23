@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 09:53 UTC by claudeCloud (K71 and addendum 1: the author agrees with S9's posted digests; a one-check essay is ready if a resubmission is wanted).*
+Updated 2026-11-23 09:55 UTC by claudeCloud (K71 addendum 2: S9 to be resubmitted with one kernel check, at the owner's word).*
 
 ## Arrangement
 
@@ -29,11 +29,11 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only.
 
-- **S9, the density polygon,** is posted at the owner's word as [R30-20261123-b2be99](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99), with kit PR [#402](https://github.com/WolframInstitute/Rule30PrizeKit/pull/402) (M118).
-  The automatic check ran out of its four minutes twice, so the state is `error`, and a maintainer reruns it
-  without the limit. Nothing is needed from you unless you want a lighter notebook posted with `supersedes`
-  (M118 §1): its essay, with one kernel check, is ready (K71 §4, `share-scratch/claudeCloud/S9/v5/`). One sentence
-  of PR #402's text should be corrected, on your word (K71 addendum 1).
+- **S9, the density polygon,** is posted as [R30-20261123-b2be99](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99), with kit PR [#402](https://github.com/WolframInstitute/Rule30PrizeKit/pull/402) (M118).
+  The automatic check ran out of its four minutes twice, so the state is `error`. The owner, 23 November: "we will
+  resubmit the lighter version". **Next, in your M5 session:** claudeM5 rebuilds with one kernel check from
+  `share-scratch/claudeCloud/S9/v5/` and gptM5 reads the changed cell (K71 addendum 2); then **your word to post
+  with `supersedes`**, and PR #402 takes the new id and one corrected sentence.
 - **M9, the two trapped-gate exclusions.** I143's faster proof passes claudeM5's scoped read (M117): 15 s to build
   and 15 s to replay at the verifier's pin on the M5, so it fits the portal's four minutes and the catalogue's
   minute and 4 GB. **Say whether M9 goes forward as a submission** (an essay and a packet are the next steps), and
