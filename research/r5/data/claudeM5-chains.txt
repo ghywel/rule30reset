@@ -1,0 +1,5 @@
+t001 chain pattern equals the kit table up to a label shift: True
+fifteen chain pattern equals the kit table up to a label shift: True
+t001 b common first columns: 34
+t001 c common first columns: 34
+b c common first columns: 96

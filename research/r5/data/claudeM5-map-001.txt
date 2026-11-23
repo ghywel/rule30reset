@@ -1,0 +1,90 @@
+word 001 width 14 limit windows 4080 ( 1347 1369 1364 )
+   components with a cycle: 3
+     size 3838 period 3 entered CLOSED
+     size 3 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 15 limit windows 6568 ( 2183 2185 2200 )
+   components with a cycle: 3
+     size 6252 period 3 entered CLOSED
+     size 5 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 16 limit windows 10739 ( 3574 3573 3592 )
+   components with a cycle: 5
+     size 7534 period 3 entered CLOSED
+     size 477 period 3 entered 
+     size 60 period 39 entered 
+     size 5 period 3 NOT ENTERED by another component 
+     size 4 period 3 NOT ENTERED by another component 
+word 001 width 17 limit windows 16860 ( 5635 5608 5617 )
+   components with a cycle: 4
+     size 12565 period 3 entered CLOSED
+     size 444 period 3 entered 
+     size 4 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 18 limit windows 27835 ( 9276 9272 9287 )
+   components with a cycle: 4
+     size 20153 period 3 entered CLOSED
+     size 244 period 3 entered 
+     size 3 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 19 limit windows 44875 ( 14956 14938 14981 )
+   components with a cycle: 4
+     size 32449 period 3 entered CLOSED
+     size 293 period 3 entered 
+     size 5 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 20 limit windows 70154 ( 23366 23388 23400 )
+   components with a cycle: 5
+     size 50006 period 3 entered CLOSED
+     size 350 period 3 NOT ENTERED by another component 
+     size 21 period 18 entered 
+     size 5 period 3 NOT ENTERED by another component 
+     size 4 period 3 NOT ENTERED by another component 
+word 001 width 21 limit windows 111511 ( 37189 37157 37165 )
+   components with a cycle: 6
+     size 79798 period 3 entered CLOSED
+     size 98 period 15 NOT ENTERED by another component 
+     size 73 period 15 entered 
+     size 26 period 18 NOT ENTERED by another component 
+     size 4 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 22 limit windows 171589 ( 57222 57176 57191 )
+   components with a cycle: 6
+     size 123382 period 3 entered CLOSED
+     size 113 period 15 NOT ENTERED by another component 
+     size 63 period 15 entered 
+     size 23 period 15 entered 
+     size 3 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 23 limit windows 269746 ( 89975 89891 89880 )
+   components with a cycle: 6
+     size 196963 period 3 entered CLOSED
+     size 151 period 15 NOT ENTERED by another component 
+     size 59 period 15 entered 
+     size 31 period 15 entered 
+     size 5 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 24 limit windows 418070 ( 139325 139368 139377 )
+   components with a cycle: 6
+     size 308607 period 3 entered CLOSED
+     size 205 period 15 NOT ENTERED by another component 
+     size 76 period 30 NOT ENTERED by another component 
+     size 43 period 15 entered 
+     size 5 period 3 NOT ENTERED by another component 
+     size 4 period 3 NOT ENTERED by another component 
+word 001 width 25 limit windows 644343 ( 214717 214785 214841 )
+   components with a cycle: 6
+     size 489889 period 3 entered CLOSED
+     size 258 period 15 NOT ENTERED by another component 
+     size 107 period 30 NOT ENTERED by another component 
+     size 65 period 15 entered 
+     size 4 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 26 limit windows 991371 ( 330356 330474 330541 )
+   components with a cycle: 6
+     size 770767 period 3 entered CLOSED
+     size 235 period 15 NOT ENTERED by another component 
+     size 159 period 30 NOT ENTERED by another component 
+     size 91 period 15 entered 
+     size 3 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 

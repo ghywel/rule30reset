@@ -1,0 +1,3 @@
+stretches of at least 42 ticks with the front at THRESHOLD or more (242 runs, 202 distinct histories; rungs exc 240 THRESHOLD)
+threshold 14: broke 7572, mean 431, median 294, longest 3234 3661 3671; end labels 20: 4727, 9: 2845. Ended in entry: 242, mean 1219, longest 7400
+threshold 35: broke 15, mean 733, median 288, longest 1653 1787 2010; end label 2: 15. Ended in entry: 242, mean 635, longest 6950

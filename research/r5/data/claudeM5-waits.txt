@@ -1,0 +1,16 @@
+cuts of the ether, N = 0..240, from departure to t001 (202 distinct histories): n 202, mean 23096 ± 1439, median 17242, greatest 117464
+   mean excess over 0: 23096 ± 1439 (n 202)
+random right halves of 64 cells, random phase, seed 20261123: n 60000, mean 22697 ± 88, median 16108, greatest 220261
+   mean excess over 0: 22697 ± 88 (n 60000)
+   mean excess over 1260: 22030 ± 90 (n 58419)
+   mean excess over 5000: 21691 ± 97 (n 49974)
+   mean excess over 10000: 21624 ± 108 (n 39790)
+fair coin in column 48, random start, seed 20261123: n 60000, mean 25708 ± 103, median 18052, greatest 260530
+   mean excess over 0: 25708 ± 103 (n 60000)
+   mean excess over 1260: 25234 ± 105 (n 58164)
+   mean excess over 5000: 25294 ± 113 (n 50037)
+   mean excess over 10000: 25346 ± 124 (n 40988)
+last tick with the front at column 14 or less, in the 6,000 ticks before entry: labels {6: 198, 12: 2}, not seen in 2; lag to entry median 187, greatest 5803
+last tick with the front at column 17 or less, in the 6,000 ticks before entry: labels {15: 200}, not seen in 2; lag to entry median 157, greatest 5773
+front paths of 22 ticks up to the last tick at 17 or less: 13 distinct, commonest 132; the 22 ticks after: 31 distinct, commonest 35
+rows at the last tick with the front at 14 or less, for the 169 cuts that enter by tick 40,000 (exploratory script, not kept): 167 have label 6 and front 14; their first 24 cells take 14 values, and one value is shared by 101 of them

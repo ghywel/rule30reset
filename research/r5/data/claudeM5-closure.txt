@@ -1,0 +1,13 @@
+w 14 full backward closure 49152 of 49152 | ether windows inside 18 of 18 | white window inside at 3 of 3 phases
+w 15 full backward closure 98304 of 98304 | ether windows inside 18 of 18 | white window inside at 3 of 3 phases
+w 16 full backward closure 17126 of 196608 | ether windows inside 9 of 18 | white window inside at 0 of 3 phases
+w 17 full backward closure 25078 of 393216 | ether windows inside 9 of 18 | white window inside at 0 of 3 phases
+w 18 full backward closure 27739 of 786432 | ether windows inside 9 of 18 | white window inside at 0 of 3 phases
+w 19 full backward closure 36519 of 1572864 | ether windows inside 9 of 18 | white window inside at 0 of 3 phases
+w 20 full backward closure 54576 of 3145728 | ether windows inside 0 of 18 | white window inside at 0 of 3 phases
+w 21 full backward closure 48460 of 6291456 | ether windows inside 0 of 18 | white window inside at 0 of 3 phases
+w 22 full backward closure 61322 of 12582912 | ether windows inside 0 of 18 | white window inside at 0 of 3 phases
+width 16 closure 17126 ether windows inside 9 white inside 0 forward control failures 0
+   sha256 of the sorted set 52283626a0fa33b7
+width 20 closure 54576 ether windows inside 0 white inside 0 forward control failures 0
+   sha256 of the sorted set 42a880e1db1cb5cb

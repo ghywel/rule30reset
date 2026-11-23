@@ -1,0 +1,76 @@
+word 011 width 14 limit windows 5163 ( 1713 1732 1718 )
+   components with a cycle: 4
+     size 2275 period 3 entered CLOSED
+     size 227 period 3 entered 
+     size 85 period 3 entered 
+     size 4 period 3 NOT ENTERED by another component 
+word 011 width 15 limit windows 8599 ( 2853 2879 2867 )
+   components with a cycle: 5
+     size 3590 period 3 entered CLOSED
+     size 238 period 3 entered 
+     size 107 period 3 entered 
+     size 11 period 9 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 011 width 16 limit windows 13887 ( 4611 4640 4636 )
+   components with a cycle: 5
+     size 5627 period 3 entered CLOSED
+     size 102 period 3 entered 
+     size 34 period 18 entered 
+     size 12 period 9 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 011 width 17 limit windows 21310 ( 7080 7109 7121 )
+   components with a cycle: 5
+     size 9454 period 3 entered CLOSED
+     size 30 period 18 NOT ENTERED by another component 
+     size 20 period 18 entered 
+     size 11 period 9 NOT ENTERED by another component 
+     size 5 period 3 NOT ENTERED by another component 
+word 011 width 18 limit windows 29615 ( 9830 9889 9896 )
+   components with a cycle: 6
+     size 15401 period 3 entered CLOSED
+     size 26 period 18 NOT ENTERED by another component 
+     size 21 period 18 NOT ENTERED by another component 
+     size 10 period 9 NOT ENTERED by another component 
+     size 5 period 3 entered 
+     size 4 period 3 NOT ENTERED by another component 
+word 011 width 19 limit windows 41590 ( 13848 13851 13891 )
+   components with a cycle: 5
+     size 24677 period 3 entered CLOSED
+     size 33 period 18 NOT ENTERED by another component 
+     size 11 period 9 NOT ENTERED by another component 
+     size 4 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 011 width 20 limit windows 63267 ( 21070 21065 21132 )
+   components with a cycle: 5
+     size 40639 period 3 entered CLOSED
+     size 41 period 18 NOT ENTERED by another component 
+     size 14 period 9 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 011 width 21 limit windows 91107 ( 30362 30350 30395 )
+   components with a cycle: 5
+     size 65182 period 3 entered CLOSED
+     size 55 period 18 NOT ENTERED by another component 
+     size 11 period 9 NOT ENTERED by another component 
+     size 5 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 011 width 22 limit windows 146022 ( 48713 48649 48660 )
+   components with a cycle: 5
+     size 104931 period 3 entered CLOSED
+     size 46 period 18 NOT ENTERED by another component 
+     size 9 period 9 NOT ENTERED by another component 
+     size 5 period 3 NOT ENTERED by another component 
+     size 4 period 3 NOT ENTERED by another component 
+word 011 width 23 limit windows 228852 ( 76338 76230 76284 )
+   components with a cycle: 5
+     size 170440 period 3 entered CLOSED
+     size 65 period 18 NOT ENTERED by another component 
+     size 9 period 9 NOT ENTERED by another component 
+     size 4 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 011 width 24 limit windows 346374 ( 115630 115333 115411 )
+   components with a cycle: 4
+     size 275183 period 3 entered CLOSED
+     size 63 period 18 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 

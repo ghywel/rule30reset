@@ -1,0 +1,9 @@
+limit 22 [57222, 57176, 57191]
+edges leaving the limit: 0
+cyclic components [123382, 113, 63, 23, 3, 3]
+size 123382 example phase 0 ...#.#.####.##..#.#### reaches cyclic components of sizes [] | windows reachable 123382
+size 113 example phase 0 ...#..#.##.#..##..#.#. reaches cyclic components of sizes [23, 63, 123382] | windows reachable 168232
+size 63 example phase 0 ..##.....##..#.......# reaches cyclic components of sizes [123382] | windows reachable 166917
+size 23 example phase 0 ...#..#.##.#..##.###.# reaches cyclic components of sizes [123382] | windows reachable 124359
+size 3 example phase 0 ..#..#####....#..##### reaches cyclic components of sizes [123382] | windows reachable 124784
+size 3 example phase 0 .#..#####....#..#####. reaches cyclic components of sizes [123382] | windows reachable 126173

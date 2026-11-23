@@ -1,0 +1,26 @@
+{"trap": "fifteen", "off_at": 0, "entry": 30, "by_label": "SSSSSSSSSSSSSSS"}
+{"trap": "fifteen", "off_at": 5, "entry": 35, "by_label": "SSS---SSS----SS"}
+{"trap": "fifteen", "off_at": 10, "entry": 40, "by_label": "-SSS--------S--"}
+{"trap": "fifteen", "off_at": 15, "entry": 45, "by_label": "---------------"}
+{"trap": "fifteen", "off_at": 15, "entry": 75, "by_label": "-------------S-"}
+{"trap": "fifteen", "off_at": 20, "entry": 40, "by_label": "---------------"}
+{"trap": "fifteen", "off_at": 20, "entry": 60, "by_label": "---------------"}
+{"trap": "fifteen", "off_at": 20, "entry": 80, "by_label": "---------------"}
+{"trap": "fifteen", "off_at": 30, "entry": 70, "by_label": "---------------"}
+{"trap": "fifteen", "off_at": 40, "entry": 80, "by_label": "---------------"}
+{"trap": "fifteen", "l0": 0, "ticks": 30, "start": "front1", "result": "1101010000110101101110010001000000001011100000110111100111000011001100101110011000"}
+{"trap": "fifteen", "l0": 0, "ticks": 90, "start": "ether12", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 3, "ticks": 90, "start": "ether12", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 6, "ticks": 90, "start": "ether12", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 9, "ticks": 90, "start": "ether12", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 12, "ticks": 90, "start": "ether12", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 0, "ticks": 130, "start": "ether24", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 3, "ticks": 130, "start": "ether24", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 6, "ticks": 130, "start": "ether24", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 9, "ticks": 130, "start": "ether24", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 12, "ticks": 130, "start": "ether24", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 0, "ticks": 190, "start": "ether48", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 3, "ticks": 190, "start": "ether48", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 6, "ticks": 190, "start": "ether48", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 9, "ticks": 190, "start": "ether48", "result": "UNSAT"}
+{"trap": "fifteen", "l0": 12, "ticks": 190, "start": "ether48", "result": "UNSAT"}

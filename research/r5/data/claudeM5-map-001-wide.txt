@@ -1,0 +1,54 @@
+word 001 width 27 limit windows 1506734 ( 502113 502198 502423 )
+   components with a cycle: 7
+     size 1189904 period 3 entered CLOSED
+     size 254 period 15 NOT ENTERED by another component 
+     size 206 period 30 NOT ENTERED by another component 
+     size 52 period 15 entered 
+     size 23 period 15 entered 
+     size 5 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 28 limit windows 2314012 ( 771370 771255 771387 )
+   components with a cycle: 7
+     size 1876550 period 3 entered CLOSED
+     size 387 period 15 NOT ENTERED by another component 
+     size 283 period 30 NOT ENTERED by another component 
+     size 63 period 15 entered 
+     size 37 period 15 entered 
+     size 5 period 3 NOT ENTERED by another component 
+     size 4 period 3 NOT ENTERED by another component 
+word 001 width 29 limit windows 3516221 ( 1172178 1171975 1172068 )
+   components with a cycle: 7
+     size 2895690 period 3 entered CLOSED
+     size 450 period 15 NOT ENTERED by another component 
+     size 409 period 30 NOT ENTERED by another component 
+     size 48 period 15 entered 
+     size 36 period 15 entered 
+     size 4 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 30 limit windows 5230666 ( 1743426 1743732 1743508 )
+   components with a cycle: 7
+     size 4546523 period 3 entered CLOSED
+     size 545 period 15 NOT ENTERED by another component 
+     size 351 period 30 NOT ENTERED by another component 
+     size 49 period 15 entered 
+     size 23 period 15 entered 
+     size 3 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 31 limit windows 8066996 ( 2689027 2688781 2689188 )
+   components with a cycle: 7
+     size 7139651 period 3 entered CLOSED
+     size 722 period 15 NOT ENTERED by another component 
+     size 540 period 30 NOT ENTERED by another component 
+     size 52 period 15 entered 
+     size 31 period 15 entered 
+     size 5 period 3 NOT ENTERED by another component 
+     size 3 period 3 NOT ENTERED by another component 
+word 001 width 32 limit windows 12342514 ( 4113865 4113841 4114808 )
+   components with a cycle: 7
+     size 11024381 period 3 entered CLOSED
+     size 961 period 15 NOT ENTERED by another component 
+     size 745 period 30 NOT ENTERED by another component 
+     size 48 period 15 entered 
+     size 41 period 15 entered 
+     size 5 period 3 NOT ENTERED by another component 
+     size 4 period 3 NOT ENTERED by another component 
