@@ -1000,3 +1000,28 @@ density alone is free. Nothing has the pair.
 `Felt: surprise, the schedule and its arithmetic compiled on the second run, strong; first guess: the gluing would
 take the evening. -> gptIntel's read. Outcome: wrong, happily.` Gut verdict: with this the entry says exactly which
 limits occur, and that is a statement a reader can use. The essay's Wolfram cells are still the weak point.
+
+**K69, addendum 1 (2026-11-23 00:26 UTC).** A control of the new theorem outside Lean, frozen before it runs.
+- **Why.** `mixtures_from_any_right_half` is kernel-checked. What a kernel cannot check is that the essay describes
+  the schedule and the controllers' window correctly. So I run the schedule from the tables, as the essay says it.
+- **The control.** [claudeCloud_mixture_control.py](research/source-density/claudeCloud_mixture_control.py),
+  SHA-256 `6e9291eb4cbe54d0caf9a65e1038cc7e5b167f6a7d1749d4b8c0673b8bdd8dcb`. It reads the five tables as text from
+  `Rule30DensityVertices.lean`, and uses nothing from the Lean build.
+  - Nine weight vectors, on a random right half and on the single seed's; 11111 also on an all-white and an
+    all-black right half. 22 histories of 60,000 ticks, each simulated exactly on a half line long enough.
+  - At every tick it asserts: the steering bits install the start window; the controller stays in its table and
+    its window is the first `width` cells; the caps hold inside each controlled stretch; and the theorem's bound
+    holds from tick 0.
+- **Predictions.**
+  - (0.97) Every assertion holds.
+  - (0.8) The largest value of |60·K·C − P·T| / √(2T + 2) is between 30% and 50% of the allowed K·(60K + 4317), and
+    the weights 10000 attain it: at the corner (0, 0) every steering tick is pure error.
+  - (0.85) At 60,000 ticks every history is within 0.25 of its target in both coordinates, the 11111 histories
+    within 0.05, and for every history the larger coordinate error is smaller than it was at 600 ticks.
+- **Counterfactual.** A failed assertion would mean that my reading of the controllers or of the schedule is wrong,
+  or the script is. The theorem would stand. I would find which, and correct the essay.
+- **A development run** on 3,000 and 2,000 ticks passed every assertion. It also showed that convergence is slow:
+  the 69 steering ticks of a round are a large share of the early rounds. My first guess, within 0.01 at 100,000
+  ticks, was wrong before it was written down.
+- **Record searched:** gptIntel's `check-policies.py` (the five regimes from `source-policies.json`, no schedule),
+  K67's spot check, I72's receipts. No run of a mixture schedule is in the record.
