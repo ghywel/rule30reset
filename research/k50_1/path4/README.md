@@ -19,13 +19,13 @@ Lowry’s entry theorem implies the original I49 Boolean check at `m=80, J=47` d
 | 78 | 4 | 7 |
 | 77 | 5 | 11 |
 
-The 77-cell tree is checked in Lean. Its forks cover both values of each unprescribed cell. The integer search returned no tree of depth through eight for lengths 64–76 with this leaf test at the same tick and phase. The earlier I63–I68 work established the physical minimum of **64 contiguous cells**, or **63 chosen cells** by omitting either site 57 or site 62 from the first 64. I68 includes the kernel proofs for both choices. [Finite search](find_splits.py) · [Lower bounds and witnesses](../Rule30Age364Observations.lean) · [I63, I64 and I68 in the archived ledger](../../../archive/ledgers/CHAT-LEDGER.6.md)
+The 77-cell tree is checked in Lean. Its forks cover both values of each unprescribed cell. The integer search and a separate run using Lean’s leaf checker agree on every row. Neither found a tree of depth through eight for lengths 64–76 with this leaf test at the same tick and phase. The earlier I63–I68 work established the physical minimum of **64 contiguous cells**, or **63 chosen cells** by omitting either site 57 or site 62 from the first 64. I68 includes the kernel proofs for both choices. [Integer search](find_splits.py) · [Lean depth check](SplitDepths.lean) · [Lower bounds and witnesses](../Rule30Age364Observations.lean) · [I63, I64 and I68 in the archived ledger](../../../archive/ledgers/CHAT-LEDGER.6.md)
 
 For the genuine singleton, any age `A` presenting those 77 cells must disagree with black-first alternation by absolute tick `2A+190`. At age 364 the actual centre already disagrees at 366. The general theorem allows different certified prefixes at different ages. If such ages with a black centre occur arbitrarily late, an eventual period-two centre is impossible. Establishing those arbitrarily late occurrences remains open. [Singleton consequences](../Rule30Lock7CertificateCenter.lean)
 
 ## Reproducing the checks
 
-Use a kit worktree at `60799e80bdc7bc8c57bf77f8d6c3ec0e9ec4bad4` containing Lowry’s git object `0aa79befcce1b525482ada70a48d20e8afa486cc`. From the research repository, run the following with paths to that kit and a separate build directory. The replay uses the exact source from Lowry’s git object, builds the research modules, runs the kit’s own `Check.lean`, and writes the full JSON receipts into the build directory.
+Use a scratch kit worktree at `60799e80bdc7bc8c57bf77f8d6c3ec0e9ec4bad4` containing Lowry’s git object `0aa79befcce1b525482ada70a48d20e8afa486cc`. From the research repository, run the following with paths to that kit and a separate build directory. The replay reads the exact source from Lowry’s git object, writes its compiled module beside the other kit modules in the scratch worktree’s Lake cache, and runs the kit’s own `Check.lean`. The research objects and full JSON receipts go in the separate build directory.
 
 ```text
 python research/k50_1/path4/replay.py <kit-worktree> <build-directory>
@@ -33,3 +33,5 @@ python research/k50_1/path4/find_splits.py <kit-worktree>
 ```
 
 The original five-headline I52 packet uses portal pin `5fb5915`. Its 29-cell positive case and the 28-cell completion entering the ordinary trap at tick 83 distinguish eventual entry from a transient miss. Its fresh author replay agreed with I58 on all five headlines and 248 constants. I148 requested an independent read from claudeM5. [I52 and I58 in the archived ledger](../../../archive/ledgers/CHAT-LEDGER.6.md)
+
+On kit `60799e8`, stock replay passed all 18 research headlines and Lowry’s six headlines with zero new axioms. The family module alone took 21.242 s to compile and 23.776 s to replay with its dependencies built. The receipt records the separate dependency builds, the exact source hashes and the shared-store evidence packet. [Replay receipts](receipts.json)

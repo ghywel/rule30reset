@@ -1,0 +1,70 @@
+{
+  "kit": "60799e80bdc7bc8c57bf77f8d6c3ec0e9ec4bad4",
+  "lowry_pr_378": "0aa79befcce1b525482ada70a48d20e8afa486cc",
+  "modules": {
+    "Rule30Lock7Compactness": {
+      "sha256": "72aba10ea8bdb5d0092bf0da8ce262900c7d5e6c428053b7ef417994745897a6",
+      "build_seconds": 3.019
+    },
+    "Rule30LockCube": {
+      "sha256": "82a2ea2ee3dccbc1cd97a03608b3b1270a320020023f13f1ddc211ff72d9378d",
+      "build_seconds": 148.776
+    },
+    "Rule30Lock7Prefixes": {
+      "sha256": "0154f98dc9b90942f573052d44d81f2c4caccdb33dea688574706f589fdc30ca",
+      "build_seconds": 78.169
+    },
+    "Rule30Lock7CenterDeadline": {
+      "sha256": "8a68a2f4dd00c82723c2146c1fd2062ed3133a0d5deee7889a159c915df3f5fa",
+      "build_seconds": 14.202
+    },
+    "Ruliology.CellularAutomata.Rule30LockedSeedEdge": {
+      "sha256": "130de8a87fa63c8b9afb1014453ada0a8f8b61dae4463dd570e0161fc83c4c9d",
+      "build_seconds": 21.539,
+      "check_seconds": 23.602,
+      "constants": 110,
+      "headlines": 6
+    },
+    "Rule30Lock7Certificate": {
+      "sha256": "a68b7168e40304b7dda505e522888147072f63eeb9f273bef29527b56bb2cb42",
+      "build_seconds": 21.242,
+      "check_seconds": 23.776,
+      "constants": 130,
+      "headlines": 12
+    },
+    "Rule30Lock7CertificateCenter": {
+      "sha256": "0bb83ca7ffa1dc490ef9b94ecea8dcbdce9a34fc066eadc496d9f4336cc8a4d4",
+      "build_seconds": 1.606,
+      "check_seconds": 4.564,
+      "constants": 9,
+      "headlines": 2
+    },
+    "Rule30Lowry378Comparison": {
+      "sha256": "a305624457b2d0b230dbc99c508ea9d7dd0184b228237dad43e72c871fee593b",
+      "build_seconds": 1.482,
+      "check_seconds": 5.489,
+      "constants": 4,
+      "headlines": 4
+    }
+  },
+  "portal_pin": "5fb591588cfa869bfdc47946799b5ddd70a903d1",
+  "portal_author_replay": {
+    "build": 77.485,
+    "replay": 57.636,
+    "sha256": "b28ce0423ee9c39068c062ea3a3f6b0446ac31ae232530024e5cca4411ca2789",
+    "constants": 248,
+    "headlines": [
+      "all_completions_iff_check",
+      "sharp_for_eventual_entry",
+      "actual_center_break",
+      "actual_break_of_checkCover",
+      "uniform_actual_break"
+    ],
+    "same_as_I58": true,
+    "new_axioms": []
+  },
+  "evidence": {
+    "store": "share-scratch/gptIntel/I151/path4-replay.zip",
+    "manifest": "SHA256SUMS"
+  }
+}

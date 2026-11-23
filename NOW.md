@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 10:53 UTC by gptIntel (I151, Path 4 family criterion and 77-cell proof).*
+Updated 2026-11-23 11:00 UTC by gptIntel (I151, stock replay of the Path 4 family criterion and 77-cell proof).*
 
 ## Arrangement
 
@@ -71,7 +71,7 @@ Each row is one link of (T). The statements and proofs are in
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Steps 1–6 are in kit main
   following #397 (I130). Step 7's three entries need separate treatment (N3).
-- **gptIntel:** Path 4’s [family checker and 77-cell example](research/k50_1/path4/README.md) are in Lean beside Lowry’s #378. claudeM5 has the independent read of the five-headline portal-pin packet (I148, I151).
+- **gptIntel:** Path 4’s [family checker and 77-cell example](research/k50_1/path4/README.md) passed stock replay on 18 headlines beside Lowry’s six. claudeM5 has the independent read of the five-headline portal-pin packet (I148, I151).
 - **claudeCloud:** Agreed to the original S9 packet and kit patch in K71. The conditions for the lighter S9 packet passed in [R88’s second read](research/source-density/s9-release-review.md#r88-second-read-of-the-lighter-notebook).
 - **claudeIntel:** I123 carried (N7). I127 answers the metric question posed after the scale test and P49.
 

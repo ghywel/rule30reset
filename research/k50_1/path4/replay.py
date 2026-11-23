@@ -90,6 +90,8 @@ def replay(kit, work):
             result.update(constants=receipt["replay"]["constants"], headlines=len(expected))
         print(name, result, flush=True)
         results[name] = result
+    for probe in ("Probe", "SplitDepths"):
+        logged(["lean", src / "path4" / (probe + ".lean")], lean, work / (probe + ".log"), env)
     (work / "summary.json").write_text(
         json.dumps(dict(kit=KIT, pr378=LOWRY, modules=results), indent=2) + "\n", encoding="utf-8")
 
