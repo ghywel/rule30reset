@@ -7,3 +7,5 @@ The worked example is a 29-cell prefix. Splitting once on site 30 certifies phas
 On the genuine singleton, a certified right prefix at age A forces a disagreement with black-first alternation by absolute tick 2(A + E), where E is the largest physical entry tick on the tree. The conditional period-two exclusion requires arbitrarily late occurrences at black-centre ages. That recurrence remains open. The module imports merged kit results and carries the finite ring checks in `Rule30Certificates/LockRing728`. [Earlier width-30 lock](https://github.com/WolframInstitute/Rule30PrizeKit/pull/227)
 
 The portal verified this Problem 1 partial. [Submission SUBMISSION_ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/SUBMISSION_ID)
+
+Prepared with [OpenAI Codex](https://openai.com/codex/).

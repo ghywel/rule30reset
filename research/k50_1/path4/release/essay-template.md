@@ -38,7 +38,7 @@ As a comparison on Lowry’s example, an eleven-leaf tree on the first 77 of his
 
 ## What follows for the actual centre
 
-Suppose the singleton at age A displays a certified right prefix. Let E be the largest physical entry tick named in the certificate. If the actual centre followed black-first alternation long enough, sideways reconstruction would make part of its true left side match Lowry’s ring. Across the seven lock phases and both age parities, a comparison with the singleton’s moving edge supplies a disagreement within nine sites once A + E is at least nine. The finitely many shorter starts are checked directly. Consequently some centre bit disagrees with the proposed alternation by absolute tick 2(A + E). For the worked example the deadline is 2(A + 1).
+Suppose the singleton at age A displays a certified right prefix. Let E be the largest physical entry tick named in the certificate. If the actual centre followed black-first alternation long enough, sideways reconstruction would make part of its true left side match Lowry’s ring. Across all seven lock phases and all 728 residues of A + E, a comparison with the singleton’s moving edge supplies a disagreement within nine sites once A + E is at least nine. The finitely many shorter starts are checked directly. Consequently some centre bit disagrees with the proposed alternation by absolute tick 2(A + E). For the worked example the deadline is 2(A + 1).
 
 If certified right prefixes occur at arbitrarily late actual ages with a black centre, this deadline contradicts any eventual period-two tail. The prefix and its tree may vary at each age. Establishing those arbitrarily late occurrences remains open. The result is a conditional partial for Problem 1.
 
