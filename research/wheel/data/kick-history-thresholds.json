@@ -1,0 +1,444 @@
+{
+  "coordinate": "positive site 1 is the low bit; initial_phase is the first temporal index in U; white wall at even wheel indices",
+  "free_start": {
+    "sensors-80-32-4": {
+      "status": "UNSAT",
+      "cnf": "9d0557e78d4574ffa5c5362cc125abae0ebcf10acaa36b2e15b9f37e84a5060d",
+      "lrat": "b4d374d2c868e91ab2950c5d5f376e8580a8117a3dbe7dcbddf8d36600545cd6"
+    },
+    "sensors-80-32-6": {
+      "status": "UNSAT",
+      "cnf": "5a09e221946b4fd552e4e24b919432e265cad4a35e68d6c524cf1433c3b83bad",
+      "lrat": "cfdef18e9bd6d6125e463a8e7bf75245ef81d052c0ba214016e9d0c4278bd201"
+    },
+    "sensors-80-32-8": {
+      "status": "UNSAT",
+      "cnf": "b162b38336c0f9b3cc2b313436431acc74dd2334c23971aeb4a61cd5b49a4cd3",
+      "lrat": "6e96b2bad32b4daaee4667ea5b8ea8310537799b2f3f45a0e3668b51f5e3f0e5"
+    },
+    "sensors-80-32-10": {
+      "status": "UNSAT",
+      "cnf": "1393f17adb2442b2eb125c3124b516fb3c08f1d05ba85b102d22ca4a0cd5edc2",
+      "lrat": "411e2b30af0a51dab7993c3d96bb3ee508bd166d1df98e945738b039ae1286dd"
+    },
+    "sensors-80-32-12": {
+      "status": "UNSAT",
+      "cnf": "275945f9f9ae434bf570415d591d5d33a23dcef5b16d22340eaf8a1dbdf4815d",
+      "lrat": "7f0b9247d926d797db8433d4457ae178685f5a52273741c8b97e8cb6a97aae4b"
+    },
+    "sensors-80-32-14": {
+      "status": "UNSAT",
+      "cnf": "37f4bddf77894ce1b72ad73cbff757c08a03c002e376662a50328fba3a987829",
+      "lrat": "282ba076fc16a7f236ef334ae1545b38979d06252ddf468fe17f863deb4c202c"
+    },
+    "sensors-80-42-4": {
+      "status": "UNSAT",
+      "cnf": "b129ac97ef5fb16e039892c832268b90f37d45d045e660ff13cc9d56e6a74a8b",
+      "lrat": "67237843ced443fa00c16381279d3e2abdde1e7e42189c2380545067bf9e7ca1"
+    },
+    "sensors-80-42-6": {
+      "status": "UNSAT",
+      "cnf": "ac4965fdb2e8619a6a53124e5e7cc00e35db98dc77e964a8e2352fd4bfc18b49",
+      "lrat": "0c60dc93dc23703a45bf41caf43df9d418bdc3c9d3bac2dcba4bafab171fcf1d"
+    },
+    "sensors-80-42-8": {
+      "status": "UNSAT",
+      "cnf": "f5ed32304d2332a34bea1ef680310fbcc13a2aa6de4bee1604690fdf81be8524",
+      "lrat": "ae5c781f02199efbbf875c8f6d70833746567e167a6ecf0db3094c5fd3f17263"
+    },
+    "sensors-80-42-10": {
+      "status": "UNSAT",
+      "cnf": "1fa49efff24a0a3a670327602b2dcee5f000d2270be27a4388ca9e4f2a9a1eda",
+      "lrat": "fb4411e717a8f7e734a015753ef83057e3729394ee4467c2f19cee3c5bc65136"
+    },
+    "sensors-80-42-12": {
+      "status": "UNSAT",
+      "cnf": "b8ee12796a5fcb2532d3f1ce1b12b6a455a20aafefaf894dadd8eccbce3788a5",
+      "lrat": "ae8a0d1de16fa0d62f77cf7b8dd571add742c8cae1b4d777e790f37414391288"
+    },
+    "sensors-80-42-14": {
+      "status": "UNSAT",
+      "cnf": "fa0c070450d7614ea2ad5998d496047d30823d224bcbc9a0f9ec00de64cec56b",
+      "lrat": "aadd1912364d4399f7dff199d3956f56e830517a770f54d66b4f5036a2eaf157"
+    },
+    "sensors-80-52-4": {
+      "status": "UNSAT",
+      "cnf": "3a58f4339731674c86b8197d785ce5380af218e68b85184a9c8e53ac0456adf8",
+      "lrat": "7c394482da6258688668e08e05788bc0f4243b974cb4f0eb1ac993456ff6d95f"
+    },
+    "sensors-80-52-6": {
+      "status": "UNSAT",
+      "cnf": "6898b8949f2ca7bd573245b3ecbc012ec1377158c082e4a26ab3f8a782823d7c",
+      "lrat": "fa69a640f1e064680582c97641f9a7cab5499b0cf5f1f019da3869dcf14eb08b"
+    },
+    "sensors-80-52-8": {
+      "status": "UNSAT",
+      "cnf": "12543e390816069af4d11ef55d380c1c987a24cd5d3afd988a5849931ca85d0a",
+      "lrat": "4e331044a2e6922170eb8e53226635a48547a3879d200f3967f9fa1f66f3b4ae"
+    },
+    "sensors-80-52-10": {
+      "status": "UNSAT",
+      "cnf": "0975951e8c3f00b8db9be6a556b13fec9e9fea213daf1c424a696efd4c5e6933",
+      "lrat": "b7420506257ec3564916ce8999e2ef81a8e9a4f25890786fa69336672d872cf6"
+    },
+    "sensors-80-52-12": {
+      "status": "UNSAT",
+      "cnf": "4a307eaecfbfa6264175d504811e31de7c99e96bb287d428dfa91ac6b141be0f",
+      "lrat": "627c3006a0633fc9ca02ca3020d95df54269a2816f204b153e736e40b9ec3a86"
+    },
+    "sensors-80-52-14": {
+      "status": "UNSAT",
+      "cnf": "e4ce9e21f664782a3e4a5cbc037372d1f3011da456cbada8e592213b7fb04b29",
+      "lrat": "de66b26c5f0597848252efda5a02bbd0d1fa98c09a662248f5509d5f8a629d36"
+    },
+    "positions-127-0-1": {
+      "status": "UNSAT",
+      "cnf": "2960abad3e02f73618dae6a93c42c3eb3bd1053503bcf5bd140d48d99950f31e",
+      "lrat": "7c2ac5cf2ceb4f770ad56516eec98fa1c42ac6d1f8bc14d73abdca59d5e3de4b"
+    },
+    "positions-127-1-1": {
+      "status": "UNSAT",
+      "cnf": "c7e9ca753dd210724d5026e9ea61c1531366ab092571cb2090e5c0c51a9ba642",
+      "lrat": "54a4416a8faa8baf8756b1cb21e7a0a3aaf300a377814f0a7c114ed1d91d2cbf"
+    },
+    "positions-127-2-1": {
+      "status": "UNSAT",
+      "cnf": "8274cfae6211bbe8776b742389f79a1ca0feb69123283d68256e90d0fc0e9e6b",
+      "lrat": "d4e7baa6595a9fa7d04e461f9f580cf6e71ef1bf97fa7330547ab3de212954a0"
+    },
+    "positions-127-3-1": {
+      "status": "UNSAT",
+      "cnf": "596831f0aa685f847ddf8fbf3ff41ab540e5808f875d7b36d0900cd6ad892ec4",
+      "lrat": "1ff8d88b2e95e1bfc3a1fca6f8cf553146b1fd2d73f7a7fda47107909597bb9b"
+    },
+    "positions-127-4-1": {
+      "status": "UNSAT",
+      "cnf": "7a0f96f855ef4f8d65793ba91d91ec8a2b9ea34d0671980f37e85e24084a1dd5",
+      "lrat": "59aa52e4e3407ce6031efb376b911839b95747dea3026c906178cab34c73b9d6"
+    },
+    "positions-127-5-1": {
+      "status": "UNSAT",
+      "cnf": "da066b8f2fe962ef4e17067696698efe8a45a4bf7d3704456ae4296b420753df",
+      "lrat": "431ba06cf33c9ecba5ef425c4fb877a5e26cd796a3c2acdf3b52f2db2ad0862d"
+    },
+    "positions-127-6-1": {
+      "status": "UNSAT",
+      "cnf": "78ed44ce24e9e09ebdb4c9c3aceb6a0fcbeba249c56072ef03bf8ad4fd5881b0",
+      "lrat": "670404c3f00088f075bcf3601b2ae376b3b85299353b6608e7857e7fff3d5707"
+    },
+    "positions-127-7-1": {
+      "status": "UNSAT",
+      "cnf": "59ac3ad9e23740fc47fbba77eda658fcb4e0888a4a018795c6c900a790563413",
+      "lrat": "abb69b5673a94ae3568259e47f0266348282b8034e7f69a2d6632ba0f95778b4"
+    },
+    "positions-127-8-1": {
+      "status": "UNSAT",
+      "cnf": "a768e6a50aaf6cac0812617a42f311dd867ef85ecc9f8266a2f004028b9e68ae",
+      "lrat": "74daf93a11b24613e56cff95090deb70b3e75f0364e3fe41d57915d04140308a"
+    },
+    "positions-127-9-1": {
+      "status": "UNSAT",
+      "cnf": "a9d760a9489f4537a63c8f923025d90617c38733c576c1d30c274bf80488d926",
+      "lrat": "a9598461e8f5ebc3e6323f6393a42a32e310edb0f548df20e9706e910eb89dbf"
+    },
+    "positions-127-10-1": {
+      "status": "UNSAT",
+      "cnf": "9e415f2695f1a80fb7f1efc94e9db558484e7fd9678abbe77f1d397a8e3f2c81",
+      "lrat": "93061088a99fa0ec54f29940d8f36d63b3fbad7a0fb8a1a286ccb644ef593156"
+    },
+    "positions-127-11-1": {
+      "status": "UNSAT",
+      "cnf": "2ffc385927424c2b8d462b00cfd56cac9d8be18fe5f2f9f90baec7575e09be84",
+      "lrat": "74be306e05ae614820b467f2475a67baa4fb9f8db5183c5db4ea9d23f81fb4f4"
+    },
+    "positions-127-12-1": {
+      "status": "UNSAT",
+      "cnf": "ac2e599f9457fe46daf85076a55020b55a2669b9114dd27750c58ad588e903e7",
+      "lrat": "b2e94ea4f20ded555d3087071a8a7686c4f1ea6503f9f37f2c0c6001cec15eed"
+    },
+    "positions-127-13-1": {
+      "status": "UNSAT",
+      "cnf": "65a5cafd5e65fe439fdfc4061917ee44b265cc34182537e26087b59d16e31701",
+      "lrat": "480d5d5945472132bded1b9e073941b552488156deb671870fddf490aca77f72"
+    },
+    "positions-127-14-1": {
+      "status": "UNSAT",
+      "cnf": "1e7e7f56397f295cea0d5e92654131fb9bd65e40750aa0e38029c6d81b09c8fd",
+      "lrat": "0b1483b7c068e4f6a6fe4f20b61abeaab71deac6d7578e4e0ac323985dee714a"
+    },
+    "positions-127-15-1": {
+      "status": "UNSAT",
+      "cnf": "2b9d1f514f5c0c02680597cc2eab58e9f136b884c2fc1aadca8ec3a0658743f8",
+      "lrat": "72c0ed9e14a17253bc09819f2621dab8b5302b74f1dde3c444f9d3574bd1c51c"
+    },
+    "positions-127-16-1": {
+      "status": "UNSAT",
+      "cnf": "0261ff5155bda3fff6c8e7a297dc999fc387a6e334255f37635ca130312424a2",
+      "lrat": "914d83e3b5192c5a87c7ac9142d62a3c4484949ce54c604b6d7b12db2df1a4cb"
+    },
+    "positions-127-17-1": {
+      "status": "UNSAT",
+      "cnf": "4f945ce71197ec15a7cae8297ba5ae095bacfb778a52590f63ae96210cfc01ef",
+      "lrat": "bef3a1afe1d33f97dd185a0837fe065f75d0ab618d19a7b0e1603716d910611c"
+    },
+    "positions-127-18-1": {
+      "status": "UNSAT",
+      "cnf": "b0874e76f23a6f442d5e41d7af27cf557e418a2b360ca825892ad6eacbdb1ba3",
+      "lrat": "7873ae58017e690f72d3a87a3af304b6de638b1f60cfe055088e4c6b1fe6a060"
+    },
+    "positions-127-19-1": {
+      "status": "UNSAT",
+      "cnf": "6b49ab82953e2d7fff30c98671f2a7b9c94ff819372cc958d3297ddc1c2983ac",
+      "lrat": "5e9c000487c180ee370c16da77ccbe1048417edc6766e99e07b48759d7a53232"
+    },
+    "positions-127-20-1": {
+      "status": "UNSAT",
+      "cnf": "d4f0fedba823791f7fa1afcf4e59ce092ef8e0c36dfcdf83889fbe4b45bf86c1",
+      "lrat": "d8e7efd45b41641567fa359db53e6579a577df2274876648326f974c9ddc286f"
+    },
+    "positions-127-21-1": {
+      "status": "UNSAT",
+      "cnf": "24ee1a43166f72946fa8013fc1265039b4d95f066886bf4ff792d25491bc4a7b",
+      "lrat": "57f9f5cb9cabcb2c297c698d249285ab65b1db7e22004049919eb76d3d27aca2"
+    },
+    "positions-127-22-1": {
+      "status": "UNSAT",
+      "cnf": "fb814134029a88d7dad3ff3d837cb87807d8a8d49edf8a1e47ea651e44e71f20",
+      "lrat": "a1f1cb99d6d44c9dea66a325029d0d532734f2f95183ae9f687c3c4198c6c227"
+    },
+    "positions-127-23-1": {
+      "status": "UNSAT",
+      "cnf": "f0a6ac2e0f3447d61a8b30f5d478907667293c6b190ede61b26ef59e8ba21b7a",
+      "lrat": "8a703d26eee72126d4c7f4d1e242a29fe24c89f524b91d8413a52e9580aa4452"
+    },
+    "positions-127-24-1": {
+      "status": "UNSAT",
+      "cnf": "96a8569c82d0ea85555ecbf110261f4ba25006f18f308c232376976e84091ddf",
+      "lrat": "b7b9e7042fe75e68e85cc42648384b9edca3fe81ca2d650494fcb9cfa806cbac"
+    },
+    "positions-127-25-1": {
+      "status": "UNSAT",
+      "cnf": "b421420a888114874126483135b35e8d5d4579b909b53c9385953da5a153c30a",
+      "lrat": "ca34e53424cfe29d4dcb56ae2ea177608ec79271f563e964c1807cf800abe064"
+    },
+    "positions-127-26-1": {
+      "status": "UNSAT",
+      "cnf": "a58830e2d3bdfa539fa3750eed696564605db93eb10540b45749569ee56bf9e7",
+      "lrat": "317461d69960736caec918abbc48643f37160023eb562ace013c802adb8996bb"
+    },
+    "positions-127-27-1": {
+      "status": "UNSAT",
+      "cnf": "22ab71d67331c6ed83465f7802981d2ca4af42546249912b941aa43339bfb415",
+      "lrat": "b185ed3d6f985555d7d41ef91a49f0970e99cf1429d7fd95dd83cb32ec7bba4b"
+    },
+    "positions-127-28-1": {
+      "status": "UNSAT",
+      "cnf": "0994d7b81be6d6f8b246f5ba3951d48b94d42e2e41594e5b3010ee499319713b",
+      "lrat": "5e01fe8c9fef52051ef5f3fb58f627450101b5a66c96769ec69c6138f41485cb"
+    },
+    "positions-127-29-1": {
+      "status": "UNSAT",
+      "cnf": "425fe4b61c855d6c2e09f4a8784412df0129b992fbe0c19d6a671081102f3e49",
+      "lrat": "38cf6286460dd0099f946121d588feebf41fabc4aef5eb3c2f663bad0c9071a2"
+    },
+    "positions-127-30-1": {
+      "status": "UNSAT",
+      "cnf": "dc7f4c74d2b457aa7047dd75c1d6f677f1edb466a47c9313c665f116a2bb010e",
+      "lrat": "25842cb5b40271c04fc86b6064d352bf33c521cd1095c82b5e5d7117c285a753"
+    },
+    "positions-127-31-1": {
+      "status": "UNSAT",
+      "cnf": "81d2dc6951982e9d06f7bafe61faabc9fde3f064ad9435363b47b29a185d4fe7",
+      "lrat": "f0b38f81898a6daea85dbb65fe125fc7b575d1a35e9d3087222e4dc92363ea58"
+    },
+    "positions-127-32-1": {
+      "status": "SAT",
+      "cnf": "dc96405011d4b2acca2553c51037066c17eaf861f3b1b41881a1ea086a4a1dab",
+      "initial_row": "0xfffffffffffffffffffff3210fcffff9",
+      "initial_phase": 17,
+      "history_start": 0,
+      "issue": 126,
+      "sensor": null,
+      "first_departure": 127
+    },
+    "positions-127-33-1": {
+      "status": "UNSAT",
+      "cnf": "81ebdb2495bbf3302dd7da7e2de5782e94805c1ee5edd823bea895d2c8c1ecf7",
+      "lrat": "57391afa9b2174b9b2b12f966a2087673ec37acc531f111f597101a857525b65"
+    },
+    "positions-127-34-1": {
+      "status": "UNSAT",
+      "cnf": "dd6628aa647931a256624f2ecad9f0e6aaa39418f70c6881b084586e56f254c6",
+      "lrat": "f7b6d2c63a17be2f3a22ca660d013bf2016bedfe6e2491af26e73387963a0a8e"
+    },
+    "positions-127-35-1": {
+      "status": "UNSAT",
+      "cnf": "e36c2fb1a4108c86527a9b6eee2e777642d2cfa80a8dbb8791b7124cf9fa9336",
+      "lrat": "7f898555f2ccd34faca5d2d762057144016d20717ec7f29f3fc0d1353a6e168a"
+    },
+    "positions-127-36-1": {
+      "status": "UNSAT",
+      "cnf": "2a4264ef6c3ff1b899b97f1fdbd34443003122a53aba06b40e7e12287c9b8fc9",
+      "lrat": "651181f2a1f70acbca6330d5c2e3395161d1542b9fa3a067a0c64e6672c08717"
+    },
+    "positions-127-37-1": {
+      "status": "UNSAT",
+      "cnf": "2f9938556086a79940a328722dd139a6a6b189e92b5b91a66ca3c5d63c66f1bf",
+      "lrat": "7f44cdf3bdbbc9b004e53bfa3c224eb7ec22829cd9edaa67e06335fc30398752"
+    },
+    "positions-127-38-1": {
+      "status": "UNSAT",
+      "cnf": "79f63579488fcff3f7c190ca81fcf6577d960b04a97d516f17cfa03f4265d446",
+      "lrat": "aa9fce4899fd1fb028d0ce4d2cbafcfc216e7ac57c23587092df4815b3725ed2"
+    },
+    "positions-127-39-1": {
+      "status": "UNSAT",
+      "cnf": "badaef72b48219b4b887ad5e6abe52d54a32d33fb421b61740df0e7a142aedf4",
+      "lrat": "6c0833e54fc4db12ddc1e1a18469b80abee013d1556f459f596368d5c10a071d"
+    },
+    "positions-127-40-1": {
+      "status": "UNSAT",
+      "cnf": "141931e533f9108629fb3894260862ded477ed7455f20f0600d1ff207488a5ef",
+      "lrat": "7432d883cbaab42eed61f9d69f422661d94c000d267d0d781705dd34209a9a53"
+    },
+    "positions-127-41-1": {
+      "status": "UNSAT",
+      "cnf": "518e358cce6f17a40e3afea6b834f9494c5b5ea4f3bcb84d42ae8951a147d941",
+      "lrat": "aaa647a73c2857cc57caf135011e0b9937cf6ff4a7a8c32d3d6d3670fa8d2c6d"
+    },
+    "positions-127-42-1": {
+      "status": "SAT",
+      "cnf": "73fb484fd3322df2fea4420582983a0342aa638ac33c3ecc1a039088c3fa93c4",
+      "initial_row": "0x1b86675bc8000ff2af92ddd00cbb4f9",
+      "initial_phase": 27,
+      "history_start": 0,
+      "issue": 126,
+      "sensor": null,
+      "first_departure": 127
+    },
+    "positions-127-43-1": {
+      "status": "UNSAT",
+      "cnf": "79b6e0fde53fd5c4de0a7ee28d453de3e8c91d300606d114eba6c6cff75d927f",
+      "lrat": "7479daa7ef1a87146c8c062721613904de7ce009dda5f1f550245972f713b0b6"
+    },
+    "positions-127-44-1": {
+      "status": "UNSAT",
+      "cnf": "00cbc0797ee92ef401329db8b249052d6cdce3d7170932e1f3e2f9fef75c0cb6",
+      "lrat": "ea54403340b19321ab9b7e19c1688e29fb973e31177352a2b91bb443df83ada2"
+    },
+    "positions-127-45-1": {
+      "status": "UNSAT",
+      "cnf": "0877df03a07f3653f618878a1a4e292177f36c7e3ee9f3b9b3720f9afe5c012a",
+      "lrat": "52f011f63a1c7424dfc884715be45577ec90a5e5eb53cddc376b764e7d940d6e"
+    },
+    "positions-127-46-1": {
+      "status": "UNSAT",
+      "cnf": "6650dc073f0b6435bdc5c38469e13afb3b745d3cb648bfd8f7d8df4f3c6b7114",
+      "lrat": "91f90dc78a83bb05c2d85168589485e4ed6822764e9cf6e31d8f5f9982c59c08"
+    },
+    "positions-127-47-1": {
+      "status": "UNSAT",
+      "cnf": "5bd80b89859a163615aa7a6f88d82b8fe4a54cfb6fc8a79c4a2a4bb7f0359f86",
+      "lrat": "c2403ad9f4da1089faa98086ebb4e6777e132359fc84d416b274a297c48c4f9e"
+    },
+    "positions-127-48-1": {
+      "status": "UNSAT",
+      "cnf": "e7d2912debb4c186b9aef2f00b294ba42e9f51b5fe6634af25866b3a875681a7",
+      "lrat": "31460026b26b2f6383837a355de107433de190c0eb8bcb6b18968b5b37d80d77"
+    },
+    "positions-127-49-1": {
+      "status": "UNSAT",
+      "cnf": "a8cb9607e5498b4c3273bb8edae39f97b34468ff9237475a8b480c929befda83",
+      "lrat": "2f507534c55801016a503763b74e24d3a0b9b885bed35491ef8862b0813d4dc1"
+    },
+    "positions-127-50-1": {
+      "status": "UNSAT",
+      "cnf": "1f5ed537feb5a20b7c8ea13493270e0605ca8d3560e2d2d6e196b36c8786c5ab",
+      "lrat": "2dd9160836bf924dc532c042725b066cfc236964710e66430175135b46c2ce5b"
+    },
+    "positions-127-51-1": {
+      "status": "UNSAT",
+      "cnf": "060cd8053a9ad521e66151f73d32a72a12e845aa7c9316d9a9af2a1763b5d225",
+      "lrat": "915d408b9969915805a18f70d2d12901c487dc98687031cb33b0c735169ba707"
+    },
+    "positions-127-52-1": {
+      "status": "SAT",
+      "cnf": "6034526b6c774cd7df3ac4a5b5279dab4a1def21b9abb2cd1ffbbb4e3223a441",
+      "initial_row": "0xfffffffffffffffffffffe7e183fc939",
+      "initial_phase": 37,
+      "history_start": 0,
+      "issue": 126,
+      "sensor": null,
+      "first_departure": 127
+    },
+    "positions-127-53-1": {
+      "status": "UNSAT",
+      "cnf": "387ea2a0271c840aa038156853283cf07cace8f33c072e5d96a48a621f7a4985",
+      "lrat": "9ee13252ca06258fa606e238ca7bd627990a7da46c87f7e43a4cbe7f7fb3bdf5"
+    },
+    "positions-127-54-1": {
+      "status": "UNSAT",
+      "cnf": "fec6e3e3ae3ff4635b337853812b46405755ade61f5e80f3a020dde6ad5a3dbc",
+      "lrat": "b2d31d83f128e90bf490a3dc5a414a4c0ae9dfca5b4b0ef28711bbffa75fa135"
+    },
+    "positions-127-55-1": {
+      "status": "UNSAT",
+      "cnf": "59762ffa0399abe4d2caf2ec7b5d8d68f7c14e8452c2534bc85a05e9abe33cb9",
+      "lrat": "0e246e6623d8568633a04a2f8a7418f5631964156b6ed01973957633f3289da4"
+    }
+  },
+  "physical_positive_positions": {
+    "positions-127-32-1": {
+      "status": "SAT",
+      "cnf": "7202affb12829063964448d9f0b74d0c87f097ee64c2b3dfd91d928135568d6d",
+      "initial_row": "0xaaa02ad405a0029594417ba3527f6cb",
+      "initial_phase": 16,
+      "history_start": 1,
+      "issue": 127,
+      "sensor": null,
+      "first_departure": 128
+    },
+    "positions-127-42-1": {
+      "status": "SAT",
+      "cnf": "d3b8d79b7f6d4f195e3cea9b29bb877c598f53d998bed517c4069ef4f3bab9cc",
+      "initial_row": "0x14111f94fae48dbbf00237e02c223084b",
+      "initial_phase": 26,
+      "history_start": 1,
+      "issue": 127,
+      "sensor": null,
+      "first_departure": 128
+    },
+    "positions-127-52-1": {
+      "status": "SAT",
+      "cnf": "21b0d9b65fd8bdfe5e5087a854b1b24f9f22c2c0e9223bab0ce2927808c0904f",
+      "initial_row": "0x4817c92cc914567",
+      "initial_phase": 36,
+      "history_start": 1,
+      "issue": 127,
+      "sensor": null,
+      "first_departure": 128
+    }
+  },
+  "sharpness": {
+    "sensor-79": {
+      "status": "SAT",
+      "cnf": "ecb9d6a117e6c1910525ec2485ff6e47d536604e7c6bc998f55b23d53fd0ac10",
+      "initial_row": "0x5555114218477bd19c3bdb6",
+      "initial_phase": 54,
+      "history_start": 0,
+      "issue": 78,
+      "sensor": "0",
+      "first_departure": null
+    },
+    "position-126": {
+      "status": "SAT",
+      "cnf": "60bc61606dd989711a3170589683342d8bd6573fcc9eeb58492e5741bb3d2d8b",
+      "initial_row": "0x5fd555555555746e534c2acc5dbdb6",
+      "initial_phase": 54,
+      "history_start": 0,
+      "issue": 125,
+      "sensor": null,
+      "first_departure": 126
+    }
+  }
+}

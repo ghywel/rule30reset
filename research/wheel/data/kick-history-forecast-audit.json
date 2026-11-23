@@ -1,0 +1,16 @@
+{
+  "finite24": {
+    "all_sensor_decisions": 5951,
+    "extra_sensor_decisions": 5337,
+    "positive_calls": 2885,
+    "distinct_departures": 507,
+    "extra_distinct_departures": 442
+  },
+  "random_far_field": {
+    "all_sensor_decisions": 6542,
+    "extra_sensor_decisions": 5897,
+    "positive_calls": 3055,
+    "distinct_departures": 528,
+    "extra_distinct_departures": 462
+  }
+}

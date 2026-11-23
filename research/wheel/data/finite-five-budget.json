@@ -1,0 +1,126 @@
+{
+  "trim_every": 5,
+  "trim_limit": 1,
+  "forbidden_factors": [
+    "33355333553335533355333553335533355",
+    "333355333355333355333355333355333355333355333355333355"
+  ],
+  "widths": [
+    {
+      "width": 16,
+      "initial": 32580,
+      "trim_rounds": 1,
+      "core": 435,
+      "prior_rounds": 0
+    },
+    {
+      "width": 17,
+      "initial": 870,
+      "trim_rounds": 0,
+      "core": 870,
+      "prior_rounds": 1
+    },
+    {
+      "width": 18,
+      "initial": 1740,
+      "trim_rounds": 0,
+      "core": 1740,
+      "prior_rounds": 1
+    },
+    {
+      "width": 19,
+      "initial": 3480,
+      "trim_rounds": 0,
+      "core": 3480,
+      "prior_rounds": 1
+    },
+    {
+      "width": 20,
+      "initial": 6960,
+      "trim_rounds": 0,
+      "core": 6960,
+      "prior_rounds": 1
+    },
+    {
+      "width": 21,
+      "initial": 13920,
+      "trim_rounds": 1,
+      "core": 1302,
+      "prior_rounds": 1
+    },
+    {
+      "width": 22,
+      "initial": 2604,
+      "trim_rounds": 0,
+      "core": 2604,
+      "prior_rounds": 2
+    },
+    {
+      "width": 23,
+      "initial": 5208,
+      "trim_rounds": 0,
+      "core": 5208,
+      "prior_rounds": 2
+    },
+    {
+      "width": 24,
+      "initial": 10416,
+      "trim_rounds": 0,
+      "core": 10416,
+      "prior_rounds": 2
+    },
+    {
+      "width": 25,
+      "initial": 20832,
+      "trim_rounds": 0,
+      "core": 20832,
+      "prior_rounds": 2
+    },
+    {
+      "width": 26,
+      "initial": 41664,
+      "trim_rounds": 1,
+      "core": 2803,
+      "prior_rounds": 2
+    },
+    {
+      "width": 27,
+      "initial": 5606,
+      "trim_rounds": 0,
+      "core": 5606,
+      "prior_rounds": 3
+    },
+    {
+      "width": 28,
+      "initial": 11212,
+      "trim_rounds": 0,
+      "core": 11212,
+      "prior_rounds": 3
+    },
+    {
+      "width": 29,
+      "initial": 22424,
+      "trim_rounds": 0,
+      "core": 22424,
+      "prior_rounds": 3
+    },
+    {
+      "width": 30,
+      "initial": 44848,
+      "trim_rounds": 0,
+      "core": 44848,
+      "prior_rounds": 3
+    },
+    {
+      "width": 31,
+      "initial": 89696,
+      "trim_rounds": 1,
+      "core": 7237,
+      "prior_rounds": 3,
+      "vertices": 174785,
+      "components": 174785,
+      "max_fives": 23,
+      "outside_bound": 29
+    }
+  ]
+}

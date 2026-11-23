@@ -1,0 +1,25 @@
+{
+  "samples": 48,
+  "forbidden": [
+    "00000",
+    "11",
+    "101",
+    "10001",
+    "1001001"
+  ],
+  "proofs": {
+    "exterior": {
+      "cnf": "2786f048aad945aaaa1f2c73726a5fc86732f65bd05d6a0836921af3c564fc09",
+      "lrat": "51048295811b8a55c2b06512ca98d9106ffeb2167de1f792088fd57b820b1745"
+    },
+    "terminal": {
+      "cnf": "dce1c70aa12145c2ff8aa77d811a479fe7aec78e17b47906589e4736abcd9784",
+      "lrat": "806db14cf9f1f0c6990822f01fec32402fb56e312ae9fcf3609c5efcd8790e6a"
+    }
+  },
+  "sharp_black_start": {
+    "initial_row_low_site_one": "0xa224d3200017fb5ccd115f23a59",
+    "white_gate": "00001001000010010000100001000010000100100001000",
+    "final_window": 362
+  }
+}

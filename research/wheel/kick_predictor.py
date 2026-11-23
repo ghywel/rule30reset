@@ -8,6 +8,8 @@ from pathlib import Path
 
 WHEEL = "00010011010001001101000100110100010011010001001101001101"
 ROTATIONS = {WHEEL[i:] + WHEEL[:i]: i for i in range(56)}
+SENSOR_HISTORY = 80
+POSITION_HISTORY = 127
 
 
 def phase_at(word, tick):
@@ -86,11 +88,15 @@ def sensor_table():
     return json.loads(path.read_bytes())["sensors"]
 
 
-def mature_opportunities(row, width, tick, phase):
-    """Possible first departures this turn, tightened by the certified spatial sensors."""
+def mature_opportunities(row, width, tick, phase, matched_ticks=POSITION_HISTORY):
+    """Return phase-specific alarms and, when the history permits it, an exhaustive list of slots."""
     pos = (tick - phase) % 56
-    slots = sorted(tick + ((target - pos - 1) % 56) + 1 for target in (32,42,52))
+    slots = None
+    if matched_ticks >= POSITION_HISTORY:
+        slots = sorted(tick + ((target - pos - 1) % 56) + 1 for target in (32, 42, 52))
     tests = []
+    if matched_ticks < SENSOR_HISTORY:
+        return slots, tests
     for item in sensor_table():
         lead, target, sites = item["lead"], item["target_phase"], item["sites"]
         if (pos+lead) % 56 != target or max(sites) > width:
@@ -98,9 +104,9 @@ def mature_opportunities(row, width, tick, phase):
         word = "".join(str((row >> (j-1)) & 1) for j in sites)
         goes = word in item["depart_if"]
         if not goes and word not in item["stay_or_other_departure_if"]:
-            raise ValueError("Snapshot contradicts the supplied 140-tick history.")
+            raise ValueError("Snapshot contradicts the supplied matched wheel history.")
         tests.append({"target_tick":tick+lead,"wheel_index":target,"sites":sites,"read":word,"departs":goes})
-        if not goes:
+        if not goes and slots is not None:
             slots.remove(tick+lead)
     return slots, tests
 
@@ -123,16 +129,17 @@ def forecast(row, width, tick, phase, horizon=160, matched_ticks=0):
     if pulse is not None and not pulse["departs"]:
         matches = max(matches, tick + 6)
     opportunities = tests = None
-    if matched_ticks >= 140:
-        opportunities, tests = mature_opportunities(row, width, tick, phase)
+    if matched_ticks >= SENSOR_HISTORY:
+        opportunities, tests = mature_opportunities(row, width, tick, phase, matched_ticks)
         for test in tests:
             if test["departs"]:
                 assert departure in (None, test["target_tick"])
                 departure = test["target_tick"]
         if departure is not None:
             matches = departure - 1
-            opportunities = [t for t in opportunities if t == departure]
-        else:
+            if opportunities is not None:
+                opportunities = [t for t in opportunities if t == departure]
+        elif opportunities is not None:
             opportunities = [t for t in opportunities if t > matches]
             matches = max(matches, (min(opportunities) - 1) if opportunities else tick + 56)
     kick = None
