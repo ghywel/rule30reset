@@ -97,10 +97,29 @@ def component_record(graph, nodes):
             "gate_necklace": word}
 
 
-def analyze(width, trap):
-    graph, rounds = reachable_core(width, trap)
-    comps = [component_record(graph, nodes) for nodes in nx.strongly_connected_components(graph)
-             if len(nodes) > 1 or any(graph.has_edge(x, x) for x in nodes)]
+def cyclic_components(graph):
+    return [nodes for nodes in nx.strongly_connected_components(graph)
+            if len(nodes) > 1 or any(graph.has_edge(x, x) for x in nodes)]
+
+
+def lift(nodes, width):
+    candidates = nodes | {(w + (1 << (width-1)), r) for w, r in nodes}
+    graph = nx.DiGraph()
+    for w, r in candidates:
+        for v in successors(w, width):
+            if v & 1 and r in (2, 4):
+                target = (v, 0)
+            elif not v & 1 and r < 4:
+                target = (v, r + 1)
+            else:
+                continue
+            if target in candidates:
+                graph.add_edge((w, r), target)
+    return graph
+
+
+def describe(graph, components, width, rounds):
+    comps = [component_record(graph, nodes) for nodes in components]
     groups = Counter(json.dumps(c, sort_keys=True) for c in comps)
     return {"width": width, "image_rounds": rounds, "surviving_sample_states": len(graph),
             "cyclic_scc": len(comps), "scc_with_fives": sum(c["five_edges"] > 0 for c in comps),
@@ -112,7 +131,19 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("kit", type=Path)
     parser.add_argument("widths", type=int, nargs="+")
+    parser.add_argument("--lift-through", type=int,
+                        help="Lift the last width by one column at a time, stopping when no 5-gap recurs.")
     args = parser.parse_args()
     trap = table(args.kit, "trapCodes", "Rule30Certificates/GateTrap")
     for w in args.widths:
-        print(json.dumps(analyze(w, trap)), flush=True)
+        graph, rounds = reachable_core(w, trap)
+        components = cyclic_components(graph)
+        print(json.dumps(describe(graph, components, w, rounds)), flush=True)
+    if args.lift_through:
+        for w in range(w + 1, args.lift_through + 1):
+            graph = lift(set.union(*components), w)
+            components = cyclic_components(graph)
+            record = describe(graph, components, w, None)
+            print(json.dumps(record), flush=True)
+            if not record["scc_with_fives"]:
+                break
