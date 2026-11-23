@@ -1,0 +1,40 @@
+{"column": 0, "word": "..#..#..#..#..#..#..#", "white": 14, "longest_run": 1, "w": 12, "windows": 1438, "checkpoints": {"13": 38, "16": 41}}
+{"column": 1, "word": ".##..#..#..#..#....##", "white": 13, "longest_run": 2, "w": 12, "windows": 1768, "checkpoints": {"10": 54, "13": 53}}
+{"column": 2, "word": "##..##.##.##.##..###.", "white": 8, "longest_run": 3, "w": 12, "windows": 2142, "checkpoints": {"9": 79, "12": 35}}
+{"column": 3, "word": "#.###.##.##.##..##...", "white": 9, "longest_run": 3, "w": 12, "windows": 2846, "checkpoints": {"8": 125, "11": 33}}
+{"column": 4, "word": "#.#.#..#....#.###.###", "white": 10, "longest_run": 4, "w": 12, "windows": 3097, "checkpoints": {"1": 112, "8": 32}}
+{"column": 5, "word": ".##.#....####.....#.#", "white": 12, "longest_run": 4, "w": 12, "windows": 3223, "checkpoints": {"0": 40, "7": 40, "13": 56}}
+{"column": 6, "word": ".#.##..###.#..#####..", "white": 9, "longest_run": 5, "w": 12, "windows": 4489, "checkpoints": {"6": 64, "12": 80, "20": 35}}
+{"column": 7, "word": "##....##.#..###.#...#", "white": 11, "longest_run": 3, "w": 12, "windows": 3459, "checkpoints": {"3": 44, "8": 23, "15": 45, "17": 127}}
+{"column": 8, "word": "...####..#..#.#..####", "white": 10, "longest_run": 4, "w": 12, "windows": 2665, "checkpoints": {"0": 50, "7": 29, "11": 106}}
+{"column": 9, "word": "####.#.###.##.#..#.#.", "white": 8, "longest_run": 4, "w": 12, "windows": 3487, "checkpoints": {"4": 31, "10": 160, "16": 15}}
+{"column": 10, "word": ".....#..#.##.##.##.#.", "white": 12, "longest_run": 2, "w": 12, "windows": 3478, "checkpoints": {"7": 54, "15": 26, "18": 110}}
+{"column": 11, "word": "######..#....#.##.##.", "white": 9, "longest_run": 6, "w": 12, "windows": 5190, "checkpoints": {"6": 72, "10": 21, "17": 133}}
+{"column": 12, "word": "#......##.####....#.#", "white": 12, "longest_run": 4, "w": 12, "windows": 4973, "checkpoints": {"1": 115, "9": 27}}
+{"column": 13, "word": ".#######.##....####.#", "white": 7, "longest_run": 7, "w": 12, "windows": 7272, "checkpoints": {"8": 44, "19": 157}}
+{"column": 14, "word": "..#.#.#..#.#####.#.##", "white": 9, "longest_run": 5, "w": 12, "windows": 2687, "checkpoints": {"1": 105, "3": 47, "18": 10}}
+{"column": 15, "word": "....#..###.#.#.#.#..#", "white": 12, "longest_run": 3, "w": 12, "windows": 1196, "checkpoints": {"10": 21, "14": 28, "19": 75}}
+{"column": 16, "word": "..###...#.##.#..##..#", "white": 11, "longest_run": 3, "w": 12, "windows": 1672, "checkpoints": {"9": 22, "12": 34, "18": 94}}
+{"column": 17, "word": ".##.#.....#.##.....##", "white": 13, "longest_run": 2, "w": 12, "windows": 2034, "checkpoints": {"7": 28, "8": 27, "15": 90}}
+{"column": 18, "word": "##..#...###..#..####.", "white": 10, "longest_run": 4, "w": 12, "windows": 2345, "checkpoints": {"6": 36, "14": 134}}
+{"column": 19, "word": "#.###..##.#....##....", "white": 12, "longest_run": 3, "w": 12, "windows": 2501, "checkpoints": {"5": 42, "13": 157}}
+{"column": 20, "word": "#.#.#.##..#..###.####", "white": 8, "longest_run": 5, "w": 12, "windows": 1457, "checkpoints": {"1": 40, "12": 69}}
+{"column": 21, "word": ".##..##.###.##.#..#.#", "white": 9, "longest_run": 3, "w": 12, "windows": 1779, "checkpoints": {"11": 95, "14": 29}}
+{"column": 22, "word": "..#...#..#.##..#....#", "white": 14, "longest_run": 2, "w": 12, "windows": 2120, "checkpoints": {"5": 84, "13": 46}}
+{"column": 23, "word": "..#...#....#.###..###", "white": 12, "longest_run": 3, "w": 12, "windows": 2774, "checkpoints": {"4": 104, "8": 47}}
+{"column": 24, "word": ".##..##..###.....##..", "white": 12, "longest_run": 3, "w": 12, "windows": 3995, "checkpoints": {"3": 142, "7": 57}}
+{"column": 25, "word": "##..##..##...#####.##", "white": 8, "longest_run": 5, "w": 12, "windows": 6057, "checkpoints": {"2": 197, "6": 82}}
+{"column": 26, "word": "#.###.###.####.#.#.#.", "white": 7, "longest_run": 4, "w": 12, "windows": 3531, "checkpoints": {"5": 47, "14": 113, "18": 67}}
+{"column": 27, "word": "#.....#.#......#..##.", "white": 15, "longest_run": 2, "w": 12, "windows": 3976, "checkpoints": {"2": 43, "9": 111, "17": 48}}
+{"column": 28, "word": "#.#####...######..#.#", "white": 7, "longest_run": 6, "w": 12, "windows": 5883, "checkpoints": {"1": 57, "8": 137, "16": 69}}
+{"column": 29, "word": ".##.....###.#....##.#", "white": 12, "longest_run": 3, "w": 12, "windows": 5190, "checkpoints": {"3": 152, "13": 114, "19": 14}}
+{"column": 30, "word": ".#.######.#..#####.##", "white": 6, "longest_run": 6, "w": 12, "windows": 6734, "checkpoints": {"0": 182, "9": 37, "11": 87}}
+{"column": 31, "word": "##........#........#.", "white": 17, "longest_run": 2, "w": 12, "windows": 4174, "checkpoints": {"12": 29}}
+{"column": 32, "word": "...########..#######.", "white": 6, "longest_run": 8, "w": 12, "windows": 4412, "checkpoints": {"11": 49}}
+{"column": 33, "word": "####........##.......", "white": 15, "longest_run": 4, "w": 12, "windows": 4703, "checkpoints": {"4": 46}}
+{"column": 34, "word": "#.#.#########.#######", "white": 3, "longest_run": 9, "w": 12, "windows": 7541, "checkpoints": {"1": 44}}
+{"column": 35, "word": "..#...........#.#.#.#", "white": 16, "longest_run": 1, "w": 12, "windows": 2418, "checkpoints": {"4": 100}}
+{"column": 36, "word": "###.###########...#..", "white": 6, "longest_run": 11, "w": 12, "windows": 3415, "checkpoints": {"3": 129}}
+{"column": 37, "word": ".#.##...........###..", "white": 15, "longest_run": 3, "w": 12, "windows": 2714, "checkpoints": {"5": 18}}
+{"column": 38, "word": "...#.############.#..", "white": 7, "longest_run": 12, "w": 12, "windows": 3541, "checkpoints": {}}
+python3 research/r5/claudeM5_r5_checks.py table 12  0.42s user 0.01s system 98% cpu 0.436 total
