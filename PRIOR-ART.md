@@ -440,3 +440,25 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
   ergodic zero-one principle for pinned exponents is known. I127 uses a separate translation of each
   variable cut to get a positive-measure set of simultaneous repetitions up to full measure at a
   prescribed bounded-type angle. This comparison concerns the parameter assumptions in the cited results.
+
+## P51 · 2026-11-23 · Low factor complexity beside a clock: pull N3 was already in the kit
+
+- **Ours.** K72 proved, in the frame of `Rule30ClockNearSquares`, that the visible word beside a clock has more than
+  $n + C$ blocks of length $n$ for all large $n$, for every $C$
+  ([Rule30ClockComplexity.lean](research/kit-repair/R30-20261023-8084e6/Rule30ClockComplexity.lean)). It was meant
+  as the complexity form of 8084e6, pull N3.
+- **Known, in the kit, by us.** `Rule30ZeroWallDiagonals` (10 November) says the same of the free word of a
+  finitely supported constrained row: `freeWord_complexity`, `Theta_complexity` and
+  `not_finSupp_theta_and_row_of_bounded_factorCount_excess`. Under an alternating centre, the left half of a
+  configuration with a leftmost black cell is such a row (`Rule30PeriodTwoSideways.left_inX`, used in
+  `Q01_no_leftfinite_alternating`). Its free word is column −1 at the ticks when the centre is white, which is
+  the complement of the visible word. So the statement was in the catalogue twelve days before N3 asked for it.
+- **Known, outside.** Aperiodic words with $n + 1$ blocks of each length are the Sturmian words (Morse and Hedlund,
+  1940). Words with $n + C$ blocks for all large $n$ are called quasi-Sturmian (Cassaigne, 1997; cited from memory,
+  not re-read).
+- **Found by.** Reading `Rule30ZeroWallDiagonals` for the theorem K72 needed, and then asking what `freeWord` is
+  under the clock. A search of KIT.md and KIT-INDEX.md for *complexity* and *Sturmian* does find the row. But the
+  row speaks of the free word of a constrained row and of Q01, not of the clock or the right neighbour, and N3, N6
+  and K72's first search all missed the link.
+- **Credit.** The statement is the kit's. K72's module is a second proof, through `corollary_F`, in the clock's
+  frame and for a clock that starts at any time.

@@ -1,0 +1,122 @@
+{
+ "claim": "partial",
+ "declared": [
+  {
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.clock_complexity",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.factorCount_tail_le",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.low_complexity_excluded",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.repeats_of_low_complexity",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.sturmian_complexity_excluded",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.tail_not_eventuallyPeriodic",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.visible",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.visible_not_eventuallyPeriodic",
+   "standardAxioms": true
+  }
+ ],
+ "headlines": [
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.clock_complexity",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.low_complexity_excluded",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.sturmian_complexity_excluded",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.repeats_of_low_complexity",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Ruliology.CellularAutomata.Rule30ClockComplexity.visible_not_eventuallyPeriodic",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  }
+ ],
+ "importsStatements": true,
+ "module": "Ruliology.CellularAutomata.Rule30ClockComplexity",
+ "newAxioms": [],
+ "official": [],
+ "reasons": [],
+ "replay": {
+  "constants": 34,
+  "ok": true
+ },
+ "verdict": "pass",
+ "verifiedTargets": []
+}
