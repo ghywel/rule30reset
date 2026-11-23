@@ -1,0 +1,204 @@
+{
+  "independent_encoding": {
+    "0": {
+      "cnf": "cb1a22c08784e7ff79e52a7e2ef81e0fdecf0e88b1a474f0ac83e02005968a46",
+      "lrat": "53bda6f287910574ed3711c26ad6db5ec56b0c8108445cba930a7bf3960b27a8"
+    },
+    "1": {
+      "cnf": "b6695935b1486ad17968fc960e66e08e1e6d34b3f838042ec953ade8d5bd62a0",
+      "lrat": "87ffa4d927563579e8c47ffcaf5ad23af51c1ddf82232b9c8f2d7cad00004caa"
+    }
+  },
+  "experiments": [
+    {
+      "start_age": 0,
+      "black_first": true,
+      "exception": "00001001000010010000100001000010000100100001000",
+      "cnf_sha256": "5d1ab5ee2f1aaa4cdb83fd77885cfd13ca22172d341985978ff09ce259fc02f6",
+      "status": "SAT",
+      "seed": "0x146aaaaaaaaafe90d89896ad8659",
+      "final_window": 362,
+      "all_earlier_outside": true,
+      "inner_control": {
+        "black_first_seed": "0x4319fc9fcd612848b70077729985e4b9",
+        "start_age": 10,
+        "final_window": 29034
+      }
+    },
+    {
+      "start_age": 0,
+      "black_first": false,
+      "exception": "00001001000010010000100001000010000100100001000",
+      "cnf_sha256": "9e71b767659368ff08a02909fc7407b7b8194602ba6cc9e6f1c1d509567838c0",
+      "status": "SAT",
+      "seed": "0x67ec205199ed16ce6021a3a516",
+      "final_window": 362,
+      "all_earlier_outside": true,
+      "inner_control": {
+        "black_first_seed": "0x4319fc9fcd612848b70077729985e4b9",
+        "start_age": 10,
+        "final_window": 29034
+      }
+    },
+    {
+      "start_age": 1,
+      "black_first": true,
+      "exception": "00001001000010010000100001000010000100100001000",
+      "cnf_sha256": "2ab853a37ab0692508a429fd41d8a97439db074a082645d2e30fea589f228b44",
+      "status": "UNSAT",
+      "proof": {
+        "cnf": "2ab853a37ab0692508a429fd41d8a97439db074a082645d2e30fea589f228b44",
+        "lrat": "a877f95e05b62eda789f98782179a8a3dc0c3ce0368212e4a557d88045510ce8"
+      },
+      "verified_by": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "inner_control": {
+        "black_first_seed": "0x4319fc9fcd612848b70077729985e4b9",
+        "start_age": 10,
+        "final_window": 29034
+      }
+    },
+    {
+      "start_age": 1,
+      "black_first": false,
+      "exception": "00001001000010010000100001000010000100100001000",
+      "cnf_sha256": "f9f5582623b7829f83bda4262138243ec238e91c52076fb63859b5a18aaa98ea",
+      "status": "UNSAT",
+      "proof": {
+        "cnf": "f9f5582623b7829f83bda4262138243ec238e91c52076fb63859b5a18aaa98ea",
+        "lrat": "218cf3bf2d4121ad52d702a38afcca4d6a056c6a9977459b70abf877166c42c4"
+      },
+      "verified_by": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "inner_control": {
+        "black_first_seed": "0x4319fc9fcd612848b70077729985e4b9",
+        "start_age": 10,
+        "final_window": 29034
+      }
+    },
+    {
+      "start_age": 10,
+      "black_first": true,
+      "exception": "00001001000010010000100001000010000100100001000",
+      "cnf_sha256": "a000715341419271dd1b55b741acc0599d3bd5ede26a645864591cf7a9b8cb3d",
+      "status": "UNSAT",
+      "proof": {
+        "cnf": "a000715341419271dd1b55b741acc0599d3bd5ede26a645864591cf7a9b8cb3d",
+        "lrat": "390293c6808b84f5aa1a5782ee7c03f1d94c4771f38ee940defc45844f94f6c0"
+      },
+      "verified_by": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "inner_control": {
+        "black_first_seed": "0x4319fc9fcd612848b70077729985e4b9",
+        "start_age": 10,
+        "final_window": 29034
+      }
+    },
+    {
+      "start_age": 10,
+      "black_first": false,
+      "exception": "00001001000010010000100001000010000100100001000",
+      "cnf_sha256": "87cf2c24ecb3c28f5d0e0ced10beb1b6856bb82b678254b96d9f31eaa40e0524",
+      "status": "UNSAT",
+      "proof": {
+        "cnf": "87cf2c24ecb3c28f5d0e0ced10beb1b6856bb82b678254b96d9f31eaa40e0524",
+        "lrat": "1126305193dadc6c2c10b99515eaf9c3266f31556aabfccd882208c6c357be55"
+      },
+      "verified_by": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "inner_control": {
+        "black_first_seed": "0x4319fc9fcd612848b70077729985e4b9",
+        "start_age": 10,
+        "final_window": 29034
+      }
+    },
+    {
+      "start_age": 2,
+      "black_first": true,
+      "exception": "00001001000010010000100001000010000100100001000",
+      "cnf_sha256": "96f37570b1b28f992854061b9d66a4dd52f9169bd1cdef9b18310142b28f81d2",
+      "status": "UNSAT",
+      "proof": {
+        "cnf": "96f37570b1b28f992854061b9d66a4dd52f9169bd1cdef9b18310142b28f81d2",
+        "lrat": "498423861a565e185c4b05e7734ec9112fdedf502c56a60922a80994d0cdb8ca"
+      },
+      "verified_by": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "inner_control": {
+        "black_first_seed": "0x4319fc9fcd612848b70077729985e4b9",
+        "start_age": 10,
+        "final_window": 29034
+      }
+    },
+    {
+      "start_age": 2,
+      "black_first": false,
+      "exception": "00001001000010010000100001000010000100100001000",
+      "cnf_sha256": "4f8f63cfc026049ef0f6b7fd7293399a2e668a333fe0422f813076a97036e64b",
+      "status": "UNSAT",
+      "proof": {
+        "cnf": "4f8f63cfc026049ef0f6b7fd7293399a2e668a333fe0422f813076a97036e64b",
+        "lrat": "8e6abad32fd04f011a67ca9da7f028ca1912d87dbcd068b96d39a7e10eb6c55b"
+      },
+      "verified_by": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "inner_control": {
+        "black_first_seed": "0x4319fc9fcd612848b70077729985e4b9",
+        "start_age": 10,
+        "final_window": 29034
+      }
+    },
+    {
+      "start_age": 5,
+      "black_first": true,
+      "exception": "00001001000010010000100001000010000100100001000",
+      "cnf_sha256": "ce938693a27bd0d5ea7d7a83dcc2ab953461dfe883219b971aed527b7a21c8a1",
+      "status": "UNSAT",
+      "proof": {
+        "cnf": "ce938693a27bd0d5ea7d7a83dcc2ab953461dfe883219b971aed527b7a21c8a1",
+        "lrat": "965cc12b2afe82314a061ef5df810b8af413d969826ee1e411507dc15c2c6d6e"
+      },
+      "verified_by": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "inner_control": {
+        "black_first_seed": "0x4319fc9fcd612848b70077729985e4b9",
+        "start_age": 10,
+        "final_window": 29034
+      }
+    },
+    {
+      "start_age": 5,
+      "black_first": false,
+      "exception": "00001001000010010000100001000010000100100001000",
+      "cnf_sha256": "df81600a7c65ea4d4bd292bc229e30f1e9dd195e1d3c1a6f82dcfcf25d328325",
+      "status": "UNSAT",
+      "proof": {
+        "cnf": "df81600a7c65ea4d4bd292bc229e30f1e9dd195e1d3c1a6f82dcfcf25d328325",
+        "lrat": "1ceddb8c2e9e95437c93a621e7d04190a2ccb528be468139b5f64b0e2ead3744"
+      },
+      "verified_by": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "inner_control": {
+        "black_first_seed": "0x4319fc9fcd612848b70077729985e4b9",
+        "start_age": 10,
+        "final_window": 29034
+      }
+    }
+  ]
+}

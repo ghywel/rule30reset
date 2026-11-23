@@ -1,0 +1,243 @@
+{
+  "portal": {
+    "pin": "5fb591588cfa869bfdc47946799b5ddd70a903d1",
+    "module": "Rule30Submission",
+    "source_sha256": "688022b62130d6aeb426877be837bdc2036c589c00848d5dfe2e55e77d684ea4",
+    "build": {
+      "seconds": 6.463,
+      "peak_process_working_set_bytes": 391700480
+    },
+    "stock": {
+      "seconds": 8.082,
+      "peak_process_working_set_bytes": 949108736
+    },
+    "raw_stock": {
+      "claim": "partial",
+      "declared": [
+        {
+          "kind": "def",
+          "name": "Rule30Submission.InTrap",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Rule30Submission.black_in_every_five",
+          "standardAxioms": true
+        },
+        {
+          "kind": "def",
+          "name": "Rule30Submission.innerSeed",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Rule30Submission.no_classifier_47",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Rule30Submission.no_short_classifier",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Rule30Submission.no_short_classifier_after_first",
+          "standardAxioms": true
+        },
+        {
+          "kind": "def",
+          "name": "Rule30Submission.outerSeed",
+          "standardAxioms": true
+        },
+        {
+          "kind": "def",
+          "name": "Rule30Submission.packed",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Rule30Submission.physical",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Rule30Submission.physical_labels",
+          "standardAxioms": true
+        },
+        {
+          "kind": "def",
+          "name": "Rule30Submission.reading",
+          "standardAxioms": true
+        },
+        {
+          "kind": "def",
+          "name": "Rule30Submission.rh",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Rule30Submission.same_reading",
+          "standardAxioms": true
+        },
+        {
+          "kind": "def",
+          "name": "Rule30Submission.tick",
+          "standardAxioms": true
+        },
+        {
+          "kind": "def",
+          "name": "Rule30Submission.packed.match_1",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Rule30Submission.reading.eq_1",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Rule30Submission.tick.eq_1",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Ruliology.CellularAutomata.Rule30GateTrap.evolve.eq_1",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Ruliology.CellularAutomata.Rule30GateTrap.evolve.eq_2",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Ruliology.CellularAutomata.Rule30GateTrap.evolve.eq_def",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Ruliology.CellularAutomata.Rule30PeriodTwoCoupled.altCol.eq_1",
+          "standardAxioms": true
+        }
+      ],
+      "headlines": [
+        {
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "found": true,
+          "kind": "theorem",
+          "name": "Rule30Submission.no_classifier_47",
+          "ok": true,
+          "problems": [],
+          "typeMatches": true
+        },
+        {
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "found": true,
+          "kind": "theorem",
+          "name": "Rule30Submission.no_short_classifier_after_first",
+          "ok": true,
+          "problems": [],
+          "typeMatches": true
+        },
+        {
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ],
+          "found": true,
+          "kind": "theorem",
+          "name": "Rule30Submission.black_in_every_five",
+          "ok": true,
+          "problems": [],
+          "typeMatches": true
+        }
+      ],
+      "importsStatements": true,
+      "module": "Rule30Submission",
+      "newAxioms": [],
+      "official": [],
+      "reasons": [],
+      "replay": {
+        "constants": 66,
+        "ok": true
+      },
+      "verdict": "pass",
+      "verifiedTargets": []
+    }
+  },
+  "research": {
+    "pin": "f41bb494d64f120e0e6f07ab68d799a6018396cc",
+    "module": "ObserverAfterFirst",
+    "source_sha256": "355439906642ad1f8d1a22b221bf1dd6a7641d86b0ff020a61e6743c05faa727",
+    "build": {
+      "seconds": 19.737,
+      "peak_process_working_set_bytes": 1653764096
+    },
+    "stock": {
+      "seconds": 21.243,
+      "peak_process_working_set_bytes": 2506846208
+    },
+    "raw_stock": {
+      "claim": "partial",
+      "declared": [
+        {
+          "kind": "theorem",
+          "name": "Ruliology.CellularAutomata.ObserverAfterFirst.confirm_by_52",
+          "standardAxioms": true
+        },
+        {
+          "kind": "theorem",
+          "name": "Ruliology.CellularAutomata.ObserverAfterFirst.sound_47_after_first",
+          "standardAxioms": true
+        }
+      ],
+      "headlines": [
+        {
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "found": true,
+          "kind": "theorem",
+          "name": "Ruliology.CellularAutomata.ObserverAfterFirst.sound_47_after_first",
+          "ok": true,
+          "problems": [],
+          "typeMatches": true
+        },
+        {
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "found": true,
+          "kind": "theorem",
+          "name": "Ruliology.CellularAutomata.ObserverAfterFirst.confirm_by_52",
+          "ok": true,
+          "problems": [],
+          "typeMatches": true
+        }
+      ],
+      "importsStatements": true,
+      "module": "ObserverAfterFirst",
+      "newAxioms": [],
+      "official": [],
+      "reasons": [],
+      "replay": {
+        "constants": 49,
+        "ok": true
+      },
+      "verdict": "pass",
+      "verifiedTargets": []
+    }
+  }
+}

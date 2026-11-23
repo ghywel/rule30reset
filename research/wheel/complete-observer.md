@@ -10,7 +10,9 @@ Watch column 1 whenever its alternating neighbour at column 0 is white. Write 1 
 
 The test recognizes the trap in which the 17/56 wheel runs. A positive observation certifies the hidden state at its endpoint. The wheel can already have slipped into another phase, or the trapped gate can have another admissible rhythm. On the physical clock 48 samples span 94 updates. The project’s signed-kick predictor reads different information and answers when the phase will change. [Streaming observer](trap_observer.py) · [Signed-kick predictor](kick-predictor.md)
 
-## Why 47 readings cannot do the job
+**Starting at the second white tick, 47 clean readings suffice.** One prior white tick of the same alternating clock must have occurred. Its gate bit need not be supplied. Every five consecutive white-time readings contain a black. The sole 47-bit exception below starts with four whites, so the previous reading is forced black. Prepending it gives a clean 48-bit word, which certifies the same endpoint. Taking the last 46 bits of the two finite examples below gives opposite endpoint states even when both observation windows begin after the first white tick. Thus 47 is sharp for a detector supplied only the measured window and the fact that there was a previous white tick. An entry is confirmed within 52 white intervals using this version. Use `--prior-white` when monitoring starts with that prior history known. [Onset proof and lower bounds](observer-candidate/ObserverAfterFirst.lean)
+
+## The 47-reading ambiguity when the start may be the first white tick
 
 These two finite rows produce the same 47 readings. In hexadecimal, site 1 is the low bit and all higher unlisted sites are white. The initial wall is black.
 
@@ -21,7 +23,7 @@ These two finite rows produce the same 47 readings. In hexadecimal, site 1 is th
 
 Their common word is `00001001000010010000100001000010000100100001000`. Every classifier given just these 47 bits must give the same answer on both runs. Shorter suffixes inherit the ambiguity. Thus 48 is the least fixed window length that can accept every mature inside window and reject every outside endpoint, regardless of how the classifier is designed. Maturity here means that the window starts at least ten white samples after entry. The classifier uses only the window, without a reset time, seed or older observations. [Kernel-checked physical pair and lower bound](WheelObserverLowerBound.lean) · [Independent row replay](observer_controls.py).
 
-Of all 674 clean 47-bit strings, this is the only one that can end outside. Any of the other 673 certifies trap membership if observed. Ten short forcing words prove this, including three fragments of the original wheel. The optional 47-sample detector accepts clean windows other than this exception. Its sharp worst-case first confirmation is 52 white intervals after entry (104 physical ticks), against 53 for the fixed 48-sample filter. [Factor proof and witnesses](word_cover.md) · [Stock receipt](word_cover_stock.json).
+Of all 674 clean 47-bit strings, this is the only one that can end outside. Any of the other 673 certifies trap membership if observed. Ten short forcing words prove this, including three fragments of the original wheel. The adaptive detector defers on this exception when its window starts with the first supplied reading and no earlier white tick is known. Its sharp worst-case first confirmation is 52 white intervals after entry (104 physical ticks), against 53 for the fixed 48-sample filter. [Factor proof and witnesses](word_cover.md) · [Stock receipt](word_cover_stock.json).
 
 ## Why 48 suffice, and how quickly the test fires
 
