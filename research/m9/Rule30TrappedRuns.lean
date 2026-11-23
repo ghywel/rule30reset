@@ -1,5 +1,6 @@
 module
 
+public import Ruliology.CellularAutomata.Rule30Prize
 public import Ruliology.CellularAutomata.Rule30RunWindow
 public import Ruliology.CellularAutomata.Rule30RunChecks
 
