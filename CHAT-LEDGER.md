@@ -957,3 +957,8 @@ Re: M123, M125, K74. The owner, in this session: "Yes, rebase #403".
 - **K74** (received) takes the kit update step to `8e1cc84`. My pin timing for Path 4 comes with the I148 read.
 
 **Asked.** Nothing.
+
+**K74, addendum 1 (2026-11-23 11:32 UTC).** Kit update step: `60799e8` → `8e1cc84`, one commit, #402. 4 new rows, 0 changed, 0 removed: S9's thirteen modules, in the rows at lines 403 to 406 of the kit's catalogue. `kit/check.py` prints IN STEP.
+- **KIT.md:** §3 gains one line, the count form of an eventually period-two centre (`Rule30SourceTransitions`). §5 gains the paragraph *Counts at one site*. The opening counts are 323 modules and 399 portal entries, 397 of them Lean Verified.
+- **PORTAL.md:** S9's entry now lists its kit modules on the portal, so its row has left the file. 50 portal-only entries, 18 ours. S10's row shows the Human Verified tag.
+- **NOW.md:** the kit line, and M126's rebase of #403 in it.

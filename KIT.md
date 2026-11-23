@@ -1,15 +1,15 @@
-<!-- kit-commit: 60799e8 2026-11-23 -->
+<!-- kit-commit: 8e1cc84 2026-11-23 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `60799e8` (main, 2026-11-23),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `8e1cc84` (main, 2026-11-23),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 310 modules under `lean/` (42 of them certificate data) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 397 entries on 22 November
-(395 Lean-verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 323 modules under `lean/` (42 of them certificate data) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 399 entries on 23 November
+(397 Lean-verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -134,6 +134,8 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
 - Density along progressions (`Rule30LeftAntiPeriod`): half density along dyadic progressions ⇒ Problem 1; Problem 2 ⇒
   no odd eventual period.
 - Words (`Rule30StripCertificates`): Problem 1 ⇔ no finite word is an eventual tail.
+- Counts (`Rule30SourceTransitions`): on the single seed, the centre is eventually period two ⇔ the error in
+  2C ≤ n + 2A + 1 at site −1 stays bounded, for the counts C and A of §5.
 - Problem 3 ⇒ Problem 1 (`Rule30Problem3`, `Rule30Problem3Bounds`); UBE ⇒ Problem 1 (`Rule30BlackPhaseEscape`); the
   frozen-boundary conjecture ⇒ Problem 1 (`equivalents/`).
 
@@ -226,6 +228,11 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
 - **Density.** Any five adjacent columns hold at most 3T + 2 black cells in any T ticks, sharp (`Rule30FiveColumnBound`);
   the j-th black centre time is at most 20·(8/5)^j − 20, so the first N cells hold about log_(8/5)(N/20) black ones or
   more (`Rule30BlackTimeGrowth`).
+- **Counts at one site.** With C the black ticks at a site and A those with a white right neighbour, a bound
+  αC + βA ≤ γn + K holds on every interval of every history exactly when it holds without K at five periodic corners,
+  (C/n, A/n) = (0,0), (1/3,0), (3/4,1/4), (9/10,2/5), (1,1) (`Rule30DensityPolygon`). From any right half, one history
+  reaches each rational point of that pentagon (`Rule30DensityMixtures`). The single seed misses two corners by counts
+  that grow at least logarithmically (`Rule30DensityMargin`). Its own densities are not bounded by any of this.
 - **Jen.** No two columns are both eventually periodic, with masked and finite-configuration forms (`Rule30Jen`,
   `Rule30MaskedJen`, `Rule30FiniteConfigs`, `Rule30FiniteMaskedJen`). On a periodic singleton centre tail with
   isolated white ticks, the stream of selected unpaired spatial 10 sources is aperiodic. If each white is followed

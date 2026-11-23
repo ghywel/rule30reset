@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 11:31 UTC by claudeM5 (M126, #403 rebased onto 8e1cc84).*
+Updated 2026-11-23 11:32 UTC by claudeCloud (K74 addendum 1, the kit update step to 8e1cc84).*
 
 ## Arrangement
 
@@ -13,7 +13,7 @@ Updated 2026-11-23 11:31 UTC by claudeM5 (M126, #403 rebased onto 8e1cc84).*
 |---|---|---|---|
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S11 read and returned for text repairs (M125); then the independent read of Path 4's packet (I148) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | pull N6: S11's text repairs (M125) |
-| claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | the kit update step to `8e1cc84` (K74); then free |
+| claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | free |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Path 4, pull I49 (I148–I151) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | free since N9 |
 
@@ -89,9 +89,8 @@ All ten posted entries are **Lean Verified** and carry the portal's **Human Veri
 | **S10** | In the trapped gate, four closed runs of four 5-gaps are excluded from delay two, sharply. Five blocks are excluded from entry. On the kit ladder the four-run threshold is exactly width 45. | M9 | [R30-20261123-71bab6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-71bab6) (M123). [Reviewed PR text and receipts](research/m9/compact/s10-release-review.md) | **PR [#403](https://github.com/WolframInstitute/Rule30PrizeKit/pull/403) open** at `da4b6f8`, rebased onto kit main `8e1cc84` and MERGEABLE (M123, M126) |
 | **S11 proposed** | Every golden half-circle phase is excluded as the eventual even-time neighbour of an eventual period-two clock. Problem 1, partial. | N6 | Not posted. [Three checked headlines and review packet](research/kit-repair/R30-20261029-0ef6e2/golden-strip-cover.md) (R91). **Carrying read, replay and novelty pass; the release read asks four text repairs** ([read](research/kit-repair/R30-20261029-0ef6e2/claudeM5-s11-read.md), M125). The repairs, the agreement and the owner's word are pending. | Portal only: the proof uses Mathlib. |
 
-- **The kit.** The portal verifier is at `5fb5915`. Kit main is `8e1cc84` since #402 merged (M125). The shared
-  catalogue is at `60799e8`, and the update step is claimed in K74. #403 conflicts in the count line and the import
-  list, and needs a rebase (M125).
+- **The kit.** The portal verifier is at `5fb5915`. Kit main is `8e1cc84` since #402 merged (M125), and the shared
+  catalogue is in step with it (K74 addendum 1). #403 is rebased onto it at `da4b6f8` and mergeable (M126).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
   [KIT-REPAIR.md](KIT-REPAIR.md) are in kit main, and step 7 was assessed, leaving pull N6.
 - **Kit issues.** [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386), the portal and kit
@@ -148,7 +147,7 @@ that would reopen it is here, not under closed (the owner, 23 November). Glance 
 
 **Pulls and routes.**
 
-- **I72, what S9 leaves** (parked 23 Nov, K73; S9 is posted). Comes back for limits at points of the pentagon with
+- **I72, what S9 leaves** (parked 23 Nov, K73; S9 is posted and in the kit). Comes back for limits at points of the pentagon with
   an irrational coordinate, which the mixing schedule with slowly changing weights should give and which are not
   formalized; for a proof that 155 is the least width at the corner (9/10, 2/5), which is searched only (K64); or
   for gptIntel's next test, the one-third corner with two aperiodic columns.
