@@ -1,8 +1,7 @@
 module
 
 public import Ruliology.CellularAutomata.Rule30LockedSeedEdge
-public import Rule30Lock7Certificate
-public import Rule30Lock7CenterDeadline
+public import Rule30Lock7CertificateCenter
 
 /-! Private comparison with Troy Lowry's PR #378 at 0aa79bef. The candidate
 family certificate itself imports only existing research modules and merged kit
@@ -29,6 +28,13 @@ breaks the proposed black-first alternation by absolute tick 2A+190. -/
 theorem centre_bound_at_matching_ages {A : Nat} (pref : HasPrefix 80 prefix364 (rightAt A)) :
     ∃ h, A+h ≤ 2*A+190 ∧ Rule30Jen.cell (A+h) 0 ≠ Rule30PeriodTwoCoupled.altCol h := by
   obtain ⟨h,bound,miss⟩ := actual_break_of_checkCover checkCover_from_pr pref
+  exact ⟨h,by omega,miss⟩
+
+/-- The eleven-leaf proof gives the same bound with the first 77 cells. -/
+theorem centre_bound_at_77_cells {A : Nat} (pref : HasPrefix 77 prefix364 (rightAt A)) :
+    ∃ h, A+h ≤ 2*A+190 ∧ Rule30Jen.cell (A+h) 0 ≠ Rule30PeriodTwoCoupled.altCol h := by
+  obtain ⟨h,bound,miss⟩ := Rule30Lock7CertificateCenter.centre_bound_of_certificate lowry_77_passes pref
+  change A+h ≤ 2*(A+1+2*47) at bound
   exact ⟨h,by omega,miss⟩
 
 end Ruliology.CellularAutomata.Rule30Lowry378Comparison
