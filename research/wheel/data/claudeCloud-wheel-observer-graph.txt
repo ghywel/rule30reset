@@ -1,0 +1,5 @@
+{"W": 16, "longest_samples_outside": null, "layers_repeat": {"first": 31, "again": 32, "states": 1853}, "seconds": 0.1}
+{"W": 18, "longest_samples_outside": null, "layers_repeat": {"first": 34, "again": 35, "states": 3755}, "seconds": 0.2}
+{"W": 20, "longest_samples_outside": null, "layers_repeat": {"first": 36, "again": 37, "states": 7270}, "seconds": 0.4}
+{"W": 22, "longest_samples_outside": null, "layers_repeat": {"first": 40, "again": 41, "states": 16225}, "seconds": 2.1}
+{"W": 24, "longest_samples_outside": null, "layers_repeat": {"first": 66, "again": 67, "states": 29744}, "seconds": 10.2}
