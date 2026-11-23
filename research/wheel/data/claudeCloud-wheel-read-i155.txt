@@ -1,0 +1,10 @@
+1. thresholds at the 28 phases: 28 agree (n white samples force; n - 1 with every tick of U do not, row replayed)
+2. fragments (phase, samples, as given, one sample shorter): [(12, 33, 'UNSAT', 'SAT'), (21, 29, 'UNSAT', 'SAT'), (26, 29, 'UNSAT', 'SAT')]
+3. witness from phase 27: 104 cells, 45 white samples, every tick is U: True; final window 7772 (stated 7772), outside the trap: True
+3. witness from phase 13: 86 cells, 36 white samples, every tick is U: True; final window 1016 (stated 1016), outside the trap: True
+3. witness from phase 22: 78 cells, 32 white samples, every tick is U: True; final window 48180 (stated 48180), outside the trap: True
+   the four double steps from window 7772 are in the trap: True
+4. kick-to-kick words of column 1 over all paths in the trap: ['110100', '1101000100']
+   black-tick reading = gate(s) OR gate(s-1) OR gate(s-3) on 6206 paths of four samples: 0 exceptions
+5. longest aligned agreement of a tile sequence with the period-14 word: 16 ticks
+read passed
