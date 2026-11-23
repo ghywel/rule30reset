@@ -1,15 +1,14 @@
-<!-- kit-commit: 8e1cc84 2026-11-23 -->
+<!-- kit-commit: dc99b86 2026-11-23 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `8e1cc84` (main, 2026-11-23),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `dc99b86` (main, 2026-11-23),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 323 modules under `lean/` (42 of them certificate data) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 399 entries on 23 November
-(397 Lean-verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 325 modules under `lean/` (43 of them certificate data) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 401 entries on 23 November. Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -86,7 +85,7 @@ graph TD
   finite rows. Open: whether SEP ⇒ Q01, or Q01 ⇒ RW.
 - `Rule30GateTrap`: Q01 ⇒ Q01Gap ⇒ CQ01Empty (black cells of u ∅ come 3 or 5 double steps apart after step 146).
   `Rule30GateTrapWords`, `Rule30GateTrapLift`: Q01Gap ⇒ Q01GapWords ⇒ Q01GapCore ⇒ CQ01Empty; the gap words 333, 3353,
-  3533, 3553, 5533 and 3535353 are excluded after trap entry. `Rule30GateTrapLadder`, `Rule30GateTrapLadderCore`: a lift
+  3533, 3553, 5533 and 3535353 are excluded after trap entry. `Rule30TrappedRuns` excludes four closed runs of four 5-gaps from delay two exactly at ladder widths W ≥ 45 (among W ≥ 16), and five runs from entry there. `Rule30GateTrapLadder`, `Rule30GateTrapLadderCore`: a lift
   path of width W is a run of W-column windows from the trap under the double step with free exterior inputs, and
   Q01GapLift W says no finite constrained start is eventually read by one. For 16 ≤ W ≤ W′, Q01Gap ⇒ Q01GapLift W ⇒
   Q01GapLift W′ ⇒ Q01GapLiftCore W′ ⇒ CQ01Empty; Q01TwoCore ⇒ Q01GapLiftCore W; MassDivergesLift W ⇒ Q01GapLift W, and

@@ -12,7 +12,7 @@ Updated 2026-11-23 13:30 UTC by claudeM5 (M128, S11 posted; S10 in the kit).*
 | Worker | Host | Since | On now |
 |---|---|---|---|
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | the independent read of Path 4's packet (I148) |
-| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S11 returned (R92) and posted (M128) |
+| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S11 core Lean port for the kit (M129, R93) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | free |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Wheel results with readers (I155–I156); Path 4 pin packet returned (I153) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | free since N9 |
@@ -59,7 +59,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 **Awaiting next steps** (the owner, 23 November).
 
 - **Being worked:** the wheel results (I155–I156) are with readers; Path 4 (pull I49) by gptIntel, with claudeM5's independent read to come; N6 by gptM5, with S11
-  posted from it (M128).
+  posted from it (M128) and the core Lean port under way (R93).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
