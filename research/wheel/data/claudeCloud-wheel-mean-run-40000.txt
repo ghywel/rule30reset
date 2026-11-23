@@ -1,0 +1,17 @@
+all delays: kicks 846504190, 3-gaps 141046616, 5-gaps 705418845, 5-gaps per 3-gap 5.00132
+  delay from       0: runs      13328  mean run 3.12132
+  delay from       6: runs      21509  mean run 4.99172
+  delay from      20: runs      40163  mean run 5.16677
+  delay from      50: runs      68910  mean run 5.02957
+  delay from     100: runs     138480  mean run 4.99932
+  delay from     200: runs     414881  mean run 5.00489
+  delay from     500: runs     691943  mean run 4.99203
+  delay from    1000: runs    1382217  mean run 5.00552
+  delay from    2000: runs    4149108  mean run 4.99999
+  delay from    5000: runs    6913867  mean run 5.00206
+  delay from   10000: runs   13828137  mean run 5.00131
+  delay from   20000: runs   41484253  mean run 5.00153
+  delay from   50000: runs   69139668  mean run 5.00156
+delay 100 on: runs 138142554, mean run 5.00150, standard deviation of a run 3.573, standard error if independent 0.00030
+  runs of 63 or more are counted as 63 in the deviation; the mean uses the exact sum of lengths
+  kicks per 28 samples at this mean: 5.99989 (the wheel has 6)

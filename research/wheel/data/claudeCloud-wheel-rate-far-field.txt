@@ -1,0 +1,7 @@
+empty    rows 400, entered by sample 100: 348, locked: 0, gaps other than 3 and 5 after entry: 0; runs 244555, mean run 5.0183, standard error 0.0077
+uniform  rows 400, entered by sample 100: 352, locked: 0, gaps other than 3 and 5 after entry: 0; runs 248566, mean run 4.9913, standard error 0.0076
+p25      rows 400, entered by sample 100: 353, locked: 0, gaps other than 3 and 5 after entry: 0; runs 248912, mean run 4.9981, standard error 0.0074
+p75      rows 400, entered by sample 100: 354, locked: 0, gaps other than 3 and 5 after entry: 0; runs 249651, mean run 4.9982, standard error 0.0069
+black    rows 400, entered by sample 100: 363, locked: 1, gaps other than 3 and 5 after entry: 0; runs 255230, mean run 4.9992, standard error 0.0074
+alt      rows 400, entered by sample 100: 360, locked: 0, gaps other than 3 and 5 after entry: 0; runs 253987, mean run 4.9952, standard error 0.0074
+per3     rows 400, entered by sample 100: 366, locked: 0, gaps other than 3 and 5 after entry: 0; runs 258087, mean run 4.9983, standard error 0.0068
