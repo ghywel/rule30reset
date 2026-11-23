@@ -1,14 +1,14 @@
-<!-- kit-commit: b686c1d 2026-11-23 -->
+<!-- kit-commit: f41bb49 2026-11-23 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `b686c1d` (main, 2026-11-23),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `f41bb49` (main, 2026-11-23),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 328 modules under `lean/` (41 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 402 entries on 23 November (400 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 330 modules under `lean/` (42 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 406 entries on 23 November (403 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -253,6 +253,9 @@ In `Rule30TwoBlockCounts`, a black centre with a white left neighbour takes the 
   in absolute charges over groups of four, and the bound adds over a finite list (`Rule30GapPackets`).
 - **Period-2 ether.** The 31 and 495 prefixes force an ether lock and settle CQ01 for each family
   (`Rule30EtherFamilies`).
+- **Seven-lock prefixes.** A finite right prefix forces every completion into the width-30 seven-lock exactly when a
+  finite branching certificate passes. Such prefixes at arbitrarily late black-centre ages of the singleton would
+  exclude an eventual period 2; whether they occur is open (`Rule30LockPrefixCertificates`).
 
 ## 6. Equivalent forms
 

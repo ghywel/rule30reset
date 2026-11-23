@@ -5,17 +5,17 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 17:27 UTC by claudeCloud (K78 addendum 1: X and Y do not end when widened).*
+Updated 2026-11-23 17:29 UTC by claudeM5 (M133: the pulls with submissions sorted; R5 taken; S12 in the kit).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S12 posted, Lean Verified (M132) |
-| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S11 in the kit at `b686c1d` (#405). |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | R5 (M133). S12 is in the kit |
+| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | free; S11 is in the kit |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | free; the wheel reads and two width tests are posted (K77, K78) |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Wheel kick predictor and exterior classification with readers (I169, I164). S12 is Lean Verified and [kit PR #406](https://github.com/WolframInstitute/Rule30PrizeKit/pull/406) is open. |
-| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | free since N9 |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Wheel kick predictor and exterior classification with readers (I169, I164). S12 is in the kit |
+| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | free since N10 |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
@@ -24,14 +24,15 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M132, gptM5 R95, claudeCloud K78, gptIntel I169 and claudeIntel N10.
+- **Last posts:** claudeM5 M133, gptM5 R95, claudeCloud K78, gptIntel I169 and claudeIntel N10.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **The next block is not set.** Path 4 and N6 are being worked. claudeCloud and claudeIntel are free, and claudeM5
-  will be after its read. Say what they take next: the choices on offer are under The next block.
+- **The next block for the free workers is not set.** claudeM5 is on R5 (the owner, 23 November) and gptIntel waits on
+  readers. gptM5, claudeCloud and claudeIntel are free: say what they take next, from the rows marked **free** in the
+  tracker or from The next block.
 
 ## Direction
 
@@ -52,9 +53,10 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 ## The next block
 
-**Awaiting next steps** (the owner, 23 November).
+**The owner, 23 November:** the pulls with submissions are sorted (M133), and claudeM5 takes R5. The rest awaits next
+steps.
 
-- **Being worked:** the wheel Lean modules and exterior classification are with readers (I155, I164). S12 (Path 4) is Lean Verified and kit PR #406 is open. S11 is in the kit at `b686c1d` (#405).
+- **Being worked:** R5 (claudeM5, M133). The wheel's Lean modules and the October comparison await readers (I155, I169).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
@@ -67,7 +69,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 METHOD §12: any worker authors, a different worker reads, both agree on the same digests, the owner gives the word;
 the Wolfram steps run on the M5. Standing consent to post: none.
 
-All twelve posted entries are **Lean Verified**. S1 through S11 also carry the portal’s **Human Verified** tag (public list, 23 November 15:57 UTC).
+All twelve posted entries are **Lean Verified** and carry the portal’s **Human Verified** tag (public list, 23 November 17:24 UTC). Every one but S1 is in the kit.
 
 | | Result | From | Portal | Kit |
 |---|---|---|---|---|
@@ -81,10 +83,11 @@ All twelve posted entries are **Lean Verified**. S1 through S11 also carry the p
 | **S8** | Every periodic sparse column (isolated pulses, gaps of at least 9) at any site of a row with a leftmost black cell contains the gaps 12, 10, 9; the ten three-gap reset words as support. | I77 | [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a) (M112) | `Rule30RequiredGapFactor` and `Rule30ThreeGapCapture`, `33b19c8`, [#398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398) |
 | **S9** | Three sharp inequalities and five periodic corners classify uniform linear bounds on black and run-end counts. From any right half, one history realizes each prescribed rational point. On the single seed two corner deficits grow at least logarithmically. Problem 2, partial. | I72 | [R30-20261123-b2be99](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) (M118, M120). [Release reads](research/source-density/s9-release-review.md). A lighter notebook with one kernel check passed its read and stays on the M5, unposted (M119, R88). | **In the kit** at `8e1cc84` ([#402](https://github.com/WolframInstitute/Rule30PrizeKit/pull/402)), all thirteen modules byte for byte (M125) |
 | **S10** | In the trapped gate, four closed runs of four 5-gaps are excluded from delay two, sharply. Five blocks are excluded from entry. On the kit ladder the four-run threshold is exactly width 45. | M9 | [R30-20261123-71bab6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-71bab6) (M123). [Reviewed PR text and receipts](research/m9/compact/s10-release-review.md) | **In the kit** at `dc99b86` ([#403](https://github.com/WolframInstitute/Rule30PrizeKit/pull/403)), both modules byte for byte (M128) |
-| **S11** | Every golden half-circle phase is excluded as the eventual even-time neighbour of an eventual period-two clock. Problem 1, partial. | N6 | [R30-20261123-6c3fa9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9), **Lean Verified**, **Human Verified**. Reads: [M125](research/kit-repair/R30-20261029-0ef6e2/claudeM5-s11-read.md), M127 | [Core kit patch](research/kit-repair/R30-20261029-0ef6e2/s11-core/kit.patch) (R94) read by claudeIntel (N10): PASS with one docstring repair. Kit PR [#405](https://github.com/WolframInstitute/Rule30PrizeKit/pull/405) is open. Author checked v2 and the merge with `7c764ef`: PASS (R95). |
-| **S12** | Finite right-prefix certificates for the width-30 seven-lock, a singleton centre deadline and a conditional period-two exclusion. Companion to Troy Lowry’s [age-364 construction](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378). | I49, K74 | [R30-20261123-9608ac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-9608ac), **Lean Verified** (M132). [Independent read](research/k50_1/path4/claudeM5-s12-read.md) and [author pins](research/k50_1/path4/release/author-pins.json). | [PR #406](https://github.com/WolframInstitute/Rule30PrizeKit/pull/406) open on merged S11. [Criterion and release links offered to Lowry](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378#issuecomment-7103117646). |
+| **S11** | Every golden half-circle phase is excluded as the eventual even-time neighbour of an eventual period-two clock. Problem 1, partial. | N6 | [R30-20261123-6c3fa9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9) (M128). Reads: [M125](research/kit-repair/R30-20261029-0ef6e2/claudeM5-s11-read.md), M127 | **In the kit** at `b686c1d` ([#405](https://github.com/WolframInstitute/Rule30PrizeKit/pull/405)): gptM5's core port (R94), read by claudeIntel (N10) |
+| **S12** | Finite right-prefix certificates for the width-30 seven-lock, a singleton centre deadline and a conditional period-two exclusion. Companion to Troy Lowry’s [age-364 construction](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378). | I49, K74 | [R30-20261123-9608ac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-9608ac) (M132). [Independent read](research/k50_1/path4/claudeM5-s12-read.md) and [author pins](research/k50_1/path4/release/author-pins.json). | **In the kit** at `f41bb49` ([#406](https://github.com/WolframInstitute/Rule30PrizeKit/pull/406)). [Criterion and release links offered to Lowry](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378#issuecomment-7103117646) |
 
-- **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `b686c1d` after S11 (#405, I165).
+- **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `f41bb49` after S12
+  (#406, M133).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
   [KIT-REPAIR.md](KIT-REPAIR.md) are in kit main, and step 7 was assessed, leaving pull N6.
 - **Kit issues.** [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386), the portal and kit
@@ -101,13 +104,12 @@ table for the lists below. The rules are in METHOD §8.
 | Pull | Written | Summary | Status | Submission? |
 |---|---|---|---|---|
 | I152 | 23 Nov, gptIntel | Which structures force or end the 17/56 wheel beside an alternating boundary? | [Wheel and trap](research/wheel/README.md) give sharp entry in 46 white samples. The shortest attainable gap marker is `53535` in 22. [Exterior classification and doubled strips](research/wheel/exterior-tails.md) leave two mixed gates open at unbounded widths. [Kick predictor](research/wheel/kick-predictor.md) gives exact 6- and 14-tick departure warnings. One site-25 edit changes the signed landing while preserving the departure. The upstream source of successive warnings remains open. **K77:** I162, I164, I166 and the 18 sensor rules replay with separate code. Both mixed gates die when widened, `333355` at 44 columns and `33355` at 55, so the exterior's only endless gate of 3-gaps and 5-gaps is 3, 3, 3, …. 127 matched ticks do the work of 140. **K78:** X and Y widened the same way do not end: Y is variable to 62 columns and X to 43, and my counts equal R65's and R69's exactly. So RD needs the finiteness of the right half. | K75 §2 and I162–I169's computations read (I164, K76, K77). The wheel's Lean modules and the October comparison await readers. |
-| I49 | 21 Nov, gptIntel | Which finite right prefixes force Lowry's seven-lock for every completion? | *In progress:* gptIntel, **Path 4** (I148–I151). The [exact finite tree criterion and comparison with #378](research/k50_1/path4/README.md) are in Lean and passed stock replay on 18 headlines beside Lowry's six. An 11-leaf tree needs 77 of Lowry's 80 cells. The six family-only headlines passed at the portal pin in 38.013 s (I153). The physical minimum is 64 contiguous or 63 chosen cells (I63–I68, kernel). Each matching singleton age A has a centre-break deadline. Arbitrarily late black-centre occurrences remain open. S12 is Lean Verified, with kit PR #406 open (I165). | Beside Lowry's #378 (K64, I148–I151). |
-| N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress:* gptM5 (R90, R91). **PROVED IN LEAN** (R90–R91, N9): [golden at every phase, quantitative at every unit scale from three](research/kit-repair/R30-20261029-0ef6e2/golden-strip-cover.md). **PROVED by hand:** every irrational angle on [both half-circle cut orbits](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md) and the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md). Pointwise hand results cover [two golden four-cut words](research/kit-repair/R30-20261029-0ef6e2/golden-rational-cuts.md) and [silver quarter phases](research/kit-repair/R30-20261029-0ef6e2/silver-quarter.md). **Conditional on computed bounds:** [silver off the cut orbit](research/kit-repair/R30-20261029-0ef6e2/configuration-torus-read.md), read by I146 and independently tested by K72. N8's quadratic families and 30 sampled phases remain in the record. The core S11 port is with its reader (R94). The N6 assessment names the endpoint theorem at every irrational angle as the strongest candidate. | S11, golden, posted (M128) |
-| M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | *In progress,* **free** since S10 (M123). Inside the trap the gate settles to a fixed process, and its exclusion laws are read by SAT with LRAT certificates; four of them and the width-45 ladder threshold are S10. The [final K65 sieve](research/m9/data/gptIntel-sieve-final-K65.txt) has 23 exact onsets, each certified by two proof checkers, and 67 survivors through delay 40 or higher; all 18 newly judged laws contain a run of 1 (I140, I142). Outside, X and Y have their grammars to 43 columns ([R69](research/m9/exterior-grammars.md)). Absence from real rows is not a law (M85, M106), and the entropy is undecided (I106). **Next test:** why a lone 1 forces exclusion, starting with a hand argument for the pair (5, 1) from delay 12. | S10 posted; the rest: no |
-| I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress,* **free** since S8 (M112). S8 holds the compulsory factor (12, 10, 9) and the ten three-gap reset words. Unread in `research/white-gap-mixtures/`: the five- and six-pulse floors, which are support (M105), and the external results (I81, I87, I90, I92, I94). **Next test** (gptIntel's): can either four-letter alphabet sustain two readings? | S8 posted; the rest: no |
+| N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress,* **free** since S11 (gptM5 wrote the [assessment](research/kit-repair/R30-20261029-0ef6e2/golden-strip-cover.md#how-the-other-n6-results-compare)). S11, golden at every phase, is in the kit. **PROVED by hand and read:** [both half-circle cut orbits at every irrational angle](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md) (I123, N7) and the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md) (I127, I128, N8). Silver off the cut orbit rests on computed bounds (I146, K72). **Next, in this order:** (1) the endpoint theorem at every irrational angle in Lean: the convergent denominator bound, the three parity and digit cases, and the signed time shift into `corollary_F`; its angles are real, so expect Mathlib and the portal first; (2) the metric theorem; (3) an exact silver cover. | S11 posted and in the kit; the endpoint theorem is the next candidate |
+| M9 | 17 Nov, claudeM5 | Why does a lone 1 force a word out of the trapped gate? (The late gate language inside the trap.) | *In progress,* **free** since S10 (M123). Inside the trap the gate settles to a fixed process. Four of its exclusion laws and the width-45 threshold are S10, in the kit. The [final K65 sieve](research/m9/data/gptIntel-sieve-final-K65.txt) has 23 certified onsets and 67 survivors through delay 40 or more, and all 18 newly judged laws contain a run of 1 (I140, I142). The entropy is undecided (I106), and absence from real rows is not a law (M85, M106). **Next:** one block on a hand reason for the pair (5, 1) from delay 12, the only judged two-run law. If no local reason appears, park it with the sieve table. The exterior half, X and Y, is K50.1's (K77, K78). | S10 posted and in the kit; the rest: no |
+| I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress,* **free** since S8 (M112), which holds the compulsory factor (12, 10, 9) and the ten three-gap reset words. **Next, in this order:** (1) widen the strip test past 22 columns for the two minimal alphabets it leaves, {9, 10, 12, 13} and {9, 10, 12, 14} (I87): can one gap input keep two different readings of the second white tick? A death at some width settles that alphabet; a survivor is the candidate for a physical column. (2) A carrying read and a Lean form of I87's other compulsory factors, (10, 12), (12, 12) and a 13 or 14, which are external. The rest of `research/white-gap-mixtures/` is support (M105, I81, I90, I92, I94). | S8 posted and in the kit; (2) could extend it |
 | I66 | 21 Nov, gptIntel | Lowry's source arrivals under periodic centres, and source priority | *In progress,* **free** (I66–I69, I71, I73; `research/arrivals/`). Kernel: arrival parity is aperiodic for a wider family of periodic centres (I66). Under an eventually alternating centre, arrival parity and the distance-two shell are both aperiodic (I67–I68), with a finite form 2n < 3b + 16 (I73). Seven rightmost readings recover a four-cell band, and four letters are optimal (I69, I71). Read so far: the finite part of I67–I68 (K56 addendum 1) and I69 (K58). **Next:** a carrying read of the Lean, then the novelty check. | not yet assessed |
-| R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | **Preliminary** (K35, K38). Every cut to N = 240 ends in the same 21-tick cycle on columns 1–24, never in the 15-trap. Departure advances 30 ticks for each 12 columns. The wait from departure behaves like chance, mean 20,900 ticks, and cuts N and N + 12 share no later history. Next tests: is the wait the same from random strips, and can the 15-trap be entered from outside? | no |
-| K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52, [R69](research/m9/exterior-grammars.md), K66). Proved for every ether cut (I46 read) and computed through support width 26. A counterexample needs one finite right half sustaining an aperiodic gate in X or Y, and the finite-window grammars constrain that. The period-2 lock is decided (K66, COMPUTED): one set, the kit's 53 ether-and-wall windows of 19 columns, entered at two alignments; 31 is the least right half that never enters the gate trap. One alignment is in the kit as `Rule30EtherFamilies` (#394); the second alignment and the exact forcing lengths are not. The period-7 lock is pull I49. No next test is written for the open half, the aperiodic gate. | no |
+| R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | *In progress:* claudeM5 (M133). K38: every cut to N = 240 ends in the 21-trap t001 after a wait like chance, mean 20,900 ticks, and departure advances 30 ticks for each 12 columns. The chance wait and four pairwise-apart traps for 001 are Hallee's (PRIOR-ART P53). **This block's questions** (M133): is the front's speed exact for every exterior; can the other traps be entered from outside at all; what is the doorway into t001, and why is the mean wait so near 21 · 2¹⁰. | no |
+| K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52, [R69](research/m9/exterior-grammars.md), K66). Proved for every ether cut (I46 read) and computed through support width 26. A counterexample needs one finite right half sustaining an aperiodic gate in X or Y, and the finite-window grammars constrain that. The period-2 lock is decided (K66, COMPUTED): one set, the kit's 53 ether-and-wall windows of 19 columns, entered at two alignments; 31 is the least right half that never enters the gate trap. One alignment is in the kit as `Rule30EtherFamilies` (#394); the second alignment and the exact forcing lengths are not. The period-7 lock's prefixes are S12. X and Y do not end when widened (Y to 62 columns, X to 43; K78), so a window graph cannot decide the open half, the aperiodic gate, and RD if true needs the half finite. No next test is written. | no |
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. I46 checked the exclusion in Lean and exhibited a finite GE2 trace with 5,2,2,5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
 
 ## Parked
@@ -142,6 +144,10 @@ that would reopen it is here, not under closed (the owner, 23 November). Glance 
 
 **Pulls and routes.**
 
+- **I49, what S12 leaves** (parked 23 Nov, M133; S12 is in the kit). A forcing prefix at arbitrarily late black-centre
+  ages of the singleton would exclude an eventual period two. That is a statement about the seed's own right half at
+  late ages, with no mechanism in hand: of 524,971 ages to 2²⁰, four have a forcing prefix of 31 cells or fewer (I62).
+  Comes back with a reason why any forcing prefix recurs, or if Lowry or the maintainer takes it up on #378.
 - **I72, what S9 leaves** (parked 23 Nov, K73; S9 is posted and in the kit). Comes back for limits at points of the pentagon with
   an irrational coordinate, which the mixing schedule with slowly changing weights should give and which are not
   formalized; for a proof that 155 is the least width at the corner (9/10, 2/5), which is searched only (K64); or
@@ -180,6 +186,9 @@ that would reopen it is here, not under closed (the owner, 23 November). Glance 
 
 One line each: answered, refuted or finished, with nothing that would reopen it.
 
+- **I49, which finite right prefixes force the seven-lock?** (answered 23 Nov, M133; I148–I165.) Exactly those with a
+  finite branching certificate: S12. At Lowry's age 364 the least is 64 contiguous cells, or 63 chosen ones. What S12
+  leaves open is parked.
 - **N3, the complexity form of 8084e6** (closed 23 Nov; K72 addendum 1, P51). Already in the kit:
   `Rule30ZeroWallDiagonals` (10 Nov) has it in the left-half frame, for n + C blocks and not only n + 1. A
   [second proof in the clock's frame](research/kit-repair/R30-20261023-8084e6/Rule30ClockComplexity.lean) passes the

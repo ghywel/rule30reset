@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-23 16:40 UTC, 403 entries, 51 portal-only -->
+<!-- portal-list: 2026-11-23 17:24 UTC, 406 entries, 53 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-23 16:40 UTC (403 entries)
-and kit main `b686c1d` (I169). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-23 17:24 UTC (406 entries)
+and kit main `f41bb49` (M133). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 51 of the 403 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 53 of the 406 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -25,15 +25,15 @@ and kit main `b686c1d` (I169). Find new portal-only entries with `python3 tools/
 
 | Class | Entries |
 |---|---|
-| Missed | 8 |
+| Missed | 10 |
 | Port | 3 |
-| Pending | 3 |
-| Check | 4 |
+| Pending | 2 |
+| Check | 5 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 51, of them 18 ours |
+| All | 53, of them 17 ours |
 
-## Missed (8)
+## Missed (10)
 
 Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-request candidates. For others', credit them when building on them, and they can be raised with their authors.
 
@@ -47,6 +47,8 @@ Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-r
 | [R30-20261115-043275](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261115-043275) | 2026-11-15 | KDRonald3; Claude | Lean Verified, Human Verified | A one-tape Turing machine computes the centre column in quadratic time: 9 symbols, 69 states, C = 21 (`exists_quadratic_machine`). | The kit has Problem 3's statements and Quint's lower bounds, and no upper bound. | A |
 | [R30-20261115-2d4add](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261115-2d4add) | 2026-11-15 | KDRonald3; Claude | Lean Verified, Human Verified | For every row with a leftmost black cell, at every column, seven sets of three-cell windows recur, and so does a black pair. The white pair need not recur. | No kit row on recurrent windows was found. Compare Condrey's Rule30SourceObservables before calling it missing. | A |
 | [R30-20261122-82686b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-82686b) | 2026-11-22 | h3artfield with Cursor Agent (Composer) | Lean Verified | If a zero-boundary row has eventual spatial period p with 3 ∤ p and some positive-time image is finite, its first image is finite. A wall trace that first differs at t₀ ≥ W+2 from a row supported through W, then agrees forever, requires every eventual spatial period of the edited row to be divisible by three. A period-three tail first becomes finite at tick two. | Core-Lean uniform tail theorem. The kit's backward-transducer NOR wave explains the period-three predecessor. The entry proves the extinction and rejoining bounds. | S |
+| [R30-20261123-9c655c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-9c655c) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified | Dyer: for every row with a leftmost black cell, no column eventually repeats 1^b 0^q or its rotation, for b = 7 and q ≥ 12 and for b = 6 and q ≥ 14 (`ones67_zeros_family`). | Infinite families at every column by the kit’s parametric strip certificate. The kit has the seed’s centre for q ≥ 17 (`Rule30White17Runs`). Posted today; no kit PR yet. | A |
+| [R30-20261123-18585c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-18585c) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified, Human Verified | Dyer: the same for b = 4 and q ≥ 7, for b = 8 and q ≥ 16, and for q = 16 and b ≥ 5 (`two_run_family_b48`). | As 9c655c. It credits our 5e2b66 for three of the b = 4 words. Posted today; no kit PR yet. | A |
 
 ## Port (3)
 
@@ -58,17 +60,16 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (3)
+## Pending (2)
 
 In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
-| [R30-20261123-9608ac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-9608ac) | 2026-11-23 | ours | Lean Verified | Ours (S12): every infinite completion of a finite right prefix enters the width-30 seven-phase lock, under the black-first alternating centre, exactly when a finite branching certificate passes; a certified prefix at age A of the singleton forces a break of alternation by absolute tick 2(A + E); certified prefixes at arbitrarily late black-centre ages would exclude eventual period two. | Companion [kit PR #406](https://github.com/WolframInstitute/Rule30PrizeKit/pull/406) is open on the merged S11 tree. | L |
 | [R30-20261123-16f287](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-16f287) | 2026-11-23 | G.P.J.W. Quint and Gemini (Google) | Lean Verified | Under recurrence and prefix clocks, first loss at exponent e ≤ 4 forces a reset at every tick in the first white-to-white interval. A bit-sliced checker covers periods through 32. DL and DLMinusOne each reduce to their cases e ≥ 5. | Extends the kit’s `Rule30RelaxedWindows`. Source `e95507d`, [kit PR #407](https://github.com/WolframInstitute/Rule30PrizeKit/pull/407). | S |
 
-## Check (4)
+## Check (5)
 
 Not decided from the abstract and headlines: needs a source read.
 
@@ -78,6 +79,7 @@ Not decided from the abstract and headlines: needs a source read.
 | [R30-20261029-23ac1b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-23ac1b) | 2026-10-29 | Eric Elbaz (Tensorbend.ai) | Lean Verified, Human Verified | Elbaz: if the column beside the centre is eventually black, its deviation from the alternating reference vanishes above 8(s/2 + 1) + 2. So a centre white on its finitely many defects reconstructs an infinite left half. | Possibly a kit-worthy Q01-type statement. Read the hypotheses against Rule30ZeroBoundary. | A |
 | [R30-20261108-508c6c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-508c6c) | 2026-11-08 | h3artfield; Cursor Agent (Composer) | Lean Verified | h3artfield: every Y < 2^52 dies within size Y + 4 steps of G, and Q01 is equivalent to Open131072Exit. | The equivalence would be a reformulation of Q01. Not Human Verified, and the portal has no separate Lean file. | A |
 | [R30-20261108-a0fd36](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-a0fd36) | 2026-11-08 | h3artfield; Cursor Agent (Composer) | Lean Verified, Human Verified | h3artfield: the size of G grows by 2 per odd step, and first_even Y ≤ size Y + 4 for every Y would give Q01 (`Q01_of_size_add_four`). | The kit's Rule30RecognizableBarrier row cites it only for an observed sharpness. Is the reduction in the kit? | A |
+| [R30-20261123-bf1cee](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-bf1cee) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Unverified | Dyer: the same for b = 3 and q ≥ 15 (`two_run_family_b3`). | Posted today with the portal’s check not passed. Look again once it has a verdict. | A |
 
 ## Covered (7)
 

@@ -473,3 +473,26 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
 - **Known.** The October domain filter found its most common departure shape at site 5 eight ticks before it reached site 1. The shape alone had several different signed outcomes. The later physical cone certificates allow only positions 32, 42 and 52 after 140 matched ticks. They give necessary signatures four ticks before departure and ten ticks before class 52, including departures with no immediate relock. [Particle study, §8.7](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/reports/rule30-prize/RULE30-PRIZE-8.1.md#87-a-slip-is-one-particle-2026-10-05) · [Physical cone certificates, §8.107](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/archived/reports/rule30-prize/RULE30-PRIZE-8.3.md#8107-s8-certified-the-kicks-local-alphabet-four-and-ten-rows-back-2026-10-14-1803-bst-cloud).
 - **Found by.** Searching the October archive for *particle*, *departure*, *kick cone* and *strain*, and reading the original display’s lock convention. Searching only for *kick* also finds the kit’s black gate pulses, a different observable. [Vitruvian display](https://www.wolframcollatzmahler.com/rule30/vitruvian.html).
 - **Credit.** The three positions, necessary precursors and empirical particle belong to the October work. I169 proves the converse for the earlier markers with the required completed history, gives phase-specific two-way rules for the same site 5 eight ticks back, and tests exact signed-landing forecasts from wider measured rows.
+
+## P53 · 2026-11-23 · Entry into the 001 trap at chance rate, and four pairwise-apart traps for 001
+
+- **Ours.** K38 (pull R5): every period-three ether cut to N = 240 ends in the kit's trap t001, after a wait that
+  behaves like a memoryless search with mean 20,878 ticks. COMPUTED and MEASURED.
+- **Known.** L. Hallee, [`lhallee/rule30-open`](https://github.com/lhallee/rule30-open) at `a3b4a64`.
+  - `findings/columns/t001-census.md`: every right half of at most ten cells enters t001 from every phase, at means
+    22,570, 22,533 and 23,028 ticks, with an exponential body. A fair coin in place of the cells beyond enters at a
+    similar rate, and the first 34 columns of the trap take some 20,000 ticks to form.
+  - `Rule30Open/Columns/Traps001.md`: four traps for 001, pairwise apart, of 47, 52, 144 and 304 cells. Entry into any
+    three of them fails for some finite right half, and entry into some trap of 001 (`WTrap.AbsorptionAny`) still
+    excludes 001.
+  - `findings/columns/lock-chains.md`: each trap is a locked window carried leftward, column by column.
+  - `Rule30Open/Columns/ReachRefuted.md` and `negative-results/columns/missed-traps.md`: the windows that can reach a
+    trap, found backward. The 52-cell trap fails the test of reach at 20 cells, so some windows never reach it.
+  - For period four, `Rule30Open/Columns/EtherPrefix.md` proves that every truncation of the ether enters the kit's
+    family, by a shift lemma.
+  - For 011 no trap was found (`negative-results/columns/period-three-011.md`).
+- **Found by.** Reading the credit line of `Rule30EtherThreeNotAbsorption` and then Hallee's notes at their source.
+  K35's search used *cut*, *erosion*, *period-21* and *trap001fifteen* in our own documents and the kit, which name
+  the repository but do not hold its census.
+- **Credit.** The chance wait, the four traps and the carried-lock construction are Hallee's. K38's departure law (30
+  ticks for each 12 columns) and its following of the cut family are not in those notes as far as read.
