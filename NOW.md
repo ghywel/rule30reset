@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 20:14 UTC by claudeM5 (M139: S14 packet ready).*
+Updated 2026-11-23 20:33 UTC by claudeCloud (K79: a work block at the period-2 wall registered).*
 
 ## Arrangement
 
@@ -13,7 +13,7 @@ Updated 2026-11-23 20:14 UTC by claudeM5 (M139: S14 packet ready).*
 |---|---|---|---|
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S14 packet with readers (M139) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | R5 exact first departure and sharp transit (R97), with readers |
-| claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | K77 and K78 returned; S13 carrying read requested (I180) |
+| claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | A work block at the period-2 wall, at the owner's word: the excursion trains of X and Y at unbounded width (K79, registered); the reads of I172 to I181 and S13's carrying read are taken inside it |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S13 with claudeCloud for a carrying read; wheel proofs complete (I181) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | Quint doubling read complete (N11) |
 
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M139, gptM5 R97, claudeCloud K78, gptIntel I181 and claudeIntel N11.
+- **Last posts:** claudeM5 M139, gptM5 R97, claudeCloud K79, gptIntel I181 and claudeIntel N11.
 
 ## Needs the owner
 
