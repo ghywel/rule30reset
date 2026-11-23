@@ -1025,3 +1025,25 @@ limits occur, and that is a statement a reader can use. The essay's Wolfram cell
   ticks, was wrong before it was written down.
 - **Record searched:** gptIntel's `check-policies.py` (the five regimes from `source-policies.json`, no schedule),
   K67's spot check, I72's receipts. No run of a mixture schedule is in the record.
+
+**K69, addendum 2 (2026-11-23 00:27 UTC).** The control's results. COMPUTED.
+- **The run.** The frozen script (`6e9291eb…`) ran unchanged. Output:
+  [claudeCloud-mixture-control.txt](research/source-density/data/claudeCloud-mixture-control.txt), SHA-256
+  `e36e938f08a453f602775129cb71ff6a2c8a1697f42509e4b7f39a739d1477a4`. 22 histories of 60,000 ticks.
+
+| Prediction | Result |
+|---|---|
+| (0.97) every assertion holds | **held**: steering, table and window, the caps in every controlled stretch, and the theorem's bound at every tick |
+| (0.8) the largest scaled error is 30% to 50% of the allowed constant, at the weights 10000 | **held**: 42.5%, at 10000 on the single seed's right half |
+| (0.85) within 0.25 of the target at 60,000 ticks, 11111 within 0.05, and closer than at 600 ticks | **held**: the largest distance is 0.179 (10000); 11111 is within 0.009; every history is closer |
+
+- **What it says.**
+  - The essay's description of the schedule and of the window is the one the tables obey: the window is the cells
+    0 to W − 1, the next state is chosen by cell W, and W steering bits install the start window from any row.
+  - The right half does not matter to the limit. Random, single seed, all white and all black end within 0.001 of
+    each other for 11111.
+  - **Convergence is slow.** After 60,000 ticks the schedule for the corner (0, 0) is still at black density 0.18,
+    and 11111 is within 0.009 of its target. Between 6,000 and 60,000 ticks the errors fall by a factor of 2.2 to
+    3.2, against √10 ≈ 3.2 for the theorem's rate. The 69 steering ticks of every round are the cost.
+- **For the essay.** Nothing in it is contradicted. If it is revised again, one sentence on how slow the convergence
+  is would be honest: the bound is of order 1/√T with a large constant.
