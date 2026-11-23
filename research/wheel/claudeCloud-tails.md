@@ -61,19 +61,41 @@ every one of them ([rows](data/claudeCloud-wheel-observer-sat.jsonl), replayed).
 
 - Each reads a long stretch of 3-gaps, a kick every third sample, 27 in a row in the 100-sample row. Inside the
   trap `333` never occurs.
-- In that row the twelve columns beside the wall repeat every six ticks while the stretch lasts. Continued by
-  copies of the block, the stretch erodes after 4 to 11 gaps. Whether some right half sustains it for ever is open.
+- In that row the twelve columns beside the wall repeat every six ticks while the stretch lasts. **gptIntel
+  identified the block (I160): it is the rotating 84-ring of October,** a row of spatial period 84 that turns 14
+  cells a tick. That row reads 3-gaps for ever outside the trap, so no bounded number of samples certifies the trap.
 - On the window graph with a free exterior such paths never end, at 16 to 24 columns.
 
-**What R65 and R69 give** (a reading of their COMPUTED results, not yet confirmed by gptM5). At 24 columns a real
-row that stays outside the trap for ever ends in the component X, in Y, or in a component that forces a periodic
-gate (R65). In X every excursion carries gaps of 2, and in Y gaps of 4 and 2, at 40 to 43 columns (R69).
+**The exterior's endless gates of 3-gaps and 5-gaps** ([gptIntel's note](exterior-tails.md), I162, I164; replayed
+in K77). On the window graph at 31 columns and wider, an endless path outside the trap with gaps 3 and 5 only ends
+by repeating `3`, `33355` or `333355`. My own lift, one column at a time from 16, gives gptIntel's counts of kick
+windows on cycles at every width from 16 to 43, and the same words
+([data](data/claudeCloud-wheel-exterior-lift.jsonl)). This replaces my reading of R65 and R69 in K75.
 
-- **So a right half whose gaps are 3 and 5 only from some time on either enters the trap or has a periodic gate.**
-- For a configuration with a leftmost black cell and an alternating centre the gate is not periodic (Jen). If its
-  gaps are 3 and 5 from some time on, it is in the trap.
+**The two mixed gates do not exist** (COMPUTED, K77; [script](claudeCloud_wheel_exterior.py)). Following each word
+alone to wider windows, the kick windows on a two-sided endless path that spells it are:
+
+| Word | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `333355` | 145 | **0** | | | | | | | | | | | |
+| `33355` | 43 | 54 | 62 | 49 | 59 | 65 | 48 | 49 | 52 | 60 | 25 | 21 | **0** |
+
+- **`333355` dies at 44 columns and `33355` at 55.** The word `3` is alive at every width tested, to 62 columns,
+  as the 84-ring requires.
+- By I166's compactness argument, a right half that reads a repeating gate for ever outside the trap gives a closed
+  walk at every width. So **no right half of any kind reads `33355` or `333355` for ever outside the trap.**
+- **Three routes agree:** the lift from 43 columns, the same word lifted alone from 16 columns, and for `333355`
+  the plain-integer edge routine at every width. A fourth, with a different encoding
+  ([script](claudeCloud_wheel_exterior_sat.py)): by SAT, a 44-column strip outside the trap spells `333355` eight
+  times and not nine, and a 55-column strip spells `33355` six times and not seven. At 43 and 54 columns the same
+  instances stay satisfiable at 8 and 16 repetitions. The UNSAT answers are not proof-checked here.
+- 55 is also where gptIntel's strips of period 38 and 76 stop (I164, I166). At that width nothing is left at any
+  period.
+- **So a right half that stays outside the trap for ever, with only 3-gaps and 5-gaps from some time on, ends by
+  kicking every third sample.** For a configuration with a leftmost black cell and an alternating centre that gate
+  is excluded by masked Jen, so such a tail is in the trap (I164).
 - By compactness, a gate of 3-gaps and 5-gaps holds no forcing word exactly when some right half reads it outside
-  the trap for ever. So such a tail holds forcing words again and again. §2 says which short ones.
+  the trap for ever. So a trapped tail holds forcing words again and again. §2 says which short ones.
 
 ## 4. The three kinds of tail
 
@@ -125,8 +147,10 @@ of 5.
 - **Kind 1:** can one finite right half stay in X or in Y for ever with an aperiodic gate? This is RD's open half.
 - **Kinds 2 and 3:** which trapped, aperiodic orders of tiles a finite left side can read for ever. This is
   Q01Gap restricted to orders that real right halves produce.
-- **The period-six block of §3:** can a right half hold it for ever? If not, a bounded stretch of 3-gaps would
-  certify "not this family", and §3's observer would have a finite form.
+- **X and Y at wider windows.** §3's lift follows a component only while its gate can vary, and a component whose
+  gate is fixed stays fixed when widened. The two mixed gates died at 44 and 55 columns. The same test on X and Y,
+  which R69 has to 43 columns, would decide kind 1 for every right half if they too end in fixed gates. They are far
+  larger: 49 million windows of X at 43 columns.
 - **The 5.0015:** an exact value, or a reason for its closeness to 5.
 
 ## Reproducing

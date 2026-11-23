@@ -1,0 +1,20 @@
+{"target": 32, "lead": 4, "sites": [3], "depart_if": ["0"], "otherwise": ["1"], "agrees": true, "cases": {"0": "SAT/UNSAT", "1": "UNSAT/SAT"}}
+{"target": 32, "lead": 6, "sites": [5], "depart_if": ["1"], "otherwise": ["0"], "agrees": true, "cases": {"0": "UNSAT/SAT", "1": "SAT/UNSAT"}}
+{"target": 32, "lead": 8, "sites": [5], "depart_if": ["1"], "otherwise": ["0"], "agrees": true, "cases": {"0": "UNSAT/SAT", "1": "SAT/UNSAT"}}
+{"target": 32, "lead": 10, "sites": [5], "depart_if": ["1"], "otherwise": ["0"], "agrees": true, "cases": {"0": "UNSAT/SAT", "1": "SAT/UNSAT"}}
+{"target": 32, "lead": 12, "sites": [7], "depart_if": ["0"], "otherwise": ["1"], "agrees": true, "cases": {"0": "SAT/UNSAT", "1": "UNSAT/SAT"}}
+{"target": 32, "lead": 14, "sites": [7], "depart_if": ["1"], "otherwise": ["0"], "agrees": true, "cases": {"0": "UNSAT/SAT", "1": "SAT/UNSAT"}}
+{"target": 42, "lead": 4, "sites": [3], "depart_if": ["0"], "otherwise": ["1"], "agrees": true, "cases": {"0": "SAT/UNSAT", "1": "UNSAT/SAT"}}
+{"target": 42, "lead": 6, "sites": [5], "depart_if": ["1"], "otherwise": ["0"], "agrees": true, "cases": {"0": "UNSAT/SAT", "1": "SAT/UNSAT"}}
+{"target": 42, "lead": 8, "sites": [5], "depart_if": ["1"], "otherwise": ["0"], "agrees": true, "cases": {"0": "UNSAT/SAT", "1": "SAT/UNSAT"}}
+{"target": 42, "lead": 10, "sites": [5], "depart_if": ["1"], "otherwise": ["0"], "agrees": true, "cases": {"0": "UNSAT/SAT", "1": "SAT/UNSAT"}}
+{"target": 42, "lead": 12, "sites": [3, 7], "depart_if": ["10"], "otherwise": ["00", "01", "11"], "agrees": true, "cases": {"00": "UNSAT/SAT", "01": "UNSAT/SAT", "10": "SAT/UNSAT", "11": "UNSAT/SAT"}}
+{"target": 42, "lead": 14, "sites": [7], "depart_if": ["1"], "otherwise": ["0"], "agrees": true, "cases": {"0": "UNSAT/SAT", "1": "SAT/UNSAT"}}
+{"target": 52, "lead": 4, "sites": [3], "depart_if": ["1"], "otherwise": ["0"], "agrees": true, "cases": {"0": "UNSAT/SAT", "1": "SAT/UNSAT"}}
+{"target": 52, "lead": 6, "sites": [5], "depart_if": ["0"], "otherwise": ["1"], "agrees": true, "cases": {"0": "SAT/UNSAT", "1": "UNSAT/SAT"}}
+{"target": 52, "lead": 8, "sites": [5], "depart_if": ["0"], "otherwise": ["1"], "agrees": true, "cases": {"0": "SAT/UNSAT", "1": "UNSAT/SAT"}}
+{"target": 52, "lead": 10, "sites": [5], "depart_if": ["0"], "otherwise": ["1"], "agrees": true, "cases": {"0": "SAT/UNSAT", "1": "UNSAT/SAT"}}
+{"target": 52, "lead": 12, "sites": [8], "depart_if": ["0"], "otherwise": ["1"], "agrees": true, "cases": {"0": "SAT/UNSAT", "1": "UNSAT/SAT"}}
+{"target": 52, "lead": 14, "sites": [3, 7], "depart_if": ["10"], "otherwise": ["00", "11"], "agrees": true, "cases": {"00": "UNSAT/SAT", "01": "UNSAT/UNSAT", "10": "SAT/UNSAT", "11": "UNSAT/SAT"}}
+{"relay_exceptions_over_all_rows": 0, "trap_pulse_windows": 188, "with_prefix_1110": 188, "with_site_5_black": 41}
+sensors agree

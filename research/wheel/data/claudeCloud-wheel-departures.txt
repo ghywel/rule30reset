@@ -1,0 +1,4 @@
+after 140 matched ticks a first departure can come at positions [32, 42, 52]
+after 127 matched ticks a first departure can come at positions [32, 42, 52]
+after 128 matched ticks a first departure can come at positions [32, 42, 52]
+after 56 matched ticks a first departure can come at positions [2, 12, 19, 22, 32, 39, 42, 49, 52]

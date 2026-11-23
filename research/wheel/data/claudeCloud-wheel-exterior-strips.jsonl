@@ -1,0 +1,9 @@
+{"gaps": "3", "ticks": 6, "columns": 84, "status": "SAT", "model_replays": true, "stated": "SAT", "agrees": true, "variables": 510, "clauses": 3009, "seconds": 0.0}
+{"gaps": "33355", "ticks": 38, "columns": 54, "status": "SAT", "model_replays": true, "stated": "SAT", "agrees": true, "variables": 2090, "clauses": 12217, "seconds": 0.1}
+{"gaps": "33355", "ticks": 38, "columns": 55, "status": "UNSAT", "model_replays": null, "stated": "UNSAT", "agrees": true, "variables": 2128, "clauses": 12445, "seconds": 0.0}
+{"gaps": "333355", "ticks": 44, "columns": 37, "status": "SAT", "model_replays": true, "stated": "SAT", "agrees": true, "variables": 1672, "clauses": 9658, "seconds": 0.0}
+{"gaps": "333355", "ticks": 44, "columns": 38, "status": "UNSAT", "model_replays": null, "stated": "UNSAT", "agrees": true, "variables": 1716, "clauses": 9922, "seconds": 0.0}
+{"gaps": "33355", "ticks": 76, "columns": 54, "status": "SAT", "model_replays": true, "stated": "SAT", "agrees": true, "variables": 4180, "clauses": 24434, "seconds": 0.2}
+{"gaps": "33355", "ticks": 76, "columns": 55, "status": "UNSAT", "model_replays": null, "stated": "UNSAT", "agrees": true, "variables": 4256, "clauses": 24890, "seconds": 0.2}
+{"gaps": "333355", "ticks": 88, "columns": 38, "status": "SAT", "model_replays": true, "stated": "SAT", "agrees": true, "variables": 3432, "clauses": 19844, "seconds": 0.1}
+strips agree

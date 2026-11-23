@@ -1,0 +1,27 @@
+gaps 333355, 43 columns, 2 repetitions (45 samples): SAT, replays: True; 3916 variables, 59790 clauses, cnf 92cca7c24ea2bf23, 0.3 s
+gaps 333355, 43 columns, 4 repetitions (89 samples): SAT, replays: True; 7788 variables, 118750 clauses, cnf 198f945e520996c9, 0.5 s
+gaps 333355, 43 columns, 8 repetitions (177 samples): SAT, replays: True; 15532 variables, 236670 clauses, cnf ca84ba8758212faa, 5.0 s
+gaps 333355, 44 columns, 1 repetitions (23 samples): SAT, replays: True; 2025 variables, 30574 clauses, cnf b6fb29e07b01d4a6, 0.1 s
+gaps 333355, 44 columns, 2 repetitions (45 samples): SAT, replays: True; 4005 variables, 60318 clauses, cnf 872e4bf50a1d6595, 0.2 s
+gaps 333355, 44 columns, 3 repetitions (67 samples): SAT, replays: True; 5985 variables, 90062 clauses, cnf c62b73a4ef332fb9, 0.5 s
+gaps 333355, 44 columns, 4 repetitions (89 samples): SAT, replays: True; 7965 variables, 119806 clauses, cnf cfe3975bbe127545, 0.6 s
+gaps 333355, 44 columns, 6 repetitions (133 samples): SAT, replays: True; 11925 variables, 179294 clauses, cnf 4d1c34a9a9c3622e, 4.2 s
+gaps 333355, 44 columns, 8 repetitions (177 samples): SAT, replays: True; 15885 variables, 238782 clauses, cnf 33f6d267d64d3566, 5.2 s
+gaps 333355, 44 columns, 9 repetitions (199 samples): UNSAT; 17865 variables, 268526 clauses, cnf b400cf10cd1dce9c, 6.6 s
+gaps 333355, 44 columns, 10 repetitions (221 samples): UNSAT; 19845 variables, 298270 clauses, cnf 9c2c0c63475cb681, 7.5 s
+gaps 333355, 44 columns, 11 repetitions (243 samples): UNSAT; 21825 variables, 328014 clauses, cnf 15ef717da9f66e11, 8.2 s
+gaps 333355, 44 columns, 12 repetitions (265 samples): UNSAT; 23805 variables, 357758 clauses, cnf b9405199be1f80e8, 9.1 s
+gaps 333355, 44 columns, 13 repetitions (287 samples): UNSAT; 25785 variables, 387502 clauses, cnf 8c1a3a8d9296dac5, 11.3 s
+gaps 333355, 44 columns, 14 repetitions (309 samples): UNSAT; 27765 variables, 417246 clauses, cnf a8c3e7dcff834f08, 10.2 s
+gaps 333355, 44 columns, 15 repetitions (331 samples): UNSAT; 29745 variables, 446990 clauses, cnf c53b32f3a3997f18, 10.0 s
+gaps 333355, 44 columns, 16 repetitions (353 samples): UNSAT; 31725 variables, 476734 clauses, cnf aeb6d332f78f50cc, 12.1 s
+gaps 33355, 54 columns, 4 repetitions (77 samples): SAT, replays: True; 8415 variables, 112702 clauses, cnf d15bc7dc69caaa7e, 0.6 s
+gaps 33355, 54 columns, 8 repetitions (153 samples): SAT, replays: True; 16775 variables, 224574 clauses, cnf 08be003e328666b0, 2.3 s
+gaps 33355, 54 columns, 16 repetitions (305 samples): SAT, replays: True; 33495 variables, 448318 clauses, cnf 86714358dcd72ae6, 5.4 s
+gaps 33355, 55 columns, 1 repetitions (20 samples): SAT, replays: True; 2184 variables, 29026 clauses, cnf f28d75a19c389551, 0.1 s
+gaps 33355, 55 columns, 2 repetitions (39 samples): SAT, replays: True; 4312 variables, 57222 clauses, cnf 308785fb0d8dc02a, 0.3 s
+gaps 33355, 55 columns, 3 repetitions (58 samples): SAT, replays: True; 6440 variables, 85418 clauses, cnf c300fcfc188a38e9, 0.4 s
+gaps 33355, 55 columns, 4 repetitions (77 samples): SAT, replays: True; 8568 variables, 113614 clauses, cnf bebc7b8311d6cbe5, 0.9 s
+gaps 33355, 55 columns, 6 repetitions (115 samples): SAT, replays: True; 12824 variables, 170006 clauses, cnf 306acd00929eb6c2, 1.7 s
+gaps 33355, 55 columns, 8 repetitions (153 samples): UNSAT; 17080 variables, 226398 clauses, cnf 600d6c283821f444, 2.4 s
+gaps 33355, 55 columns, 7 repetitions (134 samples): UNSAT; 14952 variables, 198202 clauses, cnf 06220783b6c4b550, 1.9 s
