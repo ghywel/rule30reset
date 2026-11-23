@@ -1,0 +1,20 @@
+{"column": 34, "w": 8, "windows": 900, "checkpoints": {"1": 8}, "components": [[849, "open", 0]]}
+{"column": 34, "w": 9, "windows": 1557, "checkpoints": {"1": 12}, "components": [[1481, "open", 0]]}
+{"column": 34, "w": 10, "windows": 2669, "checkpoints": {"1": 19}, "components": [[2533, "open", 0]]}
+{"column": 34, "w": 11, "windows": 4589, "checkpoints": {"1": 28}, "components": [[4354, "open", 0]]}
+{"column": 34, "w": 12, "windows": 7541, "checkpoints": {"1": 44}, "components": [[7137, "open", 0]]}
+{"column": 34, "w": 13, "windows": 12314, "checkpoints": {"1": 70}, "components": [[9221, "open", 0], [815, "CLOSED", 0]]}
+{"column": 34, "w": 14, "windows": 20494, "checkpoints": {"1": 101}, "components": [[14650, "open", 0], [1363, "CLOSED", 0], [46, "open", 0]]}
+{"column": 34, "w": 15, "windows": 33924, "checkpoints": {"1": 153}, "components": [[23645, "open", 0], [2282, "CLOSED", 0], [43, "open", 0]]}
+{"column": 34, "w": 16, "windows": 55754, "checkpoints": {"1": 220}, "components": [[37702, "open", 0], [3541, "CLOSED", 0]]}
+{"column": 34, "w": 17, "windows": 91091, "checkpoints": {"1": 335}, "components": [[60036, "open", 0], [5788, "CLOSED", 0]]}
+{"column": 34, "w": 18, "windows": 146268, "checkpoints": {"1": 478}, "components": [[92639, "open", 0], [9590, "CLOSED", 0]]}
+{"column": 13, "w": 8, "windows": 1104, "checkpoints": {"8": 7, "19": 27}, "components": [[558, "open", 0], [93, "open", 0]]}
+{"column": 13, "w": 9, "windows": 1877, "checkpoints": {"8": 12, "19": 46}, "components": [[900, "open", 0], [141, "open", 0]]}
+{"column": 13, "w": 10, "windows": 3148, "checkpoints": {"8": 20, "19": 76}, "components": [[1505, "open", 0], [141, "open", 0], [32, "open", 0]]}
+{"column": 13, "w": 11, "windows": 4598, "checkpoints": {"8": 26, "19": 112}, "components": [[2370, "open", 0], [191, "open", 0]]}
+{"column": 13, "w": 12, "windows": 7272, "checkpoints": {"8": 44, "19": 157}, "components": [[3869, "open", 0], [273, "open", 0]]}
+{"column": 13, "w": 13, "windows": 11474, "checkpoints": {"8": 67, "19": 212}, "components": [[6371, "open", 0], [381, "open", 0]]}
+{"column": 13, "w": 14, "windows": 18263, "checkpoints": {"8": 103, "19": 294}, "components": [[10169, "open", 0], [558, "open", 0]]}
+{"column": 13, "w": 15, "windows": 28432, "checkpoints": {"8": 164, "19": 450}, "components": [[16249, "open", 0], [646, "open", 0]]}
+{"column": 13, "w": 16, "windows": 45252, "checkpoints": {"8": 241, "19": 690}, "components": [[25337, "open", 0], [843, "open", 0]]}

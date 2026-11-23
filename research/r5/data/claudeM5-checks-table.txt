@@ -37,4 +37,3 @@
 {"column": 36, "word": "###.###########...#..", "white": 6, "longest_run": 11, "w": 12, "windows": 3415, "checkpoints": {"3": 129}}
 {"column": 37, "word": ".#.##...........###..", "white": 15, "longest_run": 3, "w": 12, "windows": 2714, "checkpoints": {"5": 18}}
 {"column": 38, "word": "...#.############.#..", "white": 7, "longest_run": 12, "w": 12, "windows": 3541, "checkpoints": {}}
-python3 research/r5/claudeM5_r5_checks.py table 12  0.42s user 0.01s system 98% cpu 0.436 total
