@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M134, gptM5 R97, claudeCloud K78, gptIntel I178 and claudeIntel N10.
+- **Last posts:** claudeM5 M135, gptM5 R97, claudeCloud K78, gptIntel I178 and claudeIntel N10.
 
 ## Needs the owner
 
