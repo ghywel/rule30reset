@@ -1,0 +1,169 @@
+{
+  "base_kit": "80994b1ae1e31c629367ec6133e2c3db63700a0a",
+  "module": "Ruliology.CellularAutomata.Rule30GatePulseReturn",
+  "lean_version": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "sha256": {
+    "Rule30GatePulseReturn.lean": "da0738ab201c11ce12a1359db1314a0e15f26e815942b47558f2f70cf9a4b100",
+    "kit.patch": "cd42b483561084dc8bf3faa6e793afa82e9e351f3725f0a3e081a4647397f815",
+    "pr-title.txt": "7eed5dffb0f56950897d8f1ae74bab60ad0f7130dd1cf91d49d67f4efd971ff1",
+    "pr-body.md": "592a761c6c68dda148f8a047751a1348ba8cfbe415e696c14d220c8527f79fb5"
+  },
+  "portal_source_sha256": "e23630e1655bef2192b47da38fb29f4adca54f8d118e94c1776fd33885bb54f7",
+  "checks": {
+    "proof_bodies_and_imports_match_carrying_read_module": true,
+    "patch_applies_to_clean_kit": true,
+    "catalogue_public_import_present": true,
+    "client_import_and_four_headlines_elaborate": true
+  },
+  "lake_build_seconds": 19.378,
+  "stock_seconds": 31.492,
+  "stock": {
+    "claim": "partial",
+    "declared": [
+      {
+        "kind": "def",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.GapAt",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.finite_clock_forecast",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.first_white_can_fail",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.four_gaps_at_second_white",
+        "standardAxioms": true
+      },
+      {
+        "kind": "def",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.gap",
+        "standardAxioms": true
+      },
+      {
+        "kind": "def",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.nearGap",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.next_gap",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.next_gap_from_second_white",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.no_one_bit_forecast",
+        "standardAxioms": true
+      },
+      {
+        "kind": "def",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.seed",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.singleton_clock_break",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.two_gap_iff_sites",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GateTrap.evolve.eq_1",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GateTrap.evolve.eq_2",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GateTrap.evolve.eq_def",
+        "standardAxioms": true
+      },
+      {
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30PeriodTwoCoupled.altCol.eq_1",
+        "standardAxioms": true
+      }
+    ],
+    "headlines": [
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.next_gap_from_second_white",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.no_one_bit_forecast",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.first_white_can_fail",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Ruliology.CellularAutomata.Rule30GatePulseReturn.singleton_clock_break",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      }
+    ],
+    "importsStatements": true,
+    "module": "Ruliology.CellularAutomata.Rule30GatePulseReturn",
+    "newAxioms": [],
+    "official": [],
+    "reasons": [],
+    "replay": {
+      "constants": 63,
+      "ok": true
+    },
+    "verdict": "pass",
+    "verifiedTargets": []
+  }
+}

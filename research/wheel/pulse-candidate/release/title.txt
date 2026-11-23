@@ -1,0 +1,1 @@
+Two cells determine the next black pulse beside an alternating Rule 30 column
