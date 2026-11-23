@@ -5,16 +5,16 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 11:14 UTC by claudeCloud (K73, the owner's review of this file).*
+Updated 2026-11-23 11:26 UTC by claudeM5 (M125, S11 read; #402 merged, #403 in conflict).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | the independent read of Path 4's packet (I148), queued |
-| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | pull N6: S11 proposed from it, packet ready for the shared read (R91) |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S11 read and returned for text repairs (M125); then the independent read of Path 4's packet (I148) |
+| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | pull N6: S11's text repairs (M125) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | free |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Path 4, pull I49 (I148–I151); proposed reader of S11 (R91) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Path 4, pull I49 (I148–I151) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | free since N9 |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
@@ -55,7 +55,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 **Awaiting next steps** (the owner, 23 November).
 
 - **Being worked:** Path 4 (pull I49) by gptIntel, with claudeM5's independent read to come; N6 by gptM5, with S11
-  proposed from it and gptIntel proposed as its reader (R91).
+  proposed from it, read by claudeM5 and returned for text repairs (M125).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
@@ -81,9 +81,9 @@ All ten posted entries are **Lean Verified** and carry the portal's **Human Veri
 | **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | K50.3 | [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93). [Release and final PR review](research/k50_3/s6-release-review.md) | `Rule30TwoSidedInverse` and `Rule30EveryKLine`, `54d030c`, [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) (I108) |
 | **S7** | The sharp loss of seven ticks at a moving white endpoint, and both quarter-period exclusions at every site of a row with a leftmost black cell. | I93 | [R30-20261122-a963b5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-a963b5) (M103) | `Rule30PulseRelay`, `98cdf71`, #393. Norris has priority for singleton 7/11. |
 | **S8** | Every periodic sparse column (isolated pulses, gaps of at least 9) at any site of a row with a leftmost black cell contains the gaps 12, 10, 9; the ten three-gap reset words as support. | I77 | [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a) (M112) | `Rule30RequiredGapFactor` and `Rule30ThreeGapCapture`, `33b19c8`, [#398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398) |
-| **S9** | Three sharp inequalities and five periodic corners classify uniform linear bounds on black and run-end counts. From any right half, one history realizes each prescribed rational point. On the single seed two corner deficits grow at least logarithmically. Problem 2, partial. | I72 | [R30-20261123-b2be99](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) (M118, M120). [Release reads](research/source-density/s9-release-review.md). A lighter notebook with one kernel check passed its read and stays on the M5, unposted (M119, R88). | **PR [#402](https://github.com/WolframInstitute/Rule30PrizeKit/pull/402) open**, mergeable at `62a03b7` (M118, M121) |
-| **S10** | In the trapped gate, four closed runs of four 5-gaps are excluded from delay two, sharply. Five blocks are excluded from entry. On the kit ladder the four-run threshold is exactly width 45. | M9 | [R30-20261123-71bab6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-71bab6) (M123). [Reviewed PR text and receipts](research/m9/compact/s10-release-review.md) | **PR [#403](https://github.com/WolframInstitute/Rule30PrizeKit/pull/403) open** at `4e041ce` (M123) |
-| **S11 proposed** | Every golden half-circle phase is excluded as the eventual even-time neighbour of an eventual period-two clock. Problem 1, partial. | N6 | Not posted. [Three checked headlines and review packet](research/kit-repair/R30-20261029-0ef6e2/golden-strip-cover.md) (R91). Author replay and notebook pass. The independent read, the agreement and the owner's word are pending. | Portal only: the proof uses Mathlib. |
+| **S9** | Three sharp inequalities and five periodic corners classify uniform linear bounds on black and run-end counts. From any right half, one history realizes each prescribed rational point. On the single seed two corner deficits grow at least logarithmically. Problem 2, partial. | I72 | [R30-20261123-b2be99](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) (M118, M120). [Release reads](research/source-density/s9-release-review.md). A lighter notebook with one kernel check passed its read and stays on the M5, unposted (M119, R88). | **In the kit** at `8e1cc84` ([#402](https://github.com/WolframInstitute/Rule30PrizeKit/pull/402)), all thirteen modules byte for byte (M125) |
+| **S10** | In the trapped gate, four closed runs of four 5-gaps are excluded from delay two, sharply. Five blocks are excluded from entry. On the kit ladder the four-run threshold is exactly width 45. | M9 | [R30-20261123-71bab6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-71bab6) (M123). [Reviewed PR text and receipts](research/m9/compact/s10-release-review.md) | **PR [#403](https://github.com/WolframInstitute/Rule30PrizeKit/pull/403) open** at `4e041ce` (M123), **in conflict** since #402 merged (M125) |
+| **S11 proposed** | Every golden half-circle phase is excluded as the eventual even-time neighbour of an eventual period-two clock. Problem 1, partial. | N6 | Not posted. [Three checked headlines and review packet](research/kit-repair/R30-20261029-0ef6e2/golden-strip-cover.md) (R91). **Carrying read, replay and novelty pass; the release read asks four text repairs** ([read](research/kit-repair/R30-20261029-0ef6e2/claudeM5-s11-read.md), M125). The repairs, the agreement and the owner's word are pending. | Portal only: the proof uses Mathlib. |
 
 - **The kit.** The portal verifier is at `5fb5915`. The shared catalogue is in step with kit main at `60799e8` (I148).
   PRs #402 and #403 both change the kit's count line, so whichever merges second needs a rebase.
