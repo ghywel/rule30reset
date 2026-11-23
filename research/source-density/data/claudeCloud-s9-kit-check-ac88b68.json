@@ -1,0 +1,571 @@
+{
+ "form": "kit modules under lean/Ruliology/CellularAutomata, built by lake, checked by the stock Check.lean",
+ "kit": "ac88b68cccd28d7ff3b1ee19e711f4d0c999cc26",
+ "lean": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+ "modules": [
+  {
+   "constants": 27,
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.middle_face",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.high_face",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.region",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.singleton_region",
+     "ok": true
+    }
+   ],
+   "module": "Rule30SourceDensityRegion",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "33b4c5e4cf96323740813b77c9307bdb2c63a17562b047edf62ea36fc0ff726d",
+   "verdict": "pass"
+  },
+  {
+   "constants": 90,
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner0",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner1",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner2",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner3",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corner4",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.optimal_startup",
+     "ok": true
+    }
+   ],
+   "module": "Rule30SourceDensityCorners",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "ee62e1385baf6bcd16caaa8b179e6ab380000fd08ead241e3c5d8220cc282e59",
+   "verdict": "pass"
+  },
+  {
+   "constants": 34,
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.repeated_corner",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_corner_bound",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.polygon_necessary",
+     "ok": true
+    }
+   ],
+   "module": "Rule30DensitySharpness",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "1130d88548e4ed19b7840f6c459c2096106706dc0e923635405e0dbcf4c3d43a",
+   "verdict": "pass"
+  },
+  {
+   "constants": 35,
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.fall_count",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.middle_identity",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.bounded_iff_alternates",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.singleton_middle_bounded_iff_period_two",
+     "ok": true
+    }
+   ],
+   "module": "Rule30SourceTransitions",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "8f2ef33fbc3567bb9448ed6e21f95d5579c0953386e321946e5a1d58ee2d806a",
+   "verdict": "pass"
+  },
+  {
+   "constants": 65,
+   "headlines": [
+    {
+     "axioms": [],
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.range_potential",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.band_edge",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.tight_repeat",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.tight_columns",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.accumulated_step",
+     "ok": true
+    }
+   ],
+   "module": "Rule30DensityEscape",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "357ad81ef906574c42d3bd421578f8fb0b629873978daf30937f8d114cc425fc",
+   "verdict": "pass"
+  },
+  {
+   "constants": 48,
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.loss_in_interval",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.singleton_margin",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.margin_three_quarters",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityEscape.margin_nine_tenths",
+     "ok": true
+    }
+   ],
+   "module": "Rule30DensityMargin",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "93ed7a27934d1088a4da90affa19aeacca565ba53874023ff6efd8989c7f899d",
+   "verdict": "pass"
+  },
+  {
+   "constants": 42,
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.ends_nonneg",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.ends_le_black",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.polygon_sufficient",
+     "ok": true
+    },
+    {
+     "axioms": [],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_of_uniform",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.uniform_bound_iff",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_bound_iff",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.finite_bound_iff_uniform",
+     "ok": true
+    }
+   ],
+   "module": "Rule30DensityPolygon",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "b2788f2eb6010d950018416113dadcb460abf79dbc790b66842c7ad20ee5c301",
+   "verdict": "pass"
+  },
+  {
+   "constants": 40,
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.steer_prefix",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.realize_segment",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.realize_stream",
+     "ok": true
+    }
+   ],
+   "module": "Rule30DensityControl",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "e6c259a780bb8403da6b95dd91565e200bd972a0e68d3d20e678778c6517aac3",
+   "verdict": "pass"
+  },
+  {
+   "constants": 92,
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.install",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.run_fit",
+     "ok": true
+    },
+    {
+     "axioms": [],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.run_open",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.discrepancy",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.block_bounds",
+     "ok": true
+    }
+   ],
+   "module": "Rule30DensityModes",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "d83ead1b60ba4f0c313371bed0b210c5dc139cadadac48bafba3e81fbec67ef2",
+   "verdict": "pass"
+  },
+  {
+   "constants": 15,
+   "headlines": [
+    {
+     "axioms": [
+      "propext"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.zero_policy",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.oneThird_policy",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.threeQuarters_policy",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.nineTenths_policy",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.one_policy",
+     "ok": true
+    }
+   ],
+   "module": "Rule30DensityVertices",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "d5ea2bf51ac2d50afb3afcb70c3aeb1cb97af1041811a0762b65e2abdf61e286",
+   "verdict": "pass"
+  },
+  {
+   "constants": 9,
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30DensityControl.physical_mode",
+     "ok": true
+    }
+   ],
+   "module": "Rule30DensityOneHistory",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "db68cffa9c8c5f155d9039e361245019a37f7a81e297605c006669e9971620b9",
+   "verdict": "pass"
+  },
+  {
+   "constants": 4,
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.tracks_of_mode",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.corners_from_any_right_half",
+     "ok": true
+    }
+   ],
+   "module": "Rule30DensityCornerHistories",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "9296417a049fdb535d2e0af0e440796efbdb37cc312b0204fee2d503e274d1cd",
+   "verdict": "pass"
+  },
+  {
+   "constants": 141,
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.schedule",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.cornerMode_good",
+     "ok": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "name": "Ruliology.CellularAutomata.Rule30SourceDensityRegion.mixtures_from_any_right_half",
+     "ok": true
+    }
+   ],
+   "module": "Rule30DensityMixtures",
+   "new_axioms": [],
+   "replay_ok": true,
+   "sha256": "b274afe9ba141cf572c256fe75f573fb73cdd5db041bd45aadabadbeea99c854",
+   "verdict": "pass"
+  }
+ ],
+ "totals": {
+  "all_pass": true,
+  "constants": 642,
+  "headlines": 52,
+  "modules": 13
+ }
+}

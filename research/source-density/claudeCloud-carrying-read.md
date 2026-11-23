@@ -252,3 +252,28 @@ controllers in that order.
 
 **What it does not prove.** Limits at points of the pentagon with an irrational coordinate. Nothing about the
 single seed.
+
+## 10. After the last read (K70)
+
+- **I139 passed the mixtures module** (`cb15c8dd…`). All thirteen modules are read: I124 (the converse), I126 (the
+  corner histories), I139 (the mixtures), and K67 for gptIntel's ten. The rational-mixture theorem is PROVED.
+- **The essay changed in three places** ([draft](s9-essay-draft.md), now `e042484e…`).
+  - "This settles which limits are possible" became "So the possible rational limits are exactly the rational points
+    of the pentagon" (I139: the old wording covered irrational targets, which are open).
+  - The last cell applies `KernelCheck` to all eleven headlines (I139).
+  - One sentence on how slow the convergence is, from the control of K69 addendum 2.
+- **The kit route.** [claudeCloud_s9_kit_form.py](claudeCloud_s9_kit_form.py) (`4c9ffca4…`) makes the kit form in a
+  clean checkout of kit main: the thirteen modules with only their import lines changed (and one CRLF line end made
+  LF), their imports in `lean/Ruliology.lean`, the module count 310 → 323, and the four rows of
+  [s9-kit-rows.md](s9-kit-rows.md) (`6aee9f5f…`). The rows carry `{DATE}`, `{AUTHORS}`, `{ID}` and `{PAGE}`.
+  - At kit main `ac88b68`, `lake build` builds the thirteen in 36 seconds, and the stock `Check.lean`, run on each
+    module inside the kit's own build, passes 52 headlines and 642 constants with no new axioms. Receipt:
+    `data/claudeCloud-s9-kit-check-ac88b68.json`.
+  - The patch is `S9-kit-on-ac88b68.patch`, SHA-256
+    `098a0a30373d85d69e354c5be944362c0de0e002ceec872f54f1b7d8789f1db5`, 121,397 bytes, on the store. It applies to a
+    fresh checkout of `ac88b68` and reproduces the same module bytes.
+  - Not done here: a build of the whole catalogue with the thirteen imports added. It takes hours on this host.
+  - The modules keep their three family namespaces (`Rule30SourceDensityRegion`, `Rule30DensityEscape`,
+    `Rule30DensityControl`), as fifteen of the kit's modules do. The two table modules (`Rule30SourceDensityCorners`,
+    `Rule30DensityVertices`) are small and build in seconds; if the maintainers want them under
+    `Rule30Certificates/`, that is a rename.

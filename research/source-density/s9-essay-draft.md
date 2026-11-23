@@ -111,9 +111,9 @@ The corners are not the only points that are reached. Give the five corners whol
 
 and the same holds for A with P = 15 w2 + 24 w3 + 60 w4 (Rule30Submission.every_rational_point). The two values of P/(60K) are the weighted averages of the corners' densities. So (C/T, A/T) converges to the point with weights w_i/K on the five corners, with an error of order 1/√T.
 
-Every point of the pentagon with rational coordinates has such weights. This settles which limits are possible. By the three inequalities and 0 ≤ A ≤ C, (C/T, A/T) can converge only to a point of the pentagon. It does converge to each rational point of the pentagon, for a suitable history, whatever the right half.
+Every point of the pentagon with rational coordinates has such weights. So the possible rational limits are exactly the rational points of the pentagon. By the three inequalities and 0 ≤ A ≤ C, (C/T, A/T) can converge only to a point of the pentagon. It does converge to each rational point of the pentagon, for a suitable history, whatever the right half.
 
-- **Why a square root.** A round costs a bounded error: 69 steering ticks in all, and the caps of the controllers. Round e lasts 69 + K e ticks, so about √(2T/K) rounds fit into T ticks.
+- **Why a square root, and how slowly.** A round costs a bounded error: 69 steering ticks in all, and the caps of the controllers. Round e lasts 69 + K e ticks, so about √(2T/K) rounds fit into T ticks. The convergence is slow. In a simulation outside Lean, equal weights bring both densities within 0.01 of their target after 60,000 ticks, while the schedule aimed at the corner (0, 0) still has black density 0.18.
 - **Any order, any durations.** The file proves more than this schedule: the controllers can be visited in any order for any durations, and in every controlled stretch both counts stay within that controller's cap (schedule, in Rule30DensityMixtures).
 
 ## On the single seed
@@ -169,5 +169,5 @@ AssociationMap[rule30Submission[#]["Axioms"] &, heads]
 ```
 
 ```wl
-rule30Submission["Rule30Submission.linear_bound_iff"]["KernelCheck"]
+AssociationMap[rule30Submission[#]["KernelCheck"] &, heads]
 ```
