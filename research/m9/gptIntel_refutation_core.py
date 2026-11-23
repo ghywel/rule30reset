@@ -8,17 +8,23 @@ import argparse
 from functools import cache
 import lzma
 from pathlib import Path
+import re
 import struct
-
-import numpy as np
-
-from gptIntel_word_lift import allowed, successors, trap_codes
-
 
 HEADER = b"M9C1"
 RECORD = struct.Struct("<BBBBQ")
 NEXT, PREVIOUS, SPLIT = range(3)
 ROOT = 49
+
+
+def read_trap(path):
+    declaration = re.search(r"def trapCodes : List Nat := \[([\d,\s]+)\]", path.read_text(encoding="utf-8"))
+    if declaration is None:
+        raise ValueError("trapCodes is missing from the supplied Lean source")
+    codes = tuple(map(int, re.findall(r"\d+", declaration[1])))
+    if len(set(codes)) != 829 or len(codes) != 829 or max(codes) >= 65536:
+        raise ValueError("expected 829 distinct 16-bit trap codes")
+    return codes
 
 
 def samples(delay):
@@ -113,6 +119,10 @@ def verify(path, codes, delay):
 
 
 def snapshots(codes):
+    import numpy as np
+    from gptIntel_word_lift import allowed, successors
+
+    codes = np.array(sorted(codes), dtype=np.int64)
     word = samples(2)
     widths = [16] * len(word)
     layers = [codes if bit is None else codes[(codes & 1) == bit] for bit in word]
@@ -208,7 +218,7 @@ def main():
     cli.add_argument("certificate", type=Path)
     cli.add_argument("--delay", type=int, choices=(1, 2), default=2, help="delay 1 is a rejection control")
     args = cli.parse_args()
-    codes = trap_codes(args.kit)
+    codes = read_trap(args.kit)
     if args.command == "build":
         if args.delay != 2:
             cli.error("the generator targets delay 2")

@@ -1,0 +1,155 @@
+{
+  "leanVersion": "4.35.0",
+  "source": {
+    "file": "Rule30Submission.lean",
+    "bytes": 48632,
+    "sha256": "01d05d6aa7e7760501f270badf016869f417de3cbca887e5974df7f267b459b1",
+    "portalPinBuildSeconds": 848.4091263,
+    "publicOleanBytes": 25174280
+  },
+  "singleFileStockResult": {
+    "module": "Rule30Submission",
+    "claim": "partial",
+    "replay": {
+      "constants": 8495,
+      "ok": true
+    },
+    "importsStatements": true,
+    "newAxioms": [],
+    "headlines": [
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.no_four_runs_of_four",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.no_five_runs_of_four",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.four_one_sample",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.three_sixty_samples",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      }
+    ],
+    "verdict": "pass"
+  },
+  "stockReplays": [
+    {
+      "kitCommit": "5fb591588cfa869bfdc47946799b5ddd70a903d1",
+      "seconds": 673.2260816,
+      "peakWorkingSetBytes": 1191120896,
+      "sampledPeakPrivateBytes": 1613074432
+    },
+    {
+      "kitCommit": "ac88b68cccd28d7ff3b1ee19e711f4d0c999cc26",
+      "seconds": 719.0310445,
+      "peakWorkingSetBytes": 1191202816,
+      "sampledPeakPrivateBytes": 1615994880
+    }
+  ],
+  "separateSparseCertificate": {
+    "originalBinaryLratBytes": 45546893,
+    "originalBinaryLratXzPreset9Bytes": 14510620,
+    "file": "../data/trapped-runs-core.xz",
+    "sha256": "5d3ceb7edb13ba48c08c66b264f5727e5858e1722ca41eac8ce90c3e0ecd7734",
+    "bytes": 74336,
+    "uncompressedBytes": 342880,
+    "successorRecords": 8031,
+    "predecessorRecords": 19123,
+    "splitRecords": 1419,
+    "standalonePythonReplaySeconds": 4.2544512
+  },
+  "kitLadderExtension": {
+    "kitCommit": "ac88b68cccd28d7ff3b1ee19e711f4d0c999cc26",
+    "sourceSha256": "4c7dad4f366536c457942f49752de7d1c50c445eebb2a8547a92a4eebe15d03f",
+    "openTraceSourceSha256": "1fffab6b8528e7aa3f45d3fcc4abce307d139cb220ae0dcefd44eacccdfeb243",
+    "stockResult": {
+      "module": "Ruliology.CellularAutomata.Rule30TrappedLiftRuns",
+      "claim": "partial",
+      "replay": {
+        "constants": 83,
+        "ok": true
+      },
+      "importsStatements": true,
+      "newAxioms": [],
+      "headlines": [
+        {
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "found": true,
+          "kind": "theorem",
+          "name": "Ruliology.CellularAutomata.Rule30TrappedLiftRuns.no_four_on_lift",
+          "ok": true,
+          "problems": [],
+          "typeMatches": true
+        },
+        {
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "found": true,
+          "kind": "theorem",
+          "name": "Ruliology.CellularAutomata.Rule30TrappedLiftRuns.no_five_on_lift",
+          "ok": true,
+          "problems": [],
+          "typeMatches": true
+        },
+        {
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ],
+          "found": true,
+          "kind": "theorem",
+          "name": "Ruliology.CellularAutomata.Rule30TrappedLiftRuns.four_at_width44",
+          "ok": true,
+          "problems": [],
+          "typeMatches": true
+        }
+      ],
+      "verdict": "pass"
+    }
+  }
+}
