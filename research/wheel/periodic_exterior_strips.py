@@ -84,10 +84,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
     parser.add_argument("--width", type=int, default=84)
+    parser.add_argument("--gaps", nargs="+", default=("3", "33355", "333355"),
+                        help="Gap words in one full strip period. Repeat a word to test a multiple of its gate period.")
     for name, program in (("cadical", "cadical"), ("lrat", "lrat-check"), ("cake", "cake_lpr")):
         parser.add_argument("--" + name, default=shutil.which(program))
     args = parser.parse_args()
     if args.width < 1:
         parser.error("--width must be positive")
-    for word in ("3", "33355", "333355"):
+    for word in args.gaps:
+        if not word or set(word) - {"3", "5"}:
+            parser.error("--gaps expects words of 3 and 5")
         run(args, word)

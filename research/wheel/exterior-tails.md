@@ -35,11 +35,15 @@ Ask whether W positive cells can all repeat with the gate's own physical period 
 | `33355` | 38 | 54 | 55 |
 | `333355` | 44 | 37 | 38 |
 
+The two boundaries respond differently when the eastern columns are allowed twice as long to repeat. For `33355`, a 76-tick strip still stops at 54 columns. Both checkers verified the obstruction at 55. For `333355`, an 88-tick strip **does** reach column 38. The gate repeats every 44 ticks, while the evolved strip has least period 88. In this particular witness column 13 is the first to differ after 44 ticks. All white-time 16-cell windows in both doubled-period witnesses stay outside. Each row records the wall at bit zero, then the W evolved cells and one free eastern input. [Rows and proof digests](data/doubled-strips.json).
+
 There is a stronger consequence. Suppose every column of a physical realizing right half eventually repeats with a common period L. Their starting times may differ. Take a common multiple of L and p, and use it as the temporal modulus. Each column gives a well-defined stabilized word on this modulus. Each local update still holds, since it uses only three columns and their starting times have a finite maximum.
 
 On the finite set of ordered word pairs use the map `F(b,c) = (D(b,c),b)`. The forced pair immediately west of the centre consists of p-periodic words: the centre has period two, and the white-time gate fixes the only bits of its neighbour used in D. The physical right half supplies arbitrarily long predecessor chains for this pair under F. A repeated pair in one sufficiently long chain shows that the forced pair lies on a cycle. All forward iterates of the forced pair remain p-periodic, so reversing its cycle supplies an infinite p-periodic right extension. Its centre is the same, and at every white tick its forced west and centre recover the specified east bit uniquely. Such an extension would contain the first impossible strip in the table.
 
 Thus any physical infinite realization of either mixed word would need an aperiodic column somewhere to the east, or eventual column periods with no finite upper bound. Within the first 55 or 38 cells respectively, at least one column must already fail to acquire the gate's own period. The finite obstructions are LRAT-checked. The period argument above is a hand proof.
+
+There is an exact compactness test for what remains. A physical infinite exterior with a specified repeating gate exists **if and only if** the finite free-east window graph has a closed walk spelling that gate at arbitrarily large widths. For the forward direction, include the position in the gate word in the state. Any infinite physical path repeats a state and phase in each finite graph, giving the walk. Conversely, repeat each walk in time and align the same kick at tick zero. Each finite space-time rectangle has finitely many fillings. Choose a subsequence agreeing on the first rectangle, then the next, and take a diagonal subsequence as widths grow. The limit satisfies every Rule 30 update at positive sites, the alternating wall, every gate reading and exterior membership. Its initial row is the desired right half. Thus a disappearance at any width settles nonexistence, while a construction at unbounded widths would settle existence.
 
 ## Which short readings can actually certify entry
 
@@ -58,7 +62,11 @@ python research/wheel/exterior_gap_core.py Rule30PrizeKit 16 --lift-through 43
 python research/wheel/exterior_gap_core.py Rule30PrizeKit 16 18 20 22 24
 python research/wheel/audit_exterior_gaps.py Rule30PrizeKit 43
 python research/wheel/periodic_exterior_strips.py wheel-strips
+python research/wheel/periodic_exterior_strips.py wheel-double --width 55 --gaps 3335533355
+python research/wheel/periodic_exterior_strips.py wheel-double --width 38 --gaps 333355333355
 python research/wheel/replay.py Rule30PrizeKit wheel-exterior-lean --exterior
 ```
 
 The shared-store packet `share-scratch/gptIntel/I162/wheel-exterior-evidence.zip` (11,343,033 bytes, SHA-256 `e9cd9a8ea8635a2698ecfbbb92d87e173469a0aecb77972f705440f0d42ab890`) contains the 67 DIMACS/LRAT pairs, the witness and graph outputs, and the stock Lean receipt. Decompress each `.lrat.gz` and run either checker on the matching `.cnf` and `.lrat`. The [tracked summary](data/exterior-tail-checks.json) includes the SAT boundary rows and the finite 200-sample witness.
+
+The separate doubled-period packet `share-scratch/gptIntel/I166/doubled-strip-evidence.zip` (2,020,911 bytes, SHA-256 `2bd327963daa0c49ddded231d981b94df8aec779971556717f4184749eb61d69`) includes the 76-tick width-55 CNF and LRAT, and both finite strip models.
