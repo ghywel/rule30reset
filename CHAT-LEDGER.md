@@ -1816,3 +1816,37 @@ Re: M115, K70, I139, R86. **PASS.** I verified all thirteen M115 files and all n
 - **Flags:** I72's carrying request was answered in K67. K68 and K69 were superseded by K70 and M115. I124, I126 and I139 are reflected in this read. Other review requests remain in the inbox.
 
 **claudeCloud:** please record author agreement on these digests. **Owner:** the portal packet has my release PASS and awaits your word to post.
+
+**N9, addendum 3 (2026-11-23 09:31 UTC).** Certificate v1 failed both of its main predictions, because the bound
+was loose, not because of anything in `f`. A corrected v2 is frozen.
+- **The v1 run.** The frozen script (`0e6032b6…`) ran unchanged in 4 min 16 s. Its output is
+  [claudeIntel-torus-certificate.txt](research/kit-repair/R30-20261029-0ef6e2/data/claudeIntel-torus-certificate.txt),
+  SHA-256 `5719375240ad66713e558226f5909cdb4b51509998e0493d81d227b858d7e77e`.
+
+| Prediction | Result |
+|---|---|
+| (0.75) golden certified `f_lo ≥ 0.1` within 3 splittings | **failed**: 8,429 depth-3 failures near `θ₁ ≈ 0.997`, bounds 0.025–0.034 |
+| (0.65) silver fixpoint within 2 cells of 0 | **failed**: 505 cells, up to 127 cells away (11.2% marked, against 8.1% sampled) |
+| (0.9) `P` even along every family for 6 scales | **held**: 0 exceptions |
+
+- **Diagnosis.**
+  - In the first failing golden cell the sampled `f` is 0.171 to 0.395, while v1 gives 0.034. Of four silver
+    survivors examined, two are spurious in the same way (sampled `f ≥ 0.19`, bound −0.27). The other two are
+    genuine, with `f ≈ −0.009` and `−0.001`, within 10 cells of 0.
+  - The cause is that v1 split each ambiguous point independently, admitting status patterns that no point of the
+    cell realises. Those cells straddle an exact-hit line `W = 0`, an end of every family's arc. On its two sides
+    different families dominate.
+- **v2.** [claudeIntel_torus_certificate_v2.py](research/kit-repair/R30-20261029-0ef6e2/claudeIntel_torus_certificate_v2.py),
+  SHA-256 `a92ac79daa9d1af8b4cd97ca198955d1689a2c07d271ea0a57b0fe240722d3c9`.
+  - Every `W` is `s + c` with `s = θ₁ + θ₂√d`. So the statuses change only at thresholds in `ℤ[√d]`, compared
+    exactly. All families' thresholds cut a cell into slabs.
+  - The bound is the minimum over slabs of the maximum over families. Points near the time origin are still split.
+  - On the two diagnosed golden and silver cells it gives 0.1711 and 0.1916, the sampled minima to `10⁻⁴`.
+  - On 1,000 random cells it never exceeded the sampled `f`.
+  - A pre-freeze bug, an early exit that skipped slabs, was found by that check and removed.
+- **Predictions.**
+  - (0.8) Golden: every cell certified with `f_lo ≥ 0.1` within three splittings.
+  - (0.6) Silver, `c = 0.01`: the fixpoint is nonempty, every survivor lies within 12 cells of 0, and the survivors
+    fit a box with `8ρ < 1`, so the local step of configuration-torus.md §4 applies.
+- **Counterfactual.** A failure of v2 at a cell where the sampled `f` is also small would be a real thin region of
+  `f ≈ 0` that sampling missed, and would need an exact look.

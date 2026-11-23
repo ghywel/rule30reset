@@ -1,0 +1,46 @@
+golden: 36 families x 6 scales, members with q < 1 or P odd: 0
+silver: 12 families x 6 scales, members with q < 1 or P odd: 0
+silver: 256 x 256 cells, possibly passing (f_lo <= 0.01): 7318 (fraction 0.1117)
+  fixpoint after 5 sweeps: 505 cells, max distance from 0: 127 cells
+  cells: [(0, 0), (0, 1), (0, 224), (0, 237), (0, 238), (0, 249), (0, 250), (0, 251), (0, 252), (0, 253), (0, 254), (0, 255), (1, 0), (1, 1), (1, 223), (1, 224), (1, 237), (1, 248), (1, 249), (1, 250), (1, 251), (1, 252), (1, 253), (1, 254), (1, 255), (2, 0), (2, 1), (2, 249), (2, 250), (2, 251), (2, 252), (2, 253), (2, 254), (2, 255), (3, 0), (3, 250), (3, 251), (3, 252), (3, 253), (3, 254), (3, 255), (4, 3), (4, 246), (4, 247), (4, 250), (4, 251), (4, 252), (4, 253), (4, 254), (4, 255), (5, 3), (5, 4), (5, 246), (5, 247), (5, 251), (5, 252), (5, 253), (5, 254), (6, 2), (6, 3)]
+golden: 256 x 256 cells, certified f_lo >= 0.1; 12502 cells split; 8429 failures
+  failure: cell at theta=(0.998047, 0.206055), depth 3, f_lo=0.0337
+  failure: cell at theta=(0.999023, 0.205566), depth 3, f_lo=0.0336
+  failure: cell at theta=(0.999512, 0.205078), depth 3, f_lo=0.0335
+  failure: cell at theta=(0.999023, 0.205078), depth 3, f_lo=0.0335
+  failure: cell at theta=(0.998535, 0.205566), depth 3, f_lo=0.0336
+  failure: cell at theta=(0.998047, 0.205566), depth 3, f_lo=0.0336
+  failure: cell at theta=(0.997070, 0.206543), depth 3, f_lo=0.0339
+  failure: cell at theta=(0.997559, 0.206055), depth 3, f_lo=0.0338
+  failure: cell at theta=(0.997070, 0.206055), depth 3, f_lo=0.0338
+  failure: cell at theta=(0.996582, 0.206543), depth 3, f_lo=0.0339
+  failure: cell at theta=(0.996094, 0.206543), depth 3, f_lo=0.0339
+  failure: cell at theta=(0.997070, 0.181641), depth 3, f_lo=0.0298
+  failure: cell at theta=(0.996582, 0.181641), depth 3, f_lo=0.0298
+  failure: cell at theta=(0.996094, 0.181641), depth 3, f_lo=0.0299
+  failure: cell at theta=(0.999023, 0.180664), depth 3, f_lo=0.0295
+  failure: cell at theta=(0.998047, 0.181152), depth 3, f_lo=0.0297
+  failure: cell at theta=(0.998535, 0.180664), depth 3, f_lo=0.0295
+  failure: cell at theta=(0.998047, 0.180664), depth 3, f_lo=0.0296
+  failure: cell at theta=(0.999512, 0.180176), depth 3, f_lo=0.0294
+  failure: cell at theta=(0.999023, 0.180176), depth 3, f_lo=0.0294
+  failure: cell at theta=(0.997559, 0.181152), depth 3, f_lo=0.0297
+  failure: cell at theta=(0.997070, 0.181152), depth 3, f_lo=0.0297
+  failure: cell at theta=(0.998047, 0.156250), depth 3, f_lo=0.0256
+  failure: cell at theta=(0.997559, 0.156250), depth 3, f_lo=0.0256
+  failure: cell at theta=(0.997070, 0.156250), depth 3, f_lo=0.0257
+  failure: cell at theta=(0.996582, 0.156738), depth 3, f_lo=0.0258
+  failure: cell at theta=(0.996094, 0.156738), depth 3, f_lo=0.0258
+  failure: cell at theta=(0.996582, 0.156250), depth 3, f_lo=0.0257
+  failure: cell at theta=(0.999023, 0.155762), depth 3, f_lo=0.0254
+  failure: cell at theta=(0.999512, 0.155273), depth 3, f_lo=0.0253
+  failure: cell at theta=(0.999023, 0.155273), depth 3, f_lo=0.0254
+  failure: cell at theta=(0.998535, 0.155762), depth 3, f_lo=0.0255
+  failure: cell at theta=(0.998047, 0.155762), depth 3, f_lo=0.0255
+  failure: cell at theta=(0.995605, 0.207031), depth 3, f_lo=0.0341
+  failure: cell at theta=(0.995117, 0.207031), depth 3, f_lo=0.0341
+  failure: cell at theta=(0.994629, 0.207520), depth 3, f_lo=0.0342
+  failure: cell at theta=(0.994141, 0.207520), depth 3, f_lo=0.0342
+  failure: cell at theta=(0.994629, 0.207031), depth 3, f_lo=0.0341
+  failure: cell at theta=(0.993652, 0.208008), depth 3, f_lo=0.0344
+  failure: cell at theta=(0.993164, 0.208008), depth 3, f_lo=0.0344
