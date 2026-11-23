@@ -1,7 +1,7 @@
-<!-- kit-commit: ac88b68 2026-11-23 -->
+<!-- kit-commit: 60799e8 2026-11-23 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ac88b68` (main, 2026-11-23),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `60799e8` (main, 2026-11-23),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
@@ -114,7 +114,7 @@ and no odd eventual period. The finite left half is necessary (`Rule30EtherWallW
 **Inverse ticks at the wall** (`Rule30EveryKStatement`, `Rule30EveryKCascade`, `Rule30EveryKInverse`). CAP ⇒ for
 every k, every k-tick predecessor of an aged nonzero finite row is finite with its edge exactly k inside, and every
 cell-1 history occurs, from age W(k) − 1 + 2^W(k), where W(k) is the least width of capacity k
-(`conditional_every_k`); any proved settling age may replace that bound (`capacity_at_settling_age`). CAP is open.
+(`conditional_every_k`). Any proved settling age works. Quint and Gemini reduce K1 to the universal 16-phase value for all widths 1 through 53,208 (`K1_eq_universalK1_of_le_53208`). CAP is open.
 The target holds at k = age = 0 and persists as age increases. Positive multiples of a cycle period give the same schedule and phase capacity. The target needs age at least 2k (`Rule30ZeroCoastBridge`).
 On every pointed recurrent strip, let a reset be a closed run 0 1^(3m+1) 0. If every tick has a reset between the
 white wheel at each first clock loss and the white wheel after next (`DLMinusOne`), every tick has arbitrarily deep
