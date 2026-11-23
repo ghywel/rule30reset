@@ -1,5 +1,6 @@
 module
 public import Ruliology.CellularAutomata.Rule30GateTrap
+public import Ruliology.CellularAutomata.Rule30FiniteMaskedJen
 
 /-! The October rotating 84-ring sustains the all-three gate outside Bosdure's
 trap. Every finite observation also occurs on a right row of finite support.
@@ -94,5 +95,33 @@ theorem arbitrarily_long_finite (N : Nat) : ∃ R : Nat → Bool,
     exact cone same _ _ (by omega)
   rw [g,w]
   exact outside_forever s
+
+/-- On any full-line evolution with a leftmost black cell, an indefinitely
+alternating wall cannot have an eventually periodic gate at its white ticks.
+A is a white tick; the samples may start repeating at any later sample S. -/
+theorem no_periodic_white_tail {x : Int → Bool} {lo : Int} {A S q : Nat}
+    (black : x lo = true) (leftWhite : ∀ p, p < lo → x p = false) (positive : 0 < q)
+    (clock : ∀ h, Rule30Realization.evol x (A+h) 0 = (h%2 == 1))
+    (gate : ∀ s, S≤s → Rule30Realization.evol x (A+2*(s+q)) 1 =
+      Rule30Realization.evol x (A+2*s) 1) : False := by
+  apply Rule30FiniteMaskedJen.masked_jen black leftWhite 0 (T:=A+2*S) (P:=2*q) (by omega)
+  · intro t ht
+    have keep := clock (t-A)
+    have later := clock (t-A+2*q)
+    rw [show A+(t-A)=t by omega] at keep
+    rw [show A+(t-A+2*q)=t+2*q by omega, show (t-A+2*q)%2=(t-A)%2 by omega] at later
+    exact later.trans keep.symm
+  · intro t ht white
+    have keep := clock (t-A)
+    rw [show A+(t-A)=t by omega,white] at keep
+    have even : (t-A)%2=0 := by
+      by_cases h : (t-A)%2=1
+      · rw [h] at keep
+        contradiction
+      · omega
+    let s := (t-A)/2
+    have eq : A+2*s=t := by dsimp [s]; omega
+    rw [show (0:Int)+1=1 by decide]
+    simpa only [show A+2*(s+q)=t+2*q by omega,eq] using gate s (by omega)
 
 end Ruliology.CellularAutomata.WheelThreeGapExterior

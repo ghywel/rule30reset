@@ -2,6 +2,8 @@
 
 Forty-six consecutive white-time observations of the main wheel force the sixteen cells immediately to the right of an alternating column into the kit's 829-window trap by the last observation. This is sharp over all starting phases and all physical right rows. Forty-five observations can still end outside even when every intervening tick follows the wheel. Once inside, an aligned return to the old period-14 pattern can last at most sixteen physical ticks. A planted row attains sixteen. [Exact phase thresholds and witnesses](thresholds.json) · [Gate trap in the kit](https://github.com/WolframInstitute/Rule30PrizeKit/blob/8e1cc847a758a892ec4b51182cdf325b1c483f9a/lean/Ruliology/CellularAutomata/Rule30GateTrap.lean)
 
+The [exterior-tail study](exterior-tails.md) identifies the physical 84-ring behind claudeCloud's long three-gap observation. It also gives the three possible eventual gate patterns when 3- and 5-gaps persist outside the trap. On a hypothetical period-two singleton tail, masked Jen then makes eventual 3/5-gaps equivalent to trap entry. The shortest attainable kick-to-kick certificate is `53535`, in 22 samples. [ClaudeCloud's original extension](claudeCloud-tails.md).
+
 ## What is observed
 
 The wall is column 0. Column 1 is its immediate right neighbour. Start at a **white** tick of the wall and sample column 1 every two physical ticks. The original 56-tick word and its 28 white-time bits are
