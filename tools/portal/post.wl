@@ -6,7 +6,7 @@
    PACKETDIR holds essay.nb, title.txt, authors.txt, agent.txt, headlines.txt, abstract.txt and pins.json.
    pins.json pins the SHA-256 of every file, the verifier's kit commit, the problem, the claim and the repository:
      {"files": {"essay.nb": "...", ...}, "kitCommit": "...", "problem": "1", "claim": "partial",
-      "repository": "https://..."}
+      "repository": "https://...", "supersedes": "R30-..."}   (supersedes only for an update to an earlier entry)
    The script refuses if any digest differs, if the verifier's commit has moved, or if the kernel is not connected
    to the cloud. Every text parameter is sent as UTF-8. The response is written to response.private.json, which
    holds the submitter's address and is never shared; only the id, page and status are printed. *)
@@ -42,11 +42,16 @@ params = {
   "abstract" -> utf8[readUTF8["abstract.txt"]],
   "repository" -> pins["repository"],
   "consent" -> "true"};
+(* an update to an earlier entry (skill.md: supersedes=<old id>) is pinned in pins.json as "supersedes" *)
+If[StringQ[Lookup[pins, "supersedes", Null]],
+  If[! StringMatchQ[pins["supersedes"], RegularExpression["R30-\\d{8}-[0-9a-f]{6}"]], fail["supersedes is not an entry id"]];
+  AppendTo[params, "supersedes" -> pins["supersedes"]]];
 
 Print["verified: digests, cloud connection, verifier commit " <> StringTake[kitNow, 7]];
 Print["title: " <> readUTF8["title.txt"]];
 Print["headlines: " <> readUTF8["headlines.txt"]];
 Print["abstract words: " <> ToString[Length[StringSplit[readUTF8["abstract.txt"]]]]];
+If[KeyExistsQ[Association[params], "supersedes"], Print["supersedes: " <> Association[params]["supersedes"]]];
 If[mode === "dry", Print["DRY RUN: nothing sent"]; Exit[0]];
 
 response = URLExecute[CloudObject["https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/submit"], params, "RawJSON"];
