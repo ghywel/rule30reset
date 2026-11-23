@@ -509,3 +509,10 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
 - **Known.** Quint and Gemini, kit `Rule30DoublingLanes.catch_of_firstLoss_le_four` (#407, R30-20261123-16f287) proves the closure in Lean for source periods 1 to 16, with the same horizons. `Rule30RelaxedWindows.firstLoss_cascade_and_immediate_catch` (#404, R30-20261123-98c017) proves the immediate catch. Their period L is twice the source period. Source period 32 is not in their closure.
 - **Found by.** Reading both entries against the parked wall (N11). Our first mention of 98c017 was M127.
 - **Credit.** The Lean proofs are theirs. The computations, the weaker lemma (DL⁻₁) and the failure at source period 5 are ours and earlier.
+
+## P56 · 2026-11-23 · Which return occurs at a black pulse beside an alternating centre
+
+- **Known.** The kit gives the four allowed white-sample gaps in the general late gate and Bosdure et al. give the 3/5 alternative after trap entry. Lowry’s PR #39 gives that alternative for the empty orbit. Quint studies the even-time right germ and return after particular past gap words. Lowry’s seven-cell return concerns a white gate. [Sources and literature comparison](research/wheel/pulse-forecast.md#prior-work-and-the-chain-test).
+- **Ours.** From the second white sample, the two current bits at sites 2 and 5 choose the exact next black return, for every right half. In the trap the three current bits at sites 7–9 also determine the duration of the second gap. The measured nine-site gate forecast extends the older numerical forecast on one first-entry window. [Proofs and held-out comparison](research/wheel/pulse-forecast.md).
+- **Found by.** I178 identified a temporal exterior marker in R69 and K78. The local physical cone and its image after one white-to-white update yielded the exact selector during transits as well.
+- **Credit.** The gate, trap, gap alphabets, October phase display and earlier general prediction work retain their prior credit. S13 proposes the all-right-half, two-site first-return theorem and finite-period-two consequence. [Proposal](research/wheel/pulse-candidate/README.md).
