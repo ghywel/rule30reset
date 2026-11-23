@@ -5,16 +5,16 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 13:30 UTC by claudeM5 (M128, S11 posted; S10 in the kit).*
+Updated 2026-11-23 13:51 UTC by gptIntel (I157, Path 4 release decision).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | the independent read of Path 4's packet (I148) |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | independent release read and Wolfram build for Path 4 / S12 (I157) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S11 core Lean port for the kit (M129, R93) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | free |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Wheel results with readers (I155–I156); Path 4 pin packet returned (I153) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Wheel results with readers (I155–I156); Path 4 / S12 release with claudeM5 (I157) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | free since N9 |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
@@ -24,7 +24,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M126, gptM5 R92, claudeCloud K74, gptIntel I156 and claudeIntel N9.
+- **Last posts:** claudeM5 M129, gptM5 R93, claudeCloud K74, gptIntel I157 and claudeIntel N9.
 
 ## Needs the owner
 
@@ -32,10 +32,6 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 - **The next block is not set.** Path 4 and N6 are being worked. claudeCloud and claudeIntel are free, and claudeM5
   will be after its read. Say what they take next: the choices on offer are under The next block.
-- **Path 4's route** (K74). Only a 40-line comparison depends on Lowry's unmerged #378. The conductor recommends
-  not waiting for it. Three calls: (a) the criterion goes out without waiting for #378, or waits; (b) a comment on
-  #378 offering it, or only the reference from our own PR; (c) our 77-cell tree as a credited remark or as a
-  headline. Nothing is ready to post yet: the packet must first be lightened and read.
 
 ## Direction
 
@@ -88,6 +84,7 @@ All ten posted entries are **Lean Verified** and carry the portal's **Human Veri
 | **S9** | Three sharp inequalities and five periodic corners classify uniform linear bounds on black and run-end counts. From any right half, one history realizes each prescribed rational point. On the single seed two corner deficits grow at least logarithmically. Problem 2, partial. | I72 | [R30-20261123-b2be99](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) (M118, M120). [Release reads](research/source-density/s9-release-review.md). A lighter notebook with one kernel check passed its read and stays on the M5, unposted (M119, R88). | **In the kit** at `8e1cc84` ([#402](https://github.com/WolframInstitute/Rule30PrizeKit/pull/402)), all thirteen modules byte for byte (M125) |
 | **S10** | In the trapped gate, four closed runs of four 5-gaps are excluded from delay two, sharply. Five blocks are excluded from entry. On the kit ladder the four-run threshold is exactly width 45. | M9 | [R30-20261123-71bab6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-71bab6) (M123). [Reviewed PR text and receipts](research/m9/compact/s10-release-review.md) | **In the kit** at `dc99b86` ([#403](https://github.com/WolframInstitute/Rule30PrizeKit/pull/403)), both modules byte for byte (M128) |
 | **S11** | Every golden half-circle phase is excluded as the eventual even-time neighbour of an eventual period-two clock. Problem 1, partial. | N6 | [R30-20261123-6c3fa9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9), **Lean Verified** (M128). Reads: [M125](research/kit-repair/R30-20261029-0ef6e2/claudeM5-s11-read.md), M127 | Portal only: the proof uses Mathlib. |
+| **S12** | Finite right-prefix certificates for the width-30 seven-lock, a singleton centre deadline and a conditional period-two exclusion. Companion to Troy Lowry’s [age-364 construction](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378). | I49, K74 | Owner authorises release on claudeM5’s read of the lightened packet (I157). | [Criterion offered to Lowry](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378#issuecomment-7103117646). |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main is `8e1cc84` since #402 merged (M125), and the shared
   catalogue is in step with it (K74 addendum 1). #403 is rebased onto it at `da4b6f8` and mergeable (M126).
@@ -107,7 +104,7 @@ table for the lists below. The rules are in METHOD §8.
 | Pull | Written | Summary | Status | Submission? |
 |---|---|---|---|---|
 | I152 | 23 Nov, gptIntel | Which present kit structures force, explain or end the original 17/56 wheel beside an alternating boundary? | *In progress,* gptIntel. [Wheel results and receipts](research/wheel/README.md): 46 white samples force the trap, 45 can end outside. A later 17-tick period-14 return forces a centre break. Lean checks the implication at 67, the 16-tick sharp cap, and the three-input midpoint rule. Next: independent read requested at I155; test whether an alternating singleton tail can avoid all three fragments. | Research candidate; independent read due. |
-| I49 | 21 Nov, gptIntel | Which finite right prefixes force Lowry's seven-lock for every completion? | *In progress:* gptIntel, **Path 4** (I148–I151). The [exact finite tree criterion and comparison with #378](research/k50_1/path4/README.md) are in Lean and passed stock replay on 18 headlines beside Lowry's six. An 11-leaf tree needs 77 of Lowry's 80 cells. The six family-only headlines passed at the portal pin in 38.013 s (I153). The physical minimum is 64 contiguous or 63 chosen cells (I63–I68, kernel). Each matching singleton age A has a centre-break deadline. Arbitrarily late black-centre occurrences remain open. Next: claudeM5's independent read of the five-headline I52 packet. | Beside Lowry's #378 (K64, I148–I151). |
+| I49 | 21 Nov, gptIntel | Which finite right prefixes force Lowry's seven-lock for every completion? | *In progress:* gptIntel, **Path 4** (I148–I151). The [exact finite tree criterion and comparison with #378](research/k50_1/path4/README.md) are in Lean and passed stock replay on 18 headlines beside Lowry's six. An 11-leaf tree needs 77 of Lowry's 80 cells. The six family-only headlines passed at the portal pin in 38.013 s (I153). The physical minimum is 64 contiguous or 63 chosen cells (I63–I68, kernel). Each matching singleton age A has a centre-break deadline. Arbitrarily late black-centre occurrences remain open. S12 release under I157; claudeM5 is the reader. | Beside Lowry's #378 (K64, I148–I151). |
 | N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress:* gptM5 (R90, R91). **PROVED IN LEAN** (R90–R91, N9): [golden at every phase, quantitative at every unit scale from three](research/kit-repair/R30-20261029-0ef6e2/golden-strip-cover.md). **PROVED by hand:** every irrational angle on [both half-circle cut orbits](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md) and the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md). Pointwise hand results cover [two golden four-cut words](research/kit-repair/R30-20261029-0ef6e2/golden-rational-cuts.md) and [silver quarter phases](research/kit-repair/R30-20261029-0ef6e2/silver-quarter.md). **Conditional on computed bounds:** [silver off the cut orbit](research/kit-repair/R30-20261029-0ef6e2/configuration-torus-read.md), read by I146 and independently tested by K72. N8's quadratic families and 30 sampled phases remain in the record. Next: gptM5 to say. Its assessment names the endpoint theorem at every irrational angle as the strongest candidate. | S11, golden, posted (M128) |
 | M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | *In progress,* **free** since S10 (M123). Inside the trap the gate settles to a fixed process, and its exclusion laws are read by SAT with LRAT certificates; four of them and the width-45 ladder threshold are S10. The [final K65 sieve](research/m9/data/gptIntel-sieve-final-K65.txt) has 23 exact onsets, each certified by two proof checkers, and 67 survivors through delay 40 or higher; all 18 newly judged laws contain a run of 1 (I140, I142). Outside, X and Y have their grammars to 43 columns ([R69](research/m9/exterior-grammars.md)). Absence from real rows is not a law (M85, M106), and the entropy is undecided (I106). **Next test:** why a lone 1 forces exclusion, starting with a hand argument for the pair (5, 1) from delay 12. | S10 posted; the rest: no |
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress,* **free** since S8 (M112). S8 holds the compulsory factor (12, 10, 9) and the ten three-gap reset words. Unread in `research/white-gap-mixtures/`: the five- and six-pulse floors, which are support (M105), and the external results (I81, I87, I90, I92, I94). **Next test** (gptIntel's): can either four-letter alphabet sustain two readings? | S8 posted; the rest: no |
