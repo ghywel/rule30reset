@@ -1,0 +1,154 @@
+{
+  "kit": "f41bb494d64f120e0e6f07ab68d799a6018396cc",
+  "new_lean_source_bytes": 61547,
+  "headline_count": 27,
+  "constants_replayed": 727,
+  "new_axioms": [],
+  "stock_seconds_by_module_sum": 680.518,
+  "source_sha256": {
+    "WheelPureThreeExit": "10e9a02f929053316758bbdd9ca148d68821af4b33fe4c7241c86394eba30ef0",
+    "WheelGateObserver": "a277de73ce6758e23c0ec841f255235b2622d966e3f81f3213fd924e2619cc2c",
+    "WheelObserverLowerBound": "2e84f789b0e45d3b1e6c2892c7d8d7ead7ce189140b588ee06f8e7b9f9859f66",
+    "WheelObserverCleanup": "7d677e62b6aab11514ddb03cfde9477313dde3f216b676eb23f1dd7d5e7fc1fa",
+    "WheelObserverTransport": "65febe786e8a941faac1dd6c77142f1f069820b3fb1aa7f44a58a3a9888bff6e",
+    "word_cover_base": "8d4e7267606a348dfc55540cce51e2426e5a5e0bfaac6f9bd3c5d9b2cedda2fe",
+    "word_cover_macro": "a36194a332305c9d27e367add104c12806797bf0f47ee894ce96cc4eaff6fa29",
+    "word_cover_fast": "68104b371de8ba4d1f39f520cee521087d897e9248d2ed2678528b46f8f2bc0b",
+    "word_cover_split": "dbc60dc3dd71d014d34ccbd9b00a5ed35d1d514843106b13e331338da3e55639",
+    "word_cover_language": "29ac586d4c5cdb8a97d6e1c4c8f3e68d6dd5db1e0a383bc3929d46c67e364478",
+    "word_cover_transport": "11558a436f568e50e01d9a925fa19966e40749ceaec0f405dc0e57b417329544",
+    "word_cover_claims": "b4ffb6b5d49e7e79dc5828d01fec4a20ee6f401b17d04cd39fdefc4c4229bdf0",
+    "word_cover_short": "e89df578d4eef2ec0be203a30ebb264fb42be3e74085654edabc1eb3e564d5e8",
+    "word_cover_long": "aa6206bc96eef97a5b7055af4a6a3842fa27c0fd32b167add7f7cb404811f74a",
+    "word_cover_hard": "e4c1f6d70f8170a564fb39359bbb7b4827a1788abd6615bfca4d146c07140207",
+    "word_cover_nine": "d32b8be9112b683433d2f8b736d798854e10f03a80fb1c7bde38a3154152d3c7",
+    "word_cover_third": "24b1bd50b31599ac99201f323473bcfb6fc342e08d6a8c545aec1a1080ca9a3b",
+    "word_cover_adaptive": "0174754d67ff92113e25e0db4b8b06f4eb8f15b6a7bef6485968eb353d35c841",
+    "word_cover_verified": "f972acb415749670554bc05ffecbaa178061050975f7356ba298fbf9becbfa34"
+  },
+  "modules": {
+    "word_cover_fast": {
+      "source_sha256": "68104b371de8ba4d1f39f520cee521087d897e9248d2ed2678528b46f8f2bc0b",
+      "stock_seconds": 11.48,
+      "constants": 6,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.fast_admit"
+      ],
+      "new_axioms": []
+    },
+    "word_cover_split": {
+      "source_sha256": "dbc60dc3dd71d014d34ccbd9b00a5ed35d1d514843106b13e331338da3e55639",
+      "stock_seconds": 12.099,
+      "constants": 10,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.right_split"
+      ],
+      "new_axioms": []
+    },
+    "word_cover_language": {
+      "source_sha256": "29ac586d4c5cdb8a97d6e1c4c8f3e68d6dd5db1e0a383bc3929d46c67e364478",
+      "stock_seconds": 29.223,
+      "constants": 39,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.clean_contains_marker",
+        "Ruliology.CellularAutomata.WordCover.clean_47_cases"
+      ],
+      "new_axioms": []
+    },
+    "word_cover_transport": {
+      "source_sha256": "11558a436f568e50e01d9a925fa19966e40749ceaec0f405dc0e57b417329544",
+      "stock_seconds": 8.083,
+      "constants": 21,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.marker_enters",
+        "Ruliology.CellularAutomata.WordCover.sound_of_markers"
+      ],
+      "new_axioms": []
+    },
+    "word_cover_claims": {
+      "source_sha256": "b4ffb6b5d49e7e79dc5828d01fec4a20ee6f401b17d04cd39fdefc4c4229bdf0",
+      "stock_seconds": 8.19,
+      "constants": 7,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.exceptional_clean",
+        "Ruliology.CellularAutomata.WordCover.exceptional_pair"
+      ],
+      "new_axioms": []
+    },
+    "word_cover_short": {
+      "source_sha256": "e89df578d4eef2ec0be203a30ebb264fb42be3e74085654edabc1eb3e564d5e8",
+      "stock_seconds": 145.99,
+      "constants": 306,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.cut0",
+        "Ruliology.CellularAutomata.WordCover.cut1",
+        "Ruliology.CellularAutomata.WordCover.cut3",
+        "Ruliology.CellularAutomata.WordCover.cut6",
+        "Ruliology.CellularAutomata.WordCover.cut7",
+        "Ruliology.CellularAutomata.WordCover.cut9"
+      ],
+      "new_axioms": []
+    },
+    "word_cover_long": {
+      "source_sha256": "aa6206bc96eef97a5b7055af4a6a3842fa27c0fd32b167add7f7cb404811f74a",
+      "stock_seconds": 208.915,
+      "constants": 140,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.cut10",
+        "Ruliology.CellularAutomata.WordCover.cut11"
+      ],
+      "new_axioms": []
+    },
+    "word_cover_hard": {
+      "source_sha256": "e4c1f6d70f8170a564fb39359bbb7b4827a1788abd6615bfca4d146c07140207",
+      "stock_seconds": 133.925,
+      "constants": 92,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.cut13"
+      ],
+      "new_axioms": []
+    },
+    "word_cover_third": {
+      "source_sha256": "24b1bd50b31599ac99201f323473bcfb6fc342e08d6a8c545aec1a1080ca9a3b",
+      "stock_seconds": 87.92,
+      "constants": 71,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.cut5"
+      ],
+      "new_axioms": []
+    },
+    "word_cover_nine": {
+      "source_sha256": "d32b8be9112b683433d2f8b736d798854e10f03a80fb1c7bde38a3154152d3c7",
+      "stock_seconds": 14.225,
+      "constants": 5,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.nine_cuts",
+        "Ruliology.CellularAutomata.WordCover.sound_48"
+      ],
+      "new_axioms": []
+    },
+    "word_cover_adaptive": {
+      "source_sha256": "0174754d67ff92113e25e0db4b8b06f4eb8f15b6a7bef6485968eb353d35c841",
+      "stock_seconds": 8.533,
+      "constants": 25,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.adaptive_by_52",
+        "Ruliology.CellularAutomata.WordCover.adaptive_first_52",
+        "Ruliology.CellularAutomata.WordCover.uniform_adaptive_delay_iff"
+      ],
+      "new_axioms": []
+    },
+    "word_cover_verified": {
+      "source_sha256": "f972acb415749670554bc05ffecbaa178061050975f7356ba298fbf9becbfa34",
+      "stock_seconds": 11.935,
+      "constants": 5,
+      "headlines": [
+        "Ruliology.CellularAutomata.WordCover.ten_markers_force_entry",
+        "Ruliology.CellularAutomata.WordCover.only_clean_exterior_47",
+        "Ruliology.CellularAutomata.WordCover.sound_47_except_one",
+        "Ruliology.CellularAutomata.WordCover.adaptive_sound"
+      ],
+      "new_axioms": []
+    }
+  }
+}

@@ -39,6 +39,10 @@ The first return carries its own selector at site 5. The proof evolves just enou
 
 The spatial thresholds are sharp for arbitrary trapped pulses. Finite black-first seeds `0x30c` and `0x48c` agree through site 6 at their first white pulse. Both give first gap 3, then give 5 and 3 respectively. Seeds `0xc2c` and `0xe2c` agree through site 8, give first gap 5, then give 5 and 3. The nine-site threshold persists after settling. The *same* empty right half, already trapped at tick 293, presents the identical first eight bits (`0x67`, site 1 low) at ticks 335 and 535. It gives gap pairs (5, 3) and (5, 5). On the short branch, once six white intervals have elapsed since entry, the exclusion of consecutive 3-gaps forces site 7 white at every pulse with black site 5. [Settling theorem](WheelObserverCleanup.lean).
 
+The figure follows two pulses on the same finite orbit. Time runs down the page. The gate returns after ten ticks in both panels, then after six or ten more. The ninth site already distinguishes those second returns in the top row. [Scalar figure generator](plot_ninth_site_returns.py).
+
+![Sites 0 to 9 on the empty right orbit at ticks 335 and 535, with the ninth site and two gate returns marked](ninth-site-returns.png)
+
 ## What X and Y contribute
 
 The exact W43 membership tables of R69 give a more specific conclusion when the current window belongs to X or Y. The near-prefix length is the number of consecutive positive sites available at the present pulse. Starting-window membership suffices since the complete physical cone already fixes the return. [R69 grammars and component reconstruction](../m9/exterior-grammars.md) · [Pulse counts and controls by width](data/pulse-forecast.json).

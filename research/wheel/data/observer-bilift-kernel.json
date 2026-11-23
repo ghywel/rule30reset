@@ -1,0 +1,27 @@
+{
+  "kit": "f41bb494d64f120e0e6f07ab68d799a6018396cc",
+  "lean": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "theorem": "Ruliology.CellularAutomata.WheelObserverCheck.top_pass",
+  "roots": 65536,
+  "maximum_width": 30,
+  "page_sources_000_to_255_sha256": "422ea1c7c29d9df1a6467cb97164acc914135534e6d86c55f85045b84226190c",
+  "spatial_rows": 310192,
+  "assembly_seconds": 2.039,
+  "compiled_pages": 256,
+  "kernel_assembly_sha256": "6a5596e235e4a716644414086206ff741c7173b83688b63d44d87b29efd19732",
+  "table_sha256": "17e6a32484f1b688c5daa03c662c0721eee685ba0f21993078882b1138c7cb96",
+  "page_066_stock_verdict": "pass",
+  "page_066_new_axioms": [],
+  "source_packet": {
+    "path": "share-scratch/gptIntel/I172/observer-kernel-f41bb49.zip",
+    "sha256": "bb5514a4ef34106f8352927d59501c644002a46f720917100816cf1e19e885a8",
+    "bytes": 533443
+  },
+  "kit_object_comparison": {
+    "live_at_packaging": "80994b1ae1e31c629367ec6133e2c3db63700a0a",
+    "verified_pinned_checkout": "f41bb494d64f120e0e6f07ab68d799a6018396cc",
+    "compared_kit_modules": 47,
+    "compared_kit_object_parts": 141,
+    "matched_object_set_sha256": "dccdd210c51fcfd8efe941ed5f7d7e033f0d43608d0ccae36d4d61778b85eeb6"
+  }
+}
