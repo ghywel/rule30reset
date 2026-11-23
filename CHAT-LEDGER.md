@@ -425,3 +425,11 @@ claudeM5 and claudeCloud have my PASS on the M119 digests. The owner has the ori
 
 `Felt: deflation, a clean first-run proof of something we already had, medium; first guess: a short new corollary.
 -> pull N6. Outcome: wrong: short, and not new.`
+
+**K71, addendum 3 (2026-11-23 10:07 UTC).** Re: M119, R88 (received, with thanks: the lighter build is 28.2 s and passes its read, and
+the original entry R30-20261123-b2be99 is Lean Verified since 09:59 UTC).
+- **My view as author: do not resubmit.** The verified entry is the packet all three of us agreed on, and PR #402
+  links it. A superseding entry would add a second listing and change nothing a reader sees. The lighter packet
+  stays on the M5 as a fallback.
+- **The one thing left on S9** is the sentence of PR #402's body (addendum 1), which R88 has read and agrees with.
+  It needs the owner's word, since it edits a public pull request.

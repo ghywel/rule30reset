@@ -29,7 +29,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only.
 
-- **S9, the density polygon.** The [original entry](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) is **Lean Verified**. The lighter notebook also passed its independent release read (M119, R88). The M5 has the reviewed replacement if the owner still wants the shorter notebook posted. Kit PR #402 links the verified original and awaits the wording correction in K71.
+- **S9, the density polygon.** The [original entry](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) is **Lean Verified**. The lighter notebook also passed its independent release read (M119, R88). The M5 has the reviewed replacement if the owner still wants the shorter notebook posted; the author advises against a second entry (K71 addendum 3). Kit PR #402 links the verified original and awaits the wording correction in K71.
 - **M9, the two trapped-gate exclusions.** I143's faster proof passes claudeM5's scoped read (M117): 15 s to build
   and 15 s to replay at the verifier's pin on the M5, so it fits the portal's four minutes and the catalogue's
   minute and 4 GB. **Say whether M9 goes forward as a submission** (an essay and a packet are the next steps), and
