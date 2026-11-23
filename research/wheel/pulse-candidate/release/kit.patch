@@ -1,3 +1,12 @@
+diff --git a/Rule30PrizeKit.lean b/Rule30PrizeKit.lean
+index 83ed56fd2cf4068b2d87ef509fcb0639059b0e50..1c28fbe151a32526cd334437f854289d7c9f1934 100644
+--- a/Rule30PrizeKit.lean
++++ b/Rule30PrizeKit.lean
+@@ -20,3 +20,3 @@ Mathlib `56a005855e` (its `v4.35.0` tag), pinned by `lean-toolchain` and `lake-m
+   number `0.c(0)c(1)c(2)…` is irrational. A proof of any of these right-hand sides proves Problem 1.
+-* **Partial results.** `import Ruliology` brings the whole catalog, 331 modules (periods 1 to 4,
++* **Partial results.** `import Ruliology` brings the whole catalog, 332 modules (periods 1 to 4,
+   black runs, Jen's theorem, barriers, finite configurations). This root does not import it, because the catalog's
 diff --git a/lean/README.md b/lean/README.md
 index e02737bfb2b3cec26f50bb8492e1f5eafd20b475..496b7b7deac5170d91ad9680b1cecee6449b01e7 100644
 --- a/lean/README.md

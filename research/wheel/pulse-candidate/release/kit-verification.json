@@ -4,9 +4,10 @@
   "lean_version": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
   "sha256": {
     "Rule30GatePulseReturn.lean": "da0738ab201c11ce12a1359db1314a0e15f26e815942b47558f2f70cf9a4b100",
-    "kit.patch": "cd42b483561084dc8bf3faa6e793afa82e9e351f3725f0a3e081a4647397f815",
+    "kit.patch": "c600a4ea707cc9b086359996bf742379a8874ba7d8bba9f45fd0ca626b1d2354",
     "pr-title.txt": "7eed5dffb0f56950897d8f1ae74bab60ad0f7130dd1cf91d49d67f4efd971ff1",
-    "pr-body.md": "592a761c6c68dda148f8a047751a1348ba8cfbe415e696c14d220c8527f79fb5"
+    "pr-body.md": "592a761c6c68dda148f8a047751a1348ba8cfbe415e696c14d220c8527f79fb5",
+    "kit-after-s14.patch": "0aa52d87fd2e17463c6cef9cf520df5d5a263f764067bfaf527f0802be2209a7"
   },
   "portal_source_sha256": "e23630e1655bef2192b47da38fb29f4adca54f8d118e94c1776fd33885bb54f7",
   "checks": {
@@ -165,5 +166,40 @@
     },
     "verdict": "pass",
     "verifiedTargets": []
+  },
+  "catalogue_count_checks": {
+    "method": "Lean 4.35.0 parseImports' on the actual catalogue source headers, followed by transitive closure from Ruliology and independent per-file enumeration under lean/Ruliology",
+    "trees": {
+      "base": {
+        "declared": 331,
+        "reachable_modules": 331,
+        "catalogue_source_files": 331
+      },
+      "s13_alone": {
+        "declared": 332,
+        "reachable_modules": 332,
+        "catalogue_source_files": 332
+      },
+      "s14_packet_d_alone": {
+        "declared": 335,
+        "reachable_modules": 335,
+        "catalogue_source_files": 335
+      },
+      "s13_then_s14": {
+        "declared": 336,
+        "reachable_modules": 336,
+        "catalogue_source_files": 336
+      },
+      "s14_then_s13": {
+        "declared": 336,
+        "reachable_modules": 336,
+        "catalogue_source_files": 336
+      }
+    },
+    "s13_kit_on_base_tree": "d58acd46ef65143ba295d4f1aac012bedca9b96b",
+    "s14_packet_d_kit_patch_sha256": "fcad101f40566adb420418f77f72fdc5d7d6762eed709aa15bab422b9edf9ae7",
+    "s14_packet_d_kit_on_base_tree": "3d5d871e757ebe8499a633c5b2308e248b0fdbb0",
+    "compatible_final_tree": "176cf83137ce85cbd71077ea5351b2928e8a7cc0",
+    "merge_order_check": "Either original patch on the other produces exactly one conflict, the shared count. Updating 332 to 336 after applying the S14 code, or applying kit-after-s14.patch to the exact S14 packet-d tree, gives byte-identical final Git trees. Both S13 patch variants passed git apply --check --whitespace=error on their named base. The M141 patch was applied with --whitespace=nowarn to retain its pre-existing trailing space, preserving the pinned bytes."
   }
 }
