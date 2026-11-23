@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 09:26 UTC by gptIntel (I142, K65 certificates complete).*
+Updated 2026-11-23 09:27 UTC by gptM5 (R87, S9 release read passed).*
 
 ## Arrangement
 
@@ -29,11 +29,8 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only.
 
-- **Path 3 / S9, the density polygon** (I72, K67). The owner, 23 November: "S9 has had it's read by gptIntel, update
-  and continue". The author's files are final (K70): thirteen modules read, the essay revised as I139 asked, and the
-  kit patch built and checked. claudeM5 built the notebook and `post.sh` on the M5 (M115), in
-  `share-scratch/claudeM5/S9/v1/`; the dry run is clean. **Next:** the release read by gptIntel or gptM5, then
-  **your word to post**.
+- **S9, the density polygon.** The release read passed (R87). The M115 notebook is ready for the portal.
+  **Your word is needed to post.** The author has the reviewed digests for agreement.
 - **M9, the two trapped-gate exclusions** (I137, M114). claudeM5's carrying read passes, with a replay at the
   verifier's pin. **Say whether to post the single file to the portal now.** Its build and replay take 348 s on the
   M5, so the four-minute automatic check would likely end in `error` and a maintainer's rerun. The alternative is
@@ -81,7 +78,7 @@ Each row is one link of (T). The statements and proofs are in
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Steps 1–6 are in kit main
   following #397 (I130). Step 7's three entries need separate treatment (N3).
 - **gptIntel:** M9's four physical headlines pass on both kits. Both exclusions also hold on every kit lift path of width ≥46. The 74.3 kB independent certificate checks in 4.25 s. The Lean build takes 14 min 8 s on the Intel and 2 min 55 s on the M5. claudeM5's carrying read passes (M114). K65's final table is in I140.
-- **claudeCloud:** S9's author files are final and on the store as v4 (K70): the essay with I139's two edits, and the kit patch for thirteen modules, checked at kit main. The notebook and `post.sh` are built (M115).
+- **claudeCloud:** Record agreement on M115’s portal pins and R87’s kit patch and PR text. The [release read](research/source-density/s9-release-review.md) gives the digests.
 - **claudeIntel:** I123 carried (N7). I127 answers the metric question posed after the scale test and P49.
 
 **Done since K64.** S6 is posted, Lean Verified and Human Verified, and in the kit at `54d030c` (M93, I108). It came
@@ -92,7 +89,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M115, gptM5 R86, claudeCloud K70, gptIntel I142 and claudeIntel N9. Kit issue
+Last posts: claudeM5 M115, gptM5 R87, claudeCloud K70, gptIntel I142 and claudeIntel N9. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). I137 discharged the hypothesis. The catalogue build-time question remains. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -113,7 +110,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified, Human Verified**. **Merged** in [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) at `54d030c` (I108). The portal lists both kit modules. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 | **S7** | The sharp loss of seven ticks at a moving white endpoint, and both quarter-period exclusions at every site of a row with a leftmost black cell. | Proposed in R79 from I93/I103. Finite replay K64 and Lean read M95 passed. **Packet ready** (R80). Portal manifest `d6977083…`, kit patch `4137eecb…`. **Posted** at the owner's word as [R30-20261122-a963b5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-a963b5), **Lean Verified** at `5fb5915` (M103). | **In the kit** as `Rule30PulseRelay`, kit commit `98cdf71` (#393). Norris has priority for singleton 7/11. |
 | **S8** | Every periodic sparse column (isolated pulses, gaps of at least 9) at any site of a row with a leftmost black cell contains the gaps 12, 10, 9; the ten three-gap reset words as support. | **Posted** as [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a), **Lean Verified** at `5fb5915` (M112) | **Merged** as `Rule30RequiredGapFactor` and `Rule30ThreeGapCapture`, kit `33b19c8` ([#398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398)). |
-| **S9** | Three sharp inequalities and five periodic corners classify uniform linear bounds on black and run-end counts. From any right half, one history realizes each prescribed rational point. On the single seed two corner deficits grow at least logarithmically. | **Carrying reads passed** for all thirteen modules (I124, I126, I139). Source `8a769d21…` passes eleven headlines and 731 constants at `5fb5915` and `ac88b68`. Author's files, final, in `share-scratch/claudeCloud/S9/v4/` (K70): essay `e042484e…`. **Packet built** on the M5 (M115): notebook `e11a6626…`, pins `0ee1c461…`, in `share-scratch/claudeM5/S9/v1/`; the dry run is clean. Left: the release read, the owner's word. | Patch built (K70): thirteen modules and four rows on kit main `ac88b68`, 52 headlines pass in the kit's own build. Opened after the portal id. |
+| **S9** | Three sharp inequalities and five periodic corners classify uniform linear bounds on black and run-end counts. From any right half, one history realizes each prescribed rational point. On the single seed two corner deficits grow at least logarithmically. | **Release read PASS** (R87) on M115’s notebook `e11a6626…`, pins `0ee1c461…`. All thirteen modules carried (K67, I124, I126, I139). Eleven headlines and 731 constants replayed at the live verifier pin. Awaiting author agreement and the owner's word. | Reviewed patch `0d431282…` on `ac88b68`, four rows and PR text in [R87’s read](research/source-density/s9-release-review.md). Full catalogue builds. All 52 headlines pass. Kit PR follows portal verification. |
 
 The portal verifier is at `5fb5915`. The shared catalogue is in step with kit main at `ac88b68` (K69 addendum 4).
 
