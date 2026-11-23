@@ -1,0 +1,135 @@
+{
+  "limit": {
+    "width": 22,
+    "stabilized": 109,
+    "phase_counts": [
+      57222,
+      57176,
+      57191
+    ],
+    "scc": [
+      {
+        "size": 123382,
+        "reachable": 123382,
+        "other_cycles": [],
+        "gate_necklace": null
+      },
+      {
+        "size": 63,
+        "reachable": 166917,
+        "other_cycles": [
+          123382
+        ],
+        "gate_necklace": "00011"
+      },
+      {
+        "size": 23,
+        "reachable": 124359,
+        "other_cycles": [
+          123382
+        ],
+        "gate_necklace": "00011"
+      },
+      {
+        "size": 113,
+        "reachable": 168232,
+        "other_cycles": [
+          23,
+          63,
+          123382
+        ],
+        "gate_necklace": "00011"
+      },
+      {
+        "size": 3,
+        "reachable": 126173,
+        "other_cycles": [
+          123382
+        ],
+        "gate_necklace": null
+      },
+      {
+        "size": 3,
+        "reachable": 124784,
+        "other_cycles": [
+          123382
+        ],
+        "gate_necklace": null
+      }
+    ],
+    "ether_checks": [
+      {
+        "ether": [
+          2040306,
+          2224671,
+          3284769
+        ],
+        "off_before_giant": 216,
+        "example": 4219070
+      },
+      {
+        "ether": [
+          4080612,
+          255038,
+          2375235
+        ],
+        "off_before_giant": 6,
+        "example": 4310923
+      }
+    ],
+    "physical_transient": {
+      "cut_width": 22,
+      "initial_row_hex": "0x22961803e5e50df21f2",
+      "ether": [
+        2040306,
+        2224671,
+        3284769
+      ],
+      "first_site1_departure": 52,
+      "at_departure": {
+        "row_low22": 840078,
+        "scc_size": 1
+      },
+      "first_giant_entry": 54
+    },
+    "physical_queries": [
+      [
+        2040306,
+        49,
+        100
+      ],
+      [
+        2040306,
+        52,
+        162
+      ]
+    ],
+    "late_15_basin": 113
+  },
+  "closure": {
+    "16": {
+      "size": 17126,
+      "sha256_repr": "52283626a0fa33b7b5e530ae2b75a0ff27e6283ca58f97a0fd2c169f76041d32",
+      "white": 0,
+      "aligned_ether": 3
+    },
+    "20": {
+      "size": 54576,
+      "sha256_repr": "42a880e1db1cb5cb24477aec6a1380a921534172dfde142d43acaa2016d0a2a4",
+      "white": 0,
+      "aligned_ether": 0
+    }
+  },
+  "fifteen_ether_prefix": [
+    4,
+    {
+      "label": 11,
+      "state": 237094157109683,
+      "reference": [
+        1194361219859428,
+        4015297250190398,
+        1095381008268867
+      ]
+    }
+  ]
+}
