@@ -1,0 +1,400 @@
+{
+  "width": 16,
+  "earlier_signatures": [
+    {
+      "history": 56,
+      "lead": 4,
+      "target_phase": 2,
+      "windows": 192,
+      "departures": 96,
+      "marked": 96,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    {
+      "history": 56,
+      "lead": 4,
+      "target_phase": 12,
+      "windows": 211,
+      "departures": 57,
+      "marked": 57,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    {
+      "history": 56,
+      "lead": 4,
+      "target_phase": 22,
+      "windows": 375,
+      "departures": 115,
+      "marked": 115,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    {
+      "history": 56,
+      "lead": 4,
+      "target_phase": 32,
+      "windows": 274,
+      "departures": 32,
+      "marked": 32,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    {
+      "history": 56,
+      "lead": 4,
+      "target_phase": 42,
+      "windows": 523,
+      "departures": 118,
+      "marked": 118,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    {
+      "history": 56,
+      "lead": 4,
+      "target_phase": 19,
+      "windows": 233,
+      "departures": 0,
+      "marked": 0,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    {
+      "history": 56,
+      "lead": 4,
+      "target_phase": 39,
+      "windows": 446,
+      "departures": 114,
+      "marked": 106,
+      "false_positive": 0,
+      "false_negative": 8
+    },
+    {
+      "history": 56,
+      "lead": 4,
+      "target_phase": 49,
+      "windows": 446,
+      "departures": 114,
+      "marked": 106,
+      "false_positive": 0,
+      "false_negative": 8
+    },
+    {
+      "history": 56,
+      "lead": 4,
+      "target_phase": 52,
+      "windows": 523,
+      "departures": 285,
+      "marked": 285,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    {
+      "history": 140,
+      "lead": 10,
+      "target_phase": 52,
+      "windows": 128,
+      "departures": 109,
+      "marked": 87,
+      "false_positive": 0,
+      "false_negative": 22
+    }
+  ],
+  "sensors": [
+    {
+      "history": 140,
+      "target_phase": 32,
+      "lead": 4,
+      "windows": 159,
+      "departure_windows": 32,
+      "sites": [
+        3
+      ],
+      "depart_if": [
+        "0"
+      ],
+      "stay_or_other_departure_if": [
+        "1"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 32,
+      "lead": 6,
+      "windows": 156,
+      "departure_windows": 30,
+      "sites": [
+        5
+      ],
+      "depart_if": [
+        "1"
+      ],
+      "stay_or_other_departure_if": [
+        "0"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 32,
+      "lead": 8,
+      "windows": 129,
+      "departure_windows": 22,
+      "sites": [
+        5
+      ],
+      "depart_if": [
+        "1"
+      ],
+      "stay_or_other_departure_if": [
+        "0"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 32,
+      "lead": 10,
+      "windows": 121,
+      "departure_windows": 19,
+      "sites": [
+        5
+      ],
+      "depart_if": [
+        "1"
+      ],
+      "stay_or_other_departure_if": [
+        "0"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 32,
+      "lead": 12,
+      "windows": 111,
+      "departure_windows": 18,
+      "sites": [
+        7
+      ],
+      "depart_if": [
+        "0"
+      ],
+      "stay_or_other_departure_if": [
+        "1"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 32,
+      "lead": 14,
+      "windows": 107,
+      "departure_windows": 16,
+      "sites": [
+        7
+      ],
+      "depart_if": [
+        "1"
+      ],
+      "stay_or_other_departure_if": [
+        "0"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 42,
+      "lead": 4,
+      "windows": 159,
+      "departure_windows": 32,
+      "sites": [
+        3
+      ],
+      "depart_if": [
+        "0"
+      ],
+      "stay_or_other_departure_if": [
+        "1"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 42,
+      "lead": 6,
+      "windows": 160,
+      "departure_windows": 30,
+      "sites": [
+        5
+      ],
+      "depart_if": [
+        "1"
+      ],
+      "stay_or_other_departure_if": [
+        "0"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 42,
+      "lead": 8,
+      "windows": 137,
+      "departure_windows": 22,
+      "sites": [
+        5
+      ],
+      "depart_if": [
+        "1"
+      ],
+      "stay_or_other_departure_if": [
+        "0"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 42,
+      "lead": 10,
+      "windows": 128,
+      "departure_windows": 19,
+      "sites": [
+        5
+      ],
+      "depart_if": [
+        "1"
+      ],
+      "stay_or_other_departure_if": [
+        "0"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 42,
+      "lead": 12,
+      "windows": 161,
+      "departure_windows": 18,
+      "sites": [
+        3,
+        7
+      ],
+      "depart_if": [
+        "10"
+      ],
+      "stay_or_other_departure_if": [
+        "00",
+        "01",
+        "11"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 42,
+      "lead": 14,
+      "windows": 159,
+      "departure_windows": 16,
+      "sites": [
+        7
+      ],
+      "depart_if": [
+        "1"
+      ],
+      "stay_or_other_departure_if": [
+        "0"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 52,
+      "lead": 4,
+      "windows": 159,
+      "departure_windows": 127,
+      "sites": [
+        3
+      ],
+      "depart_if": [
+        "1"
+      ],
+      "stay_or_other_departure_if": [
+        "0"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 52,
+      "lead": 6,
+      "windows": 160,
+      "departure_windows": 130,
+      "sites": [
+        5
+      ],
+      "depart_if": [
+        "0"
+      ],
+      "stay_or_other_departure_if": [
+        "1"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 52,
+      "lead": 8,
+      "windows": 137,
+      "departure_windows": 115,
+      "sites": [
+        5
+      ],
+      "depart_if": [
+        "0"
+      ],
+      "stay_or_other_departure_if": [
+        "1"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 52,
+      "lead": 10,
+      "windows": 128,
+      "departure_windows": 109,
+      "sites": [
+        5
+      ],
+      "depart_if": [
+        "0"
+      ],
+      "stay_or_other_departure_if": [
+        "1"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 52,
+      "lead": 12,
+      "windows": 161,
+      "departure_windows": 106,
+      "sites": [
+        8
+      ],
+      "depart_if": [
+        "0"
+      ],
+      "stay_or_other_departure_if": [
+        "1"
+      ]
+    },
+    {
+      "history": 140,
+      "target_phase": 52,
+      "lead": 14,
+      "windows": 159,
+      "departure_windows": 111,
+      "sites": [
+        3,
+        7
+      ],
+      "depart_if": [
+        "10"
+      ],
+      "stay_or_other_departure_if": [
+        "00",
+        "11"
+      ]
+    }
+  ]
+}

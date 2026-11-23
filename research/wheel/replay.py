@@ -11,6 +11,7 @@ import time
 
 PIN = "8e1cc847a758a892ec4b51182cdf325b1c483f9a"
 EXTERIOR_PIN = "7c764eff648a5e795aa3d4afe346db243b6db337"
+KICK_PIN = "b686c1d2547d27c4451f5691861a63f3cc4caf9f"
 MODULES = ("WheelMarkerData", "WheelMarkerGraph", "WheelMarkerCheck", "WheelTiles", "WheelMarker", "WheelReturn")
 HEADLINES = {
     "WheelTiles": ("tiles_of_pulse", "seven_secondary", "seven_b_secondary", "five_long_tile",
@@ -21,6 +22,7 @@ HEADLINES = {
     "WheelReturn": ("singleton_return_break",),
     "WheelThreeGapExterior": ("driven_ring", "outside_forever", "arbitrarily_long_finite",
                               "no_periodic_white_tail"),
+    "WheelKickRelay": ("six_tick_relay", "trapped_pulse_prefix", "trapped_selector"),
 }
 
 
@@ -33,22 +35,27 @@ def logged(cmd, cwd, env, log):
     return round(time.monotonic()-start, 3)
 
 
-def replay(kit, work, exterior=False):
+def replay(kit, work, exterior=False, kick=False):
     kit = kit.resolve()
     work = work.resolve()
     work.mkdir(parents=True, exist_ok=True)
-    pin = EXTERIOR_PIN if exterior else PIN
+    pin, modules = PIN, MODULES
+    deps = ["Rule30Prize","Rule30GateTrapWords","Rule30SidewaysLocks","Rule30MaskedJen"]
+    if exterior:
+        pin, modules = EXTERIOR_PIN, ("WheelThreeGapExterior",)
+        deps = ["Rule30Prize","Rule30GateTrap","Rule30FiniteMaskedJen"]
+    if kick:
+        pin, modules = KICK_PIN, ("WheelKickRelay",)
+        deps = ["Rule30Prize","Rule30GateTrap"]
     if subprocess.check_output(["git","rev-parse","HEAD"],cwd=kit,text=True).strip() != pin:
         raise ValueError(f"The replay uses kit {pin}")
     lean = kit/"lean"
     source = Path(__file__).resolve().parent
     ns = "Ruliology.CellularAutomata."
-    deps = (["Rule30Prize","Rule30GateTrap","Rule30FiniteMaskedJen"] if exterior else
-            ["Rule30Prize","Rule30GateTrapWords","Rule30SidewaysLocks","Rule30MaskedJen"])
     logged(["lake","build",*(ns+d for d in deps)],lean,None,work/"kit-build.log")
     env = dict(os.environ, LEAN_PATH=os.pathsep.join(map(str,(work,lean/".lake/build/lib/lean"))))
     record = {}
-    for name in (("WheelThreeGapExterior",) if exterior else MODULES):
+    for name in modules:
         src = source/(name+".lean")
         r = dict(sha256=hashlib.sha256(src.read_bytes()).hexdigest())
         r["build_seconds"] = logged(["lean","-j1","-R",source,"-o",work/(name+".olean"),src],
@@ -77,6 +84,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("kit",type=Path)
     parser.add_argument("output",type=Path)
-    parser.add_argument("--exterior", action="store_true", help="Replay the four I163 exterior headlines.")
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--exterior", action="store_true", help="Replay the four exterior headlines.")
+    group.add_argument("--kick", action="store_true", help="Replay the three phase-slip relay headlines.")
     args = parser.parse_args()
-    replay(args.kit,args.output,args.exterior)
+    replay(args.kit,args.output,args.exterior,args.kick)

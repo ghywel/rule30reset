@@ -3,12 +3,11 @@
 import argparse
 from bisect import bisect_right
 from collections import Counter, defaultdict
-import itertools
 import json
 from pathlib import Path
 from random import Random
 
-from kick_predictor import WHEEL, common_trace, forecast, phase_at, pulse_warning, read_display
+from kick_predictor import WHEEL, common_trace, forecast, mature_opportunities, phase_at, pulse_warning, read_display
 from wheel_bridge import table
 
 
@@ -109,6 +108,7 @@ def cohort(kind, seeds, ticks, trap, widths, examples, pairs):
     horizon, warm = 160, 140
     totals = Counter()
     older = defaultdict(Counter)
+    early = defaultdict(Counter)
     by_width = {str(w): Counter() for w in widths}
     phase_counts = Counter()
     for seed in seeds:
@@ -133,6 +133,17 @@ def cohort(kind, seeds, ticks, trap, widths, examples, pairs):
             raw = rows[t]
             i = bisect_right(dtimes, t)
             next_depart = dtimes[i] if i < len(dtimes) else None
+            run = history_length(trace, t, d)
+            if run >= 140 and t + 14 < ticks:
+                slots, tests = mature_opportunities(raw, 16, t, d)
+                if next_depart is not None and next_depart <= t+56:
+                    assert next_depart in slots
+                for test in tests:
+                    offset = test["target_tick"]-t
+                    assert test["departs"] == (next_depart == t+offset)
+                    tally = early[f"{test['wheel_index']}/{offset}"]
+                    tally["opportunities"] += 1
+                    tally["called"] += test["departs"]
             if t + 10 < ticks:
                 older_signals(older, trace, raw, t, d, next_depart)
             if t % 2 or raw & 1 == 0:
@@ -152,7 +163,6 @@ def cohort(kind, seeds, ticks, trap, widths, examples, pairs):
                     pulse_hits.add(t+6)
                     phase_counts[str((pos+6) % 56)] += 1
                 key = (pos, pulse["site_5"])
-                run = history_length(trace, t, d)
                 if key not in pairs or pairs[key]["history"] < run:
                     pairs[key] = {"history": run, "kind": kind, "seed": seed, "tick": t,
                                   "phase": d, "prefix16": raw & 65535}
@@ -160,7 +170,7 @@ def cohort(kind, seeds, ticks, trap, widths, examples, pairs):
             next_kick = kicks[j] if j < len(kicks) else None
             for w in widths:
                 prefix = raw & ((1 << w)-1)
-                f = forecast(prefix, w, t, d, horizon)
+                f = forecast(prefix, w, t, d, horizon, run)
                 common = common_trace(prefix, w, t, horizon)
                 assert common == trace[t:t+len(common)]
                 if f["departure"] is not None:
@@ -190,13 +200,37 @@ def cohort(kind, seeds, ticks, trap, widths, examples, pairs):
                 stats.setdefault("lead_histogram", Counter())[str(lead)] += 1
     return {"seeds": [seeds.start, seeds.stop-1], "score_ticks": [warm,ticks-1],
             "counts": totals, "departure_phase_counts": phase_counts,
-            "older_pattern_controls": older, "prefix_forecasts": by_width}
+            "older_pattern_controls": older, "mature_sensor_controls": early, "prefix_forecasts": by_width}
+
+
+def planted_controls():
+    from three_gap_ring import build_ring
+    ring_rows = build_ring()
+    ring_trace = "".join(str((ring_rows[(t+1) % 6] >> 1) & 1) for t in range(512))
+    phases, departs, kicks = reference(ring_trace)
+    assert not any(p is not None for p in phases) and not departs and not kicks
+    path = Path(__file__).parents[1] / "m9/data/claudeM5-m80-runs-of-five-5x5-P100.json"
+    seeded = json.loads(path.read_bytes())
+    raw = int(seeded["witness"]["initial_row"][::-1], 2)
+    trace, rows = [], []
+    for t in range(2*seeded["samples"]-1):
+        trace.append(str(raw & 1))
+        rows.append(raw)
+        raw = step(raw, t % 2)
+    start = 2 * seeded["P"]
+    assert all(bit == WHEEL[(46+i) % 56] for i,bit in enumerate(trace[start:]))
+    d = (start-46) % 56
+    decisions = [pulse_warning(rows[t], t, d) for t in range(start,len(trace)-6)]
+    assert all(not p["departs"] for p in decisions if p)
+    return {"october_ring_ticks":len(ring_trace),"october_ring_display_kicks":0,
+            "planted_wheel_interval":[start,len(trace)-1],
+            "planted_pulse_decisions":sum(p is not None for p in decisions),"planted_false_alarms":0}
 
 
 def main(args):
     trap = set(table(args.kit, "trapCodes", "Rule30Certificates/GateTrap"))
     examples, pairs = {}, {}
-    result = {"relay": relay_controls(trap), "cohorts": {}}
+    result = {"relay": relay_controls(trap), "planted_controls":planted_controls(), "cohorts": {}}
     for kind, first in (("finite24", 1000), ("random_far_field", 2000)):
         result["cohorts"][kind] = cohort(kind, range(first, first+args.seeds), args.ticks,
                                         trap, (8,16,32,64), examples, pairs)

@@ -1,7 +1,9 @@
 """Prospective Rule 30 wheel departures and signed Vitruvian phase changes."""
 
 import argparse
+from functools import lru_cache
 import json
+from pathlib import Path
 
 
 WHEEL = "00010011010001001101000100110100010011010001001101001101"
@@ -78,9 +80,34 @@ def common_trace(row, width, tick, horizon):
     return "".join(bits)
 
 
-def forecast(row, width, tick, phase, horizon=160):
+@lru_cache(maxsize=1)
+def sensor_table():
+    path = Path(__file__).parent / "data" / "kick-sensors.json"
+    return json.loads(path.read_bytes())["sensors"]
+
+
+def mature_opportunities(row, width, tick, phase):
+    """Possible first departures this turn, tightened by the certified spatial sensors."""
+    pos = (tick - phase) % 56
+    slots = sorted(tick + ((target - pos - 1) % 56) + 1 for target in (32,42,52))
+    tests = []
+    for item in sensor_table():
+        lead, target, sites = item["lead"], item["target_phase"], item["sites"]
+        if (pos+lead) % 56 != target or max(sites) > width:
+            continue
+        word = "".join(str((row >> (j-1)) & 1) for j in sites)
+        goes = word in item["depart_if"]
+        if not goes and word not in item["stay_or_other_departure_if"]:
+            raise ValueError("Snapshot contradicts the supplied 140-tick history.")
+        tests.append({"target_tick":tick+lead,"wheel_index":target,"sites":sites,"read":word,"departs":goes})
+        if not goes:
+            slots.remove(tick+lead)
+    return slots, tests
+
+
+def forecast(row, width, tick, phase, horizon=160, matched_ticks=0):
     """Forecast from this snapshot only, given an already established wheel phase."""
-    if width < 1 or row < 0 or row >= 1 << width or tick < 0 or horizon < 0:
+    if width < 1 or row < 0 or row >= 1 << width or tick < 0 or horizon < 0 or not 0 <= matched_ticks <= tick+1:
         raise ValueError("Use a nonnegative row of the specified width, tick and horizon.")
     if phase not in range(0, 56, 2) or int(WHEEL[(tick - phase) % 56]) != row & 1:
         raise ValueError("The current reading must fit the supplied even wheel phase.")
@@ -95,13 +122,26 @@ def forecast(row, width, tick, phase, horizon=160):
     matches = departure - 1 if departure is not None else tick + len(bits) - 1
     if pulse is not None and not pulse["departs"]:
         matches = max(matches, tick + 6)
+    opportunities = tests = None
+    if matched_ticks >= 140:
+        opportunities, tests = mature_opportunities(row, width, tick, phase)
+        for test in tests:
+            if test["departs"]:
+                assert departure in (None, test["target_tick"])
+                departure = test["target_tick"]
+        if departure is not None:
+            matches = departure - 1
+            opportunities = [t for t in opportunities if t == departure]
+        else:
+            opportunities = [t for t in opportunities if t > matches]
+            matches = max(matches, (min(opportunities) - 1) if opportunities else tick + 56)
     kick = None
     if changes:
         time, new, notches = changes[0]
         kick = {"tick": time, "phase": new, "notches": notches}
     return {"issued": tick, "phase": phase, "common_gate_through": tick + len(bits) - 1,
             "old_phase_matches_through": matches, "departure": departure, "next_kick": kick,
-            "pulse": pulse}
+            "pulse": pulse, "first_departure_candidates_this_turn":opportunities, "mature_sensors":tests}
 
 
 if __name__ == "__main__":
@@ -111,6 +151,8 @@ if __name__ == "__main__":
     ph = parser.add_mutually_exclusive_group(required=True)
     ph.add_argument("--phase", type=int, help="Previously established even display offset, from 0 to 54.")
     ph.add_argument("--history", help="Column-one history from tick zero through the current tick.")
+    parser.add_argument("--matched-ticks", type=int, default=0,
+                        help="Consecutive wheel ticks already witnessed at --phase, including this tick.")
     parser.add_argument("--horizon", type=int, default=160, help="Physical ticks to propagate the prefix.")
     args = parser.parse_args()
     if not args.prefix or set(args.prefix) - {"0", "1"}:
@@ -122,8 +164,15 @@ if __name__ == "__main__":
         phase = confirmed_phase(args.history)
         if phase is None:
             parser.exit(0, "The supplied history has not yet established a current display phase.\n")
+        if args.matched_ticks:
+            parser.error("--history computes its own matched tick count")
+        for i in range(args.tick, -1, -1):
+            if args.history[i] != WHEEL[(i-phase) % 56]:
+                break
+            args.matched_ticks += 1
     try:
-        result = forecast(int(args.prefix[::-1], 2), len(args.prefix), args.tick, phase, args.horizon)
-    except ValueError as exc:
+        result = forecast(int(args.prefix[::-1], 2), len(args.prefix), args.tick, phase,
+                          args.horizon, args.matched_ticks)
+    except (ValueError, AssertionError) as exc:
         parser.error(str(exc))
     print(json.dumps(result, indent=2))

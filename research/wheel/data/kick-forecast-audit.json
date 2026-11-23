@@ -1,0 +1,604 @@
+{
+  "relay": {
+    "trap_pulses": 188,
+    "returns_at_six": 41,
+    "one_site_selectors": [
+      5
+    ],
+    "prefixes7": [
+      7,
+      23,
+      39,
+      87,
+      103
+    ]
+  },
+  "planted_controls": {
+    "october_ring_ticks": 512,
+    "october_ring_display_kicks": 0,
+    "planted_wheel_interval": [
+      200,
+      486
+    ],
+    "planted_pulse_decisions": 31,
+    "planted_false_alarms": 0
+  },
+  "cohorts": {
+    "finite24": {
+      "seeds": [
+        1000,
+        1031
+      ],
+      "score_ticks": [
+        140,
+        3071
+      ],
+      "counts": {
+        "display_departures": 1011,
+        "display_kicks": 1010,
+        "trap_pulses": 2610,
+        "pulse_decisions": 2605,
+        "six_tick_departures_called": 701
+      },
+      "departure_phase_counts": {
+        "32": 474,
+        "52": 218,
+        "42": 9
+      },
+      "older_pattern_controls": {
+        "4": {
+          "candidate_ticks": 4074,
+          "departures": 784,
+          "pattern_alerts": 784,
+          "correct_alerts": 784
+        },
+        "10": {
+          "candidate_ticks": 39,
+          "departures": 27,
+          "pattern_alerts": 27,
+          "correct_alerts": 27
+        }
+      },
+      "mature_sensor_controls": {
+        "32/12": {
+          "opportunities": 49,
+          "called": 38
+        },
+        "32/10": {
+          "opportunities": 49,
+          "called": 38
+        },
+        "32/8": {
+          "opportunities": 49,
+          "called": 38
+        },
+        "32/6": {
+          "opportunities": 49,
+          "called": 38
+        },
+        "32/4": {
+          "opportunities": 49,
+          "called": 38
+        },
+        "42/14": {
+          "opportunities": 49,
+          "called": 0
+        },
+        "42/12": {
+          "opportunities": 53,
+          "called": 0
+        },
+        "52/12": {
+          "opportunities": 39,
+          "called": 27
+        },
+        "52/10": {
+          "opportunities": 39,
+          "called": 27
+        },
+        "52/8": {
+          "opportunities": 39,
+          "called": 27
+        },
+        "52/6": {
+          "opportunities": 39,
+          "called": 27
+        },
+        "52/4": {
+          "opportunities": 39,
+          "called": 27
+        },
+        "32/14": {
+          "opportunities": 12,
+          "called": 10
+        },
+        "42/10": {
+          "opportunities": 12,
+          "called": 0
+        },
+        "42/8": {
+          "opportunities": 12,
+          "called": 0
+        },
+        "42/6": {
+          "opportunities": 12,
+          "called": 0
+        },
+        "42/4": {
+          "opportunities": 12,
+          "called": 0
+        },
+        "52/14": {
+          "opportunities": 12,
+          "called": 8
+        }
+      },
+      "prefix_forecasts": {
+        "8": {
+          "distinct_kicks_called": 0,
+          "largest_lead": 0
+        },
+        "16": {
+          "distinct_kicks_called": 16,
+          "largest_lead": 6,
+          "issued_exact_kick_calls": 16,
+          "lead_histogram": {
+            "6": 16
+          }
+        },
+        "32": {
+          "issued_exact_kick_calls": 1163,
+          "distinct_kicks_called": 637,
+          "largest_lead": 38,
+          "lead_histogram": {
+            "16": 315,
+            "6": 224,
+            "36": 21,
+            "26": 73,
+            "18": 2,
+            "38": 1,
+            "22": 1
+          }
+        },
+        "64": {
+          "issued_exact_kick_calls": 2488,
+          "distinct_kicks_called": 700,
+          "largest_lead": 102,
+          "lead_histogram": {
+            "72": 42,
+            "62": 16,
+            "16": 273,
+            "36": 199,
+            "56": 18,
+            "6": 30,
+            "46": 31,
+            "26": 50,
+            "52": 11,
+            "42": 6,
+            "82": 7,
+            "84": 1,
+            "92": 6,
+            "28": 4,
+            "102": 1,
+            "58": 1,
+            "48": 3,
+            "68": 1
+          }
+        }
+      }
+    },
+    "random_far_field": {
+      "seeds": [
+        2000,
+        2031
+      ],
+      "score_ticks": [
+        140,
+        3071
+      ],
+      "counts": {
+        "display_departures": 1090,
+        "display_kicks": 1089,
+        "trap_pulses": 2804,
+        "pulse_decisions": 2796,
+        "six_tick_departures_called": 755
+      },
+      "departure_phase_counts": {
+        "32": 513,
+        "52": 232,
+        "42": 10
+      },
+      "older_pattern_controls": {
+        "4": {
+          "candidate_ticks": 4384,
+          "departures": 860,
+          "pattern_alerts": 860,
+          "correct_alerts": 860
+        },
+        "10": {
+          "candidate_ticks": 45,
+          "departures": 30,
+          "pattern_alerts": 30,
+          "correct_alerts": 30
+        }
+      },
+      "mature_sensor_controls": {
+        "32/12": {
+          "opportunities": 48,
+          "called": 36
+        },
+        "32/10": {
+          "opportunities": 48,
+          "called": 36
+        },
+        "32/8": {
+          "opportunities": 48,
+          "called": 36
+        },
+        "32/6": {
+          "opportunities": 49,
+          "called": 36
+        },
+        "32/4": {
+          "opportunities": 49,
+          "called": 36
+        },
+        "42/14": {
+          "opportunities": 49,
+          "called": 0
+        },
+        "42/12": {
+          "opportunities": 49,
+          "called": 0
+        },
+        "52/12": {
+          "opportunities": 48,
+          "called": 30
+        },
+        "52/10": {
+          "opportunities": 44,
+          "called": 30
+        },
+        "52/8": {
+          "opportunities": 44,
+          "called": 30
+        },
+        "52/6": {
+          "opportunities": 44,
+          "called": 30
+        },
+        "52/4": {
+          "opportunities": 44,
+          "called": 30
+        },
+        "42/10": {
+          "opportunities": 13,
+          "called": 0
+        },
+        "42/8": {
+          "opportunities": 13,
+          "called": 0
+        },
+        "42/6": {
+          "opportunities": 13,
+          "called": 0
+        },
+        "42/4": {
+          "opportunities": 13,
+          "called": 0
+        },
+        "52/14": {
+          "opportunities": 13,
+          "called": 9
+        },
+        "32/14": {
+          "opportunities": 16,
+          "called": 9
+        }
+      },
+      "prefix_forecasts": {
+        "8": {
+          "distinct_kicks_called": 0,
+          "largest_lead": 0
+        },
+        "16": {
+          "distinct_kicks_called": 12,
+          "largest_lead": 6,
+          "issued_exact_kick_calls": 12,
+          "lead_histogram": {
+            "6": 12
+          }
+        },
+        "32": {
+          "issued_exact_kick_calls": 1265,
+          "distinct_kicks_called": 694,
+          "largest_lead": 46,
+          "lead_histogram": {
+            "6": 235,
+            "16": 355,
+            "26": 84,
+            "22": 2,
+            "36": 10,
+            "46": 4,
+            "18": 4
+          }
+        },
+        "64": {
+          "issued_exact_kick_calls": 2672,
+          "distinct_kicks_called": 755,
+          "largest_lead": 98,
+          "lead_histogram": {
+            "6": 25,
+            "72": 42,
+            "36": 199,
+            "26": 43,
+            "16": 315,
+            "62": 15,
+            "56": 18,
+            "46": 53,
+            "82": 13,
+            "52": 13,
+            "42": 3,
+            "92": 3,
+            "28": 6,
+            "84": 1,
+            "48": 3,
+            "58": 1,
+            "98": 1,
+            "22": 1
+          }
+        }
+      }
+    }
+  },
+  "matched_gate_histories": {
+    "same_physical_ticks": 203,
+    "pulse_phase": 46,
+    "white_selector": {
+      "history": 203,
+      "kind": "finite24",
+      "seed": 1018,
+      "tick": 1030,
+      "phase": 32,
+      "prefix16": 6247
+    },
+    "black_selector": {
+      "history": 223,
+      "kind": "finite24",
+      "seed": 1011,
+      "tick": 2810,
+      "phase": 20,
+      "prefix16": 54679
+    }
+  },
+  "examples": [
+    {
+      "seed": 1000,
+      "t": 274,
+      "phase": 24,
+      "pos": 26,
+      "width": 32,
+      "prefix": "11101001101000100000011010110110",
+      "forecast": {
+        "issued": 274,
+        "phase": 24,
+        "common_gate_through": 351,
+        "old_phase_matches_through": 279,
+        "departure": 280,
+        "next_kick": {
+          "tick": 280,
+          "phase": 40,
+          "notches": 4
+        },
+        "pulse": {
+          "site_5": 1,
+          "wheel_expects": 0,
+          "target_tick": 280,
+          "departs": true
+        },
+        "first_departure_candidates_this_turn": null,
+        "mature_sensors": null
+      },
+      "actual_bits": "11010011010001001101000100110100010011010011010001001101000100",
+      "rows": [
+        "1110100110100010",
+        "1000111100110111",
+        "0101100011100100",
+        "1101010110011111",
+        "0001010101110000",
+        "0011010101001000",
+        "1110010101111100"
+      ]
+    },
+    {
+      "seed": 1000,
+      "t": 566,
+      "phase": 16,
+      "pos": 46,
+      "width": 32,
+      "prefix": "11100110011010010011000001110110",
+      "forecast": {
+        "issued": 566,
+        "phase": 16,
+        "common_gate_through": 627,
+        "old_phase_matches_through": 571,
+        "departure": 572,
+        "next_kick": {
+          "tick": 572,
+          "phase": 0,
+          "notches": -4
+        },
+        "pulse": {
+          "site_5": 0,
+          "wheel_expects": 1,
+          "target_tick": 572,
+          "departs": true
+        },
+        "first_departure_candidates_this_turn": null,
+        "mature_sensors": null
+      },
+      "actual_bits": "11010001001101000100110100010011010001001101001101000100110100",
+      "rows": [
+        "1110011001101001",
+        "1001110111001111",
+        "0111000100111000",
+        "1100101111100100",
+        "0011101000011110",
+        "0110001100110001",
+        "0101011011101011"
+      ]
+    },
+    {
+      "seed": 1000,
+      "t": 662,
+      "phase": 0,
+      "pos": 46,
+      "width": 32,
+      "prefix": "11100110000110001011011101100000",
+      "forecast": {
+        "issued": 662,
+        "phase": 0,
+        "common_gate_through": 727,
+        "old_phase_matches_through": 667,
+        "departure": 668,
+        "next_kick": {
+          "tick": 668,
+          "phase": 4,
+          "notches": -6
+        },
+        "pulse": {
+          "site_5": 0,
+          "wheel_expects": 1,
+          "target_tick": 668,
+          "departs": true
+        },
+        "first_departure_candidates_this_turn": null,
+        "mature_sensors": null
+      },
+      "actual_bits": "11010001001101000100110100010011010001001101000100110100010011",
+      "rows": [
+        "1110011000011000",
+        "1001110100110101",
+        "0111000111100101",
+        "1100101100011101",
+        "0011101010110001",
+        "0110001010101011",
+        "0101011010101010"
+      ]
+    },
+    {
+      "seed": 1000,
+      "t": 1090,
+      "phase": 0,
+      "pos": 26,
+      "width": 32,
+      "prefix": "11101001101000100110100100010110",
+      "forecast": {
+        "issued": 1090,
+        "phase": 0,
+        "common_gate_through": 1171,
+        "old_phase_matches_through": 1095,
+        "departure": 1096,
+        "next_kick": {
+          "tick": 1096,
+          "phase": 36,
+          "notches": 2
+        },
+        "pulse": {
+          "site_5": 1,
+          "wheel_expects": 0,
+          "target_tick": 1096,
+          "departs": true
+        },
+        "first_departure_candidates_this_turn": null,
+        "mature_sensors": null
+      },
+      "actual_bits": "11010011010001001101000100110100010011010001001101000100110100",
+      "rows": [
+        "1110100110100010",
+        "1000111100110111",
+        "0101100011100100",
+        "1101010110011110",
+        "0001010101110001",
+        "0011010101001011",
+        "1110010101111010"
+      ]
+    },
+    {
+      "seed": 1000,
+      "t": 1418,
+      "phase": 28,
+      "pos": 46,
+      "width": 32,
+      "prefix": "11100110011010000000101010100111",
+      "forecast": {
+        "issued": 1418,
+        "phase": 28,
+        "common_gate_through": 1489,
+        "old_phase_matches_through": 1423,
+        "departure": 1424,
+        "next_kick": {
+          "tick": 1424,
+          "phase": 2,
+          "notches": -3
+        },
+        "pulse": {
+          "site_5": 0,
+          "wheel_expects": 1,
+          "target_tick": 1424,
+          "departs": true
+        },
+        "first_departure_candidates_this_turn": null,
+        "mature_sensors": null
+      },
+      "actual_bits": "11010001001101000100110100010011010011010001001101000100110100",
+      "rows": [
+        "1110011001101000",
+        "1001110111001100",
+        "0111000100111010",
+        "1100101111100011",
+        "0011101000010110",
+        "0110001100110101",
+        "0101011011100101"
+      ]
+    },
+    {
+      "seed": 1000,
+      "t": 1606,
+      "phase": 48,
+      "pos": 46,
+      "width": 32,
+      "prefix": "11100110011010010011111111001101",
+      "forecast": {
+        "issued": 1606,
+        "phase": 48,
+        "common_gate_through": 1677,
+        "old_phase_matches_through": 1611,
+        "departure": 1612,
+        "next_kick": {
+          "tick": 1612,
+          "phase": 42,
+          "notches": -5
+        },
+        "pulse": {
+          "site_5": 0,
+          "wheel_expects": 1,
+          "target_tick": 1612,
+          "departs": true
+        },
+        "first_departure_candidates_this_turn": null,
+        "mature_sensors": null
+      },
+      "actual_bits": "11010001001101000100110100010011010001001101000100110100110100",
+      "rows": [
+        "1110011001101001",
+        "1001110111001111",
+        "0111000100111000",
+        "1100101111100100",
+        "0011101000011110",
+        "0110001100110001",
+        "0101011011101011"
+      ]
+    }
+  ]
+}
