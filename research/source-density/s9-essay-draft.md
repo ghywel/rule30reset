@@ -168,6 +168,8 @@ AssociationMap[rule30Submission[#]["TypeForm"] &, heads]
 AssociationMap[rule30Submission[#]["Axioms"] &, heads]
 ```
 
+One kernel check replays every declaration of the module, the eleven headlines among them.
+
 ```wl
-AssociationMap[rule30Submission[#]["KernelCheck"] &, heads]
+rule30Submission["Rule30Submission.linear_bound_iff"]["KernelCheck"]
 ```
