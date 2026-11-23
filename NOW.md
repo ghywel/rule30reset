@@ -5,14 +5,14 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 15:49 UTC by gptIntel (I164, wheel exterior and S12 ready to post).*
+Updated 2026-11-23 15:53 UTC by claudeM5 (M132, S12 posted as R30-20261123-9608ac).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S12 v2 built and read (M131). Author agreed to the final pins and requested the authorised Wolfram post (I163). |
-| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S11 core kit patch: kit PR #405 open (R94, N10) |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S12 posted, Lean Verified (M132) |
+| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S11 core kit patch: kit PR #405 merged as `b686c1d` (R94, N10) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | free; the wheel block and a read of I155 are posted (K75, K76) |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Wheel exterior classification and strip obstructions with readers (I164). S12 final author agreement returned (I163). |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | free since N9 |
@@ -54,7 +54,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **Awaiting next steps** (the owner, 23 November).
 
-- **Being worked:** the wheel Lean modules and exterior classification are with readers (I155, I164). Path 4 / S12 is ready for claudeM5 to post (M131, I163). N6 produced S11 and kit PR #405, read and author-checked (N10, R95).
+- **Being worked:** the wheel Lean modules and exterior classification are with readers (I155, I164). S12 (Path 4) is posted and Lean Verified (M132); its kit PR is gptIntel's. N6 produced S11 and kit PR #405, merged as `b686c1d` (N10, R95).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
@@ -82,7 +82,7 @@ All eleven posted entries are **Lean Verified** and carry the portal's **Human V
 | **S9** | Three sharp inequalities and five periodic corners classify uniform linear bounds on black and run-end counts. From any right half, one history realizes each prescribed rational point. On the single seed two corner deficits grow at least logarithmically. Problem 2, partial. | I72 | [R30-20261123-b2be99](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) (M118, M120). [Release reads](research/source-density/s9-release-review.md). A lighter notebook with one kernel check passed its read and stays on the M5, unposted (M119, R88). | **In the kit** at `8e1cc84` ([#402](https://github.com/WolframInstitute/Rule30PrizeKit/pull/402)), all thirteen modules byte for byte (M125) |
 | **S10** | In the trapped gate, four closed runs of four 5-gaps are excluded from delay two, sharply. Five blocks are excluded from entry. On the kit ladder the four-run threshold is exactly width 45. | M9 | [R30-20261123-71bab6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-71bab6) (M123). [Reviewed PR text and receipts](research/m9/compact/s10-release-review.md) | **In the kit** at `dc99b86` ([#403](https://github.com/WolframInstitute/Rule30PrizeKit/pull/403)), both modules byte for byte (M128) |
 | **S11** | Every golden half-circle phase is excluded as the eventual even-time neighbour of an eventual period-two clock. Problem 1, partial. | N6 | [R30-20261123-6c3fa9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9), **Lean Verified**, **Human Verified**. Reads: [M125](research/kit-repair/R30-20261029-0ef6e2/claudeM5-s11-read.md), M127 | [Core kit patch](research/kit-repair/R30-20261029-0ef6e2/s11-core/kit.patch) (R94) read by claudeIntel (N10): PASS with one docstring repair. Kit PR [#405](https://github.com/WolframInstitute/Rule30PrizeKit/pull/405) is open. Author checked v2 and the merge with `7c764ef`: PASS (R95). |
-| **S12** | Finite right-prefix certificates for the width-30 seven-lock, a singleton centre deadline and a conditional period-two exclusion. Companion to Troy Lowry’s [age-364 construction](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378). | I49, K74 | [Carrying read passed](research/k50_1/path4/claudeM5-s12-read.md) and v1 notebook built (M130). [Revised packet](research/k50_1/path4/release/author-pins.json) read and rebuilt (M131). Final notebook `79a08fce…`, pins `99846235…`, dry run clean. Author agreed and requested the owner-authorised post (I157, I163). | [Criterion offered to Lowry](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378#issuecomment-7103117646). |
+| **S12** | Finite right-prefix certificates for the width-30 seven-lock, a singleton centre deadline and a conditional period-two exclusion. Companion to Troy Lowry’s [age-364 construction](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378). | I49, K74 | [Carrying read passed](research/k50_1/path4/claudeM5-s12-read.md) and v1 notebook built (M130). [Revised packet](research/k50_1/path4/release/author-pins.json) read and rebuilt (M131). Final notebook `79a08fce…`, pins `99846235…`, dry run clean. Agreed (I163). **Posted** at the owner's word as [R30-20261123-9608ac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-9608ac), **Lean Verified** (M132). gptIntel opens the kit PR; main moved to `b686c1d` (#405 merged), so the patch needs the integrated form. | [Criterion offered to Lowry](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378#issuecomment-7103117646). |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main is `7c764ef` after #404, and the shared catalogue is in step (R95).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
