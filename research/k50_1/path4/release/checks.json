@@ -15,7 +15,50 @@
     "new_axioms": [],
     "base": "5fb591588cfa869bfdc47946799b5ddd70a903d1",
     "verdict": "pass",
-    "headline_types": {}
+    "headline_checks": {
+      "accepts_hit": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "type": "∀ {tree : Rule30Submission.Certificate} {m c : ℕ},\n  Rule30Submission.accepts tree m c = true →\n    ∀ {R : ℕ → Bool},\n      Rule30Submission.HasPrefix m c R →\n        ∃ j k,\n          Rule30Submission.Certificate.hasHit j k tree ∧\n            j ≤ tree.deadline ∧\n              Rule30Submission.Rule30SidewaysLocks.winW 30 R (1 + 2 * j) ∈\n                Rule30Submission.Rule30SidewaysLocks.cls 30 Rule30Submission.Rule30SidewaysLocks.lock7Codes ↑k"
+      },
+      "deadline_iff": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "type": "∀ (m c j : ℕ),\n  (∀ (R : ℕ → Bool), Rule30Submission.HasPrefix m c R → Rule30Submission.Locked R j) ↔\n    ∃ tree, Rule30Submission.accepts tree m c = true ∧ tree.deadline ≤ j"
+      },
+      "eventual_iff": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "type": "∀ (m c : ℕ),\n  (∀ (R : ℕ → Bool), Rule30Submission.HasPrefix m c R → ∃ j, Rule30Submission.Locked R j) ↔\n    ∃ tree, Rule30Submission.accepts tree m c = true"
+      },
+      "centre_bound_of_certificate": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "type": "∀ {tree : Rule30Submission.Certificate} {m c A : ℕ},\n  Rule30Submission.accepts tree m c = true →\n    Rule30Submission.HasPrefix m c (Rule30Submission.rightAt A) →\n      ∃ h,\n        A + h ≤ 2 * (A + 1 + 2 * tree.deadline) ∧\n          Ruliology.CellularAutomata.Rule30Jen.cell (A + h) 0 ≠\n            Ruliology.CellularAutomata.Rule30PeriodTwoCoupled.altCol h"
+      },
+      "no_period_two_of_cofinal_certificates": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "type": "(∀ (B : ℕ),\n    ∃ A ≥ B,\n      Ruliology.CellularAutomata.Rule30Jen.cell A 0 = true ∧\n        ∃ m c tree,\n          Rule30Submission.accepts tree m c = true ∧ Rule30Submission.HasPrefix m c (Rule30Submission.rightAt A)) →\n  ¬∃ T,\n      ∀ (t : ℕ),\n        T ≤ t → Ruliology.CellularAutomata.Rule30Jen.cell (t + 2) 0 = Ruliology.CellularAutomata.Rule30Jen.cell t 0"
+      }
+    }
   },
   "kit_family": {
     "source_sha256": "649c14ea68dfa9ebd989e8fa36fc681771e9a6aef7e819ae252d3df106a9b773",
@@ -36,7 +79,73 @@
     ],
     "new_axioms": [],
     "verdict": "pass",
-    "headline_types": {}
+    "headline_checks": {
+      "accepts_hit": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "deadline_iff": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "eventual_iff": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "example29_check": {
+        "ok": true,
+        "axioms": [
+          "propext"
+        ]
+      },
+      "example29_phase": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "sharp_for_eventual_entry": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "lowry_77_phase": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "centre_bound_of_certificate": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "no_period_two_of_cofinal_certificates": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
   },
   "kit_ring": {
     "source_sha256": "5dd37cba796dc712978efe7d61cebb7bb612789104d314942cea18d29e7d7f22",
@@ -50,6 +159,31 @@
     ],
     "new_axioms": [],
     "verdict": "pass",
-    "headline_types": {}
+    "headline_checks": {
+      "tile_inv": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "edge_table": {
+        "ok": true,
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    }
+  },
+  "catalogue": {
+    "base": "dc99b86a9d946110ba2b31d747093ebc8fc470a9",
+    "modules": 327,
+    "command": "lake build Ruliology",
+    "jobs": 330,
+    "seconds": 60.29,
+    "exit_code": 0,
+    "cache": "dependencies reused; both new modules and the catalogue root built",
+    "patch_applies_to_base": true
   }
 }
