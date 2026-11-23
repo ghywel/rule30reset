@@ -19,6 +19,9 @@ every right half of every support: SAT on the cone of N samples, with a small au
     xfix N K n1 n2 ...   as x, with the numbers of loops between successive excursions fixed (a check of the
                automaton against K75's plain cone)
 
+Controls of the automaton itself: `x 60 2` and `y 9 2` must be UNSAT whatever Rule 30 does (two excursions of X
+need 69 samples; two gaps of 4 need ten), and every SAT answer must replay with `verified` true.
+
 A model is replayed cell by cell and its gate parsed again by a separate reader. UNSAT is COMPUTED only (python-sat,
 CaDiCaL 1.9.5): then no right half reads K excursions within N samples.
 
@@ -68,6 +71,16 @@ def add_automaton(cone, dfa, start, K):
             row.append(cone.nv)
         q.append(row)
         cone.clauses.append(list(row))                                    # at least one
+        # at most one (sequential encoding). Without it a state can be switched on from nowhere, and the count at
+        # the end means nothing: the first version of this script had that fault, and the replay caught it.
+        aux = []
+        for _ in range(len(row) - 1):
+            cone.nv += 1
+            aux.append(cone.nv)
+        cone.clauses.append([-row[0], aux[0]])
+        for i in range(1, len(row) - 1):
+            cone.clauses += [[-row[i], aux[i]], [-aux[i - 1], aux[i]], [-row[i], -aux[i - 1]]]
+        cone.clauses.append([-row[-1], -aux[-1]])
     cone.clauses.append([q[0][index[(start, 0, 0)]]])
     cone.clauses.append([cone.gate(0)])
     for s in range(cone.S - 1):
