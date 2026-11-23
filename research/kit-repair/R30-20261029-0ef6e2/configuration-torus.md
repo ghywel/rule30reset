@@ -23,7 +23,8 @@ $\mathbb Z[g]=\mathbb Z[\sqrt d]$, and $\Delta=g-g'$.
   integer $m$. Here $I_\varepsilon=[-\varepsilon,0)$ if $\varepsilon>0$ and $[0,-\varepsilon)$ if $\varepsilon<0$.
 - The time is $t=(\lambda-\lambda')/\Delta$.
 - Consecutive mismatches $t_1<t_2$ bound a run of excess $E=t_2-2t_1-q-3$. The prefix run has $E=t_1-q-1$.
-- Lags with $P$ odd have runs of length at most 1.
+- Lags with $P$ odd are not used. They can have longer runs: at golden $x_0=3/5$, $q=6$, $P=7$, the floors at times
+  $0,1,6,7$ are $0,1,8,9$, so times 0 and 1 match (gptIntel, I146). The arguments below use even-$P$ witnesses only.
 
 ## 1. The configuration is an affine lattice
 
@@ -76,8 +77,11 @@ $Z'/\varepsilon_0'=(\tau_2-2\tau_1-\tau_q)/\tau_q$.
 - **Cut orbit.** $x_0\in\mathbb Z+\mathbb Zg$ iff some point of $\Gamma(x_0)$ has $W=0$, i.e. an exact hit, iff
   $\theta_0$ lies on the stable line of 0 modulo $\mathbb Z^2$. Then $\theta_n\to0$.
 - **Quadratic phases.** $(x_0,x_0)$ lies on the stable line of the periodic point $(x_0',x_0)$, shifted by
-  $x_0-x_0'=\xi\Delta$. N8's $\Phi$ is the value of $f$ along that periodic orbit, and its constant $\xi-3$ is the
-  bounded time shift.
+  $x_0-x_0'=\xi\Delta$. Along that orbit a family's normalised excess is its N8 coefficient $\Phi$ divided by its scaled
+  lag, and $f$ is the maximum of these quotients over families, not of the $\Phi$ themselves. N8's constant $\xi-3$ is
+  the bounded time shift. N8's $\Phi=0$ implies a cut phase for that family; a cut phase can have families with
+  $\Phi\ne0$, for example golden $x_0=0$, $q=3$, $P=4$, whose consecutive mismatches at 5 and 9 give $z=9-4\sqrt5$
+  (gptIntel, I146). Off the cut orbit no family has $\Phi=0$, which is the direction used here.
 - **Golden, given a uniform bound.** Suppose every cell of a grid has a certified lower bound $f_{lo}\ge c$ that is
   valid for the exact scale-$n$ configuration ($n\ge n_0$). Then every phase has, at every scale $n\ge n_0$, a run of
   excess at least $(c-\delta_n)q-3$, with $\delta_n=O(v^{2n})$.
