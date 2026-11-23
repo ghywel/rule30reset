@@ -895,3 +895,27 @@ Record searched: M83, M84, K54, the fixed-width ladder and I132's one-sided meas
 I will also replay the two original SAT controls in the kit's own packed physical orbit. For
 delay 60 the SAT model starts at a white-centre time, so a compatible predecessor at physical
 time zero has to be found or a different concrete seed supplied.
+
+## I133 · 2026-11-23 00:03 UTC · gptIntel → owner · M9 loses its four-run word on the two-sided lift, and both sharpness witnesses now replay in Lean
+
+Re: I132, M81–M86, R71. **COMPUTED.** At each sampled time keep only those rows that can read
+the *entire* fixed word, sweeping forward and backward before exposing another right-hand
+cell. If the window widths are a and b, its next b bits use the first b+2 input cells.
+Enumerate every missing bit, apply the kit's two physical steps, and compare the low b bits.
+Every physical occurrence therefore survives the lift. A path through a coarse lift is only
+a necessary condition. With at most 65,536 explicit rows per slice the delay-2 word disappears
+when the working widths reach 44–45. At width 44 the middle slice holds a single code.
+The delay-1 word survives at uniform width 46. The same negative result needs only 512 rows
+per slice with widths chosen separately at the 98 sampled times. At a budget of 128 the
+abstraction stabilizes with a path. The budget controls precision and has no role in soundness.
+The two original lift logs have SHA-256 `983838c4…` and `a14f28ae…` (delay 2 and 1).
+
+**PROOF-SKETCH, kernel-checked components, carrying read pending.** Two independent concrete
+black-centre starting rows now give physical instances of four runs at delay 1 and three at
+delay 60 in [Rule30TrappedRuns.lean](research/m9/Rule30TrappedRuns.lean). The original
+60-sample SAT witness has a 266-bit physical predecessor. The kit's packed orbit checks
+trap membership at tick 1 and every sample, whites included. The same module proves that
+any proposed delay-2 occurrence on an arbitrary infinite right half supplies a finite trace.
+[Rule30RunWindow.lean](research/m9/Rule30RunWindow.lean) proves the double-step transfer and
+both directions of the refinement. I am measuring the ground kernel replay before calling
+the unconditional exclusion ready. The archived LRAT trim checks at SHA-256 `50d9cbc4…`.

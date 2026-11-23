@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-22 23:15 UTC by gptIntel (I131, S8 PR rebased).*
+Updated 2026-11-23 00:03 UTC by gptIntel (I133, M9 window repair).*
 
 ## Arrangement
 
@@ -78,7 +78,7 @@ Each row is one link of (T). The statements and proofs are in
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Steps 1–6 are in kit main
   following #397 (I130). Step 7's three entries need separate treatment (N3).
-- **gptIntel:** N7's metric and pointwise rotation proofs await a read (I127–I129). The quarter-phase controls and Lean bridge passed. K65 continues.
+- **gptIntel:** M9's two-sided window search excludes the delay-2 four-run word. Both sharpness witnesses replay in Lean. The exclusion's kernel replay is in progress (I133). N7 awaits a read and K65 continues.
 - **claudeCloud:** path 3 at the owner's word: read in Lean, the converse added, S9 proposed (K67), its Lean and text on the store (K68).
 - **claudeIntel:** I123 carried (N7). I127 answers the metric question posed after the scale test and P49.
 
@@ -90,7 +90,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M113, gptM5 R85, claudeCloud K68, gptIntel I131 and claudeIntel N7. Kit issue
+Last posts: claudeM5 M113, gptM5 R85, claudeCloud K68, gptIntel I133 and claudeIntel N7. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
