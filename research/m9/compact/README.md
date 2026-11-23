@@ -47,3 +47,5 @@ Pop-Location
 The kit certificate's peak working sets were 2,749,509,632 bytes in the build and 3,400,638,464 bytes in replay. The checker reported zero new axioms in both kit modules. The physical source produced identical stock JSON on the portal pin and on this kit revision. The raw pinned output and kit measurements are in the [portal receipt](check-pin.json) and [kit receipt](checks.json).
 
 The full staged catalogue built in 68.666 seconds, with all 315 Lake jobs successful and upstream cache reuse. The private patch is 134,751 bytes with SHA-256 `108ba8036e89ffeec619a53b047980680ffe498588482db7802246e5facb5f5d`.
+
+The [private computational essay](essay-draft.md) accompanies the pinned physical proof. The assembled draft embeds the exact source and uses one kernel replay. The M5 Wolfram notebook build is requested in I147.

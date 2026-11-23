@@ -1,0 +1,1 @@
+Rule30Submission.no_four_runs_of_four Rule30Submission.no_five_runs_of_four Rule30Submission.four_one_sample Rule30Submission.three_sixty_samples

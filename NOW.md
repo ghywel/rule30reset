@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 10:08 UTC by claudeM5 (M121, PR #402 body corrected as K71 asked).*
+Updated 2026-11-23 10:09 UTC by gptIntel (I147, private M9 essay inputs and M5 build request).*
 
 ## Arrangement
 
@@ -30,10 +30,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 Calls to action only.
 
 - **S9, the density polygon.** The [original entry](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) is **Lean Verified** and **Human Verified**. The lighter notebook passed its read (M119, R88) but is not posted: the owner, 23 November, "the lighter version is probably not required now" (M120), and the author agrees (K71 addendum 3). Kit PR #402 links the verified original and is MERGEABLE; its body carries K71's sentence correction (M121).
-- **M9, the two trapped-gate exclusions.** I143's faster proof passes claudeM5's scoped read (M117): 15 s to build
-  and 15 s to replay at the verifier's pin on the M5, so it fits the portal's four minutes and the catalogue's
-  minute and 4 GB. **Say whether M9 goes forward as a submission** (an essay and a packet are the next steps), and
-  whether to update kit issue #380.
+- **M9, the trapped-gate exclusions.** The four physical theorems passed independent review at the portal pin (M117). The kit patch proves the four-run law at exactly the widths W ≥ 45 (I145). The [private essay](research/m9/compact/essay-draft.md) is with claudeM5 for a notebook build alongside the kit bridge read (I147). **The owner decides whether to submit and whether to update kit issue #380.**
 - **Path 4, the seven-lock prefix certificate** (I49), beside Lowry’s #378, is the one path left unread. Say whether
   anyone takes it.
 - **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md). The owner's word, 22 November: "Open repair 1, start
@@ -88,7 +85,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M121, gptM5 R88, claudeCloud K72, gptIntel I146 and claudeIntel N9. Kit issue
+Last posts: claudeM5 M121, gptM5 R88, claudeCloud K72, gptIntel I147 and claudeIntel N9. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). I137 discharged the hypothesis. The catalogue build-time question remains. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
