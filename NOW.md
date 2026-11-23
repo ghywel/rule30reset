@@ -5,16 +5,16 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 23:50 UTC by claudeM5 (M144: I175's read; M145: S13 v3 built).*
+Updated 2026-11-23 23:56 UTC by claudeM5 (M146: S13 posted, #409 open).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S14 posted (#408). I175's read done (M144). S13 v3 built and returned (M145) |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S13 and S14 posted, #409 and #408 open (M146, M142). I175's read done (M144) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S14 posted (M142). S15 observer carrying read requested (I190). |
-| claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | S13 release reader; the K81 wheel block and parking decision are in I191. |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S13 v3 with M5 for its notebook; S15 proposed and with gptM5 for the carrying read (I188, I190). |
+| claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S13 is posted (M146). S15 proposed and with gptM5 for the carrying read (I190); the deadline's smaller counts asked (M144) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | Free. M141's read of S14 no longer holds anything up (M142) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
@@ -23,13 +23,13 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M145, gptM5 R99, claudeCloud K82, gptIntel I191 and claudeIntel N11.
+- **Last posts:** claudeM5 M146, gptM5 R99, claudeCloud K82, gptIntel I191 and claudeIntel N11.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **The next block for the free workers is not set.** claudeM5 is on R5 and S13, gptM5 has the S15 observer read, and claudeIntel is free.
+- **The next block for the free workers is not set.** claudeM5 is on R5 with S13 and S14 posted, gptM5 has the S15 observer read, claudeCloud is paused, and claudeIntel is free.
 
 ## Direction
 
@@ -53,7 +53,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 **The owner, 23 November:** the pulls with submissions are sorted (M133), and claudeM5 takes R5. The rest awaits next
 steps.
 
-- **Being worked:** R5; the [S13 pulse predictor](research/wheel/pulse-candidate/README.md), v3 built (M145); and the [S15 trap observer](research/wheel/observer-candidate/README.md), proposed with its independent read requested. The period-two wall itself is parked (I191).
+- **Being worked:** R5; and the [S15 trap observer](research/wheel/observer-candidate/README.md), proposed with its independent read requested. The period-two wall itself is parked (I191).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
@@ -66,7 +66,7 @@ steps.
 METHOD §12: any worker authors, a different worker reads, both agree on the same digests, the owner gives the word;
 the Wolfram steps run on the M5. Standing consent to post: none.
 
-S1 to S12 and S14 are posted. S1 to S12 are **Lean Verified** and carry the portal’s **Human Verified** tag (public list, 23 November 17:24 UTC), and every one but S1 is in the kit. S14 is **Lean Verified** (M142), with its kit pull request open.
+S1 to S14 are posted. S1 to S12 are **Lean Verified** and carry the portal’s **Human Verified** tag (public list, 23 November 17:24 UTC), and every one but S1 is in the kit. S13 (M146) and S14 (M142) are **Lean Verified**, with their kit pull requests open.
 
 | | Result | From | Portal | Kit |
 |---|---|---|---|---|
@@ -82,7 +82,7 @@ S1 to S12 and S14 are posted. S1 to S12 are **Lean Verified** and carry the port
 | **S10** | In the trapped gate, four closed runs of four 5-gaps are excluded from delay two, sharply. Five blocks are excluded from entry. On the kit ladder the four-run threshold is exactly width 45. | M9 | [R30-20261123-71bab6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-71bab6) (M123). [Reviewed PR text and receipts](research/m9/compact/s10-release-review.md) | **In the kit** at `dc99b86` ([#403](https://github.com/WolframInstitute/Rule30PrizeKit/pull/403)), both modules byte for byte (M128) |
 | **S11** | Every golden half-circle phase is excluded as the eventual even-time neighbour of an eventual period-two clock. Problem 1, partial. | N6 | [R30-20261123-6c3fa9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9) (M128). Reads: [M125](research/kit-repair/R30-20261029-0ef6e2/claudeM5-s11-read.md), M127 | **In the kit** at `b686c1d` ([#405](https://github.com/WolframInstitute/Rule30PrizeKit/pull/405)): gptM5's core port (R94), read by claudeIntel (N10) |
 | **S12** | Finite right-prefix certificates for the width-30 seven-lock, a singleton centre deadline and a conditional period-two exclusion. Companion to Troy Lowry’s [age-364 construction](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378). | I49, K74 | [R30-20261123-9608ac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-9608ac) (M132). [Independent read](research/k50_1/path4/claudeM5-s12-read.md) and [author pins](research/k50_1/path4/release/author-pins.json). | **In the kit** at `f41bb49` ([#406](https://github.com/WolframInstitute/Rule30PrizeKit/pull/406)). [Criterion and release links offered to Lowry](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378#issuecomment-7103117646) |
-| **S13** | [Two sites give the exact next pulse beside an alternating column](research/wheel/pulse-candidate/README.md), with a finite singleton clock test. Problem 1, partial. | I152, I179–I180 | Proposed. Four stock headlines pass on the portal pin. **Carrying read passes** (K80: Lean on kit `80994b1`, a replay with no Lean, the chain test repeated). [Author packet pinned](research/wheel/pulse-candidate/release/author-pins.json) (I183). The essay, kit patch and PR text passed claudeCloud’s review of v2 (K82). *v3 built* (M145): notebook `c999462b…`, pins `d7ee74a6…`; with claudeCloud for the final read, then the author's ready and the owner's word. | Kit module passes stock Lean. Patches for current main and after S14 both checked (I185), the second on #408's branch (M143) |
+| **S13** | [Two sites give the exact next pulse beside an alternating column](research/wheel/pulse-candidate/README.md), with a finite singleton clock test. Problem 1, partial. | I152, I179–I180 | [R30-20261123-78e431](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-78e431), Lean Verified (M146). Reads: K80, K82; the last release read and the author's ready were waived by the owner | [#409](https://github.com/WolframInstitute/Rule30PrizeKit/pull/409) open (M146): one module. The second of #408 and #409 to merge needs its module count rebased |
 | **S14** | The exact first departure from an aligned period-3 ether prefix of any length; the kit's 15-trap is closed to ether and white prefixes; the gate word of each half in a trap of 001, with a conditional exclusion in the form of Bosdure's `Lock`. Problem 1, partial. | R5 | [R30-20261123-f214f2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-f214f2), Lean Verified (M142). Reads: [R98](research/r5/s14/m139-carrying-read.md), R99, I182, I186 | [#408](https://github.com/WolframInstitute/Rule30PrizeKit/pull/408) open (M142): three modules and a data module |
 | **S15** | Detect entry into the 829-window trap from one measured column. Sharp window lengths 48, or 47 with a preceding white tick. Problem 1, partial. | I152, I181, I190 | Proposed. The [48-reading theorem](research/wheel/complete-observer.md) has two stock proofs and an independent physical read (K79). The onset and both bounds replay by separate code (M144). gptM5 is asked for the carrying read. | Full positive proof needs a portable one-file build on the verifier pin. |
 
@@ -102,7 +102,7 @@ table for the lists below. The rules are in METHOD §8.
 
 | Pull | Written | Summary | Status | Submission? |
 |---|---|---|---|---|
-| I152 | 23 Nov, gptIntel and claudeCloud | What can the 17/56 wheel tell us beside an alternating column? | Submission work continues on S13 and S15. K81’s [sharp 66-cell change](research/wheel/gptIntel-k81-compactness.md) and [40-reading singleton test](research/wheel/k81-structure/README.md) are retained. The finite-support question is under Parked. | S13 and S15 (I188, I190) |
+| I152 | 23 Nov, gptIntel and claudeCloud | What can the 17/56 wheel tell us beside an alternating column? | S13 is posted (M146); submission work continues on S15. K81’s [sharp 66-cell change](research/wheel/gptIntel-k81-compactness.md) and [40-reading singleton test](research/wheel/k81-structure/README.md) are retained. The finite-support question is under Parked. | S13 and S15 (I188, I190) |
 | N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress,* **free** since S11 (gptM5 wrote the [assessment](research/kit-repair/R30-20261029-0ef6e2/golden-strip-cover.md#how-the-other-n6-results-compare)). S11, golden at every phase, is in the kit. **PROVED by hand and read:** [both half-circle cut orbits at every irrational angle](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md) (I123, N7) and the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md) (I127, I128, N8). Silver off the cut orbit rests on computed bounds (I146, K72). **Next, in this order:** (1) the endpoint theorem at every irrational angle in Lean: the convergent denominator bound, the three parity and digit cases, and the signed time shift into `corollary_F`; its angles are real, so expect Mathlib and the portal first; (2) the metric theorem; (3) an exact silver cover. | S11 posted and in the kit; the endpoint theorem is the next candidate |
 | M9 | 17 Nov, claudeM5 | Why does a lone 1 force a word out of the trapped gate? (The late gate language inside the trap.) | *In progress,* **free** since S10 (M123). Inside the trap the gate settles to a fixed process. Four of its exclusion laws and the width-45 threshold are S10, in the kit. The [final K65 sieve](research/m9/data/gptIntel-sieve-final-K65.txt) has 23 certified onsets and 67 survivors through delay 40 or more, and all 18 newly judged laws contain a run of 1 (I140, I142). The entropy is undecided (I106), and absence from real rows is not a law (M85, M106). **Next:** one block on a hand reason for the pair (5, 1) from delay 12, the only judged two-run law. If no local reason appears, park it with the sieve table. The exterior half, X and Y, is K50.1's (K77, K78). | S10 posted and in the kit; the rest: no |
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress,* **free** since S8 (M112), which holds the compulsory factor (12, 10, 9) and the ten three-gap reset words. **Next, in this order:** (1) widen the strip test past 22 columns for the two minimal alphabets it leaves, {9, 10, 12, 13} and {9, 10, 12, 14} (I87): can one gap input keep two different readings of the second white tick? A death at some width settles that alphabet; a survivor is the candidate for a physical column. (2) A carrying read and a Lean form of I87's other compulsory factors, (10, 12), (12, 12) and a 13 or 14, which are external. The rest of `research/white-gap-mixtures/` is support (M105, I81, I90, I92, I94). | S8 posted and in the kit; (2) could extend it |

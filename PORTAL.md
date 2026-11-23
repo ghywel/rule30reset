@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-23 23:13 UTC, 409 entries, 55 portal-only -->
+<!-- portal-list: 2026-11-23 23:56 UTC, 410 entries, 56 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-23 23:13 UTC (409 entries)
-and kit main `80994b1` (M142). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-23 23:56 UTC (410 entries)
+and kit main `80994b1` (M146). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 55 of the 409 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 56 of the 410 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -27,11 +27,11 @@ and kit main `80994b1` (M142). Find new portal-only entries with `python3 tools/
 |---|---|
 | Missed | 12 |
 | Port | 3 |
-| Pending | 2 |
+| Pending | 3 |
 | Check | 5 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 55, of them 18 ours |
+| All | 56, of them 19 ours |
 
 ## Missed (12)
 
@@ -62,7 +62,7 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (2)
+## Pending (3)
 
 In an open kit pull request. Moves out of this file when it merges.
 
@@ -70,6 +70,7 @@ In an open kit pull request. Moves out of this file when it merges.
 |---|---|---|---|---|---|---|
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261123-f214f2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-f214f2) | 2026-11-23 | ours (S14) | Lean Verified | The exact first departure from an aligned period-3 ether prefix of any length; the 15-trap closed to ether and white prefixes; the gate word of each half in a trap of 001, with a conditional exclusion. | Open kit PR #408 (M142). | L |
+| [R30-20261123-78e431](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-78e431) | 2026-11-23 | ours (S13) | Lean Verified | Beside an alternating column, two present cells give the exact next black pulse on every right half, with a finite test of any proposed alternation of the singleton's centre. | Open kit PR #409 (M146). | L |
 
 ## Check (5)
 
