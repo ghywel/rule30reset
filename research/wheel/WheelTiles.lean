@@ -136,4 +136,25 @@ theorem secondary_sixteen_witness :
   rw [show 15+2*(v/2)+v%2=15+off.val+j.val by dsimp [v]; omega] at eq
   exact eq.trans (hit j)
 
+set_option maxRecDepth 10000 in
+set_option maxHeartbeats 0 in
+private theorem midpoint_check : trap.all (fun w =>
+    firstCell w 7 == (firstCell w 6 || firstCell w 4 || firstCell w 0)) = true := by decide +kernel
+
+/-- After three trapped double steps, the following black-wall reading is the OR
+of the present white reading and the white readings one and three samples earlier. -/
+theorem midpoint_of_gate (R : Nat → Bool) {t : Nat} (odd : t%2=1) (inside : win R t ∈ trap) :
+    drv altCol R (t+7) 1 = (drv altCol R (t+6) 1 || drv altCol R (t+4) 1 || drv altCol R t 1) := by
+  have e := beq_iff_eq.mp (List.all_eq_true.mp midpoint_check _ inside)
+  change firstCell (winW 16 R t) 7 = (firstCell (winW 16 R t) 6 ||
+    firstCell (winW 16 R t) 4 || firstCell (winW 16 R t) 0) at e
+  simpa only [physical R odd (by decide : 1+7≤16),physical R odd (by decide : 1+6≤16),
+    physical R odd (by decide : 1+4≤16),physical R odd (by decide : 1+0≤16),Nat.add_zero] using e
+
+/-- Each of the three inputs is necessary, even on the permanent five-lock clock.
+Here k=0,1,2,3 indexes the four white samples from oldest to newest. -/
+theorem five_clock_needs_three : ∀ missing : Fin 4, missing.val ≠ 1 → ∃ a b : Fin 5,
+    (∀ k : Fin 4, k ≠ missing → tenTick (2*(a.val+k.val)) = tenTick (2*(b.val+k.val))) ∧
+    tenTick (2*a.val+7) ≠ tenTick (2*b.val+7) := by decide +kernel
+
 end Ruliology.CellularAutomata.WheelTiles

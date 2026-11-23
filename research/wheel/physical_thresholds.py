@@ -83,10 +83,11 @@ def search(args, trap, kind, phase):
         else:
             lo = mid
     row = solve(lo)
-    assert row is not None and solve(hi, certify=True) is None
+    if row is None or solve(hi, certify=True) is not None:
+        raise ValueError(f"Boundary check failed at {label}, {lo} / {hi}")
     state = replay(row, lo, phase, full, trap)
     checked = subprocess.run([args.checker,str(cnf),str(lrat)], capture_output=True)
-    if checked.returncode or b"VERIFIED" not in checked.stdout.upper():
+    if checked.returncode or b"c VERIFIED" not in checked.stdout.splitlines():
         raise RuntimeError((checked.stdout+checked.stderr).decode(errors="replace"))
     proof = lrat.read_bytes()
     (dest / "first-impossible.lrat.gz").write_bytes(gzip.compress(proof, mtime=0))

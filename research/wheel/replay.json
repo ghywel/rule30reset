@@ -1,0 +1,58 @@
+{
+  "kit": "8e1cc847a758a892ec4b51182cdf325b1c483f9a",
+  "modules": {
+    "WheelMarkerData": {
+      "sha256": "532d8d2e7c89e9050b3849a9f31747cb47c6081db834ecb0be7c6a9bee38aa0c",
+      "build_seconds": 1.308
+    },
+    "WheelMarkerGraph": {
+      "sha256": "6815f8f6a7729ddd57e6b9b6155c34d78702c50e973b452caf4edf3d364c07e9",
+      "build_seconds": 2.259
+    },
+    "WheelMarkerCheck": {
+      "sha256": "ef5c56622d92c822066e45f4f15c19524f1c195e594dd741d55790488501b879",
+      "build_seconds": 223.27
+    },
+    "WheelTiles": {
+      "sha256": "5b169954742ce238f64883b29db4ac531da646f73c85374f8c77875a7bc28a30",
+      "build_seconds": 16.324,
+      "stock_seconds": 17.002,
+      "headlines": [
+        "tiles_of_pulse",
+        "seven_secondary",
+        "seven_b_secondary",
+        "five_long_tile",
+        "no_seventeen_secondary",
+        "secondary_sixteen_witness",
+        "midpoint_of_gate",
+        "five_clock_needs_three"
+      ],
+      "constants": 51,
+      "new_axioms": []
+    },
+    "WheelMarker": {
+      "sha256": "7378c163902969421fb74114c840e2498f9517165a06b49eea0d8ad0f9e12396",
+      "build_seconds": 3.661,
+      "stock_seconds": 5.683,
+      "headlines": [
+        "marker_enters",
+        "wheel_enters",
+        "singleton_wheel_enters",
+        "wheel_bars_secondary",
+        "singleton_white_break"
+      ],
+      "constants": 47,
+      "new_axioms": []
+    },
+    "WheelReturn": {
+      "sha256": "edf8a0530d3ee1ec174cfb5cbe73999dd40b2baf36f542144d3850734b2279ee",
+      "build_seconds": 1.718,
+      "stock_seconds": 3.201,
+      "headlines": [
+        "singleton_return_break"
+      ],
+      "constants": 20,
+      "new_axioms": []
+    }
+  }
+}

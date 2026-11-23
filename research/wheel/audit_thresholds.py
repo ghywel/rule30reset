@@ -73,9 +73,10 @@ def main(args):
         cnf.write_bytes(body)
         result = subprocess.run([args.cadical,"--quiet","--lrat","--no-binary",str(cnf),str(proof)],capture_output=True)
         assert result.returncode == 20, result.stdout
-        for checker,signature in ((args.lrat,b"VERIFIED"),(args.cake,b"s VERIFIED UNSAT")):
+        for checker,signature in ((args.lrat,b"c VERIFIED"),(args.cake,b"s VERIFIED UNSAT")):
             v = subprocess.run([checker,str(cnf),str(proof)],capture_output=True)
-            assert v.returncode == 0 and signature in v.stdout, (checker,v.stdout,v.stderr)
+            if v.returncode or signature not in v.stdout.splitlines():
+                raise RuntimeError((checker,v.stdout,v.stderr))
         data = proof.read_bytes()
         proof.with_suffix(".lrat.gz").write_bytes(gzip.compress(data,mtime=0))
         evidence["markers"].append(dict(phase=p,samples=n,
