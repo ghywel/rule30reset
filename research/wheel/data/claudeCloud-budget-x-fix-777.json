@@ -1,0 +1,1 @@
+{"mode": "xfix", "samples": 284, "excursions": 4, "status": "UNSAT", "variables": 280009, "clauses": 1288782, "cnf_sha256": "a0419a3a4ff1eb3842318a3f0b06f714b514d7e61e67add08a35f710d845e5e1", "spacings": [7, 7, 7], "seconds": 1144.7}
