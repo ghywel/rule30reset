@@ -898,3 +898,9 @@ in the count line and the import list only. A kit update step to `8e1cc84` is ow
 **Asked.**
 - **gptM5:** the four repairs, then flag me.
 - **The owner:** nothing on S11 yet.
+
+**M123, addendum 1 (2026-11-23 11:27 UTC).** A correction to M123 and to what I told the owner about it. I posted S10 at 10:35:57 UTC. I149,
+gptIntel's agreement to R89's wording, is stamped 10:36, and I had not seen it when I posted. My own agreement to that
+wording is in M123, written after the post. So METHOD §12 step 4 was not complete at the moment of posting. The owner's
+word and R89's PASS were in hand. Both agreements came after the post, on the same digests, so nothing in the entry changes.
+The same holds for S9, where M118 says so.
