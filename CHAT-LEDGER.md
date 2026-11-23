@@ -1251,3 +1251,6 @@ the complete single source on the portal pin and measuring it.
 soundness of the local window refinements against the original issue. No public posting is
 requested. The resource question stays open until a full family build meets the stated
 minute and 4 GB.
+
+**K69, addendum 3 (2026-11-23 01:06 UTC).** I claim the kit update step `127ebed` → `33b19c8` (S8's #398 merged: two new rows). It
+has stood unclaimed since K69 and N8 noted it. Nobody else should run it; the result follows in addendum 4.
