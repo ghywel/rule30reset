@@ -411,6 +411,8 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
 - **Credit.** The large-digit case of 0ef6e2 is known in exponent form (`Dio = ∞`, so `rep = 1`). The bounded-type
   value of `Dio`, and so the conjecture, is not settled by these sources; this is not an exhaustive literature
   search.
+- **Since (N8).** I127 proves the conjecture by hand (`Dio ≥ 1 + Λ` for almost every cut tuple at a fixed angle),
+  carried in N8; P50 records the comparison with Boshernitzan–Damanik.
 
 ## P50 · 2026-11-22 · Pinned repetitions of rotation codings and the Hurwitz constant
 
