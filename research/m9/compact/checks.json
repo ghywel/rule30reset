@@ -1,0 +1,146 @@
+{
+  "kit": "ac88b68cccd28d7ff3b1ee19e711f4d0c999cc26",
+  "portal_pin": "5fb591588cfa869bfdc47946799b5ddd70a903d1",
+  "lean": "4.35.0",
+  "host": "Windows Intel i9",
+  "patch": {
+    "bytes": 134751,
+    "sha256": "108ba8036e89ffeec619a53b047980680ffe498588482db7802246e5facb5f5d"
+  },
+  "boundary_control": {
+    "bytes": 1061,
+    "sha256": "16cb4423b98d005552a5a670afd71ba66db75530c46837f66a1b1f692fb7ad47",
+    "result": "kernel pass"
+  },
+  "checks": {
+    "portal_main": {
+      "source": {
+        "bytes": 110633,
+        "sha256": "5b3c97971d8ff64b414ad0c372232b2340075104f2b1914303167ed1a48fe2ff"
+      },
+      "public_olean": {
+        "bytes": 1165432,
+        "sha256": "d61669cad0ffc4a6492a459bdaa85fe59775573ae80bd944342f8862ee0a6683"
+      },
+      "timing": {
+        "compile": {
+          "seconds": 44.905,
+          "peak_working_set_bytes": 2750545920
+        },
+        "stock_replay": {
+          "seconds": 42.64,
+          "peak_working_set_bytes": 3400593408
+        }
+      },
+      "verdict": "pass",
+      "replay": {
+        "constants": 244,
+        "ok": true
+      },
+      "new_axioms": [],
+      "headlines": [
+        "Rule30Submission.no_four_runs_of_four",
+        "Rule30Submission.no_five_runs_of_four",
+        "Rule30Submission.four_one_sample",
+        "Rule30Submission.three_sixty_samples"
+      ],
+      "stock_json": {
+        "bytes": 21771,
+        "sha256": "661a9db1665ffc5d4e92e8d5decf4d9723553ee0877bc33655d170c7684071e1",
+        "shared_as": "share-scratch/gptIntel/M9/compact-v1/check-pin.json"
+      },
+      "declarations": 143,
+      "identical_to_pin_and_M5_stock_results": true,
+      "all_declarations_standard_axioms": true
+    },
+    "kit_masks": {
+      "source": {
+        "bytes": 108438,
+        "sha256": "efac641222075fbf88eed7af9fa71e9364594aea22a30b3addb5363501e770f3"
+      },
+      "public_olean": {
+        "bytes": 1202944,
+        "sha256": "6b84bd2061323d527cbb57e88f0543fa7e2fb1f4282e0012494be4eaa20ea148"
+      },
+      "timing": {
+        "compile": {
+          "seconds": 44.009,
+          "peak_working_set_bytes": 2749509632
+        },
+        "stock_replay": {
+          "seconds": 42.198,
+          "peak_working_set_bytes": 3400638464
+        }
+      },
+      "verdict": "pass",
+      "replay": {
+        "constants": 211,
+        "ok": true
+      },
+      "new_axioms": [],
+      "headlines": [
+        "Ruliology.CellularAutomata.Rule30TrappedRunMasks.no_trace",
+        "Ruliology.CellularAutomata.Rule30TrappedRunMasks.no_frames",
+        "Ruliology.CellularAutomata.Rule30TrappedRunBoundary.step45",
+        "Ruliology.CellularAutomata.Rule30TrappedRunBoundary.no_frames45"
+      ],
+      "stock_json": {
+        "bytes": 20897,
+        "sha256": "a75744c0a46feac88b4a9b4b596a5178f333de04606af2c7f6abfceeef03ab20",
+        "shared_as": "share-scratch/gptIntel/M9/compact-v1/kit/check-masks.json"
+      },
+      "declarations": 135,
+      "all_declarations_standard_axioms": true
+    },
+    "kit_family": {
+      "source": {
+        "bytes": 19972,
+        "sha256": "f3a27206679a91a901ff02c4bd0bbaf572e7b0515140c6990b573838c71f4ea7"
+      },
+      "public_olean": {
+        "bytes": 66424,
+        "sha256": "c12a5a48ead40f5e37385cbb9f209380514b30f9bb00950511ea4f19cfeb23bd"
+      },
+      "timing": {
+        "compile": {
+          "seconds": 8.384,
+          "peak_working_set_bytes": 688193536
+        },
+        "stock_replay": {
+          "seconds": 11.753,
+          "peak_working_set_bytes": 1334857728
+        }
+      },
+      "verdict": "pass",
+      "replay": {
+        "constants": 138,
+        "ok": true
+      },
+      "new_axioms": [],
+      "headlines": [
+        "Ruliology.CellularAutomata.Rule30TrappedRuns.no_four_runs_of_four",
+        "Ruliology.CellularAutomata.Rule30TrappedRuns.no_five_runs_of_four",
+        "Ruliology.CellularAutomata.Rule30TrappedRuns.four_one_sample",
+        "Ruliology.CellularAutomata.Rule30TrappedRuns.three_sixty_samples",
+        "Ruliology.CellularAutomata.Rule30TrappedLiftRuns.no_four_on_lift",
+        "Ruliology.CellularAutomata.Rule30TrappedLiftRuns.no_five_on_lift",
+        "Ruliology.CellularAutomata.Rule30TrappedLiftRuns.four_at_width44",
+        "Ruliology.CellularAutomata.Rule30TrappedLiftRuns.four_width_iff"
+      ],
+      "stock_json": {
+        "bytes": 4539,
+        "sha256": "b268a82aff983194788001fa437646634323493e1a1bc04b74ec58ea3cd51f0b",
+        "shared_as": "share-scratch/gptIntel/M9/compact-v1/kit/check-family.json"
+      },
+      "declarations": 13,
+      "all_declarations_standard_axioms": true
+    }
+  },
+  "catalogue": {
+    "target": "Ruliology",
+    "jobs": 315,
+    "seconds": 68.666,
+    "cache": "unchanged upstream targets reused by Lake",
+    "result": "pass"
+  }
+}

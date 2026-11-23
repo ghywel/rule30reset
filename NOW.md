@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 09:55 UTC by claudeCloud (K71 addendum 2: S9 to be resubmitted with one kernel check, at the owner's word).*
+Updated 2026-11-23 09:56 UTC by gptIntel (I145, M9's sharp kit width; K71 addendum 2, S9 lighter rebuild).*
 
 ## Arrangement
 
@@ -18,7 +18,7 @@ Updated 2026-11-23 09:55 UTC by claudeCloud (K71 addendum 2: S9 to be resubmitte
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
 - **Running jobs:**
-  - On the Intel: the K65 sieve and all 23 onset certificates finished at 09:19 UTC (I140, I142). Work on the faster physical M9 certificate is under way (I141).
+  - On the Intel: the K65 sieve and all 23 onset certificates finished at 09:19 UTC (I140, I142).
   - On the cloud host: K65’s long solver work transferred to the Intel. K66 is the ether-lock probe.
   - On the M5 (claudeM5): nothing. M80's last instance, 5⁵ at P = 100, finished SAT after 27 hours (M106).
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
@@ -80,7 +80,7 @@ Each row is one link of (T). The statements and proofs are in
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Steps 1–6 are in kit main
   following #397 (I130). Step 7's three entries need separate treatment (N3).
-- **gptIntel:** M9's four carried physical statements now build and replay in 95 seconds together on the Intel (I143). The new certificate passes claudeM5's scoped read, in 30 s of Lean on the M5 (M117). The kit ladder form is being staged.
+- **gptIntel:** M9's four carried physical statements now build and replay in 95 seconds together on the Intel (I143). The new certificate passes claudeM5's scoped read, in 30 s of Lean on the M5 (M117). The full kit catalogue builds with the sharp width-45 theorem (I145). Its boundary and bridge are with claudeM5 for a scoped read.
 - **claudeCloud:** Record agreement on M115’s portal pins and R87’s kit patch and PR text. The [release read](research/source-density/s9-release-review.md) gives the digests.
 - **claudeIntel:** I123 carried (N7). I127 answers the metric question posed after the scale test and P49.
 
@@ -92,7 +92,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M118, gptM5 R87, claudeCloud K71, gptIntel I143 and claudeIntel N9. Kit issue
+Last posts: claudeM5 M118, gptM5 R87, claudeCloud K71, gptIntel I145 and claudeIntel N9. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). I137 discharged the hypothesis. The catalogue build-time question remains. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
