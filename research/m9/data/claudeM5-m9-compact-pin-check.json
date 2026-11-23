@@ -1,0 +1,805 @@
+{
+ "reader": "claudeM5",
+ "post": "M117",
+ "host": "the owner's M5 laptop",
+ "leanVersion": "4.35.0",
+ "kitCommit": "5fb591588cfa869bfdc47946799b5ddd70a903d1",
+ "source": {
+  "file": "research/m9/compact/Rule30Submission.lean",
+  "bytes": 110633,
+  "sha256": "5b3c97971d8ff64b414ad0c372232b2340075104f2b1914303167ed1a48fe2ff"
+ },
+ "build": {
+  "realSeconds": 15.32,
+  "maxResidentBytes": 2825715712,
+  "oleanBytes": 1165432
+ },
+ "check": {
+  "realSeconds": 14.97,
+  "maxResidentBytes": 3242000384
+ },
+ "headlinesEqualM114": true,
+ "stockResult": {
+  "claim": "partial",
+  "declared": [
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.four_one_sample",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.no_five_runs_of_four",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.no_four_runs_of_four",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.three_sixty_samples",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Holds",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Trace",
+    "standardAxioms": true
+   },
+   {
+    "kind": "inductive",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instDecidableEqWindow",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instInhabitedWindow",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instReprWindow",
+    "standardAxioms": true
+   },
+   {
+    "kind": "inductive",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.bit_of_congr",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.blackMask",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.branchChunks",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.branchCount",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.check",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.checkAt",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.check_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.colourMask",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.double_low",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.easy",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.extend_code",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.fits",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.instInhabitedTree",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.leafMasks",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.makeTree",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.nextCode",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.no_frames",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.no_trace",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.physical_frames",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.reject",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.step_all",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.subset",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.subset_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.table",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.table_end",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.table_start",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.table_steps",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.table_valid",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.table_width",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.whiteMask",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.block",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.closed",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.colours",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.entry",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.five",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.four_one_sample",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.headsOf",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.initial",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.no_five_runs_of_four",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.no_four_runs_of_four",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.occurrence_trace",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.three_sixty_samples",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30DrivenPrefix.double.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Trace.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.casesOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.codes",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.ctorIdx",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.mk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.noConfusionType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "recursor",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.rec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.recOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.width",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instDecidableEqWindow.decEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instInhabitedWindow.default",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instReprWindow.repr",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.below",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.bounds",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.brecOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.casesOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.child",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.child_valid",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.child_value",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.ctorElim",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.ctorElimType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.ctorIdx",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.depth",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.follow",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.follow_congr",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.follow_mod",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.follow_valid",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.follow_value",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.high",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.leaf",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.low",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.noConfusionType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.node",
+    "standardAxioms": true
+   },
+   {
+    "kind": "recursor",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.rec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.recOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.valid",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.value",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.value_congr",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.check.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.check.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.check.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.fits.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.fits.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.fits.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.instInhabitedTree.default",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.colours.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.entry.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.entry.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.entry.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.initial.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.mk.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.mk.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.mk.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.mk.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instDecidableEqWindow.decEq.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.brecOn.eq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.brecOn.go",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.child.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.child.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.depth.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.depth.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.depth.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.follow.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.follow.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.follow.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.follow.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.high.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.high.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.leaf.elim",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.leaf.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.leaf.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.leaf.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.leaf.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.low.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.low.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.low.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.node.elim",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.node.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.node.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.node.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.node.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.valid.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.valid.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.valid.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.value.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.value.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRunMasks.Tree.value.eq_def",
+    "standardAxioms": true
+   }
+  ],
+  "headlines": [
+   {
+    "axioms": [
+     "propext",
+     "Classical.choice",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.no_four_runs_of_four",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Classical.choice",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.no_five_runs_of_four",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.four_one_sample",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.three_sixty_samples",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   }
+  ],
+  "importsStatements": true,
+  "module": "Rule30Submission",
+  "newAxioms": [],
+  "official": [],
+  "reasons": [],
+  "replay": {
+   "constants": 244,
+   "ok": true
+  },
+  "verdict": "pass",
+  "verifiedTargets": []
+ }
+}
