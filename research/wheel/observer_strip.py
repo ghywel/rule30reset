@@ -39,13 +39,53 @@ def reach(width, inside):
     raise RuntimeError("inconclusive")
 
 
+def lifted(inside, first=16, limit=40):
+    """Widen a stabilized layer by admitting both values of the next spatial bit."""
+    prefixes, edges = transitions()
+    bank=np.full((len(prefixes),2),-1,dtype=np.int32)
+    for i,b,j in edges:
+        bank[i,b]=j
+    w=first
+    allw=np.arange(1<<w,dtype=np.int64)
+    active=allw[~inside[allw&65535]]*16
+    sample=1
+    records=[]
+    while w<=limit:
+        rows,states=active>>4,active&15
+        nextq=bank[states,rows&1]
+        valid=nextq>=0
+        rows,nextq=rows[valid],nextq[valid]
+        if not len(rows):
+            print("first impossible",sample,flush=True)
+            return
+        parts=[]
+        for v in successors(rows,w):
+            good=~inside[v&65535]
+            parts.append(v[good]*16+nextq[good])
+        nxt=np.unique(np.concatenate(parts))
+        # Wait for a fixed reachable set at this width. In a sparse layer a
+        # nontrivial period can be handled by increasing the width earlier.
+        if np.array_equal(nxt,active):
+            records.append((w,sample,len(nxt)))
+            print(records[-1],flush=True)
+            nxt=np.concatenate((nxt,nxt+(1<<(w+4))))
+            w+=1
+        active=nxt
+        sample+=1
+    raise ValueError("No bound through the requested width")
+
+
 if __name__=="__main__":
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument("kit",type=Path)
     ap.add_argument("width",type=int,nargs="+")
+    ap.add_argument("--lift",action="store_true")
     args=ap.parse_args()
     inside=np.zeros(65536,dtype=bool)
     inside[table(args.kit,"trapCodes","Rule30Certificates/GateTrap")]=True
     for w in args.width:
+        if args.lift:
+            lifted(inside,w)
+            continue
         value=reach(w,inside)
         print(json.dumps(value),flush=True)

@@ -1,0 +1,18 @@
+# Independent read of the 001 limit map and 15-trap closure
+
+The W22 map and W20 backward closure in M134 reproduce. One sentence about the time of entry needs a change. A row that departs from an aligned 22-cell ether window **eventually enters** the giant component. Its first off-ether reading at site 1 can still lie in a transient component.
+
+## The timing correction
+
+Start at phase 0 of the 001 wall with positive row `0x22961803e5e50df21f2`, site 1 in the low bit and white everywhere farther right. Its first 22 cells read 2040306. The reference ether’s W22 words in phase order are 2040306, 2224671 and 3284769. The first site-1 disagreement occurs at tick 52, at the second white phase. The W22 word at this tick is 840078. It belongs to a singleton strongly connected component with no cycle. The same physical row first reaches the giant at tick 54. A triangular Boolean search supplied the initial row and direct Rule 30 evolution verified every tick. The initial condition is a finite exterior beyond the matched ether. The plain zero continuations of the tested cuts at widths 22–84 gave no such example.
+
+In the finite window graph the only recurrent component reachable from either 22-cell ether class after leaving that class is the giant. It is closed. This proves eventual entry for every physical right continuation of an **aligned 22-cell window** that leaves the class. A claim starting only with a shorter prefix requires its own reachability argument. In particular, a real 52-cell state of the 15-trap shares its first four sites with an aligned ether state.
+
+## Counts and scope
+
+* Under either possible eastern bit, the successive images of all 22-cell windows stabilize after 109 physical ticks. The three phases retain 57,222, 57,176 and 57,191 windows, giving 171,589 in total. The sizes of the cyclic components are 123,382, 113, 63, 23, 3 and 3. The 113, 63 and 23 components support the same five-sample gate word 11000, up to rotation. The giant alone is closed. Within the limit graph exactly 113 windows can reach a projected 15-trap window. This restricts the sources of late entries. An upper bound on absolute entry time would require more.
+* Starting with all 15 projected labels at width 20, the exact backward basin contains 54,576 windows out of 3,145,728. Their ordered-list SHA-256 is `42a880e1db1cb5cb24477aec6a1380a921534172dfde142d43acaa2016d0a2a4`. No aligned ether window belongs to this basin. At width 16 it has 17,126 states, no all-white window and three of six distinct phase-tagged ether windows, equivalent to nine of the original 18 alignment instances. Thus the W20 exclusion for all completions passes.
+* The two distinct aligned 001 ether cycles were found by enumerating all twelve-cell rings with three-tick closure and the required centre. The fifteen-trap seed states and phase labels were unpacked directly from the kit at `f41bb49`. Each backward basin is a least fixed point starting from those projected labels and checking the successors of **every** state. A SciPy sparse-graph calculation on the exact stabilized image supplies the strongly connected components and reachability. No original R5 research code enters the replay.
+* The period-two wheel work uses a different boundary and a different sampled gate. The 84-ring and 17/56 slip relay provide no match for the 001 gate 11000 or its rigid disturbance front. The period-three 15-trap already realizes 11000. The carrying read of the rigid-front Lean theorem belongs to gptM5.
+
+Run `rule30-python research/r5/gptIntel-limit-read.py Rule30PrizeKit research/r5/data/gptIntel-limit-read.json`. [Independent implementation](gptIntel-limit-read.py) · [Counts, physical row and both hashes](data/gptIntel-limit-read.json).

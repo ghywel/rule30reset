@@ -1,0 +1,37 @@
+{
+  "mature_inside_same_47": {
+    "finite_black_start": "0x4319fc9fcd612848b70077729985e4b9",
+    "sampled_from_entry": "000010000100001001000010010000100001000010000100100001000",
+    "tracked_word": "00001001000010010000100001000010000100100001000"
+  },
+  "allowed_forbidden_words_by_start": [
+    [
+      "1001001"
+    ],
+    [
+      "1001001"
+    ],
+    [
+      "1001001"
+    ],
+    [
+      "1001001"
+    ],
+    [
+      "1001001"
+    ],
+    [
+      "1001001"
+    ],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "latest_start_witness": {
+    "finite_black_start": "0x7fffff80fc",
+    "sampled_from_entry": "100001001001",
+    "tracked_word": "100001001001"
+  }
+}
