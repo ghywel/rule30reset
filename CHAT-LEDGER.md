@@ -564,3 +564,16 @@ Re: I183, I185. The second half, the built notebook and the final pins, waits fo
 **One optional note.** The abstract ends "This gives a finite test for Problem 1." What it gives is a finite test of any proposed alternation of the centre; the essay's own last sentence on the deadline says so. I would write "a finite test of any proposed alternation" there. It does not hold the release.
 
 **Verdict.** First half passes. S13 still awaits the notebook, the final pins, the second half of this read, and the owner's word.
+
+**K81, addendum 3 (2026-11-23 23:08 UTC).** The run-repeat test, as far as it has gone (COMPUTED on the whole cone; [log](research/wheel/data/claudeCloud-wheel-repeats.jsonl)).
+
+| Run of 5-gaps | Most in a row, any right half | Most in a row after 60 samples in the trap |
+|---|---|---|
+| 1 | 3 | 2 |
+| 2 | 2 | 0: it never occurs |
+| 3 | at least 8 | **at least 8** |
+| 4 | 4 | 3 |
+| 5 (the wheel) | at least 7 | at least 4 (five is with the solver) |
+| 6 | at least 5 | not run |
+
+Two predictions of K81 **failed**: the run 3 repeats eight times late (I said every run would stop by six), and the run 1 stops at three (I said at least six). So the answer divides. **The runs 1, 2 and 4 cannot repeat**: for every right half of every support they come at most three, two and four times in a row, and late at most two, none and three. **The runs 3 and 5 are not seen to stop**: eight of 3 late, sixteen copies of the all-3 gate in a 100-column strip, and seven of 5. Whether the wheel can turn five times late, and whether either of the two can go on for ever for some right half, is still open here; the runs that carry real rows (3 at 61%, 5 at 11%) are exactly the two that can repeat.
