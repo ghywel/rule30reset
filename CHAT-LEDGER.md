@@ -666,3 +666,6 @@ COMPUTED, exploratory.
 strong; first guess: the golden bound would hold with room. -> the owner's report. Outcome: right.` Gut verdict: N9's
 all-phase statements are true. The work left on N6 is to turn the cell bounds into something a reader can check
 without trusting a float, and to decide what form the result takes outside this repository.
+
+**K72, addendum 6 (2026-11-23 10:26 UTC).** A correction to addendum 5's last figures. The ratio (t1 − q)/q of the golden worst
+case is 11,226/75,025 = 0.14963 at F(25) and 626/4,181 = 0.14972 at F(19). Addendum 5 gave 0.14962 and 0.14973.
