@@ -5,13 +5,13 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 23:34 UTC by gptIntel (I191: right-side wall parked; S13 and S15 continue).*
+Updated 2026-11-23 23:50 UTC by claudeM5 (M144: I175's read; M145: S13 v3 built).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S14 posted (#408). Built S13 v2 (M143); revised abstract and v3 notebook requested (I188). |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S14 posted (#408). I175's read done (M144). S13 v3 built and returned (M145) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S14 posted (M142). S15 observer carrying read requested (I190). |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | S13 release reader; the K81 wheel block and parking decision are in I191. |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S13 v3 with M5 for its notebook; S15 proposed and with gptM5 for the carrying read (I188, I190). |
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M143, gptM5 R99, claudeCloud K82, gptIntel I191 and claudeIntel N11.
+- **Last posts:** claudeM5 M145, gptM5 R99, claudeCloud K82, gptIntel I191 and claudeIntel N11.
 
 ## Needs the owner
 
@@ -53,7 +53,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 **The owner, 23 November:** the pulls with submissions are sorted (M133), and claudeM5 takes R5. The rest awaits next
 steps.
 
-- **Being worked:** R5; the [S13 pulse predictor](research/wheel/pulse-candidate/README.md), v3 with the M5; and the [S15 trap observer](research/wheel/observer-candidate/README.md), proposed with its independent read requested. The period-two wall itself is parked (I191).
+- **Being worked:** R5; the [S13 pulse predictor](research/wheel/pulse-candidate/README.md), v3 built (M145); and the [S15 trap observer](research/wheel/observer-candidate/README.md), proposed with its independent read requested. The period-two wall itself is parked (I191).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
@@ -82,9 +82,9 @@ S1 to S12 and S14 are posted. S1 to S12 are **Lean Verified** and carry the port
 | **S10** | In the trapped gate, four closed runs of four 5-gaps are excluded from delay two, sharply. Five blocks are excluded from entry. On the kit ladder the four-run threshold is exactly width 45. | M9 | [R30-20261123-71bab6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-71bab6) (M123). [Reviewed PR text and receipts](research/m9/compact/s10-release-review.md) | **In the kit** at `dc99b86` ([#403](https://github.com/WolframInstitute/Rule30PrizeKit/pull/403)), both modules byte for byte (M128) |
 | **S11** | Every golden half-circle phase is excluded as the eventual even-time neighbour of an eventual period-two clock. Problem 1, partial. | N6 | [R30-20261123-6c3fa9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9) (M128). Reads: [M125](research/kit-repair/R30-20261029-0ef6e2/claudeM5-s11-read.md), M127 | **In the kit** at `b686c1d` ([#405](https://github.com/WolframInstitute/Rule30PrizeKit/pull/405)): gptM5's core port (R94), read by claudeIntel (N10) |
 | **S12** | Finite right-prefix certificates for the width-30 seven-lock, a singleton centre deadline and a conditional period-two exclusion. Companion to Troy Lowry’s [age-364 construction](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378). | I49, K74 | [R30-20261123-9608ac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-9608ac) (M132). [Independent read](research/k50_1/path4/claudeM5-s12-read.md) and [author pins](research/k50_1/path4/release/author-pins.json). | **In the kit** at `f41bb49` ([#406](https://github.com/WolframInstitute/Rule30PrizeKit/pull/406)). [Criterion and release links offered to Lowry](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378#issuecomment-7103117646) |
-| **S13** | [Two sites give the exact next pulse beside an alternating column](research/wheel/pulse-candidate/README.md), with a finite singleton clock test. Problem 1, partial. | I152, I179–I180 | Proposed. Four stock headlines pass on the portal pin. **Carrying read passes** (K80: Lean on kit `80994b1`, a replay with no Lean, the chain test repeated). [Author packet pinned](research/wheel/pulse-candidate/release/author-pins.json) (I183). The essay, kit patch and PR text passed claudeCloud’s review of v2 (K82). M143 built v2. The revised abstract is with M5 for the v3 build and with claudeCloud for the final read (I188). | Kit module passes stock Lean. Patches for current main and after S14 both checked (I185), the second on #408's branch (M143) |
+| **S13** | [Two sites give the exact next pulse beside an alternating column](research/wheel/pulse-candidate/README.md), with a finite singleton clock test. Problem 1, partial. | I152, I179–I180 | Proposed. Four stock headlines pass on the portal pin. **Carrying read passes** (K80: Lean on kit `80994b1`, a replay with no Lean, the chain test repeated). [Author packet pinned](research/wheel/pulse-candidate/release/author-pins.json) (I183). The essay, kit patch and PR text passed claudeCloud’s review of v2 (K82). *v3 built* (M145): notebook `c999462b…`, pins `d7ee74a6…`; with claudeCloud for the final read, then the author's ready and the owner's word. | Kit module passes stock Lean. Patches for current main and after S14 both checked (I185), the second on #408's branch (M143) |
 | **S14** | The exact first departure from an aligned period-3 ether prefix of any length; the kit's 15-trap is closed to ether and white prefixes; the gate word of each half in a trap of 001, with a conditional exclusion in the form of Bosdure's `Lock`. Problem 1, partial. | R5 | [R30-20261123-f214f2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-f214f2), Lean Verified (M142). Reads: [R98](research/r5/s14/m139-carrying-read.md), R99, I182, I186 | [#408](https://github.com/WolframInstitute/Rule30PrizeKit/pull/408) open (M142): three modules and a data module |
-| **S15** | Detect entry into the 829-window trap from one measured column. Sharp window lengths 48, or 47 with a preceding white tick. Problem 1, partial. | I152, I181, I190 | Proposed. The [48-reading theorem](research/wheel/complete-observer.md) has two stock proofs and an independent physical read (K79). gptM5 is asked to read the strengthened onset and bounds. | Full positive proof needs a portable one-file build on the verifier pin. |
+| **S15** | Detect entry into the 829-window trap from one measured column. Sharp window lengths 48, or 47 with a preceding white tick. Problem 1, partial. | I152, I181, I190 | Proposed. The [48-reading theorem](research/wheel/complete-observer.md) has two stock proofs and an independent physical read (K79). The onset and both bounds replay by separate code (M144). gptM5 is asked for the carrying read. | Full positive proof needs a portable one-file build on the verifier pin. |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `80994b1` after Quint and Gemini’s doubling-lane theorem (#407, I176).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
