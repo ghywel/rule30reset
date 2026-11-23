@@ -164,6 +164,22 @@
 {"columns": 82, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 14.0}
 {"columns": 82, "test": "finite strip", "copies": 2, "samples": 87, "status": "SAT", "replays": true, "cnf_sha256": "568bf93aa6648b852f35dbd733311973ee20730141d9e547d0db2cbefb5fbcdb", "seconds": 1.4}
 {"columns": 82, "test": "finite strip", "copies": 4, "samples": 173, "status": "SAT", "replays": true, "cnf_sha256": "ba3994b073c564dee550566667f491678ca8624d9138bf57f4c6dc2ef7125518", "seconds": 37.5}
+{"columns": 82, "test": "finite strip", "copies": 8, "samples": 345, "status": "UNSAT", "replays": null, "cnf_sha256": "7fd48763f5c00c2ceb53e9b536a439638f9c63be17d988a797b01114e137967b", "seconds": 268.8}
+{"columns": 62, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 0.5}
+{"columns": 62, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 2.9}
+{"columns": 62, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 6.3}
+{"columns": 62, "test": "finite strip", "copies": 2, "samples": 87, "status": "SAT", "replays": true, "cnf_sha256": "2272b05df98e7fbc116f66c082c4a3e7e70d7f570a554c0802e56f6fa1cacbda", "seconds": 1.6}
+{"columns": 62, "test": "finite strip", "copies": 4, "samples": 173, "status": "SAT", "replays": true, "cnf_sha256": "d0df3f6a441fd7f7ab17db1696214b1247ac73a52123b14d61ec1a8124947917", "seconds": 9.0}
+{"columns": 62, "test": "finite strip", "copies": 8, "samples": 345, "status": "UNSAT", "replays": null, "cnf_sha256": "3163022c7b760098f9f813dfe54f6cbcc914120aa36a19df0bdea61e5e5f9fa7", "seconds": 61.5}
+{"columns": 52, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 0.5}
+{"columns": 57, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 0.5}
+{"columns": 57, "test": "closed walk", "copies": 2, "status": "SAT", "replays": true, "seconds": 2.0}
+{"columns": 59, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 0.5}
+{"columns": 59, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 3.3}
+{"columns": 59, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 8.8}
+{"columns": 59, "test": "finite strip", "copies": 2, "samples": 87, "status": "SAT", "replays": true, "cnf_sha256": "bf8f9f2b89cb08d9b63f0c1e48ecf29d5d588564e85a52d82e3e54db78f5daa9", "seconds": 2.1}
+{"columns": 59, "test": "finite strip", "copies": 4, "samples": 173, "status": "SAT", "replays": true, "cnf_sha256": "b73e6551d3f90caf0e337e15225af1ac0a7afc6fd39bff929f5801668df79803", "seconds": 10.5}
+{"columns": 59, "test": "finite strip", "copies": 8, "samples": 345, "status": "SAT", "replays": true, "cnf_sha256": "8cbea0cec03691c587aeb3e9aae6b0f9ce4fa4481d022051c9a3d02961881a9e", "seconds": 56.2}
 {"columns": 24, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 0.1}
 {"columns": 43, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 0.3}
 {"columns": 43, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 1.0}
@@ -188,6 +204,13 @@
 {"columns": 34, "test": "finite strip", "copies": 4, "samples": 181, "status": "SAT", "replays": true, "cnf_sha256": "2b1670b8f2fc2a08f77dba76bcbfd507355332dba4f6ae8c388841db26252166", "seconds": 1.6}
 {"columns": 34, "test": "finite strip", "copies": 8, "samples": 361, "status": "UNSAT", "replays": null, "cnf_sha256": "1ee9dfdcf31e83e5eb5c6fa17ccecd6235f60f1a12035ec2da25166e797ff36f", "seconds": 4.1}
 {"word": "S.2*18", "gaps": "45222222222222222222", "samples_per_copy": 45, "last_alive": 33, "first_dead": 34, "open_widths": [], "closed_walk_copies_tried": 3, "finite_copies_tried": 16, "evidence": {"24": ["alive", 1], "33": ["alive", 1], "34": ["dead", 8], "35": ["dead", 4], "38": ["dead", 4], "43": ["dead", 4]}}
+{"columns": 43, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 0.9}
+{"columns": 200, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 1.5}
+{"columns": 200, "test": "finite strip", "copies": 2, "samples": 99, "status": "SAT", "replays": true, "cnf_sha256": "c26bc81548294614ab202fd8851ed31c7170fd9f52dc03ee4dd8c5cd1bdbbcba", "seconds": 8.6}
+{"columns": 200, "test": "finite strip", "copies": 4, "samples": 197, "status": "SAT", "replays": true, "cnf_sha256": "72e47f134ad5dfccc50edf96d506385ec704607f8b7b99c1145b1ff7c02cf0fd", "seconds": 102.4}
+{"columns": 200, "test": "finite strip", "copies": 8, "samples": 393, "status": "UNSAT", "replays": null, "cnf_sha256": "4e0e0debf4d27bf485488c548714d54f9296c5387e3d4862f4133fa2af927e50", "seconds": 415.7}
+{"columns": 121, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 1.0}
+{"columns": 121, "test": "finite strip", "copies": 2, "samples": 99, "status": "SAT", "replays": true, "cnf_sha256": "c193bc6f3c191fcd89d7d7114477020b24f8217308455872e51e412291d4f250", "seconds": 2.4}
 {"columns": 24, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 0.1}
 {"columns": 43, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 0.3}
 {"columns": 43, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 0.7}

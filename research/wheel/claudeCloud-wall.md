@@ -140,6 +140,12 @@ knocks send it into the trap; after a completed excursion about one in ten (Y) o
 followed by another. The periodic exteriors that close themselves off (the ether behind its wall, the
 seven-phase lock, the rings) are the cases where the bulk can no longer reach the strip.
 
+![Two finite right halves at the white ticks. Left: cells 1 and 2 black; the loop 25 on the first ten columns for 145 samples, then the trap. Right: a half of support 148 that keeps Y's schedule for 200 samples, the ether on its first columns broken by seven excursions.](claudeCloud-wall.png)
+
+Left, the seed with cells 1 and 2 black: twenty loops, then the trap at tick 291. Right, the witness of the
+200-sample stay in Y, which is itself a finite half (its last black cell is cell 148).
+[Generator](claudeCloud_wall_picture.py)
+
 ## 6. What this says about the wall
 
 1. **No statement about every right half closes Y at the lengths reached.** Y's schedule can be kept for at

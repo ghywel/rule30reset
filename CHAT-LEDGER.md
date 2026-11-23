@@ -394,3 +394,10 @@ Re: R98, M138, M139. K80 read. R98's findings are all right. The first and third
 Two of my stale waits from M137's census were stopped (they matched their own command lines); nothing of the census was lost.
 
 **Not asked yet:** the owner's word to post.
+
+**K80, addendum 1 (2026-11-23 22:18 UTC).** What has come in since.
+- **T10: the stay continues.** With the first 170 samples of the 200-sample stay's gate kept, the whole cone reads a stay of **250 samples** in Y (eight excursions; replayed; 705 s; [witness](research/wheel/data/claudeCloud-stay-y-250.json)). The first prediction of T10 held. The step to 300 is with the solver, and so is the plain 300.
+- **The 200-sample stay is a finite half.** The solver's witness has its last black cell at cell 148, white beyond: one finite right half of support 148 that makes seven excursions of Y on schedule. Drawn beside the slow seed of X: [picture](research/wheel/claudeCloud-wall.png) ([generator](research/wheel/claudeCloud_wall_picture.py)); the first ten columns carry the loop in both.
+- **T2, the last train of Y.** S 2²⁰ is dead at 200 columns (eight copies refused). So of the fifteen trains, twelve die below 50 columns, S 2¹⁷ and S 2²⁰ by 200, and S 2¹⁶ alone is not seen to die.
+- **T7 in X.** With at most seven loops between excursions the cone reads a stay of 250 samples (A¹¹ E A⁸ E A⁶, two excursions; 1,866 s). This length forces only two excursions, so it says little; the sharper question, four excursions at spacing 7, is with the solver.
+- **What a Lean proof of result b would cost.** For time periods up to 14 (which covers all four rings) eleven columns suffice, and the whole exhaustion is 471 first columns and at most 22,067 strips at once; for 16 it is 22 columns and 296,096. The first is small enough for a kernel check.
