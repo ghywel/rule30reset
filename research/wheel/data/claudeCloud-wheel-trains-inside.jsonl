@@ -1,0 +1,7 @@
+{"word": "355555", "gaps": "355555", "columns": 80, "copies": 2, "samples": 57, "status": "SAT", "replays": true, "cnf_sha256": "0d8b8054c3d3bddf8c0bec0df3ea55a601e3c56a31c5b94e6ced5a405592370c", "seconds": 0.6}
+{"word": "355555", "gaps": "355555", "columns": 80, "copies": 4, "samples": 113, "status": "SAT", "replays": true, "cnf_sha256": "f579817c61857943d4ccba4f3a1b6c91ee8fbb242044caf09fc7022b0b425bfc", "seconds": 13.1}
+{"word": "355555", "gaps": "355555", "columns": 80, "copies": 8, "samples": 225, "status": "SAT", "replays": true, "cnf_sha256": "9a4256605b066a58032e15604b23e69c54b8bcf42668b0f5243c409d67143989", "seconds": 587.7}
+{"word": "3555", "gaps": "3555", "columns": 100, "copies": 2, "samples": 37, "status": "SAT", "replays": true, "cnf_sha256": "ee9dd280399b44ff0711f5e009392514fa426381c1c35ba074210591e4bacafb", "seconds": 0.1}
+{"word": "3555", "gaps": "3555", "columns": 100, "copies": 4, "samples": 73, "status": "SAT", "replays": true, "cnf_sha256": "72270fe4bb353d5ff9722d12921095bc04c5b954d565b60d59e63135182b5efa", "seconds": 0.1}
+{"word": "3555", "gaps": "3555", "columns": 100, "copies": 8, "samples": 145, "status": "SAT", "replays": true, "cnf_sha256": "bb0207da096110a28c6fefb8816f16275c3c87a84309eb180e827fcdd67b5fcb", "seconds": 81.8}
+{"word": "3555", "gaps": "3555", "columns": 100, "copies": 16, "samples": 289, "status": "SAT", "replays": true, "cnf_sha256": "bffe0aa4a6edbfdbbcfdd9c054dac773a59781ccf8ec53fca297ae592f80402b", "seconds": 824.8}
