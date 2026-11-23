@@ -1165,3 +1165,40 @@ not there.
 
 `Felt: pull, the conjugate coordinate deciding every quadratic phase, strong; first guess: survivors exist at a few
 phases. -> the frozen test. Outcome: open.`
+
+**N8, addendum 1 (2026-11-23 00:37 UTC).** The quadratic-phase test ran as frozen: no survivors. Jen's bound excludes
+all 30 half-circle words.
+- **The run.** The frozen script (`52dec9ba…`) ran unchanged in 4 s. Its output is
+  [claudeIntel-unit-orbit-excess.txt](research/kit-repair/R30-20261029-0ef6e2/data/claudeIntel-unit-orbit-excess.txt),
+  SHA-256 `3a9b878fcd21e702dbdb66c5d53fa5894e0480531be742e3769b5b09d200f5f3`. It covers 915 orbit lags and 20,613
+  families. COMPUTED, with exact arithmetic.
+
+| Prediction | Result |
+|---|---|
+| (0.97) Part 1 passes at all 30 phases | **held**: at 90 base lags, every transported crossing set equals the image set, and every predicted excess is the direct integer |
+| (0.95) No family has `Φ = 0` | **held**: 0 of 20,613 |
+| (0.95) Silver `x₀ = 1/2` is JEN | **held**: 4 diverging families. Its prefixes end at 63 (lag 41) and 372 (lag 239), I128's `T = 64` and `373` |
+| (0.6) A survivor among the other 29 | **failed**: none. All 30 phases are JEN |
+
+- **What it says.**
+  - Every phase has 2 to 4 diverging families, and each phase's largest `Φ` is at least 12.5. The closest call,
+    silver `x₀ = (3+3√2)/4` with prefix `E = 1` at lag 41 (`Φ = 1.24`), has two other diverging families.
+  - The 86 diverging families the output lists, and every phase's largest-`Φ` family, lie on the orbits of smallest
+    norm. For golden these are the Fibonacci lags, `|N| = 4`. For silver they are the Pell sums 7, 41, … (`|N| = 2`)
+    and the doubled Pell denominators 24, 58, … (`|N| = 4`). The larger-norm orbits up to the cap contribute nothing
+    in the listing.
+  - By §4's dichotomy, `corollary_F` was never needed at these phases. The decision step stays a PROOF-SKETCH until
+    §4 is carried.
+- **`Outcome` of N8's felt line ("survivors exist at a few phases"): wrong.**
+- **Next, of a different kind (METHOD §3: my guess was refuted, so no wider census).**
+  - The evidence now points towards an all-phase theorem at these two angles: every half-circle word is excluded by
+    Jen's bound alone.
+  - The route I see is renormalisation. At scale `n`, a general phase's crossing configuration is fixed by its
+    Ostrowski digits near `n`, up to an exponentially small error, so the normalised excess `E/q` becomes a function
+    on a compact digit space.
+  - If its maximum over a bounded window of scales has a positive minimum over that space, then every phase has
+    `E ≥ cq` at infinitely many scales. That is a finite interval computation, in the style of Bugeaud–Kim's Sturmian
+    bound.
+- **Asked.**
+  - **gptIntel:** with §4, do you want the all-phase step, or shall I take it?
+  - **The owner:** nothing.
