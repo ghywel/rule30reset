@@ -180,3 +180,25 @@ Re: I170 to I181 (read whole), K52, K77, K78, R65, R69, P17, P19, P20. The owner
 **Frozen.** [claudeCloud_wheel_trains.py](research/wheel/claudeCloud_wheel_trains.py) `51ede38262f7aaceab7a3901562e083ca7b8640b19e6d73b7d218cda45d8edab`; it imports the finite strip of K77 (`9aed2cc7…`) and the trap reader (`cd0fa27a…`). T4 uses K75's cone, `claudeCloud_wheel_observers.py` `fc8f997a…` over `claudeCloud_wheel_runs.py` `5e9fd436…`. Kit trap file `8f752c62…`.
 
 **Reads owed, taken inside this block while the solver runs:** I172, I175, I178, I179, I181, and S13's carrying read (I180). Results as addenda here. The October half of I169's read stays closed to this host.
+
+**K79, addendum 1 (2026-11-23 20:56 UTC).** The controls, and one more test registered before it runs.
+
+*T0, the controls* (COMPUTED; [log](research/wheel/data/claudeCloud-trains-controls.jsonl)).
+
+| Train of X | Recorded death | Here: last width with a closed walk | Here: first width refused |
+|---|---|---|---|
+| constant spacing 6 | 43 (R69) | 42 | 43 (four copies) |
+| the pair (4,7) | 43 (P20) | 42 | 43 (two copies) |
+| the pair (4,12) | 47 (P20) | 46 | 47 (two copies) |
+| constant spacing 7 | 63 (P20) | **63** | **64** (four copies) |
+
+Prediction 1 **failed as worded** on the fourth: 64 here against 63. The cause is the edge model, and I tested it. My strips leave column W + 1 free at every tick. R65, R69 and placego fix it one tick after a sample by the rule, from two free cells of the row (K78 met the same difference in the window counts). With that one constraint added ([claudeCloud_wheel_trains_initial.py](research/wheel/claudeCloud_wheel_trains_initial.py), `a50e303b…`, written after the miss; [log](research/wheel/data/claudeCloud-trains-controls-initial.jsonl)) spacing 7 has a closed walk at 62 columns and none at 63, and no 63-column strip spells four copies. So the record's 63 stands under the record's edges, and a death width read on my strips can be one column larger. The other three agree under both.
+
+*How T1 and T2 are run from here.* The frozen `death` search spends minutes refusing closed walks of two and three copies at wide strips. For the trains of X I call the same script with one copy and at most eight finite copies (its fifth and sixth arguments), or its `periodic` and `finite` modes at single widths. The tests and the encodings are unchanged.
+
+*T5, registered now: every doubly periodic pattern beside an alternating column, for short time periods.* By section 4 of K79 a train with closed walks of bounded copies at every width is the gate of a pattern periodic in time and space that contains an alternating column. For a time period of N ticks these are exactly the columns b for which the pair (alternating, b) returns to itself under the map that sends two neighbouring columns to the pair one step left, so all of them can be listed by trying the 2^N columns. Frozen: [claudeCloud_alt_periodic.cpp](research/wheel/claudeCloud_alt_periodic.cpp) `63388cb9fdb575328b1ece70581cf83e3e2a7881e2b11d6c0a0ffaeae6f8b844`, for N = 2, 4, …, 16, and further if the orbits stay short. `Record searched:` PRIOR-ART-ARCHIVE (9 October: Epperlein's counts of temporally periodic points recounted and extended to period 10; "the 84-ring is the unique orbit of least temporal period 6"; no configuration of least period 2), I160 to I164 (the ring), the kit's `Rule30EtherWallWitness`; `find_known.py` for *doubly periodic*, *space-time periodic*, *temporally periodic*, *torus*. The October count is of all periodic points to period 10; which of them hold an alternating column, and periods 12 to 16, I did not find.
+- **(0.6)** For N ≤ 16 the only solutions are the 7×4 ether (time period 4, gate `10`) and the 84-ring (time period 6, gate `100`), with their time shifts.
+- **(0.7)** No solution has the gate of the loop 25 (`0101000`, N = 14).
+- *If another solution appears* it is a new exact periodic exterior (or interior) of infinite support, and its gate is alive at every width; I check it against the trap and against X and Y.
+
+Also written in this block, for the read of S13: [claudeCloud_wheel_read_s13.py](research/wheel/claudeCloud_wheel_read_s13.py) `a22a830d…`.

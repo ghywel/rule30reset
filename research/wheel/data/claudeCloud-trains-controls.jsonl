@@ -1,0 +1,56 @@
+{"columns": 40, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 0.9}
+{"columns": 46, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 1.3}
+{"columns": 46, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 5.1}
+{"columns": 46, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 4.9}
+{"columns": 46, "test": "finite strip", "copies": 2, "samples": 153, "status": "SAT", "replays": true, "cnf_sha256": "40a0d1aa257834e638fc62f2d71eeff4d156d4ee41ba1ab81a66a88e9d6a796b", "seconds": 3.2}
+{"columns": 46, "test": "finite strip", "copies": 4, "samples": 305, "status": "UNSAT", "replays": null, "cnf_sha256": "766f8ce9b885922f1afed0d58209fc786cdb4bb7c59e0771769fb8bff531f893", "seconds": 9.9}
+{"columns": 43, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 0.9}
+{"columns": 43, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 2.7}
+{"columns": 43, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 2.2}
+{"columns": 43, "test": "finite strip", "copies": 2, "samples": 153, "status": "SAT", "replays": true, "cnf_sha256": "54269bc4c292e8744a54acff191bb0e05940f0c62b7195b265832780c7a6136f", "seconds": 2.0}
+{"columns": 43, "test": "finite strip", "copies": 4, "samples": 305, "status": "UNSAT", "replays": null, "cnf_sha256": "f7d897d2386e9cb637dee5f652446cac8c1867fc3dcb5dd15fcac3dec9754c96", "seconds": 10.8}
+{"columns": 41, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 1.0}
+{"columns": 42, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 1.1}
+{"word": "E.A*6", "gaps": "33535555252525252525", "samples_per_copy": 76, "last_alive": 42, "first_dead": 43, "open_widths": [], "closed_walk_copies_tried": 3, "finite_copies_tried": 16, "evidence": {"40": ["alive", 1], "41": ["alive", 1], "42": ["alive", 1], "43": ["dead", 4], "46": ["dead", 4]}}
+{"columns": 40, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 1.9}
+{"columns": 46, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 0.8}
+{"columns": 46, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 2.7}
+{"columns": 46, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 2.9}
+{"columns": 46, "test": "finite strip", "copies": 2, "samples": 291, "status": "UNSAT", "replays": null, "cnf_sha256": "d3d1642b7738a507ac1f1bb2c22516920c452239de42b3f0027849c69236379b", "seconds": 7.1}
+{"columns": 43, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 1.6}
+{"columns": 43, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 2.5}
+{"columns": 43, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 3.4}
+{"columns": 43, "test": "finite strip", "copies": 2, "samples": 291, "status": "UNSAT", "replays": null, "cnf_sha256": "7610d303396d6a7030b74bd5e69633c8559af8250f2b4381c560758d3140908e", "seconds": 4.9}
+{"columns": 41, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 2.2}
+{"columns": 42, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 2.6}
+{"word": "E.A*4.E.A*7", "gaps": "33535555252525253353555525252525252525", "samples_per_copy": 145, "last_alive": 42, "first_dead": 43, "open_widths": [], "closed_walk_copies_tried": 3, "finite_copies_tried": 16, "evidence": {"40": ["alive", 1], "41": ["alive", 1], "42": ["alive", 1], "43": ["dead", 2], "46": ["dead", 2]}}
+{"columns": 43, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 5.6}
+{"columns": 50, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 0.7}
+{"columns": 50, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 1.1}
+{"columns": 50, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 1.6}
+{"columns": 50, "test": "finite strip", "copies": 2, "samples": 361, "status": "UNSAT", "replays": null, "cnf_sha256": "4cd971aefdb4426019e3eaf2c2d4e28ab73fc635167f7aa0abee07886baaa16b", "seconds": 25.4}
+{"columns": 46, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 6.1}
+{"columns": 48, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 0.8}
+{"columns": 48, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 1.3}
+{"columns": 48, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 1.5}
+{"columns": 48, "test": "finite strip", "copies": 2, "samples": 361, "status": "UNSAT", "replays": null, "cnf_sha256": "e18442e6a67c62ec25345176de3ebebc64a3ded8492064916938f154b380a7f4", "seconds": 19.1}
+{"columns": 47, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 0.6}
+{"columns": 47, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 1.2}
+{"columns": 47, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 1.5}
+{"columns": 47, "test": "finite strip", "copies": 2, "samples": 361, "status": "UNSAT", "replays": null, "cnf_sha256": "9e028f9413b02419265d8db761028f661ba7ad3ab3b2d0f9a2cef298fd2bb11c", "seconds": 19.5}
+{"word": "E.A*4.E.A*12", "gaps": "335355552525252533535555252525252525252525252525", "samples_per_copy": 180, "last_alive": 46, "first_dead": 47, "open_widths": [], "closed_walk_copies_tried": 3, "finite_copies_tried": 16, "evidence": {"43": ["alive", 1], "46": ["alive", 1], "47": ["dead", 2], "48": ["dead", 2], "50": ["dead", 2]}}
+{"columns": 43, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 3.1}
+{"columns": 66, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 12.6}
+{"columns": 66, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 97.9}
+{"columns": 66, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 194.4}
+{"columns": 66, "test": "finite strip", "copies": 2, "samples": 167, "status": "SAT", "replays": true, "cnf_sha256": "9204dfc282859c97761986e03e75aeec470e3977038d2e61317d79594e9c8d5d", "seconds": 11.3}
+{"columns": 66, "test": "finite strip", "copies": 4, "samples": 333, "status": "UNSAT", "replays": null, "cnf_sha256": "b4145f008a550754ebb38cee451fd30517dad698a597389f4e2a32d7cd74c0e4", "seconds": 245.3}
+{"columns": 54, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 5.3}
+{"columns": 60, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 11.0}
+{"columns": 63, "test": "closed walk", "copies": 1, "status": "SAT", "replays": true, "seconds": 12.4}
+{"columns": 64, "test": "closed walk", "copies": 1, "status": "UNSAT", "replays": null, "seconds": 11.8}
+{"columns": 64, "test": "closed walk", "copies": 2, "status": "UNSAT", "replays": null, "seconds": 80.0}
+{"columns": 64, "test": "closed walk", "copies": 3, "status": "UNSAT", "replays": null, "seconds": 207.0}
+{"columns": 64, "test": "finite strip", "copies": 2, "samples": 167, "status": "SAT", "replays": true, "cnf_sha256": "be6354403c615a2fd3684ab3393b3769ca71af4332a19b40bfab1edccdc1de6d", "seconds": 12.2}
+{"columns": 64, "test": "finite strip", "copies": 4, "samples": 333, "status": "UNSAT", "replays": null, "cnf_sha256": "95ae4c7f64283a46f8a65ea809ab7d1e9f1395f8a4fbd1304c2d1dedb47784c5", "seconds": 227.8}
+{"word": "E.A*7", "gaps": "3353555525252525252525", "samples_per_copy": 83, "last_alive": 63, "first_dead": 64, "open_widths": [], "closed_walk_copies_tried": 3, "finite_copies_tried": 16, "evidence": {"43": ["alive", 1], "54": ["alive", 1], "60": ["alive", 1], "63": ["alive", 1], "64": ["dead", 4], "66": ["dead", 4]}}

@@ -1,0 +1,4 @@
+{"edges": "initial", "word": "E.A*7", "columns": 62, "copies": 1, "status": "SAT", "replays": true, "seconds": 13.4}
+{"edges": "initial", "word": "E.A*7", "columns": 63, "copies": 1, "status": "UNSAT", "replays": null, "seconds": 14.3}
+{"edges": "initial", "word": "E.A*7", "columns": 63, "copies": 2, "samples": 167, "status": "SAT", "seconds": 14.1}
+{"edges": "initial", "word": "E.A*7", "columns": 63, "copies": 4, "samples": 333, "status": "UNSAT", "seconds": 236.2}
