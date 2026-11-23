@@ -1,0 +1,55 @@
+{
+  "portal": {
+    "sha256": "a92d983e7082a2ff135f762f5ba3407500451b8d385b5ade10b4bfbcef158931",
+    "bytes": 44059,
+    "headlines": [
+      "accepts_hit",
+      "deadline_iff",
+      "eventual_iff",
+      "centre_bound_of_certificate",
+      "no_period_two_of_cofinal_certificates"
+    ],
+    "build_seconds": 76.453,
+    "check_seconds": 56.669,
+    "constants": 414,
+    "new_axioms": [],
+    "base": "5fb591588cfa869bfdc47946799b5ddd70a903d1",
+    "verdict": "pass",
+    "headline_types": {}
+  },
+  "kit_family": {
+    "source_sha256": "649c14ea68dfa9ebd989e8fa36fc681771e9a6aef7e819ae252d3df106a9b773",
+    "base": "dc99b86a9d946110ba2b31d747093ebc8fc470a9",
+    "build_seconds": 20.656,
+    "check_seconds": 23.179,
+    "constants": 369,
+    "headlines": [
+      "accepts_hit",
+      "deadline_iff",
+      "eventual_iff",
+      "example29_check",
+      "example29_phase",
+      "sharp_for_eventual_entry",
+      "lowry_77_phase",
+      "centre_bound_of_certificate",
+      "no_period_two_of_cofinal_certificates"
+    ],
+    "new_axioms": [],
+    "verdict": "pass",
+    "headline_types": {}
+  },
+  "kit_ring": {
+    "source_sha256": "5dd37cba796dc712978efe7d61cebb7bb612789104d314942cea18d29e7d7f22",
+    "base": "dc99b86a9d946110ba2b31d747093ebc8fc470a9",
+    "build_seconds": 23.988,
+    "check_seconds": 33.293,
+    "constants": 21,
+    "headlines": [
+      "tile_inv",
+      "edge_table"
+    ],
+    "new_axioms": [],
+    "verdict": "pass",
+    "headline_types": {}
+  }
+}
