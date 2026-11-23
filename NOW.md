@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 22:56 UTC by gptIntel (I182–I183: S14 computational read passed, S13 packet with M5).*
+Updated 2026-11-23 23:00 UTC by gptIntel (I182–I184: S14 computation clear, S13 with M5, three K80 searches running).*
 
 ## Arrangement
 
@@ -19,11 +19,11 @@ Updated 2026-11-23 22:56 UTC by gptIntel (I182–I183: S14 computational read pa
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** The Intel wheel certificate runs finished (I181).
+- **Running jobs:** Intel has three uncapped K80 SAT runs: Y stays of 400 and 500 samples and the sixteen-copy train. [Run state and collection](research/wheel/gptIntel-k80-review.md#reproduction-and-intel-runs) (I184).
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M141, gptM5 R99, claudeCloud K81, gptIntel I183 and claudeIntel N11.
+- **Last posts:** claudeM5 M141, gptM5 R99, claudeCloud K81, gptIntel I184 and claudeIntel N11.
 
 ## Needs the owner
 

@@ -1,0 +1,513 @@
+{
+  "proofs": [
+    {
+      "case": "cloud-original",
+      "samples": 187,
+      "gaps": "335355552525252525253353555525252525252533535555",
+      "terminal_outside": true,
+      "cnf_sha256": "0d3ca734e513174f99ff95fb7e37ad70474e27b20d27cbe212f66047b0497cde",
+      "lrat_sha256": "b5ae5fff0a918555872e8fce9e74317fa68cf317f29df01bd573a0cf6a0a765c",
+      "proof_bytes": 95310152,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "status": "VERIFIED UNSAT"
+    },
+    {
+      "case": "cloud-plus-two",
+      "samples": 189,
+      "gaps": "3353555525252525252533535555252525252525335355552",
+      "terminal_outside": true,
+      "cnf_sha256": "66ccb9156c94f0b8b44bf9625f0a23f65e12e8d43a83e40f62140049fc40b141",
+      "lrat_sha256": "79cad05330f52b00241e9948c086b5066a8fb2a7bb1cae772c2f328963667a8f",
+      "proof_bytes": 95555262,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "status": "VERIFIED UNSAT"
+    },
+    {
+      "case": "unrestricted",
+      "samples": 187,
+      "gaps": "335355552525252525253353555525252525252533535555",
+      "terminal_outside": false,
+      "cnf_sha256": "bc9f9b0dc43ac9f70c83084f3ffd66febc1fa6cb0d1da9cb11a5e889e43fa57d",
+      "lrat_sha256": "645739af5dfa824ea7e89fb76c2de05b2d95912347b4b55a77379929511427e8",
+      "proof_bytes": 90798829,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "status": "VERIFIED UNSAT"
+    }
+  ],
+  "periodic_cylinders": [
+    {
+      "period": 2,
+      "advertised": 3,
+      "gate_only_width": 2,
+      "trials": [
+        {
+          "width": 3,
+          "status": "VERIFIED UNSAT",
+          "cnf": "eff32f92d8107350506b0fa30e142bab1a7d2144f7f13e5818c0d4c26f0c03f2",
+          "lrat": "131893285e882ea5ce50762a8025d1446041ac98e45566351b0118de5a6b91db",
+          "proof_bytes": 1047
+        },
+        {
+          "width": 2,
+          "status": "VERIFIED UNSAT",
+          "cnf": "ef80e9e662f2f49658ee8389fc74584f28cfb4b5ecdf26048b34bab3d518747f",
+          "lrat": "d95dbe033a27aaf3587e95b3ebbccdefa114bb7d25c4c420726bcae12e38a876",
+          "proof_bytes": 554
+        },
+        {
+          "width": 1,
+          "status": "SAT",
+          "columns": [
+            "01",
+            "00",
+            "01"
+          ]
+        }
+      ]
+    },
+    {
+      "period": 4,
+      "advertised": 5,
+      "gate_only_width": 4,
+      "trials": [
+        {
+          "width": 5,
+          "status": "VERIFIED UNSAT",
+          "cnf": "dea36c72c767cf0a4a753c317133e3ba6cc1dae6daf9d16d37154649f3bf298d",
+          "lrat": "cb737488d3794602ded22d43b8c1ea0052f2fdee76ef89c01b493dbfb749b522",
+          "proof_bytes": 4787
+        },
+        {
+          "width": 4,
+          "status": "VERIFIED UNSAT",
+          "cnf": "8c989b7474c8dae35b9fa2a3469ef4d74fc80603e697f6a4f211f8a22737e7a8",
+          "lrat": "23bf989d0251c5f83a0913e692e0c51ab61109e3c387ac4320711de87e8df7da",
+          "proof_bytes": 2905
+        },
+        {
+          "width": 3,
+          "status": "SAT",
+          "columns": [
+            "0101",
+            "0001",
+            "0111",
+            "1100",
+            "0010"
+          ]
+        }
+      ]
+    },
+    {
+      "period": 6,
+      "advertised": 3,
+      "gate_only_width": 2,
+      "trials": [
+        {
+          "width": 3,
+          "status": "VERIFIED UNSAT",
+          "cnf": "e81f05058b66a9c03fa84db7cf766974f7a569ec484b91c4da346fbef6713b1b",
+          "lrat": "3164934b4acc8e19744f011e8a909937a85dd358285a390c9aae9ba165c3a048",
+          "proof_bytes": 4393
+        },
+        {
+          "width": 2,
+          "status": "VERIFIED UNSAT",
+          "cnf": "263d3c3a172d6c342f2544ee3f0d1f6d431a5b18f71888d152d5c3251d0cc5b2",
+          "lrat": "41090396bcfb23040f858451a23c6797270c8ff2d109c46a2fca460a20ec59da",
+          "proof_bytes": 3806
+        },
+        {
+          "width": 1,
+          "status": "SAT",
+          "columns": [
+            "010101",
+            "010001",
+            "110111"
+          ]
+        }
+      ]
+    },
+    {
+      "period": 8,
+      "advertised": 11,
+      "gate_only_width": 10,
+      "trials": [
+        {
+          "width": 11,
+          "status": "VERIFIED UNSAT",
+          "cnf": "336ef48434cd3cd10b9a850a94f154561dfc65a86b3095d3e38bb9a237fe93dd",
+          "lrat": "0e2bacc4746a4b548a3ebce0816bf5b1de899c18ac50aa6051c762b23ba15f2d",
+          "proof_bytes": 249988
+        },
+        {
+          "width": 10,
+          "status": "VERIFIED UNSAT",
+          "cnf": "6210c8ce4842b90a60b8e69d8593245deb3cbda502a4fbe4430e64ed041d38a3",
+          "lrat": "12c481c2c915208c0df55c81baebb3dbaa82e8032206af1b482fcc215f9a0e6c",
+          "proof_bytes": 160098
+        },
+        {
+          "width": 9,
+          "status": "SAT",
+          "columns": [
+            "01010101",
+            "00110001",
+            "00010111",
+            "00001101",
+            "00000101",
+            "00000011",
+            "00000001",
+            "00000001",
+            "00000011",
+            "00000110",
+            "00001011"
+          ]
+        }
+      ]
+    },
+    {
+      "period": 10,
+      "advertised": 6,
+      "gate_only_width": 5,
+      "trials": [
+        {
+          "width": 6,
+          "status": "VERIFIED UNSAT",
+          "cnf": "f0dab951367b901b952e21cce8d871bee1cb6a201589c21bffec8bc9f5f32961",
+          "lrat": "265da577952b624fac1757401afbba383b4edbf0697ec6ed4a854eaa59b3d051",
+          "proof_bytes": 100698
+        },
+        {
+          "width": 5,
+          "status": "VERIFIED UNSAT",
+          "cnf": "5587261bab2e2b67916effa565cb0683a52237f7730d1425a926bbb922102e54",
+          "lrat": "36bd5b5cf86bf398350a883518d83d89f41042bd51684505eac64ddf2ac55a61",
+          "proof_bytes": 71576
+        },
+        {
+          "width": 4,
+          "status": "SAT",
+          "columns": [
+            "0101010101",
+            "1101001100",
+            "1011000100",
+            "1001000001",
+            "0001000111",
+            "1011001111"
+          ]
+        }
+      ]
+    },
+    {
+      "period": 12,
+      "advertised": 8,
+      "gate_only_width": 7,
+      "trials": [
+        {
+          "width": 8,
+          "status": "VERIFIED UNSAT",
+          "cnf": "9af68f50ee005bebc835361eeaa23399e97519514e7ee93348a87da927ecfb0f",
+          "lrat": "de92c291ea986bdbeeb08119c20ddffa014ab62b36c662281354f83e87e8a91e",
+          "proof_bytes": 243853
+        },
+        {
+          "width": 7,
+          "status": "VERIFIED UNSAT",
+          "cnf": "8300abc08506ecc5a870eaaf0f81df066faac272d695c19ce9cce52d12c51d75",
+          "lrat": "737c2e83f2866c5aafeb1694a07228bd687d5df4ef677ab5fdcf98193adac921",
+          "proof_bytes": 150062
+        },
+        {
+          "width": 6,
+          "status": "SAT",
+          "columns": [
+            "010101010101",
+            "001100010011",
+            "000001110001",
+            "001111010001",
+            "011000010011",
+            "110111110110",
+            "000000001100",
+            "110111100010"
+          ]
+        }
+      ]
+    },
+    {
+      "period": 14,
+      "advertised": 6,
+      "gate_only_width": 5,
+      "trials": [
+        {
+          "width": 6,
+          "status": "VERIFIED UNSAT",
+          "cnf": "b1e398818f0e4dd21038331c4935b04bf27a266af3569df56b278769d663bda7",
+          "lrat": "8072bed0b85f0b188a1a0e0f0000beaf56b4c31ccd1671616015adea9c6bbe42",
+          "proof_bytes": 222751
+        },
+        {
+          "width": 5,
+          "status": "VERIFIED UNSAT",
+          "cnf": "458299eb14ce69c30ab624161c47963de03a91f7d1ad2d9ef6553acdfec9b9ef",
+          "lrat": "34f8ce6a117b45a9aa04a55a99b18710637b86a17bcb2e893ade3b44d8c45f3f",
+          "proof_bytes": 163089
+        },
+        {
+          "width": 4,
+          "status": "SAT",
+          "columns": [
+            "01010101010101",
+            "11010011000100",
+            "10110001011100",
+            "10010000110101",
+            "00000000010011",
+            "10010000010001"
+          ]
+        }
+      ]
+    },
+    {
+      "period": 16,
+      "advertised": 22,
+      "gate_only_width": 21,
+      "trials": [
+        {
+          "width": 22,
+          "status": "VERIFIED UNSAT",
+          "cnf": "778b1104bc969a2e3b2d11a6bf46353bca6566764aae5aa394c386e4679cf9a3",
+          "lrat": "eb8c38dc90cc5b3c911547bfdc404201be0d00594af8373a484798ef9bd0fb59",
+          "proof_bytes": 1551972
+        },
+        {
+          "width": 21,
+          "status": "VERIFIED UNSAT",
+          "cnf": "93dca3c0bfa15ceee5f865a6bc09bd72f6a617a19e1658b5f2d4d61048a0e4c0",
+          "lrat": "3f718b952c0fcd63f287d79c501f46d342fd2f6fffdc7c44bb76f1869f4f9814",
+          "proof_bytes": 1337412
+        },
+        {
+          "width": 20,
+          "status": "SAT",
+          "columns": [
+            "0101010101010101",
+            "0001001100010011",
+            "0111000001110001",
+            "1101001111010000",
+            "0100011000010000",
+            "0001110111110000",
+            "0111010101010000",
+            "1101001100010000",
+            "1001000101110001",
+            "0111000011010011",
+            "0101000001000110",
+            "1101000000011101",
+            "1011000001110100",
+            "1001000011000100",
+            "1001000110111101",
+            "0011001100101011",
+            "1110011011100010",
+            "0101110010101110",
+            "0100101110011010",
+            "1100001010001000",
+            "1000111010001011",
+            "1101111110011111"
+          ]
+        }
+      ]
+    },
+    {
+      "period": 18,
+      "advertised": 9,
+      "gate_only_width": 8,
+      "trials": [
+        {
+          "width": 9,
+          "status": "VERIFIED UNSAT",
+          "cnf": "b0b1c143271e23ca4eb817ade607c4aea79f3c8c9397c0dbf10f23c20ccba449",
+          "lrat": "a86c79a789fe4711224462d256b1c95e3c65edbe1e436aa8ca19180b0caa7d67",
+          "proof_bytes": 605020
+        },
+        {
+          "width": 8,
+          "status": "VERIFIED UNSAT",
+          "cnf": "e4ca6a69ec3c26229d0d5d6391cbc61a6aff1345c3d541b06edc1fd9ded34a30",
+          "lrat": "7d695061919268dc0b4ba9835ca193c2fb48d1697ed9d13f1e80e3bca92a79f0",
+          "proof_bytes": 380463
+        },
+        {
+          "width": 7,
+          "status": "SAT",
+          "columns": [
+            "010101010101010101",
+            "110100010011000100",
+            "101101110001011100",
+            "101011010000110101",
+            "011001010000010011",
+            "001000110000010001",
+            "001000010000110001",
+            "011000010001100011",
+            "100000110011110111"
+          ]
+        }
+      ]
+    },
+    {
+      "period": 20,
+      "advertised": 8,
+      "gate_only_width": 7,
+      "trials": [
+        {
+          "width": 8,
+          "status": "VERIFIED UNSAT",
+          "cnf": "68ea0895a87541f52b6dd2e4eb1ce7fa5a96b2d6030f3665a94415593fe413bd",
+          "lrat": "ca80ea08391f128328b478a32bdc698c9402b774c0bea53fe33595b613b39dc6",
+          "proof_bytes": 703789
+        },
+        {
+          "width": 7,
+          "status": "VERIFIED UNSAT",
+          "cnf": "b09c2c12fbadfdf07e28eb8653a7c2b85a8dcc11041f117d44e9b75f90142e35",
+          "lrat": "529ffd8817b43bd658e8f9ebf970722c755d3cc227d0375ea9773c9063ae669f",
+          "proof_bytes": 333061
+        },
+        {
+          "width": 6,
+          "status": "SAT",
+          "columns": [
+            "01010101010101010101",
+            "11000100110001001100",
+            "00011100010111000100",
+            "11110100001101000100",
+            "10000100000001001101",
+            "01111100001111011011",
+            "01010000011010110001",
+            "11011100111010101001"
+          ]
+        }
+      ]
+    },
+    {
+      "period": 22,
+      "advertised": 14,
+      "gate_only_width": 13,
+      "trials": [
+        {
+          "width": 14,
+          "status": "VERIFIED UNSAT",
+          "cnf": "6f392cfcf36356a3eda5618ca6d6af3e81d8f727432ea0a7a1b50f652ca3eaa6",
+          "lrat": "e31c5c4f489f47dbbbbc780ec69833468c41bc85cdf3a2d07627904026730eab",
+          "proof_bytes": 969444
+        },
+        {
+          "width": 13,
+          "status": "VERIFIED UNSAT",
+          "cnf": "14dafd2908d435d4ece635782f4e337b36b449332a6d2947101f9be22bd45a6f",
+          "lrat": "9205d05cb72b6ef3a08a93cdf2a0b2631d16ad9cc92507e0ee056d018d3a0ec9",
+          "proof_bytes": 803843
+        },
+        {
+          "width": 12,
+          "status": "SAT",
+          "columns": [
+            "0101010101010101010101",
+            "0001001100110100010011",
+            "0111000100101101110000",
+            "1101000001101011010011",
+            "0001000111011001000110",
+            "1111001101001000011101",
+            "1010011001001001110100",
+            "1001110111011011000100",
+            "1001010010110110111101",
+            "0011010010010010101011",
+            "1110110110010001100010",
+            "1010101100110000001110",
+            "1001100011100001111001",
+            "1001101011110011111101"
+          ]
+        }
+      ]
+    },
+    {
+      "period": 24,
+      "advertised": 11,
+      "gate_only_width": 10,
+      "trials": [
+        {
+          "width": 11,
+          "status": "VERIFIED UNSAT",
+          "cnf": "9659a4b065b5723176401b95e384f1c3baded5acad5f5a757b9abe50130d4373",
+          "lrat": "4f9767dcfaad8a19a6df261045d0283548614bb57204edcd40f3462ffd177a2a",
+          "proof_bytes": 1120456
+        },
+        {
+          "width": 10,
+          "status": "VERIFIED UNSAT",
+          "cnf": "267266f5769567f5d3bbdb84b8c9c662e673b5ce38c28dbe4185081994dd397f",
+          "lrat": "f109ef27b2811fb2562239867e0511a59f8f8311ac5589fbf2d2e8c9aa39fe44",
+          "proof_bytes": 586063
+        },
+        {
+          "width": 9,
+          "status": "SAT",
+          "columns": [
+            "010101010101010101010101",
+            "110001001100010011000100",
+            "010111000001110001011100",
+            "001101001111010000110100",
+            "000100011000010000010100",
+            "000001110111110000001100",
+            "000111010101010000000100",
+            "001101001100010000000100",
+            "011001000101110000001100",
+            "110111000011010000011000",
+            "010111000011010000110101"
+          ]
+        }
+      ]
+    }
+  ],
+  "Y": {
+    "source": "data/claudeCloud-trains-cone-yS16.jsonl",
+    "finite_white_start": "0x5b6e596db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db6db69f68460a3377f3584ecde3cb0a5f002eaf50ed601e30b1ecad2bfbad",
+    "support": 599,
+    "accepted_samples": 344,
+    "verified_300": true,
+    "window_at_300": 8352,
+    "first_rejected_length": 345,
+    "word_at_300": "100010000101010101010101010101010101010101000100001010101010101010101010101010101010001000010101010101010101010101010101010100010000101010101010101010101010101010101000100001010101010101010101010101010101010001000010101010101010101010101010101010100010000101010101010101010101010101010101000100001010",
+    "finite_black_predecessor": "0x314430c514514514514514514514514514514514514514514514514514514514514514514514514514514514514514722bdc06e14c963039852e5a06d20019a95798c009e0609868ea4a68",
+    "black_predecessor_support": 598,
+    "first_rejection_reason": "first 57-sample block missing 10001"
+  },
+  "archives": [
+    {
+      "name": "cloud-original-proof.zip",
+      "sha256": "1eb1a3b35e7429fb6334a3d1439ad91eed9d08ba554795bfe2ed39b3b2fc7606",
+      "bytes": 26075110
+    },
+    {
+      "name": "cloud-plus-two-proof.zip",
+      "sha256": "f36ef9a233c61180fb26562ded86f6cdcbedc1131d83930f1fbecfc568c457aa",
+      "bytes": 26342650
+    },
+    {
+      "name": "unrestricted-proof.zip",
+      "sha256": "8e44fc0960b930c2ed103e68f6f4029fe443cb967965962004cdff1b66d44f10",
+      "bytes": 24523339
+    },
+    {
+      "name": "strips-proof.zip",
+      "sha256": "b9c0f0f7bf0b2a3e7b23fd007c701a8c6ce545e749cc6c60f913366a56e339ae",
+      "bytes": 2570801
+    }
+  ]
+}
