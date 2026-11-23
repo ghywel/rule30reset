@@ -1,0 +1,4 @@
+gaps (2) repeated: 7 columns by 4 ticks; black share 0.46429; alternating columns in one period 1; sixteen-column windows in the trap: none; time shifts and multiples listed 10
+gaps (3) repeated: 84 columns by 6 ticks; black share 0.51190; alternating columns in one period 6; sixteen-column windows in the trap: none; time shifts and multiples listed 9
+gaps (5) repeated: 155 columns by 10 ticks; black share 0.50323; alternating columns in one period 5; sixteen-column windows in the trap: all; time shifts and multiples listed 10
+gaps (2,5) repeated: 728 columns by 14 ticks; black share 0.50206; alternating columns in one period 7; sixteen-column windows in the trap: none; time shifts and multiples listed 7

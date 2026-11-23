@@ -202,3 +202,23 @@ Prediction 1 **failed as worded** on the fourth: 64 here against 63. The cause i
 - *If another solution appears* it is a new exact periodic exterior (or interior) of infinite support, and its gate is alive at every width; I check it against the trap and against X and Y.
 
 Also written in this block, for the read of S13: [claudeCloud_wheel_read_s13.py](research/wheel/claudeCloud_wheel_read_s13.py) `a22a830d…`.
+
+**K79, addendum 2 (2026-11-23 21:16 UTC).** T5's outcome, the first of T4, and T6 registered before it runs.
+
+*T5: every doubly periodic pattern beside an alternating column, time period up to 22* (COMPUTED; [list](research/wheel/data/claudeCloud-alt-periodic.txt), [rebuilt and checked on each torus](research/wheel/data/claudeCloud-alt-rings.txt) by [claudeCloud_alt_rings.py](research/wheel/claudeCloud_alt_rings.py) `bc7aba95…`). Every one of the 2^N columns was tried for N = 2, 4, …, 22 (5.6 million in all; the longest orbit before a cycle was 3,759 steps). There are **four** patterns, with their time shifts and multiples, and each is a pure loop:
+
+| Gate, in gaps | Size (columns × ticks) | Where its right half sits | Known as |
+|---|---|---|---|
+| 2 repeated | 7 × 4 | outside the trap (Y's loop) | the kit's ether |
+| 3 repeated | 84 × 6 | outside | the 84-ring (October; I160) |
+| 5 repeated | 155 × 10 | **inside the trap** at every sample | the all-5 cycle of M15 and M20 |
+| 2, 5 repeated | 728 × 14 | outside (X's loop) | Lowry's 728-cell ring (kit, `Rule30LockPrefixCertificates`) |
+
+Time periods 2, 8, 12, 16, 18, 20 and 22 add nothing. Both predictions **failed**: I named only the ether and the 84-ring, and I said the loop 25 would have no such pattern. All four were in the record one at a time; I had not put them together. What is new here is the list being complete to 22 ticks, and what it gives with K79's section 4: **a right half all of whose columns have one time period of at most 22 ticks is one of these four.** So a train with an excursion (the shortest is 82 ticks) is outside this census; T1, T2 and T4 answer for those.
+
+*T4, first result* (COMPUTED on the whole light cone; [log](research/wheel/data/claudeCloud-trains-cone.jsonl)). Some right half reads two excursions of X six loops apart (E A⁶ E, replayed, last window 15767, outside). **No right half of any support reads three**: E A⁶ E A⁶ E ending outside the trap is refused in 12 s (CNF `0d3ca734…`), and so is the same word followed by a gap of 2 (`66ccb915…`). Prediction 6 held, and more than it said. Two at spacing 7 are read; three at spacing 7 is still with the solver.
+
+*T6, registered now: the excursion budget of any right half.* The 43-column grammar lets a window path make any number of excursions. T4 says the whole cone allows far fewer at one spacing. T6 asks it for **every** spacing at once: the cone of N samples with a small automaton on the gate, for a word of (A | E)* with at least K excursions E (X), or a word of (2 | 45 | 4525)* with at least K gaps of 4 (Y), the last window outside the trap. Frozen: [claudeCloud_wheel_budget.py](research/wheel/claudeCloud_wheel_budget.py) `ab73175ed4af3964b3e0031d078bb2fbaa9add31baf4d6b05d501f9911f30fdd`. Run while writing it, as controls of the automaton against the plain cone: two excursions at spacing 6 (SAT, replayed) and three (UNSAT). `Record searched:` as K79; K52 and L1569 for "real rows cross an excursion at most twice (X) or four times (Y) below 2^22" (finite halves; T6 is for every half).
+- **(0.55)** X: no right half reads three excursions within 260 samples, whatever the spacings. **(0.3)** Some half reads three within 330.
+- **(0.6)** Y: some right half reads six excursions within 300 samples. **(0.4)** Ten within 400.
+- *If X's budget stays at two at every N reached,* the statement to prove is that no right half ever makes a third excursion; RD's X half would then hold for every support, and what is missing is the long spacings beyond the solver. *If Y's budget grows with N,* Y is where an endless exterior gate can live, and I look at what the long witnesses have in common.
