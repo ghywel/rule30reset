@@ -1,0 +1,382 @@
+{
+  "claim": "partial",
+  "declared": [
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenRotation.golden_repeats_at_scale",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenRotation.no_eventual_golden_neighbour",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenRotation.scaleLags",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenRotation.unbounded_golden_repeats",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenRotation.word",
+      "standardAxioms": true
+    },
+    {
+      "kind": "inductive",
+      "name": "Rule30Submission.GoldenStripCover.Gap",
+      "standardAxioms": true
+    },
+    {
+      "kind": "inductive",
+      "name": "Rule30Submission.GoldenStripCover.Point",
+      "standardAxioms": true
+    },
+    {
+      "kind": "inductive",
+      "name": "Rule30Submission.GoldenStripCover.Row",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Witness",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.consecutive",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.crosses",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.families",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.golden_strip_cover",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.instDecidableEqPoint",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.instReprPoint",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.phys",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.val",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Gap.casesOn",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Gap.ctorIdx",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Gap.e",
+      "standardAxioms": true
+    },
+    {
+      "kind": "constructor",
+      "name": "Rule30Submission.GoldenStripCover.Gap.mk",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Gap.noConfusion",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Gap.noConfusionType",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Gap.p",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Gap.r",
+      "standardAxioms": true
+    },
+    {
+      "kind": "recursor",
+      "name": "Rule30Submission.GoldenStripCover.Gap.rec",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Gap.recOn",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Gap.skips",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Point.a",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Point.b",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Point.casesOn",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Point.ctorIdx",
+      "standardAxioms": true
+    },
+    {
+      "kind": "constructor",
+      "name": "Rule30Submission.GoldenStripCover.Point.mk",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Point.noConfusion",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Point.noConfusionType",
+      "standardAxioms": true
+    },
+    {
+      "kind": "recursor",
+      "name": "Rule30Submission.GoldenStripCover.Point.rec",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Point.recOn",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Row.casesOn",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Row.ctorIdx",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Row.gaps",
+      "standardAxioms": true
+    },
+    {
+      "kind": "constructor",
+      "name": "Rule30Submission.GoldenStripCover.Row.mk",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Row.noConfusion",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Row.noConfusionType",
+      "standardAxioms": true
+    },
+    {
+      "kind": "recursor",
+      "name": "Rule30Submission.GoldenStripCover.Row.rec",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Row.recOn",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Row.stop",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.crosses.eq_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.families.eq_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.instDecidableEqPoint.decEq",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.instReprPoint.repr",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.phys.eq_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.val.eq_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.Gap.mk.inj",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.Gap.mk.injEq",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Gap.mk.noConfusion",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.Gap.mk.sizeOf_spec",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.Point.mk.inj",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.Point.mk.injEq",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Point.mk.noConfusion",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.Point.mk.sizeOf_spec",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.Row.mk.inj",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.Row.mk.injEq",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.Row.mk.noConfusion",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenStripCover.Row.mk.sizeOf_spec",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Rule30Submission.GoldenStripCover.instDecidableEqPoint.decEq.match_1",
+      "standardAxioms": true
+    }
+  ],
+  "headlines": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenRotation.golden_repeats_at_scale",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenRotation.unbounded_golden_repeats",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Rule30Submission.GoldenRotation.no_eventual_golden_neighbour",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    }
+  ],
+  "importsStatements": true,
+  "module": "Rule30Submission",
+  "newAxioms": [],
+  "official": [],
+  "reasons": [],
+  "replay": {
+    "constants": 276,
+    "ok": true
+  },
+  "verdict": "pass",
+  "verifiedTargets": []
+}

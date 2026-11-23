@@ -315,15 +315,10 @@ lag and excess, even after discarding an arbitrary initial segment. -/
 theorem unbounded_golden_repeats (θ : ℝ) (H K : ℕ) :
     ∃ a b q : ℕ, H ≤ a ∧ K < q ∧ 2*a+q+K < b ∧
       ∀ t : ℕ, a ≤ t → t ≤ b → word θ t = word θ (t+q) := by
-  let n := 100000*(K+2*H+10)
-  let u := unitAt n
-  have hu : (n:ℤ)+1 ≤ u.A := large n
-  obtain ⟨a,b,q,_,hq,hlen,hs⟩ := run (config u θ) (by dsimp [n] at hu; omega)
-  refine ⟨a+H,b,q, by omega, ?_, ?_, ?_⟩
-  · dsimp [n] at hu; omega
-  · dsimp [n] at hu; omega
-  · intro t ht hb
-    exact hs t (by omega) hb
+  let n := 20*(K+2*H+3)+3
+  obtain ⟨q,_,a,b,hq,_,hlen,hs⟩ := golden_repeats_at_scale θ n (by dsimp [n]; omega)
+  dsimp only [n] at hq
+  exact ⟨a+H,b,q,by omega,by omega,by omega,fun t ht hb => hs t (by omega) hb⟩
 
 open Ruliology.CellularAutomata Rule30Realization
 

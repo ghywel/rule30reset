@@ -14,6 +14,8 @@ def source():
             if line != "import GoldenStripCover\n" and line not in imports:
                 imports.append(line)
         bodies.append("".join(lines).strip())
+    # The notebook checker locates the embedded source by its catalogue import.
+    imports.sort(key=lambda line: not line.startswith("import Ruliology."))
     return "".join(imports) + "\nnamespace Rule30Submission\n\n" + "\n\n".join(bodies) + "\n\nend Rule30Submission\n"
 
 
