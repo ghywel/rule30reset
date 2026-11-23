@@ -1,0 +1,2106 @@
+{
+ "reader": "claudeM5",
+ "post": "M114",
+ "host": "the owner's M5 laptop",
+ "leanVersion": "4.35.0",
+ "kitCommit": "5fb591588cfa869bfdc47946799b5ddd70a903d1",
+ "source": {
+  "file": "research/m9/repaired/Rule30Submission.lean",
+  "bytes": 48632,
+  "sha256": "01d05d6aa7e7760501f270badf016869f417de3cbca887e5974df7f267b459b1"
+ },
+ "build": {
+  "command": "lake env lean --root=DIR -o DIR/Rule30Submission.olean DIR/Rule30Submission.lean",
+  "realSeconds": 175.32,
+  "maxResidentBytes": 1022443520,
+  "oleanBytes": 25174280
+ },
+ "check": {
+  "command": "lake env lean --run ../Check.lean Rule30Submission --claim partial --headline (four names)",
+  "realSeconds": 172.84,
+  "maxResidentBytes": 1420836864
+ },
+ "stockResult": {
+  "claim": "partial",
+  "declared": [
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.four_one_sample",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.no_five_runs_of_four",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.no_four_runs_of_four",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes0",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes10",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes11",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes12",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes13",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes14",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes15",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes16",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes17",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes18",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes19",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes20",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes21",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes22",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes23",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes24",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes25",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes26",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes27",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes28",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes29",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes3",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes4",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes5",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes6",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes7",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes8",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.planes9",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.three_sixty_samples",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check0",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check10",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check11",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check12",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check13",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check14",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check15",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check16",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check17",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check18",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check19",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check20",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check21",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check22",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check23",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check24",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check25",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check26",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check27",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check28",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check29",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check3",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check4",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check5",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check6",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check7",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check8",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.check9",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.commandPlane_pass__",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneChecks.no_trace",
+    "standardAxioms": true
+   },
+   {
+    "kind": "inductive",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.data",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.descending",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.frames",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.freshen",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.growAt",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.imageSet",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.initWork",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.instInhabitedWork",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.makePasses",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.movesTerm",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.onePass",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.packFlags",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.selected",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.shifts",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.slotTerm",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.slots",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.\u00abtermTrappedRunPlanes%\u00bb",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.widthLimit",
+    "standardAxioms": true
+   },
+   {
+    "kind": "inductive",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Holds",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Known",
+    "standardAxioms": true
+   },
+   {
+    "kind": "inductive",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move",
+    "standardAxioms": true
+   },
+   {
+    "kind": "inductive",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Trace",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.bEdges",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.bEdgesCons",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.bEdges_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.bOK",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.bOK_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.back",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.col",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.compact",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.compact_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.cut",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.cut_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.dup",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.extend",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.extend_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.fEdges",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.fEdgesCons",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.fEdges_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.fOK",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.fOK_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.front",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.guard",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.inRange",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.instDecidableEqFamily",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.instInhabitedFamily",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.instInhabitedMove",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.instInhabitedSlot",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.move",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.moveBits",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.moveOK",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.move_lane",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.move_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.moved",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.no_empty",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.no_pair",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.outCol",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.outCol_bit",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.plane",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.planePairs",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.plane_bit",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.plateStep",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.plateStep_bit",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.prepare",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.prepare_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.preps",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.prepsCons",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.preps_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.rest",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.rest_bit",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.restrict",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.room",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.safe",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.separated",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.separated_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.stageOK",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.stage_intro",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.stage_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.start",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.start_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.start_trace",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.stay",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.widen",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.widen_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Holds",
+    "standardAxioms": true
+   },
+   {
+    "kind": "inductive",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index",
+    "standardAxioms": true
+   },
+   {
+    "kind": "inductive",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark",
+    "standardAxioms": true
+   },
+   {
+    "kind": "inductive",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Trace",
+    "standardAxioms": true
+   },
+   {
+    "kind": "inductive",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.bChain",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.bChain_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.bCons",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.bValid",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.bValid_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.backward",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.backward_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.check",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.check_refutes",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.chunks",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.fChain",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.fChain_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.fCons",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.fValid",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.fValid_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.forward",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.forward_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.index",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.index_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instDecidableEqWindow",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instInhabitedIndex",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instInhabitedMark",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instInhabitedPass",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instInhabitedWindow",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instReprWindow",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.liftAt",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.liftAt_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.literal",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.output_mem",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.outputs",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.residues",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.residues_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.sweep",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.sweepB",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.sweepB_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.sweepF",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.sweepF_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.sweep_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.trace_ne",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.unpack",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.verifies",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.verifies_intro",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.verifies_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.widen",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.widen_sound",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.block",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.closed",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.colours",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.entry",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.five",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.four_one_sample",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.headsOf",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.initial",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.no_five_runs_of_four",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.no_four_runs_of_four",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.occurrence_trace",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.three_sixty_samples",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30DrivenPrefix.double.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.casesOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.codes",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.ctorIdx",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.mk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.noConfusionType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "recursor",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.rec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.recOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.slot",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.instInhabitedWork.default",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.casesOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.cols",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.ctorIdx",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.live",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.mk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.noConfusionType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "recursor",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.rec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.recOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.casesOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.ctorIdx",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.mk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.noConfusionType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "recursor",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.rec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.recOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.selected",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.shift",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.back",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.backwardBits",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.casesOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.count",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.ctorIdx",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.forwardBits",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.fresh",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.front",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.grow",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.lanes",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.mk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.noConfusionType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "recursor",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.rec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.recOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.shifts",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Trace.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.bEdges.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.back.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.col.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.compact.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.cut.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.dup.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.fEdges.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.front.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.instDecidableEqFamily.decEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.instInhabitedFamily.default",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.instInhabitedMove.default",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.instInhabitedSlot.default",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.move.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.moveBits.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.moved.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.plane.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.plane.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.plane.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.plateStep.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.preps.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.preps.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.preps.eq_3",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.preps.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.preps.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.rest.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.restrict.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.separated.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.separated.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.separated.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.separated.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.stageOK.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.stageOK.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.start.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.stay.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.widen.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.casesOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.contains",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.ctorIdx",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.first",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.mk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.noConfusionType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "recursor",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.rec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.recOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.second",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.box",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.casesOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.ctorIdx",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.mask",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.mk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.noConfusionType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "recursor",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.rec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.recOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.back",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.casesOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.ctorIdx",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.front",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.grow",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.mk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.noConfusionType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "recursor",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.rec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.recOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Trace.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.casesOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.codes",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.ctorIdx",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.mk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.noConfusionType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "recursor",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.rec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.recOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.width",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.bChain.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.bChain.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.bChain.eq_3",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.bChain.eq_4",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.bChain.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.bChain.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.check.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.chunks.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.fChain.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.fChain.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.fChain.eq_3",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.fChain.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.fChain.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instDecidableEqWindow.decEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instInhabitedIndex.default",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instInhabitedMark.default",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instInhabitedPass.default",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instInhabitedWindow.default",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instReprWindow.repr",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.liftAt.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.residues.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.residues.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.residues.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.residues.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.sweepB.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.sweepB.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.sweepB.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.unpack.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.colours.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.entry.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.entry.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.entry.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30TrappedRuns.initial.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.mk.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.mk.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.mk.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlaneData.Work.mk.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.mk.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.mk.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.mk.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Family.mk.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.mk.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.mk.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.mk.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Move.mk.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.mk.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.mk.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.mk.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.Slot.mk.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunPlanes.instDecidableEqFamily.decEq.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.mk.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.mk.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.mk.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Index.mk.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.mk.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.mk.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.mk.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Mark.mk.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.mk.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.mk.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.mk.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Pass.mk.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.mk.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.mk.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.mk.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.Window.mk.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RunWindow.instDecidableEqWindow.decEq.match_1",
+    "standardAxioms": true
+   }
+  ],
+  "headlines": [
+   {
+    "axioms": [
+     "propext",
+     "Classical.choice",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.no_four_runs_of_four",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Classical.choice",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.no_five_runs_of_four",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.four_one_sample",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.three_sixty_samples",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   }
+  ],
+  "importsStatements": true,
+  "module": "Rule30Submission",
+  "newAxioms": [],
+  "official": [],
+  "reasons": [],
+  "replay": {
+   "constants": 8495,
+   "ok": true
+  },
+  "verdict": "pass",
+  "verifiedTargets": []
+ }
+}
