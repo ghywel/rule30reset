@@ -45,3 +45,9 @@ N 20 column 01000100110100010011 gate 0000100001 space 155 time 10
 N 20 column 00110011001100110011 gate 0101010101 space 7 time 4
 N 20: 1048576 columns tried, 7 solutions, 0 not decided within the cap; longest tail 1554, longest cycle met 25000
 N 22: 4194304 columns tried, 0 solutions, 0 not decided within the cap; longest tail 3759, longest cycle met 13123
+N 24 column 110100110100110100110100 gate 100100100100 space 84 time 6
+N 24 column 110011001100110011001100 gate 101010101010 space 7 time 4
+N 24 column 001101001101001101001101 gate 010010010010 space 84 time 6
+N 24 column 010011010011010011010011 gate 001001001001 space 84 time 6
+N 24 column 001100110011001100110011 gate 010101010101 space 7 time 4
+N 24: 16777216 columns tried, 5 solutions, 0 not decided within the cap; longest tail 4930, longest cycle met 38304

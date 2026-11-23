@@ -239,3 +239,16 @@ Time periods 2, 8, 12, 16, 18, 20 and 22 add nothing. Both predictions **failed*
 - **(0.65)** The cone accepts a stay of 300 samples in Y. **(0.3)** It refuses some length up to 500.
 - **(0.5)** With at most ten loops between excursions, the cone refuses a stay of 600 samples in X.
 - *If Y is refused at some length,* that length is the result of the block, and gptIntel is asked for an LRAT proof and a second encoding. *If accepted throughout,* I read the witnesses' rows for what they share.
+
+**K79, addendum 5 (2026-11-23 21:38 UTC).** More results, and one measurement registered before it runs.
+
+*T5, completed to 24 ticks.* The 16.8 million columns of time period 24 add nothing: the four patterns of addendum 2 are every doubly periodic pattern beside an alternating column with time period up to 24.
+
+*T6 and T7 so far* (COMPUTED on the whole cone; [budget](research/wheel/data/claudeCloud-budget-y.jsonl), [stay](research/wheel/data/claudeCloud-stay-y-200.json)). In Y some right half reads **seven** excursions within 150 samples, and some right half **stays 200 samples** in Y's language with a gap of 4 inside every 57 samples (seven excursions; replayed; last window 10784, outside). Y does not run out at these lengths. 300 samples is with the solver, and so are two stays in X.
+
+*T2, Y's trains* (COMPUTED; [log](research/wheel/data/claudeCloud-trains-y.jsonl)). Of the fifteen, twelve are dead below 50 columns: S 2ⁿ dies at 35, 34, 42, 27, 49, 28, 30, 34, 27 and 34 columns for n = 8, 9, 10, 11, 12, 13, 14, 18, 21 and 22; L 2³ at 34; S 2³ L 2³ at 32. Only four had a closed walk at 43 (n = 12, 16, 17, 20), so prediction 3 **failed** (I said ten). S 2¹⁷ is dead at 200 (eight copies refused). **S 2¹⁶ is not dead at 200 columns: a strip spells it eight times** (328 samples), with no closed walk of up to three copies there. It is the one train of either component that I have not seen die.
+
+*T8, registered now: how often do real halves complete an excursion?* T6 and T7 are about what some right half can do. T8 measures what right halves do: followed exactly until they enter the trap, with the completed excursions counted (X: the gaps 25 33535555 25; Y: a gap of 4 with two 2s on each side of its excursion), for random far fields and for finite seeds. Frozen: [claudeCloud_exterior_hazard.cpp](research/wheel/claudeCloud_exterior_hazard.cpp) `670c3e73e0637cce914a133e4f65c22638896ec5338f8616d8cfa9bec642f712` (tried on 2,000 seeds of support 20 while writing it: 96% enter the trap, no excursion of X, 42 halves with one to three of Y). `Record searched:` K52 and P19 (L1569: at most two excursions of X and four of Y on every half below 2^22); K75 for the trapped statistics and their independence of the far field.
+- **(0.6)** For Y the number of halves with at least k completed excursions falls by a steady factor per excursion, between 0.03 and 0.3. **(0.6)** For X the factor is below 0.05.
+- **(0.7)** Random far fields and finite seeds of support 40 give the same factors within a factor of two.
+- *If finite seeds make clearly more excursions than random fields* (three times or more), finite support is not typical for this event, and that is a lead worth a block. *If the factors agree,* an endless stay asks a finite seed's own bulk to beat a fixed odds for ever, which is the wall in one sentence.
