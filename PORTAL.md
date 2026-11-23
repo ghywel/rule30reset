@@ -1,9 +1,9 @@
-<!-- portal-list: 2026-11-23 13:30 UTC, 401 entries, 51 portal-only -->
+<!-- portal-list: 2026-11-23 13:53 UTC, 401 entries, 51 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-23 13:30 UTC (401 entries)
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-23 13:53 UTC (401 entries)
 and kit main `8e1cc84` (K74). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
@@ -56,7 +56,7 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 |---|---|---|---|---|---|---|
 | [R30-20261023-8084e6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-8084e6) | 2026-10-23 | ours | Lean Verified, Human Verified | Every Sturmian word, of every irrational slope and intercept, is excluded as the visible right neighbour of a period-2 centre column, for every row with a leftmost black cell (`sturmian_excluded`). | An exclusion for an infinite family, which the kit has no form of. It uses Mathlib, and the kit is core Lean. | A |
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
-| [R30-20261123-6c3fa9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9) | 2026-11-23 | ours | Lean Verified | Ours (S11): at every phase, the golden half-circle word is not the eventual even-time neighbour of a clocked row with a leftmost black cell at or left of the origin. | A family exclusion at one angle, every phase. Mathlib. | L |
+| [R30-20261123-6c3fa9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9) | 2026-11-23 | ours | Lean Verified, Human Verified | Ours (S11): at every phase, the golden half-circle word is not the eventual even-time neighbour of a clocked row with a leftmost black cell at or left of the origin. | A family exclusion at one angle, every phase. Core kit patch ready for review (R94). | L |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
 ## Pending (2)

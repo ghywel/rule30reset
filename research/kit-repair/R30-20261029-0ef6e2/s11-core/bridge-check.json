@@ -1,0 +1,54 @@
+{
+  "claim": "partial",
+  "declared": [
+    {
+      "kind": "theorem",
+      "name": "GoldenRealPhaseBridge.no_eventual_real_golden_neighbour",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "GoldenRealPhaseBridge.real_phase_goldenLine",
+      "standardAxioms": true
+    }
+  ],
+  "headlines": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "GoldenRealPhaseBridge.real_phase_goldenLine",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "GoldenRealPhaseBridge.no_eventual_real_golden_neighbour",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    }
+  ],
+  "importsStatements": true,
+  "module": "RealPhaseBridge",
+  "newAxioms": [],
+  "official": [],
+  "reasons": [],
+  "replay": {
+    "constants": 8,
+    "ok": true
+  },
+  "verdict": "pass",
+  "verifiedTargets": []
+}

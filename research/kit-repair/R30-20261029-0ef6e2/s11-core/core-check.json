@@ -1,0 +1,266 @@
+{
+  "claim": "partial",
+  "declared": [
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.GoldenLine",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.LtSqrt5",
+      "standardAxioms": true
+    },
+    {
+      "kind": "inductive",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.expand",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.finite_phase",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.golden_repeats_at_scale",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.ltSqrt5_iff",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.no_eventual_golden_neighbour",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.quadratic_phase_goldenLine",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.scaleLags",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.shrink",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.unbounded_golden_repeats",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.unitAt",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Golden.families.eq_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Golden.phys.eq_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.A",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.Apos",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.B",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.Bnonneg",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.casesOn",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.ctorIdx",
+      "standardAxioms": true
+    },
+    {
+      "kind": "constructor",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.mk",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.noConfusion",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.noConfusionType",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.norm",
+      "standardAxioms": true
+    },
+    {
+      "kind": "recursor",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.rec",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.recOn",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.expand.eq_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.shrink.eq_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.unitAt.match_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.mk.inj",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.mk.injEq",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.mk.noConfusion",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.UnitScale.mk.sizeOf_spec",
+      "standardAxioms": true
+    }
+  ],
+  "headlines": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.ltSqrt5_iff",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.quadratic_phase_goldenLine",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.finite_phase",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.golden_repeats_at_scale",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.unbounded_golden_repeats",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle.no_eventual_golden_neighbour",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    }
+  ],
+  "importsStatements": true,
+  "module": "Ruliology.CellularAutomata.Rule30GoldenHalfCircle",
+  "newAxioms": [],
+  "official": [],
+  "reasons": [],
+  "replay": {
+    "constants": 245,
+    "ok": true
+  },
+  "verdict": "pass",
+  "verifiedTargets": []
+}

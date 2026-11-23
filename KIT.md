@@ -7,8 +7,8 @@ per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everyt
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 325 modules under `lean/` (43 of them certificate data) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 401 entries on 23 November. Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 325 modules under `lean/` (41 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 401 entries on 23 November (399 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 

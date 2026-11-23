@@ -1,0 +1,999 @@
+diff --git a/Rule30PrizeKit.lean b/Rule30PrizeKit.lean
+index e238fb45534c50b7345a3cd026169760b0a13631..3253667578ff555d0107af047ddb6beca28f89e9 100644
+--- a/Rule30PrizeKit.lean
++++ b/Rule30PrizeKit.lean
+@@ -18,7 +18,7 @@ Mathlib `56a005855e` (its `v4.35.0` tag), pinned by `lean-toolchain` and `lake-m
+ * **Equivalent forms.** `Rule30Equivalents` proves 120 theorems `problem1_iff_*`, for example
+   `Rule30Equivalents.BinaryIrrational.problem1_iff_irrational_binary`: Problem 1 holds iff the binary
+   number `0.c(0)c(1)c(2)…` is irrational. A proof of any of these right-hand sides proves Problem 1.
+-* **Partial results.** `import Ruliology` brings the whole catalog, 325 modules (periods 1 to 4,
++* **Partial results.** `import Ruliology` brings the whole catalog, 328 modules (periods 1 to 4,
+   black runs, Jen's theorem, barriers, finite configurations). This root does not import it, because the catalog's
+   certificate modules are slow to build; import the modules you need.
+ 
+diff --git a/lean/README.md b/lean/README.md
+index 97102e141fed9d6508b841a1b06f9cbe79116f23..4fcb5497fffba918323d661e2121dfa2fac9fe53 100644
+--- a/lean/README.md
++++ b/lean/README.md
+@@ -195,6 +195,7 @@ These modules are not in the 2026-10-15 snapshot of the catalog, and `SHA256SUMS
+ | `Rule30Rule210Clock` | 2026-11-22 | Rule 210 (`left xor (!center && right)`, `Rule30Realization.g210`) beside the period-2 clock. The one-sided question is false: in the zero-boundary encoding of `Rule30ZeroBoundary` the empty start keeps the clock for ever, and for every start that keeps it the left half is parity-sparse and evolves as rule 90's. The two-sided statement is true: no finite configuration keeps the clock `0101…` on its center column, nor has an eventually alternating center column in either phase, and neither does the seed. The proof compares a clock orbit with a parity-sparse background built from its own left row: an odd first deviation persists on its diagonal, for an even first deviation a clearing front gives a contradiction at the first initially black background gate. If all gates to its right are initially white, the background has finite support. For a background supported on `[-R, R]`, rule 90 gives a white center at time `2^n + 1` whenever `2^n > R + 1`. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI) as Rule 30 Prize submissions [R30-20261022-920c1b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261022-920c1b) and [R30-20261023-1bf4dc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-1bf4dc). | `no_finite_clock`, `no_finite_eventually_alternating`, `seed_not_eventually_alternating`, `not_Q01_210`, `parity_invariant`, `linear`, `clock_bg`, `parity_left_of_clock`, `no_finite_clock90` |
+ | `Rule30RequiredGapFactor` | 2026-11-22 | At any site of any row with a leftmost black cell, if the column is eventually a train of isolated black pulses whose white gaps are at least 9 and repeat periodically, every gap is at most 16 and the gaps 12, 10, 9 occur consecutively arbitrarily late, also read cyclically across the period's wrap and from any tick (`mandatory_factor`, `mandatory_cyclic_factor`, `mandatory_rotated_factor`, `sparse_cyclic_factor`, `sparse_rotated_factor`). The four-gap clocks (9, 9, 10, 12) and (9, 12, 10, 12) are excluded at every rotation (`no_residue_44_47`). A width-19 open-boundary certificate (`Rule30Certificates.RequiredGapFactor`, with its lemmas in `Rule30RequiredGapLogic`) and the finite-left masked Jen theorem. Builds on AIOvernight's `Rule30ResetMixtures` and `Rule30FastImage` and Lowry's `Rule30FiniteStrips`. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI) as Rule 30 Prize submission [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a). | `mandatory_factor`, `mandatory_cyclic_factor`, `mandatory_rotated_factor`, `sparse_cyclic_factor`, `sparse_rotated_factor`, `no_residue_44_47` |
+ | `Rule30ThreeGapCapture` | 2026-11-22 | Exactly ten of the 512 words of three gaps from 9 to 16 force every driven right half, at every site and age, into AIOvernight's eight-cell set G after the three blocks: (q, 16, 16) for each q, (16, 10, 15) and (16, 10, 16) (`Triple.classification`, `Triple.known_forces`). Each other word has a right row, realized on the full line, whose final window lies outside G. Once in G, the right neighbour is white on the first two white ticks of each later gap of at least 9 and black on the rest (`forever`). Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI) as Rule 30 Prize submission [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a). | `Triple.classification`, `Triple.known_forces`, `forever` |
++| `Rule30GoldenHalfCircle`, `GoldenQuadratic`, `GoldenStripCover` | 2026-11-23 | For the rotation by (√5−1)/2 coded by two half-circles, every phase is excluded as the eventual even-time right neighbour of a column that is eventually black exactly at odd times, on any row with a leftmost black cell at or left of that column. At every Pell scale from three, one of six lags q gives an interval [a,b] of agreement with 10000(b−2a−q) ≥ 999q−30000. The core statement uses the parity of an integer sequence satisfying `GoldenLine`. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI) as Rule 30 Prize submission [R30-20261123-6c3fa9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9). | `finite_phase`, `golden_repeats_at_scale`, `unbounded_golden_repeats`, `no_eventual_golden_neighbour` |
+ | `Rule30TrappedRuns` | 2026-11-23 | For every gate-trap ladder width W ≥ 16, the word 3 (55553)⁴ is excluded from sample two onward exactly when W ≥ 45. At these widths (55553)⁵ is excluded from entry. Physical right halves obey the same exclusions, and witnesses attain four closed runs at delay one and three at delay sixty. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI) as Rule 30 Prize submission [R30-20261123-71bab6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-71bab6). | `four_width_iff`, `no_four_on_lift`, `no_five_on_lift`, `four_at_width44`, `no_four_runs_of_four`, `no_five_runs_of_four`, `four_one_sample`, `three_sixty_samples` |
+ | `Rule30GapBarrier` | 2026-11-23 | The ranking barrier of `Rule30ZeroBoundaryBarriers` inside the 3/5 gap clock. Its witnesses there (`trunc n`, free bits beginning `11111`) and those of `Rule30PeriodTwoSideways.no_finite_abstract_ranking_coupled` (`c7cut`, gaps of `2`) lie outside the gate clock of `Rule30GateTrap.Q01Gap` and `Rule30GateTrapLift.Q01GapCore`. Here the witnesses are seeds whose zero-coast trace is the period-5 gate `0 1^9` repeated (`gate5Word`): it satisfies `TwoCoreOK` at every step (`gate5_twoCoreOK`) and the `B35` clock (`accept_gate5Word`, `survivesTo_of_trace_gate5`). For every lookahead `n`, no ranking through a finite abstraction of seeds decreases over every ten-step block of every seed that follows the gate for the next `n + 1` blocks (`no_finite_abstract_ranking_gate5`). The witnesses are not counterexamples: the gate is periodic. Contributed by Katip Kurtuluş with Claude (Anthropic), ChatGPT (OpenAI) and Gemini (Google). | `no_finite_abstract_ranking_gate5`, `gate5_twoCoreOK`, `gate5_witnesses`, `survivesTo_of_trace_gate5` |
+ | `Rule30GateTrapLadder` | 2026-11-23 | The gate trap at every width. A lift path of width `W` is a sequence of windows of `W` columns whose first window begins with a window of `trap` and which follows `step2` with free exterior inputs (`LiftPath`). A right half that enters the trap reads `u R` along its own windows of `W` columns (`readsLift_u`); a lift path cut to `W` columns, `16 ≤ W ≤ W'`, is again a lift path (`liftPath_take`), and it keeps the gaps `3` and `5` (`ReadsLift.gapOK`). `Q01GapLift W` (**open**: no finitely supported constrained start of the zero-boundary left half has free bits whose complement, from some step on, is read by a lift path of width `W`) follows from `Q01Gap` (`Q01GapLift_of_Q01Gap`), weakens as `W` grows (`Q01GapLift_mono`), and for every `W ≥ 16` gives `CQ01Empty` (`CQ01Empty_of_Q01GapLift`); so does its form with `TwoCoreOK` added, anchored twenty steps after entry, at step `156` for `R = ∅` (`CQ01Empty_of_Q01GapLiftCore`). The popcount form `MassDivergesLift W` (**open**) gives `Q01GapLift W` (`Q01GapLift_of_massDivergesLift`, `CQ01Empty_of_massDivergesLift`). Contributed by Katip Kurtuluş with Claude (Anthropic), ChatGPT (OpenAI) and Gemini (Google). | `CQ01Empty_of_Q01GapLift`, `CQ01Empty_of_Q01GapLiftCore`, `CQ01Empty_of_massDivergesLift`, `Q01GapLift_of_Q01Gap`, `Q01GapLift_mono`, `ladder` |
+diff --git a/lean/Ruliology.lean b/lean/Ruliology.lean
+index ec1e4e8ac171fb9645903b07bc1b5eb1f049101e..e865d7d991f09cba1e814b1c65e52fa3d768f22d 100644
+--- a/lean/Ruliology.lean
++++ b/lean/Ruliology.lean
+@@ -277,6 +277,7 @@ public import Ruliology.CellularAutomata.Rule30DensityOneHistory
+ public import Ruliology.CellularAutomata.Rule30DensityCornerHistories
+ public import Ruliology.CellularAutomata.Rule30DensityMixtures
+ public import Ruliology.CellularAutomata.Rule30TrappedRuns
++public import Ruliology.CellularAutomata.Rule30GoldenHalfCircle
+ 
+ /-!
+ # Rule 30 Prize: Lean snapshot
+diff --git a/lean/Ruliology/CellularAutomata/GoldenQuadratic.lean b/lean/Ruliology/CellularAutomata/GoldenQuadratic.lean
+new file mode 100644
+index 0000000000000000000000000000000000000000..315e0c4f9d2fd01dc545811ced62817659d10691
+--- /dev/null
++++ b/lean/Ruliology/CellularAutomata/GoldenQuadratic.lean
+@@ -0,0 +1,296 @@
++module
++
++/-! Integer quadratic arithmetic for the golden half-circle coding. The positive cone of
++ℤ[√5] is obtained by iterating the positive unit 9 + 4√5 on integer pairs. -/
++@[expose] public section
++namespace Ruliology.CellularAutomata.Golden
++
++structure Q5 where
++  a : Int
++  b : Int
++  deriving DecidableEq, Repr
++
++namespace Q5
++theorem ext' {x y : Q5} (h : x.a = y.a) (k : x.b = y.b) : x = y := by cases x; cases y; simp_all
++
++instance : Add Q5 := ⟨fun x y => ⟨x.a + y.a, x.b + y.b⟩⟩
++instance : Neg Q5 := ⟨fun x => ⟨-x.a, -x.b⟩⟩
++instance : Sub Q5 := ⟨fun x y => ⟨x.a - y.a, x.b - y.b⟩⟩
++instance : Mul Q5 := ⟨fun x y => ⟨x.a * y.a + 5 * (x.b * y.b), x.a * y.b + x.b * y.a⟩⟩
++instance : NatCast Q5 := ⟨fun n => ⟨n, 0⟩⟩
++instance : IntCast Q5 := ⟨fun n => ⟨n, 0⟩⟩
++instance (n : Nat) : OfNat Q5 n := ⟨⟨n, 0⟩⟩
++instance : SMul Nat Q5 := ⟨fun n x => (n : Q5) * x⟩
++instance : SMul Int Q5 := ⟨fun n x => (n : Q5) * x⟩
++def npow (x : Q5) : Nat → Q5 | 0 => 1 | n + 1 => npow x n * x
++instance : HPow Q5 Nat Q5 := ⟨npow⟩
++
++@[simp] theorem add_a (x y : Q5) : (x + y).a = x.a + y.a := rfl
++@[simp] theorem add_b (x y : Q5) : (x + y).b = x.b + y.b := rfl
++@[simp] theorem neg_a (x : Q5) : (-x).a = -x.a := rfl
++@[simp] theorem neg_b (x : Q5) : (-x).b = -x.b := rfl
++@[simp] theorem sub_a (x y : Q5) : (x - y).a = x.a - y.a := rfl
++@[simp] theorem sub_b (x y : Q5) : (x - y).b = x.b - y.b := rfl
++@[simp] theorem mul_a (x y : Q5) : (x * y).a = x.a * y.a + 5 * (x.b * y.b) := rfl
++@[simp] theorem mul_b (x y : Q5) : (x * y).b = x.a * y.b + x.b * y.a := rfl
++@[simp] theorem ofNat_a (n : Nat) : (OfNat.ofNat n : Q5).a = n := rfl
++@[simp] theorem ofNat_b (n : Nat) : (OfNat.ofNat n : Q5).b = 0 := rfl
++@[simp] theorem zero_a : (0 : Q5).a = 0 := rfl
++@[simp] theorem zero_b : (0 : Q5).b = 0 := rfl
++@[simp] theorem one_a : (1 : Q5).a = 1 := rfl
++@[simp] theorem one_b : (1 : Q5).b = 0 := rfl
++@[simp] theorem million_a : (1000000 : Q5).a = 1000000 := rfl
++@[simp] theorem million_b : (1000000 : Q5).b = 0 := rfl
++@[simp] theorem natCast_a (n : Nat) : ((n : Q5)).a = n := rfl
++@[simp] theorem natCast_b (n : Nat) : ((n : Q5)).b = 0 := rfl
++@[simp] theorem intCast_a (n : Int) : ((n : Q5)).a = n := rfl
++@[simp] theorem intCast_b (n : Int) : ((n : Q5)).b = 0 := rfl
++
++instance : Lean.Grind.CommRing Q5 where
++  add_zero x := ext' (by simp) (by simp)
++  add_comm x y := ext' (by simp; omega) (by simp; omega)
++  add_assoc x y z := ext' (by simp; omega) (by simp; omega)
++  mul_assoc x y z := ext' (by simp; grind) (by simp; grind)
++  mul_one x := ext' (by simp) (by simp)
++  one_mul x := ext' (by simp) (by simp)
++  left_distrib x y z := ext' (by simp; grind) (by simp; grind)
++  right_distrib x y z := ext' (by simp; grind) (by simp; grind)
++  zero_mul x := ext' (by simp) (by simp)
++  mul_zero x := ext' (by simp) (by simp)
++  pow_zero _ := rfl
++  pow_succ _ _ := rfl
++  ofNat_succ n := ext' (by show ((n + 1 : Nat) : Int) = (n : Int) + 1; omega) (by show (0 : Int) = 0 + 0; rfl)
++  neg_add_cancel x := ext' (by simp; omega) (by simp; omega)
++  sub_eq_add_neg x y := ext' (by simp; omega) (by simp; omega)
++  neg_zsmul i x := ext' (by show (((-i : Int) : Q5) * x).a = (-((i : Q5) * x)).a; simp; grind)
++                        (by show (((-i : Int) : Q5) * x).b = (-((i : Q5) * x)).b; simp; grind)
++  intCast_neg i := ext' (by simp) (by simp)
++  mul_comm x y := ext' (by simp; grind) (by simp; grind)
++
++/-- Multiplication by the unit 9 + 4 sqrt 5. -/
++def up (z : Q5) : Q5 := ⟨9 * z.a + 20 * z.b, 4 * z.a + 9 * z.b⟩
++def it : Nat → Q5 → Q5 | 0, z => z | k + 1, z => up (it k z)
++/-- Both coefficients are nonnegative after enough multiplications by the unit. -/
++def nn (z : Q5) : Prop := ∃ k, 0 ≤ (it k z).a ∧ 0 ≤ (it k z).b
++
++theorem it_up : ∀ (k : Nat) (z : Q5), it k (up z) = up (it k z)
++  | 0, _ => rfl
++  | k + 1, z => congrArg up (it_up k z)
++theorem it_it (j k : Nat) (z : Q5) : it j (it k z) = it (j + k) z := by
++  induction j with
++  | zero => simp [it]
++  | succ j ih => rw [show j + 1 + k = (j + k) + 1 by omega]; simp only [it, ih]
++theorem keep {z : Q5} (h : 0 ≤ z.a ∧ 0 ≤ z.b) : ∀ j, 0 ≤ (it j z).a ∧ 0 ≤ (it j z).b
++  | 0 => h
++  | j + 1 => by have := keep h j; simp only [it, up]; omega
++theorem it_add (k : Nat) (x y : Q5) : it k (x + y) = it k x + it k y := by
++  induction k with
++  | zero => rfl
++  | succ k ih => simp only [it, ih]; exact ext' (by simp [up]; omega) (by simp [up]; omega)
++theorem it_neg (k : Nat) (x : Q5) : it k (-x) = -it k x := by
++  induction k with
++  | zero => rfl
++  | succ k ih => simp only [it, ih]; exact ext' (by simp [up]; omega) (by simp [up]; omega)
++theorem it_mul_left (k : Nat) (x y : Q5) : it k x * y = it k (x * y) := by
++  induction k with
++  | zero => rfl
++  | succ k ih => simp only [it, ← ih]; exact ext' (by simp [up]; grind) (by simp [up]; grind)
++theorem it_mul (j k : Nat) (x y : Q5) : it j x * it k y = it (j + k) (x * y) := by
++  rw [it_mul_left, Lean.Grind.CommSemiring.mul_comm x, it_mul_left, it_it, Lean.Grind.CommSemiring.mul_comm y]
++
++theorem nn_add {x y : Q5} : nn x → nn y → nn (x + y) := by
++  rintro ⟨j, hj⟩ ⟨k, hk⟩
++  refine ⟨j + k, ?_⟩
++  have h1 := keep hj k; have h2 := keep hk j
++  rw [it_it] at h1 h2; rw [it_add, show j + k = k + j by omega]
++  rw [show j + k = k + j by omega] at h2; simp; omega
++theorem nn_mul {x y : Q5} : nn x → nn y → nn (x * y) := by
++  rintro ⟨j, hj⟩ ⟨k, hk⟩
++  refine ⟨j + k, ?_⟩
++  rw [← it_mul]; simp
++  have h1 := Int.mul_nonneg hj.1 hk.1; have h2 := Int.mul_nonneg hj.2 hk.2
++  have h3 := Int.mul_nonneg hj.1 hk.2; have h4 := Int.mul_nonneg hj.2 hk.1
++  omega
++theorem nn_total : ∀ (n : Nat) (z : Q5), z.a.natAbs ≤ n → nn z ∨ nn (-z)
++  | n, z, hn => by
++    by_cases h1 : 0 ≤ z.a ∧ 0 ≤ z.b
++    · exact Or.inl ⟨0, h1⟩
++    by_cases h2 : z.a ≤ 0 ∧ z.b ≤ 0
++    · exact Or.inr ⟨0, by simp [it]; omega⟩
++    have back : nn (up z) ∨ nn (-up z) → nn z ∨ nn (-z) := by
++      rintro (⟨k, h⟩ | ⟨k, h⟩)
++      · exact Or.inl ⟨k + 1, by rw [it_up] at h; exact h⟩
++      · exact Or.inr ⟨k + 1, by rw [it_neg, it_up] at h; rw [it_neg]; exact h⟩
++    apply back
++    cases n with
++    | zero => omega
++    | succ n =>
++      by_cases h3 : 0 ≤ (up z).a ∧ 0 ≤ (up z).b
++      · exact Or.inl ⟨0, h3⟩
++      by_cases h4 : (up z).a ≤ 0 ∧ (up z).b ≤ 0
++      · exact Or.inr ⟨0, by simp [it]; omega⟩
++      exact nn_total n (up z) (by simp only [up] at *; omega)
++theorem nn_antisymm {z : Q5} : nn z → nn (-z) → z = 0 := by
++  rintro ⟨j, hj⟩ ⟨k, hk⟩
++  have h1 := keep hj k; have h2 := keep hk j
++  rw [it_it] at h1 h2; rw [it_neg, show j + k = k + j by omega] at h2
++  simp at h2
++  have hz : ∀ m, (it m z).a = 0 → (it m z).b = 0 → z.a = 0 ∧ z.b = 0 := by
++    intro m; induction m with
++    | zero => exact fun p q => ⟨p, q⟩
++    | succ m ih => intro p q; simp only [it, up] at p q; exact ih (by omega) (by omega)
++  obtain ⟨p, q⟩ := hz (k + j) (by omega) (by omega)
++  exact ext' (by simpa using p) (by simpa using q)
++theorem nn_pos_mul {x y : Q5} (hx : nn x) (hy : nn y) (nx : x ≠ 0) (ny : y ≠ 0) : x * y ≠ 0 := by
++  have strict : ∀ {z : Q5}, nn z → z ≠ 0 → ∃ k, 0 < (it k z).a ∧ 0 < (it k z).b := by
++    rintro z ⟨k, h⟩ hz
++    by_cases hp : 0 < (it k z).a ∨ 0 < (it k z).b
++    · exact ⟨k + 1, by simp only [it, up]; omega⟩
++    · exact absurd (nn_antisymm ⟨k, h⟩ ⟨k, by rw [it_neg]; simp; omega⟩) hz
++  obtain ⟨j, hj⟩ := strict hx nx; obtain ⟨k, hk⟩ := strict hy ny
++  intro e
++  have h := it_mul j k x y
++  rw [e] at h
++  have zero_it : ∀ m, it m 0 = (0 : Q5) := by
++    intro m; induction m with
++    | zero => rfl
++    | succ m ih => simp only [it, ih]; rfl
++  rw [zero_it] at h
++  have ha := congrArg Q5.a h
++  simp at ha
++  have := Int.mul_pos hj.1 hk.1; have := Int.mul_pos hj.2 hk.2
++  omega
++
++instance : LE Q5 := ⟨fun x y => nn (y - x)⟩
++instance : LT Q5 := ⟨fun x y => x ≤ y ∧ ¬ y ≤ x⟩
++theorem le_def {x y : Q5} : x ≤ y ↔ nn (y - x) := Iff.rfl
++theorem swap (x y : Q5) : x - y = -(y - x) := ext' (by simp; omega) (by simp; omega)
++
++instance : Std.IsLinearOrder Q5 where
++  le_refl x := ⟨0, by simp [it]⟩
++  le_trans x y z h k := by
++    have := nn_add h k
++    rw [show y - x + (z - y) = z - x from ext' (by simp; omega) (by simp; omega)] at this; exact this
++  le_antisymm x y h k := by
++    rw [le_def, swap] at k
++    have e := nn_antisymm h k
++    exact ext' (by have := congrArg Q5.a e; simp at this; omega) (by have := congrArg Q5.b e; simp at this; omega)
++  le_total x y := by
++    rcases nn_total _ (y - x) (Nat.le_refl _) with h | h
++    · exact Or.inl h
++    · exact Or.inr (by rw [le_def, swap]; exact h)
++instance : Std.LawfulOrderLT Q5 where lt_iff _ _ := Iff.rfl
++
++theorem pos_sub {x y : Q5} (h : x < y) : nn (y - x) ∧ y - x ≠ 0 := by
++  refine ⟨h.1, fun e => h.2 ?_⟩
++  rw [le_def, swap, e]; exact ⟨0, by simp [it]⟩
++theorem mul_lt {x y c : Q5} (h : x < y) (hc : 0 < c) : c * x < c * y := by
++  obtain ⟨p, q⟩ := pos_sub h
++  obtain ⟨r, t⟩ := pos_sub hc
++  rw [show c - 0 = c from ext' (by simp) (by simp)] at r t
++  have e : c * y - c * x = c * (y - x) := ext' (by simp; grind) (by simp; grind)
++  refine ⟨by rw [le_def, e]; exact nn_mul r p, fun k => ?_⟩
++  rw [le_def, swap, e] at k
++  exact nn_pos_mul r p t q (nn_antisymm (nn_mul r p) k)
++
++instance : Lean.Grind.OrderedRing Q5 where
++  add_le_left_iff {x y} c := by
++    rw [le_def, le_def, show y + c - (x + c) = y - x from ext' (by simp; omega) (by simp; omega)]
++  zero_lt_one := ⟨⟨0, by decide⟩, fun h => by
++    have := nn_antisymm (z := (1 : Q5)) ⟨0, by decide⟩ h
++    exact absurd this (by decide)⟩
++  mul_lt_mul_of_pos_left := mul_lt
++  mul_lt_mul_of_pos_right {a b c} h hc := by
++    rw [Lean.Grind.CommSemiring.mul_comm a c, Lean.Grind.CommSemiring.mul_comm b c]; exact mul_lt h hc
++
++/-- sqrt 5, its square and the rational enclosure S11's table uses. -/
++def r5 : Q5 := ⟨0, 1⟩
++theorem r5_sq : r5 * r5 = 5 := by decide
++theorem r5_lo : (2236067 : Q5) ≤ 1000000 * r5 := ⟨6, by decide⟩
++theorem r5_hi : 1000000 * r5 ≤ (2236069 : Q5) := ⟨6, by decide⟩
++
++/-- S11's `below_sound`: an affine integer form nonnegative at both ends of the enclosure is nonnegative at sqrt 5. -/
++theorem below_sound (x y : Int) (h1 : 0 ≤ 1000000 * x + 2236067 * y) (h2 : 0 ≤ 1000000 * x + 2236069 * y) :
++    (0 : Q5) ≤ ⟨x, y⟩ := by
++  have key : ∀ (m e : Int) (z w : Q5), 0 ≤ m → nn w → (1000000 : Q5) * z = (e : Q5) + (m : Q5) * w → 0 ≤ e → nn z := by
++    intro m e z w hm hw hz he
++    rcases nn_total _ z (Nat.le_refl _) with h | h
++    · exact h
++    · have hp : nn ((e : Q5) + (m : Q5) * w) :=
++        nn_add ⟨0, by simp [it]; omega⟩ (nn_mul ⟨0, by simp [it]; omega⟩ hw)
++      rw [← hz] at hp
++      have hq : nn ((1000000 : Q5) * -z) := nn_mul ⟨0, by decide⟩ h
++      have e0 := nn_antisymm hp (by rw [show -(1000000 * z) = (1000000 : Q5) * -z from ext' (by simp; grind) (by simp; grind)]; exact hq)
++      have ha := congrArg Q5.a e0; have hb := congrArg Q5.b e0
++      simp at ha hb
++      rw [show z = 0 from ext' (by simp; omega) (by simp; omega)]; exact ⟨0, by decide⟩
++  show nn (⟨x, y⟩ - 0)
++  rw [show (⟨x, y⟩ - 0 : Q5) = ⟨x, y⟩ from ext' (by simp) (by simp)]
++  by_cases hy : 0 ≤ y
++  · exact key y (1000000 * x + 2236067 * y) _ ⟨-2236067, 1000000⟩ hy ⟨6, by decide⟩
++      (ext' (by simp; omega) (by simp; omega)) h1
++  · exact key (-y) (1000000 * x + 2236069 * y) _ ⟨2236069, -1000000⟩ (by omega) ⟨6, by decide⟩
++      (ext' (by simp; omega) (by simp; omega)) h2
++
++
++
++open Lean.Grind
++
++theorem cast_le {i j : Int} (h : i ≤ j) : (i : Q5) ≤ (j : Q5) :=
++  ⟨0, by simp [it]; omega⟩
++
++theorem cast_lt {i j : Int} (h : i < j) : (i : Q5) < (j : Q5) := by
++  refine ⟨cast_le (by omega), fun k => ?_⟩
++  have := OrderedRing.le_of_intCast_le_intCast _ _ k
++  omega
++
++theorem uncast {i j : Int} (h : (i : Q5) ≤ (j : Q5)) : i ≤ j :=
++  OrderedRing.le_of_intCast_le_intCast _ _ h
++
++theorem repr' (p : Q5) : p = (p.a : Q5) + (p.b : Q5) * r5 :=
++  ext' (by simp [r5]) (by simp [r5])
++
++theorem root_bounds : 2 < r5 ∧ 2*r5 < 5 := by
++  have := r5_lo; have := r5_hi; grind
++
++/-- Integer part in the embedded, Archimedean order. -/
++theorem exists_floor (p : Q5) : ∃ m : Int, (m : Q5) ≤ p ∧ p < (m : Q5) + 1 := by
++  let lo := p.a - 3 * p.b.natAbs
++  let hi := p.a + 3 * p.b.natAbs
++  have base : (lo : Q5) ≤ p ∧ p < (hi : Q5) + 1 := by
++    constructor
++    · show nn (p - (lo : Q5))
++      exact ⟨1, by simp [it, up, lo]; omega⟩
++    · apply Std.lt_of_le_of_lt (b := (hi : Q5))
++      · show nn ((hi : Q5) - p)
++        exact ⟨1, by simp [it, up, hi]; omega⟩
++      · grind
++  have scan (n : Nat) (hne : p < ((lo + n : Int) : Q5) + 1) :
++      ∃ m : Int, (m : Q5) ≤ p ∧ p < (m : Q5) + 1 := by
++    induction n with
++    | zero => exact ⟨lo, base.1, by simpa using hne⟩
++    | succ n ih =>
++      by_cases h : p < ((lo + n : Int) : Q5) + 1
++      · exact ih h
++      · refine ⟨lo + (n+1 : Nat), ?_, hne⟩
++        have eq : ((lo + (n+1 : Nat) : Int) : Q5) = ((lo + n : Int) : Q5) + 1 :=
++          ext' (by simp; omega) (by simp)
++        grind
++  exact scan (hi-lo).toNat (by simpa only [show lo + ((hi-lo).toNat : Int) = hi by dsimp [lo,hi]; omega] using base.2)
++
++noncomputable def floor (p : Q5) : Int := Classical.choose (exists_floor p)
++theorem floor_spec (p : Q5) : ((floor p : Int) : Q5) ≤ p ∧ p < ((floor p : Int) : Q5) + 1 :=
++  Classical.choose_spec (exists_floor p)
++
++theorem floor_unique (p : Q5) (m : Int) (h : (m : Q5) ≤ p ∧ p < (m : Q5)+1) : floor p = m := by
++  have h' := floor_spec p
++  have step (i j : Int) (hlt : i < j) : (i : Q5) + 1 ≤ (j : Q5) :=
++    cast_le (i := i+1) (by omega) |> fun k => by simpa only [Ring.intCast_add, Ring.intCast_one] using k
++  by_cases h₁ : floor p < m
++  · have := step _ _ h₁; grind
++  by_cases h₂ : m < floor p
++  · have := step _ _ h₂; grind
++  omega
++
++end Q5
++end Ruliology.CellularAutomata.Golden
+diff --git a/lean/Ruliology/CellularAutomata/GoldenStripCover.lean b/lean/Ruliology/CellularAutomata/GoldenStripCover.lean
+new file mode 100644
+index 0000000000000000000000000000000000000000..c507c4e8c60cc893f004fae86bc04ddd0006c284
+--- /dev/null
++++ b/lean/Ruliology/CellularAutomata/GoldenStripCover.lean
+@@ -0,0 +1,156 @@
++module
++
++public import Ruliology.CellularAutomata.GoldenQuadratic
++
++/-! Finite certificate for the six golden lags. At each intermediate integer height
++the recorded integer separates the lattice points below the strip from those above it. -/
++@[expose] public section
++namespace Ruliology.CellularAutomata.Golden
++open Q5 Lean.Grind
++
++def phys (p : Q5) : Q5 := ⟨-p.a, p.b⟩
++
++def families : List Q5 := [⟨-3,1⟩, ⟨-4,2⟩, ⟨-7,3⟩, ⟨-11,5⟩, ⟨-18,8⟩, ⟨-29,13⟩]
++
++def below (p r : Q5) : Bool :=
++  let t := r - p
++  decide (0 ≤ 1000000*t.a + 2236067*t.b ∧ 0 ≤ 1000000*t.a + 2236069*t.b)
++
++private theorem sound {p r : Q5} (h : below p r = true) : p ≤ r := by
++  have hh := _root_.of_decide_eq_true h
++  have h' := Q5.below_sound _ _ hh.1 hh.2
++  change (0 : Q5) ≤ r-p at h'
++  grind
++
++def low (e : Q5) : Q5 := if below 0 (-e) then 0 else -e
++def high (e : Q5) : Q5 := if below 0 (-e) then -e else 0
++def crosses (e s p : Q5) : Prop := low e ≤ s+p ∧ s+p < high e
++
++def consecutive (e p r s : Q5) : Prop :=
++  p.b < r.b ∧ crosses e s p ∧ crosses e s r ∧
++    ∀ v : Q5, p.b < v.b → v.b < r.b → ¬crosses e s v
++
++private structure Gap where
++  e : Q5
++  p : Q5
++  r : Q5
++  skips : List Int
++
++private def skipsOK (l h lo hi : Q5) (stop b : Int) : List Int → Bool
++  | [] => b == stop
++  | k :: ks => below (h + ⟨k-1,b⟩) lo && below hi (l + ⟨k,b⟩) &&
++      skipsOK l h lo hi stop (b+1) ks
++
++private theorem skips_sound {s l h lo hi : Q5} (hs : l ≤ s ∧ s < h)
++    (stop b : Int) (ks : List Int) (ok : skipsOK l h lo hi stop b ks = true)
++    (v : Q5) (hb : b ≤ v.b ∧ v.b < stop) :
++    ¬ (lo ≤ s+v ∧ s+v < hi) := by
++  induction ks generalizing b with
++  | nil => simp [skipsOK] at ok; omega
++  | cons k ks ih =>
++    simp only [skipsOK, Bool.and_eq_true] at ok
++    by_cases he : b = v.b
++    · subst b
++      by_cases hk : k ≤ v.a
++      · have hh := sound ok.1.2
++        have hc : (⟨k,v.b⟩ : Q5) ≤ v := ⟨0, by simp [it]; omega⟩
++        grind
++      · have hh := sound ok.1.1
++        have hc : v ≤ (⟨k-1,v.b⟩ : Q5) := ⟨0, by simp [it]; omega⟩
++        grind
++    · exact ih (b+1) ok.2 ⟨by omega,hb.2⟩
++
++private def inside (l h lo hi p : Q5) := below lo (l+p) && below (h+p) hi
++private def gapOK (l h : Q5) (g : Gap) : Bool :=
++  decide (g.e ∈ families ∧ g.p.b < g.r.b ∧ g.r.b ≤ 100) &&
++    inside l h (low g.e) (high g.e) g.p && inside l h (low g.e) (high g.e) g.r &&
++    skipsOK l h (low g.e) (high g.e) g.r.b (g.p.b+1) g.skips
++
++private theorem gap_sound {l h s : Q5} {g : Gap} (hs : l ≤ s ∧ s < h)
++    (ok : gapOK l h g = true) : g.e ∈ families ∧ g.r.b ≤ 100 ∧ consecutive g.e g.p g.r s := by
++  simp only [gapOK, Bool.and_eq_true, decide_eq_true_eq] at ok
++  obtain ⟨⟨⟨⟨hm,hb,hrb⟩,hp⟩,hr⟩,hk⟩ := ok
++  have mem (p : Q5) (hin : inside l h (low g.e) (high g.e) p = true) : crosses g.e s p := by
++    simp only [inside,Bool.and_eq_true] at hin
++    have := sound hin.1; have := sound hin.2; unfold crosses; grind
++  exact ⟨hm,hrb,hb,mem _ hp,mem _ hr,fun v a b =>
++    skips_sound hs _ _ _ hk v ⟨by omega,b⟩⟩
++
++private def lower (g : Gap) := 11*phys g.e - 10*phys g.r
++private def upper (g : Gap) := 10*(phys g.r - 2*phys g.p) - 11*phys g.e
++def Witness (s z : Q5) : Prop :=
++  ∃ e ∈ families, ∃ p r, r.b ≤ 100 ∧ consecutive e p r s ∧
++    11*phys e ≤ 10*(z+phys r) ∧ 11*phys e ≤ 10*(phys r-2*phys p-z)
++
++private def chain (l h start : Q5) : List Gap → Bool
++  | [] => below 50 start
++  | g :: gs => gapOK l h g && below (lower g) start && chain l h (upper g) gs
++
++private theorem chain_sound {s z l h : Q5} (hs : l ≤ s ∧ s < h) (start : Q5) (gs : List Gap)
++    (ok : chain l h start gs = true) (hz : start < 10*z ∧ 10*z ≤ 50) : Witness s z := by
++  induction gs generalizing start with
++  | nil => have := sound ok; grind
++  | cons g gs ih =>
++    simp only [chain,Bool.and_eq_true] at ok
++    by_cases ha : 10*z ≤ upper g
++    · obtain ⟨hm,hb,hg⟩ := gap_sound hs ok.1.1
++      have hf := sound ok.1.2
++      unfold upper at ha; unfold lower at hf
++      exact ⟨g.e,hm,g.p,g.r,hb,hg,by grind,by grind⟩
++    · exact ih _ ok.2 ⟨by grind,hz.2⟩
++
++private structure Row where
++  stop : Q5
++  gaps : List Gap
++private def cover (l : Q5) : List Row → Bool
++  | [] => below 1 l
++  | row :: rs => chain l row.stop (-10) row.gaps && cover row.stop rs
++
++private theorem cover_sound {s z : Q5} (hs : s < 1) (hz : -1 < z ∧ z ≤ 5) (l : Q5) (rs : List Row)
++    (hl : l ≤ s) (ok : cover l rs = true) : Witness s z := by
++  induction rs generalizing l with
++  | nil => have := sound ok; grind
++  | cons r rs ih =>
++    simp only [cover,Bool.and_eq_true] at ok
++    by_cases h : s < r.stop
++    · exact chain_sound ⟨hl,h⟩ _ _ ok.1 (by grind)
++    · exact ih _ (by grind) ok.2
++
++private def rows : List Row := [
++  ⟨⟨47, -21⟩, [⟨⟨-18, 8⟩, ⟨0, 0⟩, ⟨-29, 13⟩, [-2, -4, -6, -8, -11, -13, -15, -17, -20, -22, -24, -26]⟩]⟩,
++  ⟨⟨9, -4⟩, [⟨⟨-18, 8⟩, ⟨0, 0⟩, ⟨-38, 17⟩, [-2, -4, -6, -8, -11, -13, -15, -17, -20, -22, -24, -26, -29, -31, -33, -35]⟩]⟩,
++  ⟨⟨18, -8⟩, [⟨⟨-11, 5⟩, ⟨2, -1⟩, ⟨-18, 8⟩, [0, -2, -4, -6, -9, -11, -13, -15]⟩]⟩,
++  ⟨⟨27, -12⟩, [⟨⟨-7, 3⟩, ⟨0, 0⟩, ⟨-9, 4⟩, [-2, -4, -6]⟩,
++      ⟨⟨-4, 2⟩, ⟨2, -1⟩, ⟨-5, 2⟩, [0, -2]⟩]⟩,
++  ⟨⟨36, -16⟩, [⟨⟨-29, 13⟩, ⟨2, -1⟩, ⟨-36, 16⟩, [0, -2, -4, -6, -9, -11, -13, -15, -18, -20, -22, -24, -27, -29, -31, -33]⟩]⟩,
++  ⟨⟨-2, 1⟩, [⟨⟨-18, 8⟩, ⟨11, -5⟩, ⟨-27, 12⟩, [9, 7, 5, 3, 0, -2, -4, -6, -9, -11, -13, -15, -18, -20, -22, -24]⟩]⟩,
++  ⟨⟨45, -20⟩, [⟨⟨-18, 8⟩, ⟨2, -1⟩, ⟨-27, 12⟩, [0, -2, -4, -6, -9, -11, -13, -15, -18, -20, -22, -24]⟩]⟩,
++  ⟨⟨7, -3⟩, [⟨⟨-18, 8⟩, ⟨2, -1⟩, ⟨-36, 16⟩, [0, -2, -4, -6, -9, -11, -13, -15, -18, -20, -22, -24, -27, -29, -31, -33]⟩]⟩,
++  ⟨⟨16, -7⟩, [⟨⟨-11, 5⟩, ⟨4, -2⟩, ⟨-16, 7⟩, [2, 0, -2, -4, -7, -9, -11, -13]⟩]⟩,
++  ⟨⟨25, -11⟩, [⟨⟨-11, 5⟩, ⟨-5, 2⟩, ⟨-25, 11⟩, [-7, -9, -11, -13, -16, -18, -20, -22]⟩]⟩,
++  ⟨⟨34, -15⟩, [⟨⟨-29, 13⟩, ⟨4, -2⟩, ⟨-34, 15⟩, [2, 0, -2, -4, -7, -9, -11, -13, -16, -18, -20, -22, -25, -27, -29, -31]⟩]⟩,
++  ⟨⟨-4, 2⟩, [⟨⟨-18, 8⟩, ⟨13, -6⟩, ⟨-25, 11⟩, [11, 9, 7, 5, 2, 0, -2, -4, -7, -9, -11, -13, -16, -18, -20, -22]⟩]⟩,
++  ⟨⟨43, -19⟩, [⟨⟨-18, 8⟩, ⟨4, -2⟩, ⟨-25, 11⟩, [2, 0, -2, -4, -7, -9, -11, -13, -16, -18, -20, -22]⟩]⟩,
++  ⟨⟨5, -2⟩, [⟨⟨-18, 8⟩, ⟨4, -2⟩, ⟨-34, 15⟩, [2, 0, -2, -4, -7, -9, -11, -13, -16, -18, -20, -22, -25, -27, -29, -31]⟩]⟩,
++  ⟨⟨14, -6⟩, [⟨⟨-11, 5⟩, ⟨6, -3⟩, ⟨-14, 6⟩, [4, 2, 0, -2, -5, -7, -9, -11]⟩]⟩,
++  ⟨⟨23, -10⟩, [⟨⟨-11, 5⟩, ⟨-3, 1⟩, ⟨-23, 10⟩, [-5, -7, -9, -11, -14, -16, -18, -20]⟩]⟩,
++  ⟨⟨32, -14⟩, [⟨⟨-3, 1⟩, ⟨0, 0⟩, ⟨-5, 2⟩, [-2]⟩,
++      ⟨⟨-29, 13⟩, ⟨6, -3⟩, ⟨-32, 14⟩, [4, 2, 0, -2, -5, -7, -9, -11, -14, -16, -18, -20, -23, -25, -27, -29]⟩]⟩,
++  ⟨⟨-6, 3⟩, [⟨⟨-18, 8⟩, ⟨15, -7⟩, ⟨-23, 10⟩, [13, 11, 9, 7, 4, 2, 0, -2, -5, -7, -9, -11, -14, -16, -18, -20]⟩]⟩,
++  ⟨⟨41, -18⟩, [⟨⟨-18, 8⟩, ⟨6, -3⟩, ⟨-23, 10⟩, [4, 2, 0, -2, -5, -7, -9, -11, -14, -16, -18, -20]⟩]⟩,
++  ⟨⟨3, -1⟩, [⟨⟨-18, 8⟩, ⟨6, -3⟩, ⟨-32, 14⟩, [4, 2, 0, -2, -5, -7, -9, -11, -14, -16, -18, -20, -23, -25, -27, -29]⟩]⟩,
++  ⟨⟨50, -22⟩, [⟨⟨-18, 8⟩, ⟨-3, 1⟩, ⟨-32, 14⟩, [-5, -7, -9, -11, -14, -16, -18, -20, -23, -25, -27, -29]⟩]⟩,
++  ⟨⟨12, -5⟩, [⟨⟨-18, 8⟩, ⟨-3, 1⟩, ⟨-41, 18⟩, [-5, -7, -9, -11, -14, -16, -18, -20, -23, -25, -27, -29, -32, -34, -36, -38]⟩]⟩,
++  ⟨⟨21, -9⟩, [⟨⟨-11, 5⟩, ⟨-1, 0⟩, ⟨-21, 9⟩, [-3, -5, -7, -9, -12, -14, -16, -18]⟩]⟩,
++  ⟨⟨30, -13⟩, [⟨⟨-4, 2⟩, ⟨-1, 0⟩, ⟨-8, 3⟩, [-3, -5]⟩,
++      ⟨⟨-3, 1⟩, ⟨2, -1⟩, ⟨-3, 1⟩, [0]⟩]⟩,
++  ⟨⟨-8, 4⟩, [⟨⟨-18, 8⟩, ⟨17, -8⟩, ⟨-21, 9⟩, [15, 13, 11, 9, 6, 4, 2, 0, -3, -5, -7, -9, -12, -14, -16, -18]⟩]⟩,
++  ⟨⟨39, -17⟩, [⟨⟨-18, 8⟩, ⟨8, -4⟩, ⟨-21, 9⟩, [6, 4, 2, 0, -3, -5, -7, -9, -12, -14, -16, -18]⟩]⟩,
++  ⟨⟨1, 0⟩, [⟨⟨-18, 8⟩, ⟨8, -4⟩, ⟨-30, 13⟩, [6, 4, 2, 0, -3, -5, -7, -9, -12, -14, -16, -18, -21, -23, -25, -27]⟩]⟩]
++
++private theorem rows_pass : cover 0 rows = true := by decide
++
++theorem golden_strip_cover (s z : Q5) (hs : 0 ≤ s ∧ s < 1) (hz : -1 < z ∧ z ≤ 5) :
++    Witness s z := cover_sound hs.2 hz 0 rows hs.1 rows_pass
++
++end Ruliology.CellularAutomata.Golden
+diff --git a/lean/Ruliology/CellularAutomata/Rule30GoldenHalfCircle.lean b/lean/Ruliology/CellularAutomata/Rule30GoldenHalfCircle.lean
+new file mode 100644
+index 0000000000000000000000000000000000000000..177da61192a470e76e85dde469c4308f1aeb92ec
+--- /dev/null
++++ b/lean/Ruliology/CellularAutomata/Rule30GoldenHalfCircle.lean
+@@ -0,0 +1,492 @@
++module
++
++public import Ruliology.CellularAutomata.GoldenStripCover
++public import Ruliology.CellularAutomata.Rule30FiniteMaskedJen
++
++/-! Repetitions of the golden half-circle word at all phases and the resulting
++exclusion for the even-time right neighbour of an eventual Rule 30 clock. -/
++@[expose] public section
++namespace Ruliology.CellularAutomata.Rule30GoldenHalfCircle
++open Golden Golden.Q5 Lean.Grind
++
++structure UnitScale where
++  A : Int
++  B : Int
++  norm : A*A - 5*B*B = 1
++  Apos : 0 < A
++  Bnonneg : 0 ≤ B
++
++def unitAt : Nat → UnitScale
++  | 0 => ⟨1,0,by decide,by decide,by decide⟩
++  | n+1 =>
++    let u := unitAt n
++    ⟨9*u.A+20*u.B, 4*u.A+9*u.B, by have := u.norm; grind,
++      by have := u.Apos; have := u.Bnonneg; omega, by have := u.Apos; have := u.Bnonneg; omega⟩
++
++private theorem large (n : Nat) : (n:Int)+1 ≤ (unitAt n).A := by
++  induction n with
++  | zero => decide
++  | succ n ih =>
++    change (_:Int) ≤ 9*(unitAt n).A+20*(unitAt n).B
++    have := (unitAt n).Bnonneg; omega
++
++def expand (u : UnitScale) : Q5 := ⟨u.A,u.B⟩
++def shrink (u : UnitScale) : Q5 := ⟨u.A,-u.B⟩
++
++private theorem unit_prod (u : UnitScale) : shrink u * expand u = 1 :=
++  ext' (by simp [shrink,expand]; have := u.norm; grind) (by simp [shrink,expand]; grind)
++
++private theorem expansion (u : UnitScale) : expand u = (u.A : Q5)+(u.B : Q5)*r5 := repr' _
++private theorem scale_bounds (u : UnitScale) (hu : 1000 ≤ u.A) :
++    0 < shrink u ∧ 1000*shrink u ≤ 1 ∧ 0 ≤ shrink u * shrink u ∧
++    1000000*(shrink u*shrink u) ≤ 1 := by
++  have ha : (1000 : Q5) ≤ expand u := ⟨0,by change 0 ≤ u.A-1000 ∧ 0 ≤ u.B-0; have := u.Bnonneg; omega⟩
++  have inv := unit_prod u
++  have hp : 0 < shrink u := by
++    apply Classical.byContradiction; intro h
++    have h' : shrink u ≤ 0 := by grind
++    have := OrderedRing.mul_le_mul_of_nonneg_right h' (show 0 ≤ expand u by grind)
++    grind
++  have hle := OrderedRing.mul_le_mul_of_nonneg_right ha (Std.le_of_lt hp)
++  have hs : 1000*shrink u ≤ 1 := by grind
++  have hsq := OrderedRing.mul_le_mul_of_nonneg_left hs (show 0 ≤ 1000*shrink u by grind)
++  exact ⟨hp,hs, Std.le_of_lt (OrderedRing.mul_pos hp hp), by grind⟩
++
++private theorem phys_add (p q : Q5) : phys (p+q) = phys p + phys q :=
++  ext' (by simp [phys]; omega) (by simp [phys])
++private theorem phys_back (u : UnitScale) (k : Q5) : phys (shrink u * k) = expand u * phys k :=
++  ext' (by simp [phys,shrink,expand]; grind) (by simp [phys,shrink,expand]; grind)
++private theorem time_sum (p : Q5) : 2*r5*(p.b : Q5) = p + phys p :=
++  ext' (by simp [r5,phys]; change 5*(0:Int)*p.b = p.a + -p.a; omega) (by simp [r5,phys]; change (2:Int)*p.b = p.b+p.b; omega)
++
++private structure Config (u : UnitScale) (θ : Q5) where
++  o : Q5
++  s : Q5
++  z : Q5
++  hs : s = expand u * θ + o
++  hz : z = -(shrink u) * θ + phys o
++  sb : 0 ≤ s ∧ s < 1
++  zb : -1 < z ∧ z ≤ 5
++  phase : (u.B : Q5)*θ + (o.b : Q5) < 1
++
++private noncomputable def config (u : UnitScale) (θ : Q5) : Config u θ := by
++  let y := (u.B : Q5)*θ
++  let b := -floor y
++  let k := expand u*θ + (b : Q5)*r5
++  let a := -floor k
++  let o : Q5 := ⟨a,b⟩
++  let s := expand u*θ + o
++  let z := -(shrink u)*θ + phys o
++  have reduce (w : Q5) : 0 ≤ w+((-floor w : Int) : Q5) ∧ w+((-floor w : Int) : Q5) < 1 := by
++    have := floor_spec w; rw [Ring.intCast_neg]; grind
++  have sy := reduce y
++  have sb : 0 ≤ s ∧ s < 1 := by
++    have := reduce k
++    have ho : o = (a : Q5) + (b : Q5)*r5 := repr' _
++    dsimp only [s]; rw [ho]; dsimp only [k,a] at *; grind
++  have sum : s+z = 2*r5*(y+(b:Q5)) := by
++    have h₁ : expand u - shrink u = 2*r5*(u.B : Q5) :=
++      ext' (by simp [expand,shrink,r5]; change 0 = 5*(0:Int)*u.B; omega) (by simp [expand,shrink,r5]; change u.B + u.B = 2*u.B; omega)
++    have h₂ := time_sum o
++    change 2*r5*(b:Q5) = o+phys o at h₂
++    dsimp only [s,z,y]; grind
++  have dr := root_bounds
++  have lo := OrderedRing.mul_le_mul_of_nonneg_left sy.1 (show 0 ≤ 2*r5 by grind)
++  have hi := OrderedRing.mul_le_mul_of_nonneg_left (Std.le_of_lt sy.2) (show 0 ≤ 2*r5 by grind)
++  exact ⟨o,s,z,rfl,rfl,sb,by grind,sy.2⟩
++
++private def tick {u θ} (c : Config u θ) (p : Q5) : Int := (shrink u * (c.o+p)).b
++
++private theorem internal {u θ} (c : Config u θ) (p : Q5) :
++    shrink u * (c.s+p) = θ + shrink u*(c.o+p) := by
++  rw [c.hs]; have := unit_prod u; grind
++
++private theorem lag_time (u : UnitScale) (p : Q5) :
++    (2*r5*shrink u)*((shrink u*p).b : Q5) = phys p + (shrink u*shrink u)*p := by
++  have hh := time_sum (shrink u*p)
++  rw [phys_back] at hh
++  have := unit_prod u; grind
++
++private theorem lattice_time {u θ} (c : Config u θ) (p : Q5) :
++    (2*r5*shrink u)*(tick c p : Q5) = c.z + phys p + (shrink u*shrink u)*(c.s+p) := by
++  have ht := lag_time u (c.o+p)
++  rw [phys_add] at ht
++  have := internal c p; rw [c.hz]; unfold tick; grind
++
++private theorem member_data {e : Q5} (he : e ∈ families) :
++    -1 < e ∧ e < 1 ∧ 1 ≤ phys e ∧ e.a ≤ 0 ∧ -29 ≤ e.a ∧ 1 ≤ e.b ∧ e.b ≤ 13 ∧ (e.a+e.b)%2 = 0 := by
++  have lt_at_three (p q : Q5)
++      (pos : 0 ≤ (it 3 (q-p)).a ∧ 0 ≤ (it 3 (q-p)).b) (ne : p ≠ q) : p < q := by
++    have le : p ≤ q := ⟨3,pos⟩
++    exact ⟨le,fun rev => ne (Std.le_antisymm le rev)⟩
++  simp [families] at he
++  rcases he with rfl | rfl | rfl | rfl | rfl | rfl <;>
++    exact ⟨lt_at_three _ _ (by decide) (by decide),lt_at_three _ _ (by decide) (by decide),
++      ⟨3,by decide⟩,by decide,by decide,by decide,by decide,by decide⟩
++
++private theorem strip_facts {e : Q5} (he : e ∈ families) :
++    -1 ≤ low e ∧ high e ≤ 1 ∧ high e - low e < 1 := by
++  have := member_data he
++  unfold low high; split <;> grind
++
++private theorem tick_formula (u : UnitScale) (p : Q5) :
++    ((shrink u*p).b : Q5) = expand u*(p.b : Q5) - (u.B : Q5)*p :=
++  ext' (by simp [expand,shrink]; grind) (by simp [expand,shrink])
++
++private theorem tick_diff {u θ} (c : Config u θ) (p r : Q5) :
++    (tick c r : Q5) - (tick c p : Q5) =
++    expand u*((r.b : Q5)-(p.b : Q5)) - (u.B : Q5)*(r-p) := by
++  unfold tick
++  rw [tick_formula,tick_formula]; simp only [add_b,Ring.intCast_add]; grind
++
++private theorem cast_step {i j : Int} (h : i < j) : (i : Q5)+1 ≤ (j : Q5) := by
++  have := cast_le (i := i+1) h
++  simpa only [Ring.intCast_add,Ring.intCast_one] using this
++
++/-- Within a single strip, strictly increasing sample times have strictly increasing lattice heights. -/
++private theorem height_lt {u θ} (c : Config u θ) {e p r : Q5}
++    (he : e ∈ families) (hp : crosses e c.s p) (hr : crosses e c.s r)
++    (ht : tick c p < tick c r) : p.b < r.b := by
++  have sf := strip_facts he
++  have width : -1 < r-p ∧ r-p < 1 := by unfold crosses at hp hr; grind
++  by_cases hb : r.b = p.b
++  · have de : r-p = ((r.a : Q5)-(p.a : Q5)) := ext' (by simp) (by simp [hb])
++    rw [de] at width
++    have hae : r.a = p.a := by
++      by_cases h : r.a < p.a
++      · have := cast_step h; grind
++      by_cases h : p.a < r.a
++      · have := cast_step h; grind
++      omega
++    have := ext' hae hb; grind
++  by_cases hb' : p.b < r.b
++  · exact hb'
++  have eb : (u.B : Q5) ≤ expand u := ⟨1,by
++    simp [it,up,expand]; have := u.Apos; have := u.Bnonneg; omega⟩
++  have bn : (0 : Q5) ≤ (u.B : Q5) := cast_le u.Bnonneg
++  have hh := OrderedRing.mul_le_mul_of_nonneg_left (cast_step (show r.b < p.b by omega))
++    (show 0 ≤ expand u by grind)
++  have hv := OrderedRing.mul_le_mul_of_nonneg_left (Std.le_of_lt width.1) bn
++  have := tick_diff c p r
++  have := cast_lt ht
++  grind
++
++private theorem cancel_le {x y k : Q5} (hk : 0 < k) (h : k*x ≤ k*y) : x ≤ y := by
++  by_cases hy : y < x
++  · have := Q5.mul_lt hy hk; grind
++  · grind
++private theorem cancel_lt {x y k : Q5} (hk : 0 < k) (h : k*x < k*y) : x < y := by
++  by_cases hy : y ≤ x
++  · have := OrderedRing.mul_le_mul_of_nonneg_left hy (Std.le_of_lt hk); grind
++  · grind
++
++private theorem floor_stays (y v e : Q5) (hv : 0 < v) (hne : low e < high e)
++    (avoid : ∀ m : Int, ¬ (v*low e ≤ y-(m : Q5) ∧ y-(m : Q5) < v*high e)) :
++    floor (y+v*e) = floor y := by
++  have bounds : low e ≤ 0 ∧ low e ≤ -e ∧ 0 ≤ high e ∧ -e ≤ high e := by
++    unfold low high at *; split at hne <;> simp_all <;> grind
++  have l₁ := OrderedRing.mul_le_mul_of_nonneg_left bounds.1 (Std.le_of_lt hv)
++  have l₂ := OrderedRing.mul_le_mul_of_nonneg_left bounds.2.1 (Std.le_of_lt hv)
++  have h₁ := OrderedRing.mul_le_mul_of_nonneg_left bounds.2.2.1 (Std.le_of_lt hv)
++  have h₂ := OrderedRing.mul_le_mul_of_nonneg_left bounds.2.2.2 (Std.le_of_lt hv)
++  have f := floor_spec y
++  have g := floor_spec (y+v*e)
++  by_cases ha : floor (y+v*e) < floor y
++  · have := cast_step ha; have := avoid (floor y); grind
++  by_cases hb : floor y < floor (y+v*e)
++  · have := cast_step hb; have hh := avoid (floor y+1)
++    rw [Ring.intCast_add,Ring.intCast_one] at hh
++    grind
++  omega
++
++private noncomputable def word (θ : Q5) (t : Nat) := decide ((floor (θ+(t:Q5)*(r5-1)))%2 = 1)
++
++/-- A change of floor lifts to an intervening crossing. The even translation of the floor preserves parity. -/
++private theorem copied {u θ} (c : Config u θ) (hu : 1000 ≤ u.A) {e p r : Q5}
++    (he : e ∈ families) (gap : consecutive e p r c.s) (t q : Nat) (hq : (q:Int) = (shrink u*e).b)
++    (hp : tick c p < t) (hr : (t:Int) < tick c r) : word θ t = word θ (t+q) := by
++  let y := θ+(t:Q5)*(r5-1)
++  have hv := (scale_bounds u hu).1
++  have stable : floor (y+shrink u*e) = floor y := by
++    have gp := gap.2.1
++    apply floor_stays _ _ _ hv (by unfold crosses at gp; grind)
++    intro m hit
++    let base : Q5 := ⟨-(t:Int)-m,t⟩
++    let w := expand u*base-c.o
++    have back : shrink u*(c.o+w) = base := by dsimp [w]; have := unit_prod u; grind
++    have hw := internal c w
++    rw [back] at hw
++    have eqb : θ+base = y-(m:Q5) := by
++      have heq := repr' base
++      dsimp only [base] at heq
++      dsimp only [base]; rw [heq]; simp only [Ring.intCast_sub,Ring.intCast_neg,Ring.intCast_natCast]; dsimp only [y]; grind
++    rw [←eqb,←hw] at hit
++    have hc : crosses e c.s w := ⟨cancel_le hv hit.1,cancel_lt hv hit.2⟩
++    have ht : tick c w = t := congrArg Q5.b back
++    exact gap.2.2.2 w (height_lt c he gap.2.1 hc (by omega))
++      (height_lt c he hc gap.2.2.1 (by omega)) hc
++  let k := -(shrink u*e).a-(shrink u*e).b
++  have eqk : k = -(u.A-u.B)*(e.a+e.b) + 2*(2*u.B*e.b) := by dsimp [k,shrink]; grind
++  have parity := (member_data he).2.2.2.2.2.2.2
++  have hk : k%2 = 0 := by rw [eqk,Int.add_emod,Int.mul_emod _ (e.a+e.b),parity]; simp
++  have hq' : (q:Q5) = ((shrink u*e).b : Q5) := congrArg (fun i : Int => (i : Q5)) hq
++  have hy : θ+((t+q : Nat):Q5)*(r5-1) = y+shrink u*e+(k:Q5) := by
++    have h := repr' (shrink u*e)
++    dsimp only [y,k]; rw [Semiring.natCast_add,hq',Ring.intCast_sub,Ring.intCast_neg]; grind
++  unfold word
++  rw [hy]
++  have shift (z : Q5) : floor (z+(k:Q5)) = floor z+k := by
++    apply floor_unique; rw [Ring.intCast_add]; have := floor_spec z; grind
++  rw [shift,stable,Int.add_emod,hk]; simp [y]
++
++/-- A phase-independent prefix length containing both copies at this scale. -/
++private def horizon (u : UnitScale) : Nat := (120*u.A+400*u.B+10).toNat
++
++/-- The last certificate height is at most 100. The reduced phase bounds its signed sample time independently of θ. -/
++private theorem end_bound {u θ} (c : Config u θ) {e r : Q5} (he : e ∈ families)
++    (hr : crosses e c.s r) (hb : r.b ≤ 100) : tick c r ≤ 101*u.A+304*u.B := by
++  have phase := c.phase
++  have s := c.hs
++  have formula : (tick c r : Q5) =
++      expand u*((u.B:Q5)*θ+(c.o.b:Q5)+(r.b:Q5))-(u.B:Q5)*(c.s+r) := by
++    unfold tick; rw [tick_formula]; simp only [add_b,Ring.intCast_add]; grind
++  have bn : (0 : Q5) ≤ (u.B:Q5) := cast_le u.Bnonneg
++  have an : (0 : Q5) ≤ (u.A:Q5) := cast_le (i := 0) (by have := u.Apos; omega)
++  have root := root_bounds
++  have ex := expansion u
++  have bm := OrderedRing.mul_le_mul_of_nonneg_left (show r5 ≤ 3 by grind) bn
++  have bp := OrderedRing.mul_le_mul_of_nonneg_left (show 0 ≤ r5 by grind) bn
++  have rb : (r.b:Q5) ≤ 100 := cast_le hb
++  have hmul := OrderedRing.mul_le_mul_of_nonneg_left
++    (show (u.B:Q5)*θ+(c.o.b:Q5)+(r.b:Q5) ≤ 101 by grind) (show 0 ≤ expand u by grind)
++  have sf := strip_facts he
++  have neg := OrderedRing.mul_le_mul_of_nonneg_left (show -1 ≤ c.s+r by unfold crosses at hr; grind) bn
++  apply uncast
++  simp only [Ring.intCast_add,Ring.intCast_mul]
++  grind
++
++private theorem lag_bounds (u : UnitScale) {e : Q5} (he : e ∈ families) :
++    u.A ≤ (shrink u*e).b ∧ (shrink u*e).b ≤ 13*u.A+29*u.B := by
++  have data := member_data he
++  have bn := u.Bnonneg
++  have an : 0 ≤ u.A := by have := u.Apos; omega
++  have h₁ := Int.mul_le_mul_of_nonneg_left data.2.2.2.2.2.1 an
++  have h₂ := Int.mul_le_mul_of_nonneg_left data.2.2.2.2.2.2.1 an
++  have h₃ := Int.mul_le_mul_of_nonneg_left data.2.2.2.1 bn
++  have h₄ := Int.mul_le_mul_of_nonneg_left data.2.2.2.2.1 bn
++  simp only [mul_b,shrink]; grind
++
++/-- Transfer the certificate’s 10% geometric margin to the sample times, retaining 999/10000. -/
++private theorem scaled_bound {h Q X Y A B E : Q5} (hn : 0 ≤ h) (hh : 1000000*h ≤ 1)
++    (hq : 1 ≤ Q) (ha : A ≤ 1) (hb : -1 ≤ B) (he : E ≤ 1)
++    (hx : 11*Q ≤ 10*Y) (hy : 11*Q ≤ 10*(Y-2*X)) :
++    10999*(Q+h*E) ≤ 10000*(Y+h*B) ∧
++    10999*(Q+h*E) ≤ 10000*((Y+h*B)-2*(X+h*A)) := by
++  have := OrderedRing.mul_le_mul_of_nonneg_left ha hn
++  have := OrderedRing.mul_le_mul_of_nonneg_left hb hn
++  have := OrderedRing.mul_le_mul_of_nonneg_left he hn
++  grind
++
++private theorem run {u θ} (c : Config u θ) (hu : 1000 ≤ u.A) :
++    ∃ a b q : Nat, (∃ e ∈ families, q = (shrink u*e).b.toNat) ∧ u.A ≤ (q:Int) ∧
++      b+q ≤ horizon u ∧ 10999*q+20000*a ≤ 10000*b+30000 ∧
++      ∀ t : Nat, a ≤ t → t ≤ b → word θ t = word θ (t+q) := by
++  obtain ⟨e,he,p,r,hrb,gap,hx,hy⟩ := golden_strip_cover c.s c.z c.sb c.zb
++  have sc := scale_bounds u hu
++  have data := member_data he
++  have sf := strip_facts he
++  have gp := gap.2.1
++  have gr := gap.2.2.1
++  have margin := scaled_bound (X := c.z+phys p) (Y := c.z+phys r) sc.2.2.1 sc.2.2.2
++    data.2.2.1 (show c.s+p ≤ 1 by unfold crosses at gp; grind)
++    (show -1 ≤ c.s+r by unfold crosses at gr; grind) (Std.le_of_lt data.2.1) hx (by grind)
++  rw [←lag_time,←lattice_time,←lattice_time] at margin
++  let k := 2*r5*shrink u
++  have pos : 0 < k := OrderedRing.mul_pos (by have := root_bounds; grind) sc.1
++  have h₁ : 10999*(shrink u*e).b ≤ 10000*tick c r := by
++    apply uncast
++    simp only [Ring.intCast_mul]
++    apply cancel_le pos; dsimp only [k]; grind
++  have h₂ : 10999*(shrink u*e).b ≤ 10000*(tick c r-2*tick c p) := by
++    apply uncast
++    simp only [Ring.intCast_mul,Ring.intCast_sub]
++    apply cancel_le pos; dsimp only [k]; grind
++  have lag := lag_bounds u he
++  have stop := end_bound c he gr hrb
++  have bn := u.Bnonneg
++  refine ⟨(tick c p+1).toNat,(tick c r-1).toNat,(shrink u*e).b.toNat,⟨e,he,rfl⟩,by omega,
++    by unfold horizon; omega,by omega,?_⟩
++  intro t a b
++  exact copied c hu he gap t _ (by omega) (by omega) (by omega)
++
++/-- Exact integer test for x < y√5, including negative x and y. -/
++def LtSqrt5 (x y : Int) : Prop :=
++  (x < 0 ∧ (0 ≤ y ∨ 5*y*y < x*x)) ∨ (0 ≤ x ∧ 0 < y ∧ x*x < 5*y*y)
++
++/-- Every pair of samples stays within one unit of the line of slope √5 − 1.
++For a real phase θ, taking f(t) = ⌊θ+t(√5−1)⌋ gives this inequality directly
++from the two floor bounds. -/
++def GoldenLine (f : Nat → Int) : Prop :=
++  ∀ s t : Nat, LtSqrt5 (f s-f t-1+((s:Int)-t)) ((s:Int)-t)
++
++private theorem sq_mono {x y : Q5} (hx : 0 ≤ x) (h : x ≤ y) : x*x ≤ y*y := by
++  have := OrderedRing.mul_le_mul_of_nonneg_left h hx
++  have := OrderedRing.mul_le_mul_of_nonneg_right h (show 0 ≤ y by grind)
++  grind
++
++private theorem lt_root {x y : Int} (h : LtSqrt5 x y) : (x : Q5) < (y : Q5)*r5 := by
++  have root := root_bounds
++  have square (v : Q5) : (v*r5)*(v*r5) = 5*v*v := by have := r5_sq; grind
++  have sq := square (y:Q5)
++  rcases h with ⟨hx,hy | hsq⟩ | ⟨hx,hy,hsq⟩
++  · have := cast_lt (j := 0) hx
++    have := OrderedRing.mul_le_mul_of_nonneg_right (cast_le hy) (show 0 ≤ r5 by grind)
++    grind
++  · have hc := cast_lt hsq
++    simp only [Ring.intCast_mul] at hc
++    have hn : (x : Q5) < 0 := cast_lt hx
++    by_cases hle : (y:Q5)*r5 ≤ (x:Q5)
++    · have hm := sq_mono (show 0 ≤ -(x:Q5) by grind) (show -(x:Q5) ≤ -((y:Q5)*r5) by grind)
++      grind
++    · grind
++  · have hc := cast_lt hsq
++    simp only [Ring.intCast_mul] at hc
++    have hp : 0 < (y : Q5)*r5 := OrderedRing.mul_pos (cast_lt hy) (by grind)
++    by_cases hle : (y:Q5)*r5 ≤ (x:Q5)
++    · have := sq_mono (Std.le_of_lt hp) hle; grind
++    · grind
++
++/-- The squared integer test agrees with the order in the quadratic ring. -/
++theorem ltSqrt5_iff (x y : Int) : LtSqrt5 x y ↔ (x:Q5) < (y:Q5)*r5 := by
++  refine ⟨lt_root, ?_⟩
++  intro h
++  have dr := root_bounds
++  have square (v : Q5) : (v*r5)*(v*r5) = 5*v*v := by have := r5_sq; grind
++  have sq := square (y:Q5)
++  have strict {a b : Q5} (ha : 0 ≤ a) (hab : a < b) : a*a < b*b := by
++    have := OrderedRing.mul_le_mul_of_nonneg_left (Std.le_of_lt hab) ha
++    have := OrderedRing.mul_lt_mul_of_pos_right hab (show 0 < b by grind)
++    grind
++  by_cases hx : x < 0
++  · refine Or.inl ⟨hx,?_⟩
++    by_cases hy : 0 ≤ y
++    · exact Or.inl hy
++    · apply Or.inr
++      have yn : (y:Q5) < 0 := cast_lt (by omega : y < 0)
++      have yp := Q5.mul_lt yn (show 0 < r5 by grind)
++      have := strict (show 0 ≤ -((y:Q5)*r5) by grind) (show -((y:Q5)*r5) < -(x:Q5) by grind)
++      apply OrderedRing.lt_of_intCast_lt_intCast (R := Q5)
++      simp only [Ring.intCast_mul]; grind
++  · have xn : (0:Q5) ≤ (x:Q5) := cast_le (by omega : 0 ≤ x)
++    have yp : 0 < y := by
++      by_cases hn : y ≤ 0
++      · have yy : (y:Q5) ≤ 0 := cast_le hn
++        have := OrderedRing.mul_le_mul_of_nonneg_right yy (show 0 ≤ r5 by grind); grind
++      · omega
++    refine Or.inr ⟨by omega,yp,?_⟩
++    have := strict xn h
++    apply OrderedRing.lt_of_intCast_lt_intCast (R := Q5)
++    simp only [Ring.intCast_mul]; grind
++
++/-- Quadratic-intercept floor words inhabit the integer phase class in core Lean. -/
++theorem quadratic_phase_goldenLine (θ : Q5) :
++    GoldenLine (fun t => floor (θ+(t:Q5)*(r5-1))) := by
++  intro s t
++  apply (ltSqrt5_iff _ _).mpr
++  simp only [Ring.intCast_add,Ring.intCast_sub,Ring.intCast_one,Ring.intCast_natCast]
++  have := floor_spec (θ+(s:Q5)*(r5-1))
++  have := floor_spec (θ+(t:Q5)*(r5-1)); grind
++
++private theorem finite_max (g : Nat → Q5) (n : Nat) :
++    ∃ j ≤ n, ∀ t ≤ n, g t ≤ g j := by
++  induction n with
++  | zero =>
++    refine ⟨0,by omega,fun t ht => ?_⟩
++    rw [Nat.eq_zero_of_le_zero ht]
++    exact Std.le_refl _
++  | succ n ih =>
++    obtain ⟨j,hj,hm⟩ := ih
++    by_cases h : g (n+1) ≤ g j
++    · refine ⟨j,by omega,fun t ht => ?_⟩
++      by_cases k : t=n+1
++      · simpa [k] using h
++      · exact hm t (by omega)
++    · refine ⟨n+1,by omega,fun t ht => ?_⟩
++      by_cases k : t=n+1
++      · subst t; grind
++      · have := hm t (by omega); grind
++
++/-- On each finite window, the largest lower endpoint is an admissible intercept. -/
++theorem finite_phase (f : Nat → Int) (hf : GoldenLine f) (N : Nat) :
++    ∃ θ : Q5, ∀ t ≤ N, floor (θ+(t:Q5)*(r5-1)) = f t := by
++  let g (t : Nat) := (f t : Q5)-(t:Q5)*(r5-1)
++  obtain ⟨j,_,hm⟩ := finite_max g N
++  refine ⟨g j,fun t ht => floor_unique _ _ ?_⟩
++  have lower := hm t ht
++  have upper := lt_root (hf j t)
++  simp only [Ring.intCast_add,Ring.intCast_sub,Ring.intCast_one,Ring.intCast_natCast] at upper
++  dsimp only [g] at lower ⊢; grind
++
++/-- The six candidate integer lags at the nth power of 9 + 4√5. -/
++def scaleLags (n : Nat) : List Nat := families.map fun e => (shrink (unitAt n)*e).b.toNat
++
++/-- At every scale from three, one of six lags has inclusive excess at least
++(999/10000)q − 3 for the parity of any golden line. -/
++theorem golden_repeats_at_scale (f : Nat → Int) (hf : GoldenLine f) (n : Nat) (hn : 3 ≤ n) :
++    ∃ q ∈ scaleLags n, ∃ a b : Nat, n < q ∧ a ≤ b ∧
++      10999*q+20000*a ≤ 10000*b+30000 ∧
++      ∀ t : Nat, a ≤ t → t ≤ b → f t % 2 = f (t+q) % 2 := by
++  have big (k : Nat) : 1000 ≤ (unitAt (3+k)).A := by
++    induction k with
++    | zero => decide
++    | succ k ih =>
++      change 1000 ≤ 9*(unitAt (3+k)).A+20*(unitAt (3+k)).B
++      have := (unitAt (3+k)).Bnonneg; omega
++  have hu : 1000 ≤ (unitAt n).A := by simpa only [show 3+(n-3)=n by omega] using big (n-3)
++  obtain ⟨θ,hθ⟩ := finite_phase f hf (horizon (unitAt n))
++  obtain ⟨a,b,q,⟨e,he,hqe⟩,hq,hend,hlen,hw⟩ := run (config (unitAt n) θ) hu
++  have hg := large n
++  refine ⟨q,List.mem_map.mpr ⟨e,he,hqe.symm⟩,a,b,by omega,by omega,hlen,?_⟩
++  intro t ha hb
++  have same := hw t ha hb
++  unfold word at same
++  rw [hθ t (by omega),hθ (t+q) (by omega)] at same
++  by_cases h : f t % 2 = 1 <;> simp [h] at same <;> omega
++
++/-- Arbitrarily large repetition excess survives every finite warm-up. -/
++theorem unbounded_golden_repeats (f : Nat → Int) (hf : GoldenLine f) (H K : Nat) :
++    ∃ a b q : Nat, H ≤ a ∧ K < q ∧ 2*a+q+K < b ∧
++      ∀ t : Nat, a ≤ t → t ≤ b → f t % 2 = f (t+q) % 2 := by
++  let n := 20*(K+2*H+3)+3
++  obtain ⟨q,_,a,b,hq,_,hlen,hs⟩ := golden_repeats_at_scale f hf n (by dsimp [n]; omega)
++  dsimp only [n] at hq
++  exact ⟨a+H,b,q,by omega,by omega,by omega,fun t ht hb => hs t (by omega) hb⟩
++
++open Rule30Realization
++
++/-- An eventual period-two clock excludes every golden half-circle phase as the
++eventual even-time right neighbour of a row with a leftmost black cell. -/
++theorem no_eventual_golden_neighbour (x : Int → Bool) (L T H : Nat) (f : Nat → Int) (hf : GoldenLine f)
++    (hleft : x (-(L:Int)) = true) (hzero : ∀ j, j < -(L:Int) → x j = false)
++    (clock : ∀ t, T ≤ t → evol x t 0 = decide (t%2 = 1))
++    (visible : ∀ t, H ≤ t → evol x (2*t) 1 = decide (f t % 2 = 1)) : False := by
++  obtain ⟨a,b,q,ha,hq,hb,agree⟩ := unbounded_golden_repeats f hf (H+T) L
++  let m := L+2*(a+q)
++  have clocks (i s : Nat) (hi : a ≤ i) : evol x (2*i+s) 0 = decide (s%2 = 1) := by
++    rw [clock _ (by omega), show (2*i+s)%2 = s%2 by omega]
++  apply Rule30FiniteMaskedJen.window_jen_col hleft hzero (i := 0) (t₁ := 2*a) (t₂ := 2*(a+q))
++    m (by omega) (by dsimp [m]; omega)
++  · intro s _
++    rw [clocks a s (by omega),clocks (a+q) s (by omega)]
++  · intro s hs
++    unfold Rule30FiniteMaskedJen.orCol
++    rw [clocks a s (by omega),clocks (a+q) s (by omega)]
++    by_cases hodd : s%2 = 1
++    · simp [hodd]
++    · simp only [hodd,decide_false,Bool.false_or]
++      have h₁ : 2*a+s = 2*(a+s/2) := by omega
++      have h₂ : 2*(a+q)+s = 2*((a+s/2)+q) := by omega
++      change evol x (2*a+s) 1 = evol x (2*(a+q)+s) 1
++      rw [h₁,h₂,visible _ (by omega),visible _ (by omega),agree _ (by omega) (by dsimp [m] at hs; omega)]
++
++end Ruliology.CellularAutomata.Rule30GoldenHalfCircle

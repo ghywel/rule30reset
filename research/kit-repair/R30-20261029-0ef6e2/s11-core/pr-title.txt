@@ -1,0 +1,1 @@
+Exclude the golden half-circle word at every phase beside a Rule 30 clock
