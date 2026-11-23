@@ -1,0 +1,5 @@
+after 76 matched ticks: 17 of 18 rules hold as stated; failing (target, lead): [(32, 12)]
+after 78 matched ticks: 17 of 18 rules hold as stated; failing (target, lead): [(32, 12)]
+after 80 matched ticks: 18 of 18 rules hold as stated; failing (target, lead): []
+after 56 matched ticks: 10 of 18 rules hold as stated; failing (target, lead): [(32, 12), (32, 14), (42, 4), (42, 6), (42, 10), (42, 12), (52, 12), (52, 14)]
+after 62 matched ticks: 12 of 18 rules hold as stated; failing (target, lead): [(32, 12), (42, 4), (42, 6), (42, 10), (52, 12), (52, 14)]
