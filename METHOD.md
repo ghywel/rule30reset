@@ -164,7 +164,8 @@ A picture is an instrument for the owner's eye and for ours.
 Two files carry the shared state. `CHAT-LEDGER.md` is the conversation and the diary: it is appended to and never
 rewritten. `NOW.md` is one file that says where things stand: it is rewritten whenever the state changes. Results go
 into their own short documents, linked from both. Data stays outside git, in share-scratch (section 9) or local storage,
-cited by SHA-256. Mark a route closed when it closes, with the evidence that would reopen it.
+cited by SHA-256. Mark a route closed when it closes. If some evidence would reopen it, park it instead and say what
+that evidence is (the owner, 23 November 2026).
 
 ### The ledger: what goes in
 
@@ -236,21 +237,29 @@ live file without any conflict. Three guards:
 ### NOW.md
 
 One file, under about 300 lines. It holds:
-- the arrangement (who is working, what is running, which schedules are on);
-- what needs the owner: **calls to action only**. A statement of fact goes in the row it changes, not here;
-- the direction, and the chain of the main line;
-- the next block;
-- the submissions table;
+- the arrangement (who is working and on what, what is running, which schedules are on);
+- what needs the owner: **calls to action only**. A statement of fact goes in the row it changes, not here. A call
+  leaves when it is answered;
+- the direction;
+- the next block: what is being worked, and what is on offer when nothing is set;
+- the submissions table, one brief row per submission;
 - the pull tracker;
-- the parked pulls (the incubator of section 3), one dated line each, with what would bring each back;
-- the open threads and the recently closed routes, one line each.
+- the parked list (the incubator of section 3), one dated entry each, with what would bring each back. The main line
+  and its wall are its first entries while they are parked;
+- the recently closed routes, one line each.
 
-**It holds no log of results** (the owner, 20 November 2026). A result changes a row: a link of the chain, a pull's
-status, a submission's stage, in a few words with its post ID. Its account is the ledger post. If a result changes
-no row, it is not in NOW.md.
+**Parked or closed** (the owner, 23 November 2026). A pull or route that stops with a condition that would reopen it
+is *parked*, and its entry says the condition. *Closed* is for what is answered, refuted or finished, with nothing
+that would reopen it. There is no list of open threads: a thing noticed and not pursued is posted as a pull and
+gets an *open* row (section 3).
+
+**It holds no log of results** (the owner, 20 November 2026). A result changes a row: a pull's status, a
+submission's stage or a parked entry, in a few words with its post ID. Its account is the ledger post. If a result
+changes no row, it is not in NOW.md.
 
 Whoever changes the state rewrites the file and stamps it with the time and their post ID. Items that drop off are
-not lost: they are in the ledger. The file as it stood before the reset of 20 November is in `archive/now/`.
+not lost: they are in the ledger. The file as it stood before the reset of 20 November, and before the review of
+23 November, is in `archive/now/`.
 
 **The pull tracker** ("Pulls in progress") keeps every pull in view, since the ledger cannot.
 - **A row per pull.** Every pull posted to the ledger gets a row when it is posted, from whichever worker posts it.
@@ -258,12 +267,14 @@ not lost: they are in the ledger. The file as it stood before the reset of 20 No
 - **Status.** Any worker rewrites a row's Status as the work goes: the present state and the next test, in a few
   words, citing the post that records the step. The history of a pull is in its posts, not in its row. Status
   begins with one word: *open* (nothing run), *preliminary* (one first block run, to inform how the work is
-  shared out; the owner, 20 November 2026), *in progress*, *parked* or *closed*. Status also says how the pull
-  relates to other pulls, for example "joined to M7" or "supplies the controls for R2".
+  shared out; the owner, 20 November 2026), *in progress*, *parked* or *closed*. An *in progress* row names the
+  worker on it, or says *free* when nobody is. Status also says how the pull relates to other pulls, for example
+  "joined to M7" or "supplies the controls for R2".
 - **Submission candidate?** This field is *no* until the pull produces a result that meets the four conditions of
   section 12. Then it turns to *yes*: the result gets an S number in the Submissions table, and the row names it.
 - **Closing a row.** A closed or parked row leaves the table in the same rewrite, for the recently closed routes or
-  the incubator (section 3), with the post that closed it.
+  the incubator (section 3), with the post that closed it. When a pull's result has been posted as a submission, its
+  row stays only if a next test is written; otherwise what it leaves open is parked.
 
 ### Keep it small
 
@@ -485,8 +496,11 @@ not a role. Candidates are numbered S1, S2, … in this repository; placego's ar
      modules carry no internal names or post numbers.
    - `essay.md`, `abstract.txt`, `title.txt` and `headlines.txt`, and the notebook built from `essay.md` by
      MarkdownToNotebook with `"UseCache" -> False` in a fresh kernel, with its gates: `rule30Submission` is a
-     `LeanEnvironment`; each headline's `"TypeForm"` is the claimed statement, its `"Axioms"` are the standard three
-     or fewer, and its `"KernelCheck"` succeeds; the source is in an icon; the expected outputs are there.
+     `LeanEnvironment`; each headline's `"TypeForm"` is the claimed statement and its `"Axioms"` are the standard
+     three or fewer; `"KernelCheck"` succeeds; the source is in an icon; the expected outputs are there. Ask for
+     `"KernelCheck"` once in the notebook, not once for each headline: one call checks every declaration of the
+     module, and the automatic check gives the whole notebook four minutes. S9's eleven calls built in 129.5 s on the
+     M5 and overran the verifier twice; with one call it built in 28.2 s (M118, M119).
    - `post.sh`, which pins every file by digest, refuses if the verifier's commit has changed, and has a dry run.
 
    Then a ledger post, `S3 packet ready`, listing the digests, and a `REVIEW` flag to the reader.

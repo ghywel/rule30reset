@@ -90,6 +90,9 @@ Each step is one pull request, read by a second worker. The maintainers have bee
 
 ## Status
 
+**Finished on our side** (the owner, 23 November 2026; ledger K73). Steps 1 to 6 are in kit main. Step 7 was
+assessed and is not a repair: what it leaves is pull N6 in [NOW.md](NOW.md).
+
 | Step | Entry | State |
 |---|---|---|
 | 1 | 8e6bd3 | **Merged** as kit commit `a4b4aff` (#391), 22 November, with the maintainer's review change (M107); the merged `Rule30ZeroBoundaryDeathTimes` is byte for byte ours (M113). |
