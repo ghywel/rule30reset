@@ -252,3 +252,20 @@ Time periods 2, 8, 12, 16, 18, 20 and 22 add nothing. Both predictions **failed*
 - **(0.6)** For Y the number of halves with at least k completed excursions falls by a steady factor per excursion, between 0.03 and 0.3. **(0.6)** For X the factor is below 0.05.
 - **(0.7)** Random far fields and finite seeds of support 40 give the same factors within a factor of two.
 - *If finite seeds make clearly more excursions than random fields* (three times or more), finite support is not typical for this event, and that is a lead worth a block. *If the factors agree,* an endless stay asks a finite seed's own bulk to beat a fixed odds for ever, which is the wall in one sentence.
+
+**K79, addendum 6 (2026-11-23 21:50 UTC).** T8's outcome, and T9 registered before it runs.
+
+*T8: what real halves do* (MEASURED; [counts](research/wheel/data/claudeCloud-hazard.txt)). Each half followed exactly to its trap entry, 3,000 ticks at most.
+
+| Halves | Enter the trap | X: one excursion completed | X: two | Y: 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2,000,000 random far fields | 1,934,522 | 546 | 0 | 47,145 | 4,835 | 461 | 27 | 4 | | |
+| 2,000,000 seeds of support 40 | 1,934,271 | 484 | 0 | 47,364 | 4,929 | 428 | 43 | 1 | | |
+| 2,000,000 seeds of support 24 | 1,934,392 | 456 | 4 | 47,194 | 4,937 | 401 | 32 | 4 | | |
+| 20,000,000 random far fields | 19,344,548 | 4,994 | 4 | 471,418 | 49,028 | 4,543 | 379 | 38 | 3 | 2 |
+
+All three predictions **held**. The share entering the trap is 0.9672 to 0.9673 in every row: K52's figure for every seed of support 22 to 26. In Y the number of halves with at least k completed excursions falls by 0.103, 0.092, 0.085, 0.102, 0.116 from each k to the next (20 million fields): a steady factor of about **0.1**. In X one half in 4,000 completes an excursion and about **one in a thousand** of those completes a second. Finite seeds and random far fields agree in every count, to the noise. So an endless stay asks the bulk of one finite seed to beat odds of about one in ten (Y), or one in a thousand (X), at every excursion, for ever.
+
+*T9, registered now: how few periodic columns force a loop gate?* K79's section 4 needs every column periodic. Followed to the right one column at a time, a strip that starts at a column outside the four rings must stop (two neighbouring columns fix everything to their left, so it cannot join a ring). The width at which the last one stops turns the census into a statement about a strip: *if columns 1 to W of a right half beside the alternating column all have time period N, the gate is one of the four loops.* Frozen: [claudeCloud_alt_strips.cpp](research/wheel/claudeCloud_alt_strips.cpp) `b42a7eaa37e44bcf19aa0e9d2b93e60a35973a619396f220d2bb42185b7ff997`. Seen while writing it (an exploration in Python, and the program on N ≤ 8): W = 3, 5, 3, 11, 6, 8, 6, 22, 9, 8 for N = 2, 4, …, 20; the pure 4-gap gate is the one that lasts (ten columns at period 8, twenty-one at period 16).
+- **(0.7)** For N = 22 and 24 the width is at most 40. **(0.6)** At N = 24 the last gate to stop is the pure 4-gap.
+- `Record searched:` the kit's `Rule30MovingWaves` (Villafuerte: return periods up to 11 in the moving frame give linearly many words, period 12 exponentially many) is the nearest; it is in the frame that moves with the right diagonals, with no wall. `Rule30Jen` and the lock modules for periodic columns beside a centre. I found no count of periodic columns beside the alternating column.

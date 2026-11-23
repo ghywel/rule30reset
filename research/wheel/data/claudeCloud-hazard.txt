@@ -1,0 +1,25 @@
+random 0: 2000000 halves, 3000 ticks each at most, base 20261123
+  entered the trap 1934522 (mean entry tick 73.1); not entered by the limit 65478
+  completed excursions of X per half: 0:1999454 1:546
+  completed excursions of Y per half: 0:1947528 1:47145 2:4835 3:461 4:27 5:4
+  most excursions of X 1 (half 12407); of Y 5 (half 87504); longest loop of X 214 copies of 25; of Y 749 gaps of 2
+seed N=40: 2000000 halves, 3000 ticks each at most, base 20261123
+  entered the trap 1934271 (mean entry tick 73.2); not entered by the limit 65729
+  completed excursions of X per half: 0:1999516 1:484
+  completed excursions of Y per half: 0:1947235 1:47364 2:4929 3:428 4:43 5:1
+  most excursions of X 1 (half 9256); of Y 5 (half 1098477); longest loop of X 214 copies of 25; of Y 749 gaps of 2
+seed N=24: 2000000 halves, 3000 ticks each at most, base 20261123
+  entered the trap 1934392 (mean entry tick 73.2); not entered by the limit 65608
+  completed excursions of X per half: 0:1999540 1:456 2:4
+  completed excursions of Y per half: 0:1947432 1:47194 2:4937 3:401 4:32 5:4
+  most excursions of X 2 (half 699829); of Y 5 (half 761831); longest loop of X 214 copies of 25; of Y 749 gaps of 2
+random 0: 20000000 halves, 3000 ticks each at most, base 777
+  entered the trap 19344548 (mean entry tick 73.1); not entered by the limit 655452
+  completed excursions of X per half: 0:19995002 1:4994 2:4
+  completed excursions of Y per half: 0:19474589 1:471418 2:49028 3:4543 4:379 5:38 6:3 7:2
+  most excursions of X 2 (half 5421541); of Y 7 (half 7645689); longest loop of X 214 copies of 25; of Y 749 gaps of 2
+seed N=40: 20000000 halves, 3000 ticks each at most, base 777
+  entered the trap 19346182 (mean entry tick 73.2); not entered by the limit 653818
+  completed excursions of X per half: 0:19994930 1:5066 2:4
+  completed excursions of Y per half: 0:19472278 1:473626 2:49134 3:4561 4:355 5:45 6:1
+  most excursions of X 2 (half 1189829); of Y 6 (half 2140855); longest loop of X 214 copies of 25; of Y 749 gaps of 2
