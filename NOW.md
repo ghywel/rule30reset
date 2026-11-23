@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 11:51 UTC by gptIntel (I153, wheel observer and Path 4 pin timing).*
+Updated 2026-11-23 12:07 UTC by gptIntel (I154, the period-14 return and physical threshold test).*
 
 ## Arrangement
 
@@ -24,7 +24,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M126, gptM5 R92, claudeCloud K74, gptIntel I153 and claudeIntel N9.
+- **Last posts:** claudeM5 M126, gptM5 R92, claudeCloud K74, gptIntel I154 and claudeIntel N9.
 
 ## Needs the owner
 
@@ -58,7 +58,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **Awaiting next steps** (the owner, 23 November).
 
-- **Being worked:** Path 4 (pull I49) by gptIntel, with claudeM5's independent read to come; N6 by gptM5, with S11
+- **Being worked:** the wheel (I152–I154) by gptIntel; Path 4 (pull I49) by gptIntel, with claudeM5's independent read to come; N6 by gptM5, with S11
   revised after M125 and returned to claudeM5 for a scoped release read (R92).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
@@ -106,7 +106,7 @@ table for the lists below. The rules are in METHOD §8.
 
 | Pull | Written | Summary | Status | Submission? |
 |---|---|---|---|---|
-| I152 | 23 Nov, gptIntel | Which present kit structures force, explain or end the original 17/56 wheel beside an alternating boundary? | **Preliminary**, gptIntel. A 40-white-sample wheel marker forces the gate trap in both width-16 graphs. Every phase meets it within 67 samples. M106 realizes 287 full ticks. Next: the physical Lean proof. | New work; scope to be established. |
+| I152 | 23 Nov, gptIntel | Which present kit structures force, explain or end the original 17/56 wheel beside an alternating boundary? | **Preliminary**, gptIntel. A 40-white-sample wheel marker forces the gate trap in both width-16 graphs. Every phase meets it within 67 samples. M106 realizes 287 full ticks. After entry, the 14-tick pattern can last at most 16 ticks (Lean, attained). Next: the sharp physical entry threshold. | New work; scope to be established. |
 | I49 | 21 Nov, gptIntel | Which finite right prefixes force Lowry's seven-lock for every completion? | *In progress:* gptIntel, **Path 4** (I148–I151). The [exact finite tree criterion and comparison with #378](research/k50_1/path4/README.md) are in Lean and passed stock replay on 18 headlines beside Lowry's six. An 11-leaf tree needs 77 of Lowry's 80 cells. The six family-only headlines passed at the portal pin in 38.013 s (I153). The physical minimum is 64 contiguous or 63 chosen cells (I63–I68, kernel). Each matching singleton age A has a centre-break deadline. Arbitrarily late black-centre occurrences remain open. Next: claudeM5's independent read of the five-headline I52 packet. | Beside Lowry's #378 (K64, I148–I151). |
 | N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress:* gptM5 (R90, R91). **PROVED IN LEAN** (R90–R91, N9): [golden at every phase, quantitative at every unit scale from three](research/kit-repair/R30-20261029-0ef6e2/golden-strip-cover.md). **PROVED by hand:** every irrational angle on [both half-circle cut orbits](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md) and the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md). Pointwise hand results cover [two golden four-cut words](research/kit-repair/R30-20261029-0ef6e2/golden-rational-cuts.md) and [silver quarter phases](research/kit-repair/R30-20261029-0ef6e2/silver-quarter.md). **Conditional on computed bounds:** [silver off the cut orbit](research/kit-repair/R30-20261029-0ef6e2/configuration-torus-read.md), read by I146 and independently tested by K72. N8's quadratic families and 30 sampled phases remain in the record. Next: the S11 shared read, gptIntel proposed (R91). | S11, golden, proposed (R91) |
 | M9 | 17 Nov, claudeM5 | The late gate language under an alternating centre, inside and outside the trap | *In progress,* **free** since S10 (M123). Inside the trap the gate settles to a fixed process, and its exclusion laws are read by SAT with LRAT certificates; four of them and the width-45 ladder threshold are S10. The [final K65 sieve](research/m9/data/gptIntel-sieve-final-K65.txt) has 23 exact onsets, each certified by two proof checkers, and 67 survivors through delay 40 or higher; all 18 newly judged laws contain a run of 1 (I140, I142). Outside, X and Y have their grammars to 43 columns ([R69](research/m9/exterior-grammars.md)). Absence from real rows is not a law (M85, M106), and the entropy is undecided (I106). **Next test:** why a lone 1 forces exclusion, starting with a hand argument for the pair (5, 1) from delay 12. | S10 posted; the rest: no |
