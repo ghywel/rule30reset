@@ -13,11 +13,12 @@ destination of the projected window have different proofs.
 1. **Recurrent fronts have a fixed path.** Their initial column and potential determine that path for any right tail. The first site-1 disagreement after a 22-site prefix exit has an exact 49/52-tick law (§8). PROVED in Lean.
 2. **After departure there is one place to go.** At 22 columns the late behaviour beside 001 is the ether, one fixed
    gate, or one giant closed component, and the only other cyclic component reachable from either aligned 22-site ether class is the giant. Transient windows can intervene. COMPUTED independently (I173).
-3. **Twenty aligned ether columns at any tick exclude subsequent entry into the 15-trap**, for every right continuation. COMPUTED by two
-   programs, and small enough for Lean.
-4. **The three other known traps share a 34-column prefix**, the *trunk*. COMPUTED.
-5. **The wait is a climb up the trunk by rungs**, each behind a column with a long black run. MEASURED. Why a given half
-   ever gets past the last rung is still chance, and that is the wall here too.
+3. **Twenty aligned ether columns at any tick exclude subsequent entry into the 15-trap**, for every right continuation. PROVED in Lean (§3), with the same for sixteen white cells.
+4. **The other known traps share a 34-column prefix**, the *trunk*, and so one gate, 1100000. A complete census of
+   walls finds no trap for 001 with any gate but 1100000 and 11000, none for 011, and a **fifth** trap apart from the
+   four known. COMPUTED (§9).
+5. **The wait is a climb up the trunk by rungs**, each behind a column with a long black run. MEASURED, and each rung's
+   holes are known exactly (§10). Why a given half ever gets past the last rung is still chance, and that is the wall here too.
 
 *Words.* The **gate** is column 1 on the second white tick of each 001, the only tick on which it is free. A trap's
 **pattern** is its columns that depend on the label alone. The **front** of a row against a pattern is its first column
@@ -80,7 +81,14 @@ has these components with a cycle ([map](data/claudeM5-map-001.txt), [second cod
 - **011 has a map of the same kind** ([map](data/claudeM5-map-011.txt)): one closed giant component, the ether, and an
   island of period 18 that nothing enters.
 
-## 3. Who can enter the 15-trap (COMPUTED)
+## 3. Who can enter the 15-trap (PROVED in Lean for the ether and the white start)
+
+[Rule30EtherThreeNoFifteen.lean](Rule30EtherThreeNoFifteen.lean) (M137): a right half of the 001 drive whose first 20
+columns are the aligned ether at some tick is in no state of the kit's `trap001fifteen` from then on, whatever lies
+beyond (`no_fifteen_after_ether`); the same for 16 white cells (`no_fifteen_after_white`). The stock checker passes both
+headlines (76 constants, axioms `propext` and `Quot.sound` only) in six seconds and 1 GB. The 54,576 windows below are
+three small automata there, and one recursion checks that they are closed under predecessors. A changed table entry and a
+window of the trap put among the ether's both fail. [Generator](claudeM5_r5_reach_lean.py).
 
 Hallee's test of reach shows that some windows cannot. Run for the windows that matter here
 ([closure](data/claudeM5-closure.txt), two programs, equal sets):
@@ -102,9 +110,10 @@ the kit's t001, the 144-cell and the 304-cell trap **agree on their first 34 col
 three label-21 traps fix one and the same gate, **1100000**, and differ only in where the wall stands. The 15-trap's
 gate is 11000.
 
-This suggests the entry statement to test in place of the kit's refuted `AbsorptionT t001`. CONJECTURE: *beside 001,
-the gate of every finite right half is eventually 1100000 repeated, or 11000 repeated.* Entry into any one of the four
-known traps implies it, so no known trap refutes it, and by masked Jen it excludes 001. It names no table.
+§9 adds a fifth. This suggests the entry statement to test in place of the kit's refuted `AbsorptionT t001`. CONJECTURE: *beside 001,
+the gate of every finite right half is eventually 1100000 repeated, or 11000 repeated.* Entry into any one of the
+known traps implies it, so no known trap refutes it, and by masked Jen it excludes 001. It names no table. Since new traps
+keep appearing on the trunk (§9), a statement that lists traps will keep failing, and this one need not.
 
 ## 5. The ladder (MEASURED)
 
@@ -143,13 +152,11 @@ and rests.
 
 - **Entry into the trunk for good.** Nothing here shows that a finite half ever passes the last rung.
 - **Next tests, cheapest first.**
-  1. *The law of the first rung.* With the front at column 14 or more it breaks only at labels 20 and 9, and is passed
-     for good at label 15. Which words of the cells beyond do each? Those are finite sets, and would give the rung's
-     exact leak. The second rung, broken only at label 2, is the same question with fewer words.
-  2. *Lean for §3 and for the gate words at 14 columns* (4,080 late windows), which would weaken the kit's open left
-     statement C3g001.
-  3. *The 011 map:* what reads in its closed component, where no trap is known.
-- **Carrying reads.** R97 passes the rigid-front proof under the hypotheses in §1. I173 independently reproduced the width-22 map and width-20 closure. R97 corrects the timing inference in §2. The new first-departure theorem and sharp transit bounds in §8 are with readers.
+  1. *The census further:* labels 33 and 36, and walls past 16 cells. One trap with a third gate kills the conjecture of §4.
+  2. *The gate words in Lean.* At 14 cells there are 4,080 late windows and `1001` is already excluded; that would weaken the
+     kit's open left statement C3g001.
+  3. *The 011 map:* what reads in its closed component, where the census finds no trap at all.
+- **Carrying reads.** R97 passes the rigid-front proof under the hypotheses in §1. I173 independently reproduced the width-22 map and width-20 closure. R97 corrects the timing inference in §2. claudeM5 passed R97's first-departure theorem (M135) and gptIntel its transit bounds (I177). §3's Lean, §9 and §10 are not read by a second worker.
 
 ## 8. Exact first departure and sharp transit (R97)
 
@@ -174,6 +181,57 @@ To bound a positive delay, follow all paths from an aligned word with a free eas
 | `0x7fffff33011e03e43e` | 1 | 49 | 50 |
 
 Both rows are white beyond their highest set bit. A scalar truth-table simulation replays them and tests component membership at every tick. The graph search, witness histories and both proof receipts are reproducible locally. [Computation](gptM5_departure_transit.py) · [Results](data/gptM5-departure-transit.json)
+
+## 9. The census of walls (COMPUTED)
+
+A trap is a chain of columns that the label fixes, then a *wall*: a closed set of windows beyond the last of them whose
+first cell is fixed at each white label. Everything left of a wall is determined, column by column. So all traps of a word
+come from walls. [The census](claudeM5_r5_census.cpp) takes **every** word of length L as a drive, finds every wall of w
+cells beside it, and follows each chain to the left until it repeats ([results](data/claudeM5-census.txt)).
+
+| Labels L | Walls of up to | Traps for 001 | for 011 |
+|---|---|---|---|
+| 3, 6, 9, 12, 18, 24, 27 | 9 cells (12 and 18: 12; 24: 12; 18: 14) | none | none |
+| 15 | 16 cells | one chain, gate **11000** (the kit's 15-trap, 52 cells) | none |
+| 21 | 9 cells | the chains of Hallee's six seeds (47, 144, 304, 359, 365, 392 cells), gate **1100000** | none |
+| 21 | 16 cells | those, and two nearer walls: 111 cells on the 144-cell trap's chain, and **129 cells on a new chain** | none |
+| 30 | 9 cells | the 15-trap's chain, and walls at 1,129 and 1,354 columns, gate **11000** | none |
+
+That is every necklace: 35,792,568 at L = 30 and 4,971,068 at 27. No chain was cut off. A [second code](claudeM5_r5_census2.py)
+agrees on all walls at L = 9 (6 cells) and L = 12 (7 cells, 14 walls) and on 143 sampled words at L = 15.
+
+- Hallee's census took seeds with a black run of nine and few other cells. This one restricts nothing, and at nine cells
+  with labels 15 and 21 it finds the same seven.
+- **A fifth trap** ([check](claudeM5_r5_fifth.py), whole windows): 129 cells, labels mod 21, its wall of 12 cells beside
+  column 117. It leaves the 304-cell trap's chain at column 97. No state of it is, cut, a state of t001 or the 15-trap, and
+  its first 117 columns are never those of the other two. So a half that starts in it enters none of the four, and
+  *entry into one of the four*, which Hallee leaves open and says a fifth trap would refute, **is false**. Its gate is
+  1100000.
+- Every 21-label trap found has the trunk's 34 columns.
+
+## 10. The rungs' holes (COMPUTED)
+
+Column j of the trunk is a drive for what lies beyond it, and needs the next cell only at its own white labels: one
+**check** each. A label is a *checkpoint* if a window with an endless past that passed every earlier check can fail it
+([table](data/claudeM5-checks-table.txt), [columns](data/claudeM5-checks-columns.txt)).
+
+- **Column 13 has two checkpoints, labels 8 and 19; column 34 has one, label 1; column 38 has none.** These are the labels
+  just before the breaks of §5, at every width from 8 to 16 and 18 cells.
+- Beyond column 34 with 13 cells there is exactly one closed component, and it is t001's 815 states.
+- **Where a black run leaks.** After r black ticks of the drive the next cell is black exactly when the cells beside it
+  began as follows.
+
+| r | Start that leaves the next cell black |
+|---:|---|
+| 5 | `...#`, `..##.#`, `..###` |
+| 6 | `#.#...#`, `#.#..#`, `##..#`, `##.#`, `###..` |
+| 7 | `..##.#`, `..###` |
+| 8 | `#.#...#`, `#.#..#`, `##..#` |
+| 9 and more | none (the kit's `nine_black`) |
+
+  So column 34, whose check at label 1 follows a run of eight, leaks only on `##..#` in columns 35 to 39 at label 14 (the
+  other two starts are not readable there), and column 13's check at label 8 only on `..##.#` in columns 14 to 19 at label 1.
+- The number of checkpoints does not say where a row rests: columns 31 to 37 have one each.
 
 ## Reproduce
 
@@ -213,7 +271,13 @@ python3 claudeM5_r5_islands.py 54 ; claudeM5_r5_lang.py 10 14 18 22
 python3 claudeM5_r5_enter_sat.py late fifteen 20 60
 door cuts 240 400000 6000 OUT ; door random 60000 64 20261123 900000 0 OUT ; door coin 60000 20261123 3000000 OUT
 rungs rung 240 ; python3 claudeM5_r5_picture.py ladder.svg
+python3 claudeM5_r5_checks.py selftest | table 12 | column 34 8 18 | keys 34 1      (frozen, M135)
+census L W 0 2^L 2000000 OUT                                             (claudeM5_r5_census.cpp, frozen, M136)
+python3 claudeM5_r5_fifth.py 5000
+python3 claudeM5_r5_reach_lean.py Rule30EtherThreeNoFifteen.lean
 ```
 
 The raw runs are `share-scratch/claudeM5/R5/M134/r5-waits.zip`, SHA-256
 `250b7fd9b237b7553bfa0631fad0f87af1dbbf240b256cb4b271b41196fc98c5`, 2,178,099 bytes.
+The raw census to 14 cells is `share-scratch/claudeM5/R5/M137/r5-census.zip`, SHA-256
+`0fdf6e9a820dfd09a2c214f811b423111340d8336f7069aa94b61cf8fb84221a`, 1,345,862 bytes.

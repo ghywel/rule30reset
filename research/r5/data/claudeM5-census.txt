@@ -1,0 +1,27 @@
+L 3 walls of up to 9 cells: necklaces 4 walls 1 chains cut off 0 small columns {}
+L 6 walls of up to 9 cells: necklaces 14 walls 1 chains cut off 0 small columns {}
+L 9 walls of up to 9 cells: necklaces 60 walls 1 chains cut off 0 small columns {}
+L 12 walls of up to 9 cells: necklaces 352 walls 21 chains cut off 0 small columns {'001011': 45, '000001': 5}
+L 15 walls of up to 9 cells: necklaces 2192 walls 97 chains cut off 0 small columns {'001:11000': 5}
+     001:11000 distances [43, 44, 45, 46, 47]
+L 18 walls of up to 9 cells: necklaces 14602 walls 260 chains cut off 0 small columns {}
+L 21 walls of up to 9 cells: necklaces 99880 walls 695 chains cut off 0 small columns {'001:1100000': 21}
+     001:1100000 distances [38, 133, 134, 135, 295, 296, 297, 298, 299, 349, 350, 356, 357, 358, 359, 360, 383, 384, 385, 386, 387]
+L 24 walls of up to 9 cells: necklaces 699252 walls 2661 chains cut off 0 small columns {'001011': 66, '000001': 18, '0111': 5, '0011': 15, '0001': 10, '01': 5}
+L 27 walls of up to 9 cells: necklaces 4971068 walls 11156 chains cut off 0 small columns {}
+L 30 walls of up to 9 cells: necklaces 35792568 walls 45143 chains cut off 0 small columns {'00011': 1015, '00111': 7, '001:11000': 16, '01': 25}
+     001:11000 distances [43, 44, 45, 46, 47, 1124, 1125, 1126, 1127, 1128, 1129, 1350, 1351, 1352, 1353, 1354]
+L 12 walls of up to 12 cells: necklaces 352 walls 30 chains cut off 0 small columns {'001011': 63, '000001': 8}
+L 15 walls of up to 12 cells: necklaces 2192 walls 142 chains cut off 0 small columns {'001:11000': 8}
+     001:11000 distances [40, 41, 42, 43, 44, 45, 46, 47]
+L 18 walls of up to 12 cells: necklaces 14602 walls 397 chains cut off 0 small columns {}
+L 21 walls of up to 12 cells: necklaces 99880 walls 1153 chains cut off 0 small columns {'001:1100000': 44}
+     001:1100000 distances [35, 36, 37, 38, 99, 100, 101, 117, 118, 130, 131, 132, 133, 134, 135, 292, 293, 294, 295, 296, 297, 298, 299, 346, 347, 348, 349, 350, 353, 354, 355, 356, 357, 358, 359, 360, 380, 381, 382, 383, 384, 385, 386, 387]
+L 24 walls of up to 12 cells: necklaces 699252 walls 4737 chains cut off 0 small columns {'000001': 39, '001011': 93, '0111': 8, '0011': 24, '0001': 16, '01': 8}
+L 15 walls of up to 16 cells: necklaces 2192 walls 199 chains cut off 0 small columns {'001:11000': 12}
+     001:11000 distances [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
+L 18 walls of up to 14 cells: necklaces 14602 walls 487 chains cut off 0 small columns {}
+L 21 walls of up to 14 cells: necklaces 99880 walls 1463 chains cut off 0 small columns {'001:1100000': 60}
+     001:1100000 distances ([33, 34, 35, 36, 37, 38, 97, 98, 99, 100, 101, 115, 116, 117, 118, 128, 129, 130, 131, 132, 133, 134, 135, 290, 291, 292, 293, 294, 295, 296], '...', [378, 379, 380, 381, 382, 383, 384, 385, 386, 387], 60)
+L 21 walls of up to 16 cells: necklaces 99880 walls 1774 chains cut off 0 small columns {'001:1100000': 74}
+     001:1100000 distances ([31, 32, 33, 34, 35, 36, 37, 38, 95, 96, 97, 98, 99, 100, 101, 113, 114, 115, 116, 117, 118, 126, 127, 128, 129, 130, 131, 132, 133, 134], '...', [378, 379, 380, 381, 382, 383, 384, 385, 386, 387], 74)
