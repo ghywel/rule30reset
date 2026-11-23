@@ -1,0 +1,89 @@
+/-! ### Leaving an aligned prefix of any length -/
+
+/-- The wait from the last aligned tick of a prefix of `N` columns, when the front one tick later has class `g` and next
+bit `u`. -/
+def exitWait (N g : Nat) (u : Bool) : Nat :=
+  if g == 9 && u then ticksToOne (N - 1) 7 + 2
+  else if g == 6 && u then ticksToOne (N - 2) 7 + 3
+  else ticksToOne (N - 1) (slot g u) + 1
+
+/-- The state in which a front leaves an aligned prefix: recurrent, or one of two transient ones. -/
+theorem exit_table : ∀ (c : Fin 12) (φ : Fin 3) (e e2 : Bool),
+    Rule30Jen.rule (ether3 (c.val + 11) φ.val) (ether3 c.val φ.val) e ≠ ether3 c.val (φ.val + 1) →
+    isRec ((c.val + 4 * (φ.val + 1)) % 12)
+        (Rule30Jen.rule (ether3 c.val φ.val) e e2 != ether3 (c.val + 1) (φ.val + 1)) = true ∨
+      ((c.val + 4 * (φ.val + 1)) % 12 = 9 ∧
+        (Rule30Jen.rule (ether3 c.val φ.val) e e2 != ether3 (c.val + 1) (φ.val + 1)) = true) ∨
+      ((c.val + 4 * (φ.val + 1)) % 12 = 6 ∧
+        (Rule30Jen.rule (ether3 c.val φ.val) e e2 != ether3 (c.val + 1) (φ.val + 1)) = true) := by
+  decide +kernel
+
+theorem rec_not : ∀ g, g < 12 → ∀ u, isRec g u = true → (g == 9 && u) = false ∧ (g == 6 && u) = false := by decide
+
+/-- **First departure after a prefix of any length.** Let the column at site `0` be an ether column, and let the sites
+`0` to `N` carry the aligned ether at tick `t` and not at tick `t + 1`, with `N ≥ 3`. Then site `1` first leaves the ether
+exactly `exitWait N g u` ticks after `t`, where `g` is the class of site `N` and `u` says whether site `N + 1` is off the
+ether at tick `t + 1`. The cells beyond are arbitrary. -/
+theorem departure_after_exit {F : Nat → Nat → Bool} (hF : IsR30 F) {j0 s t N : Nat} (hN : 3 ≤ N)
+    (h0 : ∀ w, t ≤ w → F w 0 = eth j0 s 0 w) (agree : ∀ p, p ≤ N → F t p = eth j0 s p t)
+    (exit : ∃ p, p ≤ N ∧ F (t + 1) p ≠ eth j0 s p (t + 1)) :
+    FirstDeparture F j0 s t (exitWait N (cls j0 s N (t + 1)) (ubit F j0 s (t + 1) N)) := by
+  have before : ∀ p, p < N → F (t + 1) p = eth j0 s p (t + 1) := fun p hp =>
+    prefix_step hF (h0 _ (by omega)) (D := N + 1) (fun q hq => agree q (by omega)) p (by omega)
+  have diff : F (t + 1) N ≠ eth j0 s N (t + 1) := by
+    obtain ⟨p, hp, hne⟩ := exit
+    by_cases h : p = N
+    · rw [← h]; exact hne
+    · exact absurd (before p (by omega)) hne
+  have front : Front F j0 s (t + 1) N := ⟨before, diff⟩
+  obtain ⟨M, rfl⟩ : ∃ M, N = M + 1 := ⟨N - 1, by omega⟩
+  let c : Fin 12 := ⟨(j0 + (M + 1)) % 12, Nat.mod_lt _ (by decide)⟩
+  let φ : Fin 3 := ⟨(t + s) % 3, Nat.mod_lt _ (by decide)⟩
+  have e1 : F t M = ether3 (c.val + 11) φ.val := by
+    rw [agree M (by omega)]; exact ether3_congr (by dsimp [c]; omega) (by dsimp [φ]; omega)
+  have e2 : F t (M + 1) = ether3 c.val φ.val := by
+    rw [agree (M + 1) (by omega)]; exact ether3_congr (by dsimp [c]; omega) (by dsimp [φ]; omega)
+  have e3 : eth j0 s (M + 1) (t + 1) = ether3 c.val (φ.val + 1) :=
+    ether3_congr (by dsimp [c]; omega) (by dsimp [φ]; omega)
+  have e4 : eth j0 s (M + 1 + 1) (t + 1) = ether3 (c.val + 1) (φ.val + 1) :=
+    ether3_congr (by dsimp [c]; omega) (by dsimp [φ]; omega)
+  have lost : Rule30Jen.rule (ether3 (c.val + 11) φ.val) (ether3 c.val φ.val) (F t (M + 2)) ≠
+      ether3 c.val (φ.val + 1) := by
+    rw [← e1, ← e2, ← e3, ← hF t M]; exact diff
+  have hu : ubit F j0 s (t + 1) (M + 1) =
+      (Rule30Jen.rule (ether3 c.val φ.val) (F t (M + 2)) (F t (M + 3)) != ether3 (c.val + 1) (φ.val + 1)) := by
+    unfold ubit; rw [e4, hF t (M + 1), e2]
+  have hg : cls j0 s (M + 1) (t + 1) = (c.val + 4 * (φ.val + 1)) % 12 := by dsimp [c, φ, cls]; omega
+  have hw0 : ∀ w, t + 1 ≤ w → F w 0 = eth j0 s 0 w := fun w hw => h0 w (by omega)
+  have data := exit_table c φ (F t (M + 2)) (F t (M + 3)) lost
+  rw [← hu, ← hg] at data
+  rcases data with hr | ⟨h9, hu1⟩ | ⟨h6, hu1⟩
+  · obtain ⟨n9, n6⟩ := rec_not _ (cls_lt j0 s (M + 1) (t + 1)) _ hr
+    unfold exitWait
+    rw [n9, n6]
+    exact prepend (agree 1 (by omega)) (first_departure hF hw0 (by omega) front hr)
+  · unfold exitWait
+    rw [h9, hu1]
+    exact prepend (agree 1 (by omega)) (nine hF hw0 (by omega) front h9 hu1)
+  · unfold exitWait
+    rw [h6, hu1]
+    exact prepend (agree 1 (by omega)) (six hF hw0 (by omega) front h6 hu1)
+
+/-- Twelve more columns of prefix, one period of the ether, cost exactly thirty more ticks. -/
+theorem exitWait_add_twelve {N : Nat} (hN : 4 ≤ N) (g : Nat) (u : Bool) :
+    exitWait (N + 12) g u = exitWait N g u + 30 := by
+  have h : ∀ d, 2 ≤ d → ∀ j, ticksToOne (d + 12) j = ticksToOne d j + 30 := by
+    intro d hd j
+    have a := ticks_add_four (d := d) hd j
+    have b := ticks_add_four (d := d + 4) (by omega) j
+    have c := ticks_add_four (d := d + 8) (by omega) j
+    rw [show d + 12 = d + 8 + 4 by omega, c, show d + 8 = d + 4 + 4 by omega, b, a]
+  have h1 : ∀ j, ticksToOne (N + 12 - 1) j = ticksToOne (N - 1) j + 30 := fun j => by
+    rw [show N + 12 - 1 = N - 1 + 12 by omega]; exact h _ (by omega) j
+  have h2 : ∀ j, ticksToOne (N + 12 - 2) j = ticksToOne (N - 2) j + 30 := fun j => by
+    rw [show N + 12 - 2 = N - 2 + 12 by omega]; exact h _ (by omega) j
+  unfold exitWait
+  simp only [h1, h2]
+  split
+  · omega
+  · split <;> omega
