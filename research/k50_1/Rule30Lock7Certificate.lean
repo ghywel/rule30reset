@@ -49,7 +49,7 @@ private theorem leaf_sound {m c j : Nat} {k : Fin 7} (pass : checkLeaf m c j k =
       (target := fun w => (cls 30 lock7Codes k.val).contains w) ok R pref
     simpa using hit
 
-private def verify : Certificate → Nat → Nat → Bool
+def verify : Certificate → Nat → Nat → Bool
   | .hit j k, m, c => checkLeaf m c j k
   | .split l r, m, c => verify l (m+1) c && verify r (m+1) (2^m+c)
 
@@ -66,7 +66,8 @@ private theorem verify_sound (tree : Certificate) {m c : Nat} (size : c<2^m)
   | hit j k => exact fun _ h => ⟨k,leaf_sound pass h⟩
   | split l r il ir =>
     obtain ⟨left,right⟩ := Bool.and_eq_true_iff.mp pass
-    apply Rule30LockCube.split_forces size
+    refine Rule30LockCube.split_forces (P := fun R => Locked R (max l.deadline r.deadline))
+      size ?_ ?_
     · intro R h
       exact locked_later (Nat.le_max_left _ _) (il (by rw [Nat.pow_succ]; omega) left R h)
     · intro R h
@@ -74,13 +75,14 @@ private theorem verify_sound (tree : Certificate) {m c : Nat} (size : c<2^m)
 
 theorem accepts_sound {tree : Certificate} {m c : Nat} (pass : accepts tree m c = true)
     {R : Nat → Bool} (pref : HasPrefix m c R) : Locked R tree.deadline :=
-  verify_sound tree (Nat.mod_lt _ (Nat.two_pow_pos _)) pass R ((prefix_mod R m c).mpr pref)
+  verify_sound tree (m := m) (c := c%2^m) (Nat.mod_lt _ (Nat.two_pow_pos _))
+    pass R ((prefix_mod R m c).mpr pref)
 
 /-- An accepted single leaf also identifies the phase at its specified time. -/
 theorem accepted_phase {j m c : Nat} {k : Fin 7} (pass : accepts (.hit j k) m c = true)
     {R : Nat → Bool} (pref : HasPrefix m c R) :
     winW 30 R (1+2*j) ∈ cls 30 lock7Codes k.val :=
-  leaf_sound pass ((prefix_mod R m c).mpr pref)
+  leaf_sound (m := m) (c := c%2^m) (j := j) (k := k) pass ((prefix_mod R m c).mpr pref)
 
 private theorem complete_at (j n m c : Nat) (enough : 30+(1+2*j) ≤ m+n)
     (all : ∀ R, HasPrefix m c R → Locked R j) :
@@ -106,7 +108,7 @@ theorem deadline_iff (m c j : Nat) :
   · intro h
     obtain ⟨tree,pass,bound⟩ := complete_at j (31+2*j-m) m (c%2^m) (by omega)
       (fun R pref => h R ((prefix_mod R m c).mp pref))
-    exact ⟨tree,pass,bound.le⟩
+    exact ⟨tree,pass,by omega⟩
   · rintro ⟨tree,pass,bound⟩ R pref
     exact locked_later bound (accepts_sound pass pref)
 
