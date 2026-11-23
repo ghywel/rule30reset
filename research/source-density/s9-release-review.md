@@ -30,3 +30,18 @@ K70’s patch `098a0a30…` applies at `ac88b68`. Its 13 modules, four rows and 
 The reviewed replacement supplies the four introductions and clarifies existing comments about the scaled counts, controller targets and zero-loss intervals. I compared the two applied trees. Only Lean documentation changes in nine files. The four catalogue rows, imports and module count are byte-identical. The replacement gives tree `83992174f1dc59e8d7f864cb02af88e01304a71f`. The aggregate build passed in **326 jobs** using cached upstream dependencies. On both trees the stock checker reproduced the same results for **52 headlines and 642 constants** across all 13 modules, with zero new axioms. I accept the three shared family namespaces, which have precedents in the catalogue, and the two small tables alongside the theorems that certify them.
 
 The exact patch, PR text, manifests and receipts are in `share-scratch/gptM5/S9/R87-S9-release-read.zip`, SHA-256 `66a3895110b0af8fc02232902c723ceb486ec3608da88a9bd941e62087c9b02d`, verified by read-back. The author can record agreement on these digests. Posting requires the owner’s word. After portal verification the kit rows take the date, agreed author line, entry ID and page, and the PR body takes the entry ID and page.
+
+
+## R88 second read of the lighter notebook
+
+**PASS** on the M119 v2 notebook `f937d37804a9603c7f5216f8b6cc3cfb0115cc6bd336fc8b0caff0d67da5f12d` and pins `3d170e73db92d195025f7460d91a2f8cc42b3f0dba201ecc8662d9299f7362b4`. The builder measured 28.2 seconds locally, down from 129.5 seconds for v1.
+
+I fetched both packets and checked all twelve files against each pinned manifest. Rebuilding the Markdown from K71’s v5 draft reproduced `f1cd5b90…`. The essay adds one sentence explaining that a single kernel check covers every declaration, and changes the last input to call `KernelCheck` on `linear_bound_iff`. I checked the actual input in the delivered notebook. All earlier inputs and the rest of the prose match v1.
+
+The last saved output reports success on all 731 declarations. In a fresh Wolfram kernel at `5fb5915`, I imported the embedded source and ran all eleven headline checks separately. Each accepted the same 731 declarations. All eleven displayed types and axiom lists matched. The stock checker also reproduced the pinned receipt, with zero new axioms. Saved outputs 1–5, 7 and 8 match v1 exactly. The saved Lean environment contains the same 308 names after accounting for the session-generated module name. All nine outputs passed the notebook gates.
+
+The v2 posting script passed its dry run with `supersedes=R30-20261123-b2be99`. The exact comparison and replay receipts are in `share-scratch/gptM5/S9/R88-S9-lighter-read.zip`, SHA-256 `6b9f8cd52a4ec46fe3d91bc15ddc0c6909246f0d7699502b2296a676dae5eb9f`.
+
+During this read the portal reported that **the original S9 entry passed at 09:59:45 UTC on 23 November**, with all 11 headlines, 731 declarations and zero new axioms. If the lighter notebook is submitted, the portal keeps the verified original listed until its replacement passes. [Original portal entry](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) · [Portal update rules](https://www.wolframcloud.com/obj/rule-30-prize/Agents/skill.md)
+
+K71’s proposed correction to the text of kit PR #402 also matches `high_face`. The nine-black shield explains the inequality, and the Lean proof uses a bounded potential on six cells. This is a separate edit to the public PR.
