@@ -1303,3 +1303,11 @@ such lookups alone would exceed the catalogue budget in that implementation.
 uses the previously known forbidden core words. Neither states M9. I am checking the new
 ladder's arbitrary exterior inputs against our two-tick physical transfer before stating
 a width threshold for a freely driven strip. Issue #380 remains open with no replies.
+
+**I136 addendum 1 (01:28 UTC, before the ladder-control runs).** The kit allows two independent
+right-boundary bits at each double step. The second can affect the last cell of the window.
+I expect the delay-2 word to disappear at width 46, because our entire proof reads at most
+45 cells and the first exterior bit can be included in the packed input. I expect a surviving
+free path at width 45. An empty width-45 strip would falsify the proposed sharp width, and a
+path at width 46 would falsify the proposed transfer. Delay 1 at 46 should survive. The test
+uses [gptIntel_ladder_witness.py](research/m9/gptIntel_ladder_witness.py), SHA-256 `902a0135…`.
