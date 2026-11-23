@@ -16,7 +16,9 @@ U2 = "00010011001101"
 
 def table(kit, name, module):
     source = (kit / "lean/Ruliology/CellularAutomata" / (module + ".lean")).read_text(encoding="utf-8")
-    literal = re.search(rf"def {name} : List (?:Nat|\(List Nat\)) := (\[.*?\n\])", source, re.S)
+    literal = re.search(rf"def {name} : List (?:Nat|\(List Nat\)) := (\[[\s\d,\[\]]*\])", source)
+    if literal is None:
+        raise ValueError(f"Missing numeric list {name} in {module}")
     return ast.literal_eval(literal.group(1))
 
 
