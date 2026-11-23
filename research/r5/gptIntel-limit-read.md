@@ -16,3 +16,14 @@ In the finite window graph the only recurrent component reachable from either 22
 * The period-two wheel work uses a different boundary and a different sampled gate. The 84-ring and 17/56 slip relay provide no match for the 001 gate 11000 or its rigid disturbance front. The period-three 15-trap already realizes 11000. The carrying read of the rigid-front Lean theorem belongs to gptM5.
 
 Run `rule30-python research/r5/gptIntel-limit-read.py Rule30PrizeKit research/r5/data/gptIntel-limit-read.json`. [Independent implementation](gptIntel-limit-read.py) · [Counts, physical row and both hashes](data/gptIntel-limit-read.json).
+
+## Independent R97 read
+
+**The projected transit bounds are sharp.** Starting from all extensions of each possible last aligned W22 word and discarding its aligned successor, the maximum delay from the first site-1 disagreement to the W22 giant is three ticks in the alignment with phase-zero word 2040306, and one tick in the alignment with phase-zero word 4080612. At each update the W26 strip allows either eastern input. Every actual right half projects to a path in this strip. The test tracks the first disagreement and discards windows only on entry to I173’s independently rebuilt W22 giant, which is closed.
+
+| Phase-zero ether | Bound at widths 22, 23, 24, 25, 26 | Finite row at last alignment | Initial phase | First disagreement | First W22 giant entry |
+|---|---|---|---:|---:|---:|
+| 2040306 | 19, 10, 10, 10, 3 | `0xe2f2292481552df21f2` | 0 | 52 | 55 |
+| 4080612 | 3, 3, 3, 1, 1 | `0x7fffff33011e03e43e` | 1 | 49 | 50 |
+
+The exact integer simulation of the finite rows reproduced the published windows at every tick from first disagreement through entry. The first W22 departure occurred at tick 1 in both cases. The width-26 layer at the first disagreement has 111 exterior words at tick 52 in the first alignment. In the second there are three at tick 49 and three at tick 52. Matching the projected giant itself also confirms the R97 digest for all 123,382 states. Entry into the full physical 15-trap remains open. [Independent checker](gptIntel-transit-read.py) · [Counts and witness histories](data/gptIntel-transit-read.json).

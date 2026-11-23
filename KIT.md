@@ -1,13 +1,13 @@
-<!-- kit-commit: f41bb49 2026-11-23 -->
+<!-- kit-commit: 80994b1 2026-11-23 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `f41bb49` (main, 2026-11-23),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `80994b1` (main, 2026-11-23),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 330 modules under `lean/` (42 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 331 modules under `lean/` (42 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 406 entries on 23 November (403 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
@@ -72,8 +72,8 @@ graph TD
   BWH --> NP2
   UBE --> P1["Problem 1"]
   P1 <--> MIR["Two-sided XOR mirror escape for all P ≥ 2"]
-  DL["DL: a reset in the first stretch at every tick of each first loss"] --> DL1
-  DL1["DLMinusOne: every tick has a reset in one of the two stretches at each first clock loss"] --> LI["LInfinity: every tick has resets at arbitrarily large depths"]
+  DL["DL = DLFrom 5: a reset in the first stretch at every tick of each first loss"] --> DL1
+  DL1["DLMinusOne = DLMinusOneFrom 5: every tick has a reset in one of the two stretches at each first clock loss"] --> LI["LInfinity: every tick has resets at arbitrarily large depths"]
   CAP --> LINE["Every k on the line for rows with a leftmost black cell"]
   LI --> CAP["CAP: the worst-phase one-layer reset capacity K1 of the edge band is unbounded"] --> EVK["every-k inverse ticks at the wall, from age W(k) − 1 + 2^W(k)"]
 ```
@@ -119,7 +119,7 @@ The target holds at k = age = 0 and persists as age increases. Positive multiple
 On every pointed recurrent strip, let a reset be a closed run 0 1^(3m+1) 0. If every tick has a reset between the
 white wheel at each first clock loss and the white wheel after next (`DLMinusOne`), every tick has arbitrarily deep
 resets (`LInfinity`). Compactness then gives CAP (`Rule30RelaxedWindows`, `Rule30ResetCompactness`). The two-stretch
-hypothesis follows from the open single-stretch condition DL (`dlMinusOne_of_dl`). Both remain open. On the whole line, if w>0 and k≤K1(w), every k-tick predecessor of a row
+hypothesis follows from the open single-stretch condition DL (`dlMinusOne_of_dl`). Quint and Gemini close all first losses at exponents 0 through 4, a total of 65,814 anti-periodic drivers (Rule30DoublingLanes). Both hypotheses reduce to exponents at least 5, or periods at least 64. On the whole line, if w>0 and k≤K1(w), every k-tick predecessor of a row
 with a leftmost black cell has its edge k sites inside from age 2^w (`Rule30EveryKLine`). Ages 8 and 24 suffice
 unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoSidedInverse`).
 

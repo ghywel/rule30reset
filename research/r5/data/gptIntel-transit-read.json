@@ -1,0 +1,183 @@
+{
+  "width22_stabilized": 109,
+  "width22_giant_size": 123382,
+  "width22_giant_sha256_u32le": "8834d65626504fc9afb9cb6b4d5a4bc2ab41a103b9eef5a418a0404c0e405c1d",
+  "alignments": [
+    {
+      "ether_phase_zero": 2040306,
+      "lifts": {
+        "22": [
+          {
+            "exit_phase": 0,
+            "departure_tick": 49,
+            "possible_words": 100,
+            "max_ticks_to_giant": 19
+          },
+          {
+            "exit_phase": 0,
+            "departure_tick": 52,
+            "possible_words": 58,
+            "max_ticks_to_giant": 10
+          }
+        ],
+        "23": [
+          {
+            "exit_phase": 0,
+            "departure_tick": 52,
+            "possible_words": 102,
+            "max_ticks_to_giant": 10
+          }
+        ],
+        "24": [
+          {
+            "exit_phase": 0,
+            "departure_tick": 52,
+            "possible_words": 93,
+            "max_ticks_to_giant": 10
+          }
+        ],
+        "25": [
+          {
+            "exit_phase": 0,
+            "departure_tick": 52,
+            "possible_words": 88,
+            "max_ticks_to_giant": 10
+          }
+        ],
+        "26": [
+          {
+            "exit_phase": 0,
+            "departure_tick": 52,
+            "possible_words": 111,
+            "max_ticks_to_giant": 3
+          }
+        ]
+      },
+      "finite_row": "0xe2f2292481552df21f2",
+      "phase": 0,
+      "first_window_exit": 1,
+      "first_mismatch": 52,
+      "first_giant_entry": 55,
+      "history": [
+        {
+          "t": 52,
+          "phase": 1,
+          "word": 2937230,
+          "in_giant": false
+        },
+        {
+          "t": 53,
+          "phase": 2,
+          "word": 2579155,
+          "in_giant": false
+        },
+        {
+          "t": 54,
+          "phase": 0,
+          "word": 3754588,
+          "in_giant": false
+        },
+        {
+          "t": 55,
+          "phase": 1,
+          "word": 1014726,
+          "in_giant": true
+        }
+      ]
+    },
+    {
+      "ether_phase_zero": 4080612,
+      "lifts": {
+        "22": [
+          {
+            "exit_phase": 1,
+            "departure_tick": 49,
+            "possible_words": 4,
+            "max_ticks_to_giant": 3
+          },
+          {
+            "exit_phase": 1,
+            "departure_tick": 52,
+            "possible_words": 4,
+            "max_ticks_to_giant": 3
+          }
+        ],
+        "23": [
+          {
+            "exit_phase": 1,
+            "departure_tick": 49,
+            "possible_words": 7,
+            "max_ticks_to_giant": 3
+          },
+          {
+            "exit_phase": 1,
+            "departure_tick": 52,
+            "possible_words": 2,
+            "max_ticks_to_giant": 1
+          }
+        ],
+        "24": [
+          {
+            "exit_phase": 1,
+            "departure_tick": 49,
+            "possible_words": 12,
+            "max_ticks_to_giant": 3
+          },
+          {
+            "exit_phase": 1,
+            "departure_tick": 52,
+            "possible_words": 3,
+            "max_ticks_to_giant": 1
+          }
+        ],
+        "25": [
+          {
+            "exit_phase": 1,
+            "departure_tick": 49,
+            "possible_words": 5,
+            "max_ticks_to_giant": 1
+          },
+          {
+            "exit_phase": 1,
+            "departure_tick": 52,
+            "possible_words": 5,
+            "max_ticks_to_giant": 1
+          }
+        ],
+        "26": [
+          {
+            "exit_phase": 1,
+            "departure_tick": 49,
+            "possible_words": 3,
+            "max_ticks_to_giant": 1
+          },
+          {
+            "exit_phase": 1,
+            "departure_tick": 52,
+            "possible_words": 3,
+            "max_ticks_to_giant": 1
+          }
+        ]
+      },
+      "finite_row": "0x7fffff33011e03e43e",
+      "phase": 1,
+      "first_window_exit": 1,
+      "first_mismatch": 49,
+      "first_giant_entry": 50,
+      "history": [
+        {
+          "t": 49,
+          "phase": 2,
+          "word": 3782054,
+          "in_giant": false
+        },
+        {
+          "t": 50,
+          "phase": 0,
+          "word": 955578,
+          "in_giant": true
+        }
+      ]
+    }
+  ]
+}

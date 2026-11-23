@@ -98,7 +98,8 @@ def realize_transient(seq, width, t, candidates):
         return sum((1<<j) for j,x in enumerate(rows[0][1:]) if x in pos)
 
 
-def run(width, states):
+def limit_graph(width):
+    """Construct the stabilized strip graph and label all of its SCCs."""
     N = 1<<width
     all_rows = np.arange(N,dtype=np.int32)
     # Intersect all image layers, starting with every row at every driver phase.
@@ -126,6 +127,12 @@ def run(width, states):
     mat=csr_matrix((np.ones(es.size,dtype=bool),es.ravel(),np.arange(0,2*len(ids)+1,2)),shape=(len(ids),)*2)
     _,labels=connected_components(mat, directed=True,connection='strong')
     sizes=np.bincount(labels)
+    return active, t, ids, es, mat, labels, sizes
+
+
+def run(width, states):
+    N = 1<<width
+    active, t, ids, es, mat, labels, sizes = limit_graph(width)
     # Driver phase advances each step, so singleton components have no cycles.
     cyclic=np.flatnonzero(sizes>1)
     giant=int(np.argmax(sizes))
