@@ -53,13 +53,13 @@ def replay_lower(row, word, trap):
         raise ValueError("Lower witness left the gate trap")
 
 
-def verified_proof(folder, cadical, checker, binary, success):
+def verified_proof(folder, cadical, checker, binary, success, checker_options=()):
     proof = folder / ("binary.lrat" if binary else "text.lrat")
     command = [cadical, "-q", "--lrat=true", "--binary=" + str(binary).lower(), "instance.cnf", proof.name]
     solve = subprocess.run(command, cwd=folder, capture_output=True)
     if solve.returncode != 20:
         raise RuntimeError(f"CaDiCaL returned {solve.returncode} for {proof}: {solve.stderr[-500:]!r}")
-    check = subprocess.run([checker, "instance.cnf", proof.name], cwd=folder, capture_output=True)
+    check = subprocess.run([checker, *checker_options, "instance.cnf", proof.name], cwd=folder, capture_output=True)
     output = (check.stdout + check.stderr).decode(errors="replace").splitlines()
     if check.returncode != 0 or success not in (line.strip() for line in output):
         raise RuntimeError(f"{checker} failed for {proof}: {output[-5:]}")
@@ -68,6 +68,8 @@ def verified_proof(folder, cadical, checker, binary, success):
         shutil.copyfileobj(source, target)
     record = dict(checker=Path(checker).name, verdict=success, bytes=proof.stat().st_size,
                   sha256=sha(proof), archive=packed.name, archive_sha256=sha(packed))
+    if checker_options:
+        record["checker_options"] = list(checker_options)
     proof.unlink()
     return record
 
@@ -98,7 +100,8 @@ def certify(args, row, lower, trap):
         gate.dimacs(clauses, variables, cnf)
         if sha(cnf) != row["cnf_sha"]:
             raise ValueError(f"CNF differs from the judge: {spec} at {onset}")
-        proofs = [verified_proof(pending, args.cadical, args.cake, True, "s VERIFIED UNSAT"),
+        cake_options = [] if args.cake_heap_mib is None else [f"--CML_HEAP_SIZE={args.cake_heap_mib}"]
+        proofs = [verified_proof(pending, args.cadical, args.cake, True, "s VERIFIED UNSAT", cake_options),
                   verified_proof(pending, args.cadical, args.lrat, False, "c VERIFIED")]
         data = dict(spec=spec, onset=onset, cnf_sha=row["cnf_sha"], proofs=proofs,
                     lower_witness=lower if onset else None)
@@ -115,9 +118,12 @@ def main():
     p.add_argument("records", nargs="+", type=Path)
     p.add_argument("--cadical", default="cadical")
     p.add_argument("--cake", default="cake_lpr")
+    p.add_argument("--cake-heap-mib", type=int, help="heap size for the CakeML checker, in MiB")
     p.add_argument("--lrat", default="lrat-check")
     p.add_argument("--final", action="store_true", help="require a decision and every onset for the registered cohort")
     args = p.parse_args()
+    if args.cake_heap_mib is not None and args.cake_heap_mib < 1:
+        p.error("--cake-heap-mib must be positive")
     args.output.mkdir(parents=True, exist_ok=True)
     known = answers(args.records)
     trap = gate.trap_codes(args.kitfile)
