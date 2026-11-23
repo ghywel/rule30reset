@@ -1,0 +1,203 @@
+{
+  "claim": "partial",
+  "declared": [
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.IsRec",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.cls_lt",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.front_unique",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.isRec",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.local_step",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.psi",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.psiR",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.psi_le",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.rank",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.rankR",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.rank_le",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.rank_zero",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.recAt",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.rec_all",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.rec_facts",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.rigid_path",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.rigid_step",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.same_column",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.same_path",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.settleAt",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.settle_all",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.settle_step",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.settles",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.ten_ticks",
+      "standardAxioms": true
+    }
+  ],
+  "headlines": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.rigid_step",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.rigid_path",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.same_path",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.ten_ticks",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeRigid.settles",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    }
+  ],
+  "importsStatements": true,
+  "module": "Rule30EtherThreeRigid",
+  "newAxioms": [],
+  "official": [],
+  "reasons": [],
+  "replay": {
+    "constants": 97,
+    "ok": true
+  },
+  "verdict": "pass",
+  "verifiedTargets": []
+}

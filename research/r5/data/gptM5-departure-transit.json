@@ -1,0 +1,243 @@
+{
+  "width": 22,
+  "reachable_from_either": 127575,
+  "closed_size": 123382,
+  "closed_sha256_u32le": "8834d65626504fc9afb9cb6b4d5a4bc2ab41a103b9eef5a418a0404c0e405c1d",
+  "kit_t001_projected_words_inside": 21,
+  "alignments": [
+    {
+      "ether": [
+        2040306,
+        2224671,
+        3284769
+      ],
+      "width22": {
+        "first_mismatches_outside": 100,
+        "max_ticks_to_giant": 19,
+        "maximizers": [
+          5443982,
+          7541134
+        ]
+      },
+      "lifts": {
+        "22": [
+          {
+            "exit_phase": 0,
+            "departure_tick": 49,
+            "possible_words": 100,
+            "max_ticks_to_giant": 19
+          },
+          {
+            "exit_phase": 0,
+            "departure_tick": 52,
+            "possible_words": 58,
+            "max_ticks_to_giant": 10
+          }
+        ],
+        "23": [
+          {
+            "exit_phase": 0,
+            "departure_tick": 52,
+            "possible_words": 102,
+            "max_ticks_to_giant": 10
+          }
+        ],
+        "24": [
+          {
+            "exit_phase": 0,
+            "departure_tick": 52,
+            "possible_words": 93,
+            "max_ticks_to_giant": 10
+          }
+        ],
+        "25": [
+          {
+            "exit_phase": 0,
+            "departure_tick": 52,
+            "possible_words": 88,
+            "max_ticks_to_giant": 10
+          }
+        ],
+        "26": [
+          {
+            "exit_phase": 0,
+            "departure_tick": 52,
+            "possible_words": 111,
+            "max_ticks_to_giant": 3
+          }
+        ]
+      },
+      "physical_sharp_delay": 3,
+      "finite_witness": {
+        "row_hex": "0xe2f2292481552df21f2",
+        "initial_phase": 0,
+        "site23_at_exit": 1,
+        "departure": 52,
+        "first_giant_entry": 55,
+        "history": [
+          {
+            "t": 52,
+            "phase": 1,
+            "word": 2937230,
+            "in_giant": false
+          },
+          {
+            "t": 53,
+            "phase": 2,
+            "word": 2579155,
+            "in_giant": false
+          },
+          {
+            "t": 54,
+            "phase": 0,
+            "word": 3754588,
+            "in_giant": false
+          },
+          {
+            "t": 55,
+            "phase": 1,
+            "word": 1014726,
+            "in_giant": true
+          }
+        ]
+      },
+      "local_controls": [
+        {
+          "phase": 0,
+          "site23": 1,
+          "site24": 0,
+          "first_departure": 52
+        },
+        {
+          "phase": 0,
+          "site23": 1,
+          "site24": 1,
+          "first_departure": 52
+        }
+      ]
+    },
+    {
+      "ether": [
+        4080612,
+        255038,
+        2375235
+      ],
+      "width22": {
+        "first_mismatches_outside": 4,
+        "max_ticks_to_giant": 3,
+        "maximizers": [
+          9004454,
+          11101606
+        ]
+      },
+      "lifts": {
+        "22": [
+          {
+            "exit_phase": 1,
+            "departure_tick": 49,
+            "possible_words": 4,
+            "max_ticks_to_giant": 3
+          },
+          {
+            "exit_phase": 1,
+            "departure_tick": 52,
+            "possible_words": 4,
+            "max_ticks_to_giant": 3
+          }
+        ],
+        "23": [
+          {
+            "exit_phase": 1,
+            "departure_tick": 49,
+            "possible_words": 7,
+            "max_ticks_to_giant": 3
+          },
+          {
+            "exit_phase": 1,
+            "departure_tick": 52,
+            "possible_words": 2,
+            "max_ticks_to_giant": 1
+          }
+        ],
+        "24": [
+          {
+            "exit_phase": 1,
+            "departure_tick": 49,
+            "possible_words": 12,
+            "max_ticks_to_giant": 3
+          },
+          {
+            "exit_phase": 1,
+            "departure_tick": 52,
+            "possible_words": 3,
+            "max_ticks_to_giant": 1
+          }
+        ],
+        "25": [
+          {
+            "exit_phase": 1,
+            "departure_tick": 49,
+            "possible_words": 5,
+            "max_ticks_to_giant": 1
+          },
+          {
+            "exit_phase": 1,
+            "departure_tick": 52,
+            "possible_words": 5,
+            "max_ticks_to_giant": 1
+          }
+        ],
+        "26": [
+          {
+            "exit_phase": 1,
+            "departure_tick": 49,
+            "possible_words": 3,
+            "max_ticks_to_giant": 1
+          },
+          {
+            "exit_phase": 1,
+            "departure_tick": 52,
+            "possible_words": 3,
+            "max_ticks_to_giant": 1
+          }
+        ]
+      },
+      "physical_sharp_delay": 1,
+      "finite_witness": {
+        "row_hex": "0x7fffff33011e03e43e",
+        "initial_phase": 1,
+        "site23_at_exit": 0,
+        "departure": 49,
+        "first_giant_entry": 50,
+        "history": [
+          {
+            "t": 49,
+            "phase": 2,
+            "word": 3782054,
+            "in_giant": false
+          },
+          {
+            "t": 50,
+            "phase": 0,
+            "word": 955578,
+            "in_giant": true
+          }
+        ]
+      },
+      "local_controls": [
+        {
+          "phase": 1,
+          "site23": 0,
+          "site24": 0,
+          "first_departure": 49
+        },
+        {
+          "phase": 1,
+          "site23": 0,
+          "site24": 1,
+          "first_departure": 52
+        }
+      ]
+    }
+  ]
+}

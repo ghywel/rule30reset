@@ -5,14 +5,14 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 18:20 UTC by gptIntel (I175, wheel and singleton deadline; R96, R5 read).*
+Updated 2026-11-23 18:30 UTC by gptM5 (R97, R5 first-departure law and sharp transit).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | R5, second block posted (M134) |
-| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | R5 carrying read and finite transit test (R96) |
+| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | R5 exact first departure and sharp transit (R97), with readers |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | free; the wheel reads and two width tests are posted (K77, K78) |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Wheel observer and singleton deadline (I172–I175); compact Lean certificate in progress |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | free since N10 |
@@ -29,7 +29,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **The next block for the free workers is not set.** claudeM5 is on R5 (the owner, 23 November) and gptM5 has its carrying read. gptIntel continues the wheel with claudeCloud.
+- **The next block for the free workers is not set.** claudeM5 is on R5 (the owner, 23 November) and gptM5 has completed the carrying read and returned R97 for review. gptIntel continues the wheel with claudeCloud.
   claudeIntel is free: say what they take next, from the rows marked **free** in the
   tracker or from The next block.
 
@@ -55,7 +55,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 **The owner, 23 November:** the pulls with submissions are sorted (M133), and claudeM5 takes R5. The rest awaits next
 steps.
 
-- **Being worked:** R5 (gptM5 on the M134 carrying read and the transit after departure, R96). The [wheel observer](research/wheel/complete-observer.md) and [singleton deadline](research/wheel/exterior-budget.md) are with readers (I172–I175).
+- **Being worked:** R5 (gptM5, R97; exact departure and sharp transit with readers). The [wheel observer](research/wheel/complete-observer.md) and [singleton deadline](research/wheel/exterior-budget.md) are with readers (I172–I175).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
@@ -107,7 +107,7 @@ table for the lists below. The rules are in METHOD §8.
 | M9 | 17 Nov, claudeM5 | Why does a lone 1 force a word out of the trapped gate? (The late gate language inside the trap.) | *In progress,* **free** since S10 (M123). Inside the trap the gate settles to a fixed process. Four of its exclusion laws and the width-45 threshold are S10, in the kit. The [final K65 sieve](research/m9/data/gptIntel-sieve-final-K65.txt) has 23 certified onsets and 67 survivors through delay 40 or more, and all 18 newly judged laws contain a run of 1 (I140, I142). The entropy is undecided (I106), and absence from real rows is not a law (M85, M106). **Next:** one block on a hand reason for the pair (5, 1) from delay 12, the only judged two-run law. If no local reason appears, park it with the sieve table. The exterior half, X and Y, is K50.1's (K77, K78). | S10 posted and in the kit; the rest: no |
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress,* **free** since S8 (M112), which holds the compulsory factor (12, 10, 9) and the ten three-gap reset words. **Next, in this order:** (1) widen the strip test past 22 columns for the two minimal alphabets it leaves, {9, 10, 12, 13} and {9, 10, 12, 14} (I87): can one gap input keep two different readings of the second white tick? A death at some width settles that alphabet; a survivor is the candidate for a physical column. (2) A carrying read and a Lean form of I87's other compulsory factors, (10, 12), (12, 12) and a 13 or 14, which are external. The rest of `research/white-gap-mixtures/` is support (M105, I81, I90, I92, I94). | S8 posted and in the kit; (2) could extend it |
 | I66 | 21 Nov, gptIntel | Lowry's source arrivals under periodic centres, and source priority | *In progress,* **free** (I66–I69, I71, I73; `research/arrivals/`). Kernel: arrival parity is aperiodic for a wider family of periodic centres (I66). Under an eventually alternating centre, arrival parity and the distance-two shell are both aperiodic (I67–I68), with a finite form 2n < 3b + 16 (I73). Seven rightmost readings recover a four-cell band, and four letters are optimal (I69, I71). Read so far: the finite part of I67–I68 (K56 addendum 1) and I69 (K58). **Next:** a carrying read of the Lean, then the novelty check. | not yet assessed |
-| R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | *In progress:* gptM5 (R96), following claudeM5’s [second block](research/r5/README.md) (M134). **PROVED in Lean:** the ether's front moves on one path for every right side. **COMPUTED:** after departure every cut eventually reaches the closed giant (I173 gives a two-tick transit), at every support; no cut that keeps 20 columns of ether enters the 15-trap; the other three known traps share a 34-column trunk, gate 1100000. **MEASURED:** the wait climbs the trunk by rungs behind black runs of 7 and 9. Open: that a finite half ever passes the last rung. **Next:** the words that break and pass the first rung; a kernel certificate for the 20-column closure; the 011 map. | no; the rigid front is a candidate part, with gptM5 for carrying read (R96) |
+| R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | *In progress:* gptM5. M134's rigid front passed its carrying read. **PROVED IN LEAN** (R97): from the last tick of 22-site agreement, site 1 first differs at tick 52 in one alignment and tick 49 or 52, selected by site 24, in the other. A formula applies at every recurrent front. **COMPUTED**, with sharp finite witnesses: from that discrepancy the 22-site giant is reached within 3 or 1 ticks respectively. I173 independently reproduced the W22 map and W20 exclusion of the 15-trap. [Results, hypotheses and proof receipts](research/r5/README.md). Open: whether finite right halves pass the last rung into a full trap. | Family theorem with readers (R97); no submission packet. |
 | K50.1 | 21 Nov, claudeCloud | RD: does every finite right half end in the gate trap or in a periodic gate? | **Preliminary** ([R65](research/k50_1/right-dichotomy.md), K52, [R69](research/m9/exterior-grammars.md), K66). Proved for every ether cut (I46 read) and computed through support width 26. A counterexample needs one finite right half sustaining an aperiodic gate in X or Y, and the finite-window grammars constrain that. The period-2 lock is decided (K66, COMPUTED): one set, the kit's 53 ether-and-wall windows of 19 columns, entered at two alignments; 31 is the least right half that never enters the gate trap. One alignment is in the kit as `Rule30EtherFamilies` (#394); the second alignment and the exact forcing lengths are not. The period-7 lock's prefixes are S12. X and Y do not end when widened (Y to 62 columns, X to 43; K78), so a window graph cannot decide the open half, the aperiodic gate, and RD if true needs the half finite. No next test is written. | no |
 | K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. I46 checked the exclusion in Lean and exhibited a finite GE2 trace with 5,2,2,5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
 

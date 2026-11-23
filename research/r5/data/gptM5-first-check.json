@@ -1,0 +1,96 @@
+{
+  "claim": "partial",
+  "declared": [
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeFirstDeparture.Aligned001",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeFirstDeparture.FirstDeparture",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeFirstDeparture.departure_after_prefix_exit",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeFirstDeparture.first_departure",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeFirstDeparture.slot",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeFirstDeparture.ticksToOne",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeFirstDeparture.ticks_add_four",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeFirstDeparture.ticksToOne.eq_1",
+      "standardAxioms": true
+    }
+  ],
+  "headlines": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeFirstDeparture.first_departure",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeFirstDeparture.ticks_add_four",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30EtherThreeFirstDeparture.departure_after_prefix_exit",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    }
+  ],
+  "importsStatements": true,
+  "module": "Rule30EtherThreeFirstDeparture",
+  "newAxioms": [],
+  "official": [],
+  "reasons": [],
+  "replay": {
+    "constants": 101,
+    "ok": true
+  },
+  "verdict": "pass",
+  "verifiedTargets": []
+}
