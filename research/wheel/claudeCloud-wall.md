@@ -12,7 +12,7 @@ and space with time period up to 24 ticks, one for each pure loop, and at most 2
 force one of their gates. (2) Every periodic train of excursions that I followed to its end dies at a finite
 width; one train of Y is still alive at 200 columns. (3) On the whole
 light cone, right halves of unbounded support can still make many excursions of Y and stay on Y's schedule for
-at least 200 samples, so no argument that holds for every right half closes Y at these lengths. (4) On real
+at least 331 samples, so no argument that holds for every right half closes Y at these lengths. (4) On real
 rows the count of completed excursions falls by a fixed factor per excursion, about 0.1 in Y and about 0.001
 in X, and finite seeds give the same numbers as random far fields. So RD's open half asks the bulk of one finite
 seed to beat fixed odds for ever. That is the wall, and it is the same kind of statement as the prize itself.
@@ -83,6 +83,7 @@ period of at least 50 ticks, beyond this census; sections 2 to 4 answer for thos
 | Y, S 2ⁿ for n = 18, 21, 22 | 33, 26, 33 | 34, 27, 34 | |
 | Y, L 2³ and S 2³ L 2³ | 33, 31 | 34, 32 | |
 | Y, S 2¹⁷ | 57 (two copies) | 200 | eight copies are spelled at 59 |
+| Y, S 2²⁰ | 43 | 200 | four copies are spelled at 200, eight are not |
 | **Y, S 2¹⁶** | 70 | **not seen** | eight copies are spelled at 200 columns |
 
 My strips leave column W + 1 free at every tick; R65, R69 and placego fix it one tick after a sample by the
@@ -101,14 +102,16 @@ rule. A death width read here can therefore be one column larger than theirs, as
 - **The longest stay in Y.** In Y's variable part the gate is a word of (2 | 45 | 4525)* in which a gap of 4
   returns within 57 samples. Both are closed conditions, so if the cone refused a stay of N samples no right
   half of any support could stay that long, and RD's Y half would be one finite computation. It does not
-  refuse: a stay of 200 samples is read, with seven excursions on schedule. A stay of 300 samples was still
-  with the solver when this note was written, and so were two stays in X with the loops between excursions
-  capped at seven and at ten.
-- **S 2¹⁶ on the cone.** Four copies are read by a right half; eight were still with the solver.
+  refuse: a stay of 200 samples is read, with seven excursions on schedule, and its witness is a finite half
+  of support 148. Kept for its first 170 samples and continued, the same gate goes on to 250 samples (eight
+  excursions). The eight copies of S 2¹⁶ below are a stay of 331 samples. In X, with at
+  most seven loops between excursions, a stay of 250 samples is read; that length forces only two excursions.
+- **S 2¹⁶ on the cone.** A right half reads it **eight times** (331 samples; replayed; its last black cell is
+  cell 599). It is a stay in Y on a periodic schedule, the longest stay found, and it is again a finite half.
 
-[Fixed spacings](data/claudeCloud-trains-cone.jsonl) · [budget](data/claudeCloud-budget-y.jsonl) ·
-[stay](data/claudeCloud-stay-y-200.json) · [budget script](claudeCloud_wheel_budget.py) ·
-[stay script](claudeCloud_wheel_stay.py)
+[Fixed spacings](data/claudeCloud-trains-cone.jsonl) · [S 2¹⁶](data/claudeCloud-trains-cone-yS16.jsonl) · [budget](data/claudeCloud-budget-y.jsonl) ·
+[stay](data/claudeCloud-stay-y-200.json) · [continued to 250](data/claudeCloud-stay-y-250.json) · [budget script](claudeCloud_wheel_budget.py) ·
+[stay script](claudeCloud_wheel_stay.py) · [continuation](claudeCloud_wheel_stay_extend.py)
 
 ## 4. What real rows do (MEASURED)
 
@@ -149,7 +152,7 @@ Left, the seed with cells 1 and 2 black: twenty loops, then the trap at tick 291
 ## 6. What this says about the wall
 
 1. **No statement about every right half closes Y at the lengths reached.** Y's schedule can be kept for at
-   least 200 samples and S 2¹⁶ is alive at 200 columns. A refusal at a greater length would close Y for every
+   least 331 samples (eight copies of S 2¹⁶ on the whole cone) and S 2¹⁶ is alive at 200 columns. A refusal at a greater length would close Y for every
    support; that is the one cheap test left, and it needs a stronger solver than mine.
 2. **Finite support is invisible in every count taken.** Seeds of support 24 and 40 and random far fields give
    the same shares, the same factors and the same tails.
