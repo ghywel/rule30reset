@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 01:02 UTC by gptIntel (I135, M9 stock check).*
+Updated 2026-11-23 01:11 UTC by claudeCloud (K69 addendum 4, kit update step to `ac88b68`; S8 is in the kit).*
 
 ## Arrangement
 
@@ -35,10 +35,6 @@ Calls to action only.
   all eleven headlines at the verifier's commit. Left: a read of that module, the M5 notebook and the release read.
 - **Path 4, the seven-lock prefix certificate** (I49), beside Lowry’s #378, is the one path left unread. Say whether
   anyone takes it.
-- **S8, the compulsory gap factor (12, 10, 9)** is posted as
-  [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a), Lean
-  Verified. [Kit PR #398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398) is open and mergeable
-  at `5a5ffeb` on `127ebed`. The 307-module catalogue and all nine S8 headlines pass (I131).
 - **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md). The owner's word, 22 November: "Open repair 1, start
   preparing repair 3, open repair 2 when ready" (M101).
   - Repair 1 (8e6bd3) is **merged** as kit commit `a4b4aff` (#391), with the maintainer's review change (M107).
@@ -111,10 +107,10 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S5** | (DL⁻₁) gives (L∞), and so every k. | [R30-20261120-8dc0b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-8dc0b3), Lean Verified (M72) | in the kit at `40017e8` from [#377](https://github.com/WolframInstitute/Rule30PrizeKit/pull/377) (I44) |
 | **S6** | Without the wall: for every configuration with a leftmost black cell, Hughes's ages 8 (sharp) and 24, and from (CAP) every k. | **posted** as [R30-20261122-7c7bad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-7c7bad) (M93), on manifest `374b8d2d…`: **Lean Verified, Human Verified**. **Merged** in [#385](https://github.com/WolframInstitute/Rule30PrizeKit/pull/385) at `54d030c` (I108). The portal lists both kit modules. [Release and final PR review](research/k50_3/s6-release-review.md) | route: two catalogue modules, `Rule30TwoSidedInverse` and `Rule30EveryKLine` |
 | **S7** | The sharp loss of seven ticks at a moving white endpoint, and both quarter-period exclusions at every site of a row with a leftmost black cell. | Proposed in R79 from I93/I103. Finite replay K64 and Lean read M95 passed. **Packet ready** (R80). Portal manifest `d6977083…`, kit patch `4137eecb…`. **Posted** at the owner's word as [R30-20261122-a963b5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-a963b5), **Lean Verified** at `5fb5915` (M103). | **In the kit** as `Rule30PulseRelay`, kit commit `98cdf71` (#393). Norris has priority for singleton 7/11. |
-| **S8** | Every periodic sparse column (isolated pulses, gaps of at least 9) at any site of a row with a leftmost black cell contains the gaps 12, 10, 9; the ten three-gap reset words as support. | **Posted** as [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a), **Lean Verified** at `5fb5915` (M112) | Kit PR [#398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398), open and mergeable at `5a5ffeb` (I131). |
+| **S8** | Every periodic sparse column (isolated pulses, gaps of at least 9) at any site of a row with a leftmost black cell contains the gaps 12, 10, 9; the ten three-gap reset words as support. | **Posted** as [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a), **Lean Verified** at `5fb5915` (M112) | **Merged** as `Rule30RequiredGapFactor` and `Rule30ThreeGapCapture`, kit `33b19c8` ([#398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398)). |
 | **S9** | At any site of any history the black count C and the run-end count A over T ticks satisfy three sharp inequalities; five explicit histories are the corners of the pentagon; a linear inequality holds uniformly exactly when it holds at the five corners; every rational point of the pentagon is the limit of one history, from any right half; on the single seed two corners are missed by a margin of at least log T. | **Proposed** in K67 from I72. Twelve modules read (K67, I124, I126). `Rule30DensityMixtures` (K69) is **unread**. Source `8a769d21…` passes the stock checker at a clean `5fb5915`: eleven headlines, 731 constants (K69). Author's files in `share-scratch/claudeCloud/S9/v3/`. Left: that read, the M5 notebook, the release read, the owner's word. | A family of kit modules after the portal id. |
 
-The portal verifier is at `5fb5915`. The shared catalogue is in step with kit main at `127ebed` (I130).
+The portal verifier is at `5fb5915`. The shared catalogue is in step with kit main at `ac88b68` (K69 addendum 4).
 
 ## Pulls in progress
 

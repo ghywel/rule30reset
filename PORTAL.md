@@ -1,10 +1,10 @@
-<!-- portal-list: 2026-11-22 22:57 UTC, 397 entries, 51 portal-only -->
+<!-- portal-list: 2026-11-23 01:10 UTC, 397 entries, 50 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-22 22:57 UTC (397 entries)
-and kit main `127ebed` (I130). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-23 01:10 UTC (397 entries)
+and kit main `ac88b68` (K69). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
@@ -27,11 +27,11 @@ and kit main `127ebed` (I130). Find new portal-only entries with `python3 tools/
 |---|---|
 | Missed | 8 |
 | Port | 3 |
-| Pending | 3 |
+| Pending | 2 |
 | Check | 4 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 51, of them 18 ours |
+| All | 50, of them 17 ours |
 
 ## Missed (8)
 
@@ -58,7 +58,7 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (3)
+## Pending (2)
 
 In an open kit pull request. Moves out of this file when it merges.
 
@@ -66,7 +66,6 @@ In an open kit pull request. Moves out of this file when it merges.
 |---|---|---|---|---|---|---|
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261120-2a993b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-2a993b) | 2026-11-20 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: K1 collapses to a 16-phase minimum through width 53,208, and the inverse ticks hold unconditionally through k = 25. | Open kit PR #371. | S |
-| [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a) | 2026-11-22 | ours | Lean Verified | Ours (S8): at any site of a row with a leftmost black cell, a periodic train of isolated pulses with gaps of at least 9 has every gap at most 16 and contains the gaps 12, 10, 9; ten three-gap words force every right half into G. | Open kit PR #398 (M112). | L |
 
 ## Check (4)
 

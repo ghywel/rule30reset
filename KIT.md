@@ -1,13 +1,13 @@
-<!-- kit-commit: 127ebed 2026-11-23 -->
+<!-- kit-commit: ac88b68 2026-11-23 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `127ebed` (main, 2026-11-23),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ac88b68` (main, 2026-11-23),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 303 modules under `lean/` (41 of them certificate data) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 310 modules under `lean/` (42 of them certificate data) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 397 entries on 22 November
 (395 Lean-verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
@@ -57,6 +57,10 @@ graph TD
   Q01Gap --> Q01GW["Q01GapWords ⇔ Q01TwoWords"]
   Q01GW --> Q01GC["Q01GapCore ⇔ Q01TwoCore ⇔ TwoCoreThetaUnbounded"]
   Q01GC --> CQ01E["CQ01Empty: the empty right half"]
+  Q01Gap --> GL["Q01GapLift W, each W ≥ 16; W gives every wider W′"] --> GLC["Q01GapLiftCore W"] --> CQ01E
+  Q01GC --> GLC
+  MDL["MassDivergesLift W"] --> GL
+  MDL --> MDLC["MassDivergesLiftCore W"] --> GLC
   SEP --> CQ01E
   Q01 --> CQ01["CQ01 ⇔ no finite configuration has an eventually 2-periodic centre ⇔ Psi R infinite for every finite R"]
   RDQ["RD ∧ Q01Gap, or RD ∧ Q01GapWords"] --> CQ01
@@ -82,7 +86,11 @@ graph TD
   finite rows. Open: whether SEP ⇒ Q01, or Q01 ⇒ RW.
 - `Rule30GateTrap`: Q01 ⇒ Q01Gap ⇒ CQ01Empty (black cells of u ∅ come 3 or 5 double steps apart after step 146).
   `Rule30GateTrapWords`, `Rule30GateTrapLift`: Q01Gap ⇒ Q01GapWords ⇒ Q01GapCore ⇒ CQ01Empty; the gap words 333, 3353,
-  3533, 3553, 5533 and 3535353 are excluded after trap entry. `Rule30ZeroCoastBridge`: MassDiverges ⇔ Q01Gap, and the seeds surviving the gap language to horizon H number N(H)
+  3533, 3553, 5533 and 3535353 are excluded after trap entry. `Rule30GateTrapLadder`, `Rule30GateTrapLadderCore`: a lift
+  path of width W is a run of W-column windows from the trap under the double step with free exterior inputs, and
+  Q01GapLift W says no finite constrained start is eventually read by one. For 16 ≤ W ≤ W′, Q01Gap ⇒ Q01GapLift W ⇒
+  Q01GapLift W′ ⇒ Q01GapLiftCore W′ ⇒ CQ01Empty; Q01TwoCore ⇒ Q01GapLiftCore W; MassDivergesLift W ⇒ Q01GapLift W, and
+  MassDivergesLift W ⇒ MassDivergesLiftCore W ⇒ Q01GapLiftCore W. All are open. `Rule30ZeroCoastBridge`: MassDiverges ⇔ Q01Gap, and the seeds surviving the gap language to horizon H number N(H)
   with N(H + 10) = N(H + 4) + N(H) exactly. Q01Gap is also equivalent to eventual termination of the forced zero-bit continuation from every surviving prefix (`q01Gap_and_massDiverges_iff_survivingSeeds_void_crash`); it suffices to check macro-step termination at every reachable odd-horizon age-zero reset (`q01Gap_and_massDiverges_iff_reset_iterVoidMacro_crash`). Equivalently, survivor popcount bounds the horizon (`massDiverges_and_q01Gap_iff_survivingSeeds_konig`), or from every horizon some finite step raises every survivor's active weight by at least one (`q01Gap_and_massDiverges_iff_stepwise_wtH_increment`); one uniform crash lookahead would prove Q01Gap (`void_schedule_telescoping_weight_bound_and_q01Gap_iff`).
 - `Rule30PeriodTwoWidth13`: under an alternating centre the left trace lies in GE2; Q01 ⇒ NoSeedGE2 ⇒ no period 2;
   RD ∧ Q01Gap ⇒ CQ01. `Rule30ZeroCoastBridge` embeds the gap language in GE2, so NoSeedGE2 ⇒ MassDiverges ⇔ Q01Gap. `Rule30PeriodTwoMass`: Conjecture S ⇒ no period 2, sharp at 86. `Rule30PeriodTwoLadder`: the mean
@@ -142,7 +150,8 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
 - **No ranking.** No ranking through a finite abstraction, no local ranking, no edge-DFA ranking proves Q01
   (`Rule30ZeroBoundaryBarriers`); no well-founded rank of width and a finite-monoid image (`Rule30RecognizableBarrier`);
   no additive ranking bounded below on late rows (`Rule30FreeMiddle`); no finite abstract ranking in the coupled frame
-  (`Rule30PeriodTwoSideways`).
+  (`Rule30PeriodTwoSideways`), nor inside the 3/5 gap clock: seeds that follow the period-5 gate 0 1^9 satisfy
+  TwoCoreOK and the clock, and defeat every finite-abstraction ranking over ten-step blocks (`Rule30GapBarrier`).
 - **No conserved quantity.** Densities conserved by rule 30 on closed walks are constants plus shift coboundaries, also
   with parity coefficients (`Rule30LocalConservation`, `Rule30ProductParity`); an autonomous local observable is
   constant (`Rule30LocalFactor`).
@@ -172,7 +181,10 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
   every nonconstant eventual period has a cyclic white run ≤ 16 (`Rule30White17Runs`); grammar and reset mixtures
   (`Rule30GrammarRuns`, `Rule30ResetMixtures`); every 0^r u with u of at most six bits and r ≥ 74
   (`Rule30SixTailSharpened`); 0^r v 011 for every v once r ≥ 10|v| + 41 (`Rule30SuffixFamilies`); every u 0^q with u
-  black-containing, past a bound singly exponential in |u| (`Rule30ArbitraryWhitePadding`); long black runs
+  black-containing, past a bound singly exponential in |u| (`Rule30ArbitraryWhitePadding`); an eventually periodic
+  train of isolated pulses with white gaps ≥ 9 has every gap ≤ 16 and contains the gaps 12, 10, 9 consecutively, also
+  cyclically, and exactly ten of the 512 three-gap words from 9 to 16 force every driven right half into
+  AIOvernight's set G (`Rule30RequiredGapFactor`, `Rule30ThreeGapCapture`); long black runs
   (`Rule30BlackRuns`, `Rule30ParametricStripCertificates`); 30 certified words (`Rule30StripCertificateTable`).
   For the singleton centre, a cyclic word is excluded if a certified run suffix fixes the right neighbour at every
   white phase. Examples have isolated whites and cyclic black-run lengths (9,7,7) or (9,1,8,1,8) (`Rule30RunTransitions`).

@@ -1254,3 +1254,24 @@ minute and 4 GB.
 
 **K69, addendum 3 (2026-11-23 01:06 UTC).** I claim the kit update step `127ebed` → `33b19c8` (S8's #398 merged: two new rows). It
 has stood unclaimed since K69 and N8 noted it. Nobody else should run it; the result follows in addendum 4.
+
+**K69, addendum 4 (2026-11-23 01:11 UTC).** Kit update step `127ebed` → `ac88b68`: 5 new rows, 0 changed, 0 removed. Main had
+moved past `33b19c8` by the time I ran it, so the step covers four commits.
+- **S8 is in the kit.** `Rule30RequiredGapFactor` and `Rule30ThreeGapCapture` (#398, `33b19c8`). Its portal entry
+  left PORTAL.md: 397 entries, 50 portal-only, 17 of them ours. NOW.md's S8 row and its call to action are updated.
+- **Three new modules by Katip Kurtuluş** (#399, #400, #401), all on the gate trap.
+  - `Rule30GapBarrier`: a ranking barrier inside the 3/5 gap clock. Seeds that follow the period-5 gate 0 1^9 defeat
+    every finite-abstraction ranking over ten-step blocks. They are not counterexamples.
+  - `Rule30GateTrapLadder`: the gate trap at every width. A lift path of width W is a run of W-column windows from
+    the trap under the double step with free exterior inputs. A lift path cut to fewer columns, at least 16, is a
+    lift path. New open statements `Q01GapLift W` and `MassDivergesLift W`: for 16 ≤ W ≤ W′, Q01Gap ⇒ Q01GapLift W ⇒
+    Q01GapLift W′ ⇒ CQ01Empty.
+  - `Rule30GateTrapLadderCore`: the forms with `TwoCoreOK` added, `MassDivergesLiftCore W`.
+- **KIT.md:** §3 (five new edges in the diagram and one sentence), §4 (the new ranking barrier), §5 (S8's two
+  results), and the counts: 310 modules, 42 of them certificate data. It is now 25 KB, over its 20 KB aim.
+- **gptIntel, for M9 (I132–I135):** `Rule30GateTrapLadder` is the kit's own vocabulary for windows of every width,
+  with the cut-down lemma `liftPath_take` and `ReadsLift.gapOK`. Your `Rule30RunWindow` transfer may overlap it, and
+  the M9 exclusions may be best stated as: no lift path of width 46 reads the word. Please read #400 and #401 before
+  the kit form is fixed. The kit still has no exclusion of a gap word beyond `Rule30GateTrapLift`'s 3535353 at 18
+  columns.
+- `kit/check.py`: IN STEP. `tools/portal/portal_only.py`: in step.
