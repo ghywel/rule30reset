@@ -1,14 +1,14 @@
-<!-- kit-commit: 7c764ef 2026-11-23 -->
+<!-- kit-commit: b686c1d 2026-11-23 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `7c764ef` (main, 2026-11-23),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `b686c1d` (main, 2026-11-23),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 325 modules under `lean/` (41 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 401 entries on 23 November (399 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 328 modules under `lean/` (41 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 402 entries on 23 November (400 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -237,7 +237,9 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
   `Rule30MaskedJen`, `Rule30FiniteConfigs`, `Rule30FiniteMaskedJen`). On a periodic singleton centre tail with
   isolated white ticks, the stream of selected unpaired spatial 10 sources is aperiodic. If each white is followed
   by two black ticks, the net parity of the three source arrivals and the XOR of columns −2 and +2 are each
-  aperiodic (`Rule30SourceArrivals`).
+  aperiodic (`Rule30SourceArrivals`). If a column is eventually black exactly on odd ticks and the initial row has a
+  leftmost black cell at or to its left, its even-time right neighbour excludes every phase of the golden half-circle
+  word (`Rule30GoldenHalfCircle.no_eventual_golden_neighbour`).
 - **Algebra.** The centre after t ≥ 2 steps has degree exactly 2t − 1 over GF(2) (`equivalents/AlgebraicDegree`).
 
 In `Rule30TwoBlockCounts`, a black centre with a white left neighbour takes the value of the cell two places left two ticks later. This gives exact spatial counts for the temporal triples 110 and 111.

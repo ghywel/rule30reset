@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-23 15:53 UTC, 402 entries, 51 portal-only -->
+<!-- portal-list: 2026-11-23 15:57 UTC, 402 entries, 50 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-23 15:53 UTC (402 entries)
-and kit main `7c764ef` (R95). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-23 15:57 UTC (402 entries)
+and kit main `b686c1d` (I165). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 50 of the 398 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 50 of the 402 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -27,11 +27,11 @@ and kit main `7c764ef` (R95). Find new portal-only entries with `python3 tools/p
 |---|---|
 | Missed | 8 |
 | Port | 3 |
-| Pending | 3 |
+| Pending | 2 |
 | Check | 4 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 51, of them 19 ours |
+| All | 50, of them 18 ours |
 
 ## Missed (8)
 
@@ -58,15 +58,14 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (3)
+## Pending (2)
 
 In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
-| [R30-20261123-6c3fa9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9) | 2026-11-23 | ours | Lean Verified, Human Verified | Ours (S11): at every phase, the golden half-circle word is not the eventual even-time neighbour of a clocked row with a leftmost black cell at or left of the origin. | A family exclusion at one angle, every phase. Core kit [PR #405](https://github.com/WolframInstitute/Rule30PrizeKit/pull/405) is open. | L |
-| [R30-20261123-9608ac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-9608ac) | 2026-11-23 | ours | Lean Verified | Ours (S12): every infinite completion of a finite right prefix enters the width-30 seven-phase lock, under the black-first alternating centre, exactly when a finite branching certificate passes; a certified prefix at age A of the singleton forces a break of alternation by absolute tick 2(A + E); certified prefixes at arbitrarily late black-centre ages would exclude eventual period two. | Kit PR by gptIntel to follow Lean Verified (I163). | L |
+| [R30-20261123-9608ac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-9608ac) | 2026-11-23 | ours | Lean Verified | Ours (S12): every infinite completion of a finite right prefix enters the width-30 seven-phase lock, under the black-first alternating centre, exactly when a finite branching certificate passes; a certified prefix at age A of the singleton forces a break of alternation by absolute tick 2(A + E); certified prefixes at arbitrarily late black-centre ages would exclude eventual period two. | Companion [kit PR #406](https://github.com/WolframInstitute/Rule30PrizeKit/pull/406) is open on the merged S11 tree. | L |
 
 ## Check (4)
 
