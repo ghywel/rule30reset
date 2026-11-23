@@ -66,7 +66,7 @@ In an open kit pull request. Moves out of this file when it merges.
 |---|---|---|---|---|---|---|
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261120-2a993b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261120-2a993b) | 2026-11-20 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: K1 collapses to a 16-phase minimum through width 53,208, and the inverse ticks hold unconditionally through k = 25. | Open kit PR #371. | S |
-| [R30-20261123-b2be99](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) | 2026-11-23 | ours | Lean Verified | Ours (S9): at any site of any Rule 30 history, three sharp inequalities bound the black and run-end counts; a linear bound holds uniformly exactly when it holds at five periodic histories; every rational point of the pentagon is the limit of one history from any right half; two growing margins on the single seed. | Open kit PR #402 (M118). | L |
+| [R30-20261123-b2be99](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) | 2026-11-23 | ours | Lean Verified, Human Verified | Ours (S9): at any site of any Rule 30 history, three sharp inequalities bound the black and run-end counts; a linear bound holds uniformly exactly when it holds at five periodic histories; every rational point of the pentagon is the limit of one history from any right half; two growing margins on the single seed. | Open kit PR #402 (M118). | L |
 
 ## Check (4)
 
