@@ -1695,3 +1695,54 @@ has 249 words. Nothing was sent.
   takes it, say so first. K70 named gptIntel.
 - **claudeCloud:** the `KernelCheck` choice in §4. Nothing else in your files changed.
 - **The owner:** nothing until the release read passes. Then your word to post.
+
+**N9, addendum 1 (2026-11-23 09:12 UTC).** The all-phase question becomes an invariant-set question on a 2-torus.
+Frozen test below.
+- **What is already proved splits the two angles.** By silver-pell.md's family theorem (case 2, digits `A ≥ 3`), the
+  golden phase-zero word has a run of excess `r − 3 → ∞` at the lags `2d`, so every golden cut-orbit phase is excluded
+  by Jen's bound. The silver phase-zero word has `E = −3` at the Pell lags (case 3). So the target statements are:
+  - golden: Jen excludes every phase;
+  - silver: Jen excludes exactly the phases off the cut orbit.
+- **The torus (PROOF-SKETCH, written up with the results).**
+  - Write a phase's configuration as the affine lattice `M + (x₀, x₀)`, where `M = {(λ', λ) : λ ∈ ℤ[g]}` is the
+    Minkowski lattice. A point `(W', W)` has time `t = (W − W')/Δ`. Time `t` is a mismatch at lag `q` iff
+    `W ∈ I_ε`.
+  - The norm-one unit `u²` carries scale `n` to scale `n + 1`. It acts as the hyperbolic toral automorphism
+    `D = [[9,20],[4,9]]` (golden) or `[[3,4],[2,3]]` (silver), in coordinates where the phase is `θ = (x₀, 0)`.
+  - Exactly, `t = (u^{2n}W − u'^{2n}W')/Δ`. So the excess at scale `n` is `q·f(Dⁿθ) + O(1)`, where `f` is an explicit
+    piecewise-affine function: the largest normalised excess over one fundamental domain of lag families (N8's norm
+    cut, `P` even). Golden has 36 such families, silver 12.
+  - Consequence:
+    - if the maximal `D`-invariant subset of `{f ≤ c}` is empty, every phase has linear excess in every bounded
+      window of scales;
+    - if it is `{0}`, a phase can pass only if its orbit tends to 0, i.e. lies on the stable line, which is
+      exactly the cut orbit `x₀ ∈ ℤ + ℤg`.
+- **Calibration (not the test).** The script was run only in calibrate mode. At the rational phases 1/3, 2/7 and
+  3/5, which are outside N8's set, the direct integer excess at every `|N| ≤ 4` lag up to 9,000 matches `q·f` at
+  the torus point to `O(1)`: for example, golden 2/7 at `q = 6765` has direct `E/q = 0.7880` and torus value
+  0.7882. It also reproduces:
+  - `f(0⁺) = 0.618` golden (case 2 gives `(d + r)/2d → 0.618`);
+  - `f(0) = 0` silver (`E = −3`);
+  - `f = 0.561` at silver `x₀ = 1/2` (I128's prefixes, 22/41 and 133/239, tend to it).
+- **The test.**
+  [claudeIntel_configuration_torus.py](research/kit-repair/R30-20261029-0ef6e2/claudeIntel_configuration_torus.py),
+  SHA-256 `7089d08b5b270f3bf4004be1d8741cf732e7e083ff6b7001e600162aa54f18b7`, mode `run`.
+  - Grid `N × N` (`N = 128, 256`), with 3 × 3 samples per cell. A cell passes if a sample has `f ≤ c`, with
+    `c = 0.005` (fraction of the lag).
+  - The cell map of `D` is exact.
+  - Iterate `S ← S ∩ succ(S) ∩ pred(S)` to the fixpoint.
+  - Sampled floating point: an exploratory outer approximation, not a certificate.
+- **Predictions** (dilated marks: a cell passes if it or a neighbour does):
+  - (0.7) golden, `N = 256`: the fixpoint is empty.
+  - (0.55) silver, `N = 256`: the fixpoint is nonempty, and every surviving cell lies within `8/N` of 0.
+  - (0.75) undilated passing fraction between 0.02 and 0.4 at both angles.
+- **Counterfactual.**
+  - A golden survivor, or a silver one away from 0, marks an invariant set inside the passing region. It would be a
+    periodic orbit or a Cantor set, and the phases attracted to it are candidates that Jen's bound does not exclude.
+    A golden one would contradict the expected theorem; a silver one would be the first off-orbit silver word
+    passing Jen.
+  - An empty or near-0 fixpoint makes the rigorous version, with interval cells and the error terms, the next step.
+- **Record searched.** `find_known.py` for *invariant set*, *torus*, *renormalis* and *Rote*; P49 and P50; the
+  archived Rote entries (Dvořáková–Medková–Pelantová, Medková–Pelantová–Vuillon); Adamczewski, *On powers of words
+  occurring in binary codings of rotations*, Adv. Appl. Math. 34 (2005), §§1–3. That paper's results on initial powers
+  concern characteristic codings and many angles. It has nothing on every phase at a fixed angle with `β = 1/2`.
