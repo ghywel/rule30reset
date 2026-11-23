@@ -1,0 +1,427 @@
+{
+  "old_revision": "3a5728b",
+  "issue_ticks": 3072,
+  "width": 9,
+  "unique_extended_window": 49415,
+  "in_trap_predecessor_count": 0,
+  "all_trapped_pulse_prefixes": {
+    "111001100": {
+      "trap_windows": 47,
+      "old_gate_length": 26,
+      "two_tile_length": 26
+    },
+    "111001010": {
+      "trap_windows": 60,
+      "old_gate_length": 26,
+      "two_tile_length": 26
+    },
+    "111000001": {
+      "trap_windows": 1,
+      "old_gate_length": 16,
+      "two_tile_length": 22
+    },
+    "111001101": {
+      "trap_windows": 16,
+      "old_gate_length": 22,
+      "two_tile_length": 22
+    },
+    "111010011": {
+      "trap_windows": 35,
+      "old_gate_length": 22,
+      "two_tile_length": 22
+    },
+    "111001011": {
+      "trap_windows": 23,
+      "old_gate_length": 26,
+      "two_tile_length": 26
+    },
+    "111010111": {
+      "trap_windows": 6,
+      "old_gate_length": 18,
+      "two_tile_length": 18
+    }
+  },
+  "finite24": {
+    "seeds": [
+      31000,
+      31031
+    ],
+    "counts": {
+      "rows": 32,
+      "entered_by_score_end": 31,
+      "history_confirmed_by_score_end": 31,
+      "display_departures": 1138,
+      "signed_display_relocks": 1138,
+      "eligible_locked_ticks": 29453,
+      "eligible_locked_pulses": 3005
+    },
+    "gap_pairs": {
+      "3,5": 1636,
+      "5,5": 6715,
+      "5,3": 1632,
+      "3,3": 4
+    },
+    "verified_trace_lengths": {
+      "22": 3268,
+      "26": 6715,
+      "18": 4
+    },
+    "coverage": {
+      "all_issues": {
+        "old": {
+          "distinct": 1138,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 21,
+          "earliest_lead_histogram": {
+            "1": 242,
+            "3": 1,
+            "5": 121,
+            "11": 27,
+            "16": 699,
+            "21": 48
+          }
+        },
+        "auto": {
+          "distinct": 1138,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 21,
+          "earliest_lead_histogram": {
+            "1": 242,
+            "3": 1,
+            "5": 121,
+            "11": 27,
+            "16": 699,
+            "21": 48
+          }
+        },
+        "history": {
+          "distinct": 1138,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 21,
+          "earliest_lead_histogram": {
+            "1": 242,
+            "3": 1,
+            "5": 121,
+            "11": 27,
+            "16": 699,
+            "21": 48
+          }
+        }
+      },
+      "pulse_issues": {
+        "old": {
+          "distinct": 774,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 27,
+            "16": 747
+          }
+        },
+        "auto": {
+          "distinct": 774,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 27,
+            "16": 747
+          }
+        },
+        "history": {
+          "distinct": 774,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 27,
+            "16": 747
+          }
+        },
+        "direct": {
+          "distinct": 774,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 27,
+            "16": 747
+          }
+        }
+      },
+      "locked_trap_pulses_below_95": {
+        "old": {
+          "distinct": 473,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 16,
+            "16": 457
+          }
+        },
+        "auto": {
+          "distinct": 473,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 16,
+            "16": 457
+          }
+        },
+        "history": {
+          "distinct": 473,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 16,
+            "16": 457
+          }
+        },
+        "direct": {
+          "distinct": 473,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 16,
+            "16": 457
+          }
+        }
+      }
+    },
+    "known_gate_extra_ticks_over_old": {
+      "all_trap_pulses": {
+        "0": 9984,
+        "6": 3
+      },
+      "direct": {
+        "0": 3005
+      },
+      "auto": {
+        "0": 1161
+      },
+      "history": {
+        "0": 2953
+      }
+    },
+    "signed_calls": {
+      "old": 0,
+      "auto": 0,
+      "history": 0
+    }
+  },
+  "random_far_field": {
+    "seeds": [
+      41000,
+      41031
+    ],
+    "counts": {
+      "rows": 32,
+      "entered_by_score_end": 30,
+      "history_confirmed_by_score_end": 30,
+      "display_departures": 1080,
+      "signed_display_relocks": 1080,
+      "eligible_locked_ticks": 28132,
+      "eligible_locked_pulses": 2886
+    },
+    "gap_pairs": {
+      "5,5": 6331,
+      "5,3": 1604,
+      "3,5": 1609,
+      "3,3": 2
+    },
+    "verified_trace_lengths": {
+      "26": 6331,
+      "22": 3213,
+      "18": 2
+    },
+    "coverage": {
+      "all_issues": {
+        "old": {
+          "distinct": 1080,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 21,
+          "earliest_lead_histogram": {
+            "1": 231,
+            "3": 1,
+            "5": 99,
+            "11": 21,
+            "14": 1,
+            "15": 1,
+            "16": 692,
+            "17": 1,
+            "21": 33
+          }
+        },
+        "auto": {
+          "distinct": 1080,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 21,
+          "earliest_lead_histogram": {
+            "1": 231,
+            "3": 1,
+            "5": 99,
+            "11": 21,
+            "14": 1,
+            "15": 1,
+            "16": 692,
+            "17": 1,
+            "21": 33
+          }
+        },
+        "history": {
+          "distinct": 1080,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 21,
+          "earliest_lead_histogram": {
+            "1": 231,
+            "3": 1,
+            "5": 99,
+            "11": 21,
+            "14": 1,
+            "15": 1,
+            "16": 692,
+            "17": 1,
+            "21": 33
+          }
+        }
+      },
+      "pulse_issues": {
+        "old": {
+          "distinct": 749,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 23,
+            "16": 726
+          }
+        },
+        "auto": {
+          "distinct": 749,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 23,
+            "16": 726
+          }
+        },
+        "history": {
+          "distinct": 749,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 23,
+            "16": 726
+          }
+        },
+        "direct": {
+          "distinct": 749,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 23,
+            "16": 726
+          }
+        }
+      },
+      "locked_trap_pulses_below_95": {
+        "old": {
+          "distinct": 483,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 17,
+            "16": 466
+          }
+        },
+        "auto": {
+          "distinct": 483,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 17,
+            "16": 466
+          }
+        },
+        "history": {
+          "distinct": 483,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 17,
+            "16": 466
+          }
+        },
+        "direct": {
+          "distinct": 483,
+          "extra_over_old": 0,
+          "old_only": 0,
+          "earlier_than_old_on_shared": 0,
+          "largest_lead": 16,
+          "earliest_lead_histogram": {
+            "6": 17,
+            "16": 466
+          }
+        }
+      }
+    },
+    "known_gate_extra_ticks_over_old": {
+      "all_trap_pulses": {
+        "0": 9544,
+        "6": 2
+      },
+      "direct": {
+        "0": 2886
+      },
+      "auto": {
+        "0": 1148
+      },
+      "history": {
+        "0": 2836
+      }
+    },
+    "signed_calls": {
+      "old": 0,
+      "auto": 0,
+      "history": 0
+    }
+  }
+}

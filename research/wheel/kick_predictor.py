@@ -5,6 +5,9 @@ from functools import lru_cache
 import json
 from pathlib import Path
 
+from pulse_predictor import pulse_schedule
+from trap_observer import first_confirmation
+
 
 WHEEL = "00010011010001001101000100110100010011010001001101001101"
 ROTATIONS = {WHEEL[i:] + WHEEL[:i]: i for i in range(56)}
@@ -111,13 +114,30 @@ def mature_opportunities(row, width, tick, phase, matched_ticks=POSITION_HISTORY
     return slots, tests
 
 
-def forecast(row, width, tick, phase, horizon=160, matched_ticks=0):
+@lru_cache(maxsize=56)
+def trap_from_matched_wheel(position):
+    """Confirm from the 48 white readings in the most recent 95 matched physical ticks."""
+    return first_confirmation(WHEEL[(position-d) % 56] for d in range(94, -1, -2)) is not None
+
+
+def forecast(row, width, tick, phase, horizon=160, matched_ticks=0, known_trap=False):
     """Forecast from this snapshot only, given an already established wheel phase."""
     if width < 1 or row < 0 or row >= 1 << width or tick < 0 or horizon < 0 or not 0 <= matched_ticks <= tick+1:
         raise ValueError("Use a nonnegative row of the specified width, tick and horizon.")
     if phase not in range(0, 56, 2) or int(WHEEL[(tick - phase) % 56]) != row & 1:
         raise ValueError("The current reading must fit the supplied even wheel phase.")
     bits = common_trace(row, width, tick, horizon)
+    schedule = None
+    if tick % 2 == 0 and row & 1:
+        trapped = known_trap or (matched_ticks >= 95 and trap_from_matched_wheel((tick-phase) % 56))
+        schedule = pulse_schedule(format(row, f"0{width}b")[::-1], tick >= 2, trapped)
+        if trapped:
+            tile_bits = schedule["known_gate"][:horizon+1]
+            overlap = min(len(bits), len(tile_bits))
+            if bits[:overlap] != tile_bits[:overlap]:
+                raise ValueError("The snapshot conflicts with the supplied trap or matched-phase history.")
+            if len(tile_bits) > len(bits):
+                bits = tile_bits
     departure = next((tick+i for i, bit in enumerate(bits) if bit != WHEEL[(tick+i-phase) % 56]), None)
     changes = read_display(bits, tick, phase, phase)[2] if departure is not None else []
     pulse = pulse_warning(row, tick, phase) if width >= 5 else None
@@ -148,7 +168,8 @@ def forecast(row, width, tick, phase, horizon=160, matched_ticks=0):
         kick = {"tick": time, "phase": new, "notches": notches}
     return {"issued": tick, "phase": phase, "common_gate_through": tick + len(bits) - 1,
             "old_phase_matches_through": matches, "departure": departure, "next_kick": kick,
-            "pulse": pulse, "first_departure_candidates_this_turn":opportunities, "mature_sensors":tests}
+            "pulse": pulse, "pulse_returns":schedule,
+            "first_departure_candidates_this_turn":opportunities, "mature_sensors":tests}
 
 
 if __name__ == "__main__":
@@ -161,16 +182,19 @@ if __name__ == "__main__":
     parser.add_argument("--matched-ticks", type=int, default=0,
                         help="Consecutive wheel ticks already witnessed at --phase, including this tick.")
     parser.add_argument("--horizon", type=int, default=160, help="Physical ticks to propagate the prefix.")
+    parser.add_argument("--trapped", action="store_true", help="An earlier observation has certified trap entry.")
     args = parser.parse_args()
     if not args.prefix or set(args.prefix) - {"0", "1"}:
         parser.error("prefix must be a nonempty string of binary cells")
     phase = args.phase
+    trapped = args.trapped
     if args.history is not None:
         if len(args.history) != args.tick + 1 or set(args.history) - {"0", "1"}:
             parser.error("history must contain one binary reading per tick through --tick")
         phase = confirmed_phase(args.history)
         if phase is None:
             parser.exit(0, "The supplied history has not yet established a current display phase.\n")
+        trapped = trapped or first_confirmation(args.history[::2]) is not None
         if args.matched_ticks:
             parser.error("--history computes its own matched tick count")
         for i in range(args.tick, -1, -1):
@@ -179,7 +203,7 @@ if __name__ == "__main__":
             args.matched_ticks += 1
     try:
         result = forecast(int(args.prefix[::-1], 2), len(args.prefix), args.tick, phase,
-                          args.horizon, args.matched_ticks)
+                          args.horizon, args.matched_ticks, trapped)
     except (ValueError, AssertionError) as exc:
         parser.error(str(exc))
     print(json.dumps(result, indent=2))

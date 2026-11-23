@@ -4,6 +4,8 @@ Forty-six consecutive white-time observations of the main wheel force the sixtee
 
 A [complete gate-only observer](complete-observer.md) recognizes entry from 48 white-time readings. Two physical rows prove that 47 readings cannot always distinguish the outside from the mature trap. On the exterior the only endless 3/5 tail eventually has all gaps three, realized by the October 84-ring. A [finite singleton deadline](exterior-budget.md) limits the duration of this behaviour while its own centre alternates. The earlier wheel-aligned threshold of 46 samples above uses a more specific hypothesis. [ClaudeCloud’s gap classification](claudeCloud-tails.md) · [Mixed-word proofs](mixed-cuts.md).
 
+At every black pulse from the second white tick onward, sites 2 and 5 give the time of the next pulse on every right half. Inside the trap, sites 7, 8 and 9 give the duration of the following gap at the same instant. The two-site firing condition also identifies the recurring exterior defect that a finite aperiodic right half would have to sustain to avoid entry. [Pulse measurements and physical controls](pulse-forecast.md) · [Use the predictor](kick-predictor.md#from-a-pulse-to-the-next-two-returns) · [Exterior recurrence](exterior-defects.md).
+
 ## What is observed
 
 The wall is column 0. Column 1 is its immediate right neighbour. Start at a **white** tick of the wall and sample column 1 every two physical ticks. The original 56-tick word and its 28 white-time bits are

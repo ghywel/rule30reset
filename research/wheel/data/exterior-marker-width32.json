@@ -1,0 +1,174 @@
+{
+  "samples": 43,
+  "proved": false,
+  "stages": [
+    {
+      "width": 5,
+      "candidates": 32,
+      "remaining": 19,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 6,
+      "candidates": 38,
+      "remaining": 36,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 7,
+      "candidates": 72,
+      "remaining": 62,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 8,
+      "candidates": 124,
+      "remaining": 111,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 9,
+      "candidates": 222,
+      "remaining": 195,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 10,
+      "candidates": 390,
+      "remaining": 340,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 11,
+      "candidates": 680,
+      "remaining": 587,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 12,
+      "candidates": 1174,
+      "remaining": 824,
+      "ambiguous_components": 2
+    },
+    {
+      "width": 13,
+      "candidates": 1648,
+      "remaining": 1184,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 14,
+      "candidates": 2368,
+      "remaining": 1970,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 15,
+      "candidates": 3940,
+      "remaining": 2939,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 16,
+      "candidates": 5878,
+      "remaining": 2445,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 17,
+      "candidates": 4890,
+      "remaining": 3579,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 18,
+      "candidates": 7158,
+      "remaining": 5375,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 19,
+      "candidates": 10750,
+      "remaining": 7632,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 20,
+      "candidates": 15264,
+      "remaining": 3716,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 21,
+      "candidates": 7432,
+      "remaining": 5579,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 22,
+      "candidates": 11158,
+      "remaining": 8331,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 23,
+      "candidates": 16662,
+      "remaining": 10397,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 24,
+      "candidates": 20794,
+      "remaining": 15826,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 25,
+      "candidates": 31652,
+      "remaining": 23780,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 26,
+      "candidates": 47560,
+      "remaining": 36729,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 27,
+      "candidates": 73458,
+      "remaining": 56597,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 28,
+      "candidates": 113194,
+      "remaining": 86533,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 29,
+      "candidates": 173066,
+      "remaining": 126054,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 30,
+      "candidates": 252108,
+      "remaining": 193420,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 31,
+      "candidates": 386840,
+      "remaining": 300234,
+      "ambiguous_components": 1
+    },
+    {
+      "width": 32,
+      "candidates": 600468,
+      "remaining": 466147,
+      "ambiguous_components": 1
+    }
+  ]
+}

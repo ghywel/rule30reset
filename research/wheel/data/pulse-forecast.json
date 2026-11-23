@@ -1,0 +1,1163 @@
+{
+  "unrestricted_eleven_cell_pulse_cones": 1024,
+  "unrestricted": {
+    "10000": 4,
+    "11000": 4,
+    "10100": 4,
+    "11100": 5,
+    "10010": 2,
+    "11010": 5,
+    "10110": 4,
+    "11110": 3,
+    "10001": 2,
+    "11001": 4,
+    "10101": 4,
+    "11101": 3,
+    "10011": 2,
+    "11011": 5,
+    "10111": 4,
+    "11111": 3
+  },
+  "unrestricted_sensor": {
+    "minimum_prefix": 5,
+    "smallest_site_sets_within_five": [
+      [
+        2,
+        3,
+        4,
+        5
+      ]
+    ]
+  },
+  "union_W43_sensor": {
+    "minimum_prefix": 5,
+    "smallest_site_sets_within_five": [
+      [
+        2,
+        5
+      ]
+    ]
+  },
+  "widths": [
+    {
+      "width": 19,
+      "X": {
+        "members": 7632,
+        "pulse_counts": {
+          "11100": 684,
+          "10110": 213,
+          "10001": 282,
+          "11101": 316,
+          "10011": 874
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 7632,
+        "pulse_counts": {
+          "11100": 684,
+          "10110": 213,
+          "10001": 282,
+          "11101": 316,
+          "10011": 874
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 20,
+      "X": {
+        "members": 3716,
+        "pulse_counts": {
+          "11100": 446,
+          "10001": 279,
+          "11101": 253
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 3106,
+        "pulse_counts": {
+          "11100": 172,
+          "10110": 109,
+          "10001": 34,
+          "11101": 18,
+          "10011": 820
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 21,
+      "X": {
+        "members": 5579,
+        "pulse_counts": {
+          "11100": 694,
+          "10001": 455,
+          "11101": 345
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 4285,
+        "pulse_counts": {
+          "11100": 240,
+          "10110": 143,
+          "10001": 47,
+          "11101": 22,
+          "10011": 1143
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 22,
+      "X": {
+        "members": 8331,
+        "pulse_counts": {
+          "11100": 1084,
+          "10001": 733,
+          "11101": 453
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 5927,
+        "pulse_counts": {
+          "11100": 314,
+          "10110": 193,
+          "10001": 59,
+          "11101": 21,
+          "10011": 1658
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 23,
+      "X": {
+        "members": 10397,
+        "pulse_counts": {
+          "11100": 1441,
+          "10001": 1119,
+          "11101": 264
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 8271,
+        "pulse_counts": {
+          "11100": 437,
+          "10110": 267,
+          "10001": 71,
+          "11101": 36,
+          "10011": 2362
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 24,
+      "X": {
+        "members": 15826,
+        "pulse_counts": {
+          "11100": 2227,
+          "10001": 1796,
+          "11101": 321
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 11069,
+        "pulse_counts": {
+          "11100": 565,
+          "10110": 354,
+          "10001": 96,
+          "11101": 47,
+          "10011": 3199
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 25,
+      "X": {
+        "members": 23780,
+        "pulse_counts": {
+          "11100": 3405,
+          "10001": 2891,
+          "11101": 305
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 15423,
+        "pulse_counts": {
+          "11100": 802,
+          "10110": 465,
+          "10001": 130,
+          "11101": 68,
+          "10011": 4459
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 26,
+      "X": {
+        "members": 36729,
+        "pulse_counts": {
+          "11100": 5246,
+          "10001": 4668,
+          "11101": 360
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 19175,
+        "pulse_counts": {
+          "11100": 895,
+          "10110": 542,
+          "10001": 130,
+          "11101": 78,
+          "10011": 5804
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 27,
+      "X": {
+        "members": 56597,
+        "pulse_counts": {
+          "11100": 8109,
+          "10001": 7360,
+          "11101": 445
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 15977,
+        "pulse_counts": {
+          "11100": 851,
+          "10110": 561,
+          "10001": 137,
+          "11101": 36,
+          "10011": 4398
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 28,
+      "X": {
+        "members": 86533,
+        "pulse_counts": {
+          "11100": 12467,
+          "10001": 11400,
+          "11101": 572
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 19659,
+        "pulse_counts": {
+          "11100": 974,
+          "10110": 683,
+          "10001": 173,
+          "11101": 33,
+          "10011": 5627
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 29,
+      "X": {
+        "members": 126054,
+        "pulse_counts": {
+          "11100": 18330,
+          "10001": 16937,
+          "11101": 661
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 23670,
+        "pulse_counts": {
+          "11100": 1108,
+          "10110": 785,
+          "10001": 206,
+          "11101": 19,
+          "10011": 7135
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 30,
+      "X": {
+        "members": 193420,
+        "pulse_counts": {
+          "11100": 28196,
+          "10001": 26325,
+          "11101": 716
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 29220,
+        "pulse_counts": {
+          "11100": 1322,
+          "10110": 919,
+          "10001": 243,
+          "11101": 19,
+          "10011": 9026
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 31,
+      "X": {
+        "members": 300234,
+        "pulse_counts": {
+          "11100": 44067,
+          "10001": 40923,
+          "11101": 868
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 36272,
+        "pulse_counts": {
+          "11100": 1628,
+          "10110": 1093,
+          "10001": 271,
+          "11101": 18,
+          "10011": 11330
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 32,
+      "X": {
+        "members": 466147,
+        "pulse_counts": {
+          "11100": 68345,
+          "10001": 63885,
+          "11101": 1153
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 46399,
+        "pulse_counts": {
+          "11100": 2082,
+          "10110": 1386,
+          "10001": 366,
+          "11101": 20,
+          "10011": 14468
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 33,
+      "X": {
+        "members": 719016,
+        "pulse_counts": {
+          "11100": 105360,
+          "10001": 98521,
+          "11101": 1603
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 61019,
+        "pulse_counts": {
+          "11100": 2611,
+          "10110": 1852,
+          "10001": 430,
+          "11101": 18,
+          "10011": 19376
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 34,
+      "X": {
+        "members": 1111328,
+        "pulse_counts": {
+          "11100": 162769,
+          "10001": 152602,
+          "11101": 2025
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 76496,
+        "pulse_counts": {
+          "11100": 3141,
+          "10110": 2360,
+          "10001": 457,
+          "11101": 21,
+          "10011": 24793
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 35,
+      "X": {
+        "members": 1705307,
+        "pulse_counts": {
+          "11100": 249344,
+          "10001": 233965,
+          "11101": 2718
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 93343,
+        "pulse_counts": {
+          "11100": 3636,
+          "10110": 2732,
+          "10001": 583,
+          "11101": 10,
+          "10011": 31243
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 36,
+      "X": {
+        "members": 2375471,
+        "pulse_counts": {
+          "11100": 344666,
+          "10001": 332401,
+          "11101": 765
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 110834,
+        "pulse_counts": {
+          "11100": 4047,
+          "10110": 3275,
+          "10001": 513,
+          "11101": 6,
+          "10011": 38109
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 37,
+      "X": {
+        "members": 3680227,
+        "pulse_counts": {
+          "11100": 532386,
+          "10001": 514904,
+          "11101": 1146
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 145002,
+        "pulse_counts": {
+          "11100": 4969,
+          "10110": 4166,
+          "10001": 641,
+          "11101": 8,
+          "10011": 50957
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 38,
+      "X": {
+        "members": 5685718,
+        "pulse_counts": {
+          "11100": 821059,
+          "10001": 795912,
+          "11101": 1720
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 185923,
+        "pulse_counts": {
+          "11100": 6174,
+          "10110": 5113,
+          "10001": 835,
+          "11101": 4,
+          "10011": 66176
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 39,
+      "X": {
+        "members": 8755692,
+        "pulse_counts": {
+          "11100": 1260625,
+          "10001": 1227524,
+          "11101": 2608
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 244685,
+        "pulse_counts": {
+          "11100": 7796,
+          "10110": 6492,
+          "10001": 1093,
+          "11101": 6,
+          "10011": 88089
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 40,
+      "X": {
+        "members": 13467586,
+        "pulse_counts": {
+          "11100": 1934617,
+          "10001": 1891321,
+          "11101": 3747
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 303693,
+        "pulse_counts": {
+          "11100": 9258,
+          "10110": 7619,
+          "10001": 1425,
+          "10011": 111074
+        },
+        "minimum_prefix": 3,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 41,
+      "X": {
+        "members": 20710807,
+        "pulse_counts": {
+          "11100": 2969193,
+          "10001": 2913094,
+          "11101": 5621
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 392355,
+        "pulse_counts": {
+          "11100": 11561,
+          "10110": 9405,
+          "10001": 1905,
+          "10011": 145182
+        },
+        "minimum_prefix": 3,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 42,
+      "X": {
+        "members": 31806428,
+        "pulse_counts": {
+          "11100": 4552158,
+          "10001": 4482755,
+          "11101": 8217
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 510780,
+        "pulse_counts": {
+          "11100": 14628,
+          "10110": 11769,
+          "10001": 2470,
+          "10011": 191115
+        },
+        "minimum_prefix": 3,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "width": 43,
+      "X": {
+        "members": 48895838,
+        "pulse_counts": {
+          "11100": 6987764,
+          "10001": 6904274,
+          "11101": 11973
+        },
+        "minimum_prefix": 5,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "Y": {
+        "members": 630829,
+        "pulse_counts": {
+          "11100": 17588,
+          "10110": 14281,
+          "10001": 2749,
+          "10011": 238078
+        },
+        "minimum_prefix": 3,
+        "smallest_site_sets_within_five": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    }
+  ],
+  "finite_controls": {
+    "X43": [
+      {
+        "black_start": "0xf6efc",
+        "prefix": "11100",
+        "gap": 5,
+        "core_windows": [
+          1122823,
+          4723102,
+          17189428,
+          81267026,
+          292954432,
+          1237130545
+        ]
+      },
+      {
+        "black_start": "0xd1560",
+        "prefix": "10001",
+        "gap": 2,
+        "core_windows": [
+          1422641,
+          5764168,
+          22557191
+        ]
+      },
+      {
+        "black_start": "0xcac920c",
+        "prefix": "11101",
+        "gap": 3,
+        "core_windows": [
+          396885783,
+          1502347930,
+          6213012008,
+          24163707175
+        ]
+      }
+    ],
+    "Y43": [
+      {
+        "black_start": "0x641f0",
+        "prefix": "10011",
+        "gap": 2,
+        "core_windows": [
+          778777,
+          2904544,
+          12208985
+        ]
+      },
+      {
+        "black_start": "0x473ed18",
+        "prefix": "10110",
+        "gap": 4,
+        "core_windows": [
+          245114285,
+          1044088764,
+          3850206666,
+          16199290504,
+          62937062983
+        ]
+      },
+      {
+        "black_start": "0x1ff5d2dc",
+        "prefix": "11100",
+        "gap": 5,
+        "core_windows": [
+          538205767,
+          2555536430,
+          9248474036,
+          38909669362,
+          141637496864,
+          668273405081
+        ]
+      },
+      {
+        "black_start": "0x3e252be0",
+        "prefix": "10001",
+        "gap": 2,
+        "core_windows": [
+          1132324913,
+          5327709896,
+          19048205191
+        ]
+      }
+    ],
+    "Y39": [
+      {
+        "black_start": "0x2b401b1cc",
+        "prefix": "11101",
+        "gap": 3,
+        "core_windows": [
+          28286556791,
+          112164743418,
+          455254549912,
+          150374188839
+        ]
+      }
+    ]
+  },
+  "core_sha256": {
+    "X43.bin": "de581931c154a3f5210e0c8f5d7dbe751dc8621d1f554c58b78c880f27ffb72b",
+    "Y43.bin": "21ee6edd4c920caa9b2a79e5972b5aeef7bd5d8b4abefa8461279df711453fdf",
+    "Y39.bin": "f2492ed4fcf4c22eee99aa9f2621f864959861d079e4b9fc3b8b0a7065f5570d"
+  }
+}

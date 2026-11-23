@@ -4,6 +4,19 @@
 
 The wall is site 0, white at even ticks. The wheel is read at site 1. A *pulse* is a black reading at a white-wall tick. A *departure* is the first bit disagreeing with the established wheel phase. The Vitruvian display counts a *kick* when site 1 takes up a different even phase and sustains it for 56 ticks. A departure and the next kick can have different timestamps. The display looks 55 ticks ahead to recognize a new lock at its first tick. All forecasts below use data available when issued. [Original display](https://www.wolframcollatzmahler.com/rule30/vitruvian.html).
 
+## From a pulse to the next two returns
+
+Read site 1 at a white centre tick. If it is black, from the second white tick of the alternating run the pair **(site 2, site 5)** gives the exact next black pulse. The four readings 00, 01, 10 and 11 give physical delays **8, 4, 10 and 6 ticks**, respectively. The same rule applies before wheel lock, inside the trap and outside it. If the clock has only reached its first white tick, sites 2 through 5 still determine that first return.
+
+Inside the trap, read sites **7, 8 and 9 now**. The *second* gap is six physical ticks precisely when site 9 is black and either site 7 is black or site 8 is white. Otherwise the second gap is ten ticks. With site 5 as well, this dates both returns and determines the intervening physical readings. On a known phase, compare those readings with the expected wheel bits to date the first departure. The signed phase reached after that departure can still vary. [Two-return proof and comparison](pulse-forecast.md) · [Exact first-return proof](WheelPulsePredictor.lean).
+
+The pulse tool accepts unmeasured sites as `?`. Site 1 comes first in the argument. Sample index zero is the first white reading. The first example predicts a pulse in ten ticks. The second predicts a pulse in ten ticks, another six ticks later, and gives 22 consecutive gate readings starting at the present tick.
+
+```text
+python research/wheel/pulse_predictor.py "11??0" --white-sample 1
+python research/wheel/pulse_predictor.py "11100??01" --white-sample 1 --trapped
+```
+
 ## The six-tick signal
 
 At a white-wall tick t suppose sites 1 through 4 are black, black, black, white. Write b for site 5. In the following table every marked bit is determined for every eastern continuation.

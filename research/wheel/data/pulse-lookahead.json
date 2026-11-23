@@ -1,0 +1,120 @@
+{
+  "kit_black_first": true,
+  "physical_pulse_tick": 3,
+  "initial_cone_bits": 18,
+  "classes": [
+    {
+      "first_gap": 2,
+      "second_gap_radius": 7,
+      "causal_upper": 9,
+      "possible_second_gaps": [
+        2,
+        4,
+        5
+      ],
+      "witnesses": [
+        {
+          "finite_black_seed": "0x1f",
+          "pulse_prefix": "0x19",
+          "gaps": [
+            2,
+            2
+          ]
+        },
+        {
+          "finite_black_seed": "0x9f",
+          "pulse_prefix": "0x59",
+          "gaps": [
+            2,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "first_gap": 3,
+      "second_gap_radius": 9,
+      "causal_upper": 11,
+      "possible_second_gaps": [
+        3,
+        5
+      ],
+      "witnesses": [
+        {
+          "finite_black_seed": "0x127",
+          "pulse_prefix": "0x17",
+          "gaps": [
+            3,
+            3
+          ]
+        },
+        {
+          "finite_black_seed": "0x44b",
+          "pulse_prefix": "0x117",
+          "gaps": [
+            3,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "first_gap": 4,
+      "second_gap_radius": 13,
+      "causal_upper": 13,
+      "possible_second_gaps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "witnesses": [
+        {
+          "finite_black_seed": "0x7fff",
+          "pulse_prefix": "0x1",
+          "gaps": [
+            4,
+            2
+          ]
+        },
+        {
+          "finite_black_seed": "0x3fff",
+          "pulse_prefix": "0x1001",
+          "gaps": [
+            4,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "first_gap": 5,
+      "second_gap_radius": 15,
+      "causal_upper": 15,
+      "possible_second_gaps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "witnesses": [
+        {
+          "finite_black_seed": "0xe2b",
+          "pulse_prefix": "0x45e7",
+          "gaps": [
+            5,
+            3
+          ]
+        },
+        {
+          "finite_black_seed": "0xc7",
+          "pulse_prefix": "0x5e7",
+          "gaps": [
+            5,
+            5
+          ]
+        }
+      ]
+    }
+  ]
+}
