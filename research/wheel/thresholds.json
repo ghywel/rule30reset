@@ -1,0 +1,88 @@
+{
+  "kit": "8e1cc847a758a892ec4b51182cdf325b1c483f9a",
+  "white_samples": [
+    45,
+    44,
+    43,
+    42,
+    41,
+    40,
+    39,
+    38,
+    37,
+    36,
+    35,
+    34,
+    33,
+    37,
+    36,
+    35,
+    34,
+    33,
+    32,
+    31,
+    30,
+    29,
+    33,
+    32,
+    31,
+    30,
+    29,
+    46
+  ],
+  "markers": [
+    {
+      "phase": 12,
+      "samples": 33,
+      "word": "010000100001001000010000100001000",
+      "cnf_sha256": "709caf2e860fc4dbcef20bebd00f591a0fa36aab7aa5defd2e2758befbfed80c",
+      "lrat_sha256": "28df02c159081159532053f51129fa1e75ab1372903cc7bc582551ff520e5261",
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ]
+    },
+    {
+      "phase": 21,
+      "samples": 29,
+      "word": "00100100001000010000100001000",
+      "cnf_sha256": "d1f2a951c4f9061fef614451a500d8f410da69afe72f66f399b0946d97ae5ac5",
+      "lrat_sha256": "79f3163cd694a1cc713184353a7749af3fb3b846edbd94d6c3aeffef457ff3cf",
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ]
+    },
+    {
+      "phase": 26,
+      "samples": 29,
+      "word": "10000100001000010000100001001",
+      "cnf_sha256": "dab2f6dd183930d9d4c06eb1250c9199d508850bfc047cb7d90de26d43f1cd37",
+      "lrat_sha256": "b964e6c47626c7f6299c407deeca74eb310045eda47dc007e010aa8c922a905f",
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ]
+    }
+  ],
+  "physical_witnesses": [
+    {
+      "phase": 27,
+      "samples": 45,
+      "cells_positive_first": "01101101101010011010010010011111111100010111010101000111000000010010111011000010011111111111111111110101",
+      "final_window": 7772
+    },
+    {
+      "phase": 13,
+      "samples": 36,
+      "cells_positive_first": "11010010000100111101100110101101101000011000101000100011000010010011100110100001001010",
+      "final_window": 1016
+    },
+    {
+      "phase": 22,
+      "samples": 32,
+      "cells_positive_first": "000111110111010000101110010111101011001101000100111100000010001000110011111001",
+      "final_window": 48180
+    }
+  ]
+}

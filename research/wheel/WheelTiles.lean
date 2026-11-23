@@ -1,4 +1,5 @@
 module
+public import Ruliology.CellularAutomata.Rule30Prize
 public import Ruliology.CellularAutomata.Rule30GateTrap
 public import Ruliology.CellularAutomata.Rule30SidewaysLocks
 
@@ -51,7 +52,7 @@ theorem tiles_of_pulse (R : Nat → Bool) {t : Nat} (odd : t%2 = 1)
     exact beq_iff_eq.mp (List.all_eq_true.mp ok j (List.mem_range.mpr hj))
   exact check.elim (fun h => Or.inl (read short (by decide) h)) (fun h => Or.inr (read long (by decide) h))
 
-/-- The secondary 14-physical-tick wheel recorded beside the main wheel in October. -/
+/-- The 14-physical-tick comparison word identified as a lock in the October archive. -/
 def secondary (i : Nat) := (0x2cc8 : Nat).testBit (i%14)
 def tenTick (i : Nat) := (0x8b : Nat).testBit (i%10)
 
