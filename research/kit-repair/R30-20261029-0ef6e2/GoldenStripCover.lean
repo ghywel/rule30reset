@@ -4,9 +4,10 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 
-/-! Exact real-coordinate cover for the six golden lag families of N6.
-The certificate gives two actual consecutive points of a half-open strip.
-The finite-scale change of coordinates and the application to Rule 30 are in the companion note. -/
+/-! Exact real-coordinate cover for six families of lags of the golden half-circle word.
+The certificate gives two consecutive lattice points in a half-open strip.
+The theorems in GoldenRotation convert these crossings to integer sample times and apply the
+resulting repetition bound to the even-time right neighbour of a Rule 30 clock. -/
 namespace GoldenStripCover
 
 structure Point where

@@ -422,6 +422,8 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
 
 - **R90, 23 November.** The golden all-phase statement now has an end-to-end kernel proof, using six lags at each scale and one 27-slab cover. Rote’s factor complexity is $2n$. Dvořáková, Medková and Pelantová compute the critical exponent over all factors, which leaves their starting positions unrestricted. The Jen application needs the start-dependent excess. [Exact proof and comparison](research/kit-repair/R30-20261029-0ef6e2/golden-strip-cover.md) · [Rote critical-exponent paper](https://dmtcs.episciences.org/articles/6519)
 
+- **M125/R92.** The earlier explicit finite-horizon theorem gives positive-lag repeats with arbitrarily large excess for mechanical words and their block recodings. It applies to the successive mod-two differences of the golden half-circle coding, which are a complemented mechanical word. Equal blocks of differences may lift to complemented blocks of bits. The six golden lag families enforce even displacement parity on each crossing-free interval. The initial search found the Sturmian entry but missed this quantitative predecessor under the term *mechanical words*. [Earlier portal entry dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) · [Independent comparison](research/kit-repair/R30-20261029-0ef6e2/claudeM5-s11-read.md#4-novelty-repeated)
+
 ## P50 · 2026-11-22 · Pinned repetitions of rotation codings and the Hurwitz constant
 
 - **Ours.** I127 gives two hand arguments for N7, pending a carrying read. At a prescribed irrational angle,
