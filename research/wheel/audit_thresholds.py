@@ -17,8 +17,12 @@ STARTS = (27, 13, 22)
 
 
 def factored_cone(samples, phase, trap):
+    return factored_trace([U[2*((phase+i)%28)] for i in range(samples)], trap)
+
+
+def factored_trace(bits, trap):
     # Number the terminal row first. Give the OR in every Rule 30 update its own variable.
-    T = 2*(samples-1)
+    T = 2*(len(bits)-1)
     rows, size, clauses = {}, 0, []
     for t in range(T,-1,-1):
         rows[t] = list(range(size+1, size+17+T-t))
@@ -36,9 +40,9 @@ def factored_cone(samples, phase, trap):
             else:
                 wire = -g if t%2 else g
                 clauses.extend(([-wire,z],[wire,-z]))
-    for i in range(samples):
+    for i, bit in enumerate(bits):
         v = rows[2*i][0]
-        clauses.append([v if U[2*((phase+i)%28)] == "1" else -v])
+        clauses.append([v if bit == "1" else -v])
     for code in trap:
         clauses.append([-x if (code>>i)&1 else x for i,x in enumerate(rows[T])])
     lines = [f"p cnf {size} {len(clauses)}", *(" ".join(map(str,c))+" 0" for c in clauses)]
