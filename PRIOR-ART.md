@@ -496,3 +496,9 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
   the repository but do not hold its census.
 - **Credit.** The chance wait, the four traps and the carried-lock construction are Hallee's. K38's departure law (30
   ticks for each 12 columns) and its following of the cut family are not in those notes as far as read.
+
+## P54 · 2026-11-23 · Recognizing all entries into the period-two gate trap on its sampled neighbour
+
+- **Known.** The kit proves the forward gap law, black coverage in five, and eventual exclusion of two successive 3-gaps after entry. The October 17/56 wheel and rotating 84-ring supply different reference histories. R65/R69 and K78 describe two exterior components left by finite-width pruning. [Kit gate words at f41bb49](https://github.com/WolframInstitute/Rule30PrizeKit/blob/f41bb494d64f120e0e6f07ab68d799a6018396cc/lean/Ruliology/CellularAutomata/Rule30GateTrapWords.lean) · [K78 comparison](research/wheel/claudeCloud-tails.md).
+- **Ours.** Absence of five visible factors over 48 white samples forces the hidden trap at the endpoint for any right half. The same 47 readings occur in two finite histories on opposite sides. Six white intervals suffice to clear the forbidden factors after entry, sharply. This identifies the remaining finite-right RD branch using a single measured bit. [Observer, proof records and scope](research/wheel/complete-observer.md).
+- **Credit.** The trap, its closure and its necessary eventual language are the kit's. The temporal converse, universal lower bound for a window-only readout, and settling time are the present work. The October signed phase departures are a different observable (P52).

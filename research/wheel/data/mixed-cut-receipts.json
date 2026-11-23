@@ -1,0 +1,450 @@
+{
+  "kit": "f41bb49",
+  "shared_store": "share-scratch/gptIntel/I170/mixed-cuts/",
+  "published": [
+    {
+      "cnf": "9c2c0c63475cb681689add2cd71c87407aba2c032b59bdd8fbb45d0ff5fbd121",
+      "variables": 19845,
+      "clauses": 298270,
+      "lrat": "2cf4d077a720a0fd3e39c6e8f828e6410e4ea6ed74db2a41b4cea61410d865a8",
+      "proof_bytes": 139069277,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "gaps": "333355",
+      "width": 44,
+      "repeats": 10,
+      "ticks": 440,
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "public-333355-44-10.lrat.zst",
+          "bytes": 27065162,
+          "sha256": "f239b1d71fe13139cf6dac5d119329e35e9462e57a3670fb600ade835144e383"
+        }
+      ]
+    },
+    {
+      "cnf": "15ef717da9f66e11c60e0d5d343b3dfad645b310e94fca8e2f69c552f4c7777b",
+      "variables": 21825,
+      "clauses": 328014,
+      "lrat": "855306d76de3f82cefa589f040192bea6aca1d0ddc6cb12dc44d24c1c6ea3364",
+      "proof_bytes": 151994649,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "gaps": "333355",
+      "width": 44,
+      "repeats": 11,
+      "ticks": 484,
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "public-333355-44-11.lrat.zst",
+          "bytes": 28600271,
+          "sha256": "435142a5f7f64dc09b04bad6eb00b363e94c77e8b7a878550bf47b997a49e242"
+        }
+      ]
+    },
+    {
+      "cnf": "b9405199be1f80e89810d57770e965604c926b5e7247cd27725879641d2e4228",
+      "variables": 23805,
+      "clauses": 357758,
+      "lrat": "5e4f6affea7b337630490b0e651c99a1055d0a1900bb1943d2a6fe58e649a126",
+      "proof_bytes": 155287528,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "gaps": "333355",
+      "width": 44,
+      "repeats": 12,
+      "ticks": 528,
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "public-333355-44-12.lrat.zst",
+          "bytes": 28367141,
+          "sha256": "74ed56a85b8cb9caacc45da0ac16dd8c363b6e6fe5513097a9da186f9fd46404"
+        }
+      ]
+    },
+    {
+      "cnf": "8c1a3a8d9296dac5838b927605136651e149a70e43643565200eacaea3f245e0",
+      "variables": 25785,
+      "clauses": 387502,
+      "lrat": "ccc929f7dcc2ae2c439c227927a143bdc6d365d683dbc4ea7def098bfede3f48",
+      "proof_bytes": 181111747,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "gaps": "333355",
+      "width": 44,
+      "repeats": 13,
+      "ticks": 572,
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "public-333355-44-13.lrat.zst",
+          "bytes": 32503840,
+          "sha256": "e83ced0f3565e71174afe26f1c48829516799a4f43bd13ea42fbfa54ec9894d3"
+        }
+      ]
+    },
+    {
+      "cnf": "a8c3e7dcff834f08afe93637930dc14da4d15c8d077cdcc3d9722d54b7291542",
+      "variables": 27765,
+      "clauses": 417246,
+      "lrat": "44e12bd4e99d0053316419aa08267efee4967b43924bc7511ff6609c7fdc5804",
+      "proof_bytes": 210492865,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "gaps": "333355",
+      "width": 44,
+      "repeats": 14,
+      "ticks": 616,
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "public-333355-44-14.lrat.zst",
+          "bytes": 39207376,
+          "sha256": "f4291fb1336a1f0329e82b84c76168c8e7ae6cdf8526daa5c31fc73ace43bf69"
+        }
+      ]
+    },
+    {
+      "cnf": "c53b32f3a3997f1880137a17722a7ede5b972aeba180ac4774ff85a1a0aafde8",
+      "variables": 29745,
+      "clauses": 446990,
+      "lrat": "71f239ed8bbcbde4a8794486954cd1c07d2f96f69faf9dac54d608c31c4e9485",
+      "proof_bytes": 194151907,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "gaps": "333355",
+      "width": 44,
+      "repeats": 15,
+      "ticks": 660,
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "public-333355-44-15.lrat.zst",
+          "bytes": 34916552,
+          "sha256": "c33421269e3c0e43478a1c6e41cf25ba161a4bead554b8d9deda855c8f4bf40a"
+        }
+      ]
+    },
+    {
+      "cnf": "aeb6d332f78f50cced01ddb5742af10ff61c8553b9661257bc9b5c9d1aed6092",
+      "variables": 31725,
+      "clauses": 476734,
+      "lrat": "baf78e7b1d0666872ce3e56e124b8a449250077ad6810637a45dfdd41e9dad07",
+      "proof_bytes": 222997991,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "gaps": "333355",
+      "width": 44,
+      "repeats": 16,
+      "ticks": 704,
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "public-333355-44-16.lrat.zst",
+          "bytes": 39674153,
+          "sha256": "4c7aa55b83bf1f598c247e480b4d7472d0032b8264a04ae9096105a5c10a957e"
+        }
+      ]
+    },
+    {
+      "cnf": "33f6d267d64d3566622ac62c496ca8560e75aeaf3f518c91112d7ba1a65c5681",
+      "variables": 15885,
+      "clauses": 238782,
+      "initial": "0xb6c2b51d00f",
+      "east": "0000010000010001101000010000001000100110001100100111100000000001000010100001001001001100010010000000010010100010111011101100000000000010011100001000101101000000000000011010000010010001110000000011101000011000000000000010000000001100001000001000100001101011011000000100000000000000100001000000000000110111111101000100000000001000000011000100101001000000",
+      "gaps": "333355",
+      "width": 44,
+      "repeats": 8,
+      "ticks": 352,
+      "status": "SAT"
+    },
+    {
+      "cnf": "b400cf10cd1dce9c4cc977f35f998e61b310a311058b09cda238b4c9e37fb692",
+      "variables": 17865,
+      "clauses": 268526,
+      "lrat": "a8cc0ed74157f9be843d3d5013ae3b5b58c445ea71d72aa975bffd2c366e2ed9",
+      "proof_bytes": 105389217,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "gaps": "333355",
+      "width": 44,
+      "repeats": 9,
+      "ticks": 396,
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "public-333355-44-9.lrat.zst",
+          "bytes": 19326227,
+          "sha256": "151f62afcb4068e40bf40e959d517f4d370b213369cdb133d0b695f9a16135fa"
+        }
+      ]
+    },
+    {
+      "cnf": "306acd00929eb6c2ee8ebfe18d6e10f7f8b0a69aa38185b4f949c0cbc1dc7a9a",
+      "variables": 12824,
+      "clauses": 170006,
+      "initial": "0x3de304c7de617",
+      "east": "000011001100001000100000001000000010000010010010000000110011101100000010100000001110000010110010110000001000010011001100101000000100000010101100010000000000000001100010100010001001000001000001001010100100000000100001110100001000",
+      "gaps": "33355",
+      "width": 55,
+      "repeats": 6,
+      "ticks": 228,
+      "status": "SAT"
+    },
+    {
+      "cnf": "06220783b6c4b5508ed8010abbb958c7255acc3c187adbb22daec552666a30c6",
+      "variables": 14952,
+      "clauses": 198202,
+      "lrat": "c7a184861d12c0c06f3bd2594786f5f30a3a0fcbadf151f701735ccaaf0220eb",
+      "proof_bytes": 48239699,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "gaps": "33355",
+      "width": 55,
+      "repeats": 7,
+      "ticks": 266,
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "public-33355-55-7.lrat.zst",
+          "bytes": 8029531,
+          "sha256": "a82c054df1a68a8896ac6618329a067689818e194b6cdf6f28207ee73abb27f4"
+        }
+      ]
+    },
+    {
+      "cnf": "600d6c283821f444f18d0e02fc40308d38d9453a7ab7af40dbbf66be92f436d2",
+      "variables": 17080,
+      "clauses": 226398,
+      "lrat": "c35c5339f0f075321f67fa48f10be946d27b59b71189aecf851100237ecaf884",
+      "proof_bytes": 45553644,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "gaps": "33355",
+      "width": 55,
+      "repeats": 8,
+      "ticks": 304,
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "public-33355-55-8.lrat.zst",
+          "bytes": 6928730,
+          "sha256": "ae8ca338114f18c216f5094531bd42975ba9f4fc6d04beb2b0466b7185639f98"
+        }
+      ]
+    }
+  ],
+  "independent": [
+    {
+      "cnf": "550d53615a82402f82eb9d8b639c2d806d56dc2315e2592e3128f977cf2b858b",
+      "variables": 35289,
+      "clauses": 122204,
+      "lrat": "1ed1e037bd92ef48fb44b30dd60dd960cf9fcd92b6684e3cbef36ded5daad26b",
+      "proof_bytes": 95604879,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "word": "333355",
+      "width": 44,
+      "count": 9,
+      "mode": "endpoint",
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "endpoint-333355-44-9.lrat.zst",
+          "bytes": 20438392,
+          "sha256": "4d61882714cd38fc6793acd1bf8ccb73f3e9377d6447749017a3f3c8ff1454f0"
+        }
+      ]
+    },
+    {
+      "cnf": "3164a0ebf1b512424ca1b892b2d8c978fb97278567376c9700a83746995d195a",
+      "variables": 29582,
+      "clauses": 102841,
+      "lrat": "baeddb55bdcd788c2be7fbac96f02b9000b268cf2e13c1ef1ebf64bd979cc8a0",
+      "proof_bytes": 35319525,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "word": "33355",
+      "width": 55,
+      "count": 7,
+      "mode": "endpoint",
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "endpoint-33355-55-7.lrat.zst",
+          "bytes": 7115442,
+          "sha256": "cf42eba4e1655e28b75025ad39867a04eefb87c46142ac36757dc70e6d2eba72"
+        }
+      ]
+    },
+    {
+      "cnf": "211397fd531501890ba4cf60d10a156a281762d666c1ae60cbba7727b14b0cba",
+      "variables": 135184,
+      "clauses": 471329,
+      "word": "333355",
+      "width": null,
+      "count": 8,
+      "mode": "physical",
+      "status": "SAT",
+      "initial": "11101111111001010011000001101001111110011111101001111011001110001011111110110001110001010010111111100001011101111111001101100000111111111100010011001110011010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001010000000000000000000000",
+      "final_window": 3495,
+      "cone_initial_width": 368
+    },
+    {
+      "cnf": "aa499077e1cd56be7c1342d24df2ddb910ad896bc0665df1dd2d71bb9d616bc1",
+      "variables": 169504,
+      "clauses": 591229,
+      "lrat": "9d9f32cb2165493d46bc694490e9ca947d84bfb9864efc4b71467d63c0cc850c",
+      "proof_bytes": 404214678,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "cake_heap_mib": 768,
+      "word": "333355",
+      "width": null,
+      "count": 9,
+      "mode": "physical",
+      "status": "UNSAT",
+      "cone_initial_width": 412,
+      "proof_files": [
+        {
+          "file": "physical-333355-44-9.lrat.zst.part1",
+          "bytes": 50331648,
+          "sha256": "96e2c18c5d068f9060b4acef7b4cf229cbdd8caf4a75d7b5268e04dfaf81b890"
+        },
+        {
+          "file": "physical-333355-44-9.lrat.zst.part2",
+          "bytes": 28036549,
+          "sha256": "b5b43f36bf02360a709a0d105da9f7f7e02ae0fa1fe8b0b91795e7b28a836439"
+        }
+      ]
+    },
+    {
+      "cnf": "03a1545a11d9253cc17404b31295c4ef28592bdd7bedfccfd194c803d913ee2f",
+      "variables": 35289,
+      "clauses": 121375,
+      "mode": "strip",
+      "width": 44,
+      "count": 9,
+      "word": "333355",
+      "status": "SAT",
+      "initial": "0x73944d1d00f",
+      "east": "100100011101011101001011011000010000001000100000000000000001010011000010000000000100000000000010010000001101001101001101111010010111011010010010100100000100000001001110000000001000011100000011010000000000100110000000000100001001100101010000100111100010100010010100000100001000110000010001100111000001000101101001000000000000001000000000001101001101000000000000000000000000000000000000000000000000"
+    },
+    {
+      "cnf": "ab452ff290ebfc31e3f2e3088921e73a92b3bdb1041173e7832e8a7c4914fde7",
+      "variables": 47977,
+      "clauses": 165727,
+      "mode": "strip",
+      "width": 60,
+      "count": 9,
+      "word": "333355",
+      "status": "SAT",
+      "initial": "0x6e0224044d1d00f",
+      "east": "100001000100001010010100011000010110000011000010001101001100000001010100010000001110000000000001010100000011010100100110001100110010000000010111011001010100010001000001011011000000000110000000001101010001010001000011001000100001100000000110011000010011001000000001110111011011100000110101110100111001101001000100000101100000000100000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "cnf": "80320c5ea8853974be0cee77213ec96c228f0010148fb872cb40b7faaf0dbab9",
+      "variables": 57493,
+      "clauses": 198991,
+      "lrat": "bc489990a11352673ff80777d1595f02a9b9629af69f9f6a66c45dbbb3ee7e1f",
+      "proof_bytes": 411781383,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "word": "333355",
+      "width": 72,
+      "count": 9,
+      "mode": "strip",
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "strip-333355-72-9.lrat.zst.part1",
+          "bytes": 50331648,
+          "sha256": "e4fcafce6c43378f108bf7214bf8cccf0182fdac086564fec6c6c8b6d24858e8"
+        },
+        {
+          "file": "strip-333355-72-9.lrat.zst.part2",
+          "bytes": 33288447,
+          "sha256": "fa71d809d4e8a81065f8f9416c14a045b6bf50ab3c67b701eec047149d389d86"
+        }
+      ]
+    },
+    {
+      "cnf": "9e5f85005b1e1753ead18f60fd159b3447c9241063ad5eebf57045037e0997a0",
+      "variables": 29582,
+      "clauses": 102012,
+      "lrat": "91d9b8ec94785fb3b0f81eca9b45517ced7079473df1b8277f36ac282bfa711d",
+      "proof_bytes": 30337474,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ],
+      "word": "33355",
+      "width": 55,
+      "count": 7,
+      "mode": "strip",
+      "status": "UNSAT",
+      "proof_files": [
+        {
+          "file": "strip-33355-55-7.lrat.zst",
+          "bytes": 5895362,
+          "sha256": "10cc6f37d366a785ab29993784ab5dfca45be5c893692de0480b09083e3ebd1c"
+        }
+      ]
+    }
+  ],
+  "physical_witnesses": [
+    {
+      "gaps": "33355",
+      "repetitions": 6,
+      "white_samples": 115,
+      "physical_ticks": 228,
+      "row_site_one_low": "0x6313f2973417e999be6ed08a17",
+      "rightmost_black": 103,
+      "final_window": 3495,
+      "trap_entry_tick": 214,
+      "entry_window": 58474
+    },
+    {
+      "gaps": "333355",
+      "repetitions": 8,
+      "white_samples": 177,
+      "physical_ticks": 352,
+      "row_site_one_low": "0x28000000000000000000000000000000000000000000000167323ff06cfee87f4a38dfd1cde5f9f960ca7f7",
+      "rightmost_black": 346,
+      "final_window": 3495,
+      "trap_entry_tick": 340,
+      "entry_window": 680
+    }
+  ]
+}

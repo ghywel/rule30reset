@@ -13,7 +13,7 @@ from claudeCloud_wheel_runs import Cone
 from exterior_gap_core import successors
 from wheel_bridge import table
 
-FACTORS = ("00000","11","101","10001","1001001")
+from trap_observer import FACTORS
 
 
 def transitions():

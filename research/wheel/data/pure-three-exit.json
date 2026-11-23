@@ -1,0 +1,60 @@
+{
+  "proofs": {
+    "333333353": {
+      "width": 19,
+      "requires_exterior_endpoint": false,
+      "cnf": "7e4facd98d7adb5cf011eac237e50b8952b38a0bb43053da6b9018473f310020",
+      "variables": 2282,
+      "clauses": 7628,
+      "lrat": "52a559c19a25f16ecb95ae18812fe5d17072f11632e87581be13493427e753ec",
+      "proof_bytes": 168193,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ]
+    },
+    "3333333355": {
+      "width": 23,
+      "requires_exterior_endpoint": true,
+      "cnf": "ed106e7201818ac2db206d2358cd347e261b91a52c112ec162695ae6cd2008f9",
+      "variables": 3220,
+      "clauses": 11676,
+      "lrat": "da6a6a4b74c8bc3de4ced9f49994895285616ce5d74984c1a568adfee44efe1b",
+      "proof_bytes": 952754,
+      "checkers": [
+        "lrat-check",
+        "cake_lpr"
+      ]
+    }
+  },
+  "physical": {
+    "33333353": {
+      "initial": "0xfffffffc9803e960f",
+      "initial_width": 68,
+      "endpoint": 54807,
+      "outside": true,
+      "cnf": "56a05c6bb43e209d52ade2f2d2751b53e6411783ae8606ea9f5b1c0bd71e3310"
+    },
+    "333333355": {
+      "initial": "0x87dede07e40c0ffbd77",
+      "initial_width": 78,
+      "endpoint": 27639,
+      "outside": true,
+      "cnf": "21cacbca887fe027560b3cbad20b0d10420516be0c079f4362d76ca845cda5e9"
+    },
+    "3333333355": {
+      "initial": "0xfffffffffffff87fffe0f",
+      "initial_width": 84,
+      "endpoint": 871,
+      "outside": false,
+      "cnf": "a0138d75875a2629eaaad80e19cf80b9fbab430bbfcf2b2493ff5c3669eb26d1"
+    },
+    "3333333333333333335": {
+      "initial": "0x6e5916ada62ef085d73dca28854eb0d77",
+      "initial_width": 134,
+      "endpoint": 12455,
+      "outside": true,
+      "cnf": "ba17748964131dd19ea1f664a085b5483eb670b920dca0f5ada114a01758aaea"
+    }
+  }
+}

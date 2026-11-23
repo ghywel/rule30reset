@@ -1,0 +1,18 @@
+# How the exterior pure-three rhythm can end
+
+At the white ticks of an alternating boundary, sample the first cell to its right. A pulse is a black sample, and each digit below counts the number of white-sample intervals to the next pulse. The rotating 84-cell ring gives the endless rhythm `333…` outside the kit trap. These two finite rules describe a departure from a long stretch of that rhythm.
+
+| Observed gap factor | Exact conclusion |
+|---|---|
+| Seven 3s, then 5, then 3 | Impossible on every right half, at every white start. |
+| Eight 3s, then 5, then 5 | The last pulse is in the trap. This factor actually occurs. |
+
+Consequently, after eight successive 3s, a following 5 uses up the last possible gap of an uninterrupted 3/5 run that stays outside. If the next gap is legal it is 5, and the endpoint is already trapped. On an infinite all-3/5 run that stays outside, the first occurrence of eight successive 3s therefore fixes all subsequent gaps at 3. The general statements and the finite search are in [WheelPureThreeExit.lean](WheelPureThreeExit.lean).
+
+Both numbers of initial 3s are sharp. Finite driven rows realize `3⁶ 5 3` and `3⁷ 5 5` with exterior endpoints, and another realizes `3¹⁸ 5` with an exterior endpoint. One more realizes the capture word `3⁸ 5 5` with final window code 871. These also show that deleting either end gap of either forbidden exterior factor admits a physical exterior occurrence. Each row is fully specified by its hexadecimal initial value, with positive site 1 in bit zero and white beyond the highest bit. [Physical rows and proof receipts](data/pure-three-exit.json).
+
+The Lean proof lifts possible prefixes of every sampled row, one bit at a time, then propagates the permitted transitions forward and backward. Any real path survives these operations at every width. Each double update of a width-w prefix depends on w+2 starting bits. A small bitset over-approximates membership during propagation, so a hash collision can only retain an extra candidate. The kernel checks every saved intermediate layer and the final empty layer. In the forbidden case emptiness occurs by width 18. In the capture case width 23 suffices when the final 16-bit state is required to be outside. A finite light cone at an arbitrary white sample transfers both conclusions to any infinite driven half. The kit’s stock checker passed the two physical theorems in `WheelPureThreeExit` and replayed 213 constants with zero new axioms. [Layer generator](build_pure_three_layers.py) · [Stock result](data/pure-three-exit-stock.json).
+
+A separate SAT proof allows a fresh east input on each physical tick. It excludes the first error at width 19 and the second at width 23. Both LRAT files passed lrat-check and cake_lpr. The shared-store packet `share-scratch/gptIntel/I170/pure-three-exit-cuts.zip` holds the formulas, proofs and witnesses, 912,569 bytes, SHA-256 `9149e302646179c4d90b4ff475afe33157ed9f39214de35f702ebf906cc565c4`. [Second encoding and replay](pure_three_exit.py).
+
+An independent lower test asked how many 5s can occur before capture, without prescribing the gap sequence. In 114 white-sample intervals a row stays outside across the 30 gaps `355335333553333553333553333555`, including **12** fives. For a fixed span N and k gaps in {3,5}, the number of fives is exactly (N−3k)/2. This turns a requested number of fives into an upper bound on the number of interior pulses in a single physical cone. The endpoint and all 114 earlier windows were checked against the 829 trap codes. This lower bound and I171’s upper bound leave room between 12 and 29. [Finite witness](data/exterior-five-witness.json) · [Search](exterior_five_witness.py).

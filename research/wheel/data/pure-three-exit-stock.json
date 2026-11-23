@@ -1,0 +1,254 @@
+{
+  "claim": "partial",
+  "declared": [
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.Grid",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.Linked",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.Reads",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.admit",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.blocked",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.eight_then_two_fives_enters",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.entering",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.entering_empty",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.fits",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.forbidden",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.forbidden_empty",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.forward",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.forward_sound",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.gaps",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.layers",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.left",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.left_sound",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.lift",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.lift_sound",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.link_double",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.mark",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.marked",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.no_seven_then_five_three",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.physical_eight_then_two_fives_enters",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.physical_no_seven_then_five_three",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.prefix_lift",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.right",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.right_sound",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.successors",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.survives",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.fits.match_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.layers.eq_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.layers.eq_2",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.layers.eq_def",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.layers.match_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.left.eq_def",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.mark.eq_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.mark.eq_2",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.mark.eq_def",
+      "standardAxioms": true
+    },
+    {
+      "kind": "def",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.mark.match_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30DrivenPrefix.double.eq_1",
+      "standardAxioms": true
+    },
+    {
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.Rule30PeriodTwoSideways.u.eq_1",
+      "standardAxioms": true
+    }
+  ],
+  "headlines": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.physical_no_seven_then_five_three",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "found": true,
+      "kind": "theorem",
+      "name": "Ruliology.CellularAutomata.PureThreeExit.physical_eight_then_two_fives_enters",
+      "ok": true,
+      "problems": [],
+      "typeMatches": true
+    }
+  ],
+  "importsStatements": true,
+  "module": "WheelPureThreeExit",
+  "newAxioms": [],
+  "official": [],
+  "reasons": [],
+  "replay": {
+    "constants": 213,
+    "ok": true
+  },
+  "verdict": "pass",
+  "verifiedTargets": []
+}

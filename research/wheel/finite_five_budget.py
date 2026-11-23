@@ -62,7 +62,7 @@ def avoidance_machine(words):
     return transitions
 
 
-def count_fives(nodes, edges, cuts):
+def longest(nodes, edges, cuts, duration=False):
     """Reachable product with a word-avoidance automaton, accepting all start and end windows."""
     transitions = avoidance_machine(cuts)
     adjacency = [[] for _ in nodes]
@@ -93,10 +93,10 @@ def count_fives(nodes, edges, cuts):
     for letter,(sources,targets) in graph.items():
         for i,j in zip(sources,targets):
             a,b = int(lab[i]),int(lab[j])
-            weight = int(letter == 5)
+            weight = letter if duration else int(letter == 5)
             if a == b:
                 if weight:
-                    return {"vertices":n,"components":nc,"max_fives":None}
+                    return {"vertices":n,"components":nc,"max_cost":None}
             else:
                 if b not in dag[a]:
                     indegree[b] += 1
@@ -113,8 +113,8 @@ def count_fives(nodes, edges, cuts):
     assert not any(indegree)
     # Vertex potential certifies each zero/one inequality on the original product.
     for letter,(sources,targets) in graph.items():
-        assert all(cost[lab[j]] >= cost[lab[i]] + int(letter==5) for i,j in zip(sources,targets))
-    return {"vertices":n,"components":nc,"max_fives":max(cost,default=0)}
+        assert all(cost[lab[j]] >= cost[lab[i]] + (letter if duration else int(letter==5)) for i,j in zip(sources,targets))
+    return {"vertices":n,"components":nc,"max_cost":max(cost,default=0)}
 
 
 def run(kit, stop, trim_every=1, trim_limit=None):
@@ -130,15 +130,18 @@ def run(kit, stop, trim_every=1, trim_limit=None):
         edges = gap_edges(nodes,width,inside)
         # The bound before trimming this width can be stronger.
         incoming = len(nodes)
-        before = count_fives(nodes,edges,cuts) if width==stop else None
+        before = longest(nodes,edges,cuts) if width==stop else None
+        timed = longest(nodes,edges,cuts+["3"*8],duration=True) if width==stop else None
         rounds = 0
         if (width-16) % trim_every == 0:
             nodes,edges,rounds = trim(nodes,edges,trim_limit)
         record={"width":width,"initial":incoming,"trim_rounds":rounds,"core":len(nodes),"prior_rounds":cumulative}
         if before is not None:
-            record.update(before)
-            if before["max_fives"] is not None:
-                record["outside_bound"] = 2*cumulative+before["max_fives"]
+            record.update(vertices=before["vertices"],components=before["components"],max_fives=before["max_cost"])
+            if before["max_cost"] is not None:
+                record["outside_bound"] = 2*cumulative+before["max_cost"]
+            if timed["max_cost"] is not None:
+                record["no_eight_threes"] = dict(timed, sample_bound=52*cumulative+timed["max_cost"])
         records.append(record)
         print(json.dumps(record),flush=True)
         cumulative += rounds
@@ -150,8 +153,8 @@ if __name__ == "__main__":
     p.add_argument("kit",type=Path)
     p.add_argument("output",type=Path)
     p.add_argument("--width",type=int,default=31)
-    p.add_argument("--trim-every",type=int,default=1)
-    p.add_argument("--trim-limit",type=int)
+    p.add_argument("--trim-every",type=int,default=5)
+    p.add_argument("--trim-limit",type=int,default=1)
     a=p.parse_args()
     result=run(a.kit,a.width,a.trim_every,a.trim_limit)
     a.output.write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8")

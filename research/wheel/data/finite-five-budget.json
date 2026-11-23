@@ -120,7 +120,13 @@
       "vertices": 174785,
       "components": 174785,
       "max_fives": 23,
-      "outside_bound": 29
+      "outside_bound": 29,
+      "no_eight_threes": {
+        "vertices": 176288,
+        "components": 176288,
+        "max_cost": 248,
+        "sample_bound": 404
+      }
     }
   ]
 }
