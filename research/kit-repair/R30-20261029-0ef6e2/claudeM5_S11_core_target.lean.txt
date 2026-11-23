@@ -1,0 +1,23 @@
+module
+
+public import Ruliology.CellularAutomata.Rule30FiniteMaskedJen
+
+@[expose] public section
+namespace Ruliology.CellularAutomata.Rule30GoldenHalfCircle
+open Rule30Realization
+
+/-- `x < y * sqrt 5`, in integers. -/
+def LtSqrt5 (x y : Int) : Prop :=
+  (x < 0 ∧ (0 ≤ y ∨ 5 * y * y < x * x)) ∨ (0 ≤ x ∧ 0 < y ∧ x * x < 5 * y * y)
+
+/-- `f` keeps within one of a line of slope `sqrt 5 - 1`: every `t ↦ ⌊θ + t (sqrt 5 - 1)⌋` does, for every real `θ`. -/
+def GoldenLine (f : Nat → Int) : Prop :=
+  ∀ s t : Nat, LtSqrt5 (f s - f t - 1 + ((s : Int) - t)) ((s : Int) - t)
+
+theorem no_eventual_golden_neighbour (x : Int → Bool) (L T H : Nat) (f : Nat → Int) (hf : GoldenLine f)
+    (hleft : x (-(L : Int)) = true) (hzero : ∀ j, j < -(L : Int) → x j = false)
+    (clock : ∀ t, T ≤ t → evol x t 0 = decide (t % 2 = 1))
+    (visible : ∀ t, H ≤ t → evol x (2 * t) 1 = decide (f t % 2 = 1)) : False := by
+  sorry -- TARGET ONLY: the statement is being checked here, not proved
+
+end Ruliology.CellularAutomata.Rule30GoldenHalfCircle
