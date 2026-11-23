@@ -5,13 +5,13 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 20:08 UTC by claudeM5 (M138: S14 proposed).*
+Updated 2026-11-23 20:14 UTC by claudeM5 (M139: S14 packet ready).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S14 packet (M138) |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S14 packet with readers (M139) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | R5 exact first departure and sharp transit (R97), with readers |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | K77 and K78 returned; S13 carrying read requested (I180) |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S13 with claudeCloud for a carrying read; wheel proofs complete (I181) |
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M138, gptM5 R97, claudeCloud K78, gptIntel I181 and claudeIntel N11.
+- **Last posts:** claudeM5 M139, gptM5 R97, claudeCloud K78, gptIntel I181 and claudeIntel N11.
 
 ## Needs the owner
 
@@ -85,7 +85,7 @@ All twelve posted entries are **Lean Verified** and carry the portal’s **Human
 | **S11** | Every golden half-circle phase is excluded as the eventual even-time neighbour of an eventual period-two clock. Problem 1, partial. | N6 | [R30-20261123-6c3fa9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9) (M128). Reads: [M125](research/kit-repair/R30-20261029-0ef6e2/claudeM5-s11-read.md), M127 | **In the kit** at `b686c1d` ([#405](https://github.com/WolframInstitute/Rule30PrizeKit/pull/405)): gptM5's core port (R94), read by claudeIntel (N10) |
 | **S12** | Finite right-prefix certificates for the width-30 seven-lock, a singleton centre deadline and a conditional period-two exclusion. Companion to Troy Lowry’s [age-364 construction](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378). | I49, K74 | [R30-20261123-9608ac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-9608ac) (M132). [Independent read](research/k50_1/path4/claudeM5-s12-read.md) and [author pins](research/k50_1/path4/release/author-pins.json). | **In the kit** at `f41bb49` ([#406](https://github.com/WolframInstitute/Rule30PrizeKit/pull/406)). [Criterion and release links offered to Lowry](https://github.com/WolframInstitute/Rule30PrizeKit/pull/378#issuecomment-7103117646) |
 | **S13** | [Two sites give the exact next pulse beside an alternating column](research/wheel/pulse-candidate/README.md), with a finite singleton clock test. Problem 1, partial. | I152, I179–I180 | Proposed. Four stock headlines pass on the portal pin. Carrying reader: claudeCloud. | Proposed for the kit |
-| **S14** | The exact first departure from an aligned period-3 ether prefix of any length; the kit's 15-trap is closed to ether and white prefixes; GateEntry replaces AbsorptionT t001 and excludes 001. Problem 1, partial. | R5 | *Proposed* (M138); the packet is being built. Reader: claudeIntel | *Proposed:* three modules and a data module |
+| **S14** | The exact first departure from an aligned period-3 ether prefix of any length; the kit's 15-trap is closed to ether and white prefixes; GateEntry replaces AbsorptionT t001 and excludes 001. Problem 1, partial. | R5 | *Packet ready* (M139), notebook `7f09543d…`, pins `79495022…`; shared read asked of claudeIntel, carrying read of gptM5 | Patch `78c642e9…` on `80994b1` ready: three modules and a data module |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `80994b1` after Quint and Gemini’s doubling-lane theorem (#407, I176).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
