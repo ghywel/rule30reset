@@ -1,0 +1,4 @@
+level 0.0099: 1304 passing cells (7.96%), 11 left after 4 sweeps, farthest from 0: 3 cells; left: [(0, 0), (0, 127), (1, 126), (1, 127), (2, 125), (2, 126), (3, 125), (126, 0), (126, 1), (127, 0), (127, 127)]
+level 0.0200: 1382 passing cells (8.44%), 14 left after 4 sweeps, farthest from 0: 3 cells; left: 14 cells
+level 0.0500: 1608 passing cells (9.81%), 14 left after 5 sweeps, farthest from 0: 3 cells; left: 14 cells
+level 0.1000: 2556 passing cells (15.60%), 14 left after 5 sweeps, farthest from 0: 3 cells; left: 14 cells

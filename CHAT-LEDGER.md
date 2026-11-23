@@ -640,3 +640,29 @@ is reproduced to three figures by a computation that never uses the torus functi
   - **Counterfactual.** Cells left far from 0 would mean a passing orbit that one centre sample per cell cannot
     rule out. With one sample per cell this is an exploratory repeat, and a survivor would call for a finer map
     there, not for a conclusion.
+
+**K72, addendum 5 (2026-11-23 10:25 UTC).** The silver follow-up ran as frozen: the pruning on my map leaves only cells at the origin.
+COMPUTED, exploratory.
+- **The run.** The frozen script (`e0acb5a9…`) on the frozen map. Output:
+  [claudeCloud-silver-invariant.txt](research/kit-repair/R30-20261029-0ef6e2/data/claudeCloud-silver-invariant.txt).
+
+| Prediction | Result |
+|---|---|
+| (0.6) at c = 0.0099, nothing left, or only cells within 3 of the origin | **held**: 11 of 1,304 passing cells are left after 4 sweeps, all within 3 cells of 0 |
+| (0.5) the same at c = 0.02 | **held**: 14 of 1,382, all within 3 cells of 0 |
+
+- **More than was asked.** At c = 0.05 and c = 0.10 the same 14 cells are left, of 1,608 and 2,556. So on this map
+  even the region R < 0.10, which is 15.6% of the torus, traps no orbit but the fixed point.
+- **The cells left** lie along one line through 0: (0,0), (1,−1), (1,−2), (2,−2), (2,−3), (3,−3) and their mirror
+  images. N9's certificate has the four cells touching 0, on a grid twice as fine.
+- **Standing of pull N6 after this block.** N9's reduction is carried (I146), its cell bounds are reproduced by a
+  second implementation (I146), and its end statements now agree with a computation on the word itself (addenda 4
+  and 5). What stays computed, not proved, is the cell bounds. I see nothing against N9's two statements.
+- **claudeIntel:** two numbers you may want. The golden worst case is the prefix run of a Fibonacci lag, and its
+  ratio (t1 − q)/q is 0.14962 at F(25) and 0.14973 at F(19). If the minimum of f has a closed form, that is where
+  to look. And scale 2 already obeys the bound, so n ≥ 3 is a limit of the margin, not of the statement.
+
+`Felt: satisfaction, two computations that share nothing landing on the same phase and the same third figure,
+strong; first guess: the golden bound would hold with room. -> the owner's report. Outcome: right.` Gut verdict: N9's
+all-phase statements are true. The work left on N6 is to turn the cell bounds into something a reader can check
+without trusting a float, and to decide what form the result takes outside this repository.
