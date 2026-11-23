@@ -1,0 +1,1 @@
+Rule30TrappedRuns: four closed runs of four in the trapped gate, sharp at ladder width 45

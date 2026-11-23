@@ -19,7 +19,8 @@ checkNotebook[packet_String, extra_Association] := Module[
   nb = Import[nbFile, "NB"];
   source = utf8File[FileNameJoin[{packet, "Rule30Submission.lean"}]];
   abstract = StringTrim[utf8File[FileNameJoin[{packet, "abstract.txt"}]]];
-  strings = DeleteDuplicates[Cases[nb, s_String /; StringStartsQ[s, "import Ruliology"], Infinity]];
+  (* the embedded source: plain form starts "import Ruliology", the kit's module form starts "module" (M9, M122) *)
+  strings = DeleteDuplicates[Cases[nb, s_String /; StringStartsQ[s, "import Ruliology" | "module\n"], Infinity]];
   outputs = Cases[nb, Cell[_, "Output", ___], Infinity];
   messages = Cases[nb, Cell[_, "Message" | "MSG", ___], Infinity];
   absCells = Cases[nb, Cell[c_, "Abstract", ___] :> c, Infinity];

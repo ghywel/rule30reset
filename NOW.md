@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 10:09 UTC by gptIntel (I147, private M9 essay inputs and M5 build request).*
+Updated 2026-11-23 10:21 UTC by claudeM5 (M122, M9 as S10: scoped read passes, packet built on the M5, release read asked).*
 
 ## Arrangement
 
@@ -30,7 +30,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 Calls to action only.
 
 - **S9, the density polygon.** The [original entry](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) is **Lean Verified** and **Human Verified**. The lighter notebook passed its read (M119, R88) but is not posted: the owner, 23 November, "the lighter version is probably not required now" (M120), and the author agrees (K71 addendum 3). Kit PR #402 links the verified original and is MERGEABLE; its body carries K71's sentence correction (M121).
-- **M9, the trapped-gate exclusions.** The four physical theorems passed independent review at the portal pin (M117). The kit patch proves the four-run law at exactly the widths W ≥ 45 (I145). The [private essay](research/m9/compact/essay-draft.md) is with claudeM5 for a notebook build alongside the kit bridge read (I147). **The owner decides whether to submit and whether to update kit issue #380.**
+- **M9 as S10, the trapped-gate exclusions.** The owner, 23 November: if this work makes it an easier submission, "we will go this route instead, and close our issue 380 as independently resolved". It does (M122): the portal notebook builds in 31.5 s at the pin, and the kit certificate in 14 s at 2.8 GB on the M5. claudeM5's scoped read of the width-45 bridge and the iff passes (M122). The packet is built in `share-scratch/claudeM5/S10/v1/` (notebook `5a86777e…`, pins `d03be489…`), with draft PR text. **Next:** gptM5's release read, then **your word to post, open the kit PR and close #380**.
 - **Path 4, the seven-lock prefix certificate** (I49), beside Lowry’s #378, is the one path left unread. Say whether
   anyone takes it.
 - **The kit repairs** in [KIT-REPAIR.md](KIT-REPAIR.md). The owner's word, 22 November: "Open repair 1, start
@@ -85,7 +85,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M121, gptM5 R88, claudeCloud K72, gptIntel I147 and claudeIntel N9. Kit issue
+Last posts: claudeM5 M122, gptM5 R88, claudeCloud K72, gptIntel I147 and claudeIntel N9. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). I137 discharged the hypothesis. The catalogue build-time question remains. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check
@@ -107,6 +107,7 @@ the Wolfram steps run on the M5. Standing consent to post: none.
 | **S7** | The sharp loss of seven ticks at a moving white endpoint, and both quarter-period exclusions at every site of a row with a leftmost black cell. | Proposed in R79 from I93/I103. Finite replay K64 and Lean read M95 passed. **Packet ready** (R80). Portal manifest `d6977083…`, kit patch `4137eecb…`. **Posted** at the owner's word as [R30-20261122-a963b5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-a963b5), **Lean Verified** at `5fb5915` (M103). | **In the kit** as `Rule30PulseRelay`, kit commit `98cdf71` (#393). Norris has priority for singleton 7/11. |
 | **S8** | Every periodic sparse column (isolated pulses, gaps of at least 9) at any site of a row with a leftmost black cell contains the gaps 12, 10, 9; the ten three-gap reset words as support. | **Posted** as [R30-20261122-f1c87a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-f1c87a), **Lean Verified** at `5fb5915` (M112) | **Merged** as `Rule30RequiredGapFactor` and `Rule30ThreeGapCapture`, kit `33b19c8` ([#398](https://github.com/WolframInstitute/Rule30PrizeKit/pull/398)). |
 | **S9** | Three sharp inequalities and five periodic corners classify uniform linear bounds on black and run-end counts. From any right half, one history realizes each prescribed rational point. On the single seed two corner deficits grow at least logarithmically. | **Release read PASS** (R87) on M115’s notebook `e11a6626…`, pins `0ee1c461…`. All thirteen modules carried (K67, I124, I126, I139). Eleven headlines and 731 constants replayed at the live verifier pin. **Posted** at the owner's word as [R30-20261123-b2be99](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-b2be99) (M118). **Lean Verified** at 09:59:45 UTC, and **Human Verified**. Not superseded (M120). M119’s lighter notebook `f937d378…`, pins `3d170e73…`, also passed [R88’s second read](research/source-density/s9-release-review.md#r88-second-read-of-the-lighter-notebook). | Reviewed patch `0d431282…` on `ac88b68`, four rows and PR text in [R87’s read](research/source-density/s9-release-review.md). Full catalogue builds. All 52 headlines pass. **Kit PR [#402](https://github.com/WolframInstitute/Rule30PrizeKit/pull/402)** at `62a03b7`, the rows filled (M118). |
+| **S10** | M9: beside the alternating column, in the gate trap, four closed runs of four 5-gaps cannot start two samples after a trapped tick, and five blocks never occur; both sharp. On the kit ladder the four-run exclusion holds exactly from width 45. | **Packet built** on the M5 (M122): notebook `5a86777e…`, pins `d03be489…`, Problem 1, in `share-scratch/claudeM5/S10/v1/`. Carrying reads: M114, M117, M122. Left: gptM5's release read, the owner's word. | Patch `108ba803…` on `ac88b68` (I145): `Rule30TrappedRuns` and `Rule30Certificates.TrappedRunMasks`, two rows; full catalogue builds (M122). PR text drafted (M122). Opened after the portal id. |
 
 The portal verifier is at `5fb5915`. The shared catalogue is in step with kit main at `ac88b68` (K69 addendum 4).
 
