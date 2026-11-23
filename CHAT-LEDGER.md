@@ -444,3 +444,24 @@ The owner, 23 November, after K80: "do the kicks ever repeat in their spacing, d
 - **(0.6)** After 60 samples every run from 1 to 7 has a largest number of repeats, and it is at most six. **(0.5)** For the run 5 it is four or five. **(0.6)** The run 1 can repeat at least six times (the cycle 35353555 of I53 has it twice).
 - *If some run repeats eight times late,* that run is a candidate for a periodic gate inside the trap at every width, and I follow it as a train. *If every run stops,* the wheel must be kicked at least once in a bounded number of turns, for every right half: a statement about the kicks' spacing with no left half in it.
 - `Record searched:` S10 and M78 to M82; K54, K56, K65; I48, I51, I53; S11, N6 to N9, P49, P50 and the archive's entry on square-poor words; L1614 as M78 reports it; `find_known.py` for *runs of five*, *repeat bound*, *corollary F*.
+
+**K81, addendum 1 (2026-11-23 22:47 UTC).** A correction to section 3, the first results of the test, and two more pieces registered.
+
+*Correction: I left out the kit's own five words.* `Rule30GateTrapWords` (ours, 9 November): once a window is in the trap the gate never reads the gap words **333, 3353, 3533, 3553, 5533**. The fourth is a closed run of exactly two. So among the runs there are **forbidden numbers** too: a run of 0 from six samples after entry, and **a run of 2 never, from entry**. A sample of 300 random rows, read from 60 samples after entry, shows every other small run (1, 3, 4, 5, 6, 7, …) and no 2. The sieve's laws from delay 0 also stand in section 3's list: (1,1,1), (1,1,4), (3,1,3,1), (3,1,5,6).
+
+*The test so far* (COMPUTED on the whole cone; runs 5, 6 and the late column still with the solver).
+
+| Run | Most in a row, any right half | Most in a row after 60 samples in the trap |
+|---|---|---|
+| 1 | 3 (four refused) | 2 (three refused; the sieve's law (1,1,1)) |
+| 2 | 2 (three refused) | none: one run of two is already forbidden |
+| 3 | at least 8 | at least 5 |
+| 4 | 4 (five refused; S10) | 3 (S10) |
+| 5 | at least 6 | running |
+| 6 | at least 4 | running |
+
+So the runs 1, 2 and 4 cannot repeat beyond three or four times for any right half, and the runs 3 and 5 can repeat many times. As registered, I follow those two as trains: the gate with every run 3 (gaps 3555, 18 samples) has a closed walk of one copy up to 80 columns and none at 100; the wheel itself (gaps 355555, 28 samples) up to 60 and none at 80. Whether a strip can still spell them many times there is the next step; the frozen finite strip keeps every sample outside the trap, so for these I use [claudeCloud_wheel_trains_inside.py](research/wheel/claudeCloud_wheel_trains_inside.py) `c96631ef…`, the same strip without that one condition (so far: four copies of the wheel at 80 columns and eight of the all-3 gate at 100 are spelled).
+- **(0.6)** Some number of copies of the wheel is refused at 80 columns or at 100. **(0.6)** The same for the all-3 gate at 100 or 150. *If refused,* no right half of any support turns the wheel that many times without a kick. *If sixteen copies are spelled at 150 columns,* the question goes to the whole cone and to gptIntel.
+
+*What real rows do, registered:* [claudeCloud_wheel_streaks.py](research/wheel/claudeCloud_wheel_streaks.py) `56714766…`: on random far fields, from 60 samples after entry, the share of each run and its longest streak, and the longest exact repetition of a block of two or three runs. Seen on 20 rows while writing it: the run 3 is 64% of runs with a streak of 8; the run 5 is 12% with a streak of 2.
+- **(0.7)** On 2,000 rows the longest streak of the run 5 is at most 5 (L1614, as M78 reports it: five in a row never in 2.29 million windows). **(0.6)** The longest streak of the run 3 is between 15 and 40. **(0.6)** No block of two or three different runs is read four times in a row.
