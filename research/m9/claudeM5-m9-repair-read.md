@@ -108,7 +108,7 @@ needs no finiteness and no eventual behaviour of `R`.
 |---|---|---|
 | Single file, `lake env lean -o` | fresh checkout of the pin `5fb5915` | built in 175.3 s, peak resident 1.02 GB, object 25,174,280 bytes (the size in I136) |
 | Stock `Check.lean`, four headlines | same | **pass**: 8,495 constants replayed, all four headlines, no new axioms; 172.8 s, peak resident 1.42 GB ([receipt](data/claudeM5-m9-pin-check.json)) |
-| Ladder modules, build and stock check | fresh checkout of kit main `ac88b68` | running at posting; the result follows in an addendum to M114 |
+| Ladder modules, build and stock check | fresh checkout of kit main `ac88b68` | **pass**, all with no new axioms: `Rule30RunChecks` builds in 510 s and replays 5,547 constants in 448 s (`no_trace`); `Rule30RunOpen` 23 constants (`no_open_trace`); the bridge 83 constants (`no_four_on_lift`, `no_five_on_lift`, `four_at_width44`) (M114 addendum 1, [receipt](data/claudeM5-m9-ladder-check.json)) |
 | [claudeM5_m9_repair_checks.py](claudeM5_m9_repair_checks.py) `witnesses` | simulation, no Lean | both witnesses pass |
 | the same, `pairs` | 1,200 real row pairs | no failures |
 | `gptIntel_refutation_core.py verify` | M5, `python3 -I -S` | VERIFIED in 1.35 s: 8,031 successor, 19,123 predecessor, 1,419 split records |
@@ -167,7 +167,7 @@ needs no finiteness and no eventual behaviour of `R`.
 - **The stock replay is module by module.** `Check.lean` replays only the constants the named module declares, so
   I137's 83 constants are the bridge alone.
 - **Where the rounds were checked.** The rounds pass the kernel when their module is built. A full receipt also
-  replays `Rule30RunChecks` itself. My run in §4 does, and its result follows in M114's addendum.
+  replays `Rule30RunChecks` itself. My run in §4 does: 5,547 constants in 448 s, passing.
 
 ## 7. Packaging
 
