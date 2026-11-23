@@ -1,0 +1,97 @@
+{
+ "namespace": {
+  "Rule30SourceDensityRegion": "Ruliology.CellularAutomata.Rule30SourceDensityRegion",
+  "Rule30SourceDensityCorners": "Ruliology.CellularAutomata.Rule30SourceDensityRegion",
+  "Rule30DensitySharpness": "Ruliology.CellularAutomata.Rule30SourceDensityRegion",
+  "Rule30SourceTransitions": "Ruliology.CellularAutomata.Rule30SourceDensityRegion",
+  "Rule30DensityPolygon": "Ruliology.CellularAutomata.Rule30SourceDensityRegion",
+  "Rule30DensityCornerHistories": "Ruliology.CellularAutomata.Rule30SourceDensityRegion",
+  "Rule30DensityEscape": "Ruliology.CellularAutomata.Rule30DensityEscape",
+  "Rule30DensityMargin": "Ruliology.CellularAutomata.Rule30DensityEscape",
+  "Rule30DensityControl": "Ruliology.CellularAutomata.Rule30DensityControl",
+  "Rule30DensityModes": "Ruliology.CellularAutomata.Rule30DensityControl",
+  "Rule30DensityVertices": "Ruliology.CellularAutomata.Rule30DensityControl",
+  "Rule30DensityOneHistory": "Ruliology.CellularAutomata.Rule30DensityControl",
+  "Rule30DensityMixtures": "Ruliology.CellularAutomata.Rule30SourceDensityRegion"
+ },
+ "modules": {
+  "Rule30SourceDensityRegion": [
+   "middle_face",
+   "high_face",
+   "region",
+   "singleton_region"
+  ],
+  "Rule30SourceDensityCorners": [
+   "corner0",
+   "corner1",
+   "corner2",
+   "corner3",
+   "corner4",
+   "optimal_startup"
+  ],
+  "Rule30DensitySharpness": [
+   "repeated_corner",
+   "finite_corner_bound",
+   "polygon_necessary"
+  ],
+  "Rule30SourceTransitions": [
+   "fall_count",
+   "middle_identity",
+   "bounded_iff_alternates",
+   "singleton_middle_bounded_iff_period_two"
+  ],
+  "Rule30DensityEscape": [
+   "range_potential",
+   "band_edge",
+   "tight_repeat",
+   "tight_columns",
+   "accumulated_step"
+  ],
+  "Rule30DensityMargin": [
+   "loss_in_interval",
+   "singleton_margin",
+   "margin_three_quarters",
+   "margin_nine_tenths"
+  ],
+  "Rule30DensityPolygon": [
+   "ends_nonneg",
+   "ends_le_black",
+   "polygon_sufficient",
+   "finite_of_uniform",
+   "uniform_bound_iff",
+   "finite_bound_iff",
+   "finite_bound_iff_uniform"
+  ],
+  "Rule30DensityControl": [
+   "steer_prefix",
+   "realize_segment",
+   "realize_stream"
+  ],
+  "Rule30DensityModes": [
+   "install",
+   "run_fit",
+   "run_open",
+   "discrepancy",
+   "block_bounds"
+  ],
+  "Rule30DensityVertices": [
+   "zero_policy",
+   "oneThird_policy",
+   "threeQuarters_policy",
+   "nineTenths_policy",
+   "one_policy"
+  ],
+  "Rule30DensityOneHistory": [
+   "physical_mode"
+  ],
+  "Rule30DensityCornerHistories": [
+   "tracks_of_mode",
+   "corners_from_any_right_half"
+  ],
+  "Rule30DensityMixtures": [
+   "schedule",
+   "cornerMode_good",
+   "mixtures_from_any_right_half"
+  ]
+ }
+}

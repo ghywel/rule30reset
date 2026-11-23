@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""claudeCloud_s9_assemble.py: assemble S9's single-file portal form (METHOD 12, step 2; ledger K68).
+"""claudeCloud_s9_assemble.py: assemble S9's single-file portal form (METHOD 12, step 2; ledger K68, K69).
 
   python3 research/source-density/claudeCloud_s9_assemble.py OUTFILE
 
 Every part is read as a file whose SHA-256 is asserted here, normalised to LF:
   - one kit module that the verifier's kit commit 5fb5915 lacks, Rule30SourceObservables, as it stands at kit commit
     40017e8 (and unchanged at main cf60d48), read from the kit clone Rule30PrizeKit/;
-  - gptIntel's ten modules of I72 and claudeCloud's two (Rule30DensityPolygon, Rule30DensityCornerHistories), from
-    this folder.
+  - gptIntel's ten modules of I72 and claudeCloud's three (Rule30DensityPolygon, Rule30DensityCornerHistories,
+    Rule30DensityMixtures), from this folder.
 Each has its module-system lines removed (`module`, `public import`, `@[expose] public section`) and its namespace
 moved from Ruliology.CellularAutomata.X to Rule30Submission.X. One `open Ruliology.CellularAutomata` before the
 first module makes the verifier's own kit modules resolve; the moved namespaces resolve from inside
-`Rule30Submission`. No statement and no proof line changes. Ten headlines are restated in `Rule30Submission` at
+`Rule30Submission`. No statement and no proof line changes. Eleven headlines are restated in `Rule30Submission` at
 the end. The result is encoded to UTF-8 once, written as bytes, and those same bytes are hashed.
 """
 import hashlib
@@ -37,6 +37,7 @@ LOCAL = [
     ('Rule30DensityVertices', '1567d057ea09d18f'),
     ('Rule30DensityOneHistory', 'dd4031d808e4b185'),
     ('Rule30DensityCornerHistories', 'f50cabc31840cc8e'),
+    ('Rule30DensityMixtures', 'cb15c8dd7657430b'),
 ]
 NAMESPACES = ['Rule30SourceObservables', 'Rule30SourceDensityRegion', 'Rule30DensityEscape', 'Rule30DensityControl']
 
@@ -46,7 +47,7 @@ HEADER = '''
 
 One file. First one kit module that the verifier's kit revision does not have, `Rule30SourceObservables` (David
 Condrey, extended by G.P.J.W. Quint and Gemini), as it stands in the kit, with its module-system lines removed and
-its namespace moved inside `Rule30Submission`. Then twelve modules of this entry:
+its namespace moved inside `Rule30Submission`. Then thirteen modules of this entry:
 
 * `Rule30SourceDensityRegion`: three inequalities between the duration `T`, the black count `C` of a site and the
   count `A` of ticks on which the site is black and its right neighbour white, on every interval at every site of
@@ -57,7 +58,9 @@ its namespace moved inside `Rule30Submission`. Then twelve modules of this entry
 * `Rule30SourceTransitions`: the middle inequality counts black-to-white steps of the right column;
 * `Rule30DensityEscape`, `Rule30DensityMargin`: on the single seed two corners are missed by a growing margin;
 * `Rule30DensityControl`, `Rule30DensityModes`, `Rule30DensityVertices`, `Rule30DensityOneHistory`,
-  `Rule30DensityCornerHistories`: each corner is tracked with bounded error from an arbitrary right half.
+  `Rule30DensityCornerHistories`: each corner is tracked with bounded error from an arbitrary right half;
+* `Rule30DensityMixtures`: the five controllers run in turn, and every rational point of the polygon is the limit
+  of one history from an arbitrary right half.
 
 The headlines are in `Rule30Submission` at the end.
 -/
@@ -122,6 +125,18 @@ satisfy `|D*C - c*n| ≤ cap` and `|D*A - a*n| ≤ cap`. -/
 theorem corners_from_any_right_half :
     Tracks 2 1 0 0 0 ∧ Tracks 6 3 1 0 3 ∧ Tracks 21 4 3 1 3 ∧ Tracks 37 10 9 4 12 ∧ Tracks 3 1 1 1 0 :=
   Rule30SourceDensityRegion.corners_from_any_right_half
+
+/-- **Every rational point of the polygon, from an arbitrary right half.** Give the five corners, in the order
+`(0,0)`, `(1/3,0)`, `(3/4,1/4)`, `(9/10,2/5)`, `(1,1)`, the weights `w 0, ..., w 4`, with sum `K > 0`.
+`RootClose K P c n` says `(60*K*c - P*n)^2 ≤ 2*(K*(60*K+4317))^2*(n+1)`. Every row on the sites `j ≥ 0` is the right
+half of a full-line configuration whose counts at sites `0` and `1` over the first `n` ticks, for every `n`, are
+that close to `n` times the weighted average of the corners. So `C/n` and `A/n` converge to that point, with an
+error of order `1/sqrt n`. -/
+theorem every_rational_point (w : Nat → Nat) (pos : 0<w 0+w 1+w 2+w 3+w 4) (r : Nat → Bool) :
+    ∃ x : Int → Bool, (∀ j : Nat, evol x 0 j=r j) ∧ ∀ n : Nat,
+      RootClose (w 0+w 1+w 2+w 3+w 4) (20*w 1+45*w 2+54*w 3+60*w 4) (black (evol x) 0 0 n) n ∧
+      RootClose (w 0+w 1+w 2+w 3+w 4) (15*w 2+24*w 3+60*w 4) (ends (evol x) 0 0 n) n :=
+  mixtures_from_any_right_half w pos r
 
 /-- **The single seed misses the corner `(3/4, 1/4)` by a growing margin.** With `d 0 = |j|` and
 `d (k+1) = 2 * d k + |j| + 11` (`Rule30DensityEscape.deadline false j`), every `n ≥ d k` has

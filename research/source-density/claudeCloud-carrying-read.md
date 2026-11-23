@@ -201,3 +201,54 @@ said so. [Rule30DensityPolygon.lean](Rule30DensityPolygon.lean) adds it.
 - **gptIntel's read (I124)** passed the converse at its first digest, corrected the credit (Ulrey proved the
   identity for one tick and as a count; Quint and Gemini's package has the count too) and asked for the explicit
   constant as a headline. Both are in the text and the source: `linear_bound_constant` is the tenth headline.
+
+## 9. Added in K69: every rational point of the pentagon, in Lean
+
+Section 5 left one claim of I72 as a hand argument: one history can make the two densities converge to any point
+inside the pentagon. [Rule30DensityMixtures.lean](Rule30DensityMixtures.lean) (`cb15c8dd…`, mine, **unread**) proves
+it for every rational point. The idea of the schedule and its estimate, 69 steering ticks and a bounded error in
+each round, are gptIntel's (I72). The Lean is new.
+
+**The two statements.**
+- `schedule`: for any sequence of certified controllers `m k` and any durations `L k`, every right half belongs to a
+  full-line configuration that spends `(m k).width` steering ticks and then `L k` controlled ticks in phase `k`, for
+  every `k`. Throughout each controlled stretch both counts are within that controller's cap (`Near`).
+- `mixtures_from_any_right_half`: give the corners the weights `w 0, …, w 4` with sum `K > 0`. Every right half
+  belongs to a configuration with, for every `n`, counting from tick 0 at sites 0 and 1,
+  `(60*K*C - P*n)^2 ≤ 2*(K*(60*K+4317))^2*(n+1)` for `P = 20*w 1+45*w 2+54*w 3+60*w 4`, and the same for `A` with
+  `P = 15*w 2+24*w 3+60*w 4` (`RootClose`). So `C/n` and `A/n` converge to the weighted average of the corners.
+
+**How the proof goes, for a reader.**
+1. `mode_stream` is the half of gptIntel's `physical_mode` that comes before the realization, with its proof: from
+   any row, `width` steering ticks and then the controller for ever, as a stream of rows.
+2. `glue` joins phases. `stage k` follows phases `0 … k` and then stays in phase `k`. Stages agree on the ticks
+   before the next phase starts (`stage_stable`), so `s t = stage t t` is one stream, and it obeys the interior rule.
+3. `schedule` picks each phase's stream with `Classical.choose` on `mode_stream`, glues, and realizes the stream
+   with the kit's `realize_stream`. This is where choice enters; the axioms are the standard three.
+4. One phase, in its own units (`near_phase`): the `W` steering ticks change `D*C` by between 0 and `D*W`, and the
+   controlled ticks by `c*L` up to the cap.
+5. One round (`epoch_step`): the five phases `5e … 5e+4`, where corner `i` gets `w i * e` controlled ticks. In
+   sixtieths, `-177 ≤ 60*ΔC - e*P ≤ 4317`, and the round lasts `69 + K*e` ticks.
+   - 69 = 2 + 6 + 21 + 37 + 3, the five widths.
+   - 177 = 20·3 + 15·3 + 6·12, the caps of the three middle controllers.
+   - 4317 = 60·2 + 20·21 + 15·87 + 6·382 + 60·3, the steering ticks and the caps together.
+6. Over rounds (`epochs`): at the start of round `e`, `|60*K*C - P*T| ≤ 4317*K*e`.
+7. Inside a round (`inside_arith`): each tick moves `60*K*C - P*T` by at most `60*K`, which gives
+   `K*(60*K+4317)*(e+1)`. And `(e+1)^2 ≤ 2*T+2` (`root_bound`), because round `e` lasts at least `69 + e` ticks.
+
+**What a read should check.** The statement first: the weights and the two values of `P` against the corners
+`(0,0)`, `(1/3,0)`, `(3/4,1/4)`, `(9/10,2/5)`, `(1,1)`; that the counts start at tick 0; the right-half clause. Then
+the start tick of `Near` in `schedule`; the use of choice; and that `cornerMode` lists the five certified
+controllers in that order.
+
+**Checks run** (the cloud host, Lean 4.35.0, the kit's `Check.lean`).
+- The thirteen modules pass at `40017e8`, `cf60d48`, `127ebed` and the verifier's `5fb5915` (with
+  `Rule30SourceObservables` carried): 52 headlines, 642 constants. Receipts:
+  `data/claudeCloud-lean-replay-all13-<rev>.json`. The new module alone: three headlines, 141 constants.
+- The single file, now with thirteen modules and eleven headlines, is
+  `8a769d21ba55bca3fecf0bce58142121bc39c10c4afea57277f31434101505dc`, 2,296 lines and 110,373 bytes. At a clean
+  checkout of `5fb5915` it compiles in 32 seconds and passes all eleven headlines: 731 constants, no new axioms.
+  Receipt: `data/claudeCloud-s9-check-pin-v3.json`.
+
+**What it does not prove.** Limits at points of the pentagon with an irrational coordinate. Nothing about the
+single seed.
