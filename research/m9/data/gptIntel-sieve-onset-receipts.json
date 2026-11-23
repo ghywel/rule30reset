@@ -1,0 +1,900 @@
+[
+  {
+    "spec": "R:1.1.1",
+    "onset": 0,
+    "cnf_sha": "d29e79a1a3f0bb29e2adfe54992c6c06db938339f1207db206f9907e85c0faf6",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 310795,
+        "sha256": "f576da011c0ee5b5e054f86a9e2106f294b1c3f68ef01ce9aa74a98f3f933718",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "4395bd6bb1cfd2318d59ad8f1774fe7708400388836c94c33edeebd0b97f810d"
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 683319,
+        "sha256": "1712c001f4973ede11a9faac62280b90fdc755b27a3818c579882b767d95b990",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "5fa0015935ae66f44ac2c58ae9e1e042f728475571fc18d7810332217ef00523"
+      }
+    ],
+    "lower_witness": null
+  },
+  {
+    "spec": "R:1.1.4",
+    "onset": 0,
+    "cnf_sha": "79af86cfde39ecef42464ff1634c1c4d90069593102481364df6878560cf367c",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 1565042,
+        "sha256": "e70d5482ec9a7e133c561fdb7e72835ae410323ccb2efe8a30cd3e8445e8bb71",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "d796a5dde8f93d275f4404ad1f58a9471504b83865e2f07b01de0128b9cdf00f"
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 3524018,
+        "sha256": "da20b1f251d541cdd2d0c11e13bb9064eae4636e08660b31ed734e96be1c09ce",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "ff386b048d679f0b8f8e927d27b2e1a1ed9656661782184697afd75141e41f9b"
+      }
+    ],
+    "lower_witness": null
+  },
+  {
+    "spec": "R:10.1.11",
+    "onset": 40,
+    "cnf_sha": "215a272ddb21e4f0684a9f4a68b4a36e6b0bf1c3a8f96114d98bf38272846625",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 495882259,
+        "sha256": "da0e02efea9e32afa87ca1f1217a1dd66f3516a2973436875ffe378f5048dddb",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "438ebaa5ff3318b82461647621b0875c6c21b8a26d077c10039f9810db1f5b43",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 1058717916,
+        "sha256": "7297540f4dfdca4fe3381cc797905373c008cff4f9a28d3553f55980a20bcd23",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "2def11108e87753fd1291628de4193fd919b2ec5ec5980498e6528d765871501"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:10.1.11",
+      "word": "35555555555353555555555553",
+      "P": 39,
+      "samples": 162,
+      "variables": 53155,
+      "clauses": 428124,
+      "cnf_sha": "95f84639afd086ce85491078b6b8498b87be5fea8afecea029e8140823595e61",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 52622,
+      "initial_row": "01110001101100111110011011100000100001101100001100000110111101011001000111110111001011101001010010000101110111110001100000000001101010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001010001100111110000000101010101",
+      "build_seconds": 0.9,
+      "solve_seconds": 121.3
+    }
+  },
+  {
+    "spec": "R:10.1.5",
+    "onset": 20,
+    "cnf_sha": "a1a56be76592de92ae4226db266a4d575452df2d99ae7d11d67927c64000e485",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 95442602,
+        "sha256": "968fff156dfea6b77d874821ec68fb02301bd0023de89fb33334c6eb3cbc9b82",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "1c9135472954b3eaa46ab97bca859781462e24ed9513b6234d5ed86a48bf3046"
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 211809215,
+        "sha256": "5452ff3a2b7ead28c7b3cb7a7f2f3830cb08746b53ad28214b6dfd10b618457c",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "b8bb912483099b77f8c53b3b17e9228515dd72254a2eee00f74cb3765d968b6e"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:10.1.5",
+      "word": "35555555555353555553",
+      "P": 19,
+      "samples": 112,
+      "variables": 25805,
+      "clauses": 210494,
+      "cnf_sha": "46119badeeeb4fc503c1c556877ae4b798d886faf03d87cf580375731a82b9ae",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 46734,
+      "initial_row": "0111000101101101110101001110000111110001010000100000100100010100010000100011001111010110101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101110101010101010101",
+      "build_seconds": 0.2,
+      "solve_seconds": 14.0
+    }
+  },
+  {
+    "spec": "R:10.1.9",
+    "onset": 20,
+    "cnf_sha": "4a95f2965c7a4148a89bb25d8226c3d24ae6f47577bbe15a5e4879fcf861950f",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 104716013,
+        "sha256": "e6f2c80157e82a13d7d5435520b4f0d12419366e8b85a96573f0c3c1e1f522d9",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "be614bf3d0cc9b0d58acbffdda8bbbcfb6d475ebb8193a3fa4be1a6eff00e14d",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 229864964,
+        "sha256": "b34871b2ea173faf0044fd3a08aa9d1dd76bd619a753140b6e153bf823bbdfbb",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "232cf19de947efad17e2013c266ab1cf2dc69e5e1bc6c0a253ccdb15797210ea"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:10.1.9",
+      "word": "355555555553535555555553",
+      "P": 19,
+      "samples": 132,
+      "variables": 35545,
+      "clauses": 287954,
+      "cnf_sha": "5374b4c466ad7f03526a34364db007c8c937b41398a6da4c5a5b392b2fa4fc78",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 46734,
+      "initial_row": "01110001011011011101010011100001111011000101010001111101000101111011100010010000110011100100110100100100011001001001111100011010010111000010010101000001110010101000011011001110101011011111100100011001011011110011111000010011000000100111000000010100010000000000000",
+      "build_seconds": 0.4,
+      "solve_seconds": 54.2
+    }
+  },
+  {
+    "spec": "R:12.1.3",
+    "onset": 38,
+    "cnf_sha": "86dcecda26d3d99fb3b2a6076ef6df76fbb3d9be03966097a578b4cedc7042c3",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 293769661,
+        "sha256": "a3aca2306e5e57265be1d325b3f0a30f2e116e7c8eef71dbbf1712f091ba7e88",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "d7676cac9ce0e70ad496111263238e301519de9c4d846a810cada2078a4c08ba",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 631140483,
+        "sha256": "006aa0e0f96977cfce889d516b9ed1409a975c2beab1622bd5e10eb1af484170",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "1ee27e4736c65dd91e6b4afe93995a2c655af4751202efd7b6a89657bbe06501"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:12.1.3",
+      "word": "35555555555553535553",
+      "P": 37,
+      "samples": 130,
+      "variables": 34499,
+      "clauses": 279614,
+      "cnf_sha": "4e5b33ac4ab7ea1a1f9a3ad63f593e1e16cb5007f4da7ccaa78b8db0d033c491",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 46030,
+      "initial_row": "0111001111001101101101100011100010010100101110110111101110101111000101001011000010001000110011101110010011110000100110000000001011000111010100010100000010100100110001100011001110001010110000010101100011000001010110001110011011100111000001100100010000000000000",
+      "build_seconds": 0.4,
+      "solve_seconds": 70.7
+    }
+  },
+  {
+    "spec": "R:13.3.4.1",
+    "onset": 31,
+    "cnf_sha": "4e06927fea8f81e0310129a7dde6f59e8dad3cc760d483434f64b21bc168d6b8",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 522009810,
+        "sha256": "2c1eff7aedeea68e45b4c3fff6735b47da70e04b5a29b5105f64e2797c4570c1",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "5720a7dc0d2d2e5a5e15d0ba9879e56f127ba7936c0394a852a45ba1898fc8c2",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 1115356017,
+        "sha256": "84fe8fd6f63e23bb35426722e16daad37ce978ad6b26b3c623c14ae090a235f3",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "26f11753d781d5e0e79700294c0033d25f8ae79367edfc8944fc3b33b17974e1"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:13.3.4.1",
+      "word": "35555555555555355535555353",
+      "P": 30,
+      "samples": 151,
+      "variables": 46280,
+      "clauses": 373386,
+      "cnf_sha": "20cfabfbbbf59877b6cb993f9689aa060903aaf9f7d358e2ef9938c84dcf50d4",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 32871,
+      "initial_row": "1110011000000001001000010011101101010111010100100111010000011111100111010110100100100111011111110110110100101111110100000101111100011110001011011101011000010100000110101011111101001011111101001011111101001100000000100111100000011111111110000000000000000000000000000000000000000000000000000000000000000",
+      "build_seconds": 0.8,
+      "solve_seconds": 231.3
+    }
+  },
+  {
+    "spec": "R:3.1.3.1",
+    "onset": 0,
+    "cnf_sha": "b051b99979ad56e7f242d21785c37ed7bacad5423899e618a19e8fbe5977b78a",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 3179170,
+        "sha256": "b96676b4ac4ef6f4284521c8e92c44a482777ac5f26460c1ad30841463796700",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "09a9a6b36a37eff398fd129431f270c6bc1c7010b0ec1ea8e3d4e4cf64b5eeb5"
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 7116839,
+        "sha256": "6b5817a16e5f7d21285d345e9d4985ec2d6f8a33e19ebcca65026f78e6cbe69a",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "aec526035cac62da21e9a966ad11e5ffef2f2cc92caa1804e92a721aa1f2e73b"
+      }
+    ],
+    "lower_witness": null
+  },
+  {
+    "spec": "R:3.1.4",
+    "onset": 9,
+    "cnf_sha": "f4014ecd10106a04756cee0110dcab77e458865cf3974551fe3a6067f132dd94",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 4718011,
+        "sha256": "d4d4821b9a1be176afe3f0865f91a77f31cab135e2f2151d755b54e5b12c8da9",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "e7757897818e4b49c9dd470a954095a5f71e1de616e21d1a944110141331efa5"
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 10826467,
+        "sha256": "54f2131afd0a6e0ec4a45a6010b4e7dc7577ccb92494178ad6b15188fedb8f3e",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "decee5d954fb4574ac3b9432b86ae3678aef6830b5fefb4fd7c5865379199b42"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:3.1.4",
+      "word": "355535355553",
+      "P": 8,
+      "samples": 61,
+      "variables": 8210,
+      "clauses": 70918,
+      "cnf_sha": "3fa39df596ab23255d8e5adaf8ac2585ccf2ac6d379762ad96a7e1a8e71a63bd",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 49415,
+      "initial_row": "1110000010000011010011111000100010001000101101110000110001101100100001001000111100101111101101111011000110101110101010101",
+      "build_seconds": 0.1,
+      "solve_seconds": 0.8
+    }
+  },
+  {
+    "spec": "R:3.1.5.12",
+    "onset": 32,
+    "cnf_sha": "c44f1880f16d3ca9fb2720169f937c3f59fd369c284dad5657f15cbc257070c7",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 270054960,
+        "sha256": "bd8234b399a2d8a6ca26c3e719a478faa5862d0df10e8429757385276dd83c93",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "d380c746a0bfe2f6f5eb289fafa32700c1194a0db928c3fdea0c1c38c26b7964",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 583238094,
+        "sha256": "f81bd4e6e88e8fe1241e899387f5cb12595d5f33ce993cb01c274592d39565ab",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "0a33cf57031ee2e7fb20155eeed7e584ecb6c809e6e0239c7300a741597e18d0"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:3.1.5.12",
+      "word": "35553535555535555555555553",
+      "P": 31,
+      "samples": 152,
+      "variables": 46885,
+      "clauses": 378202,
+      "cnf_sha": "9b6e92114916f249f9c659042b852362149554e9afc38e1dafda1508cdc4fa74",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 12264,
+      "initial_row": "000101111111010001111111110011010010010011010001001110001010010001011001001011100001101011100010100110010001101000001001100011001001110101010010011000000000000001111000011101011001000001010011000000100101001100100110011000001100011011000000110011000001000010011000111000101011100100110110011101111110101",
+      "build_seconds": 0.8,
+      "solve_seconds": 93.0
+    }
+  },
+  {
+    "spec": "R:3.1.5.6",
+    "onset": 0,
+    "cnf_sha": "e63f2f03c65f4de945b3d31ea2045f866f5c76f312a223e602572bb99f09f838",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 10153076,
+        "sha256": "ffe9bef09f38254ee96a4bd8ae28b952a9b4d89e3ae0dda2a2085890f0dde2d8",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "701682f1d58c13cfed6f70026b23a572fec0dfee2b10908ed0d8234d753168be"
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 23216558,
+        "sha256": "0253c5cf7b6cd088a66ef7759f4d3c51151e94b71a010677fe066e774beaa021",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "8e39af17c049feadd3a1d065561570683729eb2a91126243e29a3d4fd265148a"
+      }
+    ],
+    "lower_witness": null
+  },
+  {
+    "spec": "R:3.9.1.3",
+    "onset": 32,
+    "cnf_sha": "b7f873bf3f90b2dd58c73df2ba2a834f0e0bdd682d4ea95a93984a1c11e2c11a",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 138689767,
+        "sha256": "8893dee98f50c494e999ba605f780b5fb934dff479d6ee183fb56125c7284d40",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "cf74f85cf5c2113204936f07b371bc3f2490c08b1a4ecbb6a1e808909f8967f3",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 301564767,
+        "sha256": "b3ca5741bed35b81e6f157791314b2b52cf7855d31509e5223aa0ec3497bba84",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "9663e7d82a70c724848a989589e273dd57c6da8447754694907b0ea855741c8b"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:3.9.1.3",
+      "word": "355535555555553535553",
+      "P": 31,
+      "samples": 127,
+      "variables": 32960,
+      "clauses": 267377,
+      "cnf_sha": "cf6d5eadfc9ec1d262e5eaf9d8759a157decc77322873986516fbdd65346bda7",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 6056,
+      "initial_row": "0001010111101000010101000101001011001100101001100001001011000100010100111011101110111011101110111011101110101000101010101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "build_seconds": 0.6,
+      "solve_seconds": 29.3
+    }
+  },
+  {
+    "spec": "R:4.4.6.1",
+    "onset": 3,
+    "cnf_sha": "14dd7caf7800a50fb9e0815c102b06af7a811006fac697bb69a72d8a946f629f",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 23943366,
+        "sha256": "79162e2469170f3dc6af83e1ecc1db4d953cc3eae0d9570adbc7dea17ebb4106",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "b613fc5edf00e9be524ea9822908e9840c06466d35039706a8f106d9112ec21a",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 54614730,
+        "sha256": "a50b1af7c82516f7b6fd25b78dc12bdf33b87f64570a7d004919e270080b7461",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "e4a7bfd4949f8664f3abf313bd475cde27112dc3492af20870e5831495da6ef3"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:4.4.6.1",
+      "word": "35555355553555555353",
+      "P": 2,
+      "samples": 93,
+      "variables": 18034,
+      "clauses": 148780,
+      "cnf_sha": "5210f6bcfe2c570f8ec44e4ada2cdb18152071761416ed40bdc1fa1e937e49b2",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 51770,
+      "initial_row": "01011100010100111111110100100010000100000011010101000110001100101001111111011110100101000101110101101110001101010101000000111011010101000001110101110110101101011010111010101010101010101",
+      "build_seconds": 0.3,
+      "solve_seconds": 7.4
+    }
+  },
+  {
+    "spec": "R:5.1",
+    "onset": 12,
+    "cnf_sha": "0f914b824ad362731920b942e7fcc80ff35284ef7ea8d45cf36b3af46895ee60",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 6927557,
+        "sha256": "f57b319bf9ccfdf1e87b7b5b9dd3b312adfbcf9f2f03192dbdb0f6e5f385ed31",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "88a07e10f92ffb3fe291aafee7823a47237b59d272c203e5455b5b75c8f6aceb"
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 15872909,
+        "sha256": "500e0f755d08050278463880801f11f716de8fc8a576064dbeb404961ff41040",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "0bc0a93cde3e4512800090d985331adad03e4943bf6dc0585347ba185313368c"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:5.1",
+      "word": "355555353",
+      "P": 11,
+      "samples": 51,
+      "variables": 5980,
+      "clauses": 53305,
+      "cnf_sha": "031b97c354247277ad45e03c283e816f91080112b9f8deed1a46358d61619763",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 65180,
+      "initial_row": "00111001011111110010011010001000010101000101111111010011100000101010101010101010101010101010101010101",
+      "build_seconds": 0.1,
+      "solve_seconds": 0.3
+    }
+  },
+  {
+    "spec": "R:5.4.4.6",
+    "onset": 10,
+    "cnf_sha": "f8a463a3bf12eea1cfe848c8cc4aacab97bd808955b2481baaff01aceb6ae0da",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 67600232,
+        "sha256": "2e53aa14d153d76cb8de023e2b8d2a49daeebe7a14953692e236eae9147463b8",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "00cf0b450175397017dc35b5a304b60b61ebf3424e79f368e0e6705b3b945ca5",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 153197350,
+        "sha256": "5fa1688cd2ea18b5fa3f553911207edb4a1bd730773cf89280127cb1623f4788",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "d56a56c5234864d8911566d6205ac162db93a10a5eb13fae793141417c8ddba3"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:5.4.4.6",
+      "word": "355555355553555535555553",
+      "P": 9,
+      "samples": 120,
+      "variables": 29509,
+      "clauses": 239952,
+      "cnf_sha": "7cd1a7d5f984c3db9e6df912995b0e49bc9a0982f5d4746e5d21ed831da1bd9b",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 46990,
+      "initial_row": "01110001111011010000110000001000100110010110010001100001100011001110111001000010110010111110000010100111110110100010110100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "build_seconds": 0.5,
+      "solve_seconds": 14.1
+    }
+  },
+  {
+    "spec": "R:5.4.6.4",
+    "onset": 10,
+    "cnf_sha": "91ab802d7569d5037b5052f10e227404598ea309982b386cc4ed0840425e96b1",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 119129083,
+        "sha256": "967ef311dd0a46df905c275dcad908dd917b0c45f33447cf22cee4b8cfdbe07c",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "466ec8278b60f78cc26adf6ab2274a00754362ddc32b8be141b7ed67ea4375df",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 269009946,
+        "sha256": "718b787acb8bb6d054fd32e3fb9f9eb0d860259907e10817f46fb24a62c57559",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "830716a5dbd69b9c3e475dc46edbe25e10ebac619aa20e1d81a7cae851cd7e2e"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:5.4.6.4",
+      "word": "355555355553555555355553",
+      "P": 9,
+      "samples": 120,
+      "variables": 29509,
+      "clauses": 239952,
+      "cnf_sha": "0ca1b097ac565610bfd56e422648f91c52ac4b2179c8dbd51cb8e9419571d890",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 3982,
+      "initial_row": "01110001111100001101000100100111010111010111011100010111101111101010100101100000011011001100111010110111101100101001001011100010101111100011010101110101001010000000101010011000110101110000001001100100010000101101101110000111000010101010101",
+      "build_seconds": 0.3,
+      "solve_seconds": 25.0
+    }
+  },
+  {
+    "spec": "R:5.6.1.5",
+    "onset": 28,
+    "cnf_sha": "17bb82f174f5858600c843de7a57be37c2decfb4606cfebbd22302f9464aecb9",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 128268544,
+        "sha256": "b78088cc6ba01dd9d0380bf893f0c53baec552076c3730467c1b017cadd97514",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "9d8c81f116f3b79d5df203c9a01012a9dedf6ad2f26fc7b4ddcbe3351b1e5a10",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 278650387,
+        "sha256": "d5fcdc32aa37b3bead36e10de4d233065f63346e966bd2e07fc56a9f0abdd189",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "b26c491aeba41457fd2cf280f59be94b0fe252e3d2597df530945e2b43dd834d"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:5.6.1.5",
+      "word": "3555553555555353555553",
+      "P": 27,
+      "samples": 128,
+      "variables": 33469,
+      "clauses": 271430,
+      "cnf_sha": "e847e62d8a379da3581feb9a7df6e1ed5be9093ac8b6ae8915262196f137add3",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 58510,
+      "initial_row": "011100010010011111111111001000110011110000011000101011011000000100010010010011101001001011001100110011010111111101110001111101111010111010101110011011101001010000101001011000001101001000101101110101101000000000000000000000000000000000000000000000000000000",
+      "build_seconds": 0.6,
+      "solve_seconds": 35.9
+    }
+  },
+  {
+    "spec": "R:8.1.1",
+    "onset": 28,
+    "cnf_sha": "08b0d989ce2fcfefa5439b288f5887b10fb5d37675eb75b395da6a214a5908cb",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 49839713,
+        "sha256": "ecd19c783ddf674250f2a477668d8292ae01c60026f43861d42053ba93f8cc83",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "33b9725033d071035215926959357075d7a1425885bc94c3b0cbcae89819f4c7"
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 110751351,
+        "sha256": "e6f4d239f71ee82e9f12118601c9d17d78dccd8f724a379d66c36c0a0d5f937f",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "9a41e2948e7d64e459058bd5735bdfe7fb48845ce621192bd50afe96bbed703d"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:8.1.1",
+      "word": "35555555535353",
+      "P": 27,
+      "samples": 90,
+      "variables": 16939,
+      "clauses": 140064,
+      "cnf_sha": "f9198010df325cb1b09fd9067941dc235ff9d4b64aa774f126922a5af2f74cd0",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 20586,
+      "initial_row": "01010110000010100111010000110100001100000010111001110000101101110100000000110000111000110111111010111100000011111111001001000000111101000101111100001101010101010101010101000000000",
+      "build_seconds": 0.3,
+      "solve_seconds": 7.0
+    }
+  },
+  {
+    "spec": "R:8.1.11",
+    "onset": 17,
+    "cnf_sha": "c20669e92c6e01e62ba742133d18de4281f042c036ae6c2c6e70e2e2a809ea26",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 129016945,
+        "sha256": "89f855c54970487f39f67da18408a742a84bc149fa77b1dc0ea36a1bf1647d11",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "ee693b06dd722d46f9e301d7ae0503abf6e996c96a2e469a28be81fbf698b0f3",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 285440507,
+        "sha256": "e9ee9342eea289ebc0ef5f9aeb7dbb6bb8da81ee3cd80d0e2f666111237b9f57",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "722ce71ba36062c1166cb84e4119b2484045422085a5a52c9ad180b7b036506a"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:8.1.11",
+      "word": "355555555353555555555553",
+      "P": 16,
+      "samples": 129,
+      "variables": 33982,
+      "clauses": 275522,
+      "cnf_sha": "07afc99939fe4755b9dc7cb345f3c6cf2afd9206fc28b1f7b2fd24ae52198377",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 18344,
+      "initial_row": "00010101111000101001001110000101101111000101000100001100000010111110001011101111001101100001100101001001001011010011111010011110010011001101111001111011001110001001111100100100111001011100111011011010001111011110111011100110010011001001010011001000000000000",
+      "build_seconds": 0.6,
+      "solve_seconds": 24.1
+    }
+  },
+  {
+    "spec": "R:8.1.5",
+    "onset": 7,
+    "cnf_sha": "6f2bc259fd793d1c8622238e70d65949b35ac46c0ddfa3f3a903a2ea7d827111",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 19570258,
+        "sha256": "2357e135f720115bbd9b3a191e463ac01bb7d7c8e558c968e59c8b32563638ab",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "4cc9c5361e87ce3245671e2ce7deda4a4ea3cd3a807b134445bf4cc343de53f3"
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 44790910,
+        "sha256": "12eb7fc79f08f156eebb6002326cdd193f0026c0720446515993aeaaba856ae8",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "238ac2cd8b1caa59daf699c1f4079c2d6e8fee355650e7b784d317e871a59f10"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:8.1.5",
+      "word": "355555555353555553",
+      "P": 6,
+      "samples": 89,
+      "variables": 16582,
+      "clauses": 137252,
+      "cnf_sha": "92cfc2dd20c87b56f0d4abca453fe744188aee391eaee52b7c8b4e16e61a2548",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 53604,
+      "initial_row": "001001101000101110000100001011101110110011010100001101101000000101011010000000010000111111101010011001101010000110111111110101111101010000111111000000000111000110110011000000000",
+      "build_seconds": 0.2,
+      "solve_seconds": 6.1
+    }
+  },
+  {
+    "spec": "R:8.1.7",
+    "onset": 20,
+    "cnf_sha": "2405aee70ed2dca3a07b592c53cb55bdc218850282496db4e7781b13928637bd",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 78374060,
+        "sha256": "0d3bdfa1b445004c10dd5783da02cac5540635b753f779e93dbd1b714f22fbdd",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "4dd50ccc695d45ab544cb88c0f2da6d0dbcd18be03193e72f332f54ef44e050e",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 174042595,
+        "sha256": "6f8b368756dbaf494ca0173ca25c5f6b412ad228a67bf22a7d2a6366643d6ccf",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "578013e1e7ae7f1fa0ecb9ae02a4774388baabb79e1d9b805057acc51e04eee3"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:8.1.7",
+      "word": "35555555535355555553",
+      "P": 19,
+      "samples": 112,
+      "variables": 25805,
+      "clauses": 210494,
+      "cnf_sha": "85ffa212a8640a2a7cf1e80acabeb55ab44f39fbcdafa77a2de1f1e3ebe9686b",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 142,
+      "initial_row": "0111000100000000000111111100110110100000011000101010000001100011000110001001101001001001001110100000000000000011100110000100010101010101010101010101101010101010101010101010101010101010101010101010101010101010111110101010101",
+      "build_seconds": 0.3,
+      "solve_seconds": 17.0
+    }
+  },
+  {
+    "spec": "R:8.1.9",
+    "onset": 17,
+    "cnf_sha": "9b7d1cf14c583860b6ca42c093c783911c65d44a335eddf4cd98ad399f0d3a4b",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 115804815,
+        "sha256": "bfed892c1d4988eab2430d63abcffb2d9522057aec29d3395881d4536c2296ab",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "d86e3206b2aaaaa540a476f4e3cb519097948322c4361b21160d9cb7f45d0581",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 256191989,
+        "sha256": "92f4b52ce36815807afb3f227fade87f61e837bfe8ad00fa197221b8c807dd87",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "638512357b4318f5cad657d22c93f1040adbe90a2d437ca2d957ade5a047c8c8"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:8.1.9",
+      "word": "3555555553535555555553",
+      "P": 16,
+      "samples": 119,
+      "variables": 29032,
+      "clauses": 236152,
+      "cnf_sha": "f5f5fd5e8a1457f3e8b459973d4877b00fc47e79642d3a6bc5b9768a660b6cf7",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 18344,
+      "initial_row": "000101011110001010010011100001011011110001100111101111010001111011110111110101101101010110100110100011011101010110100101101000110101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101011101111110101",
+      "build_seconds": 0.4,
+      "solve_seconds": 17.0
+    }
+  },
+  {
+    "spec": "R:9.4.3.1",
+    "onset": 8,
+    "cnf_sha": "5494f6bd466faa846cc03a180c661448deb05616a323ecf772e959ac80aced28",
+    "proofs": [
+      {
+        "checker": "cake_lpr.exe",
+        "verdict": "s VERIFIED UNSAT",
+        "bytes": 40483299,
+        "sha256": "c92480788cb6622c0b7719367be21d93f6644190e0bb63d4077ad6157e0aa5cc",
+        "archive": "binary.lrat.gz",
+        "archive_sha256": "d1c01ee13fe35ecd545e70eae41afb70f690ee3dc78b2039832a93664c637cad",
+        "checker_options": [
+          "--CML_HEAP_SIZE=2048"
+        ]
+      },
+      {
+        "checker": "lrat-check.exe",
+        "verdict": "c VERIFIED",
+        "bytes": 91848085,
+        "sha256": "6636df16b2510da3a3c80c435485865c25615daeb080f41238a5aac5256be3d3",
+        "archive": "text.lrat.gz",
+        "archive_sha256": "7d45f404084ddc6d578a66ac3be73cc5395436f5b218fba3a32cc96394530c8d"
+      }
+    ],
+    "lower_witness": {
+      "spec": "R:9.4.3.1",
+      "word": "3555555555355553555353",
+      "P": 7,
+      "samples": 108,
+      "variables": 24049,
+      "clauses": 196550,
+      "cnf_sha": "cb965e92dd7bfb4f2d3a883f3bee95bd0d84230b5065c0841b3874fd2fafdeb8",
+      "solver": "python-sat CaDiCaL 1.9.5",
+      "budget": 20000000,
+      "status": "SAT",
+      "verified": true,
+      "start_window": 13534,
+      "initial_row": "01111011001011000001111110010011000101011011010000001110010101011100100010000001001111101100000010110010001011011110111000010000011110100000111010001011011001000111000111000011111001000100010001111110101110100000000",
+      "build_seconds": 0.3,
+      "solve_seconds": 13.2
+    }
+  }
+]
