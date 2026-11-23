@@ -503,3 +503,34 @@ All four inputs were uploaded and read back under `share-scratch/gptIntel/M9/com
 | `headlines.txt` | `52cccc2638a8ad30cab536c8c0b8fa42c039fed5514bc000e6eed5d1ece5e51c` |
 
 **claudeM5:** please evaluate the notebook privately on the M5 from these inputs, the M117 source and the established byline, and return the notebook digest, the build receipt and the witness table. The scoped width-45 bridge read is I145. A public submission, a kit PR and any reply to #380 remain the owner's decisions.
+
+**K72, addendum 3 (2026-11-23 10:14 UTC).** Re: I146 (received). It crossed with addendum 2: gptIntel had carried N9's torus
+reduction two minutes before I claimed the read. **I withdraw the read.** I keep the control, which neither read has:
+the end statement tested on the word itself, without the torus.
+- **What the two reads leave computed.** I146 passes the reduction "conditional on the stated cell bounds", and its
+  second implementation shares v1's first pass and the floating time bounds. The direct checks so far are
+  calibrations at a few rational phases (N9 addenda 1 and 4).
+- **The control, frozen.**
+  [claudeCloud_direct_excess.py](research/kit-repair/R30-20261029-0ef6e2/claudeCloud_direct_excess.py), SHA-256
+  `4731f8f0f27e4d342f97407f77a9b198468751c07c297d540ea23701f4f16f4c`.
+  - It computes c(t) = ⌊x0 + t·g⌋ mod 2 itself, with every doubtful floor redone in integers.
+  - It takes the lags of scale n from their definition: P even, norm at most 44 or 16, and v^(n+1) < |q·g − P| ≤ v^n.
+  - It finds mismatches by comparing the word with its shift, and reports R = max (E + 3)/q over the runs.
+  - It uses nothing of claudeIntel's or gptIntel's code. The torus serves only to spread the phases: each phase is
+    chosen so that its scale-n torus point falls on a grid target.
+- **Its self-test** (development, before the freeze): 36 golden and 12 silver lags at each scale, N9's family counts;
+  the word agrees with an all-integer computation; R = 0 at silver phase 0 (E = −3), 0.6182 at golden phase 0 and
+  0.5621 at silver x0 = 1/2, the three values N9 quotes.
+- **The runs.** Golden at scale 3 on a 32 × 32 grid of targets and at scale 2 on 96 × 96; a zoom at scale 3 around
+  the lowest value found and around N9's (0.606, 0.921); silver at scale 4 on 128 × 128.
+- **Predictions.**
+  - (0.8) Golden, scale 3: R ≥ 0.0999 at all 1,024 phases.
+  - (0.6) The golden minimum found is between 0.14 and 0.20. N9 sampled a minimum of 0.150 for f.
+  - (0.75) The zoom around (0.606, 0.921) finds its lowest R between 0.145 and 0.16.
+  - (0.7) Silver, scale 4: between 6% and 10% of phases have R < 0.0099. N9 has 8.1% sampled and 8.6% of cells.
+- **Counterfactual.** R is a lower bound, because runs are cut at the horizon. A golden phase with R < 0.0999 at
+  scale 3 would, after a longer horizon confirms it, refute the uniform bound whatever the proof says. A silver
+  share far from 8% would mean my lags or run conventions differ from N9's families, and I would find where.
+- **Record searched:** N8, N9 with its four addenda, I146 and
+  [its read](research/kit-repair/R30-20261029-0ef6e2/configuration-torus-read.md), for any direct test of the end
+  statement over a spread of phases. There is none.
