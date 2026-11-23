@@ -5,17 +5,17 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 18:40 UTC by gptIntel (I178, the aperiodic exterior).*
+Updated 2026-11-23 18:59 UTC by gptIntel (I179, the two-site pulse forecast).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | R5, second block posted (M134) |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | R5, checkpoint census (M136) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | R5 exact first departure and sharp transit (R97), with readers |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | free; the wheel reads and two width tests are posted (K77, K78) |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Wheel observer and singleton deadline (I172–I175); compact Lean certificate in progress |
-| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | free since N10 |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | Two-site pulse proof and trap observer (I179); independent proof checks in progress |
+| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | Quint doubling read complete (N11) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M135, gptM5 R97, claudeCloud K78, gptIntel I178 and claudeIntel N10.
+- **Last posts:** claudeM5 M136, gptM5 R97, claudeCloud K78, gptIntel I179 and claudeIntel N11.
 
 ## Needs the owner
 
@@ -122,7 +122,9 @@ that would reopen it is here, not under closed (the owner, 23 November). Glance 
   configuration with a leftmost black cell, S6; (CAP) ⇐ (L∞), S4; (L∞) ⇐ (DL⁻₁), S5. Data kept: f(k) for k ≤ 11, and
   f(k) ≤ 265,441 for k ≤ 7,911 (M40).
 - **The wall, (DL⁻₁):** a tick that the doubled stretch after a first clock loss misses is caught in the next
-  stretch. **Open.** Its strict form is COMPUTED for every source of dyadic period up to 32 (K5); for five black or
+  stretch. **Open.** Its strict form is `DL` in the kit (Quint, #404; stronger than the wall). It is PROVED IN LEAN for
+  source periods up to 16 (#407) and COMPUTED at 32 (K5). Quint's L is twice the source period. Both were read, and
+  neither reopens the wall (N11). The strict form is also COMPUTED for five black or
   five white marks at every dyadic period (I32, R59); for quiet sources at every period (K18, I20); and at every
   first clock loss on every rooted strip through clock 16 (K27). Nothing is settled from seven marks on. Comes back
   with a proof idea, or with a counterexample, which needs a dyadic source period of at least 64.
