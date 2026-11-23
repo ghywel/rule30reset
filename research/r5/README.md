@@ -84,8 +84,9 @@ has these components with a cycle ([map](data/claudeM5-map-001.txt), [second cod
 ## 3. Who can enter the 15-trap (PROVED in Lean for the ether and the white start)
 
 [Rule30EtherThreeNoFifteen.lean](Rule30EtherThreeNoFifteen.lean) (M137): a right half of the 001 drive whose first 20
-columns are the aligned ether at some tick is in no state of the kit's `trap001fifteen` from then on, whatever lies
-beyond (`no_fifteen_after_ether`); the same for 16 white cells (`no_fifteen_after_white`). The stock checker passes both
+columns are the aligned ether at some tick is from then on in no state of the kit's `trap001fifteen` whose label reads the
+drive's phase, whatever lies beyond (`no_fifteen_after_ether`); the same for 16 white cells (`no_fifteen_after_white`).
+gptM5 read it and rebuilt the 54,576 windows independently (R98). The stock checker passes both
 headlines (76 constants, axioms `propext` and `Quot.sound` only) in six seconds and 1 GB. The 54,576 windows below are
 three small automata there, and one recursion checks that they are closed under predecessors. A changed table entry and a
 window of the trap put among the ether's both fail. [Generator](claudeM5_r5_reach_lean.py).
@@ -153,10 +154,10 @@ and rests.
 - **Entry into the trunk for good.** Nothing here shows that a finite half ever passes the last rung.
 - **Next tests, cheapest first.**
   1. *The census further:* labels 33 and 36, and walls past 16 cells. One trap with a third gate kills the conjecture of §4.
-  2. *The gate words in Lean.* At 14 cells there are 4,080 late windows and `1001` is already excluded; that would weaken the
-     kit's open left statement C3g001.
+  2. *The gate beyond the known restrictions.* Hallee's `ThreeRuns` has `010`, `101` and `1001` excluded in Lean beside every
+     right half (PRIOR-ART P57), and (110000) repeated obeys it. The next word to exclude is one it allows.
   3. *The 011 map:* what reads in its closed component, where the census finds no trap at all.
-- **Carrying reads.** R97 passes the rigid-front proof under the hypotheses in §1. I173 independently reproduced the width-22 map and width-20 closure. R97 corrects the timing inference in §2. claudeM5 passed R97's first-departure theorem (M135) and gptIntel its transit bounds (I177). §3's Lean, §9 and §10 are not read by a second worker.
+- **Carrying reads.** R97 passes the rigid-front proof under the hypotheses in §1. I173 independently reproduced the width-22 map and width-20 closure. R97 corrects the timing inference in §2. claudeM5 passed R97's first-departure theorem (M135) and gptIntel its transit bounds (I177). gptM5 passed §3's Lean and §11 as it stood at M139 (R98). §9 and §10 are not read by a second worker.
 
 ## 8. Exact first departure and sharp transit (R97)
 
@@ -232,6 +233,22 @@ Column j of the trunk is a drive for what lies beyond it, and needs the next cel
   So column 34, whose check at label 1 follows a run of eight, leaks only on `##..#` in columns 35 to 39 at label 14 (the
   other two starts are not readable there), and column 13's check at label 8 only on `..##.#` in columns 14 to 19 at label 1.
 - The number of checkpoints does not say where a row rests: columns 31 to 37 have one each.
+
+## 11. The exit law for every prefix, and the gate of a half in a trap (PROVED in Lean; S14)
+
+Sources in [s14](s14/), built by [build_s14.py](s14/build_s14.py); read by gptM5 ([R98](s14/m139-carrying-read.md)), and the
+gate theorems changed since (M140).
+
+- **`departure_after_exit`.** From an aligned prefix of any length N ≥ 3 that breaks at the next tick, column 1 first leaves
+  the ether `exitWait N g u` ticks after the last aligned tick, for both words of least period 3 and any cells beyond. At one
+  class and bit, twelve more columns cost thirty more ticks for N ≥ 4. At N = 3 one exit state gives 28: with `j0 = 11` and
+  white cells beyond, the prefix of 3 departs at tick 4 and that of 15 at tick 32 (R98).
+- **`gate_of_t001`, `gate_of_fifteen`.** A right half, finite or not, that enters `t001` at a label of the drive's phase has a
+  gate that repeats 1100000 from some tick on; one that so enters `trap001fifteen` has 11000. Masked Jen asks only about the
+  white ticks, and the first is settled by `skeleton_001`, so the second, the gate, is the one white phase left.
+- **`not_eventually_001_of_gatePeriodic`.** If every finite half's gate is eventually periodic, 001 is excluded. This is the
+  form for 001 of Bosdure's `Lock` (PRIOR-ART P58). It follows if every finite half enters *some* checked trap
+  (`gatePeriodic_of_some_trap`), the statement Hallee proposes to keep. `GateEntry`, the conjecture of §4, gives it too.
 
 ## Reproduce
 

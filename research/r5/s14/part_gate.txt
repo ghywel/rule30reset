@@ -14,7 +14,8 @@ def GateEntry : Prop :=
   ∀ (x : Nat → Bool) (n : Nat), (∀ p, n < p → x p = false) → ∀ φ, ∃ t1, (t1 + φ) % 3 = 1 ∧
     ((∀ k, half x φ (t1 + 3 * k) 1 = gate7 k) ∨ (∀ k, half x φ (t1 + 3 * k) 1 = gate5 k))
 
-/-- The weaker form: the gate of every finitely supported right half is eventually periodic. -/
+/-- The weaker form (open; a `Prop`): the gate of every finitely supported right half is eventually periodic. It is the form
+for `001`, read on one white phase, of the first alternative of `Rule30Ether.Lock`, which is for period four. -/
 def GatePeriodic : Prop :=
   ∀ (x : Nat → Bool) (n : Nat), (∀ p, n < p → x p = false) → ∀ φ, ∃ t1 m, 0 < m ∧ (t1 + φ) % 3 = 1 ∧
     ∀ k, half x φ (t1 + 3 * (k + m)) 1 = half x φ (t1 + 3 * k) 1
@@ -64,7 +65,7 @@ theorem not_eventually_001_of_gateEntry (h : GateEntry) :
     ¬ ∃ T, ∀ t, T ≤ t → cell t 0 = wordAt3 w001 (t - T) :=
   not_eventually_001_of_gatePeriodic (gatePeriodic_of_gateEntry h)
 
-/-! ### Entry into either trap gives the gate statement -/
+/-! ### The gate of a half that enters a trap -/
 
 /-- The half `x`, driven by `001` from phase `φ`, is at some tick in a state of `C` whose label reads the drive's phase. -/
 def Enters (C : PTrap) (x : Nat → Bool) (φ : Nat) : Prop :=
@@ -116,24 +117,31 @@ theorem gate_of_trap {C : PTrap} (hC : C.check = true) (hw : C.w = w001) (hb : 0
 theorem t001_gate : ∀ k, k < 7 → t001.u.testBit ((19 + 3 * k) % 21) = gate7 k := by decide +kernel
 theorem fifteen_gate : ∀ k, k < 5 → trap001fifteen.u.testBit ((4 + 3 * k) % 15) = gate5 k := by decide +kernel
 
-/-- **Entry into either trap gives the gate statement.** If every finitely supported right half driven by `001`, from every
-phase, enters `t001` or `trap001fifteen`, then `GateEntry` holds. -/
-theorem gateEntry_of_traps
-    (h : ∀ (x : Nat → Bool) (n : Nat), (∀ p, n < p → x p = false) → ∀ φ, Enters t001 x φ ∨ Enters trap001fifteen x φ) :
-    GateEntry := by
-  intro x n hx φ
-  rcases h x n hx φ with he | he
-  · obtain ⟨t1, hph, hk⟩ := gate_of_trap t001_check rfl (by decide) he (l0 := 19) (by decide)
-    refine ⟨t1, hph, Or.inl fun k => ?_⟩
-    rw [hk k, show t001.m = 21 from rfl, show (19 + 3 * k) % 21 = (19 + 3 * (k % 7)) % 21 by omega,
-      t001_gate (k % 7) (Nat.mod_lt _ (by decide))]
-    unfold gate7; rw [Nat.mod_mod]
-  · obtain ⟨t1, hph, hk⟩ := gate_of_trap trap001fifteen_check rfl (by decide) he (l0 := 4) (by decide)
-    refine ⟨t1, hph, Or.inr fun k => ?_⟩
-    rw [hk k, show trap001fifteen.m = 15 from rfl, show (4 + 3 * k) % 15 = (4 + 3 * (k % 5)) % 15 by omega,
-      fifteen_gate (k % 5) (Nat.mod_lt _ (by decide))]
-    unfold gate5; rw [Nat.mod_mod]
+/-- **The gate of a half that enters `t001`**: from some second white tick on it repeats `1100000`. -/
+theorem gate_of_t001 {x : Nat → Bool} {φ : Nat} (h : Enters t001 x φ) :
+    ∃ t1, (t1 + φ) % 3 = 1 ∧ ∀ k, half x φ (t1 + 3 * k) 1 = gate7 k := by
+  obtain ⟨t1, hph, hk⟩ := gate_of_trap t001_check rfl (by decide) h (l0 := 19) (by decide)
+  refine ⟨t1, hph, fun k => ?_⟩
+  rw [hk k, show t001.m = 21 from rfl, show (19 + 3 * k) % 21 = (19 + 3 * (k % 7)) % 21 by omega,
+    t001_gate (k % 7) (Nat.mod_lt _ (by decide))]
+  unfold gate7; rw [Nat.mod_mod]
 
-/-- In particular the kit's `AbsorptionT t001`, which is false, would give it. -/
-theorem gateEntry_of_absorption (h : AbsorptionT t001) : GateEntry :=
-  gateEntry_of_traps fun x n hx φ => Or.inl (h x n hx φ)
+/-- **The gate of a half that enters `trap001fifteen`**: from some second white tick on it repeats `11000`. -/
+theorem gate_of_fifteen {x : Nat → Bool} {φ : Nat} (h : Enters trap001fifteen x φ) :
+    ∃ t1, (t1 + φ) % 3 = 1 ∧ ∀ k, half x φ (t1 + 3 * k) 1 = gate5 k := by
+  obtain ⟨t1, hph, hk⟩ := gate_of_trap trap001fifteen_check rfl (by decide) h (l0 := 4) (by decide)
+  refine ⟨t1, hph, fun k => ?_⟩
+  rw [hk k, show trap001fifteen.m = 15 from rfl, show (4 + 3 * k) % 15 = (4 + 3 * (k % 5)) % 15 by omega,
+    fifteen_gate (k % 5) (Nat.mod_lt _ (by decide))]
+  unfold gate5; rw [Nat.mod_mod]
+
+/-- **Entry into some trap gives the weaker statement.** If every finitely supported right half driven by `001`, from every
+phase, enters a trap for `001` that passes the kit's check, which may depend on the half, then `GatePeriodic` holds. -/
+theorem gatePeriodic_of_some_trap
+    (h : ∀ (x : Nat → Bool) (n : Nat), (∀ p, n < p → x p = false) → ∀ φ,
+      ∃ C : PTrap, C.check = true ∧ C.w = w001 ∧ 0 < C.b ∧ Enters C x φ) : GatePeriodic := by
+  intro x n hx φ
+  obtain ⟨C, hC, hw, hb, he⟩ := h x n hx φ
+  obtain ⟨t1, hph, hk⟩ := gate_of_trap hC hw hb he (l0 := 1) rfl
+  refine ⟨t1, C.m, (PTrap.facts C hC).1, hph, fun k => ?_⟩
+  rw [hk, hk, show 1 + 3 * (k + C.m) = 1 + 3 * k + C.m * 3 by omega, Nat.add_mul_mod_self_left]

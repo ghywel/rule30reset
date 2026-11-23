@@ -25,19 +25,20 @@ DOC_DEP = '''/-!
 Setting of `Rule30EtherThreeErosion`: `F` is a rule-30 evolution of the columns `p ≥ 1` whose column `0` is ether column
 `j0` with phase offset `s`. That column may read either word of least period three. The *front* is the first column that
 differs from the ether; its state is the class of its column and whether the next column differs too. `wake_good` proves
-that from a good state `5 D + 2 t + ψ` does not increase.
+that from a good front `5 D + 2 t + ψ` does not increase.
 
-* Thirteen of the good states are closed (`IsRec`), and on them `5 D + 2 t + ψ`, with `ψ` the class itself (and `2` for
-  one state), is **exactly conserved**, for every right side (`rigid_step`, `rigid_path`). Every other good state reaches
-  them within five ticks (`settles`).
-* So two fronts that start at one column, recurrent and with one value of `ψ`, are at one column at every later tick until
-  column `1`, whatever lies to the right (`same_path`), and every ten ticks take a front exactly four columns left
-  (`ten_ticks`).
+* Thirteen of the good states are closed (`IsRec`), and from a recurrent front `5 D + 2 t + ψ`, with `ψ` the class itself
+  (and `2` for one state), is **exactly conserved** until the front reaches column `1`, for every right side (`rigid_step`,
+  `rigid_path`). Any other good front settles to a recurrent one within its rank, at most five ticks, if it has room: a
+  front at column `rank + 2` or beyond does (`settles`).
+* So two recurrent fronts beside the same ether column that start at one column with one value of `ψ` are at one column at
+  every later tick through their first arrival at column `1`, whatever lies to the right (`same_path`). From column `7` or
+  beyond, ten ticks take a recurrent front exactly four columns left (`ten_ticks`).
 * From a recurrent front the tick at which column `1` first leaves the ether is a formula in its column and state
   (`first_departure`).
 * From an aligned prefix of **any** length `N ≥ 3` that breaks at the next tick, it is a formula in `N`, the class of
-  column `N` and one bit (`departure_after_exit`), and twelve more columns cost thirty more ticks
-  (`exitWait_add_twelve`). The cells beyond the prefix are arbitrary.
+  column `N` and one bit (`departure_after_exit`). The cells beyond the prefix are arbitrary. At one class and bit, twelve
+  more columns cost thirty more ticks for `N ≥ 4` (`exitWait_add_twelve`); from `N = 3` one exit state gives 28.
 
 Two other backgrounds have exact front speeds in `Rule30MovingWall`. Here the whole path is fixed, and the first departure
 with it.
@@ -50,7 +51,7 @@ DOC_REACH = '''/-!
 twenty cells, one for each phase of the drive, holds that trap's states cut to twenty cells and is closed under
 predecessors: if the next window is in the set, so is this one, whatever the cell beyond. No window of the aligned
 period-3 ether is in it, and none whose first sixteen cells are white. So a right half that shows either at some tick is
-in no state of the trap from then on, whatever lies beyond those cells.
+from then on in no state of the trap whose label reads the drive's phase, whatever lies beyond those cells.
 
 * `accR`: membership, a layered automaton that reads a window from cell `20` down to cell `1` (`54,576` windows).
 * `chk`, `chk_sound`: one recursion along the automaton that checks closure under predecessors.
@@ -62,20 +63,24 @@ Refuting entry by a set of windows closed under predecessors is L. Hallee's meth
 -/
 '''
 DOC_GATE = '''/-!
-# A gate statement in place of `AbsorptionT t001`
+# The gate of `001`
 
 `Rule30EtherThreeTrap` reduces the word `001` to `AbsorptionT t001`, that every finite right half enters one trap, and
-`Rule30EtherThreeNotAbsorption` proves that false. Beside `001` column `1` is free only on the second white tick of each
-period, its *gate*. In `t001` the gate repeats `1100000` and in `trap001fifteen` it repeats `11000`.
+`Rule30EtherThreeNotAbsorption` proves that false. The masked form of Jen's theorem asks only about the white ticks of the
+center. On the first white tick of each `001` column `1` is eventually white if the center ends in `001`
+(`skeleton_001`). The second is the one white phase left: call column `1` there the *gate*.
 
-* `GateEntry` (open): the gate of every finitely supported right half, from every phase, eventually repeats `1100000` or
-  `11000`. It names no trap. `GatePeriodic` (open) asks only that it is eventually periodic.
-* `not_eventually_001_of_gateEntry`, `not_eventually_001_of_gatePeriodic`: each excludes `001` as an eventual tail of the
-  centre column, by the skeleton and the masked form of Jen's theorem.
-* `gateEntry_of_traps`: entry of every finite half into one of the two traps gives `GateEntry`.
+* `gate_of_t001`, `gate_of_fifteen`: a right half that enters `t001` at a label of the drive's phase has a gate that repeats
+  `1100000` from some tick on; one that so enters `trap001fifteen` has `11000`.
+* `GatePeriodic` (open): the gate of every finitely supported right half, from every phase, is eventually periodic. It
+  excludes `001` as an eventual tail of the center column (`not_eventually_001_of_gatePeriodic`). It is the form for `001`
+  of `Rule30Ether.Lock`, which is for period four, and it follows if every finite half enters some checked trap
+  (`gatePeriodic_of_some_trap`).
+* `GateEntry` (open): those gates eventually repeat `1100000` or `11000`. It implies `GatePeriodic` and names no trap.
 
-L. Hallee proves that entry into *some* trap suffices and that no single one does (`lhallee/rule30-open`,
-`Columns.Traps001`).
+`Rule30PeriodThreeLanguage.col1_001` restricts the gate of the center's own orbit. L. Hallee (`lhallee/rule30-open`) proves
+that the gate of every right half avoids `010`, `101` and `1001` from its reading `14` on (`Columns.ThreeRuns`), that entry
+into some trap suffices and entry into `t001` or `trap001fifteen` fails (`Columns.Traps001`).
 -/
 '''
 

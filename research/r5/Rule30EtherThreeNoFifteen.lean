@@ -209,7 +209,7 @@ theorem never {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat} (hc : ∀ t, T
   exact trap_in hi hE
 
 /-- **After the ether.** A right half of the `001` drive whose first twenty columns are the aligned period-3 ether at some
-tick is in no state of the 15-trap from then on, whatever lies beyond them. -/
+tick is from then on in no state of the 15-trap whose label reads the drive's phase, whatever lies beyond them. -/
 theorem no_fifteen_after_ether {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat}
     (hc : ∀ t, T ≤ t → F t 0 = wordAt3 w001 (t - T)) {t0 j0 s : Nat} (h0 : T ≤ t0) (ha : (j0, s) ∈ A001)
     (he : ∀ p, 1 ≤ p → p ≤ 20 → F t0 p = ether3 (j0 + p) (t0 - T + s)) :
@@ -222,8 +222,8 @@ theorem no_fifteen_after_ether {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Na
     rw [he j h1 h2]; exact ether3_congr rfl (by omega)]
   rw [h]; decide
 
-/-- **After sixteen white cells.** A right half of the `001` drive whose first sixteen cells are white at some tick is in no
-state of the 15-trap from then on, whatever lies beyond them. -/
+/-- **After sixteen white cells.** A right half of the `001` drive whose first sixteen cells are white at some tick is from
+then on in no state of the 15-trap whose label reads the drive's phase, whatever lies beyond them. -/
 theorem no_fifteen_after_white {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat}
     (hc : ∀ t, T ≤ t → F t 0 = wordAt3 w001 (t - T)) {t0 : Nat} (h0 : T ≤ t0)
     (hw : ∀ p, 1 ≤ p → p ≤ 16 → F t0 p = false) :
