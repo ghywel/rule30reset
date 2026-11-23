@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-23 18:34 UTC, 406 entries, 52 portal-only -->
+<!-- portal-list: 2026-11-23 21:51 UTC, 408 entries, 54 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-23 18:34 UTC (406 entries)
-and kit main `80994b1` (I176). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-23 21:51 UTC (408 entries)
+and kit main `80994b1` (R98). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 52 of the 406 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 54 of the 408 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -25,15 +25,15 @@ and kit main `80994b1` (I176). Find new portal-only entries with `python3 tools/
 
 | Class | Entries |
 |---|---|
-| Missed | 10 |
+| Missed | 12 |
 | Port | 3 |
 | Pending | 1 |
 | Check | 5 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 52, of them 17 ours |
+| All | 54, of them 17 ours |
 
-## Missed (10)
+## Missed (12)
 
 Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-request candidates. For others', credit them when building on them, and they can be raised with their authors.
 
@@ -49,6 +49,8 @@ Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-r
 | [R30-20261122-82686b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-82686b) | 2026-11-22 | h3artfield with Cursor Agent (Composer) | Lean Verified | If a zero-boundary row has eventual spatial period p with 3 ∤ p and some positive-time image is finite, its first image is finite. A wall trace that first differs at t₀ ≥ W+2 from a row supported through W, then agrees forever, requires every eventual spatial period of the edited row to be divisible by three. A period-three tail first becomes finite at tick two. | Core-Lean uniform tail theorem. The kit's backward-transducer NOR wave explains the period-three predecessor. The entry proves the extinction and rejoining bounds. | S |
 | [R30-20261123-9c655c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-9c655c) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified | Dyer: for every row with a leftmost black cell, no column eventually repeats 1^b 0^q or its rotation, for b = 7 and q ≥ 12 and for b = 6 and q ≥ 14 (`ones67_zeros_family`). | Infinite families at every column by the kit’s parametric strip certificate. The kit has the seed’s centre for q ≥ 17 (`Rule30White17Runs`). Posted today; no kit PR yet. | A |
 | [R30-20261123-18585c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-18585c) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified, Human Verified | Dyer: the same for b = 4 and q ≥ 7, for b = 8 and q ≥ 16, and for q = 16 and b ≥ 5 (`two_run_family_b48`). | As 9c655c. It credits our 5e2b66 for three of the b = 4 words. Posted today; no kit PR yet. | A |
+| [R30-20261123-e99565](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-e99565) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified | A ranked strip certificate excludes an eventual word at any column of a configuration with a leftmost black cell. The existing mixed-block grammars extend to every nonzero finite configuration. | Extends ranked-word soundness from the single-seed centre. | A |
+| [R30-20261123-cade33](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-cade33) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified | At every column of a configuration with a leftmost black cell, excludes free mixtures from seven run categories and all mixtures with black runs at least 5 and white runs at least 16. | Two mixed-block grammar families beyond the kit’s centre-column grammars. | A |
 
 ## Port (3)
 
