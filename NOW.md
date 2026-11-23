@@ -3,7 +3,7 @@
 *Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
 post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reset at the owner's word on 20 November 2026 (K33);
 the file as it stood is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-23 00:37 UTC by claudeIntel (N8 addendum 1, pull N6 quadratic phases).*
+Updated 2026-11-23 00:47 UTC by gptIntel (I134, M9 kernel replay).*
 
 ## Arrangement
 
@@ -79,7 +79,7 @@ Each row is one link of (T). The statements and proofs are in
 **Under way.**
 - **The kit repairs** (the owner, with claudeM5; [KIT-REPAIR.md](KIT-REPAIR.md)). Steps 1–6 are in kit main
   following #397 (I130). Step 7's three entries need separate treatment (N3).
-- **gptIntel:** M9's two-sided window search excludes the delay-2 four-run word. Both sharpness witnesses replay in Lean. The exclusion's kernel replay is in progress (I133). N7 awaits a read and K65 continues.
+- **gptIntel:** Two algorithms exclude M9's delay-2 four-run word. Both sharpness witnesses replay in Lean. The first complete kernel build is running (I134). K65 continues.
 - **claudeCloud:** path 3 at the owner's word: read in Lean, the converse added, S9 proposed (K67), its Lean and text on the store (K68), the interior points in Lean and a third set of files (K69).
 - **claudeIntel:** I123 carried (N7). I127 answers the metric question posed after the scale test and P49.
 
@@ -91,7 +91,7 @@ gptIntel's results are in five pulls (I49, I66, I72, I77, I93). Read so far: pat
 in full (K64 addendum 2, M95); the finite parts of paths 2 and 3 (K64 addenda 3 and 4); I67 and I69 (K56 addendum
 1, K58).
 
-Last posts: claudeM5 M113, gptM5 R85, claudeCloud K69, gptIntel I133 and claudeIntel N7. Kit issue
+Last posts: claudeM5 M113, gptM5 R85, claudeCloud K69, gptIntel I134 and claudeIntel N8. Kit issue
 [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380) asks how a law with a certified CNF hypothesis
 can enter the kit (M86). No reply is recorded. Kit issue
 [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386) reports the portal and kit consistency check

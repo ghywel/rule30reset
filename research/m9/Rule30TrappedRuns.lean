@@ -1,7 +1,7 @@
 module
 
 public import Ruliology.CellularAutomata.Rule30RunWindow
-public import Ruliology.CellularAutomata.Rule30PeriodTwoNoFloor
+public import Ruliology.CellularAutomata.Rule30RunChecks
 
 /-! The trapped-gate run words and their physical witnesses. -/
 @[expose] public section
@@ -117,6 +117,20 @@ private theorem from_trap {R : Nat → Bool} {t q : Nat} (h : win R t ∈ trap)
   · have bound' : c < 2^j := Nat.lt_of_lt_of_le bound (Nat.pow_le_pow_right (by decide) (by omega))
     simp [hj,Nat.testBit_lt_two_pow bound']
 
+private theorem prefix_bit : ∀ (n : Nat) (f : Nat → Bool) (j : Nat), j < n →
+    (encList (seg f n)).testBit j = f j
+  | 0, _, _, h => absurd h (by omega)
+  | _+1, f, 0, _ => by
+    rw [Nat.testBit_zero]
+    simp only [seg, encList]
+    cases f 0 <;> simp <;> omega
+  | n+1, f, j+1, h => by
+    rw [Nat.testBit_succ]
+    change (((if f 0 then 1 else 0) + 2 * encList (seg (fun i => f (i+1)) n)) / 2).testBit j = _
+    have e (a : Nat) : ((if f 0 then 1 else 0) + 2*a) / 2 = a := by cases f 0 <;> simp <;> omega
+    rw [e]
+    exact prefix_bit n _ j (by omega)
+
 /-- Every proposed physical occurrence supplies one finite packed trace. -/
 theorem occurrence_trace (R : Nat → Bool) {t0 : Nat} (h0 : t0 % 2 = 1)
     (hw : win R t0 ∈ trap) (s : Nat) (hs : t0+4 ≤ 2*s+1)
@@ -127,11 +141,11 @@ theorem occurrence_trace (R : Nat → Bool) {t0 : Nat} (h0 : t0 % 2 = 1)
   have at_b := win_mem_trap R h0 hw ((b-t0)/2)
   rw [show t0+2*((b-t0)/2)=b by dsimp [b]; omega] at at_b
   let f := fun j => drv altCol R b (j+1)
-  let r := Rule30PeriodTwoNoFloor.trunc f 210
+  let r := encList (seg f 210)
   have agree (i j : Nat) (bound : j+2*i<210) :
       (iterate r i).testBit j = drv altCol R (b+2*i) (j+1) := by
     rw [packed_twice b r hb]
-    exact cone R b r 210 (fun k hk => Rule30PeriodTwoNoFloor.testBit_trunc f 210 k hk) _ _ bound
+    exact cone R b r 210 (prefix_bit 210 f) _ _ bound
   refine ⟨r, from_frames initial r (fun i hi => ?_)⟩
   have il : i < 98 := by simpa only [show initial.length = 98 by decide] using hi
   have ht := from_trap (win_mem_trap R hb at_b i) (fun j hj => agree i j (by omega))
@@ -156,5 +170,23 @@ theorem occurrence_trace (R : Nat → Bool) {t0 : Nat} (h0 : t0 % 2 = 1)
       have gate := agree (i+1+1) 0 (by omega)
       rw [show b+2*(i+1+1) = 2*(s+i)+1 by dsimp [b]; omega] at gate
       simpa [entry, List.getD_eq_getElem?_getD, List.getElem?_eq_getElem il'] using gate.trans w
+
+/-- Four closed runs of four 5-gaps cannot start two or more samples after trap entry. -/
+theorem no_four_runs_of_four (R : Nat → Bool) {t0 : Nat} (h0 : t0 % 2 = 1)
+    (hw : win R t0 ∈ trap) (s : Nat) (hs : t0+4 ≤ 2*s+1) :
+    ¬ ∀ i, i<96 → Rule30PeriodTwoSideways.u R (s+i) = (closed 4).getD i false := by
+  intro word
+  obtain ⟨r,h⟩ := occurrence_trace R h0 hw s hs word
+  exact Rule30RunChecks.no_trace r h
+
+/-- The five-block word is excluded from the trapped tick itself. -/
+theorem no_five_runs_of_four (R : Nat → Bool) {t0 : Nat} (h0 : t0 % 2 = 1)
+    (hw : win R t0 ∈ trap) (s : Nat) (hs : t0 ≤ 2*s+1) :
+    ¬ ∀ i, i<116 → Rule30PeriodTwoSideways.u R (s+i) = five.getD i false := by
+  intro word
+  have suffix : ∀ i, i<96 → five.getD (20+i) false = (closed 4).getD i false := by decide
+  apply no_four_runs_of_four R h0 hw (s+20) (by omega)
+  intro i hi
+  rw [Nat.add_assoc, word (20+i) (by omega), suffix i hi]
 
 end Ruliology.CellularAutomata.Rule30TrappedRuns

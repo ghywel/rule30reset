@@ -65,6 +65,7 @@ theorem residues_sound (p : Nat) {x : Nat} {xs : List Nat} (h : x ∈ xs) :
 structure Index where
   first : Nat
   second : Nat
+  deriving Inhabited
 
 def index (xs : List Nat) : Index := ⟨residues 8191 xs, residues 8179 xs⟩
 def Index.contains (a : Index) (x : Nat) : Bool :=
@@ -163,6 +164,7 @@ theorem trace_ne (r : Nat) (ds : List Window) (h : Trace r ds) :
 structure Mark where
   mask : Index
   box : Window
+  deriving Inhabited
 
 def fValid (a b : Window) (m : Mark) : Bool :=
   (a.codes.all fun x => (outputs a.width b.width x).all m.mask.contains) &&
@@ -190,6 +192,10 @@ def fChain (a : Window) : List Window → List Mark → Bool
   | b :: bs, m :: ms => fValid a b m && fChain m.box bs ms
   | _, _ => false
 
+theorem fCons {a b : Window} {bs : List Window} {m : Mark} {ms : List Mark}
+    (edge : fValid a b m) (rest : fChain m.box bs ms) : fChain a (b::bs) (m::ms) :=
+  Bool.and_eq_true_iff.mpr ⟨edge,rest⟩
+
 theorem fChain_sound {a : Window} {bs : List Window} {ms : List Mark} {r : Nat}
     (ok : fChain a bs ms) (h : Trace r (a::bs)) : Trace r (a::ms.map Mark.box) := by
   induction bs generalizing a ms r with
@@ -206,6 +212,10 @@ def bChain : List Window → List Mark → Bool
   | [a], [m] => decide (m.box = a)
   | a::b::bs, m::n::ms => bValid a n.box m && bChain (b::bs) (n::ms)
   | _, _ => false
+
+theorem bCons {a b : Window} {bs : List Window} {m n : Mark} {ms : List Mark}
+    (edge : bValid a n.box m) (rest : bChain (b::bs) (n::ms)) :
+    bChain (a::b::bs) (m::n::ms) := Bool.and_eq_true_iff.mpr ⟨edge,rest⟩
 
 theorem bChain_sound {bs : List Window} {ms : List Mark} {r : Nat}
     (ok : bChain bs ms) (h : Trace r bs) : Trace r (ms.map Mark.box) := by
@@ -234,11 +244,20 @@ structure Pass where
   grow : Nat
   front : List Mark
   back : List Mark
+  deriving Inhabited
 
 def verifies (ds : List Window) (p : Pass) : Bool :=
   match liftAt p.grow ds with
   | [] => false
   | a :: rest => fChain a rest p.front && bChain (a :: p.front.map Mark.box) p.back
+
+theorem verifies_intro {ds : List Window} {p : Pass} (ne : (liftAt p.grow ds).isEmpty = false)
+    (f : fChain (liftAt p.grow ds).head! (liftAt p.grow ds).tail p.front)
+    (b : bChain ((liftAt p.grow ds).head! :: p.front.map Mark.box) p.back) : verifies ds p := by
+  unfold verifies
+  cases eq : liftAt p.grow ds with
+  | nil => simp [eq] at ne
+  | cons a rest => rw [eq] at f b; exact Bool.and_eq_true_iff.mpr ⟨f,b⟩
 
 theorem verifies_sound {ds : List Window} {p : Pass} {r : Nat} (ok : verifies ds p)
     (h : Trace r ds) : Trace r (p.back.map Mark.box) := by
@@ -257,6 +276,9 @@ def unpack (p : Nat) : Nat → List Nat
   | n+1 => p % (2^48) :: unpack (p >>> 48) n
 
 def literal (width n packed : Nat) : Window := ⟨width, unpack packed n⟩
+
+def chunks (width : Nat) (parts : List (Nat × Nat)) : Window :=
+  ⟨width, parts.flatMap fun (n,p) => unpack p n⟩
 
 def check : List Window → List Pass → Bool
   | ds, [] => ds.any (fun d => d.codes.isEmpty)
