@@ -1,0 +1,3 @@
+{"row": "0xa224d3200017fb5ccd115f23a59", "reads_exception_at_0": true, "window_at_46": 362, "outside_at_46": true, "first_sample_inside": 47}
+{"row": "0x4319fc9fcd612848b70077729985e4b9", "inside_from_sample_0": true, "reads_exception_at_10": true}
+{"row": "0x7fffff80fc", "entry_sample": 0, "gate_from_entry": "100001001001", "first_offset_with_48_clean": 53, "first_offset_with_47_clean_not_exception": 52}
