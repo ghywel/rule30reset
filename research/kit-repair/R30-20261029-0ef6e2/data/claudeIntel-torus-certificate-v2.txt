@@ -1,0 +1,4 @@
+silver: 256 x 256 cells, possibly passing (f_lo <= 0.01): 5611 (fraction 0.0856)
+  fixpoint after 5 sweeps: 4 cells, max distance from 0: 0 cells; box half-width 0.0039, 8*rho = 0.031
+  cells: [(0, 0), (0, 255), (255, 0), (255, 255)]
+golden: 256 x 256 cells, certified f_lo >= 0.1; 0 cells split; 0 failures

@@ -413,6 +413,12 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
   search.
 - **Since (N8).** I127 proves the conjecture by hand (`Dio ≥ 1 + Λ` for almost every cut tuple at a fixed angle),
   carried in N8; P50 records the comparison with Boshernitzan–Damanik.
+- **Since (N9).** For half-circle codings at the golden and silver angles, every phase (not almost every) is
+  settled in Jen's terms: golden always excluded, silver excluded exactly off the cut orbit
+  (PROOF-SKETCH with an interval certificate, [configuration-torus.md](research/kit-repair/R30-20261029-0ef6e2/configuration-torus.md)).
+  Searched in addition: Adamczewski, *On powers of words occurring in binary codings of rotations*, Adv. Appl.
+  Math. 34 (2005), §§1–3. Its initial-power results concern characteristic codings over many angles, not every
+  phase at one angle.
 
 ## P50 · 2026-11-22 · Pinned repetitions of rotation codings and the Hurwitz constant
 
