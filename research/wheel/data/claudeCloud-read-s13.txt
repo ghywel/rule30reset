@@ -1,0 +1,7 @@
+(a) all 1,024 eleven-cell cones with column 1 black: the gap equals the four-site table; gaps seen {2: 192, 3: 192, 4: 448, 5: 192} ; longest 5 ; each of sites 2..5 matters: [True, True, True, True]
+(b) all 128 seven-cell prefixes, two ticks later: 16 have column 1 black; their five-site prefixes are ['10000', '10001', '10011', '10110', '11100', '11101'];
+    on every one the two-site table equals the four-site table. Prefixes where the tables differ (never reached after one update): ['10010', '10101', '10111', '11000', '11001', '11011', '11110']
+(c) {'seed': 4, 'pulse': 1, 'site2': 1, 'site5': 0, 'two_site_answer': 5, 'true_gap': 3, 'four_site_answer': 3}
+(d) [{'seed': 7, 'site2': 1, 'site5': 0, 'gap': 5}, {'seed': 15, 'site2': 0, 'site5': 0, 'gap': 4}, {'seed': 31, 'site2': 0, 'site5': 1, 'gap': 2}, {'seed': 39, 'site2': 1, 'site5': 1, 'gap': 3}]
+(e) the single cell to age 100000: 48 pulses with the centre alternating for the 3 + 2 d ticks before the endpoint; the forecast held on 48; longest gap 4
+S13 replay: all parts agree
