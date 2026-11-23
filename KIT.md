@@ -1,7 +1,7 @@
-<!-- kit-commit: dc99b86 2026-11-23 -->
+<!-- kit-commit: 7c764ef 2026-11-23 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `dc99b86` (main, 2026-11-23),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `7c764ef` (main, 2026-11-23),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
@@ -72,6 +72,7 @@ graph TD
   BWH --> NP2
   UBE --> P1["Problem 1"]
   P1 <--> MIR["Two-sided XOR mirror escape for all P ≥ 2"]
+  DL["DL: a reset in the first stretch at every tick of each first loss"] --> DL1
   DL1["DLMinusOne: every tick has a reset in one of the two stretches at each first clock loss"] --> LI["LInfinity: every tick has resets at arbitrarily large depths"]
   CAP --> LINE["Every k on the line for rows with a leftmost black cell"]
   LI --> CAP["CAP: the worst-phase one-layer reset capacity K1 of the edge band is unbounded"] --> EVK["every-k inverse ticks at the wall, from age W(k) − 1 + 2^W(k)"]
@@ -118,7 +119,7 @@ The target holds at k = age = 0 and persists as age increases. Positive multiple
 On every pointed recurrent strip, let a reset be a closed run 0 1^(3m+1) 0. If every tick has a reset between the
 white wheel at each first clock loss and the white wheel after next (`DLMinusOne`), every tick has arbitrarily deep
 resets (`LInfinity`). Compactness then gives CAP (`Rule30RelaxedWindows`, `Rule30ResetCompactness`). The two-stretch
-hypothesis remains open. On the whole line, if w>0 and k≤K1(w), every k-tick predecessor of a row
+hypothesis follows from the open single-stretch condition DL (`dlMinusOne_of_dl`). Both remain open. On the whole line, if w>0 and k≤K1(w), every k-tick predecessor of a row
 with a leftmost black cell has its edge k sites inside from age 2^w (`Rule30EveryKLine`). Ages 8 and 24 suffice
 unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoSidedInverse`).
 
@@ -261,7 +262,7 @@ the unit circle as natural boundary; not P-recursive, not D-finite; black times 
 {1^n : c(n) = 1} not regular or context-free; no one-tape decider in time o(n log n); the same question for rules 86,
 135 and 149. Problem 2 has 17 equivalent forms (Cesàro, Abel and Hölder means; simple normality; k-th black cell at
 2k + o(k); block imbalance sublinear) and sufficient conditions (normality, epsGaps, exact returns, unpredictability at
-error 1/2, source energy o(2^n n²)). Most other supporting rows are almost-sure statements about random
+error 1/2, source energy o(2^n n²)). The source-energy condition is equivalent to a one-sided bound on its off-diagonal part (`OffDiagUpperSmallO`). Most other supporting rows are almost-sure statements about random
 configurations, not facts about the seed.
 
 ## 7. What this suggests (our reading, not the kit's)
