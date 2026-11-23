@@ -92,7 +92,8 @@ theorem stays_in {C : PTrap} (hC : C.check = true) (hw : C.w = w001) {x : Nat �
       exact encF_step (drv_isR30 _ _) hr'
     · rw [hlab, hl', Nat.mod_add_mod]; rfl
 
-/-- In a checked trap for `001` the gate, from a tick whose label is `l0`, reads the trap's function at `l0`, `l0 + 3`, …. -/
+/-- In a checked trap of positive width for `001` the gate, from a tick whose label is `l0`, reads the trap's function at
+`l0`, `l0 + 3`, …. -/
 theorem gate_of_trap {C : PTrap} (hC : C.check = true) (hw : C.w = w001) (hb : 0 < C.b) {x : Nat → Bool} {φ : Nat}
     (h : Enters C x φ) {l0 : Nat} (hl3 : l0 % 3 = 1) :
     ∃ t1, (t1 + φ) % 3 = 1 ∧ ∀ k, half x φ (t1 + 3 * k) 1 = C.u.testBit ((l0 + 3 * k) % C.m) := by
@@ -135,8 +136,9 @@ theorem gate_of_fifteen {x : Nat → Bool} {φ : Nat} (h : Enters trap001fifteen
     fifteen_gate (k % 5) (Nat.mod_lt _ (by decide))]
   unfold gate5; rw [Nat.mod_mod]
 
-/-- **Entry into some trap gives the weaker statement.** If every finitely supported right half driven by `001`, from every
-phase, enters a trap for `001` that passes the kit's check, which may depend on the half, then `GatePeriodic` holds. -/
+/-- **Entry into some trap gives the weaker statement.** If, from every drive phase, each finitely supported right half enters
+some checked trap of positive width for `001`, which may depend on the half and the phase, then `GatePeriodic` holds. A
+trap of width zero passes `PTrap.check` and is entered by every half, so the width is needed. -/
 theorem gatePeriodic_of_some_trap
     (h : ∀ (x : Nat → Bool) (n : Nat), (∀ p, n < p → x p = false) → ∀ φ,
       ∃ C : PTrap, C.check = true ∧ C.w = w001 ∧ 0 < C.b ∧ Enters C x φ) : GatePeriodic := by

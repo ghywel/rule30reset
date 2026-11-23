@@ -247,8 +247,9 @@ gate theorems changed since (M140).
   gate that repeats 1100000 from some tick on; one that so enters `trap001fifteen` has 11000. Masked Jen asks only about the
   white ticks, and the first is settled by `skeleton_001`, so the second, the gate, is the one white phase left.
 - **`not_eventually_001_of_gatePeriodic`.** If every finite half's gate is eventually periodic, 001 is excluded. This is the
-  form for 001 of Bosdure's `Lock` (PRIOR-ART P58). It follows if every finite half enters *some* checked trap
-  (`gatePeriodic_of_some_trap`), the statement Hallee proposes to keep. `GateEntry`, the conjecture of §4, gives it too.
+  form for 001 of Bosdure's `Lock` (PRIOR-ART P58). It follows if, from every drive phase, each finite half
+  enters *some* checked trap of positive width (`gatePeriodic_of_some_trap`), the statement Hallee proposes to keep. The
+  kit's check passes a trap of width zero that every half enters ([witness](s14/R99ZeroWidth.lean), R99). `GateEntry`, the conjecture of §4, gives it too.
 
 ## Reproduce
 

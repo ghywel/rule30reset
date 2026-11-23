@@ -74,8 +74,8 @@ center. On the first white tick of each `001` column `1` is eventually white if 
   `1100000` from some tick on; one that so enters `trap001fifteen` has `11000`.
 * `GatePeriodic` (open): the gate of every finitely supported right half, from every phase, is eventually periodic. It
   excludes `001` as an eventual tail of the center column (`not_eventually_001_of_gatePeriodic`). It is the form for `001`
-  of `Rule30Ether.Lock`, which is for period four, and it follows if every finite half enters some checked trap
-  (`gatePeriodic_of_some_trap`).
+  of `Rule30Ether.Lock`, which is for period four. It follows if, from every drive phase, each finitely supported right half
+  enters some checked trap of positive width for `001` (`gatePeriodic_of_some_trap`).
 * `GateEntry` (open): those gates eventually repeat `1100000` or `11000`. It implies `GatePeriodic` and names no trap.
 
 `Rule30PeriodThreeLanguage.col1_001` restricts the gate of the center's own orbit. L. Hallee (`lhallee/rule30-open`) proves
