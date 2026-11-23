@@ -1,0 +1,96 @@
+map 32x32 part 0 of 3 golden scale 3: 36 lags, word length 5641656, 342 phases, 6 floors redone exactly
+  R: min 0.15701  1% 0.16480  10% 0.27028  median 0.55238  max 1.11749
+  phases with R < 0.0099: 0 (0.00%)
+  phases with R < 0.0999: 0 (0.00%)
+  phases with R < 0.1500: 0 (0.00%)
+  phases with R < 0.2000: 13 (3.80%)
+  low: R 0.15701 at target (0.3906, 0.0156), x0 = 681772339851585920/2^60, lag 75025, prefix run, t1 0, t2 86803
+  low: R 0.15929 at target (0.3281, 0.0469), x0 = 257932016041786880/2^60, lag 75025, prefix run, t1 0, t2 86974
+  low: R 0.16159 at target (0.2656, 0.0781), x0 = 714845503470240256/2^60, lag 75025, prefix run, t1 0, t2 87146
+  low: R 0.16387 at target (0.2031, 0.1094), x0 = 291005179660441216/2^60, lag 75025, prefix run, t1 0, t2 87317
+  low: R 0.16614 at target (0.1406, 0.1406), x0 = 1020086360457489152/2^60, lag 75025, prefix run, t1 0, t2 87488
+
+map 32x32 part 1 of 3 golden scale 3: 36 lags, word length 5641656, 341 phases, 6 floors redone exactly
+  R: min 0.14974  1% 0.16303  10% 0.26277  median 0.53417  max 1.11511
+  phases with R < 0.0099: 0 (0.00%)
+  phases with R < 0.0999: 0 (0.00%)
+  phases with R < 0.1500: 1 (0.29%)
+  phases with R < 0.2000: 16 (4.69%)
+  low: R 0.14974 at target (0.6094, 0.9219), x0 = 157876966376453568/2^60, lag 6765, interior run, t1 4460, t2 16698
+  low: R 0.15192 at target (0.5469, 0.9531), x0 = 886958147173501568/2^60, lag 75025, prefix run, t1 0, t2 86421
+  low: R 0.15420 at target (0.4844, 0.9844), x0 = 463117823363702464/2^60, lag 75025, prefix run, t1 0, t2 86592
+  low: R 0.16212 at target (0.2344, 0.0781), x0 = 204418839161075776/2^60, lag 75025, prefix run, t1 0, t2 87186
+  low: R 0.16440 at target (0.1719, 0.1094), x0 = 933500019958123648/2^60, lag 75025, prefix run, t1 0, t2 87357
+
+map 32x32 part 2 of 3 golden scale 3: 36 lags, word length 5641656, 341 phases, 5 floors redone exactly
+  R: min 0.15246  1% 0.17215  10% 0.28504  median 0.52757  max 1.11749
+  phases with R < 0.0099: 0 (0.00%)
+  phases with R < 0.0999: 0 (0.00%)
+  phases with R < 0.1500: 0 (0.00%)
+  phases with R < 0.2000: 10 (2.93%)
+  low: R 0.15246 at target (0.5156, 0.9531), x0 = 376531482864337024/2^60, lag 75025, prefix run, t1 0, t2 86461
+  low: R 0.15474 at target (0.4531, 0.9844), x0 = 1105612663661384960/2^60, lag 75025, prefix run, t1 0, t2 86632
+  low: R 0.15648 at target (0.4219, 0.0156), x0 = 39277499553903432/2^60, lag 75025, prefix run, t1 0, t2 86763
+  low: R 0.17124 at target (0.9844, 0.2031), x0 = 814900553135573632/2^60, lag 75025, prefix run, t1 0, t2 87870
+  low: R 0.17352 at target (0.9219, 0.2344), x0 = 391060229325774528/2^60, lag 75025, prefix run, t1 0, t2 88041
+
+zoom around (0.6060, 0.9210) half-width 0.0200 golden scale 3: 36 lags, word length 5641656, 441 phases, 2 floors redone exactly
+  R: min 0.14966  1% 0.14968  10% 0.14987  median 0.15506  max 0.42007
+  phases with R < 0.0099: 0 (0.00%)
+  phases with R < 0.0999: 0 (0.00%)
+  phases with R < 0.1500: 68 (15.42%)
+  phases with R < 0.2000: 263 (59.64%)
+  low: R 0.14966 at target (0.5980, 0.9170), x0 = 1038626238160876032/2^60, lag 75025, prefix run, t1 0, t2 86251
+  low: R 0.14966 at target (0.6020, 0.9190), x0 = 1038627834452332672/2^60, lag 75025, prefix run, t1 0, t2 86251
+  low: R 0.14966 at target (0.6200, 0.9270), x0 = 1038635017763887872/2^60, lag 75025, prefix run, t1 0, t2 86251
+  low: R 0.14967 at target (0.6060, 0.9210), x0 = 766461737375194880/2^60, lag 75025, prefix run, t1 0, t2 86252
+  low: R 0.14967 at target (0.6100, 0.9230), x0 = 766463333666651520/2^60, lag 75025, prefix run, t1 0, t2 86252
+
+map 96x96 part 0 of 3 golden scale 2: 36 lags, word length 314406, 3072 phases, 1 floors redone exactly
+  R: min 0.15116  1% 0.16177  10% 0.27216  median 0.54240  max 1.11967
+  phases with R < 0.0099: 0 (0.00%)
+  phases with R < 0.0999: 0 (0.00%)
+  phases with R < 0.1500: 0 (0.00%)
+  phases with R < 0.2000: 120 (3.91%)
+  low: R 0.15116 at target (0.5885, 0.9427), x0 = 319298686624586432/2^60, lag 4181, prefix run, t1 0, t2 4811
+  low: R 0.15119 at target (0.5990, 0.9115), x0 = 527042371299150912/2^60, lag 377, interior run, t1 248, t2 930
+  low: R 0.15140 at target (0.5781, 0.9427), x0 = 47105973742185808/2^60, lag 4181, prefix run, t1 0, t2 4812
+  low: R 0.15164 at target (0.5677, 0.9427), x0 = 927834765466632192/2^60, lag 4181, prefix run, t1 0, t2 4813
+  low: R 0.15188 at target (0.5469, 0.9427), x0 = 655567458801583488/2^60, lag 4181, prefix run, t1 0, t2 4814
+
+map 96x96 part 1 of 3 golden scale 2: 36 lags, word length 314406, 3072 phases, 0 floors redone exactly
+  R: min 0.15020  1% 0.16257  10% 0.27385  median 0.54257  max 1.11967
+  phases with R < 0.0099: 0 (0.00%)
+  phases with R < 0.0999: 0 (0.00%)
+  phases with R < 0.1500: 0 (0.00%)
+  phases with R < 0.2000: 118 (3.84%)
+  low: R 0.15020 at target (0.5990, 0.9219), x0 = 254924252199398272/2^60, lag 4181, prefix run, t1 0, t2 4807
+  low: R 0.15020 at target (0.6094, 0.9219), x0 = 254998845982046208/2^60, lag 4181, prefix run, t1 0, t2 4807
+  low: R 0.15044 at target (0.5885, 0.9219), x0 = 1135653043923844480/2^60, lag 4181, prefix run, t1 0, t2 4808
+  low: R 0.15068 at target (0.5781, 0.9219), x0 = 863460331041443968/2^60, lag 4181, prefix run, t1 0, t2 4809
+  low: R 0.15119 at target (0.6198, 0.9219), x0 = 527191558864446912/2^60, lag 377, interior run, t1 248, t2 930
+
+map 96x96 part 2 of 3 golden scale 2: 36 lags, word length 314406, 3072 phases, 4 floors redone exactly
+  R: min 0.15044  1% 0.16329  10% 0.27365  median 0.54373  max 1.11687
+  phases with R < 0.0099: 0 (0.00%)
+  phases with R < 0.0999: 0 (0.00%)
+  phases with R < 0.1500: 0 (0.00%)
+  phases with R < 0.2000: 122 (3.97%)
+  low: R 0.15044 at target (0.6094, 0.9323), x0 = 1135802231489140480/2^60, lag 4181, prefix run, t1 0, t2 4808
+  low: R 0.15068 at target (0.5990, 0.9323), x0 = 863609518606739840/2^60, lag 4181, prefix run, t1 0, t2 4809
+  low: R 0.15092 at target (0.5781, 0.9323), x0 = 591342211941691264/2^60, lag 4181, prefix run, t1 0, t2 4810
+  low: R 0.15092 at target (0.5885, 0.9323), x0 = 591416805724339200/2^60, lag 4181, prefix run, t1 0, t2 4810
+  low: R 0.15116 at target (0.5677, 0.9323), x0 = 319149499059290560/2^60, lag 4181, prefix run, t1 0, t2 4811
+
+map 128x128 part 0 of 1 silver scale 4: 12 lags, word length 230779, 16384 phases, 5 floors redone exactly
+  R: min -0.10764  1% -0.08623  10% 0.05398  median 0.43414  max 0.70782
+  phases with R < 0.0099: 1304 (7.96%)
+  phases with R < 0.0999: 2553 (15.58%)
+  phases with R < 0.1500: 3922 (23.94%)
+  phases with R < 0.2000: 5539 (33.81%)
+  low: R -0.10764 at target (0.3945, 0.6523), x0 = 1089769642241067648/2^60, lag 3363, interior run, t1 2740, t2 8481
+  low: R -0.10764 at target (0.4180, 0.6680), x0 = 1089816473433033344/2^60, lag 3363, interior run, t1 2740, t2 8481
+  low: R -0.10761 at target (0.4102, 0.6602), x0 = 414432633300678016/2^60, lag 1970, prefix run, t1 0, t2 1756
+  low: R -0.10761 at target (0.4414, 0.6836), x0 = 414495074889965696/2^60, lag 1970, prefix run, t1 0, t2 1756
+  low: R -0.10734 at target (0.4258, 0.6758), x0 = 612278808958541696/2^60, lag 3363, interior run, t1 2739, t2 8480
+
