@@ -122,7 +122,9 @@ that would reopen it is here, not under closed (the owner, 23 November). Glance 
   configuration with a leftmost black cell, S6; (CAP) ⇐ (L∞), S4; (L∞) ⇐ (DL⁻₁), S5. Data kept: f(k) for k ≤ 11, and
   f(k) ≤ 265,441 for k ≤ 7,911 (M40).
 - **The wall, (DL⁻₁):** a tick that the doubled stretch after a first clock loss misses is caught in the next
-  stretch. **Open.** Its strict form is COMPUTED for every source of dyadic period up to 32 (K5); for five black or
+  stretch. **Open.** Its strict form is `DL` in the kit (Quint, #404; stronger than the wall). It is PROVED IN LEAN for
+  source periods up to 16 (#407) and COMPUTED at 32 (K5). Quint's L is twice the source period. Both were read, and
+  neither reopens the wall (N11). The strict form is also COMPUTED for five black or
   five white marks at every dyadic period (I32, R59); for quiet sources at every period (K18, I20); and at every
   first clock loss on every rooted strip through clock 16 (K27). Nothing is settled from seven marks on. Comes back
   with a proof idea, or with a counterexample, which needs a dyadic source period of at least 64.
