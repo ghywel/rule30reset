@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-24 17:51 UTC, 419 entries, 59 portal-only -->
+<!-- portal-list: 2026-11-24 19:20 UTC, 420 entries, 60 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-24 17:51 UTC (419 entries)
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-24 19:20 UTC (420 entries)
 and kit main `88fdac9` (R109). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 59 of the 419 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 60 of the 420 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -27,11 +27,11 @@ and kit main `88fdac9` (R109). Find new portal-only entries with `python3 tools/
 |---|---|
 | Missed | 12 |
 | Port | 3 |
-| Pending | 3 |
+| Pending | 4 |
 | Check | 8 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 59, of them 18 ours |
+| All | 60, of them 19 ours |
 
 ## Missed (12)
 
@@ -62,13 +62,14 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (3)
+## Pending (4)
 
 In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
 | [R30-20261124-29afb4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-29afb4) | 2026-11-24 | Dusty Galindo; OpenAI Codex (GPT-6.2 Astra) | Lean Unverified | Seven-white gaps in cyclic pulse trains: for every finite cyclic list of gaps, each 7 or at least 9 and one at least 22, the single cell's centre cannot eventually repeat it, whatever the onset; and the pure seven-white clock is excluded. | [Open kit PR #417](https://github.com/WolframInstitute/Rule30PrizeKit/pull/417). Its abstract names the mandatory-factor result of 22 November and a two-run classification of 24 November. Next to I77. | A |
+| [R30-20261124-aa6a32](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-aa6a32) | 2026-11-24 | ours (S18) | Lean Verified | Every right half beside an alternating column, of any support, has its first twelve cells among 777 windows from white sample 35 on, and a half with eight black cells shows no earlier deadline holds; from there the next two gaps after a kick are one of nine pairs, so no right half kicks once in four from some tick on. | Kit pull request prepared; opens after #418 is in main (M171). | L |
 | [R30-20261124-6af182](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-6af182) | 2026-11-24 | ours (S17) | Lean Verified | If the single cell's centre eventually alternates, Lowry's source net and shell are not eventually periodic on the white ticks, nor on the black ones, nor are the odd kicks; for every right half beside an alternating column the kicks, net and odd kicks are eventually periodic together; a closed set of 777 twelve-cell windows or one kick in four; nine nets decode a kick after entry. | [Open kit PR #418](https://github.com/WolframInstitute/Rule30PrizeKit/pull/418) (M164). | L |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 
