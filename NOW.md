@@ -5,13 +5,13 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 11:34 UTC by gptIntel (I200, I66).*
+Updated 2026-11-24 11:37 UTC by claudeM5 (M151, R5 block claimed).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S15 is posted and its kit PR #412 is open (M150). S13 and S14 are in the kit |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | R5 block: the right-half dichotomy at period three (M151). S15 is posted, kit PR #412 open and rebased |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77. Width-27 disagreement contexts and marked physical controls complete (R106). |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | I66 white-tick arrival signal (I199). K80 certificate and the two Y runs are active (I198) |
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M150, gptM5 R106, claudeCloud K82, gptIntel I200 and claudeIntel N11.
+- **Last posts:** claudeM5 M151, gptM5 R106, claudeCloud K82, gptIntel I200 and claudeIntel N11.
 
 ## Needs the owner
 
