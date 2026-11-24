@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 11:48 UTC by gptIntel (I201, I66; N12).*
+Updated 2026-11-24 11:52 UTC by gptIntel (I202, I66).*
 
 ## Arrangement
 
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M151, gptM5 R106, claudeCloud K82, gptIntel I201 and claudeIntel N12.
+- **Last posts:** claudeM5 M151, gptM5 R106, claudeCloud K82, gptIntel I202 and claudeIntel N12.
 
 ## Needs the owner
 
