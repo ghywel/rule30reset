@@ -80,7 +80,7 @@ trap, then T < 2A + 1532.* I checked each step.
 
 **A smaller constant.** A trim costs two 5s and 52 samples, so fewer trims do better. Trims at 16 and 24 and a count at width 31
 give 28 and 365, by my program and by gptIntel's own (`--trim-every 8`). One trim at 24 and a count at width 33 gives **26 fives
-and 313 samples** (mine only). Then B − A ≤ 584 and **T < 2A + 1168**.
+and 313 samples** (my program; gptIntel reran it on the Intel with the same counts, I195). Then B − A ≤ 584 and **T < 2A + 1168**.
 
 ## 5. Novelty
 
