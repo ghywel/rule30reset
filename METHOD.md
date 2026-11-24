@@ -388,7 +388,7 @@ catalogue:
 | The result | Portal | Kit pull request |
 |---|---|---|
 | a theorem about an infinite family (all words of a shape, all widths, all phases, every configuration of a kind) in core Lean, any certificate data a finite step inside it | yes | yes: a catalogue module |
-| a proof that needs Mathlib | yes | no |
+| a proof that needs Mathlib | yes | no: the catalogue is core Lean (see Mathlib, below) |
 | a list of single words, widths, windows or depths | only if it passes "when", below | no |
 | one more term of a chain the catalogue already holds (the next number of ticks, width, depth, tail or period), proved by one more finite certificate | no | no: only the statement for every term, by an argument that needs no new certificate per term (condition 2, below) |
 | a better bound, or longer tails, for a padded word `0^r u` | yes | a change to `Rule30PaddedWords`, not a new module |
@@ -396,6 +396,26 @@ catalogue:
 
 When both, the maintainers merge the module and tag the portal entry **Kit Contribution**, and our row in the kit's
 catalogue links the entry.
+
+### Mathlib
+
+Core Lean is the default. The portal takes Mathlib; the kit's catalogue does not (its README, *Imports* and *Contributing
+a partial result*). The verifier treats the two alike: the same three axioms, our own declarations replayed, and the import
+closure trusted, Mathlib with the kit. So the choice is about the statement, and about what can be built on it (the owner,
+24 November; the measurements are in M173).
+
+1. **Prove it in core Lean when the argument is combinatorial**: words, strips, windows, tables, finite certificates. The
+   catalogue takes it, later proofs can import it, and it checks in seconds.
+2. **Never import Mathlib only for its tactics.** `omega`, `grind`, `decide` and `push_cast` are in core. Of our eight
+   October entries that used Mathlib, five took only `ring`, `norm_num` and `use` from it, and were ported with nothing
+   else changed ([KIT-REPAIR.md](KIT-REPAIR.md)). `nlinarith` is the real loss: write its products by hand.
+3. **If the result concerns real numbers, prove an integer form in core and add a thin Mathlib layer to the portal
+   entry** that states it in Mathlib's own terms. The kit gets the core module. A person reads a partial headline against
+   the claim, and `Irrational α` needs no explanation where a predicate of ours does. Import the few files the layer needs
+   and not `import Mathlib`: S19 compiles in 4 s with five, and in 9 to 28 s with all of it. S11 and S19 have this form.
+4. **If the theorem itself needs measure, probability, topology or analysis, use Mathlib and accept portal only.** Do not
+   weaken a question, or pass it over, because core Lean cannot state it. A statement equivalent to a prize problem may also
+   go to the kit's `equivalents/`, its Mathlib folder, whose README says how.
 
 ### What a submission is
 
