@@ -5,16 +5,16 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 16:06 UTC by claudeM5 (M160, S17 packet a).*
+Updated 2026-11-24 16:20 UTC by gptIntel (I213, scoped S17 packet-a review).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | R5: every finite right half beside 001 and 011 enters a gate trap (M152, in Lean); S16 is Lean Verified and in kit PR #415 (M159); S17 packet a with its readers (M160) |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | R5: every finite right half beside 001 and 011 enters a gate trap (M152, in Lean); S16 is Lean Verified and in kit PR #415 (M159); S17 packet a needs a wording correction (I213) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77. Width-27 disagreement contexts and marked physical controls complete (R106). |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S17 path read passed (I211). Both K80 proof checkers passed; the two general Y runs continue (I212) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S17 proofs and authorship agreed; GE2 wording returned to the author (I213). Both K80 proof checkers passed; the two general Y runs continue (I212) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | Free. N12's I77 block is returned and with readers; M141's read of S14 no longer holds anything up (M142) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
@@ -23,14 +23,14 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M160, gptM5 R108, claudeCloud K82, gptIntel I212 and claudeIntel N12.
+- **Last posts:** claudeM5 M160, gptM5 R108, claudeCloud K82, gptIntel I213 and claudeIntel N12.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **The next block for the free workers is not set.** S16 is posted and in kit PR #415, gptM5’s release read not yet in (M157), gptM5 holds the I77 continuation (R106), S17’s packet a is with gptM5 and gptIntel (M160), claudeCloud is paused, and claudeIntel has returned I77 (N12).
-- **S17** packet a is built, at the owner’s word to continue (M160). After both readers pass it, the owner’s word to post is asked once. [Path review](research/arrivals/light/gptIntel-s17-path.md).
+- **The next block for the free workers is not set.** S16 is posted and in kit PR #415, gptM5’s release read not yet in (M157), gptM5 holds the I77 continuation (R106), claudeM5 has the scoped S17 wording correction (I213), with gptM5’s release read outstanding, claudeCloud is paused, and claudeIntel has returned I77 (N12).
+- **S17** packet a is built, at the owner’s word to continue (M160). A wording repair and the release reads come before the owner’s decision to post. [Scoped read](research/arrivals/s17/gptIntel-packet-a-review.md).
 - **S16** is Lean Verified and [kit PR #415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415) is open (M159). Nothing is asked of the owner.
 
 ## Direction
@@ -55,7 +55,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 **The owner, 23 November:** the pulls with submissions are sorted (M133), and claudeM5 takes R5. The rest awaits next
 steps.
 
-- **Being worked:** R5 and I77. The I66 light proof is S17; packet a is with its readers (M160). S15 is posted (M150). The K50.2 finite-left result is under Parked (I197). The period-two wall itself is parked (I191).
+- **Being worked:** R5 and I77. The I66 light proof is S17; I213 returned one wording correction. S15 is posted (M150). The K50.2 finite-left result is under Parked (I197). The period-two wall itself is parked (I191).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
@@ -88,7 +88,7 @@ S17 is proposed. S1 to S16 are posted. S1 to S12 are **Lean Verified** and carry
 | **S14** | The exact first departure from an aligned period-3 ether prefix of any length; the kit's 15-trap is closed to ether and white prefixes; the gate word of each half in a trap of 001, with a conditional exclusion in the form of Bosdure's `Lock`. Problem 1, partial. | R5 | [R30-20261123-f214f2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-f214f2), Lean Verified (M142). Reads: [R98](research/r5/s14/m139-carrying-read.md), R99, I182, I186 | **In the kit** at `0c4194c` ([#408](https://github.com/WolframInstitute/Rule30PrizeKit/pull/408)), three modules and a data module (M148) |
 | **S15** | One column shows the 829-window trap: 48 clean readings, or 47 after the first white tick, for every right half, both least for a uniform test; nine certifying words; sharp delays. Problem 1, partial. | I152, I181, I190, R100 | [R30-20261124-4eb126](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-4eb126), Lean Verified (M150). Reads: R100, [R101](research/wheel/s15/r101-release-read.md), [M144](research/wheel/claudeM5-i175-read.md), I195 | **In the kit** at `a09d6c6` ([#412](https://github.com/WolframInstitute/Rule30PrizeKit/pull/412)), `Rule30GateObserver` and a data module (M153) |
 | **S16** | Every finite right half beside 001 or 011 enters the least nonempty closed set of 14-cell windows in linear time; no slope below 5/2 would do. Problem 1, partial. | R5, M152, I206 | [R30-20261124-629dac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac) (M159): **Lean Verified**. [Packet b](research/r5/s16/); reads [I206](research/r5/s16/i206-carrying-read.md), [R107, R108](research/r5/s16/gptM5-packet-a-review.md) on packet a, [I208](research/r5/s16/gptIntel-packet-b-review.md) PASS on b; gptM5’s release read not in (M157) | [#415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415), from patch `b6c8367f…` on `31b28a1`, open |
-| **S17** | If the singleton centre eventually alternates, each phase of Lowry’s source net and shell is aperiodic. Problem 1, partial. | I66, I203, M156, I211 | [Packet a](research/arrivals/s17/) (M160); [path read](research/arrivals/light/gptIntel-s17-path.md) I211 PASS; release reads by gptM5 and gptIntel asked | Patch `7c6a26b3…` on `31b28a1`; the catalogue builds |
+| **S17** | If the singleton centre eventually alternates, each phase of Lowry’s source net and shell is aperiodic. Problem 1, partial. | I66, I203, M156, I211 | [Packet a](research/arrivals/s17/) (M160); [I213 scoped read](research/arrivals/s17/gptIntel-packet-a-review.md): proofs pass, GE2 wording correction requested; gptM5 release read outstanding | Patch `7c6a26b3…` on `31b28a1`; the catalogue builds |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `31b28a1` after S15 (#412), Quint’s #411 and Kurtuluş’s #413 and #414 (M154).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of

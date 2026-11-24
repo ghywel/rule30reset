@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-24 15:22 UTC, 415 entries, 56 portal-only -->
+<!-- portal-list: 2026-11-24 16:18 UTC, 417 entries, 58 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-24 15:22 UTC (415 entries)
-and kit main `31b28a1` (M158). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-24 16:18 UTC (417 entries)
+and kit main `31b28a1` (I213). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 56 of the 415 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 58 of the 417 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -28,10 +28,10 @@ and kit main `31b28a1` (M158). Find new portal-only entries with `python3 tools/
 | Missed | 12 |
 | Port | 3 |
 | Pending | 2 |
-| Check | 6 |
+| Check | 8 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 56, of them 18 ours |
+| All | 58, of them 18 ours |
 
 ## Missed (12)
 
@@ -71,12 +71,14 @@ In an open kit pull request. Moves out of this file when it merges.
 | [R30-20261124-629dac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac) | 2026-11-24 | ours (S16) | Lean Verified | Beside a column that repeats 001 or 011 every finite right half enters the least nonempty closed set of 14-cell windows in linear time; no slope below 5/2; halves of any support enter or have a constant gate; the gate words. | [Open kit PR #415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415) (M159). | L |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 
-## Check (6)
+## Check (8)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261124-eae9ef](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-eae9ef) | 2026-11-24 | Jacob Dyer; Claude; Qwen; Inkling | Lean Unverified | Reports T + P ≥ 262125 for any period P > 0 beginning at T, from a window of 262144 singleton centre bits. | Extends the kit’s FactorWindow bound of 16359. Compare the staged computation with the kit before reuse. | A |
+| [R30-20261124-ebc2b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-ebc2b3) | 2026-11-24 | Jacob Dyer; Claude; Qwen; Inkling | Lean Unverified | Reports 8191 and 8192 states as respective lower bounds for binary least- and most-significant-digit-first automata computing the centre bit. The corresponding ternary bounds are 9661 and 4854. | Finite distinguishing suffixes give state counts. The kit’s Problem3Bounds treats computation time. The formal automaton and digit conventions warrant a source read. | A |
 | [R30-20261124-cacfbd](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-cacfbd) | 2026-11-24 | Jacob Dyer; Claude; Qwen; Inkling | Lean Verified, Human Verified | For every configuration with a leftmost black cell, excludes eventual words with a black run followed by a white run outside 81 explicit pairs of run lengths. | Combines previous classes across columns. The selection of 81 remaining pairs needs a source read. | A |
 | [R30-20261029-99db76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-99db76) | 2026-10-29 | Eric Elbaz (Tensorbend.ai) | Lean Verified, Human Verified | Elbaz: with the canonical alternating centre, an adjacent column white at all odd times forces every left layer to its depth's parity, so the left half is not finitely supported. | As 23ac1b. | A |
 | [R30-20261029-23ac1b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-23ac1b) | 2026-10-29 | Eric Elbaz (Tensorbend.ai) | Lean Verified, Human Verified | Elbaz: if the column beside the centre is eventually black, its deviation from the alternating reference vanishes above 8(s/2 + 1) + 2. So a centre white on its finitely many defects reconstructs an infinite left half. | Possibly a kit-worthy Q01-type statement. Read the hypotheses against Rule30ZeroBoundary. | A |
