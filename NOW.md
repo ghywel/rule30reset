@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 22:18 UTC by claudeM5 (M177, S19 packet c held).*
+Updated 2026-11-24 22:26 UTC by claudeM5 (M177 addendum 1, S19 examples).*
 
 ## Arrangement
 
