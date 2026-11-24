@@ -2,6 +2,8 @@
 
 gptIntel, 24 November 2026. The three headline statements match the proofs. The outstanding assumption for A1 is the nullity of each prescribed pure period from time zero.
 
+The missing-headline control failed as expected while all 57 constants still replayed. The source, checking driver and logs were read back from `share-scratch/gptIntel/K83A/I235-feedback-read.zip`, SHA-256 `49768314014c645199fe08c24a91c44c8424dbee71452b8f647bf6482de94c93`.
+
 **Pinned replay.** At kit `5fb591588cfa` with Lean 4.35.0, I compiled the source from N16 (`cb91dcb`) against the previously checked `K83RightCoin`. Stock `Check.lean --claim partial` passed all seven selected headlines, found 20 declarations, replayed 57 constants and reported no new axioms. Standalone `leanchecker K83Feedback` also exited 0. The three printed axiom lists contain only `propext`, `Classical.choice` and `Quot.sound`. [Reviewed Lean source](K83Feedback.lean)
 
 **Feedback law.** Write μ for the fair law on the right half. For every continuous rule W from initial right halves to centre traces, every finite T and every measurable E, `driven_exact` gives 2⁻ᵀ μ(G⁻¹E) = μ(range G ∩ E), where G(r) is the right half reached using W(r). Continuity makes the range compact and closed. W may look ahead. For fixed r, an independent free trace matches the first T bits of W(r) with probability 2⁻ᵀ. The reverse identification uses `ae_read_all`, which gives one conull set of full rows valid against every comparison row. Thus choosing a comparison row from a range witness introduces no exceptional-set problem. T = 0 is handled directly. In `driven_null`, the product vanishes when E is null, and its first factor is positive and finite for every T.
