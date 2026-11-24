@@ -1,0 +1,156 @@
+module
+public import Rule30Submission
+public meta import Lean.Elab.Term
+
+/-! Sharp uniform entry into the S17 closed set beside an alternating Rule 30 boundary.
+The first white sample following the initial black wall has index zero. -/
+@[expose] public section
+namespace Rule30UniformEntry
+open Ruliology.CellularAutomata Rule30Submission Rule30Ether Rule30Jen
+open Rule30PeriodTwoCoupled (altCol)
+open Rule30DrivenPrefix (step)
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+set_option Elab.async false
+
+private meta def masks : Array Nat := #[
+LEAF_DATA]
+private meta def branches : Array Nat := #[
+BRANCH_DATA]
+open Lean Elab Term in
+private noncomputable def cert : Tree := by_elab
+  liftM (makeTree masks branches BRANCH_COUNT)
+
+private def clocks : Nat := 2^37-4
+private theorem valid : cert.valid = true := by decide +kernel
+private theorem advance : walkAll cert clocks clocks false true = true := by decide +kernel
+private theorem target : isTrap cert closedSet = true := by decide +kernel
+private theorem start : cert.low.testBit 1 = true := by decide +kernel
+private theorem finish : leaves (fun m => !m.testBit 36 || m.testBit 0) cert = true := by decide +kernel
+
+/-- From an arbitrary white row, 35 complete white-to-white steps force entry. -/
+theorem white_entry {F : Nat → Nat → Bool} {t : Nat} (hF : IsR30 F) (drive : Drive F false true t 35) :
+    InTrap closedSet F (t+70) := by
+  let x := code F t 82
+  have f := fits_rows (L := 12) hF drive (fits_code F t 82) 35 (by decide)
+  have last := free_march (x := x) (o := 1) (n := 35) valid advance (by decide) ((cert.bounds valid x 0 1).1 start)
+  have inside := leaves_value finish (rows false true x 35) 0
+  change (_ || _) = true at inside
+  change (cert.value (rows false true x 35) 0).testBit 36 = true at last
+  rw [last] at inside
+  exact trap_of_bit valid target f (by decide) (by simpa using inside)
+
+/-- Uniform deadline for every right half, with arbitrary eastern cells. -/
+theorem uniform_entry {F : Nat → Nat → Bool} {T k : Nat} (hF : IsR30 F) (h : Alt F T) (age : 35 ≤ k) :
+    InSet F T k := by
+  have e : InSet F T 35 := by
+    have e := white_entry hF (h.drive 0 35)
+    simpa only [InSet, show T+2*0+1+70 = T+2*35+1 by omega] using e
+  have later := stays hF h e (k-35)
+  simpa only [show 35+(k-35)=k by omega] using later
+
+theorem every_half_enters (R : Nat → Bool) : InSet (drv altCol R) 0 35 :=
+  uniform_entry (drv_isR30 _ _) (alt_drv R) (by decide)
+
+theorem singleton_enters {T : Nat} (h : AltCenter T) : InSet trueRight T 35 :=
+  uniform_entry trueRight_isR30 h.alt (by decide)
+
+theorem gate_words {F : Nat → Nat → Bool} {T : Nat} (rule : IsR30 F) (h : Alt F T) :
+    ∀ w ∈ banned, ∀ i, ¬ Spells (fun j => gate F T (35+j)) i w :=
+  clean_of_set rule h (uniform_entry rule h (by decide))
+
+def gapPairs : List (Nat × Nat) :=
+  [(2,2),(2,4),(2,5),(3,3),(3,5),(4,5),(5,2),(5,3),(5,5)]
+
+private def pairWord (a b : Nat) : List Bool :=
+  (List.range (a+b+1)).map fun j => decide (j=0 ∨ j=a ∨ j=a+b)
+
+/-- Every kick from index 35 has two successive returns forming one of the nine
+pairs. This theorem only takes the right half and its alternating boundary. -/
+theorem nine_pairs {F : Nat → Nat → Bool} {T k : Nat} (rule : IsR30 F) (h : Alt F T)
+    (age : 35 ≤ k) (pulse : gate F T k = true) :
+    ∃ a b, NextKick F T k a ∧ NextKick F T (k+a) b ∧ (a,b) ∈ gapPairs := by
+  obtain ⟨a,al,au,first⟩ := next_kick rule h (uniform_entry rule h age) pulse
+  obtain ⟨b,bl,bu,second⟩ := next_kick rule h (uniform_entry rule h (k := k+a) (by omega)) first.2.1
+  refine ⟨a,b,first,second,?_⟩
+  apply Classical.byContradiction
+  intro absent
+  have classify : ∀ x y : Fin 6, 2 ≤ x.val → 2 ≤ y.val →
+      (x.val,y.val) ∉ gapPairs → pairWord x.val y.val ∈ banned := by decide +kernel
+  have bad := classify ⟨a,by omega⟩ ⟨b,by omega⟩ al bl absent
+  apply clean_of_set rule h (uniform_entry rule h age) _ bad 0
+  intro j hj
+  have bound : j < a+b+1 := by simpa [pairWord] using hj
+  simp [pairWord,List.getD_eq_getElem?_getD,bound]
+  by_cases zero : j=0
+  · simp [zero,pulse]
+  by_cases mid : j=a
+  · simp [mid,first.2.1]
+  by_cases last : j=a+b
+  · simp [last,← Nat.add_assoc,second.2.1]
+  have quiet : gate F T (k+j) = false := by
+    by_cases left : j<a
+    · exact first.2.2 j (by omega) left
+    · have e := second.2.2 (j-a) (by omega) (by omega)
+      simpa only [show k+a+(j-a)=k+j by omega] using e
+  simp [quiet,zero,mid,last]
+
+/-- Two consecutive gaps of four are forbidden after the deadline, so an eventual
+pure-four gate is impossible even with an infinite right half. -/
+theorem no_pure_four {F : Nat → Nat → Bool} {T : Nat} (rule : IsR30 F) (h : Alt F T) :
+    ¬ ∃ φ N, ∀ k, N ≤ k → gate F T k = decide ((k+φ)%4 = 0) := by
+  rintro ⟨φ,N,four⟩
+  let base := 4*(N+35+φ)-φ
+  let word := [true,false,false,false,true,false,false,false,true]
+  apply gate_words rule h word (by decide) (base-35)
+  intro j hj
+  change gate F T (35+(base-35+j)) = word.getD j false
+  have start : 35 ≤ base ∧ N ≤ base := by dsimp [base]; omega
+  rw [four _ (by omega)]
+  have phase : (35+(base-35+j)+φ)%4 = j%4 := by dsimp [base] at *; omega
+  rw [phase]
+  exact (by decide : ∀ i : Fin 9, decide (i.val%4=0) = word.getD i.val false) ⟨j,hj⟩
+
+theorem read_kick {F : Nat → Nat → Bool} {T k : Nat} (rule : IsR30 F) (h : Alt F T) (age : 35 ≤ k) :
+    gate F T (k+6) = decode (fun i => net F T (k+i)) :=
+  kick_of_white_nets rule h (uniform_entry rule h age)
+
+theorem streams {F : Nat → Nat → Bool} {T : Nat} (rule : IsR30 F) (h : Alt F T) :
+    (EventuallyPeriodic (gate F T) ↔ EventuallyPeriodic (net F T)) ∧
+    (EventuallyPeriodic (net F T) ↔ EventuallyPeriodic (oddKick F T)) ∧
+    (EventuallyPeriodic (blackNet F T) → EventuallyPeriodic (gate F T)) :=
+  periodic_together rule h (uniform_entry (k := 35) rule h (by decide))
+
+private theorem seed_window (x k : Nat) :
+    code (seedRun x) (0+2*k+1) 12 = (rows false true (step true x) k) % 4096 := by
+  have rule : IsR30 (seedRun x) := drv_isR30 _ _
+  have clock := alt_drv (fun p => x.testBit (p-1))
+  have white : Fits (seedRun x) 1 (step true x) (12+2*k) := by
+    apply fits_step rule (t := 0) (clock 0).1
+    intro i _
+    rw [seedRun, drv_init _ _ _ (by omega), Nat.add_sub_cancel]
+  have fit := fits_rows rule (t := 1) (n := k) (L := 12) (clock.drive 0 k) white k (Nat.le_refl k)
+  simpa only [show 0+2*k+1 = 1+2*k by omega] using (code_of_fits (n := 12) fit (by omega)).symm
+
+/-- Both terminal projections occur on physical finite starts. -/
+theorem last_windows :
+    code (seedRun 1191106) (0+2*34+1) 12 = 3508 ∧
+    code (seedRun 141962434) (0+2*34+1) 12 = 2484 := by
+  rw [seed_window 1191106 34, seed_window 141962434 34]
+  decide +kernel
+
+/-- Sites 2, 7, 8, 11, 12, 14, 18 and 21 black on the initial black tick attain the
+deadline. Closure rules out every earlier entry from the single failure at index 34. -/
+theorem sharp : (∀ k, k < 35 → ¬ InSet (seedRun 1191106) 0 k) ∧ InSet (seedRun 1191106) 0 35 := by
+  have rule : IsR30 (seedRun 1191106) := drv_isR30 _ _
+  have clock : Alt (seedRun 1191106) 0 := alt_drv _
+  have outside : ¬ InSet (seedRun 1191106) 0 34 := by
+    unfold InSet InTrap
+    rw [last_windows.1]
+    decide +kernel
+  refine ⟨?_, uniform_entry rule clock (by decide)⟩
+  intro k hk s
+  have later := stays rule clock s (34-k)
+  exact outside (by simpa only [show k+(34-k)=34 by omega] using later)
+
+end Rule30UniformEntry
