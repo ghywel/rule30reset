@@ -15,9 +15,10 @@ it, whatever lies beyond (`stays`).
 * **Streams.** The kick, the net and the odd kicks are eventually periodic together, and an eventually periodic black net makes them so
   (`streams`). Nine nets at samples k to k + 8, with k at least 35, give the kick at k + 6 (`read_kick`).
 
-The finite part is one table of sets of times on spatial prefixes, 36 sets and 1,047 branches, walked once against itself with a white and
-a black tick as the step: a row that can be outside at age t can only lead to rows that carry age t + 1, and age 35 is the set. The sharp
-half is checked by direct evolution, and `stays` rules out every earlier entry from its one failure at sample 34.
+The finite part is one table of sets of ages on spatial prefixes, 36 sets and 1,047 branches, walked once against itself with a white and
+a black tick as the step. Every row at the start carries age zero, in the set or not; each checked step advances the age by one; and a row
+that carries age 35 is in the set. The sharp half is checked by direct evolution, and `stays` rules out every earlier entry from its one
+failure at sample 34.
 
 Known. `Rule30PeriodTwoWidth13` (AIOvernight) has that every right half is eventually in the nine-pair gap language or kicks once in
 four, by a rank certificate of a strip of thirteen columns, and excludes the fours on the single cell by its left half.

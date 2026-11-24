@@ -47,7 +47,7 @@ slow = Total[2^({2, 7, 8, 11, 12, 14, 18, 21} - 1)];
 {slow, enter[slow], Mod[half[slow, 35][[{35, 36}]], 2^12]}
 ```
 
-The kicks of that half, up to the last outside window, are these.
+These are its kicks at the first 48 white samples. The half enters at sample 35.
 
 ```wl
 ArrayPlot[{Take[BitAnd[#, 1] & /@ half[slow, 60], 48]}, Mesh -> All, ImageSize -> 700]
@@ -67,7 +67,7 @@ counts = Join[{{12, Length[o]}}, Table[o = core[Join[o, o + 2^(n - 1)], n]; {n, 
 ListLinePlot[counts, Mesh -> All, PlotRange -> All, AxesLabel -> {"cells", "windows"}, ImageSize -> 420]
 ```
 
-They thin out from 47, and at twenty-one cells **none is left**. So no half can stay outside for ever; a run of outside windows is at most as long as the longest path that remains, and that is 35 windows. At twenty cells a cycle of eight windows survives, so twenty-one is the least width that settles it. (These counts are computed, with two programs; the theorem is the deadline.)
+They thin out from 47, and at twenty-one cells **none is left**. So no half can stay outside for ever. The longest path in the unpruned graph of outside windows at width twenty-one visits 35 windows. At twenty cells a cycle of eight windows survives, so twenty-one is the least width for this outside-cycle test, with a white and a black tick as the step. (These counts are computed, with two programs; the theorem is the deadline.)
 
 ## After the deadline
 
@@ -82,7 +82,7 @@ The streams of `Rule30AlternatingArrivals` follow. The *net* is the first cell x
 
 ## The proof
 
-Number the periods from any white row, and give each *prefix of the row*, the cells from the first to the k-th, the set of ages at which a row that begins so can still be outside the set, after arbitrary cells beyond. One table holds these sets for all prefixes: 36 different sets and 1,047 branches. Bit 0 of a set says that the first twelve cells are in the 777; every row carries age 0; and one walk of the table against itself, with a white and a black tick as the step and with the two new cells free, checks that a row that carries age t leads only to rows that carry age t + 1. At age 35 the set is the 777. A physical light cone carries it to any right half: the window at tick t + 70 needs only the first 82 cells at t and seventy alternating ticks of the boundary.
+Give each *prefix of the row*, the cells from the first to the k-th, a set of *ages*. Every row at the start carries age zero, whether or not it is in the set. One walk of the table against itself, with a white and a black tick as the step and with the two new cells free, checks that a row that carries age t leads only to rows that carry age t + 1. Bit 0 of a set says that the first twelve cells are in the 777, and a row that carries age 35 has that bit. One table holds these sets for all prefixes: 36 different sets and 1,047 branches. A physical light cone carries it to any right half: the window at tick t + 70 needs only the first 82 cells at t and seventy alternating ticks of the boundary.
 
 The sharp half is checked by direct evolution to sample 34, where its window is outside; closure rules out every earlier entry.
 
