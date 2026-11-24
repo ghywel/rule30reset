@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 21:04 UTC by claudeIntel (N14, S19 on hold: its word-level exclusion is already implied).*
+Updated 2026-11-24 21:21 UTC by gptIntel (I227, K83.A registered).*
 
 ## Arrangement
 
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M175, gptM5 R117, claudeCloud K83, gptIntel I226 and claudeIntel N14.
+- **Last posts:** claudeM5 M175, gptM5 R117, claudeCloud K83, gptIntel I227 and claudeIntel N14.
 
 ## Needs the owner
 
@@ -54,7 +54,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **The owner, 24 November:** claudeM5 checks this file and assigns a block each to gptIntel and claudeIntel (M165).
 
-- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19 is on hold (N14). Packet b, with the real-number theorems in the portal entry, has gptIntel’s source PASS. Two wording repairs are with claudeM5; claudeIntel and gptM5 have the author and release reads (I226). claudeCloud: the Mathlib questions we passed over, K83, with a first probe run on pulls K83.A and K83.B (addendum 1); neither is assigned. The two Intel Y runs continue. claudeIntel, S19’s substitution form (N14 §6).
+- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19 is on hold (N14). Packet b, with the real-number theorems in the portal entry, has gptIntel’s source PASS. Two wording repairs are with claudeM5; claudeIntel and gptM5 have the author and release reads (I226). claudeCloud: the Mathlib questions we passed over, K83, with a first probe run on pulls K83.A and K83.B (addendum 1); gptIntel has taken K83.A (I227). The two Intel Y runs continue. claudeIntel, S19’s substitution form (N14 §6).
 - **On offer, none started:**
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
     K50);
@@ -110,7 +110,7 @@ table for the lists below. The rules are in METHOD §8.
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | N12’s nine-gap factor (a,12,14,12,12,10,9,10,b), a=10 or 14, b=10 or 12, **COMPUTED; carrying PASS** (R117). The full four-letter width-29 replay gave zero differing pairs. **COMPUTED:** successive occurrences are at least 11 pulses apart. **PROVED IN LEAN:** at distances 7–9, two occurrences capture every right half in G. [Read, controls and reproduction](research/white-gap-mixtures/gptM5-n12-return-read.md). **Next:** carry the two unobserved cells across every distance-11 path and test physical continuity. | S8 is in the kit. The close-return capture has a standalone Lean proof ready for independent read. Full nine-gap necessity and eleven-pulse spacing need compact certificates. |
 | I66 | 21 Nov, gptIntel | Lowry’s source arrivals under periodic centres, and source priority | [I216](research/arrivals/uniform/README.md) proves M165’s uniform entry in Lean. Sample 35 is attained by a finite half with eight black sites. The nine gap pairs apply to every right half from that sample. | S17 and S18 are posted (M164, M171). |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | *In progress:* claudeM5 and gptM5 ([report](research/r5/README.md)). **PROVED IN LEAN:** recurrent fronts of the ether move on one path for every right side (M134, read by gptM5); the exact first departure after a 22-site prefix exit, 49 or 52 ticks (R97, read by claudeM5); no half that carries 20 ether columns, or 16 white cells, enters the kit's 15-trap (M137, read by gptM5 in R98). **COMPUTED:** the only component reached after departure is the 22-column giant (I173, I177); the traps of 001 share a 34-column trunk; a census of every wall with labels to 30 finds no gate but 1100000 and 11000, none for 011, and a **fifth trap** that refutes entry into the four known (M137). CONJECTURE: every finite half's gate is eventually one of those two. **PROVED (M153, I208):** each finite half enters the least nonempty closed 14-cell trap, at every gate tick from 3 D + 170 or 3 D + 820. The portable proof rules out slopes below 5/2. The period-two analogue remains open. Open: that a finite half ever passes the last rung. **Next:** a periodic trap beside 011, labels 33. | **S14** (M142) and **S16** (M159) are posted and in the kit |
-| K83.A | 24 Nov, claudeCloud | The coin on the right: with a finite left half and a fair-coin right half, is the centre almost surely not eventually periodic? RD and the coupled question for almost every right half. | **Preliminary; free.** The question reduces to atoms of the gate readings beside a periodic wall (PROOF-SKETCH, unread). MEASURED (K83 addendum 1): the centre of the half-random row gains 0.041 bits of collision entropy a tick; fates at sample 600: trap 0.9625, ether gate 0.0259, loop 2, 5: 0.0114; no aperiodic atom seen. [Note](research/rule4/README.md). **Next:** by solver, the number of fresh cells it takes to derail a gate, along prefixes of trapped halves, long trains and lock-bound halves. | no. Would be Mathlib, portal only (METHOD §12, rule 4) |
+| K83.A | 24 Nov, claudeCloud | The coin on the right: with a finite left half and a fair-coin right half, is the centre almost surely not eventually periodic? RD and the coupled question for almost every right half. | **In progress with gptIntel (I227).** The question reduces to atoms of the gate readings beside a periodic wall (PROOF-SKETCH, unread). MEASURED (K83 addendum 1): the centre of the half-random row gains 0.041 bits of collision entropy a tick; fates at sample 600: trap 0.9625, ether gate 0.0259, loop 2, 5: 0.0114; no aperiodic atom seen. [Note](research/rule4/README.md). **Next:** by solver, the number of fresh cells it takes to derail a gate, along prefixes of trapped halves, long trains and lock-bound halves. | no. Would be Mathlib, portal only (METHOD §12, rule 4) |
 | K83.B | 24 Nov, claudeCloud | How fast is the right side heard: is rule 30's entropy strictly above log 2, and below the kit's log 3? | **Preliminary; free.** The kit's Mathlib catalogue reads log 2 from counts to 18 ticks. MEASURED (K83 addendum 1): beside three fair-coin walls column 1 gains 0.045 bits of collision entropy a tick, exponentially, which points above log 2. **Next:** exact pair-word counts past 18 ticks; a construction that proves the extra entropy. | no. Would improve a row of the kit's `equivalents/` |
 
 ## Parked
