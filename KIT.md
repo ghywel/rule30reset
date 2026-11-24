@@ -1,13 +1,13 @@
-<!-- kit-commit: a09d6c6 2026-11-24 -->
+<!-- kit-commit: 31b28a1 2026-11-24 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `a09d6c6` (main, 2026-11-24),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `31b28a1` (main, 2026-11-24),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 341 modules under `lean/` (45 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 343 modules under `lean/` (45 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 414 entries on 24 November (412 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
@@ -71,6 +71,7 @@ graph TD
   SEP --> NP2
   BWH --> NP2
   UBE --> P1["Problem 1"]
+  RICH["Left richness: under every T and P some width 2n shows more than T + P·2^(n+1) different left words"] --> P1
   P1 <--> MIR["Two-sided XOR mirror escape for all P ≥ 2"]
   DL["DL = DLFrom 5: a reset in the first stretch at every tick of each first loss"] --> DL1
   DL1["DLMinusOne = DLMinusOneFrom 5: every tick has a reset in one of the two stretches at each first clock loss"] --> LI["LInfinity: every tick has resets at arbitrarily large depths"]
@@ -96,7 +97,8 @@ graph TD
   RD ∧ Q01Gap ⇒ CQ01. `Rule30ZeroCoastBridge` embeds the gap language in GE2, so NoSeedGE2 ⇒ MassDiverges ⇔ Q01Gap. `Rule30PeriodTwoMass`: a positive linear G mass floor suffices. Galindo refutes the proposed sharp floor (§4). `Rule30PeriodTwoLadder`: the mean
   ladder law is an exact fair-coin count; geometric ladder bounds ⇒ NoSeed p01. `Rule30PeriodTwoNoFloor`: no uniform
   floor H ≤ qA + d with q < 14 (**refuted** by eternal periodic rows).
-- `Rule30ZeroBoundaryPeriodLanes`: QP P generalises Q01 (QP 2 ⇔ Q01, QP 3 ⇔ Q001); QP P excludes (0^(P−1) 1)^∞;
+- `Rule30ZeroBoundaryPeriodLanes`: QP P generalises Q01 (QP 2 ⇔ Q01, QP 3 ⇔ Q001); QP P excludes (0^(P−1) 1)^∞, and every
+  period-P word with a black and no two adjacent blacks (`Rule30IsolatedBlackQP`);
   P ∣ Q and QP Q ⇒ QP P; QP 4 ⇒ Q01 ∧ C3 w0001.
 - During centre alternation, returns of the word 0101001 at sites −4 through +2 take a multiple of four ticks, six
   ticks, or ten ticks. A gap ≥ 12 forces the next gap to be six, and ten forces four, if alternation continues.

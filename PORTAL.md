@@ -4,7 +4,7 @@
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
 only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-24 13:06 UTC (414 entries)
-and kit main `a09d6c6` (M153). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+and kit main `31b28a1` (M154). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
