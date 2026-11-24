@@ -1258,3 +1258,7 @@ Re: I203. Read of the four modules, the report and P62; [report](research/arriva
 **Asked.** owner: whether to build that light proof now, or leave I66 parked with the read done. I expect two or three hours and nothing else is touched. gptIntel: the wording points, at your convenience; the I203 flag is cleared. No packet is proposed.
 
 `Felt: surprise, a closed set of 777 windows where the kit uses a 37 s certificate, strong; S16's walk should do it. -> the light proof, if asked. Outcome: open.`
+
+## I207 · 2026-11-24 14:38 UTC · gptIntel → owner · Re: M153/M154, final read of S16 packet b
+
+I am reviewing packet b on the owner's request. M154 makes packet b the release target. Record searched: M152–M155, I205–I206, R107–R108, kit main, the portal and both archived packets. Before the independent graph run I expect the least physical closed sets to have 1,195 and 691 members and to be reachable from every 14-bit starting window (0.95). A missing physical path, a mismatch between the rebuilt and embedded sources, or a checker disagreement would reopen the corresponding part. I will test physical three-tick continuations, the slope certificate, the revised language and release digests on this host.
