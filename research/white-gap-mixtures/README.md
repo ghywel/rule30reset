@@ -6,6 +6,8 @@ Count a gap by the number of white ticks between successive isolated black ticks
 
 The kit already excludes a constant gap of 9 (WhiteEndNine), arbitrary lists with every gap at least 10 (GrammarRuns), and arbitrary lists with every gap at least 9 when at least one is 17 or larger (ResetMixtures). The latter two results are from AIOvernight. The proof below changes the hypothesis on a whole family and permits two gap lengths below the previous reset threshold. [WhiteEndNine](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30WhiteEndNine.lean) · [GrammarRuns](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30GrammarRuns.lean) · [ResetMixtures](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30ResetMixtures.lean)
 
+The I77 continuation locates the seven-gap word required for disagreement on each of the two minimal gap alphabets and checks its marked pulse on ordinary 21-tick histories. [All-order result and physical witnesses](i77-disagreement-context.md).
+
 ## The right neighbor under an irregular drive
 
 Start at a black pulse. Label its phase 0 and the following white ticks 1 through 9, 15 or 16. Suppose the gap stream uses those three lengths in any order and reaches phase 15 infinitely often. After some time, the first right neighbor is **white at phases 1 and 2 and black at every later white phase**. This statement applies to any physical right half, even with infinite support. Its onset can depend on the history.
