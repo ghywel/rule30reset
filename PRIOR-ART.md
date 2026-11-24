@@ -538,3 +538,8 @@ Bosdure’s moving wall stays black for two ticks per pair before turning white.
 - **Known, for the observer.** The necessary language after entry is Quint and Gemini's (`Rule30GateTrapWords`, R30-20261110-037fe3). Hallee's `Columns.LockWord`: one word in one column forces the period-four lock, for each of its three words. Hallee's `findings/period-two/gate-census.md` has another gap trap (3,562 entry windows) and no certifying word.
 - **Found by.** I175's read (M144): searches of the portal list for *observ*, *detect*, *deadline*, and of KIT-INDEX for *alternat*. The wheel reports had neither module of Lowry's by name.
 - **Credit.** The last step of the deadline, up to six ticks, is Lowry's; ours are the counts, the exit rules and the ring's sharp table. The converse from gate to trap window, with 48 and 47 sharp, is ours.
+
+## P60 · 2026-11-24 · Five-sample coverage on the observed column already has a phase-zero certificate
+
+- **Known.** Placego's October 11 table of physically absent column-1 words lists both `11` and `00000` for a white-time start with an arbitrary right half. The latter gives the black reading used to extend S15's two exceptional prefixes. Its SAT certificate predates the 829-window observer. [Frozen table and phase convention](https://github.com/ghywel/placego/blob/a5ed5e4d595845b7fb50b6fd76da80a41e6f4981/tests/probes/lexicon/rule30_local_mfw44.txt#L1-L10)
+- **Ours.** R100 repeated I190's chain test. The new implication locates the hidden 829-window state at the end of a clean observation, with optimal lengths for uniform acceptance after entry. The older catalogue tests whether a gate word can occur anywhere. [S15 carrying read](research/wheel/observer-candidate/r100-carrying-read.md)
