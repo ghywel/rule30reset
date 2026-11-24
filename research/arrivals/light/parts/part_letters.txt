@@ -1,0 +1,129 @@
+/-! ### A search over readings -/
+
+/-- Reads `g` as the word `w` from index `i`. -/
+def Spells (u : Nat → Bool) (i : Nat) (v : List Bool) : Prop := ∀ k, k < v.length → u (i+k) = v.getD k false
+
+/-- The gate words that rule the closed set out: gap one and six or more, the seven pairs, and 2, 2, 5. -/
+def banned : List (List Bool) := [
+  [true, true], [false, false, false, false, false], [true, false, true, false, false, true], [true, false, false, true, false, true],
+  [true, false, false, true, false, false, false, true], [true, false, false, false, true, false, true],
+  [true, false, false, false, true, false, false, true], [true, false, false, false, true, false, false, false, true],
+  [true, false, false, false, false, true, false, false, false, true], [true, false, true, false, true, false, false, false, false, true]]
+
+/-- Gate, net, black net. -/
+abbrev Letter := Bool × Bool × Bool
+
+def okLetter (q : Letter) : Bool := (!q.2.2 || q.1) && (!(q.1 && !q.2.1) || q.2.2)
+
+def okStep (p q : Letter) : Bool := (q.1 || (q.2.1 == !p.2.1)) && (!q.1 || !p.2.1) && !(p.1 && q.1)
+
+/-- After the letters `h`, the latest first, may `q` follow? -/
+def okNext : List Letter → Letter → Bool
+  | [], q => okLetter q
+  | [p], q => okLetter q && okStep p q
+  | p :: p' :: _, q => okLetter q && okStep p q && !(p'.1 && p'.2.1 && p'.2.2 && q.1)
+
+def ends : List Bool → List Letter → Bool
+  | [], _ => true
+  | _ :: _, [] => false
+  | c :: r, q :: h => (q.1 == c) && ends r h
+
+def hasBanned (h : List Letter) : Bool := banned.any fun w => ends w.reverse h
+
+def allLetters : List Letter := [(false,false,false), (false,true,false), (true,false,true), (true,true,false), (true,true,true),
+  (false,false,true), (false,true,true), (true,false,false)]
+
+def search (test : List Letter → Bool) : Nat → List Letter → Bool
+  | 0, h => test h
+  | n+1, h => allLetters.all fun q => !okNext h q || hasBanned (q :: h) || search test n (q :: h)
+
+/-- The letters before index `k`, the latest first. -/
+def hist (g a b : Nat → Bool) : Nat → List Letter
+  | 0 => []
+  | k+1 => (g k, a k, b k) :: hist g a b k
+
+theorem mem_allLetters : ∀ q : Letter, q ∈ allLetters := by
+  rintro ⟨a, b, c⟩
+  cases a <;> cases b <;> cases c <;> decide
+
+theorem ends_hist {g a b : Nat → Bool} : ∀ (r : List Bool) (k : Nat), ends r (hist g a b k) = true →
+    r.length ≤ k ∧ ∀ i, i < r.length → g (k-1-i) = r.getD i false
+  | [], _, _ => ⟨Nat.zero_le _, fun i hi => absurd hi (Nat.not_lt_zero i)⟩
+  | c :: r, 0, h => by simp [hist, ends] at h
+  | c :: r, k+1, h => by
+    simp only [hist, ends, Bool.and_eq_true, beq_iff_eq] at h
+    obtain ⟨le, at_⟩ := ends_hist r k h.2
+    refine ⟨by simp; omega, fun i hi => ?_⟩
+    cases i with
+    | zero => simpa using h.1
+    | succ i =>
+      have := at_ i (by simpa using hi)
+      rw [show k+1-1-(i+1) = k-1-i by omega]
+      simpa using this
+
+theorem no_banned {g a b : Nat → Bool} (clean : ∀ w ∈ banned, ∀ i, ¬ Spells g i w) (k : Nat) : hasBanned (hist g a b k) = false := by
+  apply Bool.eq_false_iff.mpr
+  intro h
+  obtain ⟨w, hw, e⟩ := List.any_eq_true.mp h
+  obtain ⟨le, at_⟩ := ends_hist _ _ e
+  rw [List.length_reverse] at le at_
+  refine clean w hw (k-w.length) (fun j hj => ?_)
+  have := at_ (w.length-1-j) (by omega)
+  rw [show k-1-(w.length-1-j) = k-w.length+j by omega] at this
+  rw [this, List.getD_eq_getElem?_getD, List.getElem?_reverse (by omega), List.getD_eq_getElem?_getD]
+  congr 2
+  omega
+
+theorem okNext_law {g a b : Nat → Bool} (L : Law g a b) : ∀ k, okNext (hist g a b k) (g k, a k, b k) = true := by
+  have letter (k : Nat) : okLetter (g k, a k, b k) = true := by
+    simp only [okLetter]
+    cases hb : b k
+    · cases hg : g k
+      · cases a k <;> rfl
+      · cases ha : a k
+        · have := L.odd k hg ha; rw [hb] at this; cases this
+        · rfl
+    · rw [L.black k hb]
+      cases a k <;> rfl
+  have step (k : Nat) : okStep (g k, a k, b k) (g (k+1), a (k+1), b (k+1)) = true := by
+    simp only [okStep]
+    cases hg : g (k+1)
+    · rw [L.toggle k hg]
+      cases g k <;> simp
+    · rw [L.reset k hg]
+      have : g k = false := by
+        cases h : g k
+        · rfl
+        · have := L.lone k h; rw [hg] at this; cases this
+      rw [this]; cases a (k+1) <;> rfl
+  intro k
+  cases k with
+  | zero => exact letter 0
+  | succ k =>
+    cases k with
+    | zero => simp only [hist, okNext, letter, step, Bool.and_self]
+    | succ k =>
+      simp only [hist, okNext, letter, step, Bool.true_and, Bool.not_eq_true']
+      cases hg : g (k+2)
+      · simp
+      · cases hg' : g k
+        · simp
+        · cases ha : a k
+          · simp
+          · cases hb : b k
+            · simp
+            · have := L.skip k hg' ha hb
+              rw [show k+2 = k+2 from rfl, hg] at this
+              cases this
+
+theorem search_sound {g a b : Nat → Bool} (L : Law g a b) (clean : ∀ w ∈ banned, ∀ i, ¬ Spells g i w) {test : List Letter → Bool} :
+    ∀ n k, search test n (hist g a b k) = true → test (hist g a b (k+n)) = true
+  | 0, _, h => h
+  | n+1, k, h => by
+    have s := List.all_eq_true.mp h _ (mem_allLetters (g k, a k, b k))
+    have nb : hasBanned (hist g a b (k+1)) = false := no_banned clean (k+1)
+    change (!okNext (hist g a b k) (g k, a k, b k) || hasBanned (hist g a b (k+1)) || search test n (hist g a b (k+1))) = true at s
+    rw [okNext_law L k, nb] at s
+    simp only [Bool.not_true, Bool.false_or] at s
+    rw [show k+(n+1) = (k+1)+n by omega]
+    exact search_sound L clean n (k+1) s

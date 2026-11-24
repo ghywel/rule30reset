@@ -1,0 +1,189 @@
+/-! ### The three kinds of line -/
+
+section
+variable {T : Tree} {white black : Nat} {d0 d1 : Bool}
+
+theorem free_march (va : T.valid = true) (ok : walkAll T white black d0 d1 = true) {x o n : Nat}
+    (free : freeFrom white black o n = true) (start : (T.value x 0).testBit o = true) :
+    (T.value (rows d0 d1 x n) 0).testBit (o+n) = true := by
+  refine march va ok start (fun i hi => ?_) n (Nat.le_refl _)
+  have f := List.all_eq_true.mp free i (List.mem_range.mpr hi)
+  simp only [Bool.and_eq_true] at f
+  split
+  · exact f.2
+  · exact f.1
+
+/-- **The closed set.** Bit 0 is carried to the row one period later. -/
+theorem bit_closed (va : T.valid = true) (ok : walkAll T white black d0 d1 = true)
+    (free : freeFrom white black 0 1 = true) (wrap : leaves (fun m => m.testBit 1 == m.testBit 0) T = true) {x : Nat}
+    (h : (T.value x 0).testBit 0 = true) : (T.value (per d0 d1 x) 0).testBit 0 = true := by
+  have a := free_march va ok (n := 1) free h
+  have l := beq_iff_eq.mp (leaves_value wrap (per d0 d1 x) 0)
+  rw [← l]
+  exact a
+
+theorem bit_stays (va : T.valid = true) (ok : walkAll T white black d0 d1 = true)
+    (free : freeFrom white black 0 1 = true) (wrap : leaves (fun m => m.testBit 1 == m.testBit 0) T = true) {x : Nat}
+    (h : (T.value x 0).testBit 0 = true) : ∀ i, (T.value (rows d0 d1 x i) 0).testBit 0 = true
+  | 0 => h
+  | i+1 => bit_closed va ok free wrap (bit_stays va ok free wrap h i)
+
+/-- **Entry.** After `m + n` periods every row is in the closed set, unless after `m` it has the exceptional bit `e`. -/
+theorem bit_entry (va : T.valid = true) (ok : walkAll T white black d0 d1 = true) {A B m n e : Nat}
+    (freeA : freeFrom white black A m = true) (freeB : freeFrom white black B n = true)
+    (first : T.low.testBit A = true)
+    (middle : leaves (fun k => !k.testBit (A+m) || (k.testBit B || k.testBit e)) T = true)
+    (last : leaves (fun k => !k.testBit (B+n) || k.testBit 0) T = true) (x : Nat) :
+    (T.value (rows d0 d1 x m) 0).testBit e = true ∨
+      (T.value (rows d0 d1 (rows d0 d1 x m) n) 0).testBit 0 = true := by
+  have a := free_march va ok freeA ((T.bounds va x 0 A).1 first)
+  have c := leaves_value middle (rows d0 d1 x m) 0
+  rw [a] at c
+  simp only [Bool.not_true, Bool.false_or, Bool.or_eq_true] at c
+  rcases c with b | b
+  · right
+    have f := free_march va ok freeB b
+    have l := leaves_value last (rows d0 d1 (rows d0 d1 x m) n) 0
+    rw [f] at l
+    simpa using l
+  · exact Or.inl b
+
+theorem mem_colours (c : Bool) : c ∈ [false, true] := by cases c <;> simp
+
+/-- **A pattern that no row of the closed set reads.** -/
+theorem bit_word (va : T.valid = true) (ok : walkAll T white black d0 d1 = true) {o : Nat} {v : List (Option Bool)}
+    (line : wordLine T white black o v = true) (pos : 0 < v.length) {x : Nat} (h : (T.value x 0).testBit 0 = true)
+    (read : ∀ i, i < v.length → fits (v.getD i none) ((rows d0 d1 x i).testBit 0) = true) : False := by
+  simp only [wordLine, Bool.and_eq_true] at line
+  obtain ⟨⟨st, cl⟩, en⟩ := line
+  have kid (y : Nat) (t : Nat) (hy : (T.value y 0).testBit t = true) :
+      ((T.child (y.testBit 0)).value y 1).testBit t = true := by rw [Tree.child_value T y 0]; exact hy
+  have start : (T.value x 0).testBit o = true := by
+    have r0 := read 0 pos
+    have hd : v.headD none = v.getD 0 none := by cases v <;> rfl
+    have s := List.all_eq_true.mp st _ (mem_colours (x.testBit 0))
+    rw [hd] at s
+    rw [show rows d0 d1 x 0 = x from rfl] at r0
+    rw [r0] at s
+    simp only [Bool.not_true, Bool.false_or] at s
+    have l := leaves_value s x 1
+    rw [kid x 0 h] at l
+    rw [← Tree.child_value T x 0]
+    simpa using l
+  have all := march (n := v.length - 1) va ok start (fun i hi => by
+    have c := List.all_eq_true.mp (List.all_eq_true.mp cl i (List.mem_range.mpr hi)) _ (mem_colours ((rows d0 d1 x (i+1)).testBit 0))
+    rw [read (i+1) (by omega)] at c
+    simpa using c) (v.length - 1) (Nat.le_refl _)
+  have e := List.all_eq_true.mp en _ (mem_colours ((rows d0 d1 x (v.length-1)).testBit 0))
+  rw [read (v.length - 1) (by omega)] at e
+  simp only [Bool.not_true, Bool.false_or] at e
+  have l := leaves_value e (rows d0 d1 x (v.length-1)) 1
+  rw [kid _ _ all] at l
+  simp at l
+
+end
+
+/-! ### Packed rows of an evolution -/
+
+/-- `x` holds the first `L` cells of the half at tick `t`. -/
+def Fits (F : Nat → Nat → Bool) (t x L : Nat) : Prop := ∀ j, j < L → x.testBit j = F t (j+1)
+
+theorem Fits.mono {F : Nat → Nat → Bool} {t x L M : Nat} (h : Fits F t x L) (le : M ≤ L) : Fits F t x M :=
+  fun j hj => h j (by omega)
+
+theorem fits_step {F : Nat → Nat → Bool} (hF : IsR30 F) {t x L : Nat} {d : Bool} (h0 : F t 0 = d) (h : Fits F t x (L+1)) :
+    Fits F (t+1) (step d x) L := by
+  intro j hj
+  rw [step_bit, hF t j, h j (by omega), h (j+1) (by omega)]
+  unfold Rule30Jen.rule
+  cases j with
+  | zero => simp [h0]
+  | succ j => simp [h j (by omega)]
+
+theorem fits_per {F : Nat → Nat → Bool} (hF : IsR30 F) {t x L : Nat} {d0 d1 : Bool} (h0 : F t 0 = d0)
+    (h1 : F (t+1) 0 = d1) (h : Fits F t x (L+2)) : Fits F (t+2) (per d0 d1 x) L :=
+  fits_step hF h1 (fits_step hF h0 h)
+
+/-- The drive reads `d0 d1` over the `n` periods from `t`. -/
+def Drive (F : Nat → Nat → Bool) (d0 d1 : Bool) (t n : Nat) : Prop :=
+  ∀ i, i < n → F (t+2*i) 0 = d0 ∧ F (t+2*i+1) 0 = d1
+
+theorem fits_rows {F : Nat → Nat → Bool} (hF : IsR30 F) {t x L n : Nat} {d0 d1 : Bool} (hd : Drive F d0 d1 t n)
+    (h : Fits F t x (L+2*n)) : ∀ i, i ≤ n → Fits F (t+2*i) (rows d0 d1 x i) (L+2*(n-i)) := by
+  intro i
+  induction i with
+  | zero => intro _; exact h
+  | succ i ih =>
+    intro hi
+    obtain ⟨h0, h1⟩ := hd i (by omega)
+    have f := ih (by omega)
+    rw [show L+2*(n-i) = L+2*(n-(i+1))+2 by omega] at f
+    exact fits_per hF h0 h1 f
+
+/-- The first `n` cells of the half at tick `t`, as a number, the first cell in the low bit. -/
+def code (F : Nat → Nat → Bool) (t n : Nat) : Nat := encList (seg (fun j => F t (j+1)) n)
+
+theorem prefix_bit : ∀ (n : Nat) (f : Nat → Bool) (j : Nat), (encList (seg f n)).testBit j = (decide (j < n) && f j)
+  | 0, _, j => by simp [seg, encList]
+  | n+1, f, 0 => by
+    rw [Nat.testBit_zero]
+    simp only [seg, encList]
+    cases f 0 <;> simp <;> omega
+  | n+1, f, j+1 => by
+    rw [Nat.testBit_succ]
+    change (((if f 0 then 1 else 0) + 2 * encList (seg (fun i => f (i+1)) n)) / 2).testBit j = _
+    have e (a : Nat) : ((if f 0 then 1 else 0) + 2*a) / 2 = a := by cases f 0 <;> simp <;> omega
+    rw [e, prefix_bit n _ j]
+    simp
+
+theorem code_bit (F : Nat → Nat → Bool) (t n j : Nat) : (code F t n).testBit j = (decide (j < n) && F t (j+1)) :=
+  prefix_bit n _ j
+
+theorem fits_code (F : Nat → Nat → Bool) (t L : Nat) : Fits F t (code F t L) L := by
+  intro j hj
+  rw [code_bit]
+  simp [hj]
+
+theorem code_of_fits {F : Nat → Nat → Bool} {t x L n : Nat} (h : Fits F t x L) (le : n ≤ L) : x % 2^n = code F t n := by
+  apply Nat.eq_of_testBit_eq
+  intro j
+  rw [Nat.testBit_mod_two_pow, code_bit]
+  by_cases hj : j < n
+  · simp [hj, h j (by omega)]
+  · simp [hj]
+
+theorem code_lt (F : Nat → Nat → Bool) (t n : Nat) : code F t n < 2^n := by
+  rw [← code_of_fits (fits_code F t n) (Nat.le_refl n)]
+  exact Nat.mod_lt _ (Nat.two_pow_pos n)
+
+theorem cell_of_code {F : Nat → Nat → Bool} {t n c : Nat} (h : code F t n = c) {j : Nat} (hj : j < n) :
+    F t (j+1) = c.testBit j := by
+  rw [← h, code_bit]
+  simp [hj]
+
+/-! ### The trap of a table -/
+
+/-- The first twelve cells of the half at tick `t` are a window of the list. -/
+def InTrap (trap : List Nat) (F : Nat → Nat → Bool) (t : Nat) : Prop := code F t 12 ∈ trap
+
+section
+variable {T : Tree} {trap : List Nat}
+
+theorem trap_of_bit (va : T.valid = true) (is : isTrap T trap = true) {F : Nat → Nat → Bool} {t x L : Nat}
+    (h : Fits F t x L) (le : 12 ≤ L) (hb : (T.value x 0).testBit 0 = true) : InTrap trap F t := by
+  simp only [isTrap, Bool.and_eq_true] at is
+  have m := mem_codes (t := 0) 12 va (k := 0) (p := 0) (r := x) (by simp [Nat.mod_one]) hb
+  rw [beq_iff_eq.mp is.1, Nat.zero_add] at m
+  unfold InTrap
+  rw [← code_of_fits h le]
+  exact m
+
+theorem bit_of_trap (va : T.valid = true) (is : isTrap T trap = true) {F : Nat → Nat → Bool} {t x L : Nat}
+    (h : Fits F t x L) (le : 12 ≤ L) (hb : InTrap trap F t) : (T.value x 0).testBit 0 = true := by
+  simp only [isTrap, Bool.and_eq_true] at is
+  refine codes_bit 12 va is.2 (k := 0) (p := 0) (c := code F t 12) (by decide) (by rw [beq_iff_eq.mp is.1]; exact hb)
+    (fun i hi => ?_)
+  rw [Nat.zero_add, code_bit, h i (by omega)]
+  simp [hi]
+
+end

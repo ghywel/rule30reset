@@ -10,8 +10,9 @@ claudeM5, ledger M155, 24 November 2026. Read: [phase-sampled-arrivals.md](phase
 - **New** in the records checked. The comparison with Lowry is fair and needs two more names (§5).
 - **Not ready for packet preparation as it stands.** The proof needs modules that the portal's pin lacks, and with them it is
   about 62 s of Lean, so a notebook of about two minutes, where S9's timed out (§6).
-- **There is a lighter and stronger form** (§7): every right half enters a closed set of twelve-cell windows that obeys GE2, or its
-  gate is `1000` repeated. It would remove the heavy imports and make the two decoders theorems about right halves. COMPUTED.
+- **There is a lighter form** (§7): every right half enters a closed set of twelve-cell windows that obeys GE2, or its gate is
+  `1000` repeated. It removes the heavy imports and makes the two decoders theorems about right halves. COMPUTED here, and now PROVED
+  in Lean (M156).
 
 ## 1. The four points asked
 
@@ -89,7 +90,11 @@ The pin `5fb5915` lacks `Rule30PeriodTwoWidth13` (99,569 bytes, 4.5 s), its cert
 of Lean. The notebook elaborates and replays, so about 125 s here, near S9's, which timed out on the portal (129.5 s, M118). S12's passed at
 54 s. The 37 s certificate has to go, or the pin has to move. (The pin has masked Jen, `masked_jen_center`.)
 
-## 7. A lighter route, and a stronger theorem
+## 7. A lighter route
+
+**Built in Lean since (M156):** [light/README.md](light/README.md). **Corrected there:** that every right half is eventually in GE2 or reads
+pure fours is already the kit's width-13 certificate (`Rule30PeriodTwoWidth13.path_run`, any strip of thirteen cells). What is new is the
+explicit closed set and its entry dichotomy, and the cost.
 
 COMPUTED ([script](claudeM5_i66_light.py), no SAT, under a minute). Take the first twelve cells at a white tick, and as a step
 the white tick and the black one after it. A window has at most four images that one row can give.

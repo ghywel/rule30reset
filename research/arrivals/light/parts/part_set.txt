@@ -1,0 +1,110 @@
+/-! ### The closed set, and entry -/
+
+/-- The first twelve cells of the half at the `k`-th white tick are a window of the closed set. -/
+def InSet (F : Nat → Nat → Bool) (T k : Nat) : Prop := InTrap closedSet F (T+2*k+1)
+
+theorem Alt.drive {F : Nat → Nat → Bool} {T : Nat} (h : Alt F T) (k n : Nat) : Drive F false true (T+2*k+1) n := by
+  intro i _
+  refine ⟨?_, ?_⟩
+  · have := (h (k+i)).2; rwa [show T+2*(k+i)+1 = T+2*k+1+2*i by omega] at this
+  · have := (h (k+i+1)).1; rwa [show T+2*(k+i+1) = T+2*k+1+2*i+1 by omega] at this
+
+/-- **The closed set.** A half in it stays in it, whatever lies beyond. -/
+theorem stays {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat} (h : Alt F T) {k : Nat} (s : InSet F T k) (n : Nat) :
+    InSet F T (k+n) := by
+  have := trap_stays valid01 walk01 free01 wrap01 isTrap01 hF (h.drive k n) s
+  rwa [show T+2*k+1+2*n = T+2*(k+n)+1 by omega] at this
+
+/-- The windows of thirteen cells that a half outside can show for ever. -/
+def tailWindows : List Nat := [1024, 16, 3268, 2338, 2194, 769, 77, 7364, 4372, 6434]
+
+theorem tail13 : rounds false true 13 17 (widen 12 outside01) = tailWindows := by decide +kernel
+
+/-- Their place in the cycle of four. -/
+def phase (x : Nat) : Nat :=
+  if x = 77 ∨ x = 769 then 0 else if x = 4372 ∨ x = 3268 ∨ x = 7364 then 1 else if x = 2194 ∨ x = 2338 ∨ x = 6434 then 2 else 3
+
+theorem phase_lt (x : Nat) : phase x < 4 := by unfold phase; (repeat' split) <;> decide
+
+theorem phaseOK : (tailWindows.all fun a => (a.testBit 0 == (phase a == 0)) && tailWindows.all fun b =>
+    !(images false true 13 a).contains b || phase b == (phase a + 1) % 4) = true := by decide +kernel
+
+theorem outside_from {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat} (h : Alt F T) (out : ∀ k, ¬ InSet F T k) (k : Nat) :
+    code F (T+2*(27+k)+1) 13 ∈ tailWindows := by
+  have hd : Drive F false true (T+1) (10+10+(k+2*17)) := by
+    have := h.drive 0 (10+10+(k+2*17)); simpa using this
+  have no : ¬ InTrap closedSet F (T+1+2*(10+10+(k+2*17))) := fun s => out (20+(k+34)) (by
+    unfold InSet
+    rwa [show T+2*(20+(k+34))+1 = T+1+2*(10+10+(k+2*17)) by omega])
+  have a : Among F (T+1+2*10) (k+2*17) 12 outside01 := fun i hi =>
+    outside_before (m := 10) (n := 10) valid01 walk01 free01 wrap01 isTrap01 freeA01 freeB01 first01 middle01 last01
+      outsideCodes01 hF hd no i hi
+  have d : Drive F false true (T+1+2*10) (k+2*17) := (hd.mono (m := 10+(k+2*17)) (by omega)).shift 10
+  have r := among_rounds hF 17 d (among_widen a)
+  rw [tail13] at r
+  have := r k (Nat.le_refl k)
+  rwa [show T+1+2*10+2*17+2*k = T+2*(27+k)+1 by omega] at this
+
+/-- **Every right half beside an alternating column,** of any support, enters the closed set, or reads a kick once in four for
+ever. -/
+theorem enters_or_four {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat} (h : Alt F T) :
+    (∃ k, InSet F T k) ∨ ∃ φ N, ∀ k, N ≤ k → gate F T k = decide ((k+φ) % 4 = 0) := by
+  by_cases e : ∃ k, InSet F T k
+  · exact Or.inl e
+  right
+  have mem := outside_from hF h (fun k s => e ⟨k, s⟩)
+  generalize hc : (fun k => code F (T+2*(27+k)+1) 13) = c at *
+  have hc' (k : Nat) : c k = code F (T+2*(27+k)+1) 13 := by rw [← hc]
+  have mem' (k : Nat) : c k ∈ tailWindows := by rw [hc']; exact mem k
+  have step (k : Nat) : phase (c (k+1)) = (phase (c k) + 1) % 4 := by
+    have im := image_mem hF (h.drive (27+k) 1) 13
+    rw [show T+2*(27+k)+1+2 = T+2*(27+(k+1))+1 by omega, ← hc', ← hc'] at im
+    have row := List.all_eq_true.mp phaseOK _ (mem' k)
+    simp only [Bool.and_eq_true] at row
+    have cell := List.all_eq_true.mp row.2 _ (mem' (k+1))
+    rw [List.contains_iff_mem.mpr im] at cell
+    simpa using cell
+  have at_ (k : Nat) : phase (c k) = (phase (c 0) + k) % 4 := by
+    induction k with
+    | zero => have := phase_lt (c 0); omega
+    | succ k ih => rw [step k, ih]; omega
+  refine ⟨phase (c 0) + 1, 27, fun k hk => ?_⟩
+  obtain ⟨j, rfl⟩ : ∃ j, k = 27 + j := ⟨k-27, by omega⟩
+  have row := List.all_eq_true.mp phaseOK _ (mem' j)
+  simp only [Bool.and_eq_true, beq_iff_eq] at row
+  have g : gate F T (27+j) = (c j).testBit 0 := by
+    rw [hc', code_bit]; simp [gate]
+  rw [g, row.1, at_ j]
+  show decide ((phase (c 0) + j) % 4 = 0) = decide ((27 + j + (phase (c 0) + 1)) % 4 = 0)
+  exact decide_eq_decide.mpr (by omega)
+
+/-! ### What the gate of the closed set reads -/
+
+theorem avoids {T : Tree} {white black : Nat} {d0 d1 : Bool} {trap : List Nat} {F : Nat → Nat → Bool}
+    (va : T.valid = true) (ok : walkAll T white black d0 d1 = true) (free : freeFrom white black 0 1 = true)
+    (wrap : leaves (fun m => m.testBit 1 == m.testBit 0) T = true) (is : isTrap T trap = true) (hF : IsR30 F) {t : Nat}
+    (hd : ∀ n, Drive F d0 d1 t n) (h : InTrap trap F t) {o : Nat} {v : List (Option Bool)}
+    (line : wordLine T white black o v = true) (pos : 0 < v.length) (i : Nat)
+    (read : ∀ k, k < v.length → fits (v.getD k none) (F (t+2*(i+k)) 1) = true) : False := by
+  obtain ⟨x, fx, bx⟩ := trap_row va ok free wrap is hF (hd (i+v.length)) h
+  refine bit_word va ok line pos (bx i) (fun k hk => ?_)
+  rw [← rows_add, fx (i+k) (by omega) 0 (by omega)]
+  exact read k hk
+
+theorem listed01 : (banned.all fun v => lines01.any fun l => l.2 == v.map some) = true := by decide +kernel
+theorem banned_pos : ∀ v ∈ banned, 0 < v.length := by decide
+
+/-- **The gate words of the closed set.** None of the ten is read from a white tick in it on. -/
+theorem clean_of_set {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat} (h : Alt F T) {k : Nat} (s : InSet F T k) :
+    ∀ w ∈ banned, ∀ i, ¬ Spells (fun j => gate F T (k+j)) i w := by
+  intro w hw i sp
+  obtain ⟨l, hl, e⟩ := List.any_eq_true.mp (List.all_eq_true.mp listed01 w hw)
+  have line := List.all_eq_true.mp wordLines01 l hl
+  rw [beq_iff_eq.mp e] at line
+  refine avoids valid01 walk01 free01 wrap01 isTrap01 hF (h.drive k) s line (by simpa using banned_pos w hw) i (fun j hj => ?_)
+  rw [List.length_map] at hj
+  have := sp j hj
+  simp only [gate] at this
+  rw [show T+2*k+1+2*(i+j) = T+2*(k+(i+j))+1 by omega]
+  rw [this]
+  simp [List.getD, hj, fits]

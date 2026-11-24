@@ -1,0 +1,56 @@
+/-! ### The decoders -/
+
+/-- The six words of nine nets that a kick sits in, at the seventh place. -/
+def kickWords : List (List Bool) := [
+  [false,false,true,false,true,false,false,true,false], [false,false,true,false,true,false,true,false,false],
+  [false,false,true,false,true,false,true,false,true], [false,true,false,false,true,false,false,true,false],
+  [true,false,true,false,true,false,false,true,false], [true,false,true,false,true,false,true,false,true]]
+
+def decode (a : Nat → Bool) : Bool :=
+  kickWords.any fun w => (List.range 9).all fun i => a i == w.getD i false
+
+theorem decode_ext {a b : Nat → Bool} (h : ∀ i, i < 9 → a i = b i) : decode a = decode b := by
+  have e : ∀ w : List Bool, ((List.range 9).all fun i => a i == w.getD i false) = ((List.range 9).all fun i => b i == w.getD i false) := by
+    intro w
+    rw [Bool.eq_iff_iff, List.all_eq_true, List.all_eq_true]
+    constructor
+    · intro q i hi
+      rw [← h i (List.mem_range.mp hi)]; exact q i hi
+    · intro q i hi
+      rw [h i (List.mem_range.mp hi)]; exact q i hi
+  exact congrArg (fun p => kickWords.any p) (funext e)
+
+/-- A history of fourteen letters, latest first, agrees with the decoder at its seventh place. -/
+def decodeTest (h : List Letter) : Bool :=
+  (h.getD 7 default).1 == decode (fun i => (h.getD (13-i) default).2.1)
+
+theorem decodeCheck : search decodeTest 14 [] = true := by decide +kernel
+
+theorem decoder {g a b : Nat → Bool} (L : Law g a b) (clean : ∀ w ∈ banned, ∀ i, ¬ Spells g i w) : g 6 = decode a := by
+  have t := search_sound L clean (test := decodeTest) 14 0 decodeCheck
+  have e : hist g a b (0+14) = [(g 13,a 13,b 13),(g 12,a 12,b 12),(g 11,a 11,b 11),(g 10,a 10,b 10),(g 9,a 9,b 9),(g 8,a 8,b 8),
+      (g 7,a 7,b 7),(g 6,a 6,b 6),(g 5,a 5,b 5),(g 4,a 4,b 4),(g 3,a 3,b 3),(g 2,a 2,b 2),(g 1,a 1,b 1),(g 0,a 0,b 0)] := rfl
+  rw [e] at t
+  simp only [decodeTest, List.getD, beq_iff_eq] at t
+  have c : decode (fun i => ([(g 13,a 13,b 13),(g 12,a 12,b 12),(g 11,a 11,b 11),(g 10,a 10,b 10),(g 9,a 9,b 9),(g 8,a 8,b 8),
+      (g 7,a 7,b 7),(g 6,a 6,b 6),(g 5,a 5,b 5),(g 4,a 4,b 4),(g 3,a 3,b 3),(g 2,a 2,b 2),(g 1,a 1,b 1),(g 0,a 0,b 0)][13-i]?.getD default).2.1) = decode a := by
+    apply decode_ext
+    intro i hi
+    have cases : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨ i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 ∨ i = 8 := by omega
+    rcases cases with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
+  rw [← c]
+  exact t
+
+/-- The history of eleven letters agrees with the black rule at its second place. -/
+def blackTest (h : List Letter) : Bool :=
+  ((h.getD 9 default).1 && !(h.getD 9 default).2.1) == ((h.getD 9 default).2.2 && !(h.getD 5 default).2.2)
+
+theorem blackCheck : search blackTest 11 [] = true := by decide +kernel
+
+theorem blackRule {g a b : Nat → Bool} (L : Law g a b) (clean : ∀ w ∈ banned, ∀ i, ¬ Spells g i w) :
+    (g 1 && !a 1) = (b 1 && !b 5) := by
+  have t := search_sound L clean (test := blackTest) 11 0 blackCheck
+  have e : hist g a b (0+11) = [(g 10,a 10,b 10),(g 9,a 9,b 9),(g 8,a 8,b 8),(g 7,a 7,b 7),(g 6,a 6,b 6),(g 5,a 5,b 5),(g 4,a 4,b 4),
+      (g 3,a 3,b 3),(g 2,a 2,b 2),(g 1,a 1,b 1),(g 0,a 0,b 0)] := rfl
+  rw [e] at t
+  simpa [blackTest, List.getD] using t

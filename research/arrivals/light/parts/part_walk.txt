@@ -1,0 +1,196 @@
+/-! ### The walk of a table against itself -/
+
+theorem walk_easy {a b : Tree} (va : a.valid = true) (vb : b.valid = true) (x y k t : Nat) {colours : Nat}
+    (ok : subset ((a.high <<< 1) &&& colours) b.low = true) (ha : (a.value x (k+2)).testBit t = true)
+    (hc : colours.testBit (t+1) = true) : (b.value y k).testBit (t+1) = true := by
+  apply (b.bounds vb _ _ _).1
+  apply subset_sound ok
+  have hi := (a.bounds va _ _ _).2 ha
+  simp [Nat.testBit_and, Nat.testBit_shiftLeft, hi, hc]
+
+theorem step_succ (d : Bool) (a j : Nat) :
+    (step d a).testBit (j+1) = xor (a.testBit j) (a.testBit (j+1) || a.testBit (j+2)) := by
+  rw [step_bit]; simp
+
+theorem step_zero (d : Bool) (a : Nat) : (step d a).testBit 0 = xor d (a.testBit 0 || a.testBit 1) := by
+  rw [step_bit]; simp
+
+theorem walk_sound {d0 d1 : Bool} (n : Nat) {a b : Tree} {colours k x t : Nat} {x1 x2 y0 y1 : Bool}
+    (ok : walk colours a b x1 x2 y0 y1 n = true) (va : a.valid = true) (vb : b.valid = true)
+    (hx1 : x1 = x.testBit (k+1)) (hx2 : x2 = x.testBit (k+2))
+    (hy0 : y0 = (step d0 x).testBit k) (hy1 : y1 = (step d0 x).testBit (k+1))
+    (ha : (a.value x (k+3)).testBit t = true) (hc : colours.testBit (t+1) = true) :
+    (b.value (per d0 d1 x) (k+1)).testBit (t+1) = true := by
+  induction n generalizing a b k x1 x2 y0 y1 with
+  | zero => exact walk_easy va vb x _ (k+1) t ok ha hc
+  | succ n ih =>
+    simp only [walk] at ok
+    split at ok
+    · rename_i h; exact walk_easy va vb x _ (k+1) t h ha hc
+    · obtain ⟨l, r⟩ := Bool.and_eq_true_iff.mp ok
+      have ey : (step d0 x).testBit (k+2) = xor x1 (x2 || x.testBit (k+3)) := by rw [hx1, hx2, step_succ]
+      have ez : (per d0 d1 x).testBit (k+1) = xor y0 (y1 || (step d0 x).testBit (k+2)) := by
+        rw [hy0, hy1, per, step_succ]
+      have next : ((a.child (x.testBit (k+3))).value x (k+1+3)).testBit t = true := by
+        rw [show k+1+3 = (k+3)+1 by omega, Tree.child_value]; exact ha
+      have fin : ((b.child ((per d0 d1 x).testBit (k+1))).value (per d0 d1 x) (k+1+1)).testBit (t+1) = true := by
+        cases hb : x.testBit (k+3)
+        · rw [hb] at next
+          rw [hb] at ey
+          have ey' : (step d0 x).testBit (k+2) = xor x1 x2 := by rw [ey]; simp
+          rw [ey'] at ez
+          rw [ez]
+          exact ih l (a.child_valid va _) (b.child_valid vb _) hx2 (by rw [hb]) hy1 ey'.symm next
+        · rw [hb] at next
+          rw [hb] at ey
+          have ey' : (step d0 x).testBit (k+2) = !x1 := by rw [ey]; simp
+          rw [ey'] at ez
+          rw [ez]
+          exact ih r (a.child_valid va _) (b.child_valid vb _) hx2 (by rw [hb]) hy1 ey'.symm next
+      simpa only [Tree.child_value] using fin
+
+theorem walk_start {table : Tree} {white black : Nat} {d0 d1 : Bool} (ok : walkAll table white black d0 d1 = true)
+    (x0 x1 x2 : Bool) : walkAt table white black d0 d1 x0 x1 x2 = true := by
+  have m (b : Bool) : b ∈ [false, true] := by cases b <;> simp
+  exact List.all_eq_true.mp (List.all_eq_true.mp (List.all_eq_true.mp ok x0 (m _)) x1 (m _)) x2 (m _)
+
+/-- A time of a row passes to the next time of the row one period later, when the first cell there has an allowed colour. -/
+theorem walk_all {table : Tree} {white black : Nat} {d0 d1 : Bool} (va : table.valid = true)
+    (ok : walkAll table white black d0 d1 = true) (x t : Nat) (ha : (table.value x 0).testBit t = true)
+    (hc : (if (per d0 d1 x).testBit 0 then black else white).testBit (t+1) = true) :
+    (table.value (per d0 d1 x) 0).testBit (t+1) = true := by
+  have w := walk_start ok (x.testBit 0) (x.testBit 1) (x.testBit 2)
+  simp only [walkAt] at w
+  have y0 : (step d0 x).testBit 0 = xor d0 (x.testBit 0 || x.testBit 1) := step_zero ..
+  have y1 : (step d0 x).testBit 1 = xor (x.testBit 0) (x.testBit 1 || x.testBit 2) := step_succ ..
+  have w0 : (per d0 d1 x).testBit 0 = xor d1 ((step d0 x).testBit 0 || (step d0 x).testBit 1) := by
+    rw [per, step_zero]
+  rw [← y0, ← y1, ← w0] at w
+  have start : ((((table.child (x.testBit 0)).child (x.testBit 1)).child (x.testBit 2)).value x 3).testBit t = true := by
+    rw [show (3:Nat) = 2+1 by rfl, Tree.child_value, show (2:Nat) = 1+1 by rfl, Tree.child_value, show (1:Nat) = 0+1 by rfl,
+      Tree.child_value]
+    exact ha
+  have vc := Tree.child_valid (Tree.child_valid (Tree.child_valid va (x.testBit 0)) (x.testBit 1)) (x.testBit 2)
+  have fin := walk_sound (d0 := d0) (d1 := d1) (k := 0) (x := x) (t := t) 46 w vc (Tree.child_valid va _) rfl rfl rfl rfl start hc
+  rw [← Tree.child_value table (per d0 d1 x) 0]
+  exact fin
+
+/-- The rows at successive periods. -/
+def rows (d0 d1 : Bool) (x : Nat) : Nat → Nat
+  | 0 => x
+  | i+1 => per d0 d1 (rows d0 d1 x i)
+
+/-- A row carries its time along a line for as long as its first cells have the line's colours. -/
+theorem march {table : Tree} {white black : Nat} {d0 d1 : Bool} (va : table.valid = true)
+    (ok : walkAll table white black d0 d1 = true) {x o n : Nat} (start : (table.value x 0).testBit o = true)
+    (cols : ∀ i, i < n → (if (rows d0 d1 x (i+1)).testBit 0 then black else white).testBit (o+(i+1)) = true) :
+    ∀ i, i ≤ n → (table.value (rows d0 d1 x i) 0).testBit (o+i) = true := by
+  intro i
+  induction i with
+  | zero => intro _; exact start
+  | succ i ih =>
+    intro hi
+    exact walk_all va ok _ (o+i) (ih (by omega)) (cols i (by omega))
+
+/-! ### Reading a table -/
+
+theorem leaves_value {p : Nat → Bool} {a : Tree} (h : leaves p a = true) (r k : Nat) : p (a.value r k) = true := by
+  induction a generalizing k with
+  | leaf m => exact h
+  | node lo hi a b ia ib =>
+    simp only [leaves, Bool.and_eq_true] at h
+    simp only [Tree.value]
+    split
+    · exact ib h.2 _
+    · exact ia h.1 _
+
+theorem mem_codes {t : Nat} (n : Nat) {a : Tree} (va : a.valid = true) {k p r : Nat} (hp : p = r % 2^k)
+    (h : (a.value r k).testBit t = true) : r % 2^(k+n) ∈ codes t a k p n := by
+  induction n generalizing a k p with
+  | zero =>
+    have hi := (a.bounds va r k t).2 h
+    simp [codes, hi, hp]
+  | succ n ih =>
+    have hi := (a.bounds va r k t).2 h
+    simp only [codes, hi, ite_true, List.mem_append]
+    have kid := Tree.child_value a r k
+    have split : r % 2^(k+1) = r % 2^k + 2^k * (r / 2^k % 2) := by rw [Nat.pow_succ]; exact Nat.mod_mul ..
+    have bit := Nat.testBit_eq_decide_div_mod_eq (x := r) (i := k)
+    have lt : r / 2^k % 2 < 2 := Nat.mod_lt _ (by decide)
+    rw [show k+(n+1) = k+1+n by omega]
+    cases hb : r.testBit k
+    · left
+      have z : r / 2^k % 2 = 0 := by rw [hb] at bit; simp at bit; omega
+      refine ih (a.child_valid va _) (by rw [split, z, hp]; simp) ?_
+      rw [hb] at kid; rw [kid]; exact h
+    · right
+      have z : r / 2^k % 2 = 1 := by rw [hb] at bit; simpa using bit.symm
+      refine ih (a.child_valid va _) (by rw [split, z, hp]; simp) ?_
+      rw [hb] at kid; rw [kid]; exact h
+
+theorem codes_low {t : Nat} (n : Nat) {a : Tree} {k p c : Nat} (hp : p < 2^k) (hc : c ∈ codes t a k p n) : c % 2^k = p := by
+  induction n generalizing a k p with
+  | zero =>
+    simp only [codes] at hc
+    split at hc
+    · rw [List.mem_singleton.mp hc]; exact Nat.mod_eq_of_lt hp
+    · simp at hc
+  | succ n ih =>
+    simp only [codes] at hc
+    split at hc
+    · have two : (2:Nat)^(k+1) = 2^k + 2^k := by rw [Nat.pow_succ]; omega
+      have dvd : (2:Nat)^k ∣ 2^(k+1) := ⟨2, Nat.pow_succ ..⟩
+      rcases List.mem_append.mp hc with h | h
+      · have e := ih (by omega) h
+        rw [← Nat.mod_mod_of_dvd c dvd, e, Nat.mod_eq_of_lt hp]
+      · have e := ih (by omega) h
+        rw [← Nat.mod_mod_of_dvd c dvd, e, Nat.add_mod_right, Nat.mod_eq_of_lt hp]
+    · simp at hc
+
+/-- A row whose next `n` cells are those of a listed code carries the time. -/
+theorem codes_bit {t : Nat} (n : Nat) {a : Tree} (va : a.valid = true) (ht : tight t a n = true) {k p c r : Nat}
+    (hp : p < 2^k) (hc : c ∈ codes t a k p n) (same : ∀ i, i < n → r.testBit (k+i) = c.testBit (k+i)) :
+    (a.value r k).testBit t = true := by
+  have easy (hi : a.high.testBit t = true) (e : (a.high.testBit t == a.low.testBit t) = true) : (a.value r k).testBit t = true := by
+    apply (a.bounds va r k t).1
+    rw [← beq_iff_eq.mp e]
+    exact hi
+  induction n generalizing a k p with
+  | zero =>
+    simp only [codes] at hc
+    split at hc
+    · rename_i hi; exact easy hi ht
+    · simp at hc
+  | succ n ih =>
+    simp only [codes] at hc
+    split at hc
+    · rename_i hi
+      simp only [tight, Bool.or_eq_true, Bool.and_eq_true] at ht
+      rcases ht with ht | ⟨tl, tr⟩
+      · exact easy hi ht
+      · have two : (2:Nat)^(k+1) = 2^k + 2^k := by rw [Nat.pow_succ]; omega
+        have e0 : r.testBit k = c.testBit k := same 0 (by omega)
+        have rest : ∀ i, i < n → r.testBit (k+1+i) = c.testBit (k+1+i) := fun i hi => by
+          have := same (i+1) (by omega)
+          rw [show k+(i+1) = k+1+i by omega] at this; exact this
+        have fin (b : Bool) (tb : tight t (a.child b) n = true) (q : Nat) (hq : q < 2^(k+1))
+            (h : c ∈ codes t (a.child b) (k+1) q n) (hb : c.testBit k = b) : (a.value r k).testBit t = true := by
+          rw [← Tree.child_value a r k, e0, hb]
+          refine ih (a.child_valid va _) tb hq h rest (fun hi e => ?_)
+          apply ((a.child b).bounds (a.child_valid va _) r (k+1) t).1
+          rw [← beq_iff_eq.mp e]
+          exact hi
+        rcases List.mem_append.mp hc with h | h
+        · refine fin false tl p (by omega) h ?_
+          have low := codes_low n (by omega) h
+          have b := congrArg (fun v : Nat => v.testBit k) low
+          simp only [Nat.testBit_mod_two_pow] at b
+          rw [Nat.testBit_lt_two_pow hp] at b
+          simpa using b
+        · refine fin true tr (p+2^k) (by omega) h ?_
+          have low := codes_low n (by omega) h
+          have b := congrArg (fun v : Nat => v.testBit k) low
+          simp only [Nat.testBit_mod_two_pow] at b
+          rw [show p+2^k = 2^k+p from Nat.add_comm .., Nat.testBit_two_pow_add_eq, Nat.testBit_lt_two_pow hp] at b
+          simpa using b
+    · simp at hc

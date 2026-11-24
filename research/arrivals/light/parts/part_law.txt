@@ -1,0 +1,89 @@
+/-! ### The net on a driven half obeys a local law -/
+
+/-- Column `0` alternates from `T`: black at `T + 2k`, white at `T + 2k + 1`. -/
+def Alt (F : Nat → Nat → Bool) (T : Nat) : Prop := ∀ k, F (T+2*k) 0 = true ∧ F (T+2*k+1) 0 = false
+
+/-- The gate, or kick: the first cell at the `k`-th white tick. -/
+def gate (F : Nat → Nat → Bool) (T k : Nat) : Bool := F (T+2*k+1) 1
+/-- The net at the white tick: the first cell exclusive-or the second. -/
+def net (F : Nat → Nat → Bool) (T k : Nat) : Bool := xor (F (T+2*k+1) 1) (F (T+2*k+1) 2)
+/-- The net at the black tick after the white one: the first cell without the second. -/
+def blackNet (F : Nat → Nat → Bool) (T k : Nat) : Bool := F (T+2*k+2) 1 && !F (T+2*k+2) 2
+
+/-- The cells of a row at a white tick are those of the black row before it, whose wall is black; the two ticks after it are
+those of two more. Checked on the cells of the black row before. -/
+theorem localLaw : ∀ c1 c2 c3 c4 c5 c6 : Bool,
+    let x := rule true c1 c2; let y := rule c1 c2 c3; let z := rule c2 c3 c4; let w := rule c3 c4 c5; let v := rule c4 c5 c6
+    let x' := rule true (rule false x y) (rule x y z)
+    let y' := rule (rule false x y) (rule x y z) (rule y z w)
+    let z' := rule (rule x y z) (rule y z w) (rule z w v)
+    let x'' := rule true (rule false x' y') (rule x' y' z')
+    (x' = false → xor x' y' = !(xor x y)) ∧ (x' = true → xor x y = false) ∧ (x = true → x' = false) ∧
+    (x = true → xor x y = true → (rule false x y && !rule x y z) = true → x'' = false) ∧
+    ((rule false x y && !rule x y z) = true → x = true) ∧
+    (x = true → xor x y = false → (rule false x y && !rule x y z) = true) := by
+  decide +kernel
+
+/-- The law of the gate `g`, the net `a` and the black net `b`. -/
+structure Law (g a b : Nat → Bool) : Prop where
+  toggle : ∀ k, g (k+1) = false → a (k+1) = !a k
+  reset : ∀ k, g (k+1) = true → a k = false
+  lone : ∀ k, g k = true → g (k+1) = false
+  skip : ∀ k, g k = true → a k = true → b k = true → g (k+2) = false
+  black : ∀ k, b k = true → g k = true
+  odd : ∀ k, g k = true → a k = false → b k = true
+
+theorem Law.shift {g a b : Nat → Bool} (L : Law g a b) (m : Nat) : Law (fun k => g (m+k)) (fun k => a (m+k)) (fun k => b (m+k)) where
+  toggle k h := L.toggle (m+k) h
+  reset k h := L.reset (m+k) h
+  lone k h := L.lone (m+k) h
+  skip k := L.skip (m+k)
+  black k := L.black (m+k)
+  odd k := L.odd (m+k)
+
+/-- **The law.** On every right half beside an alternating column, at every white tick: at a tick that is not a kick the net is
+the complement of the one before; at a kick the net before was white; kicks stand alone; and the black net sees only kicks,
+every kick whose net is white, and a kick whose net is black only if the one after next is white. -/
+theorem law_of_alt {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat} (h : Alt F T) : Law (gate F T) (net F T) (blackNet F T) := by
+  have main (k : Nat) :
+      (gate F T (k+1) = false → net F T (k+1) = !net F T k) ∧ (gate F T (k+1) = true → net F T k = false) ∧
+      (gate F T k = true → gate F T (k+1) = false) ∧
+      (gate F T k = true → net F T k = true → blackNet F T k = true → gate F T (k+2) = false) ∧
+      (blackNet F T k = true → gate F T k = true) ∧
+      (gate F T k = true → net F T k = false → blackNet F T k = true) := by
+    generalize hu : T+2*k = u
+    have hb : F u 0 = true := by rw [← hu]; exact (h k).1
+    have hw : F (u+1) 0 = false := by rw [← hu]; exact (h k).2
+    have hb' : F (u+2) 0 = true := by have := (h (k+1)).1; rwa [show T+2*(k+1) = u+2 by omega] at this
+    have hw' : F (u+3) 0 = false := by have := (h (k+1)).2; rwa [show T+2*(k+1)+1 = u+3 by omega] at this
+    have hb'' : F (u+4) 0 = true := by have := (h (k+2)).1; rwa [show T+2*(k+2) = u+4 by omega] at this
+    have e0 : F (u+1) 1 = rule true (F u 1) (F u 2) := by rw [← hb]; exact hF u 0
+    have e1 : F (u+1) 2 = rule (F u 1) (F u 2) (F u 3) := hF u 1
+    have e2 : F (u+1) 3 = rule (F u 2) (F u 3) (F u 4) := hF u 2
+    have e3 : F (u+1) 4 = rule (F u 3) (F u 4) (F u 5) := hF u 3
+    have e4 : F (u+1) 5 = rule (F u 4) (F u 5) (F u 6) := hF u 4
+    have m1 : F (u+2) 1 = rule false (F (u+1) 1) (F (u+1) 2) := by rw [← hw]; exact hF (u+1) 0
+    have m2 : F (u+2) 2 = rule (F (u+1) 1) (F (u+1) 2) (F (u+1) 3) := hF (u+1) 1
+    have m3 : F (u+2) 3 = rule (F (u+1) 2) (F (u+1) 3) (F (u+1) 4) := hF (u+1) 2
+    have m4 : F (u+2) 4 = rule (F (u+1) 3) (F (u+1) 4) (F (u+1) 5) := hF (u+1) 3
+    have n1 : F (u+3) 1 = rule true (F (u+2) 1) (F (u+2) 2) := by rw [← hb']; exact hF (u+2) 0
+    have n2 : F (u+3) 2 = rule (F (u+2) 1) (F (u+2) 2) (F (u+2) 3) := hF (u+2) 1
+    have n3 : F (u+3) 3 = rule (F (u+2) 2) (F (u+2) 3) (F (u+2) 4) := hF (u+2) 2
+    have q1 : F (u+4) 1 = rule false (F (u+3) 1) (F (u+3) 2) := by rw [← hw']; exact hF (u+3) 0
+    have q2 : F (u+4) 2 = rule (F (u+3) 1) (F (u+3) 2) (F (u+3) 3) := hF (u+3) 1
+    have r1 : F (u+5) 1 = rule true (F (u+4) 1) (F (u+4) 2) := by rw [← hb'']; exact hF (u+4) 0
+    have k1 : T+2*(k+1)+1 = u+3 := by omega
+    have k2 : T+2*(k+2)+1 = u+5 := by omega
+    have k1' : T+2*(k+1)+2 = u+4 := by omega
+    simp only [gate, net, blackNet, k1, k2, show T+2*k+1 = u+1 by omega, show T+2*k+2 = u+2 by omega]
+    rw [r1, q1, q2, n1, n2, n3, m1, m2, m3, m4, e0, e1, e2, e3, e4]
+    have g := localLaw (F u 1) (F u 2) (F u 3) (F u 4) (F u 5) (F u 6)
+    simpa only [] using g
+  exact ⟨fun k => (main k).1, fun k => (main k).2.1, fun k => (main k).2.2.1, fun k => (main k).2.2.2.1,
+    fun k => (main k).2.2.2.2.1, fun k => (main k).2.2.2.2.2⟩
+
+/-- Two successive nets are equal exactly at an odd kick. -/
+theorem Law.equal {g a b : Nat → Bool} (L : Law g a b) (k : Nat) : (a k == a (k+1)) = (g (k+1) && !a (k+1)) := by
+  cases h : g (k+1)
+  · rw [L.toggle k h]; cases a k <;> rfl
+  · rw [L.reset k h]; cases a (k+1) <;> rfl

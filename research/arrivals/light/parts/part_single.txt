@@ -1,0 +1,383 @@
+/-! ### Every right half: the decoders and the marks -/
+
+theorem leastOf {P : Nat → Prop} (n : Nat) (hn : P n) : ∃ m, P m ∧ ∀ q, q < m → ¬ P q := by
+  induction n using Nat.strongRecOn with
+  | ind n ih =>
+    by_cases h : ∃ q, q < n ∧ P q
+    · obtain ⟨q, hq, pq⟩ := h; exact ih q hq pq
+    · exact ⟨n, hn, fun q hq p => h ⟨q, hq, p⟩⟩
+
+section
+variable {F : Nat → Nat → Bool} {T : Nat}
+
+/-- **Kicks from the white nets.** Nine nets, at six past white ticks, the kick and two after, tell whether a kick is there. -/
+theorem kick_of_white_nets (hF : IsR30 F) (h : Alt F T) {k : Nat} (s : InSet F T k) :
+    gate F T (k+6) = decode (fun i => net F T (k+i)) := by
+  have d := decoder ((law_of_alt hF h).shift k) (clean_of_set hF h s)
+  simpa using d
+
+/-- **An odd kick from two nets.** The net at two successive white ticks is equal exactly at a kick whose net is white.
+It needs no closed set. -/
+theorem odd_of_equal_nets (hF : IsR30 F) (h : Alt F T) (k : Nat) :
+    (net F T k == net F T (k+1)) = (gate F T (k+1) && !net F T (k+1)) :=
+  (law_of_alt hF h).equal k
+
+/-- **An odd kick from two black nets,** four white ticks apart. -/
+theorem odd_of_black_nets (hF : IsR30 F) (h : Alt F T) {k : Nat} (s : InSet F T k) :
+    (gate F T (k+1) && !net F T (k+1)) = (blackNet F T (k+1) && !blackNet F T (k+5)) := by
+  have d := blackRule ((law_of_alt hF h).shift k) (clean_of_set hF h s)
+  simpa using d
+
+/-- After a kick, the number of white ticks to the next one, when that number is `n`. -/
+def NextKick (F : Nat → Nat → Bool) (T k n : Nat) : Prop :=
+  1 ≤ n ∧ gate F T (k+n) = true ∧ ∀ i, 0 < i → i < n → gate F T (k+i) = false
+
+theorem law_parity {g a b : Nat → Bool} (L : Law g a b) : ∀ (n k : Nat), g (k+(n+1)) = true →
+    (∀ i, 0 < i → i < n+1 → g (k+i) = false) → a k = decide ((n+1) % 2 = 0)
+  | 0, k, h, _ => by
+    have := L.reset k h
+    simpa using this
+  | n+1, k, h, quiet => by
+    have q := quiet 1 (by omega) (by omega)
+    have ih := law_parity L n (k+1) (by rw [show k+1+(n+1) = k+(n+1+1) by omega]; exact h)
+      (fun i hi hn => by rw [show k+1+i = k+(1+i) by omega]; exact quiet (1+i) (by omega) (by omega))
+    have t := L.toggle k q
+    rw [ih] at t
+    have : a k = !decide ((n+1) % 2 = 0) := by
+      cases h1 : a k <;> rw [h1] at t <;> cases h2 : decide ((n+1) % 2 = 0) <;> rw [h2] at t <;> first | rfl | cases t
+    rw [this, ← decide_not]
+    exact decide_eq_decide.mpr (by omega)
+
+/-- **The net and the return.** A kick whose next kick is `n` white ticks later has net black exactly when `n` is even.
+It needs no closed set. -/
+theorem net_of_return (hF : IsR30 F) (h : Alt F T) {k n : Nat} (nk : NextKick F T k n) : net F T k = decide (n % 2 = 0) := by
+  obtain ⟨n, rfl⟩ : ∃ m, n = m+1 := ⟨n-1, by have := nk.1; omega⟩
+  exact law_parity (law_of_alt hF h) n k nk.2.1 nk.2.2
+
+/-- In the closed set every kick has a next one, two to five white ticks later. -/
+theorem next_kick (hF : IsR30 F) (h : Alt F T) {k : Nat} (s : InSet F T k) (g : gate F T k = true) :
+    ∃ n, 2 ≤ n ∧ n ≤ 5 ∧ NextKick F T k n := by
+  have none1 := (law_of_alt hF h).lone k g
+  have ex : ∃ n, 1 ≤ n ∧ n ≤ 5 ∧ gate F T (k+n) = true := by
+    apply Classical.byContradiction
+    intro no
+    refine clean_of_set hF h s [false, false, false, false, false] (by decide) 1 (fun j hj => ?_)
+    have j5 : j < 5 := by simpa using hj
+    have q : gate F T (k+(1+j)) = false := by
+      cases e : gate F T (k+(1+j))
+      · rfl
+      · exact absurd ⟨1+j, by omega, by omega, e⟩ no
+    have table : ([false, false, false, false, false] : List Bool).getD j false = false := by
+      have : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 ∨ j = 4 := by omega
+      rcases this with rfl | rfl | rfl | rfl | rfl <;> rfl
+    simp only [table]
+    rw [show k+(1+j) = k+(1+j) from rfl]
+    exact q
+  obtain ⟨n0, l0, u0, w0⟩ := ex
+  -- the least kick after k
+  obtain ⟨n, hn, least⟩ : ∃ n, (1 ≤ n ∧ gate F T (k+n) = true) ∧ ∀ m, (1 ≤ m ∧ gate F T (k+m) = true) → n ≤ m := by
+    obtain ⟨m, hm, small⟩ := leastOf (P := fun n => 1 ≤ n ∧ gate F T (k+n) = true) n0 ⟨l0, w0⟩
+    exact ⟨m, hm, fun q hq => Nat.le_of_not_lt fun l => small q l hq⟩
+  have n1 : n ≠ 1 := by
+    intro e; subst e; rw [none1] at hn; cases hn.2
+  refine ⟨n, by omega, ?_, by omega, hn.2, fun i hi hin => ?_⟩
+  · have := least n0 ⟨l0, w0⟩; omega
+  · cases e : gate F T (k+i)
+    · rfl
+    · have := least i ⟨hi, e⟩
+      omega
+
+/-- **The odd kick.** In the closed set a kick has white net exactly when the next one is three or five white ticks later. -/
+theorem odd_iff (hF : IsR30 F) (h : Alt F T) {k : Nat} (s : InSet F T k) (g : gate F T k = true) :
+    net F T k = false ↔ ∃ n, (n = 3 ∨ n = 5) ∧ NextKick F T k n := by
+  obtain ⟨n, l, u, nk⟩ := next_kick hF h s g
+  have e := net_of_return hF h nk
+  constructor
+  · intro z
+    rw [e] at z
+    have : n = 3 ∨ n = 5 := by
+      have : ¬ n % 2 = 0 := by simpa using z
+      omega
+    exact ⟨n, this, nk⟩
+  · rintro ⟨m, hm, mk⟩
+    rw [net_of_return hF h mk]
+    rcases hm with rfl | rfl <;> rfl
+
+end
+
+/-! ### Periodicity passes between the streams -/
+
+/-- A kick whose net is white: its next kick is an odd number of white ticks later (`odd_iff`). -/
+def oddKick (F : Nat → Nat → Bool) (T k : Nat) : Bool := gate F T k && !net F T k
+
+section
+variable {F : Nat → Nat → Bool} {T : Nat}
+
+/-- A difference that is constant under a shift repeats after twice the shift. -/
+theorem periodic_of_equalities {f : Nat → Bool} (per : EventuallyPeriodic (fun k => f k == f (k+1))) : EventuallyPeriodic f := by
+  obtain ⟨L, p, hp, per⟩ := per
+  have flip (n : Nat) (hn : L ≤ n) : xor (f (n+1+p)) (f (n+1)) = xor (f (n+p)) (f n) := by
+    have q : (f (n+p) == f (n+p+1)) = (f n == f (n+1)) := per n hn
+    rw [show n+p+1 = n+1+p by omega] at q
+    revert q
+    cases f (n+p) <;> cases f (n+1+p) <;> cases f n <;> cases f (n+1) <;> decide
+  have same (m n : Nat) (hn : L ≤ n) : xor (f (n+m+p)) (f (n+m)) = xor (f (n+p)) (f n) := by
+    induction m with
+    | zero => rfl
+    | succ m ih =>
+      have := flip (n+m) (by omega)
+      rw [show n+(m+1) = n+m+1 by omega, this, ih]
+  refine ⟨L, 2*p, by omega, fun n hn => ?_⟩
+  have e := same p n hn
+  rw [show n+p+p = n+2*p by omega] at e
+  revert e
+  cases f (n+2*p) <;> cases f (n+p) <;> cases f n <;> decide
+
+/-- If the net on the white ticks is eventually periodic, so is the gate. -/
+theorem gate_periodic_of_net (hF : IsR30 F) (h : Alt F T) {K : Nat} (s : InSet F T K) (per : EventuallyPeriodic (net F T)) :
+    EventuallyPeriodic (gate F T) := by
+  obtain ⟨L, p, hp, per⟩ := per
+  have inset (k : Nat) (hk : K ≤ k) : InSet F T k := by
+    have := stays hF h s (k-K)
+    rwa [show K+(k-K) = k by omega] at this
+  refine ⟨K+L+6, p, hp, fun k hk => ?_⟩
+  obtain ⟨j, rfl⟩ : ∃ j, k = j+6 := ⟨k-6, by omega⟩
+  have a := kick_of_white_nets hF h (inset j (by omega))
+  have b := kick_of_white_nets hF h (inset (j+p) (by omega))
+  rw [show j+6+p = j+p+6 by omega, b, a]
+  exact decode_ext (fun i _ => by
+    rw [show j+p+i = j+i+p by omega]; exact per (j+i) (by omega))
+
+/-- If the gate is eventually periodic, so is the net on the white ticks. -/
+theorem net_periodic_of_gate (hF : IsR30 F) (h : Alt F T) {K : Nat} (s : InSet F T K) (per : EventuallyPeriodic (gate F T)) :
+    EventuallyPeriodic (net F T) := by
+  obtain ⟨L, p, hp, per⟩ := per
+  have inset (k : Nat) (hk : K ≤ k) : InSet F T k := by
+    have := stays hF h s (k-K)
+    rwa [show K+(k-K) = k by omega] at this
+  -- every white tick in the set has a kick at most five ticks later
+  have soon (k : Nat) (hk : K ≤ k) : ∃ n, NextKick F T k n := by
+    apply Classical.byContradiction
+    intro no
+    refine clean_of_set hF h (inset k hk) [false, false, false, false, false] (by decide) 1 (fun j hj => ?_)
+    have j5 : j < 5 := by simpa using hj
+    have table : ([false, false, false, false, false] : List Bool).getD j false = false := by
+      have : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 ∨ j = 4 := by omega
+      rcases this with rfl | rfl | rfl | rfl | rfl <;> rfl
+    simp only [table]
+    cases e : gate F T (k+(1+j))
+    · rfl
+    · exfalso
+      obtain ⟨m, hm, small⟩ := leastOf (P := fun n => 1 ≤ n ∧ gate F T (k+n) = true) (1+j) ⟨by omega, e⟩
+      exact no ⟨m, hm.1, hm.2, fun i hi him => by
+        cases g : gate F T (k+i)
+        · rfl
+        · exact absurd ⟨hi, g⟩ (small i him)⟩
+  refine ⟨K+L, p, hp, fun k hk => ?_⟩
+  obtain ⟨n, nk⟩ := soon k (by omega)
+  have nk' : NextKick F T (k+p) n := by
+    refine ⟨nk.1, ?_, fun i hi him => ?_⟩
+    · rw [show k+p+n = k+n+p by omega, per (k+n) (by omega)]; exact nk.2.1
+    · rw [show k+p+i = k+i+p by omega, per (k+i) (by omega)]; exact nk.2.2 i hi him
+  rw [net_of_return hF h nk', net_of_return hF h nk]
+
+/-- If the odd kicks are eventually periodic, so is the net on the white ticks. No closed set is needed. -/
+theorem net_periodic_of_odd (hF : IsR30 F) (h : Alt F T) (per : EventuallyPeriodic (oddKick F T)) : EventuallyPeriodic (net F T) := by
+  obtain ⟨L, p, hp, per⟩ := per
+  apply periodic_of_equalities
+  refine ⟨L, p, hp, fun k hk => ?_⟩
+  simp only [odd_of_equal_nets hF h]
+  rw [show k+p+1 = k+1+p by omega]
+  exact per (k+1) (by omega)
+
+/-- If the net on the white ticks is eventually periodic, so are the odd kicks. -/
+theorem odd_periodic_of_net (hF : IsR30 F) (h : Alt F T) (per : EventuallyPeriodic (net F T)) : EventuallyPeriodic (oddKick F T) := by
+  obtain ⟨L, p, hp, per⟩ := per
+  refine ⟨L+1, p, hp, fun k hk => ?_⟩
+  obtain ⟨j, rfl⟩ : ∃ j, k = j+1 := ⟨k-1, by omega⟩
+  rw [show j+1+p = j+p+1 by omega]
+  have a := odd_of_equal_nets hF h (j+p)
+  have b := odd_of_equal_nets hF h j
+  show (gate F T (j+p+1) && !net F T (j+p+1)) = (gate F T (j+1) && !net F T (j+1))
+  rw [← a, ← b, show j+p+1 = j+1+p by omega, per j (by omega), per (j+1) (by omega)]
+
+/-- If the net on the black ticks is eventually periodic, so are the odd kicks. -/
+theorem odd_periodic_of_black (hF : IsR30 F) (h : Alt F T) {K : Nat} (s : InSet F T K) (per : EventuallyPeriodic (blackNet F T)) :
+    EventuallyPeriodic (oddKick F T) := by
+  obtain ⟨L, p, hp, per⟩ := per
+  have inset (k : Nat) (hk : K ≤ k) : InSet F T k := by
+    have := stays hF h s (k-K)
+    rwa [show K+(k-K) = k by omega] at this
+  refine ⟨K+L+1, p, hp, fun k hk => ?_⟩
+  obtain ⟨j, rfl⟩ : ∃ j, k = j+1 := ⟨k-1, by omega⟩
+  have a := odd_of_black_nets hF h (inset (j+p) (by omega))
+  have b := odd_of_black_nets hF h (inset j (by omega))
+  show (gate F T (j+1+p) && !net F T (j+1+p)) = (gate F T (j+1) && !net F T (j+1))
+  rw [show j+1+p = j+p+1 by omega, a, b, show j+p+1 = j+1+p by omega, per (j+1) (by omega),
+    show j+p+5 = j+5+p by omega, per (j+5) (by omega)]
+
+/-- **The three streams.** Beside an alternating column every right half in the closed set has an eventually periodic gate, white
+net and odd kicks together; and if its black net is eventually periodic, so are they. -/
+theorem periodic_together (hF : IsR30 F) (h : Alt F T) {K : Nat} (s : InSet F T K) :
+    (EventuallyPeriodic (gate F T) ↔ EventuallyPeriodic (net F T)) ∧
+    (EventuallyPeriodic (net F T) ↔ EventuallyPeriodic (oddKick F T)) ∧
+    (EventuallyPeriodic (blackNet F T) → EventuallyPeriodic (gate F T)) :=
+  ⟨⟨net_periodic_of_gate hF h s, gate_periodic_of_net hF h s⟩, ⟨odd_periodic_of_net hF h, net_periodic_of_odd hF h⟩,
+    fun per => gate_periodic_of_net hF h s (net_periodic_of_odd hF h (odd_periodic_of_black hF h s per))⟩
+
+end
+
+/-! ### Right halves driven from the clock -/
+
+/-- The right half `R`, driven by the column that is black at even ticks, alternates from the start. -/
+theorem alt_drv (R : Nat → Bool) : Alt (drv altCol R) 0 := by
+  intro k
+  rw [drv_col0, drv_col0]
+  refine ⟨?_, ?_⟩
+  · rw [show 0+2*k = 2*k by omega]; exact Rule30PeriodTwoSideways.altCol_even k
+  · rw [show 0+2*k+1 = 2*k+1 by omega]; exact Rule30PeriodTwoSideways.altCol_odd k
+
+/-- **Every right half,** of any support, beside the alternating column enters the closed set, or reads a kick once in four for
+ever. -/
+theorem every_half (R : Nat → Bool) : (∃ k, InSet (drv altCol R) 0 k) ∨
+    ∃ φ N, ∀ k, N ≤ k → gate (drv altCol R) 0 k = decide ((k+φ) % 4 = 0) :=
+  enters_or_four (drv_isR30 _ _) (alt_drv R)
+
+/-! ### The hypothetical alternating tail of the single cell -/
+
+/-- The centre alternates from `T`, black first. -/
+def AltCenter (T : Nat) : Prop := ∀ k, cell (T+2*k) 0 = true ∧ cell (T+2*k+1) 0 = false
+
+theorem AltCenter.alt {T : Nat} (h : AltCenter T) : Alt trueRight T := fun k => ⟨(h k).1, (h k).2⟩
+
+/-- Masked Jen: the kicks are not eventually periodic. -/
+theorem gate_not_periodic {T : Nat} (h : AltCenter T) : ¬ EventuallyPeriodic (gate trueRight T) := by
+  rintro ⟨L, p, hp, per⟩
+  have white (t : Nat) (ht : T ≤ t) (c : cell t 0 = false) : ∃ k, t = T+2*k+1 := by
+    rcases Nat.lt_or_ge ((t-T) % 2) 1 with e | e
+    · exfalso
+      obtain ⟨k, rfl⟩ : ∃ k, t = T+2*k := ⟨(t-T)/2, by omega⟩
+      rw [(h k).1] at c; cases c
+    · exact ⟨(t-T)/2, by omega⟩
+  refine masked_jen_center (T := T) (P := 2*p) (by omega) (fun t ht => ?_) (T+2*L+1) (fun t ht c => ?_)
+  · obtain ⟨k, rfl | rfl⟩ : ∃ k, t = T+2*k ∨ t = T+2*k+1 := ⟨(t-T)/2, by omega⟩
+    · rw [show T+2*k+2*p = T+2*(k+p) by omega, (h _).1, (h _).1]
+    · rw [show T+2*k+1+2*p = T+2*(k+p)+1 by omega, (h _).2, (h _).2]
+  · obtain ⟨k, rfl⟩ := white t (by omega) c
+    have := per k (by omega)
+    rw [show T+2*k+1+2*p = T+2*(k+p)+1 by omega]
+    exact this
+
+/-- **Entry of the single cell.** From some white tick on, the window of the single cell is in the closed set. -/
+theorem single_enters {T : Nat} (h : AltCenter T) : ∃ K, InSet trueRight T K := by
+  rcases enters_or_four trueRight_isR30 h.alt with s | ⟨φ, N, f⟩
+  · exact s
+  · exfalso
+    refine gate_not_periodic h ⟨N, 4, by omega, fun k hk => ?_⟩
+    rw [f (k+4) (by omega), f k hk]
+    congr 1
+    apply propext
+    omega
+
+/-- **White net.** If the centre alternates for ever, the net on the white ticks is not eventually periodic. -/
+theorem white_net_aperiodic {T : Nat} (h : AltCenter T) : ¬ EventuallyPeriodic (net trueRight T) := fun per => by
+  obtain ⟨K, s⟩ := single_enters h
+  exact gate_not_periodic h (gate_periodic_of_net trueRight_isR30 h.alt s per)
+
+/-- **Odd kicks.** If the centre alternates for ever, the kicks whose next one is three or five white ticks later are not
+eventually periodic. -/
+theorem odd_kicks_aperiodic {T : Nat} (h : AltCenter T) : ¬ EventuallyPeriodic (oddKick trueRight T) := fun per =>
+  white_net_aperiodic h (net_periodic_of_odd trueRight_isR30 h.alt per)
+
+/-- **Black net.** If the centre alternates for ever, the net on the black ticks is not eventually periodic. -/
+theorem black_net_aperiodic {T : Nat} (h : AltCenter T) : ¬ EventuallyPeriodic (blackNet trueRight T) := fun per => by
+  obtain ⟨K, s⟩ := single_enters h
+  exact odd_kicks_aperiodic h (odd_periodic_of_black trueRight_isR30 h.alt s per)
+
+/-! ### Lowry's net and shell -/
+
+def source (j : Int) (t : Nat) : Bool := cell t j && !cell t (j+1)
+def lowryNet (t : Nat) : Bool := xor (source (-1) t) (xor (source 1 t) (source 0 (t+1)))
+def lowryShell (t : Nat) : Bool := xor (cell t (-2)) (cell t 2)
+
+/-- On a white tick whose next tick is black, Lowry's net is the first cell exclusive-or the second. -/
+theorem lowry_white (t : Nat) (w : cell t 0 = false) (b : cell (t+1) 0 = true) : lowryNet t = xor (cell t 1) (cell t 2) := by
+  have step : cell (t+1) 0 = rule (cell t (-1)) (cell t 0) (cell t 1) := rfl
+  have next : cell (t+1) 1 = rule (cell t 0) (cell t 1) (cell t 2) := rfl
+  show xor (cell t (-1) && !cell t 0) (xor (cell t 1 && !cell t 2) (cell (t+1) 0 && !cell (t+1) 1)) = _
+  rw [w] at step next
+  have b' := b
+  rw [step] at b'
+  rw [w, b, next]
+  exact (by decide : ∀ L x y : Bool, rule L false x = true → xor (L && !false) (xor (x && !y) (true && !rule false x y)) = xor x y)
+    _ _ _ b'
+
+/-- On a black tick whose next tick is white, Lowry's net is the first cell without the second. -/
+theorem lowry_black (t : Nat) (b : cell t 0 = true) (w : cell (t+1) 0 = false) : lowryNet t = (cell t 1 && !cell t 2) := by
+  show xor (cell t (-1) && !cell t 0) (xor (cell t 1 && !cell t 2) (cell (t+1) 0 && !cell (t+1) 1)) = _
+  rw [b, w]
+  cases cell t (-1) <;> cases cell t 1 <;> cases cell t 2 <;> rfl
+
+/-- Lowry's identity at two ticks. -/
+theorem two_step (t : Nat) : cell (t+2) 0 = xor (lowryShell t) (lowryNet t) := by
+  show rule (rule (cell t (-2)) (cell t (-1)) (cell t 0)) (rule (cell t (-1)) (cell t 0) (cell t 1))
+      (rule (cell t 0) (cell t 1) (cell t 2)) = _
+  simp only [lowryShell, lowryNet, source]
+  show rule (rule (cell t (-2)) (cell t (-1)) (cell t 0)) (rule (cell t (-1)) (cell t 0) (cell t 1))
+      (rule (cell t 0) (cell t 1) (cell t 2)) = xor (xor (cell t (-2)) (cell t 2))
+        (xor (cell t (-1) && !cell t 0) (xor (cell t 1 && !cell t 2)
+          (rule (cell t (-1)) (cell t 0) (cell t 1) && !rule (cell t 0) (cell t 1) (cell t 2))))
+  exact (by decide : ∀ a b c d e : Bool, rule (rule a b c) (rule b c d) (rule c d e) =
+    xor (xor a e) (xor (b && !c) (xor (d && !e) (rule b c d && !rule c d e)))) _ _ _ _ _
+
+section
+variable {T : Nat}
+
+/-- Lowry's net at the white and the black ticks of an alternating centre is the net of its right half. -/
+theorem lowry_at_white (h : AltCenter T) (k : Nat) : lowryNet (T+2*k+1) = net trueRight T k := by
+  have b := (h (k+1)).1
+  rw [show T+2*(k+1) = T+2*k+1+1 by omega] at b
+  exact lowry_white _ (h k).2 b
+
+theorem lowry_at_black (h : AltCenter T) (k : Nat) : lowryNet (T+2*k+2) = blackNet trueRight T k := by
+  have b := (h (k+1)).1
+  have w := (h (k+1)).2
+  rw [show T+2*(k+1) = T+2*k+2 by omega] at b
+  rw [show T+2*(k+1)+1 = T+2*k+2+1 by omega] at w
+  exact lowry_black _ b w
+
+theorem shell_at_white (h : AltCenter T) (k : Nat) : lowryShell (T+2*k+1) = net trueRight T k := by
+  have e := two_step (T+2*k+1)
+  rw [show T+2*k+1+2 = T+2*(k+1)+1 by omega, (h (k+1)).2, lowry_at_white h k] at e
+  exact (by decide : ∀ a b : Bool, false = xor a b → a = b) _ _ e
+
+theorem shell_at_black (h : AltCenter T) (k : Nat) : lowryShell (T+2*k+2) = !blackNet trueRight T k := by
+  have e := two_step (T+2*k+2)
+  rw [show T+2*k+2+2 = T+2*(k+2) by omega, (h (k+2)).1, lowry_at_black h k] at e
+  exact (by decide : ∀ a b : Bool, true = xor a b → a = !b) _ _ e
+
+/-- **Both phases of Lowry's net and shell.** If the centre of the single cell alternates from `T`, black first, then Lowry's net
+and his shell are not eventually periodic on the white ticks, nor on the black ones. -/
+theorem both_phases (h : AltCenter T) :
+    ¬ EventuallyPeriodic (fun k => lowryNet (T+2*k+1)) ∧ ¬ EventuallyPeriodic (fun k => lowryNet (T+2*k+2)) ∧
+    ¬ EventuallyPeriodic (fun k => lowryShell (T+2*k+1)) ∧ ¬ EventuallyPeriodic (fun k => lowryShell (T+2*k+2)) := by
+  have eqw : (fun k => lowryNet (T+2*k+1)) = net trueRight T := funext (lowry_at_white h)
+  have eqb : (fun k => lowryNet (T+2*k+2)) = blackNet trueRight T := funext (lowry_at_black h)
+  have eqsw : (fun k => lowryShell (T+2*k+1)) = net trueRight T := funext (shell_at_white h)
+  have eqsb : (fun k => lowryShell (T+2*k+2)) = fun k => !blackNet trueRight T k := funext (shell_at_black h)
+  refine ⟨by rw [eqw]; exact white_net_aperiodic h, by rw [eqb]; exact black_net_aperiodic h,
+    by rw [eqsw]; exact white_net_aperiodic h, ?_⟩
+  rw [eqsb]
+  rintro ⟨L, p, hp, per⟩
+  refine black_net_aperiodic h ⟨L, p, hp, fun k hk => ?_⟩
+  have := per k hk
+  cases h1 : blackNet trueRight T (k+p) <;> cases h2 : blackNet trueRight T k <;> simp_all
+
+/-- **The return.** In the alternating tail of the single cell, Lowry's net at two successive white ticks is equal exactly when the
+second is an odd kick: a kick whose next kick is three or five white ticks later. -/
+theorem lowry_odd_return (h : AltCenter T) (k : Nat) :
+    (lowryNet (T+2*k+1) == lowryNet (T+2*(k+1)+1)) = oddKick trueRight T (k+1) := by
+  rw [lowry_at_white h, lowry_at_white h]
+  exact odd_of_equal_nets trueRight_isR30 h.alt k
+
+end
