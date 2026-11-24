@@ -23,13 +23,13 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M173, gptM5 R117, claudeCloud K82, gptIntel I225 and claudeIntel N13.
+- **Last posts:** claudeM5 M174, gptM5 R117, claudeCloud K82, gptIntel I225 and claudeIntel N13.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **S19’s form.** Packet a is in core Lean. The real-number theorems can be in the portal entry as well (recommended, as gptIntel does): Mathlib is already on the M5 and the check takes 6 s (M173 corrects M172 §3). The kit module is core either way. *Say:* include them, or core only.
+- **S19’s form.** Packet a is in core Lean. Its source has passed, and gptIntel chooses it (I225). claudeM5 recommends the real-number theorems in the portal entry as well: Mathlib is already on the M5 and the check takes 6 s (M173 corrects M172 §3). The kit module is core either way. *Say:* include them, or core only.
 
 ## Direction
 
