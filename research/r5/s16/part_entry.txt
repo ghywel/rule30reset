@@ -23,7 +23,7 @@ section
 variable {T : Tree} {white black : Nat} {d0 d1 d2 : Bool} {trap : List Nat} {F : Nat → Nat → Bool}
 
 theorem trap_row (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true)
-    (free : freeFrom white black 0 1 = true) (wrap : (T.leaves fun m => m.testBit 1 == m.testBit 0) = true)
+    (free : freeFrom white black 0 1 = true) (wrap : leaves (fun m => m.testBit 1 == m.testBit 0) T = true)
     (is : isTrap T trap = true) (hF : IsR30 F) {t n : Nat} (hd : Drive F d0 d1 d2 t n) (h : InTrap trap F t) :
     ∃ x, (∀ i, i ≤ n → Fits F (t+3*i) (rows d0 d1 d2 x i) (14+3*(n-i))) ∧
       ∀ i, (T.value (rows d0 d1 d2 x i) 0).testBit 0 = true := by
@@ -31,7 +31,7 @@ theorem trap_row (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = tr
   exact ⟨_, fits_rows hF hd f, bit_stays va ok free wrap (bit_of_trap va is f (by omega) h)⟩
 
 theorem trap_stays (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true)
-    (free : freeFrom white black 0 1 = true) (wrap : (T.leaves fun m => m.testBit 1 == m.testBit 0) = true)
+    (free : freeFrom white black 0 1 = true) (wrap : leaves (fun m => m.testBit 1 == m.testBit 0) T = true)
     (is : isTrap T trap = true) (hF : IsR30 F) {t n : Nat} (hd : Drive F d0 d1 d2 t n) (h : InTrap trap F t) :
     InTrap trap F (t+3*n) := by
   obtain ⟨x, fx, bx⟩ := trap_row va ok free wrap is hF hd h
@@ -39,14 +39,14 @@ theorem trap_stays (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = 
 
 theorem trap_entry (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true) (is : isTrap T trap = true)
     {A B m n e W : Nat} {outs : List Nat} (freeA : freeFrom white black A m = true) (freeB : freeFrom white black B n = true)
-    (first : T.low.testBit A = true) (middle : (T.leaves fun k => !k.testBit (A+m) || (k.testBit B || k.testBit e)) = true)
-    (last : (T.leaves fun k => !k.testBit (B+n) || k.testBit 0) = true) (outCodes : T.codes e 0 0 W = outs)
+    (first : T.low.testBit A = true) (middle : leaves (fun k => !k.testBit (A+m) || (k.testBit B || k.testBit e)) T = true)
+    (last : leaves (fun k => !k.testBit (B+n) || k.testBit 0) T = true) (outCodes : codes e T 0 0 W = outs)
     (hF : IsR30 F) {t : Nat} (hd : Drive F d0 d1 d2 t (m+n)) : InTrap trap F (t+3*(m+n)) ∨ code F (t+3*m) W ∈ outs := by
   have f := fits_code F t (14+W+3*(m+n))
   have fx := fits_rows hF hd f
   rcases bit_entry va ok freeA freeB first middle last (code F t (14+W+3*(m+n))) with h | h
   · right
-    have mem := Tree.mem_codes (t := e) W va (k := 0) (p := 0) (r := rows d0 d1 d2 (code F t (14+W+3*(m+n))) m)
+    have mem := mem_codes (t := e) W va (k := 0) (p := 0) (r := rows d0 d1 d2 (code F t (14+W+3*(m+n))) m)
       (by simp [Nat.mod_one]) h
     rw [outCodes, Nat.zero_add, code_of_fits (fx m (by omega)) (by omega)] at mem
     exact mem
@@ -56,11 +56,11 @@ theorem trap_entry (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = 
 
 /-- A half that is not in the trap at a tick was outside, and showed an exceptional window, at every earlier one. -/
 theorem outside_before (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true)
-    (free : freeFrom white black 0 1 = true) (wrap : (T.leaves fun m => m.testBit 1 == m.testBit 0) = true)
+    (free : freeFrom white black 0 1 = true) (wrap : leaves (fun m => m.testBit 1 == m.testBit 0) T = true)
     (is : isTrap T trap = true) {A B m n e W : Nat} {outs : List Nat} (freeA : freeFrom white black A m = true)
     (freeB : freeFrom white black B n = true) (first : T.low.testBit A = true)
-    (middle : (T.leaves fun k => !k.testBit (A+m) || (k.testBit B || k.testBit e)) = true)
-    (last : (T.leaves fun k => !k.testBit (B+n) || k.testBit 0) = true) (outCodes : T.codes e 0 0 W = outs)
+    (middle : leaves (fun k => !k.testBit (A+m) || (k.testBit B || k.testBit e)) T = true)
+    (last : leaves (fun k => !k.testBit (B+n) || k.testBit 0) T = true) (outCodes : codes e T 0 0 W = outs)
     (hF : IsR30 F) {t q : Nat} (hd : Drive F d0 d1 d2 t (m+n+q)) (no : ¬ InTrap trap F (t+3*(m+n+q))) :
     ∀ i, i ≤ q → code F (t+3*m+3*i) W ∈ outs := by
   intro i hi
@@ -78,9 +78,6 @@ end
 
 /-! ### The windows that can stay outside -/
 
-/-- The windows of `W` cells one period after the window `x`, whatever the three cells beyond. -/
-def images (d0 d1 d2 : Bool) (W x : Nat) : List Nat := (List.range 8).map fun e => per d0 d1 d2 (x+2^W*e) % 2^W
-
 theorem image_mem {F : Nat → Nat → Bool} (hF : IsR30 F) {d0 d1 d2 : Bool} {t : Nat} (hd : Drive F d0 d1 d2 t 1) (W : Nat) :
     code F (t+3) W ∈ images d0 d1 d2 W (code F t W) := by
   obtain ⟨h0, h1, h2⟩ := hd 0 (by omega)
@@ -95,20 +92,6 @@ theorem image_mem {F : Nat → Nat → Bool} (hF : IsR30 F) {d0 d1 d2 : Bool} {t
     show per d0 d1 d2 (code F t W + 2^W * (code F t (W+3) / 2^W)) % 2^W = code F (t+3) W
     rw [← m, Nat.mod_add_div]
     exact g
-
-/-- Windows with a next one in the list. -/
-def back (d0 d1 d2 : Bool) (W : Nat) (A : List Nat) : List Nat := A.filter fun x => (images d0 d1 d2 W x).any A.contains
-/-- Windows with one before in the list. -/
-def fwd (d0 d1 d2 : Bool) (W : Nat) (A : List Nat) : List Nat := A.filter (A.flatMap (images d0 d1 d2 W)).contains
-def rounds (d0 d1 d2 : Bool) (W : Nat) : Nat → List Nat → List Nat
-  | 0, A => A
-  | n+1, A => rounds d0 d1 d2 W n (fwd d0 d1 d2 W (back d0 d1 d2 W A))
-/-- The windows with one more cell. -/
-def widen (W : Nat) (A : List Nat) : List Nat := A ++ A.map (· + 2^W)
-/-- At each width so many rounds, then one more cell. -/
-def chase (d0 d1 d2 : Bool) : Nat → List Nat → List Nat → List Nat
-  | _, [], A => A
-  | W, r :: rs, A => chase d0 d1 d2 (W+1) rs (widen W (rounds d0 d1 d2 W r A))
 
 /-- The window is in the list at `n + 1` successive periods from `t`. -/
 def Among (F : Nat → Nat → Bool) (t n W : Nat) (A : List Nat) : Prop := ∀ i, i ≤ n → code F (t+3*i) W ∈ A

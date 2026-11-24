@@ -1,0 +1,5 @@
+/-- The rounds of the staged lift: two at each of twelve widths. -/
+def stages : List Nat := List.replicate 12 2
+
+theorem chase_011 : rounds false true true 30 3 (chase false true true 18 stages outside011) = [142378952] := by
+  decide +kernel

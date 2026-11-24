@@ -191,9 +191,9 @@ theorem trap_congr {trap : List Nat} {F G : Nat → Nat → Bool} {t s : Nat} (h
   rw [Rule30Ether.seg_congr 14 (fun j => F t (j+1)) (fun j => G s (j+1)) (fun i _ => h i)]
   exact hG
 
-/-- **The single cell beside `001`.** If the centre follows `001` from age `T` for `N ≥ 3 T + 220` ticks, the fourteen cells
+/-- **The single cell beside `001`.** If the centre follows `001` from age `T` for `N ≥ 3 T + 170` ticks, the fourteen cells
 to its right are in the trap at age `T + N`, a gate tick. -/
-theorem centre_001 {T N : Nat} (clock : ∀ j, j < N → cell (T+j) 0 = wordAt3 w001 j) (hN : N % 3 = 1) (late : 3*T+220 ≤ N) :
+theorem centre_001 {T N : Nat} (clock : ∀ j, j < N → cell (T+j) 0 = wordAt3 w001 j) (hN : N % 3 = 1) (late : 3*T+170 ≤ N) :
     InTrap trap001 trueRight (T+N) := by
   have fin : ∀ p, T < p → trueRight T p = false := fun p hp => Rule30Diagonals.cell_eq_false_of_gt T p (by omega)
   refine trap_congr (fun p => ?_) (finite_enters_001 fin (φ := 0) (t := N) (by omega) late)

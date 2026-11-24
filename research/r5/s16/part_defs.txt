@@ -1,0 +1,97 @@
+/-! ### One period of the drive, and the finite checks -/
+
+/-- One period: three ticks of a packed row beside the drive colours `d0`, `d1`, `d2`. -/
+def per (d0 d1 d2 : Bool) (x : Nat) : Nat := step d2 (step d1 (step d0 x))
+
+/-- The walk. Node `a` has read `k+3` cells of a row and `b` the first `k` cells of the row one period later. The six colours
+are cells `k+1`, `k+2` of the row, `k`, `k+1` of the next, `k-1`, `k` of the one after. A branch closes when every time of
+`a`, moved one step on and cut to the colours allowed, is a time of `b`. -/
+def walk (colours : Nat) (a b : Tree) (x1 x2 y0 y1 zm z0 : Bool) : Nat → Bool
+  | 0 => subset ((a.high <<< 1) &&& colours) b.low
+  | n+1 =>
+    if subset ((a.high <<< 1) &&& colours) b.low then true else
+    let y := xor x1 x2
+    let z := xor y0 (y1 || y)
+    let y' := !x1
+    let z' := xor y0 (y1 || y')
+    walk colours (a.child false) (b.child (xor zm (z0 || z))) x2 false y1 y z0 z n &&
+    walk colours (a.child true) (b.child (xor zm (z0 || z'))) x2 true y1 y' z0 z' n
+
+/-- The walk from the first four cells, which fix the first cell one period later. -/
+def walkAt (table : Tree) (white black : Nat) (d0 d1 d2 x0 x1 x2 x3 : Bool) : Bool :=
+  let y0 := xor d0 (x0 || x1)
+  let y1 := xor x0 (x1 || x2)
+  let y2 := xor x1 (x2 || x3)
+  let z0 := xor d1 (y0 || y1)
+  let z1 := xor y0 (y1 || y2)
+  let w := xor d2 (z0 || z1)
+  walk (if w then black else white) ((((table.child x0).child x1).child x2).child x3) (table.child w) x2 x3 y1 y2 z0 z1 46
+
+def walkAll (table : Tree) (white black : Nat) (d0 d1 d2 : Bool) : Bool :=
+  [false, true].all fun a => [false, true].all fun b => [false, true].all fun c => [false, true].all fun d =>
+    walkAt table white black d0 d1 d2 a b c d
+
+/-- A property of every time set at a leaf. -/
+def leaves (p : Nat → Bool) : Tree → Bool
+  | .leaf m => p m
+  | .node _ _ a b => leaves p a && leaves p b
+
+/-- The codes of `n` more cells whose rows carry the time `t`. -/
+def codes (t : Nat) (a : Tree) (k p : Nat) : Nat → List Nat
+  | 0 => if a.high.testBit t then [p] else []
+  | n+1 => if a.high.testBit t then codes t (a.child false) (k+1) p n ++ codes t (a.child true) (k+1) (p+2^k) n else []
+
+/-- The time `t` depends on the first cells only. -/
+def tight (t : Nat) (a : Tree) : Nat → Bool
+  | 0 => a.high.testBit t == a.low.testBit t
+  | n+1 => (a.high.testBit t == a.low.testBit t) || (tight t (a.child false) n && tight t (a.child true) n)
+
+/-- Both colours are allowed at `n` successive times after `o`. -/
+def freeFrom (white black o n : Nat) : Bool :=
+  (List.range n).all fun i => white.testBit (o+(i+1)) && black.testBit (o+(i+1))
+
+/-- A letter of a pattern: a colour, or any. -/
+def fits (a : Option Bool) (c : Bool) : Bool :=
+  match a with
+  | none => true
+  | some b => b == c
+
+/-- A pattern on the line `o`: its start from the closed set, its colours, and its death. -/
+def wordLine (T : Tree) (white black o : Nat) (v : List (Option Bool)) : Bool :=
+  ([false, true].all fun c => !fits (v.headD none) c || leaves (fun m => !m.testBit 0 || m.testBit o) (T.child c)) &&
+  ((List.range (v.length - 1)).all fun i => [false, true].all fun c =>
+    !fits (v.getD (i+1) none) c || (if c then black else white).testBit (o+(i+1))) &&
+  ([false, true].all fun c => !fits (v.getD (v.length - 1) none) c ||
+    leaves (fun m => !m.testBit (o + (v.length - 1))) (T.child c))
+
+/-- Bit 0 of the table says that the first fourteen cells are in the list. -/
+def isTrap (T : Tree) (trap : List Nat) : Bool :=
+  codes 0 T 0 0 14 == trap && tight 0 T 14
+
+/-- The windows of `W` cells one period after the window `x`, whatever the three cells beyond. -/
+def images (d0 d1 d2 : Bool) (W x : Nat) : List Nat := (List.range 8).map fun e => per d0 d1 d2 (x+2^W*e) % 2^W
+
+/-- Windows with a next one in the list. -/
+def back (d0 d1 d2 : Bool) (W : Nat) (A : List Nat) : List Nat := A.filter fun x => (images d0 d1 d2 W x).any A.contains
+/-- Windows with one before in the list. -/
+def fwd (d0 d1 d2 : Bool) (W : Nat) (A : List Nat) : List Nat := A.filter (A.flatMap (images d0 d1 d2 W)).contains
+def rounds (d0 d1 d2 : Bool) (W : Nat) : Nat → List Nat → List Nat
+  | 0, A => A
+  | n+1, A => rounds d0 d1 d2 W n (fwd d0 d1 d2 W (back d0 d1 d2 W A))
+/-- The windows with one more cell. -/
+def widen (W : Nat) (A : List Nat) : List Nat := A ++ A.map (· + 2^W)
+/-- At each width so many rounds, then one more cell. -/
+def chase (d0 d1 d2 : Bool) : Nat → List Nat → List Nat → List Nat
+  | _, [], A => A
+  | W, r :: rs, A => chase d0 d1 d2 (W+1) rs (widen W (rounds d0 d1 d2 W r A))
+
+/-- A walk by letters, the three cells beyond the window: the windows it meets, as bits, and its end. -/
+def tour (d0 d1 d2 : Bool) : Nat → Nat → Nat → Nat → Nat → Nat → Bool
+  | 0, _, x, seen, r, full => x == r && seen == full
+  | k+1, w, x, seen, r, full =>
+    let y := per d0 d1 d2 (x+2^14*(w % 8)) % 2^14
+    let s := seen ||| (1 <<< y)
+    Nat.ble y 16383 && (Nat.ble 1 s && tour d0 d1 d2 k (w / 8) y s r full)
+
+/-- The windows of a list, as bits. -/
+def bitset (L : List Nat) : Nat := L.foldl (fun s x => s ||| (1 <<< x)) 0

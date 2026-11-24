@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""make_table.py WORD OUT.json: the table of the right-half theorem at period three (ledger M151, M152; mechanism of S10, S15).
+"""make_table.py WORD OUT.json [m,n]: the table of the right-half theorem at period three (ledger M151 to M153; mechanism of
+S10, S15).
 
 A row is columns 1, 2, ... of a right half at a gate tick (the white tick before the black one of 001, the white tick of 011),
 read as a number (bit i = column i + 1). One step is one period, three ticks. Time lines stand one after another in one mask:
-  K      bits 0, 1: the rows of the trap (14 cells) and their images, so the trap is closed
+  K      bits 0, 1: the rows of the trap and their images, so the trap is closed. The trap is the one closed component of the
+         graph of all 2^14 windows of 14 cells, with the eight images of a window under one period of one row (I205)
   entry  steps 0..m from every row, then m..n from the rows whose first W1 cells are not in M: ends in the trap
   M      one bit: the first W1 cells are in M, the windows that can stay outside the trap for ever
   words  from a row of the trap, a gate word that no row of it reads ('?' reads anything)
@@ -23,18 +25,13 @@ GATE = {'001': 1, '011': 0}[WORD]
 DR = D[GATE:] + D[:GATE]
 W0 = 14
 if WORD == '001':
-    W1, m, n = 14, 12, 20
-    WORDS = ['010', '101', '1001', '11111', '000000', '0000111', '01110001', '11100000', '0110000110001110']
+    W1, m, n = 14, 8, 16
+    WORDS = ['010', '101', '1001', '11111', '000000', '0000111', '01110001', '11100000']
 else:
     W1, m, n = 18, 24, 48
     WORDS = ['00', '010', '01110', '011110', '?' * 6 + '0' + '1' * 17]
-
-
-def tick(x, d, W):
-    """both images of windows of W cells beside the drive d (the cell beyond is free)"""
-    for e in (0, 1):
-        r = x | U(e << W)
-        yield (((r << U(1)) | U(d)) ^ (r | (r >> U(1)))) & U((1 << W) - 1)
+if len(sys.argv) > 3:
+    m, n = map(int, sys.argv[3].split(','))
 
 
 def among(a, x):
@@ -43,61 +40,6 @@ def among(a, x):
     p = np.searchsorted(a, x)
     p[p == len(a)] = 0
     return a[p] == x
-
-
-def image(x, d, W):
-    return np.unique(np.concatenate(list(tick(x, d, W)))) if len(x) else x
-
-
-def widen(S, W):
-    return [np.sort(np.concatenate([x, x | U(1 << W)])) for x in S]
-
-
-def trap():
-    """the windows of W0 cells with an endless past, by phase, and their one closed component"""
-    W, S = 8, [np.arange(1 << 8, dtype=U) for _ in D]
-    while True:
-        while True:
-            N = [None] * 3
-            for p in range(3):
-                N[(p + 1) % 3] = image(S[p], D[p], W)
-                N[(p + 1) % 3] = N[(p + 1) % 3][among(S[(p + 1) % 3], N[(p + 1) % 3])]
-            same = all(len(a) == len(b) for a, b in zip(N, S))
-            S = N
-            if same:
-                break
-        if W == W0:
-            break
-        S, W = widen(S, W), W + 1
-    off = np.cumsum([0] + [len(s) for s in S])
-    rows, cols = [], []
-    for p in range(3):
-        for y in tick(S[p], D[p], W0):
-            rows.append(off[p] + np.arange(len(S[p])))
-            cols.append(off[(p + 1) % 3] + np.searchsorted(S[(p + 1) % 3], y))
-    rows, cols = np.concatenate(rows), np.concatenate(cols)
-    A = sp.csr_matrix((np.ones(len(rows), np.int8), (rows, cols)), shape=(off[-1], off[-1]))
-    k, lab = connected_components(A, directed=True, connection='strong')
-    leaves_ = np.zeros(k, bool)
-    leaves_[lab[rows[lab[rows] != lab[cols]]]] = True
-    closed = [c for c in range(k) if not leaves_[c]]
-    assert len(closed) == 1
-    return S, [S[p][lab[off[p]:off[p + 1]] == closed[0]] for p in range(3)]
-
-
-def two_way(O, W):
-    while True:
-        c = sum(map(len, O))
-        for p in range(3):
-            ok = np.zeros(len(O[p]), bool)
-            for y in tick(O[p], D[p], W):
-                ok |= among(O[(p + 1) % 3], y)
-            O[p] = O[p][ok]
-        for p in range(3):
-            q = (p + 1) % 3
-            O[q] = O[q][among(image(O[p], D[p], W), O[q])]
-        if sum(map(len, O)) == c:
-            return O
 
 
 def period(x, W):
@@ -110,12 +52,38 @@ def period(x, W):
     return out
 
 
-S, K = trap()
-O, W = [S[p][~among(K[p], S[p])] for p in range(3)], W0
-O = two_way(O, W)
+def trap():
+    """the one closed component of the graph of all windows of W0 cells"""
+    N = 1 << W0
+    cols = np.concatenate(period(np.arange(N, dtype=U), W0)).astype(np.int64)
+    rows = np.concatenate([np.arange(N)] * 8)
+    k, lab = connected_components(sp.csr_matrix((np.ones(len(rows), np.int8), (rows, cols)), shape=(N, N)), directed=True,
+                                  connection='strong')
+    left = np.zeros(k, bool)
+    left[lab[rows[lab[rows] != lab[cols]]]] = True
+    closed = [c for c in range(k) if not left[c]]
+    assert len(closed) == 1
+    return np.nonzero(lab == closed[0])[0].astype(U)
+
+
+def two_way(O, W):
+    """windows with an image and a preimage among them"""
+    while True:
+        c, ok = len(O), np.zeros(len(O), bool)
+        for y in period(O, W):
+            ok |= among(O, y)
+        O = O[ok]
+        if len(O):
+            O = O[among(np.unique(np.concatenate(period(O, W))), O)]
+        if len(O) == c:
+            return O
+
+
+KG = trap()
+MG, W = np.arange(1 << W0, dtype=U), W0
+MG = two_way(MG[~among(KG, MG)], W)
 while W < W1:
-    O, W = two_way(widen(O, W), W + 1), W + 1
-KG, MG = K[GATE], O[GATE]
+    MG, W = two_way(np.sort(np.concatenate([MG, MG | U(1 << W)])), W + 1), W + 1
 inm, alive = {}, set()
 
 

@@ -1,0 +1,1 @@
+Beside a column of period three every finite right half of Rule 30 enters the least gate trap in linear time

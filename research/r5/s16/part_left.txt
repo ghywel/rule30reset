@@ -11,7 +11,7 @@ def Free (words : List (List Bool)) (g : Nat) (u : Nat → Bool) (K : Nat) : Pro
   ∀ k, K ≤ k → k % 3 = g → ∀ v ∈ words, ¬ ∀ i, i < v.length → u (k+3*i) = !v.getD i false
 
 /-- The gate of the single cell beside an eventual `001`. -/
-theorem centre_free_001 {T : Nat} (h : ∀ t, T ≤ t → cell t 0 = wordAt3 w001 (t-T)) {t : Nat} (late : 4*T+222 ≤ t)
+theorem centre_free_001 {T : Nat} (h : ∀ t, T ≤ t → cell t 0 = wordAt3 w001 (t-T)) {t : Nat} (late : 4*T+172 ≤ t)
     (ht : (t-T) % 3 = 1) {v : List Bool} (hv : v ∈ words001) : ¬ ∀ i, i < v.length → cell (t+3*i) 1 = v.getD i false := by
   intro sp
   have clock : ∀ n j, j < n → cell (T+j) 0 = wordAt3 w001 j := fun n j _ => by rw [h (T+j) (by omega)]; congr 1; omega
@@ -78,7 +78,7 @@ theorem not_eventually_001_of_left (hC : Left001) : ¬ ∃ T, ∀ t, T ≤ t →
     have e := cell_eq_L_effective T k (-1) (by omega)
     rw [hfun] at e
     exact e
-  refine hC (fun p => cell T p) ⟨T, fun p hp => cell_eq_false_of_lt T p hp⟩ ⟨(T'-T)+(3*T+222), fun k hk => ?_, ?_⟩
+  refine hC (fun p => cell T p) ⟨T, fun p hp => cell_eq_false_of_lt T p hp⟩ ⟨(T'-T)+(3*T+172), fun k hk => ?_, ?_⟩
   · rw [hL k, fits3_001s]
     obtain ⟨s0, -, s2⟩ := hs (T+k) (by omega)
     have : k % 3 = 0 ∨ k % 3 = 1 ∨ k % 3 = 2 := by omega

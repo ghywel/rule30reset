@@ -1,0 +1,5 @@
+/-!
+The tables of `Rule30PeriodThreeEntry`, one for `001` and one for `011`: sets of times on spatial prefixes, the two traps, the
+windows that can stay outside, a closed walk through each trap, and the finite checks on them. The tree is that of
+`Rule30TrappedRunMasks`; the walk has one period of the drive as its step.
+-/

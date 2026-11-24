@@ -26,22 +26,19 @@ theorem code_same {F : Nat → Nat → Bool} (hF : IsR30 F) {d0 d1 d2 : Bool} {t
     exact ih (by omega)
 
 /-- What a half shows while it is outside the trap of `001`: one ether. -/
-theorem outside_001 {F : Nat → Nat → Bool} (hF : IsR30 F) {t q : Nat} (hd : Drive F false true false t (20+q))
-    (no : ¬ InTrap trap001 F (t+3*(20+q))) :
-    (∀ i, i ≤ q → code F (t+36+3*i) 14 = 9278) ∨ (∀ i, i ≤ q → code F (t+36+3*i) 14 = 12831) := by
-  have a : Among F (t+36) q 14 outside001 := fun i hi =>
-    outside_before (m := 12) (n := 8) valid001 walk001 free001 wrap001 isTrap001 freeA001 freeB001 first001 middle001 last001
+theorem outside_001 {F : Nat → Nat → Bool} (hF : IsR30 F) {t q : Nat} (hd : Drive F false true false t (16+q))
+    (no : ¬ InTrap trap001 F (t+3*(16+q))) :
+    (∀ i, i ≤ q → code F (t+24+3*i) 14 = 9278) ∨ (∀ i, i ≤ q → code F (t+24+3*i) 14 = 12831) := by
+  have a : Among F (t+24) q 14 outside001 := fun i hi =>
+    outside_before (m := 8) (n := 8) valid001 walk001 free001 wrap001 isTrap001 freeA001 freeB001 first001 middle001 last001
       outsideCodes001 hF hd no i hi
   have s := code_same hF (A := outside001) (d0 := false) (d1 := true) (d2 := false) (by decide +kernel)
-    ((hd.mono (m := 12+q) (by omega)).shift 12) a
+    ((hd.mono (m := 8+q) (by omega)).shift 8) a
   have z := a 0 (by omega)
   simp only [outside001, List.mem_cons, List.not_mem_nil, or_false] at z
   rcases z with z | z
   · left; intro i hi; rw [s i hi]; exact z
   · right; intro i hi; rw [s i hi]; exact z
-
-theorem chase_011 : rounds false true true 30 3 (chase false true true 18 (List.replicate 12 2) outside011) = [142378952] := by
-  decide +kernel
 
 /-- What a half shows while it is outside the trap of `011`: the ether with the white gate. -/
 theorem outside_011 {F : Nat → Nat → Bool} (hF : IsR30 F) {t q : Nat} (hd : Drive F false true true t (102+q))
@@ -51,11 +48,11 @@ theorem outside_011 {F : Nat → Nat → Bool} (hF : IsR30 F) {t q : Nat} (hd : 
   have a : Among F (t+72) (q+54) 18 outside011 := fun i hi =>
     outside_before (m := 24) (n := 24) valid011 walk011 free011 wrap011 isTrap011 freeA011 freeB011 first011 middle011 last011
       outsideCodes011 hF hd no i hi
-  have twelve : (List.replicate 12 2).sum = 24 := rfl
-  have d := (hd.mono (m := 24+((q+6)+2*(List.replicate 12 2).sum)) (by rw [twelve]; omega)).shift 24
-  have b := among_chase hF (List.replicate 12 2) (n := q+6) d (by rw [twelve]; exact a)
+  have total : stages.sum = 24 := rfl
+  have d := (hd.mono (m := 24+((q+6)+2*stages.sum)) (by rw [total]; omega)).shift 24
+  have b := among_chase hF stages (n := q+6) d (by rw [total]; exact a)
   have d' := (hd.mono (m := 48+(q+2*3)) (by omega)).shift 48
-  rw [twelve, show t+3*24+3*24 = t+3*48 by omega, show 18+(List.replicate 12 2).length = 30 from rfl] at b
+  rw [total, show t+3*24+3*24 = t+3*48 by omega, show 18+stages.length = 30 from rfl] at b
   have c := among_rounds hF 3 (n := q) d' b
   rw [chase_011] at c
   intro i hi
@@ -66,19 +63,19 @@ theorem outside_011 {F : Nat → Nat → Bool} (hF : IsR30 F) {t q : Nat} (hd : 
 /-! ### Every finite half enters -/
 
 /-- **Entry beside `001`.** A right half whose cells beyond `D` are white, driven by `001` from any phase, is in the trap at
-every gate tick from `3 D + 220` on. -/
+every gate tick from `3 D + 170` on. -/
 theorem finite_enters_001 {R : Nat → Bool} {D : Nat} (hR : ∀ p, D < p → R p = false) {φ t : Nat} (ht : (t+φ) % 3 = 1)
-    (late : 3*D+220 ≤ t) : InTrap trap001 (half w001 R φ) t := by
+    (late : 3*D+170 ≤ t) : InTrap trap001 (half w001 R φ) t := by
   apply Classical.byContradiction
   intro no
-  obtain ⟨t0, q, e, small⟩ : ∃ t0 q, t = t0+3*(20+q) ∧ t0 < 3 := ⟨t%3, t/3-20, by omega, by omega⟩
+  obtain ⟨t0, q, e, small⟩ : ∃ t0 q, t = t0+3*(16+q) ∧ t0 < 3 := ⟨t%3, t/3-16, by omega, by omega⟩
   have g : (t0+φ) % 3 = 1 % 3 := by omega
-  have hd : Drive (half w001 R φ) false true false t0 (20+q) := drive_half g _
+  have hd : Drive (half w001 R φ) false true false t0 (16+q) := drive_half g _
   rw [e] at no
   have fin (j0 c : Nat) (al : aligned3 w001 j0 0 = true)
       (hc : ((List.range 14).all fun j => c.testBit j == ether3 (j0+(j+1)) 1) = true)
-      (h : ∀ i, i ≤ q → code (half w001 R φ) (t0+36+3*i) 14 = c) : False := by
-    have := ether_ends (w := w001) (j0 := j0) (φ := φ) (t1 := t0+36) (n := q) (k := 12) (aligned3_spec al) hR (by omega)
+      (h : ∀ i, i ≤ q → code (half w001 R φ) (t0+24+3*i) 14 = c) : False := by
+    have := ether_ends (w := w001) (j0 := j0) (φ := φ) (t1 := t0+24) (n := q) (k := 12) (aligned3_spec al) hR (by omega)
       (fun i hi => etherOn_of_code (g := 1) (by omega) hc (h i hi))
     omega
   rcases outside_001 (half_isR30 _ _ _) hd no with h | h
@@ -101,19 +98,19 @@ theorem finite_enters_011 {R : Nat → Bool} {D : Nat} (hR : ∀ p, D < p → R 
 
 /-- **Every right half beside `001`,** of any support and from any phase, enters the trap or has a constant gate. -/
 theorem enters_or_constant_001 (R : Nat → Bool) (φ : Nat) : (∃ t, (t+φ) % 3 = 1 ∧ InTrap trap001 (half w001 R φ) t) ∨
-    ∃ c, ∀ t, 38 ≤ t → (t+φ) % 3 = 1 → half w001 R φ t 1 = c := by
+    ∃ c, ∀ t, 26 ≤ t → (t+φ) % 3 = 1 → half w001 R φ t 1 = c := by
   by_cases out : ∃ t, (t+φ) % 3 = 1 ∧ InTrap trap001 (half w001 R φ) t
   · exact Or.inl out
   right
   obtain ⟨t0, small, g⟩ : ∃ t0, t0 < 3 ∧ (t0+φ) % 3 = 1 % 3 := ⟨(4-φ%3)%3, by omega, by omega⟩
   have at_ (q : Nat) := outside_001 (half_isR30 w001 R φ) (t := t0) (q := q) (drive_half g _)
     (fun h => out ⟨_, by omega, h⟩)
-  have same (q : Nat) : half w001 R φ (t0+36+3*q) 1 = half w001 R φ (t0+36) 1 := by
+  have same (q : Nat) : half w001 R φ (t0+24+3*q) 1 = half w001 R φ (t0+24) 1 := by
     rcases at_ q with h | h
     · rw [cell_of_code (h q (Nat.le_refl _)) (j := 0) (by omega), cell_of_code (h 0 (by omega)) (j := 0) (by omega)]
     · rw [cell_of_code (h q (Nat.le_refl _)) (j := 0) (by omega), cell_of_code (h 0 (by omega)) (j := 0) (by omega)]
-  refine ⟨half w001 R φ (t0+36) 1, fun t ht gt => ?_⟩
-  have e : t = t0+36+3*((t-t0-36)/3) := by omega
+  refine ⟨half w001 R φ (t0+24) 1, fun t ht gt => ?_⟩
+  have e : t = t0+24+3*((t-t0-24)/3) := by omega
   rw [e]
   exact same _
 
@@ -149,7 +146,7 @@ def Spells (u : Nat → Bool) (i : Nat) (v : List Bool) : Prop := ∀ k, k < v.l
 
 theorem avoids {T : Tree} {white black : Nat} {d0 d1 d2 : Bool} {trap : List Nat} {F : Nat → Nat → Bool}
     (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true) (free : freeFrom white black 0 1 = true)
-    (wrap : (T.leaves fun m => m.testBit 1 == m.testBit 0) = true) (is : isTrap T trap = true) (hF : IsR30 F) {t : Nat}
+    (wrap : leaves (fun m => m.testBit 1 == m.testBit 0) T = true) (is : isTrap T trap = true) (hF : IsR30 F) {t : Nat}
     (hd : ∀ n, Drive F d0 d1 d2 t n) (h : InTrap trap F t) {o : Nat} {v : List (Option Bool)}
     (line : wordLine T white black o v = true) (pos : 0 < v.length) (i : Nat)
     (read : ∀ k, k < v.length → fits (v.getD k none) (gate F t (i+k)) = true) : False := by
@@ -162,8 +159,7 @@ theorem avoids {T : Tree} {white black : Nat} {d0 d1 d2 : Bool} {trap : List Nat
 def words001 : List (List Bool) := [[false, true, false], [true, false, true], [true, false, false, true],
   [true, true, true, true, true], [false, false, false, false, false, false],
   [false, false, false, false, true, true, true], [false, true, true, true, false, false, false, true],
-  [true, true, true, false, false, false, false, false],
-  [false, true, true, false, false, false, false, true, true, false, false, false, true, true, true, false]]
+  [true, true, true, false, false, false, false, false]]
 /-- The gate words the trap of `011` excludes. -/
 def words011 : List (List Bool) := [[false, false], [false, true, false], [false, true, true, true, false],
   [false, true, true, true, true, false]]
@@ -174,7 +170,7 @@ theorem listed011 : (words011.all fun v => lines011.any fun l => l.2 == v.map so
 theorem avoids_listed {T : Tree} {white black : Nat} {d0 d1 d2 : Bool} {trap : List Nat} {F : Nat → Nat → Bool}
     {lines : List (Nat × List (Option Bool))} {words : List (List Bool)}
     (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true) (free : freeFrom white black 0 1 = true)
-    (wrap : (T.leaves fun m => m.testBit 1 == m.testBit 0) = true) (is : isTrap T trap = true)
+    (wrap : leaves (fun m => m.testBit 1 == m.testBit 0) T = true) (is : isTrap T trap = true)
     (wl : (lines.all fun l => wordLine T white black l.1 l.2) = true)
     (listed : (words.all fun v => lines.any fun l => l.2 == v.map some) = true) (hF : IsR30 F) {t : Nat}
     (hd : ∀ n, Drive F d0 d1 d2 t n) (h : InTrap trap F t) {v : List Bool} (hv : v ∈ words) (pos : 0 < v.length) (i : Nat) :
@@ -191,7 +187,7 @@ theorem avoids_listed {T : Tree} {white black : Nat} {d0 d1 d2 : Bool} {trap : L
 theorem words001_pos : ∀ v ∈ words001, 0 < v.length := by decide
 theorem words011_pos : ∀ v ∈ words011, 0 < v.length := by decide
 
-/-- **The gate words of the trap of `001`:** none of the nine is ever read from a tick in the trap on. -/
+/-- **The gate words of the trap of `001`:** none of the eight is ever read from a tick in the trap on. -/
 theorem avoids_001 {R : Nat → Bool} {φ t : Nat} (ht : (t+φ) % 3 = 1) (h : InTrap trap001 (half w001 R φ) t) {v : List Bool}
     (hv : v ∈ words001) (i : Nat) : ¬ Spells (gate (half w001 R φ) t) i v :=
   avoids_listed valid001 walk001 free001 wrap001 isTrap001 wordLines001 listed001 (half_isR30 _ _ _)

@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """build_s16.py T001.json T011.json OUTDIR: assembles the portable file (ledger M152) from the tables of make_table.py and the parts.
 
-OUTDIR/Rule30Submission.lean: S10's tree is carried from research/m9/compact, declaration by declaration."""
+OUTDIR/portal/Rule30Submission.lean: S10's tree is carried from research/m9/compact, declaration by declaration, and the first
+part of Rule30EtherThreeDeparture (S14), through ten_ticks, from kit main.
+OUTDIR/kit/...: Rule30PeriodThreeEntry and Rule30Certificates/PeriodThreeEntry, the same text on the kit's own modules, with the
+two implications from the kit's left statements (part_kit.txt)."""
 import json, pathlib, re, sys
 HERE = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+from make_tour import tour
 ROOT = HERE.parents[2]
 S10 = (ROOT / 'research/m9/compact/Rule30Submission.lean').read_text(encoding='utf-8')
 D = {w: json.loads(pathlib.Path(p).read_bytes()) for w, p in zip(('001', '011'), sys.argv[1:3])}
@@ -28,6 +33,28 @@ def tree():
         doc = re.search(r'/--(?:(?!/--).)*?-/\n\Z', S10[:s], re.S)
         out.append((doc.group(0) if doc else '') + S10[s:e].rstrip() + '\n')
     return '\n'.join(out)
+
+
+def departure():
+    """S14's declarations through ten_ticks, byte for byte"""
+    t = (ROOT / 'Rule30PrizeKit/lean/Ruliology/CellularAutomata/Rule30EtherThreeDeparture.lean').read_text(encoding='utf-8')
+    body = t[t.index('/-! ### The thirteen recurrent states -/'):t.index('/-- **The wake settles.**')]
+    return ('/-! ### Carried from `Rule30EtherThreeDeparture` (R30-20261123-f214f2), which the verifier\'s kit does not have -/\n\n'
+            'namespace Rule30EtherThreeDeparture\n\nopen Rule30EtherThree Rule30EtherThreeErosion Rule30Jen Rule30Ether\n\n'
+            + body + 'end Rule30EtherThreeDeparture\n\nopen Rule30EtherThreeDeparture (IsRec ten_ticks)\n')
+
+
+def tours():
+    o = []
+    for w, d in D.items():
+        r, l = tour(d)
+        g = d['gate']
+        dr = ' '.join('(wordAt3 w%s %s)' % (w, x) for x in (g, '(%d+1)' % g, '(%d+2)' % g))
+        o.append('/-- The letters of a closed walk of %d periods through the trap of `%s`, three bits each, the first in the low bits. -/\n'
+                 'def letters%s : Nat := 0x%x\n\n'
+                 'theorem tour%s : tour %s %d letters%s %d 0 %d (bitset trap%s) = true := by decide +kernel\n'
+                 % (len(l), w, w, sum(e << (3 * i) for i, e in enumerate(l)), w, dr, len(l), w, r, r, w))
+    return '\n'.join(o)
 
 
 def wrap(items, width=118, indent='  '):
@@ -96,42 +123,49 @@ meta def makeTree (leafMasks branchChunks : Array Nat) (branchCount : Nat) : Met
         o += ['theorem valid%s : table%s.valid = true := by decide +kernel' % (w, w),
               'theorem walk%s : walkAll table%s white%s black%s %s = true := by decide +kernel' % (w, w, w, w, dr),
               'theorem free%s : freeFrom white%s black%s 0 1 = true := by decide +kernel' % (w, w, w),
-              'theorem wrap%s : (table%s.leaves fun m => m.testBit 1 == m.testBit 0) = true := by decide +kernel' % (w, w),
+              'theorem wrap%s : leaves (fun m => m.testBit 1 == m.testBit 0) table%s = true := by decide +kernel' % (w, w),
               'theorem isTrap%s : isTrap table%s trap%s = true := by decide +kernel' % (w, w, w),
               'theorem freeA%s : freeFrom white%s black%s %d %d = true := by decide +kernel' % (w, w, w, A, m),
               'theorem freeB%s : freeFrom white%s black%s %d %d = true := by decide +kernel' % (w, w, w, Bb, n),
               'theorem first%s : table%s.low.testBit %d = true := by decide +kernel' % (w, w, A),
-              'theorem middle%s : (table%s.leaves fun k => !k.testBit (%d+%d) || (k.testBit %d || k.testBit %d)) = true := by\n'
-              '  decide +kernel' % (w, w, A, m, Bb, Mb),
-              'theorem last%s : (table%s.leaves fun k => !k.testBit (%d+%d) || k.testBit 0) = true := by decide +kernel' % (w, w, Bb, n),
-              'theorem outsideCodes%s : table%s.codes %d 0 0 %d = outside%s := by decide +kernel' % (w, w, Mb, d['W1'], w),
+              'theorem middle%s : leaves (fun k => !k.testBit (%d+%d) || (k.testBit %d || k.testBit %d)) table%s = true := by\n'
+              '  decide +kernel' % (w, A, m, Bb, Mb, w),
+              'theorem last%s : leaves (fun k => !k.testBit (%d+%d) || k.testBit 0) table%s = true := by decide +kernel' % (w, Bb, n, w),
+              'theorem outsideCodes%s : codes %d table%s 0 0 %d = outside%s := by decide +kernel' % (w, Mb, w, d['W1'], w),
               'theorem wordLines%s : (lines%s.all fun l => wordLine table%s white%s black%s l.1 l.2) = true := by decide +kernel\n'
               % (w, w, w, w, w)]
     return '\n'.join(o)
 
 
-HEAD = '''module
-
-public import Ruliology.CellularAutomata.Rule30EtherThreeErosion
-public import Ruliology.CellularAutomata.Rule30EtherThreeSkeleton
-public import Ruliology.CellularAutomata.Rule30EtherThreeLeft
-public import Ruliology.CellularAutomata.Rule30DrivenPrefix
-public meta import Lean.Elab.Term
-
-@[expose] public section
-
-set_option maxRecDepth 100000
-set_option maxHeartbeats 0
-set_option Elab.async false
-
-namespace Rule30Submission
-open Ruliology.CellularAutomata
-open Rule30Jen Rule30Ether Rule30EtherThree Rule30EtherThreeErosion Rule30StripCertificates
-open Rule30DrivenPrefix (step step_bit)
-
-'''
-src = HEAD + '\n'.join([tree(), part('walk'), part('lines'), tables(), part('ether'), part('entry'), part('main'), part('runs'),
-                        part('left')]) + '\nend Rule30Submission\n'
-assert '"' not in src and '\\' not in src
-(OUT / 'Rule30Submission.lean').write_bytes(src.encode('utf-8'))
-print('Rule30Submission.lean', len(src.encode()))
+OPTS = 'set_option maxRecDepth 100000\nset_option maxHeartbeats 0\nset_option Elab.async false\n\n'
+DOC, DOC_TABLES = (HERE / 'doc_module.txt').read_text(encoding='utf-8'), (HERE / 'doc_tables.txt').read_text(encoding='utf-8')
+OPENS = ('open Rule30Jen Rule30Ether Rule30EtherThree Rule30EtherThreeErosion Rule30StripCertificates\n'
+         'open Rule30DrivenPrefix (step step_bit)\n')
+CA = 'public import Ruliology.CellularAutomata.'
+PROOF = ['walk', 'lines', 'ether', 'entry', 'main', 'runs', 'least', 'slope', 'left']
+data = '\n'.join([part('defs'), tables(), tours(), part('chase')])
+portal = ('module\n\n' + ''.join(CA + m + '\n' for m in ('Rule30EtherThreeErosion', 'Rule30EtherThreeSkeleton',
+                                                       'Rule30EtherThreeLeft', 'Rule30DrivenPrefix'))
+          + 'public meta import Lean.Elab.Term\n\n' + DOC + '\n@[expose] public section\n\n' + OPTS
+          + 'namespace Rule30Submission\nopen Ruliology.CellularAutomata\n' + OPENS + '\n'
+          + '\n'.join(["/-! ### Sets of times on spatial prefixes, carried from the kit's `Rule30TrappedRunMasks` -/\n", tree(), data]
+                      + [part(n) for n in PROOF[:7]] + [departure()] + [part(n) for n in PROOF[7:]])
+          + '\nend Rule30Submission\n')
+K = OUT / 'kit/lean/Ruliology/CellularAutomata'
+(OUT / 'portal').mkdir(parents=True, exist_ok=True)
+(K / 'Rule30Certificates').mkdir(parents=True, exist_ok=True)
+NS = 'namespace Ruliology.CellularAutomata.Rule30PeriodThreeEntry'
+kit_data = ('module\n\n' + CA + 'Rule30Certificates.TrappedRunMasks\n' + CA + 'Rule30EtherThree\n'
+            'public meta import Lean.Elab.Term\n\n' + DOC_TABLES + '\n@[expose] public section\n\n' + OPTS + NS + 'Tables\n'
+            'open Rule30TrappedRunMasks (Tree subset)\nopen Rule30DrivenPrefix (step)\nopen Rule30EtherThree\n\n'
+            + data.replace('``Tree.', '``Rule30TrappedRunMasks.Tree.') + '\nend Ruliology.CellularAutomata.Rule30PeriodThreeEntryTables\n')
+kit = ('module\n\n' + CA + 'Rule30Certificates.PeriodThreeEntry\n' + CA + 'Rule30EtherThreeDeparture\n'
+       + CA + 'Rule30PeriodThreeLanguage\n\n' + DOC + '\n@[expose] public section\n\n' + OPTS + NS + '\n'
+       + OPENS + 'open Rule30TrappedRunMasks (Tree subset subset_sound)\nopen Rule30PeriodThreeEntryTables\n'
+       'open Rule30EtherThreeDeparture (IsRec ten_ticks)\n\n'
+       + '\n'.join(part(n) for n in PROOF + ['kit']) + '\nend Ruliology.CellularAutomata.Rule30PeriodThreeEntry\n')
+assert '"' not in portal and '\\' not in portal
+for f, t in ((OUT / 'portal/Rule30Submission.lean', portal), (K / 'Rule30Certificates/PeriodThreeEntry.lean', kit_data),
+             (K / 'Rule30PeriodThreeEntry.lean', kit)):
+    f.write_bytes(t.encode('utf-8'))
+    print(f.relative_to(OUT), len(t.encode('utf-8')))

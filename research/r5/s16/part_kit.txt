@@ -1,0 +1,30 @@
+/-! ### The kit's restricted left statements (gptIntel, ledger I206) -/
+
+/-- Every word of the second list holds one of the first as a factor. -/
+def covers (small large : List (List Bool)) : Bool :=
+  large.all fun p => small.any fun v => (List.range (p.length+1)).any fun j =>
+    decide (j+v.length ≤ p.length) && (List.range v.length).all fun i => v.getD i false == p.getD (j+i) false
+
+theorem free_of_cover {small large : List (List Bool)} (h : covers small large = true) {g K : Nat} {u : Nat → Bool}
+    (free : Free small g u K) : Free large g u K := by
+  intro k hk phase p hp spells
+  obtain ⟨v, hv, offsets⟩ := List.any_eq_true.mp (List.all_eq_true.mp h p hp)
+  obtain ⟨j, _, hit⟩ := List.any_eq_true.mp offsets
+  obtain ⟨bound, cells⟩ := Bool.and_eq_true_iff.mp hit
+  have bound' := of_decide_eq_true bound
+  apply free (k+3*j) (by omega) (by omega) v hv
+  intro i hi
+  have eq := beq_iff_eq.mp (List.all_eq_true.mp cells i (List.mem_range.mpr hi))
+  rw [show k+3*j+3*i = k+3*(j+i) by omega, spells (j+i) (by omega), eq]
+
+/-- `Left001` follows from `Rule30PeriodThreeLanguage.C3g001`. -/
+theorem left001_of_C3g (h : Rule30PeriodThreeLanguage.C3g001) : Left001 := by
+  rintro s hs ⟨K, pat, free⟩
+  have old := free_of_cover (large := Rule30PeriodThreeLanguage.col1Forbidden001) (by decide) free
+  exact h s hs ⟨K, fun k hk => ⟨pat k hk, old k hk⟩⟩
+
+/-- `Left011` follows from `Rule30PeriodThreeLanguage.C3r011`. -/
+theorem left011_of_C3r (h : Rule30PeriodThreeLanguage.C3r011) : Left011 := by
+  rintro s hs ⟨K, pat, free⟩
+  have old := free_of_cover (large := Rule30PeriodThreeLanguage.col1Forbidden011) (by decide) free
+  exact h s hs ⟨K, fun k hk => ⟨pat k hk, old k hk⟩⟩

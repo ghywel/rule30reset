@@ -1,0 +1,81 @@
+/-! ### No slope below five halves (gptIntel, ledger I206) -/
+
+/-- A finite row with its first ether defect at `D`. -/
+def cut (j φ D p : Nat) : Bool :=
+  if p < D then eth j φ p 0 else if p = D then !eth j φ p 0 else false
+
+theorem cut_finite (j φ D : Nat) {p : Nat} (hp : D < p) : cut j φ D p = false := by
+  simp [cut, show ¬p < D by omega, show p ≠ D by omega]
+
+theorem travel {F : Nat → Nat → Bool} (hF : IsR30 F) {j φ : Nat} (clock : ∀ t, F t 0 = eth j φ 0 t) (k c t : Nat) (hc : 7 ≤ c)
+    (front : Front F j φ t (4*k+c)) (hrec : IsRec F j φ t (4*k+c)) : Front F j φ (t+10*k) c := by
+  induction k generalizing t with
+  | zero => simpa using front
+  | succ k ih =>
+    obtain ⟨next, nextRec, _⟩ := ten_ticks hF (fun u _ => clock u) front hrec (by omega)
+    rw [show 4*(k+1)+c-4 = 4*k+c by omega] at next nextRec
+    simpa only [show t+10*(k+1) = t+10+10*k by omega] using ih (t+10) next nextRec
+
+theorem outside_at (w : List Bool) (trap : List Nat) (j φ c n : Nat) (aligned : aligned3 w j 0 = true) (hc : 14 < c)
+    (state : (j+c+4*φ)%12 = 0) (outside : code (fun _ p => ether3 (j+p) φ) 0 14 ∉ trap) :
+    ¬ InTrap trap (half w (cut j φ (12*n+c)) φ) (30*n) := by
+  let D := 12*n+c
+  let F := half w (cut j φ D) φ
+  have clock (t : Nat) : F t 0 = eth j φ 0 t := by
+    rw [show F t 0 = wordAt3 w (t+φ) from half_zero ..]
+    simpa [eth] using (aligned3_spec aligned (t+φ)).symm
+  have initial (p : Nat) (hp : 1 ≤ p) : F 0 p = cut j φ D p := drv_init _ _ _ hp
+  have first : Front F j φ 0 D := by
+    constructor
+    · intro p hp
+      by_cases z : p = 0
+      · subst p; exact clock 0
+      · rw [initial p (by omega)]; simp [cut, hp]
+    · rw [initial D (by dsimp [D]; omega)]
+      simp [cut]
+  have state' : cls j φ D 0 = 0 := by unfold cls; dsimp [D]; omega
+  have hrec : IsRec F j φ 0 D := by
+    unfold IsRec; rw [state']; cases ubit F j φ 0 D <;> decide
+  have dEq : D = 4*(3*n)+c := by dsimp [D]; omega
+  rw [dEq] at first hrec
+  have late := travel (half_isR30 w (cut j φ D) φ) clock (3*n) c 0 (by omega) first hrec
+  rw [show 0+10*(3*n) = 30*n by omega] at late
+  have same : code F (30*n) 14 = code (fun _ p => ether3 (j+p) φ) 0 14 := by
+    unfold code; congr 1
+    apply Rule30Ether.seg_congr
+    intro i hi
+    exact (late.1 (i+1) (by omega)).trans (ether3_congr rfl (by omega))
+  change code F (30*n) 14 ∉ trap
+  rwa [same]
+
+/-- At gate tick `30 n` a half that is white beyond `12 n + 20` can still be outside the trap of `001`. -/
+theorem slow_001 (n : Nat) : ¬ InTrap trap001 (half w001 (cut 0 1 (12*n+20)) 1) (30*n) :=
+  outside_at _ _ _ _ _ _ (by decide) (by decide) (by decide) (by decide +kernel)
+
+/-- At gate tick `30 n` a half that is white beyond `12 n + 25` can still be outside the trap of `011`. -/
+theorem slow_011 (n : Nat) : ¬ InTrap trap011 (half w011 (cut 11 0 (12*n+25)) 0) (30*n) :=
+  outside_at _ _ _ _ _ _ (by decide) (by decide) (by decide) (by decide +kernel)
+
+theorem slope_arith {p q r c : Nat} (h : 2*p < 5*q) : p*(12*(c*p+r)+c) + r ≤ q*(30*(c*p+r)) := by
+  have a : (2*p+1)*(6*(c*p+r)) ≤ (5*q)*(6*(c*p+r)) := Nat.mul_le_mul_right _ h
+  have e1 : (5*q)*(6*(c*p+r)) = q*(30*(c*p+r)) := by
+    rw [Nat.mul_comm 5 q, Nat.mul_assoc, ← Nat.mul_assoc 5 6]
+  have e2 : (2*p+1)*(6*(c*p+r)) = p*(12*(c*p+r)) + 6*(c*p+r) := by
+    rw [Nat.add_mul, Nat.one_mul, Nat.mul_comm 2 p, Nat.mul_assoc, ← Nat.mul_assoc 2 6]
+  rw [e1, e2] at a
+  rw [Nat.mul_add]
+  have e3 : p*c = c*p := Nat.mul_comm ..
+  omega
+
+/-- **The slope beside `001`.** If every half white beyond `D` is in the trap at every gate tick `t` with `p D + r ≤ q t`, then
+`p/q` is at least `5/2`. -/
+theorem slope_001 {p q r : Nat} (h : ∀ (R : Nat → Bool) (D : Nat), (∀ x, D < x → R x = false) → ∀ φ t, (t+φ) % 3 = 1 →
+    p*D+r ≤ q*t → InTrap trap001 (half w001 R φ) t) : 5*q ≤ 2*p := by
+  refine Nat.le_of_not_lt fun lt => slow_001 (20*p+r) ?_
+  exact h _ _ (fun x hx => cut_finite 0 1 _ hx) 1 _ (by omega) (slope_arith lt)
+
+/-- **The slope beside `011`.** -/
+theorem slope_011 {p q r : Nat} (h : ∀ (R : Nat → Bool) (D : Nat), (∀ x, D < x → R x = false) → ∀ φ t, (t+φ) % 3 = 0 →
+    p*D+r ≤ q*t → InTrap trap011 (half w011 R φ) t) : 5*q ≤ 2*p := by
+  refine Nat.le_of_not_lt fun lt => slow_011 (25*p+r) ?_
+  exact h _ _ (fun x hx => cut_finite 11 0 _ hx) 0 _ (by omega) (slope_arith lt)

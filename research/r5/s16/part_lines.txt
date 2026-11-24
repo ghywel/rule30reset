@@ -3,10 +3,6 @@
 section
 variable {T : Tree} {white black : Nat} {d0 d1 d2 : Bool}
 
-/-- Both colours are allowed at `n` successive times after `o`. -/
-def freeFrom (white black o n : Nat) : Bool :=
-  (List.range n).all fun i => white.testBit (o+(i+1)) && black.testBit (o+(i+1))
-
 theorem free_march (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true) {x o n : Nat}
     (free : freeFrom white black o n = true) (start : (T.value x 0).testBit o = true) :
     (T.value (rows d0 d1 d2 x n) 0).testBit (o+n) = true := by
@@ -19,15 +15,15 @@ theorem free_march (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = 
 
 /-- **The closed set.** Bit 0 is carried to the row one period later. -/
 theorem bit_closed (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true)
-    (free : freeFrom white black 0 1 = true) (wrap : (T.leaves fun m => m.testBit 1 == m.testBit 0) = true) {x : Nat}
+    (free : freeFrom white black 0 1 = true) (wrap : leaves (fun m => m.testBit 1 == m.testBit 0) T = true) {x : Nat}
     (h : (T.value x 0).testBit 0 = true) : (T.value (per d0 d1 d2 x) 0).testBit 0 = true := by
   have a := free_march va ok (n := 1) free h
-  have l := beq_iff_eq.mp (Tree.leaves_value wrap (per d0 d1 d2 x) 0)
+  have l := beq_iff_eq.mp (leaves_value wrap (per d0 d1 d2 x) 0)
   rw [← l]
   exact a
 
 theorem bit_stays (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true)
-    (free : freeFrom white black 0 1 = true) (wrap : (T.leaves fun m => m.testBit 1 == m.testBit 0) = true) {x : Nat}
+    (free : freeFrom white black 0 1 = true) (wrap : leaves (fun m => m.testBit 1 == m.testBit 0) T = true) {x : Nat}
     (h : (T.value x 0).testBit 0 = true) : ∀ i, (T.value (rows d0 d1 d2 x i) 0).testBit 0 = true
   | 0 => h
   | i+1 => bit_closed va ok free wrap (bit_stays va ok free wrap h i)
@@ -36,35 +32,21 @@ theorem bit_stays (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = t
 theorem bit_entry (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true) {A B m n e : Nat}
     (freeA : freeFrom white black A m = true) (freeB : freeFrom white black B n = true)
     (first : T.low.testBit A = true)
-    (middle : (T.leaves fun k => !k.testBit (A+m) || (k.testBit B || k.testBit e)) = true)
-    (last : (T.leaves fun k => !k.testBit (B+n) || k.testBit 0) = true) (x : Nat) :
+    (middle : leaves (fun k => !k.testBit (A+m) || (k.testBit B || k.testBit e)) T = true)
+    (last : leaves (fun k => !k.testBit (B+n) || k.testBit 0) T = true) (x : Nat) :
     (T.value (rows d0 d1 d2 x m) 0).testBit e = true ∨
       (T.value (rows d0 d1 d2 (rows d0 d1 d2 x m) n) 0).testBit 0 = true := by
   have a := free_march va ok freeA ((T.bounds va x 0 A).1 first)
-  have c := Tree.leaves_value middle (rows d0 d1 d2 x m) 0
+  have c := leaves_value middle (rows d0 d1 d2 x m) 0
   rw [a] at c
   simp only [Bool.not_true, Bool.false_or, Bool.or_eq_true] at c
   rcases c with b | b
   · right
     have f := free_march va ok freeB b
-    have l := Tree.leaves_value last (rows d0 d1 d2 (rows d0 d1 d2 x m) n) 0
+    have l := leaves_value last (rows d0 d1 d2 (rows d0 d1 d2 x m) n) 0
     rw [f] at l
     simpa using l
   · exact Or.inl b
-
-/-- A letter of a pattern: a colour, or any. -/
-def fits (a : Option Bool) (c : Bool) : Bool :=
-  match a with
-  | none => true
-  | some b => b == c
-
-/-- A pattern on the line `o`: its start from the closed set, its colours, and its death. -/
-def wordLine (T : Tree) (white black o : Nat) (v : List (Option Bool)) : Bool :=
-  ([false, true].all fun c => !fits (v.headD none) c || (T.child c).leaves fun m => !m.testBit 0 || m.testBit o) &&
-  ((List.range (v.length - 1)).all fun i => [false, true].all fun c =>
-    !fits (v.getD (i+1) none) c || (if c then black else white).testBit (o+(i+1))) &&
-  ([false, true].all fun c => !fits (v.getD (v.length - 1) none) c ||
-    (T.child c).leaves fun m => !m.testBit (o + (v.length - 1)))
 
 theorem mem_colours (c : Bool) : c ∈ [false, true] := by cases c <;> simp
 
@@ -84,7 +66,7 @@ theorem bit_word (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = tr
     rw [show rows d0 d1 d2 x 0 = x from rfl] at r0
     rw [r0] at s
     simp only [Bool.not_true, Bool.false_or] at s
-    have l := Tree.leaves_value s x 1
+    have l := leaves_value s x 1
     rw [kid x 0 h] at l
     rw [← Tree.child_value T x 0]
     simpa using l
@@ -95,7 +77,7 @@ theorem bit_word (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = tr
   have e := List.all_eq_true.mp en _ (mem_colours ((rows d0 d1 d2 x (v.length-1)).testBit 0))
   rw [read (v.length - 1) (by omega)] at e
   simp only [Bool.not_true, Bool.false_or] at e
-  have l := Tree.leaves_value e (rows d0 d1 d2 x (v.length-1)) 1
+  have l := leaves_value e (rows d0 d1 d2 x (v.length-1)) 1
   rw [kid _ _ all] at l
   simp at l
 
@@ -187,15 +169,11 @@ def InTrap (trap : List Nat) (F : Nat → Nat → Bool) (t : Nat) : Prop := code
 section
 variable {T : Tree} {trap : List Nat}
 
-/-- Bit 0 of the table says that the first fourteen cells are in the list. -/
-def isTrap (T : Tree) (trap : List Nat) : Bool :=
-  T.codes 0 0 0 14 == trap && T.tight 0 14 && trap.all fun c => (T.value c 0).testBit 0
-
 theorem trap_of_bit (va : T.valid = true) (is : isTrap T trap = true) {F : Nat → Nat → Bool} {t x L : Nat}
     (h : Fits F t x L) (le : 14 ≤ L) (hb : (T.value x 0).testBit 0 = true) : InTrap trap F t := by
   simp only [isTrap, Bool.and_eq_true] at is
-  have m := Tree.mem_codes (t := 0) 14 va (k := 0) (p := 0) (r := x) (by simp [Nat.mod_one]) hb
-  rw [beq_iff_eq.mp is.1.1, Nat.zero_add] at m
+  have m := mem_codes (t := 0) 14 va (k := 0) (p := 0) (r := x) (by simp [Nat.mod_one]) hb
+  rw [beq_iff_eq.mp is.1, Nat.zero_add] at m
   unfold InTrap
   rw [← code_of_fits h le]
   exact m
@@ -203,8 +181,8 @@ theorem trap_of_bit (va : T.valid = true) (is : isTrap T trap = true) {F : Nat �
 theorem bit_of_trap (va : T.valid = true) (is : isTrap T trap = true) {F : Nat → Nat → Bool} {t x L : Nat}
     (h : Fits F t x L) (le : 14 ≤ L) (hb : InTrap trap F t) : (T.value x 0).testBit 0 = true := by
   simp only [isTrap, Bool.and_eq_true] at is
-  have b := List.all_eq_true.mp is.2 _ hb
-  refine Tree.tight_value 14 va is.1.2 (fun i hi => ?_) b
+  refine codes_bit 14 va is.2 (k := 0) (p := 0) (c := code F t 14) (by decide) (by rw [beq_iff_eq.mp is.1]; exact hb)
+    (fun i hi => ?_)
   rw [Nat.zero_add, code_bit, h i (by omega)]
   simp [hi]
 

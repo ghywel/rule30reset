@@ -1,0 +1,131 @@
+/-! ### The trap is the least closed set -/
+
+/-- A set of windows of fourteen cells that one period of a driven half keeps, from any gate tick and whatever lies beyond. -/
+def Closed (w : List Bool) (g : Nat) (C : Nat → Prop) : Prop := ∀ (R : Nat → Bool) (φ t : Nat), (t+φ) % 3 = g →
+  C (code (half w R φ) t 14) → C (code (half w R φ) (t+3) 14)
+
+theorem closed_001 : Closed w001 1 (· ∈ trap001) := fun _ _ _ ht h => stays_001 ht h 1
+theorem closed_011 : Closed w011 0 (· ∈ trap011) := fun _ _ _ ht h => stays_011 ht h 1
+
+theorem code_row (w : List Bool) (x φ L : Nat) : Fits (half w (fun p => x.testBit (p-1)) φ) 0 x L := by
+  intro j _
+  rw [half, drv_init _ _ _ (by omega), Nat.add_sub_cancel]
+
+/-- In a closed set, the eight windows that follow a window. -/
+theorem closed_image {w : List Bool} {g : Nat} {C : Nat → Prop} (h : Closed w g C) (hg : g < 3) {x : Nat} (hx : x < 2^14)
+    (c : C x) (e : Nat) : C (per (wordAt3 w g) (wordAt3 w (g+1)) (wordAt3 w (g+2)) (x+2^14*e) % 2^14) := by
+  have f := code_row w (x+2^14*e) g 17
+  have a := code_of_fits f (n := 14) (by omega)
+  rw [Nat.add_mul_mod_self_left, Nat.mod_eq_of_lt hx] at a
+  obtain ⟨h0, h1, h2⟩ := drive_half (w := w) (R := fun p => (x+2^14*e).testBit (p-1)) (φ := g) (t := 0) (g := g) (by omega) 1 0
+    (by omega)
+  have b := code_of_fits (fits_per (half_isR30 _ _ _) h0 h1 h2 (L := 14) f) (Nat.le_refl 14)
+  rw [b]
+  refine h _ g 0 (by omega) ?_
+  rw [← a]
+  exact c
+
+theorem bit_or {s y v : Nat} (h : (s ||| (1 <<< y)).testBit v = true) : s.testBit v = true ∨ v = y := by
+  rw [Nat.testBit_or, Nat.one_shiftLeft, Nat.testBit_two_pow] at h
+  simp only [Bool.or_eq_true, decide_eq_true_eq] at h
+  exact h.imp id Eq.symm
+
+section
+variable {w : List Bool} {g : Nat} {C : Nat → Prop}
+
+theorem tour_end (h : Closed w g C) (hg : g < 3) : ∀ (k l x seen r full : Nat),
+    tour (wordAt3 w g) (wordAt3 w (g+1)) (wordAt3 w (g+2)) k l x seen r full = true → x < 2^14 → C x → C r
+  | 0, _, x, seen, r, full, ok, _, c => by
+    simp only [tour, Bool.and_eq_true, beq_iff_eq] at ok
+    rw [← ok.1]; exact c
+  | k+1, l, x, seen, r, full, ok, hx, c => by
+    simp only [tour, Bool.and_eq_true] at ok
+    exact tour_end h hg k (l/8) _ _ r full ok.2.2 (Nat.mod_lt _ (by decide)) (closed_image h hg hx c (l % 8))
+
+theorem tour_all (h : Closed w g C) (hg : g < 3) : ∀ (k l x seen r full : Nat),
+    tour (wordAt3 w g) (wordAt3 w (g+1)) (wordAt3 w (g+2)) k l x seen r full = true → x < 2^14 → C x →
+      ∀ v, full.testBit v = true → seen.testBit v = true ∨ C v
+  | 0, _, x, seen, r, full, ok, _, _, v, hv => by
+    simp only [tour, Bool.and_eq_true, beq_iff_eq] at ok
+    rw [ok.2]; exact Or.inl hv
+  | k+1, l, x, seen, r, full, ok, hx, c, v, hv => by
+    simp only [tour, Bool.and_eq_true] at ok
+    have y := closed_image h hg hx c (l % 8)
+    rcases tour_all h hg k (l/8) _ _ r full ok.2.2 (Nat.mod_lt _ (by decide)) y v hv with b | b
+    · rcases bit_or b with b | b
+      · exact Or.inl b
+      · rw [b]; exact Or.inr y
+    · exact Or.inr b
+
+/-- From every window the walk meets it goes on to its end. -/
+theorem tour_home (h : Closed w g C) (hg : g < 3) : ∀ (k l x seen r full : Nat),
+    tour (wordAt3 w g) (wordAt3 w (g+1)) (wordAt3 w (g+2)) k l x seen r full = true →
+      ∀ v, full.testBit v = true → C v → seen.testBit v = true ∨ C r
+  | 0, _, x, seen, r, full, ok, v, hv, _ => by
+    simp only [tour, Bool.and_eq_true, beq_iff_eq] at ok
+    rw [ok.2]; exact Or.inl hv
+  | k+1, l, x, seen, r, full, ok, v, hv, c => by
+    simp only [tour, Bool.and_eq_true] at ok
+    rcases tour_home h hg k (l/8) _ _ r full ok.2.2 v hv c with b | b
+    · rcases bit_or b with b | b
+      · exact Or.inl b
+      · rw [b] at c
+        exact Or.inr (tour_end h hg k (l/8) _ _ r full ok.2.2 (Nat.mod_lt _ (by decide)) c)
+    · exact Or.inr b
+
+end
+
+theorem bitset_fold : ∀ (L : List Nat) (s v : Nat), (s.testBit v = true ∨ v ∈ L) →
+    (L.foldl (fun s x => s ||| (1 <<< x)) s).testBit v = true
+  | [], s, v, h => by simpa using h
+  | a :: L, s, v, h => by
+    refine bitset_fold L _ v ?_
+    rw [Nat.testBit_or, Nat.one_shiftLeft, Nat.testBit_two_pow]
+    simp only [List.mem_cons] at h
+    simp only [Bool.or_eq_true, decide_eq_true_eq]
+    rcases h with h | h | h
+    · exact Or.inl (Or.inl h)
+    · exact Or.inl (Or.inr h.symm)
+    · exact Or.inr h
+
+theorem bitset_mem {L : List Nat} {v : Nat} (h : v ∈ L) : (bitset L).testBit v = true := bitset_fold L 0 v (Or.inr h)
+
+/-- A closed set with one window of the trap has them all. -/
+theorem whole_trap {w : List Bool} {g : Nat} {C : Nat → Prop} {trap : List Nat} {k l r : Nat}
+    (ok : tour (wordAt3 w g) (wordAt3 w (g+1)) (wordAt3 w (g+2)) k l r 0 r (bitset trap) = true) (hr : r < 2^14)
+    (h : Closed w g C) (hg : g < 3) {x : Nat} (hx : x ∈ trap) (c : C x) : ∀ y ∈ trap, C y := by
+  intro y hy
+  have home : C r := by
+    rcases tour_home h hg k l r 0 r _ ok x (bitset_mem hx) c with b | b
+    · simp at b
+    · exact b
+  rcases tour_all h hg k l r 0 r _ ok hr home y (bitset_mem hy) with b | b
+  · simp at b
+  · exact b
+
+theorem closed_stays {w : List Bool} {g : Nat} {C : Nat → Prop} (h : Closed w g C) (R : Nat → Bool) {φ t : Nat}
+    (ht : (t+φ) % 3 = g) (c : C (code (half w R φ) t 14)) : ∀ n, C (code (half w R φ) (t+3*n) 14)
+  | 0 => c
+  | n+1 => h R φ (t+3*n) (by omega) (closed_stays h R ht c n)
+
+/-- **The trap of `001` is the least closed set:** every closed set that holds any window of fourteen cells holds all of it. -/
+theorem least_001 {C : Nat → Prop} (h : Closed w001 1 C) {x : Nat} (hx : x < 2^14) (c : C x) : ∀ y ∈ trap001, C y := by
+  have fin : ∀ p, 14 < p → (fun p => x.testBit (p-1)) p = false := fun p hp => by
+    apply Nat.testBit_lt_two_pow
+    exact Nat.lt_of_lt_of_le hx (Nat.pow_le_pow_right (by decide) (by omega))
+  have start : code (half w001 (fun p => x.testBit (p-1)) 1) 0 14 = x := by
+    rw [← code_of_fits (code_row w001 x 1 14) (Nat.le_refl 14), Nat.mod_eq_of_lt hx]
+  have inT := finite_enters_001 fin (φ := 1) (t := 0+3*100) (by decide) (by omega)
+  have cT := closed_stays h (fun p => x.testBit (p-1)) (φ := 1) (t := 0) (by decide) (by rw [start]; exact c) 100
+  exact whole_trap tour001 (by decide) h (by decide) inT cT
+
+/-- **The trap of `011` is the least closed set.** -/
+theorem least_011 {C : Nat → Prop} (h : Closed w011 0 C) {x : Nat} (hx : x < 2^14) (c : C x) : ∀ y ∈ trap011, C y := by
+  have fin : ∀ p, 14 < p → (fun p => x.testBit (p-1)) p = false := fun p hp => by
+    apply Nat.testBit_lt_two_pow
+    exact Nat.lt_of_lt_of_le hx (Nat.pow_le_pow_right (by decide) (by omega))
+  have start : code (half w011 (fun p => x.testBit (p-1)) 0) 0 14 = x := by
+    rw [← code_of_fits (code_row w011 x 0 14) (Nat.le_refl 14), Nat.mod_eq_of_lt hx]
+  have inT := finite_enters_011 fin (φ := 0) (t := 0+3*300) (by decide) (by omega)
+  have cT := closed_stays h (fun p => x.testBit (p-1)) (φ := 0) (t := 0) (by decide) (by rw [start]; exact c) 300
+  exact whole_trap tour011 (by decide) h (by decide) inT cT
