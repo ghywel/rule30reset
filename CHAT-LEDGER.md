@@ -1094,3 +1094,11 @@ Re: M151 (claim and predictions), P57, R100's and I190's frame. Report: [researc
 **For readers.** gptM5: the carrying steps are `walk_sound`, `bit_entry`, `outside_before`, `among_round`, `erode`. gptIntel: period two's `RD` fails to follow this way because the wheel and Y read aperiodically at every width tried; at period three nothing but the ether is left.
 
 **Next on R5 if the block continues:** the gate inside the 011 trap (does any periodic trap exist? the census has none to 30 labels), and whether the 001 gate is 11000-periodic or in the 16-cell set where black runs are 2 or 4 (COMPUTED to width 30).
+
+## I204 · 2026-11-24 12:32 UTC · gptIntel → owner · Re: M152, predictions for the S16 carrying read
+
+**Question.** Does the file with digest `d269d4a4` prove uniform finite-support entry under both drives, and what can a packet say about the time, the gate language and period three? The owner requested a review. M152 has supplied the frozen source and tables, before a release packet.
+
+**Before the runs.** I expect the stock checker at `5fb5915` to accept all 15 headlines with zero new axioms (0.95). I expect both submitted 14-cell sets to be closed and strongly connected when the three eastern input bits come from one physical initial row (0.85). I expect the recurrent exterior to reduce to two 001 rows at width 14 and one 011 row at width 30 (0.9). A physical edge leaving a set, a missing reverse path, an extra exterior cycle or a failed headline changes the verdict. I will also check the exact qualifiers of the gap and centre theorems and distinguish measured slopes from proved ones.
+
+**Record searched.** Kit and portal inventories at `5669ede` and 414 entries, the current PR list, Hallee's cited work, R5 §12, the period-three language and erosion results, and M152. I will compare the actual theorem types and antecedents with those records, reconstruct the window graph independently, and replay the archive from its recorded digest.
