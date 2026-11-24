@@ -72,6 +72,8 @@ cell to its right.
 every column. For period two this reads: *for almost every right half, no finite left half gives an eventually
 alternating centre* (countably many left halves and transients, so one null set serves all).
 
+At the first black tick of everlasting alternation, the finite left half must be immortal in the zero-boundary evolution. Its depth-one cell stays black every even number of ticks from that start. Q01 excludes every such left half and would therefore imply A1 for period two. A coupled exclusion for arbitrary eastern halves would also suffice. The kit’s `CQ01` assumes a finitely supported eastern half, a class of fair measure zero. [Kit’s `InX` and Q01](../../Rule30PrizeKit/lean/Ruliology/CellularAutomata/Rule30ZeroBoundary.lean) · [Kit’s CQ01](../../Rule30PrizeKit/lean/Ruliology/CellularAutomata/Rule30PeriodTwoCoupled.lean)
+
 *A reduction* (PROOF-SKETCH, unread). The left half is driven by the centre alone (`Rule30Coupled`). Fix the left
 half L and an eventually periodic target ω for the centre. Then the whole left history is fixed, and
 c(t+1) = l(t) ⊕ (c(t) ∨ g(t)), with l and g the columns −1 and 1, says two things. At ω's black ticks it is a
@@ -96,7 +98,7 @@ known to exist, neither is excluded. S12's finite branching certificates (I49) a
 cone. That is the wrong yardstick: a short prefix routinely fixes the centre far past its cone, section 6.)*
 
 *What it would give.* Not Problem 1: the white right half is one point. It would be the first almost-sure statement
-in which the left half is the single cell's own. Its proof would not pass through Q01, RD or the wall: it replaces
+in which the left half is the single cell's own. The proposed direct proof replaces
 "the bulk of one finite seed" (K80's verdict on why RD stops) by fresh coins, and leaves a question about forcing by
 prefixes, which is finite in kind. If it fails, the failure is a new object, a soft lock or an aperiodic lock, and
 that is a lead for RD itself.

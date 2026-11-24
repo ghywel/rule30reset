@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 22:37 UTC by gptIntel (I233–I234, S19 strip and K83.B).*
+Updated 2026-11-24 22:47 UTC by gptIntel (I235, N16 feedback read).*
 
 ## Arrangement
 
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M177, gptM5 R117, claudeCloud K83, gptIntel I234 and claudeIntel N16.
+- **Last posts:** claudeM5 M177, gptM5 R117, claudeCloud K83, gptIntel I235 and claudeIntel N16.
 
 ## Needs the owner
 
@@ -54,7 +54,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **The owner, 24 November:** claudeM5 checks this file and assigns a block each to gptIntel and claudeIntel (M165).
 
-- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19 packet c is held while claudeIntel chooses the example (M177, I233). K83.A passed its read (N16). K83.B’s entropy bounds are with claudeCloud for a read (I234). The two Intel Y runs continue.
+- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19 packet c is held while claudeIntel chooses the example (M177, I233). K83.A and its feedback extension passed their reads (N16, I235). K83.B’s entropy bounds are with claudeCloud for a read (I234). The two Intel Y runs continue.
 - **On offer, none started:**
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
     K50);
@@ -110,7 +110,7 @@ table for the lists below. The rules are in METHOD §8.
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | N12’s nine-gap factor (a,12,14,12,12,10,9,10,b), a=10 or 14, b=10 or 12, **COMPUTED; carrying PASS** (R117). The full four-letter width-29 replay gave zero differing pairs. **COMPUTED:** successive occurrences are at least 11 pulses apart. **PROVED IN LEAN:** at distances 7–9, two occurrences capture every right half in G. [Read, controls and reproduction](research/white-gap-mixtures/gptM5-n12-return-read.md). **Next:** carry the two unobserved cells across every distance-11 path and test physical continuity. | S8 is in the kit. The close-return capture has a standalone Lean proof ready for independent read. Full nine-gap necessity and eleven-pulse spacing need compact certificates. |
 | I66 | 21 Nov, gptIntel | Lowry’s source arrivals under periodic centres, and source priority | [I216](research/arrivals/uniform/README.md) proves M165’s uniform entry in Lean. Sample 35 is attained by a finite half with eight black sites. The nine gap pairs apply to every right half from that sample. | S17 and S18 are posted (M164, M171). |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | *In progress:* claudeM5 and gptM5 ([report](research/r5/README.md)). **PROVED IN LEAN:** recurrent fronts of the ether move on one path for every right side (M134, read by gptM5); the exact first departure after a 22-site prefix exit, 49 or 52 ticks (R97, read by claudeM5); no half that carries 20 ether columns, or 16 white cells, enters the kit's 15-trap (M137, read by gptM5 in R98). **COMPUTED:** the only component reached after departure is the 22-column giant (I173, I177); the traps of 001 share a 34-column trunk; a census of every wall with labels to 30 finds no gate but 1100000 and 11000, none for 011, and a **fifth trap** that refutes entry into the four known (M137). CONJECTURE: every finite half's gate is eventually one of those two. **PROVED (M153, I208):** each finite half enters the least nonempty closed 14-cell trap, at every gate tick from 3 D + 170 or 3 D + 820. The portable proof rules out slopes below 5/2. The period-two analogue remains open. Open: that a finite half ever passes the last rung. **Next:** a periodic trap beside 011, labels 33. | **S14** (M142) and **S16** (M159) are posted and in the kit |
-| K83.A | 24 Nov, claudeCloud | With a fixed finite left and fair east, is the centre almost surely aperiodic? What enters the alternating wall’s trap or locks? | **Block returned (I229); A1 and A2 open.** [Exact forward bounds](research/rule4/k83a-gate-mass.md) and [seven/one escape](research/rule4/k83a-escape.md). [Trap alone ≥51.4395%](research/rule4/k83a-basin.md). [Past-wall measure law in Lean](research/rule4/right-coin-past.md). **Read (N16): PASS.** The adaptive law and [the reduction of A1 to pure periodic targets](research/rule4/K83Feedback.lean) are in Lean (unread). For period two the kit’s `q01_width_le_52` already empties every west of width ≤ 52, so A1(2) fails only if Q01 fails; trap basin ≥ 62.85% at 34 cells. **Next:** the share of right halves that read the gate words of the longest-lived wests of depth 50 to 60 ([read](research/rule4/claudeIntel-k83a-read.md)). | No S number. The half-line result is read; no portal partial from it yet (N16). |
+| K83.A | 24 Nov, claudeCloud | For a fixed finite west and fair east, is the centre almost surely aperiodic? Which rows enter the alternating trap or locks? | **A1 and A2 open.** Trap basin ≥62.85% at width 34. The kit excludes black-first west width ≤52 and white-first width ≤51. [Past-wall law](research/rule4/right-coin-past.md), [independent read and basin counts](research/rule4/claudeIntel-k83a-read.md) (I229, N16). | The [Lean feedback and restart](research/rule4/K83Feedback.lean) reduce A1 to pure-period nullity ([read passed](research/rule4/gptIntel-n16-feedback-read.md), I235). Next, measure gate-word masses for long-lived wests of depth 50–60. No S number. |
 | K83.B | 24 Nov, claudeCloud | How quickly is the right side heard, and is entropy above one bit? | **B4 proved.** Full topological entropy <1.146669 bits/tick, fair metric entropy ≤1.124883281645. B1–B3 remain open. [Results and certificates](research/rule4/k83b/README.md) (I234). | Independent carrying and prior-art read requested on the Lean upper bound. For B3, test a language with hidden states. |
 
 ## Parked
