@@ -32,7 +32,8 @@ The proof is one table of sets of times on spatial prefixes, walked once against
 (the method of `Rule30TrappedRunMasks`). No `Rule30PeriodTwoWidth13` is used, and the file checks in about nine seconds.
 The decoders are a search over words, and the local law is a table of six cells.
 
-What is known. The gate words are GE2, and that every right half is eventually in GE2 or reads pure fours is the content of
+What is known. The gate words obey the nine pairs of GE2, and avoid 2, 2, 5 as well. That every right half eventually obeys the
+pairs or reads pure fours is the content of
 `Rule30PeriodTwoWidth13.path_run` (AIOvernight), from a rank certificate of 16,384 nodes of a strip of thirteen cells; the single
 cell excludes the fours by `not_pure4`. What is added here is an explicit set of twelve-cell windows that is closed, the entry into
 it, and 2, 2, 5, which I203's strip of six cells excludes, as one of its words. Lowry's net, shell and two-step identity are those of

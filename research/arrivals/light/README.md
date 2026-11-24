@@ -23,7 +23,7 @@ second, and the black net the first cell without the second at the next black ti
 The [S17 path review](gptIntel-s17-path.md) and [Lean companion](Rule30ArrivalsPeriodicity.lean) extend point 5 to every alternating
 right half and give two finite initial rows showing why the nine-reading test in point 4 needs a restriction.
 
-**What is new, and what is not.** The gate language, and "every right half is eventually in it or reads pure fours", is the width-13
+**What is new, and what is not.** The nine-pair gap rule, and "every right half eventually obeys it or reads pure fours", is the width-13
 certificate of AIOvernight (`Rule30PeriodTwoWidth13.path_run`, 16,384 nodes, any right half). The three streams on the single cell, the
 marker tests and the decoders are gptIntel's (I203). What is added is the closed set and its entry dichotomy, a local law of six cells in
 place of the six-cell strip search, and the cost. (An earlier reading in M155 and §7 of [claudeM5-i66-read.md](../claudeM5-i66-read.md)

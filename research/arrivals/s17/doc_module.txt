@@ -27,9 +27,10 @@ The finite part is one table of sets of times on spatial prefixes, walked once a
 (the method of `Rule30TrappedRunMasks`), and two searches over words. The local law is a table of six cells. Masked Jen
 (`Rule30MaskedJen`) excludes the periodic kicks of the single cell.
 
-Known. The gate language of the closed set is GE2, and that every right half is eventually in it or reads pure fours is AIOvernight's
+Known. Every gate trace in the closed set obeys AIOvernight's nine-pair gap rule, and it also avoids the gap sequence 2, 2, 5, which six
+columns exclude already (`Rule30PeriodTwoOnset`). That every right half eventually obeys the nine pairs or reads pure fours is AIOvernight's
 `Rule30PeriodTwoWidth13`, by a rank certificate of a strip of thirteen columns. What is added is the explicit closed set and the entry
-into it, 2, 2, 5 (which six columns exclude too), the decoders, and a proof that checks in nine seconds. Lowry's net, shell and two-step identity are those of
+into it, the decoders, and a proof that checks in nine seconds. Lowry's net, shell and two-step identity are those of
 `Rule30SourceArrivals`, restated here since the verifier's kit does not have it. Lowry's net is aperiodic there when two black ticks follow
 each white one.
 -/
