@@ -5,15 +5,15 @@ OUTDIR/Rule30Submission.lean: S10's tree is carried from research/m9/compact, de
 import json, pathlib, re, sys
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-S10 = (ROOT / 'research/m9/compact/Rule30Submission.lean').read_text()
-D = {w: json.load(open(p)) for w, p in zip(('001', '011'), sys.argv[1:3])}
+S10 = (ROOT / 'research/m9/compact/Rule30Submission.lean').read_text(encoding='utf-8')
+D = {w: json.loads(pathlib.Path(p).read_bytes()) for w, p in zip(('001', '011'), sys.argv[1:3])}
 OUT = pathlib.Path(sys.argv[3])
 OUT.mkdir(parents=True, exist_ok=True)
 B = lambda b: 'true' if b else 'false'
 
 
 def part(n):
-    return (HERE / ('part_%s.txt' % n)).read_text().rstrip('\n') + '\n'
+    return (HERE / ('part_%s.txt' % n)).read_text(encoding='utf-8').rstrip('\n') + '\n'
 
 
 def tree():
@@ -133,5 +133,5 @@ open Rule30DrivenPrefix (step step_bit)
 src = HEAD + '\n'.join([tree(), part('walk'), part('lines'), tables(), part('ether'), part('entry'), part('main'), part('runs'),
                         part('left')]) + '\nend Rule30Submission\n'
 assert '"' not in src and '\\' not in src
-(OUT / 'Rule30Submission.lean').write_text(src)
+(OUT / 'Rule30Submission.lean').write_bytes(src.encode('utf-8'))
 print('Rule30Submission.lean', len(src.encode()))
