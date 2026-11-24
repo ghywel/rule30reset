@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 15:29 UTC by claudeM5 (M159, S16 Lean Verified and PR #415).*
+Updated 2026-11-24 15:39 UTC by gptIntel (I211, S17 review; I212, K80 second checker).*
 
 ## Arrangement
 
@@ -14,23 +14,23 @@ Updated 2026-11-24 15:29 UTC by claudeM5 (M159, S16 Lean Verified and PR #415).*
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | R5: every finite right half beside 001 and 011 enters a gate trap (M152, in Lean); S16 is Lean Verified and in kit PR #415 (M159); the light I66 proof is built (M156) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77. Width-27 disagreement contexts and marked physical controls complete (R106). |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S16 packet b final PASS returned (I208). I66 has its read (M155: PASS; a lighter form found). K80 second checker and the two Y runs are active (I198) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S17 path read passed (I211). Both K80 proof checkers passed; the two general Y runs continue (I212) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | Free. N12's I77 block is returned and with readers; M141's read of S14 no longer holds anything up (M142) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** K80’s sixteen-copy train is UNSAT with an LRAT proof verified by lrat-check (I209). A second checker is running. Intel restarted the 400- and 500-sample Y stays after the 10:15 host reboot. [Run state and collection](research/wheel/gptIntel-k80-review.md#reproduction-and-intel-runs) (I198).
+- **Running jobs:** K80’s fixed sixteen-copy train is UNSAT, verified by lrat-check and cake_lpr (I212). Intel restarted the 400- and 500-sample Y stays after the 10:15 host reboot. [Run state and collection](research/wheel/gptIntel-k80-review.md#reproduction-and-intel-runs) (I198).
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M159, gptM5 R108, claudeCloud K82, gptIntel I209 and claudeIntel N12.
+- **Last posts:** claudeM5 M159, gptM5 R108, claudeCloud K82, gptIntel I212 and claudeIntel N12.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **The next block for the free workers is not set.** S16 is posted and in kit PR #415, gptM5’s release read not yet in (M157), gptM5 holds the I77 continuation (R106), claudeM5 has the light I66 proof built (M156), claudeCloud is paused, and claudeIntel has returned I77 (N12).
-- **I66, a packet** (M156): the light proof is built and checks in 9 s. Say whether it goes to a joint packet with gptIntel (S17), after gptIntel’s read.
+- **The next block for the free workers is not set.** S16 is posted and in kit PR #415, gptM5’s release read not yet in (M157), gptM5 holds the I77 continuation (R106), claudeM5 has offered to build S17 (M156, I211), claudeCloud is paused, and claudeIntel has returned I77 (N12).
+- **S17** (M156, I211). gptIntel recommends preparing one joint Problem 1 partial with claudeM5. The decision for the owner is whether to start the notebook and kit packet. [Path review](research/arrivals/light/gptIntel-s17-path.md).
 - **S16** is Lean Verified and [kit PR #415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415) is open (M159). Nothing is asked of the owner.
 
 ## Direction
@@ -55,7 +55,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 **The owner, 23 November:** the pulls with submissions are sorted (M133), and claudeM5 takes R5. The rest awaits next
 steps.
 
-- **Being worked:** R5 and I77. I66 has its carrying read (M155) and is parked on the light proof. S15 is posted (M150). The K50.2 finite-left result is under Parked (I197). The period-two wall itself is parked (I191).
+- **Being worked:** R5 and I77. The I66 light proof passed its carrying read and is proposed as S17 (I211). S15 is posted (M150). The K50.2 finite-left result is under Parked (I197). The period-two wall itself is parked (I191).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
@@ -68,7 +68,7 @@ steps.
 METHOD §12: any worker authors, a different worker reads, both agree on the same digests, the owner gives the word;
 the Wolfram steps run on the M5. Standing consent to post: none.
 
-S1 to S16 are posted. S1 to S12 are **Lean Verified** and carry the portal’s **Human Verified** tag (public list, 23 November 17:24 UTC), and every one but S1 is in the kit. S13 and S14 are **Lean Verified**, carry the **Human Verified** tag and are in the kit (24 November, R101). S15 is **Lean Verified**, carries **Human Verified** and **Kit Contribution**, and is in the kit (R108). S16 is **Lean Verified** (M159); kit pull request #415 is open.
+S17 is proposed. S1 to S16 are posted. S1 to S12 are **Lean Verified** and carry the portal’s **Human Verified** tag (public list, 23 November 17:24 UTC), and every one but S1 is in the kit. S13 and S14 are **Lean Verified**, carry the **Human Verified** tag and are in the kit (24 November, R101). S15 is **Lean Verified**, carries **Human Verified** and **Kit Contribution**, and is in the kit (R108). S16 is **Lean Verified** (M159); kit pull request #415 is open.
 
 | | Result | From | Portal | Kit |
 |---|---|---|---|---|
@@ -88,6 +88,7 @@ S1 to S16 are posted. S1 to S12 are **Lean Verified** and carry the portal’s *
 | **S14** | The exact first departure from an aligned period-3 ether prefix of any length; the kit's 15-trap is closed to ether and white prefixes; the gate word of each half in a trap of 001, with a conditional exclusion in the form of Bosdure's `Lock`. Problem 1, partial. | R5 | [R30-20261123-f214f2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-f214f2), Lean Verified (M142). Reads: [R98](research/r5/s14/m139-carrying-read.md), R99, I182, I186 | **In the kit** at `0c4194c` ([#408](https://github.com/WolframInstitute/Rule30PrizeKit/pull/408)), three modules and a data module (M148) |
 | **S15** | One column shows the 829-window trap: 48 clean readings, or 47 after the first white tick, for every right half, both least for a uniform test; nine certifying words; sharp delays. Problem 1, partial. | I152, I181, I190, R100 | [R30-20261124-4eb126](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-4eb126), Lean Verified (M150). Reads: R100, [R101](research/wheel/s15/r101-release-read.md), [M144](research/wheel/claudeM5-i175-read.md), I195 | **In the kit** at `a09d6c6` ([#412](https://github.com/WolframInstitute/Rule30PrizeKit/pull/412)), `Rule30GateObserver` and a data module (M153) |
 | **S16** | Every finite right half beside 001 or 011 enters the least nonempty closed set of 14-cell windows in linear time; no slope below 5/2 would do. Problem 1, partial. | R5, M152, I206 | [R30-20261124-629dac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac) (M159): **Lean Verified**. [Packet b](research/r5/s16/); reads [I206](research/r5/s16/i206-carrying-read.md), [R107, R108](research/r5/s16/gptM5-packet-a-review.md) on packet a, [I208](research/r5/s16/gptIntel-packet-b-review.md) PASS on b; gptM5’s release read not in (M157) | [#415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415), from patch `b6c8367f…` on `31b28a1`, open |
+| **S17** | If the singleton centre eventually alternates, each phase of Lowry’s source net and shell is aperiodic. Problem 1, partial. | I66, I203, M156, I211 | [Proof and path read](research/arrivals/light/gptIntel-s17-path.md), PASS to prepare; owner decision pending | Joint notebook and kit change proposed |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `31b28a1` after S15 (#412), Quint’s #411 and Kurtuluş’s #413 and #414 (M154).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
@@ -109,7 +110,7 @@ table for the lists below. The rules are in METHOD §8.
 | N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress,* **free** since S11 (gptM5 wrote the [assessment](research/kit-repair/R30-20261029-0ef6e2/golden-strip-cover.md#how-the-other-n6-results-compare)). S11, golden at every phase, is in the kit. **PROVED by hand and read:** [both half-circle cut orbits at every irrational angle](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md) (I123, N7) and the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md) (I127, I128, N8). Silver off the cut orbit rests on computed bounds (I146, K72). **Next, in this order:** (1) the endpoint theorem at every irrational angle in Lean: the convergent denominator bound, the three parity and digit cases, and the signed time shift into `corollary_F`; its angles are real, so expect Mathlib and the portal first; (2) the metric theorem; (3) an exact silver cover. | S11 posted and in the kit; the endpoint theorem is the next candidate |
 | M9 | 17 Nov, claudeM5 | Why does a lone 1 force a word out of the trapped gate? (The late gate language inside the trap.) | *In progress,* **free** since S10 (M123). Inside the trap the gate settles to a fixed process. Four of its exclusion laws and the width-45 threshold are S10, in the kit. The [final K65 sieve](research/m9/data/gptIntel-sieve-final-K65.txt) has 23 certified onsets and 67 survivors through delay 40 or more, and all 18 newly judged laws contain a run of 1 (I140, I142). The entropy is undecided (I106), and absence from real rows is not a law (M85, M106). **Next:** one block on a hand reason for the pair (5, 1) from delay 12, the only judged two-run law. If no local reason appears, park it with the sieve table. The exterior half, X and Y, is K50.1's (K77, K78). | S10 posted and in the kit; the rest: no |
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress with gptM5; claudeIntel's block N12 is returned.* S8 requires (12,10,9). **COMPUTED on all eight gaps** (N12): every sparse period contains (a,12,14,12,12,10,9,10,b), a = 10 or 14, b = 10 or 12. So a gap of 14 is compulsory, and {9,10,12,13} is excluded at width 29. This supersedes R106's two-alphabet words. [Write-up, controls, one-lane second route](research/white-gap-mixtures/claudeIntel-way-in.md). **Next:** (1) a carrying read and replay (gptM5, gptIntel); (2) the branch through 14: can a difference cross a whole occurrence of the nine-gap word? (3) a certificate small enough for Lean. I87's other compulsory factors are partly subsumed. | S8 is in the kit. A nine-gap extension needs (1) and (3). |
-| I66 | 21 Nov, gptIntel | Lowry’s source arrivals under periodic centres, and source priority | *Read by claudeM5, PASS (M155); no packet yet; the lighter proof is built (M156)* (I203). Under an alternating singleton, each phase of the net and shell and the odd-return kick timetable are aperiodic. Nine white source readings recover every kick. [Proofs and replay](research/arrivals/phase-sampled-arrivals.md). Earlier schedule, finite-repeat and priority results are in I66–I73, with finite reads K56/K58. | Light proof built in Lean, 9 s (M156); gptIntel’s read and a packet are the next steps. |
+| I66 | 21 Nov, gptIntel | Lowry’s source arrivals under periodic centres, and source priority | *Both carrying reads passed (M155, I211); joint S17 recommended.* Under an alternating singleton, each phase of the net and shell and the odd-return kick timetable are aperiodic. Nine white source readings recover every kick. [Proofs and replay](research/arrivals/phase-sampled-arrivals.md). Earlier schedule, finite-repeat and priority results are in I66–I73, with finite reads K56/K58. | Eventual periodicity equivalence now covers every alternating right half. Two finite rows disprove unrestricted nine-reading decoding at startup (I211). |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | *In progress:* claudeM5 and gptM5 ([report](research/r5/README.md)). **PROVED IN LEAN:** recurrent fronts of the ether move on one path for every right side (M134, read by gptM5); the exact first departure after a 22-site prefix exit, 49 or 52 ticks (R97, read by claudeM5); no half that carries 20 ether columns, or 16 white cells, enters the kit's 15-trap (M137, read by gptM5 in R98). **COMPUTED:** the only component reached after departure is the 22-column giant (I173, I177); the traps of 001 share a 34-column trunk; a census of every wall with labels to 30 finds no gate but 1100000 and 11000, none for 011, and a **fifth trap** that refutes entry into the four known (M137). CONJECTURE: every finite half's gate is eventually one of those two. **PROVED (M153, I208):** each finite half enters the least nonempty closed 14-cell trap, at every gate tick from 3 D + 170 or 3 D + 820. The portable proof rules out slopes below 5/2. The period-two analogue remains open. Open: that a finite half ever passes the last rung. **Next:** S16 packet, a periodic trap beside 011, labels 33. | **S14** posted (M142); **S16** packet b passed Intel’s final read (I208) |
 
 ## Parked

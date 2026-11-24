@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """make_table.py OUT.json [m,n]: the table of the closed set at period two (ledger M156; mechanism of S10, S15, S16).
 
-A row is columns 1, 2, ... of a right half at a gate tick (the white tick before the black one of 001, the white tick of 011),
-read as a number (bit i = column i + 1). One step is one period, three ticks. Time lines stand one after another in one mask:
+A row contains columns 1, 2, ... of a right half at a white sample of a black-first alternating boundary,
+read as a number (bit i = column i + 1). One step between white samples is two Rule 30 updates. Time lines share a mask:
   K      bits 0, 1: the rows of the trap and their images, so the trap is closed. The trap is the one closed component of the
          graph of all 2^12 windows of 12 cells, with the four images of a window under one period of one row
   entry  steps 0..m from every row, then m..n from the rows whose first W1 cells are not in M: ends in the trap

@@ -11,12 +11,17 @@ second, and the black net the first cell without the second at the next black ti
 2. **A closed set.** 777 windows of twelve cells at a white tick; a half in it stays in it. There its gate reads none of ten words, which say
    that gaps are 2 to 5, seven of the sixteen pairs do not occur, and 2, 2, 5 does not occur. (`stays`, `clean_of_set`)
 3. **Entry.** Every right half enters it, or its kicks come once in four for ever. (`every_half`, `enters_or_four`)
-4. **The decoders.** In the set, nine nets give every kick, and two black nets four ticks apart give the odd kicks. An odd kick is one
-   whose next kick is three or five ticks later. (`kick_of_white_nets`, `odd_of_black_nets`, `odd_iff`)
+4. **The decoders.** After entry, nine consecutive white nets give the kick at index 6 (counting from 0). The black nets at indices
+   k+1 and k+5 give the odd-kick marker at k+1. They are four black samples, or eight Rule 30 updates, apart. In the set the next kick
+   after an odd kick is three or five white samples later. (`kick_of_white_nets`, `odd_of_black_nets`, `odd_iff`)
 5. **Periodicity.** In the set the gate, the white net and the odd kicks are eventually periodic together, and so is the gate when the
    black net is. (`periodic_together`)
-6. **The single cell.** If its centre ever alternates, masked Jen puts it in the set, and none of these streams is eventually periodic. Lowry's
-   net and shell agree on each phase, so neither is. (`both_phases`, `odd_kicks_aperiodic`, `lowry_odd_return`)
+6. **The single cell.** If its centre alternates from some time onward, masked Jen puts it in the set, and each of these streams is
+   aperiodic. Lowry's net and shell agree on white samples and are complements on black samples. Each phase of each observable is
+   therefore aperiodic. (`both_phases`, `odd_kicks_aperiodic`, `lowry_odd_return`)
+
+The [S17 path review](gptIntel-s17-path.md) and [Lean companion](Rule30ArrivalsPeriodicity.lean) extend point 5 to every alternating
+right half and give two finite initial rows showing why the nine-reading test in point 4 needs a restriction.
 
 **What is new, and what is not.** The gate language, and "every right half is eventually in it or reads pure fours", is the width-13
 certificate of AIOvernight (`Rule30PeriodTwoWidth13.path_run`, 16,384 nodes, any right half). The three streams on the single cell, the

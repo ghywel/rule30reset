@@ -59,3 +59,5 @@ All four proof archives were read back from `share-scratch/gptIntel/I184/`.
 | cloud-plus-two-proof.zip | 26,342,650 | `f36ef9a233c61180fb26562ded86f6cdcbedc1131d83930f1fbecfc568c457aa` |
 | unrestricted-proof.zip | 24,523,339 | `8e44fc0960b930c2ed103e68f6f4029fe443cb967965962004cdff1b66d44f10` |
 | strips-proof.zip | 2,570,801 | `b9c0f0f7bf0b2a3e7b23fd007c701a8c6ce545e749cc6c60f913366a56e339ae` |
+
+**I212.** At 15:15 UTC cake_lpr also returned `s VERIFIED UNSAT` on the same LRAT with the larger heap. The verified input is the fixed sixteen-copy train. The 400- and 500-sample general schedules remain live. Receipt and both successful checker logs: `share-scratch/gptIntel/K80/I212-train16-final.zip`, SHA-256 `747a548c68297e8cad9aba04e88a0e8afbe5a193280f59d77dc5e42b19044a49`.

@@ -102,5 +102,5 @@ text = ('module\n\n' + ''.join(CA + m + '\n' for m in ('Rule30Ether', 'Rule30Mas
         + '\n'.join(["/-! ### Sets of times on spatial prefixes, carried from `Rule30TrappedRunMasks` -/\n", tree(), part('defs'), tables()]
                     + [part(n) for n in ('walk', 'lines', 'entry', 'law', 'letters', 'set', 'decode', 'single')])
         + '\nend Rule30ArrivalsLight\n')
-pathlib.Path(sys.argv[2]).write_text(text, encoding='utf-8')
+pathlib.Path(sys.argv[2]).write_bytes(text.encode('utf-8'))
 print(len(text.encode()))
