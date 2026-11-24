@@ -1,0 +1,113 @@
+/-! ### The time lines -/
+
+/-- A gate word of `n` readings, the first in the low bit. -/
+def word (n c : Nat) : List Bool := (List.range n).map fun j => c.testBit j
+
+/-- Nine gate words of 20 to 38 readings. -/
+def factors : List (List Bool) :=
+  [word 20 0x12121, word 23 0x484842, word 26 0x484242, word 29 0x12108421, word 30 0x24210908, word 30 0x24210909,
+   word 31 0x10842108, word 33 0x21084842, word 38 0x212108424]
+
+/-- Where the nine time lines begin in a mask. -/
+def offsets : List Nat := [0, 20, 43, 69, 98, 128, 158, 189, 222]
+def lines : List (Nat × List Bool) := offsets.zip factors
+
+def colourMask (b : Bool) : Nat := if b then blackMask else whiteMask
+/-- The last times of the nine lines. -/
+def lastMask : Nat := lines.foldl (fun m l => m ||| 1 <<< (l.1 + (l.2.length - 1))) 0
+
+/-- At the end of a line only trap codes stand. -/
+def ends (last : Nat) (a : Tree) (k p : Nat) : Nat → Bool
+  | 0 => (a.high &&& last) == 0 || trapCodes.contains p
+  | n+1 => (a.high &&& last) == 0 ||
+      (ends last (a.child false) (k+1) p n && ends last (a.child true) (k+1) (p + 2^k) n)
+
+theorem table_valid : table.valid = true := by decide +kernel
+theorem table_steps : (List.range 16).all (fun p => checkAt table whiteMask blackMask 4 p) = true := by decide +kernel
+theorem table_ends : ends lastMask table 0 0 16 = true := by decide +kernel
+theorem table_starts : lines.all (fun l => (table.child (l.2.headD false)).low.testBit l.1) = true := by decide +kernel
+theorem table_colours : lines.all (fun l => (List.range (l.2.length - 1)).all fun i =>
+    (colourMask (l.2.getD (i+1) false)).testBit (l.1 + (i+1))) = true := by decide +kernel
+theorem table_last : lines.all (fun l => lastMask.testBit (l.1 + (l.2.length - 1))) = true := by decide +kernel
+theorem table_settle : trapCodes.all (fun x => (table.follow x 16).low.testBit 260) = true := by decide +kernel
+theorem table_settled : table.high.testBit 272 = false := by decide +kernel
+theorem table_whites : (table.child false).low.testBit 273 = true ∧ table.high.testBit 277 = false := by decide +kernel
+
+/-- A row carries its time along a line for as long as its readings have the line's colours. -/
+theorem march {o n row : Nat} (start : (table.value row 0).testBit o = true)
+    (cols : ∀ t, t < n → (colourMask ((iterate row (t+1)).testBit 0)).testBit (o + (t+1)) = true) :
+    ∀ t, t ≤ n → (table.value (iterate row t) 0).testBit (o + t) = true := by
+  intro t
+  induction t with
+  | zero => intro _; exact start
+  | succ t ih =>
+    intro ht
+    exact step_all table_valid table_steps (iterate row t) (o + t) (ih (by omega)) (cols t (by omega))
+
+theorem start_child {o row : Nat} {b : Bool} (h : (table.child b).low.testBit o = true) (hb : row.testBit 0 = b) :
+    (table.value row 0).testBit o = true := by
+  rw [← Tree.child_value table row 0, hb]
+  exact ((table.child b).bounds (table.child_valid table_valid b) row 1 o).1 h
+
+theorem high_of_value {r t : Nat} (h : (table.value r 0).testBit t = true) : table.high.testBit t = true :=
+  (table.bounds table_valid r 0 t).2 h
+
+theorem ends_sound {last : Nat} (n : Nat) {a : Tree} {k p r t : Nat} (ok : ends last a k p n = true)
+    (va : a.valid = true) (hp : p = r % 2^k) (hk : k + n = 16) (hv : (a.value r k).testBit t = true)
+    (hl : last.testBit t = true) : r % 2^16 ∈ trapCodes := by
+  have some : ¬ ((a.high &&& last) == 0) = true := by
+    intro zero
+    have e := congrArg (fun m : Nat => m.testBit t) (beq_iff_eq.mp zero)
+    have hi := (a.bounds va r k t).2 hv
+    simp [Nat.testBit_and, hi, hl] at e
+  induction n generalizing a k p with
+  | zero =>
+    have hk' : k = 16 := by omega
+    simp only [ends, Bool.or_eq_true] at ok
+    rcases ok with zero | hit
+    · exact absurd zero some
+    · rw [hp, hk'] at hit
+      exact List.contains_iff_mem.mp hit
+  | succ n ih =>
+    simp only [ends, Bool.or_eq_true, Bool.and_eq_true] at ok
+    rcases ok with zero | ⟨l, h⟩
+    · exact absurd zero some
+    have next : (2:Nat)^(k+1) = 2^k * 2 := Nat.pow_succ ..
+    have split : r % 2^(k+1) = r % 2^k + 2^k * (r / 2^k % 2) := by rw [next]; exact Nat.mod_mul ..
+    have val := Tree.child_value a r k
+    have kid (b : Bool) (hb : r.testBit k = b) (ok' : ends last (a.child b) (k+1) (p + 2^k * b.toNat) n = true) :
+        r % 2^16 ∈ trapCodes := by
+      have hv' : ((a.child b).value r (k+1)).testBit t = true := by rw [← hb, val]; exact hv
+      refine ih ok' (a.child_valid va b) ?_ (by omega) hv' ?_
+      · rw [split, hp]
+        rw [Nat.testBit_eq_decide_div_mod_eq] at hb
+        have lt : r / 2^k % 2 < 2 := Nat.mod_lt _ (by decide)
+        cases b
+        · have : r / 2^k % 2 = 0 := by simp at hb; omega
+          simp [this]
+        · have : r / 2^k % 2 = 1 := by simpa using hb
+          simp [this]
+      · intro zero
+        have e := congrArg (fun m : Nat => m.testBit t) (beq_iff_eq.mp zero)
+        have hi := ((a.child b).bounds (a.child_valid va b) r (k+1) t).2 hv'
+        simp [Nat.testBit_and, hi, hl] at e
+    cases hb : r.testBit k
+    · exact kid false hb (by simpa using l)
+    · exact kid true hb (by simpa using h)
+
+/-- A row whose readings are a factor ends on a trap code. -/
+theorem line_ends {l : Nat × List Bool} (mem : l ∈ lines) (row : Nat)
+    (read : ∀ t, t < l.2.length → (iterate row t).testBit 0 = l.2.getD t false) (pos : 0 < l.2.length) :
+    iterate row (l.2.length - 1) % 2^16 ∈ trapCodes := by
+  have st := List.all_eq_true.mp table_starts l mem
+  have cl := List.all_eq_true.mp table_colours l mem
+  have la := List.all_eq_true.mp table_last l mem
+  have first : row.testBit 0 = l.2.headD false := by
+    have := read 0 pos
+    rw [show iterate row 0 = row from rfl] at this
+    rw [this]
+    cases l.2 <;> rfl
+  have all := march (o := l.1) (n := l.2.length - 1) (row := row) (start_child st first) (fun t ht => by
+    rw [read (t+1) (by omega)]
+    exact List.all_eq_true.mp cl t (List.mem_range.mpr ht))
+  exact ends_sound 16 table_ends table_valid (by simp [Nat.mod_one]) rfl (all _ (Nat.le_refl _)) la

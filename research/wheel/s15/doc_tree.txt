@@ -1,0 +1,5 @@
+/-!
+The table of `Rule30GateObserver`: sets of times on spatial prefixes, on eleven lines of time (the nine words of `factors`,
+for rows outside the gate trap; `1001001` six samples after a row in it; `00000`), and the finite checks on it. The tree and
+its walk are those of `Rule30TrappedRunMasks`.
+-/

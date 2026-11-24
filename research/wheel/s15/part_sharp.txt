@@ -1,0 +1,152 @@
+/-! ### The two lengths are sharp, and so are the two delays -/
+
+/-- A finite right half from a number: cell `j + 1` is bit `j`. -/
+abbrev finite (x : Nat) : Nat → Bool := IntegerForm.rowOfNat x
+
+theorem finite_bit (x t p : Nat) : drv altCol (finite x) t (p+1) = (packed altCol x t).testBit p :=
+  (packed_sound altCol (finite x) x (fun _ => rfl) t p).symm
+
+theorem finite_gate (x s : Nat) : u (finite x) s = (packed altCol x (2*s+1)).testBit 0 := finite_bit x (2*s+1) 0
+
+theorem finite_win (x t : Nat) : win (finite x) t = decode (packed altCol x t % 2^16) :=
+  win_code (fun j _ => (finite_bit x t j).symm)
+
+def outerSeed : Nat := 0xa224d3200017fb5ccd115f23a59
+def innerSeed : Nat := 0x4319fc9fcd612848b70077729985e4b9
+
+theorem same_reading : ∀ j, j < 47 → u (finite outerSeed) j = u (finite innerSeed) (10+j) := by
+  intro j hj
+  rw [finite_gate, finite_gate]
+  exact (by decide +kernel : ∀ i : Fin 47, (packed altCol outerSeed (2*i.val+1)).testBit 0 =
+    (packed altCol innerSeed (2*(10+i.val)+1)).testBit 0) ⟨j, hj⟩
+
+theorem outer_outside : ¬ InTrap (finite outerSeed) 46 := by
+  unfold InTrap
+  rw [finite_win]
+  decide +kernel
+
+theorem inner_inside : InTrap (finite innerSeed) 0 := by
+  unfold InTrap
+  rw [finite_win]
+  decide +kernel
+
+theorem no_rule {n k : Nat} (pos : 0 < n) (hk : k + n = 47) :
+    ¬ ∃ f : (Fin n → Bool) → Bool,
+      (∀ R : Nat → Bool, FinSupp R → ∀ s, k ≤ s → ¬ InTrap R (s+(n-1)) → f (fun j => u R (s+j.val)) = false) ∧
+      (∀ R : Nat → Bool, FinSupp R → ∀ a s, InTrap R a → a+10 ≤ s → f (fun j => u R (s+j.val)) = true) := by
+  rintro ⟨f, reject, accept⟩
+  have same : (fun j : Fin n => u (finite outerSeed) (k+j.val)) = fun j : Fin n => u (finite innerSeed) (10+k+j.val) := by
+    funext j
+    have h := same_reading (k+j.val) (by have := j.isLt; omega)
+    rwa [show 10+(k+j.val) = 10+k+j.val by omega] at h
+  have no := reject (finite outerSeed) (IntegerForm.finSupp_rowOfNat _) k (Nat.le_refl _)
+    (by rw [show k+(n-1) = 46 by omega]; exact outer_outside)
+  have yes := accept (finite innerSeed) (IntegerForm.finSupp_rowOfNat _) 0 (10+k) inner_inside (by omega)
+  rw [same, yes] at no
+  exact Bool.noConfusion no
+
+/-- **Forty-eight is least.** No rule on `n ≤ 47` readings rejects every block that ends outside the trap and accepts every
+block that starts ten samples or more after entry, even on finitely supported right halves. -/
+theorem no_short_classifier (n : Nat) (pos : 0 < n) (short : n ≤ 47) :
+    ¬ ∃ f : (Fin n → Bool) → Bool,
+      (∀ R : Nat → Bool, FinSupp R → ∀ s, ¬ InTrap R (s+(n-1)) → f (fun j => u R (s+j.val)) = false) ∧
+      (∀ R : Nat → Bool, FinSupp R → ∀ a s, InTrap R a → a+10 ≤ s → f (fun j => u R (s+j.val)) = true) := by
+  rintro ⟨f, reject, accept⟩
+  exact no_rule (k := 47-n) pos (by omega) ⟨f, fun R fin s _ => reject R fin s, accept⟩
+
+/-- **Forty-seven is least** for blocks that start after the first white tick. -/
+theorem no_short_classifier_after_first (n : Nat) (pos : 0 < n) (short : n ≤ 46) :
+    ¬ ∃ f : (Fin n → Bool) → Bool,
+      (∀ R : Nat → Bool, FinSupp R → ∀ s, 1 ≤ s → ¬ InTrap R (s+(n-1)) → f (fun j => u R (s+j.val)) = false) ∧
+      (∀ R : Nat → Bool, FinSupp R → ∀ a s, InTrap R a → a+10 ≤ s → f (fun j => u R (s+j.val)) = true) := by
+  rintro ⟨f, reject, accept⟩
+  exact no_rule (k := 47-n) pos (by omega) ⟨f, fun R fin s hs => reject R fin s (by omega), accept⟩
+
+/-- A finite right half that is in the trap at its first white sample and reads `1001001` at samples 5 to 11. -/
+def lateSeed : Nat := 0x7fffff80fc
+
+theorem late_inside : InTrap (finite lateSeed) 0 := by
+  unfold InTrap
+  rw [finite_win]
+  decide +kernel
+
+theorem late_reads : Reads (u (finite lateSeed)) 5 [true, false, false, true, false, false, true] := by
+  intro j hj
+  rw [finite_gate]
+  exact (by decide +kernel : ∀ i : Fin 7, (packed altCol lateSeed (2*(5+i.val)+1)).testBit 0 =
+    [true, false, false, true, false, false, true].getD i.val false) ⟨j, hj⟩
+
+theorem late_dirty {s n : Nat} (hs : s ≤ 5) (hn : 12 ≤ s + n) : ¬ Clean (u (finite lateSeed)) s n := by
+  intro clean
+  refine clean (5-s) _ (by decide : [true, false, false, true, false, false, true] ∈ forbidden) (by simp; omega) ?_
+  rw [show s + (5-s) = 5 by omega]
+  exact late_reads
+
+/-- Five samples after entry a block need not be clean, so six is least in `clean_after_six`. -/
+theorem six_is_least : ¬ ∀ (R : Nat → Bool) (a n : Nat), InTrap R a → Clean (u R) (a+5) n :=
+  fun h => late_dirty (s := 5) (n := 7) (Nat.le_refl _) (Nat.le_refl _) (h (finite lateSeed) 0 7 late_inside)
+
+/-- **The delay of the 48-reading test is 53 samples:** a clean block that starts at entry or later ends by then, and 52 is
+too few for one finite right half. -/
+theorem uniform_delay_48 (d : Nat) :
+    (∀ (R : Nat → Bool) (a : Nat), InTrap R a → ∃ s, a ≤ s ∧ s+47 ≤ a+d ∧ Clean (u R) s 48) ↔ 53 ≤ d := by
+  constructor
+  · intro h
+    obtain ⟨s, -, hd, clean⟩ := h _ 0 late_inside
+    apply Classical.byContradiction
+    intro small
+    exact late_dirty (by omega) (by omega) clean
+  · intro h R a entry
+    exact ⟨a+6, by omega, by omega, clean_after_six entry (Nat.le_refl _) 48⟩
+
+/-- **The delay of the 47-reading test is 52 samples.** -/
+theorem uniform_delay_47 (d : Nat) :
+    (∀ (R : Nat → Bool) (a : Nat), InTrap R a → ∃ s, a ≤ s ∧ 1 ≤ s ∧ s+46 ≤ a+d ∧ Clean (u R) s 47) ↔ 52 ≤ d := by
+  constructor
+  · intro h
+    obtain ⟨s, -, -, hd, clean⟩ := h _ 0 late_inside
+    apply Classical.byContradiction
+    intro small
+    exact late_dirty (by omega) (by omega) clean
+  · intro h R a entry
+    exact ⟨a+6, by omega, by omega, by omega, clean_after_six entry (Nat.le_refl _) 47⟩
+
+/-! ### On a real history -/
+
+/-- The positive columns of a rule 30 history follow the driven right half while column `0` keeps the clock. -/
+theorem agree_positive {F : Nat → Nat → Bool} (hf : IsR30 F) (a h : Nat) (clock : ∀ j, j<h → F (a+j) 0 = altCol j) :
+    ∀ k, k ≤ h → ∀ p, F (a+k) (p+1) = drv altCol (F a) k (p+1) := by
+  intro k
+  induction k with
+  | zero => intro _ p; exact (drv_init _ _ _ (Nat.succ_pos p)).symm
+  | succ k ih =>
+    intro bound p
+    rw [show a+(k+1) = a+k+1 by omega, hf, drv_isR30]
+    have eq (q : Nat) : F (a+k) q = drv altCol (F a) k q := by
+      cases q with
+      | zero => exact (clock k (by omega)).trans (drv_col0 ..).symm
+      | succ q => exact ih (by omega) q
+    rw [eq p, eq (p+1), eq (p+2)]
+
+/-- **On the single cell.** If the center alternates, black first, for the 95 ticks from age `a`, and the 48 readings of its
+right neighbour at the white ticks are clean, the sixteen cells right of the center are then in the trap. -/
+theorem singleton_observer (a : Nat) (clock : ∀ j, j < 95 → Rule30Jen.cell (a+j) 0 = altCol j)
+    (clean : Clean (fun i => trueRight (a+(2*i+1)) 1) 0 48) : seg (fun i => trueRight (a+95) (i+1)) 16 ∈ trap := by
+  have eq := agree_positive trueRight_isR30 a 95 clock
+  have gate (i : Nat) (hi : i < 48) : u (trueRight a) i = trueRight (a+(2*i+1)) 1 := (eq (2*i+1) (by omega) 0).symm
+  have same : Clean (u (trueRight a)) 0 48 := by
+    intro off w mem bound read
+    refine clean off w mem bound fun j hj => ?_
+    have e := gate (0+off+j) (by omega)
+    have r := read j hj
+    rw [e] at r
+    exact r
+  have inside : InTrap (trueRight a) 47 := by simpa only [Nat.zero_add] using sound_48 (trueRight a) 0 same
+  have at95 : win (trueRight a) 95 ∈ trap := inside
+  have win_eq : win (trueRight a) 95 = seg (fun i => trueRight (a+95) (i+1)) 16 := by
+    unfold win rowOf
+    apply Rule30Ether.seg_congr
+    intro j _
+    rw [Nat.zero_add]
+    exact (eq 95 (Nat.le_refl _) j).symm
+  rwa [win_eq] at at95

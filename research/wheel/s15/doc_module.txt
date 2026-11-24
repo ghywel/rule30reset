@@ -1,0 +1,30 @@
+/-!
+# One column shows the gate trap
+
+Beside the alternating column, black first, read column `1` of a right half `R` at the white ticks: its *gate* `u R`. The
+*trap* of `Rule30GateTrap` is a set of 829 windows of sixteen cells that no right half leaves. After entry the gate has gaps
+three and five and avoids further words. Here is the converse: the gate alone shows that the window is in the trap. Every
+statement is for every right half, of any support, and any start. A block of readings is *clean* if it holds none of
+`00000`, `11`, `101`, `10001`, `1001001`.
+
+* `factor_enters`: a gate that reads one of nine words of 20 to 38 readings ends it with the window in the trap.
+* `sound_47_after_first`, `sound_48`: 47 clean readings, if one white sample came before them, end in the trap; from any
+  sample 48 do.
+* `clean_after_six`: from six samples after entry on, every block is clean. So `enter_iff_some_clean`: a right half enters
+  the trap exactly when some block of 48 readings is clean. `dichotomy_iff_clean`: the right-half dichotomy, that every
+  finitely supported right half enters the trap or has an eventually periodic gate, as a statement about the gate alone.
+* `no_short_classifier`, `no_short_classifier_after_first`: 48 and 47 are least, for any rule on the readings that rejects
+  every block ending outside the trap and accepts every block that starts ten samples or more after entry. A rule that need
+  only signal each entry once does with 38 readings (`factor_after_entry`).
+* `uniform_delay_48`, `uniform_delay_47`: after entry a clean block ends within 53, and 52, samples, and no bound is smaller.
+* `singleton_observer`: the finite form on the single-cell pattern.
+
+The proof is one table of sets of times on spatial prefixes, the mechanism of `Rule30TrappedRunMasks`. Eleven lines of time
+stand one after another in a mask: the nine words, for rows outside the trap; `1001001` six samples after a row in the trap;
+and `00000` for any row. One walk of the table against itself shows that the sets are closed under the double step, and the
+last times stand on trap codes only, or on no row. Every clean word of 47 readings holds one of the nine words, but for two
+that begin with four whites, and the black that must stand before them completes one.
+
+The trap and its gaps are Bosdure's and collaborators'. For period four, L. Hallee proves that one word in one column forces
+the lock (`lhallee/rule30-open`, `Columns.LockWord`).
+-/
