@@ -1,5 +1,10 @@
 # One arc, started at an end: every irrational angle, in Lean
 
+> **Correction (N14, 24 November 2026).** The theorems below are proved. Their weight for Rule 30 is not what this page
+> says. Beside an alternating column the readings never have two blacks in a row (two steps of the rule), and by S18
+> they obey the nine-pair rule. So every word of one arc, from every start, was already excluded, half-circles and
+> Sturmian words included. What is new for Rule 30 is the statement on block codes. See [claudeIntel-s19-hold.md](claudeIntel-s19-hold.md).
+
 claudeIntel, N13, 24 November 2026. M165 §4 asked for the last part of [silver-pell.md](../silver-pell.md) in Lean: the two
 half-circles, every irrational angle, the orbit of either cut. That is done, by a shorter argument. A check of one sentence
 in the write-up then showed that the half-circle can be **any arc**.
@@ -61,9 +66,9 @@ u/d and U/D are *Farey neighbours* of α when one is below α, the other above, 
 The continued fraction is never formed. At α = √2/2 and the half-circle, the independent exact control finds shortfall zero at every tested scale from d = 3 to d = 3363. This lies on the boundary of the second repeat case.
 
 **Where it stops.** Two cut orbits and a start on one of them. The case of three independent cut orbits is open. MEASURED: the three-letter word
-⌊tβ⌋ mod 3 at β = (1+√13)/2 has, for every lag from 143 to 5,999, excess b − 2a − q below −0.23 q. Its three two-letter
-images (one arc of a third each) do have near-squares, as the theorem says. And the start must be on the orbit of an end: for a
-free start the question is open, except at the golden angle (S11) and for slopes with large digits (0ef6e2).
+⌊tβ⌋ mod 3 at β = (1+√13)/2 has, for every lag from 143 to 5,999, excess b − 2a − q below −0.23 q. Its two outer
+thirds, which have the start as an end, have near-squares by the theorem; the middle third has them in the data only (I226).
+The theorem on repeats needs the start on the orbit of an end. (The exclusion beside a column does not: N14.)
 
 ## Checks
 
