@@ -1,0 +1,42 @@
+gate: 1048576 fair right halves beside the black-first alternating column, 600 samples each, seed 20261124
+  entered the trap: 1009287 of 1048576 (0.96253); entry sample mean 32.4, median 13, 99% 392, 99.9% 565, last 599
+  the gate's least period over the last 200 samples (0 = none up to 60), against trap entry:
+    period  0  never entered        281  (0.000268)
+    period  0  in the trap     1005967  (0.959365)
+    period  2  never entered      27109  (0.025853)
+    period  5  in the trap         123  (0.000117)
+    period  7  never entered      11899  (0.011348)
+    period  7  in the trap          63  (0.000060)
+    period 18  in the trap        2669  (0.002545)
+    period 46  in the trap         121  (0.000115)
+    period 48  in the trap         135  (0.000129)
+    period 53  in the trap          77  (0.000073)
+    period 56  in the trap         121  (0.000115)
+    period 58  in the trap          11  (0.000010)
+    example, period  2 outside: sample 12, last readings 10101
+    example, period  5 in the trap: sample 16394, last readings 00001000010
+    example, period  7 outside: sample 0, last readings 010000101000010
+    example, period  7 in the trap: sample 11715, last readings 101000010100001
+    example, period 18 in the trap: sample 59, last readings 0010000100001001000010000100001001000
+    example, period 46 in the trap: sample 9879, last readings 000010010000100001000010000100001001000010000100001001000010000100001000010000100100001000010
+    example, period 48 in the trap: sample 6443, last readings 0010000100001000010000100001000010000100001000010010000100001000010000100001000010000100001000010
+    example, period 53 in the trap: sample 28416, last readings 00100001000010000100001000010000100100001000010000100001000010000100001000010000100001001000010000100001000
+    example, period 56 in the trap: sample 4601, last readings 00100001000010000100001000010000100001001000010000100001001000010000100001000010000100001000010010000100001000010
+    example, period 58 in the trap: sample 53997, last readings 000100001000010010000100001000010000100001000010000100001000010000100001001000010000100001000010000100001000010000100
+  pairs of halves with the same gate over samples 0..s-1:
+      s   all pairs: count, share, -log2   largest group |  both in the trap by s and aperiodic at the end: count, share of such pairs, -log2
+      8   25973185557  4.724499e-02    4.404     123568 |    4593984379  8.236317e-02    3.602   (333998 halves)
+     16    6497702750  1.181926e-02    6.403      60649 |    4086232250  2.565001e-02    5.285   (564460 halves)
+     24    3337139323  6.070227e-03    7.364      45769 |    2761738375  1.111934e-02    6.491   (704802 halves)
+     32    1729238493  3.145469e-03    8.313      23750 |    1402986347  4.480189e-03    7.802   (791396 halves)
+     48     791875491  1.440415e-03    9.439      13698 |     559612467  1.453525e-03    9.426   (877501 halves)
+     64     432847590  7.873459e-04   10.311      12747 |     236376253  5.667260e-04   10.785   (913336 halves)
+     96     201842937  3.671505e-04   11.411      11073 |      50540000  1.149371e-04   13.087   (937784 halves)
+    128     127448965  2.318285e-04   12.075       9386 |      11100723  2.458351e-05   15.312   (950318 halves)
+    160      94455673  1.718140e-04   12.507       7969 |       2606435  5.660164e-06   17.431   (959675 halves)
+    192      76354759  1.388886e-04   12.814       7039 |        689513  1.472854e-06   19.373   (967624 halves)
+    256      53313565  9.697690e-05   13.332       5348 |        107077  2.230381e-07   22.096   (979882 halves)
+    320      40779725  7.417796e-05   13.719       4145 |         43111  8.818533e-08   23.435   (988806 halves)
+    384      33622974  6.115989e-05   13.997       3840 |         21533  4.347679e-08   24.455   (995265 halves)
+    448      29850895  5.429851e-05   14.169       3840 |         10896  2.179921e-08   25.451   (999835 halves)
+    512      27709017  5.040246e-05   14.276       3840 |          5418  1.077008e-08   26.468   (1003056 halves)

@@ -83,13 +83,15 @@ ticks. By the kit's masked Jen (`orCol_not_eventuallyPeriodic`) ω ∨ γ is not
 > sequence that is not eventually periodic. (For period two: beside the alternating column.)
 
 Atoms do exist at periodic sequences: the ether lock and the seven-lock are open sets of right halves with one gate
-each, and Jen excludes them. What would an atom at an aperiodic sequence be? New cells of the right half are fair
-and independent of the cells already seen. So if a prefix of n cells does not already force the next gate reading,
-the chance of matching it is at most 1 − 2^−e, where e is how far past the prefix one must go to change it. By the
-martingale convergence theorem an atom needs prefixes whose forcing outruns their light cone by an unbounded amount:
-either a prefix that forces the gate for ever (a lock, with an aperiodic gate), or prefixes of every length that
-each force it for longer and longer past the cone (call it a soft lock). Neither is known to exist, neither is
-excluded. S12's finite branching certificates (I49) are the tool for the first.
+each, and Jen excludes them. What would an atom at an aperiodic sequence γ be? New cells of the right half are fair
+and independent of the cells already seen. Call an extension q of a prefix p *derailing* if every right half that
+begins p q misses γ somewhere, and let d(p) be the length of the shortest one (infinite if p forces γ for ever).
+Then the chance of γ given p is at most 1 − 2^−d(p). By the martingale convergence theorem an atom needs, along
+almost every one of its right halves, d(p) → ∞ over the prefixes p: either a prefix that forces γ for ever (a lock
+with an aperiodic gate), or prefixes that take ever more fresh cells to derail (call it a soft lock). Neither is
+known to exist, neither is excluded. S12's finite branching certificates (I49) are the tool for the first.
+*(Corrected after the probe, K83 addendum 1: the first version of this paragraph measured forcing against the light
+cone. That is the wrong yardstick: a short prefix routinely fixes the centre far past its cone, section 6.)*
 
 *What it would give.* Not Problem 1: the white right half is one point. It would be the first almost-sure statement
 in which the left half is the single cell's own. Its proof would not pass through Q01, RD or the wall: it replaces
@@ -145,15 +147,92 @@ would give it at once, and it is the lock half of A1.
 
 | Pull | The question | First test |
 |---|---|---|
-| **K83.A, the coin on the right** | A1 to A3 and E | The probe of section 6. Then, by solver: how far past its light cone can a prefix force the gate without forcing it for ever? Bounded excess would prove A1 from Jen and S12's certificates. |
+| **K83.A, the coin on the right** | A1 to A3 and E | The probe of section 6 (done). Then, by solver: d(p), the number of fresh cells it takes to derail the gate, along the prefixes of trapped halves, of the long trains and of lock-bound halves. A bound on d off the locks would give A1 for period two from Jen and S12's certificates. |
 | **K83.B, how fast the right side is heard** | B1 to B4 | The probe's random-wall mode. Then exact pair-word counts to 16 or 18 ticks, and B4's bound in Lean on the kit's `pairWords`. |
 
 C stays with N6. D is a list for whoever next sends a packet on S9, Q01 or K5, not a pull.
 
 A Mathlib candidate cannot be compiled on a cloud container; the M5 and the Intel can (TOOLS.md).
 
-## 6. The first probe
+## 6. The first probe (K83 addendum 1)
 
-[claudeCloud_rule4_probe.cpp](claudeCloud_rule4_probe.cpp), frozen at SHA-256
-`9a7fb960d9e594b77790701edfd18e693703efa800f4a486041bb05b972701c4` before any run but one development control (the
-exact mode at M = 8 against an independent brute force: equal). Predictions are in K83. Results follow here once run.
+[claudeCloud_rule4_probe.cpp](claudeCloud_rule4_probe.cpp), SHA-256
+`9a7fb960d9e594b77790701edfd18e693703efa800f4a486041bb05b972701c4`, frozen and pushed with eight predictions before
+its runs. One development control ran before freezing: the exact mode at M = 8 against an independent brute force,
+equal. Outputs are in [data/](data/). Everything below is MEASURED, except the exact table, which is COMPUTED.
+
+```
+g++ -O3 -fopenmp -std=c++17 claudeCloud_rule4_probe.cpp -o rule4_probe
+rule4_probe centre-exact 30
+rule4_probe centre-mc 4194304 512 20261124
+rule4_probe gate KITFILE 1048576 600 20261124      # KITFILE = the kit's Rule30Certificates/GateTrap.lean
+rule4_probe wall 1 1048576 512 20261124            # and walls 2 and 3
+```
+
+**The centre column with a white left half and a fair right half** (cell 0 black).
+
+| Ticks m | Different centre words | Shannon entropy, bits | Collision entropy, bits | Share of the likeliest word |
+|---:|---:|---:|---:|---:|
+| 8 | 5 | 2.19 | 2.08 | 0.348 |
+| 16 | 21 | 3.64 | 3.25 | 0.223 |
+| 24 | 41 | 4.81 | 4.51 | 0.085 |
+| 30 | 76 | 5.39 | 4.94 | 0.085 |
+| 64 | | | 7.19 | 0.029 |
+| 128 | | | 11.17 | 0.0058 |
+| 256 | | | 17.11 | 3.8 × 10⁻⁴ |
+| 384 | | | 22.54 | 3.3 × 10⁻⁵ |
+| 512 | | | 27.79 | 4.8 × 10⁻⁶ |
+
+Rows to 30 are exact, over all 2³⁰ right halves; the rest are from 4,194,304 samples. The collision entropy grows by
+0.041 bits a tick from 256 to 512. The words to 30 ticks are fitted as well by m²/12 as by an exponential; the
+samples to 512 settle it, since almost all 4,194,304 are different there.
+
+**Column 1 beside a fair-coin wall,** 1,048,576 fair right halves, three walls. Collision entropy in bits:
+
+| Ticks m | Wall 1 | Wall 2 | Wall 3 |
+|---:|---:|---:|---:|
+| 64 | 7.99 | 7.74 | 7.51 |
+| 128 | 11.41 | 11.29 | 11.25 |
+| 256 | 16.99 | 16.59 | 15.61 |
+| 512 | 28.46 | 28.32 | 27.10 |
+
+From 256 to 512: 0.0448, 0.0458 and 0.0449 bits a tick. The fall of the share of equal pairs is exponential and not
+a power of m: from 256 to 512 the walls lose 11.5, 11.7 and 11.5 bits, against 5.6, 5.3 and 4.4 from 128 to 256.
+
+**The fates beside the alternating column,** 1,048,576 fair right halves at sample 600 (tick 1,200).
+
+| Fate at sample 600 | Share |
+|---|---:|
+| In the 829-window trap | 0.96253 |
+| Outside, gate of period 2 over the last 200 samples (the ether's gap 2) | 0.02585 |
+| Outside, gate of period 7 (the loop 2, 5) | 0.01135 |
+| Outside, no period up to 60 | 0.00027 |
+
+K80's 0.9673 is at sample 1,500: entries keep arriving (median entry sample 13, 99% by 392, the last at 599), and
+they come from the loop 2, 5, which is a lock for some halves and a long stay of X for others. Inside the trap 0.31%
+of the halves have a periodic gate over the last 200 samples: the train 3555 (period 18) in 0.25%, the gap 5 alone in
+0.012%, periods 46 to 58 in 0.044%. gptIntel's K81 bound says no strip of 88 columns returns with the train 3555, so
+these are long stays or stays that keep changing further out, not locks of fixed width.
+
+**Pairs with the same gate.** Among all pairs the share is 9.7 × 10⁻⁵ at 256 samples and 5.0 × 10⁻⁵ at 512, still
+falling slowly; the largest group is constant at 3,840 halves (0.37%) from sample 384. Among pairs both in the trap
+and aperiodic at the end it falls by 0.07 bits a sample from 64 to 128 and by 0.016 from 320 to 512, with no plateau
+through 512.
+
+**What it says.**
+1. **The right half is heard, slowly:** about 0.04 to 0.05 bits of collision entropy a tick, for the centre of the
+   half-random row and for column 1 beside a random wall alike. That is five times less than the leftward speed of a
+   flipped cell (0.24 cells a tick) would give if each cell brought a bit.
+2. **It is an exponential rate, not a power.** The Shannon entropy that the right half adds is at least the
+   collision entropy, so under the fair coin the pair of columns (0, 1) carries at least about 1.045 bits a tick.
+   This is evidence against the catalogue's numerical reading that rule 30's entropy is exactly log 2 (question B3).
+3. **A short prefix fixes the centre far past its light cone.** One centre word of 30 ticks has share 0.085: under
+   four bits of the right half decide thirty ticks. So forcing measured against the cone is the wrong yardstick for
+   A1; the corrected one is d(p) in section 4.
+4. **No atom at an aperiodic gate was seen,** and none can be excluded by sampling.
+5. **The trap's share was still rising at sample 600.** A table of the eventual shares needs the loop 2, 5 split
+   into its lock and its long stays.
+
+**Predictions:** three of eight held (the alternation share; the gap-5 class inside the trap; the fall among trapped
+aperiodic pairs). Five failed, four of them the same way: I expected rates of 0.15 to 0.4 bits a tick and found 0.04
+to 0.13. The fifth was my own control, set against K80's share at the wrong sample.
