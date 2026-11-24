@@ -261,23 +261,27 @@ checks. One portable file, 20 s at the portal's pin, stock check with 15 headlin
 standard axioms.
 
 **The question.** At period two, `RD` (`Rule30PeriodTwoWidth13`) asks whether every finitely supported right half enters the kit's
-829-window gate trap or reads periodically. It is open: the wheel and Y live outside. Nobody had asked it at period three.
+829-window gate trap or reads periodically. It is open. At period three Hallee proved a gate-language bound beside 001
+and tested entry beside 011 through support 16. M152 asks how entry into these two specific closed sets depends on arbitrary finite support.
 
 **The answer.** Read column 1 once a period, at the gate tick: the white tick before the black one of 001, the white tick of 011.
 A *trap* is a set of windows of the first 14 cells that one period keeps, whatever lies beyond.
 
 | | 001 | 011 |
 |---|---|---|
-| Trap (least closed set: strongly connected) | 1,286 windows | 747 windows |
+| Trap, closed under every physical continuation | 1,286 windows | 747 windows |
 | A half whose cells beyond D are white is in it at every gate tick from | 3 D + 220 (`finite_enters_001`) | 3 D + 820 (`finite_enters_011`) |
 | Every half of any support is in it at some time, or has a gate that is | constant from tick 38 (`enters_or_constant_001`) | white from tick 155 (`enters_or_constant_011`) |
-| What it reads | black runs of 2–4, white runs of 3–5 (`runs_001`), nine words excluded (`avoids_001`) | a white reading is followed by the next 3, or 6 to 17, readings later (`gaps_011`); 00, 010, 01110, 011110 excluded |
-| On the single cell, centre on the word from age T | in it at age T + N, N ≥ 3 T + 220 (`centre_001`) | N ≥ 3 T + 820 (`centre_011`) |
+| What it reads | Runs beginning at a change have length 2–4 for black and 3–5 for white (`runs_001`); nine words are excluded from entry (`avoids_001`). | From gate index 6 after entry, a white reading has its next white 3 or 6–17 readings later (`gaps_011`). The four words 00, 010, 01110, 011110 are excluded from entry. |
+| On the single-cell orbit, if the centre follows the word for N ticks from age T | In the trap at age T + N when N ≥ 3 T + 220 and N mod 3 = 1 (`centre_001`). | In the trap at age T + N when N ≥ 3 T + 820 and N mod 3 = 0 (`centre_011`). |
 
-- **Linear time is needed, and 3 is nearly the right slope.** An ether cut of N columns, N a multiple of 24, enters at tick
+- **Measured entry times.** An ether cut of N columns, N a multiple of 24, enters at tick
   5N/2 − 11 beside 001 and 5N/2 + 18 beside 011 (MEASURED to N = 384). Every half of at most 16 cells beside 011 is in by tick 94
   and of at most 12 beside 001 by tick 42, over all phases (COMPUTED).
-- **Why.** The windows that can stay outside for ever are the ether's alone: at 14 cells beside 001, and beside 011 at **30**. There
+- **A lower bound on the worst-case slope (I206).** At gate tick 30n a finite row supported through 12n + 20 can still be outside beside 001.
+  Beside 011 a row supported through 12n + 25 does the same. These families rule out any uniform affine entry bound with slope below 5/2.
+  The proof uses the ten-tick front theorem from S14 and checks on kit main. [Companion Lean proof](s16/S16Review.lean)
+- **Why.** The recurrent exterior windows are the ether's: two at 14 cells beside 001 and one at **30** beside 011. This identifies the near-wall window. There
   the islands of §2, which read 110 repeated, die: the one of period 9 at 24 cells and that of period 18 at 30. So they are neither
   traps nor rings. A finite half cannot show the ether for long (`ether_ends`: `erosion3_fin` with white cells in place of the
   ether beyond).
@@ -285,9 +289,9 @@ A *trap* is a set of windows of the first 14 cells that one period keeps, whatev
   (S10's and S15's method): 1,732 and 4,774 branches, 36,952 and 73,916 steps, 10 s in the kernel. Beside 011 it leaves 16 windows
   of 18 cells, which a short list computation lifts to 30 cells and one window, the ether's.
 - **What is left of period three** (`no_eventual_period_three_of_left`): two statements about finite left halves, `Left001` and
-  `Left011`, with the gates of the traps. Each word of the kit's two lists holds one of ours as a factor, so the kit's `C3g001`
+  `Left011`, whose free bits avoid complements of the listed gate words. Each word of the kit's two lists holds one of ours as a factor, so the kit's `C3g001`
   and `C3r011` imply them; new are 1001, 0000111 and a word of 16 letters for 001, and 010 and 01110 for 011. Both are open, and
-  of the same kind as the kit's.
+  of the same kind as the kit's. The two implications from the kit's restricted left statements are also in the [kit-main comparison](s16/S16Review.lean).
 - **Not claimed.** Nothing here excludes 001 or 011, and nothing says that a half's gate is eventually periodic. The traps hold the
   kit's t001 and its 15-trap.
 
@@ -296,8 +300,10 @@ constraints* name the four words of 011 and compute entry for halves of at most 
 alphabet of 001 as sampled. The words themselves, for the centre's own orbit, are in our languages of 8 November (kit
 `Rule30PeriodThreeLanguage` at widths 10 and 7; placego's to 22). The erosion is Perez Morales's, the trap as a notion Bosdure's.
 
-**Checks outside Lean.** [check_trap.cpp](s16/check_trap.cpp): both lists closed and strongly connected, the runs, 400,000 sampled
-halves each with a random cell beyond at every tick, all in within 18 and 33 periods. [check_entry.cpp](s16/check_entry.cpp):
+**Checks outside Lean.** With a fresh eastern input at every tick, [check_trap.cpp](s16/check_trap.cpp) finds both lists closed and strongly connected,
+and 400,000 sampled halves per drive all in within 18 and 33 periods. With three ticks from one physical initial row, both lists stay closed;
+001 window 675 and 011 window 893 each have no predecessor inside their own list. Their removal gives proper closed subsets.
+[Physical graph replay](s16/check_physical_windows.py). [check_entry.cpp](s16/check_entry.cpp):
 every window, plain sets: outside for 12 periods before and 8 after leaves exactly the two ethers (14 cells); for 24 and 24 beside
 011 leaves at 21 to 23 cells only windows of the list. Of 180 changes of one bit in a time set, 159 are refused; the rest are bits
 no row can reach.
