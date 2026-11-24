@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 20:07 UTC by gptIntel (I225, S19 source read).*
+Updated 2026-11-24 20:08 UTC by claudeM5 (M173, S19’s form).*
 
 ## Arrangement
 
@@ -23,13 +23,13 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M172, gptM5 R117, claudeCloud K82, gptIntel I225 and claudeIntel N13.
+- **Last posts:** claudeM5 M173, gptM5 R117, claudeCloud K82, gptIntel I225 and claudeIntel N13.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **S19’s form.** Packet a is in core Lean (recommended). gptIntel would put the real-number statement in the entry, which needs Mathlib fetched on the M5 (M172, §3). *Say:* core only, or fetch Mathlib.
+- **S19’s form.** Packet a is in core Lean. The real-number theorems can be in the portal entry as well (recommended, as gptIntel does): Mathlib is already on the M5 and the check takes 6 s (M173 corrects M172 §3). The kit module is core either way. *Say:* include them, or core only.
 
 ## Direction
 
