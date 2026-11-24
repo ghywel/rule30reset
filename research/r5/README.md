@@ -19,6 +19,10 @@ destination of the projected window have different proofs.
    four known. COMPUTED (§9).
 5. **The wait is a climb up the trunk by rungs**, each behind a column with a long black run. MEASURED, and each rung's
    holes are known exactly (§10). Why a given half ever gets past the last rung is still chance, and that is the wall here too.
+6. **At period three every finite right half enters a gate trap, in linear time.** Beside 001 and beside 011 one closed set of
+   14-cell windows (1,286 and 747) takes every right half whose cells beyond D are white, from any phase, by tick 3D + 220 and
+   3D + 820; without finiteness, every half but those that show one ether. PROVED in Lean (§12). The same statement at period
+   two is the kit's open `RD`.
 
 *Words.* The **gate** is column 1 on the second white tick of each 001, the only tick on which it is free. A trap's
 **pattern** is its columns that depend on the label alone. The **front** of a row against a pattern is its first column
@@ -154,9 +158,8 @@ and rests.
 - **Entry into the trunk for good.** Nothing here shows that a finite half ever passes the last rung.
 - **Next tests, cheapest first.**
   1. *The census further:* labels 33 and 36, and walls past 16 cells. One trap with a third gate kills the conjecture of §4.
-  2. *The gate beyond the known restrictions.* Hallee's `ThreeRuns` has `010`, `101` and `1001` excluded in Lean beside every
-     right half (PRIOR-ART P57), and (110000) repeated obeys it. The next word to exclude is one it allows.
-  3. *The 011 map:* what reads in its closed component, where the census finds no trap at all.
+  2. *The gate beyond the known restrictions.* Answered by §12 for both words.
+  3. *A periodic trap beside 011* (label period over 30): the census finds none, and heuristically one should exist.
 - **Carrying reads.** R97 passes the rigid-front proof under the hypotheses in §1. I173 independently reproduced the width-22 map and width-20 closure. R97 corrects the timing inference in §2. claudeM5 passed R97's first-departure theorem (M135) and gptIntel its transit bounds (I177). gptM5 passed §3's Lean and §11 as it stood at M139 (R98). §9 and §10 are not read by a second worker.
 
 ## 8. Exact first departure and sharp transit (R97)
@@ -251,6 +254,57 @@ gate theorems changed since (M140).
   enters *some* checked trap of positive width (`gatePeriodic_of_some_trap`), the statement Hallee proposes to keep. The
   kit's check passes a trap of width zero that every half enters ([witness](s14/R99ZeroWidth.lean), R99). `GateEntry`, the conjecture of §4, gives it too.
 
+## 12. The right-half dichotomy at period three (PROVED in Lean; M151, M152)
+
+Sources in [s16](s16/): the parts, the [table maker](s16/make_table.py), the [builder](s16/build_s16.py) and two independent
+checks. One portable file, 20 s at the portal's pin, stock check with 15 headlines and 235 declarations, `leanchecker`, the three
+standard axioms.
+
+**The question.** At period two, `RD` (`Rule30PeriodTwoWidth13`) asks whether every finitely supported right half enters the kit's
+829-window gate trap or reads periodically. It is open: the wheel and Y live outside. Nobody had asked it at period three.
+
+**The answer.** Read column 1 once a period, at the gate tick: the white tick before the black one of 001, the white tick of 011.
+A *trap* is a set of windows of the first 14 cells that one period keeps, whatever lies beyond.
+
+| | 001 | 011 |
+|---|---|---|
+| Trap (least closed set: strongly connected) | 1,286 windows | 747 windows |
+| A half whose cells beyond D are white is in it at every gate tick from | 3 D + 220 (`finite_enters_001`) | 3 D + 820 (`finite_enters_011`) |
+| Every half of any support is in it at some time, or has a gate that is | constant from tick 38 (`enters_or_constant_001`) | white from tick 155 (`enters_or_constant_011`) |
+| What it reads | black runs of 2–4, white runs of 3–5 (`runs_001`), nine words excluded (`avoids_001`) | a white reading is followed by the next 3, or 6 to 17, readings later (`gaps_011`); 00, 010, 01110, 011110 excluded |
+| On the single cell, centre on the word from age T | in it at age T + N, N ≥ 3 T + 220 (`centre_001`) | N ≥ 3 T + 820 (`centre_011`) |
+
+- **Linear time is needed, and 3 is nearly the right slope.** An ether cut of N columns, N a multiple of 24, enters at tick
+  5N/2 − 11 beside 001 and 5N/2 + 18 beside 011 (MEASURED to N = 384). Every half of at most 16 cells beside 011 is in by tick 94
+  and of at most 12 beside 001 by tick 42, over all phases (COMPUTED).
+- **Why.** The windows that can stay outside for ever are the ether's alone: at 14 cells beside 001, and beside 011 at **30**. There
+  the islands of §2, which read 110 repeated, die: the one of period 9 at 24 cells and that of period 18 at 30. So they are neither
+  traps nor rings. A finite half cannot show the ether for long (`ether_ends`: `erosion3_fin` with white cells in place of the
+  ether beyond).
+- **The proof.** One table a word, of sets of times on spatial prefixes, walked once against itself with a whole period as the step
+  (S10's and S15's method): 1,732 and 4,774 branches, 36,952 and 73,916 steps, 10 s in the kernel. Beside 011 it leaves 16 windows
+  of 18 cells, which a short list computation lifts to 30 cells and one window, the ether's.
+- **What is left of period three** (`no_eventual_period_three_of_left`): two statements about finite left halves, `Left001` and
+  `Left011`, with the gates of the traps. Each word of the kit's two lists holds one of ours as a factor, so the kit's `C3g001`
+  and `C3r011` imply them; new are 1001, 0000111 and a word of 16 letters for 001, and 010 and 01110 for 011. Both are open, and
+  of the same kind as the kit's.
+- **Not claimed.** Nothing here excludes 001 or 011, and nothing says that a half's gate is eventually periodic. The traps hold the
+  kit's t001 and its 15-trap.
+
+**Credit.** Hallee's `ThreeRuns` proves the lower bounds of the runs of 001 for every half, by a rank on 13 cells; their *reading
+constraints* name the four words of 011 and compute entry for halves of at most 16 cells, "not forced" at widths 14 and 16, and the
+alphabet of 001 as sampled. The words themselves, for the centre's own orbit, are in our languages of 8 November (kit
+`Rule30PeriodThreeLanguage` at widths 10 and 7; placego's to 22). The erosion is Perez Morales's, the trap as a notion Bosdure's.
+
+**Checks outside Lean.** [check_trap.cpp](s16/check_trap.cpp): both lists closed and strongly connected, the runs, 400,000 sampled
+halves each with a random cell beyond at every tick, all in within 18 and 33 periods. [check_entry.cpp](s16/check_entry.cpp):
+every window, plain sets: outside for 12 periods before and 8 after leaves exactly the two ethers (14 cells); for 24 and 24 beside
+011 leaves at 21 to 23 cells only windows of the list. Of 180 changes of one bit in a time set, 159 are refused; the rest are bits
+no row can reach.
+
+**Open here.** The 011 gaps: 15 is the bound from 18 cells and gap 11 is still read at 26, though no sampled half shows it. Beside
+001, black runs of 3 disappear from the closed set at 16 cells, and there the halves outside it read 11000 repeated (COMPUTED).
+
 ## Reproduce
 
 For the two front modules, run from the repository root with the kit's Lean 4.35.0 on PATH.
@@ -293,6 +347,8 @@ python3 claudeM5_r5_checks.py selftest | table 12 | column 34 8 18 | keys 34 1  
 census L W 0 2^L 2000000 OUT                                             (claudeM5_r5_census.cpp, frozen, M136)
 python3 claudeM5_r5_fifth.py 5000
 python3 claudeM5_r5_reach_lean.py Rule30EtherThreeNoFifteen.lean
+python3 s16/make_table.py 001 T001.json ; python3 s16/make_table.py 011 T011.json ; python3 s16/build_s16.py T001.json T011.json OUT
+check_trap K001 K011 7 ; check_entry 001 K001 14 12 8 ; check_entry 011 K011 21 24 24      (K: the trap's codes, one a line)
 ```
 
 The raw runs are `share-scratch/claudeM5/R5/M134/r5-waits.zip`, SHA-256

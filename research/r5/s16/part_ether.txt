@@ -1,0 +1,140 @@
+/-! ### A finite half leaves the ether
+
+`Rule30EtherThreeErosion.erosion3_fin` with white cells, in place of the ether, beyond the disturbance. -/
+
+theorem drv_white {c R : Nat → Bool} {D : Nat} (h : ∀ p, D < p → R p = false) : ∀ t p, D + t < p → drv c R t p = false
+  | 0, p, hp => by rw [drv_init c R p (by omega)]; exact h p (by omega)
+  | t+1, p, hp => by
+    obtain ⟨q, rfl⟩ : ∃ q, p = q+1 := ⟨p-1, by omega⟩
+    rw [drv_isR30 c R t q]
+    unfold Rule30Jen.rule
+    rw [drv_white h t q (by omega), drv_white h t (q+1) (by omega), drv_white h t (q+2) (by omega)]
+    rfl
+
+theorem ether_black : ∀ c, c < 12 → ∀ φ, φ < 3 → ∃ i, i < 12 ∧ ether3 (c+i) φ = true := by decide
+
+section
+variable {F : Nat → Nat → Bool} {j0 s t1 B k : Nat}
+
+/-- Beyond a finite half the ether is somewhere black: a defect within twelve columns. -/
+theorem defect (hw : ∀ t p, B + t < p → F t p = false) (t : Nat) : ∃ p, p ≤ B+t+12 ∧ F t p ≠ eth j0 s p t := by
+  obtain ⟨i, hi, e⟩ := ether_black ((j0+(B+t+1)) % 12) (Nat.mod_lt _ (by decide)) ((t+s) % 3) (Nat.mod_lt _ (by decide))
+  refine ⟨B+t+1+i, by omega, ?_⟩
+  rw [hw t _ (by omega)]
+  have e' : eth j0 s (B+t+1+i) t = true := by
+    unfold eth
+    rw [← e]
+    exact ether3_congr (by omega) (by omega)
+  rw [e']
+  decide
+
+theorem front_le (hw : ∀ t p, B + t < p → F t p = false) {t D : Nat} (hD : Front F j0 s t D) : D ≤ B+t+12 := by
+  obtain ⟨p, hp, ne⟩ := defect (j0 := j0) (s := s) hw t
+  refine Nat.le_trans (Nat.le_of_not_lt fun h => ne (hD.1 p h)) hp
+
+/-- A run of the bad state is short: it gains seven columns a tick on the last black cell. -/
+theorem run_short (hF : IsR30 F) (h0 : ∀ t, t1 ≤ t → F t 0 = eth j0 s 0 t) (hw : ∀ t p, B + t < p → F t p = false) :
+    ∀ m t D, t1 ≤ t → 2 ≤ D → Front F j0 s t D → IsB F j0 s t D → B+t+12 < D + 7*m →
+      ∃ n, n < m ∧ ∃ D', Front F j0 s (t+n+1) D' ∧ ¬ IsB F j0 s (t+n+1) D' := by
+  intro m
+  induction m with
+  | zero =>
+    intro t D _ _ hD _ hR
+    have := front_le hw hD
+    omega
+  | succ m ih =>
+    intro t D ht hD2 hD hB hR
+    obtain ⟨p, -, ne⟩ := defect (j0 := j0) (s := s) hw (t+1)
+    obtain ⟨D', hD', hle, h | h | h⟩ := front_step hF (h0 (t+1) (by omega)) hD2 hD ⟨p, ne⟩
+    · exact absurd hB h.1
+    · exact ⟨0, by omega, D', hD', h.2.1⟩
+    · by_cases hB' : IsB F j0 s (t+1) D'
+      · have c1 := isB_cls hB
+        have c2 := isB_cls hB'
+        unfold cls at c1 c2
+        have h8 : D + 8 ≤ D' := by omega
+        obtain ⟨n, hn, D'', h1, h2⟩ := ih (t+1) D' (by omega) (by omega) hD' hB' (by omega)
+        refine ⟨n+1, by omega, D'', ?_, ?_⟩
+        · rw [show t+(n+1)+1 = t+1+n+1 by omega]; exact h1
+        · rw [show t+(n+1)+1 = t+1+n+1 by omega]; exact h2
+      · exact ⟨0, by omega, D', hD', hB'⟩
+
+/-- **A finite half leaves the ether in linear time.** -/
+theorem erode (hF : IsR30 F) (hk : 1 ≤ k) (h0 : ∀ t, t1 ≤ t → F t 0 = eth j0 s 0 t)
+    (hw : ∀ t p, B + t < p → F t p = false) (hL : ∀ p, 1 ≤ p → p ≤ k → F t1 p = eth j0 s p t1) :
+    ∃ t, t1 ≤ t ∧ t ≤ t1 + 3*(B+t1+12) + 6 ∧ ∃ p, 1 ≤ p ∧ p ≤ k ∧ F t p ≠ eth j0 s p t := by
+  have hex : ∀ t, t1 ≤ t → ∃ p, F t p ≠ eth j0 s p t := fun t _ => by
+    obtain ⟨p, -, ne⟩ := defect (j0 := j0) (s := s) hw t
+    exact ⟨p, ne⟩
+  obtain ⟨p0, hp0⟩ := hex t1 (Nat.le_refl _)
+  obtain ⟨D1, hD1, hminD⟩ := exists_least (P := fun p => F t1 p ≠ eth j0 s p t1) p0 hp0
+  have hfr1 : Front F j0 s t1 D1 := ⟨fun p hp => Classical.not_not.1 (hminD p hp), hD1⟩
+  have hD1k : k < D1 := by
+    refine Nat.lt_of_not_le fun h => hD1 ?_
+    rcases Nat.eq_zero_or_pos D1 with h1 | h1
+    · subst h1; exact h0 t1 (Nat.le_refl _)
+    · exact hL D1 h1 h
+  have hD1R := front_le hw hfr1
+  have finish : ∀ t0 D0, t1 ≤ t0 → Front F j0 s t0 D0 → ¬ IsB F j0 s t0 D0 →
+      ∃ t, t0 ≤ t ∧ t ≤ t0 + (5*(D0-k)+5)/2 + 1 ∧ ∃ p, 1 ≤ p ∧ p ≤ k ∧ F t p ≠ eth j0 s p t := by
+    intro t0 D0 ht0 hD0 hB0
+    rcases wake_good hF hk h0 hex ((5*(D0-k)+5)/2+1) t0 D0 ht0 hD0 hB0 with ⟨t', h1, h2, hp⟩ | ⟨D', hD', -, hpot⟩
+    · exact ⟨t', h1, h2, hp⟩
+    · have hψ := psiF_le F j0 s t0 D0
+      by_cases hDk : D' ≤ k
+      · refine ⟨t0 + ((5*(D0-k)+5)/2+1), by omega, by omega, D', ?_, hDk, hD'.2⟩
+        refine Nat.pos_of_ne_zero fun h => hD'.2 ?_
+        subst h; exact h0 _ (by omega)
+      · omega
+  by_cases hB1 : IsB F j0 s t1 D1
+  · obtain ⟨n, hn, D0, hD0, hB0⟩ :=
+      run_short hF h0 hw ((B+t1+12-D1)/7+1) t1 D1 (Nat.le_refl _) (by omega) hfr1 hB1 (by omega)
+    have hD0R := front_le hw hD0
+    obtain ⟨t, h1, h2, hp⟩ := finish (t1+n+1) D0 (by omega) hD0 hB0
+    exact ⟨t, by omega, by omega, hp⟩
+  · obtain ⟨t, h1, h2, hp⟩ := finish t1 D1 (Nat.le_refl _) hfr1 hB1
+    exact ⟨t, h1, by omega, hp⟩
+
+end
+
+/-- The right half `R`, driven by the word `w` from phase `φ`. -/
+def half (w : List Bool) (R : Nat → Bool) (φ : Nat) : Nat → Nat → Bool := drv (fun t => wordAt3 w (t+φ)) R
+
+theorem half_isR30 (w : List Bool) (R : Nat → Bool) (φ : Nat) : IsR30 (half w R φ) := drv_isR30 _ _
+
+theorem half_zero (w : List Bool) (R : Nat → Bool) (φ t : Nat) : half w R φ t 0 = wordAt3 w (t+φ) := drv_col0 _ _ _
+
+/-- Columns `1` to `k` read the ether column `j0 + p` at tick `t`. -/
+def EtherOn (F : Nat → Nat → Bool) (j0 φ t k : Nat) : Prop := ∀ p, 1 ≤ p → p ≤ k → F t p = eth j0 φ p t
+
+theorem etherOn_step {F : Nat → Nat → Bool} (hF : IsR30 F) {j0 φ t k : Nat} (h0 : F t 0 = eth j0 φ 0 t)
+    (h : EtherOn F j0 φ t (k+1)) : EtherOn F j0 φ (t+1) k := by
+  intro p hp hk
+  obtain ⟨q, rfl⟩ : ∃ q, p = q+1 := ⟨p-1, by omega⟩
+  rw [hF t q, eth_rule]
+  have e0 : F t q = eth j0 φ q t := by
+    rcases Nat.eq_zero_or_pos q with z | z
+    · subst z; exact h0
+    · exact h q z (by omega)
+  rw [e0, h (q+1) (by omega) (by omega), h (q+2) (by omega) (by omega)]
+
+/-- **How long a finite half can show the ether** on its first `k + 2` cells at the ticks `t1, t1 + 3, …, t1 + 3 n`. -/
+theorem ether_ends {w : List Bool} {j0 : Nat} (al : ∀ ψ, ether3 j0 ψ = wordAt3 w ψ) {R : Nat → Bool} {D : Nat}
+    (hR : ∀ p, D < p → R p = false) {φ t1 n k : Nat} (hk : 1 ≤ k)
+    (h : ∀ i, i ≤ n → EtherOn (half w R φ) j0 φ (t1+3*i) (k+2)) : t1+3*n+2 < t1 + 3*(D+t1+12) + 7 := by
+  have hF := half_isR30 w R φ
+  have h0 (t : Nat) : half w R φ t 0 = eth j0 φ 0 t := by
+    rw [half_zero]; unfold eth; rw [Nat.add_zero, al]
+  obtain ⟨t, lo, hi, p, hp, hpk, ne⟩ := erode (j0 := j0) (s := φ) (k := k) (t1 := t1) (B := D) hF hk (fun t _ => h0 t)
+    (fun t p hp => drv_white hR t p hp) (fun p hp hpk => by
+      have := h 0 (by omega) p hp (by omega)
+      rwa [show t1 + 3*0 = t1 by omega] at this)
+  refine Nat.lt_of_not_le fun le => ne ?_
+  obtain ⟨i, r, hi3, hr⟩ : ∃ i r, t = t1 + 3*i + r ∧ r < 3 := ⟨(t-t1)/3, (t-t1)%3, by omega, by omega⟩
+  have base := h i (by omega)
+  have one := etherOn_step hF (h0 _) base
+  have two := etherOn_step hF (h0 _) one
+  rcases (by omega : r = 0 ∨ r = 1 ∨ r = 2) with rfl | rfl | rfl
+  · rw [hi3]; exact base p hp (by omega)
+  · rw [hi3]; exact one p hp (by omega)
+  · rw [hi3]; exact two p hp hpk

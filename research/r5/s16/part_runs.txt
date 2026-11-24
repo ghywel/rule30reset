@@ -1,0 +1,207 @@
+/-! ### The runs of the gate -/
+
+theorem is_true {b : Bool} (h : b ≠ false) : b = true := by cases b; exact absurd rfl h; rfl
+theorem is_false {b : Bool} (h : b ≠ true) : b = false := by cases b; rfl; exact absurd rfl h
+
+/-- **The runs beside `001`.** After each change of colour, a run of two to four black readings or of three to five white. -/
+theorem runs_001 {R : Nat → Bool} {φ t : Nat} (ht : (t+φ) % 3 = 1) (h : InTrap trap001 (half w001 R φ) t) (i : Nat)
+    (change : gate (half w001 R φ) t (i+1) ≠ gate (half w001 R φ) t i) :
+    ∃ r, (if gate (half w001 R φ) t (i+1) then 2 ≤ r ∧ r ≤ 4 else 3 ≤ r ∧ r ≤ 5) ∧
+      (∀ k, k < r → gate (half w001 R φ) t (i+1+k) = gate (half w001 R φ) t (i+1)) ∧
+      gate (half w001 R φ) t (i+1+r) ≠ gate (half w001 R φ) t (i+1) := by
+  have no (v : List Bool) (hv : v ∈ words001) (j : Nat) := avoids_001 ht h hv j
+  generalize gate (half w001 R φ) t = u at *
+  have n010 := no [false, true, false] (by decide)
+  have n101 := no [true, false, true] (by decide)
+  have n1001 := no [true, false, false, true] (by decide)
+  have n11111 := no [true, true, true, true, true] (by decide)
+  have n000000 := no [false, false, false, false, false, false] (by decide)
+  clear no
+  have s3 (a b c : Bool) (j : Nat) : Spells u j [a, b, c] ↔ u j = a ∧ u (j+1) = b ∧ u (j+2) = c := by
+    constructor
+    · intro s; exact ⟨s 0 (by simp), s 1 (by simp), s 2 (by simp)⟩
+    · rintro ⟨x, y, z⟩ k hk
+      have : k = 0 ∨ k = 1 ∨ k = 2 := by simp at hk; omega
+      rcases this with rfl | rfl | rfl <;> assumption
+  have s4 (a b c d : Bool) (j : Nat) : Spells u j [a, b, c, d] ↔ u j = a ∧ u (j+1) = b ∧ u (j+2) = c ∧ u (j+3) = d := by
+    constructor
+    · intro s; exact ⟨s 0 (by simp), s 1 (by simp), s 2 (by simp), s 3 (by simp)⟩
+    · rintro ⟨x, y, z, w⟩ k hk
+      have : k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 := by simp at hk; omega
+      rcases this with rfl | rfl | rfl | rfl <;> assumption
+  have s5 (a b c d e : Bool) (j : Nat) : Spells u j [a, b, c, d, e] ↔
+      u j = a ∧ u (j+1) = b ∧ u (j+2) = c ∧ u (j+3) = d ∧ u (j+4) = e := by
+    constructor
+    · intro s; exact ⟨s 0 (by simp), s 1 (by simp), s 2 (by simp), s 3 (by simp), s 4 (by simp)⟩
+    · rintro ⟨x, y, z, w, v⟩ k hk
+      have : k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 := by simp at hk; omega
+      rcases this with rfl | rfl | rfl | rfl | rfl <;> assumption
+  have s6 (a b c d e f : Bool) (j : Nat) : Spells u j [a, b, c, d, e, f] ↔
+      u j = a ∧ u (j+1) = b ∧ u (j+2) = c ∧ u (j+3) = d ∧ u (j+4) = e ∧ u (j+5) = f := by
+    constructor
+    · intro s; exact ⟨s 0 (by simp), s 1 (by simp), s 2 (by simp), s 3 (by simp), s 4 (by simp), s 5 (by simp)⟩
+    · rintro ⟨x, y, z, w, v, q⟩ k hk
+      have : k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 ∨ k = 5 := by simp at hk; omega
+      rcases this with rfl | rfl | rfl | rfl | rfl | rfl <;> assumption
+  have a := n010 i
+  have b := n101 i
+  have c := n1001 i
+  have d := n11111 (i+1)
+  have e := n000000 (i+1)
+  rw [s3] at a b
+  rw [s4] at c
+  rw [s5] at d
+  rw [s6] at e
+  simp only [Nat.add_assoc] at a b c d e ⊢
+  have least (n : Nat) (hn : u (i+(1+n)) ≠ u (i+1)) : ∃ r, u (i+(1+r)) ≠ u (i+1) ∧ ∀ q, q < r → u (i+(1+q)) = u (i+1) := by
+    obtain ⟨r, hr, m⟩ := exists_least (P := fun r => u (i+(1+r)) ≠ u (i+1)) n hn
+    exact ⟨r, hr, fun q hq => Classical.not_not.mp (m q hq)⟩
+  cases hc : u (i+1)
+  · have hi : u i = true := by rw [hc] at change; exact is_true (Ne.symm change)
+    have far : ∃ n, n ≤ 5 ∧ u (i+(1+n)) ≠ u (i+1) := by
+      apply Classical.byContradiction
+      intro nothing
+      have w (n : Nat) (hn : n ≤ 5) : u (i+(1+n)) = false := by
+        rw [← hc]; exact Classical.not_not.mp fun q => nothing ⟨n, hn, q⟩
+      exact e ⟨hc, w 1 (by omega), w 2 (by omega), w 3 (by omega), w 4 (by omega), w 5 (by omega)⟩
+    obtain ⟨n, hn, ne⟩ := far
+    obtain ⟨r, hr, before⟩ := least n ne
+    have le : r ≤ n := Nat.le_of_not_lt fun q => ne (before n q)
+    refine ⟨r, ?_, fun k hk => ?_, ?_⟩
+    · simp only [Bool.false_eq_true, ite_false]
+      refine ⟨Nat.le_of_not_lt fun q => ?_, by omega⟩
+      have : r = 0 ∨ r = 1 ∨ r = 2 := by omega
+      rcases this with rfl | rfl | rfl
+      · exact hr rfl
+      · rw [hc] at hr; exact b ⟨hi, hc, is_true hr⟩
+      · rw [hc] at hr; exact c ⟨hi, hc, by rw [before 1 (by omega), hc], is_true hr⟩
+    · rw [← hc]; exact before k hk
+    · rw [← hc]; exact hr
+  · have hi : u i = false := by rw [hc] at change; exact is_false (Ne.symm change)
+    have far : ∃ n, n ≤ 4 ∧ u (i+(1+n)) ≠ u (i+1) := by
+      apply Classical.byContradiction
+      intro nothing
+      have w (n : Nat) (hn : n ≤ 4) : u (i+(1+n)) = true := by
+        rw [← hc]; exact Classical.not_not.mp fun q => nothing ⟨n, hn, q⟩
+      exact d ⟨hc, w 1 (by omega), w 2 (by omega), w 3 (by omega), w 4 (by omega)⟩
+    obtain ⟨n, hn, ne⟩ := far
+    obtain ⟨r, hr, before⟩ := least n ne
+    have le : r ≤ n := Nat.le_of_not_lt fun q => ne (before n q)
+    refine ⟨r, ?_, fun k hk => ?_, ?_⟩
+    · simp only [ite_true]
+      refine ⟨Nat.le_of_not_lt fun q => ?_, by omega⟩
+      have : r = 0 ∨ r = 1 := by omega
+      rcases this with rfl | rfl
+      · exact hr rfl
+      · rw [hc] at hr; exact a ⟨hi, hc, is_false hr⟩
+    · rw [← hc]; exact before k hk
+    · rw [← hc]; exact hr
+
+/-- Six readings on, no white reading is followed by seventeen black ones. -/
+theorem long_011 {R : Nat → Bool} {φ t : Nat} (ht : (t+φ) % 3 = 0) (h : InTrap trap011 (half w011 R φ) t) (i : Nat)
+    (hi : 6 ≤ i) (white : gate (half w011 R φ) t i = false) : ∃ g, 1 ≤ g ∧ g ≤ 17 ∧ gate (half w011 R φ) t (i+g) = false := by
+  apply Classical.byContradiction
+  intro nothing
+  have black (g : Nat) (h1 : 1 ≤ g) (h2 : g ≤ 17) : gate (half w011 R φ) t (i+g) = true := by
+    cases e : gate (half w011 R φ) t (i+g)
+    · exact absurd ⟨g, h1, h2, e⟩ nothing
+    · rfl
+  have line := List.all_eq_true.mp wordLines011 _ (show lines011.getLast (by decide) ∈ lines011 from List.getLast_mem _)
+  refine avoids valid011 walk011 free011 wrap011 isTrap011 (half_isR30 _ _ _) (drive_half (g := 0) (by omega)) h line
+    (by decide) (i-6) (fun k hk => ?_)
+  have len : (lines011.getLast (by decide)).2.length = 24 := by decide
+  rw [len] at hk
+  have table : ∀ k : Fin 24, (lines011.getLast (by decide)).2.getD k.val none =
+      (if k.val < 6 then none else some (decide (6 < k.val))) := by decide
+  rw [table ⟨k, hk⟩]
+  by_cases k6 : k < 6
+  · simp [k6, fits]
+  · simp only [k6, ite_false, fits]
+    rcases (by omega : k = 6 ∨ 6 < k) with rfl | k7
+    · rw [show i-6+6 = i by omega, white]; rfl
+    · rw [show i-6+k = i+(k-6) by omega, black (k-6) (by omega) (by omega), decide_eq_true k7]; rfl
+
+/-- **The gaps beside `011`.** After a white reading, at least six readings into the trap, the next white one comes three, or
+six to seventeen, readings later. -/
+theorem gaps_011 {R : Nat → Bool} {φ t : Nat} (ht : (t+φ) % 3 = 0) (h : InTrap trap011 (half w011 R φ) t) (i : Nat)
+    (hi : 6 ≤ i) (white : gate (half w011 R φ) t i = false) : ∃ g, (g = 3 ∨ 6 ≤ g ∧ g ≤ 17) ∧
+      gate (half w011 R φ) t (i+g) = false ∧ ∀ k, 0 < k → k < g → gate (half w011 R φ) t (i+k) = true := by
+  obtain ⟨g0, lo, hi17, w0⟩ := long_011 ht h i hi white
+  have no (v : List Bool) (hv : v ∈ words011) (j : Nat) := avoids_011 ht h hv j
+  generalize gate (half w011 R φ) t = u at *
+  obtain ⟨g, ⟨g1, wg⟩, least⟩ := exists_least (P := fun g => 1 ≤ g ∧ u (i+g) = false) g0 ⟨lo, w0⟩
+  have le : g ≤ g0 := Nat.le_of_not_lt fun q => least g0 q ⟨lo, w0⟩
+  have black (k : Nat) (h0 : 0 < k) (hk : k < g) : u (i+k) = true := by
+    cases e : u (i+k)
+    · exact absurd ⟨h0, e⟩ (least k hk)
+    · rfl
+  refine ⟨g, ?_, wg, black⟩
+  apply Classical.byContradiction
+  intro bad
+  have : g = 1 ∨ g = 2 ∨ g = 4 ∨ g = 5 := by omega
+  rcases this with rfl | rfl | rfl | rfl
+  · refine no [false, false] (by decide) i (fun k hk => ?_)
+    have : k = 0 ∨ k = 1 := by simp at hk; omega
+    rcases this with rfl | rfl
+    · exact white
+    · exact wg
+  · refine no [false, true, false] (by decide) i (fun k hk => ?_)
+    have : k = 0 ∨ k = 1 ∨ k = 2 := by simp at hk; omega
+    rcases this with rfl | rfl | rfl
+    · exact white
+    · exact black 1 (by omega) (by omega)
+    · exact wg
+  · refine no [false, true, true, true, false] (by decide) i (fun k hk => ?_)
+    have : k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 := by simp at hk; omega
+    rcases this with rfl | rfl | rfl | rfl | rfl
+    · exact white
+    · exact black 1 (by omega) (by omega)
+    · exact black 2 (by omega) (by omega)
+    · exact black 3 (by omega) (by omega)
+    · exact wg
+  · refine no [false, true, true, true, true, false] (by decide) i (fun k hk => ?_)
+    have : k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 ∨ k = 5 := by simp at hk; omega
+    rcases this with rfl | rfl | rfl | rfl | rfl | rfl
+    · exact white
+    · exact black 1 (by omega) (by omega)
+    · exact black 2 (by omega) (by omega)
+    · exact black 3 (by omega) (by omega)
+    · exact black 4 (by omega) (by omega)
+    · exact wg
+
+/-! ### The single cell -/
+
+/-- A driven half and an evolution that share a row and a drive agree for as long as the drive does. -/
+theorem agree {F : Nat → Nat → Bool} (hF : IsR30 F) {c : Nat → Bool} {T N : Nat} (clock : ∀ j, j < N → F (T+j) 0 = c j) :
+    ∀ j, j ≤ N → ∀ p, F (T+j) (p+1) = drv c (fun p => F T p) j (p+1) := by
+  intro j
+  induction j with
+  | zero => intro _ p; rw [drv_init _ _ _ (by omega), Nat.add_zero]
+  | succ j ih =>
+    intro hj p
+    rw [← Nat.add_assoc, hF (T+j) p, drv_isR30 c _ j p, ih (by omega) p, ih (by omega) (p+1)]
+    congr 1
+    cases p with
+    | zero => rw [drv_col0]; exact clock j (by omega)
+    | succ p => exact ih (by omega) p
+
+theorem trap_congr {trap : List Nat} {F G : Nat → Nat → Bool} {t s : Nat} (h : ∀ p, F t (p+1) = G s (p+1))
+    (hG : InTrap trap G s) : InTrap trap F t := by
+  unfold InTrap code at *
+  rw [Rule30Ether.seg_congr 14 (fun j => F t (j+1)) (fun j => G s (j+1)) (fun i _ => h i)]
+  exact hG
+
+/-- **The single cell beside `001`.** If the centre follows `001` from age `T` for `N ≥ 3 T + 220` ticks, the fourteen cells
+to its right are in the trap at age `T + N`, a gate tick. -/
+theorem centre_001 {T N : Nat} (clock : ∀ j, j < N → cell (T+j) 0 = wordAt3 w001 j) (hN : N % 3 = 1) (late : 3*T+220 ≤ N) :
+    InTrap trap001 trueRight (T+N) := by
+  have fin : ∀ p, T < p → trueRight T p = false := fun p hp => Rule30Diagonals.cell_eq_false_of_gt T p (by omega)
+  refine trap_congr (fun p => ?_) (finite_enters_001 fin (φ := 0) (t := N) (by omega) late)
+  exact agree trueRight_isR30 (c := fun t => wordAt3 w001 (t+0)) clock N (Nat.le_refl _) p
+
+/-- **The single cell beside `011`.** -/
+theorem centre_011 {T N : Nat} (clock : ∀ j, j < N → cell (T+j) 0 = wordAt3 w011 j) (hN : N % 3 = 0) (late : 3*T+820 ≤ N) :
+    InTrap trap011 trueRight (T+N) := by
+  have fin : ∀ p, T < p → trueRight T p = false := fun p hp => Rule30Diagonals.cell_eq_false_of_gt T p (by omega)
+  refine trap_congr (fun p => ?_) (finite_enters_011 fin (φ := 0) (t := N) (by omega) late)
+  exact agree trueRight_isR30 (c := fun t => wordAt3 w011 (t+0)) clock N (Nat.le_refl _) p

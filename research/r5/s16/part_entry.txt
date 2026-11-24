@@ -1,0 +1,174 @@
+/-! ### The trap is closed, and entry -/
+
+theorem rows_add (d0 d1 d2 : Bool) (x a : Nat) : ∀ b, rows d0 d1 d2 x (a+b) = rows d0 d1 d2 (rows d0 d1 d2 x a) b
+  | 0 => rfl
+  | b+1 => by rw [← Nat.add_assoc]; exact congrArg _ (rows_add d0 d1 d2 x a b)
+
+theorem Drive.mono {F : Nat → Nat → Bool} {d0 d1 d2 : Bool} {t n m : Nat} (h : Drive F d0 d1 d2 t n) (le : m ≤ n) :
+    Drive F d0 d1 d2 t m := fun i hi => h i (by omega)
+
+theorem Drive.shift {F : Nat → Nat → Bool} {d0 d1 d2 : Bool} {t n : Nat} (k : Nat) (h : Drive F d0 d1 d2 t (k+n)) :
+    Drive F d0 d1 d2 (t+3*k) n := by
+  intro i hi
+  have := h (k+i) (by omega)
+  rwa [show t+3*(k+i) = t+3*k+3*i by omega] at this
+
+/-- The drive of a word from a tick of phase `g`. -/
+theorem drive_half {w : List Bool} {R : Nat → Bool} {φ t g : Nat} (ht : (t+φ) % 3 = g % 3) (n : Nat) :
+    Drive (half w R φ) (wordAt3 w g) (wordAt3 w (g+1)) (wordAt3 w (g+2)) t n := by
+  intro i _
+  refine ⟨?_, ?_, ?_⟩ <;> rw [half_zero] <;> unfold wordAt3 <;> congr 1 <;> omega
+
+section
+variable {T : Tree} {white black : Nat} {d0 d1 d2 : Bool} {trap : List Nat} {F : Nat → Nat → Bool}
+
+theorem trap_row (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true)
+    (free : freeFrom white black 0 1 = true) (wrap : (T.leaves fun m => m.testBit 1 == m.testBit 0) = true)
+    (is : isTrap T trap = true) (hF : IsR30 F) {t n : Nat} (hd : Drive F d0 d1 d2 t n) (h : InTrap trap F t) :
+    ∃ x, (∀ i, i ≤ n → Fits F (t+3*i) (rows d0 d1 d2 x i) (14+3*(n-i))) ∧
+      ∀ i, (T.value (rows d0 d1 d2 x i) 0).testBit 0 = true := by
+  have f := fits_code F t (14+3*n)
+  exact ⟨_, fits_rows hF hd f, bit_stays va ok free wrap (bit_of_trap va is f (by omega) h)⟩
+
+theorem trap_stays (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true)
+    (free : freeFrom white black 0 1 = true) (wrap : (T.leaves fun m => m.testBit 1 == m.testBit 0) = true)
+    (is : isTrap T trap = true) (hF : IsR30 F) {t n : Nat} (hd : Drive F d0 d1 d2 t n) (h : InTrap trap F t) :
+    InTrap trap F (t+3*n) := by
+  obtain ⟨x, fx, bx⟩ := trap_row va ok free wrap is hF hd h
+  exact trap_of_bit va is (fx n (Nat.le_refl _)) (by omega) (bx n)
+
+theorem trap_entry (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true) (is : isTrap T trap = true)
+    {A B m n e W : Nat} {outs : List Nat} (freeA : freeFrom white black A m = true) (freeB : freeFrom white black B n = true)
+    (first : T.low.testBit A = true) (middle : (T.leaves fun k => !k.testBit (A+m) || (k.testBit B || k.testBit e)) = true)
+    (last : (T.leaves fun k => !k.testBit (B+n) || k.testBit 0) = true) (outCodes : T.codes e 0 0 W = outs)
+    (hF : IsR30 F) {t : Nat} (hd : Drive F d0 d1 d2 t (m+n)) : InTrap trap F (t+3*(m+n)) ∨ code F (t+3*m) W ∈ outs := by
+  have f := fits_code F t (14+W+3*(m+n))
+  have fx := fits_rows hF hd f
+  rcases bit_entry va ok freeA freeB first middle last (code F t (14+W+3*(m+n))) with h | h
+  · right
+    have mem := Tree.mem_codes (t := e) W va (k := 0) (p := 0) (r := rows d0 d1 d2 (code F t (14+W+3*(m+n))) m)
+      (by simp [Nat.mod_one]) h
+    rw [outCodes, Nat.zero_add, code_of_fits (fx m (by omega)) (by omega)] at mem
+    exact mem
+  · left
+    rw [← rows_add] at h
+    exact trap_of_bit va is (fx (m+n) (Nat.le_refl _)) (by omega) h
+
+/-- A half that is not in the trap at a tick was outside, and showed an exceptional window, at every earlier one. -/
+theorem outside_before (va : T.valid = true) (ok : walkAll T white black d0 d1 d2 = true)
+    (free : freeFrom white black 0 1 = true) (wrap : (T.leaves fun m => m.testBit 1 == m.testBit 0) = true)
+    (is : isTrap T trap = true) {A B m n e W : Nat} {outs : List Nat} (freeA : freeFrom white black A m = true)
+    (freeB : freeFrom white black B n = true) (first : T.low.testBit A = true)
+    (middle : (T.leaves fun k => !k.testBit (A+m) || (k.testBit B || k.testBit e)) = true)
+    (last : (T.leaves fun k => !k.testBit (B+n) || k.testBit 0) = true) (outCodes : T.codes e 0 0 W = outs)
+    (hF : IsR30 F) {t q : Nat} (hd : Drive F d0 d1 d2 t (m+n+q)) (no : ¬ InTrap trap F (t+3*(m+n+q))) :
+    ∀ i, i ≤ q → code F (t+3*m+3*i) W ∈ outs := by
+  intro i hi
+  have hd' := (hd.mono (m := i+(m+n)) (by omega)).shift i
+  rcases trap_entry va ok is freeA freeB first middle last outCodes hF hd' with h | h
+  · exfalso
+    apply no
+    have tail := (hd.mono (m := (i+(m+n))+(q-i)) (by omega)).shift (i+(m+n))
+    rw [show t+3*(i+(m+n)) = t+3*i+3*(m+n) by omega] at tail
+    have s := trap_stays va ok free wrap is hF tail h
+    rwa [show t+3*i+3*(m+n)+3*(q-i) = t+3*(m+n+q) by omega] at s
+  · rwa [show t+3*i+3*m = t+3*m+3*i by omega] at h
+
+end
+
+/-! ### The windows that can stay outside -/
+
+/-- The windows of `W` cells one period after the window `x`, whatever the three cells beyond. -/
+def images (d0 d1 d2 : Bool) (W x : Nat) : List Nat := (List.range 8).map fun e => per d0 d1 d2 (x+2^W*e) % 2^W
+
+theorem image_mem {F : Nat → Nat → Bool} (hF : IsR30 F) {d0 d1 d2 : Bool} {t : Nat} (hd : Drive F d0 d1 d2 t 1) (W : Nat) :
+    code F (t+3) W ∈ images d0 d1 d2 W (code F t W) := by
+  obtain ⟨h0, h1, h2⟩ := hd 0 (by omega)
+  have f := fits_code F t (W+3)
+  have g := code_of_fits (fits_per hF h0 h1 h2 f) (Nat.le_refl W)
+  refine List.mem_map.mpr ⟨code F t (W+3) / 2^W, ?_, ?_⟩
+  · have lt := code_lt F t (W+3)
+    rw [List.mem_range, Nat.div_lt_iff_lt_mul (Nat.two_pow_pos W)]
+    rw [Nat.pow_add] at lt
+    omega
+  · have m := code_of_fits (f.mono (M := W) (by omega)) (Nat.le_refl W)
+    show per d0 d1 d2 (code F t W + 2^W * (code F t (W+3) / 2^W)) % 2^W = code F (t+3) W
+    rw [← m, Nat.mod_add_div]
+    exact g
+
+/-- Windows with a next one in the list. -/
+def back (d0 d1 d2 : Bool) (W : Nat) (A : List Nat) : List Nat := A.filter fun x => (images d0 d1 d2 W x).any A.contains
+/-- Windows with one before in the list. -/
+def fwd (d0 d1 d2 : Bool) (W : Nat) (A : List Nat) : List Nat := A.filter (A.flatMap (images d0 d1 d2 W)).contains
+def rounds (d0 d1 d2 : Bool) (W : Nat) : Nat → List Nat → List Nat
+  | 0, A => A
+  | n+1, A => rounds d0 d1 d2 W n (fwd d0 d1 d2 W (back d0 d1 d2 W A))
+/-- The windows with one more cell. -/
+def widen (W : Nat) (A : List Nat) : List Nat := A ++ A.map (· + 2^W)
+/-- At each width so many rounds, then one more cell. -/
+def chase (d0 d1 d2 : Bool) : Nat → List Nat → List Nat → List Nat
+  | _, [], A => A
+  | W, r :: rs, A => chase d0 d1 d2 (W+1) rs (widen W (rounds d0 d1 d2 W r A))
+
+/-- The window is in the list at `n + 1` successive periods from `t`. -/
+def Among (F : Nat → Nat → Bool) (t n W : Nat) (A : List Nat) : Prop := ∀ i, i ≤ n → code F (t+3*i) W ∈ A
+
+section
+variable {F : Nat → Nat → Bool} {d0 d1 d2 : Bool}
+
+theorem among_round (hF : IsR30 F) {t n W : Nat} {A : List Nat} (hd : Drive F d0 d1 d2 t (n+2)) (h : Among F t (n+2) W A) :
+    Among F (t+3) n W (fwd d0 d1 d2 W (back d0 d1 d2 W A)) := by
+  have im (i : Nat) (hi : i < n+2) : code F (t+3*(i+1)) W ∈ images d0 d1 d2 W (code F (t+3*i) W) := by
+    have := image_mem hF ((hd.mono (m := i+1) (by omega)).shift i) W
+    rwa [show t+3*i+3 = t+3*(i+1) by omega] at this
+  have b (i : Nat) (hi : i < n+2) : code F (t+3*i) W ∈ back d0 d1 d2 W A := by
+    refine List.mem_filter.mpr ⟨h i (by omega), List.any_eq_true.mpr ⟨_, im i hi, ?_⟩⟩
+    exact List.contains_iff_mem.mpr (h (i+1) (by omega))
+  intro i hi
+  rw [show t+3+3*i = t+3*(i+1) by omega]
+  refine List.mem_filter.mpr ⟨b (i+1) (by omega), List.contains_iff_mem.mpr ?_⟩
+  exact List.mem_flatMap.mpr ⟨_, b i (by omega), im i (by omega)⟩
+
+theorem among_rounds (hF : IsR30 F) {W : Nat} : ∀ (r : Nat) {t n : Nat} {A : List Nat}, Drive F d0 d1 d2 t (n+2*r) →
+    Among F t (n+2*r) W A → Among F (t+3*r) n W (rounds d0 d1 d2 W r A)
+  | 0, _, _, _, _, h => h
+  | r+1, t, n, A, hd, h => by
+    have s := among_round hF (n := n+2*r) hd h
+    have d := ((hd.mono (m := 1+(n+2*r)) (by omega)).shift 1)
+    have q := among_rounds hF r (t := t+3) (n := n) d s
+    rwa [show t+3+3*r = t+3*(r+1) by omega] at q
+
+theorem among_widen {t n W : Nat} {A : List Nat} (h : Among F t n W A) : Among F t n (W+1) (widen W A) := by
+  intro i hi
+  have a := h i hi
+  rw [← code_of_fits ((fits_code F (t+3*i) (W+1)).mono (M := W) (by omega)) (Nat.le_refl W)] at a
+  have lt := code_lt F (t+3*i) (W+1)
+  have split := Nat.mod_add_div (code F (t+3*i) (W+1)) (2^W)
+  have two : code F (t+3*i) (W+1) / 2^W < 2 := by
+    apply Nat.div_lt_of_lt_mul
+    rwa [Nat.pow_succ] at lt
+  have either : code F (t+3*i) (W+1) / 2^W = 0 ∨ code F (t+3*i) (W+1) / 2^W = 1 := by
+    revert two
+    generalize code F (t+3*i) (W+1) / 2^W = d
+    omega
+  rw [← split]
+  rcases either with e | e
+  · rw [e, Nat.mul_zero, Nat.add_zero]
+    exact List.mem_append.mpr (Or.inl a)
+  · rw [e, Nat.mul_one]
+    exact List.mem_append.mpr (Or.inr (List.mem_map.mpr ⟨_, a, rfl⟩))
+
+theorem among_chase (hF : IsR30 F) : ∀ (rs : List Nat) {W t n : Nat} {A : List Nat}, Drive F d0 d1 d2 t (n+2*rs.sum) →
+    Among F t (n+2*rs.sum) W A → Among F (t+3*rs.sum) n (W+rs.length) (chase d0 d1 d2 W rs A)
+  | [], _, _, _, _, _, h => h
+  | r :: rs, W, t, n, A, hd, h => by
+    have e : n+2*(r :: rs).sum = (n+2*rs.sum)+2*r := by rw [List.sum_cons]; omega
+    rw [e] at hd h
+    have s := among_widen (among_rounds hF r hd h)
+    have d := (hd.mono (m := r+(n+2*rs.sum)) (by omega)).shift r
+    have q := among_chase hF rs d s
+    have e1 : t+3*r+3*rs.sum = t+3*(r :: rs).sum := by rw [List.sum_cons]; omega
+    have e2 : W+1+rs.length = W+(r :: rs).length := by rw [List.length_cons]; omega
+    rwa [e1, e2] at q
+
+end
