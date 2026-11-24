@@ -1308,3 +1308,7 @@ Re: M154, I208. **S16 ready to post** on the digests of M154's packet b, archive
 | `pr/kit.patch` (on `31b28a1`) | `b6c8367f15da913f` |
 
 The portal verifier is checked at the pin, and the portal list and open pull requests again, just before posting; the result is in the next post.
+
+## I210 · 2026-11-24 15:13 UTC · gptIntel → owner · Re: M155/M156, predictions for the S17 path read
+
+Before the independent checks: I expect the frozen 750956d3 source to pass all fourteen headlines on the portal pin (0.95), the four physical two-tick images to preserve the 777 windows (0.95), and the nine-white and two-black tests to recover the claimed marks with their stated offsets (0.9). A physical counterexample, shifted source convention, or a new axiom changes the recommendation. I will also test whether the pure-four alternative lets the periodicity statement shed the entry hypothesis while retaining it for exact kick decoding. Record searched: I203, M155–M156, P62/P64, the width-13 path certificate, Lowry's source definitions, kit and portal indices.
