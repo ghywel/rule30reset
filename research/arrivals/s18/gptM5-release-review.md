@@ -15,3 +15,22 @@ White sample zero is at tick `T+1` after the black tick at `T`. The guaranteed s
 At or after sample 35, a kick has its next two gaps in the nine-pair list. That list excludes `(4,4)`, so an eventual once-in-four kick tail is impossible for any right half under the drive. The nine-net window begins at `k ≥ 35` and gives the kick at `k+6`. The first guaranteed target is 41. The black-net implication is one way, and the singleton corollary assumes its centre eventually alternates. None of these claims excludes an alternating singleton.
 
 The older width-13 theorem about the gap language allows a pure-four mode and uses the finite left half when excluding it on the singleton. S17 supplies the 777 windows and closure. S18 gives the exact physical entry deadline for that fixed set, and removes pure fours on the right alone. The nearby open PRs concern exact strip exclusions for specific longer words, seven-white gaps, and marked gaps with white restarts. None supplies the same deadline. [S17 kit PR](https://github.com/WolframInstitute/Rule30PrizeKit/pull/418) · [Longer strip certificates, PR #416](https://github.com/WolframInstitute/Rule30PrizeKit/pull/416) · [Seven-white gaps, PR #417](https://github.com/WolframInstitute/Rule30PrizeKit/pull/417) · [Marked gaps, PR #419](https://github.com/WolframInstitute/Rule30PrizeKit/pull/419).
+
+## Packet a evidence
+
+All twelve advertised digests and every posting pin matched. The builder regenerated both Lean files byte for byte. The independent stock checker at `5fb5915` matched the whole author receipt with 11 headlines, 298 declared items and 582 replayed constants. The exact kit patch applies to #418 head `43e938c740eaa695eadfcc06fc695b09f366a655`. The kit module passed with 11 headlines, 13 declared items and 50 replayed constants, using the source-identical S17 modules from the earlier replay. Native `leanchecker` passed both proofs. Neither receipt adds an axiom. The notebook contains the exact source and abstract, twelve saved outputs and one successful kernel check. All four figures were inspected and the authenticated dry run passed.
+
+A separate forward enumeration confirmed 1,699,328 exterior starts in the width-21 graph and an exterior path length of 35 windows. The two-direction core sizes for widths 12–22 are 47, 10, 9, 8, 9, 10, 8, 11, 9, 0 and 0. The eight-window width-20 cycle is among the nine surviving windows at that width. A literal truth-table evolution gave `3508 → 4082` for seed 1191106 and `2484 → 754` for seed 141962434 at indices 34 and 35. Both first enter at 35.
+
+The read-back archive `share-scratch/gptM5/S18/R113/s18-a-review.zip`, SHA-256 `f742ca630bdec0582b086691d219de62e88a79fff0ee9f24abd5247a4ed31ee9`, contains the outputs, plots, reproduction and checker receipts.
+
+
+## Packet b release read
+
+**PASS** on M169's exact archive `f1927193dd9e9437d4873938cb5b2be712ff2041a526857ac7faa10295ed3c21`. The rebuilt essay describes what the 48-sample raster shows and marks entry at sample 35. The age bits now describe a forward invariant and the width claim is scoped to the exact outside-cycle test. The PR drops the stale byte count. Its theorem claims, sample indexing and credits agree with the source.
+
+All twelve advertised digests and posting pins match. The notebook `508803f79882cf70eefb5c664a04d0f41237cb0a98c23f781ace506ee15d5500` contains the exact 248-word abstract and portable Lean source. Ten of twelve outputs are identical as notebook expressions, including the four figures, headline types and axiom lists. The two changed outputs are the rebuilt Lean environment and successful kernel-check summary. The dry run passed at `5fb5915`.
+
+Both exact Lean sources differ from a only in their introductory comments. I rebuilt and reran stock and native checks on both. The portal passed all 11 headlines with 298 declared items and 582 replayed constants. The kit passed all 11 with 13 declared items and 50 replayed constants. No new axioms. Patch `1d1d5c616430953e68e97d0ac4683fe2c029d79ef9a27e290149c15b8361b9be` applies to #418's exact head `43e938c`, which was open on kit main `88fdac9` at the check. The kit module imports S17. The kit patch and PR text should be refreshed when that dependency enters main, as planned. The exact reviewed PR body is `8529fd29cf8b97a12dbaf2754193a7d77e180a92fb04ed1dff8c532910f6cf84`.
+
+Read-back evidence `share-scratch/gptM5/S18/R113/s18-b-review.zip`, SHA-256 `08331059b2e8d2105cc2cf07fefdb481288bfbe0b028c444041b2f267998b081`.
