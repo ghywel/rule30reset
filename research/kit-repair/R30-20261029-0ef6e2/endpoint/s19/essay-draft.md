@@ -13,7 +13,9 @@ Sources: ["[The golden half-circle word at every phase beside a Rule 30 clock](h
 
 Suppose that a column of Rule 30 alternates black and white from some tick on, in a row with a leftmost black cell. What can the column to its right read at the white ticks? Every eventually periodic word is excluded, by Jen's theorem. The next words to try are those of a rotation. Turn a circle of length one by a fixed irrational angle α and write a black letter when the point is in a fixed arc.
 
-**Start on the orbit of either end of the arc. For every irrational angle and every arc, this word is not read beside the column, from any tick on, and no block code of it is** (`arc_excluded`, `one_arc_excluded`, `no_eventual_arc_neighbour`). The column may be any column, on either clock phase, and the start may be any number of steps before or after the end.
+**Start on the orbit of either end of the arc. For every irrational angle and every arc, this word is not read beside the column, from any tick on, and no block code of it is.** The column may be any column, on either clock phase, and the start may be any number of steps before or after the end.
+
+Over the real numbers this is `rotation_block_excluded`. Let x be a row with a leftmost black cell whose column i alternates from tick a on, white first. Let α be irrational, 0 < γ < 1, d any integer, and r a number of letters. Take any Boolean function of the r answers to *is the fractional part of e + (t + d + s)α less than γ?*, s from 0 to r - 1, with e = 0 or e = γ. Then column i + 1 at the white ticks a + 2t does not equal that function of t from any white index H on. In integers, for the same class, it is `arc_excluded`, `one_arc_excluded` and `no_eventual_arc_neighbour`.
 
 The half-circles of every irrational angle (`half_circle_excluded`) and the characteristic Sturmian words of every irrational slope, from any index on (`sturmian_excluded`), are cases. So is a coding by finitely many arcs when all their ends lie on the two orbits, since it is a block code of one arc (a remark, by the connectedness of rotation cylinders, not formalized).
 
@@ -92,9 +94,16 @@ The first row of the picture is the row at tick zero, to the left of the clock. 
 
 Suppose that the leftmost black cell is L cells left of the clock. Let i < j be places with the letters from i and from j equal for j - K letters. Then the clock and the column to its left agree for 2(j - K) ticks from the ticks 2i and 2j, so the rows at these two ticks agree for that many cells to the left. The row at tick 2i is white beyond L + 2i cells. So the row at tick 2j is white from there to within L + 2K cells of its edge, about. But infinitely many of the diagonals parallel to the edge are eventually black. One of them, more than L + 2K cells inside the edge, crosses that stretch when j - i is large. This is `corollary_F` of the kit's `Rule30ClockNearSquares`.
 
-## In integers
+## In integers, and over the real numbers
 
-The statements are in integers. `IrrationalLine g` says of the positive integers that n g(m) < m (g(n) + 1) for all m and n, and that no rational number lies in all the intervals from g(n)/n to (g(n) + 1)/n. The floors of the positive multiples of an irrational real satisfy it, and every sequence that does agrees with them at the positive integers; g(0) is free. `PhaseLine g f` says that every increment of f over n ticks is g(n) or g(n) + 1. The floors of tα + θ satisfy it for every real θ. For irrational α the only others are the ceilings of tα + θ less one, which differ from the floors at one time at most. These statements, and the exclusion written for a real angle and a real arc, are checked against Mathlib's real numbers in [files beside this entry](https://github.com/ghywel/rule30reset/tree/main/research/kit-repair/R30-20261029-0ef6e2/endpoint), not in it. Square roots are in the entry: `sqrt_line` for the floors of t√m, with m not the square of a fraction, and `silver_excluded` for m = 2.
+The proof is about integers, in core Lean. `IrrationalLine g` says of the positive integers that n g(m) < m (g(n) + 1) for all m and n, and that no rational number lies in all the intervals from g(n)/n to (g(n) + 1)/n. `PhaseLine g f` says that every increment of f over n ticks is g(n) or g(n) + 1. These are conditions on sequences, and the theorems up to `silver_excluded` are stated with them. Square roots are explicit: `sqrt_line` has the floors of t√m, with m not the square of a fraction, and `silver_excluded` is m = 2.
+
+What they mean for real lines is the last section of the Lean, which alone uses Mathlib.
+
+- `irrationalLine_iff`: g satisfies `IrrationalLine` exactly when g(t) is the floor of tβ at every t from 1 on, for some irrational β. (g(0) is free.)
+- `phaseLine_iff`: for irrational α, f satisfies `PhaseLine` for the floors of tα exactly when there is a θ with f(t) the floor of tα + θ at every t, or the ceiling of tα + θ less one at every t.
+- `phaseLine_one_exception`: so f agrees with the floors of tα + θ, for some θ, except at one index at most.
+- `rotation_excluded`: the exclusion for a real angle and arc, the word and its letter exchange. `rotation_block_excluded` is the same for block codes and a free onset.
 
 ## Earlier work
 
@@ -102,7 +111,7 @@ Adamczewski (2005) studies the same words, as *characteristic codings*. Every on
 
 On the portal, our [golden half-circle theorem](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9) has one angle and every phase. [Our Sturmian entry](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-8084e6) has the Sturmian words of every slope and intercept. The word of an arc whose ends lie on different orbits has 2n blocks of length n for all large n, so the argument there does not reach it. [The finite-arc entry](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) has any arcs and any start, when the continued-fraction digits are large arbitrarily late. [Lowry's entry](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-094213) excludes Sturmian and quasi-Sturmian orders of the gaps, another reading. `characteristic_excluded` in the kit has the characteristic Sturmian words beside a clock from time 0; here they are excluded from any tick and any index on.
 
-The verifier's kit predates `corollary_F`. Its proof, from our `Rule30ClockNearSquares`, and the left-diagonal lemmas it uses, from our `Rule30ZeroWallDiagonals`, are carried in the source.
+The verifier's kit predates `corollary_F`. Its proof, from our `Rule30ClockNearSquares`, and the left-diagonal lemmas it uses, from our `Rule30ZeroWallDiagonals`, are carried in the source. The upper and lower roundings of an irrational line are classical ([Morse and Hedlund, 1940](https://doi.org/10.2307/2371431)).
 
 ## What is not claimed
 
@@ -119,7 +128,7 @@ DirectoryQ[$Rule30PrizeKit]
 {LEAN_IMPORT_CELL}
 
 ```wl
-heads = ("Rule30Submission." <> #) & /@ {"arc_near_squares", "arc_excluded", "one_arc_excluded", "no_eventual_arc_neighbour", "half_circle_near_squares", "half_circle_block_excluded", "half_circle_excluded", "sturmian_excluded", "sqrt_line", "silver_excluded"};
+heads = ("Rule30Submission." <> #) & /@ {"rotation_block_excluded", "arc_near_squares", "arc_excluded", "one_arc_excluded", "no_eventual_arc_neighbour", "half_circle_near_squares", "half_circle_block_excluded", "half_circle_excluded", "sturmian_excluded", "sqrt_line", "silver_excluded", "rotation_excluded", "irrationalLine_iff", "phaseLine_iff", "phaseLine_one_exception"};
 AssociationMap[rule30Submission[#]["TypeForm"] &, heads]
 ```
 

@@ -412,7 +412,7 @@ closure trusted, Mathlib with the kit. So the choice is about the statement, and
 3. **If the result concerns real numbers, prove an integer form in core and add a thin Mathlib layer to the portal
    entry** that states it in Mathlib's own terms. The kit gets the core module. A person reads a partial headline against
    the claim, and `Irrational α` needs no explanation where a predicate of ours does. Import the few files the layer needs
-   and not `import Mathlib`: S19 compiles in 4 s with five, and in 9 to 28 s with all of it. S11 and S19 have this form.
+   and not `import Mathlib`: S19 compiles in 4 s with five (10 s from cold), and in 6 to 28 s with all of it. S11 and S19 have this form.
 4. **If the theorem itself needs measure, probability, topology or analysis, use Mathlib and accept portal only.** Do not
    weaken a question, or pass it over, because core Lean cannot state it. A statement equivalent to a prize problem may also
    go to the kit's `equivalents/`, its Mathlib folder, whose README says how.
