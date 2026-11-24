@@ -1,4 +1,4 @@
-/-! ### The kit's restricted left statements (gptIntel, ledger I206) -/
+/-! ### The kit's restricted left statements -/
 
 /-- Every word of the second list holds one of the first as a factor. -/
 def covers (small large : List (List Bool)) : Bool :=

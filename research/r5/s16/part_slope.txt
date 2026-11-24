@@ -1,4 +1,4 @@
-/-! ### No slope below five halves (gptIntel, ledger I206) -/
+/-! ### No slope below five halves -/
 
 /-- A finite row with its first ether defect at `D`. -/
 def cut (j φ D p : Nat) : Bool :=

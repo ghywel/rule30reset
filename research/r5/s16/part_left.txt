@@ -2,7 +2,7 @@
 
 `C3s001` and `C3w w011` (`Rule30EtherThreeSkeleton`, `Rule30EtherThreeLeft`) ask that no finite left half keep column `-1` on a
 pattern with one free cell a period. Beside an eventual period three that free cell is the complement of the gate, and the
-gate is that of a right half in the trap. -/
+gate of a right half in the trap avoids `words001` or `words011`. -/
 
 open Rule30DrivenLeft Rule30Diagonals
 
@@ -44,14 +44,14 @@ theorem centre_free_011 {T : Nat} (h : ∀ t, T ≤ t → cell t 0 = wordAt3 w01
   rw [show T+(t-T+3*i) = t+3*i by omega]
   rfl
 
-/-- **The left half for `001`** (open): no finite left half keeps column `-1` on `(0, *, 1)` with the free cells the complements
-of a gate of the trap. -/
+/-- **The left half for `001`** (open): no finite left half keeps column `-1` on `(0, *, 1)` with free-phase readings that avoid
+the complements of `words001`. -/
 def Left001 : Prop := ∀ s : Int → Bool, (∃ M : Nat, ∀ p : Int, p < -(M : Int) → s p = false) →
   ¬ ∃ K, (∀ k, K ≤ k → fits3 colPattern001s (k % 3) (L (fun _ => false) s k (-1)) = true) ∧
     Free words001 1 (fun k => L (fun _ => false) s k (-1)) K
 
-/-- **The left half for `011`** (open): no finite left half keeps column `-1` on `(*, 0, 1)` with the free cells the complements
-of a gate of the trap. -/
+/-- **The left half for `011`** (open): no finite left half keeps column `-1` on `(*, 0, 1)` with free-phase readings that avoid
+the complements of `words011`. -/
 def Left011 : Prop := ∀ s : Int → Bool, (∃ M : Nat, ∀ p : Int, p < -(M : Int) → s p = false) →
   ¬ ∃ K, (∀ k, K ≤ k → fits3 (colPattern3 w011) (k % 3) (L (fun k => wordAt3 (effWord3 w011) k) s k (-1)) = true) ∧
     Free words011 0 (fun k => L (fun k => wordAt3 (effWord3 w011) k) s k (-1)) K

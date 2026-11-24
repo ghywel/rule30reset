@@ -97,7 +97,7 @@ theorem runs_001 {R : Nat → Bool} {φ t : Nat} (ht : (t+φ) % 3 = 1) (h : InTr
     · rw [← hc]; exact before k hk
     · rw [← hc]; exact hr
 
-/-- Six readings on, no white reading is followed by seventeen black ones. -/
+/-- At least six gate steps from the starting sample, no white reading is followed by seventeen black ones. -/
 theorem long_011 {R : Nat → Bool} {φ t : Nat} (ht : (t+φ) % 3 = 0) (h : InTrap trap011 (half w011 R φ) t) (i : Nat)
     (hi : 6 ≤ i) (white : gate (half w011 R φ) t i = false) : ∃ g, 1 ≤ g ∧ g ≤ 17 ∧ gate (half w011 R φ) t (i+g) = false := by
   apply Classical.byContradiction
@@ -121,8 +121,8 @@ theorem long_011 {R : Nat → Bool} {φ t : Nat} (ht : (t+φ) % 3 = 0) (h : InTr
     · rw [show i-6+6 = i by omega, white]; rfl
     · rw [show i-6+k = i+(k-6) by omega, black (k-6) (by omega) (by omega), decide_eq_true k7]; rfl
 
-/-- **The gaps beside `011`.** After a white reading, at least six readings into the trap, the next white one comes three, or
-six to seventeen, readings later. -/
+/-- **The gaps beside `011`.** After a white reading at least six gate steps from the starting sample (index 0), the next white
+reading comes three, or six to seventeen, steps later, and those between are black. -/
 theorem gaps_011 {R : Nat → Bool} {φ t : Nat} (ht : (t+φ) % 3 = 0) (h : InTrap trap011 (half w011 R φ) t) (i : Nat)
     (hi : 6 ≤ i) (white : gate (half w011 R φ) t i = false) : ∃ g, (g = 3 ∨ 6 ≤ g ∧ g ≤ 17) ∧
       gate (half w011 R φ) t (i+g) = false ∧ ∀ k, 0 < k → k < g → gate (half w011 R φ) t (i+k) = true := by

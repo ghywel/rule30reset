@@ -5,32 +5,32 @@ Drive a right half of rule 30 by the column that repeats `001`, or `011`, from a
 once a period: at the white tick before the black one of `001`, at the white tick of `011`. A window is the first fourteen
 cells at a gate tick, as a number. A set of windows is *closed* when one period keeps it, whatever lies beyond (`Closed`).
 
-* **The traps.** `trap001` (1,195 windows) and `trap011` (691) are closed (`closed_001`, `closed_011`) and least: every closed
-  set that holds any window at all holds them (`least_001`, `least_011`).
+* **The traps.** `trap001` (1,195 windows) and `trap011` (691) are closed (`closed_001`, `closed_011`), and they are the least
+  nonempty closed sets: every closed set that holds any window at all holds them (`least_001`, `least_011`).
 * **Entry.** A half that is white beyond cell `D` is in the trap at every gate tick from `3 D + 170` beside `001` and
   `3 D + 820` beside `011` (`finite_enters_001`, `finite_enters_011`). No bound of slope below `5/2` holds (`slope_001`,
   `slope_011`).
 * **Any support.** Every right half enters, or has a constant gate from tick 26 beside `001`, a white one from tick 155 beside
   `011` (`enters_or_constant_001`, `enters_or_constant_011`).
 * **The gate.** In the trap of `001` a run that begins at a change is two to four black readings or three to five white ones
-  (`runs_001`). In that of `011` a white reading, from the sixth reading on, is followed by the next three, or six to
-  seventeen, readings later (`gaps_011`). `avoids_001`, `avoids_011`: the words never read.
+  (`runs_001`). In that of `011`, after a white reading at least six gate steps from the starting sample, the next white
+  reading comes three, or six to seventeen, steps later (`gaps_011`). `avoids_001`, `avoids_011`: the words never read.
 * **The single cell.** If the centre follows the word for `N` ticks from age `T`, the window at age `T + N` is in the trap,
   for `N` at least `3 T + 170`, or `3 T + 820`, at a gate tick (`centre_001`, `centre_011`).
-* **What is left.** `Left001` and `Left011` (both open) ask that no finite left half keep column `-1` on its pattern with the
-  free cells the complements of a gate of the trap; together they exclude an eventual period three
-  (`no_eventual_period_three_of_left`).
+* **What is left.** `Left001` and `Left011` (both open) ask that no finite left half keep column `-1` on its pattern with
+  free-phase readings that avoid the complements of the listed forbidden gate words (`words001`, `words011`); together they
+  exclude an eventual period three (`no_eventual_period_three_of_left`).
 
-At period two the statement of this form, `Rule30PeriodTwoWidth13.RD`, is open. Nothing here excludes `001` or `011`, and no
-gate is shown to be periodic.
+At period two the statement of this form, `Rule30PeriodTwoWidth13.RD` (entry, or an eventually periodic gate), is open.
+Nothing here excludes `001` or `011`, and no gate is shown to be periodic.
 
 The proof is one table for each word, of sets of times on spatial prefixes, walked once against itself with a whole period as
 the step; the mechanism is that of `Rule30TrappedRunMasks`. Outside the trap for ever are the windows of an ether alone: at
-fourteen cells beside `001`, and beside `011` at thirty, where the last of some windows that look permanent up to 29 cells
-dies. A finite half cannot show an ether for long: the erosion of `Rule30EtherThreeErosion` with white cells in place of the
-ether beyond.
+fourteen cells beside `001`, and beside `011` at thirty. A finite half cannot show an ether for long: the erosion of
+`Rule30EtherThreeErosion` with white cells in place of the ether beyond.
 
 L. Hallee proves the lower bounds of the runs of `001` for every half (`lhallee/rule30-open`, `Columns.ThreeRuns`) and computes
-entry beside `011` for halves of at most sixteen cells. The words of the centre's own orbit are in
+entry beside `011` for halves of at most sixteen cells, and reduces `001` to a left half whose free readings avoid gate words
+(`Columns.ConstrainedLeft001`). The words of the centre's own orbit are in
 `Rule30PeriodThreeLanguage`.
 -/
