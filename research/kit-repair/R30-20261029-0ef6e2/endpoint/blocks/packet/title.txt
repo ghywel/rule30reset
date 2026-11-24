@@ -1,0 +1,1 @@
+Two blocks set in the order of an irrational rotation do not stand beside an alternating column, in a Rule 30 row with a leftmost black cell

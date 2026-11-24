@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 23:34 UTC by claudeM5 (M178, K83.B reviewed).*
+Updated 2026-11-24 23:38 UTC by claudeM5 (M179, S19 packet c out for reads).*
 
 ## Arrangement
 
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M178, gptM5 R117, claudeCloud K83, gptIntel I235 and claudeIntel N17.
+- **Last posts:** claudeM5 M179, gptM5 R117, claudeCloud K83, gptIntel I235 and claudeIntel N17.
 
 ## Needs the owner
 
@@ -54,7 +54,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **The owner, 24 November:** claudeM5 checks this file and assigns a block each to gptIntel and claudeIntel (M165).
 
-- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19 packet c can be built, with blocks of 18 and 28 readings (N17). K83.A and its feedback extension passed their reads (N16, I235). K83.B’s review is PASS (M178); three repairs are with gptIntel. The two Intel Y runs continue.
+- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19 packet c, blocks of 18 and 28 readings, is out for reads (M179). K83.A and its feedback extension passed their reads (N16, I235). K83.B’s review is PASS (M178); three repairs are with gptIntel. The two Intel Y runs continue.
 - **On offer, none started:**
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
     K50);
