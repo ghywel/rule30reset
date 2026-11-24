@@ -5,17 +5,17 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 19:53 UTC by gptM5 (R116, I77).*
+Updated 2026-11-24 19:58 UTC by claudeM5 (M172, S19 packet a).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 is in the kit and S17 in kit PR #418 (M164). S18 is Lean Verified; its kit PR waits for #418 (M171). R5 next: a periodic trap beside 011 |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 is in the kit and S17 in kit PR #418 (M164). S18 is Lean Verified; its kit PR waits for #418 (M171). S19: packet a is out for reading (M172). R5 next: a periodic trap beside 011 |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S18’s release read is done (R113). I77: full N12 carrying read, width-29 replay and the first short separations between marked pulses (R114) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S18 is posted; S19 carrying PASS and real block-code handoff returned (I221–I222). N12’s one-lane read passed (I217). Both general Y runs continue (I212) |
-| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | M165’s block is returned (N13): N6’s endpoint theorem in Lean, for any arc; S19 carrying read passed (I221), with the author for packet preparation. N12’s one-lane read passed (I217) |
+| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | M165’s block is returned (N13): N6’s endpoint theorem in Lean, for any arc; S19’s carrying read passed (I221); claudeM5 has the packet and it is asked to read it as author, with I222’s additions (M172). N12’s one-lane read passed (I217) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
@@ -23,13 +23,13 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M171, gptM5 R116, claudeCloud K82, gptIntel I223 and claudeIntel N13.
+- **Last posts:** claudeM5 M172, gptM5 R116, claudeCloud K82, gptIntel I223 and claudeIntel N13.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- None.
+- **S19’s form.** Packet a is in core Lean (recommended). gptIntel would put the real-number statement in the entry, which needs Mathlib fetched on the M5 (M172, §3). *Say:* core only, or fetch Mathlib.
 
 ## Direction
 
@@ -54,7 +54,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **The owner, 24 November:** claudeM5 checks this file and assigns a block each to gptIntel and claudeIntel (M165).
 
-- **Being worked:** claudeM5, R5’s periodic trap beside 011. gptM5, I77 and its N12 read. claudeIntel, S19 packet and the read of I222’s additions. The two Intel Y runs continue. claudeCloud is paused.
+- **Being worked:** claudeM5, R5’s periodic trap beside 011. gptM5, I77 and its N12 read. S19’s packet a is with claudeIntel (author), gptIntel and gptM5 (release read), M172. The two Intel Y runs continue. claudeCloud is paused.
 - **On offer, none started:**
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
     K50);
@@ -88,7 +88,7 @@ S1 to S18 are posted and **Lean Verified**; S1 to S17 are **Human Verified** (pu
 | **S16** | Every finite right half beside 001 or 011 enters the least nonempty closed set of 14-cell windows in linear time; no slope below 5/2 would do. Problem 1, partial. | R5, M152, I206 | [R30-20261124-629dac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac) (M159): **Lean Verified**. [Packet b](research/r5/s16/); reads [I206](research/r5/s16/i206-carrying-read.md), [R107, R108](research/r5/s16/gptM5-packet-a-review.md) on packet a, [I208](research/r5/s16/gptIntel-packet-b-review.md) PASS on b; gptM5’s release read superseded (M161) | **In the kit** at `88fdac9` ([#415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415), R109). |
 | **S17** | If the singleton centre eventually alternates, each phase of Lowry’s source net and shell is aperiodic. Problem 1, partial. | I66, I203, M156, I211 | [R30-20261124-6af182](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-6af182) (M164): **Lean Verified**, **Human Verified**. [Packet c](research/arrivals/s17/) passed by gptM5 ([R111](research/arrivals/s17/gptM5-packet-b-review.md#packet-c-release-read)); gptIntel also agreed to the posted packet c (I215) | [#418](https://github.com/WolframInstitute/Rule30PrizeKit/pull/418), from patch `1df97a90…` on `88fdac9`, open |
 | **S18** | Every right half beside an alternating column enters S17’s 777-window set by white sample 35, sharply. An eventual kick every fourth sample is impossible. Problem 1, partial. | M165, [I216](research/arrivals/uniform/README.md) | [R30-20261124-aa6a32](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-aa6a32) (M171): **Lean Verified**. [Packet b](research/arrivals/s18/); reads [R113](research/arrivals/s18/gptM5-release-review.md#packet-b-release-read), I220, carrying read M166 | Patch `1d1d5c61…` on #418’s `43e938c`, branch ready; opens after #418 |
-| **S19 proposed** | Every word of one arc of any length, at any irrational angle, started on the orbit of an end of the arc, and every block code of it, is excluded as the right neighbour of an alternating column on its white ticks, for a row with a leftmost black cell. Problem 1, partial. | N6, M165, [N13](research/kit-repair/R30-20261029-0ef6e2/endpoint/README.md) | [Carrying PASS](research/kit-repair/R30-20261029-0ef6e2/endpoint/gptIntel-carrying-read.md) (I221). [Real block-code and phase theorems](research/kit-repair/R30-20261029-0ef6e2/endpoint/gptIntel-endpoint-continuation.md) with the author for review (I222) | Full kit build passed on `88fdac9` (349 jobs) |
+| **S19 proposed** | Every word of one arc of any length, at any irrational angle, started on the orbit of an end of the arc, and every block code of it, is excluded as the right neighbour of an alternating column on its white ticks, for a row with a leftmost black cell. Problem 1, partial. | N6, M165, [N13](research/kit-repair/R30-20261029-0ef6e2/endpoint/README.md) | [Carrying PASS](research/kit-repair/R30-20261029-0ef6e2/endpoint/gptIntel-carrying-read.md) (I221). [Real block-code and phase theorems](research/kit-repair/R30-20261029-0ef6e2/endpoint/gptIntel-endpoint-continuation.md) with the author for review (I222). **Packet a, core Lean: M172** ([builder](research/kit-repair/R30-20261029-0ef6e2/endpoint/s19/build_s19.py)); author and release reads asked | Full kit build passed on `88fdac9` (349 jobs) and on S18’s branch `7a97155` (352); its PR follows S18’s |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `88fdac9` (R109).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
@@ -106,7 +106,7 @@ table for the lists below. The rules are in METHOD §8.
 
 | Pull | Written | Summary | Status | Submission? |
 |---|---|---|---|---|
-| N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress with claudeIntel.* S11, golden half-circles at every phase, is in the kit. **PROVED IN LEAN, read (N13, I221):** [one arc of any length, at every irrational angle, started on the orbit of either end](research/kit-repair/R30-20261029-0ef6e2/endpoint/README.md), and its block codes. Half-circles have slack 2. This contains the hand theorem of [silver-pell.md](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md) (I123, N7). Proved by hand and read: the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md) (I127, I128, N8). Silver off the cut orbit rests on computed bounds (I146, K72). **Next:** (1) S19 packet with the author; (2) the metric theorem; (3) an exact silver cover. A free start cannot be settled by near-squares alone for every phase, as far as the data show (N13). | **S19 proposed** (N13) |
+| N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress with claudeIntel.* S11, golden half-circles at every phase, is in the kit. **PROVED IN LEAN, read (N13, I221):** [one arc of any length, at every irrational angle, started on the orbit of either end](research/kit-repair/R30-20261029-0ef6e2/endpoint/README.md), and its block codes. Half-circles have slack 2. This contains the hand theorem of [silver-pell.md](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md) (I123, N7). Proved by hand and read: the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md) (I127, I128, N8). Silver off the cut orbit rests on computed bounds (I146, K72). **Next:** (1) S19’s packet a is out for reading (M172); (2) the metric theorem; (3) an exact silver cover. A free start cannot be settled by near-squares alone for every phase, as far as the data show (N13). | **S19 proposed** (N13) |
 | M9 | 17 Nov, claudeM5 | Why does a lone 1 force a word out of the trapped gate? (The late gate language inside the trap.) | *In progress with gptIntel (I223).* Inside the trap the gate settles to a fixed process. Four of its exclusion laws and the width-45 threshold are S10, in the kit. The [final K65 sieve](research/m9/data/gptIntel-sieve-final-K65.txt) has 23 certified onsets and 67 survivors through delay 40 or more, and all 18 newly judged laws contain a run of 1 (I140, I142). The entropy is undecided (I106), and absence from real rows is not a law (M85, M106). **Next:** one block on a hand reason for the pair (5, 1) from delay 12, the only judged two-run law. If no local reason appears, park it with the sieve table. The exterior half, X and Y, is K50.1's (K77, K78). | S10 posted and in the kit; the rest: no |
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress with gptM5; claudeIntel's block N12 is returned.* S8 requires (12,10,9). **COMPUTED on all eight gaps** (N12): every sparse period contains (a,12,14,12,12,10,9,10,b), a = 10 or 14, b = 10 or 12. So a gap of 14 is compulsory, and {9,10,12,13} is excluded at width 29. This supersedes R106's two-alphabet words. [Write-up, controls, one-lane second route](research/white-gap-mixtures/claudeIntel-way-in.md). [I217](research/white-gap-mixtures/gptIntel-n12-read.md) passed the one-lane five-gap argument and replayed the four-letter exclusion. **Next:** (1) gptM5’s carrying read of the full nine-gap argument; (2) the branch through 14: can a difference cross a whole occurrence of the nine-gap word? (3) a certificate small enough for Lean. I87's other compulsory factors are partly subsumed. | S8 is in the kit. A nine-gap extension needs (1) and (3). |
 | I66 | 21 Nov, gptIntel | Lowry’s source arrivals under periodic centres, and source priority | [I216](research/arrivals/uniform/README.md) proves M165’s uniform entry in Lean. Sample 35 is attained by a finite half with eight black sites. The nine gap pairs apply to every right half from that sample. | S17 and S18 are posted (M164, M171). |
