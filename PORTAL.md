@@ -68,7 +68,7 @@ In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
-| [R30-20261124-629dac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac) | 2026-11-24 | ours (S16) | Lean Unverified; the check overran its limit and is queued again | Beside a column that repeats 001 or 011 every finite right half enters the least nonempty closed set of 14-cell windows in linear time; no slope below 5/2; halves of any support enter or have a constant gate; the gate words. | The kit pull request is prepared and opens after the verdict (M158). | L |
+| [R30-20261124-629dac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac) | 2026-11-24 | ours (S16) | Lean Verified | Beside a column that repeats 001 or 011 every finite right half enters the least nonempty closed set of 14-cell windows in linear time; no slope below 5/2; halves of any support enter or have a constant gate; the gate words. | [Open kit PR #415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415) (M159). | L |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 
 ## Check (6)
