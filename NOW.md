@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 18:47 UTC by claudeM5 (M166, S18’s carrying read and the question for the owner).*
+Updated 2026-11-24 18:50 UTC by claudeM5 (M167, S18’s packet claimed).*
 
 ## Arrangement
 
@@ -29,7 +29,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **S18** (I216, M166): its own portal entry and its own kit pull request after #418 (claudeM5 and gptIntel recommend this), or folded into #418. Then say whether the packet is built.
+- None. S18 is separate (the owner); its packet is being built (M167).
 
 ## Direction
 
@@ -54,7 +54,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **The owner, 24 November:** claudeM5 checks this file and assigns a block each to gptIntel and claudeIntel (M165).
 
-- **Being worked:** claudeIntel, N6’s endpoint theorem in Lean. claudeM5, R5’s periodic trap beside 011. gptM5, I77 and its N12 read. The two Intel Y runs continue. claudeCloud is paused.
+- **Being worked:** claudeIntel, N6’s endpoint theorem in Lean. claudeM5, S18’s packet, then R5’s periodic trap beside 011. gptM5, I77 and its N12 read. The two Intel Y runs continue. claudeCloud is paused.
 - **On offer, none started:**
   - the row marked **free** in the tracker below (M9), with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
@@ -88,7 +88,7 @@ S1 to S17 are posted, **Lean Verified** and **Human Verified** (public list, 24 
 | **S15** | One column shows the 829-window trap: 48 clean readings, or 47 after the first white tick, for every right half, both least for a uniform test; nine certifying words; sharp delays. Problem 1, partial. | I152, I181, I190, R100 | [R30-20261124-4eb126](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-4eb126), Lean Verified (M150). Reads: R100, [R101](research/wheel/s15/r101-release-read.md), [M144](research/wheel/claudeM5-i175-read.md), I195 | **In the kit** at `a09d6c6` ([#412](https://github.com/WolframInstitute/Rule30PrizeKit/pull/412)), `Rule30GateObserver` and a data module (M153) |
 | **S16** | Every finite right half beside 001 or 011 enters the least nonempty closed set of 14-cell windows in linear time; no slope below 5/2 would do. Problem 1, partial. | R5, M152, I206 | [R30-20261124-629dac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac) (M159): **Lean Verified**. [Packet b](research/r5/s16/); reads [I206](research/r5/s16/i206-carrying-read.md), [R107, R108](research/r5/s16/gptM5-packet-a-review.md) on packet a, [I208](research/r5/s16/gptIntel-packet-b-review.md) PASS on b; gptM5’s release read superseded (M161) | **In the kit** at `88fdac9` ([#415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415), R109). |
 | **S17** | If the singleton centre eventually alternates, each phase of Lowry’s source net and shell is aperiodic. Problem 1, partial. | I66, I203, M156, I211 | [R30-20261124-6af182](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-6af182) (M164): **Lean Verified**, **Human Verified**. [Packet c](research/arrivals/s17/) passed by gptM5 ([R111](research/arrivals/s17/gptM5-packet-b-review.md#packet-c-release-read)); gptIntel also agreed to the posted packet c (I215) | [#418](https://github.com/WolframInstitute/Rule30PrizeKit/pull/418), from patch `1df97a90…` on `88fdac9`, open |
-| **S18 proposed** | Every right half beside an alternating column enters S17’s 777-window set by white sample 35, sharply. An eventual kick every fourth sample is impossible. | M165, [I216](research/arrivals/uniform/README.md) | Problem 1 partial. Lean checked; carrying read PASS (M166). Path for the owner to choose | Kit source checked on S17 PR #418 |
+| **S18 proposed** | Every right half beside an alternating column enters S17’s 777-window set by white sample 35, sharply. An eventual kick every fourth sample is impossible. | M165, [I216](research/arrivals/uniform/README.md) | Problem 1 partial. Lean checked; carrying read PASS (M166). Packet in hand (M167) | Kit source checked on S17 PR #418 |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `88fdac9` (R109).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
