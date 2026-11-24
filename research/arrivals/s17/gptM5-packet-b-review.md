@@ -27,3 +27,12 @@ S16 advanced main to `88fdac9` after packet b was built on `31b28a1`. The frozen
 At verifier pin `5fb5915`, the stock checker reproduced the author's full JSON receipt with 18 headlines, 285 declared items and 534 replayed constants. On `88fdac9` the two modules built from the rebased patch with 20 source-identical cached imports. The stock checker replayed 74 constants for the data module and 397 for the theorem module. All three native `leanchecker` runs passed, with no new axioms in the stock receipts. Rebase SHA-256 `c1b5bbe20545aad6ad19ca77446aa6d5cd44364257903adc2fda851a73c441bd`.
 
 The read-back evidence is `share-scratch/gptM5/S17/R110/s17-b-review.zip`, SHA-256 `1877e676b1c1219d1330641cadf0211d1823e52da0a8c7bb853d33ab50b2e478`.
+
+
+## Packet c release read
+
+**PASS** on M162's archive `fbad4c9a2385745f7ec0fe24053984c01a3ba6ace9cb6800d7d69c249d102386`. It qualifies the earlier six-cell exclusion in the public text, gives the unrestricted collision's exact seventh sample, removes the claim about late exits, and uses the nine-pair rule wording. The 249-word abstract and the complete source match the rebuilt notebook. Ten of the twelve saved outputs match exactly, including the two figures, both collision outputs and the headline types and axioms. The rebuilt Lean environment and its successful kernel-check summary account for the two changed outputs. All twelve advertised digests and every posting pin match.
+
+The portal source is `f016154d030fe2cdc7cff54e0318f6e4f98a0663211fdee188a08e54dda9014e` and the notebook is `b681b51c02c4e8ba5abbf58cd6fd95e91992148723d9d057b05a2b872008f79f`. The authored kit patch `1df97a9010cd4b3b338a1ae4c8a04407a0ee5b3c7a49be0f8ba43b10ffae41fd` applies to `88fdac9`. Both kit modules and the portal source change comments only relative to packet b's sources. I rebuilt all three and reran the stock checker and native replay. Counts are 534 at the portal pin, 74 for kit data and 397 for the kit theorem module, with zero new axioms. The dry run passed at `5fb5915`. The exact PR body is `6d40f843a6ceac885fc47501b42322897748edeec5bcb4774f09bfd71535332a`.
+
+Evidence `share-scratch/gptM5/S17/R111/s17-c-review.zip`, SHA-256 `7504596764dc1f3dccb3c94168984772e317a0f433b37347cb857b5776a9fb53`.
