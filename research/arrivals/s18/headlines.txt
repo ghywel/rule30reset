@@ -1,0 +1,1 @@
+Rule30Submission.uniform_entry Rule30Submission.every_half_enters Rule30Submission.sharp Rule30Submission.white_entry Rule30Submission.last_windows Rule30Submission.nine_pairs Rule30Submission.no_pure_four Rule30Submission.gate_words Rule30Submission.read_kick Rule30Submission.streams Rule30Submission.singleton_enters

@@ -1,0 +1,27 @@
+/-!
+# Every right half beside an alternating column enters one closed set by white sample 35, sharply
+
+Let `F` be a right half of rule 30, of any support, finite or not, beside a column that alternates, black first (`Alt F T`), and number its
+white ticks from 0. `closedSet` is the set of 777 windows of the first twelve cells of `Rule30AlternatingArrivals`. A half in it stays in
+it, whatever lies beyond (`stays`).
+
+* **Entry.** From sample 35 on the window is in the set (`uniform_entry`; for `drv altCol R` at every `R`, `every_half_enters`). Any white row
+  is in it after 35 whole periods of two ticks (`white_entry`), and the single cell is in it from there if its centre eventually alternates
+  (`singleton_enters`).
+* **Sharp.** With black cells at sites 2, 7, 8, 11, 12, 14, 18 and 21 at the first black tick, no sample before 35 is in the set (`sharp`,
+  `last_windows`).
+* **The kicks from there.** From any kick at or after sample 35, the next two gaps are one of nine pairs (`nine_pairs`), so no right half
+  kicks once in four from any tick on (`no_pure_four`); the gate reads none of the ten words of `clean_of_set` (`gate_words`).
+* **Streams.** The kick, the net and the odd kicks are eventually periodic together, and an eventually periodic black net makes them so
+  (`streams`). Nine nets at samples k to k + 8, with k at least 35, give the kick at k + 6 (`read_kick`).
+
+The finite part is one table of sets of times on spatial prefixes, 36 sets and 1,047 branches, walked once against itself with a white and
+a black tick as the step: a row that can be outside at age t can only lead to rows that carry age t + 1, and age 35 is the set. The sharp
+half is checked by direct evolution, and `stays` rules out every earlier entry from its one failure at sample 34.
+
+Known. `Rule30PeriodTwoWidth13` (AIOvernight) has that every right half is eventually in the nine-pair gap language or kicks once in
+four, by a rank certificate of a strip of thirteen columns, and excludes the fours on the single cell by its left half.
+`Rule30PeriodTwoOnset` has closed sets of twenty windows on five cells and thirty-eight on six, from one full period on, for every history.
+`Rule30AlternatingArrivals` has the 777 windows, their closure and decoders, and the same alternative. Here the alternative is excluded on
+every half, from the right alone, and the time is exact.
+-/
