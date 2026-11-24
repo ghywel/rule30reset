@@ -1,14 +1,14 @@
-<!-- kit-commit: 31b28a1 2026-11-24 -->
+<!-- kit-commit: 88fdac9 2026-11-24 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `31b28a1` (main, 2026-11-24),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `88fdac9` (main, 2026-11-24),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 343 modules under `lean/` (45 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 414 entries on 24 November (412 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 345 modules under `lean/` (46 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 417 entries on 24 November (414 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -34,7 +34,7 @@ All three are open. Every result in the kit is partial.
 | Period 1 | **Proved** for every column, and for every configuration with a leftmost black cell. |
 | Small periods | **Proved:** no eventual period P ≤ 4096 with transient ≤ 8192 (`Rule30Window`); any eventual period has T + P ≥ 16359 (`Rule30FactorWindow`). |
 | Period 2 | Reduced to statements about the zero-boundary left half (Q01 and weaker forms, §3). All **open**. Q01 is proved for every start of width ≤ 52. At width 52 the least uniform even death bound is 96. |
-| Least period 3 | Reduced: 001 needs Q001 or C3s001, 011 needs C3w(011). All **open**. AbsorptionT t001 is **false**. The ether-and-wall route is closed: the 12 × 3 ether has no wall of any width. |
+| Least period 3 | Reduced to the two **open** finite-left statements Left001 and Left011. Finite right halves enter the 14-cell traps. AbsorptionT t001 is **false**. The ether-and-wall route is closed: the 12 × 3 ether has no wall of any width. |
 | Least period 4 | Reduced to Absorption, and to the weaker Lock, for each of 0001, 0011, 0111. Both **open**. The pure ether lies in no trap of width ≤ 20; single-cell and high-support absorption are proved. |
 | Longer periods | **Open.** Large families of repeating words are excluded (§5). |
 | Problem 2 | **Open.** Many equivalent forms and sufficient conditions (§6); unconditional density bounds are weak (§5). |
@@ -109,7 +109,8 @@ graph TD
 
 **Period 3** (`Rule30EtherThreeLeft`, `Rule30EtherThreeSkeleton`, `Rule30PeriodThreeLanguage`). Q001 ∧ C3w(011) ⇒ no
 eventual period 3; C3w(001) ∧ C3w(011) ⇒ no period 3; C3w(001) ⇒ C3s001 ⇒ not eventually 001; C3w(011) ⇒ C3r011;
-C3r011 ∧ C3g001 ⇒ no period 3. AbsorptionT t001 is **false** (`Rule30EtherThreeNotAbsorption`: a period-15 trap apart
+C3g001 ⇒ Left001 and C3r011 ⇒ Left011. Left001 ∧ Left011 ⇒ no eventual period 3 (`Rule30PeriodThreeEntry`).
+The left statements restrict the free-phase readings by the corresponding complementary gate words. AbsorptionT t001 is **false** (`Rule30EtherThreeNotAbsorption`: a period-15 trap apart
 from t001 holds a right half for ever), so 001 needs a weaker entry statement. GateEntry ⇒ GatePeriodic ⇒ not eventually
 001 (`Rule30EtherThreeGate`; both open; the form for 001 of Lock, on the second white tick of each 001).
 
@@ -179,6 +180,10 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
   right half at age h determines the start under the same support bound (`Rule30HalfAgeOrigin`).
 
 ## 5. Unconditional results with reach
+
+- **Period-three right halves.** For arbitrary starting phase, a half white beyond site D enters the least nonempty closed
+  set of 14-cell windows by every gate tick from 3D+170 beside 001 or 3D+820 beside 011. Every uniform affine deadline
+  needs slope at least 5/2. Halves of any support enter the set or have a constant sampled gate (`Rule30PeriodThreeEntry`).
 
 - **Constant runs.** A black centre run of length L from time a ≥ 1 has L ≤ a; white runs L ≤ a − 1 (a − 3 for
   a ≥ 3); both colours occur in every window [a, 2a] (`Rule30CenterRuns`); log-log margins

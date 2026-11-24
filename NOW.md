@@ -5,13 +5,13 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 16:33 UTC by claudeM5 (M161, S17 packet b).*
+Updated 2026-11-24 17:22 UTC by gptM5 (R109, S17 release review and kit sync).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | R5: every finite right half beside 001 and 011 enters a gate trap (M152, in Lean); S16 is Lean Verified and in kit PR #415 (M159); S17 packet b, corrected, waits on gptIntel’s agreement to post (M161) |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | R5: every finite right half beside 001 and 011 enters a gate trap (M152, in Lean); S16 is Lean Verified and in the kit (R109); S17 packet b has an onset wording repair and kit rebase outstanding (R109) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77. Width-27 disagreement contexts and marked physical controls complete (R106). |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S17 proofs and authorship agreed; GE2 wording returned to the author (I213). Both K80 proof checkers passed; the two general Y runs continue (I212) |
@@ -23,15 +23,15 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M161, gptM5 R108, claudeCloud K82, gptIntel I213 and claudeIntel N12.
+- **Last posts:** claudeM5 M161, gptM5 R109, claudeCloud K82, gptIntel I213 and claudeIntel N12.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **The next block for the free workers is not set.** S16 is posted and in kit PR #415, its outstanding read closed by the owner (M161), gptM5 holds the I77 continuation (R106), S17’s packet b waits on gptIntel’s agreement (M161), claudeCloud is paused, and claudeIntel has returned I77 (N12).
-- **S17** packet b has I213’s correction (M161). The owner’s word to post and open the pull request is given, on claudeM5’s clearance, which is given; the post waits on gptIntel’s agreement to the corrected bytes.
-- **S16** is Lean Verified and [kit PR #415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415) is open (M159). Nothing is asked of the owner. gptM5’s release read of it is superseded (the owner, M161).
+- **The next block for the free workers is not set.** S16 is posted and in the kit, its outstanding read closed by the owner (M161), gptM5 holds the I77 continuation (R106), S17’s packet b is with the author for the onset wording repair (R109), claudeCloud is paused, and claudeIntel has returned I77 (N12).
+- **S17** packet b corrects the GE2 comparison. R109 found one remaining scope issue in the essay and a stale kit base. The author has the review.
+- **S16** is Lean Verified and in kit main at `88fdac9` ([#415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415), R109). Its prior release-read request is closed (M161).
 
 ## Direction
 
@@ -68,7 +68,7 @@ steps.
 METHOD §12: any worker authors, a different worker reads, both agree on the same digests, the owner gives the word;
 the Wolfram steps run on the M5. Standing consent to post: none.
 
-S17 is proposed. S1 to S16 are posted. S1 to S12 are **Lean Verified** and carry the portal’s **Human Verified** tag (public list, 23 November 17:24 UTC), and every one but S1 is in the kit. S13 and S14 are **Lean Verified**, carry the **Human Verified** tag and are in the kit (24 November, R101). S15 is **Lean Verified**, carries **Human Verified** and **Kit Contribution**, and is in the kit (R108). S16 is **Lean Verified** (M159); kit pull request #415 is open.
+S17 is proposed. S1 to S16 are posted. S1 to S12 are **Lean Verified** and carry the portal’s **Human Verified** tag (public list, 23 November 17:24 UTC), and every one but S1 is in the kit. S13 and S14 are **Lean Verified**, carry the **Human Verified** tag and are in the kit (24 November, R101). S15 is **Lean Verified**, carries **Human Verified** and **Kit Contribution**, and is in the kit (R108). S16 is **Lean Verified**, carries **Human Verified** and **Kit Contribution**, and is in the kit (R109).
 
 | | Result | From | Portal | Kit |
 |---|---|---|---|---|
@@ -87,10 +87,10 @@ S17 is proposed. S1 to S16 are posted. S1 to S12 are **Lean Verified** and carry
 | **S13** | [Two sites give the exact next pulse beside an alternating column](research/wheel/pulse-candidate/README.md), with a finite singleton clock test. Problem 1, partial. | I152, I179–I180 | [R30-20261123-78e431](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-78e431), Lean Verified (M146). Reads: K80, K82; the last release read and the author's ready were waived by the owner | [#409](https://github.com/WolframInstitute/Rule30PrizeKit/pull/409) merged at `5cf9874` (R101) |
 | **S14** | The exact first departure from an aligned period-3 ether prefix of any length; the kit's 15-trap is closed to ether and white prefixes; the gate word of each half in a trap of 001, with a conditional exclusion in the form of Bosdure's `Lock`. Problem 1, partial. | R5 | [R30-20261123-f214f2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-f214f2), Lean Verified (M142). Reads: [R98](research/r5/s14/m139-carrying-read.md), R99, I182, I186 | **In the kit** at `0c4194c` ([#408](https://github.com/WolframInstitute/Rule30PrizeKit/pull/408)), three modules and a data module (M148) |
 | **S15** | One column shows the 829-window trap: 48 clean readings, or 47 after the first white tick, for every right half, both least for a uniform test; nine certifying words; sharp delays. Problem 1, partial. | I152, I181, I190, R100 | [R30-20261124-4eb126](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-4eb126), Lean Verified (M150). Reads: R100, [R101](research/wheel/s15/r101-release-read.md), [M144](research/wheel/claudeM5-i175-read.md), I195 | **In the kit** at `a09d6c6` ([#412](https://github.com/WolframInstitute/Rule30PrizeKit/pull/412)), `Rule30GateObserver` and a data module (M153) |
-| **S16** | Every finite right half beside 001 or 011 enters the least nonempty closed set of 14-cell windows in linear time; no slope below 5/2 would do. Problem 1, partial. | R5, M152, I206 | [R30-20261124-629dac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac) (M159): **Lean Verified**. [Packet b](research/r5/s16/); reads [I206](research/r5/s16/i206-carrying-read.md), [R107, R108](research/r5/s16/gptM5-packet-a-review.md) on packet a, [I208](research/r5/s16/gptIntel-packet-b-review.md) PASS on b; gptM5’s release read superseded (M161) | [#415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415), from patch `b6c8367f…` on `31b28a1`, open |
-| **S17** | If the singleton centre eventually alternates, each phase of Lowry’s source net and shell is aperiodic. Problem 1, partial. | I66, I203, M156, I211 | [Packet b](research/arrivals/s17/) (M161), with I213’s correction; [I213 scoped read](research/arrivals/s17/gptIntel-packet-a-review.md): proofs pass; gptIntel’s agreement on the corrected bytes awaited | Patch `ee80cb3f…` on `31b28a1`; the catalogue builds |
+| **S16** | Every finite right half beside 001 or 011 enters the least nonempty closed set of 14-cell windows in linear time; no slope below 5/2 would do. Problem 1, partial. | R5, M152, I206 | [R30-20261124-629dac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac) (M159): **Lean Verified**. [Packet b](research/r5/s16/); reads [I206](research/r5/s16/i206-carrying-read.md), [R107, R108](research/r5/s16/gptM5-packet-a-review.md) on packet a, [I208](research/r5/s16/gptIntel-packet-b-review.md) PASS on b; gptM5’s release read superseded (M161) | **In the kit** at `88fdac9` ([#415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415), R109). |
+| **S17** | If the singleton centre eventually alternates, each phase of Lowry’s source net and shell is aperiodic. Problem 1, partial. | I66, I203, M156, I211 | [Packet b](research/arrivals/s17/) fixes the GE2 comparison (M161). The essay needs an onset wording repair (R109). | Patch `ee80cb3f…` needs rebasing onto `88fdac9` (R109). |
 
-- **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `31b28a1` after S15 (#412), Quint’s #411 and Kurtuluş’s #413 and #414 (M154).
+- **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `88fdac9` (R109).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
   [KIT-REPAIR.md](KIT-REPAIR.md) are in kit main, and step 7 was assessed, leaving pull N6.
 - **Kit issues.** [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386), the portal and kit
