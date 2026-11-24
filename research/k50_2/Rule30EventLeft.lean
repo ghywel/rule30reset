@@ -95,7 +95,7 @@ theorem unchanged_through_fourteen (b : Nat → Bool) (m : Nat) (hm : m ≤ 14) 
     EventGE2 b m ↔ GE2 b m :=
   ⟨And.left, fun h => ⟨h, fun _ _ _ room => by omega⟩⟩
 
-private theorem ge2_of_check {m X : Nat} (yes : ge2B m X = true) : GE2 (tr X) m := by
+theorem ge2_of_check {m X : Nat} (yes : ge2B m X = true) : GE2 (tr X) m := by
   simp only [ge2B, gvalidB, e2runB, Bool.and_eq_true, Bool.not_eq_true', List.all_eq_true] at yes
   exact ⟨⟨fun _ => yes.1.1.1, fun j hj => yes.1.1.2 j (List.mem_range.mpr hj),
     fun j hj => yes.1.2 j (List.mem_range.mpr (by omega))⟩,
@@ -186,5 +186,18 @@ theorem early_residue (X : Nat) (low : X % 2^28 = 160612694) : ¬ LiveGE2 (tr X)
   · rcases (show t = 28 ∨ t = 29 by omega) with rfl | rfl
     · exact last.trans (by decide +kernel)
     · exact (next.1.1.2.1 14 (by decide)).trans (by decide +kernel)
+
+/-- At physical offset 27 the left bit is already forced black by G. -/
+theorem early_residue_27 (X : Nat) (low : X % 2^27 = 26394966) : ¬ LiveGE2 (tr X) 14 := by
+  intro live
+  have congrTrace (t : Nat) (ht : t < 28) : tr X t = tr 160612694 t := by
+    by_cases h : t < 27
+    · rw [← tr_mod X 27 t h, low, ← tr_mod 160612694 27 t h]
+    · have e : t = 27 := by omega
+      subst t
+      exact (live.1.1.1.2.1 13 (by decide)).trans (by decide +kernel)
+  apply early_residue 160612694 (by decide)
+  obtain ⟨old, c, eq, next⟩ := live
+  exact ⟨prefixDet_eventGE2 _ _ _ congrTrace old, c, fun t ht => (eq t ht).trans (congrTrace t ht), next⟩
 
 end Ruliology.CellularAutomata.Rule30EventLeft

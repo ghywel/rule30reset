@@ -39,7 +39,11 @@ def choices(previous, twos, wait):
     gap = wait + 1
     if gap in (2, 3, 4, 5) and (previous == 0 or (previous, gap) in PAIRS):
         forbidden = gap == 5 and twos == 2
-        tail = 0 if gap == 5 else min(2, twos + 1) if gap == 2 and twos >= 0 else -1
+        tail = -1
+        if gap == 5:
+            tail = 0
+        elif gap == 2 and twos >= 0:
+            tail = min(2, twos + 1)
         edges.append((True, gap, tail, 0, forbidden))
     return edges
 

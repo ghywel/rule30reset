@@ -8,7 +8,7 @@ the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
 Mathlib `v4.35.0`, 336 modules under `lean/` (43 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 413 entries on 24 November (411 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 414 entries on 24 November (412 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -67,7 +67,7 @@ graph TD
   Q01 --> NSG["NoSeedGE2"] --> NP2
   NSG --> Q01Gap
   Q01 --> NS01["NoSeed p01 (ladder bounds suffice)"] --> NP2
-  CS["Conjecture S: every G word of length H has 7A ≥ H + 4 (checked to H = 90)"] --> NP2
+  CS["Sharp G mass conjecture S (refuted on the portal)"] -. "former sufficient condition" .-> NP2
   SEP --> NP2
   BWH --> NP2
   UBE --> P1["Problem 1"]
@@ -93,7 +93,7 @@ graph TD
   MassDivergesLift W ⇒ MassDivergesLiftCore W ⇒ Q01GapLiftCore W. All are open. `Rule30ZeroCoastBridge`: MassDiverges ⇔ Q01Gap, and the seeds surviving the gap language to horizon H number N(H)
   with N(H + 10) = N(H + 4) + N(H) exactly. Q01Gap is also equivalent to eventual termination of the forced zero-bit continuation from every surviving prefix (`q01Gap_and_massDiverges_iff_survivingSeeds_void_crash`); it suffices to check macro-step termination at every reachable odd-horizon age-zero reset (`q01Gap_and_massDiverges_iff_reset_iterVoidMacro_crash`). Equivalently, survivor popcount bounds the horizon (`massDiverges_and_q01Gap_iff_survivingSeeds_konig`), or from every horizon some finite step raises every survivor's active weight by at least one (`q01Gap_and_massDiverges_iff_stepwise_wtH_increment`); one uniform crash lookahead would prove Q01Gap (`void_schedule_telescoping_weight_bound_and_q01Gap_iff`).
 - `Rule30PeriodTwoWidth13`: under an alternating centre the left trace lies in GE2; Q01 ⇒ NoSeedGE2 ⇒ no period 2;
-  RD ∧ Q01Gap ⇒ CQ01. `Rule30ZeroCoastBridge` embeds the gap language in GE2, so NoSeedGE2 ⇒ MassDiverges ⇔ Q01Gap. `Rule30PeriodTwoMass`: Conjecture S ⇒ no period 2, sharp at 86. `Rule30PeriodTwoLadder`: the mean
+  RD ∧ Q01Gap ⇒ CQ01. `Rule30ZeroCoastBridge` embeds the gap language in GE2, so NoSeedGE2 ⇒ MassDiverges ⇔ Q01Gap. `Rule30PeriodTwoMass`: a positive linear G mass floor suffices. Galindo refutes the proposed sharp floor (§4). `Rule30PeriodTwoLadder`: the mean
   ladder law is an exact fair-coin count; geometric ladder bounds ⇒ NoSeed p01. `Rule30PeriodTwoNoFloor`: no uniform
   floor H ≤ qA + d with q < 14 (**refuted** by eternal periodic rows).
 - `Rule30ZeroBoundaryPeriodLanes`: QP P generalises Q01 (QP 2 ⇔ Q01, QP 3 ⇔ Q001); QP P excludes (0^(P−1) 1)^∞;
@@ -143,6 +143,8 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
   frozen-boundary conjecture ⇒ Problem 1 (`equivalents/`).
 
 ## 4. Barriers: what cannot work
+
+- **The sharp G mass floor fails.** Galindo constructs arbitrarily late G words with H = 7A + 9 and even H = 7A + 8. Any natural-coefficient G floor H ≤ qA + d needs q ≥ 7, with d ≥ 9 at slope seven. The portal marks the proof Lean Verified and Human Verified. [Open kit PR #410](https://github.com/WolframInstitute/Rule30PrizeKit/pull/410)
 
 - **Structure alone is not enough.** Rules 90, 150 and 210 satisfy every structural fact the arguments use, yet their
   centre columns are eventually constant (`Rule30Realization`). Rules 90 and 150 beside a wall have exact, sharp Q01

@@ -120,8 +120,7 @@ event word below remain readable in the indicated core, so each is a minimal for
 
 On the trapped class all three of Lowry’s rules hold already at width 16. The two long-gap
 implications have empty premises there. His physical theorem also constrains rows outside this
-class. The next test for period two is whether excluding runs of two or more 2-gaps bracketed by 5s in GE2
-eliminates any surviving finite *left* traces in the kit’s existing classifications.
+class. The [finite-left follow-up](finite-left.md) finds the bracket’s first cut at 15 white samples and its first dead end at 14. Using the full six-cell onset strip gives 5, 11 and 22 survivors at the three published kit horizons.
 
 ## Replay
 

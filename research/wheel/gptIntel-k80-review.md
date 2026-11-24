@@ -45,6 +45,10 @@ rule30-python research/wheel/gptIntel-k80-stays.py Rule30PrizeKit scratch train1
 
 Each process writes its problem digest to `<case>.stdout`, solver progress to `<case>.solver.log`, and diagnostics to `<case>.stderr`. Once the solver exits, the driver writes `<case>.json` in the same directory. A positive receipt carries the finite row and the complete gate, checked by physical evolution and a separate tile parser. A negative is a computed refusal until an LRAT replay. To collect a finished case, verify the reported CNF digest and the receipt, copy the receipt into the research record, update the ledger and tell claudeCloud. The stored CNF can be rerun directly after a host restart. The general-stay and fixed-train questions have different implications for RD.
 
+**24 November, I198.** The 659-sample train ended at 01:44 UTC. CaDiCaL reported UNSAT after 19,458,970 conflicts and 10,192.48 seconds. The checked input digest is `95e221ece34ea4ff4acba02423c6df3bc4430e125a2423598eb8299f55487246` (887,658 variables, 5,315,496 clauses). A proof-producing replay is running on that exact input. Its launcher checks the text LRAT with both lrat-check and cake_lpr and writes `train16-proof.json` only on success. The proof itself is on the Intel scratch NVMe at `D:/Rule30Scratch/gptIntel/K80/train16.lrat`. The solver-only receipt, terminal log and launcher are in `share-scratch/gptIntel/K80/I198-train16-solver.zip`, SHA-256 `f9a23be1d7122098b51408913658e58ec0a7762d08a5494cd1b7409cffe48994`.
+
+The host rebooted at 10:15 UTC with neither general Y run at a verdict. The original logs remain in `K80/`. The two runs restarted in `K80/restart-20261124/` on the same CNFs. Their SHA-256 prefixes are `912d009f` (400) and `c6741410` (500). A refusal of the single train leaves the general return budget open.
+
 All four proof archives were read back from `share-scratch/gptIntel/I184/`.
 
 | Archive | Bytes | SHA-256 |

@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 11:00 UTC by gptM5 (R102, I77 resumed).*
+Updated 2026-11-24 11:02 UTC by gptIntel (I197–I198, K50.2 and K80).*
 
 ## Arrangement
 
@@ -14,22 +14,22 @@ Updated 2026-11-24 11:00 UTC by gptM5 (R102, I77 resumed).*
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S15 is posted and its kit PR #412 is open (M150). S13 and S14 are in the kit |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77, the two minimal sparse gap alphabets (R102). |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | K50.2, the finite left seeds. S15 packet b cleared and the M144 deadline counts reproduced (I195) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | K50.2 finite-left block complete (I197). K80 certificate and the two Y runs are active (I198) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | Free. M141's read of S14 no longer holds anything up (M142) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** K80’s sixteen-copy train returned UNSAT (solver only). A proof-producing run is active. Intel restarted the 400- and 500-sample Y stays after the 10:15 host reboot. [Run state and collection](research/wheel/gptIntel-k80-review.md#reproduction-and-intel-runs) (I184).
+- **Running jobs:** K80’s sixteen-copy train returned UNSAT (solver only). A proof-producing run is active. Intel restarted the 400- and 500-sample Y stays after the 10:15 host reboot. [Run state and collection](research/wheel/gptIntel-k80-review.md#reproduction-and-intel-runs) (I198).
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M150, gptM5 R102, claudeCloud K82, gptIntel I195 and claudeIntel N11.
+- **Last posts:** claudeM5 M150, gptM5 R102, claudeCloud K82, gptIntel I198 and claudeIntel N11.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **The next block for the free workers is not set.** claudeM5 is on R5 with S13 to S15 posted, gptM5 is free, gptIntel is on K50.2, claudeCloud is paused, and claudeIntel is free.
+- **The next block for the free workers is not set.** claudeM5 is on R5 with S13 to S15 posted, gptM5 is on I77 (R102), gptIntel has finished the K50.2 block, claudeCloud is paused, and claudeIntel is free.
 
 ## Direction
 
@@ -53,7 +53,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 **The owner, 23 November:** the pulls with submissions are sorted (M133), and claudeM5 takes R5. The rest awaits next
 steps.
 
-- **Being worked:** R5 and K50.2 (gptIntel). S15 is posted (M150). The period-two wall itself is parked (I191).
+- **Being worked:** R5 and I77. S15 is posted (M150). The K50.2 finite-left result is under Parked (I197). The period-two wall itself is parked (I191).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
@@ -108,12 +108,13 @@ table for the lists below. The rules are in METHOD §8.
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress with gptM5* (R102) since S8 (M112), which holds the compulsory factor (12, 10, 9) and the ten three-gap reset words. **Next, in this order:** (1) widen the strip test past 22 columns for the two minimal alphabets it leaves, {9, 10, 12, 13} and {9, 10, 12, 14} (I87): can one gap input keep two different readings of the second white tick? A death at some width settles that alphabet; a survivor is the candidate for a physical column. (2) A carrying read and a Lean form of I87's other compulsory factors, (10, 12), (12, 12) and a 13 or 14, which are external. The rest of `research/white-gap-mixtures/` is support (M105, I81, I90, I92, I94). | S8 posted and in the kit; (2) could extend it |
 | I66 | 21 Nov, gptIntel | Lowry's source arrivals under periodic centres, and source priority | *In progress,* **free** (I66–I69, I71, I73; `research/arrivals/`). Kernel: arrival parity is aperiodic for a wider family of periodic centres (I66). Under an eventually alternating centre, arrival parity and the distance-two shell are both aperiodic (I67–I68), with a finite form 2n < 3b + 16 (I73). Seven rightmost readings recover a four-cell band, and four letters are optimal (I69, I71). Read so far: the finite part of I67–I68 (K56 addendum 1) and I69 (K58). **Next:** a carrying read of the Lean, then the novelty check. | not yet assessed |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | *In progress:* claudeM5 and gptM5 ([report](research/r5/README.md)). **PROVED IN LEAN:** recurrent fronts of the ether move on one path for every right side (M134, read by gptM5); the exact first departure after a 22-site prefix exit, 49 or 52 ticks (R97, read by claudeM5); no half that carries 20 ether columns, or 16 white cells, enters the kit's 15-trap (M137, read by gptM5 in R98). **COMPUTED:** the only component reached after departure is the 22-column giant (I173, I177); the traps of 001 share a 34-column trunk; a census of every wall with labels to 30 finds no gate but 1100000 and 11000, none for 011, and a **fifth trap** that refutes entry into the four known (M137). CONJECTURE: every finite half's gate is eventually one of those two. Open: that a finite half ever passes the last rung. **Next:** the trunk's first 13 columns alone; labels 33; gate restrictions beyond Hallee’s ThreeRuns (P57). | **S14** posted (M142) |
-| K50.2 | 21 Nov, claudeCloud | Lowry's events (`Rule30EventReturns`), read in gate coordinates | **Preliminary** ([R67](research/k50_2/event-returns.md)). The trapped event code is invertible at every width. Physical gates exclude 5, two or more 2s, 5. I46 checked the exclusion in Lean and exhibited a finite GE2 trace with 5,2,2,5. Next test: tighten the GE2 finite-left survivor check with this exclusion. Feeds M9. | no |
 
 ## Parked
 
 One dated entry each, with what would bring it back (METHOD §3, the incubator). A route that stopped with a condition
 that would reopen it is here, not under closed (the owner, 23 November). Glance down the list at session start.
+
+- **K50.2, Lowry’s event returns and the finite left seeds** (parked 24 Nov, I197). The full six-cell strip leaves 5, 11 and 22 kit seed classes and admits every 3/5 schedule. Reopen with a finite-support weight argument or a strip constraint that removes part of that class. [Results and exact residues](research/k50_2/finite-left.md)
 
 **The main line: the every-k statement (T) and its wall.**
 
@@ -144,7 +145,7 @@ that would reopen it is here, not under closed (the owner, 23 November). Glance 
 
 **Pulls and routes.**
 
-- **K50.1 / K81, the period-two right-half dichotomy** (parked 23 Nov, I191). A finite seed can sustain Y’s schedule for 344 readings. A full wheel turn forces a nearby cell to change, while its visible gate can stay on rhythm. Reopen for a certified whole-cone refusal of a Y stay, loss of the sixteen-copy Y train with a return-budget bound, or a new argument that uses the finite far field. The three Intel runs continue. [R65](research/k50_1/right-dichotomy.md) · [Exterior grammars](research/m9/exterior-grammars.md) · [K80 certificates](research/wheel/gptIntel-k80-review.md).
+- **K50.1 / K81, the period-two right-half dichotomy** (parked 23 Nov, I191). A finite seed can sustain Y’s schedule for 344 readings. A full wheel turn forces a nearby cell to change, while its visible gate can stay on rhythm. Reopen for a certified whole-cone refusal of a Y stay, loss of the sixteen-copy Y train with a return-budget bound, or a new argument that uses the finite far field. The sixteen-copy solver returned UNSAT. Its proof and the two general Y runs are active (I198). [R65](research/k50_1/right-dichotomy.md) · [Exterior grammars](research/m9/exterior-grammars.md) · [K80 certificates](research/wheel/gptIntel-k80-review.md).
 - **I49, what S12 leaves** (parked 23 Nov, M133; S12 is in the kit). A forcing prefix at arbitrarily late black-centre
   ages of the singleton would exclude an eventual period two. That is a statement about the seed's own right half at
   late ages, with no mechanism in hand: of 524,971 ages to 2²⁰, four have a forcing prefix of 31 cells or fewer (I62).
