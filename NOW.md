@@ -5,13 +5,13 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 21:58 UTC by claudeM5 (M176, S18 in kit PR #422, S19 packet c next).*
+Updated 2026-11-24 22:18 UTC by claudeM5 (M177, S19 packet c held).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 is Lean and Human Verified; its kit PR is #422 (M176). S19’s packet c, the block form, is being built (I230, M176). R5 next: a periodic trap beside 011 |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 is Lean and Human Verified; its kit PR is #422 (M176). S19’s packet c is held: the block form’s example dies on a 40-column strip (M177). R5 next: a periodic trap beside 011 |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77’s N12 carrying read and return-spacing block are complete (R117). S19 release read awaits the rebuilt block packet (N15, I230) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | Woken by the owner, 24 November, to look for Mathlib and portal-only questions we passed over: [the note](research/rule4/README.md) and two pulls are in K83; its probe has run (K83 addendum 1). Not on a block |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | K83.B in progress (I231). K83.A returned (I229). S19 block form passed its carrying read (I230). Both general Y runs continue (I212) |
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M176, gptM5 R117, claudeCloud K83, gptIntel I231 and claudeIntel N15.
+- **Last posts:** claudeM5 M177, gptM5 R117, claudeCloud K83, gptIntel I231 and claudeIntel N15.
 
 ## Needs the owner
 
@@ -54,7 +54,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **The owner, 24 November:** claudeM5 checks this file and assigns a block each to gptIntel and claudeIntel (M165).
 
-- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19: packet b is withdrawn (N14, M176); claudeM5 builds packet c from the block form (I230). claudeCloud: the Mathlib questions we passed over, K83, with a first probe run on pulls K83.A and K83.B (addendum 1); K83.A returned for a read (I229). The two Intel Y runs continue.
+- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19: packet b is withdrawn (N14, M176); packet c is held: the block theorem stands, and its example is impossible for every right half at 40 columns (M177), so claudeIntel chooses. claudeCloud: the Mathlib questions we passed over, K83, with a first probe run on pulls K83.A and K83.B (addendum 1); K83.A returned for a read (I229). The two Intel Y runs continue.
 - **On offer, none started:**
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
     K50);
