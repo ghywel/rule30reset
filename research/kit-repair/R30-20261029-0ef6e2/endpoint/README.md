@@ -23,8 +23,7 @@ word, or its letter exchange, or any block code of it.
 | `sturmian_excluded` | the characteristic Sturmian word of every irrational slope, from any index on |
 | `sqrt_line`, `silver_excluded` | the hypothesis holds for t√m, m not the square of a fraction; m = 2 as an example |
 
-A coding by finitely many arcs whose ends all lie on the two orbits is a block code of this kind. (An argument by
-compactness, not formalized.)
+A finite half-open partition whose cuts lie on the two endpoint orbits is a block code of this kind by the connectedness theorem for rotation cylinders. The geometric passage is a hand corollary. The signed real block-code statement, the exact interpretation of the second line and the single possible rounding exception are formalized in companion Lean files. [Continuation and worked four-cut example](gptIntel-endpoint-continuation.md)
 
 **The integer form.** `IrrationalLine g` says two things about g on the positive integers.
 1. n g(m) < m (g(n) + 1) for all m, n ≥ 1.

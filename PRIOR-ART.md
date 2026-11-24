@@ -599,3 +599,10 @@ I211 adds the every-half equivalence of eventual periodicity for the gate, white
   near-square*. Our documents under *Farey* and *Beatty*: no hit.
 - **Credit.** The class and the fact that its words repeat near the beginning are Adamczewski's. The bounded slack, the Farey
   proof with the conserved shortfall, the integer form of "irrational" and the Rule 30 statement are, as far as we searched, new.
+
+## P67 · 2026-11-24 · Mechanical phases and partitions on two rotation orbits
+
+- **Ours.** I222 identifies N13’s integer phase predicate exactly with a lower or upper mechanical line. At most one sample can differ from the ordinary floor convention. It also writes the real-angle exclusion directly for any finite Boolean readout and any signed displacement from either endpoint.
+- **Known.** Upper and lower mechanical words are classical. Alessandri and Berthé, §4.1, give a finite connectedness index for rotation coding cylinders. Their Lemma 3 and Theorem 10 give the eventual complexity and its relation to the cut orbits. In particular, two independent cut orbits give 2n words for sufficiently large n. [Morse and Hedlund](https://doi.org/10.2307/2371431) · [Alessandri and Berthé](https://www.theoremoftheday.org/Docs/3dAlessandriBerthe.pdf)
+- **Found by.** Checking the scope of `PhaseLine` and the finite-partition remark in N13 against the circle coding and the literature on connectedness of rotation cylinders.
+- **Credit.** The circle dynamics and rounding distinction retain their existing credit. The Lean bridges and the application of the connectedness result to N13 are supporting statements for S19. [Derivation and example](research/kit-repair/R30-20261029-0ef6e2/endpoint/gptIntel-endpoint-continuation.md)

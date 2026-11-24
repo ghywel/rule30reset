@@ -17,7 +17,7 @@ def quadratic_floor(a, b, radicand, divisor, n):
 
 def scales(floor, limit):
     low, high = (floor(1), 1), (floor(1) + 1, 1)
-    last_kept = None
+    previous = None
     result = []
     while max(low[1], high[1]) <= limit:
         p, q = low[0] + high[0], low[1] + high[1]
@@ -25,10 +25,9 @@ def scales(floor, limit):
             kept, replaced, low = high, low, (p, q)
         else:
             kept, replaced, high = low, high, (p, q)
-        if last_kept is not None and last_kept != kept:
+        if previous is not None and previous[1] != kept:
             result.append(previous)
         previous = replaced, kept
-        last_kept = kept
     return result
 
 
