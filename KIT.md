@@ -1,13 +1,13 @@
-<!-- kit-commit: 5669ede 2026-11-24 -->
+<!-- kit-commit: a09d6c6 2026-11-24 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `5669ede` (main, 2026-11-24),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `a09d6c6` (main, 2026-11-24),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 338 modules under `lean/` (44 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 341 modules under `lean/` (45 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 414 entries on 24 November (412 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
@@ -101,7 +101,8 @@ graph TD
 - During centre alternation, returns of the word 0101001 at sites −4 through +2 take a multiple of four ticks, six
   ticks, or ten ticks. A gap ≥ 12 forces the next gap to be six, and ten forces four, if alternation continues.
   At a black pulse from the second white sample, sites 2 and 5 determine the next gap (4, 2, 5 or 3). A wrong forecast
-  detects a clock break before its endpoint (`Rule30GatePulseReturn`).
+  detects a clock break before its endpoint (`Rule30GatePulseReturn`). 48 clean gate readings, or 47 after a white sample,
+  certify the 829-window trap, and both are least for a uniform test (`Rule30GateObserver`); so RD is a statement about the gate alone.
   An alternating singleton tail has arbitrarily late returns in both white phases modulo four (`Rule30EventReturns`).
 
 **Period 3** (`Rule30EtherThreeLeft`, `Rule30EtherThreeSkeleton`, `Rule30PeriodThreeLanguage`). Q001 ∧ C3w(011) ⇒ no
@@ -122,7 +123,7 @@ The target holds at k = age = 0 and persists as age increases. Positive multiple
 On every pointed recurrent strip, let a reset be a closed run 0 1^(3m+1) 0. If every tick has a reset between the
 white wheel at each first clock loss and the white wheel after next (`DLMinusOne`), every tick has arbitrarily deep
 resets (`LInfinity`). Compactness then gives CAP (`Rule30RelaxedWindows`, `Rule30ResetCompactness`). The two-stretch
-hypothesis follows from the open single-stretch condition DL (`dlMinusOne_of_dl`). Quint and Gemini close all first losses at exponents 0 through 4, a total of 65,814 anti-periodic drivers (Rule30DoublingLanes). Both hypotheses reduce to exponents at least 5, or periods at least 64. On the whole line, if w>0 and k≤K1(w), every k-tick predecessor of a row
+hypothesis follows from the open single-stretch condition DL (`dlMinusOne_of_dl`). Quint and Gemini close all first losses at exponents 0 through 4, a total of 65,814 anti-periodic drivers (Rule30DoublingLanes). For every exponent e the first loss has its next white at least 5, 21, 23 wheels on (e ≥ 0, 1, 2), and nine whites or eight blacks force a catch (`Rule30FirstLossBounds`). Both hypotheses reduce to exponents at least 5, or periods at least 64. On the whole line, if w>0 and k≤K1(w), every k-tick predecessor of a row
 with a leftmost black cell has its edge k sites inside from age 2^w (`Rule30EveryKLine`). Ages 8 and 24 suffice
 unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoSidedInverse`).
 
