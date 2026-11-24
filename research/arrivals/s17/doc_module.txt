@@ -16,9 +16,9 @@ cell without the second at the black tick after it (`blackNet`). An *odd kick* i
   (`stays`), and its kicks then read none of ten words (`clean_of_set`): the gaps are 2 to 5, seven of the sixteen pairs do not occur,
   and 2, 2, 5 does not occur. Every right half enters it, or its kicks eventually come once in four (`every_half`, `enters_or_four`).
 * **Decoding after entry.** Nine nets give every kick (`kick_of_white_nets`); two black nets, four black samples apart, give the odd kicks
-  (`odd_of_black_nets`), and an odd kick is one whose next kick is three or five white ticks later (`odd_iff`). Without the closed set
-  nine nets do not decide it: two finite halves read the same nine nets and differ in a kick (`nine_collision`,
-  `no_unrestricted_nine`).
+  (`odd_of_black_nets`), and an odd kick is one whose next kick is three or five white ticks later (`odd_iff`). For unrestricted
+  starting halves nine nets do not decide it: two finite halves read the same nine nets and differ in the kick at sample index 6
+  (`nine_collision`, `no_unrestricted_nine`).
 * **Periodicity.** Beside an alternating column, for every right half of any support, the kicks, the net and the odd kicks are eventually
   periodic together, and an eventually periodic black net makes the kicks eventually periodic too (`periodic_together_of_alt`;
   `four_tail` is the other branch).
@@ -28,7 +28,7 @@ The finite part is one table of sets of times on spatial prefixes, walked once a
 (`Rule30MaskedJen`) excludes the periodic kicks of the single cell.
 
 Known. Every gate trace in the closed set obeys AIOvernight's nine-pair gap rule, and it also avoids the gap sequence 2, 2, 5, which six
-columns exclude already (`Rule30PeriodTwoOnset`). That every right half eventually obeys the nine pairs or reads pure fours is AIOvernight's
+columns exclude once one full white and black period has elapsed (`Rule30PeriodTwoOnset`). That every right half eventually obeys the nine pairs or reads pure fours is AIOvernight's
 `Rule30PeriodTwoWidth13`, by a rank certificate of a strip of thirteen columns. What is added is the explicit closed set and the entry
 into it, the decoders, and a proof that checks in nine seconds. Lowry's net, shell and two-step identity are those of
 `Rule30SourceArrivals`, restated here since the verifier's kit does not have it. Lowry's net is aperiodic there when two black ticks follow

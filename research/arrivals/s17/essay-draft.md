@@ -83,7 +83,7 @@ SeedRandom[5];
 Counts[Flatten[Table[test[RandomInteger[2^60 - 1]], {100}], 1]]
 ```
 
-Entry is needed. **Two finite halves read the same nine nets and differ in the kick at the seventh** (`nine_collision`), so no function of nine nets gives the kicks of every half (`no_unrestricted_nine`). Their cells are sites 4, 5, 6 and sites 1, 4.
+For unrestricted starting halves nine nets do not decide it. **Two finite halves read the same nine nets and differ in the kick at the seventh reading** (`nine_collision`), so no function of nine nets gives the kick at sample index 6 of every starting half (`no_unrestricted_nine`). Their cells are sites 4, 5, 6 and sites 1, 4.
 
 ```wl
 {Table[net /@ half[x, 8], {x, {56, 9}}], Table[kick[half[x, 6][[7]]], {x, {56, 9}}]}
@@ -103,11 +103,11 @@ It leaves 47 windows of twelve cells, those that lie on an endless path outside 
 
 ## Earlier work
 
-Lowry's definitions, the two-step identity and the two earlier aperiodicity theorems are `Rule30SourceArrivals`; on the segment 0101 a change of the unpaired left source changes the net between the two white ticks (`alternating_change_visible`). A black net at a white tick that is not a kick is the right part of Lowry's event word 0101001; `Rule30EventReturns` gives the return times of that word. That the kicks of every right half are eventually in the nine-pair gap language, or come once in four, is AIOvernight's `Rule30PeriodTwoWidth13`, by a rank certificate of a strip of thirteen columns; here an explicit closed set replaces it. The gaps 2, 2, 5 are excluded on any history by six columns, with closed sets of twenty windows on five cells and thirty-eight on six, in our `Rule30PeriodTwoOnset`. The return of a kick from sites two and five is our `Rule30GatePulseReturn`, and the table and walk are those of our `Rule30TrappedRuns`.
+Lowry's definitions, the two-step identity and the two earlier aperiodicity theorems are `Rule30SourceArrivals`; on the segment 0101 a change of the unpaired left source changes the net between the two white ticks (`alternating_change_visible`). A black net at a white tick that is not a kick is the right part of Lowry's event word 0101001; `Rule30EventReturns` gives the return times of that word. That the kicks of every right half are eventually in the nine-pair gap language, or come once in four, is AIOvernight's `Rule30PeriodTwoWidth13`, by a rank certificate of a strip of thirteen columns; here an explicit closed set replaces it. The six-column theorem of our `Rule30PeriodTwoOnset` already excludes 2, 2, 5 once one full white–black period has elapsed, with closed sets of twenty windows on five cells and thirty-eight on six. The return of a kick from sites two and five is our `Rule30GatePulseReturn`, and the table and walk are those of our `Rule30TrappedRuns`.
 
 ## What is not claimed
 
-Nothing here excludes an alternating centre, and nothing bounds the time at which a half enters the set: the 47 windows can be left late. The closed set is not shown to be least. No half is exhibited that kicks once in four from some tick on.
+Nothing here excludes an alternating centre, and this proof gives no uniform deadline for entry. The closed set is not shown to be least. No half is exhibited that kicks once in four from some tick on.
 
 ## Lean statements and kernel replay
 
