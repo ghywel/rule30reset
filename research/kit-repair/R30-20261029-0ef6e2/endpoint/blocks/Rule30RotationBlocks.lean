@@ -19,7 +19,7 @@ translate along their orbits and every two blocks.
   blocks and for the gaps between black readings.
 * `arc_near_squares`, `arc_excluded`: letters of length one, and sliding block codes of their word.
 * `sqrt_line`, `half`, `half_phase`, `silver_blocks_excluded`: the floors of `t √m` for `m` not the square of a
-  fraction, the half-circle, and an example: the gaps 3, 5, 5, 5 and 3, 5, 5, 5, 5 in the order of the parities of
+  fraction, the half-circle, and an example: the gaps 3, 5, 5, 5 and 3, 5, 5, 5, 5, 5 in the order of the parities of
   `⌊t √2⌋`.
 
 **What is not new.** The word of the arc itself is excluded without this module, from any start. Beside a column
@@ -28,6 +28,11 @@ sample 35 on black readings come 2, 3, 4 or 5 apart with consecutive gaps among 
 The gaps of one arc are its return times `p`, `q` and `p + q`, and these rules leave only arcs whose ends lie on one
 orbit, whose words are block codes of Sturmian words. Blocks of unequal length are not touched by this: the gaps 3
 and 5 may follow each other in any order as far as the nine pairs go.
+
+**Not shown.** That the column to the right can read one of these words at all, in any row. A word that no right half
+reads is impossible without this module, and finite computations on a strip of columns with its far edge free show
+this for some of them: for the example with one gap 5 fewer in the longer block, at 40 columns. No right half that
+reads one of these words is known.
 
 **No real numbers.** `IrrationalLine g` says that the intervals `[g n / n, (g n + 1) / n]` meet pairwise and that no
 rational number lies in all of them. For a real irrational `α`, `g n = ⌊n α⌋` satisfies it, and at positive indices
@@ -1176,19 +1181,19 @@ theorem two_irrational (p q : Nat) (hq : 1 ≤ q) : p * p ≠ 2 * (q * q) := by
       omega
     exact ih k hkq q hk h'
 
-/-- An example. Set the two blocks of gaps 3, 5, 5, 5 and 3, 5, 5, 5, 5 in the order of the parities of `⌊t √2⌋`, from
-any index `q` on. The right neighbour of a column that alternates does not read this from any tick on, in a row with
-a leftmost black cell. -/
+/-- An example. Set the two blocks of gaps 3, 5, 5, 5 and 3, 5, 5, 5, 5, 5 in the order of the parities of `⌊t √2⌋`,
+from any index `q` on. The right neighbour of a column that alternates does not read this from any tick on, in a row
+with a leftmost black cell. -/
 theorem silver_blocks_excluded (x : Int → Bool) (lo i : Int) (hlo : x lo = true) (hleft : ∀ j < lo, x j = false)
     (a q : Nat) (clock : ∀ t, evol x (a + t) i = decide (t % 2 = 1)) :
-    ¬ ∀ n y, y < (if isqrt (2 * ((q + n) * (q + n))) % 2 = 1 then 23 else 18) →
-      evol x (a + 2 * (total (fun k => if isqrt (2 * ((q + k) * (q + k))) % 2 = 1 then 23 else 18) n + y)) (i + 1) =
+    ¬ ∀ n y, y < (if isqrt (2 * ((q + n) * (q + n))) % 2 = 1 then 28 else 18) →
+      evol x (a + 2 * (total (fun k => if isqrt (2 * ((q + k) * (q + k))) % 2 = 1 then 28 else 18) n + y)) (i + 1) =
         decide (y = 0 ∨ y % 5 = 3) := by
   intro visible
   have hs := sqrt_line 2 two_irrational
   have par : ∀ t : Nat, (((isqrt (2 * (t * t)) : Int) + 1) / 2 - (isqrt (2 * (t * t)) : Int) / 2 = 1) ↔
       isqrt (2 * (t * t)) % 2 = 1 := fun t => by omega
-  refine blocks_excluded x lo i hlo hleft hs.half (hs.half_phase (by decide)) (fun v => if v = 1 then 23 else 18)
+  refine blocks_excluded x lo i hlo hleft hs.half (hs.half_phase (by decide)) (fun v => if v = 1 then 28 else 18)
     (fun v => by split <;> omega) (fun _ y => decide (y = 0 ∨ y % 5 = 3)) a q clock (fun n y hy => ?_)
   simp only [par] at hy ⊢
   exact visible n y hy

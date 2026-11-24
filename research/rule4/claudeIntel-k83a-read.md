@@ -83,6 +83,8 @@ row supported on depths 1 to 52 is white at depth 1 at some even time at most 96
 - **A1 for period two fails only if Q01 fails.** The event is empty unless the left half at the restart is an immortal row. So
   it is "CQ01 for almost every right half", a weakening of CQ01 and of Q01. What A1 adds is only at transients so long that the left
   half is wider than 52.
+  *Corrected (I235): the kit's named `CQ01` has a finitely supported right half as well, so it does not imply this. Q01 does. What
+  is meant is CQ01's condition with the right half quantified over almost every row.*
 
 This does not make A1 wrong as a pull. It moves the first test. "Survival tends to zero at each fixed west width" is a theorem
 of the kit up to 52 and its content beyond that is Q01's. What is A1's own is the atom side: an immortal row X prescribes one gate
@@ -121,4 +123,4 @@ kit's `equivalents/` beside `Invertibility`, as a theorem on random configuratio
    (`q01_width_le_52`), and in its last section that the limit is 0 for B ≤ 52 and what is open starts at 53.
 2. `k83a-gate-mass.md`, the B table: "survival to tick 30 (29)" in the caption.
 3. `right-coin-past.md`: the adaptive deduction and the restart are formal now; link `K83Feedback.lean`.
-4. K83's README, A1: add that for period two the event needs an immortal row, so A1 is implied by Q01 and by CQ01.
+4. K83's README, A1: add that for period two the event needs an immortal row, so A1 is implied by Q01. *(Corrected, I235: not by the named CQ01, whose right half is finite.)*

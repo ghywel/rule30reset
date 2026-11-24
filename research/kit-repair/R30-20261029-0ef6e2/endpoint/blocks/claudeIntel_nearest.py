@@ -1,13 +1,17 @@
-# the example order (blocks 3555 / 35555 by parity of floor(t sqrt2)): do Lowry's gap bound or Jen's bound already exclude it?
+# the example order (blocks 3555 / 355555 by parity of floor(t sqrt2)): do Lowry's gap bound or Jen's bound already exclude it?
+# usage: claudeIntel_nearest.py [B] [T0]   blocks 3 5^3 and 3 5^B (default 5; N15's example was 4), from t = T0 (default 0)
+import sys
 import numpy as np
 from math import isqrt
-o=[isqrt(2*t*t)%2 for t in range(1,6000)]
+B=int(sys.argv[1]) if len(sys.argv)>1 else 5
+T0=int(sys.argv[2]) if len(sys.argv)>2 else 0
+o=[isqrt(2*t*t)%2 for t in range(T0,T0+8000)]
 gaps=[]
-for x in o: gaps+= [3]+[5]*(4 if x else 3)
+for x in o: gaps+= [3]+[5]*(B if x else 3)
 g=np.array(gaps[:20000],dtype=np.int8)
 w=[]
-for x in gaps[:16000]: w+=[1]+[0]*(x-1)
-w=np.array(w[:60000],dtype=np.int8)
+for x in gaps[:30000]: w+=[1]+[0]*(x-1)
+w=np.array(w[:80000],dtype=np.int8)
 def scan(s,qmax,f):
     best=None
     for q in range(1,qmax):
