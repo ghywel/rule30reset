@@ -353,5 +353,7 @@ check_trap K001 K011 7 ; check_entry 001 K001 14 12 8 ; check_entry 011 K011 21 
 
 The raw runs are `share-scratch/claudeM5/R5/M134/r5-waits.zip`, SHA-256
 `250b7fd9b237b7553bfa0631fad0f87af1dbbf240b256cb4b271b41196fc98c5`, 2,178,099 bytes.
+The file of §12 as checked, with its tables and the two lists, is `share-scratch/claudeM5/R5/M152/r5-entry.zip`, SHA-256
+`0a9dac9ff8c1638e043a33ff09d7957a8e37c4d74a5f59302cfdfb17f53ec3d2`, 98,445 bytes.
 The raw census to 14 cells is `share-scratch/claudeM5/R5/M137/r5-census.zip`, SHA-256
 `0fdf6e9a820dfd09a2c214f811b423111340d8336f7069aa94b61cf8fb84221a`, 1,345,862 bytes.
