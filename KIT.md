@@ -1,13 +1,13 @@
-<!-- kit-commit: 5cf9874 2026-11-24 -->
+<!-- kit-commit: 5669ede 2026-11-24 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `5cf9874` (main, 2026-11-24),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `5669ede` (main, 2026-11-24),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 336 modules under `lean/` (43 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 338 modules under `lean/` (44 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 414 entries on 24 November (412 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
@@ -67,7 +67,7 @@ graph TD
   Q01 --> NSG["NoSeedGE2"] --> NP2
   NSG --> Q01Gap
   Q01 --> NS01["NoSeed p01 (ladder bounds suffice)"] --> NP2
-  CS["Sharp G mass conjecture S (refuted on the portal)"] -. "former sufficient condition" .-> NP2
+  CS["Sharp G mass conjecture S (refuted)"] -. "former sufficient condition" .-> NP2
   SEP --> NP2
   BWH --> NP2
   UBE --> P1["Problem 1"]
@@ -144,7 +144,7 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
 
 ## 4. Barriers: what cannot work
 
-- **The sharp G mass floor fails.** Galindo constructs arbitrarily late G words with H = 7A + 9 and even H = 7A + 8. Any natural-coefficient G floor H ≤ qA + d needs q ≥ 7, with d ≥ 9 at slope seven. The portal marks the proof Lean Verified and Human Verified. [Open kit PR #410](https://github.com/WolframInstitute/Rule30PrizeKit/pull/410)
+- **The sharp G mass floor fails.** Galindo constructs arbitrarily late G words with H = 7A + 9 and even H = 7A + 8. Any natural-coefficient G floor H ≤ qA + d needs q ≥ 7, with d ≥ 9 at slope seven. `Rule30MassCounterexamples`.
 
 - **Structure alone is not enough.** Rules 90, 150 and 210 satisfy every structural fact the arguments use, yet their
   centre columns are eventually constant (`Rule30Realization`). Rules 90 and 150 beside a wall have exact, sharp Q01
