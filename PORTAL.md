@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-24 00:47 UTC, 410 entries, 55 portal-only -->
+<!-- portal-list: 2026-11-24 10:13 UTC, 413 entries, 57 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-24 00:47 UTC (410 entries)
-and kit main `0c4194c` (M148). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-24 10:13 UTC (413 entries)
+and kit main `5cf9874` (R101). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 55 of the 410 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 57 of the 413 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -27,11 +27,11 @@ and kit main `0c4194c` (M148). Find new portal-only entries with `python3 tools/
 |---|---|
 | Missed | 12 |
 | Port | 3 |
-| Pending | 2 |
-| Check | 5 |
+| Pending | 3 |
+| Check | 6 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 55, of them 18 ours |
+| All | 57, of them 17 ours |
 
 ## Missed (12)
 
@@ -62,21 +62,23 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (2)
+## Pending (3)
 
 In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261124-61c7cb](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-61c7cb) | 2026-11-24 | Dusty Galindo; OpenAI Codex | Lean Verified, Human Verified | Arbitrarily large finite traces attain H = 7A + 9, and even lengths attain 7A + 8, refuting the two sharp mass conjectures. | [Open kit PR #410](https://github.com/WolframInstitute/Rule30PrizeKit/pull/410). | A |
+| [R30-20261124-8815ca](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-8815ca) | 2026-11-24 | G.P.J.W. Quint; Gemini | Lean Verified | Bounds on the gap at first clock loss, and uniform capture from nine whites or eight blacks on a recurrent strip. | [Open kit PR #411](https://github.com/WolframInstitute/Rule30PrizeKit/pull/411). | A |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
-| [R30-20261123-78e431](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-78e431) | 2026-11-23 | ours (S13) | Lean Verified | Beside an alternating column, two present cells give the exact next black pulse on every right half, with a finite test of any proposed alternation of the singleton's centre. | Open kit PR #409 (M146). | L |
 
-## Check (5)
+## Check (6)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261124-cacfbd](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-cacfbd) | 2026-11-24 | Jacob Dyer; Claude; Qwen; Inkling | Lean Verified, Human Verified | For every configuration with a leftmost black cell, excludes eventual words with a black run followed by a white run outside 81 explicit pairs of run lengths. | Combines previous classes across columns. The selection of 81 remaining pairs needs a source read. | A |
 | [R30-20261029-99db76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-99db76) | 2026-10-29 | Eric Elbaz (Tensorbend.ai) | Lean Verified, Human Verified | Elbaz: with the canonical alternating centre, an adjacent column white at all odd times forces every left layer to its depth's parity, so the left half is not finitely supported. | As 23ac1b. | A |
 | [R30-20261029-23ac1b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-23ac1b) | 2026-10-29 | Eric Elbaz (Tensorbend.ai) | Lean Verified, Human Verified | Elbaz: if the column beside the centre is eventually black, its deviation from the alternating reference vanishes above 8(s/2 + 1) + 2. So a centre white on its finitely many defects reconstructs an infinite left half. | Possibly a kit-worthy Q01-type statement. Read the hypotheses against Rule30ZeroBoundary. | A |
 | [R30-20261108-508c6c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-508c6c) | 2026-11-08 | h3artfield; Cursor Agent (Composer) | Lean Verified | h3artfield: every Y < 2^52 dies within size Y + 4 steps of G, and Q01 is equivalent to Open131072Exit. | The equivalence would be a reformulation of Q01. Not Human Verified, and the portal has no separate Lean file. | A |

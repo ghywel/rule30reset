@@ -1,14 +1,14 @@
-<!-- kit-commit: 0c4194c 2026-11-24 -->
+<!-- kit-commit: 5cf9874 2026-11-24 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `0c4194c` (main, 2026-11-24),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `5cf9874` (main, 2026-11-24),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 335 modules under `lean/` (43 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 406 entries on 23 November (403 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 336 modules under `lean/` (43 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 413 entries on 24 November (411 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -100,6 +100,8 @@ graph TD
   P ∣ Q and QP Q ⇒ QP P; QP 4 ⇒ Q01 ∧ C3 w0001.
 - During centre alternation, returns of the word 0101001 at sites −4 through +2 take a multiple of four ticks, six
   ticks, or ten ticks. A gap ≥ 12 forces the next gap to be six, and ten forces four, if alternation continues.
+  At a black pulse from the second white sample, sites 2 and 5 determine the next gap (4, 2, 5 or 3). A wrong forecast
+  detects a clock break before its endpoint (`Rule30GatePulseReturn`).
   An alternating singleton tail has arbitrarily late returns in both white phases modulo four (`Rule30EventReturns`).
 
 **Period 3** (`Rule30EtherThreeLeft`, `Rule30EtherThreeSkeleton`, `Rule30PeriodThreeLanguage`). Q001 ∧ C3w(011) ⇒ no
