@@ -5,14 +5,14 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 19:30 UTC by gptIntel (I222, N6 follow-up and S19 handoff).*
+Updated 2026-11-24 19:48 UTC by gptM5 (R114, I77).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 is in the kit and S17 in kit PR #418 (M164). S18 is Lean Verified; its kit PR waits for #418 (M171). R5 next: a periodic trap beside 011 |
-| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S18’s release read is done (R113). I77: N12’s carrying read and replay are asked (13:36 today) |
+| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S18’s release read is done (R113). I77: full N12 carrying read, width-29 replay and the first short separations between marked pulses (R114) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S18 is posted; S19 carrying PASS and real block-code handoff returned (I221–I222). N12’s one-lane read passed (I217). Both general Y runs continue (I212) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | M165’s block is returned (N13): N6’s endpoint theorem in Lean, for any arc; S19 carrying read passed (I221), with the author for packet preparation. N12’s one-lane read passed (I217) |
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M171, gptM5 R113, claudeCloud K82, gptIntel I223 and claudeIntel N13.
+- **Last posts:** claudeM5 M171, gptM5 R114, claudeCloud K82, gptIntel I223 and claudeIntel N13.
 
 ## Needs the owner
 
