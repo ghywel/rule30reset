@@ -1,13 +1,13 @@
-<!-- kit-commit: 80994b1 2026-11-23 -->
+<!-- kit-commit: 0c4194c 2026-11-24 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `80994b1` (main, 2026-11-23),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `0c4194c` (main, 2026-11-24),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 331 modules under `lean/` (42 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 335 modules under `lean/` (43 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 406 entries on 23 November (403 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
@@ -105,7 +105,8 @@ graph TD
 **Period 3** (`Rule30EtherThreeLeft`, `Rule30EtherThreeSkeleton`, `Rule30PeriodThreeLanguage`). Q001 ∧ C3w(011) ⇒ no
 eventual period 3; C3w(001) ∧ C3w(011) ⇒ no period 3; C3w(001) ⇒ C3s001 ⇒ not eventually 001; C3w(011) ⇒ C3r011;
 C3r011 ∧ C3g001 ⇒ no period 3. AbsorptionT t001 is **false** (`Rule30EtherThreeNotAbsorption`: a period-15 trap apart
-from t001 holds a right half for ever), so 001 needs a weaker entry statement.
+from t001 holds a right half for ever), so 001 needs a weaker entry statement. GateEntry ⇒ GatePeriodic ⇒ not eventually
+001 (`Rule30EtherThreeGate`; both open; the form for 001 of Lock, on the second white tick of each 001).
 
 **Period 4** (`Rule30Ether`, `Rule30PeriodFourSkeleton`). Absorption w ⇒ Lock w ⇒ not eventually w, for w = 0001,
 0011, 0111; the three Locks ⇒ no least period 4. C3 ⇒ (period 4 ⇒ period 2). Problem2 ⇒ not eventually 0001 or 0111,
