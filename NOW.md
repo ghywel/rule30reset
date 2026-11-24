@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 11:14 UTC by gptM5 (R106, I77).*
+Updated 2026-11-24 11:26 UTC by gptIntel (I199, I66).*
 
 ## Arrangement
 
@@ -14,7 +14,7 @@ Updated 2026-11-24 11:14 UTC by gptM5 (R106, I77).*
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S15 is posted and its kit PR #412 is open (M150). S13 and S14 are in the kit |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77. Width-27 disagreement contexts and marked physical controls complete (R106). |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | K50.2 finite-left block complete (I197). K80 certificate and the two Y runs are active (I198) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | I66 white-tick arrival signal (I199). K80 certificate and the two Y runs are active (I198) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | Free. M141's read of S14 no longer holds anything up (M142) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
@@ -23,13 +23,13 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M150, gptM5 R106, claudeCloud K82, gptIntel I198 and claudeIntel N11.
+- **Last posts:** claudeM5 M150, gptM5 R106, claudeCloud K82, gptIntel I199 and claudeIntel N11.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **The next block for the free workers is not set.** claudeM5 is on R5 with S13 to S15 posted, gptM5 holds the I77 continuation (R106), gptIntel has finished the K50.2 block, claudeCloud is paused, and claudeIntel is free.
+- **The next block for the free workers is not set.** claudeM5 is on R5 with S13 to S15 posted, gptM5 holds the I77 continuation (R106), gptIntel is on I66, claudeCloud is paused, and claudeIntel is free.
 
 ## Direction
 
@@ -53,7 +53,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 **The owner, 23 November:** the pulls with submissions are sorted (M133), and claudeM5 takes R5. The rest awaits next
 steps.
 
-- **Being worked:** R5 and I77. S15 is posted (M150). The K50.2 finite-left result is under Parked (I197). The period-two wall itself is parked (I191).
+- **Being worked:** R5, I66 and I77. S15 is posted (M150). The K50.2 finite-left result is under Parked (I197). The period-two wall itself is parked (I191).
 - **On offer, none started:**
   - the rows marked **free** in the tracker below, each with its next test;
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
@@ -106,7 +106,7 @@ table for the lists below. The rules are in METHOD §8.
 | N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress,* **free** since S11 (gptM5 wrote the [assessment](research/kit-repair/R30-20261029-0ef6e2/golden-strip-cover.md#how-the-other-n6-results-compare)). S11, golden at every phase, is in the kit. **PROVED by hand and read:** [both half-circle cut orbits at every irrational angle](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md) (I123, N7) and the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md) (I127, I128, N8). Silver off the cut orbit rests on computed bounds (I146, K72). **Next, in this order:** (1) the endpoint theorem at every irrational angle in Lean: the convergent denominator bound, the three parity and digit cases, and the signed time shift into `corollary_F`; its angles are real, so expect Mathlib and the portal first; (2) the metric theorem; (3) an exact silver cover. | S11 posted and in the kit; the endpoint theorem is the next candidate |
 | M9 | 17 Nov, claudeM5 | Why does a lone 1 force a word out of the trapped gate? (The late gate language inside the trap.) | *In progress,* **free** since S10 (M123). Inside the trap the gate settles to a fixed process. Four of its exclusion laws and the width-45 threshold are S10, in the kit. The [final K65 sieve](research/m9/data/gptIntel-sieve-final-K65.txt) has 23 certified onsets and 67 survivors through delay 40 or more, and all 18 newly judged laws contain a run of 1 (I140, I142). The entropy is undecided (I106), and absence from real rows is not a law (M85, M106). **Next:** one block on a hand reason for the pair (5, 1) from delay 12, the only judged two-run law. If no local reason appears, park it with the sieve table. The exterior half, X and Y, is K50.1's (K77, K78). | S10 posted and in the kit; the rest: no |
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress with gptM5* (R106). S8 requires (12,10,9). On either minimal alphabet {9,10,12,h}, two programs find that a width-27 disagreement needs (h,12,12,10,9) immediately before the pulse and (10,10) or (10,12) after it. [Results, physical controls and replay](research/white-gap-mixtures/i77-disagreement-context.md). **Next:** for h = 13 apply the ordinary 21-tick test to every triple around the 3,059 opposite-sample pairs. For h = 14 two branches already pass locally at width 27, so extend the continuous history toward their shared endpoints. The earlier I87 compulsory-factor proofs remain a separate Lean target. | S8 is in the kit. The proposed seven-gap extension needs a compact finite certificate and a second read of the transfer. |
-| I66 | 21 Nov, gptIntel | Lowry's source arrivals under periodic centres, and source priority | *In progress,* **free** (I66–I69, I71, I73; `research/arrivals/`). Kernel: arrival parity is aperiodic for a wider family of periodic centres (I66). Under an eventually alternating centre, arrival parity and the distance-two shell are both aperiodic (I67–I68), with a finite form 2n < 3b + 16 (I73). Seven rightmost readings recover a four-cell band, and four letters are optimal (I69, I71). Read so far: the finite part of I67–I68 (K56 addendum 1) and I69 (K58). **Next:** a carrying read of the Lean, then the novelty check. | not yet assessed |
+| I66 | 21 Nov, gptIntel | Lowry's source arrivals under periodic centres, and source priority | *In progress with gptIntel* (I199; I66–I69, I71, I73; `research/arrivals/`). Kernel: arrival parity is aperiodic for a wider family of periodic centres (I66). Under an eventually alternating centre, arrival parity and the distance-two shell are both aperiodic (I67–I68), with a finite form 2n < 3b + 16 (I73). Seven rightmost readings recover a four-cell band, and four letters are optimal (I69, I71). Read so far: the finite part of I67–I68 (K56 addendum 1) and I69 (K58). **Next:** test recovery from white-tick net readings alone, replay the carrying Lean and check priority (I199). | not yet assessed |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | *In progress:* claudeM5 and gptM5 ([report](research/r5/README.md)). **PROVED IN LEAN:** recurrent fronts of the ether move on one path for every right side (M134, read by gptM5); the exact first departure after a 22-site prefix exit, 49 or 52 ticks (R97, read by claudeM5); no half that carries 20 ether columns, or 16 white cells, enters the kit's 15-trap (M137, read by gptM5 in R98). **COMPUTED:** the only component reached after departure is the 22-column giant (I173, I177); the traps of 001 share a 34-column trunk; a census of every wall with labels to 30 finds no gate but 1100000 and 11000, none for 011, and a **fifth trap** that refutes entry into the four known (M137). CONJECTURE: every finite half's gate is eventually one of those two. Open: that a finite half ever passes the last rung. **Next:** the trunk's first 13 columns alone; labels 33; gate restrictions beyond Hallee’s ThreeRuns (P57). | **S14** posted (M142) |
 
 ## Parked
