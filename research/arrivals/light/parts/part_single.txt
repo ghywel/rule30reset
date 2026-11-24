@@ -237,8 +237,8 @@ theorem alt_drv (R : Nat → Bool) : Alt (drv altCol R) 0 := by
   · rw [show 0+2*k = 2*k by omega]; exact Rule30PeriodTwoSideways.altCol_even k
   · rw [show 0+2*k+1 = 2*k+1 by omega]; exact Rule30PeriodTwoSideways.altCol_odd k
 
-/-- **Every right half,** of any support, beside the alternating column enters the closed set, or reads a kick once in four for
-ever. -/
+/-- **Every right half,** of any support, beside the alternating column enters the closed set, or from some tick on reads
+a kick once in four. -/
 theorem every_half (R : Nat → Bool) : (∃ k, InSet (drv altCol R) 0 k) ∨
     ∃ φ N, ∀ k, N ≤ k → gate (drv altCol R) 0 k = decide ((k+φ) % 4 = 0) :=
   enters_or_four (drv_isR30 _ _) (alt_drv R)

@@ -1,0 +1,35 @@
+/-!
+# If the centre of Rule 30 eventually alternates, Lowry's source net is aperiodic on each phase
+
+Let `F` be a right half of rule 30, of any support, beside a column that alternates, black first (`Alt F T`). Read it at the white
+ticks. The *kick* is the first cell (`gate`), the *net* the first cell exclusive-or the second (`net`), and the *black net* the first
+cell without the second at the black tick after it (`blackNet`). An *odd kick* is a kick whose net is white (`oddKick`).
+
+* **The single cell.** If its centre alternates from some time on (`AltCenter`), then none of these streams is eventually periodic:
+  Lowry's net and shell on the white ticks and on the black ticks (`both_phases`), and the odd kicks (`odd_kicks_aperiodic`). The net at
+  two successive white ticks is equal exactly when the second is an odd kick (`lowry_odd_return`). Whether the centre ever alternates for
+  ever is open, and nothing here bears on it.
+* **The local law** (`law_of_alt`), on every right half. The net is complemented at every white tick that is not a kick, and was white
+  just before one. So the net at a kick is black exactly when its next kick is an even number of white ticks later (`net_of_return`), and
+  two successive nets are equal exactly at an odd kick (`odd_of_equal_nets`).
+* **A closed set.** `closedSet` is 777 windows of the first twelve cells at a white tick. A half in it stays in it, whatever lies beyond
+  (`stays`), and its kicks then read none of ten words (`clean_of_set`): the gaps are 2 to 5, seven of the sixteen pairs do not occur,
+  and 2, 2, 5 does not occur. Every right half enters it, or its kicks eventually come once in four (`every_half`, `enters_or_four`).
+* **Decoding after entry.** Nine nets give every kick (`kick_of_white_nets`); two black nets, four black samples apart, give the odd kicks
+  (`odd_of_black_nets`), and an odd kick is one whose next kick is three or five white ticks later (`odd_iff`). Without the closed set
+  nine nets do not decide it: two finite halves read the same nine nets and differ in a kick (`nine_collision`,
+  `no_unrestricted_nine`).
+* **Periodicity.** Beside an alternating column, for every right half of any support, the kicks, the net and the odd kicks are eventually
+  periodic together, and an eventually periodic black net makes the kicks eventually periodic too (`periodic_together_of_alt`;
+  `four_tail` is the other branch).
+
+The finite part is one table of sets of times on spatial prefixes, walked once against itself with a white and a black tick as the step
+(the method of `Rule30TrappedRunMasks`), and two searches over words. The local law is a table of six cells. Masked Jen
+(`Rule30MaskedJen`) excludes the periodic kicks of the single cell.
+
+Known. The gate language of the closed set is GE2, and that every right half is eventually in it or reads pure fours is AIOvernight's
+`Rule30PeriodTwoWidth13`, by a rank certificate of a strip of thirteen columns. What is added is the explicit closed set and the entry
+into it, 2, 2, 5 (which six columns exclude too), the decoders, and a proof that checks in nine seconds. Lowry's net, shell and two-step identity are those of
+`Rule30SourceArrivals`, restated here since the verifier's kit does not have it. Lowry's net is aperiodic there when two black ticks follow
+each white one.
+-/

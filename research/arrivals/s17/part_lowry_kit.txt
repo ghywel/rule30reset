@@ -1,0 +1,78 @@
+/-! ### Lowry's net and shell -/
+
+/-- Lowry's net and shell (`Rule30SourceArrivals`). -/
+abbrev lowryNet := Rule30SourceArrivals.net
+abbrev lowryShell := Rule30SourceArrivals.shell
+
+/-- On a white tick whose next tick is black, Lowry's net is the first cell exclusive-or the second. -/
+theorem lowry_white (t : Nat) (w : cell t 0 = false) (b : cell (t+1) 0 = true) : lowryNet t = xor (cell t 1) (cell t 2) := by
+  have step : cell (t+1) 0 = rule (cell t (-1)) (cell t 0) (cell t 1) := rfl
+  have next : cell (t+1) 1 = rule (cell t 0) (cell t 1) (cell t 2) := rfl
+  show xor (cell t (-1) && !cell t 0) (xor (cell t 1 && !cell t 2) (cell (t+1) 0 && !cell (t+1) 1)) = _
+  rw [w] at step next
+  have b' := b
+  rw [step] at b'
+  rw [w, b, next]
+  exact (by decide : ∀ L x y : Bool, rule L false x = true → xor (L && !false) (xor (x && !y) (true && !rule false x y)) = xor x y)
+    _ _ _ b'
+
+/-- On a black tick whose next tick is white, Lowry's net is the first cell without the second. -/
+theorem lowry_black (t : Nat) (b : cell t 0 = true) (w : cell (t+1) 0 = false) : lowryNet t = (cell t 1 && !cell t 2) := by
+  show xor (cell t (-1) && !cell t 0) (xor (cell t 1 && !cell t 2) (cell (t+1) 0 && !cell (t+1) 1)) = _
+  rw [b, w]
+  cases cell t (-1) <;> cases cell t 1 <;> cases cell t 2 <;> rfl
+
+/-- Lowry's identity at two ticks. -/
+theorem two_step (t : Nat) : cell (t+2) 0 = xor (lowryShell t) (lowryNet t) := Rule30SourceArrivals.two_step t
+
+section
+variable {T : Nat}
+
+/-- Lowry's net at the white and the black ticks of an alternating centre is the net of its right half. -/
+theorem lowry_at_white (h : AltCenter T) (k : Nat) : lowryNet (T+2*k+1) = net trueRight T k := by
+  have b := (h (k+1)).1
+  rw [show T+2*(k+1) = T+2*k+1+1 by omega] at b
+  exact lowry_white _ (h k).2 b
+
+theorem lowry_at_black (h : AltCenter T) (k : Nat) : lowryNet (T+2*k+2) = blackNet trueRight T k := by
+  have b := (h (k+1)).1
+  have w := (h (k+1)).2
+  rw [show T+2*(k+1) = T+2*k+2 by omega] at b
+  rw [show T+2*(k+1)+1 = T+2*k+2+1 by omega] at w
+  exact lowry_black _ b w
+
+theorem shell_at_white (h : AltCenter T) (k : Nat) : lowryShell (T+2*k+1) = net trueRight T k := by
+  have e := two_step (T+2*k+1)
+  rw [show T+2*k+1+2 = T+2*(k+1)+1 by omega, (h (k+1)).2, lowry_at_white h k] at e
+  exact (by decide : ∀ a b : Bool, false = xor a b → a = b) _ _ e
+
+theorem shell_at_black (h : AltCenter T) (k : Nat) : lowryShell (T+2*k+2) = !blackNet trueRight T k := by
+  have e := two_step (T+2*k+2)
+  rw [show T+2*k+2+2 = T+2*(k+2) by omega, (h (k+2)).1, lowry_at_black h k] at e
+  exact (by decide : ∀ a b : Bool, true = xor a b → a = !b) _ _ e
+
+/-- **Both phases of Lowry's net and shell.** If the centre of the single cell alternates from `T`, black first, then Lowry's net
+and his shell are not eventually periodic on the white ticks, nor on the black ones. -/
+theorem both_phases (h : AltCenter T) :
+    ¬ EventuallyPeriodic (fun k => lowryNet (T+2*k+1)) ∧ ¬ EventuallyPeriodic (fun k => lowryNet (T+2*k+2)) ∧
+    ¬ EventuallyPeriodic (fun k => lowryShell (T+2*k+1)) ∧ ¬ EventuallyPeriodic (fun k => lowryShell (T+2*k+2)) := by
+  have eqw : (fun k => lowryNet (T+2*k+1)) = net trueRight T := funext (lowry_at_white h)
+  have eqb : (fun k => lowryNet (T+2*k+2)) = blackNet trueRight T := funext (lowry_at_black h)
+  have eqsw : (fun k => lowryShell (T+2*k+1)) = net trueRight T := funext (shell_at_white h)
+  have eqsb : (fun k => lowryShell (T+2*k+2)) = fun k => !blackNet trueRight T k := funext (shell_at_black h)
+  refine ⟨by rw [eqw]; exact white_net_aperiodic h, by rw [eqb]; exact black_net_aperiodic h,
+    by rw [eqsw]; exact white_net_aperiodic h, ?_⟩
+  rw [eqsb]
+  rintro ⟨L, p, hp, per⟩
+  refine black_net_aperiodic h ⟨L, p, hp, fun k hk => ?_⟩
+  have := per k hk
+  cases h1 : blackNet trueRight T (k+p) <;> cases h2 : blackNet trueRight T k <;> simp_all
+
+/-- **The return.** In the alternating tail of the single cell, Lowry's net at two successive white ticks is equal exactly when the
+second is an odd kick: a kick whose next kick is three or five white ticks later. -/
+theorem lowry_odd_return (h : AltCenter T) (k : Nat) :
+    (lowryNet (T+2*k+1) == lowryNet (T+2*(k+1)+1)) = oddKick trueRight T (k+1) := by
+  rw [lowry_at_white h, lowry_at_white h]
+  exact odd_of_equal_nets trueRight_isR30 h.alt k
+
+end

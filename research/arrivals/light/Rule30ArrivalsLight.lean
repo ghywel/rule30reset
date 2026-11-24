@@ -19,7 +19,7 @@ without the second at the black tick after it (`blackNet`, Lowry's net there).
   successive nets are equal exactly at a kick with white net (`odd_of_equal_nets`). The law is local. It needs no closed set.
 * **The closed set.** `closedSet` is 777 windows of the first twelve cells at a white tick. A half in it stays in it, whatever
   lies beyond (`stays`), and from there its kicks have gaps 2 to 5 and the gate reads none of ten words (`clean_of_set`).
-* **Entry.** Every right half enters, or its kicks come once in four for ever (`every_half`, `enters_or_four`).
+* **Entry.** Every right half enters, or its kicks eventually come once in four (`every_half`, `enters_or_four`).
 * **The decoders.** In the set the kick is a function of nine nets (`kick_of_white_nets`), and the odd kicks, whose next one is three
   or five white ticks later (`odd_iff`), are read by two black nets four ticks apart (`odd_of_black_nets`).
 * **Periodicity.** In the set the gate, the net and the odd kicks are eventually periodic together, and if the black net is
@@ -1193,8 +1193,8 @@ theorem outside_from {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat} (h : Al
   have := r k (Nat.le_refl k)
   rwa [show T+1+2*10+2*17+2*k = T+2*(27+k)+1 by omega] at this
 
-/-- **Every right half beside an alternating column,** of any support, enters the closed set, or reads a kick once in four for
-ever. -/
+/-- **Every right half beside an alternating column,** of any support, enters the closed set, or from some tick on reads
+a kick once in four. -/
 theorem enters_or_four {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat} (h : Alt F T) :
     (∃ k, InSet F T k) ∨ ∃ φ N, ∀ k, N ≤ k → gate F T k = decide ((k+φ) % 4 = 0) := by
   by_cases e : ∃ k, InSet F T k
@@ -1553,8 +1553,8 @@ theorem alt_drv (R : Nat → Bool) : Alt (drv altCol R) 0 := by
   · rw [show 0+2*k = 2*k by omega]; exact Rule30PeriodTwoSideways.altCol_even k
   · rw [show 0+2*k+1 = 2*k+1 by omega]; exact Rule30PeriodTwoSideways.altCol_odd k
 
-/-- **Every right half,** of any support, beside the alternating column enters the closed set, or reads a kick once in four for
-ever. -/
+/-- **Every right half,** of any support, beside the alternating column enters the closed set, or from some tick on reads
+a kick once in four. -/
 theorem every_half (R : Nat → Bool) : (∃ k, InSet (drv altCol R) 0 k) ∨
     ∃ φ N, ∀ k, N ≤ k → gate (drv altCol R) 0 k = decide ((k+φ) % 4 = 0) :=
   enters_or_four (drv_isR30 _ _) (alt_drv R)

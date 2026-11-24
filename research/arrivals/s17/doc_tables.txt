@@ -1,0 +1,5 @@
+/-!
+# Sets of times on spatial prefixes beside an alternating column
+
+The closed set of `Rule30AlternatingArrivals`, and the finite checks on its table.
+-/

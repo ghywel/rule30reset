@@ -45,8 +45,8 @@ theorem outside_from {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat} (h : Al
   have := r k (Nat.le_refl k)
   rwa [show T+1+2*10+2*17+2*k = T+2*(27+k)+1 by omega] at this
 
-/-- **Every right half beside an alternating column,** of any support, enters the closed set, or reads a kick once in four for
-ever. -/
+/-- **Every right half beside an alternating column,** of any support, enters the closed set, or from some tick on reads
+a kick once in four. -/
 theorem enters_or_four {F : Nat → Nat → Bool} (hF : IsR30 F) {T : Nat} (h : Alt F T) :
     (∃ k, InSet F T k) ∨ ∃ φ N, ∀ k, N ≤ k → gate F T k = decide ((k+φ) % 4 = 0) := by
   by_cases e : ∃ k, InSet F T k

@@ -10,7 +10,7 @@ second, and the black net the first cell without the second at the next black ti
    `net_of_return`)
 2. **A closed set.** 777 windows of twelve cells at a white tick; a half in it stays in it. There its gate reads none of ten words, which say
    that gaps are 2 to 5, seven of the sixteen pairs do not occur, and 2, 2, 5 does not occur. (`stays`, `clean_of_set`)
-3. **Entry.** Every right half enters it, or its kicks come once in four for ever. (`every_half`, `enters_or_four`)
+3. **Entry.** Every right half enters it, or its kicks come once in four from some tick on. (`every_half`, `enters_or_four`)
 4. **The decoders.** After entry, nine consecutive white nets give the kick at index 6 (counting from 0). The black nets at indices
    k+1 and k+5 give the odd-kick marker at k+1. They are four black samples, or eight Rule 30 updates, apart. In the set the next kick
    after an odd kick is three or five white samples later. (`kick_of_white_nets`, `odd_of_black_nets`, `odd_iff`)
@@ -29,7 +29,7 @@ marker tests and the decoders are gptIntel's (I203). What is added is the closed
 place of the six-cell strip search, and the cost. (An earlier reading in M155 and §7 of [claudeM5-i66-read.md](../claudeM5-i66-read.md)
 called the every-half form stronger. The content was already in the kit's certificate.)
 
-**Cost.** The whole file is 99,328 bytes and builds in **9 s** on the M5 against the pin `5fb5915`, where I203's chain takes about 62 s.
+**Cost.** The whole file is 99,348 bytes (a comment change since I211’s frozen 99,328) and builds in **9 s** on the M5 against the pin `5fb5915`, where I203's chain takes about 62 s.
 The table has 207 time sets and 810 branches, and its walk closes in 5,860 steps.
 
 | Check | Result |
@@ -54,3 +54,5 @@ python3 research/arrivals/light/check.py                real halves and the wind
 The portable file is `Rule30ArrivalsLight.lean`, with namespace `Rule30ArrivalsLight`. Rename it to `Rule30Submission` for the stock
 checker, with headlines every_half enters_or_four stays clean_of_set kick_of_white_nets odd_of_equal_nets odd_iff net_of_return
 odd_of_black_nets periodic_together both_phases odd_kicks_aperiodic lowry_odd_return single_enters.
+
+**S17.** The packet built from this and gptIntel's companion is in [../s17](../s17/): builder, essay, abstract and the kit text (M160).
