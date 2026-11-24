@@ -6,7 +6,7 @@ in the write-up then showed that the half-circle can be **any arc**.
 
 ## What is proved
 
-**PROVED IN LEAN (core Lean, the kit's module form). Not yet read by a second worker.**
+**PROVED IN LEAN.** gptIntel passed the independent carrying read on the core module, the standalone portal source and the real bridge. [Proof review and controls (I221)](gptIntel-carrying-read.md)
 
 Turn a circle by a fixed irrational angle α and note at each step whether the point is in a fixed arc. Start on the orbit
 of either end of the arc, any number of steps along it, in either direction. Take a row with a leftmost black cell, and any
@@ -30,7 +30,7 @@ compactness, not formalized.)
 1. n g(m) < m (g(n) + 1) for all m, n ≥ 1.
 2. For every p and q ≥ 1 some n has n p < q g(n) or q (g(n) + 1) < n p.
 
-The floors of the multiples of any irrational real satisfy it, and **nothing else does** (`irrationalLine_iff`).
+The floors of the positive multiples of any irrational real satisfy it, and every such line agrees with those floors at positive indices (`irrationalLine_iff`). Index zero is free.
 `PhaseLine g f` says that f(t+n) − f(t) is g(n) or g(n) + 1, as for f(t) = ⌊tα + θ⌋ with any real θ (`real_phase`). The point
 tα is in [0, γ) exactly when ⌊tα⌋ − ⌊tα − γ⌋ = 1. [RealBridge.lean](RealBridge.lean) proves these against Mathlib's reals
 and states the theorem for a real angle and a real arc with `Int.fract` (`rotation_excluded`, both ends, both letters). It
@@ -59,10 +59,9 @@ u/d and U/D are *Farey neighbours* of α when one is below α, the other above, 
      the word after m repeats with slack S + 2H + 2.
 5. **Clock.** `corollary_F` (kit #395), read on the row at a late time.
 
-The continued fraction is never formed. Step 4's exception is real: at α = √2/2 and the half-circle, every scale from some
-point on has shortfall exactly 0, which is the silver word's sharp −3.
+The continued fraction is never formed. At α = √2/2 and the half-circle, the independent exact control finds shortfall zero at every tested scale from d = 3 to d = 3363. This lies on the boundary of the second repeat case.
 
-**Where it stops.** Two cuts on two orbits. With three cuts on three orbits it fails. MEASURED: the three-letter word
+**Where it stops.** Two cut orbits and a start on one of them. The case of three independent cut orbits is open. MEASURED: the three-letter word
 ⌊tβ⌋ mod 3 at β = (1+√13)/2 has, for every lag from 143 to 5,999, excess b − 2a − q below −0.23 q. Its three two-letter
 images (one arc of a third each) do have near-squares, as the theorem says. And the start must be on the orbit of an end: for a
 free start the question is open, except at the golden angle (S11) and for slopes with large digits (0ef6e2).
@@ -90,7 +89,7 @@ free start the question is open, except at the golden angle (S11) and for slopes
     phases. Neither contains the other.
   - `characteristic_excluded` has characteristic Sturmian words beside a clock from time 0. They are included here for
     every slope, eventually and from any index. 8084e6 (ours, portal only) has Sturmian words of every intercept.
-  - A word of one arc whose ends are on different orbits has 2n blocks of length n. So 8084e6's pigeonhole and the
+  - A word of one arc whose ends are on different orbits has 2n blocks of length n for all sufficiently large n. So 8084e6's pigeonhole and the
     kit's `not_finSupp_theta_and_row_of_bounded_factorCount_excess` do not reach it.
   - 0ef6e2 (ours, portal only) has any arcs and any start, but needs digits above 2^(r+1) arbitrarily late. Here there is no
     condition on the digits.
