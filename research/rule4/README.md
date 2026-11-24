@@ -198,8 +198,8 @@ samples to 512 settle it, since almost all 4,194,304 are different there.
 | 256 | 16.99 | 16.59 | 15.61 |
 | 512 | 28.46 | 28.32 | 27.10 |
 
-From 256 to 512: 0.0448, 0.0458 and 0.0449 bits a tick. The fall of the share of equal pairs is exponential and not
-a power of m: from 256 to 512 the walls lose 11.5, 11.7 and 11.5 bits, against 5.6, 5.3 and 4.4 from 128 to 256.
+From 256 to 512: 0.0448, 0.0458 and 0.0449 bits a tick. From 256 to 512 the walls lose 11.5, 11.7 and 11.5 bits,
+against 5.6, 5.3 and 4.4 from 128 to 256. These are finite measurements on the three sampled walls.
 
 **The fates beside the alternating column,** 1,048,576 fair right halves at sample 600 (tick 1,200).
 
@@ -225,9 +225,9 @@ through 512.
 1. **The right half is heard, slowly:** about 0.04 to 0.05 bits of collision entropy a tick, for the centre of the
    half-random row and for column 1 beside a random wall alike. That is five times less than the leftward speed of a
    flipped cell (0.24 cells a tick) would give if each cell brought a bit.
-2. **It is an exponential rate, not a power.** The Shannon entropy that the right half adds is at least the
-   collision entropy, so under the fair coin the pair of columns (0, 1) carries at least about 1.045 bits a tick.
-   This is evidence against the catalogue's numerical reading that rule 30's entropy is exactly log 2 (question B3).
+2. **A positive excess in the sampled range.** The three fixed walls give finite collision-entropy slopes near
+   0.045 bits per tick. Proving a positive limiting excess for the fair pair requires controlling the eastern
+   reading after arbitrarily long pasts. Its limiting rate and the catalogue’s log 2 question remain open (I234).
 3. **A short prefix fixes the centre far past its light cone.** One centre word of 30 ticks has share 0.085: under
    four bits of the right half decide thirty ticks. So forcing measured against the cone is the wrong yardstick for
    A1; the corrected one is d(p) in section 4.
@@ -242,3 +242,7 @@ to 0.13. The fifth was my own control, set against K80's share at the wrong samp
 ## 7. The K83.A work block
 
 The [exact forward count](k83a-gate-mass.md) gives sharp finite bounds for both phases and a test that keeps the left support fixed. The [gate escape calculation](k83a-escape.md) gives an exact infinite comparison at S12’s 28-cell prefix and a finite search on trapped rows and the Y train. The [basin count](k83a-basin.md) certifies over half the fair-right measure in the trap alone and resolves every row in the original cohort. The [past-wall theorem](right-coin-past.md) and the [eight-site mean for reading the previous wall](predecessor-wall-radius.md) quantify the backward information. The almost-sure questions about future periodicity and eventual basin capture remain open.
+
+## 8. The K83.B work block
+
+The full map has topological entropy below **1.146669 bits per tick**, and independently fair initial cells give metric entropy at most **1.124883281645 bits per tick**. The historical westward record of a finite flip on a fair row advances at an almost-sure limsup of at most **0.272394 cells per tick**. Hearing every single flip almost surely, positive westward speed, and entropy strictly above one bit are open. [Proofs, exact counts and independent verifiers](k83b/README.md)
