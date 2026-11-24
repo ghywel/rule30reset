@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 20:01 UTC by gptM5 (R117, I77).*
+Updated 2026-11-24 20:04 UTC by gptIntel (I224, M9 parked).*
 
 ## Arrangement
 
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M172, gptM5 R117, claudeCloud K82, gptIntel I223 and claudeIntel N13.
+- **Last posts:** claudeM5 M172, gptM5 R117, claudeCloud K82, gptIntel I224 and claudeIntel N13.
 
 ## Needs the owner
 
@@ -107,7 +107,6 @@ table for the lists below. The rules are in METHOD §8.
 | Pull | Written | Summary | Status | Submission? |
 |---|---|---|---|---|
 | N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress with claudeIntel.* S11, golden half-circles at every phase, is in the kit. **PROVED IN LEAN, read (N13, I221):** [one arc of any length, at every irrational angle, started on the orbit of either end](research/kit-repair/R30-20261029-0ef6e2/endpoint/README.md), and its block codes. Half-circles have slack 2. This contains the hand theorem of [silver-pell.md](research/kit-repair/R30-20261029-0ef6e2/silver-pell.md) (I123, N7). Proved by hand and read: the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md) (I127, I128, N8). Silver off the cut orbit rests on computed bounds (I146, K72). **Next:** (1) S19’s packet a is out for reading (M172); (2) the metric theorem; (3) an exact silver cover. A free start cannot be settled by near-squares alone for every phase, as far as the data show (N13). | **S19 proposed** (N13) |
-| M9 | 17 Nov, claudeM5 | Why does a lone 1 force a word out of the trapped gate? (The late gate language inside the trap.) | *In progress with gptIntel (I223).* Inside the trap the gate settles to a fixed process. Four of its exclusion laws and the width-45 threshold are S10, in the kit. The [final K65 sieve](research/m9/data/gptIntel-sieve-final-K65.txt) has 23 certified onsets and 67 survivors through delay 40 or more, and all 18 newly judged laws contain a run of 1 (I140, I142). The entropy is undecided (I106), and absence from real rows is not a law (M85, M106). **Next:** one block on a hand reason for the pair (5, 1) from delay 12, the only judged two-run law. If no local reason appears, park it with the sieve table. The exterior half, X and Y, is K50.1's (K77, K78). | S10 posted and in the kit; the rest: no |
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | N12’s nine-gap factor (a,12,14,12,12,10,9,10,b), a=10 or 14, b=10 or 12, **COMPUTED; carrying PASS** (R117). The full four-letter width-29 replay gave zero differing pairs. **COMPUTED:** successive occurrences are at least 11 pulses apart. **PROVED IN LEAN:** at distances 7–9, two occurrences capture every right half in G. [Read, controls and reproduction](research/white-gap-mixtures/gptM5-n12-return-read.md). **Next:** carry the two unobserved cells across every distance-11 path and test physical continuity. | S8 is in the kit. The close-return capture has a standalone Lean proof ready for independent read. Full nine-gap necessity and eleven-pulse spacing need compact certificates. |
 | I66 | 21 Nov, gptIntel | Lowry’s source arrivals under periodic centres, and source priority | [I216](research/arrivals/uniform/README.md) proves M165’s uniform entry in Lean. Sample 35 is attained by a finite half with eight black sites. The nine gap pairs apply to every right half from that sample. | S17 and S18 are posted (M164, M171). |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | *In progress:* claudeM5 and gptM5 ([report](research/r5/README.md)). **PROVED IN LEAN:** recurrent fronts of the ether move on one path for every right side (M134, read by gptM5); the exact first departure after a 22-site prefix exit, 49 or 52 ticks (R97, read by claudeM5); no half that carries 20 ether columns, or 16 white cells, enters the kit's 15-trap (M137, read by gptM5 in R98). **COMPUTED:** the only component reached after departure is the 22-column giant (I173, I177); the traps of 001 share a 34-column trunk; a census of every wall with labels to 30 finds no gate but 1100000 and 11000, none for 011, and a **fifth trap** that refutes entry into the four known (M137). CONJECTURE: every finite half's gate is eventually one of those two. **PROVED (M153, I208):** each finite half enters the least nonempty closed 14-cell trap, at every gate tick from 3 D + 170 or 3 D + 820. The portable proof rules out slopes below 5/2. The period-two analogue remains open. Open: that a finite half ever passes the last rung. **Next:** a periodic trap beside 011, labels 33. | **S14** (M142) and **S16** (M159) are posted and in the kit |
@@ -116,6 +115,8 @@ table for the lists below. The rules are in METHOD §8.
 
 One dated entry each, with what would bring it back (METHOD §3, the incubator). A route that stopped with a condition
 that would reopen it is here, not under closed (the owner, 23 November). Glance down the list at session start.
+
+- **M9, lone 5-gaps inside the trap** (parked 24 Nov, I224). The pair (5, 1) can start after eleven trapped samples. Its two candidate spatial prefixes have physical histories of at most 11 and 10 samples. A later strip occurrence requires a black cell at site 37 to disappear beside a white western neighbour. Reopen for a hand derivation of the two possible starts or a rule predicting another lone-1 exclusion. [Proofs and controls](research/m9/late-pair.md) · [K65 sieve, 23 certified onsets and 67 survivors](research/m9/data/gptIntel-sieve-final-K65.txt). S10 is in the kit. The entropy is open. X and Y belong to K50.1.
 
 - **K50.2, Lowry’s event returns and the finite left seeds** (parked 24 Nov, I197). The full six-cell strip leaves 5, 11 and 22 kit seed classes and admits every 3/5 schedule. Reopen with a finite-support weight argument or a strip constraint that removes part of that class. [Results and exact residues](research/k50_2/finite-left.md)
 
