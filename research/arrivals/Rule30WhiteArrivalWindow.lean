@@ -81,18 +81,18 @@ def decode (f : Nat → Bool) : Bool :=
 def validEdges (r : Nat → Row) (n : Nat) : Bool :=
   (List.range n).all fun i => edge (r i) (r (i+1))
 
-private def children (r : Row) : List Row :=
+def children (r : Row) : List Row :=
   [false,true].flatMap fun x => [false,true].map fun y => tick (tick r false x) true y
 
-private def advance (rows : List Row) := (rows.flatMap children).eraseDups
+def advance (rows : List Row) := (rows.flatMap children).eraseDups
 
-private theorem child_of_edge {x y : Row} (step : edge x y = true) : y ∈ children x := by
+theorem child_of_edge {x y : Row} (step : edge x y = true) : y ∈ children x := by
   simp [edge] at step
   rcases step with (h|h)|(h|h) <;> subst y <;> simp [children]
 
-private def allRows := (List.range 64).map (BitVec.ofNat 6)
+def allRows := (List.range 64).map (BitVec.ofNat 6)
 
-private theorem has_row (x : Row) : x ∈ allRows :=
+theorem has_row (x : Row) : x ∈ allRows :=
   List.mem_map.mpr ⟨x.toNat, List.mem_range.mpr x.isLt, by simp⟩
 
 /-- Follow both possible source readings for this gate word. Each branch
@@ -105,14 +105,14 @@ private def inspect (gs : List Bool) (rows : List Row) (history : List Bool)
     let same := rows.filter (fun x => (gate x == g) && (reading x == a))
     same.isEmpty || inspect tail (advance same) (history ++ [a]) test
 
-private def samples (f : Nat → Bool) (n : Nat) : List Bool :=
+def samples (f : Nat → Bool) (n : Nat) : List Bool :=
   List.ofFn (fun i : Fin n => f i.val)
 
-private theorem samples_succ (f : Nat → Bool) (n : Nat) :
+theorem samples_succ (f : Nat → Bool) (n : Nat) :
     samples f (n+1) = f 0 :: samples (fun i => f (i+1)) n := by
   simp [samples, List.ofFn_succ]
 
-private theorem get_sample (f : Nat → Bool) {n i : Nat} (h : i<n) :
+theorem get_sample (f : Nat → Bool) {n i : Nat} (h : i<n) :
     (samples f n).getD i false = f i := by
   simp [samples, List.getD_eq_getElem?_getD, h]
 
@@ -175,7 +175,7 @@ private theorem any_mem {α : Type} {p q : α → Bool} (l : List α)
     simp only [List.any_cons, agree x (List.mem_cons_self ..),
       ih (fun y hy => agree y (List.mem_cons_of_mem x hy))]
 
-private theorem clean_ext {f h : Nat → Bool} (n : Nat) (eq : ∀ i, i<n → f i = h i) :
+theorem clean_ext {f h : Nat → Bool} (n : Nat) (eq : ∀ i, i<n → f i = h i) :
     clean f n = clean h n := by
   unfold clean
   apply all_mem
