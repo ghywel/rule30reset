@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 19:15 UTC by gptM5 (R113, S18 packet b release read passed).*
+Updated 2026-11-24 19:17 UTC by gptIntel (I220, author agreement on S18 packet b).*
 
 ## Arrangement
 
@@ -14,7 +14,7 @@ Updated 2026-11-24 19:15 UTC by gptM5 (R113, S18 packet b release read passed).*
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 is in the kit and S17 in kit PR #418 (M164). S18’s packet b passed the release read (R113). R5 next: a periodic trap beside 011 |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | S18’s packet b passed the scoped release read (R113). I77: N12’s carrying read and replay are asked (13:36 today) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S18 is its author’s; agreement to packet a recorded (I219), carrying read of S19 underway. N12’s one-lane read passed (I217). Both general Y runs continue (I212) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S18 is its author’s; agreement to packet b recorded (I220), carrying read of S19 underway. N12’s one-lane read passed (I217). Both general Y runs continue (I212) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | M165’s block is returned (N13): N6’s endpoint theorem in Lean, for any arc; S19 proposed, waiting for a carrying read. N12’s one-lane read passed (I217) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
@@ -23,13 +23,13 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M169, gptM5 R113, claudeCloud K82, gptIntel I219 and claudeIntel N13.
+- **Last posts:** claudeM5 M170, gptM5 R113, claudeCloud K82, gptIntel I220 and claudeIntel N13.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- None. S18’s packet b passed the release read (R113). M169 calls for gptIntel’s scoped author agreement before the builder asks for the word to post. S19 is proposed (N13) and waits for its carrying read.
+- None. The owner gave the word to post S18 (M170).
 
 ## Direction
 
@@ -88,7 +88,7 @@ S1 to S17 are posted, **Lean Verified** and **Human Verified** (public list, 24 
 | **S15** | One column shows the 829-window trap: 48 clean readings, or 47 after the first white tick, for every right half, both least for a uniform test; nine certifying words; sharp delays. Problem 1, partial. | I152, I181, I190, R100 | [R30-20261124-4eb126](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-4eb126), Lean Verified (M150). Reads: R100, [R101](research/wheel/s15/r101-release-read.md), [M144](research/wheel/claudeM5-i175-read.md), I195 | **In the kit** at `a09d6c6` ([#412](https://github.com/WolframInstitute/Rule30PrizeKit/pull/412)), `Rule30GateObserver` and a data module (M153) |
 | **S16** | Every finite right half beside 001 or 011 enters the least nonempty closed set of 14-cell windows in linear time; no slope below 5/2 would do. Problem 1, partial. | R5, M152, I206 | [R30-20261124-629dac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac) (M159): **Lean Verified**. [Packet b](research/r5/s16/); reads [I206](research/r5/s16/i206-carrying-read.md), [R107, R108](research/r5/s16/gptM5-packet-a-review.md) on packet a, [I208](research/r5/s16/gptIntel-packet-b-review.md) PASS on b; gptM5’s release read superseded (M161) | **In the kit** at `88fdac9` ([#415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415), R109). |
 | **S17** | If the singleton centre eventually alternates, each phase of Lowry’s source net and shell is aperiodic. Problem 1, partial. | I66, I203, M156, I211 | [R30-20261124-6af182](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-6af182) (M164): **Lean Verified**, **Human Verified**. [Packet c](research/arrivals/s17/) passed by gptM5 ([R111](research/arrivals/s17/gptM5-packet-b-review.md#packet-c-release-read)); gptIntel also agreed to the posted packet c (I215) | [#418](https://github.com/WolframInstitute/Rule30PrizeKit/pull/418), from patch `1df97a90…` on `88fdac9`, open |
-| **S18 proposed** | Every right half beside an alternating column enters S17’s 777-window set by white sample 35, sharply. An eventual kick every fourth sample is impossible. | M165, [I216](research/arrivals/uniform/README.md) | Problem 1 partial. [Packet b](research/arrivals/s18/) (M169) makes [R112’s](research/arrivals/s18/gptM5-release-review.md) corrections to a; carrying read PASS (M166); the author agreed to a (I219); [R113](research/arrivals/s18/gptM5-release-review.md#packet-b-release-read) passes b; scoped author agreement to b awaited | Patch `1d1d5c61…` on #418’s `43e938c`; 351 jobs; opens after #418 |
+| **S18 proposed** | Every right half beside an alternating column enters S17’s 777-window set by white sample 35, sharply. An eventual kick every fourth sample is impossible. | M165, [I216](research/arrivals/uniform/README.md) | Problem 1 partial. [Packet b](research/arrivals/s18/) (M169) makes [R112’s](research/arrivals/s18/gptM5-release-review.md) corrections to a; carrying read PASS (M166); the author agreed to a (I219); [R113](research/arrivals/s18/gptM5-release-review.md#packet-b-release-read) passes b; author agrees to b (I220) | Patch `1d1d5c61…` on #418’s `43e938c`; 351 jobs; opens after #418 |
 | **S19 proposed** | Every word of one arc of any length, at any irrational angle, started on the orbit of an end of the arc, and every block code of it, is excluded as the right neighbour of an alternating column on its white ticks, for a row with a leftmost black cell. Problem 1, partial. | N6, M165, [N13](research/kit-repair/R30-20261029-0ef6e2/endpoint/README.md) | Not read; not packaged | Module ready on `88fdac9` |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `88fdac9` (R109).
