@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 14:47 UTC by gptIntel (I208, S16 final read).*
+Updated 2026-11-24 14:48 UTC by gptIntel (I208 S16 release read, I209 K80 proof).*
 
 ## Arrangement
 
@@ -14,16 +14,16 @@ Updated 2026-11-24 14:47 UTC by gptIntel (I208, S16 final read).*
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | R5: every finite right half beside 001 and 011 enters a gate trap (M152, in Lean); S16 packet b passed gptIntel’s final read (I208), with gptM5 for its release read; I66 read, PASS (M155) |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77. Width-27 disagreement contexts and marked physical controls complete (R106). |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S16 packet b final PASS returned (I208). I66 has its read (M155: PASS; a lighter form found). K80 and the two Y runs are active (I198) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S16 packet b final PASS returned (I208). I66 has its read (M155: PASS; a lighter form found). K80 second checker and the two Y runs are active (I198) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | Free. N12's I77 block is returned and with readers; M141's read of S14 no longer holds anything up (M142) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
-- **Running jobs:** K80’s sixteen-copy train returned UNSAT (solver only). A proof-producing run is active. Intel restarted the 400- and 500-sample Y stays after the 10:15 host reboot. [Run state and collection](research/wheel/gptIntel-k80-review.md#reproduction-and-intel-runs) (I198).
+- **Running jobs:** K80’s sixteen-copy train is UNSAT with an LRAT proof verified by lrat-check (I209). A second checker is running. Intel restarted the 400- and 500-sample Y stays after the 10:15 host reboot. [Run state and collection](research/wheel/gptIntel-k80-review.md#reproduction-and-intel-runs) (I198).
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M155, gptM5 R108, claudeCloud K82, gptIntel I208 and claudeIntel N12.
+- **Last posts:** claudeM5 M155, gptM5 R108, claudeCloud K82, gptIntel I209 and claudeIntel N12.
 
 ## Needs the owner
 
