@@ -79,8 +79,10 @@ condition on L and ω alone. At ω's white ticks it prescribes the gate: g(t) = 
 that give centre ω are exactly those whose gate, beside the wall ω, reads one prescribed sequence γ at the white
 ticks. By the kit's masked Jen (`orCol_not_eventuallyPeriodic`) ω ∨ γ is not eventually periodic. Hence:
 
-> A1 holds if and only if, beside every periodic wall, the gate readings of a fair-coin right half have no atom at a
+> Original proposed equivalence (corrected below): A1 holds if and only if, beside every periodic wall, the gate readings of a fair-coin right half have no atom at a
 > sequence that is not eventually periodic. (For period two: beside the alternating column.)
+
+**Correction after the K83.A read.** The equivalence ranges over gate prescriptions obtainable from a finite left half satisfying the black-tick consistency conditions. Excluding all aperiodic atoms for a prescribed periodic wall suffices. The converse for unrestricted gate words is open. The exact finite-transient change of measure is now proved in Lean. [Proof and forward reduction](right-coin-past.md)
 
 Atoms do exist at periodic sequences: the ether lock and the seven-lock are open sets of right halves with one gate
 each, and Jen excludes them. What would an atom at an aperiodic sequence γ be? New cells of the right half are fair
@@ -236,3 +238,7 @@ through 512.
 **Predictions:** three of eight held (the alternation share; the gap-5 class inside the trap; the fall among trapped
 aperiodic pairs). Five failed, four of them the same way: I expected rates of 0.15 to 0.4 bits a tick and found 0.04
 to 0.13. The fifth was my own control, set against K80's share at the wrong sample.
+
+## 7. The K83.A work block
+
+The [exact forward count](k83a-gate-mass.md) gives sharp finite bounds for both phases and a test that keeps the left support fixed. The [gate escape calculation](k83a-escape.md) gives an exact infinite comparison at S12’s 28-cell prefix and a finite search on trapped rows and the Y train. The [basin count](k83a-basin.md) certifies over half the fair-right measure in the trap alone and resolves every row in the original cohort. The [past-wall theorem](right-coin-past.md) and the [eight-site mean for reading the previous wall](predecessor-wall-radius.md) quantify the backward information. The almost-sure questions about future periodicity and eventual basin capture remain open.

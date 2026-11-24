@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-24 20:28 UTC, 420 entries, 60 portal-only -->
+<!-- portal-list: 2026-11-24 21:24 UTC, 421 entries, 61 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-24 20:28 UTC (420 entries)
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-24 21:24 UTC (421 entries)
 and kit main `ebda8ce` (I226). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 60 of the 420 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 61 of the 421 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -25,15 +25,15 @@ and kit main `ebda8ce` (I226). Find new portal-only entries with `python3 tools/
 
 | Class | Entries |
 |---|---|
-| Missed | 12 |
+| Missed | 13 |
 | Port | 3 |
 | Pending | 4 |
 | Check | 8 |
 | Covered | 7 |
 | Below the bar | 26 |
-| All | 60, of them 19 ours |
+| All | 61, of them 19 ours |
 
-## Missed (12)
+## Missed (13)
 
 Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-request candidates. For others', credit them when building on them, and they can be raised with their authors.
 
@@ -51,6 +51,7 @@ Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-r
 | [R30-20261123-18585c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-18585c) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified, Human Verified | Dyer: the same for b = 4 and q ≥ 7, for b = 8 and q ≥ 16, and for q = 16 and b ≥ 5 (`two_run_family_b48`). | As 9c655c. It credits our 5e2b66 for three of the b = 4 words. Posted today; no kit PR yet. | A |
 | [R30-20261123-e99565](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-e99565) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified | A ranked strip certificate excludes an eventual word at any column of a configuration with a leftmost black cell. The existing mixed-block grammars extend to every nonzero finite configuration. | Extends ranked-word soundness from the single-seed centre. | A |
 | [R30-20261123-cade33](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-cade33) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified | At every column of a configuration with a leftmost black cell, excludes free mixtures from seven run categories and all mixtures with black runs at least 5 and white runs at least 16. | Two mixed-block grammar families beyond the kit’s centre-column grammars. | A |
+| [R30-20261124-681a26](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-681a26) | 2026-11-24 | G.P.J.W. Quint; Gemini (Google) | Lean Verified | For every right half driven by 001, phase-1 gate words 010, 101 and 1001 are excluded from sample 7, 8 and 13 respectively, each sharp. Nine words are excluded from 13. A 10 transition starting at or after 13 forces both colours to recur. The singleton exclusion still assumes `C3g001Sharp`. | `Rule30PeriodThreeEntry.avoids_001` gives eight bans after trap entry. Together with its entry-or-constant dichotomy they already imply the listed eventual periodic classifications through period 10. The uniform sharp onsets apply before entry as well. | S |
 
 ## Port (3)
 

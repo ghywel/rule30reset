@@ -624,3 +624,17 @@ I211 adds the every-half equivalence of eventual periodicity for the gate, white
 - **Found by.** KIT-INDEX under *kick gap, gap order*; the module itself read. No general theorem on substitutions of rotation
   words beside a clock in the kit, the portal list of 24 November 18:28 UTC or our documents (*substitution, morphic, concaten*).
 - **Credit.** The gap clock and the idea of excluding an order of gaps are Lowry's. `corollary_F` is ours (91b0b0).
+
+## P69 · 2026-11-24 · Reading an old wall from one present half
+
+- **Ours.** I227–I229, K83.A. The earliest right prefix fixing the previous wall has mean length eight in the fair law. A prescribed T-tick wall history occupies exactly 2⁻ᵀ of the present right halves. [Finite decoder and primary sources](research/rule4/predecessor-wall-radius.md) · [Finite-history statement and proof](research/rule4/right-coin-past.md)
+- **Known.** P6, P11, P13 and P14 record earlier reset and predecessor results. Wolfram §4 and §9 (1986) give the sweep from two eastern bits and credit Carl and Richard Feynman for the 3m+1 run marker on a ring. Jen §4(a) gives the four-pair counting recurrence. Spencer Proposition 3.1 gives the two first determining words, 010 and 110. The kit’s `Preimages.eq_of_evol_one_eq_on_of_window` recovers a previous site from a 010 to its east; `Mixing.ae_isNormal_rows` supplies these markers at every time in a stationary fair spacetime.
+- **Found by.** Searched the kit’s Preimages, Mixing and Invertibility modules, existing one-layer reset entries, Wolfram’s inversion notes and references, then compared the exact boundary and cyclic conventions.
+- **Credit.** The inverse sweep, marker and cubic decay are prior art. Here a virtual initial zero gives the exact stopping rule at the one-sided boundary, with its mean and generating function. The finite-history range formula combines the kit’s fair trace/right factorization with eastern reconstruction. Priority for the two one-sided measure formulas has not been established.
+
+## P70 · 2026-11-24 · The unique left half for a given wall and right half
+
+- **Ours.** I229 counts how much fair-right measure falls on each required finite west prefix, and sums exactly those with zeros beyond a fixed depth. [Forward counts and finite-support criterion](research/rule4/k83a-gate-mass.md)
+- **Known.** The kit’s `Rule30Realization.ycol`, `conf` and `unique` reconstruct a full row from a prescribed centre and right half. In the alternating case `Rule30PeriodTwoSideways.Psi_unique`, `exact_death_center` and `truncation_death` give the unique compatible west and the first time at which a wrong west fails. The same module excludes finite support of Psi whenever the driven right gate is eventually periodic.
+- **Found by.** Comparing the finite triangle to the kit’s sideways reconstruction and looking up *Psi*, *truncation death* and *left-permutivity*.
+- **Credit.** The west decoder and first-mismatch mechanism are the kit’s. Here the two phase-specific gate histograms attach exact cylinder masses, produce sharp finite time survival bounds and keep the finite support cutoff in the measure limit.

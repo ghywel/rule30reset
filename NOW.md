@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 21:39 UTC by claudeIntel (N15 addendum 1, the owner on S11).*
+Updated 2026-11-24 21:48 UTC by gptIntel (I229, K83.A returned).*
 
 ## Arrangement
 
@@ -14,7 +14,7 @@ Updated 2026-11-24 21:39 UTC by claudeIntel (N15 addendum 1, the owner on S11).*
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 is in the kit and S17 in kit PR #418 (M164). S18 is Lean Verified; its kit PR waits for #418 (M171). S19: packet b is out for reading (M175). R5 next: a periodic trap beside 011 |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77’s N12 carrying read and return-spacing block are complete (R117). S19 packet b is queued for release read (M175) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | Woken by the owner, 24 November, to look for Mathlib and portal-only questions we passed over: [the note](research/rule4/README.md) and two pulls are in K83; its probe has run (K83 addendum 1). Not on a block |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S19 packet b source passed; two wording repairs returned (I226). Both general Y runs continue (I212) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | K83.A returned (I229). N15 carrying read in hand. Both general Y runs continue (I212) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | S19: packet b held (N14); the block form is in Lean (N15) and waits for a carrying read. N12’s reads are complete (I217, R117) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M175, gptM5 R117, claudeCloud K83, gptIntel I228 and claudeIntel N15.
+- **Last posts:** claudeM5 M175, gptM5 R117, claudeCloud K83, gptIntel I229 and claudeIntel N15.
 
 ## Needs the owner
 
@@ -54,7 +54,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **The owner, 24 November:** claudeM5 checks this file and assigns a block each to gptIntel and claudeIntel (M165).
 
-- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19: packet b is held (N14); its block form is in Lean and asks for a carrying read (N15). claudeCloud: the Mathlib questions we passed over, K83, with a first probe run on pulls K83.A and K83.B (addendum 1); gptIntel has taken K83.A (I227). The two Intel Y runs continue.
+- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19: packet b is held (N14); its block form is in Lean and asks for a carrying read (N15). claudeCloud: the Mathlib questions we passed over, K83, with a first probe run on pulls K83.A and K83.B (addendum 1); K83.A returned for a read (I229). The two Intel Y runs continue.
 - **On offer, none started:**
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
     K50);
@@ -110,7 +110,7 @@ table for the lists below. The rules are in METHOD §8.
 | I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | N12’s nine-gap factor (a,12,14,12,12,10,9,10,b), a=10 or 14, b=10 or 12, **COMPUTED; carrying PASS** (R117). The full four-letter width-29 replay gave zero differing pairs. **COMPUTED:** successive occurrences are at least 11 pulses apart. **PROVED IN LEAN:** at distances 7–9, two occurrences capture every right half in G. [Read, controls and reproduction](research/white-gap-mixtures/gptM5-n12-return-read.md). **Next:** carry the two unobserved cells across every distance-11 path and test physical continuity. | S8 is in the kit. The close-return capture has a standalone Lean proof ready for independent read. Full nine-gap necessity and eleven-pulse spacing need compact certificates. |
 | I66 | 21 Nov, gptIntel | Lowry’s source arrivals under periodic centres, and source priority | [I216](research/arrivals/uniform/README.md) proves M165’s uniform entry in Lean. Sample 35 is attained by a finite half with eight black sites. The nine gap pairs apply to every right half from that sample. | S17 and S18 are posted (M164, M171). |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut 001 ether go after it first departs? | *In progress:* claudeM5 and gptM5 ([report](research/r5/README.md)). **PROVED IN LEAN:** recurrent fronts of the ether move on one path for every right side (M134, read by gptM5); the exact first departure after a 22-site prefix exit, 49 or 52 ticks (R97, read by claudeM5); no half that carries 20 ether columns, or 16 white cells, enters the kit's 15-trap (M137, read by gptM5 in R98). **COMPUTED:** the only component reached after departure is the 22-column giant (I173, I177); the traps of 001 share a 34-column trunk; a census of every wall with labels to 30 finds no gate but 1100000 and 11000, none for 011, and a **fifth trap** that refutes entry into the four known (M137). CONJECTURE: every finite half's gate is eventually one of those two. **PROVED (M153, I208):** each finite half enters the least nonempty closed 14-cell trap, at every gate tick from 3 D + 170 or 3 D + 820. The portable proof rules out slopes below 5/2. The period-two analogue remains open. Open: that a finite half ever passes the last rung. **Next:** a periodic trap beside 011, labels 33. | **S14** (M142) and **S16** (M159) are posted and in the kit |
-| K83.A | 24 Nov, claudeCloud | The coin on the right: with a finite left half and a fair-coin right half, is the centre almost surely not eventually periodic? RD and the coupled question for almost every right half. | **In progress with gptIntel (I227).** The question reduces to atoms of the gate readings beside a periodic wall (PROOF-SKETCH, unread). MEASURED (K83 addendum 1): the centre of the half-random row gains 0.041 bits of collision entropy a tick; fates at sample 600: trap 0.9625, ether gate 0.0259, loop 2, 5: 0.0114; no aperiodic atom seen. [Note](research/rule4/README.md). **Next:** by solver, the number of fresh cells it takes to derail a gate, along prefixes of trapped halves, long trains and lock-bound halves. | no. Would be Mathlib, portal only (METHOD §12, rule 4) |
+| K83.A | 24 Nov, claudeCloud | With a fixed finite left and fair east, is the centre almost surely aperiodic? What enters the alternating wall’s trap or locks? | **Block returned (I229); A1 and A2 open.** [Exact forward bounds](research/rule4/k83a-gate-mass.md) and [seven/one escape](research/rule4/k83a-escape.md). [Trap alone ≥51.4395%](research/rule4/k83a-basin.md). [Past-wall measure law in Lean](research/rule4/right-coin-past.md). **Next:** prove survival tends to zero at each fixed west-support width; independent read requested. | No S number. The Mathlib half-line result awaits a carrying and prior-art read. |
 | K83.B | 24 Nov, claudeCloud | How fast is the right side heard: is rule 30's entropy strictly above log 2, and below the kit's log 3? | **Preliminary; free.** The kit's Mathlib catalogue reads log 2 from counts to 18 ticks. MEASURED (K83 addendum 1): beside three fair-coin walls column 1 gains 0.045 bits of collision entropy a tick, exponentially, which points above log 2. **Next:** exact pair-word counts past 18 ticks; a construction that proves the extra entropy. | no. Would improve a row of the kit's `equivalents/` |
 
 ## Parked
