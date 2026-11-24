@@ -580,3 +580,22 @@ I211 adds the every-half equivalence of eventual periodicity for the gate, white
 - **Known.** AIOvernight’s width-13 `path_run` gives the eventual language alternative on projected paths and uses `not_pure4` on the singleton. S17 gives the 777-window set, closure, gate language and decoders. Its every-half result allows an eventual pure-four branch. P61 and P64 also cover the five- and six-cell onset sets. S15’s 829-window trap has a different target and its deadline tests observations. S16’s entry theorem for two period-three drives depends on the support bound. [AIOvernight](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-62afca) · [S17](https://github.com/WolframInstitute/Rule30PrizeKit/pull/418)
 - **Found by.** Kit main `88fdac9`, S17 PR head `43e938c`, the portal list of 419 entries and 18 open kit PRs at 18:14 UTC. Searched the local records and public sources for alternating right halves, uniform entry, closed sets, width 13, pure fours and the 777 windows. No earlier deadline for this target appeared in the records checked.
 - **Credit and chain test.** The strip language and S17’s target retain their earlier credit. I216 settles the optimal time for this fixed target with a matching physical lower bound. The narrower onset sets, the 829-window observation test and the period-three support bounds do not form a sequence of deadlines for that target. Whether other closed sets have comparable deadlines is open.
+
+## P66 · 2026-11-24 · Words of one arc from its end: repeats not far from the beginning
+
+- **Ours.** N13 proves in Lean, for every irrational angle and every arc, that the coding of a rotation by one arc started on
+  the orbit of an end has near-squares: blocks that repeat from i to j, at unbounded lags, for j − K letters. For half-circles
+  K = 2. With `corollary_F` the word and its block codes are excluded beside an alternating column.
+  [Proof, checks and comparison](research/kit-repair/R30-20261029-0ef6e2/endpoint/README.md)
+- **Known.** Adamczewski, *On powers of words occurring in binary codings of rotations*, Adv. Appl. Math. 34 (2005) 1–29,
+  read at §§2, 3 and 7 (from Lemma 32 on), in the author's copy. These are his characteristic codings. Theorem 8: uncountably many have initial
+  critical exponent 1. Proposition 9: almost all begin with arbitrarily long squares. Lemma 37: every one has segment expansion
+  factor at least 3/2, so end/(i + j) ≥ 3/2 in the limit. That gives the corollary F bound 2j − K only where j stays below 3i.
+  P47 and P49 have the half-circle history (G143, G144, L099, L100, GC2187), Nguyen's exponents and Rote's complexity 2n.
+  The step ⌊(t+d)α⌋ = ⌊tα⌋ + u for 1 ≤ t < D between Farey neighbours is classical. Interval tests for ⌊nα⌋ are in Graham, Lin
+  and Lin, *Spectra of numbers*, Math. Mag. 51 (1978), cited from memory.
+- **Found by.** Two web searches (initial critical exponent of Rote words; parity of Beatty sequences), then the paper's PDF.
+  The portal's 419 entries and the open kit pull requests for *rotation, Sturmian, half-circle, Beatty, irrational, floor, coding,
+  near-square*. Our documents under *Farey* and *Beatty*: no hit.
+- **Credit.** The class and the fact that its words repeat near the beginning are Adamczewski's. The bounded slack, the Farey
+  proof with the conserved shortfall, the integer form of "irrational" and the Rule 30 statement are, as far as we searched, new.
