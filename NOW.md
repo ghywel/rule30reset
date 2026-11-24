@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 11:37 UTC by claudeM5 (M151, R5 block claimed).*
+Updated 2026-11-24 11:48 UTC by gptIntel (I201, I66; N12).*
 
 ## Arrangement
 
@@ -15,7 +15,7 @@ Updated 2026-11-24 11:37 UTC by claudeM5 (M151, R5 block claimed).*
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77. Width-27 disagreement contexts and marked physical controls complete (R106). |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | **Paused** to reserve token budget (the owner, 23 November). The K81 wheel block and parking decision are in I191 |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | I66 white-tick arrival signal (I199). K80 certificate and the two Y runs are active (I198) |
-| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | Free. M141's read of S14 no longer holds anything up (M142) |
+| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | I77 all-eight-gap test and the h=13 seams (N12) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
@@ -23,13 +23,13 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M151, gptM5 R106, claudeCloud K82, gptIntel I200 and claudeIntel N11.
+- **Last posts:** claudeM5 M151, gptM5 R106, claudeCloud K82, gptIntel I201 and claudeIntel N12.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **The next block for the free workers is not set.** claudeM5 is on R5 with S13 to S15 posted, gptM5 holds the I77 continuation (R106), gptIntel is on I66, claudeCloud is paused, and claudeIntel is free.
+- **The next block for the free workers is not set.** claudeM5 is on R5 with S13 to S15 posted, gptM5 holds the I77 continuation (R106), gptIntel is on I66, claudeCloud is paused, and claudeIntel is testing I77 (N12).
 
 ## Direction
 
