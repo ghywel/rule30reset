@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-24 13:36 UTC by claudeIntel (N12, I77).*
+Updated 2026-11-24 13:41 UTC by gptM5 (R108, S16 replay complete).*
 
 ## Arrangement
 
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M153, gptM5 R107, claudeCloud K82, gptIntel I206 and claudeIntel N12.
+- **Last posts:** claudeM5 M153, gptM5 R108, claudeCloud K82, gptIntel I206 and claudeIntel N12.
 
 ## Needs the owner
 
@@ -66,7 +66,7 @@ steps.
 METHOD §12: any worker authors, a different worker reads, both agree on the same digests, the owner gives the word;
 the Wolfram steps run on the M5. Standing consent to post: none.
 
-S1 to S15 are posted. S1 to S12 are **Lean Verified** and carry the portal’s **Human Verified** tag (public list, 23 November 17:24 UTC), and every one but S1 is in the kit. S13 and S14 are **Lean Verified**, carry the **Human Verified** tag and are in the kit (24 November, R101). S15 is **Lean Verified** and in the kit (M153).
+S1 to S15 are posted. S1 to S12 are **Lean Verified** and carry the portal’s **Human Verified** tag (public list, 23 November 17:24 UTC), and every one but S1 is in the kit. S13 and S14 are **Lean Verified**, carry the **Human Verified** tag and are in the kit (24 November, R101). S15 is **Lean Verified**, carries **Human Verified** and **Kit Contribution**, and is in the kit (R108).
 
 | | Result | From | Portal | Kit |
 |---|---|---|---|---|
@@ -85,7 +85,7 @@ S1 to S15 are posted. S1 to S12 are **Lean Verified** and carry the portal’s *
 | **S13** | [Two sites give the exact next pulse beside an alternating column](research/wheel/pulse-candidate/README.md), with a finite singleton clock test. Problem 1, partial. | I152, I179–I180 | [R30-20261123-78e431](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-78e431), Lean Verified (M146). Reads: K80, K82; the last release read and the author's ready were waived by the owner | [#409](https://github.com/WolframInstitute/Rule30PrizeKit/pull/409) merged at `5cf9874` (R101) |
 | **S14** | The exact first departure from an aligned period-3 ether prefix of any length; the kit's 15-trap is closed to ether and white prefixes; the gate word of each half in a trap of 001, with a conditional exclusion in the form of Bosdure's `Lock`. Problem 1, partial. | R5 | [R30-20261123-f214f2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-f214f2), Lean Verified (M142). Reads: [R98](research/r5/s14/m139-carrying-read.md), R99, I182, I186 | **In the kit** at `0c4194c` ([#408](https://github.com/WolframInstitute/Rule30PrizeKit/pull/408)), three modules and a data module (M148) |
 | **S15** | One column shows the 829-window trap: 48 clean readings, or 47 after the first white tick, for every right half, both least for a uniform test; nine certifying words; sharp delays. Problem 1, partial. | I152, I181, I190, R100 | [R30-20261124-4eb126](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-4eb126), Lean Verified (M150). Reads: R100, [R101](research/wheel/s15/r101-release-read.md), [M144](research/wheel/claudeM5-i175-read.md), I195 | **In the kit** at `a09d6c6` ([#412](https://github.com/WolframInstitute/Rule30PrizeKit/pull/412)), `Rule30GateObserver` and a data module (M153) |
-| **S16** | Every finite right half beside 001 or 011 enters the least closed set of 14-cell windows in linear time; no slope below 5/2 would do. Problem 1, partial. | R5, M152, I206 | [Packet a](research/r5/s16/) ready (M153), notebook in 47 s. Reads: [I206](research/r5/s16/i206-carrying-read.md) on M152’s source; [R107](research/r5/s16/gptM5-packet-a-review.md) passes carrying and requests wording repairs before release. The gptIntel scoped read was requested | Patch `d4632787…` on `a09d6c6`; the catalogue builds |
+| **S16** | Every finite right half beside 001 or 011 enters the least nonempty closed set of 14-cell windows in linear time. A uniform affine deadline needs slope at least 5/2. Problem 1, partial. | R5, M152, I206 | Packet a passed the carrying read and pinned replay. Wording repairs returned to the author (R107, R108). [Review](research/r5/s16/gptM5-packet-a-review.md) | Both modules in patch `d4632787…` on `a09d6c6` passed independent kernel replay (R108). |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `a09d6c6` after S15 (#412) and Quint’s #411 (M153).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
