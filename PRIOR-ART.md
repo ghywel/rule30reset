@@ -599,6 +599,11 @@ I211 adds the every-half equivalence of eventual periodicity for the gate, white
   near-square*. Our documents under *Farey* and *Beatty*: no hit.
 - **Credit.** The class and the fact that its words repeat near the beginning are Adamczewski's. The bounded slack, the Farey
   proof with the conserved shortfall, the integer form of "irrational" and the Rule 30 statement are, as far as we searched, new.
+- **Since (N14).** The Rule 30 statement for the words themselves is *not* new, from any start. `Rule30PeriodTwo.golden` (no two
+  black readings in a row) excludes every arc longer than the distance of the angle from a whole turn, half-circles among them;
+  the nine pairs of gaps (AIOvernight, 62afca, for the single cell; S18 for every right half) leave only arcs with both ends on one
+  orbit, whose words are block codes of Sturmian words (8084e6). The search in N13 missed it: it looked for rotations and words
+  and not for what column 1 can read. Terms that find it: *golden, hard-core, nine pairs, kick gap*.
 
 ## P67 · 2026-11-24 · Mechanical phases and partitions on two rotation orbits
 
@@ -606,3 +611,16 @@ I211 adds the every-half equivalence of eventual periodicity for the gate, white
 - **Known.** Upper and lower mechanical words are classical. Alessandri and Berthé, §4.1, give a finite connectedness index for rotation coding cylinders. Their Lemma 3 and Theorem 10 give the eventual complexity and its relation to the cut orbits. In particular, two independent cut orbits give 2n words for sufficiently large n. [Morse and Hedlund](https://doi.org/10.2307/2371431) · [Alessandri and Berthé](https://www.theoremoftheday.org/Docs/3dAlessandriBerthe.pdf)
 - **Found by.** Checking the scope of `PhaseLine` and the finite-partition remark in N13 against the circle coding and the literature on connectedness of rotation cylinders.
 - **Credit.** The circle dynamics and rounding distinction retain their existing credit. The Lean bridges and the application of the connectedness result to N13 are supporting statements for S19. [Derivation and example](research/kit-repair/R30-20261029-0ef6e2/endpoint/gptIntel-endpoint-continuation.md)
+
+## P68 · 2026-11-24 · Two blocks in the order of a rotation, and the orders of the gaps 3 and 5
+
+- **Ours.** N15 proves in Lean that two nonempty finite blocks set in the order of the word of one arc, started at an end, at any
+  irrational angle, have near-squares of bounded slack, lengths counted, and are not read beside an alternating column in a
+  row with a leftmost black cell. [Write-up](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/README.md)
+- **Known.** Lowry, `Rule30GapRepetitions` (R30-20261122-094213): for kick gaps 3 and 5 with no two 3s in a row, n equal gaps from
+  places i < j need 8n < 10j + const, so lim inf r(n)/n ≥ 9/5, and by Bugeaud and Kim Sturmian and quasi-Sturmian orders are excluded.
+  `psi_not_finite_of_sample_repeats`: repeats of the readings that outlast their second start by unbounded amounts. The silver
+  example of N15 meets neither bound (8n − 10j ≤ 28 to lag 3,000; n ≤ j + 32 in readings to lag 9,000). P66 for the words.
+- **Found by.** KIT-INDEX under *kick gap, gap order*; the module itself read. No general theorem on substitutions of rotation
+  words beside a clock in the kit, the portal list of 24 November 18:28 UTC or our documents (*substitution, morphic, concaten*).
+- **Credit.** The gap clock and the idea of excluding an order of gaps are Lowry's. `corollary_F` is ours (91b0b0).
