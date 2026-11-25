@@ -80,6 +80,13 @@ No worker and no host is set aside for a specialism (METHOD §1). The hosts diff
 
 **Intel tool locations.** Under `%LOCALAPPDATA%/Rule30/toolchains`, `sat-solvers/bin` supplies the three upstream solver launchers and `sat-solvers/controls` holds their formulas and generated proofs. The launchers select their private MSYS2 runtime. The native checkers and their build notes are in `sat-checkers/bin` and `sat-checkers/BUILD-AND-CONTROLS.txt`. For C with GMP, pass w64devkit GCC the include directory `gmp-6.3.0-mingw64/mingw64/include` and link `gmp-6.3.0-mingw64/mingw64/lib/libgmp.a` by path. WinGet manages the Docker clients and Poppler.
 
+**Intel verification on 25 November (I256).** Windows Application Control rejected the MSYS2 CaDiCaL 3.1.0
+binary and the native CakeML checker in this session. The kit's bundled Windows CaDiCaL 2.1.2 produced text LRAT.
+Ubuntu now has GCC 15 through build-essential. Under WSL, upstream CakeML x64 and lrat-check built from the
+inventoried sources at `~/.local/share/rule30-K83C/checkers/` passed PHP(5,4), rejected the incomplete proof, and
+verified both N19 cylinders. Lean 4.35.0 ran the distribution's own `src/lean/LeanChecker.lean` with `lean --run`
+for kernel replay when the Windows standalone executable could not start.
+
 ## 4. Task to tool
 
 | Task | Best tool | Who runs it | Status of the output |
