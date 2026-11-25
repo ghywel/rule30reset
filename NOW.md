@@ -4,7 +4,7 @@
 changes the state, stamped with the time and who changed it. Workers on the same host may share the same local git
 repository - take care when writing. Earlier versions are in [archive/now/](archive/now/).*
 
-*Updated 2026-11-25 22:48 UTC by claudeM5 (M190); last edited by the owner at 22:41 UTC.*
+*Updated 2026-11-25 23:12 UTC by claudeM5 (M191, K83.C); last edited by the owner at 22:41 UTC.*
 
 ## Arrangement
 
@@ -14,7 +14,7 @@ The AI assistant workers:
 
 | Worker | Host | Ledger Code | Last Completed |
 |---|---|---|---|
-| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2511/2248 · M190 · K83's row put back; METHOD §5, §8 and §12 follow NOW.md |
+| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2511/2312 · M191 · Quint's strip cover read against S20; a bridge in Lean; K83.C |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2511/1918 · R125 · R5 parked after the gap-3 front test |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2511/1933 · N20 · I252 passes its carrying read; its frequency step in Lean |
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2511/1719 · I252 · N6's free-phase exclusion ready for its read |
@@ -30,7 +30,8 @@ Each worker must update their 'Last Completed' at the end of a block of work.
 This section may only contain calls to action that require the owner's input or decision and are removed when
 answered.
 
-- None.
+- **#426:** the word to add one sentence of credit to its catalogue line and text. With S20's identity the kit's
+  counts beside a fixed wall give 1.5 bits (Lowry) and 1.2854 (Galindo); S20's table gives 1.2320 (M191).
 
 ## Direction
 
@@ -112,6 +113,7 @@ the table. Inside a cell, start a new line with `<br>`.
 | K83 | 24 Nov, claudeCloud | Which questions have we not asked because they use Mathlib: what becomes of the almost-every laws with the fair coin on the right and a finite left half? | *in progress* | 2411/2052 · K83 · The kit's almost-every laws all put the fair coin on the left or on the whole row; none has it on the right with a finite left half. Four questions: A, the coin on the right, is K83.A; B, how fast the right side is heard, is K83.B; C, candidate columns in measure, stays with N6; D, limits of results we hold in whole numbers (S9's pentagon, Q01 for almost every start, M6's floor, K5's tail), is not taken. [Note](research/rule4/README.md).<br>2411/2059 · K83 addendum 1 · First probe, frozen before it ran (MEASURED): the right half is heard at about 0.04 bits a tick, exponentially. Three of eight predictions held.<br>2511/2248 · M190 · Parent row put back, at the owner's word. **Next:** it follows K83.A and K83.B, and can be parked or closed only when both are. D waits for a worker. | S20 (from K83.B) |
 | K83.A | 24 Nov, claudeCloud | For a fixed finite west and fair east, is the centre almost surely aperiodic? Which rows enter the alternating trap or locks? | *in progress* | 2411/2235 · I229, N16 · **A1 and A2 open.** Trap basin ≥62.85% at width 34. The kit excludes black-first west width ≤52 and white-first width ≤51. [Past-wall law](research/rule4/right-coin-past.md), [independent read and basin counts](research/rule4/claudeIntel-k83a-read.md).<br>2411/2247 · I235 · The [Lean feedback and restart](research/rule4/K83Feedback.lean) reduce A1 to pure-period nullity ([read passed](research/rule4/gptIntel-n16-feedback-read.md)). Next, measure gate-word masses for long-lived wests of depth 50–60.<br>2511/1158 · K84 · **COMPUTED:** Q01's long-lived wests (to support 64, D(64) = 116) demand gates no right half reads after 1 to 12 readings; the coupled lifetime L(B), with some right half supplying the demand, is B + 7 to B + 11 for 26 ≤ B ≤ 64, so E(B, T) is empty for T > L(B); on the coupled witnesses the supplying share falls by 0.4 to 0.7 bits a reading (MEASURED). [Note](research/rule4/k84/README.md). **Next:** see pull K84. | none |
 | K83.B | 24 Nov, claudeCloud | How quickly is the right side heard, and is entropy above one bit? | *in progress* | 2411/2334 · I234, M178 · **B4 proved.** Full topological entropy <1.146669 bits/tick (<1.143992 by a width-14 cover, M178), fair metric entropy ≤1.124883281645. The escape dichotomy (B1) and the speed bound (B2) are read, **PASS**; B3 remains open. [Results and certificates](research/rule4/k83b/README.md), [review](research/rule4/k83b/claudeM5-k83b-read.md). [Portable Lean bound <1.232039](research/rule4/k83b/lean-entropy.md) passed the M178 mathematics read and K84 prior-art read.<br>2511/1314 · R123, M184 · [Direct equivalents patch and PR text](research/rule4/k83b/kit/README.md) passed their release read with three wording repairs.<br>2511/1643 · M188 · **S20** is posted and Lean Verified, kit PR #426. **Next:** for B3, test a language with hidden states. | S20 (kit PR #426 open) |
+| K83.C | 25 Nov, claudeM5 | How much of its right side can a wall hear: on average, which is the entropy; at worst, which bounds the left words beside a periodic centre; and beside one given period? | *preliminary* | 2511/2312 · M191 · **PROVED IN LEAN, unread:** the entropy is the growth of the OR words summed over all walls, and a bound uniform in the wall bounds it; so S20 and the left-word criterion (Lowry, Kurtuluş, Galindo, Quint) are one count. COMPUTED: the worst wall hears at most 0.2425 bits a tick (Quint: 0.2827). [Note](research/rule4/k83b/hearing/README.md). **Next:** a read of the Lean by the other model; then one theorem for every strip and look-ahead with both consequences, and its novelty. No wider strip for its own sake. | none |
 | K84 | 25 Nov, claudeCloud | Is the excess of coupled lifetime L(B) over west support B bounded? | *preliminary* | 2511/1303 · I246 · Exact cutoffs through B = 106; the depth-80 cutoff is verified with both LRAT checkers. The largest excess is 16, at B = 86. Lean checks the equivalence to a white section of the decoded west. G₄₃ = 17,324. The unrestricted gate rate is below 0.151 bits a reading. [Results and replay](research/rule4/k84/gptIntel-k84-continuation.md). **Next:** find a constraint on decoded white sections that holds uniformly in B; no worker is on it. | none |
 | M181 | 25 Nov, claudeM5 | Can an alternating wall’s right half read every order of the 18- and 28-reading blocks? | *in progress* | 2511/1107 · I239 · **Open.** The finite-prefix criterion is in Lean. S19’s example motivates the question; its silver word is read for 821 readings.<br>2511/1752 · N19 · Every order of ten blocks has a physical row (1,024). The train of A = 3 5 5 5 costs a steady 0.80 bits a block for 50 blocks. The train of B = 3 5⁵ rises to 6 or 7 bits a turn; eleven turns found; on 72 columns it returns after no 1 to 8 turns, where A returns at 90 after three. **Conjecture: Bᵏ is refused for some k ≥ 12.** Running on the Intel: B¹⁶ at 80 columns, B²⁴ at 76. [Orders and proofs](research/wheel/block-orders/README.md), [trains](research/wheel/block-orders/claudeIntel-n19.md). **Next:** if refused, ask for orders with no two B’s together. | none |
 

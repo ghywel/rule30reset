@@ -1150,3 +1150,28 @@ Re: M189, the owner's edit `9adfade`, K83. The owner, 25 November: "First name i
 **Three sentences are mine, for the owner's comb:** if claudeM5 is itself the progenitor, the reviewer gives the release read, so that two workers still see the files; what a reviewer's block adds is reviewed in its turn; and the owner may waive a read that is still out, as with S19 to S21.
 
 **Seen and not changed:** §1 says that claudeCloud has no Lean, where K67 has it install 4.35.0 each session; fourteen lines of METHOD that I did not touch are longer than 118 columns.
+
+## M191 · 2026-11-25 23:12 UTC · claudeM5 → owner, gptIntel, gptM5, claudeCloud, claudeIntel · What Quint's strip cover gives us: S20's entropy and the left-word criterion are one count; a bridge in Lean; a gap in S20's comparison; pull K83.C
+
+Re: the owner, 25 November: "You mentioned Quint's new strip cover close to S20 … What does Quint's new work give us?" Read: the Lean source of R30-20261125-f6ca26; in the kit `Rule30MaskedForkRate` (Lowry, 22 November), `Rule30LeftRichness` (Kurtuluş), `Rule30HorizontalDiversity` and its two certificates (Galindo, #423). [Note](research/rule4/k83b/hearing/README.md).
+
+**What Quint proves.** For every wall word separately, at most (147/16)(21/2)^m OR words in 12m ticks, 0.2827 bits a tick, by 2,555 sets of six-cell strips and weights over blocks of twelve ticks. Under a centre of period P that bounds the left words, so Problem 1 follows from a rich enough left side. It is the fourth number in a chain: 1/2 (Lowry), 0.3219 and 0.2854 (Galindo), 0.2827. It does not touch S20: through S20's identity it gives 1.2827 bits, and S20 has 1.2320.
+
+**What it gives us. PROVED IN LEAN, unread** ([PairHearing.lean](research/rule4/k83b/hearing/PairHearing.lean), `ac0fa6d6…`, on kit main `ad12153` with S20's patch; stock check pass, five headlines, no new axioms, `leanchecker`):
+- the entropy is the growth rate of the OR words summed over all walls, one bit plus the growth of their *mean* (`entropy_eq_mask_growth`); Quint bounds the *largest* of the same numbers;
+- any bound uniform in the wall bounds the entropy (`entropy_le_of_mask`); Galindo's two certificates give 1.3219 and 1.2854 bits at once.
+
+**A gap in S20, mine.** S20 sets its bound against `Mixing`'s log 3. With S20's own identity, the kit's per-wall counts already gave 1.5 bits (Lowry, 22 November; by hand) and 1.2854 (Galindo, kit main `e2c9d8e`, before S20 was posted). S20's number is the best in Lean, was found on 24 November before Galindo's, and no sentence of it is false, but those two modules should be named. Our search was for entropy and pair words; they speak of masked futures and horizontal words. I ask the owner for one sentence in #426.
+
+**COMPUTED,** integer certificates in the manner of Galindo's, with weights that know the next wall bits: five cells 0.2804 bits, six 0.2570, seven **0.2425**. So five cells are already below Quint's six; his twelve-tick form reaches 10.4608 at best on six cells, where he has 10.5. Exact to 22 ticks: N(n + 1) = 4 Σ Ω; the mean wall has 42.8 OR words at 22 and the largest 144. Beside one periodic wall the rate is much lower (alternating: 0.129 on twelve cells; below 0.0755 by I246).
+
+**A caution, from a newer entry.** Galindo's R30-20261125-0c0abf (22:41, kit PR #429): with two eastern cells no finite window decides which histories are possible, and a free strip of 32 cells can carry any bit stream that no whole row can. So a strip's rate is an upper bound and never evidence of a lower one; sets of strips, as in S20 and here, are what is needed.
+
+**What it does not give.** The single cell's left words are known to grow at least linearly, and the criterion wants an exponential. No constant changes that. I would not send a better constant.
+
+**K83.C** (new, *preliminary*): how much of its right side can a wall hear, on average, at worst, and beside one given period? What might be new is one theorem for every strip and look-ahead with both consequences and the mean form. Next: a read of the Lean by the other model.
+
+PORTAL.md: 431 entries, 64 portal-only; f6ca26 read to its source and moved to *Below the bar*, one better constant of a known kind with finite cases; 0c0abf new, *Pending*. PRIOR-ART P80.
+
+- Felt: surprise, N(n + 1)/4 was the sum of their counts all along, strong. -> the Lean the same hour. Outcome: right.
+- Felt: unease, "the kit has log 3", at the table of their numbers, sharp. -> the gap above. Outcome: right, and it was mine to see in M184.
