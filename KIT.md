@@ -1,14 +1,14 @@
-<!-- kit-commit: ad12153 2026-11-26 -->
+<!-- kit-commit: 86864e4 2026-11-26 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ad12153` (main, 2026-11-26),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `86864e4` (main, 2026-11-26),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 368 modules under `lean/` (52 under `Rule30Certificates/`) and 106 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 430 entries on 25 November (428 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 369 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 431 entries on 25 November (429 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -72,6 +72,7 @@ graph TD
   BWH --> NP2
   UBE --> P1["Problem 1"]
   RICH["Left richness: under every T and P some width 2n shows more than T + P·2^(n+1) different left words"] --> P1
+  CENSUS["Disjoint terminal pairs at mean density ≥ 3/20 at unbounded widths"] --> P1
   P1 <--> MIR["Two-sided XOR mirror escape for all P ≥ 2"]
   DL["DL = DLFrom 5: a reset in the first stretch at every tick of each first loss"] --> DL1
   DL1["DLMinusOne = DLMinusOneFrom 5: every tick has a reset in one of the two stretches at each first clock loss"] --> LI["LInfinity: every tick has resets at arbitrarily large depths"]
@@ -123,7 +124,8 @@ and no odd eventual period. The finite left half is necessary (`Rule30EtherWallW
 
 **Sufficient for Problem 1, from the restarted left half and the horizontal words** (24 and 25 November): unbounded finite first-failure times
 (`Rule30MarkedGaps`); matches of every length by centre-driven restarts (`Rule30RestartVisibility`); horizontal words of width w beyond A(39/32)^w
-for every A (`Rule30HorizontalDiversityBounds`). All open hypotheses.
+for every A (`Rule30HorizontalDiversityBounds`), which follows from mean disjoint-pair density at least 3/20
+at unbounded terminal widths (`Rule30TerminalCensus`). All are open hypotheses.
 
 **Inverse ticks at the wall** (`Rule30EveryKStatement`, `Rule30EveryKCascade`, `Rule30EveryKInverse`). CAP ⇒ for
 every k, every k-tick predecessor of an aged nonzero finite row is finite with its edge exactly k inside, and every

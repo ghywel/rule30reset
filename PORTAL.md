@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-25 23:12 UTC, 431 entries, 64 portal-only -->
+<!-- portal-list: 2026-11-25 23:39 UTC, 431 entries, 63 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-25 23:12 UTC (431 entries)
-and kit main `ad12153` (M191). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-25 23:39 UTC (431 entries)
+and kit main `86864e4` (I255). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 64 of the 431 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 63 of the 431 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -70,7 +70,6 @@ In an open kit pull request. Moves out of this file when it merges.
 |---|---|---|---|---|---|---|
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261125-91722e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-91722e) | 2026-11-25 | ours (S20) | Lean Verified, Human Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Uses Mathlib. | L |
-| [R30-20261125-fa5c14](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-fa5c14) | 2026-11-25 | Dusty Galindo; OpenAI Codex (GPT-6.2 Astra) | Lean Verified, Human Verified | Galindo: disjoint age pairs of the single-seed orbit that agree on s western sites and part at the next are bounded by the vocabulary on s + 1 sites, at one width. A mean of at least 3N/20 pairs at unbounded widths would give Problem 1 (`single_width_problem1`); the estimate is open. | Kit pull request [#428](https://github.com/WolframInstitute/Rule30PrizeKit/pull/428), open. | A |
 | [R30-20261125-0c0abf](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-0c0abf) | 2026-11-25 | Dusty Galindo; OpenAI Codex (GPT-6.2 Astra) | Lean Verified, Human Verified | Galindo: for any two temporal columns, three local tests decide whether the updates extend through one more eastern cell (`two_columns`); with two eastern cells no finite window decides (`no_finite_window_bound`); a free strip of 32 cells beside a clock of eight whites carries any bit stream that no whole row can (`programmable_without_extension`). | Kit pull request [#429](https://github.com/WolframInstitute/Rule30PrizeKit/pull/429), open. | L (statements) |
 
 ## Check (8)
