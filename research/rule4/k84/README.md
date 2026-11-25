@@ -74,6 +74,11 @@ Two quantities:
   as the period-two case of Problem 1.
 - Through B = 64 the excess is 7 to 11, with a least-squares slope of 0.074. The data do not separate a bounded excess
   from a slope below about 0.1.
+- **A caveat, from the same heuristic.** If each tick past the support were a fair test, a bounded excess would go with
+  a gate language of zero entropy. M181's two-block test (every order of the blocks 3 5³ and 3 5⁵ survives width 44)
+  points to positive entropy, at least about 0.04 bits a reading. Then the excess should grow like ρB/(2 − ρ), about
+  0.02B: invisible below B = 64, and enough to break the bounded form. So M181's proposed pull and this conjecture
+  decide each other, heuristically, and G_m is the test for both.
 
 **Tests that would decide it:**
 - L(B) further, with LRAT for the UNSAT ends;
