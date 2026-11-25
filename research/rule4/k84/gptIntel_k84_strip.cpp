@@ -1,5 +1,6 @@
 // Enumerate a certified superset of physical black-first gate words.
 // Physical right rows are a separate source of replayable lower witnesses.
+#include <algorithm>
 #include <array>
 #include <cstdint>
 #include <cstdlib>
@@ -66,7 +67,7 @@ struct Strip {
         }
     }
 
-    void run() {
+    void run(unsigned warmup) {
         std::vector<Row> initial;
         std::vector<bool> listed(mask + 1);
         // At the first white sample we require a genuine black predecessor.
@@ -77,6 +78,20 @@ struct Strip {
                 initial.push_back(first);
             }
         }
+        for (unsigned age = 0; age < warmup; ++age) {
+            std::vector<Row> image;
+            std::fill(listed.begin(), listed.end(), false);
+            for (Row row : initial) {
+                for (Row next : edges[row]) {
+                    if (!listed[next]) {
+                        listed[next] = true;
+                        image.push_back(next);
+                    }
+                }
+            }
+            initial.swap(image);
+        }
+        std::cerr << "# initial rows: " << initial.size() << '\n';
         visit(initial, 0, 0);
         for (unsigned i = 1; i <= samples; ++i) {
             std::cerr << i << '\t' << totals[i] << '\n';
@@ -114,8 +129,8 @@ std::uint64_t random_bits(std::uint64_t& state) {
 }
 
 int main(int argc, char** argv) {
-    if (argc != 4) {
-        throw std::invalid_argument("strip WIDTH READINGS or sample ROWS READINGS");
+    if (argc != 4 && argc != 5) {
+        throw std::invalid_argument("strip WIDTH READINGS [WARMUP] or sample ROWS READINGS");
     }
     const std::string mode(argv[1]);
     const auto size = std::stoul(argv[2]);
@@ -124,8 +139,8 @@ int main(int argc, char** argv) {
         throw std::invalid_argument("READINGS must be between 1 and 60");
     }
     if (mode == "strip" && size >= 1 && size <= 24) {
-        Strip(size, samples).run();
-    } else if (mode == "sample") {
+        Strip(size, samples).run(argc == 5 ? std::stoul(argv[4]) : 0);
+    } else if (mode == "sample" && argc == 4) {
         std::uint64_t state = UINT64_C(0xa243bffe983d7915);
         std::unordered_map<Word, Right> witnesses;
         for (std::uint64_t i = 0; i < size; ++i) {
