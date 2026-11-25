@@ -98,7 +98,10 @@ def front_test(rows):
                 rule[t,p,b], infinite = moves(rows,t,p,b)
                 heals += infinite
     print("front states",len(rule),"unbounded local healing",heals,flush=True)
+    return slab_cycle(rule,width,phases)
 
+
+def slab_cycle(rule, width, phases, stride=1):
     # Seek a cycle with zero total displacement by retaining the actual
     # front position inside a slab of two spatial periods.
     lo, hi = 2, 2+2*width
@@ -110,7 +113,7 @@ def front_test(rows):
     for t,p,b in previous:
         for d, next_bit in rule[t,p%width,b]:
             if lo <= p+d <= hi:
-                previous[(t+1)%phases,p+d,next_bit].add((t,p,b))
+                previous[(t+stride)%phases,p+d,next_bit].add((t,p,b))
     # Reverse deletion of vertices with no outgoing edge. The remaining
     # finite set contains a cycle if nonempty.
     counts = Counter(v for children in previous.values() for v in children)
@@ -129,10 +132,10 @@ def front_test(rows):
     while current not in steps:
         steps.append(current)
         t,p,b = current
-        current = next(((t+1)%phases,p+d,c) for d,c in rule[t,p%width,b]
-                       if counts[(t+1)%phases,p+d,c])
+        current = next(((t+stride)%phases,p+d,c) for d,c in rule[t,p%width,b]
+                       if counts[(t+stride)%phases,p+d,c])
     cycle = steps[steps.index(current):]
-    assert len(cycle) % phases == 0
+    assert (stride*len(cycle)) % phases == 0
     print("local zero-displacement cycle",cycle,flush=True)
     return cycle
 
