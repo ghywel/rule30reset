@@ -1,13 +1,13 @@
-<!-- kit-commit: e92083b 2026-11-25 -->
+<!-- kit-commit: 202ba55 2026-11-25 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `e92083b` (main, 2026-11-25),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `202ba55` (main, 2026-11-25),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 366 modules under `lean/` (52 under `Rule30Certificates/`) and 106 under `equivalents/`. Every theorem
+Mathlib `v4.35.0`, 367 modules under `lean/` (52 under `Rule30Certificates/`) and 106 under `equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 425 entries on 25 November (423 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
@@ -189,8 +189,9 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
 ## 5. Unconditional results with reach
 
 - **Period-three right halves.** For arbitrary starting phase, a half white beyond site D enters the least nonempty closed
-  set of 14-cell windows by every gate tick from 3D+170 beside 001 or 3D+820 beside 011. Every uniform affine deadline
-  needs slope at least 5/2. Halves of any support enter the set or have a constant sampled gate (`Rule30PeriodThreeEntry`).
+  set of 14-cell windows by every gate tick from 3D+170 beside 001 or 3D+820 beside 011. Halves of any support enter the set or have a constant sampled gate (`Rule30PeriodThreeEntry`).
+  The optimal uniform entry slope is three beside either drive. The finite erosion and 011 constant-gate deadlines
+  also need slope three. One infinite right half keeps the exceptional front forever (`Rule30EtherThreeSharpSlope`).
 
 - **Constant runs.** A black centre run of length L from time a ≥ 1 has L ≤ a; white runs L ≤ a − 1 (a − 3 for
   a ≥ 3); both colours occur in every window [a, 2a] (`Rule30CenterRuns`); log-log margins
