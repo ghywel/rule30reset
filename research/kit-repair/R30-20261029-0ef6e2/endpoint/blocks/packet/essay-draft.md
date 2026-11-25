@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: Two blocks set in the order of an irrational rotation do not stand beside an alternating column, in a Rule 30 row with a leftmost black cell
 Author: {AUTHORS}
 Date: 2026-11-25
-Description: Two nonempty finite blocks of readings, set in the order of an irrational rotation read through an arc, are not read beside an alternating column. No right half that reads such a word is known.
+Description: Two nonempty finite blocks of readings, set in the order of an irrational rotation read through an arc, are not read beside an alternating column. Whether a right half reads the example for ever is open.
 Abstract: {ABSTRACT}
 Keywords: [Rule 30, circle rotations, Farey neighbours, repetitions, period two, Lean]
 Sources: ["[The golden half-circle word at every phase beside a Rule 30 clock](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-6c3fa9)", "[How soon can the readings beside the Rule 30 center repeat?](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261122-094213)", "[Every Sturmian word, of every slope and every intercept, is excluded as the right neighbour of a period-2 center column](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-8084e6)", "[Period 2 of Rule 30: every right half forces the left trace into a nine-pair gap language](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-62afca)", "[B. Adamczewski, On powers of words occurring in binary codings of rotations, Adv. Appl. Math. 34 (2005)](https://doi.org/10.1016/j.aam.2004.02.001)"]
@@ -24,9 +24,9 @@ step[l_, c_, r_] := BitXor[l, BitOr[c, r]];
 Flatten[Table[If[step[0, 1, r] == 1, step[1, step[0, 1, r], s], "-"], {r, 0, 1}, {s, 0, 1}]]
 ```
 
-The first cell black at a white tick (centre 0) is black again at the next tick, and white at the one after it (centre 1), whatever lies to the right. From white sample 35 on black readings come 2, 3, 4 or 5 apart, and consecutive gaps are one of nine pairs, for every right half (our `Rule30UniformEntry`, after AIOvernight's `Rule30PeriodTwoWidth13`). One arc of a rotation has the return times p, q and p + q. These rules leave only arcs with both ends on one orbit. Their words are block codes of Sturmian words, which are excluded at every start (8084e6). So the words of one arc, half-circles and Sturmian words included, were excluded before this, from every start.
+The first cell black at a white tick (centre 0) is black again at the next tick, and white at the one after it (centre 1), whatever lies to the right. From white sample 35 on black readings come 2, 3, 4 or 5 apart, and consecutive gaps are one of nine pairs, for every right half (our `Rule30UniformEntry`, after AIOvernight's `Rule30PeriodTwoWidth13`). One arc of a rotation has the return times p, q and p + q. These rules leave only arcs with both ends on one orbit. Their words are block codes of Sturmian words, which are excluded at every start. So the words of one arc, half-circles and Sturmian words included, were excluded before this, from every start (8084e6, and the bounded-excess theorem of `Rule30ZeroWallDiagonals`).
 
-**Not shown: that any right half of Rule 30 reads one of these words at all.** A strip of columns 1 to W with its far edge free contains every right half, so a word that dies on it is impossible without this theorem. Many orders of the gaps 3 and 5 die, some only on wide strips.
+**Not shown: that a right half of Rule 30 reads the example for ever.** Two blocks that are powers of one word give the same periodic word in every order. The kit's periodic ether reads 1010… at its white ticks, so it reads the blocks 10 and 1010 in every order (`Rule30PeriodTwoCoupled`), and Jen's theorem excludes it with any finite left half. So the question is about blocks that are not powers of one word. A strip of columns 1 to W with its far edge free contains every right half, so a word that dies on it is impossible without this theorem. Many orders of the gaps 3 and 5 die, some only on wide strips.
 
 ```wl
 grow[xs_, W_, g_] := With[{y = Flatten[Outer[BitOr, xs, BitShiftLeft[{0, 1, 2, 3}, W]]]},
@@ -40,7 +40,7 @@ word[g_] := Flatten[Prepend[ConstantArray[0, # - 1], 1] & /@ g];
 {strip[word[gaps[1, 2]], 20, 120], strip[word[gaps[5, 3]], 20, 120]}
 ```
 
-Each entry is a width and the number of rows left, at 120 white ticks a width. The first word is the gaps 3, 5 and 3, 5, 5 in the order of the parities of ⌊t√2⌋. It dies at width 15. The second, gaps 3, 5, 5, 5 and 3, 5, 5, 5, 5, 5, is the example of the Lean (`silver_blocks_excluded`). It survives width 44 at 300 white ticks a width from either block, by two programs, and width 49 from block 0 by one. The word with one gap 5 fewer in its longer block dies at width 40. Survival is finite evidence, and many rows at width 44 are not survival at 50. *No right half that reads one of these words is known.* Of 21 other orders of the gaps 3 and 5 that survive width 34, 15 survive width 42.
+Each entry is a width and the number of rows left, at 120 white ticks a width. The first word is the gaps 3, 5 and 3, 5, 5 in the order of the parities of ⌊t√2⌋. It dies at width 15. The second, gaps 3, 5, 5, 5 and 3, 5, 5, 5, 5, 5, is the example of the Lean (`silver_blocks_excluded`). It survives width 44 at 300 white ticks a width from either block, by two programs, and width 49 from block 0 by one. The word with one gap 5 fewer in its longer block dies at width 40. Survival is finite evidence, and many rows at width 44 are not survival at 50. The order is not special in this: four coin-flip orders of the same two blocks, and the alternating one, pass 44 columns as well, and every one of the 128 orders of seven blocks is read by a real initial row ([block-orders](https://github.com/ghywel/rule30reset/tree/main/research/wheel/block-orders)). With one gap 5 fewer in the longer block, each of the orders tried dies by width 40. *Whether one right half reads the example for ever is open.* Of 21 other orders of the gaps 3 and 5 that survive width 34, 15 survive width 42.
 
 ## The word repeats, short by a constant
 
@@ -94,7 +94,7 @@ Our [golden half-circle theorem](https://www.wolframcloud.com/obj/rule-30-prize/
 
 ## What is not claimed
 
-A right half that reads one of these words is not shown. A start off the orbits of the two ends stays open, and so do three independent cut orbits. Nothing here excludes an alternating centre. The slack may depend on how late one starts.
+That a right half reads the example, or any word of two blocks that are not powers of one word, is not shown. A start off the orbits of the two ends stays open, and so do three independent cut orbits. Nothing here excludes an alternating centre. The slack may depend on how late one starts.
 
 ## Lean statements and kernel replay
 
