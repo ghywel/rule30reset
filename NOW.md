@@ -4,7 +4,7 @@
 changes the state, stamped with the time and who changed it. Workers on the same host may share the same local git
 repository - take care when writing. Earlier versions are in [archive/now/](archive/now/).*
 
-*Updated 2026-11-25 23:12 UTC by claudeM5 (M191, K83.C); last edited by the owner at 22:41 UTC.*
+*Updated 2026-11-25 23:25 UTC by claudeM5 (M192, #426); last edited by the owner at 22:41 UTC.*
 
 ## Arrangement
 
@@ -14,7 +14,7 @@ The AI assistant workers:
 
 | Worker | Host | Ledger Code | Last Completed |
 |---|---|---|---|
-| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2511/2312 · M191 · Quint's strip cover read against S20; a bridge in Lean; K83.C |
+| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2511/2325 · M192 · #426 credits the core per-wall bounds |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2511/1918 · R125 · R5 parked after the gap-3 front test |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2511/1933 · N20 · I252 passes its carrying read; its frequency step in Lean |
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2511/1719 · I252 · N6's free-phase exclusion ready for its read |
@@ -30,8 +30,7 @@ Each worker must update their 'Last Completed' at the end of a block of work.
 This section may only contain calls to action that require the owner's input or decision and are removed when
 answered.
 
-- **#426:** the word to add one sentence of credit to its catalogue line and text. With S20's identity the kit's
-  counts beside a fixed wall give 1.5 bits (Lowry) and 1.2854 (Galindo); S20's table gives 1.2320 (M191).
+- None.
 
 ## Direction
 
@@ -82,7 +81,7 @@ are in the kit. S20’s kit pull request, [#426](https://github.com/WolframInsti
 | **S17** | If the singleton centre eventually alternates, each phase of Lowry’s source net and shell is aperiodic. Problem 1, partial. | I66, I203, M156, I211 | [R30-20261124-6af182](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-6af182) (M164): **Lean Verified**, **Human Verified**. [Packet c](research/arrivals/s17/) passed by gptM5 ([R111](research/arrivals/s17/gptM5-packet-b-review.md#packet-c-release-read)); gptIntel also agreed to the posted packet c (I215) | **In the kit** at `4bb3a7b` ([#418](https://github.com/WolframInstitute/Rule30PrizeKit/pull/418)), `Rule30AlternatingArrivals` and a data module, both as ours (M176) |
 | **S18** | Every right half beside an alternating column enters S17’s 777-window set by white sample 35, sharply. An eventual kick every fourth sample is impossible. Problem 1, partial. | M165, [I216](research/arrivals/uniform/README.md) | [R30-20261124-aa6a32](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-aa6a32) (M171): **Lean Verified**, **Human Verified**. [Packet b](research/arrivals/s18/); reads [R113](research/arrivals/s18/gptM5-release-review.md#packet-b-release-read), I220, carrying read M166 | **In the kit** at `5bda6ab` ([#422](https://github.com/WolframInstitute/Rule30PrizeKit/pull/422)), `Rule30UniformEntry`, as ours; Kit Contribution (M181) |
 | **S19** | Two nonempty blocks of readings, of any lengths, set in the order of the answers of an irrational rotation to *in the arc?*, started at an end of the arc, are not read by the right neighbour of an alternating column on its white ticks, in a row with a leftmost black cell. Problem 1, partial. | N6, M165, [N15](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/README.md) | [R30-20261125-301e35](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-301e35) (M183): **Lean Verified**, **Human Verified**. Packet d; example 18 and 28 readings, class not shown to be read by a right half beyond powers of one word. [Carrying PASS for packet c](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/gptIntel-carrying-read.md) (I230). **The owner, 24 November: S19 says that S11 is weaker for Rule 30 than its text suggests** ([wording for packet c](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/packet-c-wording.md)). Packet b (the words themselves) is **held**: already implied by `golden`, S18 and 8084e6 (I228 hand read PASS) ([N14](research/kit-repair/R30-20261029-0ef6e2/endpoint/claudeIntel-s19-hold.md)) | **In the kit** at `e92083b` ([#424](https://github.com/WolframInstitute/Rule30PrizeKit/pull/424)), `Rule30RotationBlocks` (M184) |
-| **S20** | Full two-sided topological entropy equals the growth rate of adjacent-column words and is below 1.232039 bits per tick. | K83.B, I234, R123 | [R30-20261125-91722e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-91722e) (M188): **Lean Verified, Human Verified**. Packet c. Reads: [I247](research/rule4/k83b/s20/I247-carrying-read.md), I248, [K85](research/rule4/k83b/s20/claudeCloud-prior-art-read.md); gptM5’s release read waived by the owner | [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open: passed static review, queued with AIOvernight’s [#238](https://github.com/WolframInstitute/Rule30PrizeKit/pull/238) until the maintainers add an `equivalents/` check (25 November) |
+| **S20** | Full two-sided topological entropy equals the growth rate of adjacent-column words and is below 1.232039 bits per tick. | K83.B, I234, R123 | [R30-20261125-91722e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-91722e) (M188): **Lean Verified, Human Verified**. Packet c. Reads: [I247](research/rule4/k83b/s20/I247-carrying-read.md), I248, [K85](research/rule4/k83b/s20/claudeCloud-prior-art-read.md); gptM5’s release read waived by the owner | [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open: passed static review, queued with AIOvernight’s [#238](https://github.com/WolframInstitute/Rule30PrizeKit/pull/238) until the maintainers add an `equivalents/` check (25 November). Credit to Lowry’s and Galindo’s per-wall bounds added (`4140469`, M192). **The owner, 25 November:** “It is worth stating 426 is likely to stay open for some time … We can modify 426 and it's portal submission as much as we like.” |
 | **S21** | The sharp entry slope for both traps is three ticks per site. The finite erosion and 011 constant-gate deadlines also have sharp slope three. One infinite right half sustains the exceptional front forever. | R5, I242, N18, I247 | [R30-20261125-257977](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-257977) (M187): **Lean Verified, Human Verified**. Packet b, agreed by gptIntel (I248). Reads: [N18](research/r5/sharp-slope/claudeIntel-review.md), [I247](research/r5/sharp-slope/I247-carrying-read.md). gptM5’s and claudeIntel’s reads of b waived by the owner | **In the kit** at `202ba55` ([#425](https://github.com/WolframInstitute/Rule30PrizeKit/pull/425), R124). I244 remains a separate companion |
 
 ## Pulls in progress
