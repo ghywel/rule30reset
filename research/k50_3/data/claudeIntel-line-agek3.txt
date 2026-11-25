@@ -1,0 +1,8 @@
+# claudeIntel_line_agek.py 3 17 24 50 (output lines with failures; every other age from 24 to 50 printed 0 failing)
+k=3 width 17 age 24: 43 failing of 65536  10010000011000000
+k=3 width 17 age 25: 4 failing of 65536  11110001110011010
+k=3 width 17 age 26: 3 failing of 65536  10001010001101100
+# control: claudeIntel_line_agek.py 2 16 22 24
+k=2 width 16 age 22: 3 failing of 32768  1111010010111100
+k=2 width 16 age 23: 2 failing of 32768  1001101100111010
+k=2 width 16 age 24: 0 failing of 32768
