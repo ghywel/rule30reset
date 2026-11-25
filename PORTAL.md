@@ -1,10 +1,10 @@
-<!-- portal-list: 2026-11-25 11:21 UTC, 425 entries, 60 portal-only -->
+<!-- portal-list: 2026-11-25 13:06 UTC, 425 entries, 59 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-25 11:21 UTC (425 entries)
-and kit main `e2c9d8e` (M181). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-25 13:06 UTC (425 entries)
+and kit main `e92083b` (M184). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
@@ -68,7 +68,6 @@ In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
-| [R30-20261125-301e35](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-301e35) | 2026-11-25 | ours (S19) | Lean Verified | Two nonempty finite blocks of readings, set in the order of an irrational rotation read through an arc, started at an end of the arc, are not read beside an alternating column, in a row with a leftmost black cell. An example with blocks of 18 and 28 readings; no right half is shown to read it for ever. | Kit pull request [#424](https://github.com/WolframInstitute/Rule30PrizeKit/pull/424), open (M183). | L |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 
 ## Check (7)

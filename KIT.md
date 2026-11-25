@@ -1,14 +1,14 @@
-<!-- kit-commit: e2c9d8e 2026-11-25 -->
+<!-- kit-commit: e92083b 2026-11-25 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `e2c9d8e` (main, 2026-11-25),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `e92083b` (main, 2026-11-25),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 365 modules under `lean/` (52 under `Rule30Certificates/`) and 106 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 424 entries on 25 November (422 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 366 modules under `lean/` (52 under `Rule30Certificates/`) and 106 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 425 entries on 25 November (423 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -217,7 +217,8 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
   (`Rule30GapRepetitions`).
 - Beside a column that eventually reads 0101 at site 0, with a leftmost black cell at −L, L ≥ 1, column 1 at
   even times cannot have unbounded lags with agreement lasting to within fixed slack of the later start
-  (`Rule30ClockNearSquares`). For a pair of adjacent columns whose left member starts L cells right of the
+  (`Rule30ClockNearSquares`). So two blocks in the order of an irrational rotation, from an end of its arc, are not read there
+  (`Rule30RotationBlocks`). For a pair of adjacent columns whose left member starts L cells right of the
   leftmost black, a length-n repeat at a < b satisfies n ≤ L+b−M+2P−1 if diagonals through M agree at b−P and b,
   with 1 ≤ P ≤ b and M < b−a (`Rule30SettledRepeats`).
 - **The zero-boundary left half.** At widths 56 and 60 explicit starts give even death bounds of at least 100
