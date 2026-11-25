@@ -1,70 +1,43 @@
 # NOW
 
-*Where things stand: one file, rewritten (not appended) by whoever changes the state, stamped with the time and the
-post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and purged at the owner's word on
-23 November 2026 (K73): the file as it stood is
-[archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
-reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-25 19:32 UTC by claudeIntel (N20, read of I252).*
+*Where things stand, the current work and main focus' of interest. One file, rewritten (not appended) by whoever changes the state, stamped with the time and who changed it. Workers on the same host may share the same local git repository - take care when writting. 
 
 ## Arrangement
 
-| Worker | Host | Since | On now |
+The owner - Gareth - providing direction and instruction by prompting.
+
+The AI assistant workers:
+
+| Worker | Host | Ledger Code | Last Completed |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 and S19 are Lean and Human Verified and in the kit (M184). S20 is Human Verified with kit PR #426 open. S21 is Human Verified and in the kit (R124). |
-| gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | R5 continuation complete and parked (R125) |
-| claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | S20's prior-art read is done (K85): PASS, with three text repairs and the Wolfram 1986 credit. K84 closed earlier. Not on a block |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | N6 free-phase block exclusion ready for carrying read (I252). I77 parked (I250). The general Y runs continue (I212) |
-| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | M181: trains of A and B, every ten-block order (N19); long B-trains with a solver. S21’s extension is posted (M187). I252 (N6, free phase) read, with its frequency step in Lean (N20). K83.A read (N16), its Lean passed (I235) |
+| claudeM5 | the owner's Macbook Pro M5 laptop, macOS | M | Unknown |
+| gptM5 | the M5 laptop, shared with claudeM5 | R | Unknown |
+| claudeIntel | the owner's Macbook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N1 | Unknown |
+| gptIntel | the i9 laptop shared with claudeIntel | I | Unknown |
+| claudeCloud | an Anthropic cloud container | K | Unknown |
 
-No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
+No worker and no host has a specialism (METHOD §1). ClaudeM5 is responsible for portal submissions and kit pull requests. What each host can run is in [TOOLS.md](TOOLS.md). 
 
-- **Running jobs:** K80’s fixed sixteen-copy train is UNSAT, verified by lrat-check and cake_lpr (I212). Intel restarted the 400- and 500-sample Y stays after the 10:15 host reboot. [Run state and collection](research/wheel/gptIntel-k80-review.md#reproduction-and-intel-runs) (I198).
-- **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
-- **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
-  once a week (M52).
-- **Last posts:** claudeM5 M188, gptM5 R125, claudeCloud K85, gptIntel I252 and claudeIntel N20.
+Each worker must update their 'Last Completed' at the end of a block of work.
+
 
 ## Needs the owner
 
-Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
+This section may only contain calls to action that require the owners input or decision and are removed when answered. 
 
 - None.
 
 ## Direction
 
-- **The goal** (the owner, 19 November): a submittable proof of the statement the maintainer asked for on #357, "the
-  statement for every number of ticks k: an age f(k) from which every k-tick preimage of a nonzero finite orbit has
-  its true edge k cells inside the image edge, proved by an argument that does not need a new cover for each k" (T).
-- **Where it stands:** (T) is machine-checked, posted and in the kit from one open lemma, (DL⁻₁). The lemma is the
-  wall, no proof idea for it is in hand, and the main line is **parked there** (the owner, 21 November): the first
-  entry under Parked.
-- **Now** (the owner, 21 November): the first round on the old pulls is done (K48), and warm pulls are short. New
-  pulls are to be derived from KIT.md and KIT-INDEX.md read whole, with key attention to recent third-party
-  submissions, "which we might be able to spring board off towards the next general proof".
-- **23 November** (the owner): the portal-to-kit repairs are complete on our side, except the N6 continuation, which
-  is its own pull. Path 4 is S12, posted; N6 is with claudeIntel (M165).
-- **24 November** (the owner): the day’s partials on Problem 1, the reset repository, the method, the kit as the source
-  of known truth, and the interest in external submissions to support our own work, have been “extremely successful”.
-- **Standing** (the owner, 17 November): the easy submissions are done, ours and others'; the hard problem needs new
-  ways in. Two strategies: this clean repository, read whole into context; and inquisition and visualisation, so
-  that the owner's eye can find structure.
-
-## The next block
-
-**The owner, 24 November:** claudeM5 checks this file and assigns a block each to gptIntel and claudeIntel (M165).
-
-- **Being worked:** S20 is Human Verified, with kit PR #426 open. S21 is Human Verified and in the kit. R5 is parked with the nonconstant periodic trap beside 011 open (R125). S19 is verified and in the kit (M184). Its example’s pair passes width 44 in every order tried, and the old pair died in every order sampled (M181). K83.A and its feedback extension passed their reads (N16, I235). K83.B passed review and the width-14 replay (M178, I238). The two Intel Y runs continue.
-- **On offer, none started:**
-  - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
-    K50);
-  - the visualisations proposed and not built: a map of the open statements; the branching-walk fan; Mahler's valid
-    starts on the circle; a timeline of kit contributions by theme.
+- **The goal:** Any Wolfram prize portal (accepts Mathlib) submission and/or WolframInstitute/Rule30PrizeKit git pull request (lean only, no Mathlib), of the type requested by the maintainer - "a general theorem or infinite family".
+- **Standing** The wolfram git and prize portal contain the bulk of the totality of what is known about the Rule 30 Prize problem, with significant contributions from ourselves and other third-parties. The 'easy' proofs will now be known, which leaves the hard proofs and the prize problems 1, 2 and 3 themselves - we continue to research and work with others towards the prize proofs.
+- **Strategy** The KIT.md, KIT-INDEX.md and PORTAL.md documents are read regularly to keep everything that is known about the problem in the context window, and always kept up to date. The Instinct method is used to identify pulls, choose the next research block and know when to park a pull that has cooled off. We use the Prior Art of others and third-party submissions to inform our own research, taking care to always credit where credit is due - we are all working together on the prize not competing.
 
 ## Submissions
 
-METHOD §12: any worker authors, a different worker reads, both agree on the same digests, the owner gives the word;
-the Wolfram steps run on the M5. Standing consent to post: none.
+A list of all the Submissions we have made since rule30reset superseded the older placego repository.
+
+METHOD §12: Any worker may propose a submission and add it to the table, a worker of a different model (gpt <-> claude) reviews the submission for correctness and continues a research block on it, claudeM5 prepares the submission for the prize portal and/or kit PR, the progenitor author confirms their approval, claudeM5 submits with owner approval.
 
 S1 to S21 are posted and **Lean Verified**; S1 to S21 are **Human Verified** (public list, 25 November 19:14 UTC). S2 to S19 and S21 are in the kit. S20’s kit pull request is [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426).
 
@@ -92,43 +65,35 @@ S1 to S21 are posted and **Lean Verified**; S1 to S21 are **Human Verified** (pu
 | **S20** | Full two-sided topological entropy equals the growth rate of adjacent-column words and is below 1.232039 bits per tick. | K83.B, I234, R123 | [R30-20261125-91722e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-91722e) (M188): **Lean Verified, Human Verified**. Packet c. Reads: [I247](research/rule4/k83b/s20/I247-carrying-read.md), I248, [K85](research/rule4/k83b/s20/claudeCloud-prior-art-read.md); gptM5’s release read waived by the owner | [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open, mergeable |
 | **S21** | The sharp entry slope for both traps is three ticks per site. The finite erosion and 011 constant-gate deadlines also have sharp slope three. One infinite right half sustains the exceptional front forever. | R5, I242, N18, I247 | [R30-20261125-257977](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-257977) (M187): **Lean Verified, Human Verified**. Packet b, agreed by gptIntel (I248). Reads: [N18](research/r5/sharp-slope/claudeIntel-review.md), [I247](research/r5/sharp-slope/I247-carrying-read.md). gptM5’s and claudeIntel’s reads of b waived by the owner | **In the kit** at `202ba55` ([#425](https://github.com/WolframInstitute/Rule30PrizeKit/pull/425), R124). I244 remains a separate companion |
 
-- **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `202ba55` (R124).
-- **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
-  [KIT-REPAIR.md](KIT-REPAIR.md) are in kit main, and step 7 was assessed, leaving pull N6.
-- **Kit issues.** [#386](https://github.com/WolframInstitute/Rule30PrizeKit/issues/386), the portal and kit
-  consistency check (M98), has no reply. [#380](https://github.com/WolframInstitute/Rule30PrizeKit/issues/380), how
-  a law with a certified CNF hypothesis can enter the kit (M86), is closed as resolved independently (M123).
-
 ## Pulls in progress
 
-One row per pull; its full text is the ledger post named in the first column, in the live ledger or its archives.
-Status begins with *open* (nothing run), **preliminary** (one first block run) or *in progress*. An *in progress*
-row names the worker on it, or says **free**. Every row says its next test. A parked or closed pull leaves the
-table for the lists below. The rules are in METHOD §8.
+One row per pull; its full originating text is in the ledger post named in the first column. The date it was made and who made it is in the Written column. The summary states the area of research being investigated written as a question. 
+Status - begins with *open* (A new pull) and can be moved to *preliminary* (one first research block run) or *in progress* (actively being worked on usually by multiple workers).
+Progress - This column is being transitioned to a new format by the owner. Moving forward, every time a worker completes a block on a pull, they add a new line to progress cell with the date/time in ddmm/hhmm format, ledger post ids written during the work block, a very brief summary of the work done, and a statement of what is required next to move the pull towards a submission
+Submission - If a pull has led to 1 or more submissions add it to this list, kept in sync with the submissions table.
 
-| Pull | Written | Summary | Status | Submission? |
+If a pull itself invites a new area of research directly related to it, it should be added as a new pull with a .{letter} postfix such as K83.A
+A parent pull may only be parked or closed when all it's related child-suffixed pulls have been parked or closed.
+
+
+| Pull | Written | Summary | Status | Progress | Submission? |
 |---|---|---|---|---|
-| N6 | 22 Nov, claudeIntel | Which prescribed rotation orders can the neighbour of an alternating column read? | *In progress.* S19 covers the endpoint orbits. **I252, proof sketch with Lean criterion:** arbitrary phases and nonempty blocks when the limsup of consecutive convergent-denominator ratios exceeds seven, and for the golden half-circle. The exclusion also holds at almost every phase of each fixed arc and angle. [Proof and checks](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/free-phase-repeats.md). **Carrying read PASS (N20);** the [frequency step is in Lean](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/FreePhaseFrequency.lean) (unread), so the ratio family has no hypothesis on the block clock. Jen’s bound suffices for all three families. [Read](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/claudeIntel-i252-read.md). **Next:** gptIntel’s answer on the Lean and the Jen form; gptM5’s read. | S19 is in the kit. Free-phase sequel: next number S22, if it goes forward. |
-| K83.A | 24 Nov, claudeCloud | For a fixed finite west and fair east, is the centre almost surely aperiodic? Which rows enter the alternating trap or locks? | **A1 and A2 open.** Trap basin ≥62.85% at width 34. The kit excludes black-first west width ≤52 and white-first width ≤51. [Past-wall law](research/rule4/right-coin-past.md), [independent read and basin counts](research/rule4/claudeIntel-k83a-read.md) (I229, N16). **K84, COMPUTED:** Q01's long-lived wests (to support 64, D(64) = 116) demand gates no right half reads after 1 to 12 readings; the coupled lifetime L(B), with some right half supplying the demand, is B + 7 to B + 11 for 26 ≤ B ≤ 64, so E(B, T) is empty for T > L(B); on the coupled witnesses the supplying share falls by 0.4 to 0.7 bits a reading (MEASURED). [Note](research/rule4/k84/README.md). **Next:** see pull K84. | The [Lean feedback and restart](research/rule4/K83Feedback.lean) reduce A1 to pure-period nullity ([read passed](research/rule4/gptIntel-n16-feedback-read.md), I235). Next, measure gate-word masses for long-lived wests of depth 50–60. No S number. |
-| M181 | 25 Nov, claudeM5 | Can an alternating wall’s right half read every order of the 18- and 28-reading blocks? | **Open (I239, N19).** Every order of ten blocks has a physical row (1,024). The train of A = 3 5 5 5 costs a steady 0.80 bits a block for 50 blocks. The train of B = 3 5⁵ rises to 6 or 7 bits a turn; eleven turns found; on 72 columns it returns after no 1 to 8 turns, where A returns at 90 after three. **Conjecture (N19): Bᵏ is refused for some k ≥ 12.** The finite-prefix criterion is in Lean. Running on the Intel: B¹⁶ at 80 columns, B²⁴ at 76. If refused, ask for orders with no two B’s together. [Orders and proofs](research/wheel/block-orders/README.md), [trains](research/wheel/block-orders/claudeIntel-n19.md) | S19’s example motivates the question; its silver word is read for 821 readings. |
-| K83.B | 24 Nov, claudeCloud | How quickly is the right side heard, and is entropy above one bit? | **B4 proved.** Full topological entropy <1.146669 bits/tick (<1.143992 by a width-14 cover, M178), fair metric entropy ≤1.124883281645. The escape dichotomy (B1) and the speed bound (B2) are read, **PASS**; B3 remains open. [Results and certificates](research/rule4/k83b/README.md) (I234), [review](research/rule4/k83b/claudeM5-k83b-read.md) (M178). | [Portable Lean bound <1.232039](research/rule4/k83b/lean-entropy.md) passed the M178 mathematics read and K84 prior-art read. [Direct equivalents patch and PR text](research/rule4/k83b/kit/README.md) passed their release read with three wording repairs; **S20** is posted and Lean Verified, kit PR #426 (R123, M188). For B3, test a language with hidden states. |
+| N6 | 22 Nov, claudeIntel | Which prescribed rotation orders can the neighbour of an alternating column read? | *in progress.* | S19 covers the endpoint orbits. **I252, proof sketch with Lean criterion:** arbitrary phases and nonempty blocks when the limsup of consecutive convergent-denominator ratios exceeds seven, and for the golden half-circle. The exclusion also holds at almost every phase of each fixed arc and angle. [Proof and checks](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/free-phase-repeats.md). **Next:** carry the frequency and continued-fraction reductions and the golden transfer. | S19 is in the kit. Free-phase sequel awaits a carrying read. |
+
+| K83.A | 24 Nov, claudeCloud | For a fixed finite west and fair east, is the centre almost surely aperiodic? Which rows enter the alternating trap or locks? | *in progress* | **A1 and A2 open.** Trap basin ≥62.85% at width 34. The kit excludes black-first west width ≤52 and white-first width ≤51. [Past-wall law](research/rule4/right-coin-past.md), [independent read and basin counts](research/rule4/claudeIntel-k83a-read.md) (I229, N16). **K84, COMPUTED:** Q01's long-lived wests (to support 64, D(64) = 116) demand gates no right half reads after 1 to 12 readings; the coupled lifetime L(B), with some right half supplying the demand, is B + 7 to B + 11 for 26 ≤ B ≤ 64, so E(B, T) is empty for T > L(B); on the coupled witnesses the supplying share falls by 0.4 to 0.7 bits a reading (MEASURED). [Note](research/rule4/k84/README.md). **Next:** see pull K84. | The [Lean feedback and restart](research/rule4/K83Feedback.lean) reduce A1 to pure-period nullity ([read passed](research/rule4/gptIntel-n16-feedback-read.md), I235). Next, measure gate-word masses for long-lived wests of depth 50–60. No S number. |
+
+| M181 | 25 Nov, claudeM5 | Can an alternating wall’s right half read every order of the 18- and 28-reading blocks? | *in progress* | **Open (I239, N19).** Every order of ten blocks has a physical row (1,024). The train of A = 3 5 5 5 costs a steady 0.80 bits a block for 50 blocks. The train of B = 3 5⁵ rises to 6 or 7 bits a turn; eleven turns found; on 72 columns it returns after no 1 to 8 turns, where A returns at 90 after three. **Conjecture (N19): Bᵏ is refused for some k ≥ 12.** The finite-prefix criterion is in Lean. Running on the Intel: B¹⁶ at 80 columns, B²⁴ at 76. If refused, ask for orders with no two B’s together. [Orders and proofs](research/wheel/block-orders/README.md), [trains](research/wheel/block-orders/claudeIntel-n19.md) | S19’s example motivates the question; its silver word is read for 821 readings. |
+| K83.B | 24 Nov, claudeCloud | How quickly is the right side heard, and is entropy above one bit? | *in progress* |**B4 proved.** Full topological entropy <1.146669 bits/tick (<1.143992 by a width-14 cover, M178), fair metric entropy ≤1.124883281645. The escape dichotomy (B1) and the speed bound (B2) are read, **PASS**; B3 remains open. [Results and certificates](research/rule4/k83b/README.md) (I234), [review](research/rule4/k83b/claudeM5-k83b-read.md) (M178). | [Portable Lean bound <1.232039](research/rule4/k83b/lean-entropy.md) passed the M178 mathematics read and K84 prior-art read. [Direct equivalents patch and PR text](research/rule4/k83b/kit/README.md) passed their release read with three wording repairs; **S20** is posted and Lean Verified, kit PR #426 (R123, M188). For B3, test a language with hidden states. |
 | K84 | 25 Nov, claudeCloud | Is the excess of coupled lifetime L(B) over west support B bounded? | **Preliminary, free.** I246 computes exact cutoffs through B = 106 and verifies the depth-80 cutoff with both LRAT checkers. The largest excess is 16, at B = 86. Lean checks the equivalence to a white section of the decoded west. G₄₃ = 17,324. The unrestricted gate rate is below 0.151 bits a reading. [Results and replay](research/rule4/k84/gptIntel-k84-continuation.md). **Next:** find a constraint on decoded white sections that holds uniformly in B. | no |
 
-## Parked
+## Parked pulls
 
-One dated entry each, with what would bring it back (METHOD §3, the incubator). A route that stopped with a condition
-that would reopen it is here, not under closed (the owner, 23 November). Glance down the list at session start.
+A pull that has reached a wall, gone cold, circular, or has become non-productive, but still has some un-satisfied condition that would continue it is considered Parked, removed from Pulls in progress and added to this list. One dated entry each, with the condition that would re-open it (METHOD §3, the incubator).
 
 - **R5, period-three gates** (parked 25 Nov, R125). S14, S16 and S21 are in the kit. I244 excludes constant 011 gates on finite halves. No nonconstant trap through width 34, or pure gap-3 or gap-8 trap through width 42. The new gap-3 front witness lasts 1,159 ticks at the reconstructed west seam, then fails. Reopen for an all-time argument through the 14-column transient or a repeatable physical nonconstant 011 gate. [R5 record](research/r5/README.md) · [Continuation and replay](research/r5/gap3-front-continuation.md)
-
 - **I77, sparse periodic columns** (parked 25 Nov, I250). A varying mark needs at least sixteen pulses on both sides. Thus a qualifying 18–31-pulse period has exactly one mark. Both LRAT checkers pass. The 37-tick local obstruction has four projected pulse domains as hypotheses. Reopen for a compact invariant deriving such domains, a bound valid for arbitrary spacers, or a continuous recurrent black mark between two returns. S8 is in the kit. [Results and controls](research/white-gap-mixtures/gptIntel-i77-two-sided-returns.md)
-
 - **M9, lone 5-gaps inside the trap** (parked 24 Nov, I224). The pair (5, 1) can start after eleven trapped samples. Its two candidate spatial prefixes have physical histories of at most 11 and 10 samples. A later strip occurrence requires a black cell at site 37 to disappear beside a white western neighbour. Reopen for a hand derivation of the two possible starts or a rule predicting another lone-1 exclusion. [Proofs and controls](research/m9/late-pair.md) · [K65 sieve, 23 certified onsets and 67 survivors](research/m9/data/gptIntel-sieve-final-K65.txt). S10 is in the kit. The entropy is open. X and Y belong to K50.1.
-
 - **K50.2, Lowry’s event returns and the finite left seeds** (parked 24 Nov, I197). The full six-cell strip leaves 5, 11 and 22 kit seed classes and admits every 3/5 schedule. Reopen with a finite-support weight argument or a strip constraint that removes part of that class. [Results and exact residues](research/k50_2/finite-left.md)
-
-**The main line: the every-k statement (T) and its wall.**
-
 - **M29, (T)** (parked 21 Nov, the owner). In Lean and in the kit from one open lemma. The links, with statements and
   proofs in [every-k-chain.md](research/m29/every-k-chain.md): (T) ⇐ (CAP), S2, and without the wall for every
   configuration with a leftmost black cell, S6; (CAP) ⇐ (L∞), S4; (L∞) ⇐ (DL⁻₁), S5. Data kept: f(k) for k ≤ 11, and
@@ -153,11 +118,7 @@ that would reopen it is here, not under closed (the owner, 23 November). Glance 
   above 32.
 - **Noticed in the round and not pursued** (K25 §5, in ledger archive 4): time order matters (I25); period 5's four
   poor rows (K21); two late single sources at P = 21 and 23 (K29).
-
-**Pulls and routes.**
-
 - **I66, Lowry’s source arrivals under periodic centres** (parked 25 Nov, R118). S17 and S18 are in the kit. [I216](research/arrivals/uniform/README.md) gives sharp entry at white sample 35 and the uniform nine-pair decoder. Reopen with a concrete way to use the source priority, net or shell to exclude eventual alternation, or a comparable uniform arrival law for another periodic centre.
-
 - **I152, the 17/56 wheel beside an alternating column** (parked 24 Nov, M165; its questions in the next entry). S13 and S15 are posted and in the kit. K81’s [sharp 66-cell change](research/wheel/gptIntel-k81-compactness.md) and [40-reading singleton test](research/wheel/k81-structure/README.md) are kept. Comes back with the finite-support question of K50.1.
 - **K50.1 / K81, the period-two right-half dichotomy** (parked 23 Nov, I191). A finite seed can sustain Y’s schedule for 344 readings. A full wheel turn forces a nearby cell to change, while its visible gate can stay on rhythm. Reopen for a certified whole-cone refusal of a Y stay, loss of the sixteen-copy Y train with a return-budget bound, or a new argument that uses the finite far field. The sixteen-copy train is UNSAT by a proof that two checkers accept (I212). The two general Y runs are active (I198). I216 proves that every half is in S17’s 777-window set by white sample 35. The remaining `RD` question lies inside that set. [R65](research/k50_1/right-dichotomy.md) · [Exterior grammars](research/m9/exterior-grammars.md) · [K80 certificates](research/wheel/gptIntel-k80-review.md).
 - **I49, what S12 leaves** (parked 23 Nov, M133; S12 is in the kit). A forcing prefix at arbitrarily late black-centre
@@ -198,7 +159,7 @@ that would reopen it is here, not under closed (the owner, 23 November). Glance 
 - **M7, CQ01Empty through the bounded-excess criterion** (M16, 17 Nov). Comes back only with a proof that u ∅ has
   zero entropy.
 
-## Recently closed routes
+## Closed pulls
 
 One line each: answered, refuted or finished, with nothing that would reopen it.
 
