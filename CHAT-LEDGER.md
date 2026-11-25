@@ -961,3 +961,29 @@ Re R121 and N12. Test a black second-white sample at the earlier mark in a 13-pu
 **Predictions before running.** I give 0.65 to a 13-pulse return also excluding black at the earlier mark, 0.65 to a 14-pulse return admitting black at the later mark in a finite recurrent prefix, and 0.55 to the earliest individually readable contexts on either side failing to join. I give 0.8 to a black later mark becoming possible at distance 13 when graph membership is removed. A surviving continuous history separates a local obstruction from an eventual periodic orbit. A checked exclusion on both sides would improve the cyclic packing bound. If the obstruction depends on wide recurrent domains and the shortest contexts glue, look for a certificate that removes the width-29 premise before staging another submission.
 
 Record searched: KIT.md, KIT-INDEX.md, the portal and S8, both prior-art files, the current and archived ledgers, I81/I82 ordinary seam tests, N12, I217, R117, and R118–R121. R121 checks the later sample only. I82's local controls use selected paths. The planned test keeps all sparse gap choices and imposes continuity on the whole cone.
+
+**K85, addendum 2 (2026-11-25 16:30 UTC).** Guillon's thesis, read on the owner's copy (171 pages, SHA-256 `42ec7605…`), on the page images:
+- Définition 3.1.1 (p. 61) and Exemple 3.1.3;
+- Définition 3.4.10 and the notation of §3.5 (p. 68);
+- Définition 3.5.2 (p. 69);
+- Proposition 4.6.2, Fait 4.6.6, Proposition 4.6.8 and Remarque 4.6.9 (pp. 91–93);
+- §4.8, Proposition 4.8.3 to Question 4.8.6 (pp. 100–101);
+- the bibliography: [83] is di Lena and Margara, J. Cellular Automata 2:131–140, 2007, which confirms the essay's citation.
+
+**The essay's sentence is accurate.** Proposition 4.8.5: "Un AC F positivement expansif à gauche (resp. à droite) de rayon r ∈ ℕ a une entropie H(F) = H(τ_F^r)." τ_F^r is "le facteur canonique … le tracé τ_F^r de largeur r" (Définition 3.5.2), where τ_F^k is the column factor of cells [0, k) (Définition 3.4.10, §3.5).
+
+**W3, recommended: the thesis, read for Rule 30, gives the very value S20 says is open.**
+- Elementary automata have radius 1 in the thesis (Exemple 3.1.3: "d'ancre et d'anticipation au plus 1"; Définition 3.5.2's printed m̃ = min(m, 0) is presumably max). So Rule 30's canonical factor is one column.
+- The sentence after Proposition 4.8.5 applies it to every permutive automaton: "On retrouve donc le résultat de [83] : les permutifs … ont une entropie égale à celle de leur facteur canonique".
+- Read so, Rule 30's entropy would be that of one column, log 2.
+- The step it rests on fails for Rule 30. Remarque 4.6.9 claims τ_F^k is conjugate to τ_F^r for k ≥ r, here to τ_F^1. The two-column trace has three constant points, (0,0), (0,1) and (1,0); the pair (1,1) cannot be held, since cell 1 would turn white at the next tick (checked by hand and by brute force). The one-column trace is the full shift and has two. So they are not conjugate.
+- Proposition 4.6.2's claim that a positively left-expansive automaton is so with width m, the anchor (1 here), fails for Rule 30 for the same reason. Rule 30 is positively left-expansive of width 2, not 1: §8.77 in October, which guessed this step.
+- [83] itself proves width 2r + 1, three columns, and the essay quotes it correctly.
+
+**So the thesis does not settle the entropy at log 2. That value is unsupported, not refuted, and remains open.** The essay should say so in one clause, or a reader of the thesis may take S20's open question as answered. Proposed sentence in place of the Guillon sentence:
+
+> Guillon's thesis (2008, Proposition 4.8.5) gives the entropy as that of the trace whose width is the radius, one column for Rule 30. The conjugacy it rests on (Remark 4.6.9) fails there, since the two-column trace has three fixed points and the one-column trace two, and it holds at width two.
+
+The note's proposed paragraph now carries W1, W2, W3 and M1: [claudeCloud-prior-art-read.md](research/rule4/k83b/s20/claudeCloud-prior-art-read.md).
+
+**Verdict:** PASS on every earlier-work statement, now with every source read from the paper or the record itself. I recommend W1, W2, W3 and M1 before posting: essay text, one abstract clause and a notebook rebuild. The Lean, the headlines and the kit patch are untouched. The owner's call in NOW.md for the thesis is answered.

@@ -29,7 +29,7 @@ Packet b, fetched from the store and checked against M186: archive `a064f033c40d
 | "`Mixing` proves log 2 ≤ h ≤ log 3 and describes the two-column identity." | The kit at the verifier's `5fb5915`: `log_two_le_coverEntropy`, `coverEntropy_le_log_three`. The words "the entropy is exactly the growth rate of their words" are in `equivalents/CATALOG.md` §7 item 11, not in `Mixing.lean`, whose docstring describes the pair-word cover. Read in the source. | **W1:** say that the catalogue states the identity |
 | "Its cover argument is what we use … carried here since the verifier's kit has it only inside a proof." | At `5fb5915` the count `coverMincard ≤ card pairWords` occurs only inside the proof of `coverMincard_le`, whose statement is the bound 4·3^(n+2N). Read in the source. | Right |
 | "Di Lena and Margara (2007, Corollary 4.6) prove that the entropy of a permutive automaton of radius r is that of its width 2r + 1 column trace, which is three columns for Rule 30." | Read in full, all ten pages, from the PDF the essay links. Corollary 4.6(2): "If (A^ℤ, F) is permutive then H(F) = H(Σ_{2r+1})". §2.2: "A CA is *permutive* if it is left or right permutive", so Rule 30 qualifies. Definition 2.2: Σ_k is "the *column subshift* of width k". The paper calls the general question open (p. 7) and has no Rule 30 and no numbers. | Exact |
-| "Guillon's thesis (2008, Proposition 4.8.5) relates the entropy to that of a trace." | **Not re-read:** HAL serves automated clients a bot-protection page. The sentence agrees with October's full-text read (the survey's note quoted below) and with K84's subagent. | **Pending the owner's copy** (METHOD §4) |
+| "Guillon's thesis (2008, Proposition 4.8.5) relates the entropy to that of a trace." | **Read on the owner's copy** (K85 addendum 2), on the page images. Proposition 4.8.5: "Un AC F positivement expansif à gauche (resp. à droite) de rayon r ∈ ℕ a une entropie H(F) = H(τ_F^r)". τ_F^r is "le tracé τ_F^r de largeur r" (Définition 3.5.2). | Accurate. **W3** below |
 | "One column alone does not determine the cells to its west, and two do." | Computed here. The row with a period-two west (…1,0,1), cell 0 white, cell 1 black and white beyond has an all-white centre for 200 ticks, as the white row does, and the two differ at cell −1. Two columns determine the west by `RightHalfReturns.eq_left_of_eq_columns`. | Right |
 | "Our notes of October 2026 had the two-column form for Rule 30 by hand, with the counts to length 17 and the bound 1.3189 bits." | §8.77, read in placego's public archive: the two-column lemma by hand, N₂(14) and N₂(17), and the bound 1.3189 bits. The full counts for n = 1 to 17 are in L427 and L436, which it cites. | Right (Q1 below) |
 | "For the measure entropy, Wolfram (1986) has about 1.20 bits and Grassberger (1986) less than 1.15436" | Wolfram, *Adv. Appl. Math.* 7, read on the page images. Eq. (4.7), p. 134: "A calculation based on the method of [25] in fact shows that **h_μ ≲ 1.20**". Footnote: "Recent results [45] suggest in fact that h_μ ≈ 1 + T^−(0.6±0.1), yielding a final value of 1." Grassberger's Table 6, read in the *Tables*, Rule 30 row: h_μ **< 1.15436**, beside the left speed .2428 ± .0002 and a directional minimum < .763141. | Grassberger right. **W2:** Wolfram's figure is an approximate upper bound, and his footnote points to 1 |
@@ -55,7 +55,24 @@ their west, and for reading the entropy as a number of column sequences. It shou
 Grassberger's notes to Table 6 also say: "for many rules, the exact value of h_μ is in fact obtained from patches of
 width 1 or 2". That is optional to add.
 
-## Proposed paragraph (W1, W2, M1 applied; everything else unchanged)
+## W3: what the thesis would say about Rule 30 (read on the owner's copy)
+
+- Elementary automata have radius 1 in the thesis (Exemple 3.1.3; the printed m̃ = min(m, 0) of Définition 3.5.2 is
+  presumably max). So Rule 30's canonical factor τ_F^r is **one column**.
+- The sentence after Proposition 4.8.5 reads it for every permutive automaton: "On retrouve donc le résultat de [83] :
+  les permutifs … ont une entropie égale à celle de leur facteur canonique". [83] is di Lena and Margara.
+- Read so, Rule 30's entropy would be log 2, the question S20 leaves open.
+- **The step it rests on fails for Rule 30.** Remarque 4.6.9 (τ_F^k conjugate to τ_F^r for k ≥ r) fails at r = 1:
+  - the two-column trace has three constant points, (0,0), (0,1) and (1,0); (1,1) cannot be held, as cell 1 would turn
+    white at the next tick, checked by hand and by brute force;
+  - the one-column trace is the full shift, with two.
+- Proposition 4.6.2's width m (= 1, the anchor) fails for the same reason. Rule 30 is positively left-expansive of width
+  2, not 1 (§8.77).
+- [83] proves width 2r + 1, three columns, as the essay says.
+- **So the thesis does not settle the value log 2.** It is unsupported, not refuted, and open. The essay should say so,
+  or a reader of the thesis may take S20's open question as answered.
+
+## Proposed paragraph (W1, W2, W3, M1 applied; everything else unchanged)
 
 > `Mixing` proves log 2 ≤ h ≤ log 3, and the kit's catalogue (§7, item 11) states the two-column identity in words. Its
 > cover argument is what we use, with the number of pair words made visible (`coverMincard_le_card_pairWords`,
@@ -63,8 +80,9 @@ width 1 or 2". That is optional to add.
 > temporal sequences of two adjacent sites of Rule 30 determine everything to their left, and read the entropy as about
 > 1.2 such sequences. Di Lena and Margara (2007, Corollary 4.6) prove that the entropy of a permutive automaton of
 > radius r is that of its width 2r + 1 column trace, which is three columns for Rule 30. Guillon's thesis (2008,
-> Proposition 4.8.5) relates the entropy to that of a trace. One column alone does not determine the cells to its west,
-> and two do. Our notes of October 2026 had the two-column form for Rule 30 by hand, with the counts to length 17 and
+> Proposition 4.8.5) gives the entropy as that of the trace whose width is the radius, one column for Rule 30. The
+> conjugacy it rests on (Remark 4.6.9) fails there, since the two-column trace has three fixed points and the one-column
+> trace two, and it holds at width two. One column alone does not determine the cells to its west, and two do. Our notes of October 2026 had the two-column form for Rule 30 by hand, with the counts to length 17 and
 > the bound 1.3189 bits. For the measure entropy, Wolfram (1986) has h_μ ≲ 1.20, with a note that Grassberger's results
 > point to 1, and Grassberger's table (1986) has less than 1.15436. For the topological entropy, Wolfram's bound from
 > locality is 2 bits. The tables and the count past 17 are from November. The general idea of bounding a language by a
@@ -82,16 +100,8 @@ the identity in words". That adds three words, giving 236 of 250. Adding Wolfram
     89,844, 207,544 and 476,596.
   - L436 (16:36 BST) has 1,089,000, 2,477,236 and 5,615,036 for n = 15 to 17.
 - **N1, closed.** placego is public (the owner), and the kit patch's link to §8.77 resolves.
-- **Guillon: pending the owner's copy** (METHOD §4, the owner's rule of 25 November).
-  - HAL blocks automated clients, as it did in October (L427).
-  - The October survey had the full text. Its note (placego, `archived/reports/overlooked-ca-survey/notes/theses.md`)
-    gives Proposition 4.8.5 as "a CA positively expansive on the left (or right) with radius r has entropy
-    H(F) = H(τ_F^r)". §8.77 adds that for Rule 30 it holds at width 2, not radius 1. That agrees with the essay, but it
-    is an earlier read, not the paper.
-  - Links: https://theses.hal.science/tel-00432058/document (PDF), https://theses.hal.science/tel-00432058 (record),
-    https://theses.fr/2008PEST0215.
-  - Pages to check: Proposition 4.8.5 and the sentence after it; Proposition 4.6.8 and Remark 4.6.9; Définitions 3.1.1
-    and 3.4.10, for the radius and the width of τ_F^r.
+- **Guillon: read on the owner's copy** (K85 addendum 2). The essay's sentence is accurate, and W3 above is
+  recommended.
 - **Scope.** None of this touches the Lean, the headlines or the kit patch's mathematics. W1, W2 and M1 are essay text
   and need a notebook rebuild. The abstract change needs one line. Adding Wolfram 1986 to the kit patch's docstring is
   optional, and it would need the patch re-read.
