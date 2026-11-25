@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-25 13:24 UTC by claudeM5 (M185, I244 read).*
+Updated 2026-11-25 13:43 UTC by claudeIntel (N18, review of R5 sharp slope, S21).*
 
 ## Arrangement
 
@@ -15,7 +15,7 @@ Updated 2026-11-25 13:24 UTC by claudeM5 (M185, I244 read).*
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | K83.B kit patch passed its release read; v2 and S20 to agree (R123, M184) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | K84 (addenda 1 to 3): N16's test answered on the right objects; the coupled lifetime L(B) is the support plus 7 to 14 for every B from 26 to 80. Prior-art P73 for K83.B. Block closed; not on a block |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | K84: support cutoffs, exact gate counts and unrestricted rate bound (I246). R5: sharp entry slope and constant-gate trap obstruction beside 011 (I242, I244). The general Y runs continue (I212) |
-| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | S19: packet b held (N14); the block form passed its carrying read (I230) and has a new example (N17). K83.A read (N16), its Lean passed (I235). N12’s reads are complete (I217, R117) |
+| claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | S21 (R5 sharp slope) reviewed, with an extension in Lean (N18). S19 is posted and in the kit (M183, M184). K83.A read (N16), its Lean passed (I235). N12’s reads are complete (I217, R117) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
 
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M185, gptM5 R123, claudeCloud K84, gptIntel I246 and claudeIntel N17.
+- **Last posts:** claudeM5 M185, gptM5 R123, claudeCloud K84, gptIntel I246 and claudeIntel N18.
 
 ## Needs the owner
 
@@ -54,7 +54,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **The owner, 24 November:** claudeM5 checks this file and assigns a block each to gptIntel and claudeIntel (M165).
 
-- **Being worked:** R5’s sharp slope proposal is out for review (I242). The periodic trap beside 011 remains open. S19, blocks of 18 and 28 readings, is verified and in the kit (M184). Its example’s pair passes width 44 in every order tried, and the old pair died in every order sampled (M181). K83.A and its feedback extension passed their reads (N16, I235). K83.B passed review and the width-14 replay (M178, I238). The two Intel Y runs continue.
+- **Being worked:** R5’s sharp slope, **S21**, passed its carrying read and needs repairs before the notebook (I242, N18). The periodic trap beside 011 remains open. S19, blocks of 18 and 28 readings, is verified and in the kit (M184). Its example’s pair passes width 44 in every order tried, and the old pair died in every order sampled (M181). K83.A and its feedback extension passed their reads (N16, I235). K83.B passed review and the width-14 replay (M178, I238). The two Intel Y runs continue.
 - **On offer, none started:**
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
     K50);
@@ -90,7 +90,7 @@ S1 to S19 are posted, **Lean Verified** and **Human Verified** (public list, 25 
 | **S18** | Every right half beside an alternating column enters S17’s 777-window set by white sample 35, sharply. An eventual kick every fourth sample is impossible. Problem 1, partial. | M165, [I216](research/arrivals/uniform/README.md) | [R30-20261124-aa6a32](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-aa6a32) (M171): **Lean Verified**, **Human Verified**. [Packet b](research/arrivals/s18/); reads [R113](research/arrivals/s18/gptM5-release-review.md#packet-b-release-read), I220, carrying read M166 | **In the kit** at `5bda6ab` ([#422](https://github.com/WolframInstitute/Rule30PrizeKit/pull/422)), `Rule30UniformEntry`, as ours; Kit Contribution (M181) |
 | **S19** | Two nonempty blocks of readings, of any lengths, set in the order of the answers of an irrational rotation to *in the arc?*, started at an end of the arc, are not read by the right neighbour of an alternating column on its white ticks, in a row with a leftmost black cell. Problem 1, partial. | N6, M165, [N15](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/README.md) | [R30-20261125-301e35](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-301e35) (M183): **Lean Verified**, **Human Verified**. Packet d; example 18 and 28 readings, class not shown to be read by a right half beyond powers of one word. [Carrying PASS for packet c](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/gptIntel-carrying-read.md) (I230). **The owner, 24 November: S19 says that S11 is weaker for Rule 30 than its text suggests** ([wording for packet c](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/packet-c-wording.md)). Packet b (the words themselves) is **held**: already implied by `golden`, S18 and 8084e6 (I228 hand read PASS) ([N14](research/kit-repair/R30-20261029-0ef6e2/endpoint/claudeIntel-s19-hold.md)) | **In the kit** at `e92083b` ([#424](https://github.com/WolframInstitute/Rule30PrizeKit/pull/424)), `Rule30RotationBlocks` (M184) |
 | **S20** | On the full two-sided map, the topological entropy is the growth rate of the words of two adjacent columns; every block length bounds it; a weighted reverse cover gives < 1.232039 bits a tick. Problem 1, partial; nothing claimed about Problems 1 to 3. | K83.B, I234, R123 | Packet a ready and unposted (M184): pin check and notebook pass. Out for gptIntel, gptM5 and claudeCloud. [Sources](research/rule4/k83b/s20/) | Patch v2 for `equivalents/` ready: `PairTraceEntropy`, the row and the catalogue (R123, M184). To be opened after the portal entry |
-| **R5 sharp slope** | Three physical ticks per site is the optimal uniform affine entry slope for both period-three traps. Problem 1, partial. | R5, I242 | [Proof and essay draft](research/r5/sharp-slope/README.md). Lean checks passed on the kit and on the verifier pin. | Candidate for carrying review and M5 notebook build. |
+| **S21, R5 sharp slope** (the owner’s word was S20, which M184 gave to K83.B first) | Three physical ticks per site is the optimal uniform affine entry slope for both period-three traps. Problem 1, partial. Proposed with it: the erosion bound 3w + 6 and I244’s deadline have the least slope, and erosion fails from an infinite side. | R5, I242, N18 | [Proof and essay draft](research/r5/sharp-slope/README.md). [Review](research/r5/sharp-slope/claudeIntel-review.md) (N18): **Lean PASS; repairs before the build**, chiefly the build time. [Extension in Lean](research/r5/sharp-slope/claudeIntel_extension.lean), unread, and a trimmed portal form checked at the pin. | gptIntel decides on the extension and the trim; gptM5’s carrying read is out; then claudeM5 builds the notebook. |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `e92083b` (M184).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
