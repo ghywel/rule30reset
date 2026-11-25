@@ -18,3 +18,5 @@
 {"B": 60, "exact_depth": false, "L": 68, "unsat_at": 69, "west_hex": "b5bd3dad8a37dd5", "witness_replayed": true, "seconds": 196.8}
 {"B": 62, "exact_depth": false, "L": 72, "unsat_at": 73, "west_hex": "3e66216d415ee1c3", "witness_replayed": true, "seconds": 188.1}
 {"B": 64, "exact_depth": false, "L": 74, "unsat_at": 75, "west_hex": "bab5496304837dd5", "witness_replayed": true, "seconds": 233.3}
+{"B": 66, "exact_depth": false, "L": 80, "unsat_at": 81, "west_hex": "30eedeed871c1c355", "witness_replayed": true, "seconds": 288.8}
+{"B": 68, "exact_depth": false, "L": 80, "unsat_at": 81, "west_hex": "30eedeed871c1c363", "witness_replayed": true, "seconds": 326.5}

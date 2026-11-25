@@ -40,13 +40,13 @@ Two quantities:
   half for at most 12 readings, often 1 to 5.
 - `w52`'s demand dies at its 5th reading. It asks for a kick one sample after another, which no right half gives.
 
-**The coupled lifetime is the support plus about nine.**
+**The coupled lifetime is the support plus about nine through B = 64, and then 14 and 12 at 66 and 68 (addendum 2).**
 
-| B | 26 | 28 | 30 | 32 | 34 | 36 | 38 | 40 | 42 | 44 | 46 | 48 | 50 | 52 | 54 | 56 | 58 | 60 | 62 | 64 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| L(B) | 35 | 35 | 37 | 40 | 41 | 44 | 46 | 47 | 50 | 53 | 56 | 59 | 59 | 62 | 63 | 67 | 68 | 68 | 72 | 74 |
-| L(B) − B | 9 | 7 | 7 | 8 | 7 | 8 | 8 | 7 | 8 | 9 | 10 | 11 | 9 | 10 | 9 | 11 | 10 | 8 | 10 | 10 |
-| D(B) | 44 | 48 | 52 | 66 | 66 | 66 | 72 | 76 | 78 | 78 | 86 | 86 | 92 | 96 | 96 | 100 | 110 | 114 | 114 | 116 |
+| B | 26 | 28 | 30 | 32 | 34 | 36 | 38 | 40 | 42 | 44 | 46 | 48 | 50 | 52 | 54 | 56 | 58 | 60 | 62 | 64 | 66 | 68 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| L(B) | 35 | 35 | 37 | 40 | 41 | 44 | 46 | 47 | 50 | 53 | 56 | 59 | 59 | 62 | 63 | 67 | 68 | 68 | 72 | 74 | 80 | 80 |
+| L(B) − B | 9 | 7 | 7 | 8 | 7 | 8 | 8 | 7 | 8 | 9 | 10 | 11 | 9 | 10 | 9 | 11 | 10 | 8 | 10 | 10 | 14 | 12 |
+| D(B) | 44 | 48 | 52 | 66 | 66 | 66 | 72 | 76 | 78 | 78 | 86 | 86 | 92 | 96 | 96 | 100 | 110 | 114 | 114 | 116 | | |
 
 - Each L(B) is SAT at L and UNSAT at L + 1 (CaDiCaL, no proof file yet), and every witness was replayed on the full line.
 - For B ≤ 12 the joint SAT equals a per-west brute force. Below B = 26 (development): L = 15 for B ≤ 12, 18 at 14,
@@ -63,17 +63,18 @@ Two quantities:
 | bits a reading | 0.52 | 0.39 | 0.59 | 0.68 | 0.44 |
 | readings forced for every right half | 9 | 9 | 13 | 17 | 20 |
 
-## CONJECTURE
+## CONJECTURE, and its revision
 
-**L(B) ≤ B + C for a constant C.**
+*Addendum 1 conjectured that **L(B) ≤ B + C for a constant C**. Addendum 2 (L(66) = 80, L(68) = 80) puts that in doubt: over B = 26 to 68 the excess has slope 0.10. Open: L(B) = B + o(B), or L(B) ≈ (1 + c)B with c near 0.1. The bounded form and its consequence follow.*
+
+**The bounded form: L(B) ≤ B + C.**
 - A configuration whose leftmost black cell is at −B₀ has a west of support B₀ + a at tick a. An alternating centre run
   from a black tick a would then last at most B₀ + a + C ticks.
 - For the single seed that is the period-two analogue of the kit's `Rule30CenterRuns` (a black run from tick a has
   length at most a).
 - It would exclude eventual period two for every configuration with a leftmost black cell, so it is at least as hard
   as the period-two case of Problem 1.
-- Through B = 64 the excess is 7 to 11, with a least-squares slope of 0.074. The data do not separate a bounded excess
-  from a slope below about 0.1.
+- Through B = 64 the excess is 7 to 11, with a least-squares slope of 0.074; with 66 and 68 it reaches 14 and the slope 0.10.
 - **A caveat, from the same heuristic.** If each tick past the support were a fair test, a bounded excess would go with
   a gate language of zero entropy. M181's two-block test (every order of the blocks 3 5³ and 3 5⁵ survives width 44)
   points to positive entropy, at least about 0.04 bits a reading. Then the excess should grow like ρB/(2 − ρ), about
