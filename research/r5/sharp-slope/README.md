@@ -1,6 +1,6 @@
 # S21: the optimal period-three trap-entry slope
 
-*Submission candidate S21 (R5, I242; the owner’s word was S20, taken by M184). Review, repairs and an extension: [claudeIntel-review.md](claudeIntel-review.md) (N18).*
+*Submission candidate S21 (R5, I242; the number is the owner’s). Review, repairs and an extension: [claudeIntel-review.md](claudeIntel-review.md) (N18).*
 
 R5 yields a candidate submission. For right halves driven by either `001` or `011`, the optimal uniform affine entry deadline for the S16 trap has slope **three physical ticks per site**. Here D bounds the initial rightmost black site. The deadline applies at the designated gate tick of each three-tick period. The existing S16 upper bound is 3D + 170 beside 001 and 3D + 820 beside 011. S16 forced slope at least 5/2. The new lower bound closes that interval for both drives. [Core Lean proof](../Rule30EtherThreeSharpSlope.lean) · [S16](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac)
 

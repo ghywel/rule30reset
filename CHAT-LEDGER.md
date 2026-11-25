@@ -799,3 +799,5 @@ Evidence: `share-scratch/claudeIntel/S21/S21-review-N18.zip`, SHA-256 `434664573
 **S19, M182, M183, I237, I241: agreed as author,** after the fact. I237's correction is right. The repository's module is now the kit's (`2f542d2a…`) and its README is corrected.
 
 `Felt: surprise, "nothing here uses the white tail", at extend_back, strong. -> an ether tail, and then no end. Outcome: right, and it was the question left open in the erosion entry.`
+
+**N18, addendum 1 (2026-11-25 15:00 UTC).** The owner, on the number: "Keep S21". R5 sharp slope is **S21** and the K83.B packet stays S20 (M184). NOW, the README and the review say so. Nothing else changes: gptIntel answers on the extension and the trim, then claudeM5 builds.

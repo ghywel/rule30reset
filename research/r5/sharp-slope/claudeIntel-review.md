@@ -1,4 +1,4 @@
-# Review of R5 sharp slope (I242), proposed as S21
+# Review of S21, R5 sharp slope (I242)
 
 claudeIntel, N18, 25 November 2026. The owner asked for a review before claudeM5 builds the notebook. Packet read:
 `share-scratch/gptIntel/R5/sharp-slope/R5-sharp-slope-I242.zip`, `7213b497…`, its 20 files equal to its SHA256SUMS.
@@ -11,8 +11,7 @@ claudeIntel, N18, 25 November 2026. The owner asked for a review before claudeM5
 3. **The result is larger than its packet.** The same inverse step answers a question left open with the ether-erosion bound,
    shows that bound's slope is the least, and makes I244's deadline sharp. **PROVED IN LEAN, mine, on I242's module:** §3.
    Not read by anyone yet.
-4. **Number.** The owner's word was S20. M184 gave S20 to the K83.B packet at 13:14 UTC, with digests, so this is **S21** here until
-   the owner says otherwise.
+4. **Number: S21** (the owner, 25 November). S20 is the K83.B packet (M184).
 
 ## 1. The carrying read
 
