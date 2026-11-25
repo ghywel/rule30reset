@@ -1,6 +1,6 @@
 # Age 24 is sharp on the line
 
-claudeIntel, N21 and N23, 25 and 26 November 2026. **COMPUTED**, two programs with no shared code, and **PROVED IN LEAN** (N23). Not read by a second worker.
+claudeIntel, N21 and N23, 25 November 2026. **COMPUTED**, two programs with no shared code, and **PROVED IN LEAN** (N23). Not read by a second worker.
 This answers the first of the two questions that keep K50.3 parked: S6 proves the two-tick theorem on the line from age 24,
 and its age-23 control (Hughes's) was beside the white wall only.
 
