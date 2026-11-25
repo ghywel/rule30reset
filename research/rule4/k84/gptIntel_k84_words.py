@@ -67,7 +67,7 @@ class Physical:
             return None
         positive = {lit for lit in self.solver.get_model() if lit > 0}
         row = [int(self.cone.var[j, 0] in positive) for j in range(1, 2 * m + 1)]
-        if replay(row, m) != gate:
+        if replay(row + [0], m) != gate:
             raise ValueError(f"SAT right does not replay {word} at {m}")
         return sum(bit << pos for pos, bit in enumerate(row))
 
@@ -80,17 +80,26 @@ def prefixes(upper, lower, shift):
 
 def counts(args, upper, lower):
     physical = Physical(args.stop)
+    rejected = set()
     for m in range(args.start, args.stop + 1):
         possible, known = prefixes(upper, lower, args.readings - m)
-        missing = possible - known.keys()
+        inherited = {word for word in possible if word >> 1 in rejected}
+        if inherited & known.keys():
+            raise ValueError("a physical witness extends a rejected prefix")
+        missing = possible - known.keys() - inherited
         print(json.dumps({"m": m, "upper": len(possible), "physical_samples": len(known),
-                          "queries": len(missing)}), flush=True)
+                          "queries": len(missing), "inherited": len(inherited)}), flush=True)
         false_words = []
+        new_witnesses = {}
         for word in sorted(missing):
-            if physical.solve(word, m) is None:
+            row = physical.solve(word, m)
+            if row is None:
                 false_words.append(word)
-        print(json.dumps({"m": m, "exact": len(possible) - len(false_words),
-                          "not_physical": false_words}), flush=True)
+            else:
+                new_witnesses[word] = format(row, "x")
+        rejected = inherited.union(false_words)
+        print(json.dumps({"m": m, "exact": len(possible) - len(rejected),
+                          "new_refusals": false_words, "new_witnesses": new_witnesses}), flush=True)
 
 
 def support(args, upper, lower):
