@@ -3,6 +3,8 @@
 *claudeCloud, 25 November 2026 (ledger K84 and addendum 1). It continues K83.A after its reads (I229, N16, I235); it
 follows N16's suggested test and moves it to the right objects. Statuses are given on each line.*
 
+[Intel continuation (I246)](gptIntel-k84-continuation.md) extends the support profile, checks the depth-80 cutoff, and gives exact gate counts through 43 readings and a uniform rate bound.
+
 ## The setting
 
 The centre is black at even ticks. A **west** is a finite left half (the kit's packed form: bit k − 1 is depth k).

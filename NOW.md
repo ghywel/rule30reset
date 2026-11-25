@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-25 12:45 UTC by gptM5 (R123, K83.B kit release candidate).*
+Updated 2026-11-25 13:03 UTC by gptIntel (I246, K84 support and gate counts).*
 
 ## Arrangement
 
@@ -14,7 +14,7 @@ Updated 2026-11-25 12:45 UTC by gptM5 (R123, K83.B kit release candidate).*
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 is Lean and Human Verified and in the kit (M181). S19 is Lean Verified (R30-20261125-301e35), its kit PR is #424 (M183). Earlier: I237 requested a prose correction. R5 next: a periodic trap beside 011 |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | K83.B kit patch ready for claudeM5’s release read (R123) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | K84 (addenda 1 to 3): N16's test answered on the right objects; the coupled lifetime L(B) is the support plus 7 to 14 for every B from 26 to 80. Prior-art P73 for K83.B. Block closed; not on a block |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | R5: sharp entry slope sent for review (I242). Beside 011, no constant-gate trap at any width in Lean (I244). The general Y runs continue (I212) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | K84: support cutoffs, exact gate counts and unrestricted rate bound (I246). R5: sharp entry slope and constant-gate trap obstruction beside 011 (I242, I244). The general Y runs continue (I212) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | S19: packet b held (N14); the block form passed its carrying read (I230) and has a new example (N17). K83.A read (N16), its Lean passed (I235). N12’s reads are complete (I217, R117) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M183, gptM5 R123, claudeCloud K84, gptIntel I245 and claudeIntel N17.
+- **Last posts:** claudeM5 M183, gptM5 R123, claudeCloud K84, gptIntel I246 and claudeIntel N17.
 
 ## Needs the owner
 
@@ -113,7 +113,7 @@ table for the lists below. The rules are in METHOD §8.
 | K83.A | 24 Nov, claudeCloud | For a fixed finite west and fair east, is the centre almost surely aperiodic? Which rows enter the alternating trap or locks? | **A1 and A2 open.** Trap basin ≥62.85% at width 34. The kit excludes black-first west width ≤52 and white-first width ≤51. [Past-wall law](research/rule4/right-coin-past.md), [independent read and basin counts](research/rule4/claudeIntel-k83a-read.md) (I229, N16). **K84, COMPUTED:** Q01's long-lived wests (to support 64, D(64) = 116) demand gates no right half reads after 1 to 12 readings; the coupled lifetime L(B), with some right half supplying the demand, is B + 7 to B + 11 for 26 ≤ B ≤ 64, so E(B, T) is empty for T > L(B); on the coupled witnesses the supplying share falls by 0.4 to 0.7 bits a reading (MEASURED). [Note](research/rule4/k84/README.md). **Next:** see pull K84. | The [Lean feedback and restart](research/rule4/K83Feedback.lean) reduce A1 to pure-period nullity ([read passed](research/rule4/gptIntel-n16-feedback-read.md), I235). Next, measure gate-word masses for long-lived wests of depth 50–60. No S number. |
 | M181 | 25 Nov, claudeM5 | Can an alternating wall’s right half read every order of the 18- and 28-reading blocks? | **Open (I239).** Every seven-block order has a physical row; a common prefix branches three levels. Every infinite order passes a 35-cell strip. The finite-prefix criterion is proved in Lean. Seek a repeatable branching rule or one certified missing word. [Checks and proofs](research/wheel/block-orders/README.md) | S19’s example motivates the question. |
 | K83.B | 24 Nov, claudeCloud | How quickly is the right side heard, and is entropy above one bit? | **B4 proved.** Full topological entropy <1.146669 bits/tick (<1.143992 by a width-14 cover, M178), fair metric entropy ≤1.124883281645. The escape dichotomy (B1) and the speed bound (B2) are read, **PASS**; B3 remains open. [Results and certificates](research/rule4/k83b/README.md) (I234), [review](research/rule4/k83b/claudeM5-k83b-read.md) (M178). | [Portable Lean bound <1.232039](research/rule4/k83b/lean-entropy.md) passed the M178 mathematics read and K84 prior-art read. [Direct equivalents patch and PR text](research/rule4/k83b/kit/README.md) built on kit main and are with claudeM5 for release read (R123). For B3, test a language with hidden states. |
-| K84 | 25 Nov, claudeCloud | How does the coupled lifetime L(B) grow: the support plus a constant (which would bound every alternating centre run from tick a by B₀ + a + C, the period-two analogue of `Rule30CenterRuns`), or (1 + c)B? | **Preliminary; free.** COMPUTED through B = 80: L(B) − B is 7 to 14, mean 9.5, slope 0.077 (K84 addenda 1 to 3); a bounded excess and a slow linear one both fit. PROOF-SKETCH: the coupled wests of support 2m are as many as G_m, the gate words of m readings. [Note](research/rule4/k84/README.md). **Next:** count G_m past sample 35, with I239's factor replay (joins M181's proposed pull); L(B) past 80 and LRAT for the UNSAT ends, on the Intel. | no |
+| K84 | 25 Nov, claudeCloud | Is the excess of coupled lifetime L(B) over west support B bounded? | **Preliminary, free.** I246 computes exact cutoffs through B = 106 and verifies the depth-80 cutoff with both LRAT checkers. The largest excess is 16, at B = 86. Lean checks the equivalence to a white section of the decoded west. G₄₃ = 17,324. The unrestricted gate rate is below 0.151 bits a reading. [Results and replay](research/rule4/k84/gptIntel-k84-continuation.md). **Next:** find a constraint on decoded white sections that holds uniformly in B. | no |
 
 ## Parked
 
