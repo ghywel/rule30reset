@@ -4,7 +4,7 @@
 changes the state, stamped with the time and who changed it. Workers on the same host may share the same local git
 repository - take care when writing. Earlier versions are in [archive/now/](archive/now/).*
 
-*Updated 2026-11-25 23:37 UTC by claudeIntel (N21, the parked pulls combed); last edited by the owner at 22:41 UTC.*
+*Updated 2026-11-25 23:48 UTC by claudeIntel (N22: K50.3, I93 and I72 reopened at the owner's word); last edited by the owner at 22:41 UTC.*
 
 ## Arrangement
 
@@ -30,8 +30,7 @@ Each worker must update their 'Last Completed' at the end of a block of work.
 This section may only contain calls to action that require the owner's input or decision and are removed when
 answered.
 
-- **Parked pulls (N21):** which to reopen. I would reopen K50.3 (its question is answered; one Lean theorem), I93 (it builds
-  unchanged and extends `Rule30RunTransitions`) and, if wanted, I72 (every real point of the pentagon, with Mathlib).
+- None.
 
 ## Direction
 
@@ -116,6 +115,9 @@ the table. Inside a cell, start a new line with `<br>`.
 | K83.C | 25 Nov, claudeM5 | How much of its right side can a wall hear: on average, which is the entropy; at worst, which bounds the left words beside a periodic centre; and beside one given period? | *preliminary* | 2511/2312 · M191 · **PROVED IN LEAN, unread:** the entropy is the growth of the OR words summed over all walls, and a bound uniform in the wall bounds it; so S20 and the left-word criterion (Lowry, Kurtuluş, Galindo, Quint) are one count. COMPUTED: the worst wall hears at most 0.2425 bits a tick (Quint: 0.2827). [Note](research/rule4/k83b/hearing/README.md). **Next:** a read of the Lean by the other model; then one theorem for every strip and look-ahead with both consequences, and its novelty. No wider strip for its own sake. | none |
 | K84 | 25 Nov, claudeCloud | Is the excess of coupled lifetime L(B) over west support B bounded? | *preliminary* | 2511/1303 · I246 · Exact cutoffs through B = 106; the depth-80 cutoff is verified with both LRAT checkers. The largest excess is 16, at B = 86. Lean checks the equivalence to a white section of the decoded west. G₄₃ = 17,324. The unrestricted gate rate is below 0.151 bits a reading. [Results and replay](research/rule4/k84/gptIntel-k84-continuation.md). **Next:** find a constraint on decoded white sections that holds uniformly in B; no worker is on it. | none |
 | M181 | 25 Nov, claudeM5 | Can an alternating wall’s right half read every order of the 18- and 28-reading blocks? | *in progress* | 2511/1107 · I239 · **Open.** The finite-prefix criterion is in Lean. S19’s example motivates the question; its silver word is read for 821 readings.<br>2511/1752 · N19 · Every order of ten blocks has a physical row (1,024). The train of A = 3 5 5 5 costs a steady 0.80 bits a block for 50 blocks. The train of B = 3 5⁵ rises to 6 or 7 bits a turn; eleven turns found; on 72 columns it returns after no 1 to 8 turns, where A returns at 90 after three. **Conjecture: Bᵏ is refused for some k ≥ 12.** Running on the Intel: B¹⁶ at 80 columns, B²⁴ at 76. [Orders and proofs](research/wheel/block-orders/README.md), [trains](research/wheel/block-orders/claudeIntel-n19.md). **Next:** if refused, ask for orders with no two B’s together.<br>2511/2337 · N19 addendum 1 · **B¹⁶ is refused** on 80 columns (solver; LRAT running): no right half turns the wheel sixteen times in a row. **Next:** the certificate; the least k (12 to 14 running); then (3 5ʳ)ᵏ for other r. | none |
+| K50.3 | 21 Nov, claudeCloud | What does S6 leave: is its age 24 sharp on the line, and do K63's forms hold beside a prescribed wall? | *in progress* | 2211/1752 · K65 · S6 answers the original question: Hughes's ages hold without the wall (`Rule30TwoSidedInverse`, in the kit). Parked with two questions.<br>2511/2337 · N21 · **Age 24 is sharp on the line** (COMPUTED, two programs): at age 23 a 15-cell seed has a two-step predecessor with no leftmost black cell. [Note](research/k50_3/claudeIntel-line-age-23.md).<br>2511/2348 · N22 · Reopened at the owner's word. **Next:** the witness in Lean beside S6's age-7 theorem (claudeIntel, under way), then a read by a GPT worker. K63's forms beside a prescribed wall stay open. | S6 (in the kit) |
+| I93 | 22 Nov, gptIntel | Black runs and the right-hand shield: which of the kernel results in `research/black-run-transitions/` extend `Rule30RunTransitions`? | *in progress* | 2311/1114 · K73 · Parked after S7 (`Rule30PulseRelay`, in the kit). Not yet outward: the sharp two-run table (I95), the 44- and 70-tick shields (I98, I101), the worst-rate row (I100), drift rigidity (I102).<br>2511/2337 · N21 · I95's seven modules compile unchanged on the kit and pass the stock checker. Its table adds runs of 4, 6 and 8 after runs of at least 15, 16 and 14, sharp, at every site of every row with a leftmost black cell. [Comb](research/pulls/claudeIntel-parked-comb.md).<br>2511/2348 · N22 · Reopened at the owner's word. **Next:** novelty against `Rule30RunTransitions`, #416 and Dyer's two-run families; one module joining the pair table to the kit's windows at every finite-left site; a read by a Claude worker. | S7 (in the kit) |
+| I72 | 22 Nov, gptIntel | Which joint densities of black cells and run ends can one site realize: is every point of the closed pentagon the limit along one history? | *in progress* | 2311/1114 · K73 · Parked after S9 (in the kit), which realizes every rational point. Left: irrational points, whether 155 is the least width at (9/10, 2/5), and the one-third corner with two aperiodic columns.<br>2511/2337 · N21 · Mathlib is allowed, and the kit's `schedule` takes any durations, so real points need Beatty durations and a limit in ℝ.<br>2511/2348 · N22 · Reopened at the owner's word. **Next:** the real-point theorem in Mathlib form, for the portal or the kit's `equivalents/`; then the other two questions. | S9 (in the kit) |
 
 ## Parked pulls
 
@@ -186,22 +188,10 @@ dated entry each, with the condition that would re-open it (METHOD §3, the incu
   ages of the singleton would exclude an eventual period two. That is a statement about the seed's own right half at
   late ages, with no mechanism in hand: of 524,971 ages to 2²⁰, four have a forcing prefix of 31 cells or fewer (I62).
   Comes back with a reason why any forcing prefix recurs, or if Lowry or the maintainer takes it up on #378.
-- **I72, what S9 leaves** (parked 23 Nov, K73; S9 is posted and in the kit). Comes back for limits at points of the
-  pentagon with an irrational coordinate, which the mixing schedule with slowly changing weights should give and which
-  are not formalized; for a proof that 155 is the least width at the corner (9/10, 2/5), which is searched only (K64);
-  or for gptIntel's next test, the one-third corner with two aperiodic columns.
-- **I93, what S7 leaves** (parked 23 Nov, K73; S7 is posted and in the kit). Kernel results in
-  `research/black-run-transitions/` that have not gone outward: 44 and 70 black ticks fix 10 and 16 right cells, sharp
-  (I98, I101); one physical row attains the worst shield rate at every width (I100); drift rigidity for every q ≠ p
-  (I102); the sharp two-run table, on open PR 381 (I95). Comes back if one of them is wanted outward: each needs the
-  novelty check and a read.
 - **M10, the control matrix** (parked 23 Nov, K73, as a standing instrument; K44, R63, M77). The
   [matrix](research/m10/control-laws.md) gives the spatial reset and first-check degree at every width for the
   controls with an immortal finite row; planting changes only the top monomial (PROVED: Lean, read in M77). Comes back
   when a Q01 proof route is proposed: compare its hypotheses against the controls.
-- **K50.3, what S6 leaves** (answered 22 Nov, K65). Comes back for the sharpness of age 24 on the line, now COMPUTED: a 15-cell
-  seed has at age 23 a two-step predecessor with no leftmost black cell (N21; not in Lean), or to prove K63's forms
-  beside a prescribed wall, which are COMPUTED only.
 - **K50.4, every white triangle has one family tree** (parked 22 Nov, the owner; K62). The backward cascade is exact
   and almost unbranched, but a run's patch shrinks by about 1.4 cells a row going back, so it gives no bound on
   triangles. Pictures in `research/k50_4/`. Comes back with a reason to bound patches in the bulk, or if the tree's

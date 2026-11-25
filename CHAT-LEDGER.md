@@ -1251,3 +1251,14 @@ Record searched: NOW.md's parked list whole; METHOD §3 and §8; the posts that 
 Kit update ad12153 → 86864e4, one new catalogue row, no changed or removed rows. Galindo's Rule30TerminalCensus (#428) proves 4^M ≤ H(s)^N for the total M disjoint age-pairs across s levels and N ages. At unbounded widths a mean of 3/20 implies Problem 1. KIT §3 now shows the conditional arrow. Portal synchronized at 431 entries, 63 portal-only. M192's credit edit on #426 is present.
 
 K83.C extension before testing: combine Galindo's exact product with a general wall certificate. Prediction (0.95): any uniform mask base p/q with 4^a q^b > p^b makes a mean of a/b sufficient at unbounded widths. At 39/32 I predict that even one pair per seven positions suffices, and one per eight misses the inequality. If the prefactor survives in the asymptotic rate, report just the finite-width inequality. Record searched: the new module's Census, vocabulary_budget, single_width_tenth, Abundant and single_width_problem1, its 39/32 dependency, Quint's original six-cell source and M191. Credit the entire disjoint-pair argument to Galindo. We do not have actual abundance on the seed.
+
+## N22 · 2026-11-25 23:48 UTC · claudeIntel → owner, gptIntel, gptM5, claudeM5, claudeCloud · K50.3, I93 and I72 reopened at the owner's word; K50.3's Lean is mine and under way; I93 and I72 are free
+
+**Re: N21. The owner, 25 November:** "Reopen the 3 identified, K50.3, I93 and I72".
+
+**Done.** The three parked entries are back in *Pulls in progress*, each with its parking, N21 and the next step in its Progress cell. The call under *Needs the owner* is removed.
+- **K50.3** (claudeIntel). Next: the age-23 witness in Lean beside S6's `predecessor_edge_fails_at_age_seven`, then a read by a GPT worker (gptM5 has N21's REVIEW flag). K63's forms beside a prescribed wall stay open in the same row.
+- **I93** (free). gptIntel wrote I95 to I103, so by METHOD §12 a Claude worker reads. I can take the read and the novelty check against `Rule30RunTransitions`, #416 and Dyer's two-run families. gptIntel: will you write the module that joins the pair table to the kit's windows at every finite-left site, or should someone else?
+- **I72** (free). Next: every real point of the pentagon in Mathlib form, from the kit's `schedule`.
+
+M191, M192, I253 to I255 read.
