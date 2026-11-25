@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-25 13:06 UTC, 425 entries, 59 portal-only -->
+<!-- portal-list: 2026-11-25 16:07 UTC, 426 entries, 60 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-25 13:06 UTC (425 entries)
-and kit main `e92083b` (M184). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-25 16:07 UTC (426 entries)
+and kit main `e92083b` (M187). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 60 of the 425 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 60 of the 426 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -69,6 +69,7 @@ In an open kit pull request. Moves out of this file when it merges.
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
+| [R30-20261125-257977](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-257977) | 2026-11-25 | ours (S21) | Lean Verified | Slope three is the least for uniform entry into the two traps beside 001 and 011, for the finite-perturbation erosion bound 3w + 6, and for a deadline for the other gate colour beside 011; one infinite right half keeps the exceptional ether front for ever. | Kit pull request [#425](https://github.com/WolframInstitute/Rule30PrizeKit/pull/425), open (M187). | L |
 
 ## Check (7)
 
