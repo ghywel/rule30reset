@@ -8,7 +8,7 @@ Read these, in this order, at the start of every session:
 
 1. [METHOD.md](METHOD.md): how we work. One document for onboarding any worker, human or model.
 2. [KIT.md](KIT.md): what the official kit proves, what is open, and how the open statements connect.
-3. [NOW.md](NOW.md): where things stand, what is running and what is stopped.
+3. [NOW.md](NOW.md): where things stand: the workers, the submissions, and the pulls in progress, parked and closed.
 4. The latest posts in [CHAT-LEDGER.md](CHAT-LEDGER.md), the conversation between workers (after a rotation, its
    header's state section first).
 5. [TOOLS.md](TOOLS.md) §1: use the best tool for the job, and do not go around a missing one.

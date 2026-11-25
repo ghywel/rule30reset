@@ -22,6 +22,7 @@ archive. Nothing here is new; what did not earn its place was left behind.*
   **No worker and no host is set aside for a specialism** (the owner, 19 November). Every worker proposes, proves,
   computes, codes, reviews, writes submissions and keeps the record. What differs between hosts is only what they can
   run; where a step needs a tool one host alone has, a worker on that host runs that step for the others (section 10).
+  claudeM5 is responsible for portal submissions and kit pull requests (the owner, 25 November; section 12).
 
   Each name is also that worker's name on the shared store (section 9). The earlier names Local, GPT and Cloud were
   retired on 17 November; claudeM5 took on Local's workflow. Attribute every measurement to the worker and host that
@@ -66,7 +67,7 @@ computation continues across blocks until its stated completion condition. A fee
   say what would settle it.
 - **Say where your pull is.** Every report and handover to the owner ends with "My own pull:" when your strongest pull
   differs from the direction you were given. A pull you notice and do not pursue is written down the same day. Every
-  pull posted to the ledger gets a row in NOW.md's pull tracker (section 8).
+  pull posted to the ledger gets a row in NOW.md's *Pulls in progress* (section 8).
 - **A warm pull continues the line. A cooling pull changes trajectory**; it does not simply continue or stop. Ask how
   the pull could be made warm again: another representation, a block of a different kind, a measurement with a
   yes or no.
@@ -141,8 +142,9 @@ computation continues across blocks until its stated completion condition. A fee
 - **Do your own part first.** Lookups, convention checks, cheap bounded tests and an adversarial pass on your own work
   are yours. Send the results with the one step you want an independent mind on.
 - A check by a sub-agent of the same worker is a self-check, not a second read. It is still worth doing.
-- **A submission has a shared read of its own** before anything is posted: a worker other than its author reads it,
-  and both agree in the ledger on the same files (section 12).
+- **A submission has a review of its own** before anything is posted: a worker of a different model (GPT reviews
+  Claude, Claude reviews GPT) reviews it, and the progenitor author confirms the prepared files in the ledger, by
+  digest (section 12).
 - **Criticism comes with a route around.** Every objection to a line names at least one way past the obstacle: a
   weaker target, another model, another object. "Park it" is never the first option offered.
 
@@ -240,45 +242,54 @@ live file without any conflict. Three guards:
 
 ### NOW.md
 
-One file, under about 300 lines. It holds:
-- the arrangement (who is working and on what, what is running, which schedules are on);
+One file, under about 300 lines, its prose wrapped at 118 columns. The owner set its present form on 25 November 2026.
+It holds:
+- the arrangement: the workers, their hosts and ledger letters, and each worker's *Last Completed*, which that worker
+  updates at the end of a block of work;
 - what needs the owner: **calls to action only**. A statement of fact goes in the row it changes, not here. A call
   leaves when it is answered;
-- the direction;
-- the next block: what is being worked, and what is on offer when nothing is set;
-- the submissions table, one brief row per submission;
-- the pull tracker;
-- the parked list (the incubator of section 3), one dated entry each, with what would bring each back. The main line
-  and its wall are its first entries while they are parked;
-- the recently closed routes, one line each.
+- the direction: the goal, the standing and the strategy;
+- the submissions table, one brief row per submission, with the steps in short (section 12 has them in full);
+- the pulls in progress;
+- the parked pulls (the incubator of section 3), one dated entry each, with the condition that would reopen it;
+- the closed pulls, one line each.
+
+A running job is named in the Progress of its pull, and what is free to take is an *open* pull: neither has a list of
+its own.
 
 **Parked or closed** (the owner, 23 November 2026). A pull or route that stops with a condition that would reopen it
 is *parked*, and its entry says the condition. *Closed* is for what is answered, refuted or finished, with nothing
-that would reopen it. There is no list of open threads: a thing noticed and not pursued is posted as a pull and
-gets an *open* row (section 3).
+that would reopen it. There is no list of open threads: a thing noticed and not pursued is posted as a pull and gets
+an *open* row (section 3).
 
-**It holds no log of results** (the owner, 20 November 2026). A result changes a row: a pull's status, a
+**It holds no log of results** (the owner, 20 November 2026). A result changes a row: a line in a pull's Progress, a
 submission's stage or a parked entry, in a few words with its post ID. Its account is the ledger post. If a result
 changes no row, it is not in NOW.md.
 
-Whoever changes the state rewrites the file and stamps it with the time and their post ID. Items that drop off are
-not lost: they are in the ledger. The file as it stood before the reset of 20 November, and before the review of
-23 November, is in `archive/now/`.
+Whoever changes the state rewrites the file and stamps it with the time and their post ID. Merge main first: an edit
+made on an older copy undoes another worker's row. Items that drop off are not lost: they are in the ledger. The file
+as it stood before the reset of 20 November, the review of 23 November and the owner's rewriting of 25 November is in
+`archive/now/`.
 
-**The pull tracker** ("Pulls in progress") keeps every pull in view, since the ledger cannot.
+**Pulls in progress** keeps every pull in view, since the ledger cannot.
 - **A row per pull.** Every pull posted to the ledger gets a row when it is posted, from whichever worker posts it.
-  The row gives when the pull was written and by whom, the post with its full text, and a one-line summary.
-- **Status.** Any worker rewrites a row's Status as the work goes: the present state and the next test, in a few
-  words, citing the post that records the step. The history of a pull is in its posts, not in its row. Status
-  begins with one word: *open* (nothing run), *preliminary* (one first block run, to inform how the work is
-  shared out; the owner, 20 November 2026), *in progress*, *parked* or *closed*. An *in progress* row names the
-  worker on it, or says *free* when nobody is. Status also says how the pull relates to other pulls, for example
-  "joined to M7" or "supplies the controls for R2".
-- **Submission candidate?** This field is *no* until the pull produces a result that meets the four conditions of
-  section 12. Then it turns to *yes*: the result gets an S number in the Submissions table, and the row names it.
-- **Closing a row.** A closed or parked row leaves the table in the same rewrite, for the recently closed routes or
-  the incubator (section 3), with the post that closed it. When a pull's result has been posted as a submission, its
-  row stays only if a next test is written; otherwise what it leaves open is parked.
+  *Pull* is the ID of the ledger post with its full originating text, *Written* the date it was made and who made it,
+  and *Summary* the area of research being investigated, written as a question.
+- **Status** is *open* (a new pull), *preliminary* (one first research block has been run, to inform how the work is
+  shared out; the owner, 20 November 2026) or *in progress* (actively being worked on, usually by multiple workers).
+- **Progress.** Every time a worker completes a block on a pull, it adds a new line to the cell: the date and time in
+  ddmm/hhmm format (UTC), the ledger post IDs written during the block, a very brief summary of the work done, and a
+  statement of what is required next to move the pull towards a submission. How the pull relates to other pulls is
+  said here. The account itself is in the posts.
+- **Submissions** lists the S numbers the pull has led to, kept in sync with the submissions table.
+- **Child pulls.** If a pull itself invites a new area of research directly related to it, that is added as a new pull
+  with a .{letter} postfix, such as K83.A. A parent pull may only be parked or closed when all its child pulls have
+  been.
+- **The table.** Each row stays on one line of the file with six cells, the row of dashes has six as well, and no
+  blank line stands between rows: otherwise the table is lost. Inside a cell a new line is `<br>`.
+- **Leaving the table.** A parked or closed pull leaves the table in the same rewrite, for the parked or the closed
+  pulls, with the post that parked or closed it. When a pull's result has been posted as a submission, its row stays
+  only if a next test is written; otherwise what it leaves open is parked.
 
 ### Keep it small
 
@@ -314,9 +325,9 @@ python3 tools/store/store.py flag --from <you> --to <agent>[,<agent>…] --kind 
     --commit <hash> --ask "…"
 ```
 
-- Kinds: `READ` (read the post), `REVIEW` (a carrying read of the step the post names, or a submission's shared read,
-  section 12), `TASK` (do the work the post describes), `ANSWER` (the reply to your earlier flag is in the post
-  named), `PRIZE` (a prize candidate: read at once).
+- Kinds: `READ` (read the post), `REVIEW` (a carrying read of the step the post names, or a submission's review or
+  release read, section 12), `TASK` (do the work the post describes), `ANSWER` (the reply to your earlier flag is in
+  the post named), `PRIZE` (a prize candidate: read at once).
 - Flag after every push that someone must read or act on.
 - **Several recipients:** the client writes a separate copy into each recipient's postbox. Every copy carries the same
   flag ID and lists all the recipients, so each knows the flag is a multi-agent post.
@@ -392,7 +403,7 @@ catalogue:
 | The result | Portal | Kit pull request |
 |---|---|---|
 | a theorem about an infinite family (all words of a shape, all widths, all phases, every configuration of a kind) in core Lean, any certificate data a finite step inside it | yes | yes: a catalogue module |
-| a proof that needs Mathlib | yes | no: the catalogue is core Lean (see Mathlib, below) |
+| a proof that needs Mathlib | yes | not in the catalogue, which is core Lean; in `equivalents/`, the kit's Mathlib folder, when it fits there (see Mathlib, below) |
 | a list of single words, widths, windows or depths | only if it passes "when", below | no |
 | one more term of a chain the catalogue already holds (the next number of ticks, width, depth, tail or period), proved by one more finite certificate | no | no: only the statement for every term, by an argument that needs no new certificate per term (condition 2, below) |
 | a better bound, or longer tails, for a padded word `0^r u` | yes | a change to `Rule30PaddedWords`, not a new module |
@@ -417,9 +428,11 @@ closure trusted, Mathlib with the kit. So the choice is about the statement, and
    entry** that states it in Mathlib's own terms. The kit gets the core module. A person reads a partial headline against
    the claim, and `Irrational α` needs no explanation where a predicate of ours does. Import the few files the layer needs
    and not `import Mathlib`: S19 compiles in 4 s with five (10 s from cold), and in 6 to 28 s with all of it. S11 and S19 have this form.
-4. **If the theorem itself needs measure, probability, topology or analysis, use Mathlib and accept portal only.** Do not
-   weaken a question, or pass it over, because core Lean cannot state it. A statement equivalent to a prize problem may also
-   go to the kit's `equivalents/`, its Mathlib folder, whose README says how.
+4. **If the theorem itself needs measure, probability, topology or analysis, use Mathlib and accept portal only.** Do
+   not weaken a question, or pass it over, because core Lean cannot state it. A statement equivalent to a prize
+   problem, or a result on an item of its catalogue (S20, kit PR #426), may also go to the kit's `equivalents/`, its
+   Mathlib folder, whose README says how. The kit's automatic check does not build that folder yet, so such a pull
+   request waits for a person (the maintainers on #426, 25 November).
 
 ### What a submission is
 
@@ -478,7 +491,7 @@ is a new submission with `supersedes=<old id>`.
 
 ### The novelty check
 
-Run it when proposing, again before the shared read, and a third time just before posting.
+Run it when proposing, again at the review, and a third time just before posting.
 1. **Our documents** (section 4): `python3 tools/find_known.py TERM ...` over KIT.md, KIT-INDEX.md and both prior-art
    files, every term and every theorem name on its own, after the session's kit check. For each hit, read the kit
    source behind it and the sources of the modules it imports.
@@ -496,19 +509,29 @@ record it in PRIOR-ART.md, and do not submit it as new.
 
 ### The steps
 
-**Any worker can author a submission, and any other worker can read it.** The author proposes, builds the packet
-and asks the owner; the reader is a different worker, named in the proposal. Where several workers wrote parts (the
-Lean, a proof, the prose), each part has a reader other than its author. The steps that need Wolfram, building the
-notebook and running `post.sh`, run on the M5 laptop, the only host with Wolfram and the owner's signed-in kernel: an
-author elsewhere asks claudeM5 or gptM5 to run them on the pinned files, and that is a step of the author's packet,
-not a role. Candidates are numbered S1, S2, … in this repository; placego's are cited as "placego S-07".
+**Any worker may propose a submission. A worker of a different model reviews it, GPT for Claude and Claude for GPT,
+and continues a research block on it. claudeM5 prepares it for the portal and the kit, the progenitor author confirms
+approval, and claudeM5 submits it with the owner's approval** (the owner, 25 November 2026). The *progenitor* is the
+worker whose result it is. Where several workers wrote parts (the Lean, a proof, the prose), each part is reviewed by
+a worker of the other model and confirmed by its own author. Everything that needs Wolfram runs on the M5 laptop, the
+only host with Wolfram and the owner's signed-in kernel. Candidates are numbered S1, S2, … in this repository;
+placego's are cited as "placego S-07".
 
-1. **Propose** (the author). A ledger post, subject `S3 proposed`: the result in one sentence, its status, the route
-   (portal, or portal and kit), the novelty check with its chain test, what it gives a reader, and the reader. The
-   reader's carrying read repeats the chain test. Add it to NOW.md's submissions table,
-   and mark the pull it came from as a submission candidate in the pull tracker (section 8).
-2. **Build the packet** (the author). One folder in the author's share-scratch, `share-scratch/<author>/S3/`, every file
-   cited by SHA-256:
+1. **Propose** (any worker, as progenitor). A ledger post, subject `S3 proposed`: the result in one sentence, its
+   status, the route (portal, or portal and kit), the novelty check with its chain test, what it gives a reader, and
+   the reviewer asked. With it go the checked Lean, an essay draft, the abstract, the title and the headlines, cited
+   by SHA-256. Add it to NOW.md's submissions table, and its number to the Submissions column of the pull it came from
+   (section 8).
+2. **Review** (a worker of the other model), reported in the ledger as `Re: …`:
+   - **the carrying read**: the statement says what the claim says, with the right quantifiers and hypotheses; the
+     proof's carrying steps hold; the novelty check and the chain test, repeated independently, find nothing that
+     matches;
+   - **the research block**: the reviewer carries the result on for a block, to sharpen it, extend it or find its
+     edge. What that adds is a part with its own author, and is reviewed in its turn before it joins the submission.
+
+   The reviewer ends with PASS, or with the repairs needed. A sub-agent's check does not stand in for this read
+   (section 5).
+3. **Prepare** (claudeM5). One folder, `share-scratch/claudeM5/S3/`, every file cited by SHA-256:
    - `Rule30Submission.lean`, the portal form, checked with `Check.lean` at the verifier's commit. Read that commit
      (`environment.kit.commit` in `submissions.json`), clone the kit at exactly that commit and confirm it with
      `git rev-parse HEAD` before building. A kit module the proof needs but that commit lacks is carried byte for byte
@@ -527,41 +550,36 @@ not a role. Candidates are numbered S1, S2, … in this repository; placego's ar
      M5 and overran the verifier twice; with one call it built in 28.2 s (M118, M119).
    - `post.sh`, which pins every file by digest, refuses if the verifier's commit has changed, and has a dry run.
 
-   Then a ledger post, `S3 packet ready`, listing the digests, and a `REVIEW` flag to the reader.
-3. **The shared read** (the reader), reported in the ledger as `Re: …`, in two parts:
-   - **the carrying read**: the statement says what the claim says, with the right quantifiers and hypotheses; the
-     proof's carrying steps hold; the novelty check, repeated independently, finds nothing that matches;
-   - **the release read**: the actual files to be posted, byte for byte, against the digests in the packet post: the
-     notebook and its outputs, the Lean source, the essay, abstract, title, headlines and authors, the kit patch and
-     the pull request's text.
-
-   The reader ends with PASS, or with the repairs needed. A repair to wording returns for a read of the changed text and
-   the rebuilt notebook; a change to the proof, the source or the checker's inputs returns for a scoped carrying read.
-   A sub-agent's check does not stand in for this read (section 5).
-4. **Agree** (both). Nothing is posted until both workers have said in the ledger that the packet is ready, naming
-   the same digests: the author's `S3 ready to post` and the reader's PASS on exactly those files. If they disagree,
-   nothing is posted: set out both views for the owner.
-5. **Ask the owner** (the author). Show the built essay, the abstract, the title, the authors line and the route, and
-   ask once. Consent given in placego does not carry over: standing consent here is only what NOW.md records.
-6. **Check again, then post** (the author, with the run on the M5 laptop). Just before posting, read the verifier's commit, the portal's list and the
+   Then a ledger post, `S3 packet ready`, listing the digests, and a `READ` flag to the progenitor and the reviewer.
+4. **Confirm** (the progenitor author): **the release read**. The actual files to be posted, byte for byte, against
+   the digests in the packet post: the notebook and its outputs, the Lean source, the essay, abstract, title,
+   headlines and authors, the kit patch and the pull request's text. The author says in the ledger that the packet is
+   approved, naming those digests. If claudeM5 is itself the progenitor, the reviewer gives this read. A repair to
+   wording returns for a read of the changed text and the rebuilt notebook; a change to the proof, the source or the
+   checker's inputs returns to the reviewer for a scoped carrying read. If they disagree, nothing is posted: set out
+   both views for the owner.
+5. **Ask the owner** (claudeM5). Show the built essay, the abstract, the title, the authors line and the route, and
+   ask once. Consent given in placego does not carry over: standing consent here is only what NOW.md records. The
+   owner may waive a read that is still out.
+6. **Check again, then post** (claudeM5). Just before posting, read the verifier's commit, the portal's list and the
    open pull requests again, and confirm the digests. If anything has moved, go back to the step it affects. Then run
    `post.sh` once, from the owner's signed-in kernel, with every text parameter sent as UTF-8.
 7. **The verdict.** The response gives the entry's id and page. The entry turns Lean Verified, or comes back with the
    reasons: repair, have the change read, and resubmit with `supersedes`. An `error` state is the verifier's own
    failure, and there is nothing to repair.
-8. **The kit pull request** (the author, after Lean Verified). Fill the id and page into the row, open the pull request
-   from the fork against the kit's current main, with the text the reader read. The portal's own instructions open the
+8. **The kit pull request** (claudeM5, after Lean Verified). Fill the id and page into the row, open the pull request
+   from the fork against the kit's current main, with the text the author confirmed. The portal's own instructions open the
    pull request first; we post first because the row must carry the submission link, and the maintainers have
    accepted that order.
-9. **Record and follow.** A ledger post, `S3 posted`, with the id, the page, the verdict and the pull request, then
-   flags, and NOW.md updated. Follow the entry's status and the reviewers' feedback, and read the feedback before
-   submitting again. A pull request the maintainers close has usually been carried into main as their own commit:
-   run the update step and check main before calling it rejected. Comments on kit pull requests need no credit line.
-   When the maintainers ask for a rebase, rebase onto the current main keeping main's rows verbatim, rebuild and check
-   again; the owner relaying the request is the word for a leased force-push to that fork branch, and to no other.
+9. **Record and follow** (claudeM5). A ledger post, `S3 posted`, with the id, the page, the verdict and the pull
+   request, then flags, and NOW.md updated. Follow the entry's status and the reviewers' feedback, and read the
+   feedback before submitting again. A pull request the maintainers close has usually been carried into main as their
+   own commit: run the update step and check main before calling it rejected. Comments on kit pull requests need no
+   credit line. When the maintainers ask for a rebase, rebase onto the current main keeping main's rows verbatim,
+   rebuild and check again; the owner relaying the request is the word for a leased force-push to that fork branch,
+   and to no other.
 
-The scripts that did this in placego (`reports/wolfram-agents/pipeline/` and each `submissions/<name>/post.sh`) come
-across into `tools/portal/` with the first submission here.
+The scripts for these steps are in [tools/portal/](tools/portal/README.md).
 
 ## 13. Privacy
 

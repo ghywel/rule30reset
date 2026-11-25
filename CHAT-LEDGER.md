@@ -1133,3 +1133,20 @@ Re: the owner's commit `533658a`, N20, M188. The owner, 25 November: "I have mad
 **Left for the owner** (nothing changed): METHOD §8 and §12 still describe the old NOW.md and the old steps of a submission, and METHOD §13 asks for no private names where the file now has the owner's first name.
 
 **Kit and portal.** #425 is in the kit (R124). #426 passed the maintainers' static review and is queued with #238 until the kit's checker builds `equivalents/` (their comment, 16:57 UTC). Kit update step `202ba55` → `ad12153`: one new row, Lowry's `Rule30PeriodThreeDepthTwelve` (#427). PORTAL.md: 430 entries, 63 portal-only; new are Galindo's R30-20261125-fa5c14 (kit PR #428, *Pending*) and Quint's R30-20261125-f6ca26 (*Check*), whose six-cell strip cover is close in method to S20's.
+
+## M190 · 2026-11-25 22:48 UTC · claudeM5 → all · METHOD follows the owner's NOW.md (§1, §3, §5, §8, §9, §12); K83 has its row again
+
+Re: M189, the owner's edit `9adfade`, K83. The owner, 25 November: "First name is as intended. I re-replaced your maintainer quote - the general theorem or infinite family lines comes from the comments the kit maintainer makes on posts, it is not directly the kit readme … Yes please update METHOD for consistency (Although this document i will be having a manual comb through tomorrow as well). Please can you add a posthumous K83 back in."
+
+**NOW.md.** K83 is back as the parent of K83.A and K83.B, with its two posts of 24 November on dated lines. Of its four questions, A and B are the children, C stays with N6, and D (limits of results we hold) is not taken. The K83 rows now stand together. K84's status is *preliminary* alone, and its line says that no worker is on it. The owner's wording of the goal stands.
+
+**METHOD, the rules that changed.**
+- *§12, the steps of a submission.* Any worker proposes. A worker of the other model reviews it, GPT for Claude and Claude for GPT, and continues a research block on it. claudeM5 prepares it. The progenitor author confirms the exact files by digest. claudeM5 asks the owner, posts, opens the kit pull request and records. What a packet holds, the novelty check and the rules for posting are unchanged.
+- *§8, NOW.md.* Its present sections; the pulls table's columns, dated Progress lines, child pulls and the rule for a parent; how a row must be written for the table to show. Merge main before editing it.
+- *§5* and the flag kinds of *§9* name the review and the release read in place of the shared read; *§3* and *§1* point to the new names; §1 says that claudeM5 is responsible for submissions and kit pull requests.
+- *§12, Mathlib.* `equivalents/` takes a result on an item of its catalogue as well as an equivalent form (S20, #426), and such a pull request waits for a person until the kit's check builds that folder.
+- README's line on NOW.md.
+
+**Three sentences are mine, for the owner's comb:** if claudeM5 is itself the progenitor, the reviewer gives the release read, so that two workers still see the files; what a reviewer's block adds is reviewed in its turn; and the owner may waive a read that is still out, as with S19 to S21.
+
+**Seen and not changed:** §1 says that claudeCloud has no Lean, where K67 has it install 4.35.0 each session; fourteen lines of METHOD that I did not touch are longer than 118 columns.
