@@ -1,14 +1,14 @@
-<!-- kit-commit: ebda8ce 2026-11-25 -->
+<!-- kit-commit: e2c9d8e 2026-11-25 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ebda8ce` (main, 2026-11-25),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `e2c9d8e` (main, 2026-11-25),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 345 modules under `lean/` (46 under `Rule30Certificates/`) and 108 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 421 entries on 24 November (418 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 365 modules under `lean/` (52 under `Rule30Certificates/`) and 106 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 424 entries on 25 November (422 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -105,11 +105,14 @@ graph TD
   At a black pulse from the second white sample, sites 2 and 5 determine the next gap (4, 2, 5 or 3). A wrong forecast
   detects a clock break before its endpoint (`Rule30GatePulseReturn`). 48 clean gate readings, or 47 after a white sample,
   certify the 829-window trap, and both are least for a uniform test (`Rule30GateObserver`); so RD is a statement about the gate alone.
+  Every right half beside an alternating column is in a closed set of 777 twelve-cell windows from white sample 35, sharply; from there two
+  successive gaps after a kick are one of nine pairs, and no right half kicks once in four for ever (`Rule30UniformEntry`,
+  `Rule30AlternatingArrivals`). If the centre alternates, Lowry's net, shell and odd kicks are aperiodic on each phase.
   An alternating singleton tail has arbitrarily late returns in both white phases modulo four (`Rule30EventReturns`).
 
 **Period 3** (`Rule30EtherThreeLeft`, `Rule30EtherThreeSkeleton`, `Rule30PeriodThreeLanguage`). Q001 ∧ C3w(011) ⇒ no
 eventual period 3; C3w(001) ∧ C3w(011) ⇒ no period 3; C3w(001) ⇒ C3s001 ⇒ not eventually 001; C3w(011) ⇒ C3r011;
-C3g001 ⇒ Left001 and C3r011 ⇒ Left011. Left001 ∧ Left011 ⇒ no eventual period 3 (`Rule30PeriodThreeEntry`).
+C3g001 ⇒ Left001 and C3r011 ⇒ Left011; C3s001 ⇒ C3g001Sharp ⇒ not eventually 001 (`Rule30EtherThreeGateLanguage`). Left001 ∧ Left011 ⇒ no eventual period 3 (`Rule30PeriodThreeEntry`).
 The left statements restrict the free-phase readings by the corresponding complementary gate words. AbsorptionT t001 is **false** (`Rule30EtherThreeNotAbsorption`: a period-15 trap apart
 from t001 holds a right half for ever), so 001 needs a weaker entry statement. GateEntry ⇒ GatePeriodic ⇒ not eventually
 001 (`Rule30EtherThreeGate`; both open; the form for 001 of Lock, on the second white tick of each 001).
@@ -117,6 +120,10 @@ from t001 holds a right half for ever), so 001 needs a weaker entry statement. G
 **Period 4** (`Rule30Ether`, `Rule30PeriodFourSkeleton`). Absorption w ⇒ Lock w ⇒ not eventually w, for w = 0001,
 0011, 0111; the three Locks ⇒ no least period 4. C3 ⇒ (period 4 ⇒ period 2). Problem2 ⇒ not eventually 0001 or 0111,
 and no odd eventual period. The finite left half is necessary (`Rule30EtherWallWitness`).
+
+**Sufficient for Problem 1, from the restarted left half and the horizontal words** (24 and 25 November): unbounded finite first-failure times
+(`Rule30MarkedGaps`); matches of every length by centre-driven restarts (`Rule30RestartVisibility`); horizontal words of width w beyond A(39/32)^w
+for every A (`Rule30HorizontalDiversityBounds`). All open hypotheses.
 
 **Inverse ticks at the wall** (`Rule30EveryKStatement`, `Rule30EveryKCascade`, `Rule30EveryKInverse`). CAP ⇒ for
 every k, every k-tick predecessor of an aged nonzero finite row is finite with its edge exactly k inside, and every
@@ -193,7 +200,8 @@ unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoS
   deeper-source parities differ (`Rule30EdgeSourcePulse`).
 - **Excluded repeating words**, for every transient and usually every column of every configuration with a leftmost
   black cell: 1 0^q and 0^q 1 for q ≥ 9 (`Rule30WhiteEndNine`); any mixture of blocks 1^r 0^q with every q ≥ 17, so
-  every nonconstant eventual period has a cyclic white run ≤ 16 (`Rule30White17Runs`); grammar and reset mixtures
+  every nonconstant eventual period has a cyclic white run ≤ 16 (`Rule30White17Runs`); blocks of at least 17 whites then 1001 (`Rule30PulsePairs`); isolated
+  pulses with white gaps of 7 or at least 9, one of them at least 22 (`Rule30MixedGapClocks`); grammar and reset mixtures
   (`Rule30GrammarRuns`, `Rule30ResetMixtures`); every 0^r u with u of at most six bits and r ≥ 74
   (`Rule30SixTailSharpened`); 0^r v 011 for every v once r ≥ 10|v| + 41 (`Rule30SuffixFamilies`); every u 0^q with u
   black-containing, past a bound singly exponential in |u| (`Rule30ArbitraryWhitePadding`); an eventually periodic
