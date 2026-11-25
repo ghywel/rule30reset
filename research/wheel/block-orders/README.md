@@ -1,0 +1,66 @@
+# Which block orders can a driven Rule 30 right half read?
+
+M181 asks whether **for each infinite order there is an initial right half** whose first cell reads that order beside an alternating column. Start on a white tick and observe the first cell every two ticks. A block starts with a kick (a black reading). Its gaps to successive kicks are A = 3,5,5,5 or B = 3,5,5,5,5,5. The last gap ends on the next block's first kick. A takes 18 readings and B takes 28. The left half has no finite-support requirement in this question.
+
+**The infinite question for this pair is open.** All 128 seven-block orders have genuine initial rows. On a strip of 35 cells every infinite order has a trajectory with fresh exterior inputs. Two sharp finite cutoffs explain why a direct attempt to repeat a pair of rows fails. The strip trajectories leave a compatibility condition on their eastern inputs before they can describe a single infinite initial row.
+
+## The revised S19
+
+S19 excludes rotation-ordered block readings from a row with a **leftmost black cell**. Its revised silver example uses A and B. The revised packet passed the pinned compiler, all 12 headlines, 132 declarations, kernel replay of 666 constants with no new axioms, standalone checker and a deliberately missing-headline test. The physical silver example remains undecided. An independent reproduction left 5,135,996 windows at width 44 after the second-start scan of 9,900 white readings. The first start previously left 3,640,491. [S19 source and scope](../../kit-repair/R30-20261029-0ef6e2/endpoint/blocks/README.md) · [Earlier silver test and scan conventions](../../kit-repair/R30-20261029-0ef6e2/endpoint/blocks/gptIntel-m177-review.md)
+
+The broader non-emptiness question has an elementary affirmative answer. The kit's periodic ether gives the driven readings 1010… . Take U = 10 and V = 1010. The **same** physical half reads them in every order, including every allowed irrational rotation order. Even the lengths 18 and 28 work with U = (10)⁹ and V = (10)¹⁴. These blocks commute. One fixed right half that reads all orders of any given pair would have to give the same prefix for UV and VU, hence UV = VU. For the wheel pair the first difference between AB and BA is white reading 21, counting from zero. I237 requests that the authors narrow the release wording to the specific silver example. The ether has no leftmost black cell. [Checked Lean corollary](EtherBlockOrders.lean) · [Kit ether witness](../../../Rule30PrizeKit/lean/Ruliology/CellularAutomata/Rule30PeriodTwoCoupled.lean)
+
+## Physical rows and a branching prefix
+
+The larger census followed 1,600,000 reproducible pseudorandom initial rows for 640 white readings each. It recorded the actual row at the start of each new order. A word lasting L readings requires only its first 2L+1 initial cells to verify through the closing kick. A separate ternary evaluator replaces all further cells by unknowns and replays each advertised result. Additional witnesses come from keeping part of a real row and changing its eastern suffix. As controls, no three-cell initial row reads 11 at successive white ticks; the old 18/23 pair nevertheless gives physical witnesses to finite orders, including 7 of 8 three-block orders in the smaller cohort. M181's refusals for that pair concern the orders and horizons tested. [Sampler](physical.cpp) · [Targeted search](complete.cpp) · [Independent replay](check.py)
+
+| Number of blocks | Distinct orders | Larger census alone | With targeted extensions, first pass |
+|---:|---:|---:|---:|
+| 5 | 32 | 32 | 32 |
+| 6 | 64 | 63 | 64 |
+| 7 | 128 | 124 | 128 |
+| 8 | 256 | 239 | 249 |
+
+Six consecutive B blocks were the sole six-block gap in the large census. An independently replayed 337-cell witness forces all 169 readings, including the closing kick. The seven-block collection includes seven consecutive B blocks. Searches for a missing finite order give a disproof of universality only when accompanied by a certified physical refusal.
+
+There is also a common five-cell initial prefix, 11101, from which three successive choices can be made by fixing more cells to the east. All 15 nodes were checked, including both children of every internal node. Every completion of each node's prefix forces the advertised history and the next seam's 1001. The eight leaf widths range from 63 to 96. This is stronger than eight unrelated initial rows. An alternative [stream generator](stream.cpp) draws a further initial bit only when a local update needs that bit. A search with 59,219,849 extension attempts failed to find a fourth level from that root with its chosen parent cylinders. That search leaves other cylinders open. [Prefix search](tree.cpp) · [Tree extraction from independent witnesses](mine_tree.py)
+
+## All orders on strips, for arbitrarily many blocks
+
+At each white tick extend the W-cell row with two chosen bits, apply the white-wall update to W+1 cells, then the black-wall update to W cells. Repeat, allowing fresh eastern bits at the next white tick. This retains a real two-tick cone in each step. Every physical half gives a strip trajectory. Arbitrary choices on the successive eastern edges need not come from one initial half.
+
+* **Choose either block from a common row.** For a set S of seam rows, take the intersection of the predecessors of S along A and along B. Iterate from all rows with a starting kick. At width 23 the greatest fixed set has 1,753 rows. At width 24 the successive sizes are 171,180, 1,769, 909, 376, 33, 0. A row can promise five successive choices at that width but none can promise six. The spatial lifting program independently reproduces the cutoff. A failure projects to every wider strip for this same decision rule. [Whole-strip predecessor calculation](strip.py) · [Independent spatial lift](lift.cpp)
+* **Let the seam row depend on the coming block.** Two rows P_A and P_B suffice at width 34. There is a path from P_a to P_b carrying a for each of the four pairs. Following those paths gives every infinite order, with the next letter available during the current block. At width 35 there is no such pair of rows. The 6,646-variable, 38,732-clause instance passed both lrat-check and CakeML's cake_lpr. This is a sharp cutoff for that two-row construction. Exact maximal-set enumeration with that lookahead independently got through width 30, with 2,038,782 A-seam and 2,634,029 B-seam rows. The smaller path certificates supersede the large enumeration for establishing acceptance. [Certificate generator and cell-by-cell verifier](seams.py)
+* **Allow more seam rows.** At width 35 choose a seam row indexed by the preceding, current and following block. All sixteen transitions on the eight such labels replay under the literal Rule 30 table. Any infinite order supplies the labels, with an arbitrary letter prepended at the first seam. Thus every order survives for all time at the very width that rules out a two-row construction. The failing two-row proof gives no forbidden word.
+
+Locality limits every fixed amount of advance information. Suppose the W-cell row must already be fixed with d coming letters known. Begin with d copies of A. Compare continuations beginning AB and BA. Their first difference occurs 18d+21 readings from the initial seam. Once W ≥ 2(18d+21)+1, that reading is fixed by the initial strip, regardless of the later eastern inputs. Hence this type of online controller needs increasing advance information or differently chosen initial rows as W grows. M181's existential right half may depend on the entire order.
+
+## What would settle the physical question?
+
+1. **A single finite counterexample suffices.** For a fixed infinite order the sets of initial halves realizing the first n blocks through their closing kicks are nested, closed cylinders or finite unions of cylinders. Compactness gives an infinite witness if all these sets are nonempty. Thus all infinite orders are physically readable exactly when all finite orders have true cones. Equivalently, it suffices to establish all-order strip acceptance at unbounded widths. For a fixed finite order take a strip wide enough to contain its entire cone; its time-dependent exterior cannot affect any requested bit. A single infinite readable order containing every finite block word as a factor would also suffice by advancing its row to each observed seam.
+2. **A returning whole cylinder cannot close the proof.** Write F for two driven ticks and X for all right halves. The K83.A range formula gives fair mass μ(FⁿX) = 4⁻ⁿ. If a nonempty finite prefix cylinder C were covered by its return Fᵖ(C) for p > 0, iteration would put C in FⁿᵖX for every n, contradicting its positive mass. The same obstruction applies to a finite union of cylinders covered by returns of either block length, since every n-return image lies in F¹⁸ⁿX. The set K = ⋂ₙ FⁿX is compact and fair-null. If every order is readable then each two-sided order has a realization through K: prepend more of its past, shift to the marked seam and take a convergent diagonal subsequence of the trajectories. An infinite nested tree of growing initial prefixes remains a possible construction. [Range identity and Lean proof](../../rule4/right-coin-past.md)
+3. **One missing word or positive entropy.** The readable block orders form a closed, forward-shift-invariant set. If some word of k blocks is absent, a fair independent order has probability at most (1−2⁻ᵏ)ᵐ of passing even the first m disjoint k-block tests, hence probability zero of being readable forever. If all orders are readable, the gate language has entropy at least 0.044211745 bits per white reading. To see the rate, each 3-gap marks a block start; among equal total lengths the concatenations are distinct when the closing kick is retained. Their counts have generating function 1/(1−z¹⁸−z²⁸). Its positive pole gives h with 2⁻¹⁸ʰ + 2⁻²⁸ʰ = 1. Entropy per physical tick is half this value for the sampled gate. This conditional lower bound concerns the driven gate and does not establish a full-map entropy exceeding one bit.
+
+**Next physical test.** Require both continuations from one initial prefix and retain every committed cell. Shorten a candidate prefix only after its earlier readings replay for every eastern tail. The sharper target is a repeatable rule for producing both children at every depth, or one finite word with a checked empty cone. K81's sharp mismatch at sites 66 and 83 on pure B and A turns already excludes identifying every physical cell at consecutive pure seams. [K81 return obstructions](../gptIntel-k81-compactness.md)
+
+**Connection to K84.** Counting distinct factors in the checked physical words gives unconditional lower bounds on the number Gₘ of black-first gate words. Discard start index zero so each factor has an actual preceding black tick. For m = 56, 100, 168, 224 and 256 the archived rows alone give respectively **80, 311, 2,489, 12,628 and 14,533** words. These are lower counts at finite lengths. A proof of positive fair-order probability of everlasting readability, or a proof for every periodic block order, would settle universality: a proper closed shift-invariant order set omits a finite word and also its periodic repetition. [Factor replay](factors.py) · [K84 coupled lifetime](../../rule4/k84/README.md)
+
+## Replay
+
+The larger targeted suffix search writes `refine8.tsv` and the direct pure eight-turn [cone solver](cone.py) writes `cone-B8.tsv` on finding a witness in the Intel host's `%LOCALAPPDATA%/Rule30/gptIntel/M181` directory. A missing file supplies no UNSAT evidence. The independent mixed cone produced BBAABABB through its next 1001, included below.
+
+The private store packet `share-scratch/gptIntel/M181/m181-i239.zip` has SHA-256 `8801403a14c62527c48bc320c7ca2d829daaa780af8bf7b814f8bffa89a2df7b`. It contains a SHA-256 manifest, initial rows, strip paths, the width-35 LRAT proof and both checker logs. Extract it and, with the directory containing these scripts on the command line path, run the following from the extracted directory (replace the script names with their paths as needed).
+
+~~~sh
+python check.py coverage census2.tsv focus8.tsv fills.tsv
+python check.py physical physical-old.tsv --long-run 4
+python check.py tree wide-3.tsv
+python factors.py census2.tsv focus8.tsv fills.tsv
+python seams.py seams-34.json
+python seams.py both-35.json
+python seams.py regenerated.cnf --search 35 --dimacs
+lrat-check regenerated.cnf two-35.lrat
+cake_lpr regenerated.cnf two-35.lrat
+~~~
+
+All positive witness replays above use Python's standard library. CNF generation uses python-sat. The stored CNF has SHA-256 `de238fbc6bcf1987aa82170de373b8e6372ac21ac4327229ec75cc254062ced2` on the producing Windows host. When regenerating on a host with different text-file line endings, the same clauses in the same order suffice for LRAT. The original large census command was `physical 640 1600000 12 5 200000 census2.tsv`, using a C++17 build of physical.cpp.

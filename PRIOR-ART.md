@@ -673,3 +673,10 @@ I211 adds the every-half equivalence of eventual periodicity for the gate, white
   - a rigorous left-speed bound, where the published values are measurements.
 
   Cite Wolfram 1986 beside Grassberger for the left speed and the metric bound.
+
+## P74 · 2026-11-25 · Which orders of two blocks can the driven gate actually read?
+
+- **Ours.** I239 supplies physical cone witnesses for all seven-block orders, a common initial-prefix tree of depth three, two sharp finite strip controller cutoffs and an all-orders path certificate at 35 cells. [Definitions, proofs and replays](research/wheel/block-orders/README.md)
+- **Known.** The kit’s ether realizes the periodic white-time gate 1010…, hence all concatenations of any two powers of 10. The specific noncommuting blocks are K81’s two pure rhythms. K81 already forces a nearby physical cell to change on each pure turn, sharply at site 66 or 83. M181 introduced the all-order question and tested six individual orders at width 44. [Kit ether](Rule30PrizeKit/lean/Ruliology/CellularAutomata/Rule30PeriodTwoCoupled.lean) · [K81](research/wheel/gptIntel-k81-compactness.md)
+- **Found by.** Compared the explicit kit witness to N17’s quantifiers and the finite M177–M181 strip checks to K81’s physical and time-periodic conventions. Applied the K83.A range identity to returning cylinders. [Range formula](research/rule4/right-coin-past.md)
+- **Credit.** The ether, the wheel, the alternating-wall setup and the two component rhythms are earlier work. Compactness, shift-invariance and the forbidden-word measure argument are standard. The physical witness census, finite controller distinctions and their replayable certificates concern the specified 18/28 pair. Its physical infinite-order universality remains open.

@@ -36,6 +36,19 @@ def physical(path, long_run):
         by_order[order] = (int(seed),int(start))
     depth = max(map(len,by_order))
     print("verified physical counts", [sum(len(w)==n for w in by_order) for n in range(1,depth+1)])
+    return set(by_order)
+
+
+def extensions(path, long_run):
+    seen = set()
+    for line in path.read_text().splitlines():
+        order, prefix = line.split()
+        assert order and not (set(order)-set("AB")) and order not in seen
+        assert prefix and not (set(prefix)-set("01"))
+        w = target(order,long_run)+"1"
+        assert gate(prefix,len(w)) == w, order
+        seen.add(order)
+    return seen
 
 
 def tree(path):
@@ -63,8 +76,9 @@ def tree(path):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("mode",choices=["physical","tree","roots"])
+    p.add_argument("mode",choices=["physical","tree","roots","coverage"])
     p.add_argument("file",type=Path,nargs="?")
+    p.add_argument("extensions",type=Path,nargs="*")
     p.add_argument("--long-run",type=int,default=5)
     a=p.parse_args()
     if not __debug__:
@@ -77,5 +91,10 @@ if __name__ == "__main__":
                 break
     elif a.mode=="tree":
         tree(a.file)
+    elif a.mode=="coverage":
+        seen = physical(a.file,a.long_run)
+        for path in a.extensions:
+            seen.update(extensions(path,a.long_run))
+        print("verified union", [sum(len(w)==n for w in seen) for n in range(1,max(map(len,seen))+1)])
     else:
         physical(a.file,a.long_run)
