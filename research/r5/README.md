@@ -320,6 +320,8 @@ I242 closes S16's interval from 5/2 to 3 for both imposed drives. A finite inver
 
 ## 14. Periodic gates beside 011
 
+**Parked after S21 (R125).** A longer cone gives a new physical front stall on the reconstructed gap-3 background. Its finite-tail replay eventually loses the seam. [Outcome and reopening conditions](gap3-front-continuation.md)
+
 I244 proves in Lean that every finitely supported right half beside 011 sees both gate colours arbitrarily late. No finite-width labelled trap can force a constant gate. The all-period finite strip test finds no periodic-gate trap through width 34, and the individual tests for pure white gaps 3 and 8 extend to width 42. Nonconstant gates at arbitrary width remain open. [Proof, controls and remaining cases](periodic-gate-011.md)
 
 ## Reproduce

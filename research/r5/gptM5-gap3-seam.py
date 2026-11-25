@@ -44,17 +44,24 @@ def main():
     seed = 28  # Sites 1 onward are 00111 followed by white.
     row = seed
     seam = []
+    first_front_failure = first_seam_failure = first_sample_failure = None
     for tick in range(1, 10_001):
         phase = tick % 9
         if not agrees(row, references[phase], schedule[phase]):
-            raise AssertionError(f"First physical front failure at tick {tick}, phase {phase}")
+            if first_front_failure is None:
+                first_front_failure = tick
+            if phase == 0 and first_sample_failure is None:
+                first_sample_failure = tick
         if not wall[phase]:
-            assert (row & 1) == (references[phase] & 1)
             if tick <= 9:
                 seam.append((phase, row & 1))
+            if (row ^ references[phase]) & 1 and first_seam_failure is None:
+                first_seam_failure = tick
         row = step(row, wall[phase])
-    print("10,000 ticks replayed on a finite white-tailed half")
-    print("Wall:", "".join(map(str, wall)), "white-phase east readings:", seam)
+    print("First phase-specific front failure:", first_front_failure)
+    print("First phase-zero front failure:", first_sample_failure)
+    print("First white-wall mismatch:", first_seam_failure)
+    print("Wall:", "".join(map(str, wall)), "first white-phase east readings:", seam)
     actual = [(0, 0), (3, 1), (6, 1)]
     print("Target wall: 011011011. White-phase east readings:", actual)
     for width in range(4, 31):
