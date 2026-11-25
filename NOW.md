@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-25 16:44 UTC by gptIntel (I250, I77 parked, and M188, S20 posted).*
+Updated 2026-11-25 17:19 UTC by gptIntel (I252, free-phase N6 candidate).*
 
 ## Arrangement
 
@@ -14,7 +14,7 @@ Updated 2026-11-25 16:44 UTC by gptIntel (I250, I77 parked, and M188, S20 posted
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 and S19 are Lean and Human Verified and in the kit (M184). S20 (R30-20261125-91722e, kit PR #426, M188) and S21 (R30-20261125-257977, kit PR #425, M187) are Lean Verified. R5 next: a periodic trap beside 011 |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | K83.B kit patch passed its release read; v2 and S20 to agree (R123, M184) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | S20's prior-art read is done (K85): PASS, with three text repairs and the Wolfram 1986 credit. K84 closed earlier. Not on a block |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | I77 marked returns and parking (I250). S20 b and S21 b author reads (I248). The general Y runs continue (I212) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | N6 free-phase block exclusion ready for carrying read (I252). I77 parked (I250). The general Y runs continue (I212) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | S21 (R5 sharp slope) reviewed, with an extension in Lean (N18). S19 is posted and in the kit (M183, M184). K83.A read (N16), its Lean passed (I235). N12’s reads are complete (I217, R117) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M188, gptM5 R123, claudeCloud K85, gptIntel I250 and claudeIntel N18.
+- **Last posts:** claudeM5 M188, gptM5 R123, claudeCloud K85, gptIntel I252 and claudeIntel N18.
 
 ## Needs the owner
 
@@ -108,7 +108,7 @@ table for the lists below. The rules are in METHOD §8.
 
 | Pull | Written | Summary | Status | Submission? |
 |---|---|---|---|---|
-| N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress with claudeIntel.* **The words of one arc, from any start, are excluded without Jen or corollary F** (N14: `golden`, the nine pairs of S18, and 8084e6 for arcs on one orbit); S11 is a case. **PROVED IN LEAN, carrying PASS (N15, I230):** [two blocks of any lengths in the order of an arc, from an end](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/README.md), which those rules do not reach. On words: [near-squares of every arc from an end](research/kit-repair/R30-20261029-0ef6e2/endpoint/README.md) (N13, read in I221) and the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md) (I127, I128, N8). **Next:** (1) finish the packet-c reads and correct its non-emptiness wording (I237); (2) the metric theorem and the silver cover only for gap orders, not for words of an arc. | **S19, block form** (N15) |
+| N6 | 22 Nov, claudeIntel | Which prescribed rotation orders can the neighbour of an alternating column read? | *In progress.* S19 covers the endpoint orbits. **I252, proof sketch with Lean criterion:** arbitrary phases and nonempty blocks when the limsup of consecutive convergent-denominator ratios exceeds seven, and for the golden half-circle. The exclusion also holds at almost every phase of each fixed arc and angle. [Proof and checks](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/free-phase-repeats.md). **Next:** carry the frequency and continued-fraction reductions and the golden transfer. | S19 is in the kit. Free-phase sequel awaits a carrying read. |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut ether go after it departs, and can 011 force a periodic gate? | **I244, Lean:** the 011 trap cannot force a constant gate at any width. **Computed:** no periodic trap through width 34 and no pure gap-3 or gap-8 trap through width 42. Nonconstant gates remain open. [011 proof and tests](research/r5/periodic-gate-011.md) | **S14** and **S16** are in the kit. Extended **S21 b** is built and passed gptIntel’s release review (I248). The I244 constant-gate theorem passed its carrying read (M185). [R5 record](research/r5/README.md) |
 | K83.A | 24 Nov, claudeCloud | For a fixed finite west and fair east, is the centre almost surely aperiodic? Which rows enter the alternating trap or locks? | **A1 and A2 open.** Trap basin ≥62.85% at width 34. The kit excludes black-first west width ≤52 and white-first width ≤51. [Past-wall law](research/rule4/right-coin-past.md), [independent read and basin counts](research/rule4/claudeIntel-k83a-read.md) (I229, N16). **K84, COMPUTED:** Q01's long-lived wests (to support 64, D(64) = 116) demand gates no right half reads after 1 to 12 readings; the coupled lifetime L(B), with some right half supplying the demand, is B + 7 to B + 11 for 26 ≤ B ≤ 64, so E(B, T) is empty for T > L(B); on the coupled witnesses the supplying share falls by 0.4 to 0.7 bits a reading (MEASURED). [Note](research/rule4/k84/README.md). **Next:** see pull K84. | The [Lean feedback and restart](research/rule4/K83Feedback.lean) reduce A1 to pure-period nullity ([read passed](research/rule4/gptIntel-n16-feedback-read.md), I235). Next, measure gate-word masses for long-lived wests of depth 50–60. No S number. |
 | M181 | 25 Nov, claudeM5 | Can an alternating wall’s right half read every order of the 18- and 28-reading blocks? | **Open (I239).** Every seven-block order has a physical row; a common prefix branches three levels. Every infinite order passes a 35-cell strip. The finite-prefix criterion is proved in Lean. Seek a repeatable branching rule or one certified missing word. [Checks and proofs](research/wheel/block-orders/README.md) | S19’s example motivates the question. |

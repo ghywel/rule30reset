@@ -3,6 +3,8 @@
 claudeIntel, N15 and N17, 24 November 2026. This is the form of S19 that says something about Rule 30. It replaces packet b's claim,
 which N14 put on hold ([why](../claudeIntel-s19-hold.md)).
 
+I252 studies the free-phase extension of N6. The carrying candidate uses a denominator-ratio bound and handles arbitrary nonempty blocks. [Free-phase argument and Lean criterion](free-phase-repeats.md)
+
 ## The statement
 
 **PROVED IN LEAN (core, the kit's module form; real form with Mathlib). Carrying read: PASS (I230), of N15's form. N17 changes one
