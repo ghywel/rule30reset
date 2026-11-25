@@ -234,7 +234,107 @@ void test_words(const Graph& graph, const std::vector<Row>& rows, unsigned width
     words.swap(survivors);
 }
 
+int target(int argc, char** argv) {
+    if (argc!=7) {
+        std::cerr<<"periodic-gate --target DRIVE INITIAL_CODES GATE_WORD MAX_WIDTH RESULT\n";
+        return 2;
+    }
+    std::string drive=argv[2], word=argv[4];
+    unsigned last=std::stoul(argv[5]);
+    if (last<14 || last>60 || drive.size()!=3 || drive.find_first_not_of("01")!=std::string::npos ||
+        word.empty() || word.find_first_not_of("01")!=std::string::npos) return 2;
+    std::ifstream input(argv[3]);
+    std::ofstream output(argv[6]);
+    if (!input || !output) return 2;
+    std::vector<std::vector<Row>> phases(word.size());
+    for (Row r; input>>r;) {
+        if (r>=1<<14) return 2;
+        for (std::size_t b=0; b<word.size(); ++b)
+            if ((r&1)==Row(word[b]-'0')) phases[b].push_back(r);
+    }
+    if (!input.eof()) return 2;
+    for (auto& slot : phases) {
+        std::sort(slot.begin(),slot.end());
+        if (std::adjacent_find(slot.begin(),slot.end())!=slot.end()) return 2;
+    }
+    for (unsigned width=14; width<=last; ++width) {
+        std::vector<std::size_t> offset{0};
+        for (const auto& phase : phases) offset.push_back(offset.back()+phase.size());
+        std::size_t n=offset.back();
+        if (8*n>=absent) throw std::range_error("32-bit edge index limit");
+        std::vector<std::array<Index,8>> edges(n);
+        std::vector<Index> indegree(n);
+        for (std::size_t p=0; p<word.size(); ++p) {
+            std::size_t end=(p+1)%word.size();
+            Lookup find(phases[end]);
+            for (Index i=0; i<phases[p].size(); ++i)
+                for (unsigned e=0; e<8; ++e) {
+                    Index j=find(transition(phases[p][i],width,e,drive));
+                    if (j!=absent) ++indegree[j+=offset[end]];
+                    edges[offset[p]+i][e]=j;
+                }
+        }
+        std::vector<Index> incoming(n+1);
+        for (Index i=0; i<n; ++i) incoming[i+1]=incoming[i]+indegree[i];
+        std::vector<Index> pred(incoming.back());
+        {
+            auto cursor=incoming;
+            for (Index i=0; i<n; ++i)
+                for (Index j : edges[i]) if (j!=absent) pred[cursor[j]++]=i;
+        }
+
+        // Forward-limit deletion. Any cycle of a labelled trap survives.
+        std::vector<Index> queue;
+        for (Index i=0; i<n; ++i) if (!indegree[i]) queue.push_back(i);
+        for (std::size_t i=0; i<queue.size(); ++i)
+            for (Index j : edges[queue[i]]) if (j!=absent && !--indegree[j]) queue.push_back(j);
+        std::size_t live=n-queue.size();
+
+        // Remove every row that can leave the surviving labelled set.
+        // The complement is the greatest universally closed subset.
+        std::vector<unsigned char> unsafe(n);
+        for (Index i : queue) unsafe[i]=1;
+        for (Index i=0; i<n; ++i) if (!unsafe[i])
+            for (Index j : edges[i]) if (j==absent) {
+                unsafe[i]=1;
+                queue.push_back(i);
+                break;
+            }
+        for (std::size_t i=0; i<queue.size(); ++i)
+            for (Index k=incoming[queue[i]]; k<incoming[queue[i]+1]; ++k) {
+                Index j=pred[k];
+                if (!unsafe[j]) {
+                    unsafe[j]=1;
+                    queue.push_back(j);
+                }
+            }
+        std::size_t safe=n-queue.size();
+        std::cout<<"gate "<<word<<" width "<<width<<" lifted "<<n
+                 <<" past "<<live<<" closed "<<safe<<std::endl;
+        if (safe) {
+            for (std::size_t p=0; p<word.size(); ++p)
+                for (Index i=0; i<phases[p].size(); ++i)
+                    if (!unsafe[offset[p]+i])
+                        output<<width<<'\t'<<p<<'\t'<<phases[p][i]<<'\n';
+            return output?0:2;
+        }
+        if (!live || width==last) break;
+        std::vector<std::vector<Row>> lifted(word.size());
+        for (std::size_t p=0; p<word.size(); ++p) {
+            auto& rows=lifted[p];
+            for (Index i=0; i<phases[p].size(); ++i)
+                if (indegree[offset[p]+i]) rows.push_back(phases[p][i]);
+            std::size_t count=rows.size();
+            rows.reserve(2*count);
+            for (std::size_t i=0; i<count; ++i) rows.push_back(rows[i]|(Row(1)<<width));
+        }
+        phases.swap(lifted);
+    }
+    return output?0:2;
+}
+
 int main(int argc, char** argv) {
+    if (argc>1 && std::string(argv[1])=="--target") return target(argc,argv);
     if (argc!=5 && argc!=7) {
         std::cerr << "periodic-gate DRIVE INITIAL_CODES MAX_WIDTH FORKS_TSV [WORDS WORDS_TSV]\n";
         return 2;
