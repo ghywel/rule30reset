@@ -5,7 +5,7 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-25 16:40 UTC by claudeCloud (K85 addendum 2, Guillon read).*
+Updated 2026-11-25 16:41 UTC by gptIntel (I250, I77 marked returns and parking).*
 
 ## Arrangement
 
@@ -14,7 +14,7 @@ Updated 2026-11-25 16:40 UTC by claudeCloud (K85 addendum 2, Guillon read).*
 | claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 and S19 are Lean and Human Verified and in the kit (M184). S21 is Lean Verified (R30-20261125-257977), its kit PR is #425 (M187). S20 b is built and unposted (M186). R5 next: a periodic trap beside 011 |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | K83.B kit patch passed its release read; v2 and S20 to agree (R123, M184) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | S20's prior-art read is done (K85): PASS, with three text repairs and the Wolfram 1986 credit. K84 closed earlier. Not on a block |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S20 b and S21 b pass author’s release review (I248). K84 cutoffs and gate rates (I246). The general Y runs continue (I212) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | I77 marked returns and parking (I250). S20 b and S21 b author reads (I248). The general Y runs continue (I212) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | S21 (R5 sharp slope) reviewed, with an extension in Lean (N18). S19 is posted and in the kit (M183, M184). K83.A read (N16), its Lean passed (I235). N12’s reads are complete (I217, R117) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
@@ -23,7 +23,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M187, gptM5 R123, claudeCloud K85, gptIntel I248 and claudeIntel N18.
+- **Last posts:** claudeM5 M187, gptM5 R123, claudeCloud K85, gptIntel I250 and claudeIntel N18.
 
 ## Needs the owner
 
@@ -109,7 +109,6 @@ table for the lists below. The rules are in METHOD §8.
 | Pull | Written | Summary | Status | Submission? |
 |---|---|---|---|---|
 | N6 | 22 Nov, claudeIntel | Which rotation codings do Jen and corollary F exclude beside a clock? | *In progress with claudeIntel.* **The words of one arc, from any start, are excluded without Jen or corollary F** (N14: `golden`, the nine pairs of S18, and 8084e6 for arcs on one orbit); S11 is a case. **PROVED IN LEAN, carrying PASS (N15, I230):** [two blocks of any lengths in the order of an arc, from an end](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/README.md), which those rules do not reach. On words: [near-squares of every arc from an end](research/kit-repair/R30-20261029-0ef6e2/endpoint/README.md) (N13, read in I221) and the [metric results](research/kit-repair/R30-20261029-0ef6e2/metric-rotation-repeats.md) (I127, I128, N8). **Next:** (1) finish the packet-c reads and correct its non-emptiness wording (I237); (2) the metric theorem and the silver cover only for gap orders, not for words of an arc. | **S19, block form** (N15) |
-| I77 | 22 Nov, gptIntel | Sparse periodic columns: which gap orders can a column with a leftmost black cell repeat? | *In progress with gptM5.* N12’s compulsory nine-gap factor passed carrying read (R117). **COMPUTED, checked LRAT (R121).** Occurrences in a sparse period are at least 13 pulses apart. At distance 13 the later second-white sample is white. The aperiodic marked phase must be at least 14 from its preceding mark. A continuous 13-pulse witness exists in the finite recurrent-prefix test. [Proofs, controls and reproduction](research/white-gap-mixtures/gptM5-physical-returns.md). **Next:** reduce the forced-white certificate to local domain constraints and check whether a non-white return can cross two occurrences. | S8 is in the kit. The close-return capture of R117 has a standalone Lean proof. The general factor and physical spacing still need a compact Lean certificate. |
 | R5 | 17 Nov, gptM5 | Period 3: where does a cut ether go after it departs, and can 011 force a periodic gate? | **I244, Lean:** the 011 trap cannot force a constant gate at any width. **Computed:** no periodic trap through width 34 and no pure gap-3 or gap-8 trap through width 42. Nonconstant gates remain open. [011 proof and tests](research/r5/periodic-gate-011.md) | **S14** and **S16** are in the kit. Extended **S21 b** is built and passed gptIntel’s release review (I248). The I244 constant-gate theorem passed its carrying read (M185). [R5 record](research/r5/README.md) |
 | K83.A | 24 Nov, claudeCloud | For a fixed finite west and fair east, is the centre almost surely aperiodic? Which rows enter the alternating trap or locks? | **A1 and A2 open.** Trap basin ≥62.85% at width 34. The kit excludes black-first west width ≤52 and white-first width ≤51. [Past-wall law](research/rule4/right-coin-past.md), [independent read and basin counts](research/rule4/claudeIntel-k83a-read.md) (I229, N16). **K84, COMPUTED:** Q01's long-lived wests (to support 64, D(64) = 116) demand gates no right half reads after 1 to 12 readings; the coupled lifetime L(B), with some right half supplying the demand, is B + 7 to B + 11 for 26 ≤ B ≤ 64, so E(B, T) is empty for T > L(B); on the coupled witnesses the supplying share falls by 0.4 to 0.7 bits a reading (MEASURED). [Note](research/rule4/k84/README.md). **Next:** see pull K84. | The [Lean feedback and restart](research/rule4/K83Feedback.lean) reduce A1 to pure-period nullity ([read passed](research/rule4/gptIntel-n16-feedback-read.md), I235). Next, measure gate-word masses for long-lived wests of depth 50–60. No S number. |
 | M181 | 25 Nov, claudeM5 | Can an alternating wall’s right half read every order of the 18- and 28-reading blocks? | **Open (I239).** Every seven-block order has a physical row; a common prefix branches three levels. Every infinite order passes a 35-cell strip. The finite-prefix criterion is proved in Lean. Seek a repeatable branching rule or one certified missing word. [Checks and proofs](research/wheel/block-orders/README.md) | S19’s example motivates the question. |
@@ -120,6 +119,8 @@ table for the lists below. The rules are in METHOD §8.
 
 One dated entry each, with what would bring it back (METHOD §3, the incubator). A route that stopped with a condition
 that would reopen it is here, not under closed (the owner, 23 November). Glance down the list at session start.
+
+- **I77, sparse periodic columns** (parked 25 Nov, I250). A varying mark needs at least sixteen pulses on both sides. Thus a qualifying 18–31-pulse period has exactly one mark. Both LRAT checkers pass. The 37-tick local obstruction has four projected pulse domains as hypotheses. Reopen for a compact invariant deriving such domains, a bound valid for arbitrary spacers, or a continuous recurrent black mark between two returns. S8 is in the kit. [Results and controls](research/white-gap-mixtures/gptIntel-i77-two-sided-returns.md)
 
 - **M9, lone 5-gaps inside the trap** (parked 24 Nov, I224). The pair (5, 1) can start after eleven trapped samples. Its two candidate spatial prefixes have physical histories of at most 11 and 10 samples. A later strip occurrence requires a black cell at site 37 to disappear beside a white western neighbour. Reopen for a hand derivation of the two possible starts or a rule predicting another lone-1 exclusion. [Proofs and controls](research/m9/late-pair.md) · [K65 sieve, 23 certified onsets and 67 survivors](research/m9/data/gptIntel-sieve-final-K65.txt). S10 is in the kit. The entropy is open. X and Y belong to K50.1.
 

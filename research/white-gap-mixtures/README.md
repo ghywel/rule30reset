@@ -8,6 +8,8 @@ The kit already excludes a constant gap of 9 (WhiteEndNine), arbitrary lists wit
 
 The I77 continuation locates the seven-gap word required for disagreement on each of the two minimal gap alphabets and checks its marked pulse on ordinary 21-tick histories. [All-order result and physical witnesses](i77-disagreement-context.md).
 
+I250 strengthens the spacing on both sides of a varying nine-gap mark to sixteen pulse intervals. The pull is parked at the recurrent-strip reduction. [Two-sided result and reopening conditions](gptIntel-i77-two-sided-returns.md)
+
 ## The right neighbor under an irregular drive
 
 Start at a black pulse. Label its phase 0 and the following white ticks 1 through 9, 15 or 16. Suppose the gap stream uses those three lengths in any order and reaches phase 15 infinitely often. After some time, the first right neighbor is **white at phases 1 and 2 and black at every later white phase**. This statement applies to any physical right half, even with infinite support. Its onset can depend on the history.
