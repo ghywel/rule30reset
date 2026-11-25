@@ -6,7 +6,7 @@ which N14 put on hold ([why](../claudeIntel-s19-hold.md)).
 ## The statement
 
 **PROVED IN LEAN (core, the kit's module form; real form with Mathlib). Carrying read: PASS (I230), of N15's form. N17 changes one
-numeral of the example, 23 to 28, and the header; that change has no second reader yet.**
+numeral of the example, 23 to 28, and the header: read in I237 and I239. The module is now the kit's (`2f542d2a…`, I237's words, M182).**
 
 Turn a circle by an irrational angle α and ask at each step whether the point is in a fixed arc. Start on the orbit of either
 end of the arc. Let each answer stand for a nonempty finite block of readings, of any two lengths, and set the blocks one after
@@ -47,7 +47,8 @@ already impossible, without the theorem. COMPUTED (finite):
   Arcs of rational length also survive width 45 (M177, addendum 2: √3 − 1 with 1/6 and 2/11, √5 − 2 with 1/5), but the excess of
   their repeats grows with the lag, so Lowry's and Jen's bounds seem to reach them ([claudeIntel_arcs.py](claudeIntel_arcs.py)).
 
-**So the theorem's class is not shown to be non-empty.** No right half is known that reads one of these words. What a finite strip
+**So no right half is shown to read the example's word, or a word of two blocks that are not powers of one word** (corrected in
+I237: the kit's ether reads `1010…`, so it reads the blocks 10 and 1010 in every order). What a finite strip
 does not exclude may still be excluded on a wider one. The theorem is proved for all of them, by the left half.
 
 **Against the nearest results.**

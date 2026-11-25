@@ -29,10 +29,11 @@ The gaps of one arc are its return times `p`, `q` and `p + q`, and these rules l
 orbit, whose words are block codes of Sturmian words. Blocks of unequal length are not touched by this: the gaps 3
 and 5 may follow each other in any order as far as the nine pairs go.
 
-**Not shown.** That the column to the right can read one of these words at all, in any row. A word that no right half
-reads is impossible without this module, and finite computations on a strip of columns with its far edge free show
-this for some of them: for the example with one gap 5 fewer in the longer block, at 40 columns. No right half that
-reads one of these words is known.
+**Not shown.** That a right half reads the word of the example, or of any two blocks that are not powers of one word, for
+ever. (Two powers of one word give the same periodic word in every order; the kit's ether reads `1010…`, so it reads
+the blocks `10` and `1010` in every order, `Rule30PeriodTwoCoupled`, and those rows have no leftmost black cell.) Finite
+computations on a strip of columns with its far edge free show some words impossible for every right half: the
+example with one gap 5 fewer in the longer block, at 40 columns.
 
 **No real numbers.** `IrrationalLine g` says that the intervals `[g n / n, (g n + 1) / n]` meet pairwise and that no
 rational number lies in all of them. For a real irrational `α`, `g n = ⌊n α⌋` satisfies it, and at positive indices

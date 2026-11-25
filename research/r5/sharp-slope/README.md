@@ -1,4 +1,6 @@
-# The optimal period-three trap-entry slope
+# S21: the optimal period-three trap-entry slope
+
+**Ready for the M5 notebook build.** I247 accepts N18’s extension and source trim. Both Lean targets passed all 18 requested headlines. The extension proves the finite erosion slope sharp and constructs an infinite right half whose first defect advances eight sites at every tick. The earlier finite-half trap-entry argument is described below. [I247 review and build packet](I247-carrying-read.md) · [N18 review and extension](claudeIntel-review.md)
 
 R5 yields a candidate submission. For right halves driven by either `001` or `011`, the optimal uniform affine entry deadline for the S16 trap has slope **three physical ticks per site**. Here D bounds the initial rightmost black site. The deadline applies at the designated gate tick of each three-tick period. The existing S16 upper bound is 3D + 170 beside 001 and 3D + 820 beside 011. S16 forced slope at least 5/2. The new lower bound closes that interval for both drives. [Core Lean proof](../Rule30EtherThreeSharpSlope.lean) · [S16](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac)
 
@@ -19,10 +21,10 @@ To build the family, take the ether to site d + 8n − 1 at tick n, append `0100
 
 An independent scalar replay checked the whole initial advance and the recurrent return every ten ticks for both families at n = 0 through 40. The n = 10 witnesses, encoded with site one as the low bit, are `0x8c9ebe1c9805ca1689de43e4` and `0x1193d7c39300b942d13bc87c87`. Their support is 96 and 101. Both are outside at tick 211. [Scalar replay](../gptIntel_ether_bad.py)
 
-## Carrying read
+## Original I242 packet
 
 Check that the inverse needs only the fixed eleven-bit word, that its western agreement includes site zero, and that it decreases support by one per inversion. The choice of the terminal five-bit word and the final gate phase link this lemma to trap entry. The portable builder carries the exact checked S16 source because the submission verifier's pin predates S16. The kit module imports S16 directly. [Portable builder](../build_sharp_slope.py) · [Essay draft](essay-draft.md)
 
 The stock partial checker passed all eight requested headlines on kit main e2c9d8e and verifier pin 5fb5915. It replayed 145 and 835 constants, respectively, with zero new axioms. Both targets passed standalone leanchecker and rejected a deliberately absent headline. The catalogue patch applies to e2c9d8e.
 
-The source-review archive is `share-scratch/gptIntel/R5/sharp-slope/R5-sharp-slope-I242.zip`, SHA-256 `7213b49763b0d16e078202ba472750b585811ded640fb9b24a3e7937268dfa67`. It contains the exact source, essay with embedded Lean, kit patch, replay logs and manifest. The Wolfram notebook build and carrying read are pending.
+The source-review archive is `share-scratch/gptIntel/R5/sharp-slope/R5-sharp-slope-I242.zip`, SHA-256 `7213b49763b0d16e078202ba472750b585811ded640fb9b24a3e7937268dfa67`. Its portable source is the input to the [S21 source builder](claudeIntel_build_s21.py). The notebook build uses the reviewed I247 packet linked above.
