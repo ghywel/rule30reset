@@ -1,0 +1,27 @@
+wests of support <= 58 beside a black-first alternating centre: 536870912 (every free choice), last death tick 110
+death tick: number of wests
+   58    268437593
+   60    134256834
+   62     67126679
+   64     33485732
+   66     16788120
+   68      8395375
+   70      4191284
+   72      2095833
+   74      1042731
+   76       519828
+   78       258395
+   80       132464
+   82        70333
+   84        32943
+   86        20070
+   88         7942
+   90         4591
+   92         2121
+   94         1014
+   96          407
+   98          332
+  100          166
+  102           29
+  110           96
+wests dying at tick >= 0 (0 listed):
