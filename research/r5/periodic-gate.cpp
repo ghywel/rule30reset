@@ -196,9 +196,47 @@ std::array<std::string,2> find_split(const Graph& graph, const std::vector<Row>&
     throw std::range_error("split exceeds 32-bit length");
 }
 
+// Iterate the image after one prescribed complete word. Each new seam set
+// is nested in the old one. A fixed nonempty set has a cycle with this gate.
+void test_words(const Graph& graph, const std::vector<Row>& rows, unsigned width,
+                std::vector<std::string>& words, std::ostream& output) {
+    std::vector<std::uint32_t> seen(rows.size());
+    std::uint32_t stamp=0;
+    std::vector<Index> core;
+    for (Index i=0; i<rows.size(); ++i) if (graph.indegree[i]) core.push_back(i);
+    std::vector<std::string> survivors;
+    for (const std::string& word : words) {
+        auto current=core;
+        std::vector<Index> next;
+        std::size_t duration=0, before;
+        do {
+            before=current.size();
+            for (char bit : word) {
+                ++duration;
+                if (++stamp==0) {
+                    std::fill(seen.begin(),seen.end(),0);
+                    ++stamp;
+                }
+                next.clear();
+                for (Index i : current) if ((rows[i]&1)==Row(bit-'0'))
+                    for (Index j : graph.edges[i]) if (seen[j]!=stamp) {
+                        seen[j]=stamp;
+                        next.push_back(j);
+                    }
+                next.swap(current);
+                if (current.empty()) break;
+            }
+        } while (!current.empty() && current.size()!=before);
+        if (!current.empty()) survivors.push_back(word);
+        output<<width<<'\t'<<word<<'\t'<<duration<<'\t'<<current.size()<<'\n';
+    }
+    output.flush();
+    words.swap(survivors);
+}
+
 int main(int argc, char** argv) {
-    if (argc!=5) {
-        std::cerr << "periodic-gate DRIVE INITIAL_CODES MAX_WIDTH FORKS_TSV\n";
+    if (argc!=5 && argc!=7) {
+        std::cerr << "periodic-gate DRIVE INITIAL_CODES MAX_WIDTH FORKS_TSV [WORDS WORDS_TSV]\n";
         return 2;
     }
     std::string drive=argv[1];
@@ -208,6 +246,17 @@ int main(int argc, char** argv) {
     std::ifstream input(argv[2]);
     std::ofstream output(argv[4]);
     if (!input || !output) return 2;
+    std::vector<std::string> words;
+    std::ofstream word_results;
+    if (argc==7) {
+        std::ifstream words_in(argv[5]);
+        word_results.open(argv[6]);
+        for (std::string word; words_in>>word;) {
+            if (word.find_first_not_of("01")!=std::string::npos) return 2;
+            words.push_back(word);
+        }
+        if (!words_in.eof() || !word_results || words.empty()) return 2;
+    }
     std::vector<Row> rows;
     for (Row r; input>>r;) rows.push_back(r);
     if (!input.eof() || rows.empty()) return 2;
@@ -240,7 +289,12 @@ int main(int argc, char** argv) {
         if (fork[0].size()!=fork[1].size() || !((terminal[0]^terminal[1])&1)) return 6;
         output<<width<<'\t'<<rows[root]<<'\t'<<fork[0]<<'\t'<<fork[1]<<'\t'
               <<terminal[0]<<'\t'<<terminal[1]<<'\n'<<std::flush;
-        std::cout<<" split "<<fork[0].size()<<std::endl;
+        std::cout<<" split "<<fork[0].size();
+        if (!words.empty()) {
+            test_words(graph,rows,width,words,word_results);
+            std::cout<<" periodic words left "<<words.size();
+        }
+        std::cout<<std::endl;
         if (width==last) break;
         std::size_t n=core.size();
         core.reserve(2*n);
