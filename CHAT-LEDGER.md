@@ -933,3 +933,23 @@ The note gives the paragraph rewritten with W1, W2 and M1, ready to paste.
 **My recommendation:** apply W1, W2 and M1 and rebuild the notebook before posting. That is essay text, one abstract clause, a rebuild and the author's agreement, and the Lean and kit patch are untouched. If the owner prefers to post b as it stands, nothing in it is false: W1 and W2 are imprecisions, and M1 is a credit that can go into the kit pull request's text instead. Either way S20 is not held up on mathematics.
 
 PRIOR-ART P73 gains Wolfram 1986's two-column passages.
+
+**K85, addendum 1 (2026-11-25 16:23 UTC).** The owner's answers, 25 November: "placego is still public, the original contents of placego are just one folder deep in archived"; "Guillon's thesis - please provide me with the link and I will manually download"; and a new rule for METHOD, below.
+
+- **Q1, answered from the October record. "With the counts to length 17" stands.** I read §8.77 through the kit patch's own link, which resolves, and placego's archived ledger.
+  - §8.77 prints N₂(14) = 476,596 and, added later the same day, N₂(17) = 5,615,036. It cites Local's TW and TWX.
+  - L427 (9 October, 15:53 BST) has every count for n = 1 to 14: 4, 12, 32, 80, 200, 496, 1,208, 2,916, 6,964, 16,476, 38,616, 89,844, 207,544, 476,596.
+  - L436 (16:36 BST) has n = 15, 16, 17: 1,089,000, 2,477,236, 5,615,036, with the bounds 1.3370, 1.3275 and 1.3189 bits.
+  - They agree with I234 and with I247's 38,616 at length 11.
+- **N1, closed.** placego is public, so the kit patch's link to §8.77 works and needs no change.
+- **Guillon's Proposition 4.8.5: pending the owner's copy, under the new rule.**
+  - HAL serves automated clients a bot-protection page. It did so in October too (L427).
+  - The October survey had the full text and read §§4.6 to 4.8. Its note (placego, `archived/reports/overlooked-ca-survey/notes/theses.md`) gives the proposition as "a CA positively expansive on the left (or right) with radius r has entropy H(F) = H(τ_F^r)".
+  - §8.77 added that for Rule 30 it holds at width 2, not radius 1.
+  - The essay's sentence ("relates the entropy to that of a trace") agrees, but an earlier read is not the paper. It stays pending until the owner's copy is read.
+  - Links: [HAL PDF](https://theses.hal.science/tel-00432058/document) · [HAL record](https://theses.hal.science/tel-00432058) · [theses.fr](https://theses.fr/2008PEST0215).
+  - Pages to check: Proposition 4.8.5 and the sentence after it, which cites the permutive result; Remark 4.6.9 and Proposition 4.6.8; Définitions 3.1.1 and 3.4.10, for the radius and the width of the trace τ_F^r.
+- **METHOD §4 gains the owner's rule:** "If a full paper cannot be sourced, for example a dead link, a paywall or a bot check blocker: prompt the owner to source the paper for you. Do not assume the contents." It adds that an abstract, a snippet, another agent's summary or an earlier read is not the paper, and that the claim stays pending until the owner's copy is read.
+- **Checked against the rule:** in K85 itself, only Guillon was not read from the paper. Ban, Chang, Chen and Lin (JCA 6, 2011) was seen as an abstract only; S20 does not cite it, so nothing rests on it. I can read it if the owner sources it.
+
+The verdict of K85 is unchanged: PASS, with W1, W2 and M1 recommended, and the Guillon sentence pending the owner's PDF.

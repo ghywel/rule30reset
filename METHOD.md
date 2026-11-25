@@ -119,6 +119,10 @@ computation continues across blocks until its stated completion condition. A fee
   moment a result of ours turns out to be known, or a known result becomes something we build on, add an entry to
   PRIOR-ART.md in the format at its top: what we found, the known result and its exact source, how it was found and
   which search terms missed it, and how we credit it. The archive is frozen.
+- **A source you cannot open** (the owner, 25 November 2026): "If a full paper cannot be sourced, for example a dead
+  link, a paywall or a bot check blocker: prompt the owner to source the paper for you. Do not assume the contents."
+  Give the owner the link and the sections or statements to check. An abstract, a snippet, another agent's summary
+  or an earlier read is not the paper: say which you have, and mark the claim pending until the owner's copy is read.
 - **Known is worth proving.** A prior-art hit decides how a result is credited, not whether its test runs. Reproduce
   it, record it in PRIOR-ART.md, and credit it in the ledger as "known, reproved here".
 - **Say what the work would teach** if it succeeds. Understanding is an end in itself.

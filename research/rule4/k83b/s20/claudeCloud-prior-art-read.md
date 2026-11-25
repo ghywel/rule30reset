@@ -29,9 +29,9 @@ Packet b, fetched from the store and checked against M186: archive `a064f033c40d
 | "`Mixing` proves log 2 ≤ h ≤ log 3 and describes the two-column identity." | The kit at the verifier's `5fb5915`: `log_two_le_coverEntropy`, `coverEntropy_le_log_three`. The words "the entropy is exactly the growth rate of their words" are in `equivalents/CATALOG.md` §7 item 11, not in `Mixing.lean`, whose docstring describes the pair-word cover. Read in the source. | **W1:** say that the catalogue states the identity |
 | "Its cover argument is what we use … carried here since the verifier's kit has it only inside a proof." | At `5fb5915` the count `coverMincard ≤ card pairWords` occurs only inside the proof of `coverMincard_le`, whose statement is the bound 4·3^(n+2N). Read in the source. | Right |
 | "Di Lena and Margara (2007, Corollary 4.6) prove that the entropy of a permutive automaton of radius r is that of its width 2r + 1 column trace, which is three columns for Rule 30." | Read in full, all ten pages, from the PDF the essay links. Corollary 4.6(2): "If (A^ℤ, F) is permutive then H(F) = H(Σ_{2r+1})". §2.2: "A CA is *permutive* if it is left or right permutive", so Rule 30 qualifies. Definition 2.2: Σ_k is "the *column subshift* of width k". The paper calls the general question open (p. 7) and has no Rule 30 and no numbers. | Exact |
-| "Guillon's thesis (2008, Proposition 4.8.5) relates the entropy to that of a trace." | **Not re-read:** HAL serves automated clients a bot-protection page. The sentence agrees with two earlier reads: October's (PRIOR-ART-ARCHIVE, "Proposition 4.8.5 relates entropy to trace entropy") and K84's subagent, who quotes it and its citation of di Lena and Margara. | Right, on those reads |
+| "Guillon's thesis (2008, Proposition 4.8.5) relates the entropy to that of a trace." | **Not re-read:** HAL serves automated clients a bot-protection page. The sentence agrees with October's full-text read (the survey's note quoted below) and with K84's subagent. | **Pending the owner's copy** (METHOD §4) |
 | "One column alone does not determine the cells to its west, and two do." | Computed here. The row with a period-two west (…1,0,1), cell 0 white, cell 1 black and white beyond has an all-white centre for 200 ticks, as the white row does, and the two differ at cell −1. Two columns determine the west by `RightHalfReturns.eq_left_of_eq_columns`. | Right |
-| "Our notes of October 2026 had the two-column form for Rule 30 by hand, with the counts to length 17 and the bound 1.3189 bits." | placego is closed to this host, so §8.77 itself was not re-read. M178's read of it gives N₂(14) = 476,596, N₂(17) = 5,615,036 and the bounds 1.347 and then 1.3189 bits. The archive's GC814 checked the width sandwich. | Right on M178's read. **Q1** for claudeM5 below |
+| "Our notes of October 2026 had the two-column form for Rule 30 by hand, with the counts to length 17 and the bound 1.3189 bits." | §8.77, read in placego's public archive: the two-column lemma by hand, N₂(14) and N₂(17), and the bound 1.3189 bits. The full counts for n = 1 to 17 are in L427 and L436, which it cites. | Right (Q1 below) |
 | "For the measure entropy, Wolfram (1986) has about 1.20 bits and Grassberger (1986) less than 1.15436" | Wolfram, *Adv. Appl. Math.* 7, read on the page images. Eq. (4.7), p. 134: "A calculation based on the method of [25] in fact shows that **h_μ ≲ 1.20**". Footnote: "Recent results [45] suggest in fact that h_μ ≈ 1 + T^−(0.6±0.1), yielding a final value of 1." Grassberger's Table 6, read in the *Tables*, Rule 30 row: h_μ **< 1.15436**, beside the left speed .2428 ± .0002 and a directional minimum < .763141. | Grassberger right. **W2:** Wolfram's figure is an approximate upper bound, and his footnote points to 1 |
 | "for the topological entropy the general bound is 2 bits." | Wolfram 1986, eq. (4.6), p. 134: "It is clear from the locality of the rule (3.1) that h_μ ≤ h ≤ 2." | Right. Name the source (W2) |
 | "The tables and the count past 17 are from November. The general idea of bounding a language by a weighted automaton is standard." | I234, M178, I238; no earlier source found for the tables. | Right |
@@ -74,16 +74,27 @@ width 1 or 2". That is optional to add.
 describes the identity in words" can become "The kit's `Mixing` has log 2 and log 3 as bounds, and its catalogue states
 the identity in words". That adds three words, giving 236 of 250. Adding Wolfram to the abstract is the author's choice.
 
-## For claudeM5
+## Answered after the first read (K85 addendum 1)
 
-- **Q1.** Does §8.77 give every count to length 17, or only some of them (M178 quotes 14 and 17)? If only some, "with
-  the counts to length 17" should become "with counts at lengths 14 and 17".
-- **N1.** The kit patch's module docstring links our October notes in the placego repository; the essay does not.
-  I cannot see from here whether that repository is public. If it is not, the kit's readers get a dead link: cite the
-  notes without the link, as the essay does.
+- **Q1, answered.** The October record has every count for n = 1 to 17, so "with the counts to length 17" stands.
+  - §8.77 prints the counts at 14 and 17.
+  - placego's L427 (9 October 2026, 15:53 BST) has n = 1 to 14: 4, 12, 32, 80, 200, 496, 1,208, 2,916, 6,964, 16,476, 38,616,
+    89,844, 207,544 and 476,596.
+  - L436 (16:36 BST) has 1,089,000, 2,477,236 and 5,615,036 for n = 15 to 17.
+- **N1, closed.** placego is public (the owner), and the kit patch's link to §8.77 resolves.
+- **Guillon: pending the owner's copy** (METHOD §4, the owner's rule of 25 November).
+  - HAL blocks automated clients, as it did in October (L427).
+  - The October survey had the full text. Its note (placego, `archived/reports/overlooked-ca-survey/notes/theses.md`)
+    gives Proposition 4.8.5 as "a CA positively expansive on the left (or right) with radius r has entropy
+    H(F) = H(τ_F^r)". §8.77 adds that for Rule 30 it holds at width 2, not radius 1. That agrees with the essay, but it
+    is an earlier read, not the paper.
+  - Links: https://theses.hal.science/tel-00432058/document (PDF), https://theses.hal.science/tel-00432058 (record),
+    https://theses.fr/2008PEST0215.
+  - Pages to check: Proposition 4.8.5 and the sentence after it; Proposition 4.6.8 and Remark 4.6.9; Définitions 3.1.1
+    and 3.4.10, for the radius and the width of τ_F^r.
 - **Scope.** None of this touches the Lean, the headlines or the kit patch's mathematics. W1, W2 and M1 are essay text
-  and need a notebook rebuild. The abstract change needs one line. Adding Wolfram 1986 to the kit patch's docstring would
-  be good but is optional, and it would need the patch re-read.
+  and need a notebook rebuild. The abstract change needs one line. Adding Wolfram 1986 to the kit patch's docstring is
+  optional, and it would need the patch re-read.
 
 ## The novelty claims stand
 
