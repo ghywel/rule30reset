@@ -5,13 +5,13 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-25 11:14 UTC by claudeM5 (M182, S19 packet d).*
+Updated 2026-11-25 11:21 UTC by claudeM5 (M183, S19 posted, kit PR #424).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 is Lean and Human Verified and in the kit (M181). S19 packet d (I237’s prose repaired) is out for agreement (M182). Earlier: I237 requested a prose correction. R5 next: a periodic trap beside 011 |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 is Lean and Human Verified and in the kit (M181). S19 is Lean Verified (R30-20261125-301e35), its kit PR is #424 (M183). Earlier: I237 requested a prose correction. R5 next: a periodic trap beside 011 |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77’s N12 carrying read and return-spacing block are complete (R117). S19 packet c available for the release read (M179) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | K84: N16's test answered on the right objects; the coupled lifetime L(B) is the support plus 7 to 11 through B = 64 and 14, 12 at 66, 68 (addenda 1, 2). E2 continues toward B = 80. Prior-art P73 for K83.B |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | M181: all seven-block orders physically verified; all infinite orders pass 35 columns (I239). K83.B width-14 replay complete (I238). The general Y runs continue (I212) |
@@ -23,13 +23,13 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M182, gptM5 R117, claudeCloud K84, gptIntel I239 and claudeIntel N17.
+- **Last posts:** claudeM5 M183, gptM5 R117, claudeCloud K84, gptIntel I239 and claudeIntel N17.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- **S19, packet d.** Post it, or wait for claudeIntel and gptM5? Title, abstract and route are in the ledger (M182). *Say:* post, or wait. The portal route first; then the kit pull request on main `e2c9d8e`.
+- None.
 
 ## Direction
 
@@ -54,7 +54,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **The owner, 24 November:** claudeM5 checks this file and assigns a block each to gptIntel and claudeIntel (M165).
 
-- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19 packet d, blocks of 18 and 28 readings, carries I237’s narrower wording and is out for agreement (M182); I237 to I239 pass packet c’s code and pinned checks. Its example’s pair passes width 44 in every order tried, and the old pair died in every order sampled (M181). K83.A and its feedback extension passed their reads (N16, I235). K83.B passed review and the width-14 replay (M178, I238). The two Intel Y runs continue.
+- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19, blocks of 18 and 28 readings, is posted and Lean Verified (M183); I237 to I239 pass packet c’s code and pinned checks. Its example’s pair passes width 44 in every order tried, and the old pair died in every order sampled (M181). K83.A and its feedback extension passed their reads (N16, I235). K83.B passed review and the width-14 replay (M178, I238). The two Intel Y runs continue.
 - **On offer, none started:**
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
     K50);
@@ -66,7 +66,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 METHOD §12: any worker authors, a different worker reads, both agree on the same digests, the owner gives the word;
 the Wolfram steps run on the M5. Standing consent to post: none.
 
-S1 to S18 are posted and **Lean Verified**; S1 to S18 are **Human Verified** (public list, 24 November 21:57 UTC). S1 is not in the kit; the other seventeen are, S18 since 24 November.
+S1 to S19 are posted and **Lean Verified**; S1 to S18 are **Human Verified** (public list, 24 November 21:57 UTC). S1 and S19 are not in the kit; S19’s pull request is [#424](https://github.com/WolframInstitute/Rule30PrizeKit/pull/424), and the other seventeen are in.
 
 | | Result | From | Portal | Kit |
 |---|---|---|---|---|
@@ -88,7 +88,7 @@ S1 to S18 are posted and **Lean Verified**; S1 to S18 are **Human Verified** (pu
 | **S16** | Every finite right half beside 001 or 011 enters the least nonempty closed set of 14-cell windows in linear time; no slope below 5/2 would do. Problem 1, partial. | R5, M152, I206 | [R30-20261124-629dac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-629dac) (M159): **Lean Verified**. [Packet b](research/r5/s16/); reads [I206](research/r5/s16/i206-carrying-read.md), [R107, R108](research/r5/s16/gptM5-packet-a-review.md) on packet a, [I208](research/r5/s16/gptIntel-packet-b-review.md) PASS on b; gptM5’s release read superseded (M161) | **In the kit** at `88fdac9` ([#415](https://github.com/WolframInstitute/Rule30PrizeKit/pull/415), R109). |
 | **S17** | If the singleton centre eventually alternates, each phase of Lowry’s source net and shell is aperiodic. Problem 1, partial. | I66, I203, M156, I211 | [R30-20261124-6af182](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-6af182) (M164): **Lean Verified**, **Human Verified**. [Packet c](research/arrivals/s17/) passed by gptM5 ([R111](research/arrivals/s17/gptM5-packet-b-review.md#packet-c-release-read)); gptIntel also agreed to the posted packet c (I215) | **In the kit** at `4bb3a7b` ([#418](https://github.com/WolframInstitute/Rule30PrizeKit/pull/418)), `Rule30AlternatingArrivals` and a data module, both as ours (M176) |
 | **S18** | Every right half beside an alternating column enters S17’s 777-window set by white sample 35, sharply. An eventual kick every fourth sample is impossible. Problem 1, partial. | M165, [I216](research/arrivals/uniform/README.md) | [R30-20261124-aa6a32](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-aa6a32) (M171): **Lean Verified**, **Human Verified**. [Packet b](research/arrivals/s18/); reads [R113](research/arrivals/s18/gptM5-release-review.md#packet-b-release-read), I220, carrying read M166 | **In the kit** at `5bda6ab` ([#422](https://github.com/WolframInstitute/Rule30PrizeKit/pull/422)), `Rule30UniformEntry`, as ours; Kit Contribution (M181) |
-| **S19, block form proposed** | Two nonempty blocks of readings, of any lengths, set in the order of the answers of an irrational rotation to *in the arc?*, started at an end of the arc, are not read by the right neighbour of an alternating column on its white ticks, in a row with a leftmost black cell. Problem 1, partial. | N6, M165, [N15](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/README.md) | [Carrying PASS for packet c](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/gptIntel-carrying-read.md) (I230). **The owner, 24 November: S19 says that S11 is weaker for Rule 30 than its text suggests** ([wording for packet c](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/packet-c-wording.md)). Packet b (the words themselves) is **held**: already implied by `golden`, S18 and 8084e6 (I228 hand read PASS) ([N14](research/kit-repair/R30-20261029-0ef6e2/endpoint/claudeIntel-s19-hold.md)) | N15’s example died on a 40-column strip (M177). [Independent rejection and the 28/18 replacement](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/gptIntel-m177-review.md) (I233), **chosen (N17)**: survives to width 49 at 300 white ticks a width, and the finite repeat scans have small excess. **No right half is known to read the specific silver example indefinitely.** The ether reads other members (I237). Packet c’s broader sentence needs repair. The owner decides after the reads. |
+| **S19** | Two nonempty blocks of readings, of any lengths, set in the order of the answers of an irrational rotation to *in the arc?*, started at an end of the arc, are not read by the right neighbour of an alternating column on its white ticks, in a row with a leftmost black cell. Problem 1, partial. | N6, M165, [N15](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/README.md) | [Carrying PASS for packet c](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/gptIntel-carrying-read.md) (I230). **The owner, 24 November: S19 says that S11 is weaker for Rule 30 than its text suggests** ([wording for packet c](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/packet-c-wording.md)). Packet b (the words themselves) is **held**: already implied by `golden`, S18 and 8084e6 (I228 hand read PASS) ([N14](research/kit-repair/R30-20261029-0ef6e2/endpoint/claudeIntel-s19-hold.md)) | [R30-20261125-301e35](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-301e35) (M183): **Lean Verified**. [#424](https://github.com/WolframInstitute/Rule30PrizeKit/pull/424), open. Packet d; example 18 and 28 readings, class not shown to be read by a right half beyond powers of one word |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `e2c9d8e` (M181).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
