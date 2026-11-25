@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: Rule 30's topological entropy is the growth rate of the words of two adjacent columns, and is below 1.232039 bits a tick
 Author: {AUTHORS}
 Date: 2026-11-25
-Description: The topological entropy of Rule 30 is the growth rate of the words two adjacent columns can read. A table of 140 states on five sites bounds it below 1.232039 bits a tick.
+Description: The topological entropy of Rule 30 is the growth rate of the words two adjacent columns can read. A table of 140 states on five sites gives an upper bound below 1.232039 bits a tick.
 Abstract: {ABSTRACT}
 Keywords: [Rule 30, topological entropy, column words, transfer automaton, Lean]
 Sources: ["[Rule30Equivalents.Mixing, the kit](https://github.com/WolframInstitute/Rule30PrizeKit/blob/5fb591588cfa869bfdc47946799b5ddd70a903d1/equivalents/Rule30Equivalents/Mixing.lean)", "[P. di Lena and L. Margara, Row subshifts and topological entropy of cellular automata, J. Cellular Automata 2 (2007)](https://www.cs.unibo.it/~margara/page14/assets/01-JCA07.pdf)", "[S. Wolfram, Random sequence generation by cellular automata, Adv. Appl. Math. 7 (1986)](https://content.wolfram.com/sw-publications/2020/07/random-sequence-generation-cellular-automata.pdf)", "[Tables of cellular automaton properties (1986), with P. Grassberger's Table 6](https://content.wolfram.com/sw-publications/2020/07/cellular-automaton-properties.pdf)", "[S. Wolfram, A New Kind of Science, notes to page 960](https://files.wolframcdn.com/pub/www.wolframscience.com/nks/nks-nts-ch6.pdf#page=15)"]
@@ -17,9 +17,9 @@ This is about the whole map on two-sided rows. It is not about the centre column
 
 ## Two columns carry everything
 
-Read columns a and a + 1 for n ticks, and let N(n) be the number of words that occur over all initial rows. Rule 30 is left-permutive. From two neighbouring columns for n + O(k) ticks every cell of a k-cell window to their west follows for n ticks. So each pair word is a symbol of the map. `entropy_eq_pair_growth` says that **the entropy is the growth rate of N(n)**, with the pair and its spatial position fixed. Submultiplicativity, N(m + n) ≤ N(m) N(n), then gives the upper bound log N(k) / k from any single length k (`entropy_le_block_root`).
+Read columns a and a + 1 for n ticks, and let N(n) be the number of words that occur over all initial rows. Rule 30 is left-permutive. From two neighbouring columns for n + O(k) ticks every cell of a k-cell window to their west follows for n ticks. Spatial translation lets us place that pair at the eastern edge of each window without changing N(n). `entropy_eq_pair_growth` says that **the entropy is the growth rate of N(n)**, with the pair and its spatial position fixed. Submultiplicativity, N(m + n) ≤ N(m) N(n), then gives the upper bound log N(k) / k from any single length k (`entropy_le_block_root`).
 
-Here are N(1) to N(11), counted from every white-and-black wall of n - 1 cells and every right half of n cells, and the bound each length gives, in bits.
+Here are N(1) to N(11), counted from every wall word of n − 1 ticks and every initial right prefix of n cells, with two choices for the final wall bit, and the bound each length gives, in bits.
 
 ```wl
 count[n_] := Module[{m = 2^n - 1, x0 = Range[0, 2^n - 1], x, g}, 2 Total[Table[x = x0; g = BitAnd[x, 1];
@@ -28,11 +28,11 @@ count[n_] := Module[{m = 2^n - 1, x0 = Range[0, 2^n - 1], x, g}, 2 Total[Table[x
 Table[{n, count[n], N[Log2[count[n]]/n, 5]}, {n, 1, 11}]
 ```
 
-The bound from length 11 is 1.3852 bits, and it falls slowly. Exact counts to length 23 (718,268,824 words) were made with a program outside this entry. They give 1.2464 bits from length 22, through a sharper form of the same estimate.
+The bound from length 11 is 1.3852 bits, and it falls slowly. Exact counts to length 23 (718,268,824 words) were made with a program outside this entry. Each terminal letter accounts for N(23)/4 words. The maximum number of 22 preceding letters at a fixed terminal letter therefore gives the sharper upper bound log₂(718,268,824/4)/22 < 1.2464 bits per tick.
 
 ## A table that reads backwards
 
-Better bounds come from a table with fewer but longer moves. Read the pair backwards in time. Keep a set S of possible strips of w cells east of the pair: all strips at the last tick. For each letter (the pair at the tick before) keep the strips that could step into S, with the two cells outside the strip free. The physical history of every row is a path in this table, so N(n) is at most the number of its paths of length n. Two letters that lead to the same set still count twice. Give every set a positive weight. If the weights of the four successors of each set add to at most p/q times its own, the number of paths grows by at most p/q. `ReverseCover.entropy_le` then bounds the entropy by log(p/q), and a table on a finite strip needs only the local rule (`StripTable.cover`, with `physical_strip_step`).
+Read the pair backwards one tick at a time. Store possible strips on sites a + 1 through a + w, starting with all strips at the last tick. For a previous letter (b, g), the bit at a must be b and the first strip bit must be g. Keep each such strip that can step into S for at least one choice of the bit at a + w + 1. Here S is the current set. The physical history of every row is a path in this table, so N(n) is at most the number of its paths of length n. Two letters that lead to the same set still count twice. Give every set a positive weight. If the weights of the four successors of each set add to at most p/q times its own, the number of paths grows by at most p/q. `ReverseCover.entropy_le` then bounds the entropy by log(p/q), and a table on a finite strip needs only the local rule (`StripTable.cover`, with `physical_strip_step`).
 
 This rebuilds the table on w cells by computer, with its growth rate. It has 6 sets at two cells and 140 at five. Integer weights give a little more than the growth rate: at five cells 1679211/714866 = 2.34899, against a growth of 2.34662.
 
@@ -52,7 +52,7 @@ table[w_] := Module[{full = 2^(2^w) - 1, up, pre, todo, index, edges = <||>, n, 
 {N[53/21, 8], N[Log2[53/21], 6], N[1679211/714866, 8], N[Log2[1679211/714866], 8]}
 ```
 
-`FiveSite.entropy_width_5` has the integer table and weights for five cells: the entropy is at most log(1679211/714866), below 47/20 (`FiveSite.entropy_lt_log_forty_seven_twentieths`). Lean checks all 17,920 cases of a set, two outer cells and a strip, and all 140 weight inequalities.
+`FiveSite.entropy_width_5` has the integer table and weights for five cells: the entropy is at most log(1679211/714866) in natural units. The multiplier is below 47/20, giving entropy strictly below log(47/20) (`FiveSite.entropy_lt_log_forty_seven_twentieths`). Lean checks all 17,920 cases of a set, two outer cells and a strip, and all 140 weight inequalities.
 
 Wider strips give better bounds, and no Lean here checks them. They were found by a program, and checked with a second one, for the certificate rather than the search: a file of sets and weights, read and tested case by case.
 
@@ -65,7 +65,7 @@ The last point is 1.143992 bits a tick, from 2,868,932 sets on a strip of fourte
 
 ## Is the entropy above one bit?
 
-The kit's catalogue reads log 2 from its counts: to length 15 a word of one column has at most about n²/4 partners in the next. Exact counts pass n²/4 at length 17 (73 partners), and have 177 at length 23, where n²/4 is 132. An exact calculation of the fair measure entropy gives increments above one bit at lengths to 21. They decrease.
+The kit's catalogue reads log 2 from its counts: to length 15 a word of one column has at most about n²/4 partners in the next. Exact counts pass n²/4 at length 17 (73 partners), and have 177 at length 23, where n²/4 is 132.25. An exact calculation of the fair measure entropy gives increments above one bit at lengths to 21. They decrease.
 
 ```wl
 incr = {{10, 0.1890356785}, {11, 0.1788235938}, {12, 0.1690311183}, {13, 0.1614661853}, {14, 0.1543637805}, {15, 0.1486271230}, {16, 0.1434279834}, {17, 0.1389372130}, {18, 0.1349303601}, {19, 0.1312655041}, {20, 0.1279754285}, {21, 0.1248832816}};
