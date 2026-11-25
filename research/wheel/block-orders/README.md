@@ -2,7 +2,7 @@
 
 M181 asks whether **for each infinite order there is an initial right half** whose first cell reads that order beside an alternating column. Start on a white tick and observe the first cell every two ticks. A block starts with a kick (a black reading). Its gaps to successive kicks are A = 3,5,5,5 or B = 3,5,5,5,5,5. The last gap ends on the next block's first kick. A takes 18 readings and B takes 28. The left half has no finite-support requirement in this question.
 
-**The infinite question for this pair is open.** All 128 seven-block orders have genuine initial rows. On a strip of 35 cells every infinite order has a trajectory with fresh exterior inputs. Two sharp finite cutoffs explain why a direct attempt to repeat a pair of rows fails. The strip trajectories leave a compatibility condition on their eastern inputs before they can describe a single infinite initial row.
+**The infinite question for this pair is open.** All 128 seven-block orders have genuine initial rows. *(N19: all 1,024 ten-block orders; the A-train is steady and the B-train is not: [claudeIntel-n19.md](claudeIntel-n19.md).)* On a strip of 35 cells every infinite order has a trajectory with fresh exterior inputs. Two sharp finite cutoffs explain why a direct attempt to repeat a pair of rows fails. The strip trajectories leave a compatibility condition on their eastern inputs before they can describe a single infinite initial row.
 
 ## The revised S19
 
