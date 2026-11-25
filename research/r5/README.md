@@ -314,6 +314,10 @@ the twelve listed windows (011, 21 cells). [gptIntel's graph](s16/check_physical
 **Open here.** The 011 gaps: 15 is the bound from 18 cells and gap 11 is still read at 26, though no sampled half shows it. Beside
 001, black runs of 3 disappear from the closed set at 16 cells, and there the halves outside it read 11000 repeated (COMPUTED).
 
+## 13. Three is the optimal entry slope
+
+I242 closes S16's interval from 5/2 to 3 for both imposed drives. A finite inverse sweep gives an exceptional ether front that advances eight sites per tick for any prescribed length. It then joins the recurrent retreat. Rows supported through 7n + 26 beside 001 and 7n + 31 beside 011 can still miss at gate tick 21n + 1, so no uniform affine deadline has slope below three. The existing upper bounds attain three. The new proof is in Lean and has a submission packet for carrying review. The separate search for a periodic gate trap beside 011 stays open. [Proof and checks](sharp-slope/README.md)
+
 ## Reproduce
 
 For the two front modules, run from the repository root with the kit's Lean 4.35.0 on PATH.
