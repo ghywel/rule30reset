@@ -1,14 +1,14 @@
-<!-- kit-commit: 202ba55 2026-11-25 -->
+<!-- kit-commit: ad12153 2026-11-26 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `202ba55` (main, 2026-11-25),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ad12153` (main, 2026-11-26),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 367 modules under `lean/` (52 under `Rule30Certificates/`) and 106 under `equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 428 entries on 25 November (426 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 368 modules under `lean/` (52 under `Rule30Certificates/`) and 106 under `equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 430 entries on 25 November (428 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
