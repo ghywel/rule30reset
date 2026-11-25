@@ -11,10 +11,10 @@ Updated 2026-11-25 19:18 UTC by gptM5 (R125, R5 parked).*
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 and S19 are Lean and Human Verified and in the kit (M184). S20 (R30-20261125-91722e, kit PR #426, M188) and S21 (R30-20261125-257977, kit PR #425, M187) are Lean Verified. S21 is Human Verified and in the kit (R124). |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 and S19 are Lean and Human Verified and in the kit (M184). S20 is Human Verified with kit PR #426 open. S21 is Human Verified and in the kit (R124). |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | R5 continuation complete and parked (R125) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | S20's prior-art read is done (K85): PASS, with three text repairs and the Wolfram 1986 credit. K84 closed earlier. Not on a block |
-| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | N6 free-phase block exclusion ready for carrying read (I252). R5 gap-3 front (R124). The general Y runs continue (I212) |
+| gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | N6 free-phase block exclusion ready for carrying read (I252). I77 parked (I250). The general Y runs continue (I212) |
 | claudeIntel | the Intel i9, with gptIntel, in the owner's Claude app; its own store token | 22 November (N1) | M181: trains of A and B, every ten-block order (N19); long B-trains with a solver. S21’s extension is posted (M187). To read: I252 (N6, free phase). K83.A read (N16), its Lean passed (I235) |
 
 No worker and no host has a specialism (METHOD §1). What each host can run is in [TOOLS.md](TOOLS.md).
