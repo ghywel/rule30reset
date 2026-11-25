@@ -52,7 +52,7 @@ class Cone:
                 self.clauses.append([-src, -selector] + [target[j] for j in ids if j in target])
 
 
-def build(slots, rows, edges, domains):
+def build(slots, rows, edges, domains, mark):
     cone = Cone()
     initial = cone.fresh(WIDTH + sum(max(qs)+1 for qs in slots))
     row = initial
@@ -68,6 +68,8 @@ def build(slots, rows, edges, domains):
         outputs = cone.fresh(next_width)
         for t in range(1, max(gaps)+2):
             evolved = cone.evolve(evolved, t == 1)
+            if i == mark and t == 2:
+                cone.clauses.append([evolved[0]])
             selector = chosen.get(t-1)
             if selector is not None:
                 for source, dest in zip(evolved[:next_width], outputs, strict=True):
@@ -81,17 +83,19 @@ def build(slots, rows, edges, domains):
     return cone, initial, choices
 
 
-def run(graph, output, distance, control):
+def run(graph, output, distance, control, second_black):
     slots = OBSERVER["DISTANCES"](distance)
     rows, edges = OBSERVER["LOAD"](graph)
     domains = None if control else OBSERVER["base_domains"](rows, edges, slots)
-    cone, initial, choices = build(slots, rows, edges, domains)
-    stem = output / (f"all-{distance}" + ("-control" if control else ""))
+    mark = distance + 7 if second_black else None
+    cone, initial, choices = build(slots, rows, edges, domains, mark)
+    suffix = "-control" if control else "-black" if second_black else ""
+    stem = output / (f"all-{distance}" + suffix)
     cnf, proof = stem.with_suffix(".cnf"), stem.with_suffix(".lrat")
     with cnf.open("w") as handle:
         handle.write(f"p cnf {cone.variables} {len(cone.clauses)}\n")
         handle.writelines(" ".join(map(str, c)) + " 0\n" for c in cone.clauses)
-    receipt = dict(distance=distance, control=control, vars=cone.variables, clauses=len(cone.clauses))
+    receipt = dict(distance=distance, control=control, second_black=second_black, vars=cone.variables, clauses=len(cone.clauses))
     print(json.dumps(receipt), flush=True)
     proc = subprocess.run(["cadical", "-q", "--lrat", "--no-binary", cnf, proof],
                           capture_output=True, text=True)
@@ -109,7 +113,8 @@ def run(graph, output, distance, control):
                 def __contains__(self, row):
                     return True
             allowed = [AnyRow()] * len(pulses)
-        observed, samples = FIXED["replay"](black, word, WIDTH, allowed, pulses, None)
+        sample = (mark, 1) if mark is not None else None
+        observed, samples = FIXED["replay"](black, word, WIDTH, allowed, pulses, sample)
         return dict(**receipt, verdict="SAT", word=word, pulses=pulses,
                     initial_black_indices=black, rows=observed, samples=samples)
     if proc.returncode != 20:
@@ -127,6 +132,8 @@ if __name__ == "__main__":
     p.add_argument("graph", type=Path)
     p.add_argument("output", type=Path)
     p.add_argument("distance", type=int)
-    p.add_argument("--control", action="store_true")
+    modes = p.add_mutually_exclusive_group()
+    modes.add_argument("--control", action="store_true")
+    modes.add_argument("--second-black", action="store_true")
     args = p.parse_args()
-    print(json.dumps(run(args.graph, args.output, args.distance, args.control)), flush=True)
+    print(json.dumps(run(args.graph, args.output, args.distance, args.control, args.second_black)), flush=True)
