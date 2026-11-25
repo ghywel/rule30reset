@@ -1,6 +1,8 @@
 """Replay the masked sideways orbit and test local front cycles on its background."""
 import argparse
+import json
 from collections import Counter, deque
+from pathlib import Path
 
 
 def pack(word):
@@ -132,15 +134,19 @@ def front_test(rows):
     cycle = steps[steps.index(current):]
     assert len(cycle) % phases == 0
     print("local zero-displacement cycle",cycle,flush=True)
+    return cycle
 
 
 if __name__ == "__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("word")
     parser.add_argument("--front",action="store_true")
+    parser.add_argument("--emit-cycle",type=Path)
     args=parser.parse_args()
     if not args.word or set(args.word)-set("01"):
         parser.error("word must be nonempty binary readings")
     rows=sideways(args.word)
-    if args.front:
-        front_test(rows)
+    if args.front or args.emit_cycle:
+        cycle=front_test(rows)
+        if args.emit_cycle and cycle:
+            args.emit_cycle.write_text(json.dumps({"background":rows,"cycle":cycle})+"\n",encoding="ascii")
