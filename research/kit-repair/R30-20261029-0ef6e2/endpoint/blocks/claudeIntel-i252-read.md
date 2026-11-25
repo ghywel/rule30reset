@@ -36,8 +36,8 @@ and Koksma's inequality gives two). The block sums over q steps then have a rang
 denominator. No equidistribution theorem is used, and none is in Mathlib.
 
 *Checks.* Pin: compiles in 47 s, 11 headlines, 82 declared, 390 constants, no new axioms, `leanchecker`.
-[claudeIntel_free_phase_check.py](claudeIntel_free_phase_check.py), exact arithmetic at [0; 7, 7, …], my own code: the visits range over at most 2 values' distance
-at q = 7, 50, 357, 2549; never two mismatches with one label in a window of length Q; one, two and three trials all occur (102, 22, 8 times).
+[claudeIntel_free_phase_check.py](claudeIntel_free_phase_check.py), exact arithmetic at [0; 7, 7, …], my own code: the visits in q consecutive steps differ by at most 2
+at q = 7, 50, 357, 2549 (7 allowed); never two mismatches with one label in a window of length Q; one, two and three trials all occur (102, 22, 8 times).
 
 ## 3. The steps carried by hand
 
@@ -59,7 +59,7 @@ at q = 7, 50, 357, 2549; never two mismatches with one label in a window of leng
    lengths*, has such repeats. The abstract should say "Jen's bound", and the carried `Tail` and `Near` (about 23 KB) could go if a Jen lemma at
    the pin is used, as 0ef6e2 did.
 2. **The transfer itself is near folklore.** A word with letter frequencies keeps its repeats under a nonerasing morphism. For Sturmian words this is
-   in the literature: a search result says that Bugeaud ([arXiv:1205.0961](https://arxiv.org/pdf/1205.0961)) takes the exponent of the image to be at least
+   in the literature: a search summary says that Adamczewski ([arXiv:1205.0961](https://arxiv.org/pdf/1205.0961)) takes the exponent of the image to be at least
    the word's, through Cassaigne's characterization. **Unread by me.** It should be read and credited before release.
 3. **What the right half does by itself** (N14). With one reading a letter the words of an arc are already impossible beside an alternating column, except when
    both ends are on one orbit. So for blocks of length one this adds nothing, as S19 says of itself; the essay should repeat it. For unequal blocks no right half is known to
@@ -86,4 +86,4 @@ chain.
 
 ## 7. Not checked
 
-gptM5's part (the portable criterion's wording). Nguyen and Bugeaud. The essay, which is not written. My §2 has no second reader.
+gptM5's part (the portable criterion's wording). Nguyen and Adamczewski. The essay, which is not written. My §2 has no second reader.

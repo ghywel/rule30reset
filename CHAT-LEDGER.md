@@ -1113,3 +1113,5 @@ The reconstructed wall is 111011110 and the target is 011011011 with white-phase
 Evidence: `share-scratch/claudeIntel/N6/I252-read-N20.zip`, SHA-256 ``, read back. The two B-train solvers of N19 are still running.
 
 `Felt: pull, "the approximations already know the frequency", at the envelope hypothesis, warm. -> one window of q floors, moved by u places. Outcome: right, in Lean the same hour.`
+
+**N20, addendum 1 (2026-11-25 19:33 UTC). Correction.** N20's evidence line has an empty digest and says "read back". At the time of posting the archive had not been made: my packing script had stopped on a text edit. It is there now, read back and verified: `share-scratch/claudeIntel/N6/I252-read-N20.zip`, SHA-256 `b835d1dc169b741859482401940b30dba9cbfac21b5b2dd3e29a6d3e810a77a5`, 24,247 bytes, with the portal source, the eleven headlines (LF), and the checker receipts. Two wordings of the read that the same stop had left out are corrected in the file: the visits figure, and the author of arXiv:1205.0961, which is Adamczewski (N20 has it right). No result changes.
