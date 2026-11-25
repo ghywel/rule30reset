@@ -87,3 +87,5 @@ assert W[:, :n].min() > 0 and int(W.max()) * 2 * q < 2**62 and int(W.max()) * p 
 bad = sum(int((following(W, f, nb) * q > W[f, :n] * p).sum()) for f in range(K) for nb in (0, 1))
 print('cells %d, wall bits ahead %d: %d states, %d weights; float %.6f; %s = %.5f bits a tick, %.4f in 12 ticks: violations %d'
       % (w, k, n, n * K, best, target, np.log2(float(target)), float(target) ** 12, bad))
+if bad:
+    sys.exit(1)

@@ -2,6 +2,11 @@
 
 claudeM5, M191, 25 November 2026. The owner asked what Quint's R30-20261125-f6ca26 gives us beside S20.
 
+**K83.C continuation.** The independent read clears the five M191 Lean statements. Every rational base above the
+physical worst-wall rate has a finite integer strip certificate. Galindo's new terminal-pair census then gives a
+conditional route to Problem 1. One disjoint pair per seven age-depth positions suffices with his existing
+five-cell certificate. [Proofs, checks and scope](finite-lookahead.md)
+
 ## One count
 
 Fix a wall word u of length n (a column's readings) and let Ω(u) be the number of different OR words beside it, the
@@ -11,16 +16,17 @@ reading, so a pair word of the two western columns is a wall word with an OR wor
 - **On average:** the topological entropy is the growth rate of the sum of Ω(u) over all 2ⁿ walls, so one bit plus the
   growth rate of the mean of Ω. *PROVED IN LEAN here* (`entropy_eq_mask_growth`, `card_maskWords_eq_sum`), on S20's
   identity. Exactly, N(n + 1) = 4 Σ Ω(u), which is the a_n of [count-pairs.md](../count-pairs.md).
-- **At worst:** let λ be the growth rate of the largest Ω(u). A centre of period P from T on allows at most T + P C
-  λ^w different left words of width w (Kurtuluş, `Rule30LeftRichness`; Galindo, `Rule30HorizontalDiversity`). So
-  Problem 1 follows if the single cell's left words grow faster than λ^w.
+- **At worst:** if every wall of length w admits at most C r^w OR words, a centre of period P from T on allows at
+  most T + P C r^w different left words of width w (Kurtuluş, `Rule30LeftRichness`; Galindo,
+  `Rule30HorizontalDiversity`). Every r strictly above the worst-wall growth base qualifies. An estimate at the
+  base itself requires a separate prefactor bound. A strictly larger horizontal exponential rate gives Problem 1.
 - **The bridge:** a bound K (p/q)ⁿ on Ω(u), uniform in the wall, gives entropy at most log (2p/q). *PROVED IN LEAN
   here* (`entropy_le_of_mask`), with the kit's two certificates as instances (`entropy_galindo`,
   `entropy_galindo_four`).
 
 [PairHearing.lean](PairHearing.lean): S20's module, the kit's `Rule30HorizontalDiversity`, 211 lines. Stock
-`Check.lean` on kit main `ad12153` with S20's patch: pass, five headlines, no new axioms; `leanchecker` passes. Unread
-by another worker.
+`Check.lean` on kit main `ad12153` with S20's patch: pass, five headlines, no new axioms; `leanchecker` passes.
+gptIntel independently replayed the five statements and checked both finite-word comparisons in the entropy proof.
 
 ## The bounds, in bits a tick
 
@@ -41,6 +47,7 @@ and horizontal words.
 ## What the strips can reach (COMPUTED)
 
 [claudeM5_cert.py](claudeM5_cert.py), checked in integers for every state, every known future and every next wall bit.
+The checker exits unsuccessfully on a violated row. The seven-cell value below is M191's computation.
 The design is Galindo's: weights that know the next few wall bits. Quint's weights do not, and use blocks of twelve
 ticks instead.
 
@@ -72,8 +79,9 @@ table; it does not prove it.
   w ≤ 17 (Kurtuluş, computed). Any exponential lower bound above the worst wall's rate would do, and none is known at
   any rate. A better constant does not change that.
 - **B3.** The entropy is above one bit exactly when the mean of Ω grows exponentially. Open.
-- A strip's rate is an upper bound only. Galindo (R30-20261125-0c0abf) has a free strip of 32 cells that carries any bit
-  stream, which no whole row can.
+- A strip's rate is an upper bound only. Galindo (R30-20261125-0c0abf) encodes any sampled stream on a free strip of
+  32 cells. The chosen return paths violate a physical condition at the eastern edge. Whether another trajectory
+  can yield the same sampled output remains open. [Galindo's statement](https://github.com/WolframInstitute/Rule30PrizeKit/pull/429)
 - Another constant from a wider strip is one more term of a chain (METHOD §12, condition 2).
 
 ## What would be new
