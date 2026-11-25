@@ -9,6 +9,7 @@ from pysat.solvers import Cadical195
 
 def run(data, steps, dimacs, witness):
     cycle, background = data["cycle"], data["background"]
+    stride = data.get("stride",1)
     observed = max(row[1] for row in cycle)+1
     phase = cycle[0][0]
     variables, next_index = [], 1
@@ -29,7 +30,9 @@ def run(data, steps, dimacs, witness):
             z=new[p]
             cnf.extend([[-c,-z,-l],[-c,z,l],[-r,-z,-l],[-r,z,l],[c,r,-z,l],[c,r,z,-l]])
     for t,row in enumerate(variables):
-        phase_t,d,b=cycle[t%len(cycle)]
+        if t % stride:
+            continue
+        phase_t,d,b=cycle[(t//stride)%len(cycle)]
         ref=background[phase_t]
         assert phase_t==(phase+t)%len(background)
         for p in range(1,d+2):
@@ -45,11 +48,12 @@ def run(data, steps, dimacs, witness):
     row=[int(v in model) for v in variables[0]]
     seed="".join(map(str,row))
     for t in range(steps+1):
-        phase_t,d,b=cycle[t%len(cycle)]
-        ref=background[phase_t]
-        assert all(row[p-1]==ref[p%len(ref)] for p in range(1,d))
-        assert row[d-1]!=ref[d%len(ref)]
-        assert row[d]^ref[(d+1)%len(ref)]==b
+        ref=background[(phase+t)%len(background)]
+        if t % stride == 0:
+            _,d,b=cycle[(t//stride)%len(cycle)]
+            assert all(row[p-1]==ref[p%len(ref)] for p in range(1,d))
+            assert row[d-1]!=ref[d%len(ref)]
+            assert row[d]^ref[(d+1)%len(ref)]==b
         padded=[ref[0]]+row
         row=[padded[i]^(padded[i+1]|padded[i+2]) for i in range(len(row)-1)]
     print(f"{steps} updates SAT, {len(seed)}-cell witness {seed}")
