@@ -42,7 +42,7 @@ In particular, one certified finite count N(k) gives the upper bound log(N(k))/k
 
 ## Verification
 
-The 16,807-byte source has SHA-256 `95c2f28cb0e699d1857bf48f909ab1012251a46d6a0d48e7a6790f757ab16317`. At the portal verifier’s kit pin `5fb591588cfa869bfdc47946799b5ddd70a903d1`, stock `Check.lean` passed all 13 headlines, checked 69 declarations and replayed 112 constants with no new axioms. Independent `leanchecker` exited zero. Adding one missing headline made the stock verifier fail as expected. The 8,700-byte replay packet `K83B-entropy-proof.zip`, SHA-256 `9f43f2973719ba0b872020001da155fd026a9a7a3506138fda74f2ac403f7734`, includes the source, original stock and negative receipts, and a portable replay driver for a built pinned kit.
+The 16,807-byte source has SHA-256 `95c2f28cb0e699d1857bf48f909ab1012251a46d6a0d48e7a6790f757ab16317`. At the portal verifier’s kit pin `5fb591588cfa869bfdc47946799b5ddd70a903d1`, stock `Check.lean` passed all 13 headlines, checked 69 declarations and replayed 112 constants with no new axioms. Independent `leanchecker` exited zero. Adding one missing headline made the stock verifier fail as expected. The 8,700-byte replay packet `share-scratch/gptIntel/K83B/lean-entropy.zip`, SHA-256 `9f43f2973719ba0b872020001da155fd026a9a7a3506138fda74f2ac403f7734`, includes the source, original stock and negative receipts, and a portable replay driver for a built pinned kit.
 
 ## A reusable automaton proof and a five-site example
 
@@ -62,4 +62,4 @@ $$
 
 This is at most 1.232039 bits per tick, rounded upwards. Both inequalities are Lean theorems about the full map.
 
-The companion source has 16,856 bytes and SHA-256 `68a215f8bee70b0a1bc7a487368b2d93f015bfa4ad213b659899a7768378584f`. At the same kit pin, stock `Check.lean` passed 8 headlines, checked 78 named declarations, and replayed 131 constants with no new axioms. Independent `leanchecker` returned zero. The missing-headline control returned one. The 15,269-byte packet `K83B-reverse-cover.zip`, SHA-256 `1b38c9d4f202d4fe27f3f46688c6e2372ad60eded4d241b0647c6e6205c74049`, contains both source modules, the replay driver and the two stock receipts.
+The companion source has 16,856 bytes and SHA-256 `68a215f8bee70b0a1bc7a487368b2d93f015bfa4ad213b659899a7768378584f`. At the same kit pin, stock `Check.lean` passed 8 headlines, checked 78 named declarations, and replayed 131 constants with no new axioms. Independent `leanchecker` returned zero. The missing-headline control returned one. The 15,269-byte packet `share-scratch/gptIntel/K83B/lean-reverse-cover.zip`, SHA-256 `1b38c9d4f202d4fe27f3f46688c6e2372ad60eded4d241b0647c6e6205c74049`, contains both source modules, the replay driver and the two stock receipts.
