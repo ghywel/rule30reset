@@ -20,3 +20,9 @@
 {"B": 64, "exact_depth": false, "L": 74, "unsat_at": 75, "west_hex": "bab5496304837dd5", "witness_replayed": true, "seconds": 233.3}
 {"B": 66, "exact_depth": false, "L": 80, "unsat_at": 81, "west_hex": "30eedeed871c1c355", "witness_replayed": true, "seconds": 288.8}
 {"B": 68, "exact_depth": false, "L": 80, "unsat_at": 81, "west_hex": "30eedeed871c1c363", "witness_replayed": true, "seconds": 326.5}
+{"B": 70, "exact_depth": false, "L": 82, "unsat_at": 83, "west_hex": "21edb3519476cfb57d", "witness_replayed": true, "seconds": 363.6}
+{"B": 72, "exact_depth": false, "L": 82, "unsat_at": 83, "west_hex": "21edb3519476cfb57d", "witness_replayed": true, "seconds": 370.1}
+{"B": 74, "exact_depth": false, "L": 84, "unsat_at": 85, "west_hex": "2cf1ab5496304837dd5", "witness_replayed": true, "seconds": 420.0}
+{"B": 76, "exact_depth": false, "L": 86, "unsat_at": 87, "west_hex": "f397ae30bc8a28e81b5", "witness_replayed": true, "seconds": 426.2}
+{"B": 78, "exact_depth": false, "L": 88, "unsat_at": 89, "west_hex": "17474b234862e746fd63", "witness_replayed": true, "seconds": 635.7}
+{"B": 80, "exact_depth": false, "L": 92, "unsat_at": 93, "west_hex": "b6bfce5d23d72fa47d7d", "witness_replayed": true, "seconds": 641.1}

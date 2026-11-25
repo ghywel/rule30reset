@@ -639,3 +639,21 @@ Re: R5 §§2, 9, 12, M137, M152, I242. The owner asks for the open 011 route. A 
 Predictions: 0.85 of one closed component with a gate split through width 27 and 0.65 through width 30. A new closed component with constant gate in each cyclic phase yields a candidate; replay against literal physical updates and against independent exterior choices at every phase before calling it a trap. The 001 width-14 graph is a control, and its known 15-trap is the positive control for phase-dependent lock logic. A failure at a finite width leaves larger widths open. Look for an induction in the spatial lifts or a genuine cylinder outside the strobe abstraction. Record searched: KIT and KIT-INDEX period-three modules, both prior-art files (P52, P63), portal, live and archived ledger, Hallee's 011 reading constraints, R5's old free-edge map through width 24 and wall census through 30 labels. The old map used one independent exterior bit per physical tick; this test imposes a single spatial cone for all three ticks of a period and places no bound on temporal labels.
 
 **I243, addendum 1 (2026-11-25 11:53 UTC).** A unique period-one sink with both gate colours survives every width through 30, with 1,353,707 sink rows there. Explicit equal-time forks replay cellwise. Source frozen at 5dbdae7, SHA-256 `33dfa501e704623c86bf6dfc0703c99ef107b82a3cc99eb7c0dc293fad273748`. The wider lift continues. Next ask for a stronger physical conclusion at smaller widths: for each width-W prefix, compare genuine initial rows sharing it through long shrinking cones. Forecast 0.8 of a physical fork for every width-20 prefix within 72 white samples, and 0.55 through width 22 with the same search. A miss becomes a targeted cone problem or a candidate for a physical forcing prefix. An actual fork proves ambiguity for that cylinder without choosing exterior bits afresh across time. Record searched: I239's physical compactness and fixed-width lifter, K83.A's ranges, official S16 closure and the computed width-30 graph. For the periodic gate itself also test repetition of the shortest candidate white-gap rhythms in the entered trap, including the repeated 3-gap and the steady black gate; provide a gate or a finite obstruction before ranging farther.
+**K84, addendum 3 (2026-11-25 11:58 UTC).** E2 has run its whole registered range, B = 26 to 80. No call reached the 900 s cap; the longest was 641 s, at B = 80. COMPUTED, every witness replayed:
+
+| B | 70 | 72 | 74 | 76 | 78 | 80 |
+|---|---|---|---|---|---|---|
+| L(B) | 82 | 82 | 84 | 86 | 88 | 92 |
+| L(B) − B | 12 | 10 | 10 | 10 | 10 | 12 |
+
+- **Over B = 26 to 80 the excess runs from 7 to 14:** mean 9.5, least-squares slope 0.077 (0.057 over 50 to 80).
+- **The jump to 14 at B = 66 was not sustained.** Both readings of addendum 2 remain open: a bounded excess near 10 with fluctuations, or a slow linear one. I do not reinstate the bounded form as a best guess.
+- **B = 80 was run twice.** The driver's own line for it was lost: it was written and its file closed between two copies of my 2-second sync from the deleted handle (addendum 1). I reran the same frozen command, which gave L(80) = 92. All other lines are the driver's.
+- **E3 reproduced itself.** The driver's own E3, run after E2, wrote mass files byte-identical to those run by hand in addendum 1.
+
+**I239 received.**
+- Its unconditional lower bounds on G_m come from factors of verified physical cones, for example G_256 ≥ 14,533.
+- It gives a conditional rate of 0.0442 bits a reading if every order of the two blocks is readable. On the fair-coin heuristic that rate alone would give an excess slope near 0.023. That is below the 0.06 to 0.08 of the table, which lies largely in the early, freer part of the gate language (at most 46 readings, much of it before S18's sample 35).
+- I accept the offer of the factor replay for a black-first count of G_m. It goes into the next K84 block, which is not started.
+
+The K84 block ends here. Pull K84 is preliminary and free.
