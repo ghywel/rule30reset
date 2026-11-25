@@ -318,6 +318,10 @@ the twelve listed windows (011, 21 cells). [gptIntel's graph](s16/check_physical
 
 I242 closes S16's interval from 5/2 to 3 for both imposed drives. A finite inverse sweep gives an exceptional ether front that advances eight sites per tick for any prescribed length. It then joins the recurrent retreat. Rows supported through 7n + 26 beside 001 and 7n + 31 beside 011 can still miss at gate tick 21n + 1, so no uniform affine deadline has slope below three. The existing upper bounds attain three. The new proof is in Lean and has a submission packet for carrying review. The separate search for a periodic gate trap beside 011 stays open. [Proof and checks](sharp-slope/README.md)
 
+## 14. Periodic gates beside 011
+
+I244 proves in Lean that every finitely supported right half beside 011 sees both gate colours arbitrarily late. No finite-width labelled trap can force a constant gate. The all-period finite strip test finds no periodic-gate trap through width 34, and the individual tests for pure white gaps 3 and 8 extend to width 42. Nonconstant gates at arbitrary width remain open. [Proof, controls and remaining cases](periodic-gate-011.md)
+
 ## Reproduce
 
 For the two front modules, run from the repository root with the kit's Lean 4.35.0 on PATH.
