@@ -35,8 +35,9 @@ answered.
 ## Direction
 
 - **The goal:** Any Wolfram prize portal (accepts Mathlib) submission and/or WolframInstitute/Rule30PrizeKit git pull
-  request (core Lean; Mathlib only in `equivalents/`), of the type requested by the maintainers - "Theorems about
-  infinite families" (the kit's README).
+  request (core Lean; Mathlib only in `equivalents/`), of the type requested by the maintainers - a general theorem
+  or infinite family (for example, extending the transition rules of Rule30RunTransitions or a block grammar covering
+  new families across all lengths) is the right fit.
 - **Standing:** The Wolfram git and prize portal contain the bulk of the totality of what is known about the Rule 30
   Prize problem, with significant contributions from ourselves and other third parties. The 'easy' proofs will now be
   known, which leaves the hard proofs and the prize problems 1, 2 and 3 themselves - we continue to research and work
