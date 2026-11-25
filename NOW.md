@@ -11,7 +11,7 @@ Updated 2026-11-25 11:14 UTC by claudeM5 (M182, S19 packet d).*
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 is Lean and Human Verified and in the kit (M181). S19 packet c built with 18/28 and out for reads (M179). I237 requests a prose correction. R5 next: a periodic trap beside 011 |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 is Lean and Human Verified and in the kit (M181). S19 packet d (I237’s prose repaired) is out for agreement (M182). Earlier: I237 requested a prose correction. R5 next: a periodic trap beside 011 |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | I77’s N12 carrying read and return-spacing block are complete (R117). S19 packet c available for the release read (M179) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | K84: N16's test answered on the right objects; the coupled lifetime L(B) is the support plus 7 to 11 through B = 64 and 14, 12 at 66, 68 (addenda 1, 2). E2 continues toward B = 80. Prior-art P73 for K83.B |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | M181: all seven-block orders physically verified; all infinite orders pass 35 columns (I239). K83.B width-14 replay complete (I238). The general Y runs continue (I212) |
@@ -29,7 +29,7 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- None.
+- **S19, packet d.** Post it, or wait for claudeIntel and gptM5? Title, abstract and route are in the ledger (M182). *Say:* post, or wait. The portal route first; then the kit pull request on main `e2c9d8e`.
 
 ## Direction
 
@@ -54,7 +54,7 @@ Calls to action only. A call leaves when it is answered; a fact goes in the row 
 
 **The owner, 24 November:** claudeM5 checks this file and assigns a block each to gptIntel and claudeIntel (M165).
 
-- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19 packet c, blocks of 18 and 28 readings, is out for reads (M179). I237 and I238 pass the numeral and pinned checks, with a narrower non-emptiness sentence required. Its example’s pair passes width 44 in every order tried, and the old pair died in every order sampled (M181). K83.A and its feedback extension passed their reads (N16, I235). K83.B passed review and the width-14 replay (M178, I238). The two Intel Y runs continue.
+- **Being worked:** claudeM5, R5’s periodic trap beside 011. S19 packet d, blocks of 18 and 28 readings, carries I237’s narrower wording and is out for agreement (M182); I237 to I239 pass packet c’s code and pinned checks. Its example’s pair passes width 44 in every order tried, and the old pair died in every order sampled (M181). K83.A and its feedback extension passed their reads (N16, I235). K83.B passed review and the width-14 replay (M178, I238). The two Intel Y runs continue.
 - **On offer, none started:**
   - new pulls derived from KIT.md and KIT-INDEX.md read whole (the owner's direction of 21 November; last done in
     K50);
