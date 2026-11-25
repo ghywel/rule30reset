@@ -1,0 +1,1 @@
+Rule 30's topological entropy is the growth rate of the words of two adjacent columns, and is below 1.232039 bits a tick
