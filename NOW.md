@@ -5,13 +5,13 @@ post that changed it. History is in the [ledger](CHAT-LEDGER.md). Reviewed and p
 23 November 2026 (K73): the file as it stood is
 [archive/now/now-before-review-2026-11-23.md](archive/now/now-before-review-2026-11-23.md), and the file before the
 reset of 20 November (K33) is [archive/now/now-before-reset-2026-11-20.md](archive/now/now-before-reset-2026-11-20.md).
-Updated 2026-11-25 15:14 UTC by gptIntel (I247, S20 and S21 carrying reads).*
+Updated 2026-11-25 15:48 UTC by claudeM5 (M186, S20 b and S21 b).*
 
 ## Arrangement
 
 | Worker | Host | Since | On now |
 |---|---|---|---|
-| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 and S19 are Lean and Human Verified and in the kit (M184). K83.B: R123's kit patch passed its release read; S20 is its portal packet (M184). R5 next: a periodic trap beside 011 |
+| claudeM5 | the owner's M5 laptop, the Wolfram host, in the owner's session | 17 November (M1) | S16 and S17 are in the kit. S18 and S19 are Lean and Human Verified and in the kit (M184). S20 b and S21 b are built and dry-run, unposted (M186). R5 next: a periodic trap beside 011 |
 | gptM5 | the M5 laptop, with claudeM5 | 17 November (R1) | K83.B kit patch passed its release read; v2 and S20 to agree (R123, M184) |
 | claudeCloud | a cloud container; reclaimed when idle, and its background runs are stopped at two hours, so its long runs go to gptIntel (the owner, 22 November). Lean 4.35.0 per session since K67. **Conducts for the moment** (the owner, 19 November) | 18 November (K1) | K84 (addenda 1 to 3): N16's test answered on the right objects; the coupled lifetime L(B) is the support plus 7 to 14 for every B from 26 to 80. Prior-art P73 for K83.B. Block closed; not on a block |
 | gptIntel | the Intel i9 with the RX 6600, running Windows and Ubuntu on WSL 2 (I43) | 19 November (I1) | S20 essay corrected and S21 extended source cleared for the M5 build (I247). K84 cutoffs and gate rates (I246). The general Y runs continue (I212) |
@@ -23,13 +23,13 @@ No worker and no host has a specialism (METHOD §1). What each host can run is i
 - **Schedules:** none. gptIntel's overnight heartbeat is off (the owner, 22 November).
 - **The store:** on the owner's NAS, image `981c5eb`. Its image workflow runs on a change under `tools/store/` and
   once a week (M52).
-- **Last posts:** claudeM5 M185, gptM5 R123, claudeCloud K84, gptIntel I247 and claudeIntel N18.
+- **Last posts:** claudeM5 M186, gptM5 R123, claudeCloud K84, gptIntel I247 and claudeIntel N18.
 
 ## Needs the owner
 
 Calls to action only. A call leaves when it is answered; a fact goes in the row it changes.
 
-- None.
+- **S20 and S21:** the word to post each to the portal and then open its kit pull request (M186). The reads still out are in their rows.
 
 ## Direction
 
@@ -89,8 +89,8 @@ S1 to S19 are posted, **Lean Verified** and **Human Verified** (public list, 25 
 | **S17** | If the singleton centre eventually alternates, each phase of Lowry’s source net and shell is aperiodic. Problem 1, partial. | I66, I203, M156, I211 | [R30-20261124-6af182](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-6af182) (M164): **Lean Verified**, **Human Verified**. [Packet c](research/arrivals/s17/) passed by gptM5 ([R111](research/arrivals/s17/gptM5-packet-b-review.md#packet-c-release-read)); gptIntel also agreed to the posted packet c (I215) | **In the kit** at `4bb3a7b` ([#418](https://github.com/WolframInstitute/Rule30PrizeKit/pull/418)), `Rule30AlternatingArrivals` and a data module, both as ours (M176) |
 | **S18** | Every right half beside an alternating column enters S17’s 777-window set by white sample 35, sharply. An eventual kick every fourth sample is impossible. Problem 1, partial. | M165, [I216](research/arrivals/uniform/README.md) | [R30-20261124-aa6a32](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-aa6a32) (M171): **Lean Verified**, **Human Verified**. [Packet b](research/arrivals/s18/); reads [R113](research/arrivals/s18/gptM5-release-review.md#packet-b-release-read), I220, carrying read M166 | **In the kit** at `5bda6ab` ([#422](https://github.com/WolframInstitute/Rule30PrizeKit/pull/422)), `Rule30UniformEntry`, as ours; Kit Contribution (M181) |
 | **S19** | Two nonempty blocks of readings, of any lengths, set in the order of the answers of an irrational rotation to *in the arc?*, started at an end of the arc, are not read by the right neighbour of an alternating column on its white ticks, in a row with a leftmost black cell. Problem 1, partial. | N6, M165, [N15](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/README.md) | [R30-20261125-301e35](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-301e35) (M183): **Lean Verified**, **Human Verified**. Packet d; example 18 and 28 readings, class not shown to be read by a right half beyond powers of one word. [Carrying PASS for packet c](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/gptIntel-carrying-read.md) (I230). **The owner, 24 November: S19 says that S11 is weaker for Rule 30 than its text suggests** ([wording for packet c](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/packet-c-wording.md)). Packet b (the words themselves) is **held**: already implied by `golden`, S18 and 8084e6 (I228 hand read PASS) ([N14](research/kit-repair/R30-20261029-0ef6e2/endpoint/claudeIntel-s19-hold.md)) | **In the kit** at `e92083b` ([#424](https://github.com/WolframInstitute/Rule30PrizeKit/pull/424)), `Rule30RotationBlocks` (M184) |
-| **S20** | Full two-sided topological entropy equals the growth rate of adjacent-column words and is below 1.232039 bits per tick. | K83.B, I234, R123 | Packet a2 mathematics and eight Lean headlines passed. Rebuild the [corrected essay](research/rule4/k83b/s20/I247-carrying-read.md). gptM5’s release and claudeCloud’s prior-art reads are out. | Kit patch v2 passed I247. Open after the portal entry. |
-| **S21** | The sharp entry slope for both traps is three ticks per site. The finite erosion and 011 constant-gate deadlines also have sharp slope three. One infinite right half sustains the exceptional front forever. | R5, I242, N18, I247 | Extension and trim accepted. All 18 headlines passed on both targets. [Review and notebook build input](research/r5/sharp-slope/I247-carrying-read.md). | claudeM5 builds the notebook. gptM5’s independent read is out. I244 remains a separate companion. |
+| **S20** | Full two-sided topological entropy equals the growth rate of adjacent-column words and is below 1.232039 bits per tick. | K83.B, I234, R123 | **Packet b built and dry-run, unposted** (M186), from the [corrected essay](research/rule4/k83b/s20/I247-carrying-read.md); the mathematics passed (I247). Out: gptIntel’s agreement on b, gptM5’s release read, claudeCloud’s prior-art read. | Kit patch v2 passed I247. Open after the portal entry. |
+| **S21** | The sharp entry slope for both traps is three ticks per site. The finite erosion and 011 constant-gate deadlines also have sharp slope three. One infinite right half sustains the exceptional front forever. | R5, I242, N18, I247 | **Packet b built and dry-run, unposted** (M186): four comment lines, abstract and PR text reworded, notebook 11.6 s. Mathematics passed ([N18](research/r5/sharp-slope/claudeIntel-review.md), [I247](research/r5/sharp-slope/I247-carrying-read.md)). | Kit patch on `e92083b` ready; the catalogue builds. Out: gptIntel’s and claudeIntel’s agreement on b, gptM5’s release read. I244 remains a separate companion. |
 
 - **The kit.** The portal verifier is at `5fb5915`. Kit main and the shared catalogue are in step at `e92083b` (M184).
 - **The kit repairs** are complete on our side (the owner, 23 November): steps 1 to 6 of
