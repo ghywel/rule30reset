@@ -16,10 +16,10 @@ reading, so a pair word of the two western columns is a wall word with an OR wor
 - **On average:** the topological entropy is the growth rate of the sum of Ω(u) over all 2ⁿ walls, so one bit plus the
   growth rate of the mean of Ω. *PROVED IN LEAN here* (`entropy_eq_mask_growth`, `card_maskWords_eq_sum`), on S20's
   identity. Exactly, N(n + 1) = 4 Σ Ω(u), which is the a_n of [count-pairs.md](../count-pairs.md).
-- **At worst:** if every wall of length w admits at most C r^w OR words, a centre of period P from T on allows at
-  most T + P C r^w different left words of width w (Kurtuluş, `Rule30LeftRichness`; Galindo,
-  `Rule30HorizontalDiversity`). Every r strictly above the worst-wall growth base qualifies. An estimate at the
-  base itself requires a separate prefactor bound. A strictly larger horizontal exponential rate gives Problem 1.
+- **At worst:** let λ be the growth rate of the largest Ω(u). A bound C (p/q)ⁿ on every Ω(u), for any p/q above λ,
+  lets a centre of period P from T on show at most T + P C (p/q)^w different left words of width w (Kurtuluş,
+  `Rule30LeftRichness`; Galindo, `Rule30HorizontalDiversity`). So Problem 1 follows if the single cell's left words
+  grow faster than some such base. At λ itself a constant need not exist: beside the all-white wall Ω = n + 1 (I254).
 - **The bridge:** a bound K (p/q)ⁿ on Ω(u), uniform in the wall, gives entropy at most log (2p/q). *PROVED IN LEAN
   here* (`entropy_le_of_mask`), with the kit's two certificates as instances (`entropy_galindo`,
   `entropy_galindo_four`).
