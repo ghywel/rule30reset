@@ -2,11 +2,11 @@
 Template: ComputationalEssay
 Name: Rule 30's topological entropy is the growth rate of the words of two adjacent columns, and is below 1.232039 bits a tick
 Author: {AUTHORS}
-Date: 2026-11-25
+Date: 2026-11-26
 Description: The topological entropy of Rule 30 is the growth rate of the words two adjacent columns can read. A table of 140 states on five sites gives an upper bound below 1.232039 bits a tick.
 Abstract: {ABSTRACT}
-Keywords: [Rule 30, topological entropy, column words, transfer automaton, Lean]
-Sources: ["[Rule30Equivalents.Mixing, the kit](https://github.com/WolframInstitute/Rule30PrizeKit/blob/5fb591588cfa869bfdc47946799b5ddd70a903d1/equivalents/Rule30Equivalents/Mixing.lean)", "[P. di Lena and L. Margara, Row subshifts and topological entropy of cellular automata, J. Cellular Automata 2 (2007)](https://www.cs.unibo.it/~margara/page14/assets/01-JCA07.pdf)", "[S. Wolfram, Random sequence generation by cellular automata, Adv. Appl. Math. 7 (1986)](https://content.wolfram.com/sw-publications/2020/07/random-sequence-generation-cellular-automata.pdf)", "[Tables of cellular automaton properties (1986), with P. Grassberger's Table 6](https://content.wolfram.com/sw-publications/2020/07/cellular-automaton-properties.pdf)", "[P. Guillon, doctoral thesis, Paris-Est (2008), in French](https://theses.hal.science/tel-00432058)", "[S. Wolfram, A New Kind of Science, notes to page 960](https://files.wolframcdn.com/pub/www.wolframscience.com/nks/nks-nts-ch6.pdf#page=15)"]
+Keywords: [Rule 30, topological entropy, column words, transfer automaton, joint spectral radius, Lean]
+Sources: ["[Rule30Equivalents.Mixing, the kit](https://github.com/WolframInstitute/Rule30PrizeKit/blob/5fb591588cfa869bfdc47946799b5ddd70a903d1/equivalents/Rule30Equivalents/Mixing.lean)", "[D. Galindo, Horizontal word diversity and eventual periodicity in Rule 30 (R30-20261125-70fb8c)](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-70fb8c)", "[S. Gaubert and N. Stott, a convergent hierarchy for the joint spectral radius, MTNS 2018](https://www.cmap.polytechnique.fr/~gaubert/PAPERS/MTNS2018-0181.pdf)", "[P. di Lena and L. Margara, Row subshifts and topological entropy of cellular automata, J. Cellular Automata 2 (2007)](https://www.cs.unibo.it/~margara/page14/assets/01-JCA07.pdf)", "[S. Wolfram, Random sequence generation by cellular automata, Adv. Appl. Math. 7 (1986)](https://content.wolfram.com/sw-publications/2020/07/random-sequence-generation-cellular-automata.pdf)", "[Tables of cellular automaton properties (1986), with P. Grassberger's Table 6](https://content.wolfram.com/sw-publications/2020/07/cellular-automaton-properties.pdf)", "[P. Guillon, doctoral thesis, Paris-Est (2008), in French](https://theses.hal.science/tel-00432058)", "[S. Wolfram, A New Kind of Science, notes to page 960](https://files.wolframcdn.com/pub/www.wolframscience.com/nks/nks-nts-ch6.pdf#page=15)"]
 ---
 
 ## The question
@@ -74,13 +74,29 @@ ListLinePlot[incr, Mesh -> All, PlotRange -> {0, 0.2}, AxesLabel -> {"length n",
 
 A sequence that decreases to an entropy rate bounds it from above and not from below. The last value bounds the fair measure entropy by 1.124884 bits a tick. Wolfram's *A New Kind of Science* gives less than 1.155 for the measure entropy and says that some evidence points to 1. Whether the topological entropy is above one bit is open. Nothing here decides it.
 
+## What a wall hears
+
+Read the same count beside one column. The column to the west is the wall a tick later plus the OR of the wall and its eastern neighbour, so a pair word of columns -1 and 0 is a wall word of column 0 with its OR word. Write Ω(u) for the number of OR words beside a wall word u. Then N(n + 1) = 4 Σ Ω(u) over the 2ⁿ walls, and the entropy is the growth rate of that sum: one bit plus the growth of the mean of Ω (`HearingRate.entropy_eq_mask_growth`, `HearingRate.card_maskWords_eq_sum`). This computes Σ Ω from every right half and checks it against N(n + 1)/4.
+
+```wl
+orWords[u_] := DeleteDuplicates[Table[Module[{r = IntegerDigits[h, 2, Length[u] + 1], ws = {}},
+    Do[AppendTo[ws, BitOr[u[[t]], First[r]]];
+      r = Table[BitXor[If[j == 1, u[[t]], r[[j - 1]]], BitOr[r[[j]], r[[j + 1]]]], {j, 1, Length[r] - 1}], {t, Length[u]}]; ws],
+   {h, 0, 2^(Length[u] + 1) - 1}]];
+Table[{n, Total[Length[orWords[#]] & /@ Tuples[{0, 1}, n]], count[n + 1]/4}, {n, 1, 7}]
+```
+
+The kit already bounds Ω(u) for every wall at once: Lowry by 2^(k+1) for 2k ticks, Galindo by 6 (5/4)ⁿ and 9 (39/32)ⁿ, Quint by (147/16)(21/2)^m for 12m ticks. They use these bounds for the left side of the centre: under an eventual period P from T, the single seed has at most T + P · (that bound) different words on sites 0 to -w, so a rich enough left side would give Problem 1. Any such bound, uniform in the wall, also bounds the entropy (`HearingRate.entropy_le_of_mask`): 1.5, 1.3219 (`HearingRate.entropy_galindo_four`), 1.2854 and 1.2827 bits. The five-site table above gives 1.232039, because the mean wall hears less than the worst.
+
+A strip of d + 1 cells, with the cell beyond it free, reads exactly the physical OR words of length up to d + 1, whatever the wall does later (`ExactHearingStrip.exact_at_width`). From one exact block count, every rational rate strictly above the worst wall's has a finite table of integer weights, which knows the next d wall bits (`LookaheadHearing.strict_rate_has_certificate`). Conversely one such table bounds both the entropy and the horizontal words under an eventual period (`LookaheadHearing.both_of_certificate`), and a wall of period P needs P block tests (`LookaheadHearing.periodic_phase_bound`). At the worst rate itself a constant need not exist: beside the all-white wall Ω = n + 1. The finite-memory hierarchy for joint spectral radii of nonnegative matrices is Gaubert and Stott's.
+
 ## Earlier work
 
 `Mixing` proves log 2 ≤ h ≤ log 3, and the kit's catalogue (Section 7, item 11) states the two-column identity in words. The cover argument in `Mixing` is what we use, with the number of pair words made visible (`coverMincard_le_card_pairWords`, carried here since the verifier's kit has it only inside a proof). Wolfram (1986, Sections 3, 4 and 7) noted that the time sequences of two adjacent sites of Rule 30 determine the sites to their left, and that on average about 1.2 such sequences should be enough. Di Lena and Margara (2007, Corollary 4.6) prove that the entropy of a permutive automaton of radius r is that of its width 2r + 1 column trace, which is three columns for Rule 30. Guillon's thesis (2008, Proposition 4.8.5) gives the entropy as that of a trace whose width is the radius. Read with the radius 1 of Rule 30 that is one column, and the entropy would be log 2. But the one-column trace is not conjugate here to the wider ones (compare its Remark 4.6.9): the two-column trace has three fixed points and the one-column trace has two. From width two on the traces are conjugate. So log 2 does not follow, and we treat the value as open. One column alone does not determine the cells to its west, and two do. Our notes of October 2026 had the two-column form for Rule 30 by hand, with the counts to length 17 and the bound 1.3189 bits. For the measure entropy, Wolfram (1986) has an approximate upper bound of 1.20 bits, with a note that Grassberger's results suggest 1, and Grassberger's table (1986) has less than 1.15436. For the topological entropy, Wolfram's bound from locality is 2 bits. The tables and the count past 17 are from November. The general idea of bounding a language by a weighted automaton is standard.
 
 ## What is not claimed
 
-Nothing about the centre column of one black cell, or about Problems 1 to 3. The wider tables and the fair measure entropy are outside the Lean. Whether the entropy is above one bit is open.
+Nothing about the centre column of one black cell is proved, and nothing about Problems 1 to 3: the bound on horizontal words is conditional on an eventual period, and no exponential lower bound on the single seed's horizontal words is known. The wider tables and the fair measure entropy are outside the Lean. Whether the entropy is above one bit is open.
 
 ## Lean statements and kernel replay
 
@@ -93,7 +109,7 @@ DirectoryQ[$Rule30PrizeKit]
 {LEAN_IMPORT_CELL}
 
 ```wl
-heads = ("Rule30Submission." <> #) & /@ {"entropy_eq_pair_growth", "entropy_le_block_root", "ReverseCover.entropy_le", "ReverseCover.pair_count", "FiveSite.entropy_width_5", "FiveSite.entropy_lt_log_forty_seven_twentieths", "pairWords_translate", "card_pairWords_add_le"};
+heads = ("Rule30Submission." <> #) & /@ {"entropy_eq_pair_growth", "entropy_le_block_root", "ReverseCover.entropy_le", "ReverseCover.pair_count", "FiveSite.entropy_width_5", "FiveSite.entropy_lt_log_forty_seven_twentieths", "pairWords_translate", "card_pairWords_add_le", "HearingRate.entropy_eq_mask_growth", "HearingRate.card_maskWords_eq_sum", "HearingRate.entropy_le_of_mask", "HearingRate.entropy_galindo_four", "ExactHearingStrip.exact_at_width", "LookaheadHearing.strict_rate_has_certificate", "LookaheadHearing.both_of_certificate", "LookaheadHearing.periodic_phase_bound"};
 AssociationMap[rule30Submission[#]["TypeForm"] &, heads]
 ```
 
