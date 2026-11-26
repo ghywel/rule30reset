@@ -1,14 +1,14 @@
-<!-- kit-commit: 71151d0 2026-11-26 -->
+<!-- kit-commit: bd5ec59 2026-11-26 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `71151d0` (main, 2026-11-26),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `bd5ec59` (main, 2026-11-26),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 371 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 433 entries on 26 November (431 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 372 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 435 entries on 26 November (433 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -55,13 +55,13 @@ graph TD
   SEP --> Q01Gap
   Q01Gap --> Q01GW["Q01GapWords ⇔ Q01TwoWords"]
   Q01GW --> Q01GC["Q01GapCore ⇔ Q01TwoCore ⇔ TwoCoreThetaUnbounded"]
-  Q01GC --> CQ01E["CQ01Empty: the empty right half"]
+  Q01GC --> CQ01E["CQ01Empty ⇔ the integer condition with right start 0"]
   Q01Gap --> GL["Q01GapLift W, each W ≥ 16; W gives every wider W′"] --> GLC["Q01GapLiftCore W"] --> CQ01E
   Q01GC --> GLC
   MDL["MassDivergesLift W"] --> GL
   MDL --> MDLC["MassDivergesLiftCore W"] --> GLC
   SEP --> CQ01E
-  Q01 --> CQ01["CQ01 ⇔ no finite configuration has an eventually 2-periodic centre ⇔ Psi R infinite for every finite R"]
+  Q01 --> CQ01["CQ01 ⇔ no finite configuration has an eventually 2-periodic centre ⇔ Psi R infinite for every finite R ⇔ coupled integer condition"]
   RDQ["RD ∧ Q01Gap, or RD ∧ Q01GapWords"] --> CQ01
   CQ01 --> NP2["no eventual period 2"]
   Q01 --> NSG["NoSeedGE2"] --> NP2
@@ -72,7 +72,7 @@ graph TD
   BWH --> NP2
   UBE --> P1["Problem 1"]
   RICH["Left richness: under every T and P some width 2n shows more than T + P·2^(n+1) different left words"] --> P1
-  CENSUS["Disjoint terminal pairs at mean density ≥ 3/20 at unbounded widths"] --> P1
+  CENSUS["Disjoint terminal pairs at mean density ≥ 1/7 at unbounded widths"] --> P1
   P1 <--> MIR["Two-sided XOR mirror escape for all P ≥ 2"]
   DL["DL = DLFrom 5: a reset in the first stretch at every tick of each first loss"] --> DL1
   DL1["DLMinusOne = DLMinusOneFrom 5: every tick has a reset in one of the two stretches at each first clock loss"] --> LI["LInfinity: every tick has resets at arbitrarily large depths"]
@@ -82,7 +82,7 @@ graph TD
 
 **Period 2, in words.**
 - `Rule30PeriodTwo`, `Rule30PeriodTwoCoupled`: Q01 ⇒ CQ01 ⇒ no eventual period 2. `Rule30ZeroBoundary`: Q01 ⇔ the
-  Theta form ⇔ the integer form ⇔ bounded and staged forms. `Rule30FrontierChart`: Q01 ⇔ mortality ⇔ repeat budget.
+  Theta form ⇔ the integer form ⇔ bounded and staged forms. Quint gives integer forms of CQ01 and its empty-right case in `Rule30PeriodTwoSideways`. `Rule30FrontierChart`: Q01 ⇔ mortality ⇔ repeat budget.
 - `Rule30SeparatorQ01`: Q01 ⇔ SEP ∧ the case of free bits with two adjacent whites; SEP ⇒ Q01Gap, SEP ⇒ CQ01Empty;
   BWH ⇒ Q01. `Rule30WedgeBridge`: BWH ⇔ RW. `Rule30SEPToPeriodTwo`: SEP, RW, BWH each exclude a period-2 centre trace on
   finite rows. Open: whether SEP ⇒ Q01, or Q01 ⇒ RW.
@@ -124,8 +124,8 @@ and no odd eventual period. The finite left half is necessary (`Rule30EtherWallW
 
 **Sufficient for Problem 1, from the restarted left half and the horizontal words** (24 and 25 November): unbounded finite first-failure times
 (`Rule30MarkedGaps`); matches of every length by centre-driven restarts (`Rule30RestartVisibility`); horizontal words of width w beyond A(39/32)^w
-for every A (`Rule30HorizontalDiversityBounds`), which follows from mean disjoint-pair density at least 3/20
-at unbounded terminal widths (`Rule30TerminalCensus`). All are open hypotheses.
+for every A (`Rule30HorizontalDiversityBounds`), which follows from mean disjoint-pair density at least 1/7
+at unbounded terminal widths (`Rule30TerminalHearing`, improving the 3/20 census bound). All are open hypotheses.
 
 **Inverse ticks at the wall** (`Rule30EveryKStatement`, `Rule30EveryKCascade`, `Rule30EveryKInverse`). CAP ⇒ for
 every k, every k-tick predecessor of an aged nonzero finite row is finite with its edge exactly k inside, and every

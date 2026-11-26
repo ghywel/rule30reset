@@ -1,10 +1,10 @@
-<!-- portal-list: 2026-11-26 09:37 UTC, 435 entries, 65 portal-only -->
+<!-- portal-list: 2026-11-26 11:53 UTC, 435 entries, 63 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 09:37 UTC (435 entries)
-and kit main `71151d0` (M195). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 11:53 UTC (435 entries)
+and kit main `bd5ec59` (R133). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
@@ -27,11 +27,11 @@ and kit main `71151d0` (M195). Find new portal-only entries with `python3 tools/
 |---|---|
 | Missed | 12 |
 | Port | 3 |
-| Pending | 4 |
+| Pending | 2 |
 | Check | 10 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 65, of them 19 ours |
+| All | 63, of them 18 ours |
 
 ## Missed (12)
 
@@ -62,14 +62,12 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (4)
+## Pending (2)
 
 In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
-| [R30-20261126-14e62a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-14e62a) | 2026-11-26 | ours (S22) | Lean Verified | A uniform bound K (p/q)^n on the OR words beside every wall makes a mean of a/b disjoint terminal pairs at unbounded widths sufficient for Problem 1 whenever p^b < 4^a q^b; with the five-cell 39/32, one pair per seven. | Kit pull request [#434](https://github.com/WolframInstitute/Rule30PrizeKit/pull/434), open (M195). | L |
-| [R30-20261126-c9cb6a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-c9cb6a) | 2026-11-26 | G.P.J.W. Quint; Gemini (Google) | Lean Verified | Quint: right-half integer operators dual to the left-half integer form of `Rule30PeriodTwoSideways`, a four-diagonal frontier asymmetry, and integer forms of the open CQ01 and CQ01Empty. | Kit pull request [#433](https://github.com/WolframInstitute/Rule30PrizeKit/pull/433), open. | A |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
 
