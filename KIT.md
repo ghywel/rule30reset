@@ -1,14 +1,14 @@
-<!-- kit-commit: bd5ec59 2026-11-26 -->
+<!-- kit-commit: c7c2207 2026-11-26 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `bd5ec59` (main, 2026-11-26),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `c7c2207` (main, 2026-11-26),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 372 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 435 entries on 26 November (433 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 373 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 438 entries on 26 November (436 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -136,8 +136,10 @@ On every pointed recurrent strip, let a reset be a closed run 0 1^(3m+1) 0. If e
 white wheel at each first clock loss and the white wheel after next (`DLMinusOne`), every tick has arbitrarily deep
 resets (`LInfinity`). Compactness then gives CAP (`Rule30RelaxedWindows`, `Rule30ResetCompactness`). The two-stretch
 hypothesis follows from the open single-stretch condition DL (`dlMinusOne_of_dl`). Quint and Gemini close all first losses at exponents 0 through 4, a total of 65,814 anti-periodic drivers (Rule30DoublingLanes). For every exponent e the first loss has its next white at least 5, 21, 23 wheels on (e ≥ 0, 1, 2), and nine whites or eight blacks force a catch (`Rule30FirstLossBounds`). Both hypotheses reduce to exponents at least 5, or periods at least 64. On the whole line, if w>0 and k≤K1(w), every k-tick predecessor of a row
-with a leftmost black cell has its edge k sites inside from age 2^w (`Rule30EveryKLine`). Ages 8 and 24 suffice
-unconditionally at depths one and two, and age 7 fails at depth one (`Rule30TwoSidedInverse`).
+with a leftmost black cell has its edge k sites inside from age 2^w (`Rule30EveryKLine`). The least ages for
+one and two ticks are 8 and 24 on the line (`Rule30TwoSidedInverse`). Beside any prescribed wall they are 8
+and 24 for starts at least two sites away, and 9 and 25 for an adjacent start (`Rule30DrivenLeftInverse`).
+The upper bounds allow arbitrary inverse wall bits, and the sharpness examples use the prescribed wall bits.
 
 **Other routes to Problem 1.**
 - For every tail start and shift P ≥ 2, compare the single-seed diagram with its P-tick translate. Problem 1 is equivalent to an initial centre mismatch or a later failure of the mirror rule: at a black centre the left neighbour must match, and at a white centre the two neighbour differences must agree (`problem1_iff_two_sided_xor_mirror_escape`).
