@@ -58,8 +58,7 @@ as `Absorption` and `Lock`.
   every seven consecutive widths, more than 1/16 of the first-check survivors fail the second check (Benboubakeur
   and others, portal R30-20261126-65dcb1). These two are all that is proved about checks past the support.
 - Every start below 2⁵² dies within its size plus four steps of G, and that bound for every start would be Q01
-  (h3artfield, portal R30-20261108-508c6c and a0fd36). If one immortal row exists, there are up to 4,096 at every
-  large enough width of the same parity (Benboubakeur and others, portal R30-20261126-e2e0e2).
+  (h3artfield, portal R30-20261108-508c6c and a0fd36). One immortal row of width b would force **at least** 4,096 at every exact width w≥b+389 of the same parity (Benboubakeur et al., portal R30-20261126-e2e0e2). Consequently fewer than 4,096 finite-horizon survivors at arbitrarily large widths of each parity would give Q01. [Checked corollary](research/phase2/borrowed/SparseWidths.lean)
 - In G the least weight is the one-in-seven row's (AIOvernight; PRIOR-ART P1). In the trap's gap language it has
   slope about 0.275 a tick to H = 180, while every periodic row there weighs 0.44 or more: the cheapest words are
   cheap through transients (M6, M21).

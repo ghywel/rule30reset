@@ -1,6 +1,6 @@
 # K92.2 · What the published checks count
 
-The two November 26 entries by Moncef Benboubakeur and collaborators concern a white-wall half-line. I read their published Lean sources and the kit at `0f957499e86fe008ca0ae75b5aef2e4df79144af`. The portal lists both entries as Lean Verified and Human Verified. The source comparisons below are statement and proof reads, without an independent kernel replay.
+The two November 26 entries by Moncef Benboubakeur and collaborators concern a white-wall half-line. I read their published Lean sources and the kit at `0f957499e86fe008ca0ae75b5aef2e4df79144af`. The portal lists both entries as Lean Verified and Human Verified. Both published source files compiled independently with Lean 4.35.0 at verifier kit `5fb5915`. The inverse-history source also supplied the import for the [sparse-width corollary](../borrowed/SparseWidths.lean).
 
 ## The first two checks
 
@@ -28,7 +28,11 @@ The factor `2^k` matters. The paired free cells alone already give a bound of `2
 
 There is a direct implication for the proposed experiment's own count. If `A(k,n)/2^n → 0` for each fixed `n`, its integer numerator eventually vanishes. Every finite `Y` fits some such `n`, so one even-tick wall reading is white. This is the integer form of Q01, which implies `NoSeed p01`. It requires no identification of the two finite survivor tables. The same argument works with any positive prefactor depending on `n` if the factor depending on `k` tends to zero for that `n`. [Kit implication from Q01](https://github.com/WolframInstitute/Rule30PrizeKit/blob/0f957499e86fe008ca0ae75b5aef2e4df79144af/lean/Ruliology/CellularAutomata/Rule30PeriodTwoLadder.lean)
 
-## The companion entry
+### Comparing the two actual counts
+
+There is a useful one-way comparison in absolute counts. For the white-first kit wall of length `2n+2j`, K1 forces the nearest west black at **odd** ticks. Until that horizon the driven update agrees with the zero-wall update: a black wall can change the OR term only when the nearest west cell is white. Dropping the nonconsecutive-kick condition and the exact-bitlength restriction therefore embeds the kit survivors in the **odd-pin, width-at-most-2n** free cube. At width 48 after twelve checks this compares 0 with 4,007. Dividing by the two different starting counts does not preserve this inclusion as an inequality of survival shares.
+
+## The inverse-history construction
 
 Benboubakeur et al.'s `walk_certificate` checks ten outer-band settling ages, from width 88 at age 139 through width 271 at age 413. The cover walk follows all nonzero starts into an eight-phase cycle. Its reset cuts certify specified inverse depths. For an assumed finite immortal row of exact width `b`, prescribe black wall readings at even times and choose the `m` odd-time readings freely on the way to an aged image of that row. Different histories give distinct exact-width ancestors, and their shared forward image supplies the rest of every immortal orbit. For `1 ≤ m ≤ 12`, this yields at least `2^m` immortal rows at each exact width `w ≡ b (mod 2)` with `w ≥ b+gap(m)`. For `m=12` the proved gap is 389, hence the first eligible width is `b+390`. Their all-`m` linear-gap conclusion assumes the open `LinCAP c d`. This supplies a lower bound across widths if an immortal row exists. It gives no unconditional loss at a later check and puts no positive lower bound on the limiting **share** of those rows as width grows. [Published Lean, `walk_certificate` and `immortal_rows_of_histories` through `immortal_rows_exponent`](https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/file?id=R30-20261126-e2e0e2&kind=lean)
 
