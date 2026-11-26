@@ -1,6 +1,9 @@
 # Black-run transitions and the right-hand shield
 
-Katip Kurtuluş’s open PR 381 excludes periodic singleton-center words when the runs before each white tick satisfy a local condition. At head `a9dc16e`, the stock checker passed its main theorem and replayed 124 declarations. Two extensions use the same observation, the color one cell to the right at a white tick. The local result below is sharp for ordinary configurations. The shield result improves the kit’s bound at arbitrarily large widths. [PR 381](https://github.com/WolframInstitute/Rule30PrizeKit/pull/381) · [Kit black-run theorem](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30BlackRuns.lean).
+The reopened I93 work joins the sharp two-run table with Kurtuluş's original windows at every site of a row
+with a leftmost black cell. A 49-tick primitive example needs both kinds of rule. [Joint proof and scope](joint-windows.md)
+
+Katip Kurtuluş’s PR 381, now the kit’s `Rule30RunTransitions`, excludes periodic singleton-center words when the runs before each white tick satisfy a local condition. At head `a9dc16e`, the stock checker passed its main theorem and replayed 124 declarations. Two extensions use the same observation, the color one cell to the right at a white tick. The local result below is sharp for ordinary configurations. The shield result improves the kit’s bound at arbitrarily large widths. [PR 381](https://github.com/WolframInstitute/Rule30PrizeKit/pull/381) · [Kit black-run theorem](https://github.com/WolframInstitute/Rule30PrizeKit/blob/40017e8/lean/Ruliology/CellularAutomata/Rule30BlackRuns.lean).
 
 ## Exactly what two consecutive black runs determine
 
