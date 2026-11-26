@@ -14,7 +14,7 @@ Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
 
 A history is a function `u t i` of tick `t` and site `i` that obeys rule 30 at every tick and site (`Evolution u`). At a site `j`, count in the first `n` ticks the black cells at `j`, `C(n)`, and the run ends, ticks where `j` is black and `j + 1` is white, `A(n)` (`black u j 0 n` and `ends u j 0 n`).
 
-Our entry R30-20261123-b2be99 found the exact region of the limiting pair `(C(n)/n, A(n)/n)`: the pentagon `0 ≤ a ≤ c`, `3c ≤ 1 + 5a`, `2c ≤ 1 + 2a`, `6c ≤ 5 + a`. Its corner `(9/10, 2/5)` is exposed by `8c − 3a ≤ 6`. With its six-cell potential, the deficit `D(n) = 6n + 3A(n) − 8C(n)` is at least −6 on every history.
+Our entry R30-20261123-b2be99 gave the five inequalities `0 ≤ a ≤ c`, `3c ≤ 1 + 5a`, `2c ≤ 1 + 2a`, `6c ≤ 5 + a` for the pair `(C(n)/n, A(n)/n)`, and realized every rational point of the pentagon. Its corner `(9/10, 2/5)` is exposed by `8c − 3a ≤ 6`. With its six-cell potential, the deficit `D(n) = 6n + 3A(n) − 8C(n)` is at least −6 on every history.
 
 **The theorems**, all in the namespace `Rule30Submission`:
 - `aligned_of_bounded`: if `D(n) ≤ B` for every `n`, there is a tick `s` after which column `j` reads `1111111110` and column `j + 1` reads `1010101010`, over and over, in phase (`Aligned`).
@@ -75,7 +75,7 @@ The glide does not change `ring_width`, which is about a pure spatial period.
 
 1. **The loss** (the earlier entry's `Rule30DensityEscape`). A potential on six cells at `j` makes `D(n)` plus the initial potential minus the current one a sum of nonnegative losses, one per tick (`range_potential`, `band_edge`). The potential lies between 0 and 6.
 2. **Bounded means eventually lossless** (`aligned_of_bounded`). If `D ≤ B`, the accumulated loss is at most `B + 6`. It is a nondecreasing integer, so it attains its maximum at some tick. After that every tick has zero loss, so the six-cell words at `j` follow edges of the kit's zero-loss graph `next`.
-3. **Pruning** (`survive`). A word on an infinite path needs a predecessor and a successor on it. Four rounds of removing words without both leave 14 of the 64 six-cell words: 64, 20, 17, 15, 14. They fall into ten phases, and every surviving edge advances the phase by one, checked by kernel computation. From four ticks into the lossless stretch the phase advances every tick, and the phase fixes the two observed cells. This gives the aligned columns.
+3. **Pruning** (`survive`). Each pruning round keeps words with both a predecessor and a successor in the previous set. The actual lossless path survives that round from one additional tick onward. After four rounds, 14 of the 64 words remain: 64, 20, 17, 15, 14. They fall into ten phases, and every surviving edge advances the phase by one, checked by kernel computation. So from four ticks into the lossless stretch the phase advances every tick, and the phase fixes the two observed cells. This gives the aligned columns.
 4. **To the left** (`left_unique`, `return_multiple`). By left permutivity the two columns fix the next column to the left, and so on, by induction over the distance. The resulting columns are the film's `column d`, computed once in a table of 155 pairs. The kernel checks that the table steps correctly through both seams and that no displacement below 155 repeats the observed pair.
 5. **Rings** (`ring_width`). If the history has temporal period `p` and `D(p) = 0`, the accumulated loss after one period is 0, so every loss is 0 from the start. Step 3 aligns the columns, and a spatial period `w` is then a return of the observed pair, so 155 divides `w`.
 6. **The film** (`sharp_ring`, `rigid_left_of_bounded`). The film obeys rule 30 at all 1,550 cells of a period, checked by kernel computation. It is aligned at site 0, so step 4 identifies every bounded-deficit left half with it.
@@ -85,7 +85,8 @@ The glide does not change `ring_width`, which is about a pure spatial period.
 - **The region and the corner** are our entry R30-20261123-b2be99, in the kit as thirteen modules (`Rule30SourceDensityRegion` to `Rule30DensityMixtures`). Its six-cell potential, its zero-loss graph, its period-ten corner film and its search for the least width at period ten are used here. The earlier essay said that 155 was the least width at period ten by search, and that no theorem said so.
 - **The counts** `C` and `A` are those of David Condrey's `Rule30SourceObservables` (with OpenAI Codex), in the kit.
 - **The search** for the least width was a SAT search over rings of temporal period ten, in the rule30reset record.
-- **Search.** We searched the portal's 437 entries, the kit's catalogue and its open pull requests for the density corner, its films or the number 155. We found only the earlier entry.
+- **Troy Lowry's open kit pull request #440** treats a bounded deficit at the other corner `(1/3, 0)`, with an eventual `011` column two sites east. It is a different corner and a different conclusion.
+- **Search.** We searched the portal's 438 entries, the kit's catalogue and its open pull requests for the density corner, its films or the number 155. We found only the earlier entry, and #440 at another corner.
 
 ## 6. What is not proved
 

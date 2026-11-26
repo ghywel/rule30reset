@@ -69,12 +69,12 @@ inside = Select[pts, inPentagon];
 - **The pentagon, the corner histories, the controllers and the rational schedule** are our entry R30-20261123-b2be99, in the kit as thirteen modules. They are used here through their statements. Six of them, or the parts used, are carried in this entry's source.
 - **The counts** `C` and `A` are those of David Condrey's `Rule30SourceObservables` (with OpenAI Codex), in the kit, also carried.
 - **The real-number argument** was first given by hand in the rule30reset record, and is formalized here.
-- **Search.** We searched the portal's 437 entries, the kit's catalogue and its open pull requests for limiting black and run-end frequencies at one site, and for real density regions. We found only the earlier entry.
+- **Search.** We searched the portal's 438 entries, the kit's catalogue and its open pull requests for limiting black and run-end frequencies at one site, and for real density regions. We found only the earlier entry.
 
 ## 6. What is not proved
 
 - The theorem fixes the right half and the observed site. It does not say which densities the single seed has, or whether its frequencies converge. Problem 2 is not settled.
-- The error is of order `√n`. Whether a bounded error is possible depends on the point; at the corner `(9/10, 2/5)`, a bounded error forces the whole left half to be periodic (our companion entry on the 155-column film).
+- The error is of order `√n`. Which points can be attained with bounded error is open across the pentagon. At the corner `(9/10, 2/5)`, when both count discrepancies are bounded, our companion entry on the 155-column film forces the left half to agree with one periodic film from a common onset.
 - Joint frequencies of other observables are not treated.
 
 ## The formal proof

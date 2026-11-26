@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-26 14:07 UTC, 438 entries, 65 portal-only -->
+<!-- portal-list: 2026-11-26 14:36 UTC, 441 entries, 68 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 14:07 UTC (438 entries)
-and kit main `c7c2207`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 14:36 UTC (441 entries)
+and kit main `c7c2207` (M203). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 65 of the 438 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 68 of the 441 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -27,11 +27,11 @@ and kit main `c7c2207`. Find new portal-only entries with `python3 tools/portal/
 |---|---|
 | Missed | 12 |
 | Port | 3 |
-| Pending | 3 |
-| Check | 11 |
+| Pending | 5 |
+| Check | 12 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 65, of them 19 ours |
+| All | 68, of them 21 ours |
 
 ## Missed (12)
 
@@ -62,22 +62,25 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (3)
+## Pending (5)
 
 In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261126-744811](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-744811) | 2026-11-26 | ours (S25) | Lean Verified | At the corner (9/10, 2/5) of the density pentagon, a bounded deficit 6n + 3A − 8C fixes the whole left half to one ten-tick, 155-column film from a common onset; every ring there has width divisible by 155, for any temporal period. Problem 2. | Kit pull request [#441](https://github.com/WolframInstitute/Rule30PrizeKit/pull/441), open (M203), the new module `Rule30NineTenthsRing`. | L |
+| [R30-20261126-97edd5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-97edd5) | 2026-11-26 | ours (S26) | Lean Verified | The joint limiting black and run-end frequencies at one site, from any right half, are exactly the closed pentagon, with squared count errors at most 210000(n + 1). Problem 2. | Kit pull request [#442](https://github.com/WolframInstitute/Rule30PrizeKit/pull/442), in `equivalents/`, open (M203). Uses Mathlib. | L |
 | [R30-20261126-86f74a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-86f74a) | 2026-11-26 | ours (S24) | Lean Verified | Kurtuluş's run-transition windows and sharp two-run cutoffs (8, 8, 8, 15, 8, 16, 4, 14 for a last run of 1 to 8), chosen at each white letter, exclude eventual words in every column of every configuration with a leftmost black cell, at every period length. | Kit pull request [#439](https://github.com/WolframInstitute/Rule30PrizeKit/pull/439), open (M201), the new module `Rule30RunTransitionWindows`. | L |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
 
-## Check (11)
+## Check (12)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261126-e8fd62](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-e8fd62) | 2026-11-26 | G.P.J.W. Quint; Gemini (Google) | Lean Unverified at reading | Quint: algebraic normal forms and modulo-4 forms of the open `CQ01` and `CQ01Empty`, an exact mod-8 gate-trap pulse valuation, and a one-bit gate-trap pulse forecast, extending `Rule30PeriodTwoSideways` and `Rule30GatePulseReturn`. | New (M203); no kit pull request found; the verifier had not finished. | A |
 | [R30-20261126-e43eb8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-e43eb8) | 2026-11-26 | Jacob Dyer; Claude; Qwen; Inkling | Lean Verified | Odd initial rows with a black Rule 30 light-cone apex form a non-context-free language. The proof also gives a black run of length n + 1 at the right edge of singleton row 2^n − 1. | Extends Dyer's nonregularity result for arbitrary row input. Uses Mathlib's pumping lemma. The apex language differs from the prize's time-index input. | A |
 | [R30-20261126-4cf921](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-4cf921) | 2026-11-26 | Jacob Dyer; Claude; Qwen; Inkling | Lean Verified | Dyer: the rule 30 apex language is not regular in either reading direction, so no one-tape machine decides it in time o(n log n) and no offline machine in space o(log log n). | Follows his R30-20261126-544d72 by standard machine lower bounds; read whether the complexity step is in the Lean. | A |
 | [R30-20261126-19e94d](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-19e94d) | 2026-11-26 | Jacob Dyer; Claude; Qwen; Inkling | Lean Verified, Human Verified | Dyer: in every column i of a row with a leftmost black cell lo, d = i − lo, white runs from time a have length at most a + d + 2, both colours recur in every window [a, 2a + d + 2], and both counts grow at least like log2 n. | Extends `Rule30CenterRuns` from the centre of the single seed to every column; compare with the kit's `black_run_le_evol` and the centre-run module before calling it new. | A |
