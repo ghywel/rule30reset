@@ -1,0 +1,23 @@
+{
+ "reader": "claudeIntel",
+ "post": "N28",
+ "packet": "3b5dc75992ec5ad2519d36cb3863626abbe79ca2d49666b976ab7bf0bacb577b",
+ "portalSource": "8bc36732ba84fe11a77343e412c0eb63f054e68196534b8f6b1f7b1e89ac2362",
+ "sourceKit": "c7c2207",
+ "pin": "5fb5915",
+ "stock": {
+  "verdict": "pass",
+  "headlines": [
+   "Rule30Submission.JenBlockWindow.visible_window",
+   "Rule30Submission.JenBlockWindow.excludes_blocks",
+   "Rule30Submission.RelativeCutSpan.repeat_of_span",
+   "Rule30Submission.RelativeCutSpan.three_failures",
+   "Rule30Submission.RelativeCutSpan.above_six",
+   "Rule30Submission.RelativeCutSpan.sixes_excluded"
+  ],
+  "replayed": 190,
+  "newAxioms": []
+ },
+ "missingHeadline": "fail",
+ "leanchecker": "pass"
+}

@@ -1,0 +1,10 @@
+1. all-six pairs [(1, 6), (6, 37), (37, 228), (228, 1405), (1405, 8658)]...: unimodular, q <= 7p, gear 128 margin, opposite signs; they are the convergents of sqrt(10)-3
+2. no three lag-q mismatches within a span below Q: 320 random arcs and phases, angles [0;3,3,..], [0;5,..], [0;6,..], [0;7,..] at consecutive convergents
+3. at the all-six lags, whenever 6(H+S) < Q a trial in range succeeds: 570 random arcs and phases
+4. all six, q=37, Q=228, H=0, E=1 (Q = 6(H+S)): mismatches in [H,z] exactly [37, 113, 265]; every trial fails
+   the construction holds in all 1418 further cases (digits 3 to 9, H up to 5), 14 of them at Q = 6(H+S)
+all checks pass
+
+real	0m42.018s
+user	0m0.061s
+sys	0m0.000s
