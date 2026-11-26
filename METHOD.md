@@ -403,7 +403,7 @@ catalogue:
 | The result | Portal | Kit pull request |
 |---|---|---|
 | a theorem about an infinite family (all words of a shape, all widths, all phases, every configuration of a kind) in core Lean, any certificate data a finite step inside it | yes | yes: a catalogue module |
-| a proof that needs Mathlib | yes | not in the catalogue, which is core Lean; in `equivalents/`, the kit's Mathlib folder, when it fits there (see Mathlib, below) |
+| a proof that needs Mathlib | yes | the catalogue, through a core form, whenever one is possible (see Mathlib, below); `equivalents/`, the kit's Mathlib folder, only when there is no core version |
 | a list of single words, widths, windows or depths | only if it passes "when", below | no |
 | one more term of a chain the catalogue already holds (the next number of ticks, width, depth, tail or period), proved by one more finite certificate | no | no: only the statement for every term, by an argument that needs no new certificate per term (condition 2, below) |
 | a better bound, or longer tails, for a padded word `0^r u` | yes | a change to `Rule30PaddedWords`, not a new module |
@@ -414,10 +414,11 @@ catalogue links the entry.
 
 ### Mathlib
 
-Core Lean is the default. The portal takes Mathlib; the kit's catalogue does not (its README, *Imports* and *Contributing
-a partial result*). The verifier treats the two alike: the same three axioms, our own declarations replayed, and the import
-closure trusted, Mathlib with the kit. So the choice is about the statement, and about what can be built on it (the owner,
-24 November; the measurements are in M173).
+Core Lean is the default, and always preferred where possible (the owner, 26 November). The portal takes Mathlib; the
+kit's catalogue does not (its README, *Imports* and *Contributing a partial result*). The verifier treats the two
+alike: the same three axioms, our own declarations replayed, and the import closure trusted, Mathlib with the kit. So
+the choice is about the statement, and about what can be built on it (the owner, 24 November; the measurements are in
+M173).
 
 1. **Prove it in core Lean when the argument is combinatorial**: words, strips, windows, tables, finite certificates. The
    catalogue takes it, later proofs can import it, and it checks in seconds.
@@ -433,6 +434,12 @@ closure trusted, Mathlib with the kit. So the choice is about the statement, and
    problem, or a result on an item of its catalogue (S20, kit PR #426), may also go to the kit's `equivalents/`, its
    Mathlib folder, whose README says how. The kit's automatic check does not build that folder yet, so such a pull
    request waits for a person (the maintainers on #426, 25 November).
+5. **`equivalents/` is only for results with no core Lean version** (the owner, 26 November: "In general the
+   equivalents/ path should only be used for routes that have no core lean version, lean is always preferred where
+   possible"). Before an `equivalents/` pull request, ask whether a core form exists: an integer form under rule 3, or
+   a port of a combinatorial argument. If one does, it goes to the catalogue, even when that means a port first, as
+   for S11. S20 (entropy) and S26 (real limiting frequencies) are stated in real analysis and have no core version;
+   S27, whose real number is only a rotation angle, goes core.
 
 ### What a submission is
 
