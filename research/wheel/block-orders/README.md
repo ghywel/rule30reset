@@ -2,7 +2,9 @@
 
 M181 asks whether **for each infinite order there is an initial right half** whose first cell reads that order beside an alternating column. Start on a white tick and observe the first cell every two ticks. A block starts with a kick (a black reading). Its gaps to successive kicks are A = 3,5,5,5 or B = 3,5,5,5,5,5. The last gap ends on the next block's first kick. A takes 18 readings and B takes 28. The left half has no finite-support requirement in this question.
 
-**The infinite question for this pair is open.** All 128 seven-block orders have genuine initial rows. *(N19: all 1,024 ten-block orders; the A-train is steady and the B-train is not: [claudeIntel-n19.md](claudeIntel-n19.md).)* On a strip of 35 cells every infinite order has a trajectory with fresh exterior inputs. Two sharp finite cutoffs explain why a direct attempt to repeat a pair of rows fails. The strip trajectories leave a compatibility condition on their eastern inputs before they can describe a single infinite initial row.
+**The unrestricted A/B question has a negative answer.** N19’s twice-checked refusal of fifteen consecutive B blocks on a strip with a free east edge excludes that order for every physical right half. **The successor with isolated B’s is open.** Every order of nine macros X = A and Y = AB has a physical witness (R130). [New census and replay](isolated-wheel-orders.md)
+
+All 128 seven-block orders have genuine initial rows. *(N19: all 1,024 ten-block orders; the A-train is steady and the B-train is not: [claudeIntel-n19.md](claudeIntel-n19.md).)* On a strip of 35 cells every infinite order has a trajectory with fresh exterior inputs. Two sharp finite cutoffs explain why a direct attempt to repeat a pair of rows fails. The strip trajectories leave a compatibility condition on their eastern inputs before they can describe a single infinite initial row.
 
 ## The revised S19
 
@@ -35,7 +37,7 @@ At each white tick extend the W-cell row with two chosen bits, apply the white-w
 
 Locality limits every fixed amount of advance information. Suppose the W-cell row must already be fixed with d coming letters known. Begin with d copies of A. Compare continuations beginning AB and BA. Their first difference occurs 18d+21 readings from the initial seam. Once W ≥ 2(18d+21)+1, that reading is fixed by the initial strip, regardless of the later eastern inputs. Hence this type of online controller needs increasing advance information or differently chosen initial rows as W grows. M181's existential right half may depend on the entire order.
 
-## What would settle the physical question?
+## The physical criterion
 
 The [Lean compactness proof](GateCompactness.lean) uses the kit's realization of a prescribed wall and an arbitrary initial right half. It proves that the physical gate language is closed, and that a half realizing a given infinite target exists exactly when every finite block-boundary prefix has a physical witness. The theorem permits arbitrary prescribed walls and sampling times. White-first alternation uses the even physical ticks. The proof uses the same nested compact-set argument as the kit's full-line surjectivity proof. [Kit Genericity](../../../Rule30PrizeKit/equivalents/Rule30Equivalents/Genericity.lean)
 
