@@ -1,0 +1,476 @@
+{
+ "thresholds": {
+  "k1m1": {
+   "firstPassingAge": 9,
+   "byAge": {
+    "6": {
+     "rows": 3,
+     "failingRows": 2,
+     "failingPairs": 2
+    },
+    "7": {
+     "rows": 4,
+     "failingRows": 1,
+     "failingPairs": 2
+    },
+    "8": {
+     "rows": 5,
+     "failingRows": 1,
+     "failingPairs": 1
+    },
+    "9": {
+     "rows": 7,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "10": {
+     "rows": 9,
+     "failingRows": 0,
+     "failingPairs": 0
+    }
+   }
+  },
+  "k1m2": {
+   "firstPassingAge": 8,
+   "byAge": {
+    "6": {
+     "rows": 4,
+     "failingRows": 1,
+     "failingPairs": 2
+    },
+    "7": {
+     "rows": 5,
+     "failingRows": 1,
+     "failingPairs": 1
+    },
+    "8": {
+     "rows": 7,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "9": {
+     "rows": 9,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "10": {
+     "rows": 12,
+     "failingRows": 0,
+     "failingPairs": 0
+    }
+   }
+  },
+  "k2m1": {
+   "firstPassingAge": 25,
+   "byAge": {
+    "22": {
+     "rows": 63,
+     "failingRows": 6,
+     "failingPairs": 44
+    },
+    "23": {
+     "rows": 76,
+     "failingRows": 5,
+     "failingPairs": 44
+    },
+    "24": {
+     "rows": 84,
+     "failingRows": 8,
+     "failingPairs": 68
+    },
+    "25": {
+     "rows": 91,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "26": {
+     "rows": 103,
+     "failingRows": 0,
+     "failingPairs": 0
+    }
+   }
+  },
+  "k2m2": {
+   "firstPassingAge": 24,
+   "byAge": {
+    "22": {
+     "rows": 76,
+     "failingRows": 5,
+     "failingPairs": 44
+    },
+    "23": {
+     "rows": 84,
+     "failingRows": 8,
+     "failingPairs": 68
+    },
+    "24": {
+     "rows": 91,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "25": {
+     "rows": 103,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "26": {
+     "rows": 106,
+     "failingRows": 0,
+     "failingPairs": 0
+    }
+   }
+  },
+  "k3m1": {
+   "firstPassingAge": 32,
+   "byAge": {
+    "29": {
+     "rows": 129,
+     "failingRows": 21,
+     "failingPairs": 532
+    },
+    "30": {
+     "rows": 143,
+     "failingRows": 16,
+     "failingPairs": 496
+    },
+    "31": {
+     "rows": 152,
+     "failingRows": 9,
+     "failingPairs": 288
+    },
+    "32": {
+     "rows": 168,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "33": {
+     "rows": 190,
+     "failingRows": 0,
+     "failingPairs": 0
+    }
+   }
+  },
+  "k3m2": {
+   "firstPassingAge": 31,
+   "byAge": {
+    "29": {
+     "rows": 143,
+     "failingRows": 16,
+     "failingPairs": 496
+    },
+    "30": {
+     "rows": 152,
+     "failingRows": 9,
+     "failingPairs": 288
+    },
+    "31": {
+     "rows": 168,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "32": {
+     "rows": 190,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "33": {
+     "rows": 211,
+     "failingRows": 0,
+     "failingPairs": 0
+    }
+   }
+  },
+  "k4m1": {
+   "firstPassingAge": 73,
+   "byAge": {
+    "68": {
+     "rows": 6789,
+     "failingRows": 5,
+     "failingPairs": 704
+    },
+    "69": {
+     "rows": 7373,
+     "failingRows": 6,
+     "failingPairs": 832
+    },
+    "70": {
+     "rows": 8050,
+     "failingRows": 9,
+     "failingPairs": 1152
+    },
+    "71": {
+     "rows": 8801,
+     "failingRows": 11,
+     "failingPairs": 1408
+    },
+    "72": {
+     "rows": 9662,
+     "failingRows": 14,
+     "failingPairs": 1664
+    },
+    "73": {
+     "rows": 10582,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "74": {
+     "rows": 11567,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "75": {
+     "rows": 12667,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "76": {
+     "rows": 13928,
+     "failingRows": 0,
+     "failingPairs": 0
+    }
+   }
+  },
+  "k4m2": {
+   "firstPassingAge": 72,
+   "byAge": {
+    "68": {
+     "rows": 7373,
+     "failingRows": 6,
+     "failingPairs": 832
+    },
+    "69": {
+     "rows": 8050,
+     "failingRows": 9,
+     "failingPairs": 1152
+    },
+    "70": {
+     "rows": 8801,
+     "failingRows": 11,
+     "failingPairs": 1408
+    },
+    "71": {
+     "rows": 9662,
+     "failingRows": 14,
+     "failingPairs": 1664
+    },
+    "72": {
+     "rows": 10582,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "73": {
+     "rows": 11567,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "74": {
+     "rows": 12667,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "75": {
+     "rows": 13928,
+     "failingRows": 0,
+     "failingPairs": 0
+    },
+    "76": {
+     "rows": 15276,
+     "failingRows": 0,
+     "failingPairs": 0
+    }
+   }
+  }
+ },
+ "depthCheck": {
+  "m3age71": {
+   "rows": 12625,
+   "failingRows": 20
+  },
+  "m3age72": {
+   "rows": 13786,
+   "failingRows": 0
+  },
+  "m4age71": {
+   "rows": 15874,
+   "failingRows": 19
+  },
+  "m4age72": {
+   "rows": 17338,
+   "failingRows": 0
+  }
+ },
+ "words": {
+  "m1": {
+   "rows": 12667,
+   "bands": 2794,
+   "present": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "m2": {
+   "rows": 13928,
+   "bands": 1970,
+   "present": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "m3": {
+   "rows": 18065,
+   "bands": 1663,
+   "present": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "m4": {
+   "rows": 22546,
+   "bands": 1393,
+   "present": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "longestAgreement": [
+   64,
+   64,
+   64,
+   64
+  ],
+  "relaxedFailingRegisters": [
+   192,
+   64,
+   192,
+   128
+  ]
+ },
+ "relaxed": {
+  "60": {
+   "width": 58,
+   "physicalBands": 551,
+   "coverWords": 1246,
+   "relaxedFailures": 4
+  },
+  "61": {
+   "width": 59,
+   "physicalBands": 601,
+   "coverWords": 1370,
+   "relaxedFailures": 5
+  },
+  "62": {
+   "width": 60,
+   "physicalBands": 649,
+   "coverWords": 1514,
+   "relaxedFailures": 8
+  },
+  "63": {
+   "width": 61,
+   "physicalBands": 697,
+   "coverWords": 1678,
+   "relaxedFailures": 8
+  },
+  "64": {
+   "width": 62,
+   "physicalBands": 728,
+   "coverWords": 1835,
+   "relaxedFailures": 2
+  },
+  "65": {
+   "width": 63,
+   "physicalBands": 791,
+   "coverWords": 1990,
+   "relaxedFailures": 2
+  },
+  "66": {
+   "width": 64,
+   "physicalBands": 844,
+   "coverWords": 2151,
+   "relaxedFailures": 3
+  },
+  "67": {
+   "width": 65,
+   "physicalBands": 911,
+   "coverWords": 2322,
+   "relaxedFailures": 2
+  },
+  "68": {
+   "width": 66,
+   "physicalBands": 1003,
+   "coverWords": 2528,
+   "relaxedFailures": 2
+  },
+  "69": {
+   "width": 67,
+   "physicalBands": 1112,
+   "coverWords": 2751,
+   "relaxedFailures": 3
+  },
+  "70": {
+   "width": 68,
+   "physicalBands": 1227,
+   "coverWords": 3012,
+   "relaxedFailures": 4
+  },
+  "71": {
+   "width": 69,
+   "physicalBands": 1346,
+   "coverWords": 3326,
+   "relaxedFailures": 4
+  },
+  "72": {
+   "width": 70,
+   "physicalBands": 1485,
+   "coverWords": 3651,
+   "relaxedFailures": 0
+  },
+  "73": {
+   "width": 71,
+   "physicalBands": 1633,
+   "coverWords": 4031,
+   "relaxedFailures": 0
+  },
+  "74": {
+   "width": 72,
+   "physicalBands": 1787,
+   "coverWords": 4473,
+   "relaxedFailures": 0
+  },
+  "75": {
+   "width": 73,
+   "physicalBands": 1970,
+   "coverWords": 4967,
+   "relaxedFailures": 0
+  },
+  "76": {
+   "width": 74,
+   "physicalBands": 2132,
+   "coverWords": 5539,
+   "relaxedFailures": 0
+  }
+ },
+ "failingRowsDepth2Age71": [
+  "1101111011001110001011000011011000000110011000001110001101101110110000000",
+  "1101111011001110001011000011011000000110011000001110001101101110110000001",
+  "1101111011001110001011000011011000000110011000001110001101101110110000011",
+  "1101111011001110001011000011011000000110011000001110001101101110110000110",
+  "1101111011001110001011000011011000000110011000001110001101101110110001100",
+  "1101111011001110001011000011011000000110011000001110001101101110110001101",
+  "1101111011001110001011000011011000000110011000001110001101101110110011001",
+  "1101111011001110001011000011011000000110011000001110001101101110110011011",
+  "1101111011001110001011000011011000000110011000001110001101101110110110011",
+  "1101111011001110001011000011011000000110011000001110001101101110110110111",
+  "1101111011001110001011000011011000000110011000001110001101101111110110000",
+  "1101111011001110001011000011011000000110011000001110001101101111110110001",
+  "1101111011001110001011000011011000000110011000001110001101101111110110011",
+  "1101111011001110001011000011011000000110011000001110001101101111110110110"
+ ]
+}

@@ -1,0 +1,12 @@
+layers 4, depth 2, age 71: 9662 rows, 14 failing rows, 1664 failing (row, register) pairs
+layers 4, depth 2, age 72: 10582 rows, 0 failing rows, 0 failing (row, register) pairs
+layers 4, depth 1, age 72: 9662 rows, 14 failing rows, 1664 failing (row, register) pairs
+layers 4, depth 1, age 73: 10582 rows, 0 failing rows, 0 failing (row, register) pairs
+layers 4, depth 3, age 71: 12625 rows, 20 failing rows, 2176 failing (row, register) pairs
+layers 4, depth 3, age 72: 13786 rows, 0 failing rows, 0 failing (row, register) pairs
+layers 4, depth 4, age 71: 15874 rows, 19 failing rows, 2048 failing (row, register) pairs
+layers 4, depth 4, age 72: 17338 rows, 0 failing rows, 0 failing (row, register) pairs
+layers 3, depth 2, age 30: 152 rows, 9 failing rows, 288 failing (row, register) pairs
+layers 3, depth 2, age 31: 168 rows, 0 failing rows, 0 failing (row, register) pairs
+layers 3, depth 1, age 31: 152 rows, 9 failing rows, 288 failing (row, register) pairs
+layers 3, depth 1, age 32: 168 rows, 0 failing rows, 0 failing (row, register) pairs

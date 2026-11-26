@@ -1,0 +1,8 @@
+k=5 age 79: 19670 rows, 37 failing rows (2s)
+k=5 age 80: 21345 rows, 10 failing rows (3s)
+k=5 age 81: 23254 rows, 0 failing rows (5s)
+k=5 age 82: 25288 rows, 0 failing rows (7s)
+layers 5, depth 2, age 80: 21345 rows, 10 failing rows, 4352 failing (row, register) pairs
+layers 5, depth 2, age 81: 23254 rows, 0 failing rows, 0 failing (row, register) pairs
+layers 5, depth 1, age 81: 21345 rows, 10 failing rows, 4352 failing (row, register) pairs
+layers 5, depth 1, age 82: 23254 rows, 0 failing rows, 0 failing (row, register) pairs

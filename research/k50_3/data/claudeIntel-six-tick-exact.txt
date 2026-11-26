@@ -1,0 +1,9 @@
+# six ticks, depth two (start 1 1), claudeIntel_k_tick_exact.py 6 AGE
+k=6 age 81: 23254 rows, 334 failing rows (7s)
+k=6 age 100: 104144 rows, 204 failing rows (40s)
+k=6 age 120: 397510 rows, 0 failing rows (189s)
+k=6 age 110: 211651 rows, 0 failing rows (73s)
+k=6 age 105: 150387 rows, 313 failing rows (48s)
+k=6 age 107: 172938 rows, 408 failing rows (58s)
+k=6 age 108: 185272 rows, 0 failing rows (61s)
+six ticks: fails at 107, passes at 108

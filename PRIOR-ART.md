@@ -775,3 +775,17 @@ I211 adds the every-half equivalence of eventual periodicity for the gate, white
 - **Known.** The first two are the kit's `Rule30PeriodTwoSideways.exact_death_center` and `truncation_death` (17 October), with `zrow_light_cone` (K91, P88). The third is `Rule30CoupledGerms.Psi_eq_of_u_eq_le` with `u_eq_of_Psi_eq_le`, by G.P.J.W. Quint and Gemini (R30-20261104-bc49cf, in the kit), which specialise `Rule30ZeroBoundary.Theta_dep` and `Theta_inverse_dep`.
 - **Found by.** The portal list's "Causal Prefix Injectivity of Psi" for the third, then the kit source at `aaaefdd`; K91 for the first two.
 - **Credit.** Exact death and truncation death: the kit. Prefix dependence of `Psi` on the gate, both ways: Quint and Gemini. A census of gate words counting the required west prefixes (I246, K88) rests on these.
+
+## P90 · 2026-11-26 · One statement decides every start, and the exact four- and five-tick ages beside a prescribed wall
+
+- **Ours (N30).**
+  - For every number `k` of inverse ticks beside an arbitrary wall, "every start at depth at least two, from age `T`" and "the adjacent start, from age `T + 1`" are each equivalent to the depth-two statement at age `T` (`Rule30DrivenLeftDepthTwo.two_classes`, core Lean). The proof takes any column as the wall (`L_column`), and from age 2 the depth-two start with −1 white gives only rows of the one with −1 black.
+  - An exhaustive search over the depth-two rows then gives the least ages 72 and 73 for four ticks and 81 and 82 for five (COMPUTED by two programs; the four-tick lower ages are N27's Lean witnesses), and 108 and 109 for six (one program).
+  - I267's four age-75 cover words are not physical.
+- **Known.** The offset of one between the classes for one and two ticks is S23's, proved there by checked wall-prefix propagation case by case (P84). The three-tick ages 31 and 32 are I267's. The time shift is the kit's `Rule30DrivenLeft.L_add`. Every k on the white wall and on the line is conditional on CAP (R30-20261119-ccc65f, S4, S5, `Rule30EveryKLine`).
+- **Found by.**
+  - `find_known` under column as wall, depth two, adjacent start, one tick later, least age and four inverse ticks; it found only P84.
+  - The kit's `Rule30DrivenLeft` and `Rule30DrivenLeftInverse` sources.
+  - The portal's 447 titles, for wall, inverse, predecessor and driven left.
+  - No entry states the column-as-wall reduction for every `k` or the four-, five- or six-tick least ages.
+- **Credit.** One and two ticks with their offset: Hughes and S23. Three ticks: I267. The cover method that left the 72–76 gap: I267.
