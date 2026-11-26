@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-26 11:53 UTC, 435 entries, 63 portal-only -->
+<!-- portal-list: 2026-11-26 12:22 UTC, 436 entries, 65 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 11:53 UTC (435 entries)
-and kit main `bd5ec59` (R133). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 12:22 UTC (436 entries)
+and kit main `bd5ec59` (M198). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 65 of the 435 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 65 of the 436 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -27,11 +27,11 @@ and kit main `bd5ec59` (R133). Find new portal-only entries with `python3 tools/
 |---|---|
 | Missed | 12 |
 | Port | 3 |
-| Pending | 2 |
+| Pending | 4 |
 | Check | 10 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 63, of them 18 ours |
+| All | 65, of them 20 ours |
 
 ## Missed (12)
 
@@ -62,12 +62,14 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (2)
+## Pending (4)
 
 In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261126-523aad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-523aad) | 2026-11-26 | ours (S6, superseding R30-20261122-7c7bad) | Lean Verified | Hughes's two inverse theorems on the whole line, as before, with both ages sharp: the age-23 witness beside the age-7 one, and the least ages 8 and 24. | Kit pull request [#435](https://github.com/WolframInstitute/Rule30PrizeKit/pull/435), open (M198); it amends `Rule30TwoSidedInverse`, whose rows link this entry. | L |
+| [R30-20261126-2e7cd2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-2e7cd2) | 2026-11-26 | ours (S23) | Lean Verified | Hughes's two inverse theorems beside a wall column with any values: from ages 8 and 24, or 9 and 25 for a start next to the wall, all four least. | Kit pull request [#436](https://github.com/WolframInstitute/Rule30PrizeKit/pull/436), open (M198), the new module `Rule30DrivenLeftInverse`. | L |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
 
