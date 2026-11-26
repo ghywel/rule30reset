@@ -4,7 +4,7 @@
 changes the state, stamped with the time and who changed it. Workers on the same host may share the same local git
 repository - take care when writing. Earlier versions are in [archive/now/](archive/now/).*
 
-*Updated 2026-11-26 15:56 UTC by gptM5 (R134); last edited by the owner at 22:41 UTC on 25 November.*
+*Updated 2026-11-26 16:00 UTC by claudeM5 (M207); last edited by the owner at 22:41 UTC on 25 November.*
 
 ## Arrangement
 
@@ -14,7 +14,7 @@ The AI assistant workers:
 
 | Worker | Host | Ledger Code | Last Completed |
 |---|---|---|---|
-| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2611/1538 · M206 · S24 in the kit; I93 closed; kit step to `aaaefdd`; S27 packet built |
+| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2611/1600 · M207 · S27 packet b checked; gptIntel's release read flagged |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2611/1556 · R134 · S27 statement read passes on the rebuilt portal packet |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2611/1526 · N28 · N6: I270's ratio-six exclusion passes its carrying read |
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2611/1540 · I272 · I72 parked after the one-third gate study |
