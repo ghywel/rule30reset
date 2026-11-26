@@ -1,0 +1,255 @@
+module
+
+public import Ruliology.CellularAutomata.Rule30DrivenLeft
+public import Ruliology.CellularAutomata.Rule30EveryKLine
+
+/-!
+# Four inverse ticks beside a prescribed wall: ages 71 and 72 do not suffice
+
+The driven half `Rule30DrivenLeft.L wall s` has its wall at site 0. A start whose leftmost black
+cell is at `-2` (resp. `-1`) has at age 71 (resp. 72) an image with left edge `f = -73` and four
+successive predecessors. Each satisfies the Rule 30 equation at every negative site, has its own
+wall bit equal to the prescribed one, and the fourth is black on all of `(-∞, -72]`. So no
+uniform age below 72 (starts at depth at least two) or 73 (the adjacent start) gives the fourth
+predecessor its leftmost black cell at `f + 4` (`four_tick_age_nonadjacent`,
+`four_tick_age_adjacent`). I267 computes the upper ages 76 and 77.
+
+The driven half is computed through rows written as lists (`L_rowD`): `rowD L` puts entry `i`
+of `L` at site `i - L.length`, white further west, and `stepD w` is one tick with wall bit `w`.
+-/
+
+@[expose] public section
+
+namespace Ruliology.CellularAutomata
+namespace Rule30DrivenLeftFourLower
+
+open Rule30Jen Rule30DrivenLeft Rule30EveryKLine
+
+/-- Entry `k` of `L`, white outside `0 ≤ k < L.length`. -/
+def get (L : List Bool) (k : Int) : Bool := if 0 ≤ k then L.getD k.toNat false else false
+
+theorem get_neg {L : List Bool} {k : Int} (h : k < 0) : get L k = false := by
+  simp only [get, show ¬ (0 ≤ k) by omega, ↓reduceIte]
+
+/-- Entry `k`, with the wall bit `w` at `k = L.length`. -/
+def gw (w : Bool) (L : List Bool) (k : Int) : Bool := if k = L.length then w else get L k
+
+/-- One tick of the driven half on a list row; the row grows by one cell to the west. -/
+def stepD (w : Bool) (L : List Bool) : List Bool :=
+  (List.range (L.length + 1)).map fun (i : Nat) =>
+    rule (gw w L ((i : Int) - 2)) (gw w L ((i : Int) - 1)) (gw w L i)
+
+/-- `t` ticks, with wall bit `wall τ` at tick `τ`. -/
+def iterD (wall : Nat → Bool) (L : List Bool) : Nat → List Bool
+  | 0 => L
+  | t + 1 => stepD (wall t) (iterD wall L t)
+
+/-- The row whose cell `i - L.length` is entry `i` of `L`, white further west. -/
+def rowD (L : List Bool) (p : Int) : Bool := get L (p + L.length)
+
+theorem length_stepD (w : Bool) (L : List Bool) : (stepD w L).length = L.length + 1 := by
+  simp [stepD]
+
+theorem get_stepD {w : Bool} {L : List Bool} {k : Int} (h0 : 0 ≤ k) (h1 : k < L.length + 1) :
+    get (stepD w L) k = rule (gw w L (k - 2)) (gw w L (k - 1)) (gw w L k) := by
+  have hk : k.toNat < L.length + 1 := by omega
+  show (if 0 ≤ k then (stepD w L).getD k.toNat false else false) = _
+  simp only [h0, ↓reduceIte]
+  rw [stepD, List.getD_eq_getElem?_getD, List.getElem?_map, List.getElem?_range hk]
+  simp only [Option.map_some, Option.getD_some, Int.toNat_of_nonneg h0]
+
+/-- **One tick on a list row**, at a negative site. -/
+theorem step_rowD (w : Bool) (L : List Bool) {p : Int} (hp : p < 0) :
+    rule (rowD L (p - 1)) (rowD L p) (if p + 1 = 0 then w else rowD L (p + 1)) = rowD (stepD w L) p := by
+  simp only [rowD, length_stepD]
+  by_cases h0 : p + ((L.length + 1 : Nat) : Int) < 0
+  · have hw : ¬ (p + 1 = 0) := by omega
+    simp only [hw, ↓reduceIte]
+    rw [get_neg h0, get_neg (by omega), get_neg (by omega), get_neg (by omega)]
+    rfl
+  · rw [get_stepD (by omega) (by push_cast; omega)]
+    have e2 : p + ((L.length + 1 : Nat) : Int) - 2 = p - 1 + L.length := by push_cast; omega
+    have e1 : p + ((L.length + 1 : Nat) : Int) - 1 = p + L.length := by push_cast; omega
+    rw [e2, e1]
+    have g2 : gw w L (p - 1 + L.length) = get L (p - 1 + L.length) := by
+      simp only [gw, show ¬ (p - 1 + (L.length : Int) = L.length) by omega, ↓reduceIte]
+    have g1 : gw w L (p + L.length) = get L (p + L.length) := by
+      simp only [gw, show ¬ (p + (L.length : Int) = L.length) by omega, ↓reduceIte]
+    rw [g2, g1]
+    by_cases hw : p + 1 = 0
+    · simp only [hw, ↓reduceIte, gw, show p + ((L.length + 1 : Nat) : Int) = L.length by push_cast; omega]
+    · simp only [hw, ↓reduceIte, gw, show p + ((L.length + 1 : Nat) : Int) = p + 1 + L.length by push_cast; omega,
+        show ¬ (p + 1 + (L.length : Int) = L.length) by omega]
+
+theorem length_iterD (wall : Nat → Bool) (L : List Bool) : ∀ t, (iterD wall L t).length = L.length + t
+  | 0 => rfl
+  | t + 1 => by rw [iterD, length_stepD, length_iterD wall L t]; omega
+
+/-- **The driven half on a list row**, at every negative site and every age. -/
+theorem L_rowD (wall : Nat → Bool) (s : Int → Bool) (L0 : List Bool)
+    (hs : ∀ p, p < 0 → s p = rowD L0 p) : ∀ (t : Nat) (p : Int), p < 0 → L wall s t p = rowD (iterD wall L0 t) p
+  | 0, p, hp => by rw [L_zero hp, hs p hp]; rfl
+  | t + 1, p, hp => by
+    rw [L_succ hp, L_rowD wall s L0 hs t (p - 1) (by omega), L_rowD wall s L0 hs t p hp]
+    rw [iterD, ← step_rowD (wall t) (iterD wall L0 t) hp]
+    by_cases hw : p + 1 = 0
+    · simp only [hw, ↓reduceIte]
+      rw [L_col0]
+    · simp only [hw, ↓reduceIte]
+      rw [L_rowD wall s L0 hs t (p + 1) (by omega)]
+
+/-- A predecessor row: entry `i` of `M` at site `i - 80`, colour `tail` west of `-80`, wall bit `w0`
+at site 0 and white east of it. -/
+def pred (M : List Bool) (tail w0 : Bool) (p : Int) : Bool :=
+  if p = 0 then w0 else if p < -80 then tail else get M (p + 80)
+
+theorem pred_tail {q : Int} (hq : q < -80) (M : List Bool) (t w : Bool) : pred M t w q = t := by
+  simp only [pred, show ¬ (q = 0) by omega, show q < -80 from hq, ↓reduceIte]
+
+/-! ## The nonadjacent witness: leftmost black at `-2`, age 71 -/
+
+def wallA (t : Nat) : Bool := (515329063359547058139 : Nat).testBit t
+
+def seedA : List Bool := [true, true]
+
+def startA (p : Int) : Bool := rowD seedA p
+
+/-- The image at age 71, sites `-73, …, -1`. -/
+def imageA : List Bool := [true, true, false, true, true, true, true, false, true, true, false, false, true, true, true, false, false, false, true, false, true, true, false, false, false, false, true, true, false, true, true, false, false, false, false, false, false, true, true, false, false, true, true, false, false, false, false, false, true, true, true, false, false, false, true, true, false, true, true, false, true, true, true, false, true, true, false, true, true, false, false, true, true]
+
+theorem imageA_eq : iterD wallA seedA 71 = imageA := by decide +kernel
+
+theorem imageA_L (p : Int) (hp : p < 0) : L wallA startA 71 p = rowD imageA p := by
+  rw [L_rowD wallA startA seedA (fun _ _ => rfl) 71 p hp, imageA_eq]
+
+def p1A : Int → Bool := pred [false, false, false, false, false, false, false, false, true, true, false, false, true, false, false, false, true, true, true, false, false, true, true, true, false, true, false, true, false, false, false, false, false, false, true, false, true, false, false, false, false, false, false, false, false, true, true, false, true, false, false, false, false, false, false, false, true, false, false, false, false, false, true, false, true, false, false, false, true, false, false, false, true, false, true, false, false, false, false, true] false false
+def p2A : Int → Bool := pred [false, false, false, false, false, false, false, false, false, true, true, false, true, true, true, true, false, false, true, true, true, false, false, true, false, true, false, true, true, true, true, true, true, false, true, true, false, false, false, false, false, false, false, false, false, false, true, false, true, true, true, true, true, true, true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, true, true, false, true, false, true, true, true, true, true, false] false false
+def p3A : Int → Bool := pred [false, false, false, false, false, false, false, false, false, false, true, false, true, false, false, true, true, true, false, false, true, true, false, true, true, false, false, false, true, false, false, true, false, false, false, true, true, true, true, true, true, true, true, true, true, false, true, true, false, false, true, false, false, true, false, false, false, true, false, false, true, false, true, true, false, false, true, true, false, false, true, true, false, false, false, true, false, false, true, false] false true
+def p4A : Int → Bool := pred [true, true, true, true, true, true, true, true, true, false, true, false, true, true, true, false, false, true, true, false, true, false, false, false, true, true, true, false, true, true, false, true, true, true, true, false, false, true, false, false, true, false, false, true, false, false, false, true, true, false, true, true, false, true, true, true, false, true, true, true, false, false, false, true, true, false, true, false, false, false, false, true, true, true, false, true, true, false, true, false] true true
+
+/-- The four inverse equations at one site. -/
+abbrev EqsA (p : Int) : Prop :=
+  stepLine p1A p = rowD imageA p ∧ stepLine p2A p = p1A p ∧
+    stepLine p3A p = p2A p ∧ stepLine p4A p = p3A p
+
+theorem windowA : ∀ i : Fin 86, EqsA (-((i.val + 1 : Nat) : Int)) := by decide +kernel
+
+theorem equationsA (p : Int) (hp : p < 0) :
+    stepLine p1A p = L wallA startA 71 p ∧ stepLine p2A p = p1A p ∧
+    stepLine p3A p = p2A p ∧ stepLine p4A p = p3A p := by
+  rw [imageA_L p hp]
+  by_cases deep : p < -86
+  · have len : imageA.length = 73 := rfl
+    have im : rowD imageA p = false := get_neg (by omega)
+    simp only [stepLine, p1A, p2A, p3A, p4A, pred_tail (show p - 1 < -80 by omega),
+      pred_tail (show p < -80 by omega), pred_tail (show p + 1 < -80 by omega), im] <;> decide
+  · have w : EqsA (-(((-p - 1).toNat + 1 : Nat) : Int)) := windowA ⟨(-p - 1).toNat, by omega⟩
+    rw [show -(((-p - 1).toNat + 1 : Nat) : Int) = p by omega] at w
+    exact w
+
+theorem fourth_blackA (p : Int) (hp : p ≤ -72) : p4A p = true := by
+  by_cases deep : p < -80
+  · exact pred_tail deep _ _ _
+  · have h : ∀ i : Fin 9, p4A (-((i.val + 72 : Nat) : Int)) = true := by decide +kernel
+    have w : p4A (-(((-p - 72).toNat + 72 : Nat) : Int)) = true := h ⟨(-p - 72).toNat, by omega⟩
+    rw [show -(((-p - 72).toNat + 72 : Nat) : Int) = p by omega] at w
+    exact w
+
+/-! ## The adjacent witness: leftmost black at `-1`, age 72 -/
+
+def wallB (t : Nat) : Bool := (5124327733616937479045 : Nat).testBit t
+
+def seedB : List Bool := [true]
+
+def startB (p : Int) : Bool := rowD seedB p
+
+/-- The image at age 72, sites `-73, …, -1`. -/
+def imageB : List Bool := [true, true, false, true, true, true, true, false, true, true, false, false, true, true, true, false, false, false, true, false, true, true, false, false, false, false, true, true, false, true, true, false, false, false, false, false, false, true, true, false, false, true, true, false, false, false, false, false, true, true, true, false, false, false, true, true, false, true, true, false, true, true, true, false, true, true, false, true, true, false, true, true, true]
+
+theorem imageB_eq : iterD wallB seedB 72 = imageB := by decide +kernel
+
+theorem imageB_L (p : Int) (hp : p < 0) : L wallB startB 72 p = rowD imageB p := by
+  rw [L_rowD wallB startB seedB (fun _ _ => rfl) 72 p hp, imageB_eq]
+
+def p1B : Int → Bool := pred [false, false, false, false, false, false, false, false, true, true, false, false, true, false, false, false, true, true, true, false, false, true, true, true, false, true, false, true, false, false, false, false, false, false, true, false, true, false, false, false, false, false, false, false, false, true, true, false, true, false, false, false, false, false, false, false, true, false, false, false, false, false, true, false, true, false, false, false, true, false, false, false, true, false, true, false, false, false, true, false] false false
+def p2B : Int → Bool := pred [false, false, false, false, false, false, false, false, false, true, true, false, true, true, true, true, false, false, true, true, true, false, false, true, false, true, false, true, true, true, true, true, true, false, true, true, false, false, false, false, false, false, false, false, false, false, true, false, true, true, true, true, true, true, true, false, true, true, true, true, true, false, true, false, true, true, true, false, true, true, true, false, true, false, true, true, true, true, false, false] false false
+def p3B : Int → Bool := pred [false, false, false, false, false, false, false, false, false, false, true, false, true, false, false, true, true, true, false, false, true, true, false, true, true, false, false, false, true, false, false, true, false, false, false, true, true, true, true, true, true, true, true, true, true, false, true, true, false, false, true, false, false, true, false, false, false, true, false, false, true, false, true, true, false, false, true, true, false, false, true, false, true, true, false, false, true, false, false, false] false false
+def p4B : Int → Bool := pred [true, true, true, true, true, true, true, true, true, false, true, false, true, true, true, false, false, true, true, false, true, false, false, false, true, true, true, false, true, true, false, true, true, true, true, false, false, true, false, false, true, false, false, true, false, false, false, true, true, false, true, true, false, true, true, true, false, true, true, false, true, false, true, false, false, false, false, true, true, true, false, false, false, true, true, false, true, true, true, false] true true
+
+/-- The four inverse equations at one site. -/
+abbrev EqsB (p : Int) : Prop :=
+  stepLine p1B p = rowD imageB p ∧ stepLine p2B p = p1B p ∧
+    stepLine p3B p = p2B p ∧ stepLine p4B p = p3B p
+
+theorem windowB : ∀ i : Fin 86, EqsB (-((i.val + 1 : Nat) : Int)) := by decide +kernel
+
+theorem equationsB (p : Int) (hp : p < 0) :
+    stepLine p1B p = L wallB startB 72 p ∧ stepLine p2B p = p1B p ∧
+    stepLine p3B p = p2B p ∧ stepLine p4B p = p3B p := by
+  rw [imageB_L p hp]
+  by_cases deep : p < -86
+  · have len : imageB.length = 73 := rfl
+    have im : rowD imageB p = false := get_neg (by omega)
+    simp only [stepLine, p1B, p2B, p3B, p4B, pred_tail (show p - 1 < -80 by omega),
+      pred_tail (show p < -80 by omega), pred_tail (show p + 1 < -80 by omega), im] <;> decide
+  · have w : EqsB (-(((-p - 1).toNat + 1 : Nat) : Int)) := windowB ⟨(-p - 1).toNat, by omega⟩
+    rw [show -(((-p - 1).toNat + 1 : Nat) : Int) = p by omega] at w
+    exact w
+
+theorem fourth_blackB (p : Int) (hp : p ≤ -72) : p4B p = true := by
+  by_cases deep : p < -80
+  · exact pred_tail deep _ _ _
+  · have h : ∀ i : Fin 9, p4B (-((i.val + 72 : Nat) : Int)) = true := by decide +kernel
+    have w : p4B (-(((-p - 72).toNat + 72 : Nat) : Int)) = true := h ⟨(-p - 72).toNat, by omega⟩
+    rw [show -(((-p - 72).toNat + 72 : Nat) : Int) = p by omega] at w
+    exact w
+
+/-! ## Consequences -/
+
+/-- The four-tick edge statement at a uniform age `A` for starts at depth at least `lo`. -/
+def FourTickAt (lo A : Nat) : Prop :=
+  ∀ m : Nat, lo ≤ m → ∀ t, A ≤ t → ∀ (wall : Nat → Bool) (s a b c d : Int → Bool),
+    s (-(m : Int)) = true → (∀ p, p < -(m : Int) → s p = false) →
+    (∀ p, p < 0 → stepLine a p = L wall s t p) → (∀ p, p < 0 → stepLine b p = a p) →
+    (∀ p, p < 0 → stepLine c p = b p) → (∀ p, p < 0 → stepLine d p = c p) →
+    d (-(m : Int) - t + 4) = true ∧ ∀ p, p < -(m : Int) - t + 4 → d p = false
+
+/-- Witnesses with the predecessors' wall bits equal to the prescribed wall. -/
+theorem sharp_four_step_examples :
+    (∃ (wall : Nat → Bool) (s a b c d : Int → Bool),
+      s (-2) = true ∧ (∀ p, p < -2 → s p = false) ∧
+      (∀ p, p < 0 → stepLine a p = L wall s 71 p) ∧ (∀ p, p < 0 → stepLine b p = a p) ∧
+      (∀ p, p < 0 → stepLine c p = b p) ∧ (∀ p, p < 0 → stepLine d p = c p) ∧
+      a 0 = wall 70 ∧ b 0 = wall 69 ∧ c 0 = wall 68 ∧ d 0 = wall 67 ∧ ∀ p, p ≤ -72 → d p = true) ∧
+    (∃ (wall : Nat → Bool) (s a b c d : Int → Bool),
+      s (-1) = true ∧ (∀ p, p < -1 → s p = false) ∧
+      (∀ p, p < 0 → stepLine a p = L wall s 72 p) ∧ (∀ p, p < 0 → stepLine b p = a p) ∧
+      (∀ p, p < 0 → stepLine c p = b p) ∧ (∀ p, p < 0 → stepLine d p = c p) ∧
+      a 0 = wall 71 ∧ b 0 = wall 70 ∧ c 0 = wall 69 ∧ d 0 = wall 68 ∧ ∀ p, p ≤ -72 → d p = true) := by
+  refine ⟨⟨wallA, startA, p1A, p2A, p3A, p4A, by decide, fun p hp => get_neg (by have : seedA.length = 2 := rfl; omega),
+    fun p hp => (equationsA p hp).1, fun p hp => (equationsA p hp).2.1, fun p hp => (equationsA p hp).2.2.1,
+    fun p hp => (equationsA p hp).2.2.2, by decide, by decide, by decide, by decide, fourth_blackA⟩,
+    ⟨wallB, startB, p1B, p2B, p3B, p4B, by decide, fun p hp => get_neg (by have : seedB.length = 1 := rfl; omega),
+    fun p hp => (equationsB p hp).1, fun p hp => (equationsB p hp).2.1, fun p hp => (equationsB p hp).2.2.1,
+    fun p hp => (equationsB p hp).2.2.2, by decide, by decide, by decide, by decide, fourth_blackB⟩⟩
+
+/-- No uniform age below 72 works for starts at depth at least two. -/
+theorem four_tick_age_nonadjacent (A : Nat) (h : FourTickAt 2 A) : 72 ≤ A := by
+  apply Nat.le_of_not_lt
+  intro small
+  obtain ⟨⟨wall, s, a, b, c, d, black, white, ha, hb, hc, hd, -, -, -, -, tail⟩, -⟩ := sharp_four_step_examples
+  have h' := (h 2 (Nat.le_refl _) 71 (by omega) wall s a b c d black white ha hb hc hd).2 (-80) (by decide)
+  rw [tail (-80) (by decide)] at h'
+  exact Bool.noConfusion h'
+
+/-- With the start next to the wall, no uniform age below 73 works. -/
+theorem four_tick_age_adjacent (A : Nat) (h : FourTickAt 1 A) : 73 ≤ A := by
+  apply Nat.le_of_not_lt
+  intro small
+  obtain ⟨-, ⟨wall, s, a, b, c, d, black, white, ha, hb, hc, hd, -, -, -, -, tail⟩⟩ := sharp_four_step_examples
+  have h' := (h 1 (Nat.le_refl _) 72 (by omega) wall s a b c d black white ha hb hc hd).2 (-80) (by decide)
+  rw [tail (-80) (by decide)] at h'
+  exact Bool.noConfusion h'
+
+end Rule30DrivenLeftFourLower
+end Ruliology.CellularAutomata

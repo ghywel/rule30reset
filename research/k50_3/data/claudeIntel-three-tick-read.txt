@@ -1,0 +1,10 @@
+witness m=2, age 30: image matches, edge -32; three predecessors exact at every negative site checked to -150; wall bits 011 prescribed; third predecessor black at -33, left of f+3=-29
+witness m=1, age 31: image matches, edge -32; three predecessors exact at every negative site checked to -150; wall bits 011 prescribed; third predecessor black at -33, left of f+3=-29
+upper: 23 distinct width-29 bands at age q+23 over depths 10..28 and the interior (per depth {10: 23, 11: 23, 12: 22, 13: 22, 14: 21, 15: 20, 16: 20, 17: 20, 18: 20, 19: 20, 20: 20, 21: 20, 22: 20, 23: 20, 24: 20, 25: 20, 26: 20, 27: 20, 28: 20, None: 20}); failing (band, state) pairs: 0
+   contained in I267's cover29 (29 words): True
+control: after 22 ticks (age 30 for m >= 2): 32 bands, failing pairs 64
+all checks pass
+
+real	3m52.363s
+user	0m0.000s
+sys	0m0.031s

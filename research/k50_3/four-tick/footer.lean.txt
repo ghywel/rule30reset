@@ -1,0 +1,50 @@
+
+/-! ## Consequences -/
+
+/-- The four-tick edge statement at a uniform age `A` for starts at depth at least `lo`. -/
+def FourTickAt (lo A : Nat) : Prop :=
+  ∀ m : Nat, lo ≤ m → ∀ t, A ≤ t → ∀ (wall : Nat → Bool) (s a b c d : Int → Bool),
+    s (-(m : Int)) = true → (∀ p, p < -(m : Int) → s p = false) →
+    (∀ p, p < 0 → stepLine a p = L wall s t p) → (∀ p, p < 0 → stepLine b p = a p) →
+    (∀ p, p < 0 → stepLine c p = b p) → (∀ p, p < 0 → stepLine d p = c p) →
+    d (-(m : Int) - t + 4) = true ∧ ∀ p, p < -(m : Int) - t + 4 → d p = false
+
+/-- Witnesses with the predecessors' wall bits equal to the prescribed wall. -/
+theorem sharp_four_step_examples :
+    (∃ (wall : Nat → Bool) (s a b c d : Int → Bool),
+      s (-2) = true ∧ (∀ p, p < -2 → s p = false) ∧
+      (∀ p, p < 0 → stepLine a p = L wall s 71 p) ∧ (∀ p, p < 0 → stepLine b p = a p) ∧
+      (∀ p, p < 0 → stepLine c p = b p) ∧ (∀ p, p < 0 → stepLine d p = c p) ∧
+      a 0 = wall 70 ∧ b 0 = wall 69 ∧ c 0 = wall 68 ∧ d 0 = wall 67 ∧ ∀ p, p ≤ -72 → d p = true) ∧
+    (∃ (wall : Nat → Bool) (s a b c d : Int → Bool),
+      s (-1) = true ∧ (∀ p, p < -1 → s p = false) ∧
+      (∀ p, p < 0 → stepLine a p = L wall s 72 p) ∧ (∀ p, p < 0 → stepLine b p = a p) ∧
+      (∀ p, p < 0 → stepLine c p = b p) ∧ (∀ p, p < 0 → stepLine d p = c p) ∧
+      a 0 = wall 71 ∧ b 0 = wall 70 ∧ c 0 = wall 69 ∧ d 0 = wall 68 ∧ ∀ p, p ≤ -72 → d p = true) := by
+  refine ⟨⟨wallA, startA, p1A, p2A, p3A, p4A, by decide, fun p hp => get_neg (by have : seedA.length = 2 := rfl; omega),
+    fun p hp => (equationsA p hp).1, fun p hp => (equationsA p hp).2.1, fun p hp => (equationsA p hp).2.2.1,
+    fun p hp => (equationsA p hp).2.2.2, by decide, by decide, by decide, by decide, fourth_blackA⟩,
+    ⟨wallB, startB, p1B, p2B, p3B, p4B, by decide, fun p hp => get_neg (by have : seedB.length = 1 := rfl; omega),
+    fun p hp => (equationsB p hp).1, fun p hp => (equationsB p hp).2.1, fun p hp => (equationsB p hp).2.2.1,
+    fun p hp => (equationsB p hp).2.2.2, by decide, by decide, by decide, by decide, fourth_blackB⟩⟩
+
+/-- No uniform age below 72 works for starts at depth at least two. -/
+theorem four_tick_age_nonadjacent (A : Nat) (h : FourTickAt 2 A) : 72 ≤ A := by
+  apply Nat.le_of_not_lt
+  intro small
+  obtain ⟨⟨wall, s, a, b, c, d, black, white, ha, hb, hc, hd, -, -, -, -, tail⟩, -⟩ := sharp_four_step_examples
+  have h' := (h 2 (Nat.le_refl _) 71 (by omega) wall s a b c d black white ha hb hc hd).2 (-80) (by decide)
+  rw [tail (-80) (by decide)] at h'
+  exact Bool.noConfusion h'
+
+/-- With the start next to the wall, no uniform age below 73 works. -/
+theorem four_tick_age_adjacent (A : Nat) (h : FourTickAt 1 A) : 73 ≤ A := by
+  apply Nat.le_of_not_lt
+  intro small
+  obtain ⟨-, ⟨wall, s, a, b, c, d, black, white, ha, hb, hc, hd, -, -, -, -, tail⟩⟩ := sharp_four_step_examples
+  have h' := (h 1 (Nat.le_refl _) 72 (by omega) wall s a b c d black white ha hb hc hd).2 (-80) (by decide)
+  rw [tail (-80) (by decide)] at h'
+  exact Bool.noConfusion h'
+
+end Rule30DrivenLeftFourLower
+end Ruliology.CellularAutomata

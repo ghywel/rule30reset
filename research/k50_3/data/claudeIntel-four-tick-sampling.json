@@ -1,0 +1,301 @@
+{
+ "note": "Physical four-tick search (claudeIntel_four_tick_witness.py): random seeds with the leftmost black at -m, random walls; all 256 predecessor registers at the wall tried; a failure is exact.",
+ "freeWallBits": [
+  {
+   "m": 2,
+   "age": 50,
+   "samples": 50000,
+   "failing": 1238
+  },
+  {
+   "m": 2,
+   "age": 60,
+   "samples": 50000,
+   "failing": 203
+  },
+  {
+   "m": 2,
+   "age": 66,
+   "samples": 50000,
+   "failing": 327
+  },
+  {
+   "m": 2,
+   "age": 70,
+   "samples": 50000,
+   "failing": 364
+  },
+  {
+   "m": 2,
+   "age": 70,
+   "samples": 100000,
+   "failing": 738
+  },
+  {
+   "m": 2,
+   "age": 71,
+   "samples": 100000,
+   "failing": 393
+  },
+  {
+   "m": 2,
+   "age": 72,
+   "samples": 100000,
+   "failing": 0
+  },
+  {
+   "m": 3,
+   "age": 70,
+   "samples": 100000,
+   "failing": 219
+  },
+  {
+   "m": 3,
+   "age": 71,
+   "samples": 100000,
+   "failing": 114
+  },
+  {
+   "m": 3,
+   "age": 72,
+   "samples": 100000,
+   "failing": 0
+  },
+  {
+   "m": 4,
+   "age": 70,
+   "samples": 100000,
+   "failing": 123
+  },
+  {
+   "m": 4,
+   "age": 71,
+   "samples": 100000,
+   "failing": 175
+  },
+  {
+   "m": 4,
+   "age": 72,
+   "samples": 100000,
+   "failing": 0
+  },
+  {
+   "m": 6,
+   "age": 70,
+   "samples": 100000,
+   "failing": 97
+  },
+  {
+   "m": 6,
+   "age": 71,
+   "samples": 100000,
+   "failing": 39
+  },
+  {
+   "m": 6,
+   "age": 72,
+   "samples": 100000,
+   "failing": 0
+  },
+  {
+   "m": 10,
+   "age": 70,
+   "samples": 100000,
+   "failing": 3
+  },
+  {
+   "m": 10,
+   "age": 71,
+   "samples": 100000,
+   "failing": 9
+  },
+  {
+   "m": 10,
+   "age": 72,
+   "samples": 100000,
+   "failing": 0
+  },
+  {
+   "m": 20,
+   "age": 70,
+   "samples": 100000,
+   "failing": 0
+  },
+  {
+   "m": 20,
+   "age": 71,
+   "samples": 100000,
+   "failing": 0
+  },
+  {
+   "m": 20,
+   "age": 72,
+   "samples": 100000,
+   "failing": 0
+  },
+  {
+   "m": 2,
+   "age": 71,
+   "samples": 200000,
+   "failing": 730
+  },
+  {
+   "m": 2,
+   "age": 72,
+   "samples": 200000,
+   "failing": 0
+  },
+  {
+   "m": 2,
+   "age": 73,
+   "samples": 200000,
+   "failing": 0
+  },
+  {
+   "m": 2,
+   "age": 74,
+   "samples": 200000,
+   "failing": 0
+  },
+  {
+   "m": 2,
+   "age": 75,
+   "samples": 200000,
+   "failing": 0
+  },
+  {
+   "m": 1,
+   "age": 71,
+   "samples": 200000,
+   "failing": 1968
+  },
+  {
+   "m": 1,
+   "age": 72,
+   "samples": 200000,
+   "failing": 611
+  },
+  {
+   "m": 1,
+   "age": 73,
+   "samples": 200000,
+   "failing": 0
+  }
+ ],
+ "sameWall": [
+  {
+   "m": 2,
+   "age": 71,
+   "found": "5 in 4096"
+  },
+  {
+   "m": 1,
+   "age": 72,
+   "found": "3 in 2048"
+  },
+  {
+   "m": 2,
+   "age": 72,
+   "samples": 200704,
+   "failing": 0
+  },
+  {
+   "m": 1,
+   "age": 73,
+   "samples": 200704,
+   "failing": 0
+  }
+ ],
+ "whiteWall": [
+  {
+   "age": 30,
+   "samples": 61440,
+   "failing": 19813
+  },
+  {
+   "age": 40,
+   "samples": 61440,
+   "failing": 14705
+  },
+  {
+   "age": 50,
+   "samples": 61440,
+   "failing": 4041
+  },
+  {
+   "age": 55,
+   "samples": 61440,
+   "failing": 0
+  },
+  {
+   "age": 60,
+   "samples": 61440,
+   "failing": 222
+  },
+  {
+   "age": 64,
+   "samples": 61440,
+   "failing": 0
+  },
+  {
+   "age": 66,
+   "samples": 61440,
+   "failing": 0
+  },
+  {
+   "age": 68,
+   "samples": 61440,
+   "failing": 0
+  },
+  {
+   "age": 69,
+   "samples": 409600,
+   "failing": 0,
+   "m": "2,3,4,6,8,12,16,24"
+  },
+  {
+   "age": 70,
+   "samples": 409600,
+   "failing": 0,
+   "m": "2,3,4,6,8,12,16,24"
+  },
+  {
+   "age": 71,
+   "samples": 409600,
+   "failing": 0,
+   "m": "2,3,4,6,8,12,16,24"
+  },
+  {
+   "age": 72,
+   "samples": 409600,
+   "failing": 0,
+   "m": "2,3,4,6,8,12,16,24"
+  }
+ ],
+ "threeTickCalibration": [
+  {
+   "m": 2,
+   "age": 26,
+   "samples": 200000,
+   "failing": 33355
+  },
+  {
+   "m": 2,
+   "age": 28,
+   "samples": 200000,
+   "failing": 23177
+  },
+  {
+   "m": 2,
+   "age": 29,
+   "samples": 200000,
+   "failing": 8707
+  },
+  {
+   "m": 2,
+   "age": 30,
+   "samples": 200000,
+   "failing": 6366
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "m2-age71": {
+  "m": 2,
+  "age": 71,
+  "edge": -73,
+  "seed": "11",
+  "wallTapeBitT": "110110111110010001001001001100011101001100111001000001011111011111011000",
+  "register": 161,
+  "predecessorWallBits": [
+   0,
+   0,
+   1,
+   1
+  ],
+  "imageBitsOfMinusP": 16440133972141328415590,
+  "predecessors": [
+   {
+    "constantFrom": -73,
+    "tailColour": 0,
+    "bitsOfMinusP": 7412033361942398964034
+   },
+   {
+    "constantFrom": -72,
+    "tailColour": 0,
+    "bitsOfMinusP": 4103445617383247830396
+   },
+   {
+    "constantFrom": -71,
+    "tailColour": 0,
+    "bitsOfMinusP": 1542253822070364726821
+   },
+   {
+    "constantFrom": -72,
+    "tailColour": 1,
+    "bitsOfMinusP": 1712222356109126747061
+   }
+  ]
+ },
+ "m1-age72": {
+  "m": 1,
+  "age": 72,
+  "edge": -73,
+  "seed": "1",
+  "wallTapeBitT": "1010000111010100110010000001011011111011110111001010101001010011101010001",
+  "register": 128,
+  "predecessorWallBits": [
+   0,
+   0,
+   0,
+   1
+  ],
+  "imageBitsOfMinusP": 16440133972141328415598,
+  "predecessors": [
+   {
+    "constantFrom": -73,
+    "tailColour": 0,
+    "bitsOfMinusP": 7412033361942398964036
+   },
+   {
+    "constantFrom": -72,
+    "tailColour": 0,
+    "bitsOfMinusP": 4103445617383247830392
+   },
+   {
+    "constantFrom": -71,
+    "tailColour": 0,
+    "bitsOfMinusP": 1542253822070364726672
+   },
+   {
+    "constantFrom": -72,
+    "tailColour": 1,
+    "bitsOfMinusP": 1712222356109125761245
+   }
+  ]
+ }
+}

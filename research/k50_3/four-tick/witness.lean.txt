@@ -1,0 +1,49 @@
+
+/-! ## The {name} witness: leftmost black at `-{m}`, age {age} -/
+
+def wall{tag} (t : Nat) : Bool := ({tape} : Nat).testBit t
+
+def seed{tag} : List Bool := {seed}
+
+def start{tag} (p : Int) : Bool := rowD seed{tag} p
+
+/-- The image at age {age}, sites `-73, …, -1`. -/
+def image{tag} : List Bool := {image}
+
+theorem image{tag}_eq : iterD wall{tag} seed{tag} {age} = image{tag} := by decide +kernel
+
+theorem image{tag}_L (p : Int) (hp : p < 0) : L wall{tag} start{tag} {age} p = rowD image{tag} p := by
+  rw [L_rowD wall{tag} start{tag} seed{tag} (fun _ _ => rfl) {age} p hp, image{tag}_eq]
+
+def p1{tag} : Int → Bool := pred {p1} {t1} {w1}
+def p2{tag} : Int → Bool := pred {p2} {t2} {w2}
+def p3{tag} : Int → Bool := pred {p3} {t3} {w3}
+def p4{tag} : Int → Bool := pred {p4} {t4} {w4}
+
+/-- The four inverse equations at one site. -/
+abbrev Eqs{tag} (p : Int) : Prop :=
+  stepLine p1{tag} p = rowD image{tag} p ∧ stepLine p2{tag} p = p1{tag} p ∧
+    stepLine p3{tag} p = p2{tag} p ∧ stepLine p4{tag} p = p3{tag} p
+
+theorem window{tag} : ∀ i : Fin 86, Eqs{tag} (-((i.val + 1 : Nat) : Int)) := by decide +kernel
+
+theorem equations{tag} (p : Int) (hp : p < 0) :
+    stepLine p1{tag} p = L wall{tag} start{tag} {age} p ∧ stepLine p2{tag} p = p1{tag} p ∧
+    stepLine p3{tag} p = p2{tag} p ∧ stepLine p4{tag} p = p3{tag} p := by
+  rw [image{tag}_L p hp]
+  by_cases deep : p < -86
+  · have len : image{tag}.length = 73 := rfl
+    have im : rowD image{tag} p = false := get_neg (by omega)
+    simp only [stepLine, p1{tag}, p2{tag}, p3{tag}, p4{tag}, pred_tail (show p - 1 < -80 by omega),
+      pred_tail (show p < -80 by omega), pred_tail (show p + 1 < -80 by omega), im] <;> decide
+  · have w : Eqs{tag} (-(((-p - 1).toNat + 1 : Nat) : Int)) := window{tag} ⟨(-p - 1).toNat, by omega⟩
+    rw [show -(((-p - 1).toNat + 1 : Nat) : Int) = p by omega] at w
+    exact w
+
+theorem fourth_black{tag} (p : Int) (hp : p ≤ -72) : p4{tag} p = true := by
+  by_cases deep : p < -80
+  · exact pred_tail deep _ _ _
+  · have h : ∀ i : Fin 9, p4{tag} (-((i.val + 72 : Nat) : Int)) = true := by decide +kernel
+    have w : p4{tag} (-(((-p - 72).toNat + 72 : Nat) : Int)) = true := h ⟨(-p - 72).toNat, by omega⟩
+    rw [show -(((-p - 72).toNat + 72 : Nat) : Int) = p by omega] at w
+    exact w
