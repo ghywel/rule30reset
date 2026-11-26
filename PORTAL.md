@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-26 01:18 UTC, 431 entries, 63 portal-only -->
+<!-- portal-list: 2026-11-26 09:33 UTC, 433 entries, 63 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 01:18 UTC (431 entries)
-and kit main `86864e4` (M194). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 09:33 UTC (433 entries)
+and kit main `71151d0` (M195). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 63 of the 431 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 63 of the 433 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -28,9 +28,9 @@ and kit main `86864e4` (M194). Find new portal-only entries with `python3 tools/
 | Missed | 12 |
 | Port | 3 |
 | Pending | 3 |
-| Check | 8 |
+| Check | 9 |
 | Covered | 7 |
-| Below the bar | 30 |
+| Below the bar | 29 |
 | All | 63, of them 18 ours |
 
 ## Missed (12)
@@ -68,16 +68,17 @@ In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261126-c9cb6a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-c9cb6a) | 2026-11-26 | G.P.J.W. Quint; Gemini (Google) | Lean Verified | Quint: right-half integer operators dual to the left-half integer form of `Rule30PeriodTwoSideways`, a four-diagonal frontier asymmetry, and integer forms of the open CQ01 and CQ01Empty. | Kit pull request [#433](https://github.com/WolframInstitute/Rule30PrizeKit/pull/433), open. | A |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
-| [R30-20261125-0c0abf](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-0c0abf) | 2026-11-25 | Dusty Galindo; OpenAI Codex (GPT-6.2 Astra) | Lean Verified, Human Verified | Galindo: for any two temporal columns, three local tests decide whether the updates extend through one more eastern cell (`two_columns`); with two eastern cells no finite window decides (`no_finite_window_bound`); a free strip of 32 cells encodes any sampled stream beside the eight-white clock, and its chosen return paths have no whole-row extension (`programmable_without_extension`). | Kit pull request [#429](https://github.com/WolframInstitute/Rule30PrizeKit/pull/429), open. | L (statements) |
 
-## Check (8)
+## Check (9)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261126-19e94d](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-19e94d) | 2026-11-26 | Jacob Dyer; Claude; Qwen; Inkling | Lean Verified, Human Verified | Dyer: in every column i of a row with a leftmost black cell lo, d = i − lo, white runs from time a have length at most a + d + 2, both colours recur in every window [a, 2a + d + 2], and both counts grow at least like log2 n. | Extends `Rule30CenterRuns` from the centre of the single seed to every column; compare with the kit's `black_run_le_evol` and the centre-run module before calling it new. | A |
 | [R30-20261126-544d72](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-544d72) | 2026-11-26 (superseding R30-20261125-32a757) | Jacob Dyer, Claude, Qwen, Inkling | Lean Verified, Human Verified | Neither input direction lets a finite automaton read every odd initial word and compute the Rule 30 light-cone apex. Correctness through length 2N+1 for an S-state left-to-right automaton implies N < 2S+2·S! (`apex_not_regular_both`, `apex_state_bound`). | Compare the apex padding reduction to the kit’s centre-word automata results. | A |
 | [R30-20261124-ebc2b3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-ebc2b3) | 2026-11-24 | Jacob Dyer; Claude; Qwen; Inkling | Lean Unverified | Reports 8191 and 8192 states as respective lower bounds for binary least- and most-significant-digit-first automata computing the centre bit. The corresponding ternary bounds are 9661 and 4854. | Finite distinguishing suffixes give state counts. The kit’s Problem3Bounds treats computation time. The formal automaton and digit conventions warrant a source read. | A |
 | [R30-20261124-cacfbd](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261124-cacfbd) | 2026-11-24 | Jacob Dyer; Claude; Qwen; Inkling | Lean Verified, Human Verified | For every configuration with a leftmost black cell, excludes eventual words with a black run followed by a white run outside 81 explicit pairs of run lengths. | Combines previous classes across columns. The selection of 81 remaining pairs needs a source read. | A |
@@ -101,13 +102,12 @@ The kit holds it, or something stronger, or credits it inside a row. The portal 
 | [R30-20261105-5e2517](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-5e2517) | 2026-11-05 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: algebraic inversion of `Coupled`, aperiodicity of both driven neighbours, and the reduction to even periods 2m ≥ 4 under Problem 2 and CQ01. | An earlier copy, ten minutes before, of R30-20261105-3bda85 (same title and headlines), which is tagged and in the kit as Rule30Coupled (kit #168). Neither copy records the supersession. | S |
 | [R30-20261105-8becc6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-8becc6) | 2026-11-05 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: the left-column cascade −1 to −6 under w0001, and P ≤ 7 excluded under open hypotheses. | An earlier copy, 26 minutes before, of R30-20261105-bd78e5, which is tagged and in the kit as Rule30PeriodFourSkeleton (kit #174). Neither copy records the supersession. | S |
 
-## Below the bar (30)
+## Below the bar (29)
 
 Finite instances, tables, single terms of a chain, bounded ranges, elementary facts, or a failed verification. Cite them for what they are; do not build a kit case on them.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
-| [R30-20261125-f6ca26](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-f6ca26) | 2026-11-25 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Quint: at most (147/16)(21/2)^m OR words beside every wall word of length 12m, for every row (`strip_or_word_count`; 2,555 sets of six-cell strips), so a centre of period P bounds its left words; all left words of width at most 8 occur; at most 4n left words for rules 90, 150 and 210. | The fourth constant of the chain of `Rule30MaskedForkRate`, `Rule30LeftRichness` and `Rule30HorizontalDiversityBounds` (39/32), 0.2827 bits against 0.2854, from one more finite table, with finite cases. Five cells with Galindo's look-ahead already do better (M191, computed). Through S20's identity: entropy at most 1.2827 bits. | L |
 | [R30-20261125-8d0638](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-8d0638) | 2026-11-25 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified, Human Verified | Dyer: Any eventual period P from T of the singleton centre has T + P at least 131,055. | One more term of the kit's `Rule30FactorWindow` chain (16,359), by a window of 131,072 bits. Replaces eae9ef (262,125), which overran the verifier. | A |
 | [R30-20261125-742d30](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-742d30) | 2026-11-25 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified, Human Verified | Dyer: Every weighted automaton over F2 or characteristic zero that computes the centre bit from the binary digits of n has dimension at least 511. | A finite window's bound (2^17 centre bits). Not non-2-regularity. | A |
 | [R30-20261125-3041db](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-3041db) | 2026-11-25 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified, Human Verified | Dyer: Every eventual F2-linear recurrence of the centre has transient plus order at least 65,537; no nonlinear register of order up to 33 generates it from a tick up to 82,603. | Two bounds from a window of 131,072 bits, sharp for it. | A |
