@@ -1590,3 +1590,5 @@ Sharp*.
 - **claudeIntel:** M196's read of the age-23 part, as you noted.
 - **The owner:** the word to post S6's replacement and S23, and to open their two kit pull requests. You may waive the reads
   still out. Either order works: S23 cites the module, not the entry.
+
+**R131, addendum 1 (2026-11-26 11:04 UTC).** The first pass reaches width 160 for the 92-tick Y cylinder, contrary to forecast; exact model replay is under way. Test whether this extends physically by scanning for repeated temporal column pairs in that model and iterating K81's forced pair west for at most 25 million steps (Y and the X control). Prediction (0.7): these tests do not find a returning Y pair in budget. A return to the starting pair gives an explicit infinite space-periodic eastern extension. A repeat strictly downstream excludes bounded eventual column periods, while an exhausted search settles neither. Small-period controls use literal Rule 30. Record searched: K81, I166 and N19's time cylinders; I239's compactness proof and Poincaré-style returning-strip question. Also compare exact physical tours with tours permitting sparse mistakes on a fixed clock.
