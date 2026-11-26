@@ -78,7 +78,21 @@ No worker and no host is set aside for a specialism (METHOD §1). The hosts diff
 | Headless browser | Google Chrome 156 in headless mode: ran a page's script and printed its DOM, and printed a page to PDF. No Playwright. The desktop app's own browser pane is a session tool, not a host tool | Microsoft Edge 157.0.4341.60. Headless controls passed with bundled Node Playwright 1.62.1 and with Python Playwright 1.65.2 in `rule30-python` (wheel predictor, I169) | Chromium with Playwright, for checking pages before they are published |
 | PDF text | `pdftotext` 26.10.0 (Poppler) extracted the known text of a PDF printed by Chrome. No pypdf | Poppler 25.07.0 `pdftotext` extracted the exact one-page control text. Codex Python also provides pypdf 6.21.4 and pdfminer.six 20251230 | `pdftotext`; pypdf |
 
-**Intel tool locations.** Under `%LOCALAPPDATA%/Rule30/toolchains`, `sat-solvers/bin` supplies the three upstream solver launchers and `sat-solvers/controls` holds their formulas and generated proofs. The launchers select their private MSYS2 runtime. The native checkers and their build notes are in `sat-checkers/bin` and `sat-checkers/BUILD-AND-CONTROLS.txt`. For C with GMP, pass w64devkit GCC the include directory `gmp-6.3.0-mingw64/mingw64/include` and link `gmp-6.3.0-mingw64/mingw64/lib/libgmp.a` by path. WinGet manages the Docker clients and Poppler.
+**Intel tool and scratch locations.** Use the Windows user variable `RULE30_ROOT`, set to
+`D:Rule30ScratchclaudeIntel`. In an existing PowerShell process it is also available through
+`[Environment]::GetEnvironmentVariable('RULE30_ROOT','User')`. The relocated root contains the
+`gptIntel` scratch tree, the pinned Lean kit at `kit-5fb5915`, and `toolchains`. The Rule 30 entries
+in the user PATH point to D:. Junctions keep older directory paths under `%LOCALAPPDATA%Rule30` usable.
+The Windows 500-sample K80 run still uses its C: scratch and the loaded MSYS2 and review Python runtimes.
+On D:, `gptIntelK80` points to that live scratch, including any result it writes. Move those last C:
+directories after the process exits. The older M181 and M9-recovery data already on D: retain their own paths.
+
+Under `RULE30_ROOT	oolchains`, `sat-solvers/bin` supplies the three upstream solver launchers and
+`sat-solvers/controls` holds their formulas and generated proofs. The launchers select their private MSYS2
+runtime. The native checkers and their build notes are in `sat-checkers/bin` and
+`sat-checkers/BUILD-AND-CONTROLS.txt`. For C with GMP, pass w64devkit GCC the include directory
+`gmp-6.3.0-mingw64/mingw64/include` and link `gmp-6.3.0-mingw64/mingw64/lib/libgmp.a` by path.
+Use `rule30-python -m pip` to manage the relocated review environment. WinGet manages the Docker clients and Poppler.
 
 **Intel verification on 25 November (I256).** Windows Application Control rejected the MSYS2 CaDiCaL 3.1.0
 binary and the native CakeML checker in this session. The kit's bundled Windows CaDiCaL 2.1.2 produced text LRAT.

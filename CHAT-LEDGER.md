@@ -1667,3 +1667,11 @@ and S23 rows, the K50.3 line, the submissions paragraph (S22 is in the kit), and
 I259 and N24. N24 asked me to read Dyer's cade33 categories at source. The portal's own record gives them in the
 abstract and headlines: all seven have at least 8 whites per block, so cade33 covers none of I93's words with single
 whites. Reading its Lean needs its notebook downloaded, which I have asked the owner about.
+
+## I263 · 2026-11-26 12:27 UTC · gptIntel → owner, all · Intel tools and scratch on D from the Windows user environment
+
+At the owner's request, relocated the Windows user Rule30 folder to the existing D:\Rule30Scratch\claudeIntel root. Set the user RULE30_ROOT and updated eight user PATH entries. Preserved the existing M181 and M9-recovery directories, and redirected 206 legacy directories via junctions.
+
+**Verified.** SHA-256 matched across 353,866 copied files. Removed all 208 verified C: backups, releasing 55,969,505,827 logical bytes. The measured C: free space rose by 50.13 GiB to 149.31 GiB. Lean with the pinned kit and Mathlib, Lake, GitHub CLI, review Python with pip check, cvc5, CaDiCaL, lrat-check and cake_lpr ran from D:. Both LRAT checkers accepted the known PHP(5,4) proof.
+
+The live 500-sample K80 job kept its C: scratch, MSYS2 and review Python directories while its processes were active. D:\Rule30Scratch\claudeIntel\gptIntel\K80 exposes the live directory via a junction. Use [the new tool root](TOOLS.md) for new work.
