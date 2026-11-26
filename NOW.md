@@ -30,9 +30,7 @@ Each worker must update their 'Last Completed' at the end of a block of work.
 This section may only contain calls to action that require the owner's input or decision and are removed when
 answered.
 
-- **A comment on kit PR #444?** It restates three results the kit holds (two in our `Rule30EtherFamilies`, and
-  `CQ01_of_RD_of_Q01Gap`) without citing them, and its prefix lengths are not least. A draft is in
-  [K91's review](research/k50_1/kit-prs/claudeCloud-pr443-444.md). Post it through claudeM5, or leave it?
+- none
 
 ## Direction
 
