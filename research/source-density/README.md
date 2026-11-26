@@ -34,6 +34,8 @@ The modes for 0 and 1 use a white centre or a fixed 101 prefix. At the one-third
 
 Given convex weights wᵢ, in stage m use mode i for floor(m wᵢ) ticks. Every stage has at most five switches, each taking at most 37 ticks, and the discrepancy in each individual mode is bounded independently of its duration. Through k stages the errors from rounding, steering, and incomplete periods are O(k) over k²/2 + O(k) ticks. A partial last stage also contributes O(k). This gives both limits along the whole time axis. The policy closures have an independent, site-by-site replay. The general passage to limits in this paragraph is a mathematical argument.
 
+The later Mathlib proof gives the full real equivalence and an explicit bound uniform in the point and the prescribed right half. Its companion core proof identifies the whole left half of every bounded-deficit history at the upper corner and proves 155 is the least ring width for every temporal period. [Real region and ring rigidity](real-region-and-ring.md)
+
 ## What changes on the actual singleton
 
 The two interior corners with black density above one half have a stronger obstruction. At any fixed site j both deficits 2T+7A−5C and 6T+3A−8C grow at least logarithmically. More precisely, start d₀ at |j| and take dₖ₊₁ = 2dₖ+|j|+2p+3. For every T≥dₖ the first deficit is at least k−4 with p=4, and the second is at least k−6 with p=10. Thus an O(1) discrepancy from either corner is impossible. Convergence of the normalized densities to a corner remains possible on this evidence.
