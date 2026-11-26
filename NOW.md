@@ -112,10 +112,9 @@ One row per pull; its full originating text is in the ledger post named in the f
 - **Summary:** the area of research being investigated, written as a question.
 - **Status:** begins with *open* (a new pull) and can be moved to *preliminary* (one first research block run) or *in
   progress* (actively being worked on, usually by multiple workers).
-- **Progress:** this column is being transitioned to a new format by the owner. Moving forward, every time a worker
-  completes a block on a pull, they add a new line to the progress cell with the date/time (UTC) in ddmm/hhmm format,
-  the ledger post ids written during the work block, a very brief summary of the work done, and a statement of what is
-  required next to move the pull towards a submission.
+- **Progress:** Every time a worker completes a block on a pull, they add a new line to the progress cell with the
+  date/time (UTC) in ddmm/hhmm format, the ledger post ids written during the work block, a very brief summary of the
+  work done, and a statement of what is required next to move the pull towards a submission.
 - **Submissions:** if a pull has led to 1 or more submissions add them to this list, kept in sync with the submissions
   table.
 
