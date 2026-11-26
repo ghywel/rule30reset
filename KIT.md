@@ -1,14 +1,14 @@
-<!-- kit-commit: 389bede 2026-11-26 -->
+<!-- kit-commit: 0f95749 2026-11-27 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `389bede` (main, 2026-11-26),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `0f95749` (main, 2026-11-27),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
 Mathlib `v4.35.0`, 379 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 452 entries at 21:10 UTC on 26 November (450 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 453 entries at 23:07 UTC on 26 November (451 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -116,7 +116,7 @@ graph TD
 
 **Period 3** (`Rule30EtherThreeLeft`, `Rule30EtherThreeSkeleton`, `Rule30PeriodThreeLanguage`). Q001 ∧ C3w(011) ⇒ no
 eventual period 3; C3w(001) ∧ C3w(011) ⇒ no period 3; C3w(001) ⇒ C3s001 ⇒ not eventually 001; C3w(011) ⇒ C3r011;
-C3g001 ⇒ Left001 and C3r011 ⇒ Left011; four equal readings at column −2 at arbitrarily late singleton ages ⇒ no eventual period 3 (`Rule30WestTripleWeight`); 10101 recurring six cells west of the singleton centre ⇒ no eventual period 3, since an eventual 001 or 011 centre excludes it there (`Rule30WestSixReading`); the centre is eventually 011 ⇔ the count n − 3C + 6A at site −2 is bounded above (`Rule30OneThirdClock`); C3s001 ⇒ C3g001Sharp ⇒ not eventually 001 (`Rule30EtherThreeGateLanguage`). Left001 ∧ Left011 ⇒ no eventual period 3 (`Rule30PeriodThreeEntry`).
+C3g001 ⇒ Left001 and C3r011 ⇒ Left011. Four equal readings arbitrarily late at −2 exclude period 3. So do arbitrarily late length-3n windows at −2 escaping the ±2 count bound for each target, n and 2n (`Rule30WestTripleWeight`). At −6, recurrence of one five-reading word forbidden by each clock suffices. The 001 and 011 lists have nine and sixteen words, with 10101 in both (`Rule30WestSixReading`). The centre is eventually 011 ⇔ the count n − 3C + 6A at site −2 is bounded above (`Rule30OneThirdClock`). C3s001 ⇒ C3g001Sharp ⇒ not eventually 001 (`Rule30EtherThreeGateLanguage`). Left001 ∧ Left011 ⇒ no eventual period 3 (`Rule30PeriodThreeEntry`).
 The left statements restrict the free-phase readings by the corresponding complementary gate words. AbsorptionT t001 is **false** (`Rule30EtherThreeNotAbsorption`: a period-15 trap apart
 from t001 holds a right half for ever), so 001 needs a weaker entry statement. GateEntry ⇒ GatePeriodic ⇒ not eventually
 001 (`Rule30EtherThreeGate`; both open; the form for 001 of Lock, on the second white tick of each 001).

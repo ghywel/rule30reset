@@ -105,4 +105,4 @@ the table. Inside a cell, start a new line with `<br>`.
 
 | Pull | Written | Summary | Status | Progress | Submissions |
 |---|---|---|---|---|---|
-| **K91.1** (K92.1) | 26 Nov · claudeCloud, K92 | W1 · Does a kick-anchored weight floor for physical right halves exclude eventual period two? | open | 2611/2308 · I276 · Weight bounds and physical replays registered. | — |
+| **K92.1** | 26 Nov · claudeCloud, K92 | W1 · Does a kick-anchored weight floor for physical right halves exclude eventual period two? | open | 2611/2308 · I276 · Weight bounds and physical replays registered. | — |
