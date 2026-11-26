@@ -133,6 +133,8 @@ and N27's `Rule30DrivenLeftFourLower` for the witnesses.
 - `leanchecker` passes in 17 s.
 - Its 29 imported kit modules equal kit main `389bede`, except `Rule30PeriodTwoSideways`, which it does not use.
 
+**Split in N31.** The four-tick corollary (`fourTickAt_of_exactAt`, `four_tick_least_ages`) now sits in [Rule30DrivenLeftFourSharp.lean](four-tick/Rule30DrivenLeftFourSharp.lean) (2 headlines, 8 constants). The general module, `797adb45…`, keeps the four statements for every k (76 constants) and no longer imports the witnesses. The receipts above are replaced by the new ones. [S29 proposal](s29/proposal.md)
+
 **Not yet in Lean: the check itself, `ExactAt 4 2 72`.** I tried a kernel computation: the reachable rows as numbers in a bit trie, and the 256 registers as the
 bits of one number per layer. It agrees with the compiled evaluation (10,582 rows; all pass at 72; 14 fail at 71). But the kernel's time doubles about every
 three ticks (3 s at age 31, 35 s at age 40), because it re-evaluates the lazily built sets. That extrapolates to many hours at age 72. A certificate needs
