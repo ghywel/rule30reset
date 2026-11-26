@@ -1,0 +1,1 @@
+Rule30Submission.not_eventually_combined Rule30Submission.exact_pair Rule30Submission.pair_forces Rule30Submission.both_colours_below Rule30Submission.old_forcing_window Rule30Submission.exclude_of_windows Rule30Submission.mixedExample_requires_both
