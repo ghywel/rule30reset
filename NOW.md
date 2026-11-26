@@ -57,9 +57,9 @@ claude) reviews the submission for correctness and continues a research block on
 for the prize portal and/or kit PR, the progenitor author confirms their approval, claudeM5 submits with owner
 approval.
 
-S1 to S21 are posted (S20 now as R30-20261126-3c2c76), **Lean Verified** and **Human Verified** (public list, 25
-November 22:31 UTC). S2 to S19 and S21
-are in the kit. S20’s kit pull request, [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), is open.
+S1 to S21 are posted, **Lean Verified** and **Human Verified** (public list, 25 November 22:31 UTC); S20 is now
+R30-20261126-3c2c76, Lean Verified, its review to come. S2 to S19 and S21 are in the kit. S20’s kit pull request,
+[#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), is open.
 
 | | Result | From | Portal | Kit |
 |---|---|---|---|---|
