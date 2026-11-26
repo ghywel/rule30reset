@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: Inverse ticks beside every wall: one depth-two age decides both starts for every k, and ages for every k force unique recurrent parents
 Author: {AUTHORS}
 Date: 2026-11-26
-Description: Core Lean. Beside an arbitrary prescribed wall of Rule 30's left half, for every number k of inverse ticks, both classes of starts are decided by depth-two starts at one age, the adjacent class exactly one tick later; and if every k has such an age, every recurrent row with a leftmost black cell has at most one full-line predecessor.
+Description: Core Lean. Beside an arbitrary prescribed wall of Rule 30's left half, for every number k of inverse ticks, depth-two exactness at age T ≥ 2 decides the two uniform cutoffs T and T + 1. If every k has such an age, every recurrent row with a leftmost black cell has at most one full-line predecessor.
 Abstract: {ABSTRACT}
 Keywords: [rule 30, Rule 30 Prize, inverse ticks, predecessors, driven left half, prescribed wall, left permutivity, exact edge, reset capacity, recurrent rows, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The rule30reset record](https://github.com/ghywel/rule30reset)", "[Hughes's inverse ticks beside every wall: ages 8 and 24, or 9 and 25 next to the wall, all sharp](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-2e7cd2)"]
@@ -19,7 +19,7 @@ The kit's driven half `Rule30DrivenLeft.L wall s` runs Rule 30 on the negative s
   - every start at depth at least two is exact at every age from `T`;
   - the adjacent start, at depth one, is exact at every age from `T + 1`.
 
-  So the least ages of the two classes always differ by exactly one, and exactness is monotone in age. Its three steps are `L_column`, `exactAt_of_two` and `exactAt_two_of_one`.
+  Exactness is monotone in age within each class. The one-tick offset applies to the cutoffs in the stated range. At zero inverse ticks both unrestricted least ages are zero. Its three steps are `L_column`, `exactAt_of_two` and `exactAt_two_of_one`.
 - `unique_parent_of_every_k`: suppose every `k` has a depth-two age. Then every recurrent row with a leftmost black cell has at most one full-line Rule 30 predecessor. Here recurrent means that every finite band at its edge lies on a cycle of the band map. The steps are `parent_band_history`, `parent_band_on_cycle`, `realize_recurrent`, `parent_edge_of_one` and `recurrent_parent_of_every_k`.
 
 **By hand, outside Lean.** A full-line predecessor whose edge is at site 1, read from its edge, is an odd preimage of the row read from its edge. For a recurrent row, a unique odd preimage is the same as arbitrarily deep complete resets; that equivalence is argued by hand and read in the rule30reset record. Arbitrarily deep resets at every recurrent row are the kit's `Rule30ResetCompactness.LInfinity`, which gives the reset capacity `CAP` (`cap_of_unbounded_resets`). So a depth-two age for every `k` would give `CAP`. The converse is not shown.
@@ -42,9 +42,10 @@ Quint and Gemini prove the white-wall target unconditionally through `k = 25` (R
 ```wl
 step[r_, w_] := BitXor[BitShiftRight[r, 1], BitOr[r, BitShiftLeft[r, 1], w]];
 passQ[k_, row_, width_] := Module[{img = Reverse[IntegerDigits[row, 2, width]], cur, nxt, new, deep, off},
+   If[width < k, Return[False]];
    Catch[Do[
      cur = Table[BitGet[reg, 2 i], {i, 0, k - 1}]; nxt = Table[BitGet[reg, 2 i + 1], {i, 0, k - 1}];
-     deep = <||>;
+     deep = <|width -> nxt[[k]], (width - 1) -> cur[[k]]|>;
      Do[new = BitXor[Prepend[Most[cur], img[[col + 1]]], BitOr[cur, nxt]]; nxt = cur; cur = new;
       off = width - (col + 2); If[off <= k, deep[off] = cur[[k]]], {col, 0, width - 1}];
      If[! (deep[k] == 1 && AllTrue[Range[0, k - 1], deep[#] == 0 &] && Total[cur] == 0 && Total[nxt] == 0),

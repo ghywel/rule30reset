@@ -8,7 +8,7 @@ the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
 Mathlib `v4.35.0`, 379 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 451 entries at 20:06 UTC on 26 November (449 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 452 entries at 21:10 UTC on 26 November (450 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 

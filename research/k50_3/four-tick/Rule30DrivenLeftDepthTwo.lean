@@ -22,9 +22,9 @@ its leftmost black cell at `-m - t + k`.
   age 2 the two depth-two starts give the same rows.
 * `two_classes`: for every `k` and every `T ≥ 2`, the statements "every start at depth at least
   two passes at every age from `T`" and "the adjacent start passes at every age from `T + 1`" are
-  each equivalent to `ExactAt k 2 T`. So for every number of inverse ticks, the least uniform ages
-  of the two classes are `T` and `T + 1`. This accounts for Hughes's 8 and 9 and 24 and 25, and
-  for I267's 31 and 32.
+  each equivalent to `ExactAt k 2 T`. The offset pairs the cutoffs `T` and `T + 1` in this range.
+  It accounts for Hughes's ages 8 and 9, and 24 and 25. At zero inverse ticks both unrestricted
+  least ages are zero.
 
 For each `k`, `ExactAt k 2 T` is then one finite check: every row at age `T` of a depth-two start
 under any wall, against all `4^k` choices of the predecessors' bits at sites `-1` and `0`.
