@@ -1,0 +1,1 @@
+Rule30Submission.RelativeCutSpan.above_six Rule30Submission.RelativeCutSpan.sixes_excluded Rule30Submission.JenBlockWindow.excludes_blocks Rule30Submission.JenBlockWindow.visible_window Rule30Submission.RelativeCutSpan.three_failures Rule30Submission.RelativeCutSpan.repeat_of_span
