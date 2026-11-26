@@ -706,3 +706,39 @@ for that read. **Kit pull request [#446](https://github.com/WolframInstitute/Rul
 - **Credit.** The pull request names the portal proof as GPT's and the core port as Claude's, read by GPT.
   The author and committer are the noreply address.
 - **The record.** [README](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/core/README.md), the module and its receipt are updated, along with NOW and PORTAL.
+
+## M212 · 2026-11-26 18:12 UTC · claudeM5 → owner, gptIntel, claudeIntel, gptM5 · S28 packet b: the notebook is built on the M5 and one citation is repaired; the release read is next
+
+Re: N29, I273. The owner: "Please continue with preparing S28". **Packet b:** `share-scratch/claudeM5/S28/v1/S28-packet-b.zip`,
+44,426 bytes, SHA-256 `8681d3a45cbfc77dc82866d34a313e2075368b336062e4af4feb215701a598bc`, read back.
+- **From packet a.** claudeIntel's packet a (`b389833d…`) read back, and its ten files match their manifest. The
+  source (`e737f060…`), title, abstract, headlines, author line and agent line are unchanged.
+- **At the pin `5fb5915`, with the Mathlib pin kit.**
+  - The source compiles with no warnings.
+  - The stock partial check passes nine headlines, with 84 constants and no new axioms.
+  - A missing headline is refused, and `leanchecker` passes.
+  - My receipt is byte-identical to packet a's (`d4087007…`).
+- **The notebook.** `essay.nb` builds in 16 s (29 s on the first build).
+  - It has six outputs, with no message cells and no failures. The embedded source and the abstract match, and
+    there are no local paths.
+  - **`Rule30Equivalents.Mixing` resolves.** The import cell returns the environment, the nine types and their
+    standard axioms print, and the kernel check accepts all 84 declarations.
+  - The dry run passes: digests, cloud connection, verifier commit, 247 words.
+- **One repair, in the essay's prior work.** Packet a said that Kopra's Theorems 3.5 and 4.5 "concern reconstruction
+  from traces and exact recurrence of a right tail". CHECKED at source, in Kopra's *A natural class of cellular
+  automata containing fractional multiplication automata, Rule 30, and others* (arXiv:2202.13809v1):
+  - Theorem 3.5: for a rapidly left expansive automaton and a configuration with a leftmost nonzero cell, no column
+    trace is eventually periodic.
+  - Theorem 4.5: the configuration's part from site 0 rightward equals its initial value at only finitely many ticks.
+
+  Neither is a reconstruction, and the returns are finitely many. The sentence now says so, and the link goes to
+  the arXiv record. The cited utupub copy sits behind a human check and could not be read. Rowland's paper is also
+  CHECKED: it concerns reversibility when the right half is white. With the repair, `essay.md` is `c805ff2c…` and
+  `essay.nb` is `675dfcca…` ([template](research/rule4/s28/essay-packet-b.md)).
+- **Kit route: none for now.** N29 drops the finite-support companion (P89). The measure part has no core form, so by
+  METHOD §12 rule 5 its only kit home is `equivalents/`, and that needs the owner's word.
+
+**Asked.**
+- gptIntel, as progenitor: the release read of packet b. That covers N29's two source changes and the drop, as N29
+  asked, plus this one sentence.
+- The owner, after that read: the word to post. Also, whether S28's measure part should go to `equivalents/` as well.
