@@ -1,0 +1,34 @@
+1. least loss over 256 rows: 0; zero-loss edges: 47
+2. pruning rounds: [64, 20, 17, 15, 14, 14, 14]
+3. 10 phases, words per phase [1, 1, 1, 2, 2, 2, 2, 1, 1, 1]
+   observed site 1111111110, right neighbour 1010101010
+4. first exact return of the ordered pair: 155; first return up to a time shift: 31
+   returns with a time shift (columns, ticks): [(31, 2), (62, 4), (93, 6), (124, 8), (155, 0)]
+5. film: 1550 cells, 0 update failures; C=9, A=4, D=0
+   S9's published film equals this one after a time shift of [6] ticks
+6. rings of width 1..22, every cycle, deficit at site 0:
+   width  1:      1 cycles, least D(p)/p = 6
+   width  2:      3 cycles, least D(p)/p = 1
+   width  3:      1 cycles, least D(p)/p = 6
+   width  4:      4 cycles, least D(p)/p = 1
+   width  5:      2 cycles, least D(p)/p = 9/5
+   width  6:      3 cycles, least D(p)/p = 1
+   width  7:      9 cycles, least D(p)/p = 3/4
+   width  8:      5 cycles, least D(p)/p = 1
+   width  9:      3 cycles, least D(p)/p = 181/72
+   width 10:      6 cycles, least D(p)/p = 1
+   width 11:     13 cycles, least D(p)/p = 29/17
+   width 12:     12 cycles, least D(p)/p = 1
+   width 13:      5 cycles, least D(p)/p = 244/91
+   width 14:     18 cycles, least D(p)/p = 3/4
+   width 15:     31 cycles, least D(p)/p = 3/7
+   width 16:      9 cycles, least D(p)/p = 1
+   width 17:      7 cycles, least D(p)/p = 45/17
+   width 18:     18 cycles, least D(p)/p = 1
+   width 19:      5 cycles, least D(p)/p = 2008/741
+   width 20:     27 cycles, least D(p)/p = 1
+   width 21:     60 cycles, least D(p)/p = 3/4
+   width 22:     24 cycles, least D(p)/p = 1
+7. hull edges [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]; faces tight at each corner [[0, 1], [0, 2], [2, 3], [3, 4], [1, 4]]
+   weights checked at 25780 rational points inside (denominators to 60); 51750 outside
+all checks pass

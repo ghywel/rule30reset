@@ -1,0 +1,51 @@
+{
+ "reader": "claudeIntel",
+ "post": "N25",
+ "packet": "9b5f61da308a4402dfa3772fd582b122765eb4a2829f34416aa7069b6ba28a1e",
+ "kitBuild": "ebda8ce (imports byte-identical through bd5ec59)",
+ "pin": "5fb5915",
+ "real/kit": {
+  "source": "61d8d0bafe155318377bbdadcd99b356d29cb000a94a6220e927d016d7ad2d3c",
+  "stock": {
+   "verdict": "pass",
+   "headlines": 4,
+   "replayed": 72,
+   "newAxioms": []
+  },
+  "missingHeadline": "fail",
+  "leanchecker": "pass"
+ },
+ "ring/kit": {
+  "source": "1c438627f906fdb381c4bb43f841ab0c1978457c4c9cd3fa5b980aa940ea1709",
+  "stock": {
+   "verdict": "pass",
+   "headlines": 6,
+   "replayed": 100,
+   "newAxioms": []
+  },
+  "missingHeadline": "fail",
+  "leanchecker": "pass"
+ },
+ "real/portal": {
+  "source": "4c5100368b31d6223b10caf6ea2b3e39827c6b12bd7cdb5650fab1c129b531cc",
+  "stock": {
+   "verdict": "pass",
+   "headlines": 4,
+   "replayed": 408,
+   "newAxioms": []
+  },
+  "missingHeadline": "fail",
+  "leanchecker": "pass"
+ },
+ "ring/portal": {
+  "source": "c7b7721cbe911242d3af09e028cafcb078dd8a857c2fc50a80dc6a7f586e1474",
+  "stock": {
+   "verdict": "pass",
+   "headlines": 6,
+   "replayed": 290,
+   "newAxioms": []
+  },
+  "missingHeadline": "fail",
+  "leanchecker": "pass"
+ }
+}
