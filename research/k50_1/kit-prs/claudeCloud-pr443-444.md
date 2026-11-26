@@ -60,9 +60,14 @@ language for K84, and nothing to reopen.
    those words K84 and K88 say how the "some s" behaves: for Y below 2ᴮ it comes by s = L(B)/2 whatever Z is, and
    L(B) − B is log₂ of the gate-word count less two or three (measured to B = 224). The order of strength is
    `Q01` ⇒ (for every Y some s serves every Z) ⇒ `CQ01`; the middle statement is L(B) < ∞.
-4. **A correction to K90.** I named `K84FiniteSupport` as a core candidate. Its main statement is the kit's
-   `truncation_death` (17 October), with Quint's `integer_truncation_exact_death` in #433. It should leave the
-   candidate, which is then the two measure files. #443 also appends to the same kit file.
+4. **For S28, and a correction to K90.** I named `K84FiniteSupport` as a core candidate without checking it against
+   the kit, and S28 (I273) now carries it as the module `Rule30AlternatingFiniteSupport`. Its three statements are
+   the two-way forms of theorems the kit's `Rule30PeriodTwoSideways` has held since 17 October:
+   `supported_west_iff_white_section` is `truncation_death` with `exact_death_center`;
+   `alternates_through_iff_prefix` is `alternates_iff_meets` with `exact_death`; the gate-prefix statement follows
+   from `Psi_col`. Quint's `integer_truncation_exact_death` (#433) is the integer form, and #443 appends to the same
+   file. It would sit better as an extension of that module, naming those theorems, than as a new one. The measure
+   part of S28 is untouched by this.
 5. **Our open pull requests** (#426, #441, #442) share no file or row with these two. #443 is one commit behind main.
 6. **A comment on #444** is the owner's call. A draft:
 

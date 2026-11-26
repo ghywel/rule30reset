@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-26 15:51 UTC, 445 entries, 71 portal-only -->
+<!-- portal-list: 2026-11-26 16:03 UTC, 446 entries, 72 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 15:51 UTC (445 entries)
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 16:03 UTC (446 entries)
 and kit main `aaaefdd` (M206). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 71 of the 445 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 72 of the 446 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -26,12 +26,12 @@ and kit main `aaaefdd` (M206). Find new portal-only entries with `python3 tools/
 | Class | Entries |
 |---|---|
 | Missed | 12 |
-| Port | 3 |
+| Port | 4 |
 | Pending | 4 |
 | Check | 16 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 71, of them 20 ours |
+| All | 72, of them 21 ours |
 
 ## Missed (12)
 
@@ -52,12 +52,13 @@ Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-r
 | [R30-20261123-e99565](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-e99565) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified | A ranked strip certificate excludes an eventual word at any column of a configuration with a leftmost black cell. The existing mixed-block grammars extend to every nonzero finite configuration. | Extends ranked-word soundness from the single-seed centre. | A |
 | [R30-20261123-cade33](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-cade33) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified | At every column of a configuration with a leftmost black cell, excludes free mixtures from seven run categories and all mixtures with black runs at least 5 and white runs at least 16. | Two mixed-block grammar families beyond the kit’s centre-column grammars. | A |
 
-## Port (3)
+## Port (4)
 
 Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean without it. Each is a kit candidate only after a port. All are ours.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261126-8c236d](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-8c236d) | 2026-11-26 | ours (S27) | Lean Verified | Two nonempty blocks in the order of an irrational rotation, at every phase and arc, are not read beside an alternating column when the convergent ratios have limsup above six; √10 − 3 among them. | Kit-worthy; the proof uses Mathlib reals for the angle. The core port is under way (M208). | L |
 | [R30-20261023-8084e6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-8084e6) | 2026-10-23 | ours | Lean Verified, Human Verified | Every Sturmian word, of every irrational slope and intercept, is excluded as the visible right neighbour of a period-2 centre column, for every row with a leftmost black cell (`sturmian_excluded`). | An exclusion for an infinite family, which the kit has no form of. It uses Mathlib, and the kit is core Lean. | A |
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
