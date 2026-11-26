@@ -161,3 +161,29 @@ the `equivalents/` patch).
 **5. Records.** PORTAL.md lists S25 and S26 under Pending, and Quint's new e8fd62 (CQ01 modulo-4 forms, Lean Unverified
 when read) under Check at depth A. It is in step with the list of 441 entries. NOW.md: the S24 to S26 rows, the
 submissions paragraph, the I72 line; "Needs the owner" is empty.
+
+## K88 · 2026-11-26 14:39 UTC · claudeCloud → owner, gptIntel, claudeIntel, claudeM5, gptM5 · K84 continued at the owner's word: on the complete census the decoded west is a fair coin along the gate tree, so the excess tracks log₂ of the number of gate words; a test on unseen samples registered
+
+Re: the owner, 26 November: "Continue a research block on pull K84". K84 and its addenda, I246 ("find a constraint on decoded white sections that holds uniformly in B").
+
+**1. The frame, from I246's Lean.** The gate words of m readings correspond one to one to the west prefixes of depth 2m + 1 that keep the centre alternating with some right half. A west of support at most B works through tick T exactly when the decoded prefix is white at depths B + 1 to T. So **excess(T) is the longest white run ending at depth T over all decoded prefixes**, and L(B) is the last T with T − excess(T) ≤ B. I246 left open what links the size of the gate language to those runs.
+
+**2. Seen in development, on I246's complete census to 43 readings** (17,324 words; my reconstruction returns its counts at every length). COMPUTED. [Program](research/rule4/k84/claudeCloud_k84_tree.py)
+- **The tree.** Every child's prefix extends its parent's (0 exceptions). The two children of a word, where both are read, differ at the even depth 2m + 2 (17,322 pairs of 17,322). So an even depth is chosen by the reading and an odd depth is forced by the west's own condition.
+- **The forced bits are fair.** From a white run of r at an even depth, the next (odd) depth is white in 0.498, 0.495, 0.488, 0.496 of cases for r = 1 to 4 (35,741 to 4,415 cases). At an even depth, a word with one child has it white in 0.500, 0.507, 0.506, 0.485, 0.497, 0.513 for r = 0 to 5; a word with two children always has a white one. About 12% of words have two children at 40 readings (25% at 15).
+- **So the runs are geometric.** At depth 87 the words with a run of at least e, for e = 0 to 10, number 17,324, 8,637, 4,178, 2,153, 1,061, 529, 272, 142, 80, 25, 8. Each step halves, to e = 8.
+- **A deficit past 8.** Runs of 8 and more are extended less often: 0.39 and 0.28 at single children (222 and 57 cases), 0.41 to 0.22 at forced depths. The counts are small.
+- **Excess against the count.** For odd T from 37 to 87, log₂ G − excess(T) lies between −0.4 and 4.8. Before that one west stands out: support 19 lives to tick 35, an excess of 16 among 365 words.
+- **The rings give a floor that holds for ever.** Cut the west row of the 155-column ring after depth B ≡ 17 (mod 31) and keep the ring's right half: the next seven depths of the ring are white, so the centre alternates to B + 7. Replayed on the whole line at supports 172, 203, …, 451 (life B + 7 each). The 728-ring gives 7 as well, the 84-ring 5, the ether 4. So **L(B) ≥ B + 7 for every B ≡ 17 (mod 31)** (PROOF-SKETCH: the cut row and the ring agree on every depth the centre can hear by tick B + 7). The least excess in K84's table is 7.
+
+**3. What it suggests (CONJECTURE).** The coupled ladder: the wests of support at most B that live to B + l with some right half number about G·2⁻ˡ, where G counts the gate words at B. Then L(B) − B ≈ log₂ G − 2, within about 3. The excess is then **not bounded**: it grows at half the gate's entropy per reading. With I246's bound of 0.151 that is at most 0.08 a cell in the long run; the fits so far are 0.086 and 0.049. This is the coupled form of the kit's ladder (`Rule30PeriodTwoLadder`: the west-only survivors halve every two ticks).
+
+**4. The registered test: I246's samples at 56 and 60 readings, which I have not opened.** They are distinct gate words found by replaying random right halves, so their prefixes are physical. Frozen: `claudeCloud_k84_tree.py`, SHA-256 `9279b7d8930143d86add5d2fed23b62fcf621e9c2d38da8ada138102d000ba28`; commands `sample sample-56.tsv 56 44` and `sample sample-60.tsv 60 44`.
+- **P1 (0.9):** at every m from 44 to 60 the share of sampled words that are white at depth 2m + 1 lies between 0.47 and 0.53, in both files.
+- **P2 (0.85):** at m = 56 and at m = 60 the counts with a run of at least e are within 20% of n/2ᵉ for e = 1 to 6.
+- **P3 (0.7):** pooled over m = 50 to 60 in the 60-reading file, the counts at e = 9 and e = 10 are between 0.3 and 1.0 of n/2ᵉ: the deficit is real.
+- **P4 (0.8):** for at least 15 of the 17 lengths in the 60-reading file, the longest run lies between log₂ n − 5 and log₂ n + 2.
+- **For a host with the solvers (not run here):** L(B) − B lies between 10 and 18 for every even B from 108 to 140 (0.8); near T = 200 the excess is 14 to 21 (0.7).
+- **Otherwise:** if the shares drift below 0.45 with depth, the coin is not fair far out, the excess grows more slowly than the count, and a bounded excess stays possible.
+
+Record searched: K84 and addenda, I246 and `K84FiniteSupport.lean`, N16, I229, K83.A's notes, P77; the kit's `Rule30PeriodTwoLadder` (`mean_ladder`, `card_valid`), `Rule30PeriodTwoMass`, `Rule30PeriodTwoNoFloor`, `Rule30PeriodTwoSideways`, `Rule30EtherWallWitness`; KIT.md §7; `find_known.py` on white section, first moment, fair-coin, mean_ladder.
