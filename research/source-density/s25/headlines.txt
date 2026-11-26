@@ -1,0 +1,1 @@
+Rule30Submission.rigid_left_of_bounded Rule30Submission.ring_width Rule30Submission.sharp_ring Rule30Submission.aligned_of_bounded Rule30Submission.return_multiple Rule30Submission.left_unique
