@@ -1,14 +1,14 @@
-<!-- kit-commit: b9f1062 2026-11-26 -->
+<!-- kit-commit: 389bede 2026-11-26 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `b9f1062` (main, 2026-11-26),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `389bede` (main, 2026-11-26),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 378 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 448 entries at 18:48 UTC on 26 November (446 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 379 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 451 entries at 20:06 UTC on 26 November (449 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -93,7 +93,7 @@ graph TD
   path of width W is a run of W-column windows from the trap under the double step with free exterior inputs, and
   Q01GapLift W says no finite constrained start is eventually read by one. For 16 ≤ W ≤ W′, Q01Gap ⇒ Q01GapLift W ⇒
   Q01GapLift W′ ⇒ Q01GapLiftCore W′ ⇒ CQ01Empty; Q01TwoCore ⇒ Q01GapLiftCore W; MassDivergesLift W ⇒ Q01GapLift W, and
-  MassDivergesLift W ⇒ MassDivergesLiftCore W ⇒ Q01GapLiftCore W. All are open. `Rule30ZeroCoastBridge`: MassDiverges ⇔ Q01Gap, and the seeds surviving the gap language to horizon H number N(H)
+  MassDivergesLift W ⇒ MassDivergesLiftCore W ⇒ Q01GapLiftCore W. At W ≥ 16 the open right-half trap-or-periodic dichotomy and Q01GapLift W imply CQ01; core mass divergence may restrict seeds to y < 2^H at horizon H. All are open. `Rule30ZeroCoastBridge`: MassDiverges ⇔ Q01Gap, and the seeds surviving the gap language to horizon H number N(H)
   with N(H + 10) = N(H + 4) + N(H) exactly. Q01Gap is also equivalent to eventual termination of the forced zero-bit continuation from every surviving prefix (`q01Gap_and_massDiverges_iff_survivingSeeds_void_crash`); it suffices to check macro-step termination at every reachable odd-horizon age-zero reset (`q01Gap_and_massDiverges_iff_reset_iterVoidMacro_crash`). Equivalently, survivor popcount bounds the horizon (`massDiverges_and_q01Gap_iff_survivingSeeds_konig`), or from every horizon some finite step raises every survivor's active weight by at least one (`q01Gap_and_massDiverges_iff_stepwise_wtH_increment`); one uniform crash lookahead would prove Q01Gap (`void_schedule_telescoping_weight_bound_and_q01Gap_iff`).
 - `Rule30PeriodTwoWidth13`: under an alternating centre the left trace lies in GE2; Q01 ⇒ NoSeedGE2 ⇒ no period 2;
   RD ∧ Q01Gap ⇒ CQ01. `Rule30ZeroCoastBridge` embeds the gap language in GE2, so NoSeedGE2 ⇒ MassDiverges ⇔ Q01Gap. `Rule30PeriodTwoMass`: a positive linear G mass floor suffices. Galindo refutes the proposed sharp floor (§4). `Rule30PeriodTwoLadder`: the mean
@@ -176,7 +176,7 @@ The upper bounds allow arbitrary inverse wall bits, and the sharpness examples u
   (`Rule30ZeroBoundaryBarriers`); no well-founded rank of width and a finite-monoid image (`Rule30RecognizableBarrier`);
   no additive ranking bounded below on late rows (`Rule30FreeMiddle`); no finite abstract ranking in the coupled frame
   (`Rule30PeriodTwoSideways`), nor inside the 3/5 gap clock: seeds that follow the period-5 gate 0 1^9 satisfy
-  TwoCoreOK and the clock, and defeat every finite-abstraction ranking over ten-step blocks (`Rule30GapBarrier`).
+  TwoCoreOK and the clock, and defeat every finite-abstraction ranking over ten-step blocks on both lift ladders at every W ≥ 16 (`Rule30GapBarrier`).
 - **No conserved quantity.** Densities conserved by rule 30 on closed walks are constants plus shift coboundaries, also
   with parity coefficients (`Rule30LocalConservation`, `Rule30ProductParity`); an autonomous local observable is
   constant (`Rule30LocalFactor`).
@@ -230,7 +230,7 @@ The upper bounds allow arbitrary inverse wall bits, and the sharpness examples u
 - Beside a column that eventually reads 0101 at site 0, with a leftmost black cell at −L, L ≥ 1, column 1 at
   even times cannot have unbounded lags with agreement lasting to within fixed slack of the later start
   (`Rule30ClockNearSquares`). So two blocks in the order of an irrational rotation, from an end of its arc, are not read there
-  (`Rule30RotationBlocks`). For a pair of adjacent columns whose left member starts L cells right of the
+  (`Rule30RotationBlocks`). At every phase the exclusion holds for arbitrarily large straddling unimodular approximants with a fixed ratio margin over six, including √10 − 3 (`Rule30RotationFreePhase`). For a pair of adjacent columns whose left member starts L cells right of the
   leftmost black, a length-n repeat at a < b satisfies n ≤ L+b−M+2P−1 if diagonals through M agree at b−P and b,
   with 1 ≤ P ≤ b and M < b−a (`Rule30SettledRepeats`).
 - **The zero-boundary left half.** At widths 56 and 60 explicit starts give even death bounds of at least 100
