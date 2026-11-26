@@ -187,3 +187,19 @@ Re: the owner, 26 November: "Continue a research block on pull K84". K84 and its
 - **Otherwise:** if the shares drift below 0.45 with depth, the coin is not fair far out, the excess grows more slowly than the count, and a bounded excess stays possible.
 
 Record searched: K84 and addenda, I246 and `K84FiniteSupport.lean`, N16, I229, K83.A's notes, P77; the kit's `Rule30PeriodTwoLadder` (`mean_ladder`, `card_valid`), `Rule30PeriodTwoMass`, `Rule30PeriodTwoNoFloor`, `Rule30PeriodTwoSideways`, `Rule30EtherWallWitness`; KIT.md §7; `find_known.py` on white section, first moment, fair-coin, mean_ladder.
+
+**K88, addendum 1 (2026-11-26 14:44 UTC). The registered test: three of four held, and the one that failed strengthens the law. A second run is registered, to twice the exact range.**
+- **The data.** I246's 60-reading sample has 67,919 distinct words; its prefixes give 17,953 words at 44 readings. The 56-reading file is the same sample cut shorter (identical counts to 56), so there is one test, not two. [Table](research/rule4/k84/data/claudeCloud-k84-tree-sample-60.txt)
+- **P1 held.** The share white at depth 2m + 1 is 0.491 to 0.514 at all 17 lengths.
+- **P2 held.** At 60 readings the counts with a run of at least 1 to 6 are 34,114, 16,953, 8,297, 4,192, 1,930, 997 against n/2ᵉ = 33,960, 16,980, 8,490, 4,245, 2,122, 1,061.
+- **P3 refuted: there is no deficit at long runs.** Pooled over 50 to 60 readings, runs of at least 9 number 1,131 against 1,036 expected, and of at least 10, 487 against 518. The shortfall I saw at depths 80 to 92 is a local dip: long runs at one depth share few ancestors, so their counts swing (6, 1, 9, 25, 48, 37 at 44 to 49 readings).
+- **P4 held.** The longest run lies within the band at 16 of 17 lengths.
+- **Against I246's exact supports at ticks 90 to 120:** log₂ G − excess lies between −0.9 and 5.8 whether G is taken as the sampled count or as the strip's upper count (mean 2.4 and 3.1). That is the band of the census below tick 87. So from tick 37 to 120, **excess(T) = log₂ G − c with c between −1 and 6**.
+- **Under the fair-coin measure on right halves the bits are not fair depth by depth** (shares 0.39 to 0.56 at depths 60 to 87 in 65,536 rows): a few heavy words decide each depth. The law is about counting words.
+
+**Registered: lower bounds to depth 241.** [The sampler](research/rule4/k84/claudeCloud_k84_far.cpp) (SHA-256 `0169a18c6e3d8b36d98c29b8f35496fb269880d42f6b73dd808d30f3f105b3bb`) draws right halves of 256 cells, decodes the west each demands, and keeps the longest white run ending at each depth with its right half. Each is a lower bound on the excess with a witness. One sample was cross-checked against a big-integer replay, `decode_west` and a replay on the whole line. In 65,536 rows at 43 readings it already meets the exact excess at depths 79, 80, 83, 85, 86 and 87. Command: `k84_far 120 28 20261126`.
+- **Q1 (0.85):** the bound is at least 12 at every odd depth from 151 to 241.
+- **Q2 (0.65):** it reaches 18 or more somewhere from 151 to 241, above the exact record of 16.
+- **Q3 (0.9):** it never exceeds 24.
+- **Q4 (0.8):** on ticks 90 to 120 it equals I246's exact excess at 25 or more of the 31, and never exceeds it.
+- **Otherwise:** if nothing above 13 turns up past depth 150, sampling no longer reaches the record words, or the excess is flat; the run cannot tell which.
