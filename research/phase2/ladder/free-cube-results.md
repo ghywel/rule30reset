@@ -4,6 +4,8 @@
 
 ## What was counted
 
+The [separate kit ladder](kit_ladder.py) uses exact bitlength and checks the full kick constraints. At width 43 its white-first count is 23,148 at the support and 16 after twelve pairs of ticks. All 47 other widths tested (1 through 48) had none left at that final horizon. Its width-48 counts for zero through nine pairs are 60,042, 24,721, 9,644, 4,059, 1,603, 671, 346, 65, 16 and 0. The archive `share-scratch/gptIntel/phase2/K92.2/ladders.zip` contains both sets of tables, including the full histograms and both kit phases. SHA-256 `64dbcb923336796b3f60f7b64349b74631d3309d6c45306cbfc4047c83f74e9b`.
+
 At physical width bound `W` choose `n` free wall readings before time `W`, pinning the readings of the other parity black. Sideways reconstruction gives one starting row per free word. Extend it by whites past depth `W`, and evolve forward beside the white wall. Check 1 reads the wall at the first pinned-parity tick at or after `W`. Check 12 is 22 ticks later. The three conventions are even pins at `W=2n`, odd pins at `W=2n`, and odd pins at `W=2n−1`. The last agrees with the opposite-phase first check in M10. At each width and phase the initial denominator is exactly `2^n`.
 
 The full enumeration covers `n=1,…,24`, each of the three conventions, and Rule 30, the 90/150 hybrid, uniform 90 and 150, and the fixed plant with `L=1`. These counts track black pins. The kit's exact-width `S(W,2j)` has an additional restriction on kicks and a different denominator. [The two ladders and published proofs](sources.md)

@@ -18,3 +18,5 @@ Failure of a positive linear slope leaves both possibilities open. A divergent s
 ### Reproducible finite tests
 
 I276 records the predictions. A strip permits free exterior inputs and gives a lower bound on a(H). A concrete east and a decoded west give an upper bound after replay on the full line. Only agreement identifies an exact minimum over all physical right halves.
+
+The [bounds, witnesses and failed local charge](floor/results.md) cover every even H through 300. Raw receipts are in `share-scratch/gptIntel/phase2/K92.1/floor.zip`, SHA-256 `2a93b132305a970479e17198bec6fefff749432371b2144cd754bd9acac0019c`.

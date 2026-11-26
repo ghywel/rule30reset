@@ -19,7 +19,13 @@ We retained the centre through age 4,194,816, providing 512 extra ticks for reso
 
 The pre-run prediction (0.8) put the maximum marked width between 16 and 30 inclusive. It was borne out, though the width-22 record already occurred before age `2^16`. Unbounded widths or unbounded finite failure delays would imply aperiodicity; this finite run establishes neither. A clock explanation requires a specific rule predicting future records from the edge. [Probe and build command](seed_records.cpp)
 
+## Did the clock predict the second half?
+
+At ages up to 2,097,152 there were 50 marks of width at least 14. Among their births the most frequent phase mod 16 was 0 (7/50). Among their arrivals it was 14 (10/50). Among the 64 marks in the second half, those same phases occurred 5 and 4 times respectively. The fixed offsets 2, 7, 28 and 399 taken mod 256 captured one held-out birth and zero arrivals. All available right-going characteristic intersections from those four diagonals to these marked births saw white. The final strict width record was already set at 34,429, leaving no strict records on which to test a late record law. The fitted phase failed to give a repeatable predictor. The results leave open a different observable that changes on the edge and reaches the centre by a specified route. Recommend parking the scout pending such a prediction. [Held-out test](timing.py)
+
 ## Replay receipts
+
+The observations, counts, records, timing output and small oracle are archived at `share-scratch/gptIntel/phase2/K92.4/marks.zip`, SHA-256 `1f653e1de7b9f72bfe6b105a93d2201e6af2a4fea1cb5fc7c3ed66af2aaba6e0`.
 
 Run the compiled probe with an existing output directory and arguments `4194304 512`. The record and count tables are TSV. The two binary arrays use four little-endian bytes per age. In the observation word, bit zero is the centre, bits 1–10 encode the physical gap plus one (zero at the singleton onset), and bits 11–14 hold D2, D7, D28 and D399. In the failure array `0xffffffff` is the sentinel whose classification is in `unresolved.tsv`.
 

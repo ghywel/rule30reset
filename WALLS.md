@@ -66,11 +66,10 @@ as `Absorption` and `Lock`.
 - Every right half is in a closed set of 777 windows from white sample 35 (S18); 48 clean readings certify the trap
   (S15); no right half kicks once in four for ever (S18).
 - Beside 001 and 011 a right half white beyond site D enters its trap by tick 3D + 170 or 3D + 820, and slope three
-  is sharp (S16, S21). Period two has no such deadline.
+  is sharp (S16, S21). For period two the finite-eastern census through support 24 has a sharp observation deadline of tick 5,539 for clean48 or one of the tested certified locks. The all-width deadline remains open. [K92.3](research/phase2/deadline/results.md)
 - Families that die or lock: the stripe prefixes, the locks of gates 2, 5 and 2,5, the ether families.
 
-The portal entries named here are outside the kit and were read at abstract depth only ([PORTAL.md](PORTAL.md)):
-read the source before building on one.
+The two Benboubakeur entries on post-support survival have now had [source reads](research/phase2/ladder/sources.md). For the other portal results see the read depths in [PORTAL.md](PORTAL.md).
 
 **Why it resists.**
 - *Infinite rows do survive*: the ether, the four rings, every `Theta f`. So the finiteness must be used, and a
@@ -98,7 +97,7 @@ ones nobody has proved:
    allows 4, 5, 7, 8, 10, 11, 12, 14, 15, 17, 18 (K92, a development probe:
    [table](research/phase2/data/claudeCloud-floor-probe.txt)). From H = 60 it climbs at about 0.28 a tick, the
    slope M6 measured in the gap language. The anchor matters: at a white tick that is not a kick, the ring of
-   gate 2 weighs H/7. No floor at any slope is proved in any language.
+   gate 2 weighs H/7. K92.1 gives exact physical minima at every even H through 182 and bounds of 97 to 103 at H=300. The conjecture H≤4A+12 holds on that finite range. An unbounded, even sublinear, minimum would already exclude an immortal finite west. [Bounds and counterexample to local charging](research/phase2/floor/results.md)
 3. **A deadline for finite right halves** that grows linearly with the support, as period three has.
 
 **Phase-1 pulls that stopped here.**
@@ -132,6 +131,8 @@ thing to recur without bound. It is the problem of the digits of one explicit nu
   and for period two a forcing prefix at arbitrarily late ages (S12).
 
 For Problem 2 the missing statement is any frequency at all.
+
+K92.4's single-seed scout through age 4,194,304 found a largest mark of width 22 and a longest finite first failure of 53. The timing phases fitted on the first half did not predict held-out wide marks. An edge mechanism would have to predict a new centre event in advance. [Record ages and timing test](research/phase2/marks/seed-results.md)
 
 **Proved up to it.** A run of one colour that starts at age a is no longer than a, so both colours occur in every
 window [a, 2a], and the j-th black tick comes by 20(8/5)ʲ: logarithmic counts and no more. Dyer carries both bounds
