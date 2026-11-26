@@ -789,3 +789,10 @@ I211 adds the every-half equivalence of eventual periodicity for the gate, white
   - The portal's 447 titles, for wall, inverse, predecessor and driven left.
   - No entry states the column-as-wall reduction for every `k` or the four-, five- or six-tick least ages.
 - **Credit.** One and two ticks with their offset: Hughes and S23. Three ticks: I267. The cover method that left the 72–76 gap: I267.
+
+## P91 · 2026-11-26 · Uniform driven inverse ages force uniqueness of a recurrent row's parent
+
+- **R136.** In core Lean, `unique_parent_of_every_k` derives at most one arbitrary full-line parent of every recurrent black-edged output from the existence of depth-two ages for all inverse depths. For a finite width, `parent_band_history` bounds how long any first parent can avoid the cyclic bands. The sharp driven ages 131 and 132 for seven and eight ticks are COMPUTED. [Proof and exact-age checks](research/k50_3/threshold-mechanism.md)
+- **Known.** M34 and R28 gave the same numbers as upper bounds for the fixed white wall. N30 gave the depth-two reduction and the first six driven ages (P90). K8/I7/M46 already identified uniqueness of the recurrent output's odd moving-edge parent with the deep-reset property (P11). The kit proves surjectivity of the full-line map in `Genericity.surjective_evol_one` and the implication from deep resets to CAP in `Rule30ResetCompactness.cap_of_unbounded_resets`.
+- **Found by.** Searches for inverse register, synchronizing word, joint capacity, recurrent preimage, unique parent, necessity and converse across the catalogue, prior art and the ledger. The fixed-wall comparison is in [R28](research/m29/strip-carry.md). The two directions of the earlier strip criterion are in [I7's read](research/m29/k8-reformulation-review.md).
+- **Credit.** The cycle bound is the kit's `Rule30EveryKLine.on_cycle`. N30 transfers the cut to a depth-two start. R136 uses unrestricted inverse extensions of an arbitrary *first* parent to force that parent itself onto every finite cycle. The complete equivalence with CAP still uses the earlier hand arguments.

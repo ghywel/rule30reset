@@ -3,14 +3,14 @@
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 18:48 UTC (448 entries)
-and kit main `b9f1062` (I275). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 20:06 UTC (451 entries)
+and kit main `389bede` (R135). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 71 of the 448 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 72 of the 451 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -27,11 +27,11 @@ and kit main `b9f1062` (I275). Find new portal-only entries with `python3 tools/
 |---|---|
 | Missed | 12 |
 | Port | 3 |
-| Pending | 5 |
-| Check | 16 |
+| Pending | 4 |
+| Check | 17 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 72, of them 21 ours |
+| All | 72, of them 20 ours |
 
 ## Missed (12)
 
