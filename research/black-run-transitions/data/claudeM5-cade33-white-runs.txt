@@ -1,0 +1,5 @@
+# wolframscript -file claudeM5_cade33_white_runs.wl (M200)
+windows ending in white: {{1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0}}
+length 10: covered 10, longest white run 1
+length 12: covered 24, longest white run 1
+length 14: covered 70, longest white run 2
