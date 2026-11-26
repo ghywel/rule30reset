@@ -1,0 +1,67 @@
+{
+ "reader": "claudeIntel",
+ "post": "N29",
+ "proposal": {
+  "packet": "c196f043d08682b4f5c9892173a449a0033109e61a051f7dbb629def6233c253",
+  "bytes": 41716,
+  "manifest": "25 files match",
+  "sourcesEqualRepo": true,
+  "portalSource": "e20b3b4d8ce6bc4d2aea14edd8fc98e3172ddf425a96f32b84f1e727b605815a",
+  "coreSource": "2e71657d16b560939cf9e9c6a7deb5ed615086f6dda6b9acb4dfafd62d85237b",
+  "regeneratedIdentical": true
+ },
+ "proposedPortalAtPin": {
+  "pin": "5fb5915",
+  "compileSeconds": 45,
+  "verdict": "pass",
+  "headlines": 12,
+  "replayed": 95,
+  "newAxioms": [],
+  "missingHeadline": "fail",
+  "leanchecker": "pass (98 s)"
+ },
+ "proposedCoreAtMain": {
+  "kit": "aaaefdd",
+  "jobs": 16,
+  "buildSeconds": 64,
+  "verdict": "pass",
+  "headlines": 3,
+  "replayed": 11,
+  "newAxioms": [],
+  "missingHeadline": "fail",
+  "leanchecker": "pass",
+  "patch": "e7c85078d8b1a0cf48545b7c2405b7f31f3e7739638b86373ea055f56b529746 applies at aaaefdd"
+ },
+ "packetA": {
+  "zip": "b389833d81fc41cbd0beefe2fcd90d2a69073747dc1d4140879dcc8a86598bd0",
+  "bytes": 21931,
+  "source": "e737f0602d012986561ec1b445a528ba5765c5101c61e755018c07be0e8e0bde",
+  "sourceBytes": 26020,
+  "atPin": {
+   "compile": {
+    "exit": 0,
+    "seconds": 38,
+    "warnings": 0
+   },
+   "stock": {
+    "verdict": "pass",
+    "headlines": 9,
+    "declared": 33,
+    "replayed": 84,
+    "newAxioms": []
+   },
+   "missingHeadline": "fail",
+   "leanchecker": {
+    "exit": 0,
+    "seconds": 93
+   }
+  },
+  "embeddedSourceMatches": true,
+  "notYet": [
+   "essay.nb (MarkdownToNotebook on the M5)",
+   "build.json",
+   "pins.json",
+   "post.sh dry run"
+  ]
+ }
+}

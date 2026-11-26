@@ -1,0 +1,7 @@
+exact death: exactly one west bit works at every depth, 300 random right halves, T up to 24
+1. alternation through T iff agreement with Psi at depths 1..T: 3600 wests, 617 of them agreeing
+2. a west supported in 1..B works through T iff Psi is white on (B, T]: 1073 (R, B, T), 237 true, every west supported in 1..B tried
+3. equal required prefixes iff equal gates at white ticks below T: 400 pairs, 234 equal
+census (T, distinct required prefixes, distinct gate words) over every right half on sites 1..T+1:
+   (1, 1, 1), (2, 2, 2), (3, 2, 2), (4, 3, 3), (5, 3, 3), (6, 5, 5), (7, 5, 5), (8, 8, 8), (9, 8, 8), (10, 12, 12), (11, 12, 12)
+all checks pass
