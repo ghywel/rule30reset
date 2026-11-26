@@ -1,7 +1,7 @@
-<!-- kit-commit: c7c2207 2026-11-26 -->
+<!-- kit-commit: aaaefdd 2026-11-26 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `c7c2207` (main, 2026-11-26),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `aaaefdd` (main, 2026-11-26),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
@@ -113,7 +113,7 @@ graph TD
 
 **Period 3** (`Rule30EtherThreeLeft`, `Rule30EtherThreeSkeleton`, `Rule30PeriodThreeLanguage`). Q001 ∧ C3w(011) ⇒ no
 eventual period 3; C3w(001) ∧ C3w(011) ⇒ no period 3; C3w(001) ⇒ C3s001 ⇒ not eventually 001; C3w(011) ⇒ C3r011;
-C3g001 ⇒ Left001 and C3r011 ⇒ Left011; four equal readings at column −2 at arbitrarily late singleton ages ⇒ no eventual period 3 (`Rule30WestTripleWeight`); C3s001 ⇒ C3g001Sharp ⇒ not eventually 001 (`Rule30EtherThreeGateLanguage`). Left001 ∧ Left011 ⇒ no eventual period 3 (`Rule30PeriodThreeEntry`).
+C3g001 ⇒ Left001 and C3r011 ⇒ Left011; four equal readings at column −2 at arbitrarily late singleton ages ⇒ no eventual period 3 (`Rule30WestTripleWeight`); 10101 recurring six cells west of the singleton centre ⇒ no eventual period 3, since an eventual 001 or 011 centre excludes it there (`Rule30WestSixReading`); the centre is eventually 011 ⇔ the count n − 3C + 6A at site −2 is bounded above (`Rule30OneThirdClock`); C3s001 ⇒ C3g001Sharp ⇒ not eventually 001 (`Rule30EtherThreeGateLanguage`). Left001 ∧ Left011 ⇒ no eventual period 3 (`Rule30PeriodThreeEntry`).
 The left statements restrict the free-phase readings by the corresponding complementary gate words. AbsorptionT t001 is **false** (`Rule30EtherThreeNotAbsorption`: a period-15 trap apart
 from t001 holds a right half for ever), so 001 needs a weaker entry statement. GateEntry ⇒ GatePeriodic ⇒ not eventually
 001 (`Rule30EtherThreeGate`; both open; the form for 001 of Lock, on the second white tick of each 001).
@@ -216,6 +216,10 @@ The upper bounds allow arbitrary inverse wall bits, and the sharpness examples u
   (`Rule30BlackRuns`, `Rule30ParametricStripCertificates`); 30 certified words (`Rule30StripCertificateTable`).
   For the singleton centre, a cyclic word is excluded if a certified run suffix fixes the right neighbour at every
   white phase. Examples have isolated whites and cyclic black-run lengths (9,7,7) or (9,1,8,1,8) (`Rule30RunTransitions`).
+  In every column of every configuration with a leftmost black cell, his windows and sharp two-run cutoffs, chosen at
+  each white letter, exclude such words at every length (`Rule30RunTransitionWindows`). At the singleton centre, so
+  are mixtures of long black runs each followed by a tail passing a strip test, a regular language: at five cells after
+  nine blacks, every white run and every 0^a 1 1 0^c with a odd (`Rule30LongRunTails`).
 - From singleton age T > 0, record black centre ticks as one letter and distinguish the two right-neighbour colours at
   white centre ticks. If a length-n block recurs at a later offset j, then n ≤ T + j. Under centre alternation, sufficiently
   early repeated blocks of 3/5 kick gaps, with no adjacent 3s, force the compatible left row to have infinite support
@@ -259,7 +263,9 @@ The upper bounds allow arbitrary inverse wall bits, and the sharpness examples u
   αC + βA ≤ γn + K holds on every interval of every history exactly when it holds without K at five periodic corners,
   (C/n, A/n) = (0,0), (1/3,0), (3/4,1/4), (9/10,2/5), (1,1) (`Rule30DensityPolygon`). From any right half, one history
   reaches each rational point of that pentagon (`Rule30DensityMixtures`). The single seed misses two corners by counts
-  that grow at least logarithmically (`Rule30DensityMargin`). Its own densities are not bounded by any of this.
+  that grow at least logarithmically (`Rule30DensityMargin`). Its own densities are not bounded by any of this. At the
+  corner (1/3, 0), n − 3C + 6A is bounded above exactly when the column two sites east is eventually 011
+  (`Rule30OneThirdClock`).
 - **Jen.** No two columns are both eventually periodic, with masked and finite-configuration forms (`Rule30Jen`,
   `Rule30MaskedJen`, `Rule30FiniteConfigs`, `Rule30FiniteMaskedJen`). On a periodic singleton centre tail with
   isolated white ticks, the stream of selected unpaired spatial 10 sources is aperiodic. If each white is followed
