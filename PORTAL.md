@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-26 15:32 UTC, 442 entries, 68 portal-only -->
+<!-- portal-list: 2026-11-26 15:51 UTC, 445 entries, 71 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 15:32 UTC (442 entries)
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 15:51 UTC (445 entries)
 and kit main `aaaefdd` (M206). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 68 of the 442 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 71 of the 445 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -28,10 +28,10 @@ and kit main `aaaefdd` (M206). Find new portal-only entries with `python3 tools/
 | Missed | 12 |
 | Port | 3 |
 | Pending | 4 |
-| Check | 13 |
+| Check | 16 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 68, of them 20 ours |
+| All | 71, of them 20 ours |
 
 ## Missed (12)
 
@@ -73,12 +73,15 @@ In an open kit pull request. Moves out of this file when it merges.
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
 
-## Check (13)
+## Check (16)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261126-65dcb1](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-65dcb1) | 2026-11-26 | Benboubakeur et al. | Lean Verified | For every seven consecutive widths, at one width strictly more than 1/16 of first-check survivors fail the second check. The abstract reports a 15-cell kernel certificate. | Read the finite-window transfer and compare it with the first-check census. | A |
+| [R30-20261126-e2e0e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-e2e0e2) | 2026-11-26 | Benboubakeur et al. | Lean Verified | Ten certified white-wall band settling ages through width 271. If an immortal row exists, explicit thresholds give up to 4,096 immortal rows at all sufficiently large same-parity widths. A further exponent assumes LinCAP. | Read the finite certificates and compare the thresholds with the existing recurrence. | A |
+| [R30-20261126-e00dea](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-e00dea) | 2026-11-26 | G.P.J.W. Quint; Gemini (Google) | Lean Unverified at reading | Reports a width-19 period-two lock, 24- and 26-cell CQ01 prefix families, permanent trap avoidance for the listed lock families, and a conditional Q01Gap-to-CQ01 implication. | Read the lock entry data, permanence proof and dichotomy hypothesis after verification. | A |
 | [R30-20261126-7a7308](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-7a7308) | 2026-11-26 | Jacob Dyer; Claude; Qwen; Inkling | Lean Verified | Dyer: rule 30's black spacetime set is not semilinear, so not Presburger-definable, for the seed, every configuration with a leftmost black cell, every nonzero finite configuration and the apex section. | New (M206); Mathlib (Ginsburg–Spanier); beside his apex-language entries above. | A |
 | [R30-20261126-e8fd62](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-e8fd62) | 2026-11-26 | G.P.J.W. Quint; Gemini (Google) | Lean Unverified at reading | Quint: algebraic normal forms and modulo-4 forms of the open `CQ01` and `CQ01Empty`, an exact mod-8 gate-trap pulse valuation, and a one-bit gate-trap pulse forecast, extending `Rule30PeriodTwoSideways` and `Rule30GatePulseReturn`. | New (M203); no kit pull request found; the verifier had not finished. | A |
 | [R30-20261126-e43eb8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-e43eb8) | 2026-11-26 | Jacob Dyer; Claude; Qwen; Inkling | Lean Verified | Odd initial rows with a black Rule 30 light-cone apex form a non-context-free language. The proof also gives a black run of length n + 1 at the right edge of singleton row 2^n − 1. | Extends Dyer's nonregularity result for arbitrary row input. Uses Mathlib's pumping lemma. The apex language differs from the prize's time-index input. | A |

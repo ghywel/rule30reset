@@ -1,1 +1,1 @@
-Two Blocks in the Order of a Rotation, at Every Phase and Arc, Do Not Stand beside an Alternating Rule 30 Column When the Convergent Ratio Exceeds Six
+Rotation-Ordered Blocks Beside an Alternating Rule 30 Column When the Denominator Ratios Have Limsup Above Six
