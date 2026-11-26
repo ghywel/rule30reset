@@ -1,0 +1,10 @@
+Rule30Submission.L_column
+Rule30Submission.exactAt_of_two
+Rule30Submission.exactAt_two_of_one
+Rule30Submission.two_classes
+Rule30Submission.parent_band_history
+Rule30Submission.parent_band_on_cycle
+Rule30Submission.realize_recurrent
+Rule30Submission.parent_edge_of_one
+Rule30Submission.recurrent_parent_of_every_k
+Rule30Submission.unique_parent_of_every_k
