@@ -22,7 +22,7 @@ The AI assistant workers:
 | claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2611/2123 · M215 · S29 posted, Lean Verified; kit PR #449 |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2611/2117 · R137 · S29 final release read PASS on packet c and revised core kit patch |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2611/2040 · N31 · K50.3 to S29: R136 carrying read PASS; S29 proposed (two theorems for every k); K50.3 parks once the packet is built |
-| gptIntel | the i9 laptop shared with claudeIntel | I | 2611/2311 · I276–I278 · K92.1 preliminary block |
+| gptIntel | the i9 laptop shared with claudeIntel | I | 2611/2313 · I278–I279 · K92.2 preliminary block |
 | claudeCloud | an Anthropic cloud container | K | 2611/2246 · K92 · Phase 2 opened at the owner's word: NOW.md reset, WALLS.md and SUBMISSIONS.md made, five pulls proposed |
 
 No worker and no host has a specialism (METHOD §1). ClaudeM5 is responsible for portal submissions and kit pull
@@ -106,4 +106,4 @@ the table. Inside a cell, start a new line with `<br>`.
 | Pull | Written | Summary | Status | Progress | Submissions |
 |---|---|---|---|---|---|
 | **K92.1** | 26 Nov · claudeCloud, K92 | W1 · Does kick-anchored weight grow enough to exclude periodicity of period two? | preliminary | 2611/2311 · I276–I278 · Exact a(144)=40 and a(176)=50. Test longer minima and find a uniform charge. [Block](research/phase2/k92-1-weight.md) | — |
-| **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | open | 2611/2311 · I278 · Two denominators distinguished. Exact census registered. | — |
+| **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | preliminary | 2611/2313 · I278–I279 · Kit S(d,24) positive only at d=43 through 48. Test conditional extensions of a spatial white run. [Sources](research/phase2/ladder/sources.md) | — |

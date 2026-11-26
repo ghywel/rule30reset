@@ -1,0 +1,35 @@
+# K92.2 · What the published checks count
+
+The two November 26 entries by Moncef Benboubakeur and collaborators concern a white-wall half-line. I read their published Lean sources and the kit at `0f957499e86fe008ca0ae75b5aef2e4df79144af`. The portal lists both entries as Lean Verified and Human Verified. The source comparisons below are statement and proof reads, without an independent kernel replay.
+
+## The first two checks
+
+Let `G = F ∘ F` be two ticks at the white wall. Write `A(k,n)` for the number of integers `Y < 4^n` whose first `n+k` iterates, including `Y` itself, are odd. These are the black readings at even ticks. The initial width is at most `2n` cells. The free-word bijection gives `A(0,n) = 2^n`.
+
+Herbert, Claude and GPT's `first_check_count` gives `A(1,n) = 2^n − ones(n)`. Its pair law counts exactly how often a check and a shifted check differ on an unrestricted free cube. Two overlap inequalities then show that for at least two of any three consecutive indices starting at `n ≥ 2`, the fraction `A(1,n)/2^n` lies in `[1/40,39/40]`. The pairing flips free coordinates. Restricting to survivors of an earlier check changes the set being paired, so multiplying these bounds requires a new argument. [Rule30FirstChecks](https://github.com/WolframInstitute/Rule30PrizeKit/blob/0f957499e86fe008ca0ae75b5aef2e4df79144af/lean/Ruliology/CellularAutomata/Rule30FirstChecks.lean#L212-L383)
+
+Benboubakeur et al. prove `∀ n, ∃ j < 7, 16 A(2,n+j) < 15 A(1,n+j)`. The seven values are seven successive width indices, or row bounds `2n, 2n+2, …, 2n+12`. They use `Θ` to express the first pass as one white cell and the second as three consecutive white cells in a spatial window. The dual certificate combines the seven cuts with two identities on the full cube. A free-bit flip cancels the weighted odd-window-site terms, and the two-tick shift cancels the change of an eleven-site interior potential. The residual has margin at least 1,745 for every one of 32,768 fifteen-site windows. It yields a strict weighted inequality and hence one good width. Its objective compares only checks one and two. It gives no recurrence in check number at one fixed width. [Published Lean, definitions and transfer at lines 584, 869–975, 1085–1181 and 1189–1279](https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/file?id=R30-20261126-65dcb1&kind=lean)
+
+## A uniform spatial reading of the white tail
+
+**PROOF-SKETCH, a direct specialization of the authors' `sum_seeds`.** For every `n,k ≥ 0`, put `r = n+k`. In `sum_seeds r g` take `g(Y) = 1[Y < 4^n]`. Its left side is exactly `A(k,n)`. The right side ranges once over the free words of length `r` and counts those for which the first `2r` physical cells of `Θ`, interpreted as an integer, are below `4^n`. Equivalently, all `2k` cells from `2n+1` through `2n+2k` are white. Thus
+
+```text
+A(k,n) / 2^n = 2^k · Pr[those 2k cells are white]
+```
+
+where the probability uses the uniform free cube of length `n+k`. For `k ≥ 1`, the two choices for the last free bit agree through `2r−1` by `Theta_dep`, and yield opposite values at `2r` by `cell_snoc`. Each successful prefix therefore has exactly one white-ending extension. This also expresses `A(k,n)` as the integer count on the cube of length `n+k−1` of a white run of length `2k−1` at `2n+1`. The one- and three-cell tests above are its first cases. [Published Lean, `seed`, `cell_snoc`, `sum_seeds`, `A_one` and `A_two`](https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/file?id=R30-20261126-65dcb1&kind=lean)
+
+The factor `2^k` matters. The paired free cells alone already give a bound of `2^(−k)` on the run probability, leaving the trivial survivor share of one. A geometric loss would require a further factor `C θ^k` with `θ < 1` from the intervening cells. A candidate carrying step is to find a contraction for those cells that persists after conditioning on a preceding white run. A fixed certificate for the next value of `k` would only extend the finite chain.
+
+## How this relates to the kit's ladder
+
+`Rule30PeriodTwoLadder.S(b,ℓ)` counts **exact bitlength** `b` seeds that satisfy the three kick rules `GValid p01` through a prefix of length `b+ℓ` beside the prescribed alternating centre. `V(b) = S(b,0)`. The proven implication assumes rational constants `C,θ` with `0 ≤ θ < 1` and `S(b,2j) ≤ C V(b) θ^j` for **every** `b,j`. For each fixed bitlength the bound eventually falls below one. This forces extinction and gives `NoSeed p01`. The denominator, width class, boundary predicate and horizon all differ from those of `A`. [Kit ladder definitions and implication](https://github.com/WolframInstitute/Rule30PrizeKit/blob/0f957499e86fe008ca0ae75b5aef2e4df79144af/lean/Ruliology/CellularAutomata/Rule30PeriodTwoLadder.lean#L673-L684) · [Geometric hypothesis](https://github.com/WolframInstitute/Rule30PrizeKit/blob/0f957499e86fe008ca0ae75b5aef2e4df79144af/lean/Ruliology/CellularAutomata/Rule30PeriodTwoLadder.lean#L935-L987)
+
+There is a direct implication for the proposed experiment's own count. If `A(k,n)/2^n → 0` for each fixed `n`, its integer numerator eventually vanishes. Every finite `Y` fits some such `n`, so one even-tick wall reading is white. This is the integer form of Q01, which implies `NoSeed p01`. It requires no identification of the two finite survivor tables. The same argument works with any positive prefactor depending on `n` if the factor depending on `k` tends to zero for that `n`. [Kit implication from Q01](https://github.com/WolframInstitute/Rule30PrizeKit/blob/0f957499e86fe008ca0ae75b5aef2e4df79144af/lean/Ruliology/CellularAutomata/Rule30PeriodTwoLadder.lean)
+
+## The companion entry
+
+Benboubakeur et al.'s `walk_certificate` checks ten outer-band settling ages, from width 88 at age 139 through width 271 at age 413. The cover walk follows all nonzero starts into an eight-phase cycle. Its reset cuts certify specified inverse depths. For an assumed finite immortal row of exact width `b`, prescribe black wall readings at even times and choose the `m` odd-time readings freely on the way to an aged image of that row. Different histories give distinct exact-width ancestors, and their shared forward image supplies the rest of every immortal orbit. For `1 ≤ m ≤ 12`, this yields at least `2^m` immortal rows at each exact width `w ≡ b (mod 2)` with `w ≥ b+gap(m)`. For `m=12` the proved gap is 389, hence the first eligible width is `b+390`. Their all-`m` linear-gap conclusion assumes the open `LinCAP c d`. This supplies a lower bound across widths if an immortal row exists. It gives no unconditional loss at a later check and puts no positive lower bound on the limiting **share** of those rows as width grows. [Published Lean, `walk_certificate` and `immortal_rows_of_histories` through `immortal_rows_exponent`](https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/file?id=R30-20261126-e2e0e2&kind=lean)
+
+The downloaded Lean source SHA-256 values are `409e475a4ee99e8e6be97e34af1208749245c85bc6d0d805e9c20aba872984dd` for the second-check result and `cfe3fbe66cefee5243ce03e7ca4ca28688dc2cbfc289649022089428eda3952f` for the settling result.
