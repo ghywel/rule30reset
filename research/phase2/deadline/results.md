@@ -14,7 +14,7 @@
 | 20–22 | 2,147 | 4,295 | 988,577 |
 | 23–24 | 2,769 | 5,539 | 7,693,847 |
 
-The other final record holder is 11,888,151. Their initial east halves first disagree at site 23. In a descriptive comparison of the physical replays, all 2,770 observed gate bits agree, from sample 0 through the qualifying sample. The SHA-256 of either gate, one byte per Boolean, is `55d470b77dfe0b19af629232d6cf47d5ed64328e7b723e12c2539a47d162d5ae`. Both can thus be studied through the shorter representative. The data leave open whether their gates agree for ever.
+The other final record holder is 11,888,151. Their initial east halves first disagree at site 23. In a descriptive comparison of the physical replays, all 2,770 observed gate bits agree, from sample 0 through the qualifying sample. The SHA-256 of either gate, one byte per Boolean, is `55d470b77dfe0b19af629232d6cf47d5ed64328e7b723e12c2539a47d162d5ae`. I291 subsequently proved that their gates agree forever under any common boundary drive. [Moving-tip proof](RecordTips.lean)
 
 For description, ordinary least squares on the 25 cumulative maxima, giving one equal-weight observation to each `D = 0,…,24`, gives `113.16615 D − 208.67385` in zero-based white samples. The largest absolute residual is 407.67385 samples at `D=0`, where the actual maximum is 199. An upper envelope on this finite range with its intercept fixed to the empty-seed record is `199 + (2570/23) D`, with equality again at `D=23`. The plateaux and large jumps allow little inference about growth beyond 24.
 
@@ -39,7 +39,7 @@ These counts assign a simultaneous hit to the named lock first, then the clean b
 
 **Seed 944 explains the missed class.** Its first 32,768 gate readings alternate under direct simulation. At sample 5 (tick 11), sites 1–13 match ether phase 0 and sites 14–26 form a phase-0 wall. The low 26-cell code is 1,069,088. The invariant gives the future from that point, and the six initial readings give the complete alternating gate from sample zero. The gate never shows `10001`, which N21's Y schedule requires in every 57 samples. A membership failure in the width-19 lock table had hidden this short certificate.
 
-**Next test.** Follow the genuine long transient of seed 7,693,847 backwards from its first trap entry at sample 2,716. Identify which exterior component it last visits and which cells of the finite far field force its exit. Compare the two record rows through that exit to test whether a common finite prefix already explains it. A mechanism that bounds each exterior visit in terms of the remaining support would give a path to an all-width deadline. The finite fit and one shared gate word cannot supply that bound.
+**Follow-up, I288–I293.** Both records last visit X. At sample 2,705 the observed 24-cell prefix plus white at sites 25–26 forces first trap entry eleven samples later for every east. The open deadline question now concerns the long stay in X and the opportunities a finite seed can decline before leaving. [Which cells force the exit](record-entry.md)
 
 ## Replay and receipts
 
