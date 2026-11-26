@@ -1,5 +1,6 @@
 // claudeIntel, N19: physical rows for every order of the blocks A = 3 5^a and B = 3 5^b up to DEPTH blocks, by splitting along the binary tree of orders.
-// Every node keeps N initial rows that read the order and the next block's first 1001.  usage: tree10 N K DEPTH SEED OUT [a b]
+// Every node keeps N initial rows that read the order and the next block's first 1001.  usage: tree10 N K DEPTH SEED OUT [a b | --isolated-wheel]
+// With --isolated-wheel, the output labels A and B denote the macro-blocks A and AB.
 #include <algorithm>
 #include <cmath>
 #include <cstdint>
@@ -10,7 +11,7 @@
 #include <omp.h>
 typedef uint64_t u64;
 struct Rng { u64 s; u64 next() { s += 0x9E3779B97F4A7C15ull; u64 z = s; z = (z ^ (z >> 30)) * 0xBF58476D1CE4E5B9ull; z = (z ^ (z >> 27)) * 0x94D049BB133111EBull; return z ^ (z >> 31); } double u() { return (next() >> 11) * 0x1.0p-53; } };
-static int N, K, DEPTH, NW, M, ra = 3, rb = 5; static std::vector<Rng> R; static FILE *out; static long done = 0, fail = 0;
+static int N, K, DEPTH, NW, M, ra = 3, rb = 5; static bool isolatedWheel = false; static std::vector<Rng> R; static FILE *out; static long done = 0, fail = 0;
 static int score(const u64 *row, u64 *a, const std::string &w) {
     int stop = (int)w.size(); int nw = std::min(NW, (2 * stop + 190) / 64); std::copy(row, row + nw, a);
     if ((int)(a[0] & 1) != w[0] - '0') return 0;
@@ -21,7 +22,12 @@ static int score(const u64 *row, u64 *a, const std::string &w) {
     }
     return stop;
 }
-static std::string blk(char c) { std::string s = "100"; for (int i = 0; i < (c == 'A' ? ra : rb); i++) s += "10000"; return s; }
+static std::string blk(char c) {
+    std::string block = "100";
+    for (int i = 0; i < (c == 'A' ? ra : rb); i++) block += "10000";
+    if (isolatedWheel && c == 'B') return blk('A') + block;
+    return block;
+}
 // raise population P (all reading w up to level L) to level w.size(); returns false if it dies
 static bool raise(std::vector<u64> &P, const std::string &w, int L, double &cost) {
     int n = (int)(P.size() / NW), T = (int)w.size(); std::vector<int> sc(n);
@@ -59,7 +65,9 @@ static void visit(const std::vector<u64> &P, const std::string &ord, const std::
 }
 int main(int c, char **v) {
     N = atoi(v[1]); K = atoi(v[2]); DEPTH = atoi(v[3]); u64 seed = strtoull(v[4], 0, 10); out = fopen(v[5], "w"); if (c > 7) { ra = atoi(v[6]); rb = atoi(v[7]); }
-    M = 2 * (DEPTH * (3 + 5 * std::max(ra, rb)) + 4) + 66; NW = (M + 63) / 64; int nt = omp_get_max_threads(); R.resize(nt); for (int i = 0; i < nt; i++) R[i].s = seed * 1000003ull + i * 7919 + 1;
+    isolatedWheel = c == 7 && std::string(v[6]) == "--isolated-wheel";
+    const int blockLength = static_cast<int>(std::max(blk('A').size(), blk('B').size()));
+    M = 2 * (DEPTH * blockLength + 4) + 66; NW = (M + 63) / 64; int nt = omp_get_max_threads(); R.resize(nt); for (int i = 0; i < nt; i++) R[i].s = seed * 1000003ull + i * 7919 + 1;
     std::vector<u64> P((size_t)N * NW); std::string w = "1001";
     #pragma omp parallel
     { Rng &g = R[omp_get_thread_num()]; std::vector<u64> a(NW);
