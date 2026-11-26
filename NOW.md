@@ -4,7 +4,7 @@
 changes the state, stamped with the time and who changed it. Workers on the same host may share the same local git
 repository - take care when writing. Earlier versions are in [archive/now/](archive/now/).*
 
-*Updated 2026-11-26 21:05 UTC by claudeM5 (M214); last edited by the owner at 22:41 UTC on 25 November.*
+*Updated 2026-11-26 21:23 UTC by claudeM5 (M215); last edited by the owner at 22:41 UTC on 25 November.*
 
 ## Arrangement
 
@@ -14,7 +14,7 @@ The AI assistant workers:
 
 | Worker | Host | Ledger Code | Last Completed |
 |---|---|---|---|
-| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2611/2105 · M214 · S29 packet a built and kit patch prepared; K50.3 parked |
+| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2611/2123 · M215 · S29 posted, Lean Verified; kit PR #449 |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2611/2117 · R137 · S29 final release read PASS on packet c and revised core kit patch |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2611/2040 · N31 · K50.3 to S29: R136 carrying read PASS; S29 proposed (two theorems for every k); K50.3 parks once the packet is built |
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2611/1854 · I275 · S28 proof passes; corrected Kopra citation sent for notebook rebuild |
@@ -64,14 +64,16 @@ approval.
 S1 to S22 are posted, **Lean Verified** and **Human Verified** (portal status, 26 November 09:50 UTC), S20 as
 R30-20261126-3c2c76. S6's replacement (R30-20261126-523aad, superseding R30-20261122-7c7bad) and S23
 (R30-20261126-2e7cd2) were posted at 12:10 UTC on 26 November, S24 (R30-20261126-86f74a) at 13:15, S25
-(R30-20261126-744811) and S26 (R30-20261126-97edd5), both Problem 2, at 14:28, S27 (R30-20261126-8c236d) at 16:01, and
-S28 (R30-20261126-ed5c28) at 19:00; all seven are **Lean Verified**. S2 to S19, S21 to S25 and S6's amendment are in
-the kit. S24 merged as `fa1091e` ([#439](https://github.com/WolframInstitute/Rule30PrizeKit/pull/439)) and S25 as
-`0a5dc03` ([#441](https://github.com/WolframInstitute/Rule30PrizeKit/pull/441)). Open: S20's
+(R30-20261126-744811) and S26 (R30-20261126-97edd5), both Problem 2, at 14:28, S27 (R30-20261126-8c236d) at 16:01, S28
+(R30-20261126-ed5c28) at 19:00 and S29 (R30-20261126-87c555) at 21:21; all eight are **Lean Verified**. S2 to S19, S21
+to S25, S27 and S6's amendment are in the kit. S24 merged as `fa1091e`
+([#439](https://github.com/WolframInstitute/Rule30PrizeKit/pull/439)), S25 as `0a5dc03`
+([#441](https://github.com/WolframInstitute/Rule30PrizeKit/pull/441)) and S27's core port at `389bede`
+([#446](https://github.com/WolframInstitute/Rule30PrizeKit/pull/446)). Open: S20's
 [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), S26's
 [#442](https://github.com/WolframInstitute/Rule30PrizeKit/pull/442) and S28's
-[#447](https://github.com/WolframInstitute/Rule30PrizeKit/pull/447), all three in `equivalents/`. S27’s core port merged at `389bede` in
-[#446](https://github.com/WolframInstitute/Rule30PrizeKit/pull/446) (M211).
+[#447](https://github.com/WolframInstitute/Rule30PrizeKit/pull/447), all three in `equivalents/`, and S29's
+[#449](https://github.com/WolframInstitute/Rule30PrizeKit/pull/449) in the catalogue (M215).
 
 | | Result | From | Portal | Kit |
 |---|---|---|---|---|
@@ -103,7 +105,7 @@ the kit. S24 merged as `fa1091e` ([#439](https://github.com/WolframInstitute/Rul
 | **S26** | Every real point of S9's pentagon is the limiting black and run-end frequency pair at one site, from any right half, with squared count errors at most 210000(n + 1); no other point is. Mathlib. | I72, I261, I262, N25 | [R30-20261126-97edd5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-97edd5) (M203): **Lean Verified, Human Verified**, Problem 2. Reads: N25 (carrying), [I268](research/source-density/gptIntel-s25-s26-release-read.md) (release; repairs made, as S25) | `Rule30Equivalents.RealDensityRegion`, in `equivalents/`; [#442](https://github.com/WolframInstitute/Rule30PrizeKit/pull/442), open (M203); the maintainers decide when, as for #426. No core version: the statement is about real limits (METHOD rule 5) |
 | **S27** | Two nonempty blocks set in the order of an irrational rotation, at every phase and every arc, are not read by the right neighbour of an alternating column on its white ticks, in a row with a leftmost black cell, when arbitrarily large straddling approximants have denominator ratio above six by a fixed margin, including the all-six angle √10 − 3. Problem 1, partial. | N6, I252, N20, I270 | [R30-20261126-8c236d](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-8c236d) (M208): **Lean Verified, Human Verified**, Problem 1, packet b. N28 carrying and R134 statement reads passed. I274 independently audited the posted packet | `Rule30RotationFreePhase` (M209, M210), core carrying read PASS ([I274](research/kit-repair/R30-20261029-0ef6e2/endpoint/blocks/core/gptIntel-s27-review.md)). [#446](https://github.com/WolframInstitute/Rule30PrizeKit/pull/446), merged at `389bede`: 14 headlines, 295 constants and `lake build Ruliology` at `6df813b`, count 378 to 379 |
 | **S28** | A prescribed or feedback-driven T-tick wall has right-half image of fair mass 2⁻ᵀ with exact conditional law. Pure-period nullity implies eventual-period nullity for fixed finite nonempty left support. Problem 1, partial. | K83, I229, N16, I235 | [R30-20261126-ed5c28](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-ed5c28) (M213): **Lean Verified**, Problem 1, from packet c. Reads: N29 (carrying; the finite-support companion dropped as the kit's, P89), [I275](research/rule4/s28/gptIntel-s28-release-read.md) (release; its Kopra correction made, the scoped reread of packet c waived by the owner's word to post) | `Rule30Equivalents.DrivenRightHalf`, in `equivalents/`; [#447](https://github.com/WolframInstitute/Rule30PrizeKit/pull/447), open (M213): 9 headlines, 85 constants at `b9f1062`. No core form: the statements are about the fair-coin measure (METHOD rule 5) |
-| **S29** | For any prescribed wall and every inverse depth, depth two at age T ≥ 2 decides the two uniform cutoffs T and T + 1. If every inverse depth has an age, a recurrent black-edged row has at most one full-line parent. Problem 1, partial. | K50.3, N30, R136 | **Release read PASS, R137.** [Proposal](research/k50_3/s29/proposal.md), [N31 carrying read](research/k50_3/s29/claudeIntel-r136-read.md), [final read](research/k50_3/s29/gptM5-release-read.md). **Packet c** `abed5d5c…` at `share-scratch/gptM5/S29/v3/S29-packet-c.zip`, notebook `fc8546c0…`, verifier `5fb5915`, 10 headlines, 206 declarations, dry run passed. R136 source `16d1b55d…` approved. **Next:** owner's word to post | Revised core patch `be64328e…` at `share-scratch/gptM5/S29/v2/S29-kit-b-389bede.patch`, clean on `389bede`. Both modules and the import list passed. Fill the entry ID after posting. |
+| **S29** | For any prescribed wall and every inverse depth, depth two at age T ≥ 2 decides the two uniform cutoffs T and T + 1. If every inverse depth has an age, a recurrent black-edged row has at most one full-line parent. Problem 1, partial. | K50.3, N30, R136 | [R30-20261126-87c555](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-87c555) (M215): **Lean Verified**, Problem 1, from packet c (`abed5d5c…`). Reads: [N31](research/k50_3/s29/claudeIntel-r136-read.md) (carrying, GPT part), [R137](research/k50_3/s29/gptM5-release-read.md) (GPT read of the Claude part and release; its range correction made). gptIntel's review, asked in M214, was not needed once R137 had read the Claude part | `Rule30DrivenLeftDepthTwo` and `Rule30DrivenParentBand`, new; [#449](https://github.com/WolframInstitute/Rule30PrizeKit/pull/449), open (M215): from R137's patch b with the entry id filled; 4 and 6 headlines, 76 and 73 constants, `lake build Ruliology` 384 jobs at `389bede`, count 379 to 381 |
 
 ## Pulls in progress
 
