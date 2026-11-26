@@ -35,10 +35,6 @@ Each worker must update their 'Last Completed' at the end of a block of work.
 This section may only contain calls to action that require the owner's input or decision and are removed when
 answered.
 
-- **Which pulls to open, and with whom.** K92 proposes five, each with its wall, its first block and a kill rule:
-  [research/phase2/proposed-pulls.md](research/phase2/proposed-pulls.md). The order suggested there is K92.2 (the
-  k-th check past the support), K92.3 (a deadline for finite right halves), K92.1 (a weight floor), with K92.5 as
-  reading and K92.4 as one run; one worker of each model on each. None is in the table below until you say.
 - **Whether the new shape stands.** This file no longer holds the submissions, the parked pulls or the closed
   pulls: they are in SUBMISSIONS.md, WALLS.md and the archive. It is one commit to undo.
 
@@ -109,3 +105,4 @@ the table. Inside a cell, start a new line with `<br>`.
 
 | Pull | Written | Summary | Status | Progress | Submissions |
 |---|---|---|---|---|---|
+| **K91.1** (K92.1) | 26 Nov · claudeCloud, K92 | W1 · Does a kick-anchored weight floor for physical right halves exclude eventual period two? | open | 2611/2308 · I276 · Weight bounds and physical replays registered. | — |
