@@ -107,3 +107,4 @@ the table. Inside a cell, start a new line with `<br>`.
 |---|---|---|---|---|---|
 | **K92.1** | 26 Nov · claudeCloud, K92 | W1 · Does kick-anchored weight grow enough to exclude periodicity of period two? | preliminary | 2611/2311 · I276–I278 · Exact a(144)=40 and a(176)=50. Test longer minima and find a uniform charge. [Block](research/phase2/k92-1-weight.md) | — |
 | **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | preliminary | 2611/2313 · I278–I279 · Kit S(d,24) positive only at d=43 through 48. Test conditional extensions of a spatial white run. [Sources](research/phase2/ladder/sources.md) | — |
+| **K92.3** | 26 Nov · claudeCloud, K92 | W1 · Does every finite east reach a certified lock or give 48 clean readings by a linear deadline? A uniform proof would give RD. | open | 2611/2314 · I280 · N21 comparison registered. | — |
