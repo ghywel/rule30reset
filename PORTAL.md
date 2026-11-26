@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-26 17:01 UTC, 447 entries, 71 portal-only -->
+<!-- portal-list: 2026-11-26 18:48 UTC, 448 entries, 71 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 17:01 UTC (447 entries)
-and kit main `6df813b` (I274). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 18:48 UTC (448 entries)
+and kit main `b9f1062` (I275). Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 71 of the 447 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 71 of the 448 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -81,7 +81,7 @@ Not decided from the abstract and headlines: needs a source read.
 |---|---|---|---|---|---|---|
 | [R30-20261126-65dcb1](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-65dcb1) | 2026-11-26 | Benboubakeur et al. | Lean Verified | For every seven consecutive widths, at one width strictly more than 1/16 of first-check survivors fail the second check. The abstract reports a 15-cell kernel certificate. | Read the finite-window transfer and compare it with the first-check census. | A |
 | [R30-20261126-e2e0e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-e2e0e2) | 2026-11-26 | Benboubakeur et al. | Lean Verified | Ten certified white-wall band settling ages through width 271. If an immortal row exists, explicit thresholds give up to 4,096 immortal rows at all sufficiently large same-parity widths. A further exponent assumes LinCAP. | Read the finite certificates and compare the thresholds with the existing recurrence. | A |
-| [R30-20261126-e00dea](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-e00dea) | 2026-11-26 | G.P.J.W. Quint; Gemini (Google) | Lean Unverified at reading | Reports a width-19 period-two lock, 24- and 26-cell CQ01 prefix families, permanent trap avoidance for the listed lock families, and a conditional Q01Gap-to-CQ01 implication. | Read the lock entry data, permanence proof and dichotomy hypothesis after verification. | A |
+| [R30-20261126-6e439f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-6e439f) | 2026-11-26 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | The period-five gate is realized at every ladder width W ≥ 16. The abstract extends the finite-ranking barrier, reduces the seed range of `MassDivergesLiftCore`, and gives a conditional `Q01GapLift` bridge to CQ01. | Compare the all-width witness and the two open hypotheses with the kit's ladder modules. | A |
 | [R30-20261126-7a7308](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-7a7308) | 2026-11-26 | Jacob Dyer; Claude; Qwen; Inkling | Lean Verified | Dyer: rule 30's black spacetime set is not semilinear, so not Presburger-definable, for the seed, every configuration with a leftmost black cell, every nonzero finite configuration and the apex section. | New (M206); Mathlib (Ginsburg–Spanier); beside his apex-language entries above. | A |
 | [R30-20261126-7b1cac](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-7b1cac) | 2026-11-26 | Moncef Benboubakeur; Gemini; GPT; Claude | Lean Verified, Human Verified | Every white-wall band of width w > 0 settles by age 152·2^⌊w/23⌋. The worst-case reset capacity is monotone in width. | Improves the kit's exponential settling age via a front-walk bound. Linear settling and unbounded capacity remain open. | A |
 | [R30-20261126-e43eb8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-e43eb8) | 2026-11-26 | Jacob Dyer; Claude; Qwen; Inkling | Lean Verified | Odd initial rows with a black Rule 30 light-cone apex form a non-context-free language. The proof also gives a black run of length n + 1 at the right edge of singleton row 2^n − 1. | Extends Dyer's nonregularity result for arbitrary row input. Uses Mathlib's pumping lemma. The apex language differs from the prize's time-index input. | A |
