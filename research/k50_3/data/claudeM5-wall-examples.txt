@@ -1,0 +1,8 @@
+depth 2, white wall, age 7 | image edge -9 | z predecessor: True | z black far west: True
+depth 1, wall black at tick 2, age 8 | image edge -9 | z predecessor: True | z black far west: True
+depth 8, white wall, age 23 | seed edge -8 black at [-8, -5] | image edge -31 | w pred: True | w edge -30 | z pred of w: True | z black far west: True
+depth 1, wall black at 2, 19, 20, age 24 | seed edge -1 black at [-1] | image edge -25 | w pred: True | w edge -24 | z pred of w: True | z black far west: True
+control depth 2, white, age 8, one tick: (True, 4)
+control depth 1, pulse at 2, age 9, one tick: (True, 4)
+control depth 8, white, age 24, two ticks: (True, 16)
+control depth 1, pulses 2, 19, 20, age 25, two ticks: (True, 16)
