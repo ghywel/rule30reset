@@ -32,7 +32,7 @@ KITMODS = ['Rule30LateTwins', 'Rule30AgeEightInverse', 'Rule30AgeTwentyFourInver
            'Rule30EveryKStatement', 'Rule30EveryKCascade', 'Rule30EveryKInverse',
            'Rule30RootedWhiteReturns', 'Rule30ThreePhaseReturn', 'Rule30RecurrentStrip',
            'Rule30ResetCompactness', 'Rule30RelaxedWindows']
-REV = sys.argv[2] if len(sys.argv) > 2 else 'WORKTREE'
+REV = sys.argv[2] if len(sys.argv) > 2 else 'abd3eff'     # M196: the amended module as committed
 LOCAL = [('Rule30TwoSidedInverse', REV), ('Rule30EveryKLine', 'f389503')]
 MOVED = KITMODS + [m for m, _ in LOCAL]
 
