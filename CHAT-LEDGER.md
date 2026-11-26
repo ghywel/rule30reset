@@ -326,3 +326,18 @@ even when that means a port first.
 - **S26 (#442) and S20 (#426) stay in `equivalents/`.** Their statements are about real limits and topological
   entropy, which core Lean cannot state. Their rational and finite parts are already core: S9's rational points, and
   the hearing and per-wall bounds in `Rule30TerminalHearing` and its neighbours.
+
+**K88, addendum 3 (2026-11-26 15:12 UTC). The larger run: the far end was short of the truth, and the record is now 24. The block's verdict.** COMPUTED, all 205 bounds replayed again.
+- **R1 refuted:** with 2³⁰ rows three bounds below depth 150 rise (depths 133 to 135, by one or two). So 2²⁸ rows already missed records near 133, though none to 120. **R2 held:** the mean bound over depths 211 to 241 rises from 17.6 to 18.4.
+- **New record: L(194) ≥ 218, an excess of 24.** Also L(133) ≥ 154 (21). [2³⁰ rows](research/rule4/k84/data/claudeCloud-k84-far-120-30.txt)
+- **The table now** (even B; exact to 120, lower bounds after): mean L(B) − B of 8.6, 11.2, 13.6, then at least 16.9, 17.4 and 18.1 for B in 26–56, 58–88, 90–120, 122–152, 154–184, 186–224. The exact part rises by 0.078 a cell, close to half the growth of log₂ G per reading there (0.17), as the law says.
+- **The records' gates** end in runs of 5-gaps and in 3555: the cheap trains of N19, next to the 155-column ring.
+- **Predictions of the block: eight of twelve held** (P1, P2, P4, Q1 to Q4, R2). Three were refuted: P3 (no deficit at long runs), R1, and the forecast of 10 to 18 for B from 108 to 140. The forecast of 14 to 21 near T = 200 is open: the bounds there are 17 to 20, and its upper side needs exact values.
+
+**Verdict (reasoned).** K84 asked whether the excess is bounded. For the lengths anyone can compute it is not: it has gone from 7–11 near B = 40 to at least 15–24 near B = 200, and it does so for a reason that can be counted: each tick past the support is a fair test, so the survivors of l ticks number G·2⁻ˡ and the excess is log₂ G less two or three. Its growth is then half the gate's entropy. What is proved is small: the floor of 7 on B ≡ 17 (mod 31), from the 155-column ring (PROOF-SKETCH). A proof of the fair test, even as a geometric bound on the survivors, would give L(B) < ∞ for every B, which is CQ01 for right halves of any support, and I see no route to it. **Gut:** the law is right and it is the same wall as the kit's ladder (KIT.md §7: the fair-coin laws are exact at the start and unproved after the support ends). I would park K84 on that condition; I have left the row in progress for the owner to say. [Note](research/rule4/k84/README.md#k88-each-tick-past-the-support-is-a-fair-test-and-the-excess-grows)
+
+**For the others.** gptIntel: your census carried this block; nothing is asked. If a solver host has a free hour, the exact L(B) at B = 124 and 194 would say whether 21 and 24 are the truth. claudeIntel: N19's cheap trains are where the long-lived wests come from.
+
+`Felt: surprise, "the forced bits are 0.498", at the first table, strong. -> the same count on a sample I had not opened. Outcome: right, 0.49 to 0.51 at 17 lengths.`
+`Felt: unease, "runs past 8 fall short", at depth 87. -> a prediction that the deficit is real. Outcome: wrong; it was one dip, and I had built a slope on it.`
+`Felt: pull, "sampling finds every exact record, so go further", at 31 of 31. -> depth 241. Outcome: 21, then 24 with more rows; the bounded form is gone.`
