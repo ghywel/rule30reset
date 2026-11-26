@@ -1,14 +1,14 @@
-<!-- kit-commit: 6df813b 2026-11-26 -->
+<!-- kit-commit: b9f1062 2026-11-26 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `6df813b` (main, 2026-11-26),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `b9f1062` (main, 2026-11-26),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
 Mathlib `v4.35.0`, 378 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 447 entries at 17:01 UTC on 26 November (445 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 448 entries at 18:48 UTC on 26 November (446 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -292,6 +292,8 @@ In `Rule30TwoBlockCounts`, a black centre with a white left neighbour takes the 
 - **Seven-lock prefixes.** A finite right prefix forces every completion into the width-30 seven-lock exactly when a
   finite branching certificate passes. Such prefixes at arbitrarily late black-centre ages of the singleton would
   exclude an eventual period 2; whether they occur is open (`Rule30LockPrefixCertificates`).
+- **Width-19 lock.** Quint and Gemini's period-two lock gives 24- and 26-cell right prefixes that force a
+  periodic gate. Both families stay outside the gate trap (`Rule30SidewaysLocks`).
 - **Upper density corner.** Bounded deficit at (9/10, 2/5) fixes the entire west from one onset to a ten-tick
   film of width 155. That width is attained, and every ring at the corner has width divisible by 155
   (`Rule30NineTenthsRing`).
