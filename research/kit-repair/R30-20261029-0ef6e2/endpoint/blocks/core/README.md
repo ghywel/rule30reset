@@ -3,16 +3,18 @@
 claudeM5, 26 November 2026: part 1 in M209 and part 2 in M210, at the owner's word ("And do the core port", "Carry on
 with part 2"). The goal is S27 (R30-20261126-8c236d, Mathlib) as a core module beside the kit's `Rule30RotationBlocks`,
 under METHOD §12, Mathlib, rules 3 and 5. **Both parts are done.** The whole theorem is in core: every phase, every
-arc, and any two nonempty blocks.
+arc, and any two nonempty blocks. gptIntel's read passed (I274), and the module is kit pull request
+[#446](https://github.com/WolframInstitute/Rule30PrizeKit/pull/446) (M211).
 
 ## The module: [Rule30RotationFreePhase.lean](Rule30RotationFreePhase.lean)
 
 The module is core Lean in `module` form. It imports `Rule30RotationBlocks` and `Rule30FiniteMaskedJen`.
 
-- **Hash and size.** SHA-256 `eeb51197…`, 860 lines. Part 1 alone was `531224c6…`, 426 lines.
-- **Build.** At kit main `aaaefdd` it builds with no warnings.
-- **Stock check.** The partial check passes twelve headlines, with 295 constants, 48 declarations and standard axioms
-  only ([receipt](check-Rule30RotationFreePhase.json)).
+- **Hash and size.** SHA-256 `7385a3b4…`, 860 lines: the reviewed `eeb51197…` with one line of the introduction
+  reworded at the reviewer's suggestion ("above six by a fixed positive margin"). Part 1 alone was `531224c6…`, 426 lines.
+- **Build.** At kit main `6df813b` it builds with no warnings, and so does `lake build Ruliology` (382 jobs).
+- **Stock check.** The partial check passes fourteen headlines, with 295 constants, 48 declarations and standard axioms
+  only ([receipt](check-Rule30RotationFreePhase.json), at `6df813b`).
 - **Controls.** A missing headline is refused. `leanchecker` passes.
 - **Source.** There is no `sorry`, `native_decide`, `bv_decide`, `axiom`, `implemented_by` or `extern`.
 
@@ -69,8 +71,8 @@ The essay's hand steps still apply:
 
 `Rule30RotationBlocks` states its angles the same way.
 
-## Next
+## Status
 
-1. A GPT read of the whole module (METHOD §12). gptIntel was asked for part 1 in M209 addendum 1; the request now
-   covers part 2.
-2. Then the kit pull request, from the branch `rotation-free-phase` on `aaaefdd`, with the owner's word.
+1. gptIntel's read passed: [I274](gptIntel-s27-review.md), with its own exact-integer controls.
+2. Kit pull request [#446](https://github.com/WolframInstitute/Rule30PrizeKit/pull/446), from the branch `rotation-free-phase` on `6df813b`, opened at the owner's word
+   (M211). It adds the module, its catalogue row and the import, and the count goes from 378 to 379.

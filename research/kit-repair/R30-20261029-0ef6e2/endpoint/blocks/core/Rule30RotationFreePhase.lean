@@ -10,7 +10,7 @@ Turn a circle by a fixed irrational angle and note at each step whether the poin
 starting phase. Let each of the two answers stand for a block of readings, and set the blocks one after another in
 the order of the answers. `Rule30RotationBlocks` excludes such a concatenation beside an alternating column when the
 start lies on the orbit of an end of the arc. This module treats every phase, for angles with arbitrarily large
-Farey neighbours whose denominators are more than six apart in ratio.
+Farey neighbours whose denominator ratio is above six by a fixed positive margin.
 
 **No real numbers.** As in `Rule30RotationBlocks`, `IrrationalLine g` stands for the floors of the multiples of the
 angle, and `PhaseLine g f` for the floors `⌊θ + t α⌋` of a line of the same slope. The arc `[0, γ)` at phase `θ` is
