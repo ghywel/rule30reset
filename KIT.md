@@ -1,14 +1,14 @@
-<!-- kit-commit: aaaefdd 2026-11-26 -->
+<!-- kit-commit: 6df813b 2026-11-26 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `aaaefdd` (main, 2026-11-26),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `6df813b` (main, 2026-11-26),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 373 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 438 entries on 26 November (436 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 378 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 447 entries at 17:01 UTC on 26 November (445 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -82,7 +82,8 @@ graph TD
 
 **Period 2, in words.**
 - `Rule30PeriodTwo`, `Rule30PeriodTwoCoupled`: Q01 ⇒ CQ01 ⇒ no eventual period 2. `Rule30ZeroBoundary`: Q01 ⇔ the
-  Theta form ⇔ the integer form ⇔ bounded and staged forms. Quint gives integer forms of CQ01 and its empty-right case in `Rule30PeriodTwoSideways`. `Rule30FrontierChart`: Q01 ⇔ mortality ⇔ repeat budget.
+  Theta form ⇔ the integer form ⇔ bounded and staged forms. Quint and Gemini give integer and mod-4 forms of CQ01
+  and its empty-right case in `Rule30PeriodTwoSideways`. `Rule30FrontierChart`: Q01 ⇔ mortality ⇔ repeat budget.
 - `Rule30SeparatorQ01`: Q01 ⇔ SEP ∧ the case of free bits with two adjacent whites; SEP ⇒ Q01Gap, SEP ⇒ CQ01Empty;
   BWH ⇒ Q01. `Rule30WedgeBridge`: BWH ⇔ RW. `Rule30SEPToPeriodTwo`: SEP, RW, BWH each exclude a period-2 centre trace on
   finite rows. Open: whether SEP ⇒ Q01, or Q01 ⇒ RW.
@@ -104,7 +105,9 @@ graph TD
 - During centre alternation, returns of the word 0101001 at sites −4 through +2 take a multiple of four ticks, six
   ticks, or ten ticks. A gap ≥ 12 forces the next gap to be six, and ten forces four, if alternation continues.
   At a black pulse from the second white sample, sites 2 and 5 determine the next gap (4, 2, 5 or 3). A wrong forecast
-  detects a clock break before its endpoint (`Rule30GatePulseReturn`). 48 clean gate readings, or 47 after a white sample,
+  detects a clock break before its endpoint. Inside the gate trap, site 5 alone gives the next pulse gap, and the
+  packed even row is 4 modulo 8 at a pulse (Quint and Gemini's extension of `Rule30GatePulseReturn`).
+  48 clean gate readings, or 47 after a white sample,
   certify the 829-window trap, and both are least for a uniform test (`Rule30GateObserver`); so RD is a statement about the gate alone.
   Every right half beside an alternating column is in a closed set of 777 twelve-cell windows from white sample 35, sharply; from there two
   successive gaps after a kick are one of nine pairs, and no right half kicks once in four for ever (`Rule30UniformEntry`,
@@ -289,6 +292,9 @@ In `Rule30TwoBlockCounts`, a black centre with a white left neighbour takes the 
 - **Seven-lock prefixes.** A finite right prefix forces every completion into the width-30 seven-lock exactly when a
   finite branching certificate passes. Such prefixes at arbitrarily late black-centre ages of the singleton would
   exclude an eventual period 2; whether they occur is open (`Rule30LockPrefixCertificates`).
+- **Upper density corner.** Bounded deficit at (9/10, 2/5) fixes the entire west from one onset to a ten-tick
+  film of width 155. That width is attained, and every ring at the corner has width divisible by 155
+  (`Rule30NineTenthsRing`).
 
 ## 6. Equivalent forms
 
