@@ -26,12 +26,12 @@ and kit main `b9f1062` (I275). Find new portal-only entries with `python3 tools/
 | Class | Entries |
 |---|---|
 | Missed | 12 |
-| Port | 4 |
-| Pending | 3 |
+| Port | 3 |
+| Pending | 5 |
 | Check | 16 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 71, of them 20 ours |
+| All | 72, of them 21 ours |
 
 ## Missed (12)
 
@@ -52,23 +52,24 @@ Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-r
 | [R30-20261123-e99565](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-e99565) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified | A ranked strip certificate excludes an eventual word at any column of a configuration with a leftmost black cell. The existing mixed-block grammars extend to every nonzero finite configuration. | Extends ranked-word soundness from the single-seed centre. | A |
 | [R30-20261123-cade33](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261123-cade33) | 2026-11-23 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified | At every column of a configuration with a leftmost black cell, excludes free mixtures from seven run categories and all mixtures with black runs at least 5 and white runs at least 16. | Two mixed-block grammar families beyond the kit’s centre-column grammars. | A |
 
-## Port (4)
+## Port (3)
 
 Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean without it. Each is a kit candidate only after a port. All are ours.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
-| [R30-20261126-8c236d](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-8c236d) | 2026-11-26 | ours (S27) | Lean Verified, Human Verified | Two nonempty blocks in the order of an irrational rotation, at every phase and arc, are not read beside an alternating column when the convergent ratios have limsup above six; √10 − 3 among them. | Kit pull request [#446](https://github.com/WolframInstitute/Rule30PrizeKit/pull/446), open (M211): the core port `Rule30RotationFreePhase`, read by gptIntel (I274). The portal proof uses Mathlib reals for the angle. | L |
 | [R30-20261023-8084e6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-8084e6) | 2026-10-23 | ours | Lean Verified, Human Verified | Every Sturmian word, of every irrational slope and intercept, is excluded as the visible right neighbour of a period-2 centre column, for every row with a leftmost black cell (`sturmian_excluded`). | An exclusion for an infinite family, which the kit has no form of. It uses Mathlib, and the kit is core Lean. | A |
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (3)
+## Pending (5)
 
 In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261126-ed5c28](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-ed5c28) | 2026-11-26 | ours (S28) | Lean Verified | After T ticks of a prescribed or continuously fed-back boundary, the right half of a fair Rule 30 row has the fair law conditioned on a closed set of mass 2⁻ᵀ; almost-sure aperiodicity beside a finite left half reduces to purely periodic centre words. Problem 1, partial. | Kit pull request [#447](https://github.com/WolframInstitute/Rule30PrizeKit/pull/447), in `equivalents/`, open (M213). Uses Mathlib; no core form. | L |
+| [R30-20261126-8c236d](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-8c236d) | 2026-11-26 | ours (S27) | Lean Verified, Human Verified | Two nonempty blocks in the order of an irrational rotation, at every phase and arc, are not read beside an alternating column when the convergent ratios have limsup above six; √10 − 3 among them. | Kit pull request [#446](https://github.com/WolframInstitute/Rule30PrizeKit/pull/446), open (M211): the core port `Rule30RotationFreePhase`, read by gptIntel (I274). The portal proof uses Mathlib reals for the angle. | L |
 | [R30-20261126-97edd5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-97edd5) | 2026-11-26 | ours (S26) | Lean Verified | The joint limiting black and run-end frequencies at one site, from any right half, are exactly the closed pentagon, with squared count errors at most 210000(n + 1). Problem 2. | Kit pull request [#442](https://github.com/WolframInstitute/Rule30PrizeKit/pull/442), in `equivalents/`, open (M203). Uses Mathlib. | L |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
