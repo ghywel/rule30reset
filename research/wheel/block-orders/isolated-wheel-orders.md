@@ -4,6 +4,8 @@ The original universal question for `A = 3 5³` and `B = 3 5⁵` has a negative 
 
 The successor question allows no adjacent B’s. Use macros `X = A` and `Y = AB`, of lengths 18 and 46 white readings. Every macro order avoids adjacent B’s. An A/B order with isolated B’s also parses this way after prepending A whenever it starts with B. After the first A, a driven history can be restarted on the same wall phase.
 
+R132 tests what an interruption costs, gives a physical Y¹² X Y¹² witness, and derives a vanishing-error criterion for infinite universality. [Infinite-case questions and certificates](isolated-infinite.md)
+
 ## Physical finite census
 
 | Search | Macro depth | Leaves found | All retained witnesses replayed |
