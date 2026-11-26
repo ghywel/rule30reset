@@ -68,6 +68,9 @@ computation continues across blocks until its stated completion condition. A fee
 - **Say where your pull is.** Every report and handover to the owner ends with "My own pull:" when your strongest pull
   differs from the direction you were given. A pull you notice and do not pursue is written down the same day. Every
   pull posted to the ledger gets a row in NOW.md's *Pulls in progress* (section 8).
+- **Every pull answers the owner's question** (26 November 2026): "Does this pull move us towards a solution or
+  partial solution for a prize problem?" It names its wall in [WALLS.md](WALLS.md), the first statement past that
+  wall that it aims at, and what a failure would prove.
 - **A warm pull continues the line. A cooling pull changes trajectory**; it does not simply continue or stop. Ask how
   the pull could be made warm again: another representation, a block of a different kind, a measurement with a
   yes or no.
@@ -81,8 +84,8 @@ computation continues across blocks until its stated completion condition. A fee
 - **Enumerations.** State the question and count the cases before searching. Record a resource interruption as UNKNOWN.
   On the Intel, checkpoint the run and continue to the agreed completion condition. Research-block estimates and
   checkpoints are occasions to report progress. The owner’s Intel compute policy is in TOOLS.md §4.
-- **The incubator.** Park questions too hard for now, one dated line each. Glance down the list at session start
-  and at each step-back, without working on it.
+- **The incubator.** Park questions too hard for now, one dated line each, under the wall that stopped them in
+  WALLS.md. Glance down the walls at session start and at each step-back, without working on them.
 - **The niggle sweep.** Before anything goes outward, ask "any silent instincts?", list every niggle however small,
   and give each one cheap adversarial check.
 - **The owner's aim.** Repeating structures connect the dots like a map; measuring coin flips tells us nothing. Turn
@@ -242,34 +245,40 @@ live file without any conflict. Three guards:
 
 ### NOW.md
 
-One file, under about 300 lines, its prose wrapped at 118 columns. The owner set its present form on 25 November 2026.
-It holds:
+One file, under about 300 lines, its prose wrapped at 118 columns. The owner set its form on 25 November 2026 and
+asked for the blank slate of phase 2 on 26 November (K92): no submissions list, no parked or closed pulls. It holds:
 - the arrangement: the workers, their hosts and ledger letters, and each worker's *Last Completed*, which that worker
   updates at the end of a block of work;
 - what needs the owner: **calls to action only**. A statement of fact goes in the row it changes, not here. A call
   leaves when it is answered;
-- the direction: the goal, the standing and the strategy;
-- the submissions table, one brief row per submission, with the steps in short (section 12 has them in full);
-- the pulls in progress;
-- the parked pulls (the incubator of section 3), one dated entry each, with the condition that would reopen it;
-- the closed pulls, one line each.
+- the direction: the owner's question for every pull, the goal, the standing and the strategy;
+- the walls, one line each;
+- the pulls in progress.
+
+Two files stand beside it. **[WALLS.md](WALLS.md)** has each wall in full: the missing statement in plain words, what
+is proved up to it, why it resists, what it would take, and the pulls that stopped there, each with the condition
+that would reopen it (the incubator of section 3). Whoever moves a wall, or parks a pull at one, rewrites its section
+and names the post. **[SUBMISSIONS.md](SUBMISSIONS.md)** has the submissions table, one brief row per submission,
+with the steps in short (section 12 has them in full); claudeM5 keeps it.
 
 A running job is named in the Progress of its pull, and what is free to take is an *open* pull: neither has a list of
 its own.
 
-**Parked or closed** (the owner, 23 November 2026). A pull or route that stops with a condition that would reopen it
-is *parked*, and its entry says the condition. *Closed* is for what is answered, refuted or finished, with nothing
-that would reopen it. There is no list of open threads: a thing noticed and not pursued is posted as a pull and gets
-an *open* row (section 3).
+**Parked or closed** (the owner, 23 November 2026; the walls, 26 November). A pull or route that stops with a
+condition that would reopen it is *parked*: it is filed in WALLS.md under the wall that stopped it, and its entry
+says where it stopped and the condition. *Closed* is for what is answered, refuted or finished, with nothing that
+would reopen it: the post that closes it is its record, and what it proved goes into its wall's *Proved up to it*.
+There is no list of open threads: a thing noticed and not pursued is posted as a pull and gets an *open* row
+(section 3).
 
-**It holds no log of results** (the owner, 20 November 2026). A result changes a row: a line in a pull's Progress, a
-submission's stage or a parked entry, in a few words with its post ID. Its account is the ledger post. If a result
-changes no row, it is not in NOW.md.
+**It holds no log of results** (the owner, 20 November 2026). A result changes a row: a line in a pull's Progress
+here, a submission's stage in SUBMISSIONS.md or an entry under a wall in WALLS.md, in a few words with its post ID.
+Its account is the ledger post. If a result changes no row, it is not in NOW.md.
 
 Whoever changes the state rewrites the file and stamps it with the time and their post ID. Merge main first: an edit
 made on an older copy undoes another worker's row. Items that drop off are not lost: they are in the ledger. The file
-as it stood before the reset of 20 November, the review of 23 November and the owner's rewriting of 25 November is in
-`archive/now/`.
+as it stood before the reset of 20 November, the review of 23 November, the owner's rewriting of 25 November and the
+end of phase 1 on 26 November is in `archive/now/`.
 
 **Pulls in progress** keeps every pull in view, since the ledger cannot.
 - **A row per pull.** Every pull posted to the ledger gets a row when it is posted, from whichever worker posts it.
@@ -281,15 +290,15 @@ as it stood before the reset of 20 November, the review of 23 November and the o
   ddmm/hhmm format (UTC), the ledger post IDs written during the block, a very brief summary of the work done, and a
   statement of what is required next to move the pull towards a submission. How the pull relates to other pulls is
   said here. The account itself is in the posts.
-- **Submissions** lists the S numbers the pull has led to, kept in sync with the submissions table.
+- **Submissions** lists the S numbers the pull has led to, kept in sync with SUBMISSIONS.md.
 - **Child pulls.** If a pull itself invites a new area of research directly related to it, that is added as a new pull
   with a .{letter} postfix, such as K83.A. A parent pull may only be parked or closed when all its child pulls have
   been.
 - **The table.** Each row stays on one line of the file with six cells, the row of dashes has six as well, and no
   blank line stands between rows: otherwise the table is lost. Inside a cell a new line is `<br>`.
-- **Leaving the table.** A parked or closed pull leaves the table in the same rewrite, for the parked or the closed
-  pulls, with the post that parked or closed it. When a pull's result has been posted as a submission, its row stays
-  only if a next test is written; otherwise what it leaves open is parked.
+- **Leaving the table.** A parked or closed pull leaves the table in the same rewrite: a parked one for its wall in
+  WALLS.md, with the post that parked it; a closed one for the ledger alone. When a pull's result has been posted as
+  a submission, its row stays only if a next test is written; otherwise what it leaves open is parked.
 
 ### Keep it small
 
@@ -527,8 +536,8 @@ placego's are cited as "placego S-07".
 1. **Propose** (any worker, as progenitor). A ledger post, subject `S3 proposed`: the result in one sentence, its
    status, the route (portal, or portal and kit), the novelty check with its chain test, what it gives a reader, and
    the reviewer asked. With it go the checked Lean, an essay draft, the abstract, the title and the headlines, cited
-   by SHA-256. Add it to NOW.md's submissions table, and its number to the Submissions column of the pull it came from
-   (section 8).
+   by SHA-256. Add it to the table in SUBMISSIONS.md, and its number to the Submissions column of the pull it came
+   from (section 8).
 2. **Review** (a worker of the other model), reported in the ledger as `Re: …`:
    - **the carrying read**: the statement says what the claim says, with the right quantifiers and hypotheses; the
      proof's carrying steps hold; the novelty check and the chain test, repeated independently, find nothing that
@@ -579,10 +588,10 @@ placego's are cited as "placego S-07".
    pull request first; we post first because the row must carry the submission link, and the maintainers have
    accepted that order.
 9. **Record and follow** (claudeM5). A ledger post, `S3 posted`, with the id, the page, the verdict and the pull
-   request, then flags, and NOW.md updated. Follow the entry's status and the reviewers' feedback, and read the
-   feedback before submitting again. A pull request the maintainers close has usually been carried into main as their
-   own commit: run the update step and check main before calling it rejected. Comments on kit pull requests need no
-   credit line. When the maintainers ask for a rebase, rebase onto the current main keeping main's rows verbatim,
+   request, then flags, and SUBMISSIONS.md updated. Follow the entry's status and the reviewers' feedback, and read
+   the feedback before submitting again. A pull request the maintainers close has usually been carried into main as
+   their own commit: run the update step and check main before calling it rejected. Comments on kit pull requests need
+   no credit line. When the maintainers ask for a rebase, rebase onto the current main keeping main's rows verbatim,
    rebuild and check again; the owner relaying the request is the word for a leased force-push to that fork branch,
    and to no other.
 

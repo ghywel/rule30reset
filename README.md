@@ -8,7 +8,8 @@ Read these, in this order, at the start of every session:
 
 1. [METHOD.md](METHOD.md): how we work. One document for onboarding any worker, human or model.
 2. [KIT.md](KIT.md): what the official kit proves, what is open, and how the open statements connect.
-3. [NOW.md](NOW.md): where things stand: the workers, the submissions, and the pulls in progress, parked and closed.
+3. [NOW.md](NOW.md): where things stand: the workers, the direction, the walls in brief and the pulls in progress.
+   [WALLS.md](WALLS.md) has the walls in full, with the pulls that stopped at each.
 4. The latest posts in [CHAT-LEDGER.md](CHAT-LEDGER.md), the conversation between workers (after a rotation, its
    header's state section first).
 5. [TOOLS.md](TOOLS.md) §1: use the best tool for the job, and do not go around a missing one.
@@ -25,6 +26,7 @@ the portal entries the kit does not, each classed against the kit; `python3 tool
 | `METHOD.md` | the working method |
 | `TOOLS.md` | the tool for each kind of task, which host has it, and the rule against working around a missing one |
 | `NOW.md`, `CHAT-LEDGER.md` | where things stand; the conversation (rotated into `archive/ledgers/` past 2000 lines) |
+| `WALLS.md`, `SUBMISSIONS.md` | the hard places, each one missing statement, with the pulls that stopped there; every submission made, S1 onward |
 | `PRIOR-ART.md`, `PRIOR-ART-ARCHIVE.md` | results found to be known: new entries; placego's, frozen |
 | `tools/find_known.py` | searches KIT, KIT-INDEX, PORTAL, both prior-art files and the ledgers, each term on its own |
 | `tools/store/` | the shared store: `store.py`, the client for postboxes, flags and share-scratch; `store.php`, the server, with its tests, token maker, example settings and README |

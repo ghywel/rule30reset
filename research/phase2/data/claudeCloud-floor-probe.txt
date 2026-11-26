@@ -1,0 +1,33 @@
+Table 1. The decoded west at its black tick: least black cells to depth T = 2m + 1
+m | T | census, exact | 18-column strip | 22-column strip | sample of real halves | exact value | kit S: ceil((H + 4)/7) | gaps of a sparsest gate
+10 | 21 | 8 | 8 | 8 | 8 | 8 | - | 3
+15 | 31 | 11 | 11 | 11 | 11 | 11 | - | 33
+20 | 41 | 13 | 13 | 13 | 13 | 13 | - | 42452
+25 | 51 | 17 | 17 | 17 | 17 | 17 | - | 253333
+30 | 61 | 20 | 20 | 20 | 20 | 20 | - | 42533353
+35 | 71 | 23 | 23 | 23 | 23 | 23 | - | 425333353
+40 | 81 | 26 | 26 | 26 | 26 | 26 | - | 4253335533
+45 | 91 | - | 29 | 29 | 29 | 29 | - | 25333553333
+50 | 101 | - | 32 | 32 | 32 | 32 | - | 2452522222222222222
+55 | 111 | - | - | 36 | 36 | 36 | - | 2452522222222222222224
+60 | 121 | - | - | 40 | 40 | 40 | - | 25333553335555
+
+Table 2. One tick on, at a kick: least weight A below H = 2m
+m | H | census, exact | 18-column strip | 22-column strip | sample of real halves | exact value | kit S: ceil((H + 4)/7) | gaps of a sparsest gate
+10 | 20 | 5 | 5 | 5 | 5 | 5 | 4 | 34
+15 | 30 | 7 | 7 | 7 | 7 | 7 | 5 | 344
+20 | 40 | 8 | 8 | 8 | 8 | 8 | 7 | 34443
+25 | 50 | 10 | 10 | 10 | 10 | 10 | 8 | 344435
+30 | 60 | 14 | 14 | 14 | 14 | 14 | 10 | 3444353
+35 | 70 | 18 | 18 | 18 | 18 | 18 | 11 | 54253555
+40 | 80 | 21 | 20 | 21 | 21 | 21 | 12 | 3444353535
+45 | 90 | - | 22 | 22 | 22 | 22 | 14 | 34443535355
+50 | 100 | - | 26 | 26 | 26 | 26 | 15 | 344435353555
+55 | 110 | - | - | 29 | 29 | 29 | 17 | 3444353535555
+60 | 120 | - | - | 31 | 31 | 31 | 18 | 34443535355555
+
+Part 3. The row with black cells at sites 2 and 4 and at 1 + 7i (bit i is depth i + 1)
+G word for 400 of 400 readings; weight below 280: 42
+its demand, 40 readings: 0010001000100010001000100010001000100010
+some right half reads it for 30 readings and none for 31 (census to 43)
+18-column strip: 53 readings; 22-column strip: 30

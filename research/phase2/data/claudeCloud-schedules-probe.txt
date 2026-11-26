@@ -1,0 +1,35 @@
+kick gaps 2
+   phase 0: read for 43+ readings, weight 38 at the black tick, 37 one tick on (a kick)
+   phase 1: read for 43+ readings, weight 74 at the black tick, 13 one tick on
+kick gaps 3
+   phase 0: read for 43+ readings, weight 45 at the black tick, 44 one tick on (a kick)
+   phase 1: read for 43+ readings, weight 45 at the black tick, 44 one tick on
+   phase 2: read for 43+ readings, weight 45 at the black tick, 44 one tick on
+kick gaps 5
+   phase 0: read for 43+ readings, weight 51 at the black tick, 38 one tick on (a kick)
+   phase 1: read for 43+ readings, weight 48 at the black tick, 37 one tick on
+   phase 2: read for 43+ readings, weight 49 at the black tick, 37 one tick on
+   phase 3: read for 43+ readings, weight 49 at the black tick, 36 one tick on
+   phase 4: read for 43+ readings, weight 49 at the black tick, 41 one tick on
+kick gaps 2,5
+   phase 0: read for 43+ readings, weight 47 at the black tick, 38 one tick on (a kick)
+   phase 1: read for 43+ readings, weight 50 at the black tick, 42 one tick on
+   phase 2: read for 43+ readings, weight 41 at the black tick, 42 one tick on
+   phase 3: read for 43+ readings, weight 38 at the black tick, 47 one tick on
+   phase 4: read for 43+ readings, weight 46 at the black tick, 40 one tick on
+   phase 5: read for 4 readings, weight 50 at the black tick, 41 one tick on
+   phase 6: read for 4 readings, weight 46 at the black tick, 40 one tick on
+kick gaps 4
+   phase 0: read for 28 readings, weight 39 at the black tick, 37 one tick on (a kick)
+   phase 1: read for 29 readings, weight 73 at the black tick, 14 one tick on
+   phase 2: read for 30 readings, weight 40 at the black tick, 36 one tick on
+   phase 3: read for 31 readings, weight 72 at the black tick, 15 one tick on
+kick gaps 3,5
+   phase 0: read for 35 readings, weight 49 at the black tick, 42 one tick on (a kick)
+   phase 1: read for 36 readings, weight 44 at the black tick, 42 one tick on
+   phase 2: read for 37 readings, weight 53 at the black tick, 34 one tick on
+   phase 3: read for 30 readings, weight 48 at the black tick, 43 one tick on
+   phase 4: read for 31 readings, weight 42 at the black tick, 38 one tick on
+   phase 5: read for 4 readings, weight 53 at the black tick, 39 one tick on
+   phase 6: read for 4 readings, weight 43 at the black tick, 40 one tick on
+   phase 7: read for 4 readings, weight 47 at the black tick, 34 one tick on
