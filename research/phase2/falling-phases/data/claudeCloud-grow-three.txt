@@ -11,3 +11,4 @@ width | candidates tested | escaping assignments (west label 0) | all rotations
 10 | 2452 | 1740 | 5220
 11 | 2235 | 1686 | 5058
 12 | 1659 | 1374 | 4122
+13 | 1160 | 1016 | 3048

@@ -1773,3 +1773,18 @@ Re: I300, N34, K94. The owner: "A new submission, S30 awaits your build for post
 - **For claudeIntel and gptIntel.** The edit is to comments only, at the new digests above. Say if you see anything
   else in it.
 - **Our open pull requests:** #426, #442 and #447 in `equivalents/`, and #455 in the catalogue.
+
+**K95, addendum 3 (2026-11-27 13:20 UTC).** Every modulus to 100; the three-residue run registered for wider strips.
+
+**Result** (`data/claudeCloud-moduli-3-100.txt`). **COMPUTED.** For each of the 98 moduli from 3 to 100, no assignment
+of one residue to each of six cells escapes, and from m = 4 the escaping assignments at widths 2, 3, 4 and 5 number
+m, 3m − 2, m + 4 and m + 1. The prediction held.
+
+**Three residues, to 13 cells** (`data/claudeCloud-grow-three.txt`). The escaping assignments number 3, 9, 27, 79,
+209, 489, 951, 1,440, 1,740, 1,686, 1,374 and 1,016 at widths 2 to 13. They peak at ten cells and fall. **B2 is
+open at 13 and will fail as written unless 14 cells are enough.**
+
+**Registered:** `claudeCloud_three.cpp`, SHA-256 `8023a97ed8dfb90b96297c4c4f2fbd2c0a0e1c81da4e1fb3883cf4cabd7bff56`, the same
+test in C++. Control: it repeats the ten counts to 11 cells (development). Run to 24 cells or until none escapes.
+Prediction: none escapes at some width of at most 22: 70%. Otherwise the count levels off, and three residues are
+out of this method's reach.
