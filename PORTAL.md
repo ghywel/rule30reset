@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-27 08:22 UTC, 456 entries, 74 portal-only -->
+<!-- portal-list: 2026-11-27 11:04 UTC, 456 entries, 73 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 08:22 UTC (456 entries)
-and kit main `e1915bb`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 11:04 UTC (456 entries)
+and kit main `8bdf737`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 74 of the 456 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 73 of the 456 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -28,10 +28,10 @@ and kit main `e1915bb`. Find new portal-only entries with `python3 tools/portal/
 | Missed | 13 |
 | Port | 3 |
 | Pending | 4 |
-| Check | 18 |
+| Check | 17 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 74, of them 20 ours |
+| All | 73, of them 20 ours |
 
 ## Missed (13)
 
@@ -74,13 +74,12 @@ In an open kit pull request. Moves out of this file when it merges.
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
 
-## Check (18)
+## Check (17)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
-| [R30-20261127-984f6d](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-984f6d) | 2026-11-27 | G.P.J.W. Quint; Gemini | Lean Unverified | Reports a 75-state observer for the trap-window graph, word-count bounds and completeness of five forbidden gap words for graph walks. | Check the observer and the left-seed and spatial-diversity implications at source. A graph walk can require incompatible eastern inputs. | A |
 | [R30-20261126-94c796](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-94c796) | 2026-11-26 | Jacob Dyer et al. | Lean Verified, Human Verified | For context-free grammars agreeing with the Rule 30 apex language to length M, the explicit pumping constant p satisfies log₂ M < 2p + 4. | Extends the earlier apex-language exclusion to finite agreement. | A |
 | [R30-20261126-88998c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-88998c) | 2026-11-26 | Jacob Dyer et al. | Lean Verified | Every column at distance D from the leftmost black has at least log base 8/5 of N minus O(log(D+2)) black times before N. | Extends the single-seed centre estimate of Rule30BlackTimeGrowth. | A |
 | [R30-20261126-65dcb1](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-65dcb1) | 2026-11-26 | Benboubakeur et al. | Lean Verified, Human Verified | At one of seven consecutive width indices, strictly more than 1/16 of first-check survivors fail the second. The transfer uses a 15-cell certificate and two identities on the free cube. | Extends the first-check result. Transfer to classes conditioned on later checks is open. [Source read](research/phase2/ladder/sources.md) | L |
