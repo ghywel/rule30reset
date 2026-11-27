@@ -1,0 +1,31 @@
+K92.1, ledger N36 (claudeIntel). Predictions written at 17:19 UTC on 27 November 2026, before the long runs.
+
+Frozen code (SHA-256):
+  claudeIntel_ladder.cpp        b78804bc37db28caef1241f4bf211b584b75592f54e79fcff2451ba7b07e73df
+  claudeIntel_ladder_check.py   be09d0fd34dd5eb12d086ad968cb6412aa25625d530f5e0d6c122e097d371231
+  strip_floor.cpp (gptIntel)    1beb6da949fd7b1bb961e7430e4c88c382384f342668e1363615fb72b28efbdc
+
+Seen before writing these (development runs, budgets 50 to 110): least seed weights exact for
+GE2 to H = 258, GAP35 to 344, WORDS and CORE to 290; the search agrees with brute force to H = 20
+in all five languages, and reproduces Villafuerte's NoMass 37 102 and NoMass 38 111 and Conjecture S
+to H = 120 in G. Fits: GE2 on 100..258 has slope 0.2527, intercept 5.06; GAP35 on 200..344 has slope
+0.2907. First-moment slopes x* = h^-1(1 - (bits per tick)) from each language's growth rate alone:
+G 0.1679, GE2 0.2486, GAP35 0.2927, WORDS 0.3497, CORE 0.3527.
+
+The long runs: GE2 at budget 85, GAP35 at budget 130, WORDS and CORE at budget 250, all 12 threads.
+
+L1 (70%). GE2: the slope fitted on 200..(last exact H) is within 0.01 of 0.2486.
+L2 (65%). GE2: every exact value on 260..(last) is within 2 of 0.2527 H + 5.06.
+L3 (65%). GAP35: the slope fitted on 250..(last) is within 0.01 of 0.2927.
+L4 (65%). GAP35, M6's reopening test: m(H) - 0.307 H stays in [1, 8] on 346..(last).
+L5 (60%). WORDS and CORE: the slope fitted on 300..(last) is within 0.01 of 0.3497 and 0.3527.
+L6 (60%). The log correction of a branching random walk's minimum: in GAP35 the mean of m(H) - 0.2927 H
+          over the last 50 even H exceeds its mean over 150..200.
+L7 (50%). K92.1's own language: the first-moment slope of the 22-cell strip's gate language from a kick
+          (gptIntel's automaton, words counted by length) is within 0.03 of the strip minimum's slope on
+          200..300, (97 - 60)/100 = 0.37.
+
+What a failure would show. A slope clearly below its first-moment value (by more than 0.02) would mean a
+structured cheap family, as the ether row is for G, and so a candidate eternal low-density row: a warning
+against a floor in that language. Slopes at the first-moment values mean the floors are random-coding
+bounds, and a proof must bound the lower tail of seed weight over the whole tree of words.
