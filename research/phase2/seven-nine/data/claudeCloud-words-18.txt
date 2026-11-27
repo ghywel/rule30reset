@@ -1,0 +1,82 @@
+18 cells, gaps [7, 9], 25869 states at block boundaries
+7 | excluded
+9 | excluded
+7 9 | excluded
+7 7 9 | excluded
+7 9 9 | excluded
+7 7 7 9 | excluded
+7 7 9 9 | excluded
+7 9 9 9 | excluded
+7 7 7 7 9 | excluded
+7 7 7 9 9 | excluded
+7 7 9 7 9 | excluded
+7 7 9 9 9 | excluded
+7 9 7 9 9 | excluded
+7 9 9 9 9 | excluded
+7 7 7 7 7 9 | excluded
+7 7 7 7 9 9 | excluded
+7 7 7 9 7 9 | excluded
+7 7 7 9 9 9 | excluded
+7 7 9 7 9 9 | excluded
+7 7 9 9 7 9 | excluded
+7 7 9 9 9 9 | excluded
+7 9 7 9 9 9 | excluded
+7 9 9 9 9 9 | excluded
+7 7 7 7 7 7 9 | excluded
+7 7 7 7 7 9 9 | excluded
+7 7 7 7 9 7 9 | excluded
+7 7 7 7 9 9 9 | excluded
+7 7 7 9 7 7 9 | excluded
+7 7 7 9 7 9 9 | excluded
+7 7 7 9 9 7 9 | excluded
+7 7 7 9 9 9 9 | excluded
+7 7 9 7 7 9 9 | excluded
+7 7 9 7 9 7 9 | excluded
+7 7 9 7 9 9 9 | excluded
+7 7 9 9 7 9 9 | excluded
+7 7 9 9 9 7 9 | excluded
+7 7 9 9 9 9 9 | excluded
+7 9 7 9 7 9 9 | excluded
+7 9 7 9 9 9 9 | excluded
+7 9 9 7 9 9 9 | excluded
+7 9 9 9 9 9 9 | excluded
+7 7 7 7 7 7 7 9 | excluded
+7 7 7 7 7 7 9 9 | excluded
+7 7 7 7 7 9 7 9 | excluded
+7 7 7 7 7 9 9 9 | excluded
+7 7 7 7 9 7 7 9 | excluded
+7 7 7 7 9 7 9 9 | excluded
+7 7 7 7 9 9 7 9 | excluded
+7 7 7 7 9 9 9 9 | excluded
+7 7 7 9 7 7 9 9 | excluded
+7 7 7 9 7 9 7 9 | excluded
+7 7 7 9 7 9 9 9 | excluded
+7 7 7 9 9 7 7 9 | excluded
+7 7 7 9 9 7 9 9 | excluded
+7 7 7 9 9 9 7 9 | excluded
+7 7 7 9 9 9 9 9 | excluded
+7 7 9 7 7 9 7 9 | excluded
+7 7 9 7 7 9 9 9 | excluded
+7 7 9 7 9 7 9 9 | excluded
+7 7 9 7 9 9 7 9 | excluded
+7 7 9 7 9 9 9 9 | excluded
+7 7 9 9 7 9 7 9 | excluded
+7 7 9 9 7 9 9 9 | excluded
+7 7 9 9 9 7 9 9 | excluded
+7 7 9 9 9 9 7 9 | excluded
+7 7 9 9 9 9 9 9 | excluded
+7 9 7 9 7 9 9 9 | excluded
+7 9 7 9 9 7 9 9 | excluded
+7 9 7 9 9 9 9 9 | excluded
+7 9 9 7 9 9 9 9 | excluded
+7 9 9 9 9 9 9 9 | excluded
+length | words | excluded on 18 cells | not excluded
+1 | 2 | 2 | 0
+2 | 1 | 1 | 0
+3 | 2 | 2 | 0
+4 | 3 | 3 | 0
+5 | 6 | 6 | 0
+6 | 9 | 9 | 0
+7 | 18 | 18 | 0
+8 | 30 | 30 | 0
+all | 71 | 71 | 0

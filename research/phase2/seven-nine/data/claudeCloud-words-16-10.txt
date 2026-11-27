@@ -1,0 +1,239 @@
+16 cells, gaps [7, 9], 7872 states at block boundaries
+7 | excluded
+9 | excluded
+7 9 | excluded
+7 7 9 | excluded
+7 9 9 | excluded
+7 7 7 9 | excluded
+7 7 9 9 | excluded
+7 9 9 9 | excluded
+7 7 7 7 9 | excluded
+7 7 7 9 9 | excluded
+7 7 9 7 9 | excluded
+7 7 9 9 9 | excluded
+7 9 7 9 9 | excluded
+7 9 9 9 9 | excluded
+7 7 7 7 7 9 | excluded
+7 7 7 7 9 9 | excluded
+7 7 7 9 7 9 | excluded
+7 7 7 9 9 9 | not excluded; unsettled components of sizes [131]
+7 7 9 7 9 9 | excluded
+7 7 9 9 7 9 | excluded
+7 7 9 9 9 9 | excluded
+7 9 7 9 9 9 | excluded
+7 9 9 9 9 9 | excluded
+7 7 7 7 7 7 9 | excluded
+7 7 7 7 7 9 9 | excluded
+7 7 7 7 9 7 9 | excluded
+7 7 7 7 9 9 9 | excluded
+7 7 7 9 7 7 9 | excluded
+7 7 7 9 7 9 9 | excluded
+7 7 7 9 9 7 9 | excluded
+7 7 7 9 9 9 9 | excluded
+7 7 9 7 7 9 9 | excluded
+7 7 9 7 9 7 9 | excluded
+7 7 9 7 9 9 9 | excluded
+7 7 9 9 7 9 9 | excluded
+7 7 9 9 9 7 9 | excluded
+7 7 9 9 9 9 9 | excluded
+7 9 7 9 7 9 9 | excluded
+7 9 7 9 9 9 9 | excluded
+7 9 9 7 9 9 9 | excluded
+7 9 9 9 9 9 9 | excluded
+7 7 7 7 7 7 7 9 | excluded
+7 7 7 7 7 7 9 9 | excluded
+7 7 7 7 7 9 7 9 | excluded
+7 7 7 7 7 9 9 9 | excluded
+7 7 7 7 9 7 7 9 | excluded
+7 7 7 7 9 7 9 9 | excluded
+7 7 7 7 9 9 7 9 | excluded
+7 7 7 7 9 9 9 9 | excluded
+7 7 7 9 7 7 9 9 | excluded
+7 7 7 9 7 9 7 9 | not excluded; unsettled components of sizes [30]
+7 7 7 9 7 9 9 9 | excluded
+7 7 7 9 9 7 7 9 | excluded
+7 7 7 9 9 7 9 9 | excluded
+7 7 7 9 9 9 7 9 | excluded
+7 7 7 9 9 9 9 9 | not excluded; unsettled components of sizes [66]
+7 7 9 7 7 9 7 9 | excluded
+7 7 9 7 7 9 9 9 | excluded
+7 7 9 7 9 7 9 9 | excluded
+7 7 9 7 9 9 7 9 | excluded
+7 7 9 7 9 9 9 9 | excluded
+7 7 9 9 7 9 7 9 | excluded
+7 7 9 9 7 9 9 9 | excluded
+7 7 9 9 9 7 9 9 | excluded
+7 7 9 9 9 9 7 9 | excluded
+7 7 9 9 9 9 9 9 | excluded
+7 9 7 9 7 9 9 9 | excluded
+7 9 7 9 9 7 9 9 | excluded
+7 9 7 9 9 9 9 9 | excluded
+7 9 9 7 9 9 9 9 | excluded
+7 9 9 9 9 9 9 9 | excluded
+7 7 7 7 7 7 7 7 9 | excluded
+7 7 7 7 7 7 7 9 9 | excluded
+7 7 7 7 7 7 9 7 9 | excluded
+7 7 7 7 7 7 9 9 9 | excluded
+7 7 7 7 7 9 7 7 9 | excluded
+7 7 7 7 7 9 7 9 9 | excluded
+7 7 7 7 7 9 9 7 9 | excluded
+7 7 7 7 7 9 9 9 9 | not excluded; unsettled components of sizes [55]
+7 7 7 7 9 7 7 7 9 | excluded
+7 7 7 7 9 7 7 9 9 | excluded
+7 7 7 7 9 7 9 7 9 | excluded
+7 7 7 7 9 7 9 9 9 | excluded
+7 7 7 7 9 9 7 7 9 | excluded
+7 7 7 7 9 9 7 9 9 | excluded
+7 7 7 7 9 9 9 7 9 | excluded
+7 7 7 7 9 9 9 9 9 | not excluded; unsettled components of sizes [114]
+7 7 7 9 7 7 7 9 9 | excluded
+7 7 7 9 7 7 9 7 9 | excluded
+7 7 7 9 7 7 9 9 9 | excluded
+7 7 7 9 7 9 7 7 9 | excluded
+7 7 7 9 7 9 7 9 9 | excluded
+7 7 7 9 7 9 9 7 9 | excluded
+7 7 7 9 7 9 9 9 9 | excluded
+7 7 7 9 9 7 7 9 9 | excluded
+7 7 7 9 9 7 9 7 9 | excluded
+7 7 7 9 9 7 9 9 9 | excluded
+7 7 7 9 9 9 7 7 9 | excluded
+7 7 7 9 9 9 7 9 9 | excluded
+7 7 7 9 9 9 9 7 9 | excluded
+7 7 7 9 9 9 9 9 9 | excluded
+7 7 9 7 7 9 7 9 9 | excluded
+7 7 9 7 7 9 9 7 9 | excluded
+7 7 9 7 7 9 9 9 9 | excluded
+7 7 9 7 9 7 7 9 9 | excluded
+7 7 9 7 9 7 9 7 9 | excluded
+7 7 9 7 9 7 9 9 9 | excluded
+7 7 9 7 9 9 7 9 9 | excluded
+7 7 9 7 9 9 9 7 9 | excluded
+7 7 9 7 9 9 9 9 9 | excluded
+7 7 9 9 7 7 9 9 9 | excluded
+7 7 9 9 7 9 7 9 9 | excluded
+7 7 9 9 7 9 9 7 9 | excluded
+7 7 9 9 7 9 9 9 9 | excluded
+7 7 9 9 9 7 9 7 9 | excluded
+7 7 9 9 9 7 9 9 9 | excluded
+7 7 9 9 9 9 7 9 9 | excluded
+7 7 9 9 9 9 9 7 9 | excluded
+7 7 9 9 9 9 9 9 9 | excluded
+7 9 7 9 7 9 7 9 9 | excluded
+7 9 7 9 7 9 9 9 9 | excluded
+7 9 7 9 9 7 9 9 9 | excluded
+7 9 7 9 9 9 7 9 9 | excluded
+7 9 7 9 9 9 9 9 9 | excluded
+7 9 9 7 9 9 9 9 9 | excluded
+7 9 9 9 7 9 9 9 9 | excluded
+7 9 9 9 9 9 9 9 9 | excluded
+7 7 7 7 7 7 7 7 7 9 | excluded
+7 7 7 7 7 7 7 7 9 9 | excluded
+7 7 7 7 7 7 7 9 7 9 | excluded
+7 7 7 7 7 7 7 9 9 9 | not excluded; unsettled components of sizes [93]
+7 7 7 7 7 7 9 7 7 9 | excluded
+7 7 7 7 7 7 9 7 9 9 | excluded
+7 7 7 7 7 7 9 9 7 9 | excluded
+7 7 7 7 7 7 9 9 9 9 | excluded
+7 7 7 7 7 9 7 7 7 9 | excluded
+7 7 7 7 7 9 7 7 9 9 | excluded
+7 7 7 7 7 9 7 9 7 9 | excluded
+7 7 7 7 7 9 7 9 9 9 | excluded
+7 7 7 7 7 9 9 7 7 9 | excluded
+7 7 7 7 7 9 9 7 9 9 | excluded
+7 7 7 7 7 9 9 9 7 9 | excluded
+7 7 7 7 7 9 9 9 9 9 | excluded
+7 7 7 7 9 7 7 7 9 9 | excluded
+7 7 7 7 9 7 7 9 7 9 | not excluded; unsettled components of sizes [66]
+7 7 7 7 9 7 7 9 9 9 | excluded
+7 7 7 7 9 7 9 7 7 9 | excluded
+7 7 7 7 9 7 9 7 9 9 | excluded
+7 7 7 7 9 7 9 9 7 9 | excluded
+7 7 7 7 9 7 9 9 9 9 | excluded
+7 7 7 7 9 9 7 7 7 9 | excluded
+7 7 7 7 9 9 7 7 9 9 | excluded
+7 7 7 7 9 9 7 9 7 9 | excluded
+7 7 7 7 9 9 7 9 9 9 | excluded
+7 7 7 7 9 9 9 7 7 9 | excluded
+7 7 7 7 9 9 9 7 9 9 | excluded
+7 7 7 7 9 9 9 9 7 9 | excluded
+7 7 7 7 9 9 9 9 9 9 | excluded
+7 7 7 9 7 7 7 9 7 9 | excluded
+7 7 7 9 7 7 7 9 9 9 | not excluded; unsettled components of sizes [91]
+7 7 7 9 7 7 9 7 7 9 | excluded
+7 7 7 9 7 7 9 7 9 9 | excluded
+7 7 7 9 7 7 9 9 7 9 | excluded
+7 7 7 9 7 7 9 9 9 9 | excluded
+7 7 7 9 7 9 7 7 9 9 | excluded
+7 7 7 9 7 9 7 9 7 9 | excluded
+7 7 7 9 7 9 7 9 9 9 | excluded
+7 7 7 9 7 9 9 7 7 9 | excluded
+7 7 7 9 7 9 9 7 9 9 | excluded
+7 7 7 9 7 9 9 9 7 9 | excluded
+7 7 7 9 7 9 9 9 9 9 | excluded
+7 7 7 9 9 7 7 9 7 9 | excluded
+7 7 7 9 9 7 7 9 9 9 | not excluded; unsettled components of sizes [141]
+7 7 7 9 9 7 9 7 7 9 | excluded
+7 7 7 9 9 7 9 7 9 9 | excluded
+7 7 7 9 9 7 9 9 7 9 | excluded
+7 7 7 9 9 7 9 9 9 9 | excluded
+7 7 7 9 9 9 7 7 9 9 | excluded
+7 7 7 9 9 9 7 9 7 9 | excluded
+7 7 7 9 9 9 7 9 9 9 | excluded
+7 7 7 9 9 9 9 7 7 9 | excluded
+7 7 7 9 9 9 9 7 9 9 | excluded
+7 7 7 9 9 9 9 9 7 9 | excluded
+7 7 7 9 9 9 9 9 9 9 | not excluded; unsettled components of sizes [82]
+7 7 9 7 7 9 7 7 9 9 | excluded
+7 7 9 7 7 9 7 9 7 9 | excluded
+7 7 9 7 7 9 7 9 9 9 | excluded
+7 7 9 7 7 9 9 7 9 9 | excluded
+7 7 9 7 7 9 9 9 7 9 | excluded
+7 7 9 7 7 9 9 9 9 9 | excluded
+7 7 9 7 9 7 7 9 9 9 | excluded
+7 7 9 7 9 7 9 7 9 9 | excluded
+7 7 9 7 9 7 9 9 7 9 | excluded
+7 7 9 7 9 7 9 9 9 9 | excluded
+7 7 9 7 9 9 7 7 9 9 | excluded
+7 7 9 7 9 9 7 9 7 9 | excluded
+7 7 9 7 9 9 7 9 9 9 | excluded
+7 7 9 7 9 9 9 7 9 9 | excluded
+7 7 9 7 9 9 9 9 7 9 | excluded
+7 7 9 7 9 9 9 9 9 9 | excluded
+7 7 9 9 7 7 9 9 7 9 | excluded
+7 7 9 9 7 7 9 9 9 9 | excluded
+7 7 9 9 7 9 7 9 7 9 | excluded
+7 7 9 9 7 9 7 9 9 9 | excluded
+7 7 9 9 7 9 9 7 9 9 | excluded
+7 7 9 9 7 9 9 9 7 9 | excluded
+7 7 9 9 7 9 9 9 9 9 | excluded
+7 7 9 9 9 7 9 7 9 9 | excluded
+7 7 9 9 9 7 9 9 7 9 | excluded
+7 7 9 9 9 7 9 9 9 9 | excluded
+7 7 9 9 9 9 7 9 7 9 | excluded
+7 7 9 9 9 9 7 9 9 9 | excluded
+7 7 9 9 9 9 9 7 9 9 | excluded
+7 7 9 9 9 9 9 9 7 9 | excluded
+7 7 9 9 9 9 9 9 9 9 | excluded
+7 9 7 9 7 9 7 9 9 9 | excluded
+7 9 7 9 7 9 9 7 9 9 | excluded
+7 9 7 9 7 9 9 9 9 9 | excluded
+7 9 7 9 9 7 9 9 9 9 | excluded
+7 9 7 9 9 9 7 9 9 9 | excluded
+7 9 7 9 9 9 9 7 9 9 | excluded
+7 9 7 9 9 9 9 9 9 9 | excluded
+7 9 9 7 9 9 7 9 9 9 | excluded
+7 9 9 7 9 9 9 9 9 9 | excluded
+7 9 9 9 7 9 9 9 9 9 | excluded
+7 9 9 9 9 9 9 9 9 9 | excluded
+length | words | excluded on 16 cells | not excluded
+1 | 2 | 2 | 0
+2 | 1 | 1 | 0
+3 | 2 | 2 | 0
+4 | 3 | 3 | 0
+5 | 6 | 6 | 0
+6 | 9 | 8 | 1
+7 | 18 | 18 | 0
+8 | 30 | 28 | 2
+9 | 56 | 54 | 2
+10 | 99 | 94 | 5
+all | 226 | 216 | 10

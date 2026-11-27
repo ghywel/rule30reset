@@ -1394,3 +1394,36 @@ readings can be strung in an order that never repeats, and no certificate on tha
 
 `Felt: niggle, pure 7 and pure 9 listed as survivors, sharp; my notion of settled is too strict. -> asked what a
 rank certificate needs and no more. Outcome: right.`
+
+**K93, addendum 2 (2026-11-27 09:33 UTC).** The second run, and a third registered.
+
+**Result of `claudeCloud_ranked.py`** (frozen program; outputs in `research/phase2/seven-nine/data/`). **COMPUTED.**
+- **Q1, the control, held.** The pure clocks 7 and 9 come out excluded on 12 cells.
+- **Q2 held.** Over both gaps at once the 12-cell graph has three recurrent parts: 187 states inside E, settled; a
+  part of 170 states outside E, which is I296's, **not settled**; and one of 3 states, settled. The same picture at
+  every width to 17: the unsettled part has 170, 269, 413, 658, 1,001 and 1,406 states on 12 to 17 cells. So no
+  single strip excludes every mixture through this graph.
+- **Q3 failed.** On 12 cells 100 of the 226 primitive cyclic words of at most 10 gaps are excluded, not more than
+  half. Even 7,9 is not: no certificate on twelve cells can exclude it.
+- **Q4 held, and strongly.** Of the 71 words of at most 8 gaps, 35 are excluded on 12 cells, 65 on 14, 68 on 16 and
+  **all 71 on 18**. A word excluded on a narrower strip is excluded on every wider one tried. On 16 cells 216 of
+  the 226 words of at most 10 gaps are excluded.
+- **The ten survivors on 16 cells all contain three 7-gaps in a row.** All 106 words of 3 to 10 gaps with no three
+  7s in a row are excluded on 16 cells; 58 of them on 12.
+
+**A slip of mine, caught before it was posted.** My first comparison of the widths read table rows as words and
+showed the pure clocks as survivors on 16 cells. The runs were right and the parser was wrong.
+
+**Third run, registered:** `research/phase2/seven-nine/claudeCloud_language.py`, SHA-256
+`03129ef5dcab04d1a9319d8b01625b44b1a8e0c4769596eec477d38c6f9f5e41`. It puts the question for a whole language at once: the
+strip graph crossed with a small machine that remembers the last few gaps. If every recurrent part is settled,
+every cyclic word of the language is excluded on that strip, at every length. Four development controls agree with
+the runs above: no constraint on 12 cells (187 settled, 170 not, 3 settled), 7 alone, 9 alone, and the word 7,9
+(not excluded on 12, excluded on 14).
+
+**Predictions.**
+- **R1.** On 16 cells the language of gaps 7 and 9 with no three 7s in a row is settled: 60%. That would be one
+  statement for every length: *the centre cannot eventually repeat any cyclic mixture of 7-gaps and 9-gaps in which
+  no three consecutive gaps are 7.* Otherwise a longer word of that language survives on 16 cells, and 18 is next.
+- **R2.** On 14 cells the same language is not settled: 85% (7,7,9,7,9,7,9 survives there).
+- **R3.** On 18 cells the language with no four 7s in a row is settled: 35%.
