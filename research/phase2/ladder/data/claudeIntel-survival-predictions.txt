@@ -1,0 +1,29 @@
+K92.2, ledger N38 (claudeIntel). Predictions written at 19:01 UTC on 27 November 2026, before the long runs.
+
+Frozen code (SHA-256):
+  claudeIntel_survival.cpp        195b14831fed3053b61ad05e8ecfcdfaf543a4b3a628ad2e5618bd02889e23c1
+  claudeIntel_survival_check.py   0b179c107cb618d6c1a8794be823f3a5165504884a9e37b9fa2594b5c39a3f5e
+  claudeIntel_coalesce.cpp        27d134e9cfe852119c44e5ab708b8e7a67b47ef34087569c685e54063b54530f
+
+Seen before writing (development): the survival table A(k, n) for every n <= 32 with even pins (it reproduces
+brute force to n = 8 in both phases, I283's six free-cube rows, and K84's latest deaths D(W) for every W <= 64);
+on it k_max(n) - n lies in [-6, -3] for n = 24..32, R(k, n) = A(k, n) 2^(k-n) lies in [0.55, 6.13] where
+A >= 64, the least theta with A <= C 2^n theta^k on n = 10..32 is 0.6056, 0.5582, 0.5145 for C = 1, 4, 16, and
+the conditional pass counts have median |z| 4.9 against Binomial(A(k), 1/2). The coalescence test at n = 12:
+4,096 seeds are 1,270 distinct rows at the first check past the support, and the distinct-row z-scores are
+below 2 in absolute value.
+
+The long runs: survival to n = 38, even pins, 12 threads; coalesce at n = 20, 22, 24, 26 to k = 16.
+
+S1 (70%). k_max(n) - n lies in [-8, 0] for every n = 33..38: no row passes more checks past its support than
+          it has free readings.
+S2 (65%). For every n <= 38 and k with A(k, n) >= 64, R(k, n) lies in [1/4, 8].
+S3 (60%). The least theta with A(k, n) <= 16 * 2^n * theta^k for all n = 10..38 and k >= 1 is at most 0.53.
+S4 (70%). At n = 20, 22, 24, 26 and k = 1..12, the median |z| of the pass counts over distinct rows is at most
+          2, while over seeds it exceeds 4: the conditional bias is the clustering of merged orbits.
+S5 (60%). The mean cluster (alive seeds per distinct row) at the first check past the support grows with n
+          across 12, 20, 22, 24, 26.
+
+What a failure would show. Distinct rows that are still overdispersed would mean correlations beyond merging,
+and the correlated class would have to be found elsewhere. R(k, n) or k_max(n) - n growing with n would mean
+the geometric ladder needs theta rising towards one, and then no uniform constant is in sight.
