@@ -88,4 +88,18 @@ theorem bond_aperiodic (q : Root) {x : Int → Bool} {lo : Int}
       simpa only [intermediate_eq, (projections _ _).2, Rule30FiniteMaskedJen.orCol]
         using congrArg orBit (h t ht)⟩
 
+/-- At least two of the three fixed binary readings (00, 01, 1*) are
+aperiodic at each physical bond. The two assumed periods may differ. -/
+theorem periodic_indicator_unique (q : Root) {x : Int → Bool} {lo : Int}
+    (hlo : x lo = true) (hz : ∀ i, i < lo → x i = false) (i : Int) (a b : Colour)
+    (ha : EventuallyPeriodic fun t => decide (mid q (rounds q x t) i = a))
+    (hb : EventuallyPeriodic fun t => decide (mid q (rounds q x t) i = b)) : a = b := by
+  apply Classical.byContradiction
+  intro ne
+  have distinguish : ∀ a b c d : Colour, a ≠ b →
+      decide (c = a) = decide (d = a) → decide (c = b) = decide (d = b) → c = d := by decide
+  obtain ⟨T,P,hP,h₁,h₂⟩ := common_period ha hb
+  exact bond_aperiodic q hlo hz i ⟨T,P,hP,
+    fun t ht => distinguish a b _ _ ne (h₁ t ht) (h₂ t ht)⟩
+
 end TernaryRoot

@@ -15,7 +15,7 @@ would prove.
 | **W2** | One orbit | Known bulk recurrences on the single seed still leave the prize-column criteria open. | Problem 2 whole; Problem 1 through its weakest sufficient conditions |
 | **W3** | The doubling step | At the left edge every result holds through finitely many clock doublings; none passes from period 2ᵉ to 2ᵉ⁺¹. | The every-k chain; the left-edge routes to Problem 1 |
 | **W4** | Hearing from below | We can bound from above what the right side sends, and refuse words; we cannot show that any given thing is sent. | No prize problem directly; whether the classes we exclude are empty |
-| **W5** | Lower bounds on computation | No technique bounds from below the cost of computing one fixed sequence. | Problem 3 |
+| **W5** | Lower bounds on computation | A lower bound for lookup at the named centre of the unaltered singleton is missing. | Problem 3 |
 
 The kit's names are in `code`; [KIT.md](KIT.md) §3 has the web of implications and §4 the barriers. Phase-1 pulls are
 cited by their ledger names; their full entries are in [the archived NOW](archive/now/now-phase1-2026-11-26.md), and
@@ -59,6 +59,9 @@ as `Absorption` and `Lock`.
   and others, portal R30-20261126-65dcb1). These two are all that is proved about checks past the support.
 - Every start below 2⁵² dies within its size plus four steps of G, and that bound for every start would be Q01
   (h3artfield, portal R30-20261108-508c6c and a0fd36). One immortal row of width b would force **at least** 4,096 at every exact width w≥b+389 of the same parity (Benboubakeur et al., portal R30-20261126-e2e0e2). Consequently fewer than 4,096 finite-horizon survivors at arbitrarily large widths of each parity would give Q01. [Checked corollary](research/phase2/borrowed/SparseWidths.lean)
+- Summed across widths, Q01 is equivalent to unbounded 2048B−S(B,k), where S counts starts below 2ᴮ passing k checks.
+  It suffices to prove A(n,n)≤4095n at unbounded n. The 4,096 published ancestors at a single width already fill
+  one 24-tick fibre, so repeating the same short inverse construction cannot improve this count. [I316](research/phase2/borrowed/arithmetic-transfer.md)
 - In G the least weight is the one-in-seven row's (AIOvernight; PRIOR-ART P1). In the trap's gap language it has
   slope about 0.275 a tick to H = 180, while every periodic row there weighs 0.44 or more: the cheapest words are
   cheap through transients (M6, M21).
@@ -274,9 +277,12 @@ Problem 3 gives Problem 1. Among the forms *equivalent* to Problem 1 are "no one
 it is harder. Dyer's entries of 26 November are about a different input, the starting row and not the time: the
 language of rows with a black apex is neither regular nor context-free (portal, abstract depth).
 
-**What it would take.** A way to bound from below the cost of one fixed sequence, with no inputs in which to encode
-a hard problem. None exists for any natural sequence. No pull is proposed; a Problem 3 partial will come, if at all,
-as a by-product of W1 or W2.
+**What it would take.** A lower bound for the particular time-indexed bit of the unaltered seed. Fischer and
+Rabin's hard sequence encodes an arbitrary Presburger sentence in its index. Direct Rule 30 simulation precludes
+a polynomial-time reduction of that full decision problem to a singleton time index. On the actual singleton,
+Jen and the kit's canonical-window theorem give logarithmic lookup cost in every such window at all but at most
+one fixed site. The possible exception could be the centre. A centre mismatch at unbounded dyadic scales is
+I295.5's concrete first step. [K98, families 8 and 9](research/phase2/borrowed/orbit-cost-transfer.md)
 
 ## Two limits of practice, which are not walls
 
