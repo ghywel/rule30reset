@@ -1,5 +1,6 @@
 """First test for I295.1 against Galindo's width-12 F and E, using Python 3."""
 import argparse
+from collections import deque
 from itertools import product
 from pathlib import Path
 import re
@@ -88,6 +89,24 @@ def main():
             if not current:
                 resets.append(word)
         print(f"length {length}: {len(resets)} reset words, first {resets[:1]}")
+    # The image set records all possible avoiding states after reading a word.
+    # Equal image sets have identical futures, irrespective of the prefix.
+    start = frozenset(outside)
+    todo, seen = deque([(start, ())]), {start}
+    while todo:
+        states, word = todo.popleft()
+        if len(word) == 16:
+            print(f"no reset through 16 pulses; {len(seen)} distinct images reached")
+            return
+        for q in GAPS:
+            after = frozenset(v for u in states for v in arcs[u][q])
+            if not after:
+                print(f"shortest reset: {word + (q,)}")
+                return
+            if after not in seen:
+                seen.add(after)
+                todo.append((after, word + (q,)))
+    print(f"all {len(seen)} reachable images are nonempty; no reset word at any length")
 
 
 if __name__ == "__main__":
