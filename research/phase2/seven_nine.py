@@ -33,6 +33,48 @@ def reachable(root, edges):
     return seen
 
 
+def audit_reset(outer, inner, word):
+    """Independently enumerate up to the discovered length with the literal rule."""
+    rule = (0, 1, 1, 1, 1, 0, 0, 0)
+
+    def next_code(code, wall, east):
+        cells = [wall] + [(code >> i) & 1 for i in range(WIDTH)] + [east]
+        neighbours = zip(cells, cells[1:], cells[2:])
+        return sum(rule[4 * l + 2 * c + r] << i
+                   for i, (l, c, r) in enumerate(neighbours))
+
+    steps = {(r, w): {next_code(r, w, e) for e in (0, 1)}
+             for r in range(2**WIDTH) for w in (0, 1)}
+    images = {}
+    for r in outer:
+        for q in GAPS:
+            frontier = {r}
+            for wall in [1] + [0] * q:
+                frontier = {v for u in frontier for v in steps[u, wall]}
+            assert frontier == macro({r}, q)
+            images[r, q] = frontier
+
+    def advance(rows, q):
+        return set().union(*(images[r, q] for r in rows))
+
+    matches = []
+
+    def visit(prefix, rows):
+        if prefix and rows <= inner:
+            matches.append(prefix)
+        if len(prefix) < len(word):
+            for q in GAPS:
+                visit(prefix + (q,), advance(rows, q))
+
+    visit((), outer)
+    assert word in matches and all(len(w) == len(word) for w in matches)
+    print(f"all shortest resets: {matches}")
+    rows = outer
+    for q in word:
+        rows = advance(rows, q)
+    print(f"final full image: {len(rows)} states, {len(rows - inner)} outside E")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("kit", type=Path)
@@ -58,8 +100,7 @@ def main():
         if all(any(arcs[r][q] & scc for r in scc) for q in GAPS):
             mixed.append((min(scc), len(scc)))
     print(f"F={len(outer)}, E={len(inner)}, mixed components (min code, size)={mixed}")
-    # A nonempty fixed set lets an avoiding path take either requested label
-    # at every pulse. Verify the witnesses separately with literal cell updates.
+    # A nonempty fixed set lets an avoiding path take either requested label.
     safe = outside.copy()
     while True:
         keep = {r for r in safe if all(arcs[r][q] & safe for q in GAPS)}
@@ -67,19 +108,6 @@ def main():
             break
         safe = keep
     print(f"greatest set with an avoiding successor for each label: {len(safe)}")
-    if safe:
-        rule = (0, 1, 1, 1, 1, 0, 0, 0)
-        def next_code(code, wall, east):
-            cells = [wall] + [(code >> i) & 1 for i in range(WIDTH)] + [east]
-            return sum(rule[4*cells[i]+2*cells[i+1]+cells[i+2]] << i for i in range(WIDTH))
-        steps = {(r, w): {next_code(r, w, e) for e in (0, 1)}
-                 for r in range(2**WIDTH) for w in (0, 1)}
-        for r in safe:
-            for q in GAPS:
-                frontier = {r}
-                for wall in [1] + [0]*q:
-                    frontier = {v for u in frontier for v in steps[u, wall]}
-                assert frontier & safe and frontier - inner == arcs[r][q]
     for length in range(1, 7):
         resets = []
         for word in product(GAPS, repeat=length):
@@ -95,13 +123,11 @@ def main():
     todo, seen = deque([(start, ())]), {start}
     while todo:
         states, word = todo.popleft()
-        if len(word) == 16:
-            print(f"no reset through 16 pulses; {len(seen)} distinct images reached")
-            return
         for q in GAPS:
             after = frozenset(v for u in states for v in arcs[u][q])
             if not after:
                 print(f"shortest reset: {word + (q,)}")
+                audit_reset(outer, inner, word + (q,))
                 return
             if after not in seen:
                 seen.add(after)
