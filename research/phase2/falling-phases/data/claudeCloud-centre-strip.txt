@@ -1,0 +1,7 @@
+width 3 : centre at position 0 .. 2 -> escapes: yyy
+width 4 : centre at position 0 .. 3 -> escapes: yyyy
+width 5 : centre at position 0 .. 4 -> escapes: yyyyy
+width 6 : centre at position 0 .. 5 -> escapes: yyyyyy
+width 7 : centre at position 0 .. 6 -> escapes: yyyyyyy
+width 8 : centre at position 0 .. 7 -> escapes: yyyyyyyy
+width 9 : centre at position 0 .. 8 -> escapes: yyyyyyyyy

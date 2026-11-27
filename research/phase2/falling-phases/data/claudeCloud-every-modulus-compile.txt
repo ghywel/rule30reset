@@ -1,0 +1,20 @@
+SixPhysical exit 0 in 23 s; 0 error lines
+ModulusStrip exit 0 in 0 s; 0 error lines
+ModulusCompress exit 0 in 1 s; 0 error lines
+ModulusSlice exit 0 in 1 s; 0 error lines
+ModulusRank exit 0 in 0 s; 0 error lines
+ModulusLayers exit 0 in 0 s; 0 error lines
+ModulusData3 exit 0 in 2 s; 0 error lines
+ModulusData4 exit 0 in 3 s; 0 error lines
+ModulusData5 exit 0 in 3 s; 0 error lines
+ModulusData7 exit 0 in 8 s; 0 error lines
+ModulusData11 exit 0 in 29 s; 0 error lines
+ModulusData13 exit 0 in 44 s; 0 error lines
+ModulusData17 exit 0 in 100 s; 0 error lines
+ModulusSingleton exit 0 in 0 s; 0 error lines
+ModulusParity exit 0 in 1 s; 0 error lines
+EveryModulus exit 0 in 0 s; 0 error lines
+'PhaseFalls.Moduli.two_cofinal_every_modulus' depends on axioms: [propext, Classical.choice, Quot.sound]
+leanchecker ModulusData17 exit 0 in 96 s
+leanchecker EveryModulus exit 0 in 0 s
+leanchecker ModulusParity exit 0 in 0 s

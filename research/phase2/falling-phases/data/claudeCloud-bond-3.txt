@@ -1,0 +1,10 @@
+width 2 | pair at K, K+1 : escapes for R = 0..2 -> 0:yyy
+width 3 | pair at K, K+1 : escapes for R = 0..2 -> 0:yyy 1:yyy
+width 4 | pair at K, K+1 : escapes for R = 0..2 -> 0:yyy 1:yyy 2:yyy
+width 5 | pair at K, K+1 : escapes for R = 0..2 -> 0:yyy 1:yyy 2:yyy 3:yyy
+width 6 | pair at K, K+1 : escapes for R = 0..2 -> 0:yyy 1:yyy 2:yyy 3:yyy 4:yyy
+width 7 | pair at K, K+1 : escapes for R = 0..2 -> 0:yyy 1:yyy 2:yyy 3:yyy 4:yyy 5:yyy
+width 8 | pair at K, K+1 : escapes for R = 0..2 -> 0:yyy 1:yyy 2:yyy 3:yyy 4:yyy 5:yyy 6:yyy
+width 9 | pair at K, K+1 : escapes for R = 0..2 -> 0:yyy 1:yyy 2:yyy 3:yyy 4:yyy 5:yyy 6:yyy 7:yyy
+width 10 | pair at K, K+1 : escapes for R = 0..2 -> 0:yyy 1:yyy 2:yyy 3:yyy 4:yyy 5:yyy 6:yyy 7:yyy 8:yyy
+width 11 | pair at K, K+1 : escapes for R = 0..2 -> 0:yyy 1:yyy 2:yyy 3:yyy 4:yyy 5:yyy 6:yyy 7:yyy 8:yyy 9:yyy

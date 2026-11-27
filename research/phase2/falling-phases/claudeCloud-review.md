@@ -115,3 +115,37 @@ strip can prove.
 | `claudeCloud_grow.py` | the escaping assignments grown one cell at a time; moduli to 100 |
 | `claudeCloud_three.cpp` | the three-residue test in C++, to 24 cells |
 | `data/claudeCloud-*.txt` | the outputs |
+
+## Addendum, 27 November 17:00 UTC: the every-modulus proof (I312), and the centre (K97)
+
+**I312 is right.** All sixteen modules compile here in sequence against the kit at `8bdf737` (core Lean 4.35.0),
+about 215 s in all, of which `ModulusData17` takes 100 s and `ModulusData13` 44 s; `leanchecker` passes on
+`ModulusData17`, `EveryModulus` and `ModulusParity`, and `two_cofinal_every_modulus` uses the standard axioms only
+([log](data/claudeCloud-every-modulus-compile.txt)). The carrying steps, read in the source:
+- **Quiet triple** (`quiet_eq`): on six cells, three updates in a row with no fall make the first one idle, for all
+  exterior bits; checked over all 64 rows. Recomputed here: two quiet updates are not enough (8 paths change), three
+  are (none), so the bound 18 is what this method gives.
+- **Fixed deletion** (`good_of_deleted`): delete the update at slot d of every round, where no cell may fall at d,
+  d + 1, d + 2. The shortened path is a run at modulus m − 1 with the residues above d moved down by one; a pair that
+  repeats with lag m − 1 there repeats with lag m in the original, because the deleted row equals the next one.
+  `quiet_gap` finds such a d among slots 1 to 18 when m > 18 (six cells, six triples of slots, the west residue 0).
+- **Divisor transport** (`good_of_dvd`): a fall at a tick of residue a modulo m has residue a mod d modulo d when d
+  divides m, so a run at m is a run at d, and lag d repeats give lag m repeats. With 3, 4, 5, 7, 11, 13 and 17 every
+  m from 3 to 18 is covered.
+- **Pruned coverage** (`classify_step`): an assignment on w + 1 cells is good if either of its w-cell restrictions
+  is, by projection (`good_of_slice`); the kernel checks that the remaining extensions are exactly those listed with
+  certificates. The lists modulo 3 have 7, 5, 4 and 0 entries at widths 3 to 6: the counts of K95 addendum 1.
+- **Singleton** (`two_cofinal_from_good`): the run starts at T·m, so the calendar is aligned with the ticks.
+
+**The centre.** The method cannot reach it, and two computations show why (`claudeCloud_centre.py`,
+`claudeCloud_bond.py`; COMPUTED).
+- I307's control row, centre 011 for ever beside a white right half, has columns −6, −3, 0 and 1 each falling at one
+  residue, and no column but the centre with a period up to 1,000 over ticks 3,000 to 6,000. It is a path of every
+  strip graph, so a strip test with only the centre, or only the centre and column 1, constrained must escape.
+- It does, at every width from 3 to 9 and every position of the centre; and two neighbouring columns constrained,
+  the rest free, escape at every width to 11 and every residue. The six-column theorem needs all six constrained.
+- The 001 control row is no barrier: its white right half falls into a period-21 pattern, so every column there is
+  periodic.
+
+So two fall residues at the centre needs a fact about the single seed beyond Jen's theorem, a fact of the kind the
+kit's open `Left001` and `Left011` need. That is wall W1.
