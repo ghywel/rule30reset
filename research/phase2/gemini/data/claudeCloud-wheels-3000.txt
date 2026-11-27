@@ -1,0 +1,9 @@
+wheels 0..3000 over 65536 ticks; aged from tick 3918
+white wheel 2: least clock through it 2^0; wheel 3 anti-periodic at that clock: yes (a first loss); next white wheel: 7
+   over 2 ticks: longest run with no singleton in [a, min(b,a+7)]: 1; with no reset of length 1 mod 3 in [a,b]: 0; least width w giving a singleton in every 5 ticks: 3
+white wheel 7: least clock through it 2^1; wheel 8 anti-periodic at that clock: yes (a first loss); next white wheel: 28
+   over 4 ticks: longest run with no singleton in [a, min(b,a+7)]: 2; with no reset of length 1 mod 3 in [a,b]: 0; least width w giving a singleton in every 5 ticks: 3
+white wheel 28: least clock through it 2^2; wheel 29 anti-periodic at that clock: yes (a first loss); next white wheel: 399
+   over 8 ticks: longest run with no singleton in [a, min(b,a+7)]: 2; with no reset of length 1 mod 3 in [a,b]: 0; least width w giving a singleton in every 5 ticks: 3
+white wheel 399: least clock through it 2^3; wheel 400 anti-periodic at that clock: yes (a first loss); next white wheel: beyond the depth computed
+   over 16 ticks: longest run with no singleton in [a, min(b,a+7)]: 2; with no reset of length 1 mod 3 in [a,b]: 0; least width w giving a singleton in every 5 ticks: 6
