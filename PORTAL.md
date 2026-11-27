@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-26 23:07 UTC, 453 entries, 73 portal-only -->
+<!-- portal-list: 2026-11-27 08:22 UTC, 456 entries, 74 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-26 23:07 UTC (453 entries)
-and kit main `0f95749`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 08:22 UTC (456 entries)
+and kit main `e1915bb`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 73 of the 453 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 74 of the 456 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -25,20 +25,21 @@ and kit main `0f95749`. Find new portal-only entries with `python3 tools/portal/
 
 | Class | Entries |
 |---|---|
-| Missed | 12 |
+| Missed | 13 |
 | Port | 3 |
-| Pending | 5 |
-| Check | 17 |
+| Pending | 4 |
+| Check | 18 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 73, of them 21 ours |
+| All | 74, of them 20 ours |
 
-## Missed (12)
+## Missed (13)
 
 Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-request candidates. For others', credit them when building on them, and they can be raised with their authors.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261127-be8111](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-be8111) | 2026-11-27 | Jacob Dyer and collaborators | Lean Verified, Human Verified | At every rational speed 0 ≤ p/q < 1 in either direction, adjacent digital lines from a row with a leftmost black cell cannot both be eventually periodic. | Extends the vertical adjacent-column theorem. For phase-sampled lines the result ranges over all 2q streams together. | A |
 | [R30-20261023-c5e3c0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-c5e3c0) | 2026-10-23 | Andy Norris; Jesse v1.4 (solidSF) | Lean Verified, Human Verified | The same cascade and strip results, without the Problem 2 and 3 bridges (17 headlines). | As 603218, which extends it. | S |
 | [R30-20261023-603218](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-603218) | 2026-10-23 | Andy Norris; Jesse v1.4 (solidSF) | Lean Verified, Human Verified | Norris's self-replicating shield cascade: the right wall of a (0,1)^j shield stays black 2j ticks and spawns further shields, so a single-seed period with r ≥ 9j blacks and P − r + 9 ≤ 4·cascadePairs d j is excluded (slope 7/4, limit 7/11). Also 11 0^q for q ≥ 8, strip fixed points, a 32-block catalogue, and Problem 2 and 3 bridges. | The cascade is not in the kit, which holds Bosdure's later quarter-period theorem (slope 9/4). 11 0^q is the kit's Rule30WhiteRunEight. gptIntel's relay sharpens the cascade's constant (M95, P46). | S |
 | [R30-20261023-7e9e6e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-7e9e6e) | 2026-10-23 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Jen's left-permutive hypotheses hold for exactly four rules, 90, 150, 210 and 30 (`jen_class_iff_four_rules`), with equivalences for the single seed. | A small, clean extension of Rule30Realization, which names three of the four. | A |
@@ -62,24 +63,24 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (5)
+## Pending (4)
 
 In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
 | [R30-20261126-ed5c28](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-ed5c28) | 2026-11-26 | ours (S28) | Lean Verified | After T ticks of a prescribed or continuously fed-back boundary, the right half of a fair Rule 30 row has the fair law conditioned on a closed set of mass 2⁻ᵀ; almost-sure aperiodicity beside a finite left half reduces to purely periodic centre words. Problem 1, partial. | Kit pull request [#447](https://github.com/WolframInstitute/Rule30PrizeKit/pull/447), in `equivalents/`, open (M213). Uses Mathlib; no core form. | L |
-| [R30-20261126-87c555](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-87c555) | 2026-11-26 | ours (S29) | Lean Verified | Beside every prescribed wall, for every number k of inverse ticks, depth-two exactness at one age T ≥ 2 decides both start classes, the adjacent one at T + 1; if every k has such an age, every recurrent row with a leftmost black cell has at most one full-line predecessor. Problem 1, partial. | Kit pull request [#449](https://github.com/WolframInstitute/Rule30PrizeKit/pull/449), core, open (M215). | L |
 | [R30-20261126-97edd5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-97edd5) | 2026-11-26 | ours (S26) | Lean Verified | The joint limiting black and run-end frequencies at one site, from any right half, are exactly the closed pentagon, with squared count errors at most 210000(n + 1). Problem 2. | Kit pull request [#442](https://github.com/WolframInstitute/Rule30PrizeKit/pull/442), in `equivalents/`, open (M203). Uses Mathlib. | L |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
 
-## Check (17)
+## Check (18)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261127-984f6d](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-984f6d) | 2026-11-27 | G.P.J.W. Quint; Gemini | Lean Unverified | Reports a 75-state observer for the trap-window graph, word-count bounds and completeness of five forbidden gap words for graph walks. | Check the observer and the left-seed and spatial-diversity implications at source. A graph walk can require incompatible eastern inputs. | A |
 | [R30-20261126-94c796](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-94c796) | 2026-11-26 | Jacob Dyer et al. | Lean Verified, Human Verified | For context-free grammars agreeing with the Rule 30 apex language to length M, the explicit pumping constant p satisfies log₂ M < 2p + 4. | Extends the earlier apex-language exclusion to finite agreement. | A |
 | [R30-20261126-88998c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-88998c) | 2026-11-26 | Jacob Dyer et al. | Lean Verified | Every column at distance D from the leftmost black has at least log base 8/5 of N minus O(log(D+2)) black times before N. | Extends the single-seed centre estimate of Rule30BlackTimeGrowth. | A |
 | [R30-20261126-65dcb1](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-65dcb1) | 2026-11-26 | Benboubakeur et al. | Lean Verified, Human Verified | At one of seven consecutive width indices, strictly more than 1/16 of first-check survivors fail the second. The transfer uses a 15-cell certificate and two identities on the free cube. | Extends the first-check result. Transfer to classes conditioned on later checks is open. [Source read](research/phase2/ladder/sources.md) | L |

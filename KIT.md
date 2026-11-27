@@ -1,14 +1,14 @@
-<!-- kit-commit: 0f95749 2026-11-27 -->
+<!-- kit-commit: e1915bb 2026-11-27 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `0f95749` (main, 2026-11-27),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `e1915bb` (main, 2026-11-27),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 379 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 453 entries at 23:07 UTC on 26 November (451 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 384 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 456 entries at 08:22 UTC on 27 November (453 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -143,6 +143,7 @@ with a leftmost black cell has its edge k sites inside from age 2^w (`Rule30Ever
 one and two ticks are 8 and 24 on the line (`Rule30TwoSidedInverse`). Beside any prescribed wall they are 8
 and 24 for starts at least two sites away, and 9 and 25 for an adjacent start (`Rule30DrivenLeftInverse`).
 The upper bounds allow arbitrary inverse wall bits, and the sharpness examples use the prescribed wall bits.
+For every k, depth two at T ≥ 2 decides both start classes, at T and T+1. Ages for all k would force unique parents for recurrent black-edged rows (`Rule30DrivenLeftDepthTwo`, `Rule30DrivenParentBand`).
 
 **Other routes to Problem 1.**
 - For every tail start and shift P ≥ 2, compare the single-seed diagram with its P-tick translate. Problem 1 is equivalent to an initial centre mismatch or a later failure of the mirror rule: at a black centre the left neighbour must match, and at a white centre the two neighbour differences must agree (`problem1_iff_two_sided_xor_mirror_escape`).
@@ -180,6 +181,7 @@ The upper bounds allow arbitrary inverse wall bits, and the sharpness examples u
 - **No conserved quantity.** Densities conserved by rule 30 on closed walks are constants plus shift coboundaries, also
   with parity coefficients (`Rule30LocalConservation`, `Rule30ProductParity`); an autonomous local observable is
   constant (`Rule30LocalFactor`).
+- **Temporal differences.** For every positive lag the singleton difference rows admit no elementary rule valid at all sufficiently late ticks (`Rule30TemporalDifference`).
 - **No linear chart.** Theta is affine only to depth 6; a linear chart of the constrained starts is the free-bit chart
   (`Rule30LinearCharts`); the cone tip is not affine (`Rule30ConeTip`).
 - **The finite hypothesis matters.** A periodic left half can realise period-4 and alternating centres
@@ -197,6 +199,7 @@ The upper bounds allow arbitrary inverse wall bits, and the sharpness examples u
 
 - **Period-three right halves.** For arbitrary starting phase, a half white beyond site D enters the least nonempty closed
   set of 14-cell windows by every gate tick from 3D+170 beside 001 or 3D+820 beside 011. Halves of any support enter the set or have a constant sampled gate (`Rule30PeriodThreeEntry`).
+  Lowry characterizes both clocks by sampled white markers. Either cofinal spatial 101 at sites −3 to −1, or uniform third-tick hits at unbounded depths, excludes period three (`Rule30FlankingSources`, `Rule30ThirdTick`).
   The optimal uniform entry slope is three beside either drive. The finite erosion and 011 constant-gate deadlines
   also need slope three. One infinite right half keeps the exceptional front forever (`Rule30EtherThreeSharpSlope`).
 
