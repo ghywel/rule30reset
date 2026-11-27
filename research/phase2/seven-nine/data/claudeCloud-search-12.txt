@@ -1,0 +1,13 @@
+12 cells, 767 states; 30 factors of length at most 4; 466 sets of at most two factors
+settled languages, largest growth rate first (those implied by a listed one with fewer factors are left out):
+   rate 1.0000  avoid: 7
+   rate 1.0000  avoid: 7 9
+   rate 1.0000  avoid: 9
+   rate 1.0000  avoid: 9 7
+   rate 1.0000  avoid: 7 7 ; 9 7 9
+   rate 1.0000  avoid: 7 7 9 ; 9 7 9
+   rate 1.0000  avoid: 7 9 7 ; 7 9 9
+   rate 1.0000  avoid: 7 9 7 ; 9 9 7
+   rate 1.0000  avoid: 9 7 7 ; 9 7 9
+   rate 1.0000  avoid: 9 9 ; 7 9 7
+settled in all: 113 ; shown: 10

@@ -1,0 +1,55 @@
+14 cells, gaps [7, 9], avoiding ['7 7 7']: 2428 states at block boundaries, 4 memories, 7997 components
+   part of 1230 nodes (547 states): settled
+   part of 487 nodes (314 states): NOT settled: 487 nodes have two inside paths that differ
+some part is not settled: the language is not excluded as a whole on 14 cells
+16 cells, gaps [7, 9], avoiding ['7 7 7']: 7872 states at block boundaries, 4 memories, 27853 components
+   part of 3263 nodes (1540 states): settled
+   part of 320 nodes (266 states): settled
+   part of 48 nodes (39 states): NOT settled: 48 nodes have two inside paths that differ
+   part of 8 nodes (8 states): settled
+some part is not settled: the language is not excluded as a whole on 16 cells
+17 cells, gaps [7, 9], avoiding ['7 7 7']: 14263 states at block boundaries, 4 memories, 51230 components
+   part of 5414 nodes (2644 states): settled
+   part of 385 nodes (327 states): settled
+   part of 20 nodes (20 states): settled
+   part of 7 nodes (7 states): settled
+every part settled: every cyclic word of the language is excluded on 17 cells
+18 cells, gaps [7, 9], avoiding ['7 7 7']: 25869 states at block boundaries, 4 memories, 93988 components
+   part of 9046 nodes (4534 states): settled
+   part of 418 nodes (362 states): settled
+   part of 18 nodes (18 states): settled
+   part of 10 nodes (10 states): settled
+every part settled: every cyclic word of the language is excluded on 18 cells
+18 cells, gaps [7, 9], avoiding ['7 7 7 7']: 25869 states at block boundaries, 8 memories, 186841 components
+   part of 17599 nodes (4640 states): settled
+   part of 2505 nodes (1440 states): NOT settled: 2505 nodes have two inside paths that differ
+   part of 10 nodes (10 states): settled
+some part is not settled: the language is not excluded as a whole on 18 cells
+19 cells, gaps [7, 9], avoiding ['7 7 7 7']: 47015 states at block boundaries, 8 memories, 345854 components
+   part of 28935 nodes (7885 states): settled
+   part of 1328 nodes (893 states): NOT settled: 1328 nodes have two inside paths that differ
+   part of 4 nodes (4 states): settled
+   part of 3 nodes (3 states): settled
+some part is not settled: the language is not excluded as a whole on 19 cells
+20 cells, gaps [7, 9], avoiding ['7 7 7 7']: 85758 states at block boundaries, 8 memories, 636596 components
+   part of 47630 nodes (13483 states): settled
+   part of 1837 nodes (1263 states): NOT settled: 1837 nodes have two inside paths that differ
+   part of 3 nodes (3 states): settled
+   part of 2 nodes (2 states): settled
+some part is not settled: the language is not excluded as a whole on 20 cells
+13 cells, gaps [7, 9], avoiding ['7 7 7', '7 9 7 9']: 1364 states at block boundaries, 7 memories, 8122 components
+   part of 1274 nodes (321 states): settled
+   part of 126 nodes (74 states): settled
+   part of 29 nodes (23 states): settled
+every part settled: every cyclic word of the language is excluded on 13 cells
+14 cells, gaps [7, 9], avoiding ['7 7 7', '7 9 7 9']: 2428 states at block boundaries, 7 memories, 14739 components
+   part of 2088 nodes (547 states): settled
+   part of 162 nodes (106 states): settled
+   part of 10 nodes (10 states): settled
+every part settled: every cyclic word of the language is excluded on 14 cells
+16 cells, gaps [7, 9], avoiding ['7 7 7', '7 9 7 7']: 7872 states at block boundaries, 7 memories, 49224 components
+   part of 5483 nodes (1540 states): settled
+   part of 377 nodes (261 states): settled
+   part of 16 nodes (16 states): settled
+   part of 8 nodes (8 states): settled
+every part settled: every cyclic word of the language is excluded on 16 cells

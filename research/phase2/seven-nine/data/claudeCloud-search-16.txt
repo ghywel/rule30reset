@@ -1,0 +1,43 @@
+16 cells, 7872 states; 30 factors of length at most 4; 466 sets of at most two factors
+settled languages, largest growth rate first (those implied by a listed one with fewer factors are left out):
+   rate 1.7549  avoid: 7 7 7 ; 7 9 7 7
+   rate 1.7549  avoid: 7 7 7 9 ; 7 9 7 7
+   rate 1.7549  avoid: 7 9 7 7 ; 9 7 7 7
+   rate 1.7549  avoid: 7 7 7 9 ; 7 7 9 7
+   rate 1.7549  avoid: 7 7 7 ; 7 7 9 7
+   rate 1.7549  avoid: 7 7 9 7 ; 9 7 7 7
+   rate 1.7305  avoid: 7 7 9 7 ; 9 9 7 7
+   rate 1.6956  avoid: 7 7 7 ; 7 9 7 9
+   rate 1.6956  avoid: 7 7 7 9 ; 7 9 7 9
+   rate 1.6956  avoid: 7 7 7 9 ; 9 7 9 7
+   rate 1.6956  avoid: 7 9 7 9 ; 9 7 7 7
+   rate 1.6956  avoid: 7 7 7 ; 9 7 9 7
+   rate 1.6956  avoid: 9 7 7 7 ; 9 7 9 7
+   rate 1.6180  avoid: 7 7 7 ; 7 9 7
+   rate 1.6180  avoid: 7 9 7 7 ; 9 9 9 7
+   rate 1.6180  avoid: 9 9 9 ; 7 9 7 7
+   rate 1.6180  avoid: 7 9 7 7 ; 7 9 9 9
+   rate 1.6180  avoid: 9 7 7
+   rate 1.6180  avoid: 7 7 7 9 ; 9 7 7 9
+   rate 1.6180  avoid: 7 7 9 7 ; 7 7 9 9
+   rate 1.6180  avoid: 7 9 7 7 ; 9 9 7 7
+   rate 1.6180  avoid: 9 7 7 7 ; 9 7 7 9
+   rate 1.6180  avoid: 7 7
+   rate 1.6180  avoid: 7 7 9 7 ; 9 9 9 7
+   rate 1.6180  avoid: 9 9 9 ; 7 7 9 7
+   rate 1.6180  avoid: 7 7 7 ; 9 7 7 9
+   rate 1.6180  avoid: 7 7 9 7 ; 7 9 9 9
+   rate 1.6180  avoid: 7 9 7 ; 7 7 7 9
+   rate 1.6180  avoid: 7 7 9
+   rate 1.6180  avoid: 7 9 7 ; 9 7 7 7
+   rate 1.4656  avoid: 9 7 9 ; 9 7 7 7
+   rate 1.4656  avoid: 7 9 7 ; 9 9 9
+   rate 1.4656  avoid: 7 7 7 ; 9 7 9
+   rate 1.4656  avoid: 7 9 7 ; 7 7 9 9
+   rate 1.4656  avoid: 7 9 7 ; 9 9 7 7
+   rate 1.4656  avoid: 7 9 7 ; 7 9 9 9
+   rate 1.4656  avoid: 7 9 7 ; 9 9 9 7
+   rate 1.4656  avoid: 9 7 9 ; 7 7 7 9
+   rate 1.0000  avoid: 7
+   rate 1.0000  avoid: 7 9
+settled in all: 226 ; shown: 51

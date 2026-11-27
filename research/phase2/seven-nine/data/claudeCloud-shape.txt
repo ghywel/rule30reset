@@ -1,0 +1,61 @@
+17 cells, avoiding ['7 7 7']: 14263 states, 4 memories
+nodes possible after 0, 1, 2, ... blocks: [57052, 30610, 21560, 18019, 16876, 16680, 16636, 16529, 16451, 16391, 16385] (stable after 10)
+of the 16385 lasting nodes, 5826 lie in 4 recurrent parts; 10559 do not
+   part of 5414 nodes: at most 1 different readings for one (memory, next gap): the readings do not depend on the node
+      after gaps (7, 7), next gap 9: site 1 reads 001111111
+      after gaps (7, 9), next gap 7: site 1 reads 0011111
+      after gaps (7, 9), next gap 9: site 1 reads 001111111
+      after gaps (9, 7), next gap 7: site 1 reads 0011111
+      after gaps (9, 7), next gap 9: site 1 reads 001111111
+      after gaps (9, 9), next gap 7: site 1 reads 0011111
+      after gaps (9, 9), next gap 9: site 1 reads 001111111
+   part of 385 nodes: at most 2 different readings for one (memory, next gap)
+   part of 20 nodes: at most 1 different readings for one (memory, next gap): the readings do not depend on the node
+      after gaps (7, 7), next gap 9: site 1 reads 001111111
+      after gaps (7, 9), next gap 7: site 1 reads 0111111
+      after gaps (7, 9), next gap 9: site 1 reads 000001111
+      after gaps (9, 7), next gap 7: site 1 reads 0011111
+      after gaps (9, 7), next gap 9: site 1 reads 000000011
+      after gaps (9, 9), next gap 7: site 1 reads 0011111
+   part of 7 nodes: at most 1 different readings for one (memory, next gap): the readings do not depend on the node
+      after gaps (7, 9), next gap 7: site 1 reads 0111111
+      after gaps (9, 7), next gap 9: site 1 reads 001111111
+longest chain of lasting nodes outside the recurrent parts: 15
+14 cells, avoiding ['7 7 7', '7 9 7 9']: 2428 states, 7 memories
+nodes possible after 0, 1, 2, ... blocks: [16996, 11019, 8624, 6841, 6153, 6014, 5934, 5819, 5641, 5468, 5085, 4937, 4876, 4825] (stable after 13)
+of the 4825 lasting nodes, 2260 lie in 3 recurrent parts; 2565 do not
+   part of 2088 nodes: at most 1 different readings for one (memory, next gap): the readings do not depend on the node
+      after gaps (7, 7, 9), next gap 7: site 1 reads 0011111
+      after gaps (7, 7, 9), next gap 9: site 1 reads 001111111
+      after gaps (7, 9, 7), next gap 7: site 1 reads 0011111
+      after gaps (7, 9, 9), next gap 7: site 1 reads 0011111
+      after gaps (7, 9, 9), next gap 9: site 1 reads 001111111
+      after gaps (9, 7, 7), next gap 9: site 1 reads 001111111
+      after gaps (9, 7, 9), next gap 7: site 1 reads 0011111
+      after gaps (9, 7, 9), next gap 9: site 1 reads 001111111
+      after gaps (9, 9, 7), next gap 7: site 1 reads 0011111
+      after gaps (9, 9, 7), next gap 9: site 1 reads 001111111
+      after gaps (9, 9, 9), next gap 7: site 1 reads 0011111
+      after gaps (9, 9, 9), next gap 9: site 1 reads 001111111
+   part of 162 nodes: at most 2 different readings for one (memory, next gap)
+   part of 10 nodes: at most 2 different readings for one (memory, next gap)
+longest chain of lasting nodes outside the recurrent parts: 13
+13 cells, avoiding ['7 7 7', '7 9 7 9']: 1364 states, 7 memories
+nodes possible after 0, 1, 2, ... blocks: [9548, 6490, 5275, 4258, 3862, 3785, 3722, 3624, 3499, 3393, 3191, 3105, 3067, 3042] (stable after 13)
+of the 3042 lasting nodes, 1429 lie in 3 recurrent parts; 1613 do not
+   part of 1274 nodes: at most 1 different readings for one (memory, next gap): the readings do not depend on the node
+      after gaps (7, 7, 9), next gap 7: site 1 reads 0011111
+      after gaps (7, 7, 9), next gap 9: site 1 reads 001111111
+      after gaps (7, 9, 7), next gap 7: site 1 reads 0011111
+      after gaps (7, 9, 9), next gap 7: site 1 reads 0011111
+      after gaps (7, 9, 9), next gap 9: site 1 reads 001111111
+      after gaps (9, 7, 7), next gap 9: site 1 reads 001111111
+      after gaps (9, 7, 9), next gap 7: site 1 reads 0011111
+      after gaps (9, 7, 9), next gap 9: site 1 reads 001111111
+      after gaps (9, 9, 7), next gap 7: site 1 reads 0011111
+      after gaps (9, 9, 7), next gap 9: site 1 reads 001111111
+      after gaps (9, 9, 9), next gap 7: site 1 reads 0011111
+      after gaps (9, 9, 9), next gap 9: site 1 reads 001111111
+   part of 126 nodes: at most 2 different readings for one (memory, next gap)
+   part of 29 nodes: at most 2 different readings for one (memory, next gap)
+longest chain of lasting nodes outside the recurrent parts: 10
