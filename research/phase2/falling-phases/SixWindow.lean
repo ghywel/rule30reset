@@ -43,7 +43,7 @@ private theorem frozen_or_lower (rank tag : Nat → Nat) (s n : Nat)
 
 /-- A plateau in the certificate rank pins an adjacent pair at phase three,
 and cannot last until the moving left edge separates the two ages. -/
-private theorem window_drop (i : Int) (s c : Nat) (hs : i.natAbs ≤ s)
+theorem window_drop (i : Int) (s c : Nat) (hs : i.natAbs ≤ s)
     (hc : c=i.natAbs+10) (rank tag : Nat → Nat)
     (steps : ∀ k, k < s+c → rank (s+k+1) < rank (s+k) ∨
       (rank (s+k+1)=rank (s+k) ∧ tag (s+k+1)=tag (s+k)))

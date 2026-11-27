@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-27 11:04 UTC, 456 entries, 73 portal-only -->
+<!-- portal-list: 2026-11-27 11:29 UTC, 457 entries, 74 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 11:04 UTC (456 entries)
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 11:29 UTC (457 entries)
 and kit main `8bdf737`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 73 of the 456 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 74 of the 457 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -27,11 +27,11 @@ and kit main `8bdf737`. Find new portal-only entries with `python3 tools/portal/
 |---|---|
 | Missed | 13 |
 | Port | 3 |
-| Pending | 4 |
+| Pending | 5 |
 | Check | 17 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 73, of them 20 ours |
+| All | 74, of them 20 ours |
 
 ## Missed (13)
 
@@ -63,12 +63,13 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (4)
+## Pending (5)
 
 In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261127-4129d8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-4129d8) | 2026-11-27 | onebluecloud and OpenAI Codex | Lean Verified, Human Verified | Beside a prescribed alternating boundary, all completions give the specified alternating first-column samples exactly from prefix length 23 for seed 31 and 20 for seed 495. Shorter prefixes admit white-tailed counterexamples. | [Kit PR #454](https://github.com/WolframInstitute/Rule30PrizeKit/pull/454) sharpens the sufficient lengths in Rule30EtherFamilies and Rule30SidewaysLocks. | A |
 | [R30-20261126-ed5c28](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-ed5c28) | 2026-11-26 | ours (S28) | Lean Verified | After T ticks of a prescribed or continuously fed-back boundary, the right half of a fair Rule 30 row has the fair law conditioned on a closed set of mass 2⁻ᵀ; almost-sure aperiodicity beside a finite left half reduces to purely periodic centre words. Problem 1, partial. | Kit pull request [#447](https://github.com/WolframInstitute/Rule30PrizeKit/pull/447), in `equivalents/`, open (M213). Uses Mathlib; no core form. | L |
 | [R30-20261126-97edd5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-97edd5) | 2026-11-26 | ours (S26) | Lean Verified | The joint limiting black and run-end frequencies at one site, from any right half, are exactly the closed pentagon, with squared count errors at most 210000(n + 1). Problem 2. | Kit pull request [#442](https://github.com/WolframInstitute/Rule30PrizeKit/pull/442), in `equivalents/`, open (M203). Uses Mathlib. | L |
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
