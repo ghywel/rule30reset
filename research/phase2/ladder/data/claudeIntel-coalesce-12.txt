@@ -1,0 +1,4 @@
+# coalesce n 12: check k reads tick 2n+2(k-1)
+# k alive_seeds distinct_rows seeds_passing rows_passing z_seeds z_rows max_cluster
+1 4096 1270 2008 627 -1.25 -0.45 16
+2 2008 627 1030 319 1.16 0.44 14
