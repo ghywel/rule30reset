@@ -1,0 +1,13 @@
+Written before running claudeIntel_x_hazard.py (N32).
+P1 50%: under a fair drive, X's escape rate lambda gives ln2/lambda within a factor 2 of the census slope (~113 samples per site).
+P2 45%: the census tail of first trap entry is close to exponential beyond sample 400, with rate within a factor 1.5 of X's fair-drive lambda.
+P3 60%: the fraction of clean seeds entering the trap after sample 400 is nearly the same at every support above 12 (memoryless exit, so linear records).
+2026-11-27T08:22:12Z
+Results of P1-P3 seen (P1 yes: ln2/lambda = 131.5; P2 yes: tail rate 0.00540 vs 0.00527; P3 yes: beyond-400 fraction 0.0141-0.0142 for supports 16-24).
+P4 55%, written before running claudeIntel_x_widths.py: the fair-drive escape rate from X read through windows of width 25 to 30 stays within 10% of the width-24 value.
+P5 50%, written before the physical replay: at physical visits to departure windows of X, the observed exits are within 10% of the fair expectation (sum of leaving pairs / 4), for seeds that end in the clean block.
+2026-11-27T08:25:48Z
+P4 result so far: no (width 25: 0.00459, 26: 0.00463, 27: 0.00433); cause suspected: the seven-lock closes at width 30. Lock-aware rerun at 30-32 started.
+P5 result: no as stated (all ages: observed/fair 1.12; ages >= 25: 1.14-1.16), though the late hazard is within 10% of fair.
+P6 65%, written before running claudeIntel_x_nearlock.py: of clean seeds with first trap entry beyond sample 1000, at least 90% keep the seven-lock gate rhythm on at least 95% of their X stay.
+2026-11-27T08:35:12Z

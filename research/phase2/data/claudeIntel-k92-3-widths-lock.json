@@ -1,0 +1,16 @@
+[
+ {
+  "width": 30,
+  "states": 1012864,
+  "escape_rate_per_sample": 0.004829508480131567,
+  "log2_over_rate": 143.5233385367329,
+  "per_step_log_spread_in_tail": 8.558344242677075e-05
+ },
+ {
+  "width": 31,
+  "states": 2025728,
+  "escape_rate_per_sample": 0.0050786614181809134,
+  "log2_over_rate": 136.48225850980597,
+  "per_step_log_spread_in_tail": 8.91007421780464e-05
+ }
+]

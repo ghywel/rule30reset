@@ -1,0 +1,330 @@
+{
+ "sample": 1000000,
+ "rng": "numpy default_rng(20261127).choice(2^24, N, replace=False)",
+ "trap_check": "first trap sample equals the census field for all 967676 clean seeds",
+ "by_fate": {
+  "clean": {
+   "seeds": 967676,
+   "X": {
+    "seeds_visiting": 116029,
+    "samples_in": 18454562,
+    "departure_visits": 186109,
+    "fair_expected_exits": 103262.25,
+    "observed_exits": 116029,
+    "observed_over_fair": 1.1236342419422394,
+    "departure_visits_per_sample_in": 0.010084715096462327,
+    "mean_leaving_fraction_at_departure": 0.5548482340993719
+   },
+   "Y": {
+    "seeds_visiting": 45236,
+    "samples_in": 634466,
+    "departure_visits": 96004,
+    "fair_expected_exits": 45456.5,
+    "observed_exits": 45236,
+    "observed_over_fair": 0.9951492085840309,
+    "departure_visits_per_sample_in": 0.15131464885431212,
+    "mean_leaving_fraction_at_departure": 0.47348547977167615
+   }
+  },
+  "two-lock": {
+   "seeds": 24909,
+   "X": {
+    "seeds_visiting": 0,
+    "samples_in": 0,
+    "departure_visits": 0,
+    "fair_expected_exits": 0.0,
+    "observed_exits": 0,
+    "observed_over_fair": null,
+    "departure_visits_per_sample_in": null,
+    "mean_leaving_fraction_at_departure": null
+   },
+   "Y": {
+    "seeds_visiting": 4385,
+    "samples_in": 58113,
+    "departure_visits": 8617,
+    "fair_expected_exits": 4178.0,
+    "observed_exits": 4385,
+    "observed_over_fair": 1.0495452369554812,
+    "departure_visits_per_sample_in": 0.14828007502624196,
+    "mean_leaving_fraction_at_departure": 0.48485551816177325
+   }
+  },
+  "five-lock": {
+   "seeds": 30,
+   "X": {
+    "seeds_visiting": 0,
+    "samples_in": 0,
+    "departure_visits": 0,
+    "fair_expected_exits": 0.0,
+    "observed_exits": 0,
+    "observed_over_fair": null,
+    "departure_visits_per_sample_in": null,
+    "mean_leaving_fraction_at_departure": null
+   },
+   "Y": {
+    "seeds_visiting": 0,
+    "samples_in": 0,
+    "departure_visits": 0,
+    "fair_expected_exits": 0.0,
+    "observed_exits": 0,
+    "observed_over_fair": null,
+    "departure_visits_per_sample_in": null,
+    "mean_leaving_fraction_at_departure": null
+   }
+  },
+  "seven-lock": {
+   "seeds": 6783,
+   "X": {
+    "seeds_visiting": 6783,
+    "samples_in": 1501821,
+    "departure_visits": 479,
+    "fair_expected_exits": 218.5,
+    "observed_exits": 0,
+    "observed_over_fair": 0.0,
+    "departure_visits_per_sample_in": 0.0003189461327282013,
+    "mean_leaving_fraction_at_departure": 0.4561586638830898
+   },
+   "Y": {
+    "seeds_visiting": 238,
+    "samples_in": 3286,
+    "departure_visits": 595,
+    "fair_expected_exits": 276.75,
+    "observed_exits": 238,
+    "observed_over_fair": 0.8599819331526649,
+    "departure_visits_per_sample_in": 0.18107121119902617,
+    "mean_leaving_fraction_at_departure": 0.4651260504201681
+   }
+  },
+  "ether": {
+   "seeds": 602,
+   "X": {
+    "seeds_visiting": 0,
+    "samples_in": 0,
+    "departure_visits": 0,
+    "fair_expected_exits": 0.0,
+    "observed_exits": 0,
+    "observed_over_fair": null,
+    "departure_visits_per_sample_in": null,
+    "mean_leaving_fraction_at_departure": null
+   },
+   "Y": {
+    "seeds_visiting": 602,
+    "samples_in": 6522,
+    "departure_visits": 5,
+    "fair_expected_exits": 2.25,
+    "observed_exits": 0,
+    "observed_over_fair": 0.0,
+    "departure_visits_per_sample_in": 0.0007666360012266176,
+    "mean_leaving_fraction_at_departure": 0.45
+   }
+  },
+  "all": {
+   "seeds": 1000000,
+   "X": {
+    "seeds_visiting": 122812,
+    "samples_in": 19956383,
+    "departure_visits": 186588,
+    "fair_expected_exits": 103480.75,
+    "observed_exits": 116029,
+    "observed_over_fair": 1.1212616839363843,
+    "departure_visits_per_sample_in": 0.009349790490591406,
+    "mean_leaving_fraction_at_departure": 0.554594882843484
+   },
+   "Y": {
+    "seeds_visiting": 50461,
+    "samples_in": 702387,
+    "departure_visits": 105221,
+    "fair_expected_exits": 49913.5,
+    "observed_exits": 49859,
+    "observed_over_fair": 0.9989081110320855,
+    "departure_visits_per_sample_in": 0.14980487964612102,
+    "mean_leaving_fraction_at_departure": 0.4743682344779084
+   }
+  }
+ },
+ "by_k_all": {
+  "X": {
+   "1": {
+    "declined": 24044,
+    "taken": 8404
+   },
+   "2": {
+    "declined": 33241,
+    "taken": 47704
+   },
+   "3": {
+    "declined": 13274,
+    "taken": 59921
+   },
+   "4": {
+    "declined": 0,
+    "taken": 0
+   }
+  },
+  "Y": {
+   "1": {
+    "declined": 26548,
+    "taken": 9698
+   },
+   "2": {
+    "declined": 22458,
+    "taken": 21059
+   },
+   "3": {
+    "declined": 6356,
+    "taken": 19102
+   },
+   "4": {
+    "declined": 0,
+    "taken": 0
+   }
+  }
+ },
+ "x_stay_clean": {
+  "seeds": 116029,
+  "survival": {
+   "0": 112044,
+   "50": 73968,
+   "100": 56741,
+   "200": 33419,
+   "300": 19641,
+   "400": 11581,
+   "600": 3965,
+   "800": 1409,
+   "1000": 513,
+   "1200": 180
+  }
+ },
+ "clean_never_in_X": 851647,
+ "clean_in_X_without_exit_seen": 0,
+ "records": {
+  "7693847": {
+   "census_stop": 2716,
+   "my_first_trap": 2716,
+   "entryX": 9,
+   "exitX": 2705,
+   "departure_events": [
+    [
+     "X",
+     240,
+     2,
+     2,
+     0
+    ],
+    [
+     "X",
+     288,
+     2,
+     3,
+     0
+    ],
+    [
+     "X",
+     995,
+     2,
+     3,
+     0
+    ],
+    [
+     "X",
+     1569,
+     2,
+     3,
+     0
+    ],
+    [
+     "X",
+     1897,
+     1,
+     3,
+     0
+    ],
+    [
+     "X",
+     1898,
+     2,
+     0,
+     0
+    ],
+    [
+     "X",
+     2592,
+     2,
+     0,
+     0
+    ],
+    [
+     "X",
+     2705,
+     1,
+     0,
+     1
+    ]
+   ]
+  },
+  "11888151": {
+   "census_stop": 2716,
+   "my_first_trap": 2716,
+   "entryX": 9,
+   "exitX": 2705,
+   "departure_events": [
+    [
+     "X",
+     240,
+     2,
+     2,
+     0
+    ],
+    [
+     "X",
+     288,
+     2,
+     3,
+     0
+    ],
+    [
+     "X",
+     995,
+     2,
+     3,
+     0
+    ],
+    [
+     "X",
+     1569,
+     2,
+     3,
+     0
+    ],
+    [
+     "X",
+     1897,
+     1,
+     3,
+     0
+    ],
+    [
+     "X",
+     1898,
+     2,
+     0,
+     0
+    ],
+    [
+     "X",
+     2592,
+     2,
+     0,
+     0
+    ],
+    [
+     "X",
+     2705,
+     1,
+     0,
+     1
+    ]
+   ]
+  }
+ }
+}

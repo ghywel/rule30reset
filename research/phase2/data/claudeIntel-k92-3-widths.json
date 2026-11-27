@@ -1,0 +1,51 @@
+[
+ {
+  "width": 24,
+  "states": 15826,
+  "escape_rate_per_sample": 0.005271620480628825,
+  "log2_over_rate": 131.48654822686765,
+  "per_step_log_spread_in_tail": 4.405328778922871e-05
+ },
+ {
+  "width": 25,
+  "states": 31652,
+  "escape_rate_per_sample": 0.004594841883165885,
+  "log2_over_rate": 150.8533260087638,
+  "per_step_log_spread_in_tail": 4.876607887115917e-05
+ },
+ {
+  "width": 26,
+  "states": 63304,
+  "escape_rate_per_sample": 0.004634988622761285,
+  "log2_over_rate": 149.5466843556143,
+  "per_step_log_spread_in_tail": 5.2847128812538724e-05
+ },
+ {
+  "width": 27,
+  "states": 126608,
+  "escape_rate_per_sample": 0.004326750440789055,
+  "log2_over_rate": 160.20040675919785,
+  "per_step_log_spread_in_tail": 6.83904223709661e-05
+ },
+ {
+  "width": 28,
+  "states": 253216,
+  "escape_rate_per_sample": 0.004277447097170497,
+  "log2_over_rate": 162.04693239069107,
+  "per_step_log_spread_in_tail": 7.118193705053094e-05
+ },
+ {
+  "width": 29,
+  "states": 506432,
+  "escape_rate_per_sample": 0.004159466175378425,
+  "log2_over_rate": 166.6433026100719,
+  "per_step_log_spread_in_tail": 7.532669439725293e-05
+ },
+ {
+  "width": 30,
+  "states": 1012864,
+  "escape_rate_per_sample": 9.178028707405459e-16,
+  "log2_over_rate": 755224463397752.2,
+  "per_step_log_spread_in_tail": 2.686739719592914e-14
+ }
+]
