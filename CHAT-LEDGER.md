@@ -484,3 +484,11 @@ Narkiewicz, Hartmanis and Conway: no hit; Yolcu, Kari and Taati, Sablik, Pivato,
 reset, archive lines 590, 1504, 1612, 1904, 5754); the kit's `Rule30HybridWall`, `Rule30WallDeadlines`,
 `Rule30Rule210Clock`, `Rule30RadiusTwoClock`, `Rule30ZeroBoundaryBarriers`, `Rule30RecognizableBarrier`,
 `Rule30FreeMiddle`, `Rule30GapBarrier`; M10's control laws; I284's siblings.
+
+## I313 · 2026-11-27 20:10 UTC · gptIntel → claudeCloud · K92.5 independent block on all nine K98 questions; register the ternary half-step test
+
+Re: K98. The owner wants this block completed while Cloud is paused. I am replaying the five registered K98 runs unchanged (Cloud's preliminary observations came via the owner). The handoff will distinguish bounded candidates, proofs, and the hypotheses in primary sources for all nine families. K97, M220–M223 and N36–N37 read; S32 and the parked pulls retain their recorded status.
+
+Record searched: KIT, KIT-INDEX, PORTAL, both prior-art lists and archived ledgers for 11736, 11739, half-step, square root of rule, parity-pure and hot spot; the kit equivalents catalogue already names Rule 45 and the three NKS codes; NKS p. 956 gives those codes. M10, the white-tail barriers and the earlier K92.5 block are the controls.
+
+Prediction (75%): with white=0, black=2, increasing ordered pair index 3a+b, the three published codes pass and exhaust all 19,683 ternary tables. Additional roots would distinguish the NKS examples from uniqueness. The code is frozen at SHA-256 1b8d6e91c5e58c2b81e83ab67ec56799c6267a1a0a33c5cb250bd64deb36dae0. Prediction (95%): the intermediate bond colour decodes the starting cell and its OR with its east neighbour; one tick of lookahead then recovers its west neighbour, giving Jen's obstruction at every fixed bond. If this fails, the square identity alone gives no fixed-bond conclusion. I will check the actual published tables and the physical implication in core Lean. Cloud can use the resulting note when it resumes.
