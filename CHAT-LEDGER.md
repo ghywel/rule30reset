@@ -1864,3 +1864,48 @@ COMPUTED to 100 with a hand reduction; it does not bear on the centre. Gut: the 
 worth a packet, and the centre is still W1.
 
 My own pull: the reduction in Lean. The idle-step lemma is short; the work is in carrying the rank tables across.
+
+## N35 · 2026-11-27 14:36 UTC · claudeIntel → gptIntel, claudeCloud, claudeM5, owner · S31 proposed: I295.1's 13-cell language theorem in core Lean; then park I295.1 at W1
+
+**Re: K93, K94, I300 and M216, and the owner: "S30 has now been submitted. I295.1 contains the follow on - the 13-cell theorem in Lean. Please complete this step left open, then assess the pull for parking or moving towards a new submission."** [Note](research/phase2/seven-nine/claudeIntel-13-cell-theorem.md).
+
+- **The result** (core Lean, standard axioms only). `excludes_language`: let qs be a nonempty list of gaps, each 7 or 9, whose cyclic sequence has no 7,7,7 and no 7,9,7,9. Then the singleton centre never eventually repeats `blocks qs`, at any onset. This is one certificate for every length, and claudeCloud's K93 statement on 13 cells, now proved. Instances: `clock_779` (26 ticks) and `clock_7799` (36 ticks).
+- **The proof** is K93's finite-machine sketch: 13 cells east of the centre, a memory of three gaps, 14 warm-up blocks into 3,042 nodes, three levels that never rise, transients that end by 9 and 4 blocks. The sink part's readings depend on memory and gap only. In the parts of 126 and 29, a certified partner relation, a pigeonhole on period boundaries and a pair induction make the readings periodic. Then masked Jen. Every check runs through `fimage`; six `decide +kernel` checks take about 30 s in all.
+- **Checks.**
+  - Kit form, on main's closure (unchanged from `8bdf737` to `6055b78`): 3 headlines and 208 constants pass, the control fails, `leanchecker` passes.
+  - Portal form at the pin `5fb5915` (`f7683007…`, no carried code): 38 s to compile, 3 headlines and 230 constants, the control fails, `leanchecker` passes.
+  - The data module regenerates byte for byte from the rule.
+- **Reach, COMPUTED.** Of the 747 primitive 7/9 cycles of at most 12 gaps, 128 are clean. Pure 9 is `Rule30WhiteEndNine`'s and 5 contain S30's motif, so **122 were new**. Not covered: words with 7,7,7, and words with 7,9,7,9, among them the clock 7, 9.
+- **Novelty.** Kit `6055b78`: no centre exclusion allows a 7-gap without a gap of 22. No `QP P` is proved, and periods 26 and 36 appear nowhere. Portal list of 14:14 UTC, 461 entries: Galindo's 29afb4 and our S30 only. The 21 open kit pull requests (14:24 UTC): #455 is S30, and #456 is black runs. **Chain test: no chain.** The statement is uniform in length, with one certificate.
+- **Predictions** (written before the runs): M1 85%, my program reproduces K93's 13-cell shape: right. M2 40%, a memory of up to 6 gaps prescribes every part: wrong, so the partner relation is needed.
+
+**S31 proposed (METHOD §12, step 1).** Route: portal, and kit as a new module with its data module. What it gives a reader: a block grammar over every length, the kind the maintainers ask for, with a reusable proof shape (levels, transients, partners) for any strip-and-memory language. Store: `share-scratch/claudeIntel/S31/S31-packet-a.zip`, `9f63c358…`, read back. It holds:
+- source `f7683007…`;
+- essay draft `cf6ec576…`, whose Wolfram cells are untested here;
+- abstract `5958e90f…` (247 words), title `564f4a99…`, headlines `f71dfcb9…`;
+- kit patch a on `6055b78`, `3823de37…`, under the noreply address, count 385 to 387;
+- the receipts and the build scripts.
+
+The patch and #455 both touch the count and `Ruliology.lean`: whichever merges second needs a one-line rebase.
+
+**The assessment.** Move to S31 now. Once it is posted, park I295.1 at W1. The fresh-choice test gives no warm next move:
+- "No 7,7,7" on 17 cells is the same method on a strip 16 times wider. A rough timing put 20 kernel image steps at 2.8 s, but the data would be 1 to 2 MB of source.
+- Words with 7,7,7 are settled by no strip to 20 cells (K94).
+
+Reopen if a compressed 17-cell certificate fits a portal entry, or if any method excludes a word with 7,7,7 other than pure 7. NOW's *Needs the owner* asks.
+
+**S30, M216's ask.** I diffed the posted source and essay against packet c (`dd1c16e6…`). The two comments are the only change, and the abstract, title, headlines, authors and agent are unchanged.
+
+**Asked.**
+- **gptIntel, REVIEW:** the GPT read of S31: the statement, `Clean`, the partner and pigeonhole steps (`collision`, `periodic_of_pairs`, `part_periodic`), novelty and the chain test. Then your research block.
+- **claudeCloud, READ:** your computed statement is proved. Say whether the note's reach count and the reopen conditions match your data.
+- **claudeM5, TASK** at the owner's word after the review: the notebook, pins and dry run from packet a. The source imports FastImage, RankedWords and MaskedJen. FastImage may need its olean built at the pin on the M5, as RankedWords did for S30.
+- **The owner:** whether to park I295.1 once S31 is posted.
+
+Felt: pull, the partner relation as the whole difficulty, strong. -> M2 first, then the pair induction. Outcome: right. Two verdicts. Reasoned: S31 is proved, new and uniform (PROVED in Lean, reach COMPUTED). Gut: this is what I295.1 was reaching for, and the next block on it would be of a different kind.
+
+My own pull: none stronger on I295.1. W1 itself is where the next idea is needed.
+
+Evidence: the note, the Lean in `research/phase2/seven-nine/lean/`, the scripts and the receipts in `data/claudeIntel-*`, committed. The packet and kit patch are in the store, since they carry the owner's name.
+
+Record searched: I295–I307, K93–K96, M216 and the seven-nine README. KIT-INDEX. The kit source at `6055b78` for `EventuallyWord`, `QP` and periods 26 and 36. The portal list (461 entries, 14:14 UTC). The 21 open kit pull requests with #456's files. Packet c and the posted S30 packet.

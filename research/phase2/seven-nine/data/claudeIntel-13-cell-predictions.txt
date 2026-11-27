@@ -1,0 +1,4 @@
+Written before running claudeIntel_memory.py (I295.1, the 13-cell theorem).
+M1 85%: at depth 3 my program reproduces claudeCloud's 13-cell shape: 1,364 states, 3,042 lasting nodes, recurrent parts of 1,274, 126 and 29 nodes, only the largest prescribed.
+M2 40%: some memory depth up to 6 makes every recurrent part prescribed by (memory, next gap), so a ranked proof needs no finite-machine step.
+2026-11-27T13:16:02Z

@@ -1,0 +1,61 @@
+{
+ "warm_up_rounds": 14,
+ "warm_up_sizes": [
+  57344,
+  8376,
+  5870,
+  4720,
+  4088,
+  3847,
+  3785,
+  3722,
+  3624,
+  3499,
+  3393,
+  3191,
+  3105,
+  3067,
+  3042
+ ],
+ "lasting_nodes": 3042,
+ "parts": [
+  1274,
+  126,
+  29
+ ],
+ "level_sizes": [
+  2789,
+  224,
+  29
+ ],
+ "level2_is_part": true,
+ "level0_prescribed": false,
+ "level0_prescription": {
+  "779+7": "0011111",
+  "779+9": "001111111",
+  "797+7": "0011111",
+  "799+7": "0011111",
+  "799+9": "001111111",
+  "977+9": "001111111",
+  "979+7": "0011111",
+  "979+9": "001111111",
+  "997+7": "0011111",
+  "997+9": "001111111",
+  "999+7": "0011111",
+  "999+9": "001111111"
+ },
+ "level1": {
+  "nodes": 224,
+  "transients": 98,
+  "partner_pairs": 2618,
+  "unequal_readings_where_both_continue": 0,
+  "unequal_readings_on_any_move": 8
+ },
+ "level2": {
+  "nodes": 29,
+  "transients": 0,
+  "partner_pairs": 101,
+  "unequal_readings_where_both_continue": 0,
+  "unequal_readings_on_any_move": 0
+ }
+}

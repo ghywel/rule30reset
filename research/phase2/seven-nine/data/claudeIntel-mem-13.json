@@ -1,0 +1,161 @@
+{
+ "states": 1364,
+ "rows": [
+  {
+   "cells": 13,
+   "factors": [
+    [
+     7,
+     7,
+     7
+    ],
+    [
+     7,
+     9,
+     7,
+     9
+    ]
+   ],
+   "depth": 3,
+   "memories": 7,
+   "lasting_nodes": 3042,
+   "rounds_to_settle": 13,
+   "recurrent_parts": [
+    {
+     "nodes": 1274,
+     "states": 321,
+     "max_readings_per_memory_gap": 1
+    },
+    {
+     "nodes": 126,
+     "states": 74,
+     "max_readings_per_memory_gap": 2
+    },
+    {
+     "nodes": 29,
+     "states": 23,
+     "max_readings_per_memory_gap": 2
+    }
+   ],
+   "all_prescribed": false,
+   "longest_transient_chain": 10
+  },
+  {
+   "cells": 13,
+   "factors": [
+    [
+     7,
+     7,
+     7
+    ],
+    [
+     7,
+     9,
+     7,
+     9
+    ]
+   ],
+   "depth": 4,
+   "memories": 12,
+   "lasting_nodes": 4874,
+   "rounds_to_settle": 14,
+   "recurrent_parts": [
+    {
+     "nodes": 2104,
+     "states": 321,
+     "max_readings_per_memory_gap": 1
+    },
+    {
+     "nodes": 160,
+     "states": 74,
+     "max_readings_per_memory_gap": 2
+    },
+    {
+     "nodes": 33,
+     "states": 23,
+     "max_readings_per_memory_gap": 2
+    }
+   ],
+   "all_prescribed": false,
+   "longest_transient_chain": 13
+  },
+  {
+   "cells": 13,
+   "factors": [
+    [
+     7,
+     7,
+     7
+    ],
+    [
+     7,
+     9,
+     7,
+     9
+    ]
+   ],
+   "depth": 5,
+   "memories": 20,
+   "lasting_nodes": 7820,
+   "rounds_to_settle": 14,
+   "recurrent_parts": [
+    {
+     "nodes": 3568,
+     "states": 321,
+     "max_readings_per_memory_gap": 1
+    },
+    {
+     "nodes": 200,
+     "states": 74,
+     "max_readings_per_memory_gap": 2
+    },
+    {
+     "nodes": 38,
+     "states": 23,
+     "max_readings_per_memory_gap": 2
+    }
+   ],
+   "all_prescribed": false,
+   "longest_transient_chain": 13
+  },
+  {
+   "cells": 13,
+   "factors": [
+    [
+     7,
+     7,
+     7
+    ],
+    [
+     7,
+     9,
+     7,
+     9
+    ]
+   ],
+   "depth": 6,
+   "memories": 34,
+   "lasting_nodes": 12435,
+   "rounds_to_settle": 14,
+   "recurrent_parts": [
+    {
+     "nodes": 6116,
+     "states": 321,
+     "max_readings_per_memory_gap": 1
+    },
+    {
+     "nodes": 266,
+     "states": 74,
+     "max_readings_per_memory_gap": 2
+    },
+    {
+     "nodes": 49,
+     "states": 23,
+     "max_readings_per_memory_gap": 2
+    }
+   ],
+   "all_prescribed": false,
+   "longest_transient_chain": 13
+  }
+ ]
+}

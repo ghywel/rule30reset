@@ -1,0 +1,44 @@
+{
+ "singleton_block_cost": {
+  "min": 9,
+  "mean": 30.799126637554586,
+  "max": 88,
+  "total_small_parts": 7053
+ },
+ "part_105": {
+  "classes": 67,
+  "class_closed": false,
+  "readings_constant": true,
+  "class_block_cost": 2291
+ },
+ "part_26": {
+  "classes": 18,
+  "class_closed": false,
+  "readings_constant": true,
+  "class_block_cost": 679
+ },
+ "transients_level_0": {
+  "nodes": 0,
+  "longest_stay": 0,
+  "cost": 0
+ },
+ "transients_level_1": {
+  "nodes": 1036,
+  "longest_stay": 9,
+  "cost": 69228
+ },
+ "transients_level_2": {
+  "nodes": 279,
+  "longest_stay": 4,
+  "cost": 14359
+ },
+ "transients_level_3": {
+  "nodes": 5334,
+  "longest_stay": 13,
+  "cost": 245793
+ },
+ "warm_up": {
+  "blocks": 13,
+  "cost": 557591
+ }
+}

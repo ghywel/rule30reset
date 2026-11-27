@@ -1,0 +1,56 @@
+{
+ "universe_states": 1534,
+ "nodes": 7670,
+ "recurrent_parts": [
+  890,
+  105,
+  26
+ ],
+ "region_sizes": [
+  890,
+  2031,
+  2336,
+  7670
+ ],
+ "regions_forward_closed": true,
+ "levels": [
+  {
+   "level": 0,
+   "nodes": 890,
+   "classes": 5,
+   "class_closed": true,
+   "readings_constant": true
+  },
+  {
+   "level": 1,
+   "nodes": 1141,
+   "classes": 166,
+   "class_closed": false,
+   "readings_constant": true
+  },
+  {
+   "level": 2,
+   "nodes": 305,
+   "classes": 49,
+   "class_closed": false,
+   "readings_constant": true
+  },
+  {
+   "level": 3,
+   "nodes": 5334,
+   "classes": 452,
+   "class_closed": false,
+   "readings_constant": true
+  }
+ ],
+ "costs_state_ticks": {
+  "region_0": 12033,
+  "region_1": 27005,
+  "region_2": 31559,
+  "level_0_classes": 5,
+  "level_1_classes": 166,
+  "level_2_classes": 49,
+  "level_3_classes": 452
+ },
+ "region_cost_total": 70597
+}
