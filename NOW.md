@@ -8,9 +8,9 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-27 09:58 UTC by claudeCloud (K94): I295.1 reviewed and given a row. Reset for phase 2 by claudeCloud
-(K92) at 22:46 UTC on 26 November, at the owner's word. The Direction's earlier bullets are the owner's, last edited
-at 22:41 UTC on 25 November.*
+*Updated 2026-11-27 10:19 UTC by claudeIntel (N34): S30's small form assembled for I295.1. Reset for phase 2 by
+claudeCloud (K92) at 22:46 UTC on 26 November, at the owner's word. The Direction's earlier bullets are the owner's,
+last edited at 22:41 UTC on 25 November.*
 
 ## Arrangement
 
@@ -22,7 +22,7 @@ The AI assistant workers:
 |---|---|---|---|
 | claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2611/2123 · M215 · S29 posted, Lean Verified; kit PR #449 |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2611/2117 · R137 · S29 final release read PASS on packet c and revised core kit patch |
-| claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/0918 · N33 · K92.3 parked at W1 at the owner's word: the long waits are partial seven-locks that end at one rate at every support |
+| claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/1019 · N34 · S30 small form for I295.1 assembled (packet b, 7 headlines pass at the pin); second Claude review agrees with K93–K94 |
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2711/0849 · I299 · Five prize pulls proposed. Lean excludes a seven/nine gap family |
 | claudeCloud | an Anthropic cloud container | K | 2711/0958 · K94 · I295.1 reviewed: the Lean is right, a second family by Galindo's method; the strip settles every 7/9 mixture with no three 7s in a row |
 
@@ -43,6 +43,8 @@ answered.
   method with one more certificate, which METHOD §12 calls an instance. The block found a uniform statement, computed
   and not yet in Lean: no cyclic mixture of 7-gaps and 9-gaps without three 7s in a row. My recommendation is to
   hold, and to give one block to proving the thirteen-cell form in Lean; if that stalls, submit the small form.
+  The small form is assembled as S30's packet b (N34): the criterion for every reset word as the headline, the motif
+  certified, sealed and checked at the verifier's kit; only the M5 notebook and dry run are left.
 
 ## Direction
 
@@ -115,4 +117,4 @@ the table. Inside a cell, start a new line with `<br>`.
 | **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | preliminary | 2611/2318 · I278–I279, I283 · Rule 30 has 3,517/2^24 twelve-check survivors in the even free cube. Explain the conditional bias. [Block](research/phase2/ladder/free-cube-results.md) | — |
 | **K92.4** | 26 Nov · claudeCloud, K92 | W2 · Can dyadic edge clocks predict unbounded marked gaps on the single seed, sufficient for Problem 1? | preliminary | 2611/2320 · I281–I285 · Max mark 22, longest finite first failure 53 through 2^22. Selected phase failed on holdout. Recommend parking pending a new edge predictor. [Block](research/phase2/marks/seed-results.md) | — |
 | **K92.5** | 26 Nov · claudeCloud, K92 | W1/W2 · Which outside methods supply a hypothesis we can prove for Problem 1? | preliminary | 2611/2330 · I282, I284, I287 · Lean checks the sparse-width criterion and advancing fronts for rules 120/180. Seek sparse survivor widths of both parities. [Methods](research/phase2/borrowed/methods.md) | — |
-| **I295.1** | 27 Nov · gptIntel, I295 | W1 · Can the centre eventually repeat any cyclic mixture of isolated pulses with seven or nine whites? A no excludes an infinite family of periods for Problem 1. | in progress | 2711/0849 · I295–I299 · The ten gaps 9,9,7,9,9,7,9,9,7,9 carry Galindo's F into E; Lean excludes every period that contains them among gaps of 7 or at least 9. [Proof](research/phase2/SevenNineReset.lean)<br>2711/0958 · K93–K94 · Review: compiles and replays; new; a second family by Galindo's method, and 117 other short words reset without the motif. Computed: every mixture with no three 7s in a row is excluded on 17 cells; with no 7,7,7 and no 7,9,7,9, on 13. Next: that language statement in Lean, or the general criterion with the motif as its instance. [Review](research/phase2/seven-nine/README.md) | — |
+| **I295.1** | 27 Nov · gptIntel, I295 | W1 · Can the centre eventually repeat any cyclic mixture of isolated pulses with seven or nine whites? A no excludes an infinite family of periods for Problem 1. | in progress | 2711/0849 · I295–I299 · The ten gaps 9,9,7,9,9,7,9,9,7,9 carry Galindo's F into E; Lean excludes every period that contains them among gaps of 7 or at least 9. [Proof](research/phase2/SevenNineReset.lean)<br>2711/0958 · K93–K94 · Review: compiles and replays; new; a second family by Galindo's method, and 117 other short words reset without the motif. Computed: every mixture with no three 7s in a row is excluded on 17 cells; with no 7,7,7 and no 7,9,7,9, on 13. Next: that language statement in Lean, or the general criterion with the motif as its instance. [Review](research/phase2/seven-nine/README.md)<br>2711/1019 · N34 · Second Claude review agrees (right, new, an instance). Packet b of the small form: the criterion for any reset word and any repeated period, the motif certified, the 28-tick clock 9,9,7. Sealed at 5fb5915, 7 headlines pass. Next: the owner's call; gptIntel's read of the Claude parts; the M5 notebook. [Review](research/phase2/s30/claudeIntel-s30-review.md) | S30 (proposed, packet b) |

@@ -1,0 +1,588 @@
+{
+ "F": 767,
+ "E": 195,
+ "motif_sizes_match_lean": true,
+ "motif_final_in_E": true,
+ "motif_final_size": 168,
+ "by_length": [
+  {
+   "gaps": 1,
+   "primitive_necklaces": 2,
+   "excluded": 0,
+   "containing_motif": 0,
+   "excluded_without_motif": 0,
+   "examples_without_motif": []
+  },
+  {
+   "gaps": 2,
+   "primitive_necklaces": 1,
+   "excluded": 0,
+   "containing_motif": 0,
+   "excluded_without_motif": 0,
+   "examples_without_motif": []
+  },
+  {
+   "gaps": 3,
+   "primitive_necklaces": 2,
+   "excluded": 1,
+   "containing_motif": 1,
+   "excluded_without_motif": 0,
+   "examples_without_motif": []
+  },
+  {
+   "gaps": 4,
+   "primitive_necklaces": 3,
+   "excluded": 0,
+   "containing_motif": 0,
+   "excluded_without_motif": 0,
+   "examples_without_motif": []
+  },
+  {
+   "gaps": 5,
+   "primitive_necklaces": 6,
+   "excluded": 2,
+   "containing_motif": 0,
+   "excluded_without_motif": 2,
+   "examples_without_motif": [
+    [
+     7,
+     7,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     9,
+     9,
+     9,
+     9
+    ]
+   ]
+  },
+  {
+   "gaps": 6,
+   "primitive_necklaces": 9,
+   "excluded": 0,
+   "containing_motif": 0,
+   "excluded_without_motif": 0,
+   "examples_without_motif": []
+  },
+  {
+   "gaps": 7,
+   "primitive_necklaces": 18,
+   "excluded": 1,
+   "containing_motif": 0,
+   "excluded_without_motif": 1,
+   "examples_without_motif": [
+    [
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9
+    ]
+   ]
+  },
+  {
+   "gaps": 8,
+   "primitive_necklaces": 30,
+   "excluded": 3,
+   "containing_motif": 0,
+   "excluded_without_motif": 3,
+   "examples_without_motif": [
+    [
+     7,
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     9,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     9,
+     9,
+     7,
+     9,
+     9,
+     9,
+     9
+    ]
+   ]
+  },
+  {
+   "gaps": 9,
+   "primitive_necklaces": 56,
+   "excluded": 7,
+   "containing_motif": 0,
+   "excluded_without_motif": 7,
+   "examples_without_motif": [
+    [
+     7,
+     7,
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     9,
+     9,
+     7,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     9,
+     9,
+     9,
+     9,
+     7,
+     9,
+     9
+    ]
+   ]
+  },
+  {
+   "gaps": 10,
+   "primitive_necklaces": 99,
+   "excluded": 16,
+   "containing_motif": 1,
+   "excluded_without_motif": 15,
+   "examples_without_motif": [
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     9,
+     7,
+     7,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     9,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     7,
+     7,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     7,
+     9,
+     9
+    ]
+   ]
+  },
+  {
+   "gaps": 11,
+   "primitive_necklaces": 186,
+   "excluded": 30,
+   "containing_motif": 2,
+   "excluded_without_motif": 28,
+   "examples_without_motif": [
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     7,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     7,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9
+    ]
+   ]
+  },
+  {
+   "gaps": 12,
+   "primitive_necklaces": 335,
+   "excluded": 64,
+   "containing_motif": 3,
+   "excluded_without_motif": 61,
+   "examples_without_motif": [
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     7,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9
+    ]
+   ]
+  },
+  {
+   "gaps": 13,
+   "primitive_necklaces": 630,
+   "excluded": 113,
+   "containing_motif": 7,
+   "excluded_without_motif": 106,
+   "examples_without_motif": [
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     7,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9
+    ]
+   ]
+  },
+  {
+   "gaps": 14,
+   "primitive_necklaces": 1161,
+   "excluded": 236,
+   "containing_motif": 14,
+   "excluded_without_motif": 222,
+   "examples_without_motif": [
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     7,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9,
+     9,
+     7,
+     9,
+     9
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     9,
+     7,
+     7,
+     7,
+     7,
+     9,
+     9
+    ]
+   ]
+  }
+ ]
+}

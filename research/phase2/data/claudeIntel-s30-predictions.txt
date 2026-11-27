@@ -1,0 +1,5 @@
+Written before running claudeIntel_s30_reach.py (S30 review block).
+Q1 95%: the independent strip replay gives the same 94 set sizes as the Lean masks and ends inside E.
+Q2 60%: some primitive 7/9 necklaces with at most 14 gaps are excluded by repeating them from F without containing the motif.
+Q3 55%: the share of 7/9 necklaces excluded this way grows with the number of gaps and passes one half by 14 gaps.
+2026-11-27T09:47:56Z

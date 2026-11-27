@@ -12,5 +12,12 @@
   "escape_rate_per_sample": 0.0050786614181809134,
   "log2_over_rate": 136.48225850980597,
   "per_step_log_spread_in_tail": 8.91007421780464e-05
+ },
+ {
+  "width": 32,
+  "states": 4051456,
+  "escape_rate_per_sample": 0.004779030481097682,
+  "log2_over_rate": 145.03928847106627,
+  "per_step_log_spread_in_tail": 7.575893683752898e-05
  }
 ]

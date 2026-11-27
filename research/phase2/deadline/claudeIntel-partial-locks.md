@@ -26,8 +26,8 @@ width-24 window graph. Sample s is a white sample, at physical tick 2s + 1, as i
   - The two record holders read `0101000` 386 times in a row, from sample 9 until they leave X.
 - **The rate is close to a fair coin's, but the physical drive is not a fair coin.** COMPUTED rates, MEASURED on a
   million uniform seeds.
-  - Driven by fair exterior pairs, X empties at 0.00527 per sample at width 24, and at 0.00483 and 0.00508 at widths
-    30 and 31 once lock entry counts as an exit. The physical late rate is 0.0048 to 0.0054.
+  - Driven by fair exterior pairs, X empties at 0.00527 per sample at width 24, and at 0.00478 to 0.00508 at widths
+    30 to 32 once lock entry counts as an exit. The physical late rate is 0.0048 to 0.0054.
   - In detail the physical drive differs:
     - a stay begins committed: 3.2% leave X at the first step, against 58% for a fair drive from the same windows;
     - later it reaches departure windows 26% less often than the fair walk, and leaves 15% more often at each one.
@@ -129,8 +129,8 @@ width V ≥ 25 the state is a V-cell window whose first 24 cells are in X.
 
 | Width V | 24 | 25 | 26 | 27 | 28 | 29 | 30 with lock entry an exit | 31 with lock entry an exit | 32 with lock entry an exit |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Rate per sample | 0.005272 | 0.004595 | 0.004635 | 0.004327 | 0.004277 | 0.004159 | 0.004830 | 0.005079 | running |
-| ln 2 / rate | 131.5 | 150.9 | 149.5 | 160.2 | 162.0 | 166.6 | 143.5 | 136.5 | |
+| Rate per sample | 0.005272 | 0.004595 | 0.004635 | 0.004327 | 0.004277 | 0.004159 | 0.004830 | 0.005079 | 0.004779 |
+| ln 2 / rate | 131.5 | 150.9 | 149.5 | 160.2 | 162.0 | 166.6 | 143.5 | 136.5 | 145.0 |
 
 - I read the fall from 25 to 29 as the fair walk lingering near the seven-lock, which is not yet closed.
 - At 30 the lock is closed under every exterior pair. Without counting lock entry as an exit, the rate there is
@@ -273,7 +273,7 @@ before, which departs from METHOD §4. The file is in the receipts.
 |---|---|---|---|
 | [claudeIntel_x_hazard.py](claudeIntel_x_hazard.py) | `ba92e265…7e8` | `W24.scc 24-aligned.bin out` | 1 min |
 | [claudeIntel_x_widths.py](claudeIntel_x_widths.py) | `c9d130b8…1b1` | `W24.scc 30 out` | 28 min |
-| [claudeIntel_x_widths_lock.py](claudeIntel_x_widths_lock.py) | `5d5f3f5b…dcf` | `W24.scc tables.txt 30 32 out` | 10 min at 30, 29 min at 31; 32 running |
+| [claudeIntel_x_widths_lock.py](claudeIntel_x_widths_lock.py) | `5d5f3f5b…dcf` | `W24.scc tables.txt 30 32 out` | 10, 29 and 45 min at widths 30, 31 and 32 |
 | [claudeIntel_x_physical.py](claudeIntel_x_physical.py) | `3462cb93…04f` | `W24.scc 24-aligned.bin tables.txt 1000000 out` | 3 min |
 | [claudeIntel_x_stays.py](claudeIntel_x_stays.py) | `40930131…81c` | `W24.scc 24-aligned.bin tables.txt 1000000 out` | 3 min |
 | [claudeIntel_x_qprocess.py](claudeIntel_x_qprocess.py) | `bc9ce047…8cf` | `W24.scc out` | 1 min |
