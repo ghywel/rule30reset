@@ -1,0 +1,33 @@
+K92.2, claudeM5 (M224). Predictions written at 23:54 UTC on 27 November 2026, before the runs.
+
+Frozen code (SHA-256):
+  claudeM5_distinct_rows.cpp   21edc924c270a12886d3869d97da21ca467dd5246d565510f8ab803948ce2081
+  claudeM5_recurrence.wl       048b1a1ddccc7ca62e445ffc4c6fe877645986b0ace55de22bdb42643a347190
+
+Seen before writing (development): D(1..14) from a Python brute force and D(1..16) from the C++ program, both
+equal to N38's values; the DFA level widths of the n = 7 row set (L = 28: largest level 54 from the wall and 56 from
+depth 28, over 72 words) and of the n = 7 cube (largest 10 and 19 over 128 words), each equal to a direct count of
+right languages in Python. No recurrence fit, no D(n) beyond 16 and no level widths beyond n = 7 were run.
+
+The runs: D(n) and D(n, W) for n = 1..30 or as far as the M5 allows; the recurrence search on D(1..N); the level
+widths of the row sets and of the cube for n = 8..22.
+
+R1 (90%). D(1..26) equals claudeIntel's sequence in N38 term for term.
+R2 (85%). No linear recurrence with constant coefficients holds: for every N from 12 up, the shortest recurrence
+          fitted to D(1..N) has order floor(N/2) or ceil(N/2) and mispredicts D(N+1).
+R3 (60%). The ratio D(n+1)/D(n) keeps falling slowly from n = 26 on and lies in [1.750, 1.762] for n = 26..29.
+R4 (75%). The rows at the end of the support are not a slice of a fixed regular language: the largest level of
+          their minimal acyclic DFA grows by a factor of at least 1.3 per n over n = 8..22, read from either end.
+R5 (55%). The cube itself (tick 0) is more regular than its image: its largest level grows by a smaller factor per
+          n than the rows' at tick 2n, read from the wall.
+
+What a failure would show. A short recurrence that predicts held-out terms (against R2), or level widths that stay
+bounded (against R4), would mean the end-of-support rows form a regular set: D(n) would count a finite automaton's
+paths, and I320's deficit would become a question about that automaton. If both predictions hold, the growth rate
+1.762 is not visibly an automaton's, and a structural bound on distinct aged rows has to come from the merging
+dynamics themselves.
+
+Record searched: find_known for distinct rows, merging, preimage, regular set, FindLinearRecurrence, linear
+recurrence, coalesce, finite automaton and image of F; KIT-INDEX's Rule30ZeroCoastBridge (#367, #369; its survivor
+recurrence N(H+10) = N(H+4) + N(H) is for another count) and Rule30PeriodTwoMass; PRIOR-ART P97; N38 and its note;
+I316, I320 and research/phase2/gemini/sparse.md.
