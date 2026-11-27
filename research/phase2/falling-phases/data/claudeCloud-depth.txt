@@ -1,0 +1,7 @@
+six cells, one residue each, west cell at residue 0: most recurrent parts on one path
+modulus | assignments | escaping | by depth
+3 | 243 | 0 | [(1, 58), (2, 175), (3, 10)]
+4 | 1024 | 0 | [(1, 384), (2, 638), (3, 2)]
+5 | 3125 | 0 | [(1, 1488), (2, 1637)]
+6 | 7776 | 0 | [(1, 4275), (2, 3501)]
+7 | 16807 | 0 | [(1, 10188), (2, 6619)]

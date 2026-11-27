@@ -1,9 +1,9 @@
-<!-- portal-list: 2026-11-27 11:29 UTC, 457 entries, 74 portal-only -->
+<!-- portal-list: 2026-11-27 13:46 UTC, 461 entries, 78 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 11:29 UTC (457 entries)
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 13:46 UTC (461 entries)
 and kit main `8bdf737`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
@@ -28,10 +28,10 @@ and kit main `8bdf737`. Find new portal-only entries with `python3 tools/portal/
 | Missed | 13 |
 | Port | 3 |
 | Pending | 6 |
-| Check | 17 |
+| Check | 20 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 75, of them 21 ours |
+| All | 78, of them 21 ours |
 
 ## Missed (13)
 
@@ -76,12 +76,15 @@ In an open kit pull request. Moves out of this file when it merges.
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
 
-## Check (17)
+## Check (20)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261127-6f6639](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-6f6639) | 2026-11-27 | G.P.J.W. Quint; Gemini (Google) | Lean Verified | A 35-state minimal automaton for the long-run tails of `Rule30LongRunTails`, closing 1^r (0 1 0 1^8)^m 0^c for every c; exact counts 4·3^n of one-column words and a Lucas law for two-column words beside an alternating column; the 13 recurrent front states of the period-three departure form one ten-tick necklace with 8^m wake trajectories. | Extends three kit modules; its two-column count beside an alternating column should be set against S20 and K83. Fifteen theorems, abstract only. | A |
+| [R30-20261127-a4d3f8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-a4d3f8) | 2026-11-27 | Moncef Benboubakeur; GPT; Claude | Lean Verified | With A j r the seeds y < 4^r that pass the first r + j checks beside the white wall: 4·A 2 r ≤ 3·2^r, 12288·A 2 r ≤ 9007·2^r and 2048·A 4 r ≤ 1363·2^r at every r, so a third of the seeds that pass their first r checks fail within four more. | Checks past the support at every width: the subject of our pull K92.2, beyond `Rule30FirstChecks` and their own R30-20261126-65dcb1. Read the 11- and 15-cell certificates. | A |
+| [R30-20261127-24c411](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-24c411) | 2026-11-27 | Moncef Benboubakeur; GPT; Claude | Lean Verified | For base-four rows beside the white wall with units digit 3 and higher digits in {1, 2, 3}: the first white check is at the index of the first higher digit other than 2, and at r + 1 + (r mod 2) for 22…23. Every row of the family fails. | An exact death law for an infinite family of left halves; compare with the kit's stripe-prefix families. | A |
 | [R30-20261126-94c796](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-94c796) | 2026-11-26 | Jacob Dyer et al. | Lean Verified, Human Verified | For context-free grammars agreeing with the Rule 30 apex language to length M, the explicit pumping constant p satisfies log₂ M < 2p + 4. | Extends the earlier apex-language exclusion to finite agreement. | A |
 | [R30-20261126-88998c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-88998c) | 2026-11-26 | Jacob Dyer et al. | Lean Verified | Every column at distance D from the leftmost black has at least log base 8/5 of N minus O(log(D+2)) black times before N. | Extends the single-seed centre estimate of Rule30BlackTimeGrowth. | A |
 | [R30-20261126-65dcb1](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-65dcb1) | 2026-11-26 | Benboubakeur et al. | Lean Verified, Human Verified | At one of seven consecutive width indices, strictly more than 1/16 of first-check survivors fail the second. The transfer uses a 15-cell certificate and two identities on the free cube. | Extends the first-check result. Transfer to classes conditioned on later checks is open. [Source read](research/phase2/ladder/sources.md) | L |

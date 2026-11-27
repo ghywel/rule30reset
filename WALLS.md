@@ -153,7 +153,7 @@ period up to 4096 with a transient up to 8192, and T + P ≥ 16359 for any event
 of the density pentagon by counts that grow at least logarithmically, and a bounded deficit at the corner (9/10, 2/5)
 would make the left half one film of 155 columns (S25).
 
-I295.2 proves that in every six consecutive singleton columns, one fixed column falls on two distinct phases modulo three arbitrarily late. Every dyadic shell from age 8 also has two falling phases pooled over columns −7 through 0. Either period-three centre clock would itself force a two-phase witness on its western flank. The missing step is to locate the second phase at the centre. [Proofs and controls](research/phase2/falling-phases/README.md)
+I295.2 proves that in every six consecutive singleton columns, one fixed column falls on two distinct phases modulo three arbitrarily late. Every dyadic shell from age 8 also has two falling phases pooled over columns −7 through 0. Either period-three centre clock would itself force a two-phase witness on its western flank. The missing step is to locate the second phase at the centre. [Proofs and controls](research/phase2/falling-phases/README.md) K96 extends the count by computation and a hand reduction, not yet in Lean: for every modulus m ≥ 3 one column in every six has two fall residues modulo m, and modulo three one column in every 24 has all three. None of these places the column, and two residues at the centre itself is W1's `Left001` with `Left011`.
 
 **Why it resists.** No invariant measure belongs to the seed; mixing and genericity speak of almost every point and
 of no particular one. Both edges are known exactly (left diagonal j has period 2ʲ, right diagonal j about 2^(j/2)),
