@@ -12,7 +12,7 @@ would prove.
 | | Wall | The missing statement, in one line | What it stops |
 |---|---|---|---|
 | **W1** | The white tail | A finite row's own white cells must end a periodic centre, and nothing is proved once its last black cell has been read. | Problem 1: period two, and every period by the same reduction |
-| **W2** | One orbit | What almost every row does cannot be carried to the single seed: no pattern is proved to recur in its bulk. | Problem 2 whole; Problem 1 through its weakest sufficient conditions |
+| **W2** | One orbit | Known bulk recurrences on the single seed still leave the prize-column criteria open. | Problem 2 whole; Problem 1 through its weakest sufficient conditions |
 | **W3** | The doubling step | At the left edge every result holds through finitely many clock doublings; none passes from period 2ᵉ to 2ᵉ⁺¹. | The every-k chain; the left-edge routes to Problem 1 |
 | **W4** | Hearing from below | We can bound from above what the right side sends, and refuse words; we cannot show that any given thing is sent. | No prize problem directly; whether the classes we exclude are empty |
 | **W5** | Lower bounds on computation | No technique bounds from below the cost of computing one fixed sequence. | Problem 3 |
@@ -129,9 +129,8 @@ ones nobody has proved:
 ## W2. One orbit
 
 **In plain words.** With fair coins on the right, the centre column is an exact fair-coin sequence whatever the left
-half is (S28 has the law): aperiodic, with density one half. The seed is one row. No theorem says that its bulk ever
-shows a given pattern again, and every sufficient condition for Problem 1 that looks only at the seed asks for one
-thing to recur without bound. It is the problem of the digits of one explicit number.
+half is (S28 has the law): aperiodic, with density one half. The seed is one row. Some local patterns recur there.
+The known recurrences leave open the specific events and growth rates that would decide its centre column.
 
 **The missing statement.** Each of these is proved, in the kit, to give Problem 1:
 - **marks** (`problem1_of_marks`, Lowry): for every B there is an age with more than B white cells immediately left
@@ -154,13 +153,15 @@ period up to 4096 with a transient up to 8192, and T + P ≥ 16359 for any event
 of the density pentagon by counts that grow at least logarithmically, and a bounded deficit at the corner (9/10, 2/5)
 would make the left half one film of 155 columns (S25).
 
+I295.2 proves that in every six consecutive singleton columns, one fixed column falls on two distinct phases modulo three arbitrarily late. Every dyadic shell from age 8 also has two falling phases pooled over columns −7 through 0. Either period-three centre clock would itself force a two-phase witness on its western flank. The missing step is to locate the second phase at the centre. [Proofs and controls](research/phase2/falling-phases/README.md)
+
 **Why it resists.** No invariant measure belongs to the seed; mixing and genericity speak of almost every point and
 of no particular one. Both edges are known exactly (left diagonal j has period 2ʲ, right diagonal j about 2^(j/2)),
 and the centre at tick t is t cells from each. Whatever is true of every row is too weak, because other rows have
 periodic centres. Finite data never helps either: every computed fact about the seed leaves room for a longer
 transient.
 
-**What it would take.** One unbounded recurrence in the bulk, of anything. Or a law for *where* records fall, tied
+**What it would take.** An unbounded recurrence at the sites and phases required by a centre criterion. Or a law for *where* records fall, tied
 to the left edge's clocks, the one place where recurrence is proved. Or the first rung between w and (39/32)ʷ for
 the vocabulary: any superlinear bound.
 
