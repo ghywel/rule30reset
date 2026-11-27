@@ -147,6 +147,12 @@ For Problem 2 the missing statement is any frequency at all.
 
 K92.4's single-seed scout through age 4,194,304 found a largest mark of width 22 and a longest finite first failure of 53. The timing phases fitted on the first half did not predict held-out wide marks. An edge mechanism would have to predict a new centre event in advance. [Record ages and timing test](research/phase2/marks/seed-results.md)
 
+The edge clock decides half of a mark (M220, PROOF-SKETCH and COMPUTED). A gap of width l is marked or not by the
+seed's left diagonal l, read from a short prefix of the cells east of the centre: 9 cells to width 28, 30 to width
+399, and at most about half the width in general. It does not say when a gap opens. The settled wedge ends near
+x = −t/4 and its boundary recedes: diagonal j settles near tick 1.3 j, and the centre reads it at tick j.
+[What an edge predictor requires](research/phase2/marks/claudeM5-edge-predictor.md)
+
 **Proved up to it.** A run of one colour that starts at age a is no longer than a, so both colours occur in every
 window [a, 2a], and the j-th black tick comes by 20(8/5)ʲ: logarithmic counts and no more. Dyer carries both bounds
 to every column of a row with a leftmost black cell (portal R30-20261126-19e94d and 88998c, abstract depth). No
@@ -167,8 +173,10 @@ periodic centres. Finite data never helps either: every computed fact about the 
 transient.
 
 **What it would take.** An unbounded recurrence at the sites and phases required by a centre criterion. Or a law for *where* records fall, tied
-to the left edge's clocks, the one place where recurrence is proved. Or the first rung between w and (39/32)ʷ for
-the vocabulary: any superlinear bound.
+to the left edge's clocks, the one place where recurrence is proved. For marks that law is now one statement about
+single rows: at unbounded widths l the seed's row reads one black cell, l white cells and then a forcing prefix of
+an edge word, ending at the centre (M220). Or the first rung between w and (39/32)ʷ for the vocabulary: any
+superlinear bound.
 
 **Phase-1 pulls that stopped here.**
 
@@ -178,6 +186,12 @@ the vocabulary: any superlinear bound.
 | K83, seed side (N26) | the seed's largest census nears one half at the widths computed | abundance at every width, which is as strong as window normality |
 | I72 | a bounded deficit at (1/3, 0) pins an eventual 011 two sites east; two fixed right halves defeat periods to 4,096 | an all-period argument for one fixed right half |
 | K50.4, R4 | white triangles have one family tree but no bound; deep-source occupancy | a reason to bound patches in the bulk; a seed-specific bound |
+
+**Phase-2 pulls that stopped here.**
+
+| Pull | Where it stopped | Reopens with |
+|---|---|---|
+| K92.4 (parked at the owner's word, M220) | through age 2²² the widest mark is 22 and record ages follow no clock (I281–I285). The clock decides a gap's arrival from a short edge prefix (9 cells to width 28), and of the 114 marks of width at least 14 it decided one. It makes no gaps: the missing half is the launch, a row reading one black cell, l white cells and a forcing edge prefix at the centre, at unbounded l (M220) | a mechanism or proof for white gaps of unbounded width beside the centre; or a law for the arrival when the context is not an edge prefix; or a reason for the seed's own edge to be read at the centre, F(j) ≤ j at unbounded j against F(j) ≈ 1.3 j computed |
 
 ## W3. The doubling step
 

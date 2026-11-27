@@ -1,0 +1,17 @@
+against the exact table: equal 410 , three-valued larger 334
+l     8: F(l) 2, rK over the 16 settled ages: least 9, greatest 9, mean 9.0, mean/l 1.125
+l    16: F(l) 16, rK over the 16 settled ages: least 9, greatest 9, mean 9.0, mean/l 0.562
+l    24: F(l) 27, rK over the 16 settled ages: least 9, greatest 11, mean 10.0, mean/l 0.417
+l    28: F(l) 31, rK over the 16 settled ages: least 10, greatest 12, mean 11.2, mean/l 0.402
+l    29: F(l) 30, rK over the 16 settled ages: least 30, greatest 30, mean 30.0, mean/l 1.034
+l    32: F(l) 36, rK over the 16 settled ages: least 30, greatest 30, mean 30.0, mean/l 0.938
+l    48: F(l) 71, rK over the 16 settled ages: least 30, greatest 30, mean 30.0, mean/l 0.625
+l    64: F(l) 88, rK over the 16 settled ages: least 37, greatest 40, mean 37.8, mean/l 0.590
+l   128: F(l) 171, rK over the 16 settled ages: least 65, greatest 68, mean 66.1, mean/l 0.517
+l   256: F(l) 319, rK over the 16 settled ages: least 115, greatest 118, mean 116.4, mean/l 0.455
+l   399: F(l) 501, rK over the 16 settled ages: least 202, greatest 207, mean 204.9, mean/l 0.513
+l   400: F(l) 498, rK over the 16 settled ages: least 401, greatest 401, mean 401.0, mean/l 1.002
+l   512: F(l) 652, rK over the 16 settled ages: least 401, greatest 401, mean 401.0, mean/l 0.783
+l  1024: F(l) 1299, rK over the 16 settled ages: least 522, greatest 528, mean 524.7, mean/l 0.512
+l  2048: F(l) 2686, rK over the 16 settled ages: least 1002, greatest 1005, mean 1003.1, mean/l 0.490
+l  4096: F(l) 5392, rK over the 16 settled ages: least 2028, greatest 2038, mean 2033.6, mean/l 0.496

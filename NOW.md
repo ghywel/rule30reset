@@ -8,7 +8,8 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-27 16:50 UTC by claudeCloud (K97): I312's every-modulus proof passes review; S32 proposed; parking of
+*Updated 2026-11-27 17:07 UTC by claudeM5 (M220): K92.4 parked at W2 at the owner's word, with what an edge predictor requires.
+Before that 16:50 UTC by claudeCloud (K97): I312's every-modulus proof passes review; S32 proposed; parking of
 I295.2 at W1 proposed for after it is posted. Reset for phase 2 by claudeCloud (K92) at 22:46 UTC on 26 November, at
 the owner's word. The Direction's earlier bullets are the owner's, last edited at 22:41 UTC on 25 November.*
 
@@ -20,7 +21,7 @@ The AI assistant workers:
 
 | Worker | Host | Ledger Code | Last Completed |
 |---|---|---|---|
-| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2711/1633 · M219 · S31 posted (R30-20261127-20bf8c), Lean Verified; kit PR #457; I295.1 parked; S30 merged as `6a2c92a` |
+| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2711/1707 · M220 · K92.4: the edge clock decides a mark's arrival from a short prefix, not its launch; parked at W2 with the requirement |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2611/2117 · R137 · S29 final release read PASS on packet c and revised core kit patch |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/1436 · N35 · I295.1's 13-cell language theorem in core Lean; S31 proposed (packet a: 3 headlines pass at the pin and on kit main) |
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2711/1636 · I312 · I295.2 proved for every modulus ≥3 and replayed. S31's sole GPT release read passed (I309–I310). |
@@ -111,6 +112,5 @@ the table. Inside a cell, start a new line with `<br>`.
 |---|---|---|---|---|---|
 | **K92.1** | 26 Nov · claudeCloud, K92 | W1 · Does kick-anchored weight grow enough to exclude period two? | preliminary | 2611/2318 · I276–I279, I283 · Exact at every even H≤182. At H=300 the minimum is 97–103. Test whether surplus can pay for long white gaps. [Block](research/phase2/floor/results.md) | — |
 | **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | preliminary | 2611/2318 · I278–I279, I283 · Rule 30 has 3,517/2^24 twelve-check survivors in the even free cube. Explain the conditional bias. [Block](research/phase2/ladder/free-cube-results.md) | — |
-| **K92.4** | 26 Nov · claudeCloud, K92 | W2 · Can dyadic edge clocks predict unbounded marked gaps on the single seed, sufficient for Problem 1? | preliminary | 2611/2320 · I281–I285 · Max mark 22, longest finite first failure 53 through 2^22. Selected phase failed on holdout. Recommend parking pending a new edge predictor. [Block](research/phase2/marks/seed-results.md) | — |
 | **K92.5** | 26 Nov · claudeCloud, K92 | W1/W2 · Which outside methods supply a hypothesis we can prove for Problem 1? | preliminary | 2611/2330 · I282, I284, I287 · Lean checks the sparse-width criterion and advancing fronts for rules 120/180. Seek sparse survivor widths of both parities. [Methods](research/phase2/borrowed/methods.md) | — |
 | **I295.2** | 27 Nov · gptIntel, I295 | W2/W1 · Force two falling residues in six columns, then at the singleton centre. | in progress | 2711/1636 · I312 · Core Lean: for every modulus ≥3, one fixed site in every six has two cofinal fall phases. Fixed quiet-step deletion reduces the calendars to 18. W1 next: exclude a tail of nondecreasing triples at the centre. [Proof](research/phase2/falling-phases/every-modulus.md)<br>2711/1650 · K97 · Step-2 review of I312 PASS: compiles here (about 215 s in sequence), carrying steps hold, chain test passes. Centre: a strip constraining only the centre, or any two neighbouring columns, escapes at every width tried, as I307's 011 control row predicts, so the centre needs a W1 fact. Next: S32 assembly; then park at W1. [Review](research/phase2/falling-phases/claudeCloud-review.md) | S32 proposed (K97): `two_cofinal_every_modulus` |
