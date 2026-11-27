@@ -29,3 +29,11 @@ What a failure would show. A slope clearly below its first-moment value (by more
 structured cheap family, as the ether row is for G, and so a candidate eternal low-density row: a warning
 against a floor in that language. Slopes at the first-moment values mean the floors are random-coding
 bounds, and a proof must bound the lower tail of seed weight over the whole tree of words.
+
+Added at 17:26 UTC, before running it: the annealed test.
+  claudeIntel_ladder_dist.cpp   56e4003d787bba111fcfc4757fb65aa5d7eee232fe51c94a16a7f510b6ccec50
+  claudeIntel_strip_count.cpp   b08618427905d6f02ba9c4ac15126221d7c890acec4bf4aae8e5d1d1a61d0c40  (L7's counter, written after the registration above, before its run)
+L8 (60%). Every word counted (no budget): GE2 to H = 140, GAP35 to 220, WORDS and CORE to 300. With N(H) the
+          number of words and Z_H(z) = sum over words of z^weight, the annealed excess
+          E(H) = ln Z_H(1/2) - ln N(H) - H ln(3/4) (zero for fair coins) satisfies |E(H)| <= 0.01 H at each
+          language's largest H.
