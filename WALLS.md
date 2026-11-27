@@ -11,11 +11,11 @@ would prove.
 
 | | Wall | The missing statement, in one line | What it stops |
 |---|---|---|---|
-| **W1** | The white tail | A finite row's own white cells must end a periodic centre, and nothing is proved once its last black cell has been read. | Problem 1: period two, and every period by the same reduction |
+| **W1** | The white tail | A finite row's own white cells must end a periodic centre, and an all-budget mortality proof beyond its support is missing. | Problem 1: period two, and every period by the same reduction |
 | **W2** | One orbit | Known bulk recurrences on the single seed still leave the prize-column criteria open. | Problem 2 whole; Problem 1 through its weakest sufficient conditions |
-| **W3** | The doubling step | At the left edge every result holds through finitely many clock doublings; none passes from period 2ᵉ to 2ᵉ⁺¹. | The every-k chain; the left-edge routes to Problem 1 |
+| **W3** | The doubling step | A catch on each prescribed tick across two successive white intervals is missing at unbounded clock orders. | The every-k chain; the left-edge routes to Problem 1 |
 | **W4** | Hearing from below | We can bound from above what the right side sends, and refuse words; we cannot show that any given thing is sent. | No prize problem directly; whether the classes we exclude are empty |
-| **W5** | Lower bounds on computation | No technique bounds from below the cost of computing one fixed sequence. | Problem 3 |
+| **W5** | Lower bounds on computation | A lower bound for lookup at the named centre of the unaltered singleton is missing. | Problem 3 |
 
 The kit's names are in `code`; [KIT.md](KIT.md) §3 has the web of implications and §4 the barriers. Phase-1 pulls are
 cited by their ledger names; their full entries are in [the archived NOW](archive/now/now-phase1-2026-11-26.md), and
@@ -31,7 +31,7 @@ exactly like fair coins: of the 4ⁿ rows of width at most 2n, 2ⁿ − ones n p
 (`first_check_count`); over all fillings of the next digits the survivors follow a fair-coin chain (`mean_ladder`);
 beside a prescribed wall of T ticks the right halves that serve it have fair mass exactly 2⁻ᵀ (S28); along the tree
 of gate words each decoded cell is white half the time (K88, measured). After that the remaining checks are decided
-by white cells, that is by the row's own past, and there every proof stops. The kit digest has it in one line: the
+by white cells, that is by the row's own past, and an all-width survival law is missing. The kit digest has it in one line: the
 fair-coin laws are exact at the start and unproved after a finite row's support ends.
 
 **The missing statement.** Any one of these gives *no eventual period two*:
@@ -50,6 +50,7 @@ fails a check. `UBE` gives Problem 1 (`problem1_of_UBE`). Period three has it as
 as `Absorption` and `Lock`.
 
 **Proved up to it.**
+- With at most 18 black sites among the first 133 depths, the first failed even check comes by tick 132 (two exhaustive searches, sharp). A finite prefix deadline for every weight budget is equivalent to Q01. So is an unbounded deficit n−E in the number of distinct aged rows from starts below 4ⁿ passing k checks, at any prescribed image age. [I320](research/phase2/gemini/sparse.md)
 - `Q01` for every start of width at most 52 (`q01_width_le_52`). The latest lone death is at tick 96 at width 52
   and 116 at width 64 (exhaustive, K84's note). The coupled lifetime is exact to support 106, with replayed lower
   bounds to 224 (I246, K88).
@@ -59,6 +60,9 @@ as `Absorption` and `Lock`.
   and others, portal R30-20261126-65dcb1). These two are all that is proved about checks past the support.
 - Every start below 2⁵² dies within its size plus four steps of G, and that bound for every start would be Q01
   (h3artfield, portal R30-20261108-508c6c and a0fd36). One immortal row of width b would force **at least** 4,096 at every exact width w≥b+389 of the same parity (Benboubakeur et al., portal R30-20261126-e2e0e2). Consequently fewer than 4,096 finite-horizon survivors at arbitrarily large widths of each parity would give Q01. [Checked corollary](research/phase2/borrowed/SparseWidths.lean)
+- Summed across widths, Q01 is equivalent to unbounded 2048B−S(B,k), where S counts starts below 2ᴮ passing k checks.
+  It suffices to prove A(n,n)≤4095n at unbounded n. The 4,096 published ancestors at a single width already fill
+  one 24-tick fibre, so repeating the same short inverse construction cannot improve this count. [I316](research/phase2/borrowed/arithmetic-transfer.md)
 - In G the least weight is the one-in-seven row's (AIOvernight; PRIOR-ART P1). In the trap's gap language it has
   slope about 0.275 a tick to H = 180, while every periodic row there weighs 0.44 or more: the cheapest words are
   cheap through transients (M6, M21).
@@ -162,6 +166,8 @@ period up to 4096 with a transient up to 8192, and T + P ≥ 16359 for any event
 of the density pentagon by counts that grow at least logarithmically, and a bounded deficit at the corner (9/10, 2/5)
 would make the left half one film of 155 columns (S25).
 
+At the named centre a new gap is launched by a solid black run ending at −2 beside an active pair. Among the first 2²² ticks there are 787,329 width-at-least-two launches. Even a fall count F(N) at −2 without a launch condition gives F(N) ≤ 4 black₀(N+2)+1 and F(N) ≤ 2 white₀(N+3). Its asymptotic rate and unbounded marked widths remain open. Independently, k+2 words of the anchored 2k+2-cell strip recur cofinally, with a finite deadline from every sufficiently late start. [Gap launches](research/phase2/gemini/launch.md) · [Late vocabulary](research/phase2/gemini/vocabulary.md)
+
 I295.2 proves in core Lean that for every modulus m ≥ 3, each six-column singleton strip contains a fixed site
 with two cofinal falling residues. Every dyadic shell from age 8 also has falls at two residues modulo three pooled over
 −7 through 0. The centre milestone belongs to W1. It would exclude both period-three clocks by forcing falls
@@ -174,11 +180,11 @@ and the centre at tick t is t cells from each. Whatever is true of every row is 
 periodic centres. Finite data never helps either: every computed fact about the seed leaves room for a longer
 transient.
 
-**What it would take.** An unbounded recurrence at the sites and phases required by a centre criterion. Or a law for *where* records fall, tied
-to the left edge's clocks, the one place where recurrence is proved. For marks that law is now one statement about
-single rows: at unbounded widths l the seed's row reads one black cell, l white cells and then a forcing prefix of
-an edge word, ending at the centre (M220). Or the first rung between w and (39/32)ʷ for the vocabulary: any
-superlinear bound.
+**What it would take.** An unbounded recurrence at the sites and phases required by a centre criterion. Or a law
+for *where* records fall, tied to the left edge's clocks, the one place where recurrence is proved. For marks, show
+that arbitrarily wide launch bars ending at −2 recur with a black centre at the predicted arrival (I321, I324).
+M220’s short edge prefix is one sufficient arrival test. K92.4 follows this route. K92.4.A seeks a fixed-site fall
+count for density, and I295.4 seeks the first superlinear vocabulary bound. [Active pulls](NOW.md#pulls-in-progress)
 
 **Phase-1 pulls that stopped here.**
 
@@ -189,31 +195,23 @@ superlinear bound.
 | I72 | a bounded deficit at (1/3, 0) pins an eventual 011 two sites east; two fixed right halves defeat periods to 4,096 | an all-period argument for one fixed right half |
 | K50.4, R4 | white triangles have one family tree but no bound; deep-source occupancy | a reason to bound patches in the bulk; a seed-specific bound |
 
-**Phase-2 pulls that stopped here.**
-
-| Pull | Where it stopped | Reopens with |
-|---|---|---|
-| K92.4 (parked at the owner's word, M220) | through age 2²² the widest mark is 22 and record ages follow no clock (I281–I285). The clock decides a gap's arrival from a short edge prefix (9 cells to width 28), and of the 114 marks of width at least 14 it decided one. It makes no gaps: the missing half is the launch, a row reading one black cell, l white cells and a forcing edge prefix at the centre, at unbounded l (M220) | a mechanism or proof for white gaps of unbounded width beside the centre; or a law for the arrival when the context is not an edge prefix; or a reason for the seed's own edge to be read at the centre, F(j) ≤ j at unbounded j against F(j) ≈ 1.3 j computed |
-
 ## W3. The doubling step
 
 **In plain words.** The left side of every row with a leftmost black cell is dyadic. Diagonal j repeats with period
-2ʲ, clocks double going in, and a clock that is lost is caught again by a reset. Each exact statement there is proved
-through finitely many doublings, by one more finite certificate each time: source periods to 16 in Lean and 32
-computed, wheels to 87,866, inverse depths to three in Lean and eight computed.
+2ʲ, clocks double going in, and a clock that is lost is caught again by a reset. The prescribed-phase cancellation and inverse-depth checks reach finite orders: old source periods to 16 in Lean and 32 computed, wheels to 87,866, inverse depths to three in Lean and eight computed.
 
 **The missing statement.** (DL⁻₁): *a tick that the doubled stretch after a first clock loss misses is caught in the
 next stretch*, at every dyadic period. It gives (L∞), then (CAP), then Hughes's inverse ticks for every k: the chain
 of S2, S4, S5, S6, S23 and S29. A counterexample needs a source period of at least 64.
 
-**Bearing on the prize.** The inverse ticks are a statement about the seed's past. The routes from the left edge to
-Problem 1 wait on the same step: an aperiodic band from column 0 at every depth (proved to depth 87,868 for long
-periods; `problem1_of_band`), and half density along dyadic progressions (`Rule30LeftAntiPeriod`).
+**Bearing on the prize.** The inverse ticks concern the seed’s past. The sufficient band criterion for Problem 1 is `∀ N, AperiodicBand N 0`. The depth-87,868 long-period results have shifted western column bounds and an onset condition. A route from the prescribed-tick reset law to the full centreward band still needs a proof. [Quantifiers and existing bands](research/phase2/gemini/clock.md)
 
 **Proved up to it.** The chain's links, S2, S4, S5, S6, S23 and S29. The four left sides through wheel 87,866
 (`Rule30FourLeftSides`). Every white-wall band of width w settles by age 152·2^⌊w/23⌋, and the worst-case reset
 capacity is monotone in width (Benboubakeur, portal R30-20261126-7b1cac, abstract depth); linear settling and
 unbounded capacity, which is (CAP), are open.
+
+At a first loss of any dyadic order, every five successive ticks contain an isolated black within seven wheels of the starting white and inside the first white interval. The missing law needs a catch on each prescribed tick across the two stretches. [I321](research/phase2/gemini/clock.md)
 
 **Why it resists.** Each certificate grows with the period, and the maintainers take only the statement for every
 value (kit pull request #357). Five counting marks pass at every dyadic clock, and nothing settles from seven. The
@@ -274,9 +272,14 @@ Problem 3 gives Problem 1. Among the forms *equivalent* to Problem 1 are "no one
 it is harder. Dyer's entries of 26 November are about a different input, the starting row and not the time: the
 language of rows with a black apex is neither regular nor context-free (portal, abstract depth).
 
-**What it would take.** A way to bound from below the cost of one fixed sequence, with no inputs in which to encode
-a hard problem. None exists for any natural sequence. No pull is proposed; a Problem 3 partial will come, if at all,
-as a by-product of W1 or W2.
+The unary one-tape equivalence measures time in the unary string length. The digit equivalence requires fast deciders in both bases 2 and 3. In the prize binary model an aperiodic control needs a full digit scan on every positive index and a two-state machine attains that exact logarithmic cost. The current quadratic DFA state bound for the variable-row apex has a separate input. [I322](research/phase2/gemini/indexed-cost.md)
+
+**What it would take.** A lower bound for the particular time-indexed bit of the unaltered seed. Fischer and
+Rabin's hard sequence encodes an arbitrary Presburger sentence in its index. Direct Rule 30 simulation precludes
+a polynomial-time reduction of that full decision problem to a singleton time index. On the actual singleton,
+Jen and the kit's canonical-window theorem give logarithmic lookup cost in every such window at all but at most
+one fixed site. The possible exception could be the centre. A centre mismatch at unbounded dyadic scales is
+I295.5's concrete first step. [K98, families 8 and 9](research/phase2/borrowed/orbit-cost-transfer.md)
 
 ## Two limits of practice, which are not walls
 

@@ -1,5 +1,9 @@
 # K92.5 · What transfers at a white tail or on a single orbit?
 
+The [K98 block on nine questions](k98-nine-questions.md) continues this preliminary read. It gives a cumulative
+survivor criterion, the limit of the 24-tick inverse construction, and an all-width counterexample to transfer
+between whole-line whitening and survival beside a wall.
+
 **The inverse-counting comparison gives a test we can actually state for Rule 30.** At arbitrarily large exact widths of each parity, can some finite observation leave at most 4,095 rows passing every black-phase check? A yes implies Q01 and excludes an eventually alternating seed centre. The observation horizon may depend on the width. This is a corollary of the published immortal-row amplification theorem. Finding the two unbounded sequences of widths is open. [Lean corollary](SparseWidths.lean) · [Benboubakeur et al., original proof](https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/file?id=R30-20261126-e2e0e2&kind=lean)
 
 | Method | What the proof needs | What carries over, and the control or obstruction |

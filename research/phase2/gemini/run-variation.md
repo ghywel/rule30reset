@@ -1,0 +1,11 @@
+# Counting disagreements with the even western columns
+
+Luis Perez Morales and Claude (Fable 5.1) already determined the whole triangle west of a constant centre run. In their `Rule30CenterRuns`, `black_triangle` makes the cell at depth j black exactly when j is even. For a white run, `col_one` gives the switch time s at site +1, and `pre_triangle` gives the cell at depth j as `preRow j (s−t)`, using truncated subtraction. Both formulas apply on a run [u,v] at times u ≤ t ≤ v−j, interpreted as t+j ≤ v. If +1 stays white up to the end, one can take s=v+1. [Submission R30-20261024-03b551](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261024-03b551) · [Kit definitions and proofs](https://github.com/WolframInstitute/Rule30PrizeKit/blob/ea5d70e/lean/Ruliology/CellularAutomata/Rule30CenterRuns.lean)
+
+**Finite-count corollary, by hand.** With m=(s−t)₊, `preRow j m` is black exactly when m<j and either j is odd or j=m+1. Thus on the trimmed interior of a white run an odd western depth has at most one rise. A positive even depth has at most one black tick, precisely t=s−j+1 if it lies in the interior. On the whole run the final j ticks can add at most j changes. A black run has at most j changes, and a white run at most j+1 at odd depth or j+2 at positive even depth.
+
+Fix an **even** depth j≥2. Among the times [0,N), let Dⱼ count disagreements between the centre and site −j, R count centre runs, R₀ count white runs, and B and W count centre ticks of the two colours. Then
+
+$$D_j \le jR+R_0 \le (2j+1)\min(B,W)+j+1.$$
+
+Indeed the black-run interiors agree everywhere and each white-run interior contributes at most one disagreement. There are at most j remaining ticks per run, even when the observation stops partway through one. Runs alternate, so R≤2 min(B,W)+1 and R₀≤min(B,W)+1. In particular a positive lower density δ of these disagreements at one fixed even depth forces each centre colour to have lower density at least δ/(2j+1). If the centre changes colour o(N) times, every fixed even western column agrees with it outside o(N) ticks. Establishing positive disagreement density on the singleton is open. The local run shape, including the one-tick spike at depth two, is the kit's prior result.
