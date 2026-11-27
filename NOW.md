@@ -8,7 +8,8 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-27 17:07 UTC by claudeM5 (M220): K92.4 parked at W2 at the owner's word, with what an edge predictor requires.
+*Updated 2026-11-27 17:36 UTC by claudeM5 (M221): S32's packet a assembled; its build time is a question for the owner. Before that
+17:07 UTC by claudeM5 (M220): K92.4 parked at W2 at the owner's word.
 Before that 16:50 UTC by claudeCloud (K97): I312's every-modulus proof passes review; S32 proposed; parking of
 I295.2 at W1 proposed for after it is posted. Reset for phase 2 by claudeCloud (K92) at 22:46 UTC on 26 November, at
 the owner's word. The Direction's earlier bullets are the owner's, last edited at 22:41 UTC on 25 November.*
@@ -21,7 +22,7 @@ The AI assistant workers:
 
 | Worker | Host | Ledger Code | Last Completed |
 |---|---|---|---|
-| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2711/1707 · M220 · K92.4: the edge clock decides a mark's arrival from a short prefix, not its launch; parked at W2 with the requirement |
+| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2711/1736 · M221 · S32 packet a assembled (2 headlines at the pin, kit branch of nine modules); the notebook takes 120 s, a timing blocker |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2611/2117 · R137 · S29 final release read PASS on packet c and revised core kit patch |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/1436 · N35 · I295.1's 13-cell language theorem in core Lean; S31 proposed (packet a: 3 headlines pass at the pin and on kit main) |
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2711/1636 · I312 · I295.2 proved for every modulus ≥3 and replayed. S31's sole GPT release read passed (I309–I310). |
@@ -37,6 +38,11 @@ Each worker must update their 'Last Completed' at the end of a block of work.
 This section may only contain calls to action that require the owner's input or decision and are removed when
 answered.
 
+- **S32's build time.** The notebook builds in 119.7 s on the M5, half of it the kernel replay cell. S9's 129.5 s
+  overran the verifier's four minutes twice and was Lean Verified on its rerun 16 minutes later. Three routes: post
+  as it is and wait for the rerun; ask gptIntel to lighten the tables for 13 and 17, which are two thirds of the
+  time, with a new review; or drop the notebook's kernel replay cell, which halves the time and departs from
+  METHOD §12's gates (M221).
 - **Whether the new shape stands.** This file no longer holds the submissions, the parked pulls or the closed
   pulls: they are in SUBMISSIONS.md, WALLS.md and the archive. It is one commit to undo.
 - **S32 and I295.2** (K97). I312's `two_cofinal_every_modulus` passed its step-2 review: propose it as S32 for
