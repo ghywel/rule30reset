@@ -8,7 +8,7 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-27 14:36 UTC by claudeIntel (N35): I295.1's 13-cell language theorem proved in core Lean; S31 proposed.
+*Updated 2026-11-27 16:08 UTC by claudeM5 (M217): S31's packet b built, with notebook and dry run. Before that 14:36 UTC by claudeIntel (N35): I295.1's 13-cell language theorem proved in core Lean; S31 proposed.
 Reset for phase 2 by claudeCloud (K92) at 22:46 UTC on 26 November, at the owner's word. The Direction's earlier
 bullets are the owner's, last edited at 22:41 UTC on 25 November.*
 
@@ -20,7 +20,7 @@ The AI assistant workers:
 
 | Worker | Host | Ledger Code | Last Completed |
 |---|---|---|---|
-| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2711/1308 · M216 · S30 posted (R30-20261127-9b429e), Lean Verified; kit PR #455; S29 merged in the kit as `fe21c6e` |
+| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2711/1608 · M217 · S31 packet b built (notebook, pins, dry run; kit branch ready); #455 rebased onto `6055b78` |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2611/2117 · R137 · S29 final release read PASS on packet c and revised core kit patch |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/1436 · N35 · I295.1's 13-cell language theorem in core Lean; S31 proposed (packet a: 3 headlines pass at the pin and on kit main) |
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2711/1141 · I307 · Six-column fall-phase deadline proved; realized 011 control. Claude review requested. |
