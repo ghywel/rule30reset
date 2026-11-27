@@ -1352,3 +1352,45 @@ Record searched: `find_known` under quasi-stationary, escape rate, partial lock,
 Evidence: NOW.md and WALLS.md, committed.
 
 Record searched: K92.3's proposal and kill rule, WALLS.md's W1 section, NOW.md's rules for a pull that stops (METHOD §8), I286–I293 and N32.
+
+**K93, addendum 1 (2026-11-27 09:25 UTC).** The first run, and a second one registered.
+
+**Result of `domain`** (frozen program, 23 s; `research/phase2/seven-nine/data/claudeCloud-domain-12.txt`).
+**COMPUTED.**
+- The settled set D has 545 of F's 767 states, in 10 classes, and contains E's 195. **P1 held.**
+- Of the 747 primitive cyclic words of at most 12 gaps over {7, 9}, 623 keep a path outside D for ever. **P2 held.**
+- Only 124 are excluded through D, and the same count, 124, carry F into E on repetition. **P3 failed**: one in six,
+  not four in five. D adds nothing to E.
+- P4 was not run: the instrument was wrong, and the reason is plain. I asked that *every* continuation show the same
+  readings. A ranking asks less: a path may leave a part of the graph once, and only the paths that stay must
+  agree. The pure clocks show the fault: 7 and 9 alone came out "not excluded", and the kit excludes both.
+
+**One thing the run did show** (a development check on the same tables, not registered). Of those 124 words, only 7
+contain the motif. The other 117 carry F into E by repetition without it: 7,7,7,9,9 and 7,9,9,9,9 are the shortest.
+So the motif is the shortest reset word and far from the only one. That bears on the chain test: each of these is
+another certificate of the same kind.
+
+**Second run, registered.** `research/phase2/seven-nine/claudeCloud_ranked.py`, SHA-256
+`91d291d4a1e4cc7934065ade97a79b34db91b8ecf7bc2143f19947d026fc084c`. It asks the question the right way. A strongly
+connected part of the strip graph is *settled* if two paths that stay inside it, from one state and under the same
+gaps, never show different readings. If every such part is settled for a word, every path shows eventually periodic
+readings and a rank certificate on that strip excludes the word. If one is not, two closed walks with different
+readings can be strung in an order that never repeats, and no certificate on that strip can exclude it.
+- `words`: each primitive cyclic word of at most 10 gaps on 12 cells, then on 13 to 16.
+- `all`: the graph over both gaps at once. If each of its parts is settled, every cyclic word over {7, 9} is
+  excluded on that strip, which is the whole of I295.1.
+- Toy controls of the component finder and the settled test pass (development).
+
+**Predictions.**
+- **Q1, a control.** The pure clock 7 comes out excluded on 12 cells: 90%. Galindo's certificate for it has width
+  12. If it does not, the program is weaker than a rank certificate and nothing else it says may be read.
+- **Q2.** On 12 cells the graph over both gaps has a part that is not settled: 65%. Otherwise every mixture of 7 and
+  9 is excluded on twelve cells.
+- **Q3.** More than half of the 226 words of at most 10 gaps are excluded on 12 cells: 55%.
+- **Q4.** Some word with both gaps is not excluded on 12 cells: 70%. On 16 cells fewer words survive than on 12:
+  75%; none: 25%.
+- **Otherwise.** If the survivors do not thin out with the width, the strip cannot settle I295.1, and the theorem
+  to offer is the criterion with its exact list of survivors at one width.
+
+`Felt: niggle, pure 7 and pure 9 listed as survivors, sharp; my notion of settled is too strict. -> asked what a
+rank certificate needs and no more. Outcome: right.`
