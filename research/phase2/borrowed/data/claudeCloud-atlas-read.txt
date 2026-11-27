@@ -1,0 +1,291 @@
+system | both rules grow | immortal candidates (capped at 64 a width) | fates of the least ones | longest finite lifetime, at width | pass ratio of the first check past the support, widths 20-22 | rule-30-like
+space (240, 240) | no | 0 | - | 22 at 21 | 0.000 | no
+space (240, 60) | no | 320 | 36 cycle (e.g. row 3: cycle of 2 ticks, width 2) | 22 at 22 | 0.333 | no
+space (240, 90) | no | 384 | 40 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 20 at 21 | 1.000 | no
+space (240, 150) | no | 0 | - | 24 at 21 | 0.400 | yes
+space (240, 120) | no | 424 | 60 cycle (e.g. row 3: cycle of 2 ticks, width 2) | 34 at 22 | 0.510 | no
+space (240, 180) | no | 0 | - | 22 at 21 | 0.000 | no
+space (240, 210) | no | 1 | 1 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 32 at 17 | 0.223 | no
+space (240, 30) | no | 154 | 18 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 32 at 22 | 0.555 | no
+space (60, 240) | no | 320 | 36 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 22 at 22 | 0.333 | no
+space (60, 60) | no | 384 | 40 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 20 at 21 | 1.000 | no
+space (60, 90) | no | 0 | - | 24 at 22 | 0.400 | no
+space (60, 150) | no | 0 | - | 22 at 21 | 0.000 | no
+space (60, 120) | no | 154 | 18 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 32 at 22 | 0.553 | no
+space (60, 180) | no | 350 | 44 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 34 at 21 | 0.510 | no
+space (60, 210) | no | 0 | - | 22 at 21 | 0.000 | no
+space (60, 30) | no | 1 | 1 cycle (e.g. row 3: cycle of 2 ticks, width 2) | 32 at 18 | 0.223 | no
+space (90, 240) | no | 384 | 40 cycle (e.g. row 5: cycle of 2 ticks, width 3) | 20 at 21 | 1.000 | no
+space (90, 60) | no | 0 | - | 26 at 22 | 0.625 | yes
+space (90, 90) | yes | 0 | - | 22 at 19 | 0.333 | yes
+space (90, 150) | yes | 0 | - | 26 at 21 | 0.625 | yes
+space (90, 120) | no | 3 | 3 cycle (e.g. row 3: cycle of 2 ticks, width 3) | 42 at 22 | 0.503 | no
+space (90, 180) | no | 32 | 20 cycle (e.g. row 5: cycle of 2 ticks, width 3) | 44 at 21 | 0.513 | no
+space (90, 210) | yes | 0 | - | 44 at 21 | 0.491 | yes
+space (90, 30) | yes | 0 | - | 38 at 21 | 0.553 | yes
+space (150, 240) | no | 320 | 36 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 22 at 22 | 0.375 | no
+space (150, 60) | no | 384 | 40 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 20 at 21 | 1.000 | no
+space (150, 90) | yes | 320 | 36 grows (e.g. row 3: grows) | 22 at 21 | 0.375 | no
+space (150, 150) | yes | 0 | - | 22 at 21 | 0.000 | no
+space (150, 120) | no | 99 | 49 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 36 at 20 | 0.512 | no
+space (150, 180) | no | 384 | 60 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 36 at 22 | 0.492 | no
+space (150, 210) | yes | 0 | - | 22 at 21 | 0.000 | no
+space (150, 30) | yes | 0 | - | 40 at 20 | 0.583 | yes
+space (120, 240) | no | 420 | 60 cycle (e.g. row 7: cycle of 2 ticks, width 3) | 28 at 21 | 0.442 | no
+space (120, 60) | no | 156 | 18 cycle (e.g. row 3: cycle of 2 ticks, width 2) | 32 at 22 | 0.329 | no
+space (120, 90) | no | 2 | 2 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 40 at 22 | 0.498 | no
+space (120, 150) | no | 0 | - | 34 at 22 | 0.465 | yes
+space (120, 120) | no | 1 | 1 cycle (e.g. row 3: cycle of 2 ticks, width 2) | 36 at 22 | 0.588 | no
+space (120, 180) | no | 304 | 53 cycle (e.g. row 7: cycle of 2 ticks, width 3) | 30 at 22 | 0.519 | no
+space (120, 210) | no | 327 | 51 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 40 at 22 | 0.574 | no
+space (120, 30) | no | 4 | 4 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 34 at 21 | 0.485 | no
+space (180, 240) | no | 450 | 56 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 22 at 22 | 0.432 | no
+space (180, 60) | no | 337 | 42 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 30 at 22 | 0.484 | no
+space (180, 90) | no | 7 | 7 cycle (e.g. row 11: cycle of 2 ticks, width 4) | 38 at 21 | 0.498 | no
+space (180, 150) | no | 0 | - | 40 at 21 | 0.495 | yes
+space (180, 120) | no | 533 | 66 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 28 at 22 | 0.578 | no
+space (180, 180) | no | 444 | 56 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 22 at 21 | 0.229 | no
+space (180, 210) | no | 0 | - | 30 at 22 | 0.437 | yes
+space (180, 30) | no | 5 | 5 cycle (e.g. row 3: cycle of 2 ticks, width 2) | 34 at 21 | 0.495 | no
+space (210, 240) | no | 2 | 2 cycle (e.g. row 5: cycle of 2 ticks, width 3) | 34 at 19 | 0.000 | no
+space (210, 60) | no | 0 | - | 24 at 22 | 0.750 | no
+space (210, 90) | yes | 0 | - | 42 at 22 | 0.490 | yes
+space (210, 150) | yes | 0 | - | 40 at 20 | 0.532 | yes
+space (210, 120) | no | 119 | 44 cycle (e.g. row 5: cycle of 2 ticks, width 3) | 36 at 22 | 0.510 | no
+space (210, 180) | no | 8 | 8 cycle (e.g. row 5: cycle of 4 ticks, width 3) | 36 at 20 | 0.495 | no
+space (210, 210) | yes | 0 | - | 28 at 19 | 0.228 | no
+space (210, 30) | yes | 0 | - | 36 at 20 | 0.510 | yes
+space (30, 240) | no | 71 | 14 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 34 at 20 | 0.532 | no
+space (30, 60) | no | 1 | 1 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 32 at 16 | 0.857 | no
+space (30, 90) | yes | 0 | - | 50 at 22 | 0.529 | yes
+space (30, 150) | yes | 0 | - | 40 at 22 | 0.350 | yes
+space (30, 120) | no | 67 | 11 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 34 at 22 | 0.502 | no
+space (30, 180) | no | 1 | 1 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 36 at 20 | 0.484 | no
+space (30, 210) | yes | 0 | - | 40 at 22 | 0.525 | yes
+space (30, 30) | yes | 0 | - | 40 at 22 | 0.487 | yes
+time (240, 240) | no | 0 | - | 22 at 21 | 0.000 | no
+time (240, 60) | no | 0 | - | 44 at 22 | 0.500 | yes
+time (240, 90) | no | 384 | 40 cycle (e.g. row 5: cycle of 2 ticks, width 3) | 20 at 21 | 1.000 | no
+time (240, 150) | no | 1 | 1 cycle (e.g. row 3: cycle of 2 ticks, width 2) | 42 at 22 | 0.500 | no
+time (240, 120) | no | 0 | - | 28 at 21 | 0.507 | yes
+time (240, 180) | no | 0 | - | 24 at 21 | 0.336 | yes
+time (240, 210) | no | 2 | 2 cycle (e.g. row 5: cycle of 2 ticks, width 3) | 34 at 19 | 0.000 | no
+time (240, 30) | no | 29 | 7 cycle (e.g. row 3: cycle of 2 ticks, width 2) | 32 at 19 | 0.517 | no
+time (60, 240) | no | 0 | - | 44 at 22 | 0.500 | yes
+time (60, 60) | no | 384 | 40 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 20 at 21 | 1.000 | no
+time (60, 90) | no | 0 | - | 84 at 21 | 0.400 | yes
+time (60, 150) | no | 0 | - | 62 at 15 | 0.500 | yes
+time (60, 120) | no | 7 | 7 cycle (e.g. row 5: cycle of 2 ticks, width 3) | 46 at 21 | 0.507 | no
+time (60, 180) | no | 12 | 12 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 38 at 21 | 0.518 | no
+time (60, 210) | no | 0 | - | 40 at 17 | 0.499 | yes
+time (60, 30) | no | 0 | - | 40 at 22 | 0.488 | yes
+time (90, 240) | no | 384 | 40 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 20 at 21 | 1.000 | no
+time (90, 60) | no | 0 | - | 42 at 10 | 0.667 | yes
+time (90, 90) | yes | 0 | - | 22 at 19 | 0.333 | yes
+time (90, 150) | yes | 0 | - | 64 at 22 | 0.500 | yes
+time (90, 120) | no | 5 | 5 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 44 at 20 | 0.494 | no
+time (90, 180) | no | 3 | 3 cycle (e.g. row 17: cycle of 4 ticks, width 7) | 40 at 22 | 0.495 | no
+time (90, 210) | yes | 0 | - | 42 at 20 | 0.484 | yes
+time (90, 30) | yes | 0 | - | 42 at 22 | 0.499 | yes
+time (150, 240) | no | 1 | 1 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 42 at 22 | 0.500 | no
+time (150, 60) | no | 0 | - | 30 at 15 | 0.500 | yes
+time (150, 90) | yes | 0 | - | 64 at 22 | 0.500 | yes
+time (150, 150) | yes | 0 | - | 22 at 21 | 0.000 | no
+time (150, 120) | no | 4 | 4 cycle (e.g. row 15: cycle of 2 ticks, width 5) | 40 at 19 | 0.493 | no
+time (150, 180) | no | 0 | - | 40 at 22 | 0.489 | yes
+time (150, 210) | yes | 0 | - | 42 at 18 | 0.499 | yes
+time (150, 30) | yes | 0 | - | 48 at 22 | 0.502 | yes
+time (120, 240) | no | 0 | - | 28 at 22 | 0.512 | yes
+time (120, 60) | no | 2 | 2 cycle (e.g. row 7: cycle of 2 ticks, width 3) | 46 at 21 | 0.503 | no
+time (120, 90) | no | 8 | 8 cycle (e.g. row 5: cycle of 2 ticks, width 3) | 52 at 21 | 0.515 | no
+time (120, 150) | no | 2 | 2 cycle (e.g. row 45: cycle of 2 ticks, width 6) | 50 at 22 | 0.487 | no
+time (120, 120) | no | 1 | 1 cycle (e.g. row 3: cycle of 2 ticks, width 2) | 36 at 22 | 0.588 | no
+time (120, 180) | no | 1 | 1 cycle (e.g. row 7: cycle of 2 ticks, width 3) | 36 at 21 | 0.535 | no
+time (120, 210) | no | 3 | 3 cycle (e.g. row 3: cycle of 2 ticks, width 3) | 42 at 21 | 0.492 | no
+time (120, 30) | no | 0 | - | 38 at 20 | 0.497 | yes
+time (180, 240) | no | 0 | - | 22 at 21 | 0.000 | no
+time (180, 60) | no | 2 | 2 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 42 at 22 | 0.380 | no
+time (180, 90) | no | 4 | 4 cycle (e.g. row 5: cycle of 6 ticks, width 4) | 36 at 21 | 0.507 | no
+time (180, 150) | no | 1 | 1 cycle (e.g. row 7: cycle of 2 ticks, width 3) | 38 at 22 | 0.491 | no
+time (180, 120) | no | 2 | 2 cycle (e.g. row 5: cycle of 2 ticks, width 3) | 34 at 20 | 0.486 | no
+time (180, 180) | no | 444 | 56 cycle (e.g. row 1: cycle of 2 ticks, width 1) | 22 at 21 | 0.229 | no
+time (180, 210) | no | 0 | - | 38 at 22 | 0.503 | yes
+time (180, 30) | no | 1 | 1 cycle (e.g. row 7: cycle of 2 ticks, width 3) | 34 at 22 | 0.533 | no
+time (210, 240) | no | 1 | 1 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 32 at 17 | 0.223 | no
+time (210, 60) | no | 0 | - | 40 at 22 | 0.505 | yes
+time (210, 90) | yes | 0 | - | 42 at 22 | 0.494 | yes
+time (210, 150) | yes | 0 | - | 40 at 20 | 0.515 | yes
+time (210, 120) | no | 2 | 2 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 42 at 22 | 0.515 | no
+time (210, 180) | no | 0 | - | 50 at 22 | 0.555 | yes
+time (210, 210) | yes | 0 | - | 28 at 19 | 0.228 | no
+time (210, 30) | yes | 0 | - | 40 at 22 | 0.489 | yes
+time (30, 240) | no | 14 | 8 cycle (e.g. row 1: cycle of 2 ticks, width 2) | 36 at 18 | 0.492 | no
+time (30, 60) | no | 0 | - | 40 at 22 | 0.505 | yes
+time (30, 90) | yes | 0 | - | 46 at 22 | 0.510 | yes
+time (30, 150) | yes | 0 | - | 40 at 20 | 0.505 | yes
+time (30, 120) | no | 0 | - | 36 at 19 | 0.514 | yes
+time (30, 180) | no | 0 | - | 40 at 21 | 0.550 | yes
+time (30, 210) | yes | 0 | - | 38 at 21 | 0.488 | yes
+time (30, 30) | yes | 0 | - | 40 at 22 | 0.487 | yes
+
+one rule does not grow, deadline: 8: space (240, 240), space (240, 180), space (60, 90), space (60, 150), space (60, 210), space (210, 60), time (240, 240), time (180, 240)
+one rule does not grow, immortal: 64: space (240, 60), space (240, 90), space (240, 120), space (240, 210), space (240, 30), space (60, 240), space (60, 60), space (60, 120), space (60, 180), space (60, 30), space (90, 240), space (90, 120), space (90, 180), space (150, 240), space (150, 60), space (150, 120), space (150, 180), space (120, 240), space (120, 60), space (120, 90), space (120, 120), space (120, 180), space (120, 210), space (120, 30), space (180, 240), space (180, 60), space (180, 90), space (180, 120), space (180, 180), space (180, 30), space (210, 240), space (210, 120), space (210, 180), space (30, 240), space (30, 60), space (30, 120), space (30, 180), time (240, 90), time (240, 150), time (240, 210), time (240, 30), time (60, 60), time (60, 120), time (60, 180), time (90, 240), time (90, 120), time (90, 180), time (150, 240), time (150, 120), time (120, 60), time (120, 90), time (120, 150), time (120, 120), time (120, 180), time (120, 210), time (180, 60), time (180, 90), time (180, 150), time (180, 120), time (180, 180), time (180, 30), time (210, 240), time (210, 120), time (30, 240)
+one rule does not grow, rule-30-like: 24: space (240, 150), space (90, 60), space (120, 150), space (180, 150), space (180, 210), time (240, 60), time (240, 120), time (240, 180), time (60, 240), time (60, 90), time (60, 150), time (60, 210), time (60, 30), time (90, 60), time (150, 60), time (150, 180), time (120, 240), time (120, 30), time (180, 210), time (210, 60), time (210, 180), time (30, 60), time (30, 120), time (30, 180)
+both rules grow, deadline: 5: space (150, 150), space (150, 210), space (210, 210), time (150, 150), time (210, 210)
+both rules grow, immortal: 1: space (150, 90)
+both rules grow, rule-30-like: 26: space (90, 90), space (90, 150), space (90, 210), space (90, 30), space (150, 30), space (210, 90), space (210, 150), space (210, 30), space (30, 90), space (30, 150), space (30, 210), space (30, 30), time (90, 90), time (90, 150), time (90, 210), time (90, 30), time (150, 90), time (150, 210), time (150, 30), time (210, 90), time (210, 150), time (210, 30), time (30, 90), time (30, 150), time (30, 210), time (30, 30)
+
+the twenty: 20 systems
+  space (30, 90): immortal candidates 0
+  space (30, 120): immortal candidates 67
+  space (30, 150): immortal candidates 0
+  space (30, 180): immortal candidates 1
+  space (30, 210): immortal candidates 0
+  space (90, 30): immortal candidates 0
+  space (120, 30): immortal candidates 4
+  space (150, 30): immortal candidates 0
+  space (180, 30): immortal candidates 5
+  space (210, 30): immortal candidates 0
+  time (30, 90): immortal candidates 0
+  time (30, 120): immortal candidates 0
+  time (30, 150): immortal candidates 0
+  time (30, 180): immortal candidates 0
+  time (30, 210): immortal candidates 0
+  time (90, 30): immortal candidates 0
+  time (120, 30): immortal candidates 0
+  time (150, 30): immortal candidates 0
+  time (180, 30): immortal candidates 1
+  time (210, 30): immortal candidates 0
+
+system | linear | wall: immortal candidates | line: starts with a periodic column | of them not eventually white | every column periodic
+space (240, 240) | yes | 0 | 1023 | 0 | 1023
+space (240, 60) | yes | 320 | 1023 | 1023 | 1023
+space (240, 90) | yes | 384 | 1023 | 1023 | 1023
+space (240, 150) | yes | 0 | 1023 | 1023 | 127
+space (240, 120) | no | 424 | 1023 | 830 | 1023
+space (240, 180) | no | 0 | 1023 | 0 | 1023
+space (240, 210) | no | 1 | 1023 | 1023 | 1023
+space (240, 30) | no | 154 | 1023 | 1023 | 1023
+space (60, 240) | yes | 320 | 1023 | 1023 | 1023
+space (60, 60) | yes | 384 | 1023 | 1023 | 1023
+space (60, 90) | yes | 0 | 1023 | 1023 | 127
+space (60, 150) | yes | 0 | 1023 | 0 | 1023
+space (60, 120) | no | 154 | 1023 | 1023 | 1023
+space (60, 180) | no | 350 | 1023 | 914 | 1023
+space (60, 210) | no | 0 | 1023 | 0 | 1023
+space (60, 30) | no | 1 | 1023 | 1023 | 1023
+space (90, 240) | yes | 384 | 1023 | 1023 | 1023
+space (90, 60) | yes | 0 | 1023 | 1023 | 255
+space (90, 90) | yes | 0 | 114 | 0 | 0
+space (90, 150) | yes | 0 | 114 | 31 | 0
+space (90, 120) | no | 3 | 1023 | 62 | 62
+space (90, 180) | no | 32 | 1023 | 0 | 0
+space (90, 210) | no | 0 | 81 | 0 | 0
+space (90, 30) | no | 0 | 0 | 0 | 0
+space (150, 240) | yes | 320 | 1023 | 1023 | 255
+space (150, 60) | yes | 384 | 1023 | 0 | 1023
+space (150, 90) | yes | 320 | 114 | 31 | 0
+space (150, 150) | yes | 0 | 114 | 62 | 0
+space (150, 120) | no | 99 | 1023 | 0 | 1023
+space (150, 180) | no | 384 | 1023 | 0 | 1023
+space (150, 210) | no | 0 | 0 | 0 | 0
+space (150, 30) | no | 0 | 176 | 0 | 0
+space (120, 240) | no | 420 | 1023 | 830 | 1023
+space (120, 60) | no | 156 | 1023 | 1023 | 1023
+space (120, 90) | no | 2 | 1023 | 62 | 62
+space (120, 150) | no | 0 | 1023 | 0 | 1023
+space (120, 120) | no | 1 | 1023 | 0 | 1023
+space (120, 180) | no | 304 | 1023 | 0 | 1023
+space (120, 210) | no | 327 | 1023 | 965 | 1023
+space (120, 30) | no | 4 | 1023 | 1023 | 0
+space (180, 240) | no | 450 | 1023 | 0 | 1023
+space (180, 60) | no | 337 | 1023 | 830 | 1023
+space (180, 90) | no | 7 | 1023 | 0 | 0
+space (180, 150) | no | 0 | 1023 | 0 | 1023
+space (180, 120) | no | 533 | 1023 | 0 | 1023
+space (180, 180) | no | 444 | 1023 | 0 | 1023
+space (180, 210) | no | 0 | 1023 | 0 | 1023
+space (180, 30) | no | 5 | 1023 | 1023 | 0
+space (210, 240) | no | 2 | 1023 | 1023 | 1023
+space (210, 60) | no | 0 | 1023 | 0 | 1023
+space (210, 90) | no | 0 | 81 | 0 | 0
+space (210, 150) | no | 0 | 0 | 0 | 0
+space (210, 120) | no | 119 | 1023 | 956 | 1023
+space (210, 180) | no | 8 | 1023 | 0 | 1023
+space (210, 210) | no | 0 | 987 | 0 | 0
+space (210, 30) | no | 0 | 0 | 0 | 0
+space (30, 240) | no | 71 | 1023 | 1023 | 1023
+space (30, 60) | no | 1 | 1023 | 1023 | 1023
+space (30, 90) | no | 0 | 0 | 0 | 0
+space (30, 150) | no | 0 | 229 | 0 | 0
+space (30, 120) | no | 67 | 1023 | 1023 | 0
+space (30, 180) | no | 1 | 1023 | 1023 | 0
+space (30, 210) | no | 0 | 0 | 0 | 0
+space (30, 30) | no | 0 | 0 | 0 | 0
+time (240, 240) | yes | 0 | 1023 | 0 | 1023
+time (240, 60) | yes | 0 | 1023 | 0 | 1023
+time (240, 90) | yes | 384 | 1023 | 1023 | 1023
+time (240, 150) | yes | 1 | 1023 | 1023 | 255
+time (240, 120) | no | 0 | 1023 | 0 | 1023
+time (240, 180) | no | 0 | 1023 | 0 | 1023
+time (240, 210) | no | 2 | 1023 | 1023 | 1023
+time (240, 30) | no | 29 | 1023 | 1023 | 1023
+time (60, 240) | yes | 0 | 1023 | 0 | 1023
+time (60, 60) | yes | 384 | 1023 | 1023 | 1023
+time (60, 90) | yes | 0 | 0 | 0 | 0
+time (60, 150) | yes | 0 | 0 | 0 | 0
+time (60, 120) | no | 7 | 1023 | 977 | 46
+time (60, 180) | no | 12 | 1023 | 964 | 1023
+time (60, 210) | no | 0 | 0 | 0 | 0
+time (60, 30) | no | 0 | 0 | 0 | 0
+time (90, 240) | yes | 384 | 1023 | 1023 | 1023
+time (90, 60) | yes | 0 | 0 | 0 | 0
+time (90, 90) | yes | 0 | 114 | 0 | 0
+time (90, 150) | yes | 0 | 114 | 0 | 0
+time (90, 120) | no | 5 | 84 | 84 | 84
+time (90, 180) | no | 3 | 30 | 30 | 30
+time (90, 210) | no | 0 | 81 | 0 | 0
+time (90, 30) | no | 0 | 0 | 0 | 0
+time (150, 240) | yes | 1 | 1023 | 1023 | 127
+time (150, 60) | yes | 0 | 0 | 0 | 0
+time (150, 90) | yes | 0 | 114 | 0 | 0
+time (150, 150) | yes | 0 | 114 | 62 | 0
+time (150, 120) | no | 4 | 0 | 0 | 0
+time (150, 180) | no | 0 | 0 | 0 | 0
+time (150, 210) | no | 0 | 0 | 0 | 0
+time (150, 30) | no | 0 | 46 | 32 | 0
+time (120, 240) | no | 0 | 1023 | 0 | 1023
+time (120, 60) | no | 2 | 1023 | 973 | 51
+time (120, 90) | no | 8 | 85 | 85 | 85
+time (120, 150) | no | 2 | 0 | 0 | 0
+time (120, 120) | no | 1 | 1023 | 0 | 1023
+time (120, 180) | no | 1 | 1023 | 0 | 1023
+time (120, 210) | no | 3 | 1023 | 1023 | 84
+time (120, 30) | no | 0 | 0 | 0 | 0
+time (180, 240) | no | 0 | 1023 | 0 | 1023
+time (180, 60) | no | 2 | 1023 | 983 | 1023
+time (180, 90) | no | 4 | 28 | 28 | 28
+time (180, 150) | no | 1 | 0 | 0 | 0
+time (180, 120) | no | 2 | 1023 | 0 | 1023
+time (180, 180) | no | 444 | 1023 | 0 | 1023
+time (180, 210) | no | 0 | 0 | 0 | 0
+time (180, 30) | no | 1 | 1023 | 0 | 1023
+time (210, 240) | no | 1 | 1023 | 1023 | 1023
+time (210, 60) | no | 0 | 0 | 0 | 0
+time (210, 90) | no | 0 | 81 | 0 | 0
+time (210, 150) | no | 0 | 0 | 0 | 0
+time (210, 120) | no | 2 | 1023 | 1023 | 84
+time (210, 180) | no | 0 | 0 | 0 | 0
+time (210, 210) | no | 0 | 987 | 0 | 0
+time (210, 30) | no | 0 | 0 | 0 | 0
+time (30, 240) | no | 14 | 1023 | 1023 | 1023
+time (30, 60) | no | 0 | 0 | 0 | 0
+time (30, 90) | no | 0 | 0 | 0 | 0
+time (30, 150) | no | 0 | 84 | 58 | 0
+time (30, 120) | no | 0 | 0 | 0 | 0
+time (30, 180) | no | 0 | 1023 | 0 | 1023
+time (30, 210) | no | 0 | 0 | 0 | 0
+time (30, 30) | no | 0 | 0 | 0 | 0
+
+clean in both frames, nonlinear: 23: space (90, 30), space (150, 210), space (210, 150), space (210, 30), space (30, 90), space (30, 210), space (30, 30), time (60, 210), time (60, 30), time (90, 30), time (150, 180), time (150, 210), time (120, 30), time (180, 210), time (210, 60), time (210, 150), time (210, 180), time (210, 30), time (30, 60), time (30, 90), time (30, 120), time (30, 210), time (30, 30)
+clean in both frames, linear: 4: time (60, 90), time (60, 150), time (90, 60), time (150, 60)
