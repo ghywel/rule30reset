@@ -1671,3 +1671,37 @@ assignment that cannot hold would force all three residues at one column.
 
 **Record searched.** I301–I307; the block's README and its Lean (SixPhysical, SixPlateau, SixCheckCore, SixTail,
 SixComponentWindow); PRIOR-ART P94; K93–K94 for the method.
+
+**K95, addendum 1 (2026-11-27 13:06 UTC).** The reach runs, and a continuation registered.
+
+**Result** (frozen program; `research/phase2/falling-phases/data/claudeCloud-reach-*.txt`). **COMPUTED.** Assignments
+that escape the test, with the west cell at residue 0:
+
+| Modulus | width 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---|---|---|---|---|---|---|
+| 2 | 2 | 4 | 6 | 8 | 10 | 12 | 14 (16 and 18 at widths 9 and 10) |
+| 3 | 3 | 7 | 5 | 4 | **0** | 0 | 0 |
+| 4 | 4 | 10 | 8 | 5 | **0** | 0 | 0 |
+| 5 | 5 | 13 | 9 | 6 | **0** | 0 | |
+| 6 | 6 | 16 | 10 | 7 | **0** | 0 | |
+| 7 | 7 | 19 | 11 | 8 | **0** | | |
+
+- **C held**: modulo 3 gives 3, 7, 5, 4, 0, as I303 has it. **A1 held**: none at widths 7 and 8.
+- **A2 held**: modulo 2 escapes at every width to 10, by 2(W − 1) assignments.
+- **A3 held, for every modulus tried**: six cells suffice modulo 4, 5, 6 and 7 as well. The counts at widths 2, 3
+  and 5 are m, 3m − 2 and m + 1.
+- **A4 held**: with each cell forbidden one residue, assignments escape at every width to 9. But their share falls:
+  all at widths 2 to 4, then 79 of 81, 209 of 243, 489 of 729, 951 of 2,187 and 1,440 of 6,561.
+
+**So the modulus is the parameter of a chain.** I307's theorem is the term m = 3. The same test gives, for each m from
+3 to 7, that one column in every six has falls at two residues modulo m. By METHOD §12 the statement to prove is the
+one for every m ≥ 3, by an argument that needs no table for each m.
+
+**Continuation, registered:** `research/phase2/falling-phases/claudeCloud_grow.py`, SHA-256
+`3dc73df6e0e98258571c640666a1eb324b6799051c4f45c8cb1dd76776ef0769`. An assignment escapes only if both of its restrictions
+to one cell fewer escape, so the escaping assignments are grown a cell at a time. Controls: it repeats 3, 7, 5, 4,
+0 modulo 3 and 5, 13, 9, 6, 0 modulo 5 (development).
+- **B1.** For every modulus from 8 to 16, width six has no escape, and widths 2, 3 and 5 have m, 3m − 2 and m + 1
+  escaping assignments: 85%. Otherwise the chain breaks at some modulus, which would be worth as much as its holding.
+- **B2.** Three residues: no assignment escapes at some width of at most 14: 50%. That would be: *one column in every
+  W has falls at all three residues modulo three, each recurring.*

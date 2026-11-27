@@ -1,0 +1,20 @@
+modulo 3, one residue for each cell; assignments with the west cell at residue 0
+width | assignments | escape the test
+2 | 3 | 3
+3 | 9 | 7
+4 | 27 | 5
+5 | 81 | 4
+6 | 243 | 0
+7 | 729 | 0
+8 | 2187 | 0
+modulo 2, one residue for each cell; assignments with the west cell at residue 0
+width | assignments | escape the test
+2 | 2 | 2
+3 | 4 | 4
+4 | 8 | 6
+5 | 16 | 8
+6 | 32 | 10
+7 | 64 | 12
+8 | 128 | 14
+9 | 256 | 16
+10 | 512 | 18
