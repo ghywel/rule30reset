@@ -1,0 +1,30 @@
+1. four ticks clear L from every one of the 128 windows L..L+6: yes; the first pair leaves L black in 16 of 128; problems: none
+2. starts below 2^12, 800 ticks: least advance of the leftmost black cell 200 sites; the bound gives 200
+3. two-tick map on the three wall cells: [0, 0, 2, 1, 5, 3, 3, 2] ; first white even tick from rows 0..7: [0, 2, 0, 4, 0, 6, 0, 2]
+4. width | longest lifetime in the atlas | deadline 4 max(W-3,0)+6
+   1 | 2 | 6
+   2 | 4 | 6
+   3 | 6 | 6
+   4 | 8 | 10
+   5 | 6 | 14
+   6 | 10 | 18
+   7 | 12 | 22
+   8 | 14 | 26
+   9 | 18 | 30
+   10 | 14 | 34
+   11 | 16 | 38
+   12 | 18 | 42
+   13 | 20 | 46
+   14 | 22 | 50
+   15 | 26 | 54
+   16 | 28 | 58
+   17 | 28 | 62
+   18 | 30 | 66
+   19 | 32 | 70
+   20 | 36 | 74
+   21 | 40 | 78
+   22 | 34 | 82
+5. reversed order (180 first) from row 7, packed rows at ticks 0..11: [7, 2, 7, 2, 7, 2, 7, 2, 7, 2, 7, 2]
+6. time hybrids whose two orders fall in different wall classes (A first | B first):
+   (30, 180): dies | (180, 30): immortal
+   (150, 180): dies | (180, 150): immortal
