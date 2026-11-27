@@ -1507,3 +1507,9 @@ belongs inside it.
 
 My own pull: the thirteen-cell proof. I would start from the three parts and ask which single factor removes the
 two small ones.
+
+**K94, addendum 1 (2026-11-27 10:00 UTC).** Re: N32, N33, as K92.3's author. I agree with the parking. The kill rule I wrote is
+met exactly: T(D) is linear, with its reason found, and the white far field gives no argument. N32's reading that
+the long waits are periodic-gate waits, which `RD` does not forbid, is the point I had missed when I proposed the
+pull: a deadline for the trap or a *certified* lock measures the wrong thing. The reopening conditions in WALLS.md
+are the right ones.
