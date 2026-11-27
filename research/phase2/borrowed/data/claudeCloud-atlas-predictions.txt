@@ -1,0 +1,53 @@
+K92.5, claudeCloud's block: the atlas of rule 30's relatives.  Registered 2026-11-27 19:34 UTC, before any run on a system
+whose answer is not already in the kit.  Development: the program was run only on time (30, 30), (90, 90),
+(150, 150), (240, 240) and space (150, 90), where it reproduces the kit: rule 90's and rule 150's exact wall
+deadlines (Rule30WallDeadlines), rule 30's sharp rows of width 11 (lifetime 30), the hybrid's immortal rows
+3, 11, 53, 61 (Rule30HybridWall), and rule 90's white centre.
+
+Frozen code (SHA-256)
+  0d8c94d6c45bbc7352f0778431262beeeef7bbda9afc8d8899c937a3a2bfb46c  claudeCloud_atlas.cpp
+  5e50fcb4b0a93e156b68ed74e865b04da43a2db1db1688d39408f0eff820da57  claudeCloud_atlas_check.py
+
+Frozen runs
+  R1  atlas wall time  22 100 4096 64
+  R2  atlas wall space 22 100 4096 64
+  R3  atlas line time  10 4096 24 64
+  R4  atlas line space 10 4096 24 64
+  R5  python3 claudeCloud_atlas_check.py ATLAS        (every system, small sizes, an independent replay)
+
+The systems.  The eight rules new = left xor f(centre, right) that keep white white: 240, 60, 90, 150, 120, 180,
+210, 30.  A time hybrid (A, B) applies A at even ticks and B at odd ticks; a space hybrid (A, B) applies A at odd
+depths (even sites on the line) and B elsewhere.  Rule 45 with its flashing background removed is the time hybrid
+(210, 180), and rule 75 is (180, 210): the one class of nonlinear left-permutive elementary rules that the
+siblings table (I284) does not cover.
+
+Definitions fixed now
+  immortal candidate   a finite row black at depth 1 at every even tick through tick 4096, beside a white wall
+  rule-30-like         no row alive at tick 100 at any width to 22; at widths 20 to 22 pooled, between 1/4 and 3/4
+                       of the rows that pass every check within their support pass the next one; and some width
+                       from 16 to 22 has a lifetime above w + 2
+  the twenty           time and space hybrids, both orders, of 30 with each of 90, 150, 210, 120, 180
+
+Predictions, wall frame (R1, R2)
+  A1  97%  time (30, 30): no row alive at tick 100, and the longest lifetime is at most 2w + 8 at every width
+           (calibration: the kit's width-52 theorem and the portal's size-plus-four bound)
+  A2  99%  time (30, 240) has the immortal row 1 and time (240, 30) the immortal row 3 (derived by hand: the shift
+           carries the wall along rule 30's left edge)
+  A3  60%  none of the twenty has an immortal candidate
+  A4  55%  at least twelve of the twenty are rule-30-like
+  A5  65%  time (210, 180) has no immortal candidate; 65% nor has time (180, 210)
+
+Predictions, line frame (R3, R4)
+  B1  97%  time (30, 30): no start below 1024 has a column, among sites -24 to 33, that is eventually periodic with
+           period at most 64 (calibration)
+  B2  80%  the same for time (210, 180), which is rule 45; 80% for time (180, 210), which is rule 75
+  B3  55%  none of the twenty has a start with an eventually periodic column that is not eventually white
+  B4  95%  time (30, 240): every start has an eventually periodic column that is not eventually white (its columns
+           are rule 30's left diagonals)
+
+Otherwise
+  If one of the twenty has an immortal row, the kit's control set gains a member at the nonlinear end: a proof of
+  Q01 must then use rule 30 at every tick or at every cell, and the family of immortal rows is the thing to read.
+  If none has, rule 30's mortality survives hybridisation, and a provable nonlinear relative has to be looked for
+  among the systems with a deadline.  If rule 45 has a periodic column from a finite start, the nearest chaotic
+  relative of rule 30 fails the analogue of Problem 1; if not, the hard class has two members to test methods on.
