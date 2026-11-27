@@ -180,11 +180,11 @@ and the centre at tick t is t cells from each. Whatever is true of every row is 
 periodic centres. Finite data never helps either: every computed fact about the seed leaves room for a longer
 transient.
 
-**What it would take.** An unbounded recurrence at the sites and phases required by a centre criterion. Or a law for *where* records fall, tied
-to the left edge's clocks, the one place where recurrence is proved. For marks that law is now one statement about
-single rows: at unbounded widths l the seed's row reads one black cell, l white cells and then a forcing prefix of
-an edge word, ending at the centre (M220). Or the first rung between w and (39/32)ʷ for the vocabulary: any
-superlinear bound.
+**What it would take.** An unbounded recurrence at the sites and phases required by a centre criterion. Or a law
+for *where* records fall, tied to the left edge's clocks, the one place where recurrence is proved. For marks, show
+that arbitrarily wide launch bars ending at −2 recur with a black centre at the predicted arrival (I321, I324).
+M220’s short edge prefix is one sufficient arrival test. K92.4 follows this route. K92.4.A seeks a fixed-site fall
+count for density, and I295.4 seeks the first superlinear vocabulary bound. [Active pulls](NOW.md#pulls-in-progress)
 
 **Phase-1 pulls that stopped here.**
 
@@ -194,12 +194,6 @@ superlinear bound.
 | K83, seed side (N26) | the seed's largest census nears one half at the widths computed | abundance at every width, which is as strong as window normality |
 | I72 | a bounded deficit at (1/3, 0) pins an eventual 011 two sites east; two fixed right halves defeat periods to 4,096 | an all-period argument for one fixed right half |
 | K50.4, R4 | white triangles have one family tree but no bound; deep-source occupancy | a reason to bound patches in the bulk; a seed-specific bound |
-
-**Phase-2 pulls that stopped here.**
-
-| Pull | Where it stopped | Reopens with |
-|---|---|---|
-| K92.4 (parked at the owner's word, M220) | through age 2²² the widest mark is 22 and record ages follow no clock (I281–I285). The clock decides a gap's arrival from a short edge prefix (9 cells to width 28), and of the 114 marks of width at least 14 it decided one. It makes no gaps: the missing half is the launch, a row reading one black cell, l white cells and a forcing edge prefix at the centre, at unbounded l (M220) | a mechanism or proof for white gaps of unbounded width beside the centre; or a law for the arrival when the context is not an edge prefix; or a reason for the seed's own edge to be read at the centre, F(j) ≤ j at unbounded j against F(j) ≈ 1.3 j computed |
 
 ## W3. The doubling step
 
