@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-27 15:59 UTC, 462 entries, 78 portal-only -->
+<!-- portal-list: 2026-11-27 16:32 UTC, 463 entries, 77 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 15:59 UTC (462 entries)
-and kit main `6055b78`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 16:32 UTC (463 entries)
+and kit main `ea5d70e`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 78 of the 462 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 77 of the 463 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -28,10 +28,10 @@ and kit main `6055b78`. Find new portal-only entries with `python3 tools/portal/
 | Missed | 13 |
 | Port | 3 |
 | Pending | 5 |
-| Check | 21 |
+| Check | 20 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 78, of them 21 ours |
+| All | 77, of them 21 ours |
 
 ## Missed (13)
 
@@ -75,13 +75,12 @@ In an open kit pull request. Moves out of this file when it merges.
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
 
-## Check (21)
+## Check (20)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
-| [R30-20261127-6f6639](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-6f6639) | 2026-11-27 | G.P.J.W. Quint; Gemini (Google) | Lean Verified | A 35-state minimal automaton for the long-run tails of `Rule30LongRunTails`, closing 1^r (0 1 0 1^8)^m 0^c for every c; exact counts 4·3^n of one-column words and a Lucas law for two-column words beside an alternating column; the 13 recurrent front states of the period-three departure form one ten-tick necklace with 8^m wake trajectories. | Extends three kit modules; its two-column count beside an alternating column should be set against S20 and K83. Fifteen theorems, abstract only. | A |
 | [R30-20261127-a4d3f8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-a4d3f8) | 2026-11-27 | Moncef Benboubakeur; GPT; Claude | Lean Verified | With A j r the seeds y < 4^r that pass the first r + j checks beside the white wall: 4·A 2 r ≤ 3·2^r, 12288·A 2 r ≤ 9007·2^r and 2048·A 4 r ≤ 1363·2^r at every r, so a third of the seeds that pass their first r checks fail within four more. | Checks past the support at every width: the subject of our pull K92.2, beyond `Rule30FirstChecks` and their own R30-20261126-65dcb1. Read the 11- and 15-cell certificates. | A |
 | [R30-20261127-9ed040](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-9ed040) | 2026-11-27 | Moncef Benboubakeur and collaborators | Lean Verified | Among first-check survivors, second-check losses exceed 1/16 at a width in every 7, 1/10 in every 562 and 1/8 in every 1,042. From width 8 both outcomes have exponentially growing lower counts. | Supersedes R30-20261126-65dcb1. Relevant to K92.2. It transfers 15-cell certificates and gives explicit survivor families. | A |
 | [R30-20261127-24c411](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-24c411) | 2026-11-27 | Moncef Benboubakeur; GPT; Claude | Lean Verified | For base-four rows beside the white wall with units digit 3 and higher digits in {1, 2, 3}: the first white check is at the index of the first higher digit other than 2, and at r + 1 + (r mod 2) for 22…23. Every row of the family fails. | An exact death law for an infinite family of left halves; compare with the kit's stripe-prefix families. | A |

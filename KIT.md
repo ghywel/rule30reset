@@ -1,13 +1,13 @@
-<!-- kit-commit: 6055b78 2026-11-27 -->
+<!-- kit-commit: ea5d70e 2026-11-27 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `6055b78` (main, 2026-11-27),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ea5d70e` (main, 2026-11-27),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 385 modules under `lean/Ruliology/` (52 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
+Mathlib `v4.35.0`, 387 modules under `lean/Ruliology/` (53 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
 uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 456 entries at 08:22 UTC on 27 November (453 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
@@ -202,6 +202,8 @@ For every k, depth two at T ≥ 2 decides both start classes, at T and T+1. Ages
   Lowry characterizes both clocks by sampled white markers. Either cofinal spatial 101 at sites −3 to −1, or uniform third-tick hits at unbounded depths, excludes period three (`Rule30FlankingSources`, `Rule30ThirdTick`).
   The optimal uniform entry slope is three beside either drive. The finite erosion and 011 constant-gate deadlines
   also need slope three. One infinite right half keeps the exceptional front forever (`Rule30EtherThreeSharpSlope`).
+  The 13 recurrent departure states return after ten ticks and four cells west, with 8^m wake paths in 10m ticks
+  (`Rule30EtherThreeDeparture`).
 
 - **Constant runs.** A black centre run of length L from time a ≥ 1 has L ≤ a; white runs L ≤ a − 1 (a − 3 for
   a ≥ 3); both colours occur in every window [a, 2a] (`Rule30CenterRuns`); log-log margins
@@ -212,7 +214,8 @@ For every k, depth two at T ≥ 2 decides both start classes, at T and T+1. Ages
 - **Excluded repeating words**, for every transient and usually every column of every configuration with a leftmost
   black cell: 1 0^q and 0^q 1 for q ≥ 9 (`Rule30WhiteEndNine`); any mixture of blocks 1^r 0^q with every q ≥ 17, so
   every nonconstant eventual period has a cyclic white run ≤ 16 (`Rule30White17Runs`); blocks of at least 17 whites then 1001 (`Rule30PulsePairs`); isolated
-  pulses with white gaps of 7 or at least 9, one of them at least 22 (`Rule30MixedGapClocks`); grammar and reset mixtures
+  pulses with white gaps of 7 or at least 9, one of them at least 22 (`Rule30MixedGapClocks`), or a certified reset
+  factor such as the ten-gap 7/9 motif (`Rule30SevenNineReset`); grammar and reset mixtures
   (`Rule30GrammarRuns`, `Rule30ResetMixtures`); every 0^r u with u of at most six bits and r ≥ 74
   (`Rule30SixTailSharpened`); 0^r v 011 for every v once r ≥ 10|v| + 41 (`Rule30SuffixFamilies`); every u 0^q with u
   black-containing, past a bound singly exponential in |u| (`Rule30ArbitraryWhitePadding`); an eventually periodic
@@ -225,7 +228,8 @@ For every k, depth two at T ≥ 2 decides both start classes, at T and T+1. Ages
   In every column of every configuration with a leftmost black cell, his windows and sharp two-run cutoffs, chosen at
   each white letter, exclude such words at every length (`Rule30RunTransitionWindows`). At the singleton centre, so
   are mixtures of long black runs each followed by a tail passing a strip test, a regular language: at five cells after
-  nine blacks, every white run and every 0^a 1 1 0^c with a odd (`Rule30LongRunTails`).
+  nine blacks, every white run and every 0^a 1 1 0^c with a odd. The passing-tail language has a minimal 35-state DFA
+  (`Rule30LongRunTails`).
 - From singleton age T > 0, record black centre ticks as one letter and distinguish the two right-neighbour colours at
   white centre ticks. If a length-n block recurs at a later offset j, then n ≤ T + j. Under centre alternation, sufficiently
   early repeated blocks of 3/5 kick gaps, with no adjacent 3s, force the compatible left row to have infinite support

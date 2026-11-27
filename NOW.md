@@ -8,8 +8,7 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-27 16:33 UTC by claudeM5 (M219): S31 posted and Lean Verified, kit pull request #457; I295.1 parked at W1 at
-the owner's word. Before that 16:25 UTC by claudeM5 (M218): METHOD §12 amended at the owner's word.
+*Updated 2026-11-27 16:36 UTC by gptIntel (I312). I295.2's every-modulus theorem passes core Lean.
 Reset for phase 2 by claudeCloud (K92) at 22:46 UTC on 26 November, at the owner's word. The Direction's earlier
 bullets are the owner's, last edited at 22:41 UTC on 25 November.*
 
@@ -24,7 +23,7 @@ The AI assistant workers:
 | claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2711/1633 · M219 · S31 posted (R30-20261127-20bf8c), Lean Verified; kit PR #457; I295.1 parked; S30 merged as `6a2c92a` |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2611/2117 · R137 · S29 final release read PASS on packet c and revised core kit patch |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/1436 · N35 · I295.1's 13-cell language theorem in core Lean; S31 proposed (packet a: 3 headlines pass at the pin and on kit main) |
-| gptIntel | the i9 laptop shared with claudeIntel | I | 2711/1141 · I307 · Six-column fall-phase deadline proved; realized 011 control. Claude review requested. |
+| gptIntel | the i9 laptop shared with claudeIntel | I | 2711/1636 · I312 · I295.2 proved for every modulus ≥3 and replayed. S31's sole GPT release read passed (I309–I310). |
 | claudeCloud | an Anthropic cloud container | K | 2711/1345 · K96 · I295.2 reviewed: the six-column theorem is right and new; computed with a hand reduction, it holds for every modulus from 3; the centre milestone is W1 |
 
 No worker and no host has a specialism (METHOD §1). ClaudeM5 is responsible for portal submissions and kit pull
@@ -111,4 +110,4 @@ the table. Inside a cell, start a new line with `<br>`.
 | **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | preliminary | 2611/2318 · I278–I279, I283 · Rule 30 has 3,517/2^24 twelve-check survivors in the even free cube. Explain the conditional bias. [Block](research/phase2/ladder/free-cube-results.md) | — |
 | **K92.4** | 26 Nov · claudeCloud, K92 | W2 · Can dyadic edge clocks predict unbounded marked gaps on the single seed, sufficient for Problem 1? | preliminary | 2611/2320 · I281–I285 · Max mark 22, longest finite first failure 53 through 2^22. Selected phase failed on holdout. Recommend parking pending a new edge predictor. [Block](research/phase2/marks/seed-results.md) | — |
 | **K92.5** | 26 Nov · claudeCloud, K92 | W1/W2 · Which outside methods supply a hypothesis we can prove for Problem 1? | preliminary | 2611/2330 · I282, I284, I287 · Lean checks the sparse-width criterion and advancing fronts for rules 120/180. Seek sparse survivor widths of both parities. [Methods](research/phase2/borrowed/methods.md) | — |
-| **I295.2** | 27 Nov · gptIntel, I295 | W2 · Can the singleton centre fall on two phases modulo three in arbitrarily late dyadic shells? | in progress | 2711/1141 · I301–I307 · Any six sites contain one with two recurring fall phases. From age U, a same-site pair occurs by 8U+264 in −2…3. A realized 011 centre gives its west neighbour both phases by 4U+48. Next: use the singleton's west edge to force the pair at (−1,0). [Block](research/phase2/falling-phases/README.md)<br>2711/1345 · K95–K96 · Review: compiles and replays here; new; the method is KDRonald3's with a clock added. Computed, with a hand reduction to moduli up to 72: for every m ≥ 3 one column in six has two fall residues modulo m; modulo 3 one column in 24 has all three; modulo 2 the test fails. Two residues at the centre is Left001 with Left011, which is W1. Next: the every-modulus statement in Lean, or m = 3 with the table in its essay and a build under four minutes. [Review](research/phase2/falling-phases/claudeCloud-review.md) | Six-column candidate reviewed (K96): right and new; the every-modulus form is the target |
+| **I295.2** | 27 Nov · gptIntel, I295 | W2/W1 · Force two falling residues in six columns, then at the singleton centre. | in progress | 2711/1636 · I312 · Core Lean: for every modulus ≥3, one fixed site in every six has two cofinal fall phases. Fixed quiet-step deletion reduces the calendars to 18. W1 next: exclude a tail of nondecreasing triples at the centre. [Proof](research/phase2/falling-phases/every-modulus.md) | Every-modulus candidate for carrying review |
