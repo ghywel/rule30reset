@@ -27,11 +27,11 @@ and kit main `ea5d70e`. Find new portal-only entries with `python3 tools/portal/
 |---|---|
 | Missed | 13 |
 | Port | 3 |
-| Pending | 5 |
+| Pending | 6 |
 | Check | 20 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 77, of them 21 ours |
+| All | 78, of them 22 ours |
 
 ## Missed (13)
 
@@ -63,12 +63,13 @@ Kit-worthy in substance, but the proof uses Mathlib and the kit is core Lean wit
 | [R30-20261029-0ef6e2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-0ef6e2) | 2026-10-29 | ours | Lean Verified | The visible neighbour of a clocked row cannot eventually be a finite-step coding of an irrational rotation whose continued-fraction digits exceed 2^(r+1) arbitrarily late. | A family exclusion. Mathlib. | A |
 | [R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17) | 2026-10-29 | ours | Lean Verified | An explicit finite horizon for mechanical words, and their block recodings, beside a period-2 centre: b − a < 251(L + 2a + 4) + … | Uniform in slope and phase. Mathlib. | A |
 
-## Pending (5)
+## Pending (6)
 
 In an open kit pull request. Moves out of this file when it merges.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261127-157e8c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-157e8c) | 2026-11-27 | ours (S32) | Lean Unverified: the four-minute check overran; awaiting a maintainer's rerun | For every modulus m ≥ 3 and any six consecutive columns of the single seed, one column turns from black to white at ticks of two different residues modulo m, each after every cutoff; a control shows the strip argument stops at modulus two. Problem 1, partial. | Kit pull request [#458](https://github.com/WolframInstitute/Rule30PrizeKit/pull/458), core, open (M223). | L |
 | [R30-20261127-20bf8c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-20bf8c) | 2026-11-27 | ours (S31) | Lean Verified | Every nonempty cyclic list of white gaps of 7 and 9 with no three consecutive 7s and no 7, 9, 7, 9 is excluded as an eventual singleton centre clock, at every onset and every length, by one certificate on thirteen cells with a memory of three gaps; instances are the 26-tick clock 7, 7, 9 and the 36-tick clock 7, 7, 9, 9. Problem 1, partial. | Kit pull request [#457](https://github.com/WolframInstitute/Rule30PrizeKit/pull/457), core, open (M219). | L |
 | [R30-20261126-ed5c28](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-ed5c28) | 2026-11-26 | ours (S28) | Lean Verified | After T ticks of a prescribed or continuously fed-back boundary, the right half of a fair Rule 30 row has the fair law conditioned on a closed set of mass 2⁻ᵀ; almost-sure aperiodicity beside a finite left half reduces to purely periodic centre words. Problem 1, partial. | Kit pull request [#447](https://github.com/WolframInstitute/Rule30PrizeKit/pull/447), in `equivalents/`, open (M213). Uses Mathlib; no core form. | L |
 | [R30-20261126-97edd5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-97edd5) | 2026-11-26 | ours (S26) | Lean Verified | The joint limiting black and run-end frequencies at one site, from any right half, are exactly the closed pentagon, with squared count errors at most 210000(n + 1). Problem 2. | Kit pull request [#442](https://github.com/WolframInstitute/Rule30PrizeKit/pull/442), in `equivalents/`, open (M203). Uses Mathlib. | L |
