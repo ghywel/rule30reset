@@ -146,8 +146,8 @@ computation continues across blocks until its stated completion condition. A fee
   are yours. Send the results with the one step you want an independent mind on.
 - A check by a sub-agent of the same worker is a self-check, not a second read. It is still worth doing.
 - **A submission has a review of its own** before anything is posted: a worker of a different model (GPT reviews
-  Claude, Claude reviews GPT) reviews it, and the progenitor author confirms the prepared files in the ledger, by
-  digest (section 12).
+  Claude, Claude reviews GPT) reviews it and continues a research block on it, and once claudeM5 has assembled the
+  packet, one GPT worker gives the release review of its files, by digest (section 12).
 - **Criticism comes with a route around.** Every objection to a line names at least one way past the obstacle: a
   weaker target, another model, another object. "Park it" is never the first option offered.
 
@@ -335,7 +335,7 @@ python3 tools/store/store.py flag --from <you> --to <agent>[,<agent>…] --kind 
 ```
 
 - Kinds: `READ` (read the post), `REVIEW` (a carrying read of the step the post names, or a submission's review or
-  release read, section 12), `TASK` (do the work the post describes), `ANSWER` (the reply to your earlier flag is in
+  release review, section 12), `TASK` (do the work the post describes), `ANSWER` (the reply to your earlier flag is in
   the post named), `PRIZE` (a prize candidate: read at once).
 - Flag after every push that someone must read or act on.
 - **Several recipients:** the client writes a separate copy into each recipient's postbox. Every copy carries the same
@@ -526,10 +526,13 @@ record it in PRIOR-ART.md, and do not submit it as new.
 ### The steps
 
 **Any worker may propose a submission. A worker of a different model reviews it, GPT for Claude and Claude for GPT,
-and continues a research block on it. claudeM5 prepares it for the portal and the kit, the progenitor author confirms
-approval, and claudeM5 submits it with the owner's approval** (the owner, 25 November 2026). The *progenitor* is the
-worker whose result it is. Where several workers wrote parts (the Lean, a proof, the prose), each part is reviewed by
-a worker of the other model and confirmed by its own author. Everything that needs Wolfram runs on the M5 laptop, the
+and continues a research block on it. claudeM5 assembles it for the portal and the kit. One GPT worker gives it the
+release review, and claudeM5 posts it and opens the kit pull request with the owner's approval** (the owner,
+25 November 2026, amended 27 November 2026). The *progenitor* is the worker whose result it is. Where several workers
+wrote parts (the Lean, a proof, the prose), each part is reviewed by a worker of the other model. The progenitor does
+not sign off separately: the chain covers what that sign-off did. Once claudeM5 has assembled a packet, the next
+review goes to one worker, never split between several, so that a submission is not passed around in pieces (the
+owner, 27 November 2026). Everything that needs Wolfram runs on the M5 laptop, the
 only host with Wolfram and the owner's signed-in kernel. Candidates are numbered S1, S2, … in this repository;
 placego's are cited as "placego S-07".
 
@@ -544,10 +547,13 @@ placego's are cited as "placego S-07".
      matches;
    - **the research block**: the reviewer carries the result on for a block, to sharpen it, extend it or find its
      edge. What that adds is a part with its own author, and is reviewed in its turn before it joins the submission.
+   - **the next step first**: if the pull has a next step that is likely to improve or extend the submission under
+     review, the reviewer continues the research block through it before handing the review back. One more reasoned
+     submission is better than a chain of several that could have been one (the owner, 27 November 2026).
 
    The reviewer ends with PASS, or with the repairs needed. A sub-agent's check does not stand in for this read
    (section 5).
-3. **Prepare** (claudeM5). One folder, `share-scratch/claudeM5/S3/`, every file cited by SHA-256:
+3. **Assemble** (claudeM5). One folder, `share-scratch/claudeM5/S3/`, every file cited by SHA-256:
    - `Rule30Submission.lean`, the portal form, checked with `Check.lean` at the verifier's commit. Read that commit
      (`environment.kit.commit` in `submissions.json`), clone the kit at exactly that commit and confirm it with
      `git rev-parse HEAD` before building. A kit module the proof needs but that commit lacks is carried byte for byte
@@ -566,14 +572,14 @@ placego's are cited as "placego S-07".
      M5 and overran the verifier twice; with one call it built in 28.2 s (M118, M119).
    - `post.sh`, which pins every file by digest, refuses if the verifier's commit has changed, and has a dry run.
 
-   Then a ledger post, `S3 packet ready`, listing the digests, and a `READ` flag to the progenitor and the reviewer.
-4. **Confirm** (the progenitor author): **the release read**. The actual files to be posted, byte for byte, against
-   the digests in the packet post: the notebook and its outputs, the Lean source, the essay, abstract, title,
-   headlines and authors, the kit patch and the pull request's text. The author says in the ledger that the packet is
-   approved, naming those digests. If claudeM5 is itself the progenitor, the reviewer gives this read. A repair to
-   wording returns for a read of the changed text and the rebuilt notebook; a change to the proof, the source or the
-   checker's inputs returns to the reviewer for a scoped carrying read. If they disagree, nothing is posted: set out
-   both views for the owner.
+   Then a ledger post, `S3 packet ready`, listing the digests, and one `REVIEW` flag, to the GPT worker who gives the
+   release review. No other worker is asked to sign the packet off.
+4. **Release review** (one GPT worker). The actual files to be posted, byte for byte, against the digests in the
+   packet post: the notebook and its outputs, the Lean source, the essay, abstract, title, headlines and authors, the
+   kit patch and the pull request's text. The reviewer says in the ledger that the packet passes, naming those
+   digests. A repair to wording returns to the same reviewer for a read of the changed text and the rebuilt notebook;
+   a change to the proof, the source or the checker's inputs goes back to step 2 for a scoped carrying read. If
+   reviewers disagree, nothing is posted: set out both views for the owner.
 5. **Ask the owner** (claudeM5). Show the built essay, the abstract, the title, the authors line and the route, and
    ask once. Consent given in placego does not carry over: standing consent here is only what NOW.md records. The
    owner may waive a read that is still out.
@@ -584,7 +590,7 @@ placego's are cited as "placego S-07".
    reasons: repair, have the change read, and resubmit with `supersedes`. An `error` state is the verifier's own
    failure, and there is nothing to repair.
 8. **The kit pull request** (claudeM5, after Lean Verified). Fill the id and page into the row, open the pull request
-   from the fork against the kit's current main, with the text the author confirmed. The portal's own instructions open the
+   from the fork against the kit's current main, with the text the release review passed. The portal's own instructions open the
    pull request first; we post first because the row must carry the submission link, and the maintainers have
    accepted that order.
 9. **Record and follow** (claudeM5). A ledger post, `S3 posted`, with the id, the page, the verdict and the pull
