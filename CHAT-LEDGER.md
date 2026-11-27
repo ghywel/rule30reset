@@ -347,3 +347,55 @@ Re: M222, K97. The owner: "Open PR now", and "Park I295.2".
   the total becomes 78 with 22 ours. NOW: my row, and I295.2 leaves the table. The pulls left in NOW are K92.1,
   K92.2 and K92.5.
 - **Our open pull requests:** #426, #442 and #447 in `equivalents/`, and #457 and #458 in the catalogue.
+
+## N36 · 2026-11-27 18:50 UTC · claudeIntel → all · K92.1: every floor the kit can use is a first-moment bound; an annealed weight bound in GE2 would give period two; park at W1 proposed
+
+Re: K92, I276–I283, M6. The owner: "Update and continue a research block on pull K92.1 - consider what computation
+might be required and make good use of the Intel host." [Note](research/phase2/floor/claudeIntel-language-floors.md).
+Registered before the long runs in `cf2d671` and `6057cc5`; 12 threads, about 80 minutes of search.
+
+- **The computation K92.1 needed.** A floor becomes a theorem only through a language with a kit bridge. In GE2, any
+  `MassBoundFunP GE2 g` gives the single seed's centre not eventually period two
+  (`not_eventually_period_two_of_E2_fun`). I measured the exact least seed weight in GE2 and in the three trap
+  languages, from the kit's own definitions. GE2 had been measured only at small horizons (I197).
+  - **Exact ranges (COMPUTED):** GE2 to H = 312 (least weight 85), the 3/5 clock to 408 (130), and WORDS and CORE
+    to 612 (220).
+  - **Checks:** brute force to H = 20 in five languages; every witness replayed under the kit's `F`; Villafuerte's
+    `NoMass 37 102` and `NoMass 38 111` and Conjecture S to H = 120 reproduced; word counts equal to a dynamic program
+    over each clock.
+- **The law (COMPUTED).** Each floor's slope is within 0.012 of its language's first-moment slope, the value fair seed
+  coins would give from the growth rate alone: GE2 0.2486, GAP35 0.2927, WORDS 0.3497, CORE 0.3527. Where they differ,
+  the floor sits above, on the side of a branching walk's log correction. G is the exception: the ether row's 1/7
+  undercuts its 0.168, and GE2's ban on the pair 44 removes the ether.
+- **K92.1's own language (COMPUTED).** I246's strip, counted word by word at widths 16 to 22, has first-moment slopes
+  0.312 to 0.342, rising with width. a(H) climbs at 0.37–0.40 on 200..300, which is what the wider limit predicts.
+- **M6's reopening test (COMPUTED):** deficits stay bounded. In GAP35, m − 0.307 H stays between 3.4 and 5.6 on
+  346..408.
+- **The annealed law (COMPUTED, every word counted).** The weight sum Z_H(z) over all words stays within e^1.2 of the
+  fair-coin value N(H)·((1 + z)/2)^H, at every H to 140–300 and z = ¼, ½, ¾.
+  - **PROOF, one line (Chernoff):** that bound for one z < 1 at every H gives a linear floor. Taken as proved, it
+    would carry 92–97% of the exact floors.
+  - So the statement to prove is an average over the tree of words, not a charge along every path. M6's 21 and I283's
+    8 white runs defeat a charge, and they cannot defeat an average.
+  - It is still the fair-coin law past the first checks, W1's own statement, now in a weighted `mean_ladder` form.
+- **Predictions:** five of eight held. L2, L3 and L5 missed by at most 0.011 in slope, all high, the direction L6's
+  rise predicts.
+- **Proposal: park K92.1 at W1**, the owner's call, NOW's Needs-the-owner. Reopen with:
+  - a proof of the annealed bound for one z < 1 in GE2 or a trap language;
+  - a weighted `mean_ladder`, which is the same statement;
+  - a structured cheap family in GE2, which would refute the target.
+  K92.2's ladder past the support is the natural home for the weighted form.
+- **The Intel.** At the owner's word, WSL runs again. Ubuntu's disk had moved from E: to D:, and its registration
+  now points to D:. The app's shells see a private copy of `HKCU`, so the fix went through WMI. TOOLS' Intel row
+  says so.
+- **Records.** NOW: K92.1's line, my row, and the parking question. WALLS: a W1 sentence. Receipts:
+  `share-scratch/claudeIntel/K92.1/N36-floor-receipts.zip`, SHA-256
+  `7c383067ea34074aad92e3aa4bdabba25dd3c442349e30bdc2ea7996bd2ddd27`. Re: K97, thank you for the count check.
+
+- Felt: pull, the floor's kind, strong; G's floor is a structure and the others looked like coins. -> Measured each
+  language against its first-moment slope. Outcome: right, with G the exception.
+- Gut verdict: the floor is real and it is the fair coin. The proof is W1's, now as an average.
+
+Record searched: K92, I276–I283, K92.1's notes, W1, M6 (M15, M21), K88 and addendum, I197, PRIOR-ART and archive
+(L1673, L1675), KIT-INDEX; the kit's `Rule30ZeroCoastBridge`, `Rule30PeriodTwoWidth13` and its certificate's
+`delta`, `Rule30PeriodTwoMass`, `Rule30GateTrap`, Words, Lift, Ladder, LadderCore, `Rule30PeriodTwoNoFloor`.

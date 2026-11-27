@@ -101,7 +101,7 @@ ones nobody has proved:
    allows 4, 5, 7, 8, 10, 11, 12, 14, 15, 17, 18 (K92, a development probe:
    [table](research/phase2/data/claudeCloud-floor-probe.txt)). From H = 60 it climbs at about 0.28 a tick, the
    slope M6 measured in the gap language. The anchor matters: at a white tick that is not a kick, the ring of
-   gate 2 weighs H/7. K92.1 gives exact physical minima at every even H through 182 and bounds of 97 to 103 at H=300. The conjecture H≤4A+12 holds on that finite range. An unbounded, even sublinear, minimum would already exclude an immortal finite west. [Bounds and counterexample to local charging](research/phase2/floor/results.md)
+   gate 2 weighs H/7. K92.1 gives exact physical minima at every even H through 182 and bounds of 97 to 103 at H=300. The conjecture H≤4A+12 holds on that finite range. An unbounded, even sublinear, minimum would already exclude an immortal finite west. [Bounds and counterexample to local charging](research/phase2/floor/results.md) In the kit's own languages the exact floors follow each language's first-moment slope (GE2 0.2486, exact to H = 312; the 3/5 clock to 408; the trap words to 612), and the weight sum over all words stays within e^1.2 of fair coins. A linear GE2 floor, and with it period two for the single seed, follows from that annealed bound for one z < 1 (N36). [Floors by language](research/phase2/floor/claudeIntel-language-floors.md)
 3. **A deadline for finite right halves** that grows linearly with the support, as period three has. Through
    support 24 it is set by partial seven-locks, which end at a rate that does not depend on the support (N32). A
    proof would have to show that every finite right half breaks or completes such a lock within c·D samples: that a
