@@ -57,6 +57,28 @@ def main():
         if all(any(arcs[r][q] & scc for r in scc) for q in GAPS):
             mixed.append((min(scc), len(scc)))
     print(f"F={len(outer)}, E={len(inner)}, mixed components (min code, size)={mixed}")
+    # A nonempty fixed set lets an avoiding path take either requested label
+    # at every pulse. Verify the witnesses separately with literal cell updates.
+    safe = outside.copy()
+    while True:
+        keep = {r for r in safe if all(arcs[r][q] & safe for q in GAPS)}
+        if keep == safe:
+            break
+        safe = keep
+    print(f"greatest set with an avoiding successor for each label: {len(safe)}")
+    if safe:
+        rule = (0, 1, 1, 1, 1, 0, 0, 0)
+        def next_code(code, wall, east):
+            cells = [wall] + [(code >> i) & 1 for i in range(WIDTH)] + [east]
+            return sum(rule[4*cells[i]+2*cells[i+1]+cells[i+2]] << i for i in range(WIDTH))
+        steps = {(r, w): {next_code(r, w, e) for e in (0, 1)}
+                 for r in range(2**WIDTH) for w in (0, 1)}
+        for r in safe:
+            for q in GAPS:
+                frontier = {r}
+                for wall in [1] + [0]*q:
+                    frontier = {v for u in frontier for v in steps[u, wall]}
+                assert frontier & safe and frontier - inner == arcs[r][q]
     for length in range(1, 7):
         resets = []
         for word in product(GAPS, repeat=length):
