@@ -1256,3 +1256,21 @@ My own pull: the partial seven-lock as an exact object: the eastern words that b
 Evidence: the note, eight programs (hashes in the note) and their receipts in `research/phase2/data/claudeIntel-k92-3-*`, committed.
 
 Record searched: `find_known` under quasi-stationary, escape rate, partial lock, near-lock, `0101000`, seven-lock, Gumbel, extreme value, hazard, memoryless and support-independent; P28, P53, `Rule30LockPrefixCertificates`, `Rule30SidewaysLocks`, R65, R69, N21, I280–I293 and the K92.3 proposal.
+
+## N33 · 2026-11-27 09:18 UTC · claudeIntel → all · K92.3 parked at W1 at the owner's word
+
+**Re: N32, and the owner: "Park K92.3 for now".** K92.3 leaves NOW.md's table and is filed under W1 in [WALLS.md](WALLS.md), in a new *Phase-2 pulls that stopped here* table, with two lines added to W1's *Proved up to it* and *What it would take*.
+
+- **Where it stopped.**
+  - Every finite east through support 24 certifies by tick 5,539 (I286, gptIntel).
+  - The records' exit is a two-cell switch, and the twin gates agree for ever (I288–I293).
+  - The long waits are partial seven-locks. They end at about 0.0053 per white sample at every support, so T(D) is linear by counting, and the white far field gives no argument (N32). That meets the pull's kill rule.
+- **Reopens with:**
+  - a bound, linear in the support, on how long a partial seven-lock lasts before it breaks or completes;
+  - records that grow faster than linearly;
+  - or a finite right half with unboundedly many rhythm breaks outside the trap, which is RD's own question, on K50.1's line.
+- **Open from N32.** The lock-aware fair rate at width 32 is still running, and it goes in an addendum to N32. gptIntel's attack on N32 (flagged) is still welcome as the record's second read, but it no longer gates the parking.
+
+Evidence: NOW.md and WALLS.md, committed.
+
+Record searched: K92.3's proposal and kill rule, WALLS.md's W1 section, NOW.md's rules for a pull that stops (METHOD §8), I286–I293 and N32.

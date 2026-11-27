@@ -8,9 +8,9 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-27 09:10 UTC by claudeIntel (N32): K92.3 progress. Reset for phase 2 by claudeCloud (K92) at 22:46 UTC on
-26 November, at the owner's word. The Direction's earlier bullets are the owner's, last edited at 22:41 UTC on 25
-November.*
+*Updated 2026-11-27 09:18 UTC by claudeIntel (N33): K92.3 parked at W1 at the owner's word. Reset for phase 2 by
+claudeCloud (K92) at 22:46 UTC on 26 November, at the owner's word. The Direction's earlier bullets are the owner's,
+last edited at 22:41 UTC on 25 November.*
 
 ## Arrangement
 
@@ -22,7 +22,7 @@ The AI assistant workers:
 |---|---|---|---|
 | claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2611/2123 · M215 · S29 posted, Lean Verified; kit PR #449 |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2611/2117 · R137 · S29 final release read PASS on packet c and revised core kit patch |
-| claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/0910 · N32 · K92.3: the long waits are partial seven-locks that end at one rate at every support; park at W1 proposed |
+| claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/0918 · N33 · K92.3 parked at W1 at the owner's word: the long waits are partial seven-locks that end at one rate at every support |
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2711/0849 · I299 · Five prize pulls proposed. Lean excludes a seven/nine gap family |
 | claudeCloud | an Anthropic cloud container | K | 2611/2246 · K92 · Phase 2 opened at the owner's word: NOW.md reset, WALLS.md and SUBMISSIONS.md made, five pulls proposed |
 
@@ -108,6 +108,5 @@ the table. Inside a cell, start a new line with `<br>`.
 |---|---|---|---|---|---|
 | **K92.1** | 26 Nov · claudeCloud, K92 | W1 · Does kick-anchored weight grow enough to exclude period two? | preliminary | 2611/2318 · I276–I279, I283 · Exact at every even H≤182. At H=300 the minimum is 97–103. Test whether surplus can pay for long white gaps. [Block](research/phase2/floor/results.md) | — |
 | **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | preliminary | 2611/2318 · I278–I279, I283 · Rule 30 has 3,517/2^24 twelve-check survivors in the even free cube. Explain the conditional bias. [Block](research/phase2/ladder/free-cube-results.md) | — |
-| **K92.3** | 26 Nov · claudeCloud, K92 | W1 · Do 48 clean readings or a certified lock arrive by a linear deadline? This would give RD. | in progress | 2611/2326 · I280–I286 · All 2^24 finite easts certify by tick 5,539, sharp through D=24. Identify what forces the shared record gate to exit. [Block](research/phase2/deadline/results.md)<br>2611/2352 · I288–I293 · White at 25–26 forces entry 11 samples later for the records. Bound how many exits a finite nonlocking east can decline in X. [Evidence](research/phase2/deadline/record-entry.md)<br>2711/0910 · N32 · The long waits are partial seven-locks: gate `0101000`, at most 202 samples off it before trap entry. Exits come at one rate at every support, so T(D) grows about 130 samples per site by counting. Park at W1 by the kill rule, once gptIntel has attacked this. [Note](research/phase2/deadline/claudeIntel-partial-locks.md) | — |
 | **K92.4** | 26 Nov · claudeCloud, K92 | W2 · Can dyadic edge clocks predict unbounded marked gaps on the single seed, sufficient for Problem 1? | preliminary | 2611/2320 · I281–I285 · Max mark 22, longest finite first failure 53 through 2^22. Selected phase failed on holdout. Recommend parking pending a new edge predictor. [Block](research/phase2/marks/seed-results.md) | — |
 | **K92.5** | 26 Nov · claudeCloud, K92 | W1/W2 · Which outside methods supply a hypothesis we can prove for Problem 1? | preliminary | 2611/2330 · I282, I284, I287 · Lean checks the sparse-width criterion and advancing fronts for rules 120/180. Seek sparse survivor widths of both parities. [Methods](research/phase2/borrowed/methods.md) | — |

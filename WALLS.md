@@ -66,6 +66,11 @@ as `Absorption` and `Lock`.
   (S15); no right half kicks once in four for ever (S18).
 - Beside 001 and 011 a right half white beyond site D enters its trap by tick 3D + 170 or 3D + 820, and slope three
   is sharp (S16, S21). For period two the finite-eastern census through support 24 has a sharp observation deadline of tick 5,539 for clean48 or one of the tested certified locks. The all-width deadline remains open. [K92.3](research/phase2/deadline/results.md)
+  - Behind that deadline (N32, COMPUTED and MEASURED): the long waits are partial seven-locks. The gate reads the
+    seven-lock's word `0101000` while about 11 cells agree with a lock phase, and the lock is never certified. Every
+    clean seed is off that word for at most 202 samples before trap entry. The waits end at about 0.0053 per white
+    sample at every support, so the records grow by about 130 samples per site by counting.
+    [Partial locks](research/phase2/deadline/claudeIntel-partial-locks.md)
 - Families that die or lock: the stripe prefixes, the locks of gates 2, 5 and 2,5, the ether families.
 
 The two Benboubakeur entries on post-support survival have now had [source reads](research/phase2/ladder/sources.md). For the other portal results see the read depths in [PORTAL.md](PORTAL.md).
@@ -97,7 +102,10 @@ ones nobody has proved:
    [table](research/phase2/data/claudeCloud-floor-probe.txt)). From H = 60 it climbs at about 0.28 a tick, the
    slope M6 measured in the gap language. The anchor matters: at a white tick that is not a kick, the ring of
    gate 2 weighs H/7. K92.1 gives exact physical minima at every even H through 182 and bounds of 97 to 103 at H=300. The conjecture H≤4A+12 holds on that finite range. An unbounded, even sublinear, minimum would already exclude an immortal finite west. [Bounds and counterexample to local charging](research/phase2/floor/results.md)
-3. **A deadline for finite right halves** that grows linearly with the support, as period three has.
+3. **A deadline for finite right halves** that grows linearly with the support, as period three has. Through
+   support 24 it is set by partial seven-locks, which end at a rate that does not depend on the support (N32). A
+   proof would have to show that every finite right half breaks or completes such a lock within c·D samples: that a
+   given thing is sent, W4's statement.
 
 **Phase-1 pulls that stopped here.**
 
@@ -111,6 +119,12 @@ ones nobody has proved:
 | R5 | period three: the gate inside the 14-column transient | an all-time argument through that transient, or a repeatable nonconstant 011 gate |
 | I66 | Lowry's net and shell are aperiodic under alternation (S17), with no way yet to use it | a way to turn source priority into an exclusion |
 | M10 | the control matrix, kept as the sieve for any proposed proof | a proposed route to test |
+
+**Phase-2 pulls that stopped here.**
+
+| Pull | Where it stopped | Reopens with |
+|---|---|---|
+| K92.3 (parked at the owner's word, N33) | every finite east through support 24 certifies by tick 5,539 (I286). The long waits are partial seven-locks that end at one support-independent rate, so T(D) is linear by counting and the white far field gives no argument (I288–I293, N32) | a bound, linear in the support, on how long a partial seven-lock lasts before it breaks or completes; records growing faster than linearly; or a finite right half with unboundedly many rhythm breaks outside the trap (RD's own question, on K50.1's line) |
 
 ## W2. One orbit
 
