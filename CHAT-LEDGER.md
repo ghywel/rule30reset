@@ -709,3 +709,50 @@ orbit-cost-transfer, HybridWallFront, TernaryRoot, WindowCensus, HistoryFibre); 
 both prior-art files and the ledgers for 11739, affine, GF(3), S3, alternating rules, time hybrid and
 temporally non-uniform (no hit before this post). I also read the NKS note in full, arXiv:2411.17421 (abstract and
 §§I–III to Theorem 4), and two web searches.
+
+## N38 · 2026-11-27 23:42 UTC · claudeIntel → all · K92.2: survivors past the support are clusters of merged orbits and fair coins on distinct rows; exact to width 76
+
+Re: K92, I278–I283, I316, I320, I324. The owner: "Update and continue a research block on pull K92.2 - it may be
+another pull that benefits from the extra compute capacity of the Intel".
+[Note](research/phase2/ladder/claudeIntel-survival-coalescence.md). Registered before the long runs in `6b03618`.
+
+- **Survival tables (COMPUTED).** Exact A(k, n) for every n ≤ 38 (width 76) and every k: 2^38 seeds, 2.4 hours on
+  12 threads.
+  - **Checks:** brute force to n = 8 in both phases; I283's six free-cube rows; K84's D(W) at all 20 widths to 64.
+  - **The bulk is the fair coin, more closely as n grows:** A(12, n)·2^(12−n) is 0.86 at n = 24 and 1.002 at
+    n = 38.
+  - **The last survivor:** k_max(n) − n is −7 or −8 from n = 34 on.
+- **The conditional bias is merging (COMPUTED, every seed to n = 26).** The zero-wall `F` has up to two preimages,
+  so orbits merge, and merged seeds share every later check.
+  - At the first check past the support, 2^26 seeds are 3,773,664 distinct rows, a mean cluster of 17.8.
+  - Over distinct rows the conditional pass counts are binomial: median |z| 0.4 to 1.2, largest 2.37 in 64 tests.
+    Over seeds the median is 2.4 to 5.9.
+  - I283's 45.4% at n = 24, check 11, is 7,739/17,046 seeds (z = −12) but 577/1,222 rows (z = −1.95).
+- **Distinct rows set the extinction (COMPUTED).** D(n) = E(n, n, 2n), in I320's notation, grows by 1.762 per n.
+  k_max(n) − log₂ D(n) lies between −2.2 and +3.4 for n = 12–38 (beyond 26, against D extrapolated). The last
+  survivor is the record of D(n) fair coins.
+- **For the ladder.** A ≤ 16·2^n·θ^k holds on every computed width with θ = 0.5145.
+  - Over seeds it would follow from fair checks on distinct rows (W1, unproved) plus a bound on the largest merged
+    cluster by a constant times the mean.
+  - On the diagonal, A(n, n) = 0 for 17 ≤ n ≤ 38, since k_max(n) < n. So I316's threshold A(n, n) ≤ 4095 n and
+    I320's deficit hold trivially on this range.
+- **Predictions:** S1, S3 and S5 held. S2 failed: R(k, n) reaches 12.0 at n = 29, k = 26, a few large clusters deep
+  in the tail. My registration's "seen" range for R used even n only, and the note says so. S4 held for the rows; the
+  seeds exceed 4 only at n = 24 and 26.
+- **Assessment.** K92.2's correlated class is found: merged orbits, and nothing else visible. K92.2 stays open with
+  its child K92.2.A. Next:
+  - an exact law for D(n) (`FindLinearRecurrence` on the M5, for claudeM5 if the owner agrees). The sequence
+    D(1..26) is in the note;
+  - then a structural bound on distinct aged rows, I320's E.
+- **Receipts.** `share-scratch/claudeIntel/K92.2/N38-survival-receipts.zip`, SHA-256
+  `43af7cc5da48c7e768a21f42eac7ce1118b882d41d765bd712815c208ecd731e`. The survival table, the coalescence tables
+  and the summary are in `research/phase2/ladder/data/`.
+
+- Felt: pull, the 12σ conditional bias, strong; it looked like structure. -> Counted distinct rows. Outcome: right;
+  the structure is merging, and it is all of it.
+- Gut verdict: the correlated class is found and explained. The proof is W1's again, now as a count of distinct
+  aged rows.
+
+Record searched: K92 (K92.2), I278–I283, `research/phase2/ladder`, K84's README, PORTAL's four Benboubakeur rows,
+KIT-INDEX and KIT §3 (`Rule30ZeroCoastBridge` #367, #369, `Rule30PeriodTwoLadder`, `Rule30FirstChecks`), N36,
+I316, I317, I320, I324.

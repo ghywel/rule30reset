@@ -8,7 +8,8 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-27 23:28 UTC by claudeCloud (K99): K92.5's second block; the 30/180 front read (K92.5.B) passes; the hard class of relatives and (150, 180) added to K92.5.B. Before that 2026-11-27 22:11 UTC by gptIntel (I324). Added the follow-ups from K98 and the Gemini block.
+*Updated 2026-11-27 23:42 UTC by claudeIntel (N38): K92.2's survival tables to width 76; the conditional bias is merged orbits.
+Before that 23:28 UTC by claudeCloud (K99): K92.5's second block; the 30/180 front read (K92.5.B) passes; the hard class of relatives and (150, 180) added to K92.5.B. Before that 2026-11-27 22:11 UTC by gptIntel (I324). Added the follow-ups from K98 and the Gemini block.
 K92.4 is open again on unbounded marked births. [Research results](research/phase2/gemini/five-questions.md)*
 
 ## Arrangement
@@ -21,7 +22,7 @@ The AI assistant workers:
 |---|---|---|---|
 | claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2711/1829 · M223 · S32's kit PR #458 opened; I295.2 parked at W1; S32 (R30-20261127-157e8c) awaits a maintainer's rerun |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2711/1753 · R138 · S32 packet b passes the technical release read; timing decision pending |
-| claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/1850 · N37 · K92.1 parked at W1 at the owner's word, after N36's exact floors in GE2, the 3/5 clock and the trap words (each at its first-moment slope)
+| claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/2342 · N38 · K92.2: survival past the support exact to n=38; survivors are clusters of merged orbits and fair coins on distinct rows; the last survivor sits at log2 of the distinct rows
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2711/2211 · I324 · Added the K98 and Gemini proof targets to the pull table (research I313–I323). |
 | claudeCloud | an Anthropic cloud container | K | 2711/2328 · K98–K99 · K92.5 second block: atlas scored (9 of 11), HybridWallFront read PASS, the square root is affine over GF(3), questions 10–13. Pending: Lean replay of I316's census and fibre, I321's clock read |
 
@@ -105,7 +106,7 @@ the table. Inside a cell, start a new line with `<br>`.
 
 | Pull | Written | Summary | Status | Progress | Submissions |
 |---|---|---|---|---|---|
-| **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | preliminary | 2611/2318 · I278–I279, I283 · Rule 30 has 3,517/2^24 twelve-check survivors in the even free cube. Explain the conditional bias. [Block](research/phase2/ladder/free-cube-results.md)<br>2711/2211 · I316, I320, I324 · Use the registered coalescence run to test distinct aged images. Seek unbounded n−E or A(n,n) ≤ 4095n at unbounded widths. [Count criteria](research/phase2/gemini/sparse.md) | — |
+| **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | preliminary | 2611/2318 · I278–I279, I283 · Rule 30 has 3,517/2^24 twelve-check survivors in the even free cube. Explain the conditional bias. [Block](research/phase2/ladder/free-cube-results.md)<br>2711/2211 · I316, I320, I324 · Use the registered coalescence run to test distinct aged images. Seek unbounded n−E or A(n,n) ≤ 4095n at unbounded widths. [Count criteria](research/phase2/gemini/sparse.md)<br>2711/2342 · N38 · Exact A(k,n) for n≤38 (width 76), all k. The conditional bias is merged orbits: distinct rows D(n)=E(n,n,2n)≈1.762^n, and on them checks pass like fair coins; the last survivor is at log2 D(n) (k_max−n=−7 at 38). Next: an exact law for D(n) (M5's FindLinearRecurrence), then a bound on distinct aged rows (I320). [Survival](research/phase2/ladder/claudeIntel-survival-coalescence.md) | — |
 | **K92.2.A** | 27 Nov · gptIntel, I324 | W1 · Can a failure deadline be proved for every black-cell budget on the bare white wall? A yes gives Q01. | preliminary | 2711/2128 · I320 · Sharp deadlines through 18 black cells. Bound the delay from one more black site by a uniform argument on the sparse tree. [Weight floor](research/phase2/gemini/sparse.md) | — |
 | **K92.4** | 26 Nov · claudeCloud, K92 | W2 · Do arbitrarily wide black bars launch gaps with a black arrival at the centre? Unbounded marked births give Problem 1. | in progress | 2711/2142 · I321, I323 · Reopened in I324 via the exact launch law. Prove unbounded launches and a recurring forcing context on those same rows. Carrying read with claudeIntel. [Birth criterion](research/phase2/gemini/launch.md) | — |
 | **K92.4.A** | 27 Nov · gptIntel, I324 | W2 · Can the fixed site −2 be forced to fall more often than logarithmically? This would improve both centre colour counts for Problem 2. | preliminary | 2711/2142 · I323 · Each colour has a lower bound in terms of the fall count. Seek a growing number of falls per late dyadic shell at −2, or directly at the centre. [Proof and census](research/phase2/gemini/launch.md) | — |
