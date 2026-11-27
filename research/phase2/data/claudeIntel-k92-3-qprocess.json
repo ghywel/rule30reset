@@ -1,0 +1,20 @@
+{
+ "519": {
+  "windows": 15826,
+  "escape_rate_per_sample": 0.005271619781284615,
+  "qsd_departure_visit_rate": 0.010001081589195503,
+  "qprocess_departure_visit_rate": 0.0006104469757877676,
+  "qprocess_mean_leaving_pairs_at_departure": 1.8107488844907071,
+  "qsd_black_gate_fraction": 0.28538333420149126,
+  "qprocess_black_gate_fraction": 0.28567957354512596
+ },
+ "1799": {
+  "windows": 11069,
+  "escape_rate_per_sample": 0.0014786469404730591,
+  "qsd_departure_visit_rate": 0.00324916603343263,
+  "qprocess_departure_visit_rate": 3.9469672120005916e-05,
+  "qprocess_mean_leaving_pairs_at_departure": 1.5701048441157806,
+  "qsd_black_gate_fraction": 0.49974315494156596,
+  "qprocess_black_gate_fraction": 0.49999999288005836
+ }
+}
