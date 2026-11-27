@@ -24,8 +24,8 @@ Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
 |---|---|---|
 | Jen's theorem (kit, `Rule30Jen.not_adjacent`) | two adjacent columns | they are never both eventually periodic |
 | *Windows That Always Return* (KDRonald3 and Claude, R30-20261115-2d4add) | two and three adjacent columns | a window that avoids a set of rows is trapped in a finite graph; each black pair recurs |
-| `Rule30SettledBarrierEffective` (Quint and Gemini, kit; R30-20261106-2b31c4) | the centre | a fall in every window `[a, a + L)` with the centre black at `a` and `3a + 21 < 5L + 3 log₂ log₂ a`; no residue |
-| this entry | any six consecutive columns | one column falls at two residues of every modulus `m ≥ 3`, for ever |
+| `Rule30SettledBarrierEffective` (Quint and Gemini, kit; R30-20261106-2b31c4) | the centre | a fall in `[a, a + L)` if `a ≥ 16`, the centre is black at `a`, and `3a + 21 < 5L + 3 log₂ log₂ a` using integer logarithms, with no residue specified |
+| this entry | any six consecutive columns | for each modulus `m ≥ 3`, one column falls arbitrarily late on two distinct residues |
 
 A column whose falls keep to one residue modulo `m` keeps to one residue modulo every divisor of `m`. So the new content is at 4 and at the odd primes, and the statement at larger moduli is the stronger.
 
@@ -40,7 +40,7 @@ table[m_] := Grid[Prepend[Table[Prepend[Table[Count[Mod[falls[rows[[All, j]]], m
 {table[3], table[7]}
 ```
 
-Every column falls at every residue, about equally often. The theorem proves much less than that, but for every tick: one of the six columns has two residues that never stop.
+In this sample every column falls on every residue for both displayed moduli. The theorem gives two residues at which the chosen column continues to fall after every cutoff.
 
 **The strip.** Read six cells as a number whose bit `k` is the cell `k` sites east of the first. One update with exterior cells `w` and `e` is Rule 30 on those six. An update is *quiet* when no cell falls. The lemma behind the reduction: if a quiet update changes the strip, the strip cannot make two more quiet updates, whatever the exterior does.
 
@@ -77,7 +77,7 @@ Grid[{Range[3, 18], Table[SelectFirst[{3, 4, 5, 7, 11, 13, 17}, Divisible[m, #] 
 
 ## 5. What is not shown
 
-- **Which column.** The column may differ with the modulus and with the six columns chosen. Nothing is proved about the centre alone. A row with a repeating centre 011 beside a white right half has its columns −6, −3, 0 and 1 each on one residue modulo 3, by computation in the rule30reset record. It is a path of every strip graph, so no strip argument with free exterior cells can single out the centre.
+- **Which column.** The column may differ with the modulus and with the six columns chosen. Nothing is proved about the centre alone. A row with a repeating centre 011 beside a white right half has its columns −6, −3, 0 and 1 each on one residue modulo 3, by computation in the rule30reset record. Its restrictions are legal paths in the free-exterior strip when only the centre is constrained to one fall residue. This example blocks a centre-only conclusion from those strip constraints. The single-seed initial condition could provide further information.
 - **Modulus two.** `not_good_parity` shows that the method stops there.
 - **Three residues, or both residues close together.** By computation in the record, one column in every 24 has all three residues modulo 3. Neither that nor two residues inside one dyadic range of ticks is proved.
 - **Frequencies.** The falls at each residue recur; nothing is said of how often.
@@ -118,7 +118,7 @@ Their axioms:
 AssociationMap[rule30Submission[#]["Axioms"] &, heads]
 ```
 
-The kernel accepts every declaration of the module again. This is the replay the verifier runs. It comes last because it resets LeanLink's elaboration state:
+The kernel replays every declaration of the module. This check comes last because it resets LeanLink's elaboration state.
 
 ```wl
 rule30Submission["Rule30Submission.PhaseFalls.Moduli.two_cofinal_every_modulus"]["KernelCheck"]
