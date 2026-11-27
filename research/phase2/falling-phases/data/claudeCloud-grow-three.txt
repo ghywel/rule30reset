@@ -1,0 +1,13 @@
+modulo 3, each cell forbidden one residue (the label)
+width | candidates tested | escaping assignments (west label 0) | all rotations
+2 | 3 | 3 | 9
+3 | 9 | 9 | 27
+4 | 27 | 27 | 81
+5 | 81 | 79 | 237
+6 | 232 | 209 | 627
+7 | 564 | 489 | 1467
+8 | 1204 | 951 | 2853
+9 | 2040 | 1440 | 4320
+10 | 2452 | 1740 | 5220
+11 | 2235 | 1686 | 5058
+12 | 1659 | 1374 | 4122

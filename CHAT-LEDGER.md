@@ -1705,3 +1705,25 @@ to one cell fewer escape, so the escaping assignments are grown a cell at a time
   escaping assignments: 85%. Otherwise the chain breaks at some modulus, which would be worth as much as its holding.
 - **B2.** Three residues: no assignment escapes at some width of at most 14: 50%. That would be: *one column in every
   W has falls at all three residues modulo three, each recurring.*
+
+**K95, addendum 2 (2026-11-27 13:10 UTC).** B1 held, and a run for every modulus to 100 registered.
+
+**Result** (`data/claudeCloud-grow-moduli.txt`). **COMPUTED.** Modulo 8, 9, 10, 12 and 16: no assignment escapes
+at width six, and widths 2, 3, 4 and 5 have m, 3m − 2, m + 4 and m + 1 escaping assignments. **B1 held.**
+
+**The escaping assignments do not depend on the modulus.** Written as offsets between the cells' residues, for every
+modulus from 4 to 16 they are:
+- three cells (p, q, r): q = p, or q = p − 1, or r = p + 2;
+- five cells: (a, a, a, a, a − 1), and (a, a, a + 3, a + 2, r) with r free.
+No assignment of six residues has both of its five-cell restrictions on that list when m ≥ 4, so six cells need no
+further graph. Modulo 3 the two forms meet (3 = 0) and three six-cell assignments are left for the graph to refuse.
+
+**Why every modulus should reduce to finitely many** (PROOF-SKETCH). Between two ticks at which some cell may fall,
+no cell falls, so the row can only gain black cells: at most W changes, the rest idle steps. Two rows are joined by a
+quiet stretch of length L exactly when they are joined by one of length L + 1, once L ≥ W: add or remove an idle
+step. So stretching a quiet interval beyond W ticks changes nothing between its ends, and beyond about 2W nothing
+at any tick inside it. If that is right, six cells are settled for every modulus by the moduli up to 6 × 12 = 72.
+
+**Registered.** `claudeCloud_grow.py one m 7` for every m from 3 to 100 (the same frozen program). Prediction: no
+escape at width six for any of them, and the counts m, 3m − 2, m + 4, m + 1 for every m from 4: 90%. Otherwise the
+stretching argument is wrong somewhere, and the modulus at which it breaks says where.

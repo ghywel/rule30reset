@@ -1,0 +1,35 @@
+modulo 8, one residue for each cell
+width | candidates tested | escaping assignments (west label 0) | all rotations
+2 | 8 | 8 | 64
+3 | 64 | 22 | 176
+4 | 64 | 12 | 96
+5 | 10 | 9 | 72
+6 | 0 | 0 | 0
+modulo 9, one residue for each cell
+width | candidates tested | escaping assignments (west label 0) | all rotations
+2 | 9 | 9 | 81
+3 | 81 | 25 | 225
+4 | 73 | 13 | 117
+5 | 11 | 10 | 90
+6 | 0 | 0 | 0
+modulo 10, one residue for each cell
+width | candidates tested | escaping assignments (west label 0) | all rotations
+2 | 10 | 10 | 100
+3 | 100 | 28 | 280
+4 | 82 | 14 | 140
+5 | 12 | 11 | 110
+6 | 0 | 0 | 0
+modulo 12, one residue for each cell
+width | candidates tested | escaping assignments (west label 0) | all rotations
+2 | 12 | 12 | 144
+3 | 144 | 34 | 408
+4 | 100 | 16 | 192
+5 | 14 | 13 | 156
+6 | 0 | 0 | 0
+modulo 16, one residue for each cell
+width | candidates tested | escaping assignments (west label 0) | all rotations
+2 | 16 | 16 | 256
+3 | 256 | 46 | 736
+4 | 136 | 20 | 320
+5 | 18 | 17 | 272
+6 | 0 | 0 | 0
