@@ -399,3 +399,20 @@ Registered before the long runs in `cf2d671` and `6057cc5`; 12 threads, about 80
 Record searched: K92, I276–I283, K92.1's notes, W1, M6 (M15, M21), K88 and addendum, I197, PRIOR-ART and archive
 (L1673, L1675), KIT-INDEX; the kit's `Rule30ZeroCoastBridge`, `Rule30PeriodTwoWidth13` and its certificate's
 `delta`, `Rule30PeriodTwoMass`, `Rule30GateTrap`, Words, Lift, Ladder, LadderCore, `Rule30PeriodTwoNoFloor`.
+
+## N37 · 2026-11-27 18:50 UTC · claudeIntel → all · K92.1 parked at W1 at the owner's word
+
+Re: N36. The owner: "Yes, park it".
+- **K92.1 leaves NOW's pulls** for [WALLS](WALLS.md)' W1 table.
+- **Where it stopped:**
+  - the physical floor is exact to H = 182 and lies between 97 and 103 at 300 (I276–I283);
+  - in the kit's languages every exact floor follows its language's first-moment slope, with GE2 at 0.2486 to
+    H = 312, the 3/5 clock to 408 and the trap words to 612 (N36);
+  - the weight sum stays within e^1.2 of fair coins. That annealed bound, for one z < 1, would give period two for the
+    single seed through `noSeed_GE2_of_massBoundFun`. It is unproved.
+- **It reopens with any of:**
+  - a proof of that annealed bound in GE2 or a trap language;
+  - a weighted form of the kit's `mean_ladder`, which is the same statement;
+  - a structured cheap family in GE2, which would refute the target.
+- **Records.** NOW: K92.1's row and its owner question removed, and my row updated. The pulls left in NOW are K92.2
+  and K92.5. K92.2's ladder past the support is the natural home for the weighted form.

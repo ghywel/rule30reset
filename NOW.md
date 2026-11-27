@@ -8,8 +8,8 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-27 18:50 UTC by claudeIntel (N36): K92.1's floors measured in the kit's languages; parking at W1
-proposed. Before that 18:29 UTC by claudeM5 (M223): S32's kit pull request #458 opened and I295.2 parked at W1, both at the owner's word. Before that 18:06 UTC by claudeM5 (M222): S32 posted. Before that 17:53 UTC by gptM5 (R138).
+*Updated 2026-11-27 18:50 UTC by claudeIntel (N37): K92.1 parked at W1 at the owner's word. Before that 18:50 UTC by
+claudeIntel (N36): K92.1's floors measured in the kit's languages. Before that 18:29 UTC by claudeM5 (M223): S32's kit pull request #458 opened and I295.2 parked at W1, both at the owner's word. Before that 18:06 UTC by claudeM5 (M222): S32 posted. Before that 17:53 UTC by gptM5 (R138).
 17:07 UTC by claudeM5 (M220): K92.4 parked at W2 at the owner's word.
 Before that 16:50 UTC by claudeCloud (K97): I312's every-modulus proof passes review; S32 proposed; parking of
 I295.2 at W1 proposed for after it is posted. Reset for phase 2 by claudeCloud (K92) at 22:46 UTC on 26 November, at
@@ -25,7 +25,7 @@ The AI assistant workers:
 |---|---|---|---|
 | claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2711/1829 · M223 · S32's kit PR #458 opened; I295.2 parked at W1; S32 (R30-20261127-157e8c) awaits a maintainer's rerun |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2711/1753 · R138 · S32 packet b passes the technical release read; timing decision pending |
-| claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/1850 · N36 · K92.1: exact floors in GE2 (to H=312), the 3/5 clock (408) and the trap words (612), each at its first-moment slope; the annealed weight bound in GE2 would give period two
+| claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/1850 · N37 · K92.1 parked at W1 at the owner's word, after N36's exact floors in GE2, the 3/5 clock and the trap words (each at its first-moment slope)
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2711/1636 · I312 · I295.2 proved for every modulus ≥3 and replayed. S31's sole GPT release read passed (I309–I310). |
 | claudeCloud | an Anthropic cloud container | K | 2711/1650 · K97 · I312 reviewed: PASS, the every-modulus theorem is a uniform submission; the strip cannot reach the centre (W1) |
 
@@ -39,10 +39,6 @@ Each worker must update their 'Last Completed' at the end of a block of work.
 This section may only contain calls to action that require the owner's input or decision and are removed when
 answered.
 
-- **K92.1: park at W1, or keep it open?** N36 finds each kit floor at its first-moment slope, and the weight
-  sum within e^1.2 of fair coins. A floor in GE2 follows from that annealed bound, and through the kit's bridge
-  it gives period two for the single seed. No proof step is warm. N36 proposes parking with three reopen
-  conditions ([note](research/phase2/floor/claudeIntel-language-floors.md)).
 - **Whether the new shape stands.** This file no longer holds the submissions, the parked pulls or the closed
   pulls: they are in SUBMISSIONS.md, WALLS.md and the archive. It is one commit to undo.
 
@@ -113,6 +109,5 @@ the table. Inside a cell, start a new line with `<br>`.
 
 | Pull | Written | Summary | Status | Progress | Submissions |
 |---|---|---|---|---|---|
-| **K92.1** | 26 Nov · claudeCloud, K92 | W1 · Does kick-anchored weight grow enough to exclude period two? | preliminary | 2611/2318 · I276–I279, I283 · Exact at every even H≤182. At H=300 the minimum is 97–103. Test whether surplus can pay for long white gaps. [Block](research/phase2/floor/results.md)<br>2711/1850 · N36 · Exact least weights in the kit's languages: GE2 to H=312 (85), GAP35 to 408 (130), WORDS and CORE to 612 (220). Each follows its language's first-moment slope (GE2 0.2486), and the weight sum stays within e^1.2 of fair coins. Next: prove that annealed bound for one z<1 in GE2, which gives period two via `noSeed_GE2_of_massBoundFun`; park at W1 proposed. [Floors](research/phase2/floor/claudeIntel-language-floors.md) | — |
 | **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | preliminary | 2611/2318 · I278–I279, I283 · Rule 30 has 3,517/2^24 twelve-check survivors in the even free cube. Explain the conditional bias. [Block](research/phase2/ladder/free-cube-results.md) | — |
 | **K92.5** | 26 Nov · claudeCloud, K92 | W1/W2 · Which outside methods supply a hypothesis we can prove for Problem 1? | preliminary | 2611/2330 · I282, I284, I287 · Lean checks the sparse-width criterion and advancing fronts for rules 120/180. Seek sparse survivor widths of both parities. [Methods](research/phase2/borrowed/methods.md) | — |
