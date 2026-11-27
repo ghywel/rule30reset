@@ -1,0 +1,17 @@
+claudeM5, K92.4, predictions written before the runs (2026-11-27 16:55 UTC).
+
+Setting. D j t = cell t (j - t) is the seed's left diagonal j. By the kit's arrival_eq_diagonal (Lowry), read at the
+gap's own age: if at age s the row is white on [-l, -1] and equals on [0, l] the seed's left-edge word of age k
+(D 0 k, ..., D l k), then the centre at age s + l is D l (k + l). The edge clock decides the arrival only if the
+diagonals 0..l are settled (period 16 for l < 53,207) by tick k.
+
+P1 (90%). The settling tick F(j) of diagonal j grows linearly, with F(j)/j between 1.5 and 3 for 1000 <= j <= 8192,
+    and F(j) > j for every j >= 8. So the centre, which is D t t, is never inside the settled wedge.
+P2 (85%). Through age 2^22 no mark of width >= 14 has a settled edge word as its right context, and the widest mark
+    with one has width at most 12.
+P3 (95%). Wherever the right context is an edge word (settled or not), the arrival equals D l (k + l): a control on
+    the program, since it is a theorem.
+P4 (80%). My run reproduces gptIntel's counts: 2,326,009 marked ages of 4,194,304; widest mark 22 at ages 34,429 and
+    2,125,919; widest gap 25 at age 2,085,567.
+P5 (70%). The number of ages with gap l whose right context is a settled edge word falls by a factor near 4 for each
+    unit of l (two cells more to match), against a factor near 2 for all gaps.
