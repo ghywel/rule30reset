@@ -125,6 +125,7 @@ ones nobody has proved:
 | Pull | Where it stopped | Reopens with |
 |---|---|---|
 | K92.3 (parked at the owner's word, N33) | every finite east through support 24 certifies by tick 5,539 (I286). The long waits are partial seven-locks that end at one support-independent rate, so T(D) is linear by counting and the white far field gives no argument (I288–I293, N32) | a bound, linear in the support, on how long a partial seven-lock lasts before it breaks or completes; records growing faster than linearly; or a finite right half with unboundedly many rhythm breaks outside the trap (RD's own question, on K50.1's line) |
+| I295.1 (parked at the owner's word, M219) | two submissions. S30 (R30-20261127-9b429e, in the kit as `Rule30SevenNineReset`): any safe gap list that carries Galindo's F into E is excluded, with the ten-gap motif certified (I299, N34). S31 (R30-20261127-20bf8c, kit pull request #457): every cyclic 7/9 word with no 7,7,7 and no 7,9,7,9 is excluded at every length by one 13-cell certificate (N35). Words with 7,9,7,9 but no 7,7,7 settle on 17 cells by computation, with a certificate some sixteen times larger (K93, K94, N35); words with 7,7,7 settle on no strip up to 20 cells (K94) | a 17-cell certificate for "no 7,7,7" small enough for a portal entry, or any method that excludes a word containing 7,7,7 other than pure sevens (N35) |
 
 ## W2. One orbit
 
