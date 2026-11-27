@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-27 16:32 UTC, 463 entries, 77 portal-only -->
+<!-- portal-list: 2026-11-27 21:26 UTC, 465 entries, 79 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 16:32 UTC (463 entries)
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 21:26 UTC (465 entries)
 and kit main `ea5d70e`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 77 of the 463 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 79 of the 465 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -25,20 +25,21 @@ and kit main `ea5d70e`. Find new portal-only entries with `python3 tools/portal/
 
 | Class | Entries |
 |---|---|
-| Missed | 13 |
+| Missed | 14 |
 | Port | 3 |
 | Pending | 6 |
 | Check | 20 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 78, of them 22 ours |
+| All | 79, of them 22 ours |
 
-## Missed (13)
+## Missed (14)
 
 Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-request candidates. For others', credit them when building on them, and they can be raised with their authors.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261127-1bc7d2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-1bc7d2) | 2026-11-27 | Moncef Benboubakeur and collaborators | Lean Verified | An S-state DFA computing the Rule 30 apex on all odd initial words of length at most 2N+1 satisfies N² ≤ 8S. An exponential bound follows conditionally from exponential diagonal-trace diversity. | General quantitative version of the variable-row apex obstruction. Singleton time lookup has a different input and machine. [Source read and replay](research/phase2/gemini/indexed-cost.md) | L |
 | [R30-20261127-be8111](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-be8111) | 2026-11-27 | Jacob Dyer and collaborators | Lean Verified, Human Verified | At every rational speed 0 ≤ p/q < 1 in either direction, adjacent digital lines from a row with a leftmost black cell cannot both be eventually periodic. | Extends the vertical adjacent-column theorem. For phase-sampled lines the result ranges over all 2q streams together. | A |
 | [R30-20261023-c5e3c0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-c5e3c0) | 2026-10-23 | Andy Norris; Jesse v1.4 (solidSF) | Lean Verified, Human Verified | The same cascade and strip results, without the Problem 2 and 3 bridges (17 headlines). | As 603218, which extends it. | S |
 | [R30-20261023-603218](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-603218) | 2026-10-23 | Andy Norris; Jesse v1.4 (solidSF) | Lean Verified, Human Verified | Norris's self-replicating shield cascade: the right wall of a (0,1)^j shield stays black 2j ticks and spawns further shields, so a single-seed period with r ≥ 9j blacks and P − r + 9 ≤ 4·cascadePairs d j is excluded (slope 7/4, limit 7/11). Also 11 0^q for q ≥ 8, strip fixed points, a 32-block catalogue, and Problem 2 and 3 bridges. | The cascade is not in the kit, which holds Bosdure's later quarter-period theorem (slope 9/4). 11 0^q is the kit's Rule30WhiteRunEight. gptIntel's relay sharpens the cascade's constant (M95, P46). | S |
@@ -128,7 +129,7 @@ Finite instances, tables, single terms of a chain, bounded ranges, elementary fa
 | [R30-20261125-3041db](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261125-3041db) | 2026-11-25 | Jacob Dyer; Claude; Qwen3.6-35B-A3B; Inkling-2-Mini | Lean Verified, Human Verified | Dyer: Every eventual F2-linear recurrence of the centre has transient plus order at least 65,537; no nonlinear register of order up to 33 generates it from a tick up to 82,603. | Two bounds from a window of 131,072 bits, sharp for it. | A |
 | [R30-20261023-4767e0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-4767e0) | 2026-10-23 | ours | Lean Verified, Human Verified | Ours: the visible bits beside a clocked centre carry at most about 0.258 bits each, by a certified automaton at width 12. | Each width needs its own certificate: a chain (see 4d1a54). | A |
 | [R30-20261023-4d1a54](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-4d1a54) | 2026-10-23 | ours | Lean Verified, Human Verified | Ours: the same at width 14, about 0.2445 bits. | The next term of the same chain. | A |
-| [R30-20261023-60d213](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-60d213) | 2026-10-23 | @AIOvernight; OpenAI Codex; Claude | Lean Verified, Human Verified | AIOvernight, Sparse16: 56 even black observations force 17 black cells among the first 111. | A finite instance. | A |
+| [R30-20261023-60d213](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-60d213) | 2026-10-23 | @AIOvernight; OpenAI Codex; Claude | Lean Verified, Human Verified | AIOvernight, Sparse16: 56 even black observations force 17 black cells among the first 111, with arbitrary farther tail. | A checked history certificate for a finite instance. Full notebook and earlier sparse-work credits read in I320. | S |
 | [R30-20261023-ac3898](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-ac3898) | 2026-10-23 | ours | Lean Verified, Human Verified | Ours: the death time at width 56 is exactly 100, with 1,024 chunk checks. | The kit chose to leave this check out for its build cost. | A |
 | [R30-20261024-71f858](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261024-71f858) | 2026-10-24 | ours | Lean Unverified | Ours: the death time at width 60 is exactly 114. | Lean Unverified: the portal's check failed. | A |
 | [R30-20261024-b16332](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261024-b16332) | 2026-10-24 | ours | Lean Verified, Human Verified | Ours: death-time lower bounds at widths 64 to 72. | Finite instances. | A |

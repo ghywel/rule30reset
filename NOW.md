@@ -8,12 +8,7 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-27 20:35 UTC by gptIntel (I317): K98's nine-family K92.5 block completed. Before that, 2026-11-27 18:50 UTC by claudeIntel (N37): K92.1 parked at W1 at the owner's word. Before that 18:50 UTC by
-claudeIntel (N36): K92.1's floors measured in the kit's languages. Before that 18:29 UTC by claudeM5 (M223): S32's kit pull request #458 opened and I295.2 parked at W1, both at the owner's word. Before that 18:06 UTC by claudeM5 (M222): S32 posted. Before that 17:53 UTC by gptM5 (R138).
-17:07 UTC by claudeM5 (M220): K92.4 parked at W2 at the owner's word.
-Before that 16:50 UTC by claudeCloud (K97): I312's every-modulus proof passes review; S32 proposed; parking of
-I295.2 at W1 proposed for after it is posted. Reset for phase 2 by claudeCloud (K92) at 22:46 UTC on 26 November, at
-the owner's word. The Direction's earlier bullets are the owner's, last edited at 22:41 UTC on 25 November.*
+*Updated 2026-11-27 21:40 UTC by gptIntel (I323). Five Gemini wall questions checked. Carrying reads on marked-gap births and all-clock resets are with claudeIntel and claudeCloud. The phase-2 reset was K92 on 26 November. [Full block](research/phase2/gemini/five-questions.md)*
 
 ## Arrangement
 
@@ -26,7 +21,7 @@ The AI assistant workers:
 | claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2711/1829 · M223 · S32's kit PR #458 opened; I295.2 parked at W1; S32 (R30-20261127-157e8c) awaits a maintainer's rerun |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2711/1753 · R138 · S32 packet b passes the technical release read; timing decision pending |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/1850 · N37 · K92.1 parked at W1 at the owner's word, after N36's exact floors in GE2, the 3/5 clock and the trap words (each at its first-moment slope)
-| gptIntel | the i9 laptop shared with claudeIntel | I | 2711/2035 · I313–I317 · K92.5 reviewed across nine families. Census criterion, sharp 24-tick fibre ceiling and hybrid phase control checked in Lean. |
+| gptIntel | the i9 laptop shared with claudeIntel | I | 2711/2140 · I318–I323 · Sharp sparse floor to 18 black sites, marked-gap births, all-clock resets, late vocabulary and a lookup-cost control. |
 | claudeCloud | an Anthropic cloud container | K | 2711/1650 · K97 · I312 reviewed: PASS, the every-modulus theorem is a uniform submission; the strip cannot reach the centre (W1) |
 
 No worker and no host has a specialism (METHOD §1). ClaudeM5 is responsible for portal submissions and kit pull
@@ -75,9 +70,9 @@ reopen them. A pull that stops is filed there, under its wall.
 
 | | Wall | The missing statement | What it stops |
 |---|---|---|---|
-| **W1** | The white tail | A finite row's own white cells must end a periodic centre; nothing is proved once its last black cell has been read. | Problem 1: period two, and every period by the same reduction |
+| **W1** | The white tail | A finite row's own white cells must end a periodic centre; a uniform all-budget proof beyond its support is missing. | Problem 1: period two, and every period by the same reduction |
 | **W2** | One orbit | What almost every row does cannot be carried to the single seed. | Problem 2; Problem 1 through its weakest sufficient conditions |
-| **W3** | The doubling step | No left-edge result passes from clock 2ᵉ to 2ᵉ⁺¹. | The every-k chain; the left-edge routes to Problem 1 |
+| **W3** | The doubling step | Prescribed-tick cancellation across clock doublings remains open. | The every-k chain; the left-edge routes to Problem 1 |
 | **W4** | Hearing from below | We bound what the right side sends from above and cannot show that any given thing is sent. | No prize problem directly |
 | **W5** | Lower bounds on computation | A lower bound for lookup at the named centre of the unaltered seed is missing at unbounded scales. | Problem 3 |
 
@@ -109,5 +104,5 @@ the table. Inside a cell, start a new line with `<br>`.
 
 | Pull | Written | Summary | Status | Progress | Submissions |
 |---|---|---|---|---|---|
-| **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | preliminary | 2611/2318 · I278–I279, I283 · Rule 30 has 3,517/2^24 twelve-check survivors in the even free cube. Explain the conditional bias. [Block](research/phase2/ladder/free-cube-results.md) | — |
+| **K92.2** | 26 Nov · claudeCloud, K92 | W1 · How quickly do finite rows fail checks past their support, and can that exclude period two? | preliminary | 2611/2318 · I278–I279, I283 · Rule 30 has 3,517/2^24 twelve-check survivors in the even free cube. Explain the conditional bias. [Block](research/phase2/ladder/free-cube-results.md)<br>2711/2133 · I320 · Seek unbounded n−E for distinct survivor images at growing ages; the existing coalescence census counts E. [Criterion](research/phase2/gemini/sparse.md) | — |
 | **K92.5** | 26 Nov · claudeCloud, K92 | W1/W2 · Which outside methods supply a hypothesis we can prove for Problem 1? | in progress | 2611/2330 · I282, I284, I287 · Lean checks the sparse-width criterion and advancing fronts for rules 120/180. Seek sparse survivor widths of both parities. [Methods](research/phase2/borrowed/methods.md)<br>2711/2035 · K98, I313–I317 · Nine families read. A(n,n)≤4095n at unbounded n would give Q01. Bound the post-support survivors or their tick-24 images. [Handoff](research/phase2/borrowed/k98-nine-questions.md) | — |

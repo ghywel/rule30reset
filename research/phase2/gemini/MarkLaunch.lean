@@ -18,6 +18,37 @@ def Bar (t l : Nat) : Prop :=
   active t = true ∧ cell t (-(l:Int)-2) = false ∧
     ∀ p : Int, -(l:Int)-1 ≤ p → p ≤ -2 → cell t p = true
 
+/-- A bar of width at least two occurs exactly on the four-site words
+1101, 1110, 1111, read from west to east. -/
+theorem two_iff_four_cells (t : Nat) :
+    (∃ l, 2 ≤ l ∧ Bar t l) ↔
+    cell t (-3) = true ∧ cell t (-2) = true ∧ active t = true := by
+  constructor
+  · rintro ⟨l,wide,bar⟩
+    exact ⟨bar.2.2 _ (by omega) (by omega), bar.2.2 _ (by omega) (by omega), bar.1⟩
+  · rintro ⟨at3,at2,gate⟩
+    let W (j : Nat) := cell t (-(j:Int)-2) = false
+    have least (n : Nat) : W n → ∃ w, W w ∧ ∀ j < w, ¬ W j := by
+      induction n using Nat.strongRecOn with
+      | ind n ih =>
+        intro white
+        by_cases earlier : ∃ j < n, W j
+        · obtain ⟨j,lt,h⟩ := earlier
+          exact ih j lt h
+        · exact ⟨n,white,fun j lt h => earlier ⟨j,lt,h⟩⟩
+    obtain ⟨w,white,first⟩ := least t (cell_eq_false_of_lt t _ (by omega))
+    have wide : 2 ≤ w := by
+      apply Classical.byContradiction
+      intro narrow
+      have tiny : w = 0 ∨ w = 1 := by omega
+      rcases tiny with h | h <;> subst w <;> simp [W,at2,at3] at white
+    refine ⟨w,wide,gate,white,fun p lo hi => ?_⟩
+    let j := (-p-2).toNat
+    have pos : -(j:Int)-2 = p := by dsimp [j]; omega
+    cases h : cell t p with
+    | false => exact (first j (by dsimp [j]; omega) (by simpa [W,pos] using h)).elim
+    | true => rfl
+
 /-- The kit's one-step white-run dichotomy in fixed-observer coordinates. -/
 theorem gap_back {t l : Nat} (hl : 0 < l) (gap : Gap (t+1) l) :
     (active t = false ∧ Gap t (l+1)) ∨ Bar t l := by
@@ -238,7 +269,7 @@ theorem near_black {t l : Nat} (bar : Bar t l) (wide : 1 ≤ l) :
     simp [rule,a,b]
 
 /-- The kit's black-triangle law forces a white centre by t+3. -/
-theorem near_white {t l : Nat} (bar : Bar t l) (wide : 2 ≤ l) :
+private theorem white_of_m3 {t : Nat} (west : cell t (-3) = true) :
     ∃ k ≤ 3, cell (t+k) 0 = false := by
   apply Classical.byContradiction
   intro missed
@@ -248,8 +279,12 @@ theorem near_white {t l : Nat} (bar : Bar t l) (wide : 2 ≤ l) :
     | true => rfl
   have triangle := Rule30CenterRuns.black_triangle t 4 all 3 t (by omega) (by omega)
   change cell t (-3) = false at triangle
-  rw [bar.2.2 (-3) (by omega) (by omega)] at triangle
+  rw [west] at triangle
   contradiction
+
+theorem near_white {t l : Nat} (bar : Bar t l) (wide : 2 ≤ l) :
+    ∃ k ≤ 3, cell (t+k) 0 = false :=
+  white_of_m3 (bar.2.2 _ (by omega) (by omega))
 
 /-- Each width-at-least-six birth before N supplies a distinct centre tick
 of either prescribed colour before N+3. -/
@@ -285,5 +320,150 @@ theorem birth_count_le (N k : Nat) (time width : Fin k → Nat)
     simp only [List.mem_filter, List.mem_range, decide_eq_true_eq]
     exact ⟨by omega, (Classical.choose_spec (hit i)).2⟩
   simpa using clean.length_le_of_subset included
+
+private theorem count_le_twice (N k : Nat) (time : Fin k → Nat) (b : Bool)
+    (distinct : ∀ i j, time i = time j → i = j) (before : ∀ i, time i < N)
+    (apart : ∀ i j, time i < time j → time i+1 < time j)
+    (hit : ∀ i, ∃ d ≤ 3, cell (time i+d) 0 = b) :
+    k ≤ 2 * ((List.range (N+3)).filter fun t => decide (cell t 0 = b)).length := by
+  let pick (i : Fin k) := time i + Classical.choose (hit i)
+  let code (i : Fin k) := (pick i, decide (pick i ≤ time i+1))
+  have bounds (i : Fin k) : time i ≤ pick i ∧ pick i ≤ time i+3 := by
+    have h := (Classical.choose_spec (hit i)).1
+    dsimp [pick]; omega
+  have inject (i j : Fin k) (eq : code i = code j) : i = j := by
+    obtain ⟨same,tag⟩ := Prod.ext_iff.mp eq
+    change pick i = pick j at same
+    change decide (pick i ≤ time i+1) = decide (pick j ≤ time j+1) at tag
+    have bi := bounds i
+    have bj := bounds j
+    have close : time i ≤ time j+1 ∧ time j ≤ time i+1 := by
+      by_cases a : pick i ≤ time i+1 <;> by_cases b : pick j ≤ time j+1 <;>
+        simp [a,b] at tag <;> omega
+    rcases Nat.lt_trichotomy (time i) (time j) with lt | e | gt
+    · have := apart i j lt; omega
+    · exact distinct i j e
+    · have := apart j i gt; omega
+  let ticks := (List.range (N+3)).filter fun t => decide (cell t 0 = b)
+  let tagged := ticks.map (fun t => (t, true)) ++ ticks.map (fun t => (t, false))
+  have clean : ((List.finRange k).map code).Nodup :=
+    (List.nodup_finRange k).map code (fun i j ne eq => ne (inject i j eq))
+  have included : (List.finRange k).map code ⊆ tagged := by
+    intro x hx
+    obtain ⟨i,_,rfl⟩ := List.mem_map.mp hx
+    have mem : pick i ∈ ticks := by
+      have less := before i
+      have bi := bounds i
+      simp only [ticks, List.mem_filter, List.mem_range, decide_eq_true_eq]
+      exact ⟨by omega, (Classical.choose_spec (hit i)).2⟩
+    apply List.mem_append.mpr
+    by_cases e : pick i ≤ time i+1
+    · exact Or.inl (List.mem_map.mpr ⟨pick i,mem,by simp [code,e]⟩)
+    · exact Or.inr (List.mem_map.mpr ⟨pick i,mem,by simp [code,e]⟩)
+  simpa [tagged, ticks, Nat.two_mul] using clean.length_le_of_subset included
+
+/-- Each centre tick can account for at most two width-at-least-two births.
+The four possible birth times split into two pairs of consecutive times. -/
+theorem birth_count_le_twice (N k : Nat) (time width : Fin k → Nat)
+    (distinct : ∀ i j, time i = time j → i = j) (before : ∀ i, time i < N)
+    (wide : ∀ i, 2 ≤ width i) (birth : ∀ i, Bar (time i) (width i)) (b : Bool) :
+    k ≤ 2 * ((List.range (N+3)).filter fun t => decide (cell t 0 = b)).length := by
+  apply count_le_twice N k time b distinct before (fun i j =>
+    wide_births_apart (d := 1) (birth i) (birth j) (wide i) (wide j))
+  intro i
+  cases b with
+  | false => exact near_white (birth i) (wide i)
+  | true =>
+    obtain ⟨d,small,found⟩ := near_black (birth i) (by have := wide i; omega)
+    exact ⟨d,by omega,found⟩
+
+/-- On the whole-line checkerboard with a black centre, a width-one bar
+occurs on every row while the centre stays black. -/
+def checker (p : Int) : Bool := decide (p % 2 = 0)
+
+private theorem checker_fixed (t : Nat) : ∀ p, evol checker t p = checker p := by
+  induction t with
+  | zero => intro p; rfl
+  | succ t ih =>
+    intro p
+    change rule (evol checker t (p-1)) (evol checker t p) (evol checker t (p+1)) = _
+    rw [ih,ih,ih]
+    by_cases h : p % 2 = 0
+    · have left : (p-1) % 2 ≠ 0 := by omega
+      have right : (p+1) % 2 ≠ 0 := by omega
+      simp [rule,checker,h,left,right]
+    · have left : (p-1) % 2 = 0 := by omega
+      have right : (p+1) % 2 = 0 := by omega
+      simp [rule,checker,h,left,right]
+
+theorem width_one_obstruction (t : Nat) :
+    evol checker t (-3) = false ∧ evol checker t (-2) = true ∧
+    evol checker t (-1) = false ∧ evol checker t 0 = true := by
+  simp [checker_fixed, checker]
+
+/-- A black-to-white transition at -2 is the spatial pair 11 at -3,-2. -/
+theorem fall_iff (t : Nat) :
+    (cell t (-2) = true ∧ cell (t+1) (-2) = false) ↔
+    cell t (-3) = true ∧ cell t (-2) = true := by
+  change (_ ∧ rule (cell t (-3)) (cell t (-2)) (cell t (-1)) = false) ↔ _
+  cases cell t (-3) <;> cases cell t (-2) <;> simp [rule]
+
+/-- Even falls at a quiet gate force a nearby white centre tick. -/
+theorem fall_count_le_twice_white (N k : Nat) (time : Fin k → Nat)
+    (distinct : ∀ i j, time i = time j → i = j) (before : ∀ i, time i < N)
+    (fall : ∀ i, cell (time i) (-2) = true ∧ cell (time i+1) (-2) = false) :
+    k ≤ 2 * ((List.range (N+3)).filter fun t => decide (cell t 0 = false)).length := by
+  apply count_le_twice N k time false distinct before
+  · intro i j h
+    have ne : time i+1 ≠ time j := by
+      intro same
+      have pale := (fall i).2
+      rw [same,(fall j).1] at pale
+      contradiction
+    omega
+  · exact fun i => white_of_m3 ((fall_iff _).mp (fall i)).1
+
+private def bit (b : Bool) : Nat := if b then 1 else 0
+
+/-- Black cells before N in column p. -/
+def black (p : Int) : Nat → Nat
+  | 0 => 0
+  | n+1 => black p n + bit (cell n p)
+
+private theorem bit_bound (b : Bool) : bit b ≤ 1 := by cases b <;> decide
+
+/-- If three successive centre bits are white, the bit two sites west is
+exactly the rise of the eastern neighbour. The allowances on the right
+account for centre blacks when this premise fails. -/
+private theorem budget_step (a w c e r : Bool) :
+    bit a + bit e ≤ bit (rule c e r) + 2 * bit c + bit (rule w c e) +
+    bit (rule (rule a w c) (rule w c e) (rule c e r)) := by
+  revert a w c e r
+  decide +kernel
+
+/-- A black centre count controls all black ticks two sites west, with no
+condition on the intervening site or on the centre bond. -/
+theorem black_two_west (N : Nat) :
+    black (-2) N ≤ 4 * black 0 (N+2) + 1 := by
+  have sum (n : Nat) : black (-2) n + bit (cell 0 1) ≤
+      bit (cell n 1) + 2 * black 0 n + black 0 (n+1) + black 0 (n+2) := by
+    induction n with
+    | zero => simp [black, bit, cell]
+    | succ n ih =>
+      have step : bit (cell n (-2)) + bit (cell n 1) ≤ bit (cell (n+1) 1) +
+          2 * bit (cell n 0) + bit (cell (n+1) 0) + bit (cell (n+2) 0) :=
+        budget_step _ _ _ _ _
+      have count (p : Int) (k : Nat) : black p (k+1) = black p k + bit (cell k p) := rfl
+      have ca := count (-2) n
+      have cb := count 0 n
+      have cc := count 0 (n+1)
+      have cd := count 0 (n+2)
+      simp only [Nat.add_assoc, Nat.reduceAdd] at *
+      omega
+  have m₁ : black 0 N ≤ black 0 (N+1) := by change _ ≤ _ + _; omega
+  have m₂ : black 0 (N+1) ≤ black 0 (N+2) := by change _ ≤ _ + _; omega
+  have bounded := bit_bound (cell N 1)
+  have total := sum N
+  omega
 
 end PhaseTwo.MarkLaunch
