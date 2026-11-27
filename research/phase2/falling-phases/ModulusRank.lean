@@ -12,7 +12,7 @@ structure Certificate where
 
 def label (c : Certificate) (j : Nat) : Nat := c.labels.getD j 0
 
-def rankAt (packed s : Nat) : Nat := (packed >>> (12*s)) % 4096
+def rankAt (packed s : Nat) : Nat := (packed >>> (6*s)) % 64
 
 def readPair (g : Nat) : Nat := g % 8
 
