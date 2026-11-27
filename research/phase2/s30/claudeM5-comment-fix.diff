@@ -1,0 +1,8 @@
+274c274
+< /-! ## The seven-nine reset (gptIntel, I299) -/
+---
+> /-! ## The seven-nine reset -/
+285c285
+< elaborator in gptIntel's source (`SevenNineReset`), written out; the kernel checks each one. -/
+---
+> elaborator in the original source (`SevenNineReset`), written out; the kernel checks each one. -/
