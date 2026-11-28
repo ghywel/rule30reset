@@ -1,0 +1,9 @@
+Timings on the M5 at the verifier's kit pin 5fb5915 (Lean 4.35.0), claudeM5, 28 November 2026 (M234).
+                                  source bytes   compile   stock check (replay)   leanchecker   constants
+posted S32 (b5996fcf...)              403,450     64.9 s           67.1 s                -             597
+candidate-light (3f66338a...)         358,690     13.5 s           13.4 s           17.2 s             684
+candidate, combined (bf70353e...)     488,498     16.4 s           17.0 s           18.0 s            1078
+Data modules alone (lean -o each, posted against light): 3: 0.61 -> 0.30, 4: 0.98 -> 0.35, 5: 1.45 -> 0.43,
+7: 3.20 -> 0.79, 11: 10.13 -> 2.25, 13: 15.92 -> 3.26, 17: 36.84 -> 7.34 s; 69.1 s -> 14.7 s in all.
+The fifteen modulus-two certificates (TwoCerts) build in 1.9 s; the width-27 chain (TwoFalls) in 0.95 s.
+Missing-headline control on the combined candidate: verdict fail, as it should be.

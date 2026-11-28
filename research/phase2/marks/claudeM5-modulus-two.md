@@ -83,7 +83,7 @@ assignment contains one of them as a window, up to swapping the two parities:
 - **Jen's full form changes nothing.** With two rigid columns anywhere instead of an adjacent pair, the counts at
   every width are identical and 27 is still the least width ([output](data/claudeM5-jen-full-form.txt)).
 
-**THEOREM (COMPUTED; not yet in Lean).** For every integer i, one of the 27 singleton columns i, …, i + 26 has
+**THEOREM (COMPUTED; proved in core Lean in M234, `two_parities_every_27`).** For every integer i, one of the 27 singleton columns i, …, i + 26 has
 black-to-white falls on even ticks and on odd ticks after every cutoff.
 
 **Why.** Suppose each of the 27 columns has late falls at one parity at most. Then after a common cutoff the strip
@@ -185,7 +185,8 @@ modulus two holds at width 27 (COMPUTED, three implementations), and free-exteri
 at these widths (COMPUTED). Gut: the modulus-two theorem is worth a Lean certificate; period two needs the finite
 halves.
 
-My own pull: a Lean certificate for the modulus-two theorem, with calendar 2 and lag 40, first at the small widths
+*Done in M234* ([Lean](../modulus-two/claudeM5-modulus-two-lean.md)): the any-lag and product certificates make it 2.9 s of building.
+My own pull, as it was: a Lean certificate for the modulus-two theorem, with calendar 2 and lag 40, first at the small widths
 (4 to 10) to time the kernel, then the four longer-lag tables.
 
 ## Files and replay
