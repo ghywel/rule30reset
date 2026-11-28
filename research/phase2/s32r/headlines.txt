@@ -1,0 +1,4 @@
+Rule30Submission.PhaseFalls.Moduli.two_cofinal_every_modulus_from_two
+Rule30Submission.PhaseFalls.Moduli.two_parities_every_27
+Rule30Submission.PhaseFalls.Moduli.two_cofinal_every_modulus
+Rule30Submission.PhaseFalls.Moduli.not_good_parity
