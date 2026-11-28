@@ -342,6 +342,16 @@ private theorem cone (n : Nat) (odd : Bool) (x y : Row) (h : ∀ i ≤ n, x i = 
         | succ j => exact h j (by omega)
       simp [tick, h _ (by omega : i+1 ≤ n+1), h _ (by omega : i ≤ n+1), r]
 
+/-- A first spatial difference at index n is first heard at physical tick n. -/
+theorem first_difference (n : Nat) (odd : Bool) (x y : Row) (h : ∀ i < n, x i = y i)
+    (different : x n ≠ y n) :
+    (∀ t < n, clock odd x t 0 = clock odd y t 0) ∧ clock odd x n 0 ≠ clock odd y n 0 := by
+  have before (t : Nat) (ht : t < n) := cone t odd x y (fun i hi => h i (by omega)) t (by omega)
+  refine ⟨before, fun eq => different (trace_prefix n odd x y (fun t ht => ?_) n (by omega))⟩
+  by_cases last : t=n
+  · simpa only [last] using eq
+  · exact before t (by omega)
+
 private theorem realize (n : Nat) (b : Nat → Bool) :
     ∃ x : Row, ∀ t ≤ n, clock false x t 0 = b t := by
   induction n with
