@@ -2,7 +2,9 @@
 //
 // The sparse tree of I320 (gptIntel, sparse_wall.py): the root is the row 1 (one black cell at depth 1); a node y
 // fails at d, its first even tick whose wall reading (bit 0 of F^d(y), F(y) = (y >> 1) ^ (y | (y << 1))) is white;
-// its children are y + 2^p for p from bitlength(y) to d. Every finite row with depth 1 black is a node.
+// its children are y + 2^p for p from bitlength(y) to d. A row outside the tree has the first failure of the node it
+// extends (kit #367: adding 2^p beyond a node's failure tick keeps the readings before p). [Corrected after the
+// registration: the frozen text said every such row is a node. Comment only.]
 // Here, written apart from I320's two programs:
 //   * per weight: nodes, the deadline (largest d) and the maximizers, with their parents (are maximizers nested?);
 //   * the delay of each child, delta = d(child) - d(parent), its maximum by the parent's d and by the weight;

@@ -1,0 +1,77 @@
+W 1 nodes 1 LD 2
+W 2 nodes 2 LD 6
+W 3 nodes 4 LD 6
+W 4 nodes 6 LD 6
+W 5 nodes 10 LD 8
+W 6 nodes 14 LD 10
+W 7 nodes 22 LD 12
+W 8 nodes 30 LD 12
+W 9 nodes 46 LD 18
+W 10 nodes 62 LD 18
+W 11 nodes 94 LD 30
+W 12 nodes 126 LD 30
+W 13 nodes 190 LD 30
+W 14 nodes 254 LD 32
+W 15 nodes 382 LD 32
+W 16 nodes 510 LD 32
+W 17 nodes 766 LD 32
+W 18 nodes 1022 LD 32
+W 19 nodes 1534 LD 38
+W 20 nodes 2046 LD 38
+W 21 nodes 3070 LD 38
+W 22 nodes 4094 LD 40
+W 23 nodes 6142 LD 40
+W 24 nodes 8190 LD 42
+W 25 nodes 12286 LD 44
+W 26 nodes 16382 LD 44
+W 27 nodes 24574 LD 48
+W 28 nodes 32766 LD 48
+W 29 nodes 49150 LD 48
+W 30 nodes 65534 LD 52
+W 31 nodes 98302 LD 66
+W 32 nodes 131070 LD 66
+W 33 nodes 196606 LD 66
+W 34 nodes 262142 LD 66
+W 35 nodes 393214 LD 66
+W 36 nodes 524286 LD 66
+W 37 nodes 786430 LD 66
+W 38 nodes 1048574 LD 72
+W 39 nodes 1572862 LD 74
+W 40 nodes 2097150 LD 76
+W 41 nodes 3145726 LD 78
+W 42 nodes 4194302 LD 78
+W 43 nodes 6291454 LD 78
+W 44 nodes 8388606 LD 78
+W 45 nodes 12582910 LD 86
+W 46 nodes 16777214 LD 86
+W 47 nodes 25165822 LD 86
+W 48 nodes 33554430 LD 86
+W 49 nodes 50331646 LD 86
+W 50 nodes 67108862 LD 92
+W 51 nodes 100663294 LD 96
+W 52 nodes 134217726 LD 96
+m 2 4 repair 2
+m 4 4 repair 4
+m 6 6 repair 6
+m 8 10 repair 10
+m 10 20 repair 20
+m 12 16 repair 16
+m 14 18 repair 12
+m 16 14 repair 14
+m 18 20 repair 20
+m 20 16 repair 16
+m 22 18 repair 18
+m 24 20 repair 20
+m 26 22 repair 22
+m 28 20 repair 20
+m 30 36 repair 36
+m 32 32 repair 32
+m 34 28 repair 28
+m 36 26 repair 26
+m 38 36 repair 36
+m 40 38 repair 38
+m 42 34 repair 34
+m 44 42 repair 42
+m 46 38 repair 38
+m 48 38 repair 34
+m 50 46 repair 46
