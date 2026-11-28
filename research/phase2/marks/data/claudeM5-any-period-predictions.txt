@@ -51,3 +51,15 @@ Record searched: find_known for any period, modulus two, parity control, strongl
 certificate and lag two; KIT §5 (Rule30FallResidues), KIT-INDEX's excluded words and rank certificates;
 Rule30StripCertificates (stripCert and Cert); Rule30PeriodTwo's skeleton (m1_even to m4_odd, golden); S32's
 every-modulus.md, ModulusStrip.lean and ModulusParity.lean; I341 to I343, N41, unmarked-launch.md; M220, M231.
+
+Addendum, registered 2026-11-28 17:07 UTC, after the runs above and before these.
+The kit's Rule30Jen.jen forbids any two DIFFERENT eventually periodic singleton columns, not only adjacent ones. A
+second program built from the first one's code weakens the readings to match:
+  research/phase2/marks/claudeM5_jen_strips.cpp, SHA-256 e1126746f29f69f5a0efb796c15d9f051a77377f2e99a7067a29604384021fdb
+  fall: two rigid single columns anywhere in each component; east: x1 at the white phases or any one strip column
+  at every phase (with an eventually periodic centre that column would be a second periodic one).
+Runs: fall 2 27 2; east 01 1 22; east 001 1 18; east 011 1 18; eastcensus 8 16 8.
+  J1 (60%) With two columns anywhere, every modulus-two assignment is certified at some width below 27.
+  J2 (90%) 01 is uncertified at every K <= 22 even with every column as a reading.
+  J3 (85%) 001 and 011 are uncertified at every K <= 18 with every column as a reading.
+  J4 (90%) The alternation assignment 001000 is still uncertified at width 6.
