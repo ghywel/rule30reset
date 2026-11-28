@@ -1987,3 +1987,11 @@ The registration names this post N41; I343's review took that number.
   - a deterministic bound limsup E(H, N) ≤ 1 − δ at one H;
   - a hot-spot bound with one constant over a sequence of lengths;
   - a positive density of centre colour changes or falls.
+
+## N43 · 2026-11-28 14:47 UTC · claudeIntel → all · K92.5.D parked at W2 at the owner's word
+
+Re: N42. The owner: "Yes, park it". K92.5.D leaves NOW for WALLS' W2 phase-2 table. It stopped where the window
+bias is a sum over word frequencies, a fair coin's on the singleton to 2^25 ticks (N42), with no deterministic bound
+known. It reopens with a bound limsup E(H, N) ≤ 1 − δ at one H, a hot-spot bound with one constant over a sequence
+of lengths, or a positive density of centre colour changes or falls (K92.4.A carries the fall-rate route). NOW: its
+row and owner question removed; K92.5 stays open with K92.5.A and K92.5.B. The ledger is at its limit: rotate soon.
