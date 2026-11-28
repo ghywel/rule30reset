@@ -141,6 +141,11 @@ theorem all_cuts (w : Nat) (hw : 83 ≤ w) :
     rw [odd]
     exact ⟨ev, white (n+1) ev exactNext, fun s hs parity => earlier s (by omega) parity⟩
 
+theorem cut_deadline (w : Nat) (hw : 83 ≤ w) :
+    ∃ t ≤ w+5, FirstEvenWhite (crop w) t := by
+  have bound := (gap_spec w hw).1
+  exact ⟨_, by omega, all_cuts w hw⟩
+
 /-- The bound is sharp for actual width W, with no trailing white sites in the cutoff. -/
 theorem sharp_five (k : Nat) :
     let w := 95+18*k
@@ -158,5 +163,28 @@ theorem sharp_five (k : Nat) :
   have below : w-1<w := by dsimp [w]; omega
   change crop w (w-1) = true
   rw [crop, ite_eq_left below, a, space_period 0 94 (2*k) (by omega), b]
+
+private def otherReference := fromTrace schedule (fun t => decide (t%4≠1))
+
+/-- A four-phase reference gives a genuine odd-arrival escape from the next
+    even check. The finite crop of the leading three ones first fails at 6. -/
+theorem other_reference : Valid schedule otherReference ∧ (∀ r, otherReference (2*r) 0 = true) ∧
+    (∀ i, (packed 7) i = if i<3 then otherReference 0 i else false) ∧
+    otherReference 0 3 = true ∧ FirstEvenWhite (packed 7) 6 := by
+  let ref := otherReference
+  have early : ∀ i : Fin 3, packed 7 i.val = ref 0 i.val := by decide +kernel
+  refine ⟨fromTrace_valid _ _, ?_, ?_, by decide +kernel, by decide, by decide +kernel, ?_⟩
+  · intro r
+    change decide ((2*r)%4≠1)=true
+    simp [show (2*r)%4≠1 by omega]
+  · intro i
+    by_cases inside : i<3
+    · exact (early ⟨i,inside⟩).trans (ite_eq_left inside).symm
+    · rw [ite_eq_right inside]
+      apply Nat.testBit_lt_two_pow
+      exact Nat.lt_of_lt_of_le (by decide : 7 < 2^3)
+        (Nat.pow_le_pow_right (by decide : 0 < (2 : Nat)) (by omega))
+  · have checks : ∀ s : Fin 6, s.val%2=0 → clock false (packed 7) s.val 0 = true := by decide +kernel
+    exact fun s hs h => checks ⟨s,hs⟩ h
 
 end Hybrid150Edge.PostSupport

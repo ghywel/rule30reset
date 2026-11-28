@@ -37,6 +37,11 @@ To construct the pair, repeat the twelve physical readings `111110111011` from 1
 
 ## Disposition and replay
 
-K92.5.B stays **in progress**. The all-width low-vocabulary deadline and the exact family are ready for a carrying read. Universal mortality is open for the growing rows with sufficiently complex odd readings. The kit's spatial 150/90 hybrid has growing finite immortals, so growth alone cannot exclude them. The next test is to keep the same 12-phase reference and truncate where the first missing black arrives on an **odd** tick. Follow that disagreement through the following even observations and seek a uniform additional delay over the other width residues. An even arrival already has an exact answer. Establishing a uniform result for this reference would give a family of mortal rows with a shared structure. Rule 30 itself still needs an argument for every finite start at W1. [Kit's spatial hybrid](https://github.com/WolframInstitute/Rule30PrizeKit/blob/ea5d70e/lean/Ruliology/CellularAutomata/Rule30HybridWall.lean)
+K92.5.B stays **in progress**. K101 passed the carrying read of the vocabulary deadline and exact family.
+Universal mortality is open for growing rows with sufficiently complex odd readings. The kit's spatial 150/90
+hybrid has growing finite immortals, so growth alone cannot exclude them. I332 settled the odd-arrival test for
+every cutoff $W\ge83$ of this reference. The first failure is the next even tick at or after the first difference
+arrives, and is at most $W+5$. The transfer to Rule 30 gives an exact formula for all even cuts of an alternating
+reference. [K101 carrying read](claudeCloud-k925b-read.md) · [Continuation](wall-cutoffs.md) · [Kit's spatial hybrid](https://github.com/WolframInstitute/Rule30PrizeKit/blob/ea5d70e/lean/Ruliology/CellularAutomata/Rule30HybridWall.lean)
 
 With Lean 4.35.0, compile `Hybrid150Edge`, `Hybrid150Merge` and `Hybrid150PostSupport` in that order, setting `LEAN_PATH` to the directory holding their `.olean` files. Then run `leanchecker` on all three. They use only Lean's standard library. For the stock kit `Check.lean --claim partial`, prepend the official `Ruliology.CellularAutomata.Rule30Prize` import to the first source in a scratch copy and build all three against the kit. The four Python replays in this note run directly with Python 3. The public literature comparison here is to Paul and Das's model of temporally non-uniform automata, which uses periodic boundaries on finite lattices. [Paul and Das, §II](https://arxiv.org/html/2411.17421v2#S2)

@@ -12,9 +12,10 @@ clamps every site >= 0 white at every tick.  Checks are at even ticks: site -1 m
    tested for c = 1 .. CMAX, both parities of L for space hybrids, by enumerating all 2^(2c+1) windows.  The cone of
    site L after 2c ticks reaches only L + 2c, so the lemma holds at the wall too while L + 2c <= -1.
 2. Terminal map.  Once the front is within 2c of the wall, the row lies on sites -2c .. -1.  Every such row is run with
-   the wall until it fails an even check, repeats a state (an immortal cycle), or exceeds the round limit.
+   the wall until it fails an even check or repeats an even-phase state. Reaching the round limit with
+   neither outcome leaves the row unresolved.
 3. If the lemma holds and every terminal row dies, every finite west dies, and the deadline is at most
-   2c (W - 2c) ticks plus the terminal maximum.  If a terminal row cycles, that row is immortal.
+   2c max(W - 2c, 0) ticks plus the terminal maximum. If a terminal row cycles, that row is immortal.
 
     python3 claudeCloud_front_criterion.py [CMAX] [ATLAS-WALL-TIME.txt ATLAS-WALL-SPACE.txt]
 
@@ -65,29 +66,27 @@ def front_lemma(mode, a, b, c):
 
 
 def terminal(mode, a, b, c, rounds=4096):
-    worst, immortal = 0, []
+    worst, immortal, unresolved = 0, [], []
     width = 2 * c
     for v in range(1, 1 << width):
         x = {-1 - i: 1 for i in range(width) if (v >> i) & 1}
-        seen = {}
-        life = None
-        for t in range(2 * rounds):
+        seen = set()
+        for t in range(2 * rounds + 1):
             if t % 2 == 0:
                 if not x.get(-1, 0):
-                    life = t
+                    worst = max(worst, t)
                     break
-                key = tuple(sorted(x))
+                key = frozenset(x)
                 if key in seen:
                     immortal.append(v)
                     break
-                seen[key] = t
+                seen.add(key)
+            if t == 2 * rounds:
+                unresolved.append(v)
+                break
             lo = min(x) if x else -1
             x = step(x, mode, a, b, t, lo, -1, True)
-        if life is not None:
-            worst = max(worst, life)
-        elif not immortal or immortal[-1] != v:
-            immortal.append(v)               # survived the limit without repeating: treat as not decided
-    return worst, immortal
+    return worst, immortal, unresolved
 
 
 def atlas_candidates(paths):
@@ -107,26 +106,32 @@ def atlas_candidates(paths):
 def main():
     cmax = int(sys.argv[1]) if len(sys.argv) > 1 else 4
     atlas = atlas_candidates(sys.argv[2:4]) if len(sys.argv) >= 4 else {}
-    print('system | front lemma: least c (rounds per site), or none to %d | terminal rows: worst first failure (ticks), '
-          'immortal rows | verdict | atlas candidates to width 22 | agree' % cmax)
+    print('system | front lemma: least c (rounds per site), or none to %d | longest failure (ticks) | '
+          'immortal rows | unresolved rows | verdict | atlas candidates to width 22 | agree' % cmax)
     tally = {}
     for mode in ('time', 'space'):
         for a in NAMES:
             for b in NAMES:
                 c = next((c for c in range(1, cmax + 1) if front_lemma(mode, a, b, c)), None)
+                immortal, unresolved = [], []
                 if c is None:
-                    verdict, tw, imm = 'front does not erode', '-', '-'
+                    verdict, worst = 'front not certified', '-'
                 else:
-                    worst, immortal = terminal(mode, a, b, c)
-                    tw, imm = worst, immortal
-                    verdict = 'immortal (terminal cycle)' if immortal else 'mortal at every width'
+                    worst, immortal, unresolved = terminal(mode, a, b, c)
+                    if immortal:
+                        verdict = 'immortal (terminal cycle)'
+                    elif unresolved:
+                        verdict = 'terminal unresolved'
+                    else:
+                        verdict = 'mortal at every width'
                 key = (mode, a, b)
                 ac = atlas.get(key)
                 agree = '-'
-                if ac is not None and c is not None:
-                    agree = 'yes' if (ac > 0) == bool(imm) else 'NO'
-                print('%s (%d, %d) | %s | %s | %s | %s | %s | %s' % (mode, a, b, c if c else 'none', tw,
-                      imm if imm != '-' else '-', verdict, ac if ac is not None else '?', agree))
+                if ac is not None and c is not None and (immortal or not unresolved):
+                    agree = 'yes' if (ac > 0) == bool(immortal) else 'NO'
+                print('%s (%d, %d) | %s | %s | %s | %s | %s | %s | %s' % (
+                      mode, a, b, c if c else 'none', worst, immortal if c else '-', unresolved if c else '-',
+                      verdict, ac if ac is not None else '?', agree))
                 tally.setdefault(verdict, []).append('%s (%d, %d)' % key)
                 sys.stdout.flush()
     print()
