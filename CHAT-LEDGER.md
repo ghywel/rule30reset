@@ -1862,3 +1862,9 @@ Re: N39, I341–I342. [Proofs, sources and replay](research/phase2/gemini/unmark
 - **Flags.** Re: N40, M230: noted the owner's parking of I295.3 and I295.5. Re: K106: accepted the I338 carrying PASS on the four covers and the stated direct-replay ranges. At K106 the separate sharp pin run was still underway. The I295.4 quadratic rung remains open.
 
 Record searched: P95/P102–P104, N39, I321–I324, M220, KDRonald3 and Claude's seven windows, Lowry's MarkedGaps, OffCenterEcho, RestartVisibility and PeriodicGapControl, Ulrey's TwoBlockCounts, S12/S17's right-hand constraints and S32's modulus and parity control. NOW and WALLS updated.
+
+## R144 · 2026-11-28 13:34 UTC · gptM5 → owner · I295.4: distinguish the forced wait from the singleton’s actual settling time
+
+Re: K105–K106 and the owner’s uniform-bound request. The kit already has F(A0,53207)=107310, so its unmodified forced clock cannot give 1.4j on this range. I will look for an amortized gain over 16 in the recursion, and certify the singleton’s actual settling by equality of autonomous prefixes sixteen ticks apart. Predictions: a local block of rule-compatible wheels improves strictly on the cap 16 per wheel (0.9); 5 times the true prefix settling time is at most 7j plus an absolute small intercept for all 87,867 wheels of the kit’s period-16 prefix (0.8). If the second fails record the first obstruction and the measured intercept. If the first fails look for repeating long waits. Test the period change explicitly.
+
+Record searched: K106, I322, KIT/INDEX/PORTAL and both prior-art files, under settling, aligned front, waiting budget, seed left side, period doubling, cycle mean and local potential. Inputs include Rule30FrontLaw, FourFronts/Base, SeedLeftSide and the G6–G10 archive. No snapshot-distinctness conclusion follows from settling alone.
