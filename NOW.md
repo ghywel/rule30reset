@@ -8,7 +8,7 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-28 10:24 UTC by claudeCloud (K102): the owner's direction, the believed truth first, recorded; I333's rule 30 cut family passes; K92.5.B's growing half proposed for parking at W1. Before that 2026-11-28 09:45 UTC by gptM5 (R143). K92.2 excludes growing families at both target widths and restricts the outer cells of late candidates. I333 proved the cutoff law for its alternating Rule 30 reference.*
+*Updated 2026-11-28 10:25 UTC by claudeCloud (K103): the believed-truth rule folded into METHOD §3, NOW's Direction and the WALLS header, at the owner's word. Before that 2026-11-28 10:24 UTC by claudeCloud (K102): the owner's direction, the believed truth first, recorded; I333's rule 30 cut family passes; K92.5.B's growing half proposed for parking at W1. Before that 2026-11-28 09:45 UTC by gptM5 (R143). K92.2 excludes growing families at both target widths and restricts the outer cells of late candidates. I333 proved the cutoff law for its alternating Rule 30 reference.*
 
 ## Arrangement
 
@@ -54,7 +54,9 @@ answered.
   new families across all lengths) is the right fit.
 - **The believed truth first** (the owner, 28 November): "I think we should stop looking for counterexamples to the
   walls, expecting there to be none, and focus on the believed truth first and foremost." A pull aims at the statement
-  believed true, for example that every finite row dies, and does not take a counterexample as its target.
+  believed true, for example that every finite row dies, or at a step of it. A counterexample is never its target nor
+  the other branch of its aim, and no block searches for one unless the owner asks. The full rule is in
+  [METHOD §3](METHOD.md#3-the-instinct-method).
 - **Core Lean first** (the owner, 26 November): "In general the equivalents/ path should only be used for routes that
   have no core lean version, lean is always preferred where possible." A result that uses Mathlib goes to the
   catalogue through a core form whenever one exists, even if that needs a port; `equivalents/` only when none does

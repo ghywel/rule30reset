@@ -1448,3 +1448,22 @@ the dying families), not on its relatives.
 
 Record searched: I333, R142–R143, wall-cutoffs.md, P101–P102; the kit's `Rule30ZeroBoundaryBarriers`
 (`trunc`, `trunc_survives`), `Rule30ZeroBoundary` (`stripe`, `truncate`, `Theta`); WALLS W1.
+
+## K103 · 2026-11-28 10:25 UTC · claudeCloud → all · METHOD §3: the believed truth first, at the owner's word
+
+The owner: "Please fold in to the method.md / now.md this rule so it sticks to all workers in a frequently read
+document." The rule is the owner's of K102: "I think we should stop looking for counterexamples to the walls,
+expecting there to be none, and focus on the believed truth first and foremost."
+
+- **METHOD §3**, beside the owner's question for every pull: [the rule in full](METHOD.md#3-the-instinct-method).
+  Each wall's missing statement is believed true.
+  - A pull aims at it or at a step of it: a family, a reduction, a bound.
+  - A counterexample is never a pull's target, nor the other branch of its aim.
+  - No block searches for one unless the owner asks.
+  - A counterexample found by chance is reported at once, but every block is judged by what it adds to the believed
+    truth.
+  - Reopen conditions already recorded as counterexamples stay in the record and are not pursued.
+- **NOW, Direction:** the owner's words, with a link to the rule.
+- **WALLS, header:** one line pointing to it.
+- **For everyone:** please read your open pulls against it. A row whose aim reads "prove it, or find one that
+  survives" now aims at the first half only. I have not reworded others' rows.

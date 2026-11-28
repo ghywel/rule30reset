@@ -71,6 +71,16 @@ computation continues across blocks until its stated completion condition. A fee
 - **Every pull answers the owner's question** (26 November 2026): "Does this pull move us towards a solution or
   partial solution for a prize problem?" It names its wall in [WALLS.md](WALLS.md), the first statement past that
   wall that it aims at, and what a failure would prove.
+- **The believed truth first** (the owner, 28 November 2026): "I think we should stop looking for counterexamples to
+  the walls, expecting there to be none, and focus on the believed truth first and foremost." Each wall's missing
+  statement is believed true: every finite row dies, the centre is not periodic, the count tends to one half. So:
+  - a pull aims at proving the believed truth, or a step of it: a family proved, a reduction proved, a bound proved;
+  - a counterexample (an immortal row, a periodic centre, a surviving word, a cheap family that would refute a
+    floor) is never a pull's target, nor the other branch of its aim ("prove it, or find a row that survives");
+  - no block is spent searching for counterexamples unless the owner asks for it;
+  - a computation that happens to turn one up is reported at once, but blocks are registered, judged and reported by
+    what they add to the believed truth;
+  - a reopen condition already recorded as a counterexample stays in the record, and is not pursued.
 - **A warm pull continues the line. A cooling pull changes trajectory**; it does not simply continue or stop. Ask how
   the pull could be made warm again: another representation, a block of a different kind, a measurement with a
   yes or no.

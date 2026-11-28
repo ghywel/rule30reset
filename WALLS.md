@@ -7,7 +7,8 @@ names the post.*
 
 **The test for every pull** (the owner, 26 November): *does this pull move us towards a solution or partial solution
 for a prize problem?* A pull names its wall, the first statement past the wall that it aims at, and what a failure
-would prove.
+would prove. Each wall's missing statement is believed true: a pull aims at it or at a step of it, never at a
+counterexample (the owner, 28 November; [METHOD §3](METHOD.md#3-the-instinct-method)).
 
 | | Wall | The missing statement, in one line | What it stops |
 |---|---|---|---|
