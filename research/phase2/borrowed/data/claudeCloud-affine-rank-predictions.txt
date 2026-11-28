@@ -1,0 +1,12 @@
+K92.5.A, claudeCloud's block: a screen of two-coordinate affine ranks for Q01.  Registered 2026-11-28 16:45 UTC.
+Development, reported as such: entries 0..1 to W = 10 (12,288 interpretations: 54 stand below 2^4, none below 2^6).
+Frozen code: claudeCloud_affine_rank.c, SHA-256 22caa3f8f8ffde149149136dfdf25f95ebab3ad6f493c3222eed636efb3ae272
+Frozen runs:  affine_rank 16 2     and     affine_rank 14 3
+
+Predictions (first-coordinate form: weak everywhere, strict at 3 mod 4)
+  R1  90%  entries 0..2: no interpretation stands on every surviving step from rows below 2^12
+  R2  85%  entries 0..3: none stands below 2^12
+  R3  70%  entries 0..2: none stands below 2^8
+Otherwise
+  A survivor at 2^12 is a candidate certificate: it is then tested to 2^16, on I333's alternating cuts (a strict step
+  at every check) and on the kit's truncated stripes, and only an all-width argument would make it a proof.
