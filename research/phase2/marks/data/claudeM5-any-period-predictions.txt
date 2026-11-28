@@ -1,0 +1,53 @@
+K92.4 · claudeM5 · registered 2026-11-28 16:58 UTC, before the runs (M233)
+
+The question. Jen's theorem forbids two adjacent eventually periodic singleton columns, and masked Jen forbids an
+eventually periodic masked column c OR x1, each with ANY period. S32's modulus-two control (ModulusParity, a
+four-row loop with every fall on even ticks) defeats only a lag-two repeat; the loop has period four, so every
+column on it is periodic. Is the modulus-two case of S32 (falls of both parities at a fixed site, which K92.4's
+period-two step needs at -2) reachable by the exact any-period strip test? And does the east strip driven by an
+alternating centre force x1 eventually periodic at the white ticks, which by masked Jen would exclude period two?
+
+Program, frozen: research/phase2/marks/claudeM5_any_period_strips.cpp
+SHA-256 85212199c82a41b71c51e974bb2d73c2106b5f49652f36d54cf0fa88b6fc201e
+Only a smoke test on the all-black word "1" has been run.
+
+Runs, all on the M5:
+  fall 3 6 10          control: modulus 3 to width 6
+  fall 2 12 10         modulus 2 to width 12, or until every assignment is certified
+  east 01 1 22         period two
+  east 001 1 20, east 011 1 20   both period-three clocks
+  eastcensus 8 16 10   every primitive word up to length 8, widths to 16
+
+Controls
+  A0 (97%) Modulus 3: every normalized assignment is certified by width 6 (S32 certified them with lag-3 repeats,
+           and any period is weaker).
+  B0 (95%) The east census certifies 00000011 by K = 6 (the kit's rank certificate). Every word of length <= 8 that
+           the bitmask census certified at a width K <= 16 is certified here at a width <= K.
+
+Predictions
+  A1 (65%) Modulus 2, width 6: at least one normalized assignment is uncertified.
+  A2 (93%) The alternation assignment 001000 (columns -4..+1; under an alternating centre the kit's skeleton puts
+           every fall of -4, -3, -1, 0 and +1 on the black ticks and every fall of -2 on the white ones) is
+           uncertified at width 6. If it is certified, period two is excluded through Jen: verify independently
+           before believing it.
+  A3 (35%) Some width <= 12 certifies every modulus-two assignment: the modulus-two case of S32, with any period.
+  A4 (60%) The control loop's assignment 000000 is certified at width 6.
+  E1 (92%) 01 is uncertified at every K <= 22. If it is certified at some K, period two is excluded through masked
+           Jen: verify independently before believing it.
+  E2 (80%) 001 and 011 are uncertified at every K <= 20.
+  E3 (70%) In the east census (length <= 8, K <= 16) at most five words are certified that the bitmask census did
+           not certify at any width <= 16.
+  E4 (60%) For 01 the largest non-rigid component grows by a factor of at least 1.3 per unit of width from K = 10
+           to the largest K run.
+
+Counterfactual. If A2 or E1 fails, period two is excluded for the single seed, a prize-level partial result; I would
+stop, replay the component and the cyclic-class check in a second program, and seek a Lean certificate in the kit's
+rank format. If A3 holds, S32's statement extends to modulus two at that width: every strip of that width has a
+column with falls of both parities after every cutoff, though not necessarily at -2. If A1 to A3 and E1 to E2 all
+hold as predicted, the strip methods are dead for period two at these widths even with any period, and the
+ring-phantom barrier of M231 (bitmask only) is not the binding one.
+
+Record searched: find_known for any period, modulus two, parity control, strongly connected, cyclic class, rank
+certificate and lag two; KIT §5 (Rule30FallResidues), KIT-INDEX's excluded words and rank certificates;
+Rule30StripCertificates (stripCert and Cert); Rule30PeriodTwo's skeleton (m1_even to m4_odd, golden); S32's
+every-modulus.md, ModulusStrip.lean and ModulusParity.lean; I341 to I343, N41, unmarked-launch.md; M220, M231.
