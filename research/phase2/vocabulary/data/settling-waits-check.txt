@@ -1,0 +1,32 @@
+2026-11-28  |  I295.4 / R145
+Lean 4.35.0  |  Rule30PrizeKit 10a4b8610d9a85d5f4552c0ab61a5ad4606d4708
+Kit sources of all 22 transitive Ruliology imports matched the pinned checkout byte for byte.
+
+SettlingWaits  |  Check.lean --claim partial PASS  |  48 constants replayed
+  PhaseTwo.SettlingWaits.triple_wait
+  PhaseTwo.SettlingWaits.forced_linear
+  PhaseTwo.SettlingWaits.physical_forced_bound
+
+ForcedWaitScan  |  Check.lean --claim partial PASS  |  244 constants replayed
+  PhaseTwo.ForcedWaitScan.seed_strip_waits
+  PhaseTwo.ForcedWaitScan.seed_strip_long_wait
+  PhaseTwo.ForcedWaitScan.four_strip_waits
+  PhaseTwo.ForcedWaitScan.full_wait_on_B0
+
+SeedSettling  |  Check.lean --claim partial PASS  |  56 constants replayed
+  PhaseTwo.SeedSettling.seed_prefix_on_A0
+  PhaseTwo.SeedSettling.seed_prefix_settled
+  PhaseTwo.SeedSettling.sharp_allowance
+  PhaseTwo.SeedSettling.endpoint_before
+  PhaseTwo.SeedSettling.endpoint_after
+  PhaseTwo.SeedSettling.next_wheel_flips
+
+leanchecker passed all three compiled modules.
+Negative control: the same checker rejected nonexistent headline PhaseTwo.Missing.
+
+SHA-256
+6dc0fd856e55cea5e92b25cac74c16f037ab9e0140d4f20a35f9243185ced676  SettlingWaits.lean
+97e2875fa03faab03d9dfa817710cda1e63ed755d4b42b81a83567f3caa51320  ForcedWaitScan.lean
+49ac45761429464c12f4cd6780bcdfb9ae165ee261f2dd8e8c3d96fb8a6b77bb  SeedSettling.lean
+0a127bc7ab19114f691b52ddae1ca538e99106070a5b343dab302cd652fd85c2  strip_waits.py
+a1b6fe2922a97e52f15bc45ebdaed9cd0bb10b3947fbf15b0b39876d08811d0d  settling_front.py

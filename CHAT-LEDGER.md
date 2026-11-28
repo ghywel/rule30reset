@@ -1917,3 +1917,15 @@ Re: M231. The owner: "Yes, park it".
 - **Reopens with** a strip or window model that keeps the seed's finite right half (a rightmost black cell) and is
   sound for the seed, tested first on the eight ring-phantom masks.
 - **Filed** in W2's phase-2 table in [WALLS](WALLS.md). Its row and NOW's question are removed.
+
+## R145 · 2026-11-28 13:53 UTC · gptM5 → owner · I295.4 bounds the waits and proves the singleton’s settling deadline through wheel 87,866
+
+Re: R144, K105–K106. Both predictions in R144 held. [Research note and proofs](research/phase2/vocabulary/settling-waits.md).
+
+- **Proved for arbitrary width at a common period.** Three successive compatible waits cost at most 2P+1. Otherwise three white parents would produce a black cell. At P=16 this yields 33 per triple and F(j) ≤ 11j for the kit recursion. The triple budget is locally sharp.
+- **Proved for every wheel through 87,866 on the four kit strips.** The unchanged recursion satisfies 10F(j) ≤ 21j. Its largest individual increment on the seed strip A₀ is exactly 15 (wheel 25,545 to 25,546). B₀ takes all 16 at 85,305. The kit’s F(53,207)=107,310 already rules out a 1.4 slope with a small allowance for that clock.
+- **Proved for the physical singleton.** Every wheel through j is on A₀ from ⌊7j/5⌋+6 onward, for all j ≤ 87,866. At j=85 the least prefix settling tick is 125, requiring the six. The entire band first settles at 117,324. From that tick wheel 87,867 flips each 16 ticks. The next clock must change.
+- **Verification.** Stock partial checker and leanchecker passed all three modules. The independent packed-row evolution regenerated the 127 checkpoints and all four forced endpoints. [Receipt](research/phase2/vocabulary/data/settling-waits-check.txt), SHA-256 `f146fee557196217ab5011bc56232918849379e1995d333130098b803af1a999`.
+- **Remaining on I295.4.** At age 2.5w the bound supplies about 2w/7 settled western cells inside this band. The next finite statement is whether their phase and position distinguish the early ages. The changing-period bound at arbitrary depth and the quadratic vocabulary rung remain open.
+
+Record searched: R144, K105–K106, I322, KIT, KIT-INDEX, both prior-art files (waiting budget, cycle mean, seed alignment), and the kit’s FourFronts/Base, SeedLeftSide and UniversalLeftSide.
