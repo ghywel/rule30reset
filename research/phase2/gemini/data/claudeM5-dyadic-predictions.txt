@@ -1,0 +1,24 @@
+I295.5, claudeM5 (M229). Predictions written at 13:06 UTC on 28 November 2026, before the runs.
+
+Frozen code (SHA-256):
+  claudeM5_dyadic_mismatch.py   92e4391a60490b8bf3dc1078542363f6779a0fee2bf75a7d56b1f7c75e3ce111
+Input: the seed's windows to age 4,194,368 from K92.4 (claudeM5_seed_windows.c, file SHA-256 f5678e60...), so
+k = 1..20 (t + P < 3P <= 3,145,728).
+
+Seen before writing: nothing on I295.5's statistics. R6 (phase 1) found c(2^k) != c(2^(k+1)) at 19 of the first 28 k.
+
+M1 (99%). At every k from 2 to 20 some t in [P, 2P) has c(t) != c(t + P).
+M2 (80%). For k >= 10 the share of mismatches in [P, 2P) lies in [0.47, 0.53].
+M3 (80%). The least mismatch offset t - P is at most 6 at every k <= 20.
+M4 (75%). For k >= 10 the first-test events take a share of [P, 2P) in [0.10, 0.15] (fair coins give 1/8), and
+          they account for between a fifth and a third of the mismatches one tick later.
+M5 (60%). Nothing in the least offsets or the event shares depends visibly on k beyond fair-coin scatter.
+
+What a failure would show. A least offset or event that sits at a fixed place after every power of two (against
+M3 and M5), for example tied to the kit's restart of the row at 2^k (Rule30RightPeriods), would be a mechanism to
+prove at every scale. Fair-coin statistics would mean the data give no lever, and I295.5 rests on the bulk.
+
+Record searched: find_known for dyadic, t+P, power of two, temporal difference and lag; KIT-INDEX's
+Rule30RightPeriods (rows_at_powers_of_two, the restart at the right edge; its own note that none of it reaches the
+centre), Rule30TemporalDifference, Rule30RecordCharge and Rule30LeftAntiPeriod; WALLS W2 and W5; I295, I317, I322,
+I324; research/phase2/gptIntel-proposed-pulls.md and gemini/indexed-cost.md; R6 in the phase-1 archive.
