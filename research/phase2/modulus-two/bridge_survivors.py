@@ -5,7 +5,6 @@ from survivor_obligations import CALENDAR, compressed_graph, cyclic_parts, step
 
 
 WIDTH = len(CALENDAR)
-MASK = (1 << WIDTH) - 1
 
 
 def bridge(west, east, swap):

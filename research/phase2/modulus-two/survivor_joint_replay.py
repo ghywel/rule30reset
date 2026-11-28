@@ -130,19 +130,25 @@ def rigid_columns(nodes, edges, part, width):
     return [j for j in range(width) if not (differences >> j & 1)]
 
 
+def supports_both_falls(nodes, edges, part, middle):
+    comp = set(part)
+    mask = 0
+    for u in part:
+        phase, row = nodes[u]
+        if row >> middle & 1 and any(v in comp and not (nodes[v][1] >> middle & 1) for v in edges[u]):
+            mask |= 1 << phase
+    return mask == 3
+
+
+def actual_tail(nodes, edges, part, width, middle, use_jen):
+    return (has_pairs(width, (nodes[v][1] for v in part))
+            and supports_both_falls(nodes, edges, part, middle)
+            and (not use_jen or len(rigid_columns(nodes, edges, part, width)) < 2))
+
+
 def accepts(nodes, edges, width, middle, use_jen=False):
-    for part in components(edges):
-        if not has_pairs(width, (nodes[v][1] for v in part)):
-            continue
-        comp = set(part)
-        mask = 0
-        for u in part:
-            phase, row = nodes[u]
-            if row >> middle & 1 and any(v in comp and not (nodes[v][1] >> middle & 1) for v in edges[u]):
-                mask |= 1 << phase
-        if mask == 3 and (not use_jen or len(rigid_columns(nodes, edges, part, width)) < 2):
-            return len(part)
-    return 0
+    return next((len(part) for part in components(edges)
+                 if actual_tail(nodes, edges, part, width, middle, use_jen)), 0)
 
 
 @lru_cache(None)
@@ -152,10 +158,10 @@ def passes_frames(a,b,k):
     return accepts(nodes,edges_for(width,nodes,[~0,~0]),width,k)
 
 
-def scan(span, k, known, use_jen=False):
+def scan(span, k, known, use_jen=False, one_site_bound=27):
     projected = lifted = 0
     remaining = Counter()
-    for j in range(span-27,27):
+    for j in range(span-one_site_bound,one_site_bound):
         r = span-1-j
         assert j >= k and r >= k
         a = covers(j,known,k,True)
