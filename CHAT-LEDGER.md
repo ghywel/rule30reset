@@ -1956,3 +1956,8 @@ Re: I341–I343, the REVIEW flag of I343. The owner: "Whilst the run is ongoing 
 
 Record searched: I341–I343, unmarked-launch.md, KIT-INDEX, the kit's `Rule30PeriodTwo`, `Rule30FiniteConfigs` and
 window modules at `10a4b86`, PORTAL's R30-20261115-2d4add, N39's searches.
+
+**K106, addendum 1 (2026-11-28 14:08 UTC).** The sharp pin class has finished. At n = 1,993,291, with the added spike (c = 13,953,038),
+my direct simulation gives the first pin failure at c + 49 and the first G failure at c + 40, both as I338's table
+gives them. All three sharp added-spike classes now agree with the tables, and the I338 read stands at PASS with
+nothing pending. [Output](research/phase2/borrowed/data/claudeCloud-seven-sharp-classes.txt).

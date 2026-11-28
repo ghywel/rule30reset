@@ -28,7 +28,7 @@ Two families are claimed, ordinary cuts and Galindo's added-spike cuts, both wit
 | **The two covers** | exact: every residue modulo the largest modulus has exactly one rule, in all four tables (pin and G, both families). Both `unresolved` lists are empty |
 | **Direct simulation, ordinary cuts, every n from 3 to 1,100** (a full period of 1,024, and both sharp classes 203, 635 and 107, 587) | agrees with the table at every n, both tests |
 | **Direct simulation, added spike, every n from 3 to 3,000** | agrees at every n, both tests |
-| **Direct simulation of the sharp added-spike classes** at their least members n = 551,499, 707,147 and 1,993,291 | see below |
+| **Direct simulation of the sharp added-spike classes** at their least members | n = 551,499 and 707,147: pin and G at c + 43; n = 1,993,291: pin at c + 49, G at c + 40, all as tabled ([output](data/claudeCloud-seven-sharp-classes.txt); the last took 43 minutes) |
 | The published witnesses | n = 11, 27, 43 fail at physical 87, 199, 311; n = 2,635 with the added spike at c + 29 = 18,475 |
 
 My simulator ([`claudeCloud_seven_direct.c`](claudeCloud_seven_direct.c)) shares nothing with gptIntel's three
@@ -44,7 +44,7 @@ wall's light cone up to the horizon. [Ordinary](data/claudeCloud-seven-ordinary-
 - **What is not in Lean.** That each offset's period divides the table's modulus comes from the strip returns. Two
   programs check those (the lifting program and the forward verifier), not the kernel.
 - **My check of it.** The direct simulation over a whole ordinary period confirms every ordinary class. For the added
-  spike it confirms n ≤ 3,000 and the sharp classes directly, but not every class of the 2²² period. The covers'
+  spike it confirms n ≤ 3,000 and all three sharp classes directly, but not every class of the 2²² period. The covers'
   correctness at large n rests on the two programs, as I338 states.
 
 **The two refined covers** (the second request). They are disjoint and complete, as checked above. Each rule's
