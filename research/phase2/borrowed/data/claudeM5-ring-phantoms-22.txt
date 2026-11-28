@@ -1,0 +1,30 @@
+0 rings 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 | ambiguous at white phase 0: no bitmask certificate at any width
+0000001 rings 15 | cell 1 constant at every white phase across these orbits
+000000101 rings 15 | cell 1 constant at every white phase across these orbits
+0000011 rings 15 | cell 1 constant at every white phase across these orbits
+00001 rings 15 | cell 1 constant at every white phase across these orbits
+0000101 rings 15 | cell 1 constant at every white phase across these orbits
+0001 rings 7 14 21 | ambiguous at white phase 2: no bitmask certificate at any width
+0001001 rings 15 | cell 1 constant at every white phase across these orbits
+0001011 rings 15 | cell 1 constant at every white phase across these orbits
+000110111 rings 15 | cell 1 constant at every white phase across these orbits
+00011101 rings 4 8 12 16 20 | cell 1 constant at every white phase across these orbits
+0001111 rings 15 | cell 1 constant at every white phase across these orbits
+000111101 rings 15 | cell 1 constant at every white phase across these orbits
+001 rings 12 | ambiguous at white phase 1: no bitmask certificate at any width
+001001011 rings 15 | cell 1 constant at every white phase across these orbits
+0010011 rings 15 | cell 1 constant at every white phase across these orbits
+0010101 rings 15 | cell 1 constant at every white phase across these orbits
+0011 rings 7 14 21 | ambiguous at white phase 0: no bitmask certificate at any width
+001101011 rings 15 | cell 1 constant at every white phase across these orbits
+0011011 rings 15 | cell 1 constant at every white phase across these orbits
+0011101 rings 15 | ambiguous at white phase 0: no bitmask certificate at any width
+0011111 rings 15 | cell 1 constant at every white phase across these orbits
+01 rings 7 14 21 | ambiguous at white phase 0: no bitmask certificate at any width
+01011 rings 5 10 15 20 | ambiguous at white phase 0: no bitmask certificate at any width
+011 rings 12 | ambiguous at white phase 0: no bitmask certificate at any width
+0110111 rings 15 | cell 1 constant at every white phase across these orbits
+0111 rings 7 14 21 | cell 1 constant at every white phase across these orbits
+01111 rings 15 | cell 1 constant at every white phase across these orbits
+0111111 rings 15 | cell 1 constant at every white phase across these orbits
+1 rings 2 4 6 8 10 12 14 16 18 20 22 | cell 1 constant at every white phase across these orbits
