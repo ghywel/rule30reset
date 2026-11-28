@@ -57,6 +57,10 @@ as `Absorption` and `Lock`.
   fails at W + 2 or W + 4 by W mod 4 (I333, [proof](research/phase2/borrowed/Rule30AlternatingCuts.lean)). For every
   n ≥ 16, at least 2^⌊(2n−3)/8⌋ starts at each exact width 2n − 1 and 2n pass n checks and die before check 2n
   (R143, [proofs](research/phase2/ladder/unbounded-exclusion.md)).
+- For ordinary cuts of the seven-spaced reference and Galindo's added-spike family, exact finite-strip certificates
+  give sharp first pin failures by physical tick $W+25$ and $W+31$, respectively, where $W$ is the seed's actual
+  support width and the pinned phase is odd. Every width residue in both families is covered (I338,
+  [exact laws](research/phase2/borrowed/seven-spaced-cutoffs.md)).
 - `Q01` for every start of width at most 52 (`q01_width_le_52`). The latest lone death is at tick 96 at width 52
   and 116 at width 64 (exhaustive, K84's note). The coupled lifetime is exact to support 106, with replayed lower
   bounds to 224 (I246, K88).

@@ -63,7 +63,7 @@ on. Checking the four initial even widths 2, 4, 6 and 8 and using this recurrenc
 The four diagonals reach far enough for the first failure. Every even width 2 through 128 and width one passed the
 independent rule-table replay in E8. [Four-diagonal induction](Rule30AlternatingCuts.lean) · [Independent simulation](rule30_alternating_cuts.py)
 
-This gives infinitely many Rule 30 cuts that pass the even check immediately after the first omitted black reaches the wall. The growing 150/180 case and Rule 30's universal white-wall mortality remain open. The next direct test is whether the same finite difference method controls the delays of the published sparse seven-spaced reference, including the cut locations used in its width witnesses. [Sparse reference and credit](../../../PRIOR-ART.md#p1--2026-11-17--conjecture-ss-sharp-witnesses-truncate-one-eternal-row-one-black-cell-in-seven)
+This gives infinitely many Rule 30 cuts that pass the even check immediately after the first omitted black reaches the wall. The closest earlier result is the kit's `trunc_survives` for the stationary stripe cut at odd physical depths. The growing 150/180 case and universal Rule 30 white-wall mortality remain open. Galindo's moving strip gives a finite calculation for the sparse seven-spaced reference and its width witnesses. [Stationary stripe](https://github.com/WolframInstitute/Rule30PrizeKit/blob/ea5d70e/lean/Ruliology/CellularAutomata/Rule30ZeroBoundaryBarriers.lean) · [Sparse cutoff results](seven-spaced-cutoffs.md)
 
 ## Read of K101's erosion test
 
