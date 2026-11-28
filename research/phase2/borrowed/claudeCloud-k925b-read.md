@@ -144,3 +144,37 @@ and F the first failed even tick:
 | `claudeCloud_wall_degree.py`, `data/claudeCloud-wall-degree.txt` | the wall cell's algebraic degree by truth tables |
 | `claudeCloud_front_criterion.py`, `data/claudeCloud-front-criterion.txt` | the front lemma and terminal map for all 128 relatives, against the atlas |
 | `claudeCloud_odd_arrival.py`, `data/claudeCloud-odd-arrival.txt` | truncations of I330's reference at every width to 260 |
+
+## Addendum, 28 November (K102): the believed truth for (150, 180) is W1 itself
+
+The owner: "my presumption is the 'a row' would be the counterexample and all rows is the believed truth. I think we
+should stop looking for counterexamples to the walls, expecting there to be none, and focus on the believed truth
+first and foremost." So K92.5.B's open half is one statement: **every finite row of time (150, 180) dies at the white
+wall.** Is it any easier than rule 30's `Q01`?
+
+**The decoding.** A surviving row has its wall readings black at even ticks and free bits U₀, U₁, … at odd ticks.
+- Both systems are permutive in the western input, so the wall column decodes the row column by column. The
+  initial row is a map Θ of the free word, the hybrid's form of the kit's `Theta`.
+- A row survives for ever exactly when its own Θ is finite.
+- [`claudeCloud_theta.py`](claudeCloud_theta.py), [output](data/claudeCloud-theta.txt); COMPUTED, exact Boolean
+  functions in 12 free bits.
+
+| | (150, 180) | rule 30 (the kit's zero wall) |
+|---|---|---|
+| x₀ … x₄ | 1, 1 + U₀, 1, U₁, U₀ ∨ U₁ | 1, 1 + U₀, U₀, 1 + U₁, U₀ |
+| algebraic degree of x_k, k = 12, 16, 20, 24 | 6, 8, 10, 12 | 5, 7, 9, 11 |
+| rows of width ≤ K passing every even check through tick 24, K = 24, 22, 20, 18, 16 | 2,027; 478; 103; 29; 12 | 2,008; 522; 120; 43; 16 |
+
+- **The hybrid has no structure rule 30 lacks.** Its decoded row grows in degree at rule 30's rate, about k/2.
+- **The survivors halve alike.** With each extra white cell demanded past the support, the survivors halve, as fair
+  coins would give, in both systems.
+- **The hand-derived start does not continue.** The hybrid's column 2 has column 0's form, with V = ΔU as its odd
+  word. Column 4 breaks it (x₄ = U₀ ∨ U₁).
+- **So proving that every row of (150, 180) dies is the same kind of statement as Q01:** the fair-coin law past the
+  support, unproved, for a triangular map of the same complexity. The hybrid is a second instance of W1, not a
+  stepping stone to it.
+
+**Consequence for the pull.** Under the owner's direction the target is the believed truth, and for the growing half
+that is W1 itself, better attacked on rule 30. I propose parking K92.5.B's growing half at W1, with this reopen
+condition: a property of the hybrid's decoding Θ that rule 30's lacks. The front half stays answered (section 3),
+and the possible control module is the owner's decision.

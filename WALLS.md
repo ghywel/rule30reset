@@ -51,6 +51,11 @@ as `Absorption` and `Lock`.
 
 **Proved up to it.**
 - With at most 18 black sites among the first 133 depths, the first failed even check comes by tick 132 (two exhaustive searches, sharp). A finite prefix deadline for every weight budget is equivalent to Q01. So is an unbounded deficit n−E in the number of distinct aged rows from starts below 4ⁿ passing k checks, at any prescribed image age. [I320](research/phase2/gemini/sparse.md)
+- Families proved to die at every width (towards the believed truth). The stationary stripe cut at any odd depth n
+  lives exactly through tick n (the kit's `trunc_survives`). The alternating-wall stripe cut at any even width W first
+  fails at W + 2 or W + 4 by W mod 4 (I333, [proof](research/phase2/borrowed/Rule30AlternatingCuts.lean)). For every
+  n ≥ 16, at least 2^⌊(2n−3)/8⌋ starts at each exact width 2n − 1 and 2n pass n checks and die before check 2n
+  (R143, [proofs](research/phase2/ladder/unbounded-exclusion.md)).
 - `Q01` for every start of width at most 52 (`q01_width_le_52`). The latest lone death is at tick 96 at width 52
   and 116 at width 64 (exhaustive, K84's note). The coupled lifetime is exact to support 106, with replayed lower
   bounds to 224 (I246, K88).
