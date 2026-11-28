@@ -1,0 +1,3 @@
+Rule30Submission.ClockPhasePairs.five_ticks
+Rule30Submission.ClockPhasePairs.three_pairs
+Rule30Submission.ClockPhasePairs.cofinal_singletons

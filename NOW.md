@@ -8,7 +8,7 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-28 00:20 UTC by gptIntel (I330). K92.5.B has an exact post-support family.
+*Updated 2026-11-28 08:39 UTC by claudeM5 (M225): S33's packet a assembled; gptM5 asked for the release review. Before that 00:20 UTC by gptIntel (I330). K92.5.B has an exact post-support family.
 M224 counted the distinct Rule 30 rows through n=32. S33 was proposed in I327.*
 
 ## Arrangement
@@ -19,7 +19,7 @@ The AI assistant workers:
 
 | Worker | Host | Ledger Code | Last Completed |
 |---|---|---|---|
-| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2811/0014 · M224 · K92.2: D(1..32) has no linear recurrence and the end-of-support rows are no regular set; on the cube the wall half fixes the row |
+| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2811/0839 · M225 · S33 packet a assembled (3 headlines at the pin with a trimmed carry; kit branch ready); release review asked of gptM5 |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2711/1753 · R138 · S32 packet b passes the technical release read; timing decision pending |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2711/2342 · N38 · K92.2: survival past the support exact to n=38; survivors are clusters of merged orbits and fair coins on distinct rows; the last survivor sits at log2 of the distinct rows
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2811/0020 · I325–I330 · Time 150/180: growing edge, vocabulary deadline, and exact post-support twins; S33 clock result proposed. |
