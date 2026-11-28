@@ -6,9 +6,9 @@ This adds a uniform bound on resets after a first clock loss, at every clock.
 - `cofinal_singletons`: on a pointed strip, one fixed tick of any five sees such singletons at first losses beyond every depth.
 - **The proof** follows the driver wheel `a + 1` from `firstLoss_cascade_and_immediate_catch`.
   - A fall of the driver is a singleton at once.
-  - Two black readings, or three white ones, make a wheel toggle beside a white one, and its next fall is isolated (`toggle_catch`). The one use of the antiperiod shows that wheel `a + 4` is not permanently white.
+  - Two black readings or three white readings make a wheel toggle beside a white one. Its fall gives a singleton there or at the next wheel one tick later (`toggle_catch`). In the five-tick proof the antiperiod shows that wheel `a + 4` is black at some tick.
   - Four driver readings always hold one of these cases, which gives five ticks. The strip's clock moves the bound back to tick zero.
-- **Against the catalogue.** `Rule30RelaxedWindows`, `Rule30DoublingLanes` and `Rule30FirstLossBounds` together give a reset in every fifteen ticks within nine wheels. Here it is five ticks, seven wheels and a run of length one. For `e ≤ 4`, `Rule30DoublingLanes` already catches every tick, so the new range is clocks of 32 and more.
+- **Against the catalogue.** `Rule30RelaxedWindows`, `Rule30DoublingLanes` and `Rule30FirstLossBounds` together give a reset in every fifteen ticks within nine wheels. Here it is five ticks, seven wheels and a run of length one. For `e ≤ 4`, `Rule30DoublingLanes` already guarantees a reset in the first interval at each tick. The new local singleton bounds hold also for clocks of 32 and more.
 - **Not shown:** the prescribed tick of `DLMinusOne`. `local_paired_nfa_escapes_in_five` shows why a paired local window cannot reach it.
 
 **Checks.** Core Lean 4.35.0 at `ea5d70e`.

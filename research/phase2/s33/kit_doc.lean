@@ -12,7 +12,7 @@ white wheel `NextWhite d a b`:
   losses beyond every depth.
 
 The proof follows the driver wheel `a + 1` from `firstLoss_cascade_and_immediate_catch`: a fall of the driver gives a
-singleton at once; two black readings, or three white ones, make a wheel toggle beside a white one, and its next
-fall is isolated (`toggle_catch`). With `Rule30FirstLossBounds` the catalogue already gives a reset in every fifteen
+singleton at the ending tick. Two black readings or three white readings make a wheel toggle beside a white
+one, forcing a singleton at its fall or one tick later at the next wheel (`toggle_catch`). With `Rule30FirstLossBounds` the catalogue already gives a reset in every fifteen
 ticks within nine wheels. The prescribed tick of `DLMinusOne` stays open.
 -/

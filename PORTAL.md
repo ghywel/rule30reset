@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-27 23:28 UTC, 466 entries, 80 portal-only -->
+<!-- portal-list: 2026-11-28 08:43 UTC, 467 entries, 81 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-27 23:28 UTC (466 entries)
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-28 08:43 UTC (467 entries)
 and kit main `ea5d70e`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 80 of the 466 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 81 of the 467 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -28,10 +28,10 @@ and kit main `ea5d70e`. Find new portal-only entries with `python3 tools/portal/
 | Missed | 14 |
 | Port | 3 |
 | Pending | 6 |
-| Check | 21 |
+| Check | 22 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 80, of them 22 ours |
+| All | 81, of them 22 ours |
 
 ## Missed (14)
 
@@ -77,12 +77,13 @@ In an open kit pull request. Moves out of this file when it merges.
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
 
-## Check (21)
+## Check (22)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
+| [R30-20261128-f03004](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261128-f03004) | 2026-11-28 | Mateo Molina; GPT (OpenAI); Claude (Anthropic) | Lean Verified | Singleton horizontal word diversity is at least w + ⌊6w/59⌋ + 1 at every width, and reaches an asymptotic ratio of at least 117/100. Every fixed extra length of the initial age segment has distinct words at sufficiently large widths. | Compare the exact word convention and age bounds to Rule30HorizontalDiversityBounds. | A |
 | [R30-20261127-5d944b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-5d944b) | 2026-11-27 | G.P.J.W. Quint; Gemini (Google) | Lean Verified | Fifteen core-Lean theorems on black-phase escape: `UBEAt 3` ⇔ Q001 ∧ C3w0(011); single-word escape is invariant under cyclic phase shifts; the forced-row bijection `ThetaP` for every period P ≥ 2, with exactly 2^((P−1)n) of the 2^(Pn) prefixes passing n checks; a 2ⁿ/8ⁿ law for the 011-driven left; bounded cases Q001 to width 16, QP 4 to 14, the 011 left to 18. | Extends the kit's `Rule30BlackPhaseEscape`, `Rule30IsolatedBlackQP` and `Rule30EtherThreeLeft` (W1 for every period, `UBE`). Compare with `Rule30ZeroBoundaryPeriodLanes` and the period-3 modules in a source read. Added by claudeCloud (K99): abstract read through its third group of theorems, and the headlines. | A |
 | [R30-20261127-a4d3f8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-a4d3f8) | 2026-11-27 | Moncef Benboubakeur; GPT; Claude | Lean Verified | With A j r the seeds y < 4^r that pass the first r + j checks beside the white wall: 4·A 2 r ≤ 3·2^r, 12288·A 2 r ≤ 9007·2^r and 2048·A 4 r ≤ 1363·2^r at every r, so a third of the seeds that pass their first r checks fail within four more. | Checks past the support at every width: the subject of our pull K92.2, beyond `Rule30FirstChecks` and their own R30-20261126-65dcb1. Read the 11- and 15-cell certificates. | A |
 | [R30-20261127-9ed040](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-9ed040) | 2026-11-27 | Moncef Benboubakeur and collaborators | Lean Verified | Among first-check survivors, second-check losses exceed 1/16 at a width in every 7, 1/10 in every 562 and 1/8 in every 1,042. From width 8 both outcomes have exponentially growing lower counts. | Supersedes R30-20261126-65dcb1. Relevant to K92.2. It transfers 15-cell certificates and gives explicit survivor families. | A |

@@ -30,7 +30,7 @@ A *wheel* is a column in the coordinates that follow the left edge of Rule 30: `
 | those together | a reset in every fifteen ticks within nine wheels, of some length `1 mod 3` |
 | this entry | a singleton in every five ticks within seven wheels, at every clock |
 
-The fifteen-tick bound is not stated in the kit. Take the tick before a window of fifteen: the sixteen driver bits either have a fall, or read whites followed by blacks, with at least nine whites or eight blacks.
+The fifteen-tick bound is not stated in the kit. Take the tick before a window of fifteen: the sixteen driver bits either have a fall, or read whites followed by blacks, with at least nine whites or eight blacks. When the window starts at zero, take one period of the prefix through `b` before applying this argument, then translate the catch back.
 
 ## 3. Exploration
 
@@ -53,34 +53,44 @@ ArrayPlot[First[misses[4]], Mesh -> True, FrameTicks -> None, ImageSize -> 240]
 
 The free model drops the driver's antiperiod and the strip's clock, so it allows more than any real strip. Its zero at five ticks is a check of the theorem's local core; its one miss at four shows only that this local argument needs five. A wider search over widths and earlier driver ticks, in the rule30reset record, finds that for windows of up to eight ticks fewer than seven wheels never suffice.
 
-**The seed's own first losses.** Wheel `j` of the single black cell is the bit `j` of a number `A(t)`, with `A(t + 1) = 4A(t) XOR (2A(t) OR A(t))`. Its permanently white wheels up to 420, and at each the least clock of the prefix and whether the next wheel flips at that clock:
+**The seed's recurrent left edge.** Wheel `j` of the single black cell is the bit `j` of a number `A(t)`, with `A(t + 1) = 4A(t) XOR (2A(t) OR A(t))`. The truncated row through wheel 421 evolves autonomously. We find its first repeated state, then read the white wheels through 420 and their first-loss clocks on the resulting cycle.
 
 ```wl
-J = 420; T = 4096;
-hist = NestList[BitAnd[BitXor[BitShiftLeft[#, 2], BitOr[BitShiftLeft[#, 1], #]], 2^J - 1] &, 1, T];
-wheel[j_, t_] := BitGet[hist[[t + 1]], j];
-late = Range[T - 255, T];
-whites = Select[Range[0, J - 2], Function[j, AllTrue[late, wheel[j, #] == 0 &]]];
-per[j_] := SelectFirst[{1, 2, 4, 8, 16}, Function[p, AllTrue[late[[;; -33]], wheel[j, #] == wheel[j, # + p] &]]];
-Table[With[{p = Apply[LCM, per /@ Range[0, a]]}, {a, p, AllTrue[late[[;; -33]], wheel[a + 1, # + p] == 1 - wheel[a + 1, #] &]}], {a, whites}]
+J = 420;
+bandStep[v_] := BitAnd[BitXor[BitShiftLeft[v, 2], BitOr[BitShiftLeft[v, 1], v]], 2^(J + 2) - 1];
+hist = NestList[bandStep, 1, 4096];
+repeated = SelectFirst[Range[2, Length[hist]], MemberQ[Take[hist, # - 1], hist[[#]]] &, Missing["No cycle found"]];
+If[MissingQ[repeated], $Failed,
+  entry = First[FirstPosition[Take[hist, repeated - 1], hist[[repeated]]]];
+  cycle = Take[hist, {entry, repeated - 1}];
+  whites = Select[Range[0, J], Function[a, AllTrue[cycle, BitGet[#, a] == 0 &]]];
+  details = Table[
+    prefix = BitAnd[#, 2^(a + 1) - 1] & /@ cycle;
+    clock = SelectFirst[Divisors[Length[cycle]], RotateLeft[prefix, #] === prefix &];
+    driver = BitGet[#, a + 1] & /@ cycle;
+    {a, clock, RotateLeft[driver, clock] === (1 - driver), AllTrue[Take[hist, repeated - 1], BitGet[#, a] == 0 &]},
+    {a, whites}];
+  Column[{Row[{"Cycle entry: ", entry - 1, " ticks. Period: ", Length[cycle], " ticks."}],
+    Grid[Prepend[details, {"wheel", "least prefix clock", "driver flips", "white from tick zero"}], Frame -> All]}]
+]
 ```
 
-The first losses at wheels 2, 7, 28 and 399 have clocks 1, 2, 4 and 8. Every configuration with a leftmost black cell has period 16 through wheel 87,866 (`Rule30FourLeftSides`), so every first loss there has `e ≤ 4`, where `Rule30DoublingLanes` already catches every tick. The new content is at clocks of 32 and more, beyond that depth: the regime to which the doubling question was reduced.
+The cycle starts at tick 523 and has period 16. On that cycle the white wheels 2, 7, 28 and 399 have first-loss clocks 1, 2, 4 and 8. Only wheel 7 is white from the start of the seed evolution. The kit proves eventual period 16 through wheel 87,866 for any configuration with a leftmost black cell (`Rule30FourLeftSides`). A first loss with old clock 32 or higher therefore has its driver beyond that prefix. For `e ≤ 4`, `Rule30DoublingLanes` already guarantees a reset somewhere in the first interval at each tick. The present theorem gives a short, spatially bounded singleton for every exponent, including the higher orders.
 
 ## 4. The proof
 
 1. **The cascade** (Quint and Gemini, `firstLoss_cascade_and_immediate_catch`). Wheel `a + 2` is black at every tick, and wheel `a + 3` reads the complement of the driver one tick late. A fall of the driver from black to white is a singleton at the next tick.
 2. **A white wheel beside a toggling one** (`toggle_catch`). If wheel `z` is white for two ticks and wheel `z + 1` toggles at both, then `z + 1` falls at one of them. At that tick either `z + 2` is white, and `z + 1` is isolated, or `z + 2` is black, and one tick later the recurrence makes `z + 1` white, `z + 2` black and `z + 3` white. The next white wheel cannot be `z + 1` or `z + 2`, since each is black at some tick.
 3. **Two black driver readings** (`black_two`) make wheel `a + 3` white for two ticks and wheel `a + 4` toggle, so step 2 gives a singleton within three ticks by wheel `a + 6`.
-4. **Three white driver readings** (`white_three`) make `a + 3` black, `a + 4` white for two ticks and `a + 5` toggle: a singleton by wheel `a + 7`. Wheel `a + 4` is not permanently white, because the driver is black `2^e` ticks later and `a + 4` then toggles. That is the one use of the antiperiod.
+4. **Three white driver readings** (`white_three`) make `a + 3` black, `a + 4` white for two ticks and `a + 5` toggle: a singleton by wheel `a + 7`. Wheel `a + 4` is not permanently white, because the driver is black `2^e` ticks later and `a + 4` then toggles. The five-tick proof uses the antiperiod at this step.
 5. **Five ticks** (`five_ticks`). Four driver readings have a fall, or end in two blacks, or begin with three whites. The strip's clock through `b` moves the bound back to tick zero (`move_back`).
 6. **Pairs** (`three_pairs`). A change among four readings is a fall of the driver or of its complement `2^e` ticks later. With no change, one of the two halves reads two blacks.
-7. **Cofinal ticks** (`cofinal_singletons`). If each of the five ticks saw its last singleton at a finite depth, a first loss beyond all five depths would contradict `five_ticks`. First losses at every depth exist on a pointed strip (`unbounded_first_losses`).
+7. **Cofinal ticks** (`cofinal_singletons`). If each of the five ticks saw its last singleton at a finite depth, a first loss beyond all five depths would contradict `five_ticks`. First losses occur arbitrarily deep on a pointed strip (`unbounded_first_losses`).
 
 ## 5. What is not shown
 
-- **The prescribed tick.** `DLMinusOne` asks for a catch at the given tick, and the theorem lets the tick move within five. Quint and Gemini's `local_paired_nfa_escapes_in_five` shows why a paired local window cannot reach the prescribed tick.
-- **Reachable cases by computation.** No configuration with a leftmost black cell has a first loss at a clock of 32 or more before wheel 87,866, so the new range cannot be exhibited.
+- **The prescribed tick.** `DLMinusOne` asks for a catch across the first two intervals at the given tick. The five-tick theorem allows any tick in its window. Quint and Gemini's `local_paired_nfa_escapes_in_five` shows why a paired local window cannot reach the prescribed tick.
+- **Reachable cases by computation.** The finite seed computation illustrates the low-clock cases. Higher-clock first losses require going beyond the kit’s period-16 prefix.
 - **Problem 1.**
 
 ## 6. Prior art and credit
