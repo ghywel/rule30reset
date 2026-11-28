@@ -1,0 +1,133 @@
+system | front lemma: least c (rounds per site), or none to 5 | terminal rows: worst first failure (ticks), immortal rows | verdict | atlas candidates to width 22 | agree
+time (240, 240) | 1 | 2 | [] | mortal at every width | 0 | yes
+time (240, 60) | 1 | 4 | [] | mortal at every width | 0 | yes
+time (240, 90) | none | - | - | front does not erode | 384 | -
+time (240, 150) | none | - | - | front does not erode | 1 | -
+time (240, 120) | 1 | 2 | [] | mortal at every width | 0 | yes
+time (240, 180) | 1 | 4 | [] | mortal at every width | 0 | yes
+time (240, 210) | none | - | - | front does not erode | 2 | -
+time (240, 30) | none | - | - | front does not erode | 29 | -
+time (60, 240) | 1 | 4 | [] | mortal at every width | 0 | yes
+time (60, 60) | none | - | - | front does not erode | 384 | -
+time (60, 90) | none | - | - | front does not erode | 0 | -
+time (60, 150) | none | - | - | front does not erode | 0 | -
+time (60, 120) | none | - | - | front does not erode | 7 | -
+time (60, 180) | none | - | - | front does not erode | 12 | -
+time (60, 210) | none | - | - | front does not erode | 0 | -
+time (60, 30) | none | - | - | front does not erode | 0 | -
+time (90, 240) | none | - | - | front does not erode | 384 | -
+time (90, 60) | none | - | - | front does not erode | 0 | -
+time (90, 90) | none | - | - | front does not erode | 0 | -
+time (90, 150) | none | - | - | front does not erode | 0 | -
+time (90, 120) | none | - | - | front does not erode | 5 | -
+time (90, 180) | none | - | - | front does not erode | 3 | -
+time (90, 210) | none | - | - | front does not erode | 0 | -
+time (90, 30) | none | - | - | front does not erode | 0 | -
+time (150, 240) | none | - | - | front does not erode | 1 | -
+time (150, 60) | none | - | - | front does not erode | 0 | -
+time (150, 90) | none | - | - | front does not erode | 0 | -
+time (150, 150) | none | - | - | front does not erode | 0 | -
+time (150, 120) | none | - | - | front does not erode | 4 | -
+time (150, 180) | none | - | - | front does not erode | 0 | -
+time (150, 210) | none | - | - | front does not erode | 0 | -
+time (150, 30) | none | - | - | front does not erode | 0 | -
+time (120, 240) | 1 | 4 | [] | mortal at every width | 0 | yes
+time (120, 60) | none | - | - | front does not erode | 2 | -
+time (120, 90) | none | - | - | front does not erode | 8 | -
+time (120, 150) | none | - | - | front does not erode | 2 | -
+time (120, 120) | 2 | 8 | [3] | immortal (terminal cycle) | 1 | yes
+time (120, 180) | 2 | 8 | [7] | immortal (terminal cycle) | 1 | yes
+time (120, 210) | none | - | - | front does not erode | 3 | -
+time (120, 30) | none | - | - | front does not erode | 0 | -
+time (180, 240) | 1 | 2 | [] | mortal at every width | 0 | yes
+time (180, 60) | none | - | - | front does not erode | 2 | -
+time (180, 90) | none | - | - | front does not erode | 4 | -
+time (180, 150) | none | - | - | front does not erode | 1 | -
+time (180, 120) | 3 | 8 | [5, 55] | immortal (terminal cycle) | 2 | yes
+time (180, 180) | 1 | 2 | [1] | immortal (terminal cycle) | 444 | yes
+time (180, 210) | none | - | - | front does not erode | 0 | -
+time (180, 30) | 4 | 18 | [7] | immortal (terminal cycle) | 1 | yes
+time (210, 240) | none | - | - | front does not erode | 1 | -
+time (210, 60) | none | - | - | front does not erode | 0 | -
+time (210, 90) | none | - | - | front does not erode | 0 | -
+time (210, 150) | none | - | - | front does not erode | 0 | -
+time (210, 120) | none | - | - | front does not erode | 2 | -
+time (210, 180) | none | - | - | front does not erode | 0 | -
+time (210, 210) | none | - | - | front does not erode | 0 | -
+time (210, 30) | none | - | - | front does not erode | 0 | -
+time (30, 240) | none | - | - | front does not erode | 14 | -
+time (30, 60) | none | - | - | front does not erode | 0 | -
+time (30, 90) | none | - | - | front does not erode | 0 | -
+time (30, 150) | none | - | - | front does not erode | 0 | -
+time (30, 120) | none | - | - | front does not erode | 0 | -
+time (30, 180) | 2 | 8 | [] | mortal at every width | 0 | yes
+time (30, 210) | none | - | - | front does not erode | 0 | -
+time (30, 30) | none | - | - | front does not erode | 0 | -
+space (240, 240) | 1 | 2 | [] | mortal at every width | 0 | yes
+space (240, 60) | none | - | - | front does not erode | 320 | -
+space (240, 90) | none | - | - | front does not erode | 384 | -
+space (240, 150) | none | - | - | front does not erode | 0 | -
+space (240, 120) | none | - | - | front does not erode | 424 | -
+space (240, 180) | 1 | 2 | [] | mortal at every width | 0 | yes
+space (240, 210) | none | - | - | front does not erode | 1 | -
+space (240, 30) | none | - | - | front does not erode | 154 | -
+space (60, 240) | none | - | - | front does not erode | 320 | -
+space (60, 60) | none | - | - | front does not erode | 384 | -
+space (60, 90) | none | - | - | front does not erode | 0 | -
+space (60, 150) | 1 | 2 | [] | mortal at every width | 0 | yes
+space (60, 120) | none | - | - | front does not erode | 154 | -
+space (60, 180) | none | - | - | front does not erode | 350 | -
+space (60, 210) | 2 | 4 | [] | mortal at every width | 0 | yes
+space (60, 30) | none | - | - | front does not erode | 1 | -
+space (90, 240) | none | - | - | front does not erode | 384 | -
+space (90, 60) | none | - | - | front does not erode | 0 | -
+space (90, 90) | none | - | - | front does not erode | 0 | -
+space (90, 150) | none | - | - | front does not erode | 0 | -
+space (90, 120) | none | - | - | front does not erode | 3 | -
+space (90, 180) | none | - | - | front does not erode | 32 | -
+space (90, 210) | none | - | - | front does not erode | 0 | -
+space (90, 30) | none | - | - | front does not erode | 0 | -
+space (150, 240) | none | - | - | front does not erode | 320 | -
+space (150, 60) | 1 | 0 | [1, 3] | immortal (terminal cycle) | 384 | yes
+space (150, 90) | none | - | - | front does not erode | 320 | -
+space (150, 150) | none | - | - | front does not erode | 0 | -
+space (150, 120) | none | - | - | front does not erode | 99 | -
+space (150, 180) | none | - | - | front does not erode | 384 | -
+space (150, 210) | none | - | - | front does not erode | 0 | -
+space (150, 30) | none | - | - | front does not erode | 0 | -
+space (120, 240) | none | - | - | front does not erode | 420 | -
+space (120, 60) | none | - | - | front does not erode | 156 | -
+space (120, 90) | none | - | - | front does not erode | 2 | -
+space (120, 150) | none | - | - | front does not erode | 0 | -
+space (120, 120) | 2 | 8 | [3] | immortal (terminal cycle) | 1 | yes
+space (120, 180) | 2 | 6 | [7] | immortal (terminal cycle) | 304 | yes
+space (120, 210) | none | - | - | front does not erode | 327 | -
+space (120, 30) | none | - | - | front does not erode | 4 | -
+space (180, 240) | 1 | 2 | [1] | immortal (terminal cycle) | 450 | yes
+space (180, 60) | none | - | - | front does not erode | 337 | -
+space (180, 90) | none | - | - | front does not erode | 7 | -
+space (180, 150) | none | - | - | front does not erode | 0 | -
+space (180, 120) | 2 | 4 | [1, 3, 11] | immortal (terminal cycle) | 533 | yes
+space (180, 180) | 1 | 2 | [1] | immortal (terminal cycle) | 444 | yes
+space (180, 210) | 5 | 12 | [] | mortal at every width | 0 | yes
+space (180, 30) | none | - | - | front does not erode | 5 | -
+space (210, 240) | none | - | - | front does not erode | 2 | -
+space (210, 60) | 2 | 6 | [] | mortal at every width | 0 | yes
+space (210, 90) | none | - | - | front does not erode | 0 | -
+space (210, 150) | none | - | - | front does not erode | 0 | -
+space (210, 120) | none | - | - | front does not erode | 119 | -
+space (210, 180) | 5 | 12 | [5, 7] | immortal (terminal cycle) | 8 | yes
+space (210, 210) | none | - | - | front does not erode | 0 | -
+space (210, 30) | none | - | - | front does not erode | 0 | -
+space (30, 240) | none | - | - | front does not erode | 71 | -
+space (30, 60) | none | - | - | front does not erode | 1 | -
+space (30, 90) | none | - | - | front does not erode | 0 | -
+space (30, 150) | none | - | - | front does not erode | 0 | -
+space (30, 120) | none | - | - | front does not erode | 67 | -
+space (30, 180) | none | - | - | front does not erode | 1 | -
+space (30, 210) | none | - | - | front does not erode | 0 | -
+space (30, 30) | none | - | - | front does not erode | 0 | -
+
+mortal at every width: 14
+front does not erode: 102
+immortal (terminal cycle): 12
