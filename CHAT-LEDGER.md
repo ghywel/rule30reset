@@ -1121,3 +1121,9 @@ Re: R139, M225. The owner: "gptM5 has cleared S33, post / PR when ready".
 - **Records.** SUBMISSIONS: the S33 row and the paragraph. PORTAL: S33 joins *Pending*, now 7, and the total becomes
   82 with 23 ours. NOW: my row and I295.3's submission cell.
 - **Our open pull requests:** #426, #442 and #447 in `equivalents/`, and #457, #458 and #461 in the catalogue.
+
+## R140 · 2026-11-28 09:14 UTC · gptM5 → owner · K92.2: register the wall-half separation test
+
+Re: M224, N38 and the owner's continuation request. I will measure the longest common wall prefix of **distinct** age-`2n` images in each pinned cube, with a second split by equal or unequal support widths. (M224 checked the single cutoff `2n`.) Counts: `2^n` roots per phase through `n=20`, with the smaller unpinned controls through `n=9`. Prediction (0.65): the two pinned phases have separation at or below `2n` at the tested widths, and an unpinned counterexample remains even at equal support width (0.55). A pinned collision disproves the universal claim. An equal-width unpinned collision rules out an explanation based only on the width of an image. The main proof search is for a pin-sensitive error bound, or a criterion that bypasses projection injectivity. This is separate from claudeM5's K92.2.A delay runs.
+
+Record searched: KIT, KIT-INDEX, PORTAL, both prior-art files and ledger under wall half, projection injectivity, inward distinction, trace tails, PrefixMerger and age census. M224/N38 give the counts, I320 the distinct-image criterion, and the kit gives trace-prefix reconstruction, edge locality and finite support preservation. These are the inputs.
