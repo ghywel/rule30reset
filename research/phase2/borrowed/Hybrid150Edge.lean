@@ -182,6 +182,34 @@ theorem packed_launch {y : Nat} (hy : 3 ≤ y) : Launched (packed y) (2*(y.log2-
   have h := launch_budget (y.log2-2) (packed y) (by simpa only [Nat.sub_add_cancel two] using edge)
   rwa [show 2*(y.log2-2)+3 = 2*(y.log2-1)+1 by omega] at h
 
+/-- Boundedness here concerns the even rows. The intervening linear tick adds
+    at most one outer cell. -/
+theorem bounded_iff (y : Nat) : (∃ w, ∀ n, Within (run n (packed y)) w) ↔ y ≤ 2 := by
+  constructor
+  · rintro ⟨w, bound⟩
+    apply Nat.le_of_not_gt
+    intro hy
+    obtain ⟨t, d, _, hd⟩ := packed_launch (by omega : 3 ≤ y)
+    have black := (locked_run w _ _ hd).1.2
+    rw [← run_add, bound (t+w) (d+w+1) (by omega)] at black
+    contradiction
+  · intro h
+    have small (n y : Nat) (hy : y ≤ 2) : Within (run n (packed y)) 2 := by
+      induction n generalizing y with
+      | zero =>
+        intro i hi
+        exact Nat.testBit_lt_two_pow (Nat.lt_of_lt_of_le (by omega : y < 2^2)
+          (Nat.pow_le_pow_right (by decide : 0 < (2 : Nat)) hi))
+      | succ n ih =>
+        rcases (by omega : y=0 ∨ y=1 ∨ y=2) with rfl | rfl | rfl <;>
+          simp only [run, terminal_steps.1, terminal_steps.2.1, terminal_steps.2.2.1] <;> apply ih <;> decide
+    exact ⟨2, fun n => small n y h⟩
+
+/-- One forward round reads the former depth three at the wall exactly. -/
+theorem wall_round (x : Row) : round x 0 = x 2 := by
+  simp only [round, nonlin, linear, tick, east]
+  cases x 0 <;> cases x 1 <;> cases x 2 <;> decide
+
 /-- Physical time, starting in either phase. Both rules are permutive in the west cell. -/
 def gate (odd : Bool) (c r : Bool) := if odd then c && !r else xor c r
 def clock (odd : Bool) (x : Row) : Nat → Row
@@ -296,5 +324,66 @@ theorem packed_low_deadline {y : Nat} (hy : 3 ≤ y)
   have hb : 2*(y.log2-1)+1+5 = 2*(y.log2+1)+2 := by omega
   rw [← hb] at low ⊢
   exact low_vocabulary_deadline (packed_launch hy) low
+
+private theorem cone (n : Nat) (odd : Bool) (x y : Row) (h : ∀ i ≤ n, x i = y i) :
+    ∀ t ≤ n, clock odd x t 0 = clock odd y t 0 := by
+  induction n generalizing odd x y with
+  | zero => intro t ht; simpa [clock, show t=0 by omega] using h 0 (by omega)
+  | succ n ih =>
+    intro t ht
+    cases t with
+    | zero => exact h 0 (by omega)
+    | succ t =>
+      apply ih (!odd) (tick (gate odd) x) (tick (gate odd) y) _ t (by omega)
+      intro i hi
+      have r : east x i = east y i := by
+        cases i with
+        | zero => rfl
+        | succ j => exact h j (by omega)
+      simp [tick, h _ (by omega : i+1 ≤ n+1), h _ (by omega : i ≤ n+1), r]
+
+private theorem realize (n : Nat) (b : Nat → Bool) :
+    ∃ x : Row, ∀ t ≤ n, clock false x t 0 = b t := by
+  induction n with
+  | zero => exact ⟨fun _ => b 0, fun t ht => by simp [clock, show t=0 by omega]⟩
+  | succ n ih =>
+    obtain ⟨x, hx⟩ := ih
+    let y : Row := fun i => if i = n+1 then !x i else x i
+    have same := cone n false y x (fun i hi => by simp [y, show i ≠ n+1 by omega])
+    have different : clock false x (n+1) 0 ≠ clock false y (n+1) 0 := by
+      intro eq
+      have far := trace_prefix (n+1) false x y (fun t ht => by
+        by_cases he : t=n+1
+        · simpa only [he] using eq
+        · exact (same t (by omega)).symm) (n+1) (by omega)
+      simp [y] at far
+    by_cases a : clock false x (n+1) 0 = b (n+1)
+    · exact ⟨x, fun t ht => by
+        by_cases e : t=n+1
+        · simpa only [e] using a
+        · exact hx t (by omega)⟩
+    · refine ⟨y, fun t ht => ?_⟩
+      by_cases e : t=n+1
+      · subst t
+        have two : ∀ a b c : Bool, a ≠ b → a ≠ c → b = c := by decide
+        exact two _ _ _ different a
+      · exact (same t (by omega)).trans (hx t (by omega))
+
+/-- Every prescribed finite odd word can occur while all m+1 even samples are
+    black, on a row already locked and of exact width 2m+3. -/
+theorem arbitrary_odd_prefix (m : Nat) (f : Nat → Bool) :
+    ∃ x, Locked x (2*m+1) ∧ (∀ j ≤ m, run j x 0 = true) ∧ (∀ j < m, oddBit x j = f j) := by
+  let b : Nat → Bool := fun t => if t%2=0 then true else f (t/2)
+  obtain ⟨u, hu⟩ := realize (2*m) b
+  let x : Row := fun i => if i ≤ 2*m then u i else decide (i ≤ 2*m+2)
+  have same := cone (2*m) false x u (fun i hi => by simp [x, hi])
+  refine ⟨x, ⟨⟨fun i hi => by simp [x, show ¬ i ≤ 2*m by omega, show ¬ i ≤ 2*m+2 by omega],
+    by simp [x, show ¬(2*m+1+1 ≤ 2*m) by omega]⟩, by simp [x]⟩, ?_, ?_⟩
+  · intro j hj
+    have eq := (same (2*j) (by omega)).trans (hu _ (by omega))
+    simpa [clock_even, b] using eq
+  · intro j hj
+    have eq := (same (2*j+1) (by omega)).trans (hu _ (by omega))
+    simpa [clock_odd, b, oddBit, show (2*j+1)/2 = j by omega, show (2*j+1)%2 = 1 by omega] using eq
 
 end Hybrid150Edge
