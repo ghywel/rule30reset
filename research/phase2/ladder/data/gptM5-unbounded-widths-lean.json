@@ -1,0 +1,96 @@
+{
+  "kit": "ea5d70e876555d4dc858551efc504c1673cf969c",
+  "lean": "4.35.0",
+  "modules": {
+    "ExactShellLoss": {
+      "constants": 50,
+      "headlines": [
+        "PhaseTwo.ExactShellLoss.death_iff",
+        "PhaseTwo.ExactShellLoss.first_deaths",
+        "PhaseTwo.ExactShellLoss.every_pair_has_shell"
+      ],
+      "standardAxioms": true,
+      "leanchecker": "pass",
+      "sha256": "8e9bbf6a99e037922cb33d44afb5a43741c8dd1378230531c45c19ea08505305"
+    },
+    "StripeHistory": {
+      "constants": 93,
+      "headlines": [
+        "PhaseTwo.StripeHistory.splice_injective",
+        "PhaseTwo.StripeHistory.splice_merges",
+        "PhaseTwo.StripeHistory.five_tail_exclusion",
+        "PhaseTwo.StripeHistory.shell_diagonal",
+        "PhaseTwo.StripeHistory.odd_shell_death",
+        "PhaseTwo.StripeHistory.even_shell_deadline",
+        "PhaseTwo.StripeHistory.even_shell_sharp"
+      ],
+      "standardAxioms": true,
+      "leanchecker": "pass",
+      "sha256": "2a7cfdaa8626e482757f64e99ddbe636219b9934400b72d5d0e281cf04a33008"
+    },
+    "EdgePair": {
+      "constants": 78,
+      "headlines": [
+        "PhaseTwo.EdgePair.packed_two_extensions",
+        "PhaseTwo.EdgePair.late_outer_cover"
+      ],
+      "standardAxioms": true,
+      "leanchecker": "pass",
+      "sha256": "ca594240571b159bd17160285218b36e152a16e0d3955f0b09790d678bb5c01b"
+    },
+    "EdgeTriple": {
+      "constants": 41,
+      "headlines": [
+        "PhaseTwo.EdgeTriple.three_extensions",
+        "PhaseTwo.EdgeTriple.age3_closed",
+        "PhaseTwo.EdgeTriple.late_outer_cover3"
+      ],
+      "standardAxioms": true,
+      "leanchecker": "pass",
+      "sha256": "db4e6e2d55d8ab9720c16ff63a717d958bdb6a8704e65c53b7eed3b850591df0"
+    },
+    "ThinShell": {
+      "constants": 19,
+      "headlines": [
+        "PhaseTwo.ThinShell.small_cover",
+        "PhaseTwo.ThinShell.aged_band",
+        "PhaseTwo.ThinShell.pinCount_le",
+        "PhaseTwo.ThinShell.q01_of_admissible_exclusion"
+      ],
+      "standardAxioms": true,
+      "leanchecker": "pass",
+      "sha256": "cbc020addbabebdee1e29717563fdcf2b5116354436d3f14e6168d2124564f7e"
+    },
+    "BlockCover": {
+      "constants": 10,
+      "headlines": [
+        "PhaseTwo.BlockCover.iterated_cover",
+        "PhaseTwo.BlockCover.physical_cover"
+      ],
+      "standardAxioms": true,
+      "leanchecker": "pass",
+      "sha256": "e552378f381f8c5d81e04e7ba57e7e55dc147d574e1a2db20fcce36692edd268"
+    },
+    "RecurrentShell": {
+      "constants": 14,
+      "headlines": [
+        "PhaseTwo.RecurrentShell.immortal_on_recurrent_shell",
+        "PhaseTwo.RecurrentShell.q01_of_dyadic_recurrent_shells"
+      ],
+      "standardAxioms": true,
+      "leanchecker": "pass",
+      "sha256": "f30e805f1646d5bb5da7b9e1fc96dbc0a4585c7e0fbe6687bfbc1d48f0f51d57"
+    },
+    "WhiteSpacing": {
+      "constants": 26,
+      "headlines": [
+        "PhaseTwo.WhiteSpacing.white_latches_two",
+        "PhaseTwo.WhiteSpacing.white_gap_five"
+      ],
+      "standardAxioms": true,
+      "leanchecker": "pass",
+      "sha256": "9d7e810e118865c446e7dbafc06637ed212f04bb79e7c65c8b34574c63f4d51f"
+    }
+  },
+  "missingHeadlineControl": "failed as expected"
+}
