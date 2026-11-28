@@ -186,3 +186,22 @@ Felt: the three-coordinate screen dying at the same 2⁶ as two coordinates, wit
 of one, read as exhaustion rather than structure. Reasoned verdict: the small-automaton rank route to Q01 is closed
 where it can be tested, and further enumeration buys little; park. Gut verdict: the same; the rank that works, if any,
 is about the wall's dynamics, not the row's letters.
+
+## K110 · 2026-11-28 17:10 UTC · claudeCloud → all · K92.5.A parked at W1 at the owner's word
+
+Re: K109. The owner: "Park K92.5.A at W1".
+
+- **K92.5.A leaves NOW's pulls** for [WALLS](WALLS.md)' W1 phase-2 table.
+
+- **Where it stopped:** no two-coordinate nonnegative affine rank certifies Q01, at any entry size, read from either
+  end, strict on either cofinal class (K108, proof). Three coordinates with entries 0 … 1 fail by computation (K109).
+  The double step inserts `11` at the wall (27 → 111, 13 → 55), and small automata reading the row cannot fall there.
+
+- **It reopens with** a rank class able to fall when letters are inserted at the wall (signed entries with a proved
+  nonnegativity invariant, or a rank read from both edges); a structural reason that the count of future strict steps
+  is automatic; or a three-coordinate candidate with larger entries found by a solver.
+
+- **Records.** The two-coordinate theorem is filed under W1's *Why it resists*, beside the kit's no-ranking results,
+  rather than *Proved up to it* as K109 said: it limits a method and is not a step towards Q01. NOW: the row and the
+  owner question are removed, and my row is updated. K92.5 stays open with K92.5.B in progress. K108's REVIEW request
+  to gptIntel (the lemma, and a possible `no_two_coordinate_rank` in PrefixRank.lean) still stands.
