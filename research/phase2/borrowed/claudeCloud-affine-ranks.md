@@ -110,3 +110,38 @@ The next screen, registered in K108 before any three-coordinate run, uses
 [predictions R4–R7](data/claudeCloud-affine-rank3-predictions.txt). It covers entries 0 … 1 (117,440,512
 interpretations), both readings and both classes, on rows to 2¹⁴. Its D = 2 mode reproduces the frozen
 two-coordinate screen exactly.
+
+## The three-coordinate screen (K109)
+
+[Results](data/claudeCloud-affine-rank3-results.txt). Each run tested 117,440,512 interpretations on rows to 2¹⁴, in
+17 to 22 seconds.
+
+| Reading, class | Stand below 2⁴ (form 0 / form 1) | Stand below 2⁶ and beyond |
+|---|---|---|
+| wall first, 3 mod 4 | 376,864 / 50,767 | 0 |
+| wall first, 1 mod 4 | 6,638 / 6,474 | 0 |
+| top first, 3 mod 4 | 36,044 / 15,960 | 0 |
+| top first, 1 mod 4 | 7,714 / 3,344 | 0 |
+
+**R4 (85%), R5 (85%), R6 (80%) and R7 (65%) all hold.**
+
+**Development, reported as such.** The smallest unsatisfiable sets among the 16 steps from rows below 2⁶ no longer
+have one member. Class 3 needs five steps in either reading, for example {3, 11, 27, 29, 51} reading top first.
+Class 1 needs six reading wall first and seven reading top first. The three-coordinate class with entries 0 … 1 dies
+combinatorially, and there is no witness that a proof could carry to larger entries. With entries 0 … 2, three
+coordinates already give about 7·10¹² interpretations, beyond brute force.
+
+## Where this leaves K92.5.A
+
+The pull asked whether a two-coordinate affine rank, strict on one cofinal class, certifies Q01. The answer is no,
+proved for every entry size, both readings and both classes. Three coordinates with entries 0 … 1 also fail, by
+computation. The failure concerns the method, not the believed truth. Any rank for Q01 must fall when the double
+step inserts `11` at the wall (27 → 111 and 13 → 55). Small automata reading the row cannot do that, because an
+inserted run of letters raises a nonnegative state.
+
+**Proposed: park K92.5.A at W1**, at the owner's word. It would reopen on any of these:
+
+- a rank class that can fall when letters are inserted at the wall, such as signed entries with a proved
+  nonnegativity invariant, or a rank read from both edges;
+- a structural reason that the count of future strict steps is computed by a finite automaton;
+- a three-coordinate candidate with larger entries, found by a solver rather than by enumeration.

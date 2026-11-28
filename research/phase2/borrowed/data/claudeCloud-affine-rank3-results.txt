@@ -1,0 +1,55 @@
+# frozen runs: affine_rank3 14 1 Q READ 3 (claudeCloud_affine_rank3.c, SHA-256 4a9e3615...cfe7), 2026-11-28 UTC; wall time each in seconds
+
+D=3, entries 0..1, strict at 3 mod 4, reading wall (bit 0) first
+surviving double steps from rows below 2^W: W=4: 4  W=6: 16  W=8: 64  W=10: 256  W=12: 1024  W=14: 4096  
+interpretations tested: 117440512
+W | standing, first coordinate weak everywhere and strict at 3 mod 4 | standing, all coordinates weak
+4 | 376864 | 50767
+6 | 0 | 0
+8 | 0 | 0
+10 | 0 | 0
+12 | 0 | 0
+14 | 0 | 0
+wall time: 20 s
+
+D=3, entries 0..1, strict at 3 mod 4, reading top bit first
+surviving double steps from rows below 2^W: W=4: 4  W=6: 16  W=8: 64  W=10: 256  W=12: 1024  W=14: 4096  
+interpretations tested: 117440512
+W | standing, first coordinate weak everywhere and strict at 3 mod 4 | standing, all coordinates weak
+4 | 36044 | 15960
+6 | 0 | 0
+8 | 0 | 0
+10 | 0 | 0
+12 | 0 | 0
+14 | 0 | 0
+wall time: 17 s
+
+D=3, entries 0..1, strict at 1 mod 4, reading wall (bit 0) first
+surviving double steps from rows below 2^W: W=4: 4  W=6: 16  W=8: 64  W=10: 256  W=12: 1024  W=14: 4096  
+interpretations tested: 117440512
+W | standing, first coordinate weak everywhere and strict at 1 mod 4 | standing, all coordinates weak
+4 | 6638 | 6474
+6 | 0 | 0
+8 | 0 | 0
+10 | 0 | 0
+12 | 0 | 0
+14 | 0 | 0
+wall time: 22 s
+
+D=3, entries 0..1, strict at 1 mod 4, reading top bit first
+surviving double steps from rows below 2^W: W=4: 4  W=6: 16  W=8: 64  W=10: 256  W=12: 1024  W=14: 4096  
+interpretations tested: 117440512
+W | standing, first coordinate weak everywhere and strict at 1 mod 4 | standing, all coordinates weak
+4 | 7714 | 3344
+6 | 0 | 0
+8 | 0 | 0
+10 | 0 | 0
+12 | 0 | 0
+14 | 0 | 0
+wall time: 20 s
+
+# development, reported as such: smallest sets of steps from rows below 2^6 that no interpretation (D = 3, entries 0..1) satisfies; rows named by source
+Q=3 read=0: smallest infeasible size 5: { 3 11 13 27 51 } { 3 11 13 27 59 } { 3 11 27 51 59 } { 11 27 29 51 59 }
+Q=3 read=1: smallest infeasible size 5: { 3 11 27 29 51 }
+Q=1 read=0: smallest infeasible size 6: { 3 5 13 29 37 45 } { 3 13 21 29 37 45 } { 3 5 13 29 45 53 } { 3 13 21 29 45 53 } { 3 13 29 37 45 61 } { 3 13 29 45 53 61 } { 3 13 37 45 59 61 }
+Q=1 read=1: smallest infeasible size 7: { 3 5 13 27 29 37 45 } { 3 13 19 27 29 37 45 } { 3 13 21 27 29 37 45 } { 3 13 27 29 35 37 45 } { 3 13 27 29 37 45 51 } { 3 13 27 29 37 45 53 } { 3 13 27 29 37 45 61 } { 3 13 27 35 37 45 61 } { 3 13 27 37 45 51 61 }
