@@ -211,6 +211,7 @@ count for density, and I295.4 seeks the first superlinear vocabulary bound. [Act
 | Pull | Where it stopped | Reopens with |
 |---|---|---|
 | I295.5 (parked at the owner's word, M230) | on the seed to k = 20, c(t) ≠ c(t + 2^k) somewhere in [2^k, 2^(k+1)) at every k from 3 (none at k = 2), filling half of each interval; the forcing event (a black centre at both ages with different western neighbours) explains the quarter that chance gives (M229). The lag-2^k difference's fronts are the rows' edges, the kit's powers-of-two restart and right-diagonal periods stay off the centre, and a yes would exclude the singleton's eventual period two (W1) | a structure on the seed that reaches the centre at dyadic scales, such as a diagonal of period dividing 2^k through the centre at some age in [2^k, 2^(k+1)); or a proof that the singleton centre is not eventually alternating (M229) |
+| K92.5.C (parked at the owner's word, M232) | the white-phase 0/2 choice of the ternary origin bond is site 1, so the question is the kit's bitmask strip certificate. Of the 1,377 primitive centre masks up to length 13, 40 are certified to strip width 18, none of length 2 to 7, and the kit's table is complete at width 9. Rule 30 orbits on rings are eternal right halves in every strip limit set, so 0, 01, 001, 011, 0001, 0011, 01011 and 0011101 have no certificate at any width (M231) | a strip or window model that keeps the seed's finite right half (a rightmost black cell) and is sound for the seed, tested first on the eight ring-phantom masks (M231) |
 
 ## W3. The doubling step
 
