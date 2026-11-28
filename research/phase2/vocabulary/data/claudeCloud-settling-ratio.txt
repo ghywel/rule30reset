@@ -1,0 +1,20 @@
+settling tick F(j) (period 16): j : F(j) : F(j)/j
+  16 : 16 : 1.000
+  32 : 36 : 1.125
+  64 : 88 : 1.375
+  128 : 171 : 1.336
+  256 : 319 : 1.246
+  512 : 652 : 1.273
+  1024 : 1299 : 1.269
+  2048 : 2686 : 1.312
+  4096 : 5392 : 1.316
+  8192 : 10956 : 1.337
+  16384 : 21918 : 1.338
+  wheels 64..127: largest F(j)/j 1.471 at j = 85; largest F(j) - j 47
+  wheels 128..255: largest F(j)/j 1.336 at j = 128; largest F(j) - j 69
+  wheels 256..511: largest F(j)/j 1.328 at j = 290; largest F(j) - j 143
+  wheels 512..1023: largest F(j)/j 1.292 at j = 667; largest F(j) - j 278
+  wheels 1024..2047: largest F(j)/j 1.319 at j = 1583; largest F(j) - j 640
+  wheels 2048..4095: largest F(j)/j 1.327 at j = 3909; largest F(j) - j 1309
+  wheels 4096..8191: largest F(j)/j 1.340 at j = 8117; largest F(j) - j 2764
+  wheels 8192..16383: largest F(j)/j 1.343 at j = 15424; largest F(j) - j 5539

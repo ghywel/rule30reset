@@ -84,3 +84,49 @@ The data say the windows carry the age up to about 2^(w/2), and that no special 
 | `claudeCloud_snapshots.c` | the frozen run: H(w), first repeats, O among the w² ages from w |
 | `claudeCloud_collision_words.py` | the repeated words against typical snapshots |
 | `data/claudeCloud-snapshot-*.txt`, `data/claudeCloud-collision-words.txt` | predictions and outputs |
+
+## Addendum, 28 November (K106): where a window keeps its age
+
+The owner: "continue with proving that a window determines its age". The block followed the statement into the
+seed's own geometry. Nothing new is proved; the result is where the age is written, and what a proof must use there.
+
+**The geometry.**
+- **The snapshot is a slice of the left diagonals.** The snapshot at age t on sites 0, …, −w lies on the seed's left
+  diagonals (the kit's wheels), j = t − w to t, all read at the same tick t.
+- **Settled wheels repeat with period 16.** Wheel j settles into the kit's period-16 left side (`Rule30FourLeftSides`)
+  near tick 1.3j. Measured F(j)/j is 1.25 to 1.37 for j from 64 to 4,096. The kit proves F(j) ≤ 16j
+  (`F_linear_bounds`).
+- **So a snapshot has two parts.**
+  - Its western part, the wheels from t − w up to about t/1.3, is settled. There the snapshot is a window of one of
+    the 16 fixed rows of the left side: the row at phase t mod 16, starting at wheel t − w.
+  - Its eastern part is unsettled.
+  - The settled part is empty once t exceeds about 4.3w.
+
+**Where the age is carried** ([`claudeCloud_settled_windows.c`](claudeCloud_settled_windows.c),
+[output](data/claudeCloud-settled-windows.txt); COMPUTED, development):
+
+| Ages | What separates the snapshots |
+|---|---|
+| w to 2.5w | **the settled part alone**, at every width from 20 to 1,000 in steps of 20: no two ages share it |
+| 2.5w to about 5w | mostly the settled part. At 3w it fails only at widths 20 and 40; at 5w a few per cent of pairs need the unsettled part |
+| beyond about 5w | **nothing settled.** The age has to be carried by the unsettled part, and the run of K105 says it is, to the birthday scale |
+
+**What this means for a proof.**
+1. **Up to about 2.5w** the window determines the age through the left side.
+   - That would give H(w) of about 2.5w, beyond Galindo's w + ⌊w/39⌋ + 1, still linear.
+   - A uniform proof needs two left-side statements, both of W3's kind:
+     - a settling bound near F(j) ≤ 1.4j (the kit has 16j);
+     - window-distinctness of the 16 rows: windows of length about 0.3w, at positions up to about 1.5w, determine
+       both the row and the position.
+   - The kit knows these rows exactly only through wheel 87,866 (`Rule30FourFronts`). There a finite check is
+     possible, but it would be an instance, not a theorem.
+2. **The quadratic rung lies wholly beyond 5w.** At ages up to w² no part of the window is settled, so no
+   left-side argument reaches it. It needs a W2 statement: the unsettled wedge does not repeat its windows early.
+3. **The data are clear on both ranges.** Early windows separate through the left side, later ones through the
+   unsettled wedge, and the first repeat comes only at the birthday scale.
+
+**Verdict.**
+- **Reasoned.** The window-age statement splits at about 2.5w to 5w. Below, it is a left-side statement that a
+  uniform settling bound would turn into a better linear rung. Above, where the quadratic rung lives, it is W2.
+- **Gut.** The provable next step is the settling bound. A uniform F(j) ≤ (1 + ε)j for the seed's left side would be
+  a theorem in its own right, and it is the first half of the window-age proof.
