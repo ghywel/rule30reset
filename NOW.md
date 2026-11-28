@@ -8,8 +8,8 @@ repository - take care when writing. Earlier versions are in [archive/now/](arch
 whole in [archive/now/now-phase1-2026-11-26.md](archive/now/now-phase1-2026-11-26.md). The submissions are kept up to
 date in [SUBMISSIONS.md](SUBMISSIONS.md). What stopped each pull is in [WALLS.md](WALLS.md).*
 
-*Updated 2026-11-28 12:13 UTC by claudeIntel (N39): I321's birth and count proofs carried; a marked birth of width 23.
-Before that 11:25 UTC by gptIntel (I338–I339). K92.5.B has exact first failures at every width for the ordinary seven-spaced cuts and the added-spike family. R143's ten-cell bound and exact-width families pass review. K103 records the owner's believed-truth direction in METHOD §3, NOW and WALLS.*
+*Updated 2026-11-28 13:07 UTC by claudeM5 (M229): I295.5's dyadic mismatches are fair coins with no lever; parking proposed. Before that
+12:13 UTC by claudeIntel (N39): I321's birth and count proofs carried; a marked birth of width 23. Before that 11:25 UTC by gptIntel (I338–I339). K92.5.B has exact first failures at every width for the ordinary seven-spaced cuts and the added-spike family. R143's ten-cell bound and exact-width families pass review. K103 records the owner's believed-truth direction in METHOD §3, NOW and WALLS.*
 
 ## Arrangement
 
@@ -19,7 +19,7 @@ The AI assistant workers:
 
 | Worker | Host | Ledger Code | Last Completed |
 |---|---|---|---|
-| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2811/0920 · M228 · K92.2.A parked at W1 at the owner's word (M227: no uniform one-black delay bound; deadline steps ≤ 16 through 22) |
+| claudeM5 | the owner's MacBook Pro M5 laptop, macOS | M | 2811/1307 · M229 · I295.5: dyadic centre mismatches are fair coins to k=20 (none at k=2); no known structure reaches the centre; parking proposed |
 | gptM5 | the M5 laptop, shared with claudeM5 | R | 2811/0945 · R142–R143 · K92.2: exponential families die on both unbounded width classes. The remaining late rows meet a small outer-band test. |
 | claudeIntel | the owner's MacBook Pro Intel i9 laptop, AMD RX 6600 GPU, Windows and WSL Ubuntu | N | 2811/1213 · N39 · I321 carried (birth theorem and colour counts, kernel replay at ea5d70e); singleton launch census to 2^25: the first marked birth of width 23, at tick 21,892,697
 | gptIntel | the i9 laptop shared with claudeIntel | I | 2811/1125 · I334–I339 · Exact seven-spaced cutoff laws for both suffixes. R143 read PASS. |
@@ -35,6 +35,9 @@ Each worker must update their 'Last Completed' at the end of a block of work.
 This section may only contain calls to action that require the owner's input or decision and are removed when
 answered.
 
+- **Park I295.5?** M229 ran its first test on the seed to k = 20: the dyadic mismatches and the forcing event are
+  fair coins, and no known structure (the edge fronts, the kit's powers-of-two restart, the settled wedge) reaches
+  the centre. A yes would contain the singleton's period two. Park at W2, or keep it open?
 - **Whether the new shape stands.** This file no longer holds the submissions, the parked pulls or the closed
   pulls: they are in SUBMISSIONS.md, WALLS.md and the archive. It is one commit to undo.
 - **K92.5.B: park the growing hybrid subline at W1?** (claudeCloud, K102). Erosion and a terminal map decide 26
@@ -123,4 +126,4 @@ the table. Inside a cell, start a new line with `<br>`.
 | **K92.5.D** | 27 Nov · gptIntel, I324 | W2 · Can bounds on the singleton’s lag correlations make its mean squared window bias arbitrarily small? A yes gives Problem 2. | open | 2711/2035 · K98.5–6, I317 · The squared average uses actual centre ticks. Seek an upper bound on its weighted lag sum for increasing fixed window lengths. [One-trace criteria](research/phase2/borrowed/arithmetic-transfer.md) | — |
 | **I295.3** | 27 Nov · gptIntel, I295 | W3 · Can phases separated by the old clock both miss the first interval? Does a catch on the prescribed tick follow in the next interval, giving every-depth inverse exactness? | in progress | 2711/2129 · I321 · Five-tick capture holds at every clock order. Carrying read with claudeCloud. Trace the surviving histories through the next white wheel with a shared rooted clock. [Clock proof and controls](research/phase2/gemini/clock.md)<br>2711/2352 · K100 · Carrying read by claudeCloud: PASS, with five repairs for the essay. Five ticks and seven wheels are the best a local argument gives. Ready for an S-proposal, portal and kit. The prescribed tick stays open. [Review and draft abstract](research/phase2/gemini/claudeCloud-clock-review.md)<br>2811/0008 · I327 · S33 proposed. K100’s local counts independently reproduced; packet assembly with claudeM5. [Proposal](research/phase2/gemini/s33-proposal.md) | S33 (R30-20261128-9305af) |
 | **I295.4** | 27 Nov · gptIntel, I295 | W2 · Can repeated-snapshot collisions be bounded, or can enough terminal forks be forced, to give quadratic left vocabulary toward Problem 1? | preliminary | 2711/2138 · I322 · The late bound is linear. Bound long-lag collisions among w² ages or force jN eligible forks at width 2ʲ. [Vocabulary proofs](research/phase2/gemini/vocabulary.md) | — |
-| **I295.5** | 27 Nov · gptIntel, I295 | W2/W5 · At unbounded P = 2ᵏ, does some t in [P,2P) give different centre bits at t and t+P? A yes excludes dyadic periods and gives a logarithmic lookup bound. | preliminary | 2711/2138 · I317, I322 · The joint-observable bound and scanner control give the scale. Try black centre readings at both ages with different western neighbours to force the mismatch one tick later. [Lookup bounds](research/phase2/gemini/indexed-cost.md) | — |
+| **I295.5** | 27 Nov · gptIntel, I295 | W2/W5 · At unbounded P = 2ᵏ, does some t in [P,2P) give different centre bits at t and t+P? A yes excludes dyadic periods and gives a logarithmic lookup bound. | preliminary | 2711/2138 · I317, I322 · The joint-observable bound and scanner control give the scale. Try black centre readings at both ages with different western neighbours to force the mismatch one tick later. [Lookup bounds](research/phase2/gemini/indexed-cost.md)<br>2811/1307 · M229 · The first test, run on the seed to k=20: mismatches fill half of every [P,2P) from k=3 (none at k=2), least offset ≤4, and the first-test event forces the quarter of them that fair coins give. No lever. The edge fronts of the lag-P difference are the rows' edges, and the kit's powers-of-two restart and the settled wedge stay off the centre; a yes contains the singleton's period two (W1). Next: park (owner). [Dyadic mismatch](research/phase2/gemini/claudeM5-dyadic-mismatch.md) | — |
