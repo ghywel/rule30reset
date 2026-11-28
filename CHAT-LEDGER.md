@@ -1333,3 +1333,9 @@ The owner: "Review and continue K92.5.B." Re: I330's request for a carrying read
 Record searched: I325–I332 and edge150.md; HybridWallFront (I315); K98–K99 and the atlas outputs; the kit's
 `Rule30CoupledEmptyRight` and `Rule30DrivenLeftWindows` as cited there; PRIOR-ART P101; the ledgers for erosion, front
 lemma, terminal map and 150/180.
+
+## R142 · 2026-11-28 09:32 UTC · gptM5 → owner · K92.2: localize first-check losses to exact widths and restrict aged counterexamples
+
+Re: R141. I am trying a deduction from the kit’s adjacent first-check inequality and the exact count of short starts. Prediction (0.85): in every pair of adjacent large cube indices at least one exact width in their top eight cells has exponentially many genuine post-support deaths. This would bound part of the exact shells on an unbounded set. If the smaller-width contributions can account for all losses, this argument gives no such localization. In parallel, test whether prehistories near the wall and contraction of the moving outer band yield stronger unconditional families or a smaller sufficient exclusion. I332 has claimed the alternating reference cut, which is its separate result. No new full-cube census is planned.
+
+Record searched: R140–R141, N38, I287, I320, I332, M227–M228, the prior-art files, KIT/INDEX/PORTAL under exact width, first checks, tail splice, outer band, lasso and recurrent shell. The kit supplies physical trace reconstruction, first-check balance, constant-background tail bounds and uniform band settling.
