@@ -243,6 +243,12 @@ most one full-line parent.
 Noticed in that round and not pursued (K25 §5, ledger archive 4): time order matters (I25); period 5's four poor
 rows (K21); two late single sources at P = 21 and 23 (K29).
 
+**Phase-2 pulls that stopped here.**
+
+| Pull | Where it stopped | Reopens with |
+|---|---|---|
+| I295.3 (parked at the owner's word, N40) | S33 (R30-20261128-9305af, kit pull request #461): at every first clock loss, at every clock order, one of any five consecutive ticks has an isolated black within seven wheels, and three opposite-phase pairs suffice within six (I321, K100, I327). Five ticks and seven wheels are the best a local argument gives (K100). The catch on the prescribed tick of the relaxed doubling lemma `DLMinusOne` stays open beyond Quint and Gemini's e ≤ 4 | a catch on the prescribed tick in the next white interval at any clock order e ≥ 5; a non-local argument, since the local constants cannot improve; or a way through the surviving local histories (one two-pair and 16 one-pair normalized histories, I321) traced into the next white wheel with a shared rooted clock |
+
 ## W4. Hearing from below
 
 **In plain words.** New cells arrive from the right through the rule's OR, which lets a cell through only beside a
