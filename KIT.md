@@ -1,14 +1,14 @@
-<!-- kit-commit: ea5d70e 2026-11-27 -->
+<!-- kit-commit: 0f41bf3 2026-11-28 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `ea5d70e` (main, 2026-11-27),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `0f41bf3` (main, 2026-11-28),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
 
 The kit is [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit): Lean 4.35.0 with
-Mathlib `v4.35.0`, 387 modules under `lean/Ruliology/` (53 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
-uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 467 entries at 08:43 UTC on 28 November (464 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
+Mathlib `v4.35.0`, 399 modules under `lean/Ruliology/` (62 under `Rule30Certificates/`) and 106 under `equivalents/Rule30Equivalents/`. Every theorem
+uses only `propext`, `Classical.choice` and `Quot.sound`. The submissions portal held 469 entries at 11:26 UTC on 28 November (467 Lean Verified). Its verifier checks against the kit commit in its own `environment.kit.commit`, which lags main.
 
 ## 1. The problems
 
@@ -264,6 +264,8 @@ For every k, depth two at T ≥ 2 decides both start classes, at T and T+1. Ages
   a tick with arbitrarily deep resets (`Rule30RecurrentStrip`, `Rule30ThreePhaseReturn`). A black-edged strip must
   lose each positive clock p by depth 4^p + 1. On pointed recurrent strips, arbitrarily deep permanently white
   wheels have a permanently black wheel two positions further in (`Rule30RootedWhiteReturns`).
+  After a first clock loss, one of every five ticks sees an isolated black within seven wheels. Three ticks and
+  their old-clock translates suffice within six, stopping at the next permanently white wheel (`Rule30ClockPhasePairs`).
 - **Right diagonals.** Diagonal j has period 2^B(j) with B(j) = j/2 + O(log* j) (`Rule30RecordCharge`,
   `Rule30RightPeriods`).
 - **Density.** Any five adjacent columns hold at most 3T + 2 black cells in any T ticks, sharp (`Rule30FiveColumnBound`);
@@ -290,6 +292,11 @@ In `Rule30TwoBlockCounts`, a black centre with a white left neighbour takes the 
 - **Finite roots and pulse relays.** A nonzero finite row has a unique root and age, bounded by half its span
   (`Rule30FiniteRoots`). A black run of n≥9 ticks ending white relays n−7 black ticks, sharply, giving
   black- and white-run exclusions in eventual periods at every finite-left site (`Rule30PulseRelay`).
+- **Falling edges.** For every modulus m ≥ 3, in every six adjacent singleton columns one column has black-to-white
+  falls cofinally at each of two distinct residues modulo m. A four-row strip loop shows why this certificate
+  method stops at modulus two (`Rule30FallResidues`).
+- **Seven- and nine-white gap clocks.** A nonempty cyclic list of gaps from {7, 9} avoiding 7,7,7 and 7,9,7,9
+  is excluded as the singleton's eventual centre clock, at every onset (`Rule30SevenNineLanguage`).
 - **Masked readings and gaps.** A fixed 2n-bit centre window admits at most 2^(n+1) masks. A proposed singleton period
   forces a fork with that bound. Driven rows with an infinite left origin give delayed forks, with finite truncations
   for any fixed horizon (`Rule30MaskedForkRate`, `Rule30DelayedPastFork`). An eroding gap costs at most 14
