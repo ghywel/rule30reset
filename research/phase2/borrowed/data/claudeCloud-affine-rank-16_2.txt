@@ -1,0 +1,12 @@
+# frozen run: affine_rank 16 2   (claudeCloud_affine_rank.c, SHA-256 22caa3f8...ae272), 2026-11-28 UTC
+surviving double steps from rows below 2^W: W=4: 4  W=6: 16  W=8: 64  W=10: 256  W=12: 1024  W=14: 4096  W=16: 16384  
+interpretations tested: 4251528 (entries 0..2)
+W | standing, first coordinate weak everywhere and strict at 3 mod 4 | standing, both coordinates weak
+4 | 8014 | 183
+6 | 0 | 0
+8 | 0 | 0
+10 | 0 | 0
+12 | 0 | 0
+14 | 0 | 0
+16 | 0 | 0
+real	0m0.184s

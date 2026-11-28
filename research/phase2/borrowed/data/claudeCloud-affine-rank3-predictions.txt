@@ -1,0 +1,21 @@
+K92.5.A, claudeCloud's block (ledger K108): a screen of three-coordinate affine ranks for Q01.  Registered 2026-11-28 17:01 UTC.
+K108 proves that no two-coordinate rank works (any entries, either reading, either class).  Its matrix lemma fails in
+three coordinates (a 3-cycle), so this screen asks whether three coordinates escape the small rows.
+
+Frozen code: claudeCloud_affine_rank3.c, SHA-256 4a9e3615f63362e5e58c7566cceff7be65bf96894b185362e8a36cb49b9bcfe7
+Controls, run before registration: D = 2 reproduces the frozen two-coordinate screen exactly
+  (E = 1: 54/5, 9/6, 0/0, 0/0 standing below 2^4 for class 3 wall-first, class 3 top-first, class 1 both readings;
+   E = 2, class 3 wall-first: 8,014/183 below 2^4, none below 2^6).
+No D = 3 run has been made.
+Frozen runs (entries 0..1, 117,440,512 interpretations each):
+  affine_rank3 14 1 3 0 3     affine_rank3 14 1 1 0 3     affine_rank3 14 1 3 1 3     affine_rank3 14 1 1 1 3
+
+Predictions (first-coordinate form)
+  R4  85%  wall-first reading, strict at 3 mod 4: none stands below 2^12
+  R5  85%  wall-first reading, strict at 1 mod 4: none stands below 2^12
+  R6  80%  top-first reading, both classes: none stands below 2^12
+  R7  65%  all four runs: none stands below 2^8
+Otherwise
+  A survivor at 2^12 is a candidate certificate: it is tested to 2^16, on I333's alternating cuts and on the kit's
+  truncated stripes, and only an all-width argument would make it a proof.  If none survive, the three-coordinate
+  class at entries 0..1 is closed by computation only, and K92.5.A is proposed for parking at W1.
