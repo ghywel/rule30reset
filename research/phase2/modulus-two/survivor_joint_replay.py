@@ -1,6 +1,7 @@
 """Independently replay the joint recurrence screen and lift any surviving projection."""
 from collections import Counter, defaultdict
 from functools import lru_cache
+from math import gcd
 from sys import argv
 
 from claudeM5_two_certs import permit
@@ -107,7 +108,29 @@ def glue(a,b,left_width):
             for p in (0,1) for x in a[p] for y in b[p] for middle in (0,1)]
 
 
-def accepts(nodes, edges, width, middle):
+def rigid_columns(nodes, edges, part, width):
+    inside = set(part)
+    levels = {part[0]: 0}
+    reach = [part[0]]
+    lag = 0
+    for u in reach:
+        for v in edges[u]:
+            if v not in inside:
+                continue
+            if v not in levels:
+                levels[v] = levels[u]+1
+                reach.append(v)
+            lag = gcd(lag, levels[u]+1-levels[v])
+    bases = {}
+    differences = 0
+    for u in part:
+        row = nodes[u][1]
+        base = bases.setdefault(levels[u] % lag, row)
+        differences |= row ^ base
+    return [j for j in range(width) if not (differences >> j & 1)]
+
+
+def accepts(nodes, edges, width, middle, use_jen=False):
     for part in components(edges):
         if not has_pairs(width, (nodes[v][1] for v in part)):
             continue
@@ -117,7 +140,7 @@ def accepts(nodes, edges, width, middle):
             phase, row = nodes[u]
             if row >> middle & 1 and any(v in comp and not (nodes[v][1] >> middle & 1) for v in edges[u]):
                 mask |= 1 << phase
-        if mask == 3:
+        if mask == 3 and (not use_jen or len(rigid_columns(nodes, edges, part, width)) < 2):
             return len(part)
     return 0
 
@@ -129,7 +152,7 @@ def passes_frames(a,b,k):
     return accepts(nodes,edges_for(width,nodes,[~0,~0]),width,k)
 
 
-def scan(span, k, known):
+def scan(span, k, known, use_jen=False):
     projected = lifted = 0
     remaining = Counter()
     for j in range(span-27,27):
@@ -147,18 +170,20 @@ def scan(span, k, known):
                         n = glue(ls,rs,j)
                         masks = [permit(lc,p) | (1 << j) | (permit(rc,p) << (j+1)) for p in (0,1)]
                         lifted += 1
-                        hit = accepts(n,edges_for(span,n,masks),span,j)
+                        hit = accepts(n,edges_for(span,n,masks),span,j,use_jen)
                         if hit:
                             remaining[(j,r,lc,rc,hit)] += 1
     return projected, lifted, remaining
 
 
 if __name__ == "__main__":
-    start, end, depth = map(int, argv[1:])
+    use_jen = argv[-1] == "--jen"
+    start, end, depth = map(int, argv[1:-1] if use_jen else argv[1:])
     known = calendars()
     for span in range(start,end-1,-1):
-        fr, lifted, remaining = scan(span,depth,known)
-        print(span, depth,"frame survivors",fr,"full products",lifted,"remaining",sum(remaining.values()),flush=True)
+        k = min(depth,span-27)
+        fr, lifted, remaining = scan(span,k,known,use_jen)
+        print(span, k,"frame survivors",fr,"full products",lifted,"remaining",sum(remaining.values()),flush=True)
         for (j,r,a,b,n),count in sorted(remaining.items()):
             print(j,r,''.join(map(str,a)),''.join(map(str,b)),n,count,flush=True)
         if remaining:
