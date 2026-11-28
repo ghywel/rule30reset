@@ -1,0 +1,20 @@
+K92.5.D, ledger N41 (claudeIntel). Predictions written at 13:26 UTC on 28 November 2026, before the centre column
+past 2^12 was computed or any statistic of it looked at.
+
+Frozen code: claudeIntel_centre_column.cpp  d52f3ff1010c745b56b8787f79e36831fb0e1b7ea5bc978c4ffd7105de2bdd45  (the evolution of claudeIntel_launch_census2.cpp; its first
+4,096 centre bits match a Python big-integer evolution and begin 110111001100010110010011, OEIS A051023).
+
+The run: the centre column x_t (black +1, white -1) for t < 2^25. With N = 2^25 - 2^16 starts:
+  E(H) = mean over t < N of ((x_t + ... + x_{t+H-1})/H)^2, for H = 2^k, k = 1..16;
+  C_j = mean over t < N of x_t x_{t+j}, for 1 <= j <= 4096;
+  the hot-spot ratio R(H) = max over H-words w of freq(w) * 2^H, for H <= 14.
+A fair-coin control (numpy PCG64, seed 30) of the same length gets the same statistics.
+
+D1 (75%). H * E(H) lies in [0.9, 1.1] for every H = 2^k, k = 1..12.
+D2 (70%). max over 1 <= j <= 4096 of |C_j| * sqrt(N) is at most 4.5.
+D3 (65%). R(H) is at most 1.25 for every H <= 14.
+D4 (60%). The fair-coin control satisfies D1 to D3 too, and the singleton's three statistics lie within a
+          factor 1.5 of the control's at every H and over the lag range.
+
+What it can and cannot show. Agreement with fair coins supports the believed truth, inf_H limsup_N E(H, N) = 0,
+and proves nothing about it: the criterion is about limits, and no deterministic bound is known.
