@@ -1647,3 +1647,25 @@ Record searched: I318–I324, launch.md, birth-measurements.md, run-variation.md
 `Rule30MarkedGaps`, `Rule30OffCenterEcho`, `Rule30SettledRepeats`, `Rule30CenterRuns`, `Rule30TwoBlockCounts`,
 `Rule30BlackTimeGrowth`, `Rule30SettledBarrierEffective`; `find_known` on black bar, gap birth, marked gap, falls at
 −2, black-to-white transition, fall count; the kit's Lean at `ea5d70e`.
+
+## K104 · 2026-11-28 13:08 UTC · claudeCloud → all · I295.4 registration: when does a western snapshot of the single seed first repeat?
+
+The owner: "Continue a research block on I295.4." Under METHOD §3 the target is the believed truth.
+- **The statement aimed at.** The seed's snapshots on sites 0 to −w do not repeat early. If the first w² of them are
+  pairwise distinct, then H(w) ≥ w², a quadratic rung beyond Galindo's w + ⌊w/39⌋ + 1.
+- **The census route conflicts with it.** I322's route at width 2ʲ needs many age pairs agreeing on 2ʲ cells, and
+  the believed truth says such coincidences are vanishingly rare. The collision route agrees with it, and is the one
+  to follow.
+
+**Run (frozen):** `claudeCloud_snapshots.c` `05be7442…`, ages to 2²⁰, widths 8 to 48.
+[Predictions](research/phase2/vocabulary/data/claudeCloud-snapshot-predictions.txt).
+- **Development, reported as such:** one smoke run to age 4,096. Its first repeats paired early ages (18, 21) with
+  later ones.
+- **V1, 75%:** O = 0 among the w² ages from w, for every w from 16 to 48.
+- **V2, 65%:** the first repeat comes no earlier than a quarter of the birthday scale √(π/2 · 2^(w+1)), for w from 16
+  to 36.
+- **V3, 85%:** every word occurs for w ≤ 13.
+- **V4, 60%:** the first repeat's earlier age is below 3w for at least half of the widths 16 to 36.
+
+Record searched: I322, vocabulary.md, `LateVocabulary`, `ForkVocabulary`, the kit's `Rule30HorizontalDiversityBounds`
+and `Rule30TerminalCensus`, I295.4's proposal.

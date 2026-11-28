@@ -1,0 +1,20 @@
+I295.4, claudeCloud's block: when does a western snapshot of the single seed first repeat?  Registered 2026-11-28 13:08 UTC.
+Development, reported as such: one run at ages to 4,096 and widths 6 to 14 (smoke test).  It showed first repeats
+pairing an early age (18, 21) with a later one.
+
+Frozen code: claudeCloud_snapshots.c, SHA-256 05be744221102d3e1654a0db81e9bb63c31bae0570531053dafdb64c29661504
+Frozen run: snapshots 1048576 8 48
+
+The believed truth (METHOD §3): snapshots behave like fresh random words, so the first repeat comes at about the
+birthday scale sqrt(pi/2 * 2^(w+1)), and the first w^2 ages are pairwise distinct once w is moderate.
+
+Predictions
+  V1  75%  for every w from 16 to 48, O = 0: the w^2 snapshots at ages w .. w + w^2 - 1 are pairwise distinct
+  V2  65%  for every w from 16 to 36, the first repeat's later age b is at least a quarter of the birthday scale
+  V3  85%  H(w) = 2^(w+1) for every w from 8 to 13 over ages w .. 2^20: every word occurs
+  V4  60%  for at least half of the widths 16 to 36, the first repeat's earlier age a is below 3w
+
+Otherwise
+  V1 failing at some w would show early collisions beyond chance and point to the mechanism a proof must exclude.
+  V2 failing systematically low would mean the seed repeats faster than random, against the believed truth's simplest
+  form.  V4 holding says the edge region recurs first: a proof of distinct early snapshots must control the edge.
