@@ -206,6 +206,12 @@ count for density, and I295.4 seeks the first superlinear vocabulary bound. [Act
 | I72 | a bounded deficit at (1/3, 0) pins an eventual 011 two sites east; two fixed right halves defeat periods to 4,096 | an all-period argument for one fixed right half |
 | K50.4, R4 | white triangles have one family tree but no bound; deep-source occupancy | a reason to bound patches in the bulk; a seed-specific bound |
 
+**Phase-2 pulls that stopped here.**
+
+| Pull | Where it stopped | Reopens with |
+|---|---|---|
+| I295.5 (parked at the owner's word, M230) | on the seed to k = 20, c(t) ≠ c(t + 2^k) somewhere in [2^k, 2^(k+1)) at every k from 3 (none at k = 2), filling half of each interval; the forcing event (a black centre at both ages with different western neighbours) explains the quarter that chance gives (M229). The lag-2^k difference's fronts are the rows' edges, the kit's powers-of-two restart and right-diagonal periods stay off the centre, and a yes would exclude the singleton's eventual period two (W1) | a structure on the seed that reaches the centre at dyadic scales, such as a diagonal of period dividing 2^k through the centre at some age in [2^k, 2^(k+1)); or a proof that the singleton centre is not eventually alternating (M229) |
+
 ## W3. The doubling step
 
 **In plain words.** The left side of every row with a leftmost black cell is dyadic. Diagonal j repeats with period
@@ -295,8 +301,8 @@ The unary one-tape equivalence measures time in the unary string length. The dig
 Rabin's hard sequence encodes an arbitrary Presburger sentence in its index. Direct Rule 30 simulation precludes
 a polynomial-time reduction of that full decision problem to a singleton time index. On the actual singleton,
 Jen and the kit's canonical-window theorem give logarithmic lookup cost in every such window at all but at most
-one fixed site. The possible exception could be the centre. A centre mismatch at unbounded dyadic scales is
-I295.5's concrete first step. [K98, families 8 and 9](research/phase2/borrowed/orbit-cost-transfer.md)
+one fixed site. The possible exception could be the centre. A centre mismatch at unbounded dyadic scales was
+I295.5's concrete first step; on the seed's data it is fair coins, and I295.5 is parked at W2 (M229, M230). [K98, families 8 and 9](research/phase2/borrowed/orbit-cost-transfer.md)
 
 ## Two limits of practice, which are not walls
 
