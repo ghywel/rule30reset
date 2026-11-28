@@ -1,7 +1,7 @@
-<!-- kit-commit: 0f41bf3 2026-11-28 -->
+<!-- kit-commit: 10a4b86 2026-11-28 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `0f41bf3` (main, 2026-11-28),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `10a4b86` (main, 2026-11-28),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
@@ -48,6 +48,7 @@ open unless marked.
 ```mermaid
 graph TD
   UBE["UBE: every finite left start driven by a periodic word with a black phase escapes"] --> Q01
+  UBE --> U3["UBEAt 3 ⇔ Q001 ∧ C3w0 w011"]
   BWH["BWH ⇔ RW ⇔ exact-width death bounds"] --> Q01
   Q01["Q01 ⇔ every natural Y reaches an even number under G ⇔ no Theta f is finite ⇔ mortality ⇔ repeat budget ⇔ QP 2 ⇔ UBEAt 2"]
   Q01 --> SEP["SEP ⇔ QN ⇔ LR1 ⇔ constant-tail separator ⇔ orbit separator"]
@@ -114,7 +115,9 @@ graph TD
   `Rule30AlternatingArrivals`). If the centre alternates, Lowry's net, shell and odd kicks are aperiodic on each phase.
   An alternating singleton tail has arbitrarily late returns in both white phases modulo four (`Rule30EventReturns`).
 
-**Period 3** (`Rule30EtherThreeLeft`, `Rule30EtherThreeSkeleton`, `Rule30PeriodThreeLanguage`). Q001 ∧ C3w(011) ⇒ no
+**Period 3**. Quint and Gemini identify period-three universal black-phase escape with Q001 ∧ C3w0(011). The 011 prefix law admits exactly 2^n of 8^n rows.
+
+For the singleton (`Rule30EtherThreeLeft`, `Rule30EtherThreeSkeleton`, `Rule30PeriodThreeLanguage`). Q001 ∧ C3w(011) ⇒ no
 eventual period 3; C3w(001) ∧ C3w(011) ⇒ no period 3; C3w(001) ⇒ C3s001 ⇒ not eventually 001; C3w(011) ⇒ C3r011;
 C3g001 ⇒ Left001 and C3r011 ⇒ Left011. Four equal readings arbitrarily late at −2 exclude period 3. So do arbitrarily late length-3n windows at −2 escaping the ±2 count bound for each target, n and 2n (`Rule30WestTripleWeight`). At −6, recurrence of one five-reading word forbidden by each clock suffices. The 001 and 011 lists have nine and sixteen words, with 10101 in both (`Rule30WestSixReading`). The centre is eventually 011 ⇔ the count n − 3C + 6A at site −2 is bounded above (`Rule30OneThirdClock`). C3s001 ⇒ C3g001Sharp ⇒ not eventually 001 (`Rule30EtherThreeGateLanguage`). Left001 ∧ Left011 ⇒ no eventual period 3 (`Rule30PeriodThreeEntry`).
 The left statements restrict the free-phase readings by the corresponding complementary gate words. AbsorptionT t001 is **false** (`Rule30EtherThreeNotAbsorption`: a period-15 trap apart
