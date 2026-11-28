@@ -162,7 +162,7 @@ The known recurrences leave open the specific events and growth rates that would
 
 For Problem 2 the missing statement is any frequency at all.
 
-K92.4's single-seed scout through age 4,194,304 found a largest mark of width 22 and a longest finite first failure of 53. The timing phases fitted on the first half did not predict held-out wide marks. An edge mechanism would have to predict a new centre event in advance. [Record ages and timing test](research/phase2/marks/seed-results.md)
+K92.4's single-seed scout through age 4,194,304 found a largest mark of width 22 and a longest finite first failure of 53. N39 extended the launch census to 2²⁵ ticks and found a marked birth of width 23 at tick 21,892,697. The timing phases fitted on the first half did not predict held-out wide marks. An edge mechanism would have to predict a new centre event in advance. [Record ages and timing test](research/phase2/marks/seed-results.md)
 
 The edge clock decides half of a mark (M220, PROOF-SKETCH and COMPUTED). A gap of width l is marked or not by the
 seed's left diagonal l, read from a short prefix of the cells east of the centre: 9 cells to width 28, 30 to width
@@ -194,7 +194,7 @@ transient.
 **What it would take.** An unbounded recurrence at the sites and phases required by a centre criterion. Or a law
 for *where* records fall, tied to the left edge's clocks, the one place where recurrence is proved. For marks, show
 that arbitrarily wide launch bars ending at −2 recur with a black centre at the predicted arrival (I321, I324).
-M220’s short edge prefix is one sufficient arrival test. K92.4 follows this route. K92.4.A seeks a fixed-site fall
+M220’s short edge prefix is one sufficient arrival test. An unbounded sequence of white arrivals detected one tick later also suffices. For period two alone, two falls at −2 an odd distance apart after every cutoff would suffice. Width-two-or-wider births already recur at one of 0 and +1. [Two-observer recurrence and the six-cell fall test](research/phase2/gemini/unmarked-launch.md) K92.4 follows this route. K92.4.A seeks a fixed-site fall
 count for density, and I295.4 seeks the first superlinear vocabulary bound. [Active pulls](NOW.md#pulls-in-progress)
 
 **Phase-1 pulls that stopped here.**

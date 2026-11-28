@@ -8,9 +8,9 @@
 
 Write `Gap(s,l)` when row $s$ is black at $-l-1$ and white from $-l$ through $-1$. Lowry's `Mark(s,l)` additionally requires a black centre at $s+l$. Call the pair at $(-1,0)$ active when either cell is black. Write `Bar(t,l)` when this pair is active, $-l-2$ is white, and all $l$ cells from $-l-1$ through $-2$ are black.
 
-For $l>0$, `next_gap_iff` gives precisely two ways to see `Gap(t+1,l)`. A quiet pair shortens an existing gap of width $l+1$ by one. An active pair creates a gap whose width equals the number of consecutive black cells read westward starting at $-2$. The cases specialize the kit's older/newborn white-run dichotomy to the fixed centre. Walking the quiet case backwards preserves the arrival time. It must terminate because the seed row has no black cap west of the centre. Thus a mark at $(s,l)$ has a most recent active tick $t<s$ with a bar of width $w\ge l$ and $t+1+w=s+l$. The gap at $t+1$ itself is marked. [Kit white-run dichotomy](https://github.com/WolframInstitute/Rule30PrizeKit/blob/ea5d70e/lean/Ruliology/CellularAutomata/Rule30SettledRepeats.lean) · [Lowry's marks](https://github.com/WolframInstitute/Rule30PrizeKit/blob/ea5d70e/lean/Ruliology/CellularAutomata/Rule30MarkedGaps.lean)
+For $l>0$, `next_gap_iff` gives precisely two ways to see `Gap(t+1,l)`. A quiet pair shortens an existing gap of width $l+1$ by one. An active pair creates a gap whose width equals the number of consecutive black cells read westward starting at $-2$. The cases specialize the kit's `Rule30SettledRepeats.back` older/newborn white-run dichotomy to the fixed centre. Walking the quiet case backwards preserves the arrival time. It must terminate because the seed row has no black cap west of the centre. Thus a mark at $(s,l)$ has a most recent active tick $t<s$ with a bar of width $w\ge l$ and $t+1+w=s+l$. The gap at $t+1$ itself is marked. [Kit white-run dichotomy](https://github.com/WolframInstitute/Rule30PrizeKit/blob/ea5d70e/lean/Ruliology/CellularAutomata/Rule30SettledRepeats.lean) · [Lowry's marks](https://github.com/WolframInstitute/Rule30PrizeKit/blob/ea5d70e/lean/Ruliology/CellularAutomata/Rule30MarkedGaps.lean)
 
-For the two width-22 marks at ages 34,429 and 2,125,919 in the existing census, the preceding rows therefore both have a white cell at $-24$, black cells at $-23,\ldots,-2$, and an active pair. An inherited mark would require an earlier width-23 mark, above the census maximum. This deduction uses the recorded census and `record_is_birth`. [Census](../marks/seed-results.md)
+For the two width-22 marks at ages 34,429 and 2,125,919 in the existing census, the preceding rows therefore both have a white cell at $-24$, black cells at $-23,\ldots,-2$, and an active pair. An inherited mark would require an earlier width-23 mark, above the census maximum. Lowry had already certified the mark at 34,429 and the echo on its birth row 34,428 in `Rule30OffCenterEcho.singleton_mark_and_echo`. The deduction about both birth rows uses the recorded census and `record_is_birth`. [Lowry's singleton witness](https://github.com/WolframInstitute/Rule30PrizeKit/blob/10a4b86/lean/Ruliology/CellularAutomata/Rule30OffCenterEcho.lean) [Census](../marks/seed-results.md)
 
 ## Which births are marked?
 
@@ -28,7 +28,9 @@ Let $B_w(N)$ count distinct births of width at least $w$ before $N$. Before $N+3
 
 Write $F(N)$ for the number of black-to-white transitions starting before $N$ at site $-2$. Rule 30 gives a fall exactly when $-3,-2$ read 11, since the new value of a black cell is the complement of its western neighbour. S32 supplies a result about bands of columns. Here the count must grow at this particular column. [S32 review and its quantifiers](../falling-phases/claudeCloud-review.md)
 
-Every fall supplies a white centre within three ticks by Pérez Morales's black-triangle law. Falls are at least two ticks apart, so $F(N)\le 2\,\#\mathrm{white}_0(N+3)$. For black, let $A_t,C_t,E_t$ be the 0/1 values at $-2,0,+1$. A five-cell truth table gives
+Every fall supplies a white centre within three ticks by Pérez Morales's black-triangle law. Falls are at least two ticks apart, so $F(N)\le 2\,\#\mathrm{white}_0(N+3)$. Ulrey's `center_two_step_black_independent_of_right` already identifies the centre two ticks later with the current bit at −2 when the centre is black and −1 is white. The cumulative estimate below counts arbitrary ticks. [Ulrey's two-block result](https://github.com/WolframInstitute/Rule30PrizeKit/blob/10a4b86/lean/Ruliology/CellularAutomata/Rule30TwoBlockCounts.lean)
+
+For black, let $A_t,C_t,E_t$ be the 0/1 values at $-2,0,+1$. A five-cell truth table gives
 
 $$ A_t+E_t\ \le\ E_{t+1}+2C_t+C_{t+1}+C_{t+2}. $$
 
@@ -36,4 +38,6 @@ To see the zero case, during three white centre ticks the western and eastern ne
 
 If the lower density of falls at $-2$ is $\rho>0$, the centre's lower black frequency is at least $\rho/4$ and its upper black frequency at most $1-\rho/2$. Even a lower bound $F(N)/\log N\to\infty$ would improve the logarithmic counts for both colours. The singleton's fall rate at this fixed site remains open. Unbounded marked widths alone give no rate in time, and exact half density requires more.
 
-**Disposition.** Retain the primitive-birth and counting lemmas for independent review. I324 reopens K92.4 for unbounded marked births and opens K92.4.A for the fixed-site fall rate. The [registered singleton census](birth-measurements.md) counts the new observables through 2²² ticks. The [even-depth disagreement bound](run-variation.md) records what follows already from Perez Morales and Claude’s full run triangles.
+**Disposition.** N39 carried the primitive-birth and counting lemmas. [Carrying read and width-23 witness](claudeIntel-launch-read.md) · [White arrivals and two-observer births](unmarked-launch.md)
+
+I324 reopens K92.4 for unbounded marked births and opens K92.4.A for the fixed-site fall rate. The [registered singleton census](birth-measurements.md) counts the new observables through 2²² ticks. The [even-depth disagreement bound](run-variation.md) records what follows already from Perez Morales and Claude’s full run triangles.
