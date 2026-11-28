@@ -64,7 +64,7 @@ private theorem permitFast_go (p : Nat) : ∀ (xs : List Nat) (i j : Nat),
         simp [hne]
       · have heq := Nat.eq_of_beq_eq_true h
         subst heq
-        simp [raw_shl, Nat.testBit_shiftLeft]
+        simp [Nat.testBit_shiftLeft]
     · have bit : (cond (Nat.beq hd p) (Nat.shiftLeft 1 i) 0).testBit j = false := by
         cases Nat.beq hd p
         · simp
@@ -287,12 +287,12 @@ theorem rotateFast_eq (m q r : Nat) : rotateFast m q r = rotate m q r := by
   unfold rotateFast rotate
   by_cases h : q ≤ r
   · have : Nat.ble q r = true := Nat.ble_eq.mpr h
-    simp [this, h, raw_sub]
+    simp [this, h]
   · have : Nat.ble q r = false := by
       cases e : Nat.ble q r
       · rfl
       · exact absurd (Nat.ble_eq.mp e) h
-    simp [this, h, raw_sub, raw_add]
+    simp [this, h]
 
 noncomputable def extendFast (m : Nat) (bad : List (List Nat)) : List (List Nat) :=
   bad.flatMap fun xs => (List.range m).filterMap fun p =>

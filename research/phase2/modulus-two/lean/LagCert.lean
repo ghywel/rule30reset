@@ -70,7 +70,7 @@ theorem pairAny_of_records {w rb cb classes : Nat} {x ρ : Nat → Nat} {N0 : Na
     have e := edge t (by omega)
     have eq : rkOf rb (ρ (t+1)) = rkOf rb (ρ t) := (stable (t+1) (by omega)).trans (stable t ht).symm
     unfold edgeCond at e
-    simp only [Bool.and_eq_true, Bool.or_eq_true, Bool.not_eq_true', Nat.beq_eq_true_eq] at e
+    simp only [Bool.and_eq_true, Bool.or_eq_true, Bool.not_eq_true'] at e
     have hb : Nat.beq (rkOf rb (ρ (t+1))) (rkOf rb (ρ t)) = true := by rw [eq]; exact Nat.beq_refl _
     rcases e.2 with bad | ⟨⟨c0, c1⟩, p1⟩
     · rw [hb] at bad; exact absurd bad (by decide)

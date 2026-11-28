@@ -1,0 +1,2 @@
+Rule30Submission.FallParities.two_parities_every_27
+Rule30Submission.FallParities.goodAny27

@@ -79,7 +79,7 @@ theorem labelsOf_getD {w : Nat} {a : Nat → Nat} {j : Nat} (hj : j < w) : (labe
     Option.getD_some]
 
 /-- One width up: an assignment is good by a substrip, left in `remaining`, or one of the certified `cs`. -/
-theorem classify_stepAny {w m : Nat} {previous remaining cs : List (List Nat)} (hw : 0 < w) (hm : 0 < m)
+theorem classify_stepAny {w m : Nat} {previous remaining cs : List (List Nat)} (hw : 0 < w) (_hm : 0 < m)
     (prev : ClassifiesAny w m previous)
     (certs : ∀ l ∈ cs, GoodAny (w+1) m (fun j => l.getD j 0))
     (complete : ruledOut m previous remaining = cs) :
@@ -138,7 +138,7 @@ theorem rowW_step (W T : Nat) (j : Int) :
 
 /-! ### The singleton -/
 
-private theorem escapeW {W m : Nat} (hW : 0 < W) (hm : 0 < m) (i : Int) (a : Fin W → Fin m)
+private theorem escapeW {W m : Nat} (_hW : 0 < W) (hm : 0 < m) (i : Int) (a : Fin W → Fin m)
     (good : ∀ a, (∀ j, j < W → a j < m) → GoodAny W m a) (T : Nat) :
     ∃ (j : Fin W) (t : Nat), T ≤ t ∧ Fall (i+j.val) t ∧ t%m ≠ (a j).val := by
   apply Classical.byContradiction

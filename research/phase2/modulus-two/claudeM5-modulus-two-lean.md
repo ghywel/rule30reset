@@ -4,6 +4,17 @@
 theorem. It also follows, can we lighten S32 to resubmit it to pass it more quickly?" All builds on the M5, at the
 verifier's kit pin `5fb5915` with Lean 4.35.0.*
 
+**Update (M236, at the owner's word).** S32 turned Lean Verified while this block ran, and its kit module is in main.
+So nothing supersedes it.
+- **What is proposed.** The modulus-two theorem goes in as an add-on, S34, in [addon/](addon/).
+  - [Portal source](addon/Rule30Submission.lean) (`d07215e4…`), which carries the kit's `FallResidueStrip`, `Fall`
+    and `Cofinal`. At the pin: compile 3.4 s, check 3.9 s, 568 constants.
+  - [Three kit modules](addon/kit/) on main beside `Rule30FallResidues`, made by `claudeM5_addon_kit.py`; the
+    portal source is made by `claudeM5_addon_portal.py`.
+- **Kept as a record only, not submitted:** the light and combined candidates below.
+- **Source edits since M234.** In the research sources, three unused `simp` arguments and two unused hypotheses
+  were removed; the proofs are otherwise unchanged.
+
 ## The answers
 
 1. **S32 can be lightened 4.9×** with the same statement and the same certificates.
