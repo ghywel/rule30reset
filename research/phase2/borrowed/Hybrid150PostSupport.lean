@@ -14,7 +14,17 @@ private def state : Nat → Nat × Nat
   | i+1 => let (east, here) := state i; (here, advance east here)
 
 private def index (i : Nat) := if i < 81 then i else 81 + (i-81)%9
-private def refRow (t : Nat) : Row := fun i => (state (index i)).2.testBit (t%12)
+def refRow (t : Nat) : Row := fun i => (state (index i)).2.testBit (t%12)
+
+theorem time_period (t m : Nat) : refRow (t+12*m) = refRow t := by
+  funext i
+  simp only [refRow, show (t+12*m)%12=t%12 by omega]
+
+theorem space_period (t i m : Nat) (h : 81 ≤ i) : refRow t (i+9*m) = refRow t i := by
+  have eq : index (i+9*m) = index i := by
+    simp only [index, ite_eq_right (by omega : ¬i+9*m<81), ite_eq_right (by omega : ¬i<81),
+      show (i+9*m-81)%9=(i-81)%9 by omega]
+  simp only [refRow, eq]
 
 private theorem index_add (u k : Nat) : index (index u+k) = index (u+k) := by
   by_cases small : u < 81
@@ -34,7 +44,7 @@ private theorem table_step : ∀ t : Fin 12, ∀ i : Fin 91,
     refRow (t.val+1) i.val = tick (gate (decide (t.val%2=1))) (refRow t.val) i.val := by
   decide +kernel
 
-private theorem physical_step (t : Nat) : tick (gate (decide (t%2=1))) (refRow t) = refRow (t+1) := by
+theorem physical_step (t : Nat) : tick (gate (decide (t%2=1))) (refRow t) = refRow (t+1) := by
   funext i
   have p : (t%12)%2 = t%2 := by omega
   cases i with
@@ -63,7 +73,7 @@ private theorem physical (t k : Nat) :
       · simp [o, show (t+1)%2=0 by omega]
     simp only [clock, physical_step, toggle, ih, show t+1+k=t+(k+1) by omega]
 
-private theorem ref_black (r : Nat) : clock false (refRow 0) (2*r) 0 = true := by
+theorem ref_black (r : Nat) : clock false (refRow 0) (2*r) 0 = true := by
   have ev : ∀ j : Fin 6, (3551 : Nat).testBit (2*j.val) = true := by decide +kernel
   have eq := congrFun (physical 0 (2*r)) 0
   change clock false (refRow 0) (2*r) 0 = refRow (0+2*r) 0 at eq
@@ -71,7 +81,12 @@ private theorem ref_black (r : Nat) : clock false (refRow 0) (2*r) 0 = true := b
   change (3551 : Nat).testBit ((0+2*r)%12) = true
   simpa only [show (0+2*r)%12 = 2*(r%6) by omega] using ev ⟨r%6, by omega⟩
 
-private def crop (w : Nat) : Row := fun i => if i < w then refRow 0 i else false
+theorem ref_even (t : Nat) (h : t%2=0) : refRow t 0 = true := by
+  have eq := physical 0 (2*(t/2))
+  rw [show 0+2*(t/2)=t by omega] at eq
+  exact (congrFun eq 0).symm.trans (ref_black (t/2))
+
+def crop (w : Nat) : Row := fun i => if i < w then refRow 0 i else false
 
 /-- Widths 92+18n give two distinct locked finite rows with exactly the same
     first failed even check, at physical tick W+2. All checks before it pass. -/
