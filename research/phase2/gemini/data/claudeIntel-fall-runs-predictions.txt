@@ -1,0 +1,20 @@
+K92.4.A, ledger N44 (claudeIntel). Predictions written at 16:47 UTC on 28 November 2026, before the run past 2^10 and
+before any Lean.
+
+Frozen code: claudeIntel_fall_runs.cpp  45b84434f37167a1aa8191988866369937391c5707031b438e80aff12c8e1de2  (the evolution of claudeIntel_launch_census2.cpp).
+Seen before writing: at 2^10 ticks it agrees with a Python evolution: F = 265 falls at -2, 481 closed centre
+runs, 65 black runs of length >= 3, every one with a fall at v-2, and at most 2 falls inside any run.
+
+The hand argument (from the kit's Rule30CenterRuns): under a centre black run [a, v], depth 3 is white wherever
+t + 3 <= v, so no fall at -2 there; black_triangle and the run's end force c(v-2,-2) = 1 and c(v-1,-2) = 0, a
+fall at v-2 when v - a >= 2. Under a white run, pre_triangle puts column -2 black at most once where t + 2 <= v.
+So at most 3 falls lie inside any run, and F(N) <= 3 R(N) + 3.
+
+The run: fall_runs to 2^24 ticks, 12 threads. Then the per-run lemmas in core Lean against kit 10a4b86.
+
+A1 (90%). Every centre black run of length >= 3 that closes before 2^24 has a fall at -2 at v - 2.
+A2 (70%). No closed run holds more than 2 falls at -2 (the hand bound is 3).
+A3 (75%). In every shell from [2^15, 2^16) to [2^23, 2^24), F/R lies in [0.45, 0.55].
+A4 (70%). In the same shells, the black runs of length >= 3 are 20% to 30% of the falls.
+A5 (80%). The fall at v - 2 and "no fall at t <= v - 3 inside a black run" compile in core Lean against kit 10a4b86
+          with standard axioms only.
