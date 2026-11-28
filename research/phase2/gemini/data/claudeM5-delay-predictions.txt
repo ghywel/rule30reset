@@ -1,0 +1,30 @@
+K92.2.A, claudeM5 (M227). Predictions written at 09:13 UTC on 28 November 2026, before the runs.
+
+Frozen code (SHA-256):
+  claudeM5_sparse_delay.cpp   f7fc86436b83e3bad34a21b8ba723893ea50289be79ce231c7bbbe7fa0c11295
+
+Seen before writing (development): the program's preorder output to weight 18 has SHA-256
+16c5fc6d4a933269e933e5dae35470954d16a3dca497383785f0d666855886cb, I320's digest; its deadlines to weight 12 are
+I320's; at weights 8 and 11 no maximizer's parent is a maximizer of the weight before. No delay statistics, no
+weight above 18 and no width-capped tree were run.
+
+The question (I324): is there a uniform bound on how far one more black cell can delay the first failed check?
+Delay = d(child) - d(parent) in I320's sparse tree. LD(W) = the latest first failure among rows of width at most W.
+
+D1 (95%). Some child's delay exceeds 16, the largest increment of the deadline H(b) through b = 18.
+D2 (85%). The largest delay grows with the parent's failure d: over the tree to weight 20, its maximum over parents
+          with d in [40, 79] is at least twice its maximum over d in [0, 19].
+D3 (70%). For every d up to 30, the largest delay at parent failure d in the tree to weight 20 equals
+          LD(d + 1) - d: a child has width at most d + 1, so the width bound is attained.
+D4 (60%). H(19) lies in [134, 146] and H(20) in [136, 152].
+D5 (60%). At some weight from 13 to 20 no maximizer has a maximizing parent.
+
+What a failure would show. A delay bounded by a constant near 16 (against D1 and D2) would make
+H(b + 1) <= H(b) + C a concrete proof target: a deadline linear in the budget. If D1 to D3 hold, the one-cell
+delay is the latest death by width less d, so the weight route is the width route of K92.2 again, and I324's
+"uniform bound on the delay" fails as stated.
+
+Record searched: find_known for Sparse16, sparse, deadline, budget, one more black, first failure and weight
+floor; PORTAL's Sparse16 entry (R30-20261023-60d213); PRIOR-ART P99; KIT-INDEX's Rule30ZeroCoastBridge (#367:
+adding 2^k flips trace bit k and keeps the first k); I319, I320, I324; research/phase2/gemini/sparse.md and
+sparse_wall.py; N38 and M224 for the width form.

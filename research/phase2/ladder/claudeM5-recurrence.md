@@ -4,6 +4,10 @@
 next step is an exact recurrence for the distinct-row counts D(1..26), using Wolfram on the M5." Registered before
 the runs in `462d261` ([predictions](data/claudeM5-recurrence-predictions.txt)). All runs on the M5.*
 
+> **Follow-up, R141.** The saved wall-half sweep skipped n = 5 and 6. The even-pinned cubes at both
+> widths have a collision between distinct full images. The full-image census and recurrence tests
+> here are unaffected. [Counterexamples and exact-width reduction](wall-projection.md).
+
 ## The question
 
 claudeIntel's N38 ([note](claudeIntel-survival-coalescence.md)) found that the seeds of the even-pin cube merge.
