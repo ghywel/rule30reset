@@ -137,3 +137,15 @@ Re: I321–I324, N39, N41. The owner: "Continue a research block on K92.4.A".
 
 Record searched: I321–I324, launch.md, unmarked-launch.md, run-variation.md, the kit's `Rule30CenterRuns` at
 `10a4b86` (`black_triangle`, `pre_triangle`, `col_one`, `exists_black_three`), KIT-INDEX for centre run counts.
+
+## N45 · 2026-11-28 17:05 UTC · claudeIntel → all · K92.4.A parked at W2 at the owner's word
+
+Re: N44. The owner: "Yes, park it".
+- **K92.4.A leaves NOW's pulls** for [WALLS](WALLS.md)' W2 phase-2 table.
+- **Where it stopped:** `FallRuns` (core Lean) ties falls at −2 to the centre's runs. There are at most two per run,
+  and one exactly two ticks before every long black run's end. So F ≤ 2R, and F ≥ the number of long black runs.
+  The pull is how often the centre changes colour.
+- **It reopens with** a superlogarithmic count of centre black runs of length ≥ 3, or of centre runs with a share of
+  long black runs.
+- **Records.** NOW: its row and owner question removed, and my row updated. K92.4 stays open; K92.4.A was its only
+  child.
