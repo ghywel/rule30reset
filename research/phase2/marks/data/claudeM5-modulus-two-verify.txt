@@ -1,0 +1,57 @@
+# the fifteen assignments certified by direct test (west cell first)
+0011
+0110
+01010
+01011
+011101
+0111101
+01111101
+011111101
+0000000010
+000000000000
+00100000000001
+000000010000001
+00000001000000010
+000000010000000001
+00000001000000000001
+# claudeM5_lag2_verify (Kosaraju, cell-by-cell rule; lag two, then any period)
+verify 0011: components 26 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 0: certified at lag two
+verify 0110: components 27 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 0: certified at lag two
+verify 01010: components 59 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 0: certified at lag two
+verify 01011: components 58 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 0: certified at lag two
+verify 011101: components 123 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 0: certified at lag two
+verify 0111101: components 251 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 0: certified at lag two
+verify 01111101: components 507 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 0: certified at lag two
+verify 011111101: components 1016 nontrivial 5, rigid only at a longer lag 1 (largest 4), with no rigid pair 0: certified with any period
+verify 0000000010: components 2043 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 0: certified at lag two
+verify 000000000000: components 8171 nontrivial 7, rigid only at a longer lag 1 (largest 8), with no rigid pair 0: certified with any period
+verify 00100000000001: components 32756 nontrivial 5, rigid only at a longer lag 1 (largest 8), with no rigid pair 0: certified with any period
+verify 000000010000001: components 65531 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 0: certified at lag two
+verify 00000001000000010: components 262139 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 0: certified at lag two
+verify 000000010000000001: components 524283 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 0: certified at lag two
+verify 00000001000000000001: components 2097138 nontrivial 5, rigid only at a longer lag 1 (largest 10), with no rigid pair 0: certified with any period
+verify 001000: components 108 nontrivial 4, rigid only at a longer lag 0 (largest 0), with no rigid pair 1: not certified
+verify 000000: components 84 nontrivial 1, rigid only at a longer lag 0 (largest 0), with no rigid pair 1: not certified
+verify 00000000000: components 4056 nontrivial 6, rigid only at a longer lag 1 (largest 8), with no rigid pair 1: not certified
+verify 0000010000000100000000000: components 67108772 nontrivial 6, rigid only at a longer lag 0 (largest 0), with no rigid pair 1: not certified
+verify 0000001000000010000000000: components 67108628 nontrivial 6, rigid only at a longer lag 0 (largest 0), with no rigid pair 1: not certified
+verify 00000010000000100000000000: components 134217626 nontrivial 6, rigid only at a longer lag 0 (largest 0), with no rigid pair 1: not certified
+cover width 27: 67108864 normalized assignments, 0 uncovered by 15 listed assignments
+# lag-two certificates alone
+cover width 27: 67108864 normalized assignments, 86 uncovered by 11 listed assignments
+# claudeM5_any_period_diag.py (Kosaraju, breadth-first periods): size, period, first rigid pairs per component
+0011 certified [(2, 2, [0, 1, 2]), (3, 2, [0, 1]), (2, 2, [0, 1, 2]), (3, 2, [0, 1])]
+0110 certified [(2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (3, 2, [0, 1])]
+01010 certified [(2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (3, 2, [0, 1, 2]), (2, 2, [0, 1, 2])]
+01011 certified [(2, 2, [0, 1, 2]), (3, 2, [0, 1, 2]), (3, 2, [0, 1, 2]), (2, 2, [0, 1, 2])]
+011101 certified [(2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (3, 2, [0, 1, 2])]
+0111101 certified [(2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (3, 2, [0, 1, 2])]
+01111101 certified [(2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (3, 2, [0, 1, 2])]
+011111101 certified [(4, 4, [0, 1, 2]), (3, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2])]
+0000000010 certified [(2, 2, [0, 1, 2]), (3, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2])]
+000000000000 certified [(10, 8, [0, 1, 2]), (2, 2, [0, 1, 2]), (4, 4, [0, 1, 2]), (3, 2, [0, 1, 2]), (4, 4, [0, 1, 2]), (3, 2, [0, 1, 2]), (2, 2, [0, 1, 2])]
+00100000000001 certified [(8, 8, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (3, 2, [0, 1, 2])]
+000000010000001 certified [(2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (3, 2, [0, 1, 2])]
+00000001000000010 certified [(2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (3, 2, [0, 1, 2])]
+000000010000000001 certified [(3, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2])]
+00000001000000000001 certified [(10, 10, [0, 1, 2]), (3, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2]), (2, 2, [0, 1, 2])]

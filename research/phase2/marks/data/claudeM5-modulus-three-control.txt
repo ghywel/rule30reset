@@ -1,0 +1,28 @@
+# fall 3 6 10 (control)
+width 1 modulus 3: 1 normalized, 1 tested, 1 uncertified
+  uncertified 0  components 1 non-rigid 1 largest 6 period 3 cycle-nodes 6
+width 2 modulus 3: 3 normalized, 3 tested, 3 uncertified
+  uncertified 00  components 1 non-rigid 1 largest 10 period 3 cycle-nodes 10
+  uncertified 01  components 1 non-rigid 1 largest 10 period 3 cycle-nodes 10
+  uncertified 02  components 1 non-rigid 1 largest 10 period 3 cycle-nodes 10
+width 3 modulus 3: 9 normalized, 9 tested, 7 uncertified
+  uncertified 000  components 2 non-rigid 1 largest 12 period 3 cycle-nodes 15
+  uncertified 020  components 3 non-rigid 1 largest 6 period 3 cycle-nodes 12
+  uncertified 001  components 2 non-rigid 1 largest 11 period 3 cycle-nodes 14
+  uncertified 021  components 3 non-rigid 1 largest 6 period 3 cycle-nodes 12
+  uncertified 002  components 1 non-rigid 1 largest 14 period 3 cycle-nodes 14
+  uncertified 012  components 2 non-rigid 1 largest 9 period 3 cycle-nodes 12
+  uncertified 022  components 2 non-rigid 1 largest 11 period 3 cycle-nodes 14
+width 4 modulus 3: 27 normalized, 15 tested, 5 uncertified
+  uncertified 0000  components 3 non-rigid 1 largest 5 period 3 cycle-nodes 12
+  uncertified 0020  components 3 non-rigid 1 largest 7 period 3 cycle-nodes 13
+  uncertified 0021  components 3 non-rigid 1 largest 8 period 3 cycle-nodes 14
+  uncertified 0002  components 2 non-rigid 1 largest 13 period 3 cycle-nodes 17
+  uncertified 0022  components 2 non-rigid 1 largest 13 period 3 cycle-nodes 16
+width 5 modulus 3: 81 normalized, 5 tested, 4 uncertified
+  uncertified 00020  components 3 non-rigid 1 largest 10 period 3 cycle-nodes 16
+  uncertified 00021  components 3 non-rigid 1 largest 10 period 3 cycle-nodes 16
+  uncertified 00002  components 3 non-rigid 1 largest 6 period 3 cycle-nodes 13
+  uncertified 00022  components 3 non-rigid 1 largest 10 period 3 cycle-nodes 16
+width 6 modulus 3: 243 normalized, 3 tested, 0 uncertified
+every assignment certified at width 6

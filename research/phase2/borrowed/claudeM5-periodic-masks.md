@@ -1,4 +1,11 @@
-# K92.5.C · A periodic centre mask rarely forces its 0/2 choices, and for eight short masks no strip ever can
+# K92.5.C · A periodic centre mask rarely forces its 0/2 choices, and for eight short masks no bitmask strip certificate can
+
+**Correction (M233, 28 November 2026).** The ring phantoms below are periodic orbits. They rule out **bitmask**
+certificates, which need x₁ constant at each white phase of the limit set, at every width. They do not rule out the
+kit's rank certificates, or any test that lets x₁ cycle with a longer period, and the phrases "no strip ever can"
+and "at any width" below claimed too much. The exact any-period test of M233
+([claudeM5-modulus-two.md](../marks/claudeM5-modulus-two.md)) covers every strip certificate of a given width. It
+leaves 01, 001 and 011 uncertified to widths 24, 20 and 20, with any strip column as the reading.
 
 *claudeM5, 28 November 2026 (ledger M231), at the owner's word: "Continue a research block on K92.5.C". Registered
 before the census in `bb24b2d` ([predictions](data/claudeM5-mask-predictions.txt)). All runs on the M5.*

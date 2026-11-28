@@ -1,0 +1,136 @@
+01 K 1: components 1 cycle-nodes 4 non-rigid 1 largest 4 period 2 | not certified
+01 K 2: components 1 cycle-nodes 8 non-rigid 1 largest 8 period 2 | not certified
+01 K 3: components 1 cycle-nodes 14 non-rigid 1 largest 14 period 2 | not certified
+01 K 4: components 1 cycle-nodes 23 non-rigid 1 largest 23 period 2 | not certified
+01 K 5: components 1 cycle-nodes 42 non-rigid 1 largest 42 period 2 | not certified
+01 K 6: components 1 cycle-nodes 75 non-rigid 1 largest 75 period 2 | not certified
+01 K 7: components 1 cycle-nodes 132 non-rigid 1 largest 132 period 2 | not certified
+01 K 8: components 1 cycle-nodes 228 non-rigid 1 largest 228 period 2 | not certified
+01 K 9: components 1 cycle-nodes 398 non-rigid 1 largest 398 period 2 | not certified
+01 K 10: components 1 cycle-nodes 694 non-rigid 1 largest 694 period 2 | not certified
+01 K 11: components 1 cycle-nodes 1204 non-rigid 1 largest 1204 period 2 | not certified
+01 K 12: components 2 cycle-nodes 1678 non-rigid 2 largest 1577 period 2 | not certified
+01 K 13: components 2 cycle-nodes 2473 non-rigid 1 largest 2452 period 2 | not certified
+01 K 14: components 2 cycle-nodes 4034 non-rigid 1 largest 4015 period 2 | not certified
+01 K 15: components 3 cycle-nodes 6155 non-rigid 1 largest 6085 period 2 | not certified
+01 K 16: components 4 cycle-nodes 6739 non-rigid 2 largest 5130 period 2 | not certified
+01 K 17: components 4 cycle-nodes 10173 non-rigid 2 largest 7558 period 2 | not certified
+01 K 18: components 3 cycle-nodes 15525 non-rigid 2 largest 11291 period 2 | not certified
+01 K 19: components 5 cycle-nodes 23105 non-rigid 2 largest 16438 period 2 | not certified
+01 K 20: components 5 cycle-nodes 34137 non-rigid 2 largest 23184 period 2 | not certified
+01 K 21: components 6 cycle-nodes 38030 non-rigid 3 largest 16959 period 2 | not certified
+01 K 22: components 6 cycle-nodes 58484 non-rigid 3 largest 27421 period 2 | not certified
+01 K 23: components 7 cycle-nodes 86438 non-rigid 3 largest 44777 period 2 | not certified
+01 K 24: components 6 cycle-nodes 131489 non-rigid 3 largest 72367 period 2 | not certified
+001 K 1: components 1 cycle-nodes 6 non-rigid 1 largest 6 period 3 | not certified
+001 K 2: components 1 cycle-nodes 12 non-rigid 1 largest 12 period 3 | not certified
+001 K 3: components 1 cycle-nodes 21 non-rigid 1 largest 21 period 3 | not certified
+001 K 4: components 2 cycle-nodes 26 non-rigid 1 largest 20 period 3 | not certified
+001 K 5: components 2 cycle-nodes 45 non-rigid 1 largest 38 period 3 | not certified
+001 K 6: components 2 cycle-nodes 78 non-rigid 1 largest 71 period 3 | not certified
+001 K 7: components 2 cycle-nodes 132 non-rigid 1 largest 124 period 3 | not certified
+001 K 8: components 2 cycle-nodes 227 non-rigid 1 largest 218 period 3 | not certified
+001 K 9: components 2 cycle-nodes 368 non-rigid 1 largest 361 period 3 | not certified
+001 K 10: components 4 cycle-nodes 565 non-rigid 1 largest 553 period 3 | not certified
+001 K 11: components 3 cycle-nodes 975 non-rigid 1 largest 967 period 3 | not certified
+001 K 12: components 3 cycle-nodes 1643 non-rigid 1 largest 1634 period 3 | not certified
+001 K 13: components 3 cycle-nodes 2356 non-rigid 1 largest 2349 period 3 | not certified
+001 K 14: components 3 cycle-nodes 3844 non-rigid 1 largest 3838 period 3 | not certified
+001 K 15: components 3 cycle-nodes 6260 non-rigid 1 largest 6252 period 3 | not certified
+001 K 16: components 5 cycle-nodes 8080 non-rigid 2 largest 7534 period 3 | not certified
+001 K 17: components 4 cycle-nodes 13016 non-rigid 2 largest 12565 period 3 | not certified
+001 K 18: components 4 cycle-nodes 20403 non-rigid 2 largest 20153 period 3 | not certified
+001 K 19: components 4 cycle-nodes 32750 non-rigid 2 largest 32449 period 3 | not certified
+001 K 20: components 5 cycle-nodes 50386 non-rigid 2 largest 50006 period 3 | not certified
+011 K 1: components 1 cycle-nodes 6 non-rigid 1 largest 6 period 3 | not certified
+011 K 2: components 2 cycle-nodes 11 non-rigid 1 largest 7 period 3 | not certified
+011 K 3: components 2 cycle-nodes 16 non-rigid 1 largest 13 period 3 | not certified
+011 K 4: components 2 cycle-nodes 26 non-rigid 1 largest 23 period 3 | not certified
+011 K 5: components 2 cycle-nodes 47 non-rigid 1 largest 42 period 3 | not certified
+011 K 6: components 2 cycle-nodes 81 non-rigid 1 largest 77 period 3 | not certified
+011 K 7: components 2 cycle-nodes 139 non-rigid 1 largest 136 period 3 | not certified
+011 K 8: components 2 cycle-nodes 224 non-rigid 1 largest 221 period 3 | not certified
+011 K 9: components 2 cycle-nodes 374 non-rigid 1 largest 369 period 3 | not certified
+011 K 10: components 2 cycle-nodes 606 non-rigid 1 largest 602 period 3 | not certified
+011 K 11: components 2 cycle-nodes 1000 non-rigid 1 largest 997 period 3 | not certified
+011 K 12: components 3 cycle-nodes 1476 non-rigid 2 largest 1406 period 3 | not certified
+011 K 13: components 3 cycle-nodes 2425 non-rigid 2 largest 2345 period 3 | not certified
+011 K 14: components 4 cycle-nodes 2591 non-rigid 3 largest 2275 period 3 | not certified
+011 K 15: components 5 cycle-nodes 3949 non-rigid 3 largest 3590 period 3 | not certified
+011 K 16: components 5 cycle-nodes 5778 non-rigid 2 largest 5627 period 3 | not certified
+011 K 17: components 5 cycle-nodes 9520 non-rigid 1 largest 9454 period 3 | not certified
+011 K 18: components 6 cycle-nodes 15467 non-rigid 1 largest 15401 period 3 | not certified
+011 K 19: components 5 cycle-nodes 24728 non-rigid 1 largest 24677 period 3 | not certified
+011 K 20: components 5 cycle-nodes 40700 non-rigid 1 largest 40639 period 3 | not certified
+# eastcensus 8 16 8 (word, length, least K or -)
+0 1 1
+1 1 1
+01 2 - non-rigid 2 largest 5130 period 2
+001 3 - non-rigid 2 largest 7534 period 3
+011 3 - non-rigid 2 largest 5627 period 3
+0001 4 - non-rigid 1 largest 6101 period 4
+0011 4 - non-rigid 1 largest 11372 period 4
+0111 4 - non-rigid 1 largest 13703 period 4
+00001 5 - non-rigid 1 largest 20667 period 5
+00011 5 - non-rigid 1 largest 19195 period 5
+00101 5 - non-rigid 1 largest 33034 period 5
+00111 5 - non-rigid 1 largest 19517 period 5
+01011 5 - non-rigid 1 largest 26215 period 5
+01111 5 - non-rigid 1 largest 20671 period 5
+000001 6 - non-rigid 1 largest 24750 period 6
+000011 6 - non-rigid 1 largest 19875 period 6
+000101 6 - non-rigid 1 largest 34129 period 6
+000111 6 - non-rigid 1 largest 27690 period 6
+001011 6 - non-rigid 1 largest 26600 period 6
+001101 6 - non-rigid 1 largest 32001 period 6
+001111 6 - non-rigid 1 largest 15294 period 6
+010111 6 - non-rigid 1 largest 26561 period 6
+011111 6 - non-rigid 1 largest 29100 period 6
+0000001 7 - non-rigid 1 largest 20862 period 7
+0000011 7 - non-rigid 1 largest 25288 period 7
+0000101 7 - non-rigid 1 largest 33617 period 7
+0000111 7 - non-rigid 1 largest 33926 period 7
+0001001 7 - non-rigid 1 largest 21493 period 7
+0001011 7 - non-rigid 1 largest 17634 period 7
+0001101 7 - non-rigid 1 largest 37594 period 7
+0001111 7 - non-rigid 1 largest 21235 period 7
+0010011 7 - non-rigid 1 largest 27462 period 7
+0010101 7 - non-rigid 1 largest 42441 period 7
+0010111 7 - non-rigid 1 largest 29591 period 7
+0011011 7 - non-rigid 2 largest 15425 period 7
+0011101 7 - non-rigid 1 largest 35229 period 7
+0011111 7 - non-rigid 1 largest 22001 period 7
+0101011 7 - non-rigid 1 largest 30738 period 7
+0101111 7 - non-rigid 1 largest 35369 period 7
+0110111 7 - non-rigid 1 largest 38702 period 7
+0111111 7 - non-rigid 1 largest 22970 period 7
+00000001 8 12
+00000011 8 6
+00000101 8 - non-rigid 1 largest 20018 period 8
+00000111 8 - non-rigid 1 largest 35054 period 8
+00001001 8 - non-rigid 1 largest 27264 period 8
+00001011 8 - non-rigid 1 largest 16031 period 8
+00001101 8 - non-rigid 1 largest 30069 period 8
+00001111 8 - non-rigid 1 largest 23268 period 8
+00010011 8 - non-rigid 1 largest 37987 period 8
+00010101 8 - non-rigid 1 largest 45220 period 8
+00010111 8 - non-rigid 1 largest 37403 period 8
+00011001 8 - non-rigid 1 largest 37044 period 8
+00011011 8 - non-rigid 1 largest 25903 period 8
+00011101 8 - non-rigid 1 largest 31366 period 8
+00011111 8 - non-rigid 1 largest 16092 period 8
+00100101 8 - non-rigid 1 largest 45541 period 8
+00100111 8 - non-rigid 1 largest 37302 period 8
+00101011 8 - non-rigid 1 largest 33391 period 8
+00101101 8 - non-rigid 1 largest 36658 period 8
+00101111 8 - non-rigid 1 largest 25572 period 8
+00110101 8 - non-rigid 1 largest 25894 period 8
+00110111 8 - non-rigid 1 largest 38374 period 8
+00111011 8 - non-rigid 1 largest 33285 period 8
+00111101 8 - non-rigid 1 largest 14379 period 8
+00111111 8 - non-rigid 1 largest 3500 period 8
+01010111 8 - non-rigid 1 largest 46239 period 8
+01011011 8 - non-rigid 1 largest 34731 period 8
+01011111 8 - non-rigid 1 largest 44568 period 8
+01101111 8 - non-rigid 1 largest 24058 period 8
+01111111 8 5
