@@ -1,0 +1,17 @@
+n 4 pin 0 rows 13 wall_halves 13 outer_halves 7 wall half determines the row
+n 8 pin 0 rows 127 wall_halves 127 outer_halves 27 wall half determines the row
+n 12 pin 0 rows 1270 wall_halves 1270 outer_halves 82 wall half determines the row
+n 16 pin 0 rows 12807 wall_halves 12807 outer_halves 141 wall half determines the row
+n 20 pin 0 rows 125401 wall_halves 125401 outer_halves 290 wall half determines the row
+n 23 pin 0 rows 688942 wall_halves 688942 outer_halves 532 wall half determines the row
+n 24 pin 0 rows 1215214 wall_halves 1215214 outer_halves 645 wall half determines the row
+n 25 pin 0 rows 2141177 wall_halves 2141177 outer_halves 766 wall half determines the row
+n 26 pin 0 rows 3773664 wall_halves 3773664 outer_halves 873 wall half determines the row
+n 27 pin 0 rows 6648797 wall_halves 6648797 outer_halves 979 wall half determines the row
+n 28 pin 0 rows 11709691 wall_halves 11709691 outer_halves 1086 wall half determines the row
+n 4 pin 1 rows 9 wall_halves 9 outer_halves 7 wall half determines the row
+n 8 pin 1 rows 89 wall_halves 89 outer_halves 21 wall half determines the row
+n 12 pin 1 rows 906 wall_halves 906 outer_halves 79 wall half determines the row
+n 16 pin 1 rows 9009 wall_halves 9009 outer_halves 138 wall half determines the row
+n 20 pin 1 rows 88630 wall_halves 88630 outer_halves 287 wall half determines the row
+n 24 pin 1 rows 859065 wall_halves 859065 outer_halves 639 wall half determines the row
