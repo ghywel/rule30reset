@@ -1,16 +1,16 @@
-<!-- portal-list: 2026-11-28 13:11 UTC, 469 entries, 79 portal-only -->
+<!-- portal-list: 2026-11-28 18:42 UTC, 469 entries, 78 portal-only -->
 # The portal outside the kit
 
 *Every portal entry with no kit modules, each read with the scrutiny the kit's review would give it. The kit's own
 results, which are most of the portal, are in [KIT.md](KIT.md) and [KIT-INDEX.md](KIT-INDEX.md); this file covers
-only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-28 13:11 UTC (469 entries)
-and kit main `10a4b86`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
+only what those cannot. The inventory begun in M97 now matches the portal list of 2026-11-28 18:42 UTC (469 entries)
+and kit main `6289b3b`. Find new portal-only entries with `python3 tools/portal/portal_only.py`; see
 [KIT-UPDATE.md](KIT-UPDATE.md). Check a source before building on anything here.*
 
 ## Why it exists
 
 - **The portal records every submission. The kit holds only what was merged into its catalogue.**
-  - The portal marks each entry's kit modules (its `kitContribution` field). 79 of the 469 entries have none.
+  - The portal marks each entry's kit modules (its `kitContribution` field). 78 of the 469 entries have none.
   - Our documents track the kit, so those entries were invisible to `find_known.py`.
   - On 22 November, two Lean-Verified, Human-Verified entries of this kind (Norris's shield cascade) already
     held a result that path 1 called new (M95, [PRIOR-ART P46](PRIOR-ART.md)).
@@ -28,10 +28,10 @@ and kit main `10a4b86`. Find new portal-only entries with `python3 tools/portal/
 | Missed | 14 |
 | Port | 3 |
 | Pending | 4 |
-| Check | 22 |
+| Check | 21 |
 | Covered | 7 |
 | Below the bar | 29 |
-| All | 79, of them 20 ours |
+| All | 78, of them 20 ours |
 
 ## Missed (14)
 
@@ -39,7 +39,7 @@ Kit-fit and kit-worthy, and not in the kit. For our own entries these are pull-r
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
-| [R30-20261127-1bc7d2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-1bc7d2) | 2026-11-27 | Moncef Benboubakeur and collaborators | Lean Verified | An S-state DFA computing the Rule 30 apex on all odd initial words of length at most 2N+1 satisfies N² ≤ 8S. An exponential bound follows conditionally from exponential diagonal-trace diversity. | General quantitative version of the variable-row apex obstruction. Singleton time lookup has a different input and machine. [Source read and replay](research/phase2/gemini/indexed-cost.md) | L |
+| [R30-20261128-a7bb4f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261128-a7bb4f) | 2026-11-28 | Moncef Benboubakeur and collaborators | Lean Verified, Human Verified | An S-state DFA correct on the Rule 30 apex for all odd initial rows of length at most 2N+1 has N² ≤ 8S (`apex_state_quadratic`). A separate theorem gives an exponential lower bound under the stated trace-diversity hypothesis. | Replaces the departed portal listing R30-20261127-1bc7d2 in this inventory. The variable initial row is the input. The singleton-time problem uses a different input. [Published Lean](https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/file?id=R30-20261128-a7bb4f&kind=lean) | L |
 | [R30-20261127-be8111](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-be8111) | 2026-11-27 | Jacob Dyer and collaborators | Lean Verified, Human Verified | At every rational speed 0 ≤ p/q < 1 in either direction, adjacent digital lines from a row with a leftmost black cell cannot both be eventually periodic. | Extends the vertical adjacent-column theorem. For phase-sampled lines the result ranges over all 2q streams together. | A |
 | [R30-20261023-c5e3c0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-c5e3c0) | 2026-10-23 | Andy Norris; Jesse v1.4 (solidSF) | Lean Verified, Human Verified | The same cascade and strip results, without the Problem 2 and 3 bridges (17 headlines). | As 603218, which extends it. | S |
 | [R30-20261023-603218](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-603218) | 2026-10-23 | Andy Norris; Jesse v1.4 (solidSF) | Lean Verified, Human Verified | Norris's self-replicating shield cascade: the right wall of a (0,1)^j shield stays black 2j ticks and spawns further shields, so a single-seed period with r ≥ 9j blacks and P − r + 9 ≤ 4·cascadePairs d j is excluded (slope 7/4, limit 7/11). Also 11 0^q for q ≥ 8, strip fixed points, a 32-block catalogue, and Problem 2 and 3 bridges. | The cascade is not in the kit, which holds Bosdure's later quarter-period theorem (slope 9/4). 11 0^q is the kit's Rule30WhiteRunEight. gptIntel's relay sharpens the cascade's constant (M95, P46). | S |
@@ -75,13 +75,12 @@ In an open kit pull request. Moves out of this file when it merges.
 | [R30-20261103-4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | 2026-11-03 | @AIOvernight; Claude; OpenAI Codex | Lean Verified, Human Verified | AIOvernight: no smaller observable certifies the word 1001 (Problem 2). | Open kit PR #238. Uses Mathlib. | A |
 | [R30-20261126-3c2c76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261126-3c2c76) | 2026-11-26 | ours (S20, superseding R30-20261125-91722e) | Lean Verified | On the full two-sided map, the topological entropy (Mathlib's cover entropy) is the growth rate of the words of two adjacent columns; a weighted reverse cover of 140 states gives less than 1.232039 bits a tick. Nothing is claimed about Problems 1 to 3. | Kit pull request [#426](https://github.com/WolframInstitute/Rule30PrizeKit/pull/426), in `equivalents/`, open (M188): passed static review, queued with #238 until the maintainers add an `equivalents/` check (25 November); credit to the core per-wall bounds added (M192). Now also the hearing modules: the entropy is the growth of the OR words over all walls, and every rate above the worst wall has a finite certificate (M194). Uses Mathlib. | L |
 
-## Check (22)
+## Check (21)
 
 Not decided from the abstract and headlines: needs a source read.
 
 | Entry | Date | Authors | Status | What it proves | Why this class | Read |
 |---|---|---|---|---|---|---|
-| [R30-20261128-138390](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261128-138390) | 2026-11-28 | G.P.J.W. Quint; Gemini (Google) | Lean Verified, Human Verified | Sharp driven inverse ages 31 and 32 for three ticks, an `ExactAt` to `TargetAt` bridge, `TargetAt 3 32`, and third-tick coverage tests by mod-3 residue through distance three. | Compare K50.3 and the kit's `Rule30DrivenLeftDepthTwo` and `Rule30DrivenParentBand`. The abstract gives the cutoff pair and reports unconditional recurrent ancestor locations; check the exact coverage quantifiers in the source. | A |
 | [R30-20261128-f03004](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261128-f03004) | 2026-11-28 | Mateo Molina; GPT (OpenAI); Claude (Anthropic) | Lean Verified | Singleton horizontal word diversity is at least w + ⌊6w/59⌋ + 1 at every width, and reaches an asymptotic ratio of at least 117/100. Every fixed extra length of the initial age segment has distinct words at sufficiently large widths. | Compare the exact word convention and age bounds to Rule30HorizontalDiversityBounds. | A |
 | [R30-20261127-a4d3f8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-a4d3f8) | 2026-11-27 | Moncef Benboubakeur; GPT; Claude | Lean Verified | With A j r the seeds y < 4^r that pass the first r + j checks beside the white wall: 4·A 2 r ≤ 3·2^r, 12288·A 2 r ≤ 9007·2^r and 2048·A 4 r ≤ 1363·2^r at every r, so a third of the seeds that pass their first r checks fail within four more. | Checks past the support at every width: the subject of our pull K92.2, beyond `Rule30FirstChecks` and their own R30-20261126-65dcb1. Read the 11- and 15-cell certificates. | A |
 | [R30-20261127-9ed040](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261127-9ed040) | 2026-11-27 | Moncef Benboubakeur and collaborators | Lean Verified | Among first-check survivors, second-check losses exceed 1/16 at a width in every 7, 1/10 in every 562 and 1/8 in every 1,042. From width 8 both outcomes have exponentially growing lower counts. | Supersedes R30-20261126-65dcb1. Relevant to K92.2. It transfers 15-cell certificates and gives explicit survivor families. | A |

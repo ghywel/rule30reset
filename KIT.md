@@ -1,7 +1,7 @@
-<!-- kit-commit: 10a4b86 2026-11-28 -->
+<!-- kit-commit: 6289b3b 2026-11-28 -->
 # The Rule 30 Prize kit, in one reading
 
-*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `10a4b86` (main, 2026-11-28),
+*What is already proved, what is open, and how the open statements connect. Written from the kit at commit `6289b3b` (main, 2026-11-28),
 the commit in the stamp line above, and kept in step with the kit's main by [KIT-UPDATE.md](KIT-UPDATE.md). One line
 per catalogue row, with contributors, is in [KIT-INDEX.md](KIT-INDEX.md). Everything below is the kit's claim; check
 the Lean source before building on it.*
@@ -146,7 +146,7 @@ with a leftmost black cell has its edge k sites inside from age 2^w (`Rule30Ever
 one and two ticks are 8 and 24 on the line (`Rule30TwoSidedInverse`). Beside any prescribed wall they are 8
 and 24 for starts at least two sites away, and 9 and 25 for an adjacent start (`Rule30DrivenLeftInverse`).
 The upper bounds allow arbitrary inverse wall bits, and the sharpness examples use the prescribed wall bits.
-For every k, depth two at T ≥ 2 decides both start classes, at T and T+1. Ages for all k would force unique parents for recurrent black-edged rows (`Rule30DrivenLeftDepthTwo`, `Rule30DrivenParentBand`).
+For every k, depth two at T ≥ 2 decides both start classes, at T and T+1. Ages for all k would force unique parents for recurrent black-edged rows (`Rule30DrivenLeftDepthTwo`, `Rule30DrivenParentBand`). Quint and Gemini prove the sharp three-inverse-tick ages 31 and 32, and the `ExactAt` to `TargetAt` bridge.
 
 **Other routes to Problem 1.**
 - For every tail start and shift P ≥ 2, compare the single-seed diagram with its P-tick translate. Problem 1 is equivalent to an initial centre mismatch or a later failure of the mirror rule: at a black centre the left neighbour must match, and at a white centre the two neighbour differences must agree (`problem1_iff_two_sided_xor_mirror_escape`).
@@ -202,7 +202,7 @@ For every k, depth two at T ≥ 2 decides both start classes, at T and T+1. Ages
 
 - **Period-three right halves.** For arbitrary starting phase, a half white beyond site D enters the least nonempty closed
   set of 14-cell windows by every gate tick from 3D+170 beside 001 or 3D+820 beside 011. Halves of any support enter the set or have a constant sampled gate (`Rule30PeriodThreeEntry`).
-  Lowry characterizes both clocks by sampled white markers. Either cofinal spatial 101 at sites −3 to −1, or uniform third-tick hits at unbounded depths, excludes period three (`Rule30FlankingSources`, `Rule30ThirdTick`).
+  Lowry characterizes both clocks by sampled white markers. Either cofinal spatial 101 at sites −3 to −1, or uniform third-tick hits at unbounded depths, excludes period three (`Rule30FlankingSources`, `Rule30ThirdTick`). Quint and Gemini split the sampled coverage test into its three residues and prove a descent that preserves the sampled phase.
   The optimal uniform entry slope is three beside either drive. The finite erosion and 011 constant-gate deadlines
   also need slope three. One infinite right half keeps the exceptional front forever (`Rule30EtherThreeSharpSlope`).
   The 13 recurrent departure states return after ten ticks and four cells west, with 8^m wake paths in 10m ticks
