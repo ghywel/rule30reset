@@ -1,0 +1,31 @@
+K92.5.C, claudeM5 (M231). Predictions written at 13:29 UTC on 28 November 2026, before the runs.
+
+Frozen code (SHA-256):
+  claudeM5_mask_census.cpp   bec909a8e092f28e2d255c963065de74c5748dd4696a40a2b7a3acbd5c2975c8
+
+Seen before writing: nothing from this program. The kit's Rule30StripCertificateTable lists 30 words of length
+8 to 13 certified at strip width K <= 9 and says the completeness of that search is not checked; the rank-certified
+words 00000011 and 000000000101 are not in it.
+
+The question: for which primitive words w does a periodic centre w force column 1 at its white phases to repeat
+on a strip of K cells with a free exterior (the kit's bitmask strip certificate, for some warm-up k)? In the
+ternary square root that is the 0/2 choice at the origin bond. The census: every primitive word of length 1 to 13
+(1,377), every K from 1 to 18, the least certifying K.
+
+E1 (85%). At K <= 9 and lengths 8 to 13 the certified words are exactly the kit table's 30.
+E2 (70%). Widening to K <= 18 certifies at most three times as many words of length <= 13 as K <= 9 does.
+E3 (95%). The period-two word 01 is certified at no K <= 18.
+E4 (70%). The constant word 0 is certified at no K <= 18: each true path's column 1 is eventually constant there
+          (x1 never falls when the centre is white), but different paths can settle on different values, which a
+          bitmask certificate cannot express.
+E5 (60%). The certified share rises with word length from 6 to 13.
+
+What a failure would show. A K at which most short words are certified (against E2) would make the width the
+lever for whole families, the kind of statement K92.5.C asks for. If few are, the 0/2 choice is underdetermined by
+a periodic mask on any strip of this kind, and a proof needs the rank or partner refinements (Galindo's ranked words,
+S31's partner relation) or information from the singleton itself.
+
+Record searched: find_known for every word of length, all words of length, short words, strip width, survivor words,
+word census, periods up to and primitive words; KIT-INDEX's excluded-words section (54 modules), Rule30StripCertificates
+(stripCert, Cert, problem1_iff_no_word) and Rule30StripCertificateTable; PRIOR-ART P38 (false positives of the strip
+criterion); research/phase2/borrowed/k98-nine-questions.md and TernaryRoot.lean; K99, I315, I324.
