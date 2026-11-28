@@ -369,21 +369,27 @@ private theorem realize (n : Nat) (b : Nat → Bool) :
         exact two _ _ _ different a
       · exact (same t (by omega)).trans (hx t (by omega))
 
+/-- All n+1 prescribed physical readings are attainable on a finite growing row. -/
+theorem finite_trace (n : Nat) (b : Nat → Bool) :
+    ∃ x, Locked x (n+1) ∧ ∀ t ≤ n, clock false x t 0 = b t := by
+  obtain ⟨u, hu⟩ := realize n b
+  let x : Row := fun i => if i ≤ n then u i else decide (i ≤ n+2)
+  have same := cone n false x u (fun i hi => by simp [x, hi])
+  exact ⟨x, ⟨⟨fun i hi => by simp [x, show ¬ i ≤ n by omega, show ¬ i ≤ n+2 by omega],
+    by simp [x, show ¬(n+1+1 ≤ n) by omega]⟩, by simp [x]⟩,
+    fun t ht => (same t ht).trans (hu t ht)⟩
+
 /-- Every prescribed finite odd word can occur while all m+1 even samples are
     black, on a row already locked and of exact width 2m+3. -/
 theorem arbitrary_odd_prefix (m : Nat) (f : Nat → Bool) :
     ∃ x, Locked x (2*m+1) ∧ (∀ j ≤ m, run j x 0 = true) ∧ (∀ j < m, oddBit x j = f j) := by
   let b : Nat → Bool := fun t => if t%2=0 then true else f (t/2)
-  obtain ⟨u, hu⟩ := realize (2*m) b
-  let x : Row := fun i => if i ≤ 2*m then u i else decide (i ≤ 2*m+2)
-  have same := cone (2*m) false x u (fun i hi => by simp [x, hi])
-  refine ⟨x, ⟨⟨fun i hi => by simp [x, show ¬ i ≤ 2*m by omega, show ¬ i ≤ 2*m+2 by omega],
-    by simp [x, show ¬(2*m+1+1 ≤ 2*m) by omega]⟩, by simp [x]⟩, ?_, ?_⟩
+  obtain ⟨x, hx, obs⟩ := finite_trace (2*m) b
+  refine ⟨x, hx, ?_, ?_⟩
   · intro j hj
-    have eq := (same (2*j) (by omega)).trans (hu _ (by omega))
-    simpa [clock_even, b] using eq
+    simpa [clock_even, b] using obs (2*j) (by omega)
   · intro j hj
-    have eq := (same (2*j+1) (by omega)).trans (hu _ (by omega))
-    simpa [clock_odd, b, oddBit, show (2*j+1)/2 = j by omega, show (2*j+1)%2 = 1 by omega] using eq
+    simpa [clock_odd, b, oddBit, show (2*j+1)/2 = j by omega, show (2*j+1)%2 = 1 by omega]
+      using obs (2*j+1) (by omega)
 
 end Hybrid150Edge
